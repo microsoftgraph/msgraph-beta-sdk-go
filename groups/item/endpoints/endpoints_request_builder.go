@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\endpoints
+// endpointsRequestBuilder builds and executes requests for operations under \groups\{group-id}\endpoints
 type EndpointsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EndpointsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// EndpointsRequestBuilderGetOptions options for Get
 type EndpointsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type EndpointsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Endpoints for the group. Read-only. Nullable.
+// endpointsRequestBuilderGetQueryParameters endpoints for the group. Read-only. Nullable.
 type EndpointsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type EndpointsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// EndpointsRequestBuilderPostOptions options for Post
 type EndpointsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Endpoint;
@@ -56,10 +56,7 @@ type EndpointsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EndpointsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEndpointsRequestBuilderInternal instantiates a new EndpointsRequestBuilder and sets the default values.
 func NewEndpointsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EndpointsRequestBuilder) {
     m := &EndpointsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewEndpointsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EndpointsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEndpointsRequestBuilder instantiates a new EndpointsRequestBuilder and sets the default values.
 func NewEndpointsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EndpointsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEndpointsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Endpoints for the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation endpoints for the group. Read-only. Nullable.
 func (m *EndpointsRequestBuilder) CreateGetRequestInformation(options *EndpointsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *EndpointsRequestBuilder) CreateGetRequestInformation(options *Endpoints
     }
     return requestInfo, nil
 }
-// Endpoints for the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation endpoints for the group. Read-only. Nullable.
 func (m *EndpointsRequestBuilder) CreatePostRequestInformation(options *EndpointsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *EndpointsRequestBuilder) CreatePostRequestInformation(options *Endpoint
     }
     return requestInfo, nil
 }
-// Endpoints for the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get endpoints for the group. Read-only. Nullable.
 func (m *EndpointsRequestBuilder) Get(options *EndpointsRequestBuilderGetOptions)(*EndpointsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *EndpointsRequestBuilder) Get(options *EndpointsRequestBuilderGetOptions
     }
     return res.(*EndpointsResponse), nil
 }
-// Endpoints for the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post endpoints for the group. Read-only. Nullable.
 func (m *EndpointsRequestBuilder) Post(options *EndpointsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Endpoint, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

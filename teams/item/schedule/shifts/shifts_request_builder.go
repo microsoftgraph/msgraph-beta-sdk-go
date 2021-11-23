@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\shifts
+// shiftsRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\shifts
 type ShiftsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ShiftsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ShiftsRequestBuilderGetOptions options for Get
 type ShiftsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ShiftsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The shifts in the schedule.
+// shiftsRequestBuilderGetQueryParameters the shifts in the schedule.
 type ShiftsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -43,7 +43,7 @@ type ShiftsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ShiftsRequestBuilderPostOptions options for Post
 type ShiftsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Shift;
@@ -54,10 +54,7 @@ type ShiftsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ShiftsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewShiftsRequestBuilderInternal instantiates a new ShiftsRequestBuilder and sets the default values.
 func NewShiftsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ShiftsRequestBuilder) {
     m := &ShiftsRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewShiftsRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ShiftsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewShiftsRequestBuilder instantiates a new ShiftsRequestBuilder and sets the default values.
 func NewShiftsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ShiftsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewShiftsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The shifts in the schedule.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the shifts in the schedule.
 func (m *ShiftsRequestBuilder) CreateGetRequestInformation(options *ShiftsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *ShiftsRequestBuilder) CreateGetRequestInformation(options *ShiftsReques
     }
     return requestInfo, nil
 }
-// The shifts in the schedule.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the shifts in the schedule.
 func (m *ShiftsRequestBuilder) CreatePostRequestInformation(options *ShiftsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ShiftsRequestBuilder) CreatePostRequestInformation(options *ShiftsReque
     }
     return requestInfo, nil
 }
-// The shifts in the schedule.
-// Parameters:
-//  - options : Options for the request
+// Get the shifts in the schedule.
 func (m *ShiftsRequestBuilder) Get(options *ShiftsRequestBuilderGetOptions)(*ShiftsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -135,9 +123,7 @@ func (m *ShiftsRequestBuilder) Get(options *ShiftsRequestBuilderGetOptions)(*Shi
     }
     return res.(*ShiftsResponse), nil
 }
-// The shifts in the schedule.
-// Parameters:
-//  - options : Options for the request
+// Post the shifts in the schedule.
 func (m *ShiftsRequestBuilder) Post(options *ShiftsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Shift, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -8,7 +8,7 @@ import (
     i533bf20e862e0cfd002ac11184843402fc54130b1fcc0d9fabaa59a9f85e56fd "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenanttags/item/assigntag"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\tenantTags\{tenantTag-id}
+// tenantTagRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenantTags\{tenantTag-id}
 type TenantTagRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type TenantTagRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TenantTagRequestBuilderDeleteOptions options for Delete
 type TenantTagRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TenantTagRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TenantTagRequestBuilderGetOptions options for Get
 type TenantTagRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type TenantTagRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of tenant tags across managed tenants.
+// tenantTagRequestBuilderGetQueryParameters the collection of tenant tags across managed tenants.
 type TenantTagRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TenantTagRequestBuilderPatchOptions options for Patch
 type TenantTagRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTag;
@@ -58,10 +58,7 @@ type TenantTagRequestBuilderPatchOptions struct {
 func (m *TenantTagRequestBuilder) AssignTag()(*i533bf20e862e0cfd002ac11184843402fc54130b1fcc0d9fabaa59a9f85e56fd.AssignTagRequestBuilder) {
     return i533bf20e862e0cfd002ac11184843402fc54130b1fcc0d9fabaa59a9f85e56fd.NewAssignTagRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new TenantTagRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantTagRequestBuilderInternal instantiates a new TenantTagRequestBuilder and sets the default values.
 func NewTenantTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantTagRequestBuilder) {
     m := &TenantTagRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewTenantTagRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TenantTagRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantTagRequestBuilder instantiates a new TenantTagRequestBuilder and sets the default values.
 func NewTenantTagRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantTagRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTenantTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of tenant tags across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of tenant tags across managed tenants.
 func (m *TenantTagRequestBuilder) CreateDeleteRequestInformation(options *TenantTagRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *TenantTagRequestBuilder) CreateDeleteRequestInformation(options *Tenant
     }
     return requestInfo, nil
 }
-// The collection of tenant tags across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of tenant tags across managed tenants.
 func (m *TenantTagRequestBuilder) CreateGetRequestInformation(options *TenantTagRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *TenantTagRequestBuilder) CreateGetRequestInformation(options *TenantTag
     }
     return requestInfo, nil
 }
-// The collection of tenant tags across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of tenant tags across managed tenants.
 func (m *TenantTagRequestBuilder) CreatePatchRequestInformation(options *TenantTagRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *TenantTagRequestBuilder) CreatePatchRequestInformation(options *TenantT
     }
     return requestInfo, nil
 }
-// The collection of tenant tags across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of tenant tags across managed tenants.
 func (m *TenantTagRequestBuilder) Delete(options *TenantTagRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *TenantTagRequestBuilder) Delete(options *TenantTagRequestBuilderDeleteO
     }
     return nil
 }
-// The collection of tenant tags across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of tenant tags across managed tenants.
 func (m *TenantTagRequestBuilder) Get(options *TenantTagRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTag, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *TenantTagRequestBuilder) Get(options *TenantTagRequestBuilderGetOptions
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantTag), nil
 }
-// The collection of tenant tags across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of tenant tags across managed tenants.
 func (m *TenantTagRequestBuilder) Patch(options *TenantTagRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

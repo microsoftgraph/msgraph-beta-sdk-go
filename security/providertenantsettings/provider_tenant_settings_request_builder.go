@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\providerTenantSettings
+// providerTenantSettingsRequestBuilder builds and executes requests for operations under \security\providerTenantSettings
 type ProviderTenantSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ProviderTenantSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ProviderTenantSettingsRequestBuilderGetOptions options for Get
 type ProviderTenantSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ProviderTenantSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get providerTenantSettings from security
+// providerTenantSettingsRequestBuilderGetQueryParameters get providerTenantSettings from security
 type ProviderTenantSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ProviderTenantSettingsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ProviderTenantSettingsRequestBuilderPostOptions options for Post
 type ProviderTenantSettingsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProviderTenantSetting;
@@ -56,10 +56,7 @@ type ProviderTenantSettingsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ProviderTenantSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProviderTenantSettingsRequestBuilderInternal instantiates a new ProviderTenantSettingsRequestBuilder and sets the default values.
 func NewProviderTenantSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProviderTenantSettingsRequestBuilder) {
     m := &ProviderTenantSettingsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewProviderTenantSettingsRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ProviderTenantSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProviderTenantSettingsRequestBuilder instantiates a new ProviderTenantSettingsRequestBuilder and sets the default values.
 func NewProviderTenantSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProviderTenantSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProviderTenantSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get providerTenantSettings from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get providerTenantSettings from security
 func (m *ProviderTenantSettingsRequestBuilder) CreateGetRequestInformation(options *ProviderTenantSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ProviderTenantSettingsRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Create new navigation property to providerTenantSettings for security
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to providerTenantSettings for security
 func (m *ProviderTenantSettingsRequestBuilder) CreatePostRequestInformation(options *ProviderTenantSettingsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ProviderTenantSettingsRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get providerTenantSettings from security
-// Parameters:
-//  - options : Options for the request
+// Get get providerTenantSettings from security
 func (m *ProviderTenantSettingsRequestBuilder) Get(options *ProviderTenantSettingsRequestBuilderGetOptions)(*ProviderTenantSettingsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ProviderTenantSettingsRequestBuilder) Get(options *ProviderTenantSettin
     }
     return res.(*ProviderTenantSettingsResponse), nil
 }
-// Create new navigation property to providerTenantSettings for security
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to providerTenantSettings for security
 func (m *ProviderTenantSettingsRequestBuilder) Post(options *ProviderTenantSettingsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProviderTenantSetting, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

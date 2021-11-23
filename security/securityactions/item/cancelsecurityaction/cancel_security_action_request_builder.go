@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \security\securityActions\{securityAction-id}\microsoft.graph.cancelSecurityAction
+// cancelSecurityActionRequestBuilder builds and executes requests for operations under \security\securityActions\{securityAction-id}\microsoft.graph.cancelSecurityAction
 type CancelSecurityActionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type CancelSecurityActionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// CancelSecurityActionRequestBuilderPostOptions options for Post
 type CancelSecurityActionRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type CancelSecurityActionRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CancelSecurityActionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCancelSecurityActionRequestBuilderInternal instantiates a new CancelSecurityActionRequestBuilder and sets the default values.
 func NewCancelSecurityActionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CancelSecurityActionRequestBuilder) {
     m := &CancelSecurityActionRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewCancelSecurityActionRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CancelSecurityActionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCancelSecurityActionRequestBuilder instantiates a new CancelSecurityActionRequestBuilder and sets the default values.
 func NewCancelSecurityActionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CancelSecurityActionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCancelSecurityActionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action cancelSecurityAction
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action cancelSecurityAction
 func (m *CancelSecurityActionRequestBuilder) CreatePostRequestInformation(options *CancelSecurityActionRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *CancelSecurityActionRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Invoke action cancelSecurityAction
-// Parameters:
-//  - options : Options for the request
+// Post invoke action cancelSecurityAction
 func (m *CancelSecurityActionRequestBuilder) Post(options *CancelSecurityActionRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

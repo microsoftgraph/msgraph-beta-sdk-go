@@ -10,7 +10,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \servicePrincipals
+// servicePrincipalsRequestBuilder builds and executes requests for operations under \servicePrincipals
 type ServicePrincipalsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type ServicePrincipalsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ServicePrincipalsRequestBuilderGetOptions options for Get
 type ServicePrincipalsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type ServicePrincipalsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from servicePrincipals
+// servicePrincipalsRequestBuilderGetQueryParameters get entities from servicePrincipals
 type ServicePrincipalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -49,7 +49,7 @@ type ServicePrincipalsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ServicePrincipalsRequestBuilderPostOptions options for Post
 type ServicePrincipalsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipal;
@@ -60,10 +60,7 @@ type ServicePrincipalsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ServicePrincipalsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServicePrincipalsRequestBuilderInternal instantiates a new ServicePrincipalsRequestBuilder and sets the default values.
 func NewServicePrincipalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServicePrincipalsRequestBuilder) {
     m := &ServicePrincipalsRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewServicePrincipalsRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ServicePrincipalsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServicePrincipalsRequestBuilder instantiates a new ServicePrincipalsRequestBuilder and sets the default values.
 func NewServicePrincipalsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServicePrincipalsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServicePrincipalsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from servicePrincipals
 func (m *ServicePrincipalsRequestBuilder) CreateGetRequestInformation(options *ServicePrincipalsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *ServicePrincipalsRequestBuilder) CreateGetRequestInformation(options *S
     }
     return requestInfo, nil
 }
-// Add new entity to servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to servicePrincipals
 func (m *ServicePrincipalsRequestBuilder) CreatePostRequestInformation(options *ServicePrincipalsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,13 +117,11 @@ func (m *ServicePrincipalsRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \servicePrincipals\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \servicePrincipals\microsoft.graph.delta()
 func (m *ServicePrincipalsRequestBuilder) Delta()(*i07ea82e8cdb01938ad025e6648ae29c3c96f2adbafa7de6af15c650980651744.DeltaRequestBuilder) {
     return i07ea82e8cdb01938ad025e6648ae29c3c96f2adbafa7de6af15c650980651744.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get entities from servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Get get entities from servicePrincipals
 func (m *ServicePrincipalsRequestBuilder) Get(options *ServicePrincipalsRequestBuilderGetOptions)(*ServicePrincipalsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,9 +139,7 @@ func (m *ServicePrincipalsRequestBuilder) GetByIds()(*i13ad01682da78442a9cf027f3
 func (m *ServicePrincipalsRequestBuilder) GetUserOwnedObjects()(*ic1b17114e49e92b3da03ac7e6328ba8f143e419e9a0cb2b80fe833a35584283a.GetUserOwnedObjectsRequestBuilder) {
     return ic1b17114e49e92b3da03ac7e6328ba8f143e419e9a0cb2b80fe833a35584283a.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to servicePrincipals
 func (m *ServicePrincipalsRequestBuilder) Post(options *ServicePrincipalsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipal, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

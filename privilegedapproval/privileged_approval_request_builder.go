@@ -7,7 +7,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privilegedApproval
+// privilegedApprovalRequestBuilder builds and executes requests for operations under \privilegedApproval
 type PrivilegedApprovalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type PrivilegedApprovalRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PrivilegedApprovalRequestBuilderGetOptions options for Get
 type PrivilegedApprovalRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type PrivilegedApprovalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from privilegedApproval
+// privilegedApprovalRequestBuilderGetQueryParameters get entities from privilegedApproval
 type PrivilegedApprovalRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type PrivilegedApprovalRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PrivilegedApprovalRequestBuilderPostOptions options for Post
 type PrivilegedApprovalRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedApproval;
@@ -57,10 +57,7 @@ type PrivilegedApprovalRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrivilegedApprovalRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedApprovalRequestBuilderInternal instantiates a new PrivilegedApprovalRequestBuilder and sets the default values.
 func NewPrivilegedApprovalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedApprovalRequestBuilder) {
     m := &PrivilegedApprovalRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewPrivilegedApprovalRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrivilegedApprovalRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedApprovalRequestBuilder instantiates a new PrivilegedApprovalRequestBuilder and sets the default values.
 func NewPrivilegedApprovalRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedApprovalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedApprovalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from privilegedApproval
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) CreateGetRequestInformation(options *PrivilegedApprovalRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *PrivilegedApprovalRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Add new entity to privilegedApproval
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) CreatePostRequestInformation(options *PrivilegedApprovalRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *PrivilegedApprovalRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get entities from privilegedApproval
-// Parameters:
-//  - options : Options for the request
+// Get get entities from privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) Get(options *PrivilegedApprovalRequestBuilderGetOptions)(*PrivilegedApprovalResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,13 +126,11 @@ func (m *PrivilegedApprovalRequestBuilder) Get(options *PrivilegedApprovalReques
     }
     return res.(*PrivilegedApprovalResponse), nil
 }
-// Builds and executes requests for operations under \privilegedApproval\microsoft.graph.myRequests()
+// MyRequests builds and executes requests for operations under \privilegedApproval\microsoft.graph.myRequests()
 func (m *PrivilegedApprovalRequestBuilder) MyRequests()(*if17dca57674287967656a13b54c8ccf00e884141c664d0612de3a3a1cb5aa5ab.MyRequestsRequestBuilder) {
     return if17dca57674287967656a13b54c8ccf00e884141c664d0612de3a3a1cb5aa5ab.NewMyRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to privilegedApproval
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) Post(options *PrivilegedApprovalRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedApproval, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

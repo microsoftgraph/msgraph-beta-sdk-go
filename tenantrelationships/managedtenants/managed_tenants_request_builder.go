@@ -52,7 +52,7 @@ import (
     if6d60fc8097e10a44124bc34967688bbbcf720e50c2b3034d3ecedc559f02741 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/cloudpcsoverview/item"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants
+// managedTenantsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants
 type ManagedTenantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -61,7 +61,7 @@ type ManagedTenantsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedTenantsRequestBuilderDeleteOptions options for Delete
 type ManagedTenantsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -70,7 +70,7 @@ type ManagedTenantsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedTenantsRequestBuilderGetOptions options for Get
 type ManagedTenantsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -81,14 +81,14 @@ type ManagedTenantsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The operations available to interact with the multi-tenant management platform.
+// managedTenantsRequestBuilderGetQueryParameters the operations available to interact with the multi-tenant management platform.
 type ManagedTenantsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedTenantsRequestBuilderPatchOptions options for Patch
 type ManagedTenantsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedTenant;
@@ -102,9 +102,7 @@ type ManagedTenantsRequestBuilderPatchOptions struct {
 func (m *ManagedTenantsRequestBuilder) AggregatedPolicyCompliances()(*idbc8f4984d2cb262d1942923c269bd190c01b953b808d1fdb9cf4be97280aaa9.AggregatedPolicyCompliancesRequestBuilder) {
     return idbc8f4984d2cb262d1942923c269bd190c01b953b808d1fdb9cf4be97280aaa9.NewAggregatedPolicyCompliancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.aggregatedPolicyCompliances.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AggregatedPolicyCompliancesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.aggregatedPolicyCompliances.item collection
 func (m *ManagedTenantsRequestBuilder) AggregatedPolicyCompliancesById(id string)(*i52c320bc8af30828e6ec0c42efaa3e1776f96666e820434df3a8666acde77551.AggregatedPolicyComplianceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -118,9 +116,7 @@ func (m *ManagedTenantsRequestBuilder) AggregatedPolicyCompliancesById(id string
 func (m *ManagedTenantsRequestBuilder) CloudPcConnections()(*icc9f761cb74e72b6d07de77b6cf9c0fe4d404bf9718587ba757ff7c9a01b8c9c.CloudPcConnectionsRequestBuilder) {
     return icc9f761cb74e72b6d07de77b6cf9c0fe4d404bf9718587ba757ff7c9a01b8c9c.NewCloudPcConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.cloudPcConnections.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CloudPcConnectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.cloudPcConnections.item collection
 func (m *ManagedTenantsRequestBuilder) CloudPcConnectionsById(id string)(*ief1a51d13b4379383242b889e4364a07fc548b896256031dfb57941100b7e3b5.CloudPcConnectionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -134,9 +130,7 @@ func (m *ManagedTenantsRequestBuilder) CloudPcConnectionsById(id string)(*ief1a5
 func (m *ManagedTenantsRequestBuilder) CloudPcDevices()(*i1d7cc37e7e8e702a054a8907daa331abe670d4a4d9e3e68367c96a95472d6186.CloudPcDevicesRequestBuilder) {
     return i1d7cc37e7e8e702a054a8907daa331abe670d4a4d9e3e68367c96a95472d6186.NewCloudPcDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.cloudPcDevices.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CloudPcDevicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.cloudPcDevices.item collection
 func (m *ManagedTenantsRequestBuilder) CloudPcDevicesById(id string)(*i24e026309e2f5ec4fcde15b1735de3d790a689d3408b9e14ae04f9328e84c7bd.CloudPcDeviceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -150,9 +144,7 @@ func (m *ManagedTenantsRequestBuilder) CloudPcDevicesById(id string)(*i24e026309
 func (m *ManagedTenantsRequestBuilder) CloudPcsOverview()(*ic9cc0fcc7a3eb22d3fce4f7ca12420fe56e916b98e995471ceacfe67707ebaf2.CloudPcsOverviewRequestBuilder) {
     return ic9cc0fcc7a3eb22d3fce4f7ca12420fe56e916b98e995471ceacfe67707ebaf2.NewCloudPcsOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.cloudPcsOverview.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CloudPcsOverviewById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.cloudPcsOverview.item collection
 func (m *ManagedTenantsRequestBuilder) CloudPcsOverviewById(id string)(*if6d60fc8097e10a44124bc34967688bbbcf720e50c2b3034d3ecedc559f02741.CloudPcOverviewRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -166,9 +158,7 @@ func (m *ManagedTenantsRequestBuilder) CloudPcsOverviewById(id string)(*if6d60fc
 func (m *ManagedTenantsRequestBuilder) ConditionalAccessPolicyCoverages()(*i0f79005843a77cfe19ad60950bc394afee89e8d9bc4b81f6b21b1a8097fbaf3b.ConditionalAccessPolicyCoveragesRequestBuilder) {
     return i0f79005843a77cfe19ad60950bc394afee89e8d9bc4b81f6b21b1a8097fbaf3b.NewConditionalAccessPolicyCoveragesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.conditionalAccessPolicyCoverages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ConditionalAccessPolicyCoveragesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.conditionalAccessPolicyCoverages.item collection
 func (m *ManagedTenantsRequestBuilder) ConditionalAccessPolicyCoveragesById(id string)(*ic4d32f9937154ecb1938a14d8397e02282c93535909cb4eb03a94798fefb2623.ConditionalAccessPolicyCoverageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -179,10 +169,7 @@ func (m *ManagedTenantsRequestBuilder) ConditionalAccessPolicyCoveragesById(id s
     }
     return ic4d32f9937154ecb1938a14d8397e02282c93535909cb4eb03a94798fefb2623.NewConditionalAccessPolicyCoverageRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new ManagedTenantsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedTenantsRequestBuilderInternal instantiates a new ManagedTenantsRequestBuilder and sets the default values.
 func NewManagedTenantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedTenantsRequestBuilder) {
     m := &ManagedTenantsRequestBuilder{
     }
@@ -195,18 +182,13 @@ func NewManagedTenantsRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedTenantsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedTenantsRequestBuilder instantiates a new ManagedTenantsRequestBuilder and sets the default values.
 func NewManagedTenantsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedTenantsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The operations available to interact with the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the operations available to interact with the multi-tenant management platform.
 func (m *ManagedTenantsRequestBuilder) CreateDeleteRequestInformation(options *ManagedTenantsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -223,9 +205,7 @@ func (m *ManagedTenantsRequestBuilder) CreateDeleteRequestInformation(options *M
     }
     return requestInfo, nil
 }
-// The operations available to interact with the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the operations available to interact with the multi-tenant management platform.
 func (m *ManagedTenantsRequestBuilder) CreateGetRequestInformation(options *ManagedTenantsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -245,9 +225,7 @@ func (m *ManagedTenantsRequestBuilder) CreateGetRequestInformation(options *Mana
     }
     return requestInfo, nil
 }
-// The operations available to interact with the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the operations available to interact with the multi-tenant management platform.
 func (m *ManagedTenantsRequestBuilder) CreatePatchRequestInformation(options *ManagedTenantsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -268,9 +246,7 @@ func (m *ManagedTenantsRequestBuilder) CreatePatchRequestInformation(options *Ma
 func (m *ManagedTenantsRequestBuilder) CredentialUserRegistrationsSummaries()(*ia20d7fc1ac1c1bc3fdda49bc096fa4ae6d7e86dfce8d76ba7d6ac1a863264fd1.CredentialUserRegistrationsSummariesRequestBuilder) {
     return ia20d7fc1ac1c1bc3fdda49bc096fa4ae6d7e86dfce8d76ba7d6ac1a863264fd1.NewCredentialUserRegistrationsSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.credentialUserRegistrationsSummaries.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CredentialUserRegistrationsSummariesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.credentialUserRegistrationsSummaries.item collection
 func (m *ManagedTenantsRequestBuilder) CredentialUserRegistrationsSummariesById(id string)(*ibb2dbd75a715fb8c4c67773499667f80d218a5b875d91d6bb702f87d5c5815f3.CredentialUserRegistrationsSummaryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -281,9 +257,7 @@ func (m *ManagedTenantsRequestBuilder) CredentialUserRegistrationsSummariesById(
     }
     return ibb2dbd75a715fb8c4c67773499667f80d218a5b875d91d6bb702f87d5c5815f3.NewCredentialUserRegistrationsSummaryRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The operations available to interact with the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// Delete the operations available to interact with the multi-tenant management platform.
 func (m *ManagedTenantsRequestBuilder) Delete(options *ManagedTenantsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -298,9 +272,7 @@ func (m *ManagedTenantsRequestBuilder) Delete(options *ManagedTenantsRequestBuil
 func (m *ManagedTenantsRequestBuilder) DeviceCompliancePolicySettingStateSummaries()(*i351272dacb7afa33f5595b8bebab11592453eab40a95aa2158a10f1fa59e9972.DeviceCompliancePolicySettingStateSummariesRequestBuilder) {
     return i351272dacb7afa33f5595b8bebab11592453eab40a95aa2158a10f1fa59e9972.NewDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.deviceCompliancePolicySettingStateSummaries.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeviceCompliancePolicySettingStateSummariesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.deviceCompliancePolicySettingStateSummaries.item collection
 func (m *ManagedTenantsRequestBuilder) DeviceCompliancePolicySettingStateSummariesById(id string)(*i39c4093a2570401121e930eab4cc05bf3a3f5879dba69aa644fa464b46e8aa51.DeviceCompliancePolicySettingStateSummaryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -311,9 +283,7 @@ func (m *ManagedTenantsRequestBuilder) DeviceCompliancePolicySettingStateSummari
     }
     return i39c4093a2570401121e930eab4cc05bf3a3f5879dba69aa644fa464b46e8aa51.NewDeviceCompliancePolicySettingStateSummaryRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The operations available to interact with the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// Get the operations available to interact with the multi-tenant management platform.
 func (m *ManagedTenantsRequestBuilder) Get(options *ManagedTenantsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedTenant, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -328,9 +298,7 @@ func (m *ManagedTenantsRequestBuilder) Get(options *ManagedTenantsRequestBuilder
 func (m *ManagedTenantsRequestBuilder) ManagedDeviceCompliances()(*ie2be96252bd3e7e355c4cc7dbf41dd9251cda2dfdea6235dbd43916501b1bb8e.ManagedDeviceCompliancesRequestBuilder) {
     return ie2be96252bd3e7e355c4cc7dbf41dd9251cda2dfdea6235dbd43916501b1bb8e.NewManagedDeviceCompliancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managedDeviceCompliances.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ManagedDeviceCompliancesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managedDeviceCompliances.item collection
 func (m *ManagedTenantsRequestBuilder) ManagedDeviceCompliancesById(id string)(*idf8987c670699b4ba0e9e1d460cbd94442affa23953d4b483a7d372543e0f818.ManagedDeviceComplianceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -344,9 +312,7 @@ func (m *ManagedTenantsRequestBuilder) ManagedDeviceCompliancesById(id string)(*
 func (m *ManagedTenantsRequestBuilder) ManagedDeviceComplianceTrends()(*i0b126875f3df8ff7b29e49628de663aa712a3121ba720093bf9eedc172a2f466.ManagedDeviceComplianceTrendsRequestBuilder) {
     return i0b126875f3df8ff7b29e49628de663aa712a3121ba720093bf9eedc172a2f466.NewManagedDeviceComplianceTrendsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managedDeviceComplianceTrends.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ManagedDeviceComplianceTrendsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managedDeviceComplianceTrends.item collection
 func (m *ManagedTenantsRequestBuilder) ManagedDeviceComplianceTrendsById(id string)(*i3d3e0cdf3a9fbbfd02cd0827a97a9c93f4ebb2715ac2ee966e30acaf51299aff.ManagedDeviceComplianceTrendRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -360,9 +326,7 @@ func (m *ManagedTenantsRequestBuilder) ManagedDeviceComplianceTrendsById(id stri
 func (m *ManagedTenantsRequestBuilder) ManagementActions()(*i9aa242f436094e02f161a3df7791adfa9932ceaf20ebf440b6069847018656e0.ManagementActionsRequestBuilder) {
     return i9aa242f436094e02f161a3df7791adfa9932ceaf20ebf440b6069847018656e0.NewManagementActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementActions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ManagementActionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementActions.item collection
 func (m *ManagedTenantsRequestBuilder) ManagementActionsById(id string)(*ief008158d809c9b248f0635950f9a44dacadb584a83e78751c8b87051d125c7a.ManagementActionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -376,9 +340,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementActionsById(id string)(*ief0081
 func (m *ManagedTenantsRequestBuilder) ManagementActionTenantDeploymentStatuses()(*i39d20a98967701e034567f952771787304d37316148dcd57a17798ecd8e6b196.ManagementActionTenantDeploymentStatusesRequestBuilder) {
     return i39d20a98967701e034567f952771787304d37316148dcd57a17798ecd8e6b196.NewManagementActionTenantDeploymentStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementActionTenantDeploymentStatuses.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ManagementActionTenantDeploymentStatusesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementActionTenantDeploymentStatuses.item collection
 func (m *ManagedTenantsRequestBuilder) ManagementActionTenantDeploymentStatusesById(id string)(*ib007e276e70fb157eccc427006d3a6fdf591c84e085e79a6ae7d6a7149a17922.ManagementActionTenantDeploymentStatusRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -392,9 +354,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementActionTenantDeploymentStatusesB
 func (m *ManagedTenantsRequestBuilder) ManagementIntents()(*icfac7b17b942815ef506ee4f3661445d6355fd31ed1673ad9d6ef8ebe8b57487.ManagementIntentsRequestBuilder) {
     return icfac7b17b942815ef506ee4f3661445d6355fd31ed1673ad9d6ef8ebe8b57487.NewManagementIntentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementIntents.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ManagementIntentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementIntents.item collection
 func (m *ManagedTenantsRequestBuilder) ManagementIntentsById(id string)(*i1ec6b65aff2fcd462f8f45f48ce513ea76dde61b1ec3f1cf01d65b849b740b8b.ManagementIntentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -408,9 +368,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementIntentsById(id string)(*i1ec6b6
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollections()(*i86ccee4069fa2a8887f6c01c1bd59869700242c19224ee8b7aa8d4ad7bfbb89f.ManagementTemplateCollectionsRequestBuilder) {
     return i86ccee4069fa2a8887f6c01c1bd59869700242c19224ee8b7aa8d4ad7bfbb89f.NewManagementTemplateCollectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementTemplateCollections.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ManagementTemplateCollectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementTemplateCollections.item collection
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionsById(id string)(*i8612235b849d43a7141e3638c7b76b5ba29594d12c5272cfc9e32333a038808a.ManagementTemplateCollectionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -424,9 +382,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionsById(id stri
 func (m *ManagedTenantsRequestBuilder) ManagementTemplates()(*i2b66c9972458318dcd18b57d227c1397d3704eed4ceba1aab769bae8473fef7c.ManagementTemplatesRequestBuilder) {
     return i2b66c9972458318dcd18b57d227c1397d3704eed4ceba1aab769bae8473fef7c.NewManagementTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementTemplates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ManagementTemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementTemplates.item collection
 func (m *ManagedTenantsRequestBuilder) ManagementTemplatesById(id string)(*i36371b16b14a3a26bf98be71cdf018d4cde82965ba2327d328aeac3639125ea0.ManagementTemplateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -440,9 +396,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplatesById(id string)(*i3637
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateSteps()(*i9c7ec006c2124aad1f6bd0b710b33ddb680a37848847978f567ac657d103fd3a.ManagementTemplateStepsRequestBuilder) {
     return i9c7ec006c2124aad1f6bd0b710b33ddb680a37848847978f567ac657d103fd3a.NewManagementTemplateStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementTemplateSteps.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ManagementTemplateStepsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementTemplateSteps.item collection
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepsById(id string)(*i7002a802b3e3d4667259a74b2f46e5190bce103c7bacef3e3630f3808a1f4256.ManagementTemplateStepRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -456,9 +410,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepsById(id string)(*i
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepVersions()(*id0d999b2f9f0ee37ec597aead92f01550dd34dbc53eee9ed3fe40e49f0d53bf7.ManagementTemplateStepVersionsRequestBuilder) {
     return id0d999b2f9f0ee37ec597aead92f01550dd34dbc53eee9ed3fe40e49f0d53bf7.NewManagementTemplateStepVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementTemplateStepVersions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ManagementTemplateStepVersionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.managementTemplateStepVersions.item collection
 func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepVersionsById(id string)(*ibeef58461c8396867818d36875356dc3e16db01443724532b324a94c46ca8d52.ManagementTemplateStepVersionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -469,9 +421,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepVersionsById(id str
     }
     return ibeef58461c8396867818d36875356dc3e16db01443724532b324a94c46ca8d52.NewManagementTemplateStepVersionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The operations available to interact with the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// Patch the operations available to interact with the multi-tenant management platform.
 func (m *ManagedTenantsRequestBuilder) Patch(options *ManagedTenantsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -486,9 +436,7 @@ func (m *ManagedTenantsRequestBuilder) Patch(options *ManagedTenantsRequestBuild
 func (m *ManagedTenantsRequestBuilder) TenantGroups()(*icf1f2046c60f5e428ce03f4d34ebbf94d9da108c7a89ad5560774e04115aee81.TenantGroupsRequestBuilder) {
     return icf1f2046c60f5e428ce03f4d34ebbf94d9da108c7a89ad5560774e04115aee81.NewTenantGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.tenantGroups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TenantGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.tenantGroups.item collection
 func (m *ManagedTenantsRequestBuilder) TenantGroupsById(id string)(*i79c491f13216abf413ae87d0ff1c465e6a8a4809a3f15a3c0d1e120851ef9a5c.TenantGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -502,9 +450,7 @@ func (m *ManagedTenantsRequestBuilder) TenantGroupsById(id string)(*i79c491f1321
 func (m *ManagedTenantsRequestBuilder) Tenants()(*i507510374fef5a86fcce6eb7ecdb044e4a7bc928ee54765d0620b2b896a746e1.TenantsRequestBuilder) {
     return i507510374fef5a86fcce6eb7ecdb044e4a7bc928ee54765d0620b2b896a746e1.NewTenantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.tenants.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TenantsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.tenants.item collection
 func (m *ManagedTenantsRequestBuilder) TenantsById(id string)(*i902764218ad5577611d10586599ccdb34a8aa22b15a8c9043e035e89db4d4c7b.TenantRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -518,9 +464,7 @@ func (m *ManagedTenantsRequestBuilder) TenantsById(id string)(*i902764218ad55776
 func (m *ManagedTenantsRequestBuilder) TenantsCustomizedInformation()(*i824a81edbead3d58bdec21d61a960b3c5f03f44f0e89355db9cc5414e1d67e10.TenantsCustomizedInformationRequestBuilder) {
     return i824a81edbead3d58bdec21d61a960b3c5f03f44f0e89355db9cc5414e1d67e10.NewTenantsCustomizedInformationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.tenantsCustomizedInformation.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TenantsCustomizedInformationById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.tenantsCustomizedInformation.item collection
 func (m *ManagedTenantsRequestBuilder) TenantsCustomizedInformationById(id string)(*i22d7e4fc2a16cf517b6c379250cc88fc88b4ed4261b52362648bc93110b5f230.TenantCustomizedInformationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -534,9 +478,7 @@ func (m *ManagedTenantsRequestBuilder) TenantsCustomizedInformationById(id strin
 func (m *ManagedTenantsRequestBuilder) TenantsDetailedInformation()(*i23841075703fcb028662b4d36c5564ffa62324dd12cbd9935ed7d56f0dc0ca9f.TenantsDetailedInformationRequestBuilder) {
     return i23841075703fcb028662b4d36c5564ffa62324dd12cbd9935ed7d56f0dc0ca9f.NewTenantsDetailedInformationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.tenantsDetailedInformation.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TenantsDetailedInformationById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.tenantsDetailedInformation.item collection
 func (m *ManagedTenantsRequestBuilder) TenantsDetailedInformationById(id string)(*ic98453c829b49eb4768ddc3245c452c7c68722a915539ad220764ab7c19350c3.TenantDetailedInformationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -550,9 +492,7 @@ func (m *ManagedTenantsRequestBuilder) TenantsDetailedInformationById(id string)
 func (m *ManagedTenantsRequestBuilder) TenantTags()(*iab13ec14c24b8dac8fd45f37a3723dad71088c5ec497397272541acbbb27e30e.TenantTagsRequestBuilder) {
     return iab13ec14c24b8dac8fd45f37a3723dad71088c5ec497397272541acbbb27e30e.NewTenantTagsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.tenantTags.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TenantTagsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.tenantTags.item collection
 func (m *ManagedTenantsRequestBuilder) TenantTagsById(id string)(*i44e5d1aa3329234fb97b49ec0893e801904dd6a9768684f18a00bd816da70fd6.TenantTagRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -566,9 +506,7 @@ func (m *ManagedTenantsRequestBuilder) TenantTagsById(id string)(*i44e5d1aa33292
 func (m *ManagedTenantsRequestBuilder) WindowsDeviceMalwareStates()(*i0abc6f978704af5e99b7eb130a6c0d2e5c1e092e355b17b5af5cdc81f3564b2f.WindowsDeviceMalwareStatesRequestBuilder) {
     return i0abc6f978704af5e99b7eb130a6c0d2e5c1e092e355b17b5af5cdc81f3564b2f.NewWindowsDeviceMalwareStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.windowsDeviceMalwareStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// WindowsDeviceMalwareStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.windowsDeviceMalwareStates.item collection
 func (m *ManagedTenantsRequestBuilder) WindowsDeviceMalwareStatesById(id string)(*i186e85376ac4af3f7e13d1b03ae3ecca0403b582ff4761f086be79d2ceacdf75.WindowsDeviceMalwareStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -582,9 +520,7 @@ func (m *ManagedTenantsRequestBuilder) WindowsDeviceMalwareStatesById(id string)
 func (m *ManagedTenantsRequestBuilder) WindowsProtectionStates()(*i65beab9150aa7abd814be391125d812f4d3c3bdfde9d2016db1f22a146166aee.WindowsProtectionStatesRequestBuilder) {
     return i65beab9150aa7abd814be391125d812f4d3c3bdfde9d2016db1f22a146166aee.NewWindowsProtectionStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.windowsProtectionStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// WindowsProtectionStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.windowsProtectionStates.item collection
 func (m *ManagedTenantsRequestBuilder) WindowsProtectionStatesById(id string)(*ib77c9f0cca75f19b263afc4ae06ae033ceee00cde50068f4a1ad949ad4e69035.WindowsProtectionStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

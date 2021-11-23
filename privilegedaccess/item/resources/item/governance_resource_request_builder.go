@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}\resources\{governanceResource-id}
+// governanceResourceRequestBuilder builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}\resources\{governanceResource-id}
 type GovernanceResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GovernanceResourceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GovernanceResourceRequestBuilderDeleteOptions options for Delete
 type GovernanceResourceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type GovernanceResourceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GovernanceResourceRequestBuilderGetOptions options for Get
 type GovernanceResourceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type GovernanceResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of resources for the provider.
+// governanceResourceRequestBuilderGetQueryParameters a collection of resources for the provider.
 type GovernanceResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GovernanceResourceRequestBuilderPatchOptions options for Patch
 type GovernanceResourceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResource;
@@ -53,10 +53,7 @@ type GovernanceResourceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GovernanceResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceResourceRequestBuilderInternal instantiates a new GovernanceResourceRequestBuilder and sets the default values.
 func NewGovernanceResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceResourceRequestBuilder) {
     m := &GovernanceResourceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewGovernanceResourceRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GovernanceResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceResourceRequestBuilder instantiates a new GovernanceResourceRequestBuilder and sets the default values.
 func NewGovernanceResourceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceResourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceResourceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of resources for the provider.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of resources for the provider.
 func (m *GovernanceResourceRequestBuilder) CreateDeleteRequestInformation(options *GovernanceResourceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *GovernanceResourceRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// A collection of resources for the provider.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of resources for the provider.
 func (m *GovernanceResourceRequestBuilder) CreateGetRequestInformation(options *GovernanceResourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *GovernanceResourceRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// A collection of resources for the provider.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of resources for the provider.
 func (m *GovernanceResourceRequestBuilder) CreatePatchRequestInformation(options *GovernanceResourceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *GovernanceResourceRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// A collection of resources for the provider.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of resources for the provider.
 func (m *GovernanceResourceRequestBuilder) Delete(options *GovernanceResourceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *GovernanceResourceRequestBuilder) Delete(options *GovernanceResourceReq
     }
     return nil
 }
-// A collection of resources for the provider.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of resources for the provider.
 func (m *GovernanceResourceRequestBuilder) Get(options *GovernanceResourceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResource, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *GovernanceResourceRequestBuilder) Get(options *GovernanceResourceReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResource), nil
 }
-// A collection of resources for the provider.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of resources for the provider.
 func (m *GovernanceResourceRequestBuilder) Patch(options *GovernanceResourceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

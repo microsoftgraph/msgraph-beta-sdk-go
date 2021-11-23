@@ -7,7 +7,7 @@ import (
     ia34f5a9a562044041685e3db9109ec3e9838934b3b52dddd5bced54def83a1b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackageassignmentresourceroles/item/accesspackageassignments/item/reprocess"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id}
+// accessPackageAssignmentRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id}
 type AccessPackageAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AccessPackageAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessPackageAssignmentRequestBuilderDeleteOptions options for Delete
 type AccessPackageAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type AccessPackageAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessPackageAssignmentRequestBuilderGetOptions options for Get
 type AccessPackageAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type AccessPackageAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The access package assignments resulting in this role assignment. Read-only. Nullable.
+// accessPackageAssignmentRequestBuilderGetQueryParameters the access package assignments resulting in this role assignment. Read-only. Nullable.
 type AccessPackageAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessPackageAssignmentRequestBuilderPatchOptions options for Patch
 type AccessPackageAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignment;
@@ -54,10 +54,7 @@ type AccessPackageAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccessPackageAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageAssignmentRequestBuilderInternal instantiates a new AccessPackageAssignmentRequestBuilder and sets the default values.
 func NewAccessPackageAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageAssignmentRequestBuilder) {
     m := &AccessPackageAssignmentRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewAccessPackageAssignmentRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackageAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageAssignmentRequestBuilder instantiates a new AccessPackageAssignmentRequestBuilder and sets the default values.
 func NewAccessPackageAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The access package assignments resulting in this role assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the access package assignments resulting in this role assignment. Read-only. Nullable.
 func (m *AccessPackageAssignmentRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *AccessPackageAssignmentRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// The access package assignments resulting in this role assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the access package assignments resulting in this role assignment. Read-only. Nullable.
 func (m *AccessPackageAssignmentRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *AccessPackageAssignmentRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The access package assignments resulting in this role assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the access package assignments resulting in this role assignment. Read-only. Nullable.
 func (m *AccessPackageAssignmentRequestBuilder) CreatePatchRequestInformation(options *AccessPackageAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *AccessPackageAssignmentRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// The access package assignments resulting in this role assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the access package assignments resulting in this role assignment. Read-only. Nullable.
 func (m *AccessPackageAssignmentRequestBuilder) Delete(options *AccessPackageAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *AccessPackageAssignmentRequestBuilder) Delete(options *AccessPackageAss
     }
     return nil
 }
-// The access package assignments resulting in this role assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the access package assignments resulting in this role assignment. Read-only. Nullable.
 func (m *AccessPackageAssignmentRequestBuilder) Get(options *AccessPackageAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *AccessPackageAssignmentRequestBuilder) Get(options *AccessPackageAssign
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignment), nil
 }
-// The access package assignments resulting in this role assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the access package assignments resulting in this role assignment. Read-only. Nullable.
 func (m *AccessPackageAssignmentRequestBuilder) Patch(options *AccessPackageAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

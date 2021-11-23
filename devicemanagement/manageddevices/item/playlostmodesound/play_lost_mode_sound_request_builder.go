@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.playLostModeSound
+// playLostModeSoundRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.playLostModeSound
 type PlayLostModeSoundRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type PlayLostModeSoundRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// PlayLostModeSoundRequestBuilderPostOptions options for Post
 type PlayLostModeSoundRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type PlayLostModeSoundRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PlayLostModeSoundRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlayLostModeSoundRequestBuilderInternal instantiates a new PlayLostModeSoundRequestBuilder and sets the default values.
 func NewPlayLostModeSoundRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlayLostModeSoundRequestBuilder) {
     m := &PlayLostModeSoundRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewPlayLostModeSoundRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PlayLostModeSoundRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlayLostModeSoundRequestBuilder instantiates a new PlayLostModeSoundRequestBuilder and sets the default values.
 func NewPlayLostModeSoundRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlayLostModeSoundRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlayLostModeSoundRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Remote lock
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation remote lock
 func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformation(options *PlayLostModeSoundRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Remote lock
-// Parameters:
-//  - options : Options for the request
+// Post remote lock
 func (m *PlayLostModeSoundRequestBuilder) Post(options *PlayLostModeSoundRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     ic154c6b7d98226dc8edf73ea4564b2b341b7f36e9222ba2462b79b9694e1c781 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/termsandconditions/item/acceptancestatuses/item/termsandconditions/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}\acceptanceStatuses\{termsAndConditionsAcceptanceStatus-id}\termsAndConditions
+// termsAndConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}\acceptanceStatuses\{termsAndConditionsAcceptanceStatus-id}\termsAndConditions
 type TermsAndConditionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TermsAndConditionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TermsAndConditionsRequestBuilderGetOptions options for Get
 type TermsAndConditionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type TermsAndConditionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Navigation link to the terms and conditions that are assigned.
+// termsAndConditionsRequestBuilderGetQueryParameters navigation link to the terms and conditions that are assigned.
 type TermsAndConditionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermsAndConditionsRequestBuilderInternal instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
 func NewTermsAndConditionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermsAndConditionsRequestBuilder) {
     m := &TermsAndConditionsRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewTermsAndConditionsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermsAndConditionsRequestBuilder instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
 func NewTermsAndConditionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermsAndConditionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTermsAndConditionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Navigation link to the terms and conditions that are assigned.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsRequestBuilder) CreateGetRequestInformation(options *TermsAndConditionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *TermsAndConditionsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Navigation link to the terms and conditions that are assigned.
-// Parameters:
-//  - options : Options for the request
+// Get navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsRequestBuilder) Get(options *TermsAndConditionsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TermsAndConditions, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

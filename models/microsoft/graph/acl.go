@@ -5,7 +5,7 @@ import (
     i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/externalconnectors"
 )
 
-// 
+// acl 
 type Acl struct {
     // The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.
     accessType *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.AccessType;
@@ -18,14 +18,14 @@ type Acl struct {
     // The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
     value *string;
 }
-// Instantiates a new acl and sets the default values.
+// NewAcl instantiates a new acl and sets the default values.
 func NewAcl()(*Acl) {
     m := &Acl{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the accessType property value. The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.
+// GetAccessType gets the accessType property value. The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.
 func (m *Acl) GetAccessType()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.AccessType) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *Acl) GetAccessType()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e8
         return m.accessType
     }
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Acl) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *Acl) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the identitySource property value. The source of identity. Possible values are azureActiveDirectory or external.
+// GetIdentitySource gets the identitySource property value. The source of identity. Possible values are azureActiveDirectory or external.
 func (m *Acl) GetIdentitySource()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.IdentitySourceType) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *Acl) GetIdentitySource()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1
         return m.identitySource
     }
 }
-// Gets the type_escaped property value. The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests, externalGroup, unknownFutureValue.
+// GetType_escaped gets the type_escaped property value. The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests, externalGroup, unknownFutureValue.
 func (m *Acl) GetType_escaped()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.AclType) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *Acl) GetType_escaped()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4
         return m.type_escaped
     }
 }
-// Gets the value property value. The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
+// GetValue gets the value property value. The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
 func (m *Acl) GetValue()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *Acl) GetValue()(*string) {
         return m.value
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Acl) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["accessType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,9 +116,7 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
 func (m *Acl) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Acl) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAccessType() != nil {
         cast := m.GetAccessType().String()
@@ -155,33 +153,23 @@ func (m *Acl) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     }
     return nil
 }
-// Sets the accessType property value. The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the accessType property.
+// SetAccessType sets the accessType property value. The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.
 func (m *Acl) SetAccessType(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.AccessType)() {
     m.accessType = value
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Acl) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the identitySource property value. The source of identity. Possible values are azureActiveDirectory or external.
-// Parameters:
-//  - value : Value to set for the identitySource property.
+// SetIdentitySource sets the identitySource property value. The source of identity. Possible values are azureActiveDirectory or external.
 func (m *Acl) SetIdentitySource(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.IdentitySourceType)() {
     m.identitySource = value
 }
-// Sets the type_escaped property value. The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests, externalGroup, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests, externalGroup, unknownFutureValue.
 func (m *Acl) SetType_escaped(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.AclType)() {
     m.type_escaped = value
 }
-// Sets the value property value. The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
-// Parameters:
-//  - value : Value to set for the value property.
+// SetValue sets the value property value. The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
 func (m *Acl) SetValue(value *string)() {
     m.value = value
 }

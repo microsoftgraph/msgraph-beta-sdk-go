@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\androidForWorkSettings\microsoft.graph.unbind
+// unbindRequestBuilder builds and executes requests for operations under \deviceManagement\androidForWorkSettings\microsoft.graph.unbind
 type UnbindRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UnbindRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UnbindRequestBuilderPostOptions options for Post
 type UnbindRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type UnbindRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnbindRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnbindRequestBuilderInternal instantiates a new UnbindRequestBuilder and sets the default values.
 func NewUnbindRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnbindRequestBuilder) {
     m := &UnbindRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewUnbindRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnbindRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnbindRequestBuilder instantiates a new UnbindRequestBuilder and sets the default values.
 func NewUnbindRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnbindRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnbindRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action unbind
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action unbind
 func (m *UnbindRequestBuilder) CreatePostRequestInformation(options *UnbindRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *UnbindRequestBuilder) CreatePostRequestInformation(options *UnbindReque
     }
     return requestInfo, nil
 }
-// Invoke action unbind
-// Parameters:
-//  - options : Options for the request
+// Post invoke action unbind
 func (m *UnbindRequestBuilder) Post(options *UnbindRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

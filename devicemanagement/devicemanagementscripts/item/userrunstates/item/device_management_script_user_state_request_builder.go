@@ -8,7 +8,7 @@ import (
     if63529abcb6375d5844a3356429aa15c11d510f7add89325d7946969fd130118 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item/userrunstates/item/devicerunstates/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\userRunStates\{deviceManagementScriptUserState-id}
+// deviceManagementScriptUserStateRequestBuilder builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\userRunStates\{deviceManagementScriptUserState-id}
 type DeviceManagementScriptUserStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type DeviceManagementScriptUserStateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementScriptUserStateRequestBuilderDeleteOptions options for Delete
 type DeviceManagementScriptUserStateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceManagementScriptUserStateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementScriptUserStateRequestBuilderGetOptions options for Get
 type DeviceManagementScriptUserStateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type DeviceManagementScriptUserStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of run states for this script across all users.
+// deviceManagementScriptUserStateRequestBuilderGetQueryParameters list of run states for this script across all users.
 type DeviceManagementScriptUserStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementScriptUserStateRequestBuilderPatchOptions options for Patch
 type DeviceManagementScriptUserStateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptUserState;
@@ -55,10 +55,7 @@ type DeviceManagementScriptUserStateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementScriptUserStateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementScriptUserStateRequestBuilderInternal instantiates a new DeviceManagementScriptUserStateRequestBuilder and sets the default values.
 func NewDeviceManagementScriptUserStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementScriptUserStateRequestBuilder) {
     m := &DeviceManagementScriptUserStateRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewDeviceManagementScriptUserStateRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementScriptUserStateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementScriptUserStateRequestBuilder instantiates a new DeviceManagementScriptUserStateRequestBuilder and sets the default values.
 func NewDeviceManagementScriptUserStateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementScriptUserStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementScriptUserStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of run states for this script across all users.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of run states for this script across all users.
 func (m *DeviceManagementScriptUserStateRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementScriptUserStateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *DeviceManagementScriptUserStateRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// List of run states for this script across all users.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of run states for this script across all users.
 func (m *DeviceManagementScriptUserStateRequestBuilder) CreateGetRequestInformation(options *DeviceManagementScriptUserStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *DeviceManagementScriptUserStateRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// List of run states for this script across all users.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of run states for this script across all users.
 func (m *DeviceManagementScriptUserStateRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementScriptUserStateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *DeviceManagementScriptUserStateRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// List of run states for this script across all users.
-// Parameters:
-//  - options : Options for the request
+// Delete list of run states for this script across all users.
 func (m *DeviceManagementScriptUserStateRequestBuilder) Delete(options *DeviceManagementScriptUserStateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *DeviceManagementScriptUserStateRequestBuilder) Delete(options *DeviceMa
 func (m *DeviceManagementScriptUserStateRequestBuilder) DeviceRunStates()(*i49b669f3136cd8595388f924a6e0d06054f8ab5a1d1690e65059f177ebfdaca8.DeviceRunStatesRequestBuilder) {
     return i49b669f3136cd8595388f924a6e0d06054f8ab5a1d1690e65059f177ebfdaca8.NewDeviceRunStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceManagementScripts.item.userRunStates.item.deviceRunStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeviceRunStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.deviceManagementScripts.item.userRunStates.item.deviceRunStates.item collection
 func (m *DeviceManagementScriptUserStateRequestBuilder) DeviceRunStatesById(id string)(*if63529abcb6375d5844a3356429aa15c11d510f7add89325d7946969fd130118.DeviceManagementScriptDeviceStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -171,9 +155,7 @@ func (m *DeviceManagementScriptUserStateRequestBuilder) DeviceRunStatesById(id s
     }
     return if63529abcb6375d5844a3356429aa15c11d510f7add89325d7946969fd130118.NewDeviceManagementScriptDeviceStateRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// List of run states for this script across all users.
-// Parameters:
-//  - options : Options for the request
+// Get list of run states for this script across all users.
 func (m *DeviceManagementScriptUserStateRequestBuilder) Get(options *DeviceManagementScriptUserStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptUserState, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *DeviceManagementScriptUserStateRequestBuilder) Get(options *DeviceManag
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptUserState), nil
 }
-// List of run states for this script across all users.
-// Parameters:
-//  - options : Options for the request
+// Patch list of run states for this script across all users.
 func (m *DeviceManagementScriptUserStateRequestBuilder) Patch(options *DeviceManagementScriptUserStateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

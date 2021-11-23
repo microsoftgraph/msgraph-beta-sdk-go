@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\threads\{conversationThread-id}\posts\{post-id}\mentions\{mention-id}
+// mentionRequestBuilder builds and executes requests for operations under \groups\{group-id}\threads\{conversationThread-id}\posts\{post-id}\mentions\{mention-id}
 type MentionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MentionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MentionRequestBuilderDeleteOptions options for Delete
 type MentionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MentionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MentionRequestBuilderGetOptions options for Get
 type MentionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type MentionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get mentions from groups
+// mentionRequestBuilderGetQueryParameters get mentions from groups
 type MentionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MentionRequestBuilderPatchOptions options for Patch
 type MentionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Mention;
@@ -53,10 +53,7 @@ type MentionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MentionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMentionRequestBuilderInternal instantiates a new MentionRequestBuilder and sets the default values.
 func NewMentionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MentionRequestBuilder) {
     m := &MentionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewMentionRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MentionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMentionRequestBuilder instantiates a new MentionRequestBuilder and sets the default values.
 func NewMentionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MentionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMentionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property mentions for groups
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property mentions for groups
 func (m *MentionRequestBuilder) CreateDeleteRequestInformation(options *MentionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *MentionRequestBuilder) CreateDeleteRequestInformation(options *MentionR
     }
     return requestInfo, nil
 }
-// Get mentions from groups
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get mentions from groups
 func (m *MentionRequestBuilder) CreateGetRequestInformation(options *MentionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MentionRequestBuilder) CreateGetRequestInformation(options *MentionRequ
     }
     return requestInfo, nil
 }
-// Update the navigation property mentions in groups
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property mentions in groups
 func (m *MentionRequestBuilder) CreatePatchRequestInformation(options *MentionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *MentionRequestBuilder) CreatePatchRequestInformation(options *MentionRe
     }
     return requestInfo, nil
 }
-// Delete navigation property mentions for groups
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property mentions for groups
 func (m *MentionRequestBuilder) Delete(options *MentionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *MentionRequestBuilder) Delete(options *MentionRequestBuilderDeleteOptio
     }
     return nil
 }
-// Get mentions from groups
-// Parameters:
-//  - options : Options for the request
+// Get get mentions from groups
 func (m *MentionRequestBuilder) Get(options *MentionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Mention, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *MentionRequestBuilder) Get(options *MentionRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Mention), nil
 }
-// Update the navigation property mentions in groups
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property mentions in groups
 func (m *MentionRequestBuilder) Patch(options *MentionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

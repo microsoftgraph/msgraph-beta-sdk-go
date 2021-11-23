@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// uploadCertificateRequestBody 
 type UploadCertificateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     key *string;
 }
-// Instantiates a new uploadCertificateRequestBody and sets the default values.
+// NewUploadCertificateRequestBody instantiates a new uploadCertificateRequestBody and sets the default values.
 func NewUploadCertificateRequestBody()(*UploadCertificateRequestBody) {
     m := &UploadCertificateRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadCertificateRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,7 +26,7 @@ func (m *UploadCertificateRequestBody) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// Gets the key property value. 
+// GetKey gets the key property value. 
 func (m *UploadCertificateRequestBody) GetKey()(*string) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *UploadCertificateRequestBody) GetKey()(*string) {
         return m.key
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UploadCertificateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["key"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,9 +52,7 @@ func (m *UploadCertificateRequestBody) GetFieldDeserializers()(map[string]func(i
 func (m *UploadCertificateRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UploadCertificateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("key", m.GetKey())
@@ -70,15 +68,11 @@ func (m *UploadCertificateRequestBody) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadCertificateRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the key property value. 
-// Parameters:
-//  - value : Value to set for the key property.
+// SetKey sets the key property value. 
 func (m *UploadCertificateRequestBody) SetKey(value *string)() {
     m.key = value
 }

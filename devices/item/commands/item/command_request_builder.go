@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \devices\{device-id}\commands\{command-id}
+// commandRequestBuilder builds and executes requests for operations under \devices\{device-id}\commands\{command-id}
 type CommandRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CommandRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CommandRequestBuilderDeleteOptions options for Delete
 type CommandRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CommandRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CommandRequestBuilderGetOptions options for Get
 type CommandRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CommandRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Set of commands sent to this device.
+// commandRequestBuilderGetQueryParameters set of commands sent to this device.
 type CommandRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CommandRequestBuilderPatchOptions options for Patch
 type CommandRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Command;
@@ -53,10 +53,7 @@ type CommandRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CommandRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCommandRequestBuilderInternal instantiates a new CommandRequestBuilder and sets the default values.
 func NewCommandRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CommandRequestBuilder) {
     m := &CommandRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCommandRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CommandRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCommandRequestBuilder instantiates a new CommandRequestBuilder and sets the default values.
 func NewCommandRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CommandRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCommandRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Set of commands sent to this device.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation set of commands sent to this device.
 func (m *CommandRequestBuilder) CreateDeleteRequestInformation(options *CommandRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CommandRequestBuilder) CreateDeleteRequestInformation(options *CommandR
     }
     return requestInfo, nil
 }
-// Set of commands sent to this device.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation set of commands sent to this device.
 func (m *CommandRequestBuilder) CreateGetRequestInformation(options *CommandRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CommandRequestBuilder) CreateGetRequestInformation(options *CommandRequ
     }
     return requestInfo, nil
 }
-// Set of commands sent to this device.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation set of commands sent to this device.
 func (m *CommandRequestBuilder) CreatePatchRequestInformation(options *CommandRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CommandRequestBuilder) CreatePatchRequestInformation(options *CommandRe
     }
     return requestInfo, nil
 }
-// Set of commands sent to this device.
-// Parameters:
-//  - options : Options for the request
+// Delete set of commands sent to this device.
 func (m *CommandRequestBuilder) Delete(options *CommandRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CommandRequestBuilder) Delete(options *CommandRequestBuilderDeleteOptio
     }
     return nil
 }
-// Set of commands sent to this device.
-// Parameters:
-//  - options : Options for the request
+// Get set of commands sent to this device.
 func (m *CommandRequestBuilder) Get(options *CommandRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Command, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CommandRequestBuilder) Get(options *CommandRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Command), nil
 }
-// Set of commands sent to this device.
-// Parameters:
-//  - options : Options for the request
+// Patch set of commands sent to this device.
 func (m *CommandRequestBuilder) Patch(options *CommandRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

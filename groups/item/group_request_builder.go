@@ -62,7 +62,7 @@ import (
     ife496b0c6e03a5eae3a225783a9684a940a4c1aa359a015613fe0091a2704801 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}
+// groupRequestBuilder builds and executes requests for operations under \groups\{group-id}
 type GroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -71,7 +71,7 @@ type GroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupRequestBuilderDeleteOptions options for Delete
 type GroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -80,7 +80,7 @@ type GroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupRequestBuilderGetOptions options for Get
 type GroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -91,14 +91,14 @@ type GroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from groups by key
+// groupRequestBuilderGetQueryParameters get entity from groups by key
 type GroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupRequestBuilderPatchOptions options for Patch
 type GroupRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Group;
@@ -118,9 +118,7 @@ func (m *GroupRequestBuilder) AddFavorite()(*id5be5a063ce4126bc3169c53e0c8a80107
 func (m *GroupRequestBuilder) AppRoleAssignments()(*i1e180c98492486bc886a6593521a76055d900d97075423582dee1a58714edbbd.AppRoleAssignmentsRequestBuilder) {
     return i1e180c98492486bc886a6593521a76055d900d97075423582dee1a58714edbbd.NewAppRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.appRoleAssignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppRoleAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.appRoleAssignments.item collection
 func (m *GroupRequestBuilder) AppRoleAssignmentsById(id string)(*i9f44ea42f796eb814c4952a992e9dc83e10e462621a158d473fd625c512ef4bc.AppRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -140,9 +138,7 @@ func (m *GroupRequestBuilder) Calendar()(*i79f77916b75b286d0c14bd1d97ba370f6acb6
 func (m *GroupRequestBuilder) CalendarView()(*ia430883e94cb7abce482535ac8c7253ae6b920d048575108445765c30b4d334f.CalendarViewRequestBuilder) {
     return ia430883e94cb7abce482535ac8c7253ae6b920d048575108445765c30b4d334f.NewCalendarViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.calendarView.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CalendarViewById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.calendarView.item collection
 func (m *GroupRequestBuilder) CalendarViewById(id string)(*i9e89b77447821dbf477a68b13c79a69139c1946756898bdc20b285e001539ea1.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -162,10 +158,7 @@ func (m *GroupRequestBuilder) CheckMemberGroups()(*if5b292810372bc43cee66c49bbbe
 func (m *GroupRequestBuilder) CheckMemberObjects()(*i89e2b1f1f516d9a68cf412b1affa3e4875236e1ec9219fe013ea8cd481acff30.CheckMemberObjectsRequestBuilder) {
     return i89e2b1f1f516d9a68cf412b1affa3e4875236e1ec9219fe013ea8cd481acff30.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new GroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupRequestBuilderInternal instantiates a new GroupRequestBuilder and sets the default values.
 func NewGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupRequestBuilder) {
     m := &GroupRequestBuilder{
     }
@@ -178,10 +171,7 @@ func NewGroupRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupRequestBuilder instantiates a new GroupRequestBuilder and sets the default values.
 func NewGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -190,9 +180,7 @@ func NewGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
 func (m *GroupRequestBuilder) Conversations()(*idca52ceeaf754eed01a2ea52af72bb7be37a2691f73fab6b966a898b32c145e6.ConversationsRequestBuilder) {
     return idca52ceeaf754eed01a2ea52af72bb7be37a2691f73fab6b966a898b32c145e6.NewConversationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.conversations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ConversationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.conversations.item collection
 func (m *GroupRequestBuilder) ConversationsById(id string)(*i7d987f66a62915c3b7f44d0edad9deb15f79e59e58f2d9c5ad9b71bf48f15eec.ConversationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -203,9 +191,7 @@ func (m *GroupRequestBuilder) ConversationsById(id string)(*i7d987f66a62915c3b7f
     }
     return i7d987f66a62915c3b7f44d0edad9deb15f79e59e58f2d9c5ad9b71bf48f15eec.NewConversationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Delete entity from groups
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from groups
 func (m *GroupRequestBuilder) CreateDeleteRequestInformation(options *GroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -225,9 +211,7 @@ func (m *GroupRequestBuilder) CreateDeleteRequestInformation(options *GroupReque
 func (m *GroupRequestBuilder) CreatedOnBehalfOf()(*ib725062d5d2e7f70fa299e0ee2b220626e42ba87b03d5d4a6ba5a08f987c9bfe.CreatedOnBehalfOfRequestBuilder) {
     return ib725062d5d2e7f70fa299e0ee2b220626e42ba87b03d5d4a6ba5a08f987c9bfe.NewCreatedOnBehalfOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get entity from groups by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from groups by key
 func (m *GroupRequestBuilder) CreateGetRequestInformation(options *GroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -247,9 +231,7 @@ func (m *GroupRequestBuilder) CreateGetRequestInformation(options *GroupRequestB
     }
     return requestInfo, nil
 }
-// Update entity in groups
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in groups
 func (m *GroupRequestBuilder) CreatePatchRequestInformation(options *GroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -267,9 +249,7 @@ func (m *GroupRequestBuilder) CreatePatchRequestInformation(options *GroupReques
     }
     return requestInfo, nil
 }
-// Delete entity from groups
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from groups
 func (m *GroupRequestBuilder) Delete(options *GroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -287,9 +267,7 @@ func (m *GroupRequestBuilder) Drive()(*i55a8986bb385256f244980fc278061552d519213
 func (m *GroupRequestBuilder) Drives()(*i8daf117241c7766d7ff29c5cbcabcc082be0444b70bf3b2708dffc23076a87ad.DrivesRequestBuilder) {
     return i8daf117241c7766d7ff29c5cbcabcc082be0444b70bf3b2708dffc23076a87ad.NewDrivesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.drives.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DrivesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.drives.item collection
 func (m *GroupRequestBuilder) DrivesById(id string)(*i1b00a3ee52b67a17dd6db2a8f1625a38323a6135625081fb54b40b44232e89bf.DriveRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -303,9 +281,7 @@ func (m *GroupRequestBuilder) DrivesById(id string)(*i1b00a3ee52b67a17dd6db2a8f1
 func (m *GroupRequestBuilder) Endpoints()(*i8b52f30152d353621c99bf7bb2121f0421df94ae1ba573498738cca015e14db2.EndpointsRequestBuilder) {
     return i8b52f30152d353621c99bf7bb2121f0421df94ae1ba573498738cca015e14db2.NewEndpointsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.endpoints.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// EndpointsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.endpoints.item collection
 func (m *GroupRequestBuilder) EndpointsById(id string)(*i98092eb6315426df8755d93b1458a713452cb101bc01a6e4f43e716dc0143e8f.EndpointRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -322,9 +298,7 @@ func (m *GroupRequestBuilder) EvaluateDynamicMembership()(*i4dd1e402eb350eebba65
 func (m *GroupRequestBuilder) Events()(*i22f4b02027f167f9f99b20aa4eae4d0871053f60939cceceb5731344f9774944.EventsRequestBuilder) {
     return i22f4b02027f167f9f99b20aa4eae4d0871053f60939cceceb5731344f9774944.NewEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.events.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// EventsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.events.item collection
 func (m *GroupRequestBuilder) EventsById(id string)(*i40372e5830ab7b777e2a31cda4dd8ad81dac267969ff1e25f7608a8298cc1dad.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -338,9 +312,7 @@ func (m *GroupRequestBuilder) EventsById(id string)(*i40372e5830ab7b777e2a31cda4
 func (m *GroupRequestBuilder) Extensions()(*i8837566c7fd9bfa1e091bc591d6d52db9c0af6edf0fdc781f5e2f194afeffe0c.ExtensionsRequestBuilder) {
     return i8837566c7fd9bfa1e091bc591d6d52db9c0af6edf0fdc781f5e2f194afeffe0c.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.extensions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.extensions.item collection
 func (m *GroupRequestBuilder) ExtensionsById(id string)(*i963f882f3f2b0d209b4c91218281e65677ae124fdb171aff79661733b37fc788.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -351,9 +323,7 @@ func (m *GroupRequestBuilder) ExtensionsById(id string)(*i963f882f3f2b0d209b4c91
     }
     return i963f882f3f2b0d209b4c91218281e65677ae124fdb171aff79661733b37fc788.NewExtensionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get entity from groups by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from groups by key
 func (m *GroupRequestBuilder) Get(options *GroupRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Group, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -374,9 +344,7 @@ func (m *GroupRequestBuilder) GetMemberObjects()(*i5f5ccb8bcb6b8d2a93b9b86498908
 func (m *GroupRequestBuilder) GroupLifecyclePolicies()(*id94a57871bbab0456d687ee70bc7c1fd561519d5ccb62b8021883c0d5a0386fb.GroupLifecyclePoliciesRequestBuilder) {
     return id94a57871bbab0456d687ee70bc7c1fd561519d5ccb62b8021883c0d5a0386fb.NewGroupLifecyclePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.groupLifecyclePolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// GroupLifecyclePoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.groupLifecyclePolicies.item collection
 func (m *GroupRequestBuilder) GroupLifecyclePoliciesById(id string)(*id4a401ad94d1a1e42e6580fcd9d3d1f570370ff23b48a112b9e47f17279acf9f.GroupLifecyclePolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -402,9 +370,7 @@ func (m *GroupRequestBuilder) Onenote()(*iff7545973594d37acb39d1b4365ee7b6eb267f
 func (m *GroupRequestBuilder) Owners()(*id7f04eb5e6dbe2b30622df95d1de790ebae357f05ba2293e3e9c6941f337805b.OwnersRequestBuilder) {
     return id7f04eb5e6dbe2b30622df95d1de790ebae357f05ba2293e3e9c6941f337805b.NewOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in groups
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in groups
 func (m *GroupRequestBuilder) Patch(options *GroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -419,9 +385,7 @@ func (m *GroupRequestBuilder) Patch(options *GroupRequestBuilderPatchOptions)(er
 func (m *GroupRequestBuilder) PermissionGrants()(*ib51c2fbc52f6d50414f9159f3ead9786b621b227a51da00af9354cb6be6fe6b5.PermissionGrantsRequestBuilder) {
     return ib51c2fbc52f6d50414f9159f3ead9786b621b227a51da00af9354cb6be6fe6b5.NewPermissionGrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.permissionGrants.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PermissionGrantsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.permissionGrants.item collection
 func (m *GroupRequestBuilder) PermissionGrantsById(id string)(*i2a0b85f77a81e8f4f18cb792065ad27157bce3afd57f90f15a90fd83196308f8.ResourceSpecificPermissionGrantRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -438,9 +402,7 @@ func (m *GroupRequestBuilder) Photo()(*i6391d4a344a566d46875fa0b0152d8ebbfcec627
 func (m *GroupRequestBuilder) Photos()(*i44f2125d842af13a8f7093916e1621e93cdf4c5a20c2ead1b9f39afa6c04fd6d.PhotosRequestBuilder) {
     return i44f2125d842af13a8f7093916e1621e93cdf4c5a20c2ead1b9f39afa6c04fd6d.NewPhotosRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.photos.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PhotosById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.photos.item collection
 func (m *GroupRequestBuilder) PhotosById(id string)(*i20ad8636c32bde1b97aa6dbe46a82bfcc7dec5240d558da351ccb4e7801c7cae.ProfilePhotoRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -472,9 +434,7 @@ func (m *GroupRequestBuilder) Restore()(*i555eb1d39daf7dceb1ba9d79ad628592e7fc24
 func (m *GroupRequestBuilder) Settings()(*i5740a9548283ec6d1f78bd07c0e97c4b41045ec41cf82467585964a4625bb670.SettingsRequestBuilder) {
     return i5740a9548283ec6d1f78bd07c0e97c4b41045ec41cf82467585964a4625bb670.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.settings.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.settings.item collection
 func (m *GroupRequestBuilder) SettingsById(id string)(*ib7c0afd37a4b7a5f14bbce80fa4fb24e2e0339815e98c21882b0619e5898b56e.DirectorySettingRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -488,9 +448,7 @@ func (m *GroupRequestBuilder) SettingsById(id string)(*ib7c0afd37a4b7a5f14bbce80
 func (m *GroupRequestBuilder) Sites()(*i3afd98d50e381574faac1f866015db15f1e2f6ddf7c88f46ed656c7cdfc5f039.SitesRequestBuilder) {
     return i3afd98d50e381574faac1f866015db15f1e2f6ddf7c88f46ed656c7cdfc5f039.NewSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.sites.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SitesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.sites.item collection
 func (m *GroupRequestBuilder) SitesById(id string)(*ife496b0c6e03a5eae3a225783a9684a940a4c1aa359a015613fe0091a2704801.SiteRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -510,9 +468,7 @@ func (m *GroupRequestBuilder) Team()(*i50da4bfa6fe7c38e6f565a09fc06474b9b56b07f7
 func (m *GroupRequestBuilder) Threads()(*i5c5a2c806ddf65cb48eca8a02a8bb45136bda5cf5cd7de5574ad78f10f604ba2.ThreadsRequestBuilder) {
     return i5c5a2c806ddf65cb48eca8a02a8bb45136bda5cf5cd7de5574ad78f10f604ba2.NewThreadsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.threads.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ThreadsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.threads.item collection
 func (m *GroupRequestBuilder) ThreadsById(id string)(*if3d2858206557e4f8b00ac2f74098e2775aa239b7ce50e535d3e73ff34555b4f.ConversationThreadRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

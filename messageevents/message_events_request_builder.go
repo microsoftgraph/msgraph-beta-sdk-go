@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \messageEvents
+// messageEventsRequestBuilder builds and executes requests for operations under \messageEvents
 type MessageEventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MessageEventsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MessageEventsRequestBuilderGetOptions options for Get
 type MessageEventsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MessageEventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from messageEvents
+// messageEventsRequestBuilderGetQueryParameters get entities from messageEvents
 type MessageEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MessageEventsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MessageEventsRequestBuilderPostOptions options for Post
 type MessageEventsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageEvent;
@@ -56,10 +56,7 @@ type MessageEventsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MessageEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageEventsRequestBuilderInternal instantiates a new MessageEventsRequestBuilder and sets the default values.
 func NewMessageEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageEventsRequestBuilder) {
     m := &MessageEventsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMessageEventsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MessageEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageEventsRequestBuilder instantiates a new MessageEventsRequestBuilder and sets the default values.
 func NewMessageEventsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageEventsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessageEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from messageEvents
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from messageEvents
 func (m *MessageEventsRequestBuilder) CreateGetRequestInformation(options *MessageEventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MessageEventsRequestBuilder) CreateGetRequestInformation(options *Messa
     }
     return requestInfo, nil
 }
-// Add new entity to messageEvents
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to messageEvents
 func (m *MessageEventsRequestBuilder) CreatePostRequestInformation(options *MessageEventsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MessageEventsRequestBuilder) CreatePostRequestInformation(options *Mess
     }
     return requestInfo, nil
 }
-// Get entities from messageEvents
-// Parameters:
-//  - options : Options for the request
+// Get get entities from messageEvents
 func (m *MessageEventsRequestBuilder) Get(options *MessageEventsRequestBuilderGetOptions)(*MessageEventsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MessageEventsRequestBuilder) Get(options *MessageEventsRequestBuilderGe
     }
     return res.(*MessageEventsResponse), nil
 }
-// Add new entity to messageEvents
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to messageEvents
 func (m *MessageEventsRequestBuilder) Post(options *MessageEventsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageEvent, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

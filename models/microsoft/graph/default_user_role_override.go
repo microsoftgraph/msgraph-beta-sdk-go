@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// defaultUserRoleOverride 
 type DefaultUserRoleOverride struct {
     Entity
     // 
@@ -12,14 +12,14 @@ type DefaultUserRoleOverride struct {
     // 
     rolePermissions []UnifiedRolePermission;
 }
-// Instantiates a new defaultUserRoleOverride and sets the default values.
+// NewDefaultUserRoleOverride instantiates a new defaultUserRoleOverride and sets the default values.
 func NewDefaultUserRoleOverride()(*DefaultUserRoleOverride) {
     m := &DefaultUserRoleOverride{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the isDefault property value. 
+// GetIsDefault gets the isDefault property value. 
 func (m *DefaultUserRoleOverride) GetIsDefault()(*bool) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *DefaultUserRoleOverride) GetIsDefault()(*bool) {
         return m.isDefault
     }
 }
-// Gets the rolePermissions property value. 
+// GetRolePermissions gets the rolePermissions property value. 
 func (m *DefaultUserRoleOverride) GetRolePermissions()([]UnifiedRolePermission) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *DefaultUserRoleOverride) GetRolePermissions()([]UnifiedRolePermission) 
         return m.rolePermissions
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DefaultUserRoleOverride) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -67,9 +67,7 @@ func (m *DefaultUserRoleOverride) GetFieldDeserializers()(map[string]func(interf
 func (m *DefaultUserRoleOverride) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DefaultUserRoleOverride) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -94,15 +92,11 @@ func (m *DefaultUserRoleOverride) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the isDefault property value. 
-// Parameters:
-//  - value : Value to set for the isDefault property.
+// SetIsDefault sets the isDefault property value. 
 func (m *DefaultUserRoleOverride) SetIsDefault(value *bool)() {
     m.isDefault = value
 }
-// Sets the rolePermissions property value. 
-// Parameters:
-//  - value : Value to set for the rolePermissions property.
+// SetRolePermissions sets the rolePermissions property value. 
 func (m *DefaultUserRoleOverride) SetRolePermissions(value []UnifiedRolePermission)() {
     m.rolePermissions = value
 }

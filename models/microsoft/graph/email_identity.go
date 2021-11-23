@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// emailIdentity 
 type EmailIdentity struct {
     Identity
     // Email address of the user.
     email *string;
 }
-// Instantiates a new emailIdentity and sets the default values.
+// NewEmailIdentity instantiates a new emailIdentity and sets the default values.
 func NewEmailIdentity()(*EmailIdentity) {
     m := &EmailIdentity{
         Identity: *NewIdentity(),
     }
     return m
 }
-// Gets the email property value. Email address of the user.
+// GetEmail gets the email property value. Email address of the user.
 func (m *EmailIdentity) GetEmail()(*string) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *EmailIdentity) GetEmail()(*string) {
         return m.email
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EmailIdentity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["email"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -43,9 +43,7 @@ func (m *EmailIdentity) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *EmailIdentity) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EmailIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Identity.Serialize(writer)
     if err != nil {
@@ -59,9 +57,7 @@ func (m *EmailIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the email property value. Email address of the user.
-// Parameters:
-//  - value : Value to set for the email property.
+// SetEmail sets the email property value. Email address of the user.
 func (m *EmailIdentity) SetEmail(value *string)() {
     m.email = value
 }

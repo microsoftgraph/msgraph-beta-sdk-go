@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\synchronization\microsoft.graph.Ping()
+// PingRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\microsoft.graph.Ping()
 type PingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type PingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PingRequestBuilderGetOptions options for Get
 type PingRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type PingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PingRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPingRequestBuilderInternal instantiates a new PingRequestBuilder and sets the default values.
 func NewPingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PingRequestBuilder) {
     m := &PingRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewPingRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PingRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPingRequestBuilder instantiates a new PingRequestBuilder and sets the default values.
 func NewPingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function Ping
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function Ping
 func (m *PingRequestBuilder) CreateGetRequestInformation(options *PingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *PingRequestBuilder) CreateGetRequestInformation(options *PingRequestBui
     }
     return requestInfo, nil
 }
-// Invoke function Ping
-// Parameters:
-//  - options : Options for the request
+// Get invoke function Ping
 func (m *PingRequestBuilder) Get(options *PingRequestBuilderGetOptions)(*string, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

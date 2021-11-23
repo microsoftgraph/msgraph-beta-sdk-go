@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// groupPolicyCategory 
 type GroupPolicyCategory struct {
     Entity
     // The children categories
@@ -23,14 +23,14 @@ type GroupPolicyCategory struct {
     // The parent category
     parent *GroupPolicyCategory;
 }
-// Instantiates a new groupPolicyCategory and sets the default values.
+// NewGroupPolicyCategory instantiates a new groupPolicyCategory and sets the default values.
 func NewGroupPolicyCategory()(*GroupPolicyCategory) {
     m := &GroupPolicyCategory{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the children property value. The children categories
+// GetChildren gets the children property value. The children categories
 func (m *GroupPolicyCategory) GetChildren()([]GroupPolicyCategory) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *GroupPolicyCategory) GetChildren()([]GroupPolicyCategory) {
         return m.children
     }
 }
-// Gets the definitionFile property value. The id of the definition file the category came from
+// GetDefinitionFile gets the definitionFile property value. The id of the definition file the category came from
 func (m *GroupPolicyCategory) GetDefinitionFile()(*GroupPolicyDefinitionFile) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *GroupPolicyCategory) GetDefinitionFile()(*GroupPolicyDefinitionFile) {
         return m.definitionFile
     }
 }
-// Gets the definitions property value. The immediate GroupPolicyDefinition children of the category
+// GetDefinitions gets the definitions property value. The immediate GroupPolicyDefinition children of the category
 func (m *GroupPolicyCategory) GetDefinitions()([]GroupPolicyDefinition) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *GroupPolicyCategory) GetDefinitions()([]GroupPolicyDefinition) {
         return m.definitions
     }
 }
-// Gets the displayName property value. The string id of the category's display name
+// GetDisplayName gets the displayName property value. The string id of the category's display name
 func (m *GroupPolicyCategory) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *GroupPolicyCategory) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the isRoot property value. Defines if the category is a root category
+// GetIsRoot gets the isRoot property value. Defines if the category is a root category
 func (m *GroupPolicyCategory) GetIsRoot()(*bool) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *GroupPolicyCategory) GetIsRoot()(*bool) {
         return m.isRoot
     }
 }
-// Gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *GroupPolicyCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f
         return m.lastModifiedDateTime
     }
 }
-// Gets the parent property value. The parent category
+// GetParent gets the parent property value. The parent category
 func (m *GroupPolicyCategory) GetParent()(*GroupPolicyCategory) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *GroupPolicyCategory) GetParent()(*GroupPolicyCategory) {
         return m.parent
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyCategory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["children"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,9 +172,7 @@ func (m *GroupPolicyCategory) GetFieldDeserializers()(map[string]func(interface{
 func (m *GroupPolicyCategory) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GroupPolicyCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -234,45 +232,31 @@ func (m *GroupPolicyCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the children property value. The children categories
-// Parameters:
-//  - value : Value to set for the children property.
+// SetChildren sets the children property value. The children categories
 func (m *GroupPolicyCategory) SetChildren(value []GroupPolicyCategory)() {
     m.children = value
 }
-// Sets the definitionFile property value. The id of the definition file the category came from
-// Parameters:
-//  - value : Value to set for the definitionFile property.
+// SetDefinitionFile sets the definitionFile property value. The id of the definition file the category came from
 func (m *GroupPolicyCategory) SetDefinitionFile(value *GroupPolicyDefinitionFile)() {
     m.definitionFile = value
 }
-// Sets the definitions property value. The immediate GroupPolicyDefinition children of the category
-// Parameters:
-//  - value : Value to set for the definitions property.
+// SetDefinitions sets the definitions property value. The immediate GroupPolicyDefinition children of the category
 func (m *GroupPolicyCategory) SetDefinitions(value []GroupPolicyDefinition)() {
     m.definitions = value
 }
-// Sets the displayName property value. The string id of the category's display name
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The string id of the category's display name
 func (m *GroupPolicyCategory) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the isRoot property value. Defines if the category is a root category
-// Parameters:
-//  - value : Value to set for the isRoot property.
+// SetIsRoot sets the isRoot property value. Defines if the category is a root category
 func (m *GroupPolicyCategory) SetIsRoot(value *bool)() {
     m.isRoot = value
 }
-// Sets the lastModifiedDateTime property value. The date and time the entity was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyCategory) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the parent property value. The parent category
-// Parameters:
-//  - value : Value to set for the parent property.
+// SetParent sets the parent property value. The parent category
 func (m *GroupPolicyCategory) SetParent(value *GroupPolicyCategory)() {
     m.parent = value
 }

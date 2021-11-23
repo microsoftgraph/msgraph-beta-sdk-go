@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\deployments
+// deploymentsRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments
 type DeploymentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeploymentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeploymentsRequestBuilderGetOptions options for Get
 type DeploymentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeploymentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Deployments created using the deployment service. Read-only.
+// deploymentsRequestBuilderGetQueryParameters deployments created using the deployment service. Read-only.
 type DeploymentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeploymentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeploymentsRequestBuilderPostOptions options for Post
 type DeploymentsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Deployment;
@@ -56,10 +56,7 @@ type DeploymentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeploymentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeploymentsRequestBuilderInternal instantiates a new DeploymentsRequestBuilder and sets the default values.
 func NewDeploymentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeploymentsRequestBuilder) {
     m := &DeploymentsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeploymentsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeploymentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeploymentsRequestBuilder instantiates a new DeploymentsRequestBuilder and sets the default values.
 func NewDeploymentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeploymentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeploymentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Deployments created using the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation deployments created using the deployment service. Read-only.
 func (m *DeploymentsRequestBuilder) CreateGetRequestInformation(options *DeploymentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeploymentsRequestBuilder) CreateGetRequestInformation(options *Deploym
     }
     return requestInfo, nil
 }
-// Deployments created using the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation deployments created using the deployment service. Read-only.
 func (m *DeploymentsRequestBuilder) CreatePostRequestInformation(options *DeploymentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeploymentsRequestBuilder) CreatePostRequestInformation(options *Deploy
     }
     return requestInfo, nil
 }
-// Deployments created using the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get deployments created using the deployment service. Read-only.
 func (m *DeploymentsRequestBuilder) Get(options *DeploymentsRequestBuilderGetOptions)(*DeploymentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeploymentsRequestBuilder) Get(options *DeploymentsRequestBuilderGetOpt
     }
     return res.(*DeploymentsResponse), nil
 }
-// Deployments created using the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post deployments created using the deployment service. Read-only.
 func (m *DeploymentsRequestBuilder) Post(options *DeploymentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Deployment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

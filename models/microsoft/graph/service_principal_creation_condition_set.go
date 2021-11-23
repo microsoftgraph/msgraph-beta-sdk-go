@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// servicePrincipalCreationConditionSet 
 type ServicePrincipalCreationConditionSet struct {
     Entity
     // 
@@ -16,14 +16,14 @@ type ServicePrincipalCreationConditionSet struct {
     // 
     applicationTenantIds []string;
 }
-// Instantiates a new servicePrincipalCreationConditionSet and sets the default values.
+// NewServicePrincipalCreationConditionSet instantiates a new servicePrincipalCreationConditionSet and sets the default values.
 func NewServicePrincipalCreationConditionSet()(*ServicePrincipalCreationConditionSet) {
     m := &ServicePrincipalCreationConditionSet{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the applicationIds property value. 
+// GetApplicationIds gets the applicationIds property value. 
 func (m *ServicePrincipalCreationConditionSet) GetApplicationIds()([]string) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *ServicePrincipalCreationConditionSet) GetApplicationIds()([]string) {
         return m.applicationIds
     }
 }
-// Gets the applicationPublisherIds property value. 
+// GetApplicationPublisherIds gets the applicationPublisherIds property value. 
 func (m *ServicePrincipalCreationConditionSet) GetApplicationPublisherIds()([]string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *ServicePrincipalCreationConditionSet) GetApplicationPublisherIds()([]st
         return m.applicationPublisherIds
     }
 }
-// Gets the applicationsFromVerifiedPublisherOnly property value. 
+// GetApplicationsFromVerifiedPublisherOnly gets the applicationsFromVerifiedPublisherOnly property value. 
 func (m *ServicePrincipalCreationConditionSet) GetApplicationsFromVerifiedPublisherOnly()(*bool) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *ServicePrincipalCreationConditionSet) GetApplicationsFromVerifiedPublis
         return m.applicationsFromVerifiedPublisherOnly
     }
 }
-// Gets the applicationTenantIds property value. 
+// GetApplicationTenantIds gets the applicationTenantIds property value. 
 func (m *ServicePrincipalCreationConditionSet) GetApplicationTenantIds()([]string) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *ServicePrincipalCreationConditionSet) GetApplicationTenantIds()([]strin
         return m.applicationTenantIds
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicationIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,9 +115,7 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
 func (m *ServicePrincipalCreationConditionSet) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ServicePrincipalCreationConditionSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -149,27 +147,19 @@ func (m *ServicePrincipalCreationConditionSet) Serialize(writer i04eb5309aeaafad
     }
     return nil
 }
-// Sets the applicationIds property value. 
-// Parameters:
-//  - value : Value to set for the applicationIds property.
+// SetApplicationIds sets the applicationIds property value. 
 func (m *ServicePrincipalCreationConditionSet) SetApplicationIds(value []string)() {
     m.applicationIds = value
 }
-// Sets the applicationPublisherIds property value. 
-// Parameters:
-//  - value : Value to set for the applicationPublisherIds property.
+// SetApplicationPublisherIds sets the applicationPublisherIds property value. 
 func (m *ServicePrincipalCreationConditionSet) SetApplicationPublisherIds(value []string)() {
     m.applicationPublisherIds = value
 }
-// Sets the applicationsFromVerifiedPublisherOnly property value. 
-// Parameters:
-//  - value : Value to set for the applicationsFromVerifiedPublisherOnly property.
+// SetApplicationsFromVerifiedPublisherOnly sets the applicationsFromVerifiedPublisherOnly property value. 
 func (m *ServicePrincipalCreationConditionSet) SetApplicationsFromVerifiedPublisherOnly(value *bool)() {
     m.applicationsFromVerifiedPublisherOnly = value
 }
-// Sets the applicationTenantIds property value. 
-// Parameters:
-//  - value : Value to set for the applicationTenantIds property.
+// SetApplicationTenantIds sets the applicationTenantIds property value. 
 func (m *ServicePrincipalCreationConditionSet) SetApplicationTenantIds(value []string)() {
     m.applicationTenantIds = value
 }

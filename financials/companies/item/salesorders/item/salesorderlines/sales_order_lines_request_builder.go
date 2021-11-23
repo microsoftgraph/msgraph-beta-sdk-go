@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesOrders\{salesOrder-id}\salesOrderLines
+// salesOrderLinesRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesOrders\{salesOrder-id}\salesOrderLines
 type SalesOrderLinesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SalesOrderLinesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SalesOrderLinesRequestBuilderGetOptions options for Get
 type SalesOrderLinesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SalesOrderLinesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get salesOrderLines from financials
+// salesOrderLinesRequestBuilderGetQueryParameters get salesOrderLines from financials
 type SalesOrderLinesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SalesOrderLinesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SalesOrderLinesRequestBuilderPostOptions options for Post
 type SalesOrderLinesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesOrderLine;
@@ -56,10 +56,7 @@ type SalesOrderLinesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SalesOrderLinesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesOrderLinesRequestBuilderInternal instantiates a new SalesOrderLinesRequestBuilder and sets the default values.
 func NewSalesOrderLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesOrderLinesRequestBuilder) {
     m := &SalesOrderLinesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSalesOrderLinesRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SalesOrderLinesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesOrderLinesRequestBuilder instantiates a new SalesOrderLinesRequestBuilder and sets the default values.
 func NewSalesOrderLinesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesOrderLinesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSalesOrderLinesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get salesOrderLines from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get salesOrderLines from financials
 func (m *SalesOrderLinesRequestBuilder) CreateGetRequestInformation(options *SalesOrderLinesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SalesOrderLinesRequestBuilder) CreateGetRequestInformation(options *Sal
     }
     return requestInfo, nil
 }
-// Create new navigation property to salesOrderLines for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to salesOrderLines for financials
 func (m *SalesOrderLinesRequestBuilder) CreatePostRequestInformation(options *SalesOrderLinesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SalesOrderLinesRequestBuilder) CreatePostRequestInformation(options *Sa
     }
     return requestInfo, nil
 }
-// Get salesOrderLines from financials
-// Parameters:
-//  - options : Options for the request
+// Get get salesOrderLines from financials
 func (m *SalesOrderLinesRequestBuilder) Get(options *SalesOrderLinesRequestBuilderGetOptions)(*SalesOrderLinesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SalesOrderLinesRequestBuilder) Get(options *SalesOrderLinesRequestBuild
     }
     return res.(*SalesOrderLinesResponse), nil
 }
-// Create new navigation property to salesOrderLines for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to salesOrderLines for financials
 func (m *SalesOrderLinesRequestBuilder) Post(options *SalesOrderLinesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesOrderLine, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

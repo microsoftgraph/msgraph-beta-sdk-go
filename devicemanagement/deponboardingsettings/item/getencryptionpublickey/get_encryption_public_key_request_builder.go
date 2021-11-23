@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.getEncryptionPublicKey()
+// getEncryptionPublicKeyRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.getEncryptionPublicKey()
 type GetEncryptionPublicKeyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetEncryptionPublicKeyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetEncryptionPublicKeyRequestBuilderGetOptions options for Get
 type GetEncryptionPublicKeyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type GetEncryptionPublicKeyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetEncryptionPublicKeyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetEncryptionPublicKeyRequestBuilderInternal instantiates a new GetEncryptionPublicKeyRequestBuilder and sets the default values.
 func NewGetEncryptionPublicKeyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetEncryptionPublicKeyRequestBuilder) {
     m := &GetEncryptionPublicKeyRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewGetEncryptionPublicKeyRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetEncryptionPublicKeyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetEncryptionPublicKeyRequestBuilder instantiates a new GetEncryptionPublicKeyRequestBuilder and sets the default values.
 func NewGetEncryptionPublicKeyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetEncryptionPublicKeyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetEncryptionPublicKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get a public key to use to encrypt the Apple device enrollment program token
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get a public key to use to encrypt the Apple device enrollment program token
 func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformation(options *GetEncryptionPublicKeyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get a public key to use to encrypt the Apple device enrollment program token
-// Parameters:
-//  - options : Options for the request
+// Get get a public key to use to encrypt the Apple device enrollment program token
 func (m *GetEncryptionPublicKeyRequestBuilder) Get(options *GetEncryptionPublicKeyRequestBuilderGetOptions)(*string, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

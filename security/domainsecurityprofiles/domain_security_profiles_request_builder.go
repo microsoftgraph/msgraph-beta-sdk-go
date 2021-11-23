@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\domainSecurityProfiles
+// domainSecurityProfilesRequestBuilder builds and executes requests for operations under \security\domainSecurityProfiles
 type DomainSecurityProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DomainSecurityProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DomainSecurityProfilesRequestBuilderGetOptions options for Get
 type DomainSecurityProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DomainSecurityProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get domainSecurityProfiles from security
+// domainSecurityProfilesRequestBuilderGetQueryParameters get domainSecurityProfiles from security
 type DomainSecurityProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DomainSecurityProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DomainSecurityProfilesRequestBuilderPostOptions options for Post
 type DomainSecurityProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DomainSecurityProfile;
@@ -56,10 +56,7 @@ type DomainSecurityProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DomainSecurityProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDomainSecurityProfilesRequestBuilderInternal instantiates a new DomainSecurityProfilesRequestBuilder and sets the default values.
 func NewDomainSecurityProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DomainSecurityProfilesRequestBuilder) {
     m := &DomainSecurityProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDomainSecurityProfilesRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DomainSecurityProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDomainSecurityProfilesRequestBuilder instantiates a new DomainSecurityProfilesRequestBuilder and sets the default values.
 func NewDomainSecurityProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DomainSecurityProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDomainSecurityProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get domainSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get domainSecurityProfiles from security
 func (m *DomainSecurityProfilesRequestBuilder) CreateGetRequestInformation(options *DomainSecurityProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DomainSecurityProfilesRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Create new navigation property to domainSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to domainSecurityProfiles for security
 func (m *DomainSecurityProfilesRequestBuilder) CreatePostRequestInformation(options *DomainSecurityProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DomainSecurityProfilesRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get domainSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// Get get domainSecurityProfiles from security
 func (m *DomainSecurityProfilesRequestBuilder) Get(options *DomainSecurityProfilesRequestBuilderGetOptions)(*DomainSecurityProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DomainSecurityProfilesRequestBuilder) Get(options *DomainSecurityProfil
     }
     return res.(*DomainSecurityProfilesResponse), nil
 }
-// Create new navigation property to domainSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to domainSecurityProfiles for security
 func (m *DomainSecurityProfilesRequestBuilder) Post(options *DomainSecurityProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DomainSecurityProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

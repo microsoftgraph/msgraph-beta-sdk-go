@@ -13,7 +13,7 @@ import (
     id3fbc20e2aaca189e5a1a34399bb63266b91e90673fe015d4987e17f6eff56c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/additionalsources/item"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}
+// sourceCollectionRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}
 type SourceCollectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type SourceCollectionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SourceCollectionRequestBuilderDeleteOptions options for Delete
 type SourceCollectionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type SourceCollectionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SourceCollectionRequestBuilderGetOptions options for Get
 type SourceCollectionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,14 +42,14 @@ type SourceCollectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns a list of sourceCollection objects associated with this case.
+// sourceCollectionRequestBuilderGetQueryParameters returns a list of sourceCollection objects associated with this case.
 type SourceCollectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SourceCollectionRequestBuilderPatchOptions options for Patch
 type SourceCollectionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SourceCollection;
@@ -63,9 +63,7 @@ type SourceCollectionRequestBuilderPatchOptions struct {
 func (m *SourceCollectionRequestBuilder) AdditionalSources()(*i2c744ed9b76601b529ed40d577c487cc9b9cdba275f49afd6d038d45b275a597.AdditionalSourcesRequestBuilder) {
     return i2c744ed9b76601b529ed40d577c487cc9b9cdba275f49afd6d038d45b275a597.NewAdditionalSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.sourceCollections.item.additionalSources.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AdditionalSourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item.sourceCollections.item.additionalSources.item collection
 func (m *SourceCollectionRequestBuilder) AdditionalSourcesById(id string)(*id3fbc20e2aaca189e5a1a34399bb63266b91e90673fe015d4987e17f6eff56c3.DataSourceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -79,10 +77,7 @@ func (m *SourceCollectionRequestBuilder) AdditionalSourcesById(id string)(*id3fb
 func (m *SourceCollectionRequestBuilder) AddToReviewSetOperation()(*i3bd4cbfecafd766c2564c32940263a2048489063caa57ec31b0d0ad2df543409.AddToReviewSetOperationRequestBuilder) {
     return i3bd4cbfecafd766c2564c32940263a2048489063caa57ec31b0d0ad2df543409.NewAddToReviewSetOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new SourceCollectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSourceCollectionRequestBuilderInternal instantiates a new SourceCollectionRequestBuilder and sets the default values.
 func NewSourceCollectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SourceCollectionRequestBuilder) {
     m := &SourceCollectionRequestBuilder{
     }
@@ -95,18 +90,13 @@ func NewSourceCollectionRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SourceCollectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSourceCollectionRequestBuilder instantiates a new SourceCollectionRequestBuilder and sets the default values.
 func NewSourceCollectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SourceCollectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSourceCollectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns a list of sourceCollection objects associated with this case.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation returns a list of sourceCollection objects associated with this case.
 func (m *SourceCollectionRequestBuilder) CreateDeleteRequestInformation(options *SourceCollectionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SourceCollectionRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Returns a list of sourceCollection objects associated with this case.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns a list of sourceCollection objects associated with this case.
 func (m *SourceCollectionRequestBuilder) CreateGetRequestInformation(options *SourceCollectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +133,7 @@ func (m *SourceCollectionRequestBuilder) CreateGetRequestInformation(options *So
     }
     return requestInfo, nil
 }
-// Returns a list of sourceCollection objects associated with this case.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation returns a list of sourceCollection objects associated with this case.
 func (m *SourceCollectionRequestBuilder) CreatePatchRequestInformation(options *SourceCollectionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -168,9 +154,7 @@ func (m *SourceCollectionRequestBuilder) CreatePatchRequestInformation(options *
 func (m *SourceCollectionRequestBuilder) CustodianSources()(*i0597b69327ef47612760d3a06e5168d4357386c9da9233bf1fe1f95375bde771.CustodianSourcesRequestBuilder) {
     return i0597b69327ef47612760d3a06e5168d4357386c9da9233bf1fe1f95375bde771.NewCustodianSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Returns a list of sourceCollection objects associated with this case.
-// Parameters:
-//  - options : Options for the request
+// Delete returns a list of sourceCollection objects associated with this case.
 func (m *SourceCollectionRequestBuilder) Delete(options *SourceCollectionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -185,9 +169,7 @@ func (m *SourceCollectionRequestBuilder) Delete(options *SourceCollectionRequest
 func (m *SourceCollectionRequestBuilder) EstimateStatistics()(*i85c4be0475ccbd4aff4cb007fd0c2ec13881b05cf9e8cb5b59116c59ad86da86.EstimateStatisticsRequestBuilder) {
     return i85c4be0475ccbd4aff4cb007fd0c2ec13881b05cf9e8cb5b59116c59ad86da86.NewEstimateStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Returns a list of sourceCollection objects associated with this case.
-// Parameters:
-//  - options : Options for the request
+// Get returns a list of sourceCollection objects associated with this case.
 func (m *SourceCollectionRequestBuilder) Get(options *SourceCollectionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SourceCollection, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -205,9 +187,7 @@ func (m *SourceCollectionRequestBuilder) LastEstimateStatisticsOperation()(*i3a1
 func (m *SourceCollectionRequestBuilder) NoncustodialSources()(*ie844c3a4d7bb8cc79a58d398b260c44e966bd08e45f89594aa2bccaa7e8180e9.NoncustodialSourcesRequestBuilder) {
     return ie844c3a4d7bb8cc79a58d398b260c44e966bd08e45f89594aa2bccaa7e8180e9.NewNoncustodialSourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Returns a list of sourceCollection objects associated with this case.
-// Parameters:
-//  - options : Options for the request
+// Patch returns a list of sourceCollection objects associated with this case.
 func (m *SourceCollectionRequestBuilder) Patch(options *SourceCollectionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\securityBaselineStates\{securityBaselineState-id}\settingStates
+// settingStatesRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\securityBaselineStates\{securityBaselineState-id}\settingStates
 type SettingStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SettingStatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SettingStatesRequestBuilderGetOptions options for Get
 type SettingStatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SettingStatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The security baseline state for different settings for a device
+// settingStatesRequestBuilderGetQueryParameters the security baseline state for different settings for a device
 type SettingStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SettingStatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SettingStatesRequestBuilderPostOptions options for Post
 type SettingStatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineSettingState;
@@ -56,10 +56,7 @@ type SettingStatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SettingStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSettingStatesRequestBuilderInternal instantiates a new SettingStatesRequestBuilder and sets the default values.
 func NewSettingStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SettingStatesRequestBuilder) {
     m := &SettingStatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSettingStatesRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SettingStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSettingStatesRequestBuilder instantiates a new SettingStatesRequestBuilder and sets the default values.
 func NewSettingStatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SettingStatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSettingStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The security baseline state for different settings for a device
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the security baseline state for different settings for a device
 func (m *SettingStatesRequestBuilder) CreateGetRequestInformation(options *SettingStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SettingStatesRequestBuilder) CreateGetRequestInformation(options *Setti
     }
     return requestInfo, nil
 }
-// The security baseline state for different settings for a device
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the security baseline state for different settings for a device
 func (m *SettingStatesRequestBuilder) CreatePostRequestInformation(options *SettingStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SettingStatesRequestBuilder) CreatePostRequestInformation(options *Sett
     }
     return requestInfo, nil
 }
-// The security baseline state for different settings for a device
-// Parameters:
-//  - options : Options for the request
+// Get the security baseline state for different settings for a device
 func (m *SettingStatesRequestBuilder) Get(options *SettingStatesRequestBuilderGetOptions)(*SettingStatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SettingStatesRequestBuilder) Get(options *SettingStatesRequestBuilderGe
     }
     return res.(*SettingStatesResponse), nil
 }
-// The security baseline state for different settings for a device
-// Parameters:
-//  - options : Options for the request
+// Post the security baseline state for different settings for a device
 func (m *SettingStatesRequestBuilder) Post(options *SettingStatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineSettingState, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

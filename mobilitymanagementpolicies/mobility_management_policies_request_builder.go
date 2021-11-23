@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \mobilityManagementPolicies
+// mobilityManagementPoliciesRequestBuilder builds and executes requests for operations under \mobilityManagementPolicies
 type MobilityManagementPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MobilityManagementPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MobilityManagementPoliciesRequestBuilderGetOptions options for Get
 type MobilityManagementPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MobilityManagementPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from mobilityManagementPolicies
+// mobilityManagementPoliciesRequestBuilderGetQueryParameters get entities from mobilityManagementPolicies
 type MobilityManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MobilityManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MobilityManagementPoliciesRequestBuilderPostOptions options for Post
 type MobilityManagementPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicy;
@@ -56,10 +56,7 @@ type MobilityManagementPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MobilityManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobilityManagementPoliciesRequestBuilderInternal instantiates a new MobilityManagementPoliciesRequestBuilder and sets the default values.
 func NewMobilityManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobilityManagementPoliciesRequestBuilder) {
     m := &MobilityManagementPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMobilityManagementPoliciesRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MobilityManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobilityManagementPoliciesRequestBuilder instantiates a new MobilityManagementPoliciesRequestBuilder and sets the default values.
 func NewMobilityManagementPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobilityManagementPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobilityManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from mobilityManagementPolicies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from mobilityManagementPolicies
 func (m *MobilityManagementPoliciesRequestBuilder) CreateGetRequestInformation(options *MobilityManagementPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MobilityManagementPoliciesRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// Add new entity to mobilityManagementPolicies
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to mobilityManagementPolicies
 func (m *MobilityManagementPoliciesRequestBuilder) CreatePostRequestInformation(options *MobilityManagementPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MobilityManagementPoliciesRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Get entities from mobilityManagementPolicies
-// Parameters:
-//  - options : Options for the request
+// Get get entities from mobilityManagementPolicies
 func (m *MobilityManagementPoliciesRequestBuilder) Get(options *MobilityManagementPoliciesRequestBuilderGetOptions)(*MobilityManagementPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MobilityManagementPoliciesRequestBuilder) Get(options *MobilityManageme
     }
     return res.(*MobilityManagementPoliciesResponse), nil
 }
-// Add new entity to mobilityManagementPolicies
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to mobilityManagementPolicies
 func (m *MobilityManagementPoliciesRequestBuilder) Post(options *MobilityManagementPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

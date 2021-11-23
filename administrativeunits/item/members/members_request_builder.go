@@ -6,7 +6,7 @@ import (
     i293474319befec6e6483824f688dd04e17f1e2546d3f2cf12e7dc631925459d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/administrativeunits/item/members/ref"
 )
 
-// Builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}\members
+// membersRequestBuilder builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}\members
 type MembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MembersRequestBuilderGetOptions options for Get
 type MembersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
+// membersRequestBuilderGetQueryParameters users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type MembersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new MembersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MembersRequestBuilder) {
     m := &MembersRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MembersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
 func NewMembersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MembersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
 func (m *MembersRequestBuilder) CreateGetRequestInformation(options *MembersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *MembersRequestBuilder) CreateGetRequestInformation(options *MembersRequ
     }
     return requestInfo, nil
 }
-// Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
-// Parameters:
-//  - options : Options for the request
+// Get users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
 func (m *MembersRequestBuilder) Get(options *MembersRequestBuilderGetOptions)(*MembersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     i30db67cd61229a1c4f0f63a4bdb1c1f595ad027e74a84df702775f133d2f57c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/target/connectedorganization"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\target
+// targetRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\target
 type TargetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TargetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TargetRequestBuilderDeleteOptions options for Delete
 type TargetRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type TargetRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TargetRequestBuilderGetOptions options for Get
 type TargetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type TargetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The subject of the access package assignment. Read-only. Nullable.
+// targetRequestBuilderGetQueryParameters the subject of the access package assignment. Read-only. Nullable.
 type TargetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TargetRequestBuilderPatchOptions options for Patch
 type TargetRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageSubject;
@@ -57,10 +57,7 @@ type TargetRequestBuilderPatchOptions struct {
 func (m *TargetRequestBuilder) ConnectedOrganization()(*i30db67cd61229a1c4f0f63a4bdb1c1f595ad027e74a84df702775f133d2f57c0.ConnectedOrganizationRequestBuilder) {
     return i30db67cd61229a1c4f0f63a4bdb1c1f595ad027e74a84df702775f133d2f57c0.NewConnectedOrganizationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new TargetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetRequestBuilderInternal instantiates a new TargetRequestBuilder and sets the default values.
 func NewTargetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetRequestBuilder) {
     m := &TargetRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewTargetRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TargetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetRequestBuilder instantiates a new TargetRequestBuilder and sets the default values.
 func NewTargetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTargetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The subject of the access package assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the subject of the access package assignment. Read-only. Nullable.
 func (m *TargetRequestBuilder) CreateDeleteRequestInformation(options *TargetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *TargetRequestBuilder) CreateDeleteRequestInformation(options *TargetReq
     }
     return requestInfo, nil
 }
-// The subject of the access package assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the subject of the access package assignment. Read-only. Nullable.
 func (m *TargetRequestBuilder) CreateGetRequestInformation(options *TargetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TargetRequestBuilder) CreateGetRequestInformation(options *TargetReques
     }
     return requestInfo, nil
 }
-// The subject of the access package assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the subject of the access package assignment. Read-only. Nullable.
 func (m *TargetRequestBuilder) CreatePatchRequestInformation(options *TargetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *TargetRequestBuilder) CreatePatchRequestInformation(options *TargetRequ
     }
     return requestInfo, nil
 }
-// The subject of the access package assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the subject of the access package assignment. Read-only. Nullable.
 func (m *TargetRequestBuilder) Delete(options *TargetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *TargetRequestBuilder) Delete(options *TargetRequestBuilderDeleteOptions
     }
     return nil
 }
-// The subject of the access package assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the subject of the access package assignment. Read-only. Nullable.
 func (m *TargetRequestBuilder) Get(options *TargetRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageSubject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *TargetRequestBuilder) Get(options *TargetRequestBuilderGetOptions)(*i53
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageSubject), nil
 }
-// The subject of the access package assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the subject of the access package assignment. Read-only. Nullable.
 func (m *TargetRequestBuilder) Patch(options *TargetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -10,7 +10,7 @@ import (
     if7f959c11e06f172ec88344202e39c37c579835cbcd855889fc28d546c7c6126 "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2xuserflows/item/languages/item/defaultpages/item"
 )
 
-// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}
+// userFlowLanguageConfigurationRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}
 type UserFlowLanguageConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type UserFlowLanguageConfigurationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserFlowLanguageConfigurationRequestBuilderDeleteOptions options for Delete
 type UserFlowLanguageConfigurationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type UserFlowLanguageConfigurationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserFlowLanguageConfigurationRequestBuilderGetOptions options for Get
 type UserFlowLanguageConfigurationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type UserFlowLanguageConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+// userFlowLanguageConfigurationRequestBuilderGetQueryParameters the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
 type UserFlowLanguageConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserFlowLanguageConfigurationRequestBuilderPatchOptions options for Patch
 type UserFlowLanguageConfigurationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserFlowLanguageConfiguration;
@@ -57,10 +57,7 @@ type UserFlowLanguageConfigurationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserFlowLanguageConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserFlowLanguageConfigurationRequestBuilderInternal instantiates a new UserFlowLanguageConfigurationRequestBuilder and sets the default values.
 func NewUserFlowLanguageConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserFlowLanguageConfigurationRequestBuilder) {
     m := &UserFlowLanguageConfigurationRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewUserFlowLanguageConfigurationRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserFlowLanguageConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserFlowLanguageConfigurationRequestBuilder instantiates a new UserFlowLanguageConfigurationRequestBuilder and sets the default values.
 func NewUserFlowLanguageConfigurationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserFlowLanguageConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowLanguageConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
 func (m *UserFlowLanguageConfigurationRequestBuilder) CreateDeleteRequestInformation(options *UserFlowLanguageConfigurationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *UserFlowLanguageConfigurationRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
 func (m *UserFlowLanguageConfigurationRequestBuilder) CreateGetRequestInformation(options *UserFlowLanguageConfigurationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserFlowLanguageConfigurationRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
 func (m *UserFlowLanguageConfigurationRequestBuilder) CreatePatchRequestInformation(options *UserFlowLanguageConfigurationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +134,7 @@ func (m *UserFlowLanguageConfigurationRequestBuilder) CreatePatchRequestInformat
 func (m *UserFlowLanguageConfigurationRequestBuilder) DefaultPages()(*id8b4aa20110754f7a6332241da005226519c2fdc8bae4a32149df9d988ded399.DefaultPagesRequestBuilder) {
     return id8b4aa20110754f7a6332241da005226519c2fdc8bae4a32149df9d988ded399.NewDefaultPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2xUserFlows.item.languages.item.defaultPages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DefaultPagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2xUserFlows.item.languages.item.defaultPages.item collection
 func (m *UserFlowLanguageConfigurationRequestBuilder) DefaultPagesById(id string)(*if7f959c11e06f172ec88344202e39c37c579835cbcd855889fc28d546c7c6126.UserFlowLanguagePageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -159,9 +145,7 @@ func (m *UserFlowLanguageConfigurationRequestBuilder) DefaultPagesById(id string
     }
     return if7f959c11e06f172ec88344202e39c37c579835cbcd855889fc28d546c7c6126.NewUserFlowLanguagePageRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
-// Parameters:
-//  - options : Options for the request
+// Delete the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
 func (m *UserFlowLanguageConfigurationRequestBuilder) Delete(options *UserFlowLanguageConfigurationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *UserFlowLanguageConfigurationRequestBuilder) Delete(options *UserFlowLa
     }
     return nil
 }
-// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
-// Parameters:
-//  - options : Options for the request
+// Get the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
 func (m *UserFlowLanguageConfigurationRequestBuilder) Get(options *UserFlowLanguageConfigurationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserFlowLanguageConfiguration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -190,9 +172,7 @@ func (m *UserFlowLanguageConfigurationRequestBuilder) Get(options *UserFlowLangu
 func (m *UserFlowLanguageConfigurationRequestBuilder) OverridesPages()(*i38edbc2c15228f0a4386c06fe1cd74f5b61b0532c060a337d0d143cee71f76dc.OverridesPagesRequestBuilder) {
     return i38edbc2c15228f0a4386c06fe1cd74f5b61b0532c060a337d0d143cee71f76dc.NewOverridesPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2xUserFlows.item.languages.item.overridesPages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// OverridesPagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2xUserFlows.item.languages.item.overridesPages.item collection
 func (m *UserFlowLanguageConfigurationRequestBuilder) OverridesPagesById(id string)(*id97df1ec1b4e9135f6abf467520dc7657ad6787d1073dfe17aa2b9434dc66f74.UserFlowLanguagePageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -203,9 +183,7 @@ func (m *UserFlowLanguageConfigurationRequestBuilder) OverridesPagesById(id stri
     }
     return id97df1ec1b4e9135f6abf467520dc7657ad6787d1073dfe17aa2b9434dc66f74.NewUserFlowLanguagePageRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
-// Parameters:
-//  - options : Options for the request
+// Patch the languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
 func (m *UserFlowLanguageConfigurationRequestBuilder) Patch(options *UserFlowLanguageConfigurationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesInvoiceLines\{salesInvoiceLine-id}\account
+// accountRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesInvoiceLines\{salesInvoiceLine-id}\account
 type AccountRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AccountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccountRequestBuilderDeleteOptions options for Delete
 type AccountRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AccountRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccountRequestBuilderGetOptions options for Get
 type AccountRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AccountRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get account from financials
+// accountRequestBuilderGetQueryParameters get account from financials
 type AccountRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccountRequestBuilderPatchOptions options for Patch
 type AccountRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Account;
@@ -53,10 +53,7 @@ type AccountRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccountRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccountRequestBuilderInternal instantiates a new AccountRequestBuilder and sets the default values.
 func NewAccountRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccountRequestBuilder) {
     m := &AccountRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAccountRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccountRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccountRequestBuilder instantiates a new AccountRequestBuilder and sets the default values.
 func NewAccountRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property account for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property account for financials
 func (m *AccountRequestBuilder) CreateDeleteRequestInformation(options *AccountRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AccountRequestBuilder) CreateDeleteRequestInformation(options *AccountR
     }
     return requestInfo, nil
 }
-// Get account from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get account from financials
 func (m *AccountRequestBuilder) CreateGetRequestInformation(options *AccountRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AccountRequestBuilder) CreateGetRequestInformation(options *AccountRequ
     }
     return requestInfo, nil
 }
-// Update the navigation property account in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property account in financials
 func (m *AccountRequestBuilder) CreatePatchRequestInformation(options *AccountRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AccountRequestBuilder) CreatePatchRequestInformation(options *AccountRe
     }
     return requestInfo, nil
 }
-// Delete navigation property account for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property account for financials
 func (m *AccountRequestBuilder) Delete(options *AccountRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AccountRequestBuilder) Delete(options *AccountRequestBuilderDeleteOptio
     }
     return nil
 }
-// Get account from financials
-// Parameters:
-//  - options : Options for the request
+// Get get account from financials
 func (m *AccountRequestBuilder) Get(options *AccountRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Account, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AccountRequestBuilder) Get(options *AccountRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Account), nil
 }
-// Update the navigation property account in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property account in financials
 func (m *AccountRequestBuilder) Patch(options *AccountRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

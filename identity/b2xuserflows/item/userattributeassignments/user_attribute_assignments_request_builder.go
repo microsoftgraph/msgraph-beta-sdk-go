@@ -8,7 +8,7 @@ import (
     ic0c2653e1c9764d09e46f0f0c5fbc743c57740a231409bd22b086f6d6d9486a1 "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2xuserflows/item/userattributeassignments/setorder"
 )
 
-// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments
+// userAttributeAssignmentsRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments
 type UserAttributeAssignmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type UserAttributeAssignmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserAttributeAssignmentsRequestBuilderGetOptions options for Get
 type UserAttributeAssignmentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type UserAttributeAssignmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user attribute assignments included in the user flow.
+// userAttributeAssignmentsRequestBuilderGetQueryParameters the user attribute assignments included in the user flow.
 type UserAttributeAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type UserAttributeAssignmentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserAttributeAssignmentsRequestBuilderPostOptions options for Post
 type UserAttributeAssignmentsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlowAttributeAssignment;
@@ -58,10 +58,7 @@ type UserAttributeAssignmentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserAttributeAssignmentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserAttributeAssignmentsRequestBuilderInternal instantiates a new UserAttributeAssignmentsRequestBuilder and sets the default values.
 func NewUserAttributeAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserAttributeAssignmentsRequestBuilder) {
     m := &UserAttributeAssignmentsRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewUserAttributeAssignmentsRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserAttributeAssignmentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserAttributeAssignmentsRequestBuilder instantiates a new UserAttributeAssignmentsRequestBuilder and sets the default values.
 func NewUserAttributeAssignmentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserAttributeAssignmentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserAttributeAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user attribute assignments included in the user flow.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user attribute assignments included in the user flow.
 func (m *UserAttributeAssignmentsRequestBuilder) CreateGetRequestInformation(options *UserAttributeAssignmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *UserAttributeAssignmentsRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The user attribute assignments included in the user flow.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the user attribute assignments included in the user flow.
 func (m *UserAttributeAssignmentsRequestBuilder) CreatePostRequestInformation(options *UserAttributeAssignmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *UserAttributeAssignmentsRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// The user attribute assignments included in the user flow.
-// Parameters:
-//  - options : Options for the request
+// Get the user attribute assignments included in the user flow.
 func (m *UserAttributeAssignmentsRequestBuilder) Get(options *UserAttributeAssignmentsRequestBuilderGetOptions)(*UserAttributeAssignmentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -139,13 +127,11 @@ func (m *UserAttributeAssignmentsRequestBuilder) Get(options *UserAttributeAssig
     }
     return res.(*UserAttributeAssignmentsResponse), nil
 }
-// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\microsoft.graph.getOrder()
+// GetOrder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\microsoft.graph.getOrder()
 func (m *UserAttributeAssignmentsRequestBuilder) GetOrder()(*i03e9955c501e8b7a7a566ae8df5d4af3b9d35ebe56e5c50fcbf80d184f1b1339.GetOrderRequestBuilder) {
     return i03e9955c501e8b7a7a566ae8df5d4af3b9d35ebe56e5c50fcbf80d184f1b1339.NewGetOrderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The user attribute assignments included in the user flow.
-// Parameters:
-//  - options : Options for the request
+// Post the user attribute assignments included in the user flow.
 func (m *UserAttributeAssignmentsRequestBuilder) Post(options *UserAttributeAssignmentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityUserFlowAttributeAssignment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

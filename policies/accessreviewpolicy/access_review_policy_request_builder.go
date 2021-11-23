@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\accessReviewPolicy
+// accessReviewPolicyRequestBuilder builds and executes requests for operations under \policies\accessReviewPolicy
 type AccessReviewPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AccessReviewPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessReviewPolicyRequestBuilderDeleteOptions options for Delete
 type AccessReviewPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AccessReviewPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessReviewPolicyRequestBuilderGetOptions options for Get
 type AccessReviewPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AccessReviewPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy that contains directory-level access review settings.
+// accessReviewPolicyRequestBuilderGetQueryParameters the policy that contains directory-level access review settings.
 type AccessReviewPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessReviewPolicyRequestBuilderPatchOptions options for Patch
 type AccessReviewPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewPolicy;
@@ -53,10 +53,7 @@ type AccessReviewPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccessReviewPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewPolicyRequestBuilderInternal instantiates a new AccessReviewPolicyRequestBuilder and sets the default values.
 func NewAccessReviewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewPolicyRequestBuilder) {
     m := &AccessReviewPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAccessReviewPolicyRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessReviewPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewPolicyRequestBuilder instantiates a new AccessReviewPolicyRequestBuilder and sets the default values.
 func NewAccessReviewPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy that contains directory-level access review settings.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the policy that contains directory-level access review settings.
 func (m *AccessReviewPolicyRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AccessReviewPolicyRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// The policy that contains directory-level access review settings.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy that contains directory-level access review settings.
 func (m *AccessReviewPolicyRequestBuilder) CreateGetRequestInformation(options *AccessReviewPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AccessReviewPolicyRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The policy that contains directory-level access review settings.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the policy that contains directory-level access review settings.
 func (m *AccessReviewPolicyRequestBuilder) CreatePatchRequestInformation(options *AccessReviewPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AccessReviewPolicyRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// The policy that contains directory-level access review settings.
-// Parameters:
-//  - options : Options for the request
+// Delete the policy that contains directory-level access review settings.
 func (m *AccessReviewPolicyRequestBuilder) Delete(options *AccessReviewPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AccessReviewPolicyRequestBuilder) Delete(options *AccessReviewPolicyReq
     }
     return nil
 }
-// The policy that contains directory-level access review settings.
-// Parameters:
-//  - options : Options for the request
+// Get the policy that contains directory-level access review settings.
 func (m *AccessReviewPolicyRequestBuilder) Get(options *AccessReviewPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AccessReviewPolicyRequestBuilder) Get(options *AccessReviewPolicyReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewPolicy), nil
 }
-// The policy that contains directory-level access review settings.
-// Parameters:
-//  - options : Options for the request
+// Patch the policy that contains directory-level access review settings.
 func (m *AccessReviewPolicyRequestBuilder) Patch(options *AccessReviewPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

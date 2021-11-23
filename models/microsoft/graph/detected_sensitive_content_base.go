@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// detectedSensitiveContentBase 
 type DetectedSensitiveContentBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type DetectedSensitiveContentBase struct {
     // 
     uniqueCount *int32;
 }
-// Instantiates a new detectedSensitiveContentBase and sets the default values.
+// NewDetectedSensitiveContentBase instantiates a new detectedSensitiveContentBase and sets the default values.
 func NewDetectedSensitiveContentBase()(*DetectedSensitiveContentBase) {
     m := &DetectedSensitiveContentBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DetectedSensitiveContentBase) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *DetectedSensitiveContentBase) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// Gets the confidence property value. 
+// GetConfidence gets the confidence property value. 
 func (m *DetectedSensitiveContentBase) GetConfidence()(*int32) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *DetectedSensitiveContentBase) GetConfidence()(*int32) {
         return m.confidence
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *DetectedSensitiveContentBase) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *DetectedSensitiveContentBase) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the id property value. 
+// GetId gets the id property value. 
 func (m *DetectedSensitiveContentBase) GetId()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *DetectedSensitiveContentBase) GetId()(*string) {
         return m.id
     }
 }
-// Gets the recommendedConfidence property value. 
+// GetRecommendedConfidence gets the recommendedConfidence property value. 
 func (m *DetectedSensitiveContentBase) GetRecommendedConfidence()(*int32) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *DetectedSensitiveContentBase) GetRecommendedConfidence()(*int32) {
         return m.recommendedConfidence
     }
 }
-// Gets the uniqueCount property value. 
+// GetUniqueCount gets the uniqueCount property value. 
 func (m *DetectedSensitiveContentBase) GetUniqueCount()(*int32) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *DetectedSensitiveContentBase) GetUniqueCount()(*int32) {
         return m.uniqueCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DetectedSensitiveContentBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["confidence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,9 +132,7 @@ func (m *DetectedSensitiveContentBase) GetFieldDeserializers()(map[string]func(i
 func (m *DetectedSensitiveContentBase) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DetectedSensitiveContentBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("confidence", m.GetConfidence())
@@ -174,39 +172,27 @@ func (m *DetectedSensitiveContentBase) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DetectedSensitiveContentBase) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the confidence property value. 
-// Parameters:
-//  - value : Value to set for the confidence property.
+// SetConfidence sets the confidence property value. 
 func (m *DetectedSensitiveContentBase) SetConfidence(value *int32)() {
     m.confidence = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *DetectedSensitiveContentBase) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the id property value. 
-// Parameters:
-//  - value : Value to set for the id property.
+// SetId sets the id property value. 
 func (m *DetectedSensitiveContentBase) SetId(value *string)() {
     m.id = value
 }
-// Sets the recommendedConfidence property value. 
-// Parameters:
-//  - value : Value to set for the recommendedConfidence property.
+// SetRecommendedConfidence sets the recommendedConfidence property value. 
 func (m *DetectedSensitiveContentBase) SetRecommendedConfidence(value *int32)() {
     m.recommendedConfidence = value
 }
-// Sets the uniqueCount property value. 
-// Parameters:
-//  - value : Value to set for the uniqueCount property.
+// SetUniqueCount sets the uniqueCount property value. 
 func (m *DetectedSensitiveContentBase) SetUniqueCount(value *int32)() {
     m.uniqueCount = value
 }

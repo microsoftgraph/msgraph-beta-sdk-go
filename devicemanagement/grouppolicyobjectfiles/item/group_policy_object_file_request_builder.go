@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyObjectFiles\{groupPolicyObjectFile-id}
+// groupPolicyObjectFileRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyObjectFiles\{groupPolicyObjectFile-id}
 type GroupPolicyObjectFileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GroupPolicyObjectFileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupPolicyObjectFileRequestBuilderDeleteOptions options for Delete
 type GroupPolicyObjectFileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type GroupPolicyObjectFileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupPolicyObjectFileRequestBuilderGetOptions options for Get
 type GroupPolicyObjectFileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type GroupPolicyObjectFileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of Group Policy Object files uploaded.
+// groupPolicyObjectFileRequestBuilderGetQueryParameters a list of Group Policy Object files uploaded.
 type GroupPolicyObjectFileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupPolicyObjectFileRequestBuilderPatchOptions options for Patch
 type GroupPolicyObjectFileRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyObjectFile;
@@ -53,10 +53,7 @@ type GroupPolicyObjectFileRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupPolicyObjectFileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyObjectFileRequestBuilderInternal instantiates a new GroupPolicyObjectFileRequestBuilder and sets the default values.
 func NewGroupPolicyObjectFileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyObjectFileRequestBuilder) {
     m := &GroupPolicyObjectFileRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewGroupPolicyObjectFileRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupPolicyObjectFileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyObjectFileRequestBuilder instantiates a new GroupPolicyObjectFileRequestBuilder and sets the default values.
 func NewGroupPolicyObjectFileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyObjectFileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyObjectFileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of Group Policy Object files uploaded.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a list of Group Policy Object files uploaded.
 func (m *GroupPolicyObjectFileRequestBuilder) CreateDeleteRequestInformation(options *GroupPolicyObjectFileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *GroupPolicyObjectFileRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// A list of Group Policy Object files uploaded.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of Group Policy Object files uploaded.
 func (m *GroupPolicyObjectFileRequestBuilder) CreateGetRequestInformation(options *GroupPolicyObjectFileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *GroupPolicyObjectFileRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// A list of Group Policy Object files uploaded.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a list of Group Policy Object files uploaded.
 func (m *GroupPolicyObjectFileRequestBuilder) CreatePatchRequestInformation(options *GroupPolicyObjectFileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *GroupPolicyObjectFileRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// A list of Group Policy Object files uploaded.
-// Parameters:
-//  - options : Options for the request
+// Delete a list of Group Policy Object files uploaded.
 func (m *GroupPolicyObjectFileRequestBuilder) Delete(options *GroupPolicyObjectFileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *GroupPolicyObjectFileRequestBuilder) Delete(options *GroupPolicyObjectF
     }
     return nil
 }
-// A list of Group Policy Object files uploaded.
-// Parameters:
-//  - options : Options for the request
+// Get a list of Group Policy Object files uploaded.
 func (m *GroupPolicyObjectFileRequestBuilder) Get(options *GroupPolicyObjectFileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyObjectFile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *GroupPolicyObjectFileRequestBuilder) Get(options *GroupPolicyObjectFile
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyObjectFile), nil
 }
-// A list of Group Policy Object files uploaded.
-// Parameters:
-//  - options : Options for the request
+// Patch a list of Group Policy Object files uploaded.
 func (m *GroupPolicyObjectFileRequestBuilder) Patch(options *GroupPolicyObjectFileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

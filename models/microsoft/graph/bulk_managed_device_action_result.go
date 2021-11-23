@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// bulkManagedDeviceActionResult 
 type BulkManagedDeviceActionResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type BulkManagedDeviceActionResult struct {
     // Successful devices
     successfulDeviceIds []string;
 }
-// Instantiates a new bulkManagedDeviceActionResult and sets the default values.
+// NewBulkManagedDeviceActionResult instantiates a new bulkManagedDeviceActionResult and sets the default values.
 func NewBulkManagedDeviceActionResult()(*BulkManagedDeviceActionResult) {
     m := &BulkManagedDeviceActionResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkManagedDeviceActionResult) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *BulkManagedDeviceActionResult) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// Gets the failedDeviceIds property value. Failed devices
+// GetFailedDeviceIds gets the failedDeviceIds property value. Failed devices
 func (m *BulkManagedDeviceActionResult) GetFailedDeviceIds()([]string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *BulkManagedDeviceActionResult) GetFailedDeviceIds()([]string) {
         return m.failedDeviceIds
     }
 }
-// Gets the notFoundDeviceIds property value. Not found devices
+// GetNotFoundDeviceIds gets the notFoundDeviceIds property value. Not found devices
 func (m *BulkManagedDeviceActionResult) GetNotFoundDeviceIds()([]string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *BulkManagedDeviceActionResult) GetNotFoundDeviceIds()([]string) {
         return m.notFoundDeviceIds
     }
 }
-// Gets the notSupportedDeviceIds property value. Not supported devices
+// GetNotSupportedDeviceIds gets the notSupportedDeviceIds property value. Not supported devices
 func (m *BulkManagedDeviceActionResult) GetNotSupportedDeviceIds()([]string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *BulkManagedDeviceActionResult) GetNotSupportedDeviceIds()([]string) {
         return m.notSupportedDeviceIds
     }
 }
-// Gets the successfulDeviceIds property value. Successful devices
+// GetSuccessfulDeviceIds gets the successfulDeviceIds property value. Successful devices
 func (m *BulkManagedDeviceActionResult) GetSuccessfulDeviceIds()([]string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *BulkManagedDeviceActionResult) GetSuccessfulDeviceIds()([]string) {
         return m.successfulDeviceIds
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["failedDeviceIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,9 +128,7 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
 func (m *BulkManagedDeviceActionResult) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *BulkManagedDeviceActionResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteCollectionOfStringValues("failedDeviceIds", m.GetFailedDeviceIds())
@@ -164,33 +162,23 @@ func (m *BulkManagedDeviceActionResult) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkManagedDeviceActionResult) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the failedDeviceIds property value. Failed devices
-// Parameters:
-//  - value : Value to set for the failedDeviceIds property.
+// SetFailedDeviceIds sets the failedDeviceIds property value. Failed devices
 func (m *BulkManagedDeviceActionResult) SetFailedDeviceIds(value []string)() {
     m.failedDeviceIds = value
 }
-// Sets the notFoundDeviceIds property value. Not found devices
-// Parameters:
-//  - value : Value to set for the notFoundDeviceIds property.
+// SetNotFoundDeviceIds sets the notFoundDeviceIds property value. Not found devices
 func (m *BulkManagedDeviceActionResult) SetNotFoundDeviceIds(value []string)() {
     m.notFoundDeviceIds = value
 }
-// Sets the notSupportedDeviceIds property value. Not supported devices
-// Parameters:
-//  - value : Value to set for the notSupportedDeviceIds property.
+// SetNotSupportedDeviceIds sets the notSupportedDeviceIds property value. Not supported devices
 func (m *BulkManagedDeviceActionResult) SetNotSupportedDeviceIds(value []string)() {
     m.notSupportedDeviceIds = value
 }
-// Sets the successfulDeviceIds property value. Successful devices
-// Parameters:
-//  - value : Value to set for the successfulDeviceIds property.
+// SetSuccessfulDeviceIds sets the successfulDeviceIds property value. Successful devices
 func (m *BulkManagedDeviceActionResult) SetSuccessfulDeviceIds(value []string)() {
     m.successfulDeviceIds = value
 }

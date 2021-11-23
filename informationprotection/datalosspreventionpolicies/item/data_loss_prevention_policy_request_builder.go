@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \informationProtection\dataLossPreventionPolicies\{dataLossPreventionPolicy-id}
+// dataLossPreventionPolicyRequestBuilder builds and executes requests for operations under \informationProtection\dataLossPreventionPolicies\{dataLossPreventionPolicy-id}
 type DataLossPreventionPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DataLossPreventionPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DataLossPreventionPolicyRequestBuilderDeleteOptions options for Delete
 type DataLossPreventionPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DataLossPreventionPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DataLossPreventionPolicyRequestBuilderGetOptions options for Get
 type DataLossPreventionPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DataLossPreventionPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get dataLossPreventionPolicies from informationProtection
+// dataLossPreventionPolicyRequestBuilderGetQueryParameters get dataLossPreventionPolicies from informationProtection
 type DataLossPreventionPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DataLossPreventionPolicyRequestBuilderPatchOptions options for Patch
 type DataLossPreventionPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataLossPreventionPolicy;
@@ -53,10 +53,7 @@ type DataLossPreventionPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DataLossPreventionPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDataLossPreventionPolicyRequestBuilderInternal instantiates a new DataLossPreventionPolicyRequestBuilder and sets the default values.
 func NewDataLossPreventionPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DataLossPreventionPolicyRequestBuilder) {
     m := &DataLossPreventionPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDataLossPreventionPolicyRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DataLossPreventionPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDataLossPreventionPolicyRequestBuilder instantiates a new DataLossPreventionPolicyRequestBuilder and sets the default values.
 func NewDataLossPreventionPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DataLossPreventionPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDataLossPreventionPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property dataLossPreventionPolicies for informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property dataLossPreventionPolicies for informationProtection
 func (m *DataLossPreventionPolicyRequestBuilder) CreateDeleteRequestInformation(options *DataLossPreventionPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DataLossPreventionPolicyRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// Get dataLossPreventionPolicies from informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get dataLossPreventionPolicies from informationProtection
 func (m *DataLossPreventionPolicyRequestBuilder) CreateGetRequestInformation(options *DataLossPreventionPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DataLossPreventionPolicyRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Update the navigation property dataLossPreventionPolicies in informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property dataLossPreventionPolicies in informationProtection
 func (m *DataLossPreventionPolicyRequestBuilder) CreatePatchRequestInformation(options *DataLossPreventionPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DataLossPreventionPolicyRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// Delete navigation property dataLossPreventionPolicies for informationProtection
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property dataLossPreventionPolicies for informationProtection
 func (m *DataLossPreventionPolicyRequestBuilder) Delete(options *DataLossPreventionPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DataLossPreventionPolicyRequestBuilder) Delete(options *DataLossPrevent
     }
     return nil
 }
-// Get dataLossPreventionPolicies from informationProtection
-// Parameters:
-//  - options : Options for the request
+// Get get dataLossPreventionPolicies from informationProtection
 func (m *DataLossPreventionPolicyRequestBuilder) Get(options *DataLossPreventionPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataLossPreventionPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DataLossPreventionPolicyRequestBuilder) Get(options *DataLossPrevention
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DataLossPreventionPolicy), nil
 }
-// Update the navigation property dataLossPreventionPolicies in informationProtection
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property dataLossPreventionPolicies in informationProtection
 func (m *DataLossPreventionPolicyRequestBuilder) Patch(options *DataLossPreventionPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

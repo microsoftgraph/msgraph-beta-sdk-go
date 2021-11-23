@@ -8,7 +8,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \chats
+// chatsRequestBuilder builds and executes requests for operations under \chats
 type ChatsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ChatsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ChatsRequestBuilderGetOptions options for Get
 type ChatsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type ChatsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from chats
+// chatsRequestBuilderGetQueryParameters get entities from chats
 type ChatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type ChatsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ChatsRequestBuilderPostOptions options for Post
 type ChatsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Chat;
@@ -58,14 +58,11 @@ type ChatsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \chats\microsoft.graph.allMessages()
+// AllMessages builds and executes requests for operations under \chats\microsoft.graph.allMessages()
 func (m *ChatsRequestBuilder) AllMessages()(*i53f5d6ac5d19da99e4d848f0d84293b898614b5041c3215a25d1e5dc57339235.AllMessagesRequestBuilder) {
     return i53f5d6ac5d19da99e4d848f0d84293b898614b5041c3215a25d1e5dc57339235.NewAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ChatsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatsRequestBuilderInternal instantiates a new ChatsRequestBuilder and sets the default values.
 func NewChatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatsRequestBuilder) {
     m := &ChatsRequestBuilder{
     }
@@ -78,18 +75,13 @@ func NewChatsRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChatsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatsRequestBuilder instantiates a new ChatsRequestBuilder and sets the default values.
 func NewChatsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChatsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from chats
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from chats
 func (m *ChatsRequestBuilder) CreateGetRequestInformation(options *ChatsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +101,7 @@ func (m *ChatsRequestBuilder) CreateGetRequestInformation(options *ChatsRequestB
     }
     return requestInfo, nil
 }
-// Add new entity to chats
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to chats
 func (m *ChatsRequestBuilder) CreatePostRequestInformation(options *ChatsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *ChatsRequestBuilder) CreatePostRequestInformation(options *ChatsRequest
     }
     return requestInfo, nil
 }
-// Get entities from chats
-// Parameters:
-//  - options : Options for the request
+// Get get entities from chats
 func (m *ChatsRequestBuilder) Get(options *ChatsRequestBuilderGetOptions)(*ChatsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -143,13 +131,11 @@ func (m *ChatsRequestBuilder) Get(options *ChatsRequestBuilderGetOptions)(*Chats
     }
     return res.(*ChatsResponse), nil
 }
-// Builds and executes requests for operations under \chats\microsoft.graph.getAllMessages()
+// GetAllMessages builds and executes requests for operations under \chats\microsoft.graph.getAllMessages()
 func (m *ChatsRequestBuilder) GetAllMessages()(*i3ffed895f21daba82463bd2903d50fce085e5f77677698c86d175dc2cc3323b9.GetAllMessagesRequestBuilder) {
     return i3ffed895f21daba82463bd2903d50fce085e5f77677698c86d175dc2cc3323b9.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to chats
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to chats
 func (m *ChatsRequestBuilder) Post(options *ChatsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Chat, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

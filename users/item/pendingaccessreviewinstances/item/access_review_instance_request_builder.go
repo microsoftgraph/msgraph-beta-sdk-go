@@ -17,7 +17,7 @@ import (
     i6af551f0724120edad9980686a562c6ee0ec8f50a04abb46cb03bf7eacb81ac5 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item/contactedreviewers/item"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\{accessReviewInstance-id}
+// accessReviewInstanceRequestBuilder builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\{accessReviewInstance-id}
 type AccessReviewInstanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type AccessReviewInstanceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessReviewInstanceRequestBuilderDeleteOptions options for Delete
 type AccessReviewInstanceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -35,7 +35,7 @@ type AccessReviewInstanceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessReviewInstanceRequestBuilderGetOptions options for Get
 type AccessReviewInstanceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -46,14 +46,14 @@ type AccessReviewInstanceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
+// accessReviewInstanceRequestBuilderGetQueryParameters navigation property to get list of access reviews pending approval by reviewer.
 type AccessReviewInstanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessReviewInstanceRequestBuilderPatchOptions options for Patch
 type AccessReviewInstanceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstance;
@@ -73,10 +73,7 @@ func (m *AccessReviewInstanceRequestBuilder) ApplyDecisions()(*i4b5e7a16aef84786
 func (m *AccessReviewInstanceRequestBuilder) BatchRecordDecisions()(*i2c33bdddccade847db8f95ca5491389dc559779eb3443e04a0bfcb0e6e3fcc57.BatchRecordDecisionsRequestBuilder) {
     return i2c33bdddccade847db8f95ca5491389dc559779eb3443e04a0bfcb0e6e3fcc57.NewBatchRecordDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new AccessReviewInstanceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewInstanceRequestBuilderInternal instantiates a new AccessReviewInstanceRequestBuilder and sets the default values.
 func NewAccessReviewInstanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewInstanceRequestBuilder) {
     m := &AccessReviewInstanceRequestBuilder{
     }
@@ -89,10 +86,7 @@ func NewAccessReviewInstanceRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessReviewInstanceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewInstanceRequestBuilder instantiates a new AccessReviewInstanceRequestBuilder and sets the default values.
 func NewAccessReviewInstanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewInstanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -101,9 +95,7 @@ func NewAccessReviewInstanceRequestBuilder(rawUrl string, requestAdapter ida96af
 func (m *AccessReviewInstanceRequestBuilder) ContactedReviewers()(*i157fdf67ef27b693ebfa46b836a81baa53b2fffe51cf8faa76f9ff1c2be3e533.ContactedReviewersRequestBuilder) {
     return i157fdf67ef27b693ebfa46b836a81baa53b2fffe51cf8faa76f9ff1c2be3e533.NewContactedReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.pendingAccessReviewInstances.item.contactedReviewers.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ContactedReviewersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.pendingAccessReviewInstances.item.contactedReviewers.item collection
 func (m *AccessReviewInstanceRequestBuilder) ContactedReviewersById(id string)(*i6af551f0724120edad9980686a562c6ee0ec8f50a04abb46cb03bf7eacb81ac5.AccessReviewReviewerRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -114,9 +106,7 @@ func (m *AccessReviewInstanceRequestBuilder) ContactedReviewersById(id string)(*
     }
     return i6af551f0724120edad9980686a562c6ee0ec8f50a04abb46cb03bf7eacb81ac5.NewAccessReviewReviewerRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation navigation property to get list of access reviews pending approval by reviewer.
 func (m *AccessReviewInstanceRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewInstanceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,9 +123,7 @@ func (m *AccessReviewInstanceRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation navigation property to get list of access reviews pending approval by reviewer.
 func (m *AccessReviewInstanceRequestBuilder) CreateGetRequestInformation(options *AccessReviewInstanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -155,9 +143,7 @@ func (m *AccessReviewInstanceRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation navigation property to get list of access reviews pending approval by reviewer.
 func (m *AccessReviewInstanceRequestBuilder) CreatePatchRequestInformation(options *AccessReviewInstanceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -178,9 +164,7 @@ func (m *AccessReviewInstanceRequestBuilder) CreatePatchRequestInformation(optio
 func (m *AccessReviewInstanceRequestBuilder) Decisions()(*ibcccde7c49f5c5bbcb5ceea96760dde9fbef276461349ba11507419b629f04e6.DecisionsRequestBuilder) {
     return ibcccde7c49f5c5bbcb5ceea96760dde9fbef276461349ba11507419b629f04e6.NewDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.pendingAccessReviewInstances.item.decisions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DecisionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.pendingAccessReviewInstances.item.decisions.item collection
 func (m *AccessReviewInstanceRequestBuilder) DecisionsById(id string)(*i0b5d9b80b48fdacc03dda0d4899b47787af4703b66ab3b6c99f6c290394d6f15.AccessReviewInstanceDecisionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -194,9 +178,7 @@ func (m *AccessReviewInstanceRequestBuilder) DecisionsById(id string)(*i0b5d9b80
 func (m *AccessReviewInstanceRequestBuilder) Definition()(*i29e3e31b50fe024cbfcedaf85025abb3ad402366b9a1338c8b8bc0d397a92401.DefinitionRequestBuilder) {
     return i29e3e31b50fe024cbfcedaf85025abb3ad402366b9a1338c8b8bc0d397a92401.NewDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
-// Parameters:
-//  - options : Options for the request
+// Delete navigation property to get list of access reviews pending approval by reviewer.
 func (m *AccessReviewInstanceRequestBuilder) Delete(options *AccessReviewInstanceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -208,9 +190,7 @@ func (m *AccessReviewInstanceRequestBuilder) Delete(options *AccessReviewInstanc
     }
     return nil
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
-// Parameters:
-//  - options : Options for the request
+// Get navigation property to get list of access reviews pending approval by reviewer.
 func (m *AccessReviewInstanceRequestBuilder) Get(options *AccessReviewInstanceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstance, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -222,9 +202,7 @@ func (m *AccessReviewInstanceRequestBuilder) Get(options *AccessReviewInstanceRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstance), nil
 }
-// Navigation property to get list of access reviews pending approval by reviewer.
-// Parameters:
-//  - options : Options for the request
+// Patch navigation property to get list of access reviews pending approval by reviewer.
 func (m *AccessReviewInstanceRequestBuilder) Patch(options *AccessReviewInstanceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

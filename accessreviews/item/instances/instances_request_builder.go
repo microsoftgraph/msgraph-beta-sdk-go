@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \accessReviews\{accessReview-id}\instances
+// instancesRequestBuilder builds and executes requests for operations under \accessReviews\{accessReview-id}\instances
 type InstancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type InstancesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// InstancesRequestBuilderGetOptions options for Get
 type InstancesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type InstancesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+// instancesRequestBuilderGetQueryParameters the collection of access reviews instances past, present and future, if this object is a recurring access review.
 type InstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type InstancesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// InstancesRequestBuilderPostOptions options for Post
 type InstancesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReview;
@@ -56,10 +56,7 @@ type InstancesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new InstancesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInstancesRequestBuilderInternal instantiates a new InstancesRequestBuilder and sets the default values.
 func NewInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InstancesRequestBuilder) {
     m := &InstancesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewInstancesRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new InstancesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInstancesRequestBuilder instantiates a new InstancesRequestBuilder and sets the default values.
 func NewInstancesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InstancesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInstancesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of access reviews instances past, present and future, if this object is a recurring access review.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of access reviews instances past, present and future, if this object is a recurring access review.
 func (m *InstancesRequestBuilder) CreateGetRequestInformation(options *InstancesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *InstancesRequestBuilder) CreateGetRequestInformation(options *Instances
     }
     return requestInfo, nil
 }
-// The collection of access reviews instances past, present and future, if this object is a recurring access review.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of access reviews instances past, present and future, if this object is a recurring access review.
 func (m *InstancesRequestBuilder) CreatePostRequestInformation(options *InstancesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *InstancesRequestBuilder) CreatePostRequestInformation(options *Instance
     }
     return requestInfo, nil
 }
-// The collection of access reviews instances past, present and future, if this object is a recurring access review.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of access reviews instances past, present and future, if this object is a recurring access review.
 func (m *InstancesRequestBuilder) Get(options *InstancesRequestBuilderGetOptions)(*InstancesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *InstancesRequestBuilder) Get(options *InstancesRequestBuilderGetOptions
     }
     return res.(*InstancesResponse), nil
 }
-// The collection of access reviews instances past, present and future, if this object is a recurring access review.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of access reviews instances past, present and future, if this object is a recurring access review.
 func (m *InstancesRequestBuilder) Post(options *InstancesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReview, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

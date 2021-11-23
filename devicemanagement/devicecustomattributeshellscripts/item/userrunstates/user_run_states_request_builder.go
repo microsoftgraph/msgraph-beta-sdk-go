@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates
+// userRunStatesRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates
 type UserRunStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserRunStatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserRunStatesRequestBuilderGetOptions options for Get
 type UserRunStatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserRunStatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of run states for this script across all users.
+// userRunStatesRequestBuilderGetQueryParameters list of run states for this script across all users.
 type UserRunStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserRunStatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserRunStatesRequestBuilderPostOptions options for Post
 type UserRunStatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptUserState;
@@ -56,10 +56,7 @@ type UserRunStatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserRunStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserRunStatesRequestBuilderInternal instantiates a new UserRunStatesRequestBuilder and sets the default values.
 func NewUserRunStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserRunStatesRequestBuilder) {
     m := &UserRunStatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserRunStatesRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserRunStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserRunStatesRequestBuilder instantiates a new UserRunStatesRequestBuilder and sets the default values.
 func NewUserRunStatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserRunStatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserRunStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of run states for this script across all users.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of run states for this script across all users.
 func (m *UserRunStatesRequestBuilder) CreateGetRequestInformation(options *UserRunStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserRunStatesRequestBuilder) CreateGetRequestInformation(options *UserR
     }
     return requestInfo, nil
 }
-// List of run states for this script across all users.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of run states for this script across all users.
 func (m *UserRunStatesRequestBuilder) CreatePostRequestInformation(options *UserRunStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserRunStatesRequestBuilder) CreatePostRequestInformation(options *User
     }
     return requestInfo, nil
 }
-// List of run states for this script across all users.
-// Parameters:
-//  - options : Options for the request
+// Get list of run states for this script across all users.
 func (m *UserRunStatesRequestBuilder) Get(options *UserRunStatesRequestBuilderGetOptions)(*UserRunStatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserRunStatesRequestBuilder) Get(options *UserRunStatesRequestBuilderGe
     }
     return res.(*UserRunStatesResponse), nil
 }
-// List of run states for this script across all users.
-// Parameters:
-//  - options : Options for the request
+// Post list of run states for this script across all users.
 func (m *UserRunStatesRequestBuilder) Post(options *UserRunStatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptUserState, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \programControlTypes\{programControlType-id}
+// programControlTypeRequestBuilder builds and executes requests for operations under \programControlTypes\{programControlType-id}
 type ProgramControlTypeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ProgramControlTypeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ProgramControlTypeRequestBuilderDeleteOptions options for Delete
 type ProgramControlTypeRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ProgramControlTypeRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ProgramControlTypeRequestBuilderGetOptions options for Get
 type ProgramControlTypeRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ProgramControlTypeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from programControlTypes by key
+// programControlTypeRequestBuilderGetQueryParameters get entity from programControlTypes by key
 type ProgramControlTypeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ProgramControlTypeRequestBuilderPatchOptions options for Patch
 type ProgramControlTypeRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProgramControlType;
@@ -53,10 +53,7 @@ type ProgramControlTypeRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ProgramControlTypeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProgramControlTypeRequestBuilderInternal instantiates a new ProgramControlTypeRequestBuilder and sets the default values.
 func NewProgramControlTypeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProgramControlTypeRequestBuilder) {
     m := &ProgramControlTypeRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewProgramControlTypeRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ProgramControlTypeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProgramControlTypeRequestBuilder instantiates a new ProgramControlTypeRequestBuilder and sets the default values.
 func NewProgramControlTypeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProgramControlTypeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProgramControlTypeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from programControlTypes
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from programControlTypes
 func (m *ProgramControlTypeRequestBuilder) CreateDeleteRequestInformation(options *ProgramControlTypeRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ProgramControlTypeRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get entity from programControlTypes by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from programControlTypes by key
 func (m *ProgramControlTypeRequestBuilder) CreateGetRequestInformation(options *ProgramControlTypeRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ProgramControlTypeRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Update entity in programControlTypes
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in programControlTypes
 func (m *ProgramControlTypeRequestBuilder) CreatePatchRequestInformation(options *ProgramControlTypeRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ProgramControlTypeRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete entity from programControlTypes
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from programControlTypes
 func (m *ProgramControlTypeRequestBuilder) Delete(options *ProgramControlTypeRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ProgramControlTypeRequestBuilder) Delete(options *ProgramControlTypeReq
     }
     return nil
 }
-// Get entity from programControlTypes by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from programControlTypes by key
 func (m *ProgramControlTypeRequestBuilder) Get(options *ProgramControlTypeRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProgramControlType, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ProgramControlTypeRequestBuilder) Get(options *ProgramControlTypeReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProgramControlType), nil
 }
-// Update entity in programControlTypes
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in programControlTypes
 func (m *ProgramControlTypeRequestBuilder) Patch(options *ProgramControlTypeRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

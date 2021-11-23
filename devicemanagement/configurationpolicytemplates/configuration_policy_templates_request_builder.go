@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\configurationPolicyTemplates
+// configurationPolicyTemplatesRequestBuilder builds and executes requests for operations under \deviceManagement\configurationPolicyTemplates
 type ConfigurationPolicyTemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConfigurationPolicyTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ConfigurationPolicyTemplatesRequestBuilderGetOptions options for Get
 type ConfigurationPolicyTemplatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ConfigurationPolicyTemplatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of all templates
+// configurationPolicyTemplatesRequestBuilderGetQueryParameters list of all templates
 type ConfigurationPolicyTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ConfigurationPolicyTemplatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ConfigurationPolicyTemplatesRequestBuilderPostOptions options for Post
 type ConfigurationPolicyTemplatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicyTemplate;
@@ -56,10 +56,7 @@ type ConfigurationPolicyTemplatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConfigurationPolicyTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConfigurationPolicyTemplatesRequestBuilderInternal instantiates a new ConfigurationPolicyTemplatesRequestBuilder and sets the default values.
 func NewConfigurationPolicyTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConfigurationPolicyTemplatesRequestBuilder) {
     m := &ConfigurationPolicyTemplatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewConfigurationPolicyTemplatesRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConfigurationPolicyTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConfigurationPolicyTemplatesRequestBuilder instantiates a new ConfigurationPolicyTemplatesRequestBuilder and sets the default values.
 func NewConfigurationPolicyTemplatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConfigurationPolicyTemplatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConfigurationPolicyTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of all templates
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of all templates
 func (m *ConfigurationPolicyTemplatesRequestBuilder) CreateGetRequestInformation(options *ConfigurationPolicyTemplatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ConfigurationPolicyTemplatesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// List of all templates
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of all templates
 func (m *ConfigurationPolicyTemplatesRequestBuilder) CreatePostRequestInformation(options *ConfigurationPolicyTemplatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ConfigurationPolicyTemplatesRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// List of all templates
-// Parameters:
-//  - options : Options for the request
+// Get list of all templates
 func (m *ConfigurationPolicyTemplatesRequestBuilder) Get(options *ConfigurationPolicyTemplatesRequestBuilderGetOptions)(*ConfigurationPolicyTemplatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ConfigurationPolicyTemplatesRequestBuilder) Get(options *ConfigurationP
     }
     return res.(*ConfigurationPolicyTemplatesResponse), nil
 }
-// List of all templates
-// Parameters:
-//  - options : Options for the request
+// Post list of all templates
 func (m *ConfigurationPolicyTemplatesRequestBuilder) Post(options *ConfigurationPolicyTemplatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicyTemplate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

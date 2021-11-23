@@ -9,7 +9,7 @@ import (
     ie810f95f442b7e5b0679893cb8cade4ba1695eaa96df7ba757075302d6fd2294 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deponboardingsettings/item/enrollmentprofiles/item/exportmobileconfig"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}
+// enrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}
 type EnrollmentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type EnrollmentProfileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EnrollmentProfileRequestBuilderDeleteOptions options for Delete
 type EnrollmentProfileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type EnrollmentProfileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EnrollmentProfileRequestBuilderGetOptions options for Get
 type EnrollmentProfileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type EnrollmentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The enrollment profiles.
+// enrollmentProfileRequestBuilderGetQueryParameters the enrollment profiles.
 type EnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EnrollmentProfileRequestBuilderPatchOptions options for Patch
 type EnrollmentProfileRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnrollmentProfile;
@@ -56,10 +56,7 @@ type EnrollmentProfileRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EnrollmentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEnrollmentProfileRequestBuilderInternal instantiates a new EnrollmentProfileRequestBuilder and sets the default values.
 func NewEnrollmentProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EnrollmentProfileRequestBuilder) {
     m := &EnrollmentProfileRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewEnrollmentProfileRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EnrollmentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEnrollmentProfileRequestBuilder instantiates a new EnrollmentProfileRequestBuilder and sets the default values.
 func NewEnrollmentProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EnrollmentProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEnrollmentProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The enrollment profiles.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the enrollment profiles.
 func (m *EnrollmentProfileRequestBuilder) CreateDeleteRequestInformation(options *EnrollmentProfileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *EnrollmentProfileRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// The enrollment profiles.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the enrollment profiles.
 func (m *EnrollmentProfileRequestBuilder) CreateGetRequestInformation(options *EnrollmentProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *EnrollmentProfileRequestBuilder) CreateGetRequestInformation(options *E
     }
     return requestInfo, nil
 }
-// The enrollment profiles.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the enrollment profiles.
 func (m *EnrollmentProfileRequestBuilder) CreatePatchRequestInformation(options *EnrollmentProfileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +130,7 @@ func (m *EnrollmentProfileRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The enrollment profiles.
-// Parameters:
-//  - options : Options for the request
+// Delete the enrollment profiles.
 func (m *EnrollmentProfileRequestBuilder) Delete(options *EnrollmentProfileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -156,13 +142,11 @@ func (m *EnrollmentProfileRequestBuilder) Delete(options *EnrollmentProfileReque
     }
     return nil
 }
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}\microsoft.graph.exportMobileConfig()
+// ExportMobileConfig builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}\microsoft.graph.exportMobileConfig()
 func (m *EnrollmentProfileRequestBuilder) ExportMobileConfig()(*ie810f95f442b7e5b0679893cb8cade4ba1695eaa96df7ba757075302d6fd2294.ExportMobileConfigRequestBuilder) {
     return ie810f95f442b7e5b0679893cb8cade4ba1695eaa96df7ba757075302d6fd2294.NewExportMobileConfigRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The enrollment profiles.
-// Parameters:
-//  - options : Options for the request
+// Get the enrollment profiles.
 func (m *EnrollmentProfileRequestBuilder) Get(options *EnrollmentProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnrollmentProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -174,9 +158,7 @@ func (m *EnrollmentProfileRequestBuilder) Get(options *EnrollmentProfileRequestB
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnrollmentProfile), nil
 }
-// The enrollment profiles.
-// Parameters:
-//  - options : Options for the request
+// Patch the enrollment profiles.
 func (m *EnrollmentProfileRequestBuilder) Patch(options *EnrollmentProfileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

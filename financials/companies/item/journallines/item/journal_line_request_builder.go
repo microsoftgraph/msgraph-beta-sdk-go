@@ -7,7 +7,7 @@ import (
     i0f4b7429c40ce7038f81fb2c58fac8bab2a548c5b805d8929297f8d7d010c5cd "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/journallines/item/account"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\journalLines\{journalLine-id}
+// journalLineRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\journalLines\{journalLine-id}
 type JournalLineRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type JournalLineRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// JournalLineRequestBuilderDeleteOptions options for Delete
 type JournalLineRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type JournalLineRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// JournalLineRequestBuilderGetOptions options for Get
 type JournalLineRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type JournalLineRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get journalLines from financials
+// journalLineRequestBuilderGetQueryParameters get journalLines from financials
 type JournalLineRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// JournalLineRequestBuilderPatchOptions options for Patch
 type JournalLineRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JournalLine;
@@ -57,10 +57,7 @@ type JournalLineRequestBuilderPatchOptions struct {
 func (m *JournalLineRequestBuilder) Account()(*i0f4b7429c40ce7038f81fb2c58fac8bab2a548c5b805d8929297f8d7d010c5cd.AccountRequestBuilder) {
     return i0f4b7429c40ce7038f81fb2c58fac8bab2a548c5b805d8929297f8d7d010c5cd.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new JournalLineRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJournalLineRequestBuilderInternal instantiates a new JournalLineRequestBuilder and sets the default values.
 func NewJournalLineRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JournalLineRequestBuilder) {
     m := &JournalLineRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewJournalLineRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new JournalLineRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJournalLineRequestBuilder instantiates a new JournalLineRequestBuilder and sets the default values.
 func NewJournalLineRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JournalLineRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewJournalLineRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property journalLines for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property journalLines for financials
 func (m *JournalLineRequestBuilder) CreateDeleteRequestInformation(options *JournalLineRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *JournalLineRequestBuilder) CreateDeleteRequestInformation(options *Jour
     }
     return requestInfo, nil
 }
-// Get journalLines from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get journalLines from financials
 func (m *JournalLineRequestBuilder) CreateGetRequestInformation(options *JournalLineRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *JournalLineRequestBuilder) CreateGetRequestInformation(options *Journal
     }
     return requestInfo, nil
 }
-// Update the navigation property journalLines in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property journalLines in financials
 func (m *JournalLineRequestBuilder) CreatePatchRequestInformation(options *JournalLineRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *JournalLineRequestBuilder) CreatePatchRequestInformation(options *Journ
     }
     return requestInfo, nil
 }
-// Delete navigation property journalLines for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property journalLines for financials
 func (m *JournalLineRequestBuilder) Delete(options *JournalLineRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *JournalLineRequestBuilder) Delete(options *JournalLineRequestBuilderDel
     }
     return nil
 }
-// Get journalLines from financials
-// Parameters:
-//  - options : Options for the request
+// Get get journalLines from financials
 func (m *JournalLineRequestBuilder) Get(options *JournalLineRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JournalLine, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *JournalLineRequestBuilder) Get(options *JournalLineRequestBuilderGetOpt
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JournalLine), nil
 }
-// Update the navigation property journalLines in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property journalLines in financials
 func (m *JournalLineRequestBuilder) Patch(options *JournalLineRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

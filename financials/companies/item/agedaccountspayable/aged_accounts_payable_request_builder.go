@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\agedAccountsPayable
+// agedAccountsPayableRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\agedAccountsPayable
 type AgedAccountsPayableRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AgedAccountsPayableRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AgedAccountsPayableRequestBuilderGetOptions options for Get
 type AgedAccountsPayableRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AgedAccountsPayableRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get agedAccountsPayable from financials
+// agedAccountsPayableRequestBuilderGetQueryParameters get agedAccountsPayable from financials
 type AgedAccountsPayableRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AgedAccountsPayableRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AgedAccountsPayableRequestBuilderPostOptions options for Post
 type AgedAccountsPayableRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgedAccountsPayable;
@@ -56,10 +56,7 @@ type AgedAccountsPayableRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AgedAccountsPayableRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgedAccountsPayableRequestBuilderInternal instantiates a new AgedAccountsPayableRequestBuilder and sets the default values.
 func NewAgedAccountsPayableRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgedAccountsPayableRequestBuilder) {
     m := &AgedAccountsPayableRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAgedAccountsPayableRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AgedAccountsPayableRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgedAccountsPayableRequestBuilder instantiates a new AgedAccountsPayableRequestBuilder and sets the default values.
 func NewAgedAccountsPayableRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgedAccountsPayableRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAgedAccountsPayableRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get agedAccountsPayable from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get agedAccountsPayable from financials
 func (m *AgedAccountsPayableRequestBuilder) CreateGetRequestInformation(options *AgedAccountsPayableRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AgedAccountsPayableRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Create new navigation property to agedAccountsPayable for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to agedAccountsPayable for financials
 func (m *AgedAccountsPayableRequestBuilder) CreatePostRequestInformation(options *AgedAccountsPayableRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AgedAccountsPayableRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Get agedAccountsPayable from financials
-// Parameters:
-//  - options : Options for the request
+// Get get agedAccountsPayable from financials
 func (m *AgedAccountsPayableRequestBuilder) Get(options *AgedAccountsPayableRequestBuilderGetOptions)(*AgedAccountsPayableResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AgedAccountsPayableRequestBuilder) Get(options *AgedAccountsPayableRequ
     }
     return res.(*AgedAccountsPayableResponse), nil
 }
-// Create new navigation property to agedAccountsPayable for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to agedAccountsPayable for financials
 func (m *AgedAccountsPayableRequestBuilder) Post(options *AgedAccountsPayableRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgedAccountsPayable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

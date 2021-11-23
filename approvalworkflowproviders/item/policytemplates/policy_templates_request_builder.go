@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\policyTemplates
+// policyTemplatesRequestBuilder builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\policyTemplates
 type PolicyTemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PolicyTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PolicyTemplatesRequestBuilderGetOptions options for Get
 type PolicyTemplatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PolicyTemplatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get policyTemplates from approvalWorkflowProviders
+// policyTemplatesRequestBuilderGetQueryParameters get policyTemplates from approvalWorkflowProviders
 type PolicyTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PolicyTemplatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PolicyTemplatesRequestBuilderPostOptions options for Post
 type PolicyTemplatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernancePolicyTemplate;
@@ -56,10 +56,7 @@ type PolicyTemplatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PolicyTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicyTemplatesRequestBuilderInternal instantiates a new PolicyTemplatesRequestBuilder and sets the default values.
 func NewPolicyTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyTemplatesRequestBuilder) {
     m := &PolicyTemplatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPolicyTemplatesRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PolicyTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicyTemplatesRequestBuilder instantiates a new PolicyTemplatesRequestBuilder and sets the default values.
 func NewPolicyTemplatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyTemplatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPolicyTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get policyTemplates from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get policyTemplates from approvalWorkflowProviders
 func (m *PolicyTemplatesRequestBuilder) CreateGetRequestInformation(options *PolicyTemplatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PolicyTemplatesRequestBuilder) CreateGetRequestInformation(options *Pol
     }
     return requestInfo, nil
 }
-// Create new navigation property to policyTemplates for approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to policyTemplates for approvalWorkflowProviders
 func (m *PolicyTemplatesRequestBuilder) CreatePostRequestInformation(options *PolicyTemplatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PolicyTemplatesRequestBuilder) CreatePostRequestInformation(options *Po
     }
     return requestInfo, nil
 }
-// Get policyTemplates from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Get get policyTemplates from approvalWorkflowProviders
 func (m *PolicyTemplatesRequestBuilder) Get(options *PolicyTemplatesRequestBuilderGetOptions)(*PolicyTemplatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PolicyTemplatesRequestBuilder) Get(options *PolicyTemplatesRequestBuild
     }
     return res.(*PolicyTemplatesResponse), nil
 }
-// Create new navigation property to policyTemplates for approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to policyTemplates for approvalWorkflowProviders
 func (m *PolicyTemplatesRequestBuilder) Post(options *PolicyTemplatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernancePolicyTemplate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

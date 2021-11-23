@@ -17,7 +17,7 @@ import (
     if8797c053079d45780da07f4c01fb650fc8015394e895a3fdf2d677f2013e9ae "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesinvoices/item/salesinvoicelines/item"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}
+// salesInvoiceRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}
 type SalesInvoiceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type SalesInvoiceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SalesInvoiceRequestBuilderDeleteOptions options for Delete
 type SalesInvoiceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -35,7 +35,7 @@ type SalesInvoiceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SalesInvoiceRequestBuilderGetOptions options for Get
 type SalesInvoiceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -46,14 +46,14 @@ type SalesInvoiceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get salesInvoices from financials
+// salesInvoiceRequestBuilderGetQueryParameters get salesInvoices from financials
 type SalesInvoiceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SalesInvoiceRequestBuilderPatchOptions options for Patch
 type SalesInvoiceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesInvoice;
@@ -70,10 +70,7 @@ func (m *SalesInvoiceRequestBuilder) Cancel()(*i36d06f0f74d1b6fcb1f7c52c368d55e3
 func (m *SalesInvoiceRequestBuilder) CancelAndSend()(*i4029970bec644a3ffd8071814f20a9d8eb5762118c76c4b80b23161fb86c2fee.CancelAndSendRequestBuilder) {
     return i4029970bec644a3ffd8071814f20a9d8eb5762118c76c4b80b23161fb86c2fee.NewCancelAndSendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new SalesInvoiceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesInvoiceRequestBuilderInternal instantiates a new SalesInvoiceRequestBuilder and sets the default values.
 func NewSalesInvoiceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesInvoiceRequestBuilder) {
     m := &SalesInvoiceRequestBuilder{
     }
@@ -86,18 +83,13 @@ func NewSalesInvoiceRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SalesInvoiceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSalesInvoiceRequestBuilder instantiates a new SalesInvoiceRequestBuilder and sets the default values.
 func NewSalesInvoiceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SalesInvoiceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSalesInvoiceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property salesInvoices for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property salesInvoices for financials
 func (m *SalesInvoiceRequestBuilder) CreateDeleteRequestInformation(options *SalesInvoiceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,9 +106,7 @@ func (m *SalesInvoiceRequestBuilder) CreateDeleteRequestInformation(options *Sal
     }
     return requestInfo, nil
 }
-// Get salesInvoices from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get salesInvoices from financials
 func (m *SalesInvoiceRequestBuilder) CreateGetRequestInformation(options *SalesInvoiceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -136,9 +126,7 @@ func (m *SalesInvoiceRequestBuilder) CreateGetRequestInformation(options *SalesI
     }
     return requestInfo, nil
 }
-// Update the navigation property salesInvoices in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property salesInvoices in financials
 func (m *SalesInvoiceRequestBuilder) CreatePatchRequestInformation(options *SalesInvoiceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -162,9 +150,7 @@ func (m *SalesInvoiceRequestBuilder) Currency()(*i0650e7911918a65a74f67fe1c197bd
 func (m *SalesInvoiceRequestBuilder) Customer()(*i93777e17bc2372af2aae81772eb24d80da0156546c0cdfca56a28e9618f8d889.CustomerRequestBuilder) {
     return i93777e17bc2372af2aae81772eb24d80da0156546c0cdfca56a28e9618f8d889.NewCustomerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete navigation property salesInvoices for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property salesInvoices for financials
 func (m *SalesInvoiceRequestBuilder) Delete(options *SalesInvoiceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -176,9 +162,7 @@ func (m *SalesInvoiceRequestBuilder) Delete(options *SalesInvoiceRequestBuilderD
     }
     return nil
 }
-// Get salesInvoices from financials
-// Parameters:
-//  - options : Options for the request
+// Get get salesInvoices from financials
 func (m *SalesInvoiceRequestBuilder) Get(options *SalesInvoiceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesInvoice, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -190,9 +174,7 @@ func (m *SalesInvoiceRequestBuilder) Get(options *SalesInvoiceRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SalesInvoice), nil
 }
-// Update the navigation property salesInvoices in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property salesInvoices in financials
 func (m *SalesInvoiceRequestBuilder) Patch(options *SalesInvoiceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -216,9 +198,7 @@ func (m *SalesInvoiceRequestBuilder) PostAndSend()(*iff094cb38c7f93c080b831ba288
 func (m *SalesInvoiceRequestBuilder) SalesInvoiceLines()(*i34ab7468987d894218eb3c0a57bf71468ae3b457fdc7c9a1e1e06dac5693aad7.SalesInvoiceLinesRequestBuilder) {
     return i34ab7468987d894218eb3c0a57bf71468ae3b457fdc7c9a1e1e06dac5693aad7.NewSalesInvoiceLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesInvoices.item.salesInvoiceLines.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SalesInvoiceLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesInvoices.item.salesInvoiceLines.item collection
 func (m *SalesInvoiceRequestBuilder) SalesInvoiceLinesById(id string)(*if8797c053079d45780da07f4c01fb650fc8015394e895a3fdf2d677f2013e9ae.SalesInvoiceLineRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

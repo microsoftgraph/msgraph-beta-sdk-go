@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\importedAppleDeviceIdentities\{importedAppleDeviceIdentity-id}
+// importedAppleDeviceIdentityRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\importedAppleDeviceIdentities\{importedAppleDeviceIdentity-id}
 type ImportedAppleDeviceIdentityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ImportedAppleDeviceIdentityRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ImportedAppleDeviceIdentityRequestBuilderDeleteOptions options for Delete
 type ImportedAppleDeviceIdentityRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ImportedAppleDeviceIdentityRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ImportedAppleDeviceIdentityRequestBuilderGetOptions options for Get
 type ImportedAppleDeviceIdentityRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ImportedAppleDeviceIdentityRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The imported Apple device identities.
+// importedAppleDeviceIdentityRequestBuilderGetQueryParameters the imported Apple device identities.
 type ImportedAppleDeviceIdentityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ImportedAppleDeviceIdentityRequestBuilderPatchOptions options for Patch
 type ImportedAppleDeviceIdentityRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedAppleDeviceIdentity;
@@ -53,10 +53,7 @@ type ImportedAppleDeviceIdentityRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ImportedAppleDeviceIdentityRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportedAppleDeviceIdentityRequestBuilderInternal instantiates a new ImportedAppleDeviceIdentityRequestBuilder and sets the default values.
 func NewImportedAppleDeviceIdentityRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportedAppleDeviceIdentityRequestBuilder) {
     m := &ImportedAppleDeviceIdentityRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewImportedAppleDeviceIdentityRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ImportedAppleDeviceIdentityRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportedAppleDeviceIdentityRequestBuilder instantiates a new ImportedAppleDeviceIdentityRequestBuilder and sets the default values.
 func NewImportedAppleDeviceIdentityRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportedAppleDeviceIdentityRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewImportedAppleDeviceIdentityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The imported Apple device identities.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the imported Apple device identities.
 func (m *ImportedAppleDeviceIdentityRequestBuilder) CreateDeleteRequestInformation(options *ImportedAppleDeviceIdentityRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ImportedAppleDeviceIdentityRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// The imported Apple device identities.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the imported Apple device identities.
 func (m *ImportedAppleDeviceIdentityRequestBuilder) CreateGetRequestInformation(options *ImportedAppleDeviceIdentityRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ImportedAppleDeviceIdentityRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// The imported Apple device identities.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the imported Apple device identities.
 func (m *ImportedAppleDeviceIdentityRequestBuilder) CreatePatchRequestInformation(options *ImportedAppleDeviceIdentityRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ImportedAppleDeviceIdentityRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// The imported Apple device identities.
-// Parameters:
-//  - options : Options for the request
+// Delete the imported Apple device identities.
 func (m *ImportedAppleDeviceIdentityRequestBuilder) Delete(options *ImportedAppleDeviceIdentityRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ImportedAppleDeviceIdentityRequestBuilder) Delete(options *ImportedAppl
     }
     return nil
 }
-// The imported Apple device identities.
-// Parameters:
-//  - options : Options for the request
+// Get the imported Apple device identities.
 func (m *ImportedAppleDeviceIdentityRequestBuilder) Get(options *ImportedAppleDeviceIdentityRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedAppleDeviceIdentity, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ImportedAppleDeviceIdentityRequestBuilder) Get(options *ImportedAppleDe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedAppleDeviceIdentity), nil
 }
-// The imported Apple device identities.
-// Parameters:
-//  - options : Options for the request
+// Patch the imported Apple device identities.
 func (m *ImportedAppleDeviceIdentityRequestBuilder) Patch(options *ImportedAppleDeviceIdentityRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

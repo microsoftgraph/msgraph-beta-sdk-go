@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\domainSecurityProfiles\{domainSecurityProfile-id}
+// domainSecurityProfileRequestBuilder builds and executes requests for operations under \security\domainSecurityProfiles\{domainSecurityProfile-id}
 type DomainSecurityProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DomainSecurityProfileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DomainSecurityProfileRequestBuilderDeleteOptions options for Delete
 type DomainSecurityProfileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DomainSecurityProfileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DomainSecurityProfileRequestBuilderGetOptions options for Get
 type DomainSecurityProfileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DomainSecurityProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get domainSecurityProfiles from security
+// domainSecurityProfileRequestBuilderGetQueryParameters get domainSecurityProfiles from security
 type DomainSecurityProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DomainSecurityProfileRequestBuilderPatchOptions options for Patch
 type DomainSecurityProfileRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DomainSecurityProfile;
@@ -53,10 +53,7 @@ type DomainSecurityProfileRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DomainSecurityProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDomainSecurityProfileRequestBuilderInternal instantiates a new DomainSecurityProfileRequestBuilder and sets the default values.
 func NewDomainSecurityProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DomainSecurityProfileRequestBuilder) {
     m := &DomainSecurityProfileRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDomainSecurityProfileRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DomainSecurityProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDomainSecurityProfileRequestBuilder instantiates a new DomainSecurityProfileRequestBuilder and sets the default values.
 func NewDomainSecurityProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DomainSecurityProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDomainSecurityProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property domainSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property domainSecurityProfiles for security
 func (m *DomainSecurityProfileRequestBuilder) CreateDeleteRequestInformation(options *DomainSecurityProfileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DomainSecurityProfileRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Get domainSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get domainSecurityProfiles from security
 func (m *DomainSecurityProfileRequestBuilder) CreateGetRequestInformation(options *DomainSecurityProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DomainSecurityProfileRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Update the navigation property domainSecurityProfiles in security
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property domainSecurityProfiles in security
 func (m *DomainSecurityProfileRequestBuilder) CreatePatchRequestInformation(options *DomainSecurityProfileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DomainSecurityProfileRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delete navigation property domainSecurityProfiles for security
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property domainSecurityProfiles for security
 func (m *DomainSecurityProfileRequestBuilder) Delete(options *DomainSecurityProfileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DomainSecurityProfileRequestBuilder) Delete(options *DomainSecurityProf
     }
     return nil
 }
-// Get domainSecurityProfiles from security
-// Parameters:
-//  - options : Options for the request
+// Get get domainSecurityProfiles from security
 func (m *DomainSecurityProfileRequestBuilder) Get(options *DomainSecurityProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DomainSecurityProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DomainSecurityProfileRequestBuilder) Get(options *DomainSecurityProfile
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DomainSecurityProfile), nil
 }
-// Update the navigation property domainSecurityProfiles in security
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property domainSecurityProfiles in security
 func (m *DomainSecurityProfileRequestBuilder) Patch(options *DomainSecurityProfileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     idf760bbe698f0e7ec33f0f98c22c00961039c99efc61075cdf539d6dc777e0c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicyconfigurations/item/definitionvalues/item/presentationvalues/item/definitionvalue/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\definitionValues\{groupPolicyDefinitionValue-id}\presentationValues\{groupPolicyPresentationValue-id}\definitionValue
+// definitionValueRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\definitionValues\{groupPolicyDefinitionValue-id}\presentationValues\{groupPolicyPresentationValue-id}\definitionValue
 type DefinitionValueRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DefinitionValueRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DefinitionValueRequestBuilderGetOptions options for Get
 type DefinitionValueRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type DefinitionValueRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The group policy definition value associated with the presentation value.
+// definitionValueRequestBuilderGetQueryParameters the group policy definition value associated with the presentation value.
 type DefinitionValueRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new DefinitionValueRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefinitionValueRequestBuilderInternal instantiates a new DefinitionValueRequestBuilder and sets the default values.
 func NewDefinitionValueRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefinitionValueRequestBuilder) {
     m := &DefinitionValueRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewDefinitionValueRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DefinitionValueRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefinitionValueRequestBuilder instantiates a new DefinitionValueRequestBuilder and sets the default values.
 func NewDefinitionValueRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefinitionValueRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDefinitionValueRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The group policy definition value associated with the presentation value.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the group policy definition value associated with the presentation value.
 func (m *DefinitionValueRequestBuilder) CreateGetRequestInformation(options *DefinitionValueRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *DefinitionValueRequestBuilder) CreateGetRequestInformation(options *Def
     }
     return requestInfo, nil
 }
-// The group policy definition value associated with the presentation value.
-// Parameters:
-//  - options : Options for the request
+// Get the group policy definition value associated with the presentation value.
 func (m *DefinitionValueRequestBuilder) Get(options *DefinitionValueRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinitionValue, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

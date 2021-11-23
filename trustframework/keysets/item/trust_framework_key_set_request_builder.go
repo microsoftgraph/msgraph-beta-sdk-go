@@ -11,7 +11,7 @@ import (
     ie04ccf263002e1d9853509d405e0878dfbf7c145b0a12ed976019d944eb6fe4d "github.com/microsoftgraph/msgraph-beta-sdk-go/trustframework/keysets/item/generatekey"
 )
 
-// Builds and executes requests for operations under \trustFramework\keySets\{trustFrameworkKeySet-id}
+// trustFrameworkKeySetRequestBuilder builds and executes requests for operations under \trustFramework\keySets\{trustFrameworkKeySet-id}
 type TrustFrameworkKeySetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type TrustFrameworkKeySetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TrustFrameworkKeySetRequestBuilderDeleteOptions options for Delete
 type TrustFrameworkKeySetRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type TrustFrameworkKeySetRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TrustFrameworkKeySetRequestBuilderGetOptions options for Get
 type TrustFrameworkKeySetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type TrustFrameworkKeySetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get keySets from trustFramework
+// trustFrameworkKeySetRequestBuilderGetQueryParameters get keySets from trustFramework
 type TrustFrameworkKeySetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TrustFrameworkKeySetRequestBuilderPatchOptions options for Patch
 type TrustFrameworkKeySetRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKeySet;
@@ -58,10 +58,7 @@ type TrustFrameworkKeySetRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TrustFrameworkKeySetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTrustFrameworkKeySetRequestBuilderInternal instantiates a new TrustFrameworkKeySetRequestBuilder and sets the default values.
 func NewTrustFrameworkKeySetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TrustFrameworkKeySetRequestBuilder) {
     m := &TrustFrameworkKeySetRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewTrustFrameworkKeySetRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TrustFrameworkKeySetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTrustFrameworkKeySetRequestBuilder instantiates a new TrustFrameworkKeySetRequestBuilder and sets the default values.
 func NewTrustFrameworkKeySetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TrustFrameworkKeySetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTrustFrameworkKeySetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property keySets for trustFramework
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property keySets for trustFramework
 func (m *TrustFrameworkKeySetRequestBuilder) CreateDeleteRequestInformation(options *TrustFrameworkKeySetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *TrustFrameworkKeySetRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get keySets from trustFramework
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get keySets from trustFramework
 func (m *TrustFrameworkKeySetRequestBuilder) CreateGetRequestInformation(options *TrustFrameworkKeySetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *TrustFrameworkKeySetRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update the navigation property keySets in trustFramework
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property keySets in trustFramework
 func (m *TrustFrameworkKeySetRequestBuilder) CreatePatchRequestInformation(options *TrustFrameworkKeySetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *TrustFrameworkKeySetRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete navigation property keySets for trustFramework
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property keySets for trustFramework
 func (m *TrustFrameworkKeySetRequestBuilder) Delete(options *TrustFrameworkKeySetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -161,9 +147,7 @@ func (m *TrustFrameworkKeySetRequestBuilder) Delete(options *TrustFrameworkKeySe
 func (m *TrustFrameworkKeySetRequestBuilder) GenerateKey()(*ie04ccf263002e1d9853509d405e0878dfbf7c145b0a12ed976019d944eb6fe4d.GenerateKeyRequestBuilder) {
     return ie04ccf263002e1d9853509d405e0878dfbf7c145b0a12ed976019d944eb6fe4d.NewGenerateKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get keySets from trustFramework
-// Parameters:
-//  - options : Options for the request
+// Get get keySets from trustFramework
 func (m *TrustFrameworkKeySetRequestBuilder) Get(options *TrustFrameworkKeySetRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKeySet, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -175,13 +159,11 @@ func (m *TrustFrameworkKeySetRequestBuilder) Get(options *TrustFrameworkKeySetRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkKeySet), nil
 }
-// Builds and executes requests for operations under \trustFramework\keySets\{trustFrameworkKeySet-id}\microsoft.graph.getActiveKey()
+// GetActiveKey builds and executes requests for operations under \trustFramework\keySets\{trustFrameworkKeySet-id}\microsoft.graph.getActiveKey()
 func (m *TrustFrameworkKeySetRequestBuilder) GetActiveKey()(*ib72c6292feaaf57eee55722f788b219f51c4f92a445271c20e5af998098f6daf.GetActiveKeyRequestBuilder) {
     return ib72c6292feaaf57eee55722f788b219f51c4f92a445271c20e5af998098f6daf.NewGetActiveKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property keySets in trustFramework
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property keySets in trustFramework
 func (m *TrustFrameworkKeySetRequestBuilder) Patch(options *TrustFrameworkKeySetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

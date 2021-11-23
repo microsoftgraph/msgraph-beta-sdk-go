@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// searchAnswer 
 type SearchAnswer struct {
     Entity
     // 
@@ -19,14 +19,14 @@ type SearchAnswer struct {
     // 
     webUrl *string;
 }
-// Instantiates a new searchAnswer and sets the default values.
+// NewSearchAnswer instantiates a new searchAnswer and sets the default values.
 func NewSearchAnswer()(*SearchAnswer) {
     m := &SearchAnswer{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the description property value. 
+// GetDescription gets the description property value. 
 func (m *SearchAnswer) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *SearchAnswer) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *SearchAnswer) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *SearchAnswer) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastModifiedBy property value. 
+// GetLastModifiedBy gets the lastModifiedBy property value. 
 func (m *SearchAnswer) GetLastModifiedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *SearchAnswer) GetLastModifiedBy()(*IdentitySet) {
         return m.lastModifiedBy
     }
 }
-// Gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *SearchAnswer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *SearchAnswer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.lastModifiedDateTime
     }
 }
-// Gets the webUrl property value. 
+// GetWebUrl gets the webUrl property value. 
 func (m *SearchAnswer) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *SearchAnswer) GetWebUrl()(*string) {
         return m.webUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SearchAnswer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,9 +124,7 @@ func (m *SearchAnswer) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *SearchAnswer) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SearchAnswer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -164,33 +162,23 @@ func (m *SearchAnswer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the description property value. 
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. 
 func (m *SearchAnswer) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *SearchAnswer) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastModifiedBy property value. 
-// Parameters:
-//  - value : Value to set for the lastModifiedBy property.
+// SetLastModifiedBy sets the lastModifiedBy property value. 
 func (m *SearchAnswer) SetLastModifiedBy(value *IdentitySet)() {
     m.lastModifiedBy = value
 }
-// Sets the lastModifiedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *SearchAnswer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the webUrl property value. 
-// Parameters:
-//  - value : Value to set for the webUrl property.
+// SetWebUrl sets the webUrl property value. 
 func (m *SearchAnswer) SetWebUrl(value *string)() {
     m.webUrl = value
 }

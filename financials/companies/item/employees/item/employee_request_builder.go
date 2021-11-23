@@ -7,7 +7,7 @@ import (
     i652ff1de6cfef015a3e309d14034175d4603ec679c441ab393763107684f5092 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/employees/item/picture"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\employees\{employee-id}
+// employeeRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\employees\{employee-id}
 type EmployeeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type EmployeeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EmployeeRequestBuilderDeleteOptions options for Delete
 type EmployeeRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type EmployeeRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EmployeeRequestBuilderGetOptions options for Get
 type EmployeeRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type EmployeeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get employees from financials
+// employeeRequestBuilderGetQueryParameters get employees from financials
 type EmployeeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EmployeeRequestBuilderPatchOptions options for Patch
 type EmployeeRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Employee;
@@ -54,10 +54,7 @@ type EmployeeRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EmployeeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmployeeRequestBuilderInternal instantiates a new EmployeeRequestBuilder and sets the default values.
 func NewEmployeeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmployeeRequestBuilder) {
     m := &EmployeeRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewEmployeeRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EmployeeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmployeeRequestBuilder instantiates a new EmployeeRequestBuilder and sets the default values.
 func NewEmployeeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmployeeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEmployeeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property employees for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property employees for financials
 func (m *EmployeeRequestBuilder) CreateDeleteRequestInformation(options *EmployeeRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *EmployeeRequestBuilder) CreateDeleteRequestInformation(options *Employe
     }
     return requestInfo, nil
 }
-// Get employees from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get employees from financials
 func (m *EmployeeRequestBuilder) CreateGetRequestInformation(options *EmployeeRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *EmployeeRequestBuilder) CreateGetRequestInformation(options *EmployeeRe
     }
     return requestInfo, nil
 }
-// Update the navigation property employees in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property employees in financials
 func (m *EmployeeRequestBuilder) CreatePatchRequestInformation(options *EmployeeRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *EmployeeRequestBuilder) CreatePatchRequestInformation(options *Employee
     }
     return requestInfo, nil
 }
-// Delete navigation property employees for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property employees for financials
 func (m *EmployeeRequestBuilder) Delete(options *EmployeeRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *EmployeeRequestBuilder) Delete(options *EmployeeRequestBuilderDeleteOpt
     }
     return nil
 }
-// Get employees from financials
-// Parameters:
-//  - options : Options for the request
+// Get get employees from financials
 func (m *EmployeeRequestBuilder) Get(options *EmployeeRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Employee, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *EmployeeRequestBuilder) Get(options *EmployeeRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Employee), nil
 }
-// Update the navigation property employees in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property employees in financials
 func (m *EmployeeRequestBuilder) Patch(options *EmployeeRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *EmployeeRequestBuilder) Patch(options *EmployeeRequestBuilderPatchOptio
 func (m *EmployeeRequestBuilder) Picture()(*i652ff1de6cfef015a3e309d14034175d4603ec679c441ab393763107684f5092.PictureRequestBuilder) {
     return i652ff1de6cfef015a3e309d14034175d4603ec679c441ab393763107684f5092.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.employees.item.picture.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PictureById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.employees.item.picture.item collection
 func (m *EmployeeRequestBuilder) PictureById(id string)(*i652ff1de6cfef015a3e309d14034175d4603ec679c441ab393763107684f5092.PictureRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

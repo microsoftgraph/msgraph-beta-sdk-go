@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// rbacApplicationMultiple 
 type RbacApplicationMultiple struct {
     Entity
     // 
@@ -14,14 +14,14 @@ type RbacApplicationMultiple struct {
     // 
     roleDefinitions []UnifiedRoleDefinition;
 }
-// Instantiates a new rbacApplicationMultiple and sets the default values.
+// NewRbacApplicationMultiple instantiates a new rbacApplicationMultiple and sets the default values.
 func NewRbacApplicationMultiple()(*RbacApplicationMultiple) {
     m := &RbacApplicationMultiple{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the resourceNamespaces property value. 
+// GetResourceNamespaces gets the resourceNamespaces property value. 
 func (m *RbacApplicationMultiple) GetResourceNamespaces()([]UnifiedRbacResourceNamespace) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *RbacApplicationMultiple) GetResourceNamespaces()([]UnifiedRbacResourceN
         return m.resourceNamespaces
     }
 }
-// Gets the roleAssignments property value. 
+// GetRoleAssignments gets the roleAssignments property value. 
 func (m *RbacApplicationMultiple) GetRoleAssignments()([]UnifiedRoleAssignmentMultiple) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *RbacApplicationMultiple) GetRoleAssignments()([]UnifiedRoleAssignmentMu
         return m.roleAssignments
     }
 }
-// Gets the roleDefinitions property value. 
+// GetRoleDefinitions gets the roleDefinitions property value. 
 func (m *RbacApplicationMultiple) GetRoleDefinitions()([]UnifiedRoleDefinition) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *RbacApplicationMultiple) GetRoleDefinitions()([]UnifiedRoleDefinition) 
         return m.roleDefinitions
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["resourceNamespaces"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,9 +95,7 @@ func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(interf
 func (m *RbacApplicationMultiple) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RbacApplicationMultiple) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -138,21 +136,15 @@ func (m *RbacApplicationMultiple) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the resourceNamespaces property value. 
-// Parameters:
-//  - value : Value to set for the resourceNamespaces property.
+// SetResourceNamespaces sets the resourceNamespaces property value. 
 func (m *RbacApplicationMultiple) SetResourceNamespaces(value []UnifiedRbacResourceNamespace)() {
     m.resourceNamespaces = value
 }
-// Sets the roleAssignments property value. 
-// Parameters:
-//  - value : Value to set for the roleAssignments property.
+// SetRoleAssignments sets the roleAssignments property value. 
 func (m *RbacApplicationMultiple) SetRoleAssignments(value []UnifiedRoleAssignmentMultiple)() {
     m.roleAssignments = value
 }
-// Sets the roleDefinitions property value. 
-// Parameters:
-//  - value : Value to set for the roleDefinitions property.
+// SetRoleDefinitions sets the roleDefinitions property value. 
 func (m *RbacApplicationMultiple) SetRoleDefinitions(value []UnifiedRoleDefinition)() {
     m.roleDefinitions = value
 }

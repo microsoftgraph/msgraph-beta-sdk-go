@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// informationProtectionPolicy 
 type InformationProtectionPolicy struct {
     Entity
     // 
     labels []InformationProtectionLabel;
 }
-// Instantiates a new informationProtectionPolicy and sets the default values.
+// NewInformationProtectionPolicy instantiates a new informationProtectionPolicy and sets the default values.
 func NewInformationProtectionPolicy()(*InformationProtectionPolicy) {
     m := &InformationProtectionPolicy{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the labels property value. 
+// GetLabels gets the labels property value. 
 func (m *InformationProtectionPolicy) GetLabels()([]InformationProtectionLabel) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *InformationProtectionPolicy) GetLabels()([]InformationProtectionLabel) 
         return m.labels
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtectionPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["labels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -47,9 +47,7 @@ func (m *InformationProtectionPolicy) GetFieldDeserializers()(map[string]func(in
 func (m *InformationProtectionPolicy) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *InformationProtectionPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -68,9 +66,7 @@ func (m *InformationProtectionPolicy) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the labels property value. 
-// Parameters:
-//  - value : Value to set for the labels property.
+// SetLabels sets the labels property value. 
 func (m *InformationProtectionPolicy) SetLabels(value []InformationProtectionLabel)() {
     m.labels = value
 }

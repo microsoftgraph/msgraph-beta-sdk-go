@@ -8,7 +8,7 @@ import (
     i52615d5294b7c09cc7abf48113e76d304d971ab6e369a32e6e648d565d5d7767 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthoverview/metricvalues/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthOverview
+// userExperienceAnalyticsAppHealthOverviewRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthOverview
 type UserExperienceAnalyticsAppHealthOverviewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type UserExperienceAnalyticsAppHealthOverviewRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsAppHealthOverviewRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsAppHealthOverviewRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsAppHealthOverviewRequestBuilderDeleteOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics appHealth overview
+// userExperienceAnalyticsAppHealthOverviewRequestBuilderGetQueryParameters user experience analytics appHealth overview
 type UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsAppHealthOverviewRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsAppHealthOverviewRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsCategory;
@@ -55,10 +55,7 @@ type UserExperienceAnalyticsAppHealthOverviewRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsAppHealthOverviewRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsAppHealthOverviewRequestBuilderInternal instantiates a new UserExperienceAnalyticsAppHealthOverviewRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthOverviewRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsAppHealthOverviewRequestBuilder) {
     m := &UserExperienceAnalyticsAppHealthOverviewRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewUserExperienceAnalyticsAppHealthOverviewRequestBuilderInternal(pathParam
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsAppHealthOverviewRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsAppHealthOverviewRequestBuilder instantiates a new UserExperienceAnalyticsAppHealthOverviewRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthOverviewRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsAppHealthOverviewRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsAppHealthOverviewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics appHealth overview
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user experience analytics appHealth overview
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsAppHealthOverviewRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreateDeleteReq
     }
     return requestInfo, nil
 }
-// User experience analytics appHealth overview
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics appHealth overview
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// User experience analytics appHealth overview
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user experience analytics appHealth overview
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsAppHealthOverviewRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreatePatchRequ
     }
     return requestInfo, nil
 }
-// User experience analytics appHealth overview
-// Parameters:
-//  - options : Options for the request
+// Delete user experience analytics appHealth overview
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Delete(options *UserExperienceAnalyticsAppHealthOverviewRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Delete(options 
     }
     return nil
 }
-// User experience analytics appHealth overview
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics appHealth overview
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Get(options *UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Get(options *Us
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValues()(*i76d76df01534fbe41283b7237bc4b6635f2316d4abaf6113e056758ee16ef5cc.MetricValuesRequestBuilder) {
     return i76d76df01534fbe41283b7237bc4b6635f2316d4abaf6113e056758ee16ef5cc.NewMetricValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthOverview.metricValues.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MetricValuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthOverview.metricValues.item collection
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValuesById(id string)(*i52615d5294b7c09cc7abf48113e76d304d971ab6e369a32e6e648d565d5d7767.UserExperienceAnalyticsMetricRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValuesByI
     }
     return i52615d5294b7c09cc7abf48113e76d304d971ab6e369a32e6e648d565d5d7767.NewUserExperienceAnalyticsMetricRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// User experience analytics appHealth overview
-// Parameters:
-//  - options : Options for the request
+// Patch user experience analytics appHealth overview
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Patch(options *UserExperienceAnalyticsAppHealthOverviewRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

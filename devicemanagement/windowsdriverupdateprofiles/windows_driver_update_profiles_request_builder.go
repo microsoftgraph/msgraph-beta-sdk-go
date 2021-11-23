@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles
+// windowsDriverUpdateProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles
 type WindowsDriverUpdateProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsDriverUpdateProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// WindowsDriverUpdateProfilesRequestBuilderGetOptions options for Get
 type WindowsDriverUpdateProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WindowsDriverUpdateProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of windows driver update profiles
+// windowsDriverUpdateProfilesRequestBuilderGetQueryParameters a collection of windows driver update profiles
 type WindowsDriverUpdateProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type WindowsDriverUpdateProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// WindowsDriverUpdateProfilesRequestBuilderPostOptions options for Post
 type WindowsDriverUpdateProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateProfile;
@@ -56,10 +56,7 @@ type WindowsDriverUpdateProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsDriverUpdateProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDriverUpdateProfilesRequestBuilderInternal instantiates a new WindowsDriverUpdateProfilesRequestBuilder and sets the default values.
 func NewWindowsDriverUpdateProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDriverUpdateProfilesRequestBuilder) {
     m := &WindowsDriverUpdateProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewWindowsDriverUpdateProfilesRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsDriverUpdateProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDriverUpdateProfilesRequestBuilder instantiates a new WindowsDriverUpdateProfilesRequestBuilder and sets the default values.
 func NewWindowsDriverUpdateProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDriverUpdateProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDriverUpdateProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of windows driver update profiles
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of windows driver update profiles
 func (m *WindowsDriverUpdateProfilesRequestBuilder) CreateGetRequestInformation(options *WindowsDriverUpdateProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *WindowsDriverUpdateProfilesRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// A collection of windows driver update profiles
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a collection of windows driver update profiles
 func (m *WindowsDriverUpdateProfilesRequestBuilder) CreatePostRequestInformation(options *WindowsDriverUpdateProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *WindowsDriverUpdateProfilesRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// A collection of windows driver update profiles
-// Parameters:
-//  - options : Options for the request
+// Get a collection of windows driver update profiles
 func (m *WindowsDriverUpdateProfilesRequestBuilder) Get(options *WindowsDriverUpdateProfilesRequestBuilderGetOptions)(*WindowsDriverUpdateProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *WindowsDriverUpdateProfilesRequestBuilder) Get(options *WindowsDriverUp
     }
     return res.(*WindowsDriverUpdateProfilesResponse), nil
 }
-// A collection of windows driver update profiles
-// Parameters:
-//  - options : Options for the request
+// Post a collection of windows driver update profiles
 func (m *WindowsDriverUpdateProfilesRequestBuilder) Post(options *WindowsDriverUpdateProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDriverUpdateProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

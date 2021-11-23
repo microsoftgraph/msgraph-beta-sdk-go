@@ -15,7 +15,7 @@ import (
     id230b39b4e00abffe8da78e60ed15b517f9d03d898f31f7c488e506773163f1e "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/activities/item/listitem/versions/item"
 )
 
-// Builds and executes requests for operations under \drive\activities\{itemActivityOLD-id}\listItem
+// listItemRequestBuilder builds and executes requests for operations under \drive\activities\{itemActivityOLD-id}\listItem
 type ListItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,7 +24,7 @@ type ListItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ListItemRequestBuilderDeleteOptions options for Delete
 type ListItemRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -33,7 +33,7 @@ type ListItemRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ListItemRequestBuilderGetOptions options for Get
 type ListItemRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -44,14 +44,14 @@ type ListItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get listItem from drive
+// listItemRequestBuilderGetQueryParameters get listItem from drive
 type ListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ListItemRequestBuilderPatchOptions options for Patch
 type ListItemRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItem;
@@ -65,9 +65,7 @@ type ListItemRequestBuilderPatchOptions struct {
 func (m *ListItemRequestBuilder) Activities()(*i97f0a18da1b17d71abd6590810614e4ba5d8a013e296054f0c4b0c49d45a73c7.ActivitiesRequestBuilder) {
     return i97f0a18da1b17d71abd6590810614e4ba5d8a013e296054f0c4b0c49d45a73c7.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drive.activities.item.listItem.activities.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ActivitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drive.activities.item.listItem.activities.item collection
 func (m *ListItemRequestBuilder) ActivitiesById(id string)(*ia83eb6501d741bd3c069f17e8e1375255bb8eff0e96927242583b207710de379.ItemActivityOLDRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -81,10 +79,7 @@ func (m *ListItemRequestBuilder) ActivitiesById(id string)(*ia83eb6501d741bd3c06
 func (m *ListItemRequestBuilder) Analytics()(*ib1f4f385a41aa17719a5b4e1c99c4784b9903c1ed2e047c68ba5ebbf9d9f37d5.AnalyticsRequestBuilder) {
     return ib1f4f385a41aa17719a5b4e1c99c4784b9903c1ed2e047c68ba5ebbf9d9f37d5.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ListItemRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewListItemRequestBuilderInternal instantiates a new ListItemRequestBuilder and sets the default values.
 func NewListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ListItemRequestBuilder) {
     m := &ListItemRequestBuilder{
     }
@@ -97,18 +92,13 @@ func NewListItemRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ListItemRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewListItemRequestBuilder instantiates a new ListItemRequestBuilder and sets the default values.
 func NewListItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ListItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewListItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property listItem for drive
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property listItem for drive
 func (m *ListItemRequestBuilder) CreateDeleteRequestInformation(options *ListItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *ListItemRequestBuilder) CreateDeleteRequestInformation(options *ListIte
     }
     return requestInfo, nil
 }
-// Get listItem from drive
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get listItem from drive
 func (m *ListItemRequestBuilder) CreateGetRequestInformation(options *ListItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +138,7 @@ func (m *ListItemRequestBuilder) CreateGetRequestInformation(options *ListItemRe
 func (m *ListItemRequestBuilder) CreateLink()(*iee917aae3fe0d66573c05d064d6ea891b1c88393a5fc7a2c46b47b909e24339c.CreateLinkRequestBuilder) {
     return iee917aae3fe0d66573c05d064d6ea891b1c88393a5fc7a2c46b47b909e24339c.NewCreateLinkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property listItem in drive
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property listItem in drive
 func (m *ListItemRequestBuilder) CreatePatchRequestInformation(options *ListItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,9 +156,7 @@ func (m *ListItemRequestBuilder) CreatePatchRequestInformation(options *ListItem
     }
     return requestInfo, nil
 }
-// Delete navigation property listItem for drive
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property listItem for drive
 func (m *ListItemRequestBuilder) Delete(options *ListItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -190,9 +174,7 @@ func (m *ListItemRequestBuilder) DriveItem()(*id887c7dbe5f0398cd041ea27bdf3c2057
 func (m *ListItemRequestBuilder) Fields()(*i8c1e1f23168e7f6b8f9d998833acba379b4141dd4d5823249a0965310dc5e3e8.FieldsRequestBuilder) {
     return i8c1e1f23168e7f6b8f9d998833acba379b4141dd4d5823249a0965310dc5e3e8.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get listItem from drive
-// Parameters:
-//  - options : Options for the request
+// Get get listItem from drive
 func (m *ListItemRequestBuilder) Get(options *ListItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -204,17 +186,11 @@ func (m *ListItemRequestBuilder) Get(options *ListItemRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ListItem), nil
 }
-// Builds and executes requests for operations under \drive\activities\{itemActivityOLD-id}\listItem\microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')
-// Parameters:
-//  - endDateTime : Usage: endDateTime={endDateTime}
-//  - interval : Usage: interval={interval}
-//  - startDateTime : Usage: startDateTime={startDateTime}
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval builds and executes requests for operations under \drive\activities\{itemActivityOLD-id}\listItem\microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')
 func (m *ListItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(startDateTime *string, endDateTime *string, interval *string)(*i6f0f9b40d4750bce971fdb969ae2afaded210accf56ee979fd8ad889c6d83eeb.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
     return i6f0f9b40d4750bce971fdb969ae2afaded210accf56ee979fd8ad889c6d83eeb.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, startDateTime, endDateTime, interval);
 }
-// Update the navigation property listItem in drive
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property listItem in drive
 func (m *ListItemRequestBuilder) Patch(options *ListItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -229,9 +205,7 @@ func (m *ListItemRequestBuilder) Patch(options *ListItemRequestBuilderPatchOptio
 func (m *ListItemRequestBuilder) Versions()(*i89ca08871da62b84e7b9c50c6e0d3d0f836ff66e3ff15017aef0f29167347ebe.VersionsRequestBuilder) {
     return i89ca08871da62b84e7b9c50c6e0d3d0f836ff66e3ff15017aef0f29167347ebe.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drive.activities.item.listItem.versions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// VersionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drive.activities.item.listItem.versions.item collection
 func (m *ListItemRequestBuilder) VersionsById(id string)(*id230b39b4e00abffe8da78e60ed15b517f9d03d898f31f7c488e506773163f1e.ListItemVersionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

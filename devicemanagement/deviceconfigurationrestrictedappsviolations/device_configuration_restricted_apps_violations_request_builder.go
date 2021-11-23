@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurationRestrictedAppsViolations
+// deviceConfigurationRestrictedAppsViolationsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurationRestrictedAppsViolations
 type DeviceConfigurationRestrictedAppsViolationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceConfigurationRestrictedAppsViolationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetOptions options for Get
 type DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Restricted apps violations for this account.
+// deviceConfigurationRestrictedAppsViolationsRequestBuilderGetQueryParameters restricted apps violations for this account.
 type DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetQueryParameters
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostOptions options for Post
 type DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RestrictedAppsViolation;
@@ -56,10 +56,7 @@ type DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceConfigurationRestrictedAppsViolationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationRestrictedAppsViolationsRequestBuilderInternal instantiates a new DeviceConfigurationRestrictedAppsViolationsRequestBuilder and sets the default values.
 func NewDeviceConfigurationRestrictedAppsViolationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationRestrictedAppsViolationsRequestBuilder) {
     m := &DeviceConfigurationRestrictedAppsViolationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceConfigurationRestrictedAppsViolationsRequestBuilderInternal(pathPa
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceConfigurationRestrictedAppsViolationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationRestrictedAppsViolationsRequestBuilder instantiates a new DeviceConfigurationRestrictedAppsViolationsRequestBuilder and sets the default values.
 func NewDeviceConfigurationRestrictedAppsViolationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationRestrictedAppsViolationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationRestrictedAppsViolationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Restricted apps violations for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation restricted apps violations for this account.
 func (m *DeviceConfigurationRestrictedAppsViolationsRequestBuilder) CreateGetRequestInformation(options *DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceConfigurationRestrictedAppsViolationsRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// Restricted apps violations for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation restricted apps violations for this account.
 func (m *DeviceConfigurationRestrictedAppsViolationsRequestBuilder) CreatePostRequestInformation(options *DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceConfigurationRestrictedAppsViolationsRequestBuilder) CreatePostRe
     }
     return requestInfo, nil
 }
-// Restricted apps violations for this account.
-// Parameters:
-//  - options : Options for the request
+// Get restricted apps violations for this account.
 func (m *DeviceConfigurationRestrictedAppsViolationsRequestBuilder) Get(options *DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetOptions)(*DeviceConfigurationRestrictedAppsViolationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceConfigurationRestrictedAppsViolationsRequestBuilder) Get(options 
     }
     return res.(*DeviceConfigurationRestrictedAppsViolationsResponse), nil
 }
-// Restricted apps violations for this account.
-// Parameters:
-//  - options : Options for the request
+// Post restricted apps violations for this account.
 func (m *DeviceConfigurationRestrictedAppsViolationsRequestBuilder) Post(options *DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RestrictedAppsViolation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

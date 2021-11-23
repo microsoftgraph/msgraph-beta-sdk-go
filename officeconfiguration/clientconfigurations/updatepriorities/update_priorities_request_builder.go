@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \officeConfiguration\clientConfigurations\microsoft.graph.updatePriorities
+// updatePrioritiesRequestBuilder builds and executes requests for operations under \officeConfiguration\clientConfigurations\microsoft.graph.updatePriorities
 type UpdatePrioritiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UpdatePrioritiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UpdatePrioritiesRequestBuilderPostOptions options for Post
 type UpdatePrioritiesRequestBuilderPostOptions struct {
     // 
     Body *UpdatePrioritiesRequestBody;
@@ -24,10 +24,7 @@ type UpdatePrioritiesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UpdatePrioritiesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdatePrioritiesRequestBuilderInternal instantiates a new UpdatePrioritiesRequestBuilder and sets the default values.
 func NewUpdatePrioritiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatePrioritiesRequestBuilder) {
     m := &UpdatePrioritiesRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewUpdatePrioritiesRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UpdatePrioritiesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdatePrioritiesRequestBuilder instantiates a new UpdatePrioritiesRequestBuilder and sets the default values.
 func NewUpdatePrioritiesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatePrioritiesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUpdatePrioritiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action updatePriorities
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action updatePriorities
 func (m *UpdatePrioritiesRequestBuilder) CreatePostRequestInformation(options *UpdatePrioritiesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *UpdatePrioritiesRequestBuilder) CreatePostRequestInformation(options *U
     }
     return requestInfo, nil
 }
-// Invoke action updatePriorities
-// Parameters:
-//  - options : Options for the request
+// Post invoke action updatePriorities
 func (m *UpdatePrioritiesRequestBuilder) Post(options *UpdatePrioritiesRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

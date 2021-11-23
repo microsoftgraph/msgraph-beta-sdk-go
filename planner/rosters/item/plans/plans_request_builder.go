@@ -6,7 +6,7 @@ import (
     ib5697ad827cac6724d298f8e138a085ff8bd1fe4320424b3249fdb87d0461850 "github.com/microsoftgraph/msgraph-beta-sdk-go/planner/rosters/item/plans/ref"
 )
 
-// Builds and executes requests for operations under \planner\rosters\{plannerRoster-id}\plans
+// plansRequestBuilder builds and executes requests for operations under \planner\rosters\{plannerRoster-id}\plans
 type PlansRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PlansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PlansRequestBuilderGetOptions options for Get
 type PlansRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PlansRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Retrieves the plans contained by the plannerRoster.
+// plansRequestBuilderGetQueryParameters retrieves the plans contained by the plannerRoster.
 type PlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type PlansRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new PlansRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlansRequestBuilderInternal instantiates a new PlansRequestBuilder and sets the default values.
 func NewPlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlansRequestBuilder) {
     m := &PlansRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewPlansRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PlansRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlansRequestBuilder instantiates a new PlansRequestBuilder and sets the default values.
 func NewPlansRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlansRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlansRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Retrieves the plans contained by the plannerRoster.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation retrieves the plans contained by the plannerRoster.
 func (m *PlansRequestBuilder) CreateGetRequestInformation(options *PlansRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *PlansRequestBuilder) CreateGetRequestInformation(options *PlansRequestB
     }
     return requestInfo, nil
 }
-// Retrieves the plans contained by the plannerRoster.
-// Parameters:
-//  - options : Options for the request
+// Get retrieves the plans contained by the plannerRoster.
 func (m *PlansRequestBuilder) Get(options *PlansRequestBuilderGetOptions)(*PlansResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

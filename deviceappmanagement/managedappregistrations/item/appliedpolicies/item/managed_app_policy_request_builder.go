@@ -10,7 +10,7 @@ import (
     ie7f5606c139c22faaa101d1eb10801cba4ca1282d26fa67419451925a809558b "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedappregistrations/item/appliedpolicies/item/targetapps"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\appliedPolicies\{managedAppPolicy-id}
+// managedAppPolicyRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\appliedPolicies\{managedAppPolicy-id}
 type ManagedAppPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type ManagedAppPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedAppPolicyRequestBuilderDeleteOptions options for Delete
 type ManagedAppPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type ManagedAppPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedAppPolicyRequestBuilderGetOptions options for Get
 type ManagedAppPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type ManagedAppPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
+// managedAppPolicyRequestBuilderGetQueryParameters zero or more policys already applied on the registered app when it last synchronized with managment service.
 type ManagedAppPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedAppPolicyRequestBuilderPatchOptions options for Patch
 type ManagedAppPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedAppPolicy;
@@ -57,10 +57,7 @@ type ManagedAppPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagedAppPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedAppPolicyRequestBuilderInternal instantiates a new ManagedAppPolicyRequestBuilder and sets the default values.
 func NewManagedAppPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedAppPolicyRequestBuilder) {
     m := &ManagedAppPolicyRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewManagedAppPolicyRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedAppPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedAppPolicyRequestBuilder instantiates a new ManagedAppPolicyRequestBuilder and sets the default values.
 func NewManagedAppPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedAppPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *ManagedAppPolicyRequestBuilder) CreateDeleteRequestInformation(options *ManagedAppPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *ManagedAppPolicyRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *ManagedAppPolicyRequestBuilder) CreateGetRequestInformation(options *ManagedAppPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ManagedAppPolicyRequestBuilder) CreateGetRequestInformation(options *Ma
     }
     return requestInfo, nil
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *ManagedAppPolicyRequestBuilder) CreatePatchRequestInformation(options *ManagedAppPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *ManagedAppPolicyRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
-// Parameters:
-//  - options : Options for the request
+// Delete zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *ManagedAppPolicyRequestBuilder) Delete(options *ManagedAppPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *ManagedAppPolicyRequestBuilder) Delete(options *ManagedAppPolicyRequest
     }
     return nil
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
-// Parameters:
-//  - options : Options for the request
+// Get zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *ManagedAppPolicyRequestBuilder) Get(options *ManagedAppPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedAppPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -174,9 +158,7 @@ func (m *ManagedAppPolicyRequestBuilder) Get(options *ManagedAppPolicyRequestBui
 func (m *ManagedAppPolicyRequestBuilder) ManagedAppProtection()(*ia5b743276ffdb496eb66220a0a53ba3adf25d50fba689c1c1a6dbe1ac9c91d34.ManagedAppProtectionRequestBuilder) {
     return ia5b743276ffdb496eb66220a0a53ba3adf25d50fba689c1c1a6dbe1ac9c91d34.NewManagedAppProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
-// Parameters:
-//  - options : Options for the request
+// Patch zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *ManagedAppPolicyRequestBuilder) Patch(options *ManagedAppPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

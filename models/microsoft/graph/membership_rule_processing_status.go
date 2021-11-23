@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// membershipRuleProcessingStatus 
 type MembershipRuleProcessingStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,14 +16,14 @@ type MembershipRuleProcessingStatus struct {
     // Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.   Required. Read-only.
     status *MembershipRuleProcessingStatusDetails;
 }
-// Instantiates a new membershipRuleProcessingStatus and sets the default values.
+// NewMembershipRuleProcessingStatus instantiates a new membershipRuleProcessingStatus and sets the default values.
 func NewMembershipRuleProcessingStatus()(*MembershipRuleProcessingStatus) {
     m := &MembershipRuleProcessingStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MembershipRuleProcessingStatus) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *MembershipRuleProcessingStatus) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// Gets the errorMessage property value. Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
+// GetErrorMessage gets the errorMessage property value. Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
 func (m *MembershipRuleProcessingStatus) GetErrorMessage()(*string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *MembershipRuleProcessingStatus) GetErrorMessage()(*string) {
         return m.errorMessage
     }
 }
-// Gets the lastMembershipUpdated property value. Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
+// GetLastMembershipUpdated gets the lastMembershipUpdated property value. Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
 func (m *MembershipRuleProcessingStatus) GetLastMembershipUpdated()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *MembershipRuleProcessingStatus) GetLastMembershipUpdated()(*i336074805f
         return m.lastMembershipUpdated
     }
 }
-// Gets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.   Required. Read-only.
+// GetStatus gets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.   Required. Read-only.
 func (m *MembershipRuleProcessingStatus) GetStatus()(*MembershipRuleProcessingStatusDetails) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *MembershipRuleProcessingStatus) GetStatus()(*MembershipRuleProcessingSt
         return m.status
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["errorMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,9 +94,7 @@ func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func
 func (m *MembershipRuleProcessingStatus) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MembershipRuleProcessingStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("errorMessage", m.GetErrorMessage())
@@ -125,27 +123,19 @@ func (m *MembershipRuleProcessingStatus) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MembershipRuleProcessingStatus) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the errorMessage property value. Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the errorMessage property.
+// SetErrorMessage sets the errorMessage property value. Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
 func (m *MembershipRuleProcessingStatus) SetErrorMessage(value *string)() {
     m.errorMessage = value
 }
-// Sets the lastMembershipUpdated property value. Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the lastMembershipUpdated property.
+// SetLastMembershipUpdated sets the lastMembershipUpdated property value. Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
 func (m *MembershipRuleProcessingStatus) SetLastMembershipUpdated(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastMembershipUpdated = value
 }
-// Sets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.   Required. Read-only.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.   Required. Read-only.
 func (m *MembershipRuleProcessingStatus) SetStatus(value *MembershipRuleProcessingStatusDetails)() {
     m.status = value
 }

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \riskyUsers\{riskyUser-id}\history
+// historyRequestBuilder builds and executes requests for operations under \riskyUsers\{riskyUser-id}\history
 type HistoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type HistoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// HistoryRequestBuilderGetOptions options for Get
 type HistoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type HistoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The activity related to user risk level change
+// historyRequestBuilderGetQueryParameters the activity related to user risk level change
 type HistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type HistoryRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// HistoryRequestBuilderPostOptions options for Post
 type HistoryRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUserHistoryItem;
@@ -56,10 +56,7 @@ type HistoryRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new HistoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHistoryRequestBuilderInternal instantiates a new HistoryRequestBuilder and sets the default values.
 func NewHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HistoryRequestBuilder) {
     m := &HistoryRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewHistoryRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new HistoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHistoryRequestBuilder instantiates a new HistoryRequestBuilder and sets the default values.
 func NewHistoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HistoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The activity related to user risk level change
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the activity related to user risk level change
 func (m *HistoryRequestBuilder) CreateGetRequestInformation(options *HistoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *HistoryRequestBuilder) CreateGetRequestInformation(options *HistoryRequ
     }
     return requestInfo, nil
 }
-// The activity related to user risk level change
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the activity related to user risk level change
 func (m *HistoryRequestBuilder) CreatePostRequestInformation(options *HistoryRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *HistoryRequestBuilder) CreatePostRequestInformation(options *HistoryReq
     }
     return requestInfo, nil
 }
-// The activity related to user risk level change
-// Parameters:
-//  - options : Options for the request
+// Get the activity related to user risk level change
 func (m *HistoryRequestBuilder) Get(options *HistoryRequestBuilderGetOptions)(*HistoryResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *HistoryRequestBuilder) Get(options *HistoryRequestBuilderGetOptions)(*H
     }
     return res.(*HistoryResponse), nil
 }
-// The activity related to user risk level change
-// Parameters:
-//  - options : Options for the request
+// Post the activity related to user risk level change
 func (m *HistoryRequestBuilder) Post(options *HistoryRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskyUserHistoryItem, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\authentication\softwareOathMethods
+// softwareOathMethodsRequestBuilder builds and executes requests for operations under \me\authentication\softwareOathMethods
 type SoftwareOathMethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SoftwareOathMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SoftwareOathMethodsRequestBuilderGetOptions options for Get
 type SoftwareOathMethodsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SoftwareOathMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get softwareOathMethods from me
+// softwareOathMethodsRequestBuilderGetQueryParameters get softwareOathMethods from me
 type SoftwareOathMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SoftwareOathMethodsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SoftwareOathMethodsRequestBuilderPostOptions options for Post
 type SoftwareOathMethodsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethod;
@@ -56,10 +56,7 @@ type SoftwareOathMethodsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SoftwareOathMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSoftwareOathMethodsRequestBuilderInternal instantiates a new SoftwareOathMethodsRequestBuilder and sets the default values.
 func NewSoftwareOathMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SoftwareOathMethodsRequestBuilder) {
     m := &SoftwareOathMethodsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSoftwareOathMethodsRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SoftwareOathMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSoftwareOathMethodsRequestBuilder instantiates a new SoftwareOathMethodsRequestBuilder and sets the default values.
 func NewSoftwareOathMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SoftwareOathMethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSoftwareOathMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get softwareOathMethods from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get softwareOathMethods from me
 func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformation(options *SoftwareOathMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SoftwareOathMethodsRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Create new navigation property to softwareOathMethods for me
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to softwareOathMethods for me
 func (m *SoftwareOathMethodsRequestBuilder) CreatePostRequestInformation(options *SoftwareOathMethodsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SoftwareOathMethodsRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Get softwareOathMethods from me
-// Parameters:
-//  - options : Options for the request
+// Get get softwareOathMethods from me
 func (m *SoftwareOathMethodsRequestBuilder) Get(options *SoftwareOathMethodsRequestBuilderGetOptions)(*SoftwareOathMethodsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SoftwareOathMethodsRequestBuilder) Get(options *SoftwareOathMethodsRequ
     }
     return res.(*SoftwareOathMethodsResponse), nil
 }
-// Create new navigation property to softwareOathMethods for me
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to softwareOathMethods for me
 func (m *SoftwareOathMethodsRequestBuilder) Post(options *SoftwareOathMethodsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SoftwareOathAuthenticationMethod, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

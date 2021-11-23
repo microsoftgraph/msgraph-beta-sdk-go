@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\publishedResources
+// publishedResourcesRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\publishedResources
 type PublishedResourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PublishedResourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PublishedResourcesRequestBuilderGetOptions options for Get
 type PublishedResourcesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PublishedResourcesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of existing publishedResource objects. Read-only. Nullable.
+// publishedResourcesRequestBuilderGetQueryParameters list of existing publishedResource objects. Read-only. Nullable.
 type PublishedResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PublishedResourcesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PublishedResourcesRequestBuilderPostOptions options for Post
 type PublishedResourcesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PublishedResource;
@@ -56,10 +56,7 @@ type PublishedResourcesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PublishedResourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPublishedResourcesRequestBuilderInternal instantiates a new PublishedResourcesRequestBuilder and sets the default values.
 func NewPublishedResourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PublishedResourcesRequestBuilder) {
     m := &PublishedResourcesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPublishedResourcesRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PublishedResourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPublishedResourcesRequestBuilder instantiates a new PublishedResourcesRequestBuilder and sets the default values.
 func NewPublishedResourcesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PublishedResourcesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPublishedResourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of existing publishedResource objects. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of existing publishedResource objects. Read-only. Nullable.
 func (m *PublishedResourcesRequestBuilder) CreateGetRequestInformation(options *PublishedResourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PublishedResourcesRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// List of existing publishedResource objects. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of existing publishedResource objects. Read-only. Nullable.
 func (m *PublishedResourcesRequestBuilder) CreatePostRequestInformation(options *PublishedResourcesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PublishedResourcesRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// List of existing publishedResource objects. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get list of existing publishedResource objects. Read-only. Nullable.
 func (m *PublishedResourcesRequestBuilder) Get(options *PublishedResourcesRequestBuilderGetOptions)(*PublishedResourcesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PublishedResourcesRequestBuilder) Get(options *PublishedResourcesReques
     }
     return res.(*PublishedResourcesResponse), nil
 }
-// List of existing publishedResource objects. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post list of existing publishedResource objects. Read-only. Nullable.
 func (m *PublishedResourcesRequestBuilder) Post(options *PublishedResourcesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PublishedResource, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

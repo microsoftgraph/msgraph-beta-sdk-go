@@ -16,7 +16,7 @@ import (
     ia6c25f4c749e8beb990221d7c4363a8d4383190388b2db9197c94a520cdfffde "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/connectors/item"
 )
 
-// Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}
+// onPremisesPublishingProfileRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}
 type OnPremisesPublishingProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -25,7 +25,7 @@ type OnPremisesPublishingProfileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OnPremisesPublishingProfileRequestBuilderDeleteOptions options for Delete
 type OnPremisesPublishingProfileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -34,7 +34,7 @@ type OnPremisesPublishingProfileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OnPremisesPublishingProfileRequestBuilderGetOptions options for Get
 type OnPremisesPublishingProfileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -45,14 +45,14 @@ type OnPremisesPublishingProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from onPremisesPublishingProfiles by key
+// onPremisesPublishingProfileRequestBuilderGetQueryParameters get entity from onPremisesPublishingProfiles by key
 type OnPremisesPublishingProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OnPremisesPublishingProfileRequestBuilderPatchOptions options for Patch
 type OnPremisesPublishingProfileRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnPremisesPublishingProfile;
@@ -66,9 +66,7 @@ type OnPremisesPublishingProfileRequestBuilderPatchOptions struct {
 func (m *OnPremisesPublishingProfileRequestBuilder) AgentGroups()(*i4f4a2aad6de6e818a6b03ab06593dcd209fd37f696b126badf1ccf2cbb487d98.AgentGroupsRequestBuilder) {
     return i4f4a2aad6de6e818a6b03ab06593dcd209fd37f696b126badf1ccf2cbb487d98.NewAgentGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AgentGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item collection
 func (m *OnPremisesPublishingProfileRequestBuilder) AgentGroupsById(id string)(*i7be5eb505c9819935bb7ecd0914ce542aff26ebb696b731e5bb2ef462b429317.OnPremisesAgentGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -82,9 +80,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) AgentGroupsById(id string)(*
 func (m *OnPremisesPublishingProfileRequestBuilder) Agents()(*i4c54046d8ca87c2d4d86246e027b33b58926116766af2be55ea00fe765476f06.AgentsRequestBuilder) {
     return i4c54046d8ca87c2d4d86246e027b33b58926116766af2be55ea00fe765476f06.NewAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agents.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AgentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agents.item collection
 func (m *OnPremisesPublishingProfileRequestBuilder) AgentsById(id string)(*i50192dbecdd2d205018f1c9f0d43e5faa1231c597c1e3d9879fb3bfcceb8f7bf.OnPremisesAgentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -98,9 +94,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) AgentsById(id string)(*i5019
 func (m *OnPremisesPublishingProfileRequestBuilder) ConnectorGroups()(*i015798be98f5354e44d25cd3fc8c761a04c2de377021e2334f9f574c0b9d9d50.ConnectorGroupsRequestBuilder) {
     return i015798be98f5354e44d25cd3fc8c761a04c2de377021e2334f9f574c0b9d9d50.NewConnectorGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ConnectorGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item collection
 func (m *OnPremisesPublishingProfileRequestBuilder) ConnectorGroupsById(id string)(*i4e613208e03a8604c73cff8fea0c650341897927012dab6031821bf1b1ae2305.ConnectorGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -114,9 +108,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) ConnectorGroupsById(id strin
 func (m *OnPremisesPublishingProfileRequestBuilder) Connectors()(*i86c4967a04a253d001f5fd0f5c1dd90bb7ff7141cd43dab8638d3f8ddaff0d58.ConnectorsRequestBuilder) {
     return i86c4967a04a253d001f5fd0f5c1dd90bb7ff7141cd43dab8638d3f8ddaff0d58.NewConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectors.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ConnectorsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectors.item collection
 func (m *OnPremisesPublishingProfileRequestBuilder) ConnectorsById(id string)(*ia6c25f4c749e8beb990221d7c4363a8d4383190388b2db9197c94a520cdfffde.ConnectorRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -127,10 +119,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) ConnectorsById(id string)(*i
     }
     return ia6c25f4c749e8beb990221d7c4363a8d4383190388b2db9197c94a520cdfffde.NewConnectorRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new OnPremisesPublishingProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnPremisesPublishingProfileRequestBuilderInternal instantiates a new OnPremisesPublishingProfileRequestBuilder and sets the default values.
 func NewOnPremisesPublishingProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnPremisesPublishingProfileRequestBuilder) {
     m := &OnPremisesPublishingProfileRequestBuilder{
     }
@@ -143,18 +132,13 @@ func NewOnPremisesPublishingProfileRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OnPremisesPublishingProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnPremisesPublishingProfileRequestBuilder instantiates a new OnPremisesPublishingProfileRequestBuilder and sets the default values.
 func NewOnPremisesPublishingProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnPremisesPublishingProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOnPremisesPublishingProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from onPremisesPublishingProfiles
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from onPremisesPublishingProfiles
 func (m *OnPremisesPublishingProfileRequestBuilder) CreateDeleteRequestInformation(options *OnPremisesPublishingProfileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -171,9 +155,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// Get entity from onPremisesPublishingProfiles by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from onPremisesPublishingProfiles by key
 func (m *OnPremisesPublishingProfileRequestBuilder) CreateGetRequestInformation(options *OnPremisesPublishingProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -193,9 +175,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// Update entity in onPremisesPublishingProfiles
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in onPremisesPublishingProfiles
 func (m *OnPremisesPublishingProfileRequestBuilder) CreatePatchRequestInformation(options *OnPremisesPublishingProfileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -213,9 +193,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// Delete entity from onPremisesPublishingProfiles
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from onPremisesPublishingProfiles
 func (m *OnPremisesPublishingProfileRequestBuilder) Delete(options *OnPremisesPublishingProfileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -227,9 +205,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) Delete(options *OnPremisesPu
     }
     return nil
 }
-// Get entity from onPremisesPublishingProfiles by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from onPremisesPublishingProfiles by key
 func (m *OnPremisesPublishingProfileRequestBuilder) Get(options *OnPremisesPublishingProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnPremisesPublishingProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -241,9 +217,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) Get(options *OnPremisesPubli
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnPremisesPublishingProfile), nil
 }
-// Update entity in onPremisesPublishingProfiles
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in onPremisesPublishingProfiles
 func (m *OnPremisesPublishingProfileRequestBuilder) Patch(options *OnPremisesPublishingProfileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -258,9 +232,7 @@ func (m *OnPremisesPublishingProfileRequestBuilder) Patch(options *OnPremisesPub
 func (m *OnPremisesPublishingProfileRequestBuilder) PublishedResources()(*if08fda1a25bbc0d180dcba2e00721696a53ac148a9d4209b397df9ba1382eb6f.PublishedResourcesRequestBuilder) {
     return if08fda1a25bbc0d180dcba2e00721696a53ac148a9d4209b397df9ba1382eb6f.NewPublishedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.publishedResources.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PublishedResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.publishedResources.item collection
 func (m *OnPremisesPublishingProfileRequestBuilder) PublishedResourcesById(id string)(*i04768df19176575e14a7cad44b0f47526794459b68db53ab71668e3192948132.PublishedResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\resourceOperations
+// resourceOperationsRequestBuilder builds and executes requests for operations under \deviceManagement\resourceOperations
 type ResourceOperationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ResourceOperationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ResourceOperationsRequestBuilderGetOptions options for Get
 type ResourceOperationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ResourceOperationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Resource Operations.
+// resourceOperationsRequestBuilderGetQueryParameters the Resource Operations.
 type ResourceOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ResourceOperationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ResourceOperationsRequestBuilderPostOptions options for Post
 type ResourceOperationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceOperation;
@@ -56,10 +56,7 @@ type ResourceOperationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ResourceOperationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceOperationsRequestBuilderInternal instantiates a new ResourceOperationsRequestBuilder and sets the default values.
 func NewResourceOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceOperationsRequestBuilder) {
     m := &ResourceOperationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewResourceOperationsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ResourceOperationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceOperationsRequestBuilder instantiates a new ResourceOperationsRequestBuilder and sets the default values.
 func NewResourceOperationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceOperationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResourceOperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Resource Operations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Resource Operations.
 func (m *ResourceOperationsRequestBuilder) CreateGetRequestInformation(options *ResourceOperationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ResourceOperationsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The Resource Operations.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the Resource Operations.
 func (m *ResourceOperationsRequestBuilder) CreatePostRequestInformation(options *ResourceOperationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ResourceOperationsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The Resource Operations.
-// Parameters:
-//  - options : Options for the request
+// Get the Resource Operations.
 func (m *ResourceOperationsRequestBuilder) Get(options *ResourceOperationsRequestBuilderGetOptions)(*ResourceOperationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ResourceOperationsRequestBuilder) Get(options *ResourceOperationsReques
     }
     return res.(*ResourceOperationsResponse), nil
 }
-// The Resource Operations.
-// Parameters:
-//  - options : Options for the request
+// Post the Resource Operations.
 func (m *ResourceOperationsRequestBuilder) Post(options *ResourceOperationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResourceOperation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

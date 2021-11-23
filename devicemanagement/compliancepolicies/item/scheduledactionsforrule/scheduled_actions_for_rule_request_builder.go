@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\scheduledActionsForRule
+// scheduledActionsForRuleRequestBuilder builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\scheduledActionsForRule
 type ScheduledActionsForRuleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ScheduledActionsForRuleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ScheduledActionsForRuleRequestBuilderGetOptions options for Get
 type ScheduledActionsForRuleRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ScheduledActionsForRuleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of scheduled action for this rule
+// scheduledActionsForRuleRequestBuilderGetQueryParameters the list of scheduled action for this rule
 type ScheduledActionsForRuleRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ScheduledActionsForRuleRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ScheduledActionsForRuleRequestBuilderPostOptions options for Post
 type ScheduledActionsForRuleRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementComplianceScheduledActionForRule;
@@ -56,10 +56,7 @@ type ScheduledActionsForRuleRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ScheduledActionsForRuleRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScheduledActionsForRuleRequestBuilderInternal instantiates a new ScheduledActionsForRuleRequestBuilder and sets the default values.
 func NewScheduledActionsForRuleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScheduledActionsForRuleRequestBuilder) {
     m := &ScheduledActionsForRuleRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewScheduledActionsForRuleRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ScheduledActionsForRuleRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScheduledActionsForRuleRequestBuilder instantiates a new ScheduledActionsForRuleRequestBuilder and sets the default values.
 func NewScheduledActionsForRuleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScheduledActionsForRuleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewScheduledActionsForRuleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of scheduled action for this rule
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of scheduled action for this rule
 func (m *ScheduledActionsForRuleRequestBuilder) CreateGetRequestInformation(options *ScheduledActionsForRuleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ScheduledActionsForRuleRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The list of scheduled action for this rule
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of scheduled action for this rule
 func (m *ScheduledActionsForRuleRequestBuilder) CreatePostRequestInformation(options *ScheduledActionsForRuleRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ScheduledActionsForRuleRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The list of scheduled action for this rule
-// Parameters:
-//  - options : Options for the request
+// Get the list of scheduled action for this rule
 func (m *ScheduledActionsForRuleRequestBuilder) Get(options *ScheduledActionsForRuleRequestBuilderGetOptions)(*ScheduledActionsForRuleResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ScheduledActionsForRuleRequestBuilder) Get(options *ScheduledActionsFor
     }
     return res.(*ScheduledActionsForRuleResponse), nil
 }
-// The list of scheduled action for this rule
-// Parameters:
-//  - options : Options for the request
+// Post the list of scheduled action for this rule
 func (m *ScheduledActionsForRuleRequestBuilder) Post(options *ScheduledActionsForRuleRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementComplianceScheduledActionForRule, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

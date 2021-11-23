@@ -15,7 +15,7 @@ import (
     if64c28382662f3e40b50d01a6d6cccdf239d73815a84e10346df6028d2331d87 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceresources/item/roledefinitions/item"
 )
 
-// Builds and executes requests for operations under \governanceResources\{governanceResource-id}
+// governanceResourceRequestBuilder builds and executes requests for operations under \governanceResources\{governanceResource-id}
 type GovernanceResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,7 +24,7 @@ type GovernanceResourceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GovernanceResourceRequestBuilderDeleteOptions options for Delete
 type GovernanceResourceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -33,7 +33,7 @@ type GovernanceResourceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GovernanceResourceRequestBuilderGetOptions options for Get
 type GovernanceResourceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -44,14 +44,14 @@ type GovernanceResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from governanceResources by key
+// governanceResourceRequestBuilderGetQueryParameters get entity from governanceResources by key
 type GovernanceResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GovernanceResourceRequestBuilderPatchOptions options for Patch
 type GovernanceResourceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResource;
@@ -62,10 +62,7 @@ type GovernanceResourceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GovernanceResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceResourceRequestBuilderInternal instantiates a new GovernanceResourceRequestBuilder and sets the default values.
 func NewGovernanceResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceResourceRequestBuilder) {
     m := &GovernanceResourceRequestBuilder{
     }
@@ -78,18 +75,13 @@ func NewGovernanceResourceRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GovernanceResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceResourceRequestBuilder instantiates a new GovernanceResourceRequestBuilder and sets the default values.
 func NewGovernanceResourceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceResourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceResourceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from governanceResources
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from governanceResources
 func (m *GovernanceResourceRequestBuilder) CreateDeleteRequestInformation(options *GovernanceResourceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,9 +98,7 @@ func (m *GovernanceResourceRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get entity from governanceResources by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from governanceResources by key
 func (m *GovernanceResourceRequestBuilder) CreateGetRequestInformation(options *GovernanceResourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,9 +118,7 @@ func (m *GovernanceResourceRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Update entity in governanceResources
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in governanceResources
 func (m *GovernanceResourceRequestBuilder) CreatePatchRequestInformation(options *GovernanceResourceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,9 +136,7 @@ func (m *GovernanceResourceRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete entity from governanceResources
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from governanceResources
 func (m *GovernanceResourceRequestBuilder) Delete(options *GovernanceResourceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -162,9 +148,7 @@ func (m *GovernanceResourceRequestBuilder) Delete(options *GovernanceResourceReq
     }
     return nil
 }
-// Get entity from governanceResources by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from governanceResources by key
 func (m *GovernanceResourceRequestBuilder) Get(options *GovernanceResourceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceResource, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -179,9 +163,7 @@ func (m *GovernanceResourceRequestBuilder) Get(options *GovernanceResourceReques
 func (m *GovernanceResourceRequestBuilder) Parent()(*i8994915f6b921c39a8137a306b12e45f26896a0146d2c3163937128e4f0b5053.ParentRequestBuilder) {
     return i8994915f6b921c39a8137a306b12e45f26896a0146d2c3163937128e4f0b5053.NewParentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in governanceResources
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in governanceResources
 func (m *GovernanceResourceRequestBuilder) Patch(options *GovernanceResourceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -196,9 +178,7 @@ func (m *GovernanceResourceRequestBuilder) Patch(options *GovernanceResourceRequ
 func (m *GovernanceResourceRequestBuilder) RoleAssignmentRequests()(*iccb81886f13078be67906d67b607f4f7bed31ff7dbd649ca2ce2c93d6b838ee0.RoleAssignmentRequestsRequestBuilder) {
     return iccb81886f13078be67906d67b607f4f7bed31ff7dbd649ca2ce2c93d6b838ee0.NewRoleAssignmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.governanceResources.item.roleAssignmentRequests.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleAssignmentRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.governanceResources.item.roleAssignmentRequests.item collection
 func (m *GovernanceResourceRequestBuilder) RoleAssignmentRequestsById(id string)(*ib874dfaa0f52241f63218e4bd5551aae0a845a5ffdc8fe31ba0ba8d76ef68368.GovernanceRoleAssignmentRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -212,9 +192,7 @@ func (m *GovernanceResourceRequestBuilder) RoleAssignmentRequestsById(id string)
 func (m *GovernanceResourceRequestBuilder) RoleAssignments()(*ie79a6e359646d3f119e90ecd4fe15c896747add74360c87f3375f7297d6b2061.RoleAssignmentsRequestBuilder) {
     return ie79a6e359646d3f119e90ecd4fe15c896747add74360c87f3375f7297d6b2061.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.governanceResources.item.roleAssignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.governanceResources.item.roleAssignments.item collection
 func (m *GovernanceResourceRequestBuilder) RoleAssignmentsById(id string)(*iebcf8addd43958225cc668f85c54db37378718447b94561d98640bf82caf0a25.GovernanceRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -228,9 +206,7 @@ func (m *GovernanceResourceRequestBuilder) RoleAssignmentsById(id string)(*iebcf
 func (m *GovernanceResourceRequestBuilder) RoleDefinitions()(*ie4dc11adf5ace6ad678d0f22990accf9d7e8cd8c8fe6080254ad1e674cff8621.RoleDefinitionsRequestBuilder) {
     return ie4dc11adf5ace6ad678d0f22990accf9d7e8cd8c8fe6080254ad1e674cff8621.NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.governanceResources.item.roleDefinitions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.governanceResources.item.roleDefinitions.item collection
 func (m *GovernanceResourceRequestBuilder) RoleDefinitionsById(id string)(*if64c28382662f3e40b50d01a6d6cccdf239d73815a84e10346df6028d2331d87.GovernanceRoleDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -244,9 +220,7 @@ func (m *GovernanceResourceRequestBuilder) RoleDefinitionsById(id string)(*if64c
 func (m *GovernanceResourceRequestBuilder) RoleSettings()(*i58db9e4793251cf9ae32fa068af461b00d7ceae629ebdc2aa7054c7827578fb3.RoleSettingsRequestBuilder) {
     return i58db9e4793251cf9ae32fa068af461b00d7ceae629ebdc2aa7054c7827578fb3.NewRoleSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.governanceResources.item.roleSettings.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleSettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.governanceResources.item.roleSettings.item collection
 func (m *GovernanceResourceRequestBuilder) RoleSettingsById(id string)(*i45fabc4315060a7a2958038a6d8acadc4ae3b133060b3d51a24591bef93cbd24.GovernanceRoleSettingRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

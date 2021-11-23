@@ -7,7 +7,7 @@ import (
     i2102882d39a51f43c68ec32bbe610ceb1f758aca76a69c4c3c2274eb11831fc8 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/entitlementmanagement/roleassignmentschedulerequests/item/activatedusing/ref"
 )
 
-// Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}\activatedUsing
+// activatedUsingRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}\activatedUsing
 type ActivatedUsingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ActivatedUsingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ActivatedUsingRequestBuilderGetOptions options for Get
 type ActivatedUsingRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ActivatedUsingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
+// activatedUsingRequestBuilderGetQueryParameters if the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
 type ActivatedUsingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ActivatedUsingRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivatedUsingRequestBuilderInternal instantiates a new ActivatedUsingRequestBuilder and sets the default values.
 func NewActivatedUsingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivatedUsingRequestBuilder) {
     m := &ActivatedUsingRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewActivatedUsingRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ActivatedUsingRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivatedUsingRequestBuilder instantiates a new ActivatedUsingRequestBuilder and sets the default values.
 func NewActivatedUsingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivatedUsingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivatedUsingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation if the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
 func (m *ActivatedUsingRequestBuilder) CreateGetRequestInformation(options *ActivatedUsingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ActivatedUsingRequestBuilder) CreateGetRequestInformation(options *Acti
     }
     return requestInfo, nil
 }
-// If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
-// Parameters:
-//  - options : Options for the request
+// Get if the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
 func (m *ActivatedUsingRequestBuilder) Get(options *ActivatedUsingRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleEligibilitySchedule, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

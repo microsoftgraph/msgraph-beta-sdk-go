@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}\roleDefinitions\{governanceRoleDefinition-id}
+// governanceRoleDefinitionRequestBuilder builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}\roleDefinitions\{governanceRoleDefinition-id}
 type GovernanceRoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GovernanceRoleDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GovernanceRoleDefinitionRequestBuilderDeleteOptions options for Delete
 type GovernanceRoleDefinitionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type GovernanceRoleDefinitionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GovernanceRoleDefinitionRequestBuilderGetOptions options for Get
 type GovernanceRoleDefinitionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type GovernanceRoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of role defintions for the provider.
+// governanceRoleDefinitionRequestBuilderGetQueryParameters a collection of role defintions for the provider.
 type GovernanceRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GovernanceRoleDefinitionRequestBuilderPatchOptions options for Patch
 type GovernanceRoleDefinitionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinition;
@@ -53,10 +53,7 @@ type GovernanceRoleDefinitionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GovernanceRoleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceRoleDefinitionRequestBuilderInternal instantiates a new GovernanceRoleDefinitionRequestBuilder and sets the default values.
 func NewGovernanceRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceRoleDefinitionRequestBuilder) {
     m := &GovernanceRoleDefinitionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewGovernanceRoleDefinitionRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GovernanceRoleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceRoleDefinitionRequestBuilder instantiates a new GovernanceRoleDefinitionRequestBuilder and sets the default values.
 func NewGovernanceRoleDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceRoleDefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of role defintions for the provider.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of role defintions for the provider.
 func (m *GovernanceRoleDefinitionRequestBuilder) CreateDeleteRequestInformation(options *GovernanceRoleDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *GovernanceRoleDefinitionRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// A collection of role defintions for the provider.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of role defintions for the provider.
 func (m *GovernanceRoleDefinitionRequestBuilder) CreateGetRequestInformation(options *GovernanceRoleDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *GovernanceRoleDefinitionRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// A collection of role defintions for the provider.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of role defintions for the provider.
 func (m *GovernanceRoleDefinitionRequestBuilder) CreatePatchRequestInformation(options *GovernanceRoleDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *GovernanceRoleDefinitionRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// A collection of role defintions for the provider.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of role defintions for the provider.
 func (m *GovernanceRoleDefinitionRequestBuilder) Delete(options *GovernanceRoleDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *GovernanceRoleDefinitionRequestBuilder) Delete(options *GovernanceRoleD
     }
     return nil
 }
-// A collection of role defintions for the provider.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of role defintions for the provider.
 func (m *GovernanceRoleDefinitionRequestBuilder) Get(options *GovernanceRoleDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *GovernanceRoleDefinitionRequestBuilder) Get(options *GovernanceRoleDefi
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinition), nil
 }
-// A collection of role defintions for the provider.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of role defintions for the provider.
 func (m *GovernanceRoleDefinitionRequestBuilder) Patch(options *GovernanceRoleDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

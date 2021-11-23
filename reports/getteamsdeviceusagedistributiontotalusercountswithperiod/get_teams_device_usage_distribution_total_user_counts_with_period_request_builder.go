@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsDeviceUsageDistributionTotalUserCounts(period='{period}')
+// getTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getTeamsDeviceUsageDistributionTotalUserCounts(period='{period}')
 type GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder stru
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,11 +22,7 @@ type GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderGetOp
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderInternal instantiates a new GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder) {
     m := &GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder{
     }
@@ -42,18 +38,13 @@ func NewGetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderIn
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder instantiates a new GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getTeamsDeviceUsageDistributionTotalUserCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getTeamsDeviceUsageDistributionTotalUserCounts
 func (m *GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +61,7 @@ func (m *GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder)
     }
     return requestInfo, nil
 }
-// Invoke function getTeamsDeviceUsageDistributionTotalUserCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getTeamsDeviceUsageDistributionTotalUserCounts
 func (m *GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder) Get(options *GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

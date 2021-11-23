@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}\microsoft.graph.exportMobileConfig()
+// exportMobileConfigRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}\microsoft.graph.exportMobileConfig()
 type ExportMobileConfigRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ExportMobileConfigRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ExportMobileConfigRequestBuilderGetOptions options for Get
 type ExportMobileConfigRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type ExportMobileConfigRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExportMobileConfigRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExportMobileConfigRequestBuilderInternal instantiates a new ExportMobileConfigRequestBuilder and sets the default values.
 func NewExportMobileConfigRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExportMobileConfigRequestBuilder) {
     m := &ExportMobileConfigRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewExportMobileConfigRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExportMobileConfigRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExportMobileConfigRequestBuilder instantiates a new ExportMobileConfigRequestBuilder and sets the default values.
 func NewExportMobileConfigRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExportMobileConfigRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExportMobileConfigRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Exports the mobile configuration
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation exports the mobile configuration
 func (m *ExportMobileConfigRequestBuilder) CreateGetRequestInformation(options *ExportMobileConfigRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *ExportMobileConfigRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Exports the mobile configuration
-// Parameters:
-//  - options : Options for the request
+// Get exports the mobile configuration
 func (m *ExportMobileConfigRequestBuilder) Get(options *ExportMobileConfigRequestBuilderGetOptions)(*string, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

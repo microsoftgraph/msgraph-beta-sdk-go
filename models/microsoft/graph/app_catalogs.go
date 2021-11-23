@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AppCatalogs 
 type AppCatalogs struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     teamsApps []TeamsApp;
 }
-// Instantiates a new AppCatalogs and sets the default values.
+// NewAppCatalogs instantiates a new AppCatalogs and sets the default values.
 func NewAppCatalogs()(*AppCatalogs) {
     m := &AppCatalogs{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppCatalogs) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,7 +26,7 @@ func (m *AppCatalogs) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the teamsApps property value. 
+// GetTeamsApps gets the teamsApps property value. 
 func (m *AppCatalogs) GetTeamsApps()([]TeamsApp) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *AppCatalogs) GetTeamsApps()([]TeamsApp) {
         return m.teamsApps
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AppCatalogs) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["teamsApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -56,9 +56,7 @@ func (m *AppCatalogs) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *AppCatalogs) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AppCatalogs) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTeamsApps()))
@@ -79,15 +77,11 @@ func (m *AppCatalogs) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppCatalogs) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the teamsApps property value. 
-// Parameters:
-//  - value : Value to set for the teamsApps property.
+// SetTeamsApps sets the teamsApps property value. 
 func (m *AppCatalogs) SetTeamsApps(value []TeamsApp)() {
     m.teamsApps = value
 }

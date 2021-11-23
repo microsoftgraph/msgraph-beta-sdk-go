@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDeviceMetricHistory
+// userExperienceAnalyticsDeviceMetricHistoryRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDeviceMetricHistory
 type UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics device metric history
+// userExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetQueryParameters user experience analytics device metric history
 type UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetQueryParameters 
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetricHistory;
@@ -56,10 +56,7 @@ type UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderPostOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilderInternal instantiates a new UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) {
     m := &UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilderInternal(pathPar
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilder instantiates a new UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics device metric history
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics device metric history
 func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// User experience analytics device metric history
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation user experience analytics device metric history
 func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) CreatePostReq
     }
     return requestInfo, nil
 }
-// User experience analytics device metric history
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics device metric history
 func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) Get(options *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetOptions)(*UserExperienceAnalyticsDeviceMetricHistoryResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) Get(options *
     }
     return res.(*UserExperienceAnalyticsDeviceMetricHistoryResponse), nil
 }
-// User experience analytics device metric history
-// Parameters:
-//  - options : Options for the request
+// Post user experience analytics device metric history
 func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) Post(options *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetricHistory, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\licenseDetails\{licenseDetails-id}
+// licenseDetailsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\licenseDetails\{licenseDetails-id}
 type LicenseDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type LicenseDetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// LicenseDetailsRequestBuilderDeleteOptions options for Delete
 type LicenseDetailsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type LicenseDetailsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// LicenseDetailsRequestBuilderGetOptions options for Get
 type LicenseDetailsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type LicenseDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get licenseDetails from servicePrincipals
+// licenseDetailsRequestBuilderGetQueryParameters get licenseDetails from servicePrincipals
 type LicenseDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// LicenseDetailsRequestBuilderPatchOptions options for Patch
 type LicenseDetailsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LicenseDetails;
@@ -53,10 +53,7 @@ type LicenseDetailsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LicenseDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLicenseDetailsRequestBuilderInternal instantiates a new LicenseDetailsRequestBuilder and sets the default values.
 func NewLicenseDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LicenseDetailsRequestBuilder) {
     m := &LicenseDetailsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewLicenseDetailsRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LicenseDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLicenseDetailsRequestBuilder instantiates a new LicenseDetailsRequestBuilder and sets the default values.
 func NewLicenseDetailsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LicenseDetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLicenseDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property licenseDetails for servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property licenseDetails for servicePrincipals
 func (m *LicenseDetailsRequestBuilder) CreateDeleteRequestInformation(options *LicenseDetailsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *LicenseDetailsRequestBuilder) CreateDeleteRequestInformation(options *L
     }
     return requestInfo, nil
 }
-// Get licenseDetails from servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get licenseDetails from servicePrincipals
 func (m *LicenseDetailsRequestBuilder) CreateGetRequestInformation(options *LicenseDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *LicenseDetailsRequestBuilder) CreateGetRequestInformation(options *Lice
     }
     return requestInfo, nil
 }
-// Update the navigation property licenseDetails in servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property licenseDetails in servicePrincipals
 func (m *LicenseDetailsRequestBuilder) CreatePatchRequestInformation(options *LicenseDetailsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *LicenseDetailsRequestBuilder) CreatePatchRequestInformation(options *Li
     }
     return requestInfo, nil
 }
-// Delete navigation property licenseDetails for servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property licenseDetails for servicePrincipals
 func (m *LicenseDetailsRequestBuilder) Delete(options *LicenseDetailsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *LicenseDetailsRequestBuilder) Delete(options *LicenseDetailsRequestBuil
     }
     return nil
 }
-// Get licenseDetails from servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Get get licenseDetails from servicePrincipals
 func (m *LicenseDetailsRequestBuilder) Get(options *LicenseDetailsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LicenseDetails, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *LicenseDetailsRequestBuilder) Get(options *LicenseDetailsRequestBuilder
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LicenseDetails), nil
 }
-// Update the navigation property licenseDetails in servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property licenseDetails in servicePrincipals
 func (m *LicenseDetailsRequestBuilder) Patch(options *LicenseDetailsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

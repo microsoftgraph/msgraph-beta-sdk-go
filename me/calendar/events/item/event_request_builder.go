@@ -26,7 +26,7 @@ import (
     if2b1e2a9807085574644316d2e02a3a9aa2335ecc40c7e9a8828e945fbc62be9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendar/events/item/multivalueextendedproperties/item"
 )
 
-// Builds and executes requests for operations under \me\calendar\events\{event-id}
+// eventRequestBuilder builds and executes requests for operations under \me\calendar\events\{event-id}
 type EventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type EventRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EventRequestBuilderDeleteOptions options for Delete
 type EventRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -44,7 +44,7 @@ type EventRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EventRequestBuilderGetOptions options for Get
 type EventRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -55,12 +55,12 @@ type EventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The events in the calendar. Navigation property. Read-only.
+// eventRequestBuilderGetQueryParameters the events in the calendar. Navigation property. Read-only.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EventRequestBuilderPatchOptions options for Patch
 type EventRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event;
@@ -77,9 +77,7 @@ func (m *EventRequestBuilder) Accept()(*ib2a51806722e21c6ec788fdf6b0eee10e907a4d
 func (m *EventRequestBuilder) Attachments()(*i97b528d359cdfaf66013514b9af5ce682328c510bc03248fb0810ebf226f19e4.AttachmentsRequestBuilder) {
     return i97b528d359cdfaf66013514b9af5ce682328c510bc03248fb0810ebf226f19e4.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.attachments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.attachments.item collection
 func (m *EventRequestBuilder) AttachmentsById(id string)(*ia14123345e5038209c9a2a037b69700ff79c35780a03e5454afed921703f8320.AttachmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -96,10 +94,7 @@ func (m *EventRequestBuilder) Calendar()(*idf6baae4d48e4fcb9e8ccf745a9b91eb8ec7f
 func (m *EventRequestBuilder) Cancel()(*icae7b5ff991f4631b46cc3802546c55d85ad10eaeb0238bf2f6e3ff7bf554f0e.CancelRequestBuilder) {
     return icae7b5ff991f4631b46cc3802546c55d85ad10eaeb0238bf2f6e3ff7bf554f0e.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new EventRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEventRequestBuilderInternal instantiates a new EventRequestBuilder and sets the default values.
 func NewEventRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventRequestBuilder) {
     m := &EventRequestBuilder{
     }
@@ -112,18 +107,13 @@ func NewEventRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EventRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEventRequestBuilder instantiates a new EventRequestBuilder and sets the default values.
 func NewEventRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEventRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The events in the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the events in the calendar. Navigation property. Read-only.
 func (m *EventRequestBuilder) CreateDeleteRequestInformation(options *EventRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +130,7 @@ func (m *EventRequestBuilder) CreateDeleteRequestInformation(options *EventReque
     }
     return requestInfo, nil
 }
-// The events in the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the events in the calendar. Navigation property. Read-only.
 func (m *EventRequestBuilder) CreateGetRequestInformation(options *EventRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -162,9 +150,7 @@ func (m *EventRequestBuilder) CreateGetRequestInformation(options *EventRequestB
     }
     return requestInfo, nil
 }
-// The events in the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the events in the calendar. Navigation property. Read-only.
 func (m *EventRequestBuilder) CreatePatchRequestInformation(options *EventRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -185,9 +171,7 @@ func (m *EventRequestBuilder) CreatePatchRequestInformation(options *EventReques
 func (m *EventRequestBuilder) Decline()(*i86ef866cc2d984e3066c38be80d8b147c286544fa4fecd6ab59fe1d8ff248c1d.DeclineRequestBuilder) {
     return i86ef866cc2d984e3066c38be80d8b147c286544fa4fecd6ab59fe1d8ff248c1d.NewDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The events in the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete the events in the calendar. Navigation property. Read-only.
 func (m *EventRequestBuilder) Delete(options *EventRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -205,9 +189,7 @@ func (m *EventRequestBuilder) DismissReminder()(*i7cda4870e61701a73f65b06cb1c454
 func (m *EventRequestBuilder) ExceptionOccurrences()(*if0032e7643530222733c0d1a82c01d7975494927aa723dfe9e7505cb06dc839e.ExceptionOccurrencesRequestBuilder) {
     return if0032e7643530222733c0d1a82c01d7975494927aa723dfe9e7505cb06dc839e.NewExceptionOccurrencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.exceptionOccurrences.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExceptionOccurrencesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.exceptionOccurrences.item collection
 func (m *EventRequestBuilder) ExceptionOccurrencesById(id string)(*i73e700365b2c2d1e86684192b02ce3e5f7775ba91bb65b0fe4eb04ec97e7b592.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -221,9 +203,7 @@ func (m *EventRequestBuilder) ExceptionOccurrencesById(id string)(*i73e700365b2c
 func (m *EventRequestBuilder) Extensions()(*i07fe24d1dec166fbef03b00ab5b46e976baffb6c06b5ef5e6347d446ff25bca3.ExtensionsRequestBuilder) {
     return i07fe24d1dec166fbef03b00ab5b46e976baffb6c06b5ef5e6347d446ff25bca3.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.extensions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.extensions.item collection
 func (m *EventRequestBuilder) ExtensionsById(id string)(*i12298c30cb81e9f690ef9152f8caab34fa4d1864ebd36ed5577020082370bd73.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -237,9 +217,7 @@ func (m *EventRequestBuilder) ExtensionsById(id string)(*i12298c30cb81e9f690ef91
 func (m *EventRequestBuilder) Forward()(*i8f07c66b2cf1a3f6d8da9f8cf5d8442d87cb10892aad82c5dd44556cc8ec85bb.ForwardRequestBuilder) {
     return i8f07c66b2cf1a3f6d8da9f8cf5d8442d87cb10892aad82c5dd44556cc8ec85bb.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The events in the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the events in the calendar. Navigation property. Read-only.
 func (m *EventRequestBuilder) Get(options *EventRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -254,9 +232,7 @@ func (m *EventRequestBuilder) Get(options *EventRequestBuilderGetOptions)(*i5356
 func (m *EventRequestBuilder) Instances()(*if607cd43935ec64edb92794109173f3c0d5910d8dfebec67b6e22ea9bffd7433.InstancesRequestBuilder) {
     return if607cd43935ec64edb92794109173f3c0d5910d8dfebec67b6e22ea9bffd7433.NewInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.instances.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// InstancesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.instances.item collection
 func (m *EventRequestBuilder) InstancesById(id string)(*i5956806f1c4b998abe4fcd54db1586d7465f29b5e18161bba26e275d033eab11.EventRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -270,9 +246,7 @@ func (m *EventRequestBuilder) InstancesById(id string)(*i5956806f1c4b998abe4fcd5
 func (m *EventRequestBuilder) MultiValueExtendedProperties()(*i5dbf769c1f25e1b0b17d30509a4a645cfa242a1c4d7c348c060dccc53cf78dd6.MultiValueExtendedPropertiesRequestBuilder) {
     return i5dbf769c1f25e1b0b17d30509a4a645cfa242a1c4d7c348c060dccc53cf78dd6.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.multiValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.multiValueExtendedProperties.item collection
 func (m *EventRequestBuilder) MultiValueExtendedPropertiesById(id string)(*if2b1e2a9807085574644316d2e02a3a9aa2335ecc40c7e9a8828e945fbc62be9.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -283,9 +257,7 @@ func (m *EventRequestBuilder) MultiValueExtendedPropertiesById(id string)(*if2b1
     }
     return if2b1e2a9807085574644316d2e02a3a9aa2335ecc40c7e9a8828e945fbc62be9.NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The events in the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch the events in the calendar. Navigation property. Read-only.
 func (m *EventRequestBuilder) Patch(options *EventRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -300,9 +272,7 @@ func (m *EventRequestBuilder) Patch(options *EventRequestBuilderPatchOptions)(er
 func (m *EventRequestBuilder) SingleValueExtendedProperties()(*ie4cb09c95e0c35a55010b7327a11926471dad8ff28619f453f661c22aee3f94a.SingleValueExtendedPropertiesRequestBuilder) {
     return ie4cb09c95e0c35a55010b7327a11926471dad8ff28619f453f661c22aee3f94a.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.singleValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.calendar.events.item.singleValueExtendedProperties.item collection
 func (m *EventRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i916f3cc62a9632691b92c06ae4a196bfbbab686ba1d7e0ec5f5b48c10806fd6b.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

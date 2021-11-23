@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// redirectUriSettings 
 type RedirectUriSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type RedirectUriSettings struct {
     // Specifies the URI that tokens are sent to.
     uri *string;
 }
-// Instantiates a new redirectUriSettings and sets the default values.
+// NewRedirectUriSettings instantiates a new redirectUriSettings and sets the default values.
 func NewRedirectUriSettings()(*RedirectUriSettings) {
     m := &RedirectUriSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectUriSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *RedirectUriSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the index property value. Identifies the specific URI within the redirectURIs collection in SAML SSO flows. Defaults to null. The index is unique across all the redirectUris for the application.
+// GetIndex gets the index property value. Identifies the specific URI within the redirectURIs collection in SAML SSO flows. Defaults to null. The index is unique across all the redirectUris for the application.
 func (m *RedirectUriSettings) GetIndex()(*int32) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *RedirectUriSettings) GetIndex()(*int32) {
         return m.index
     }
 }
-// Gets the uri property value. Specifies the URI that tokens are sent to.
+// GetUri gets the uri property value. Specifies the URI that tokens are sent to.
 func (m *RedirectUriSettings) GetUri()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *RedirectUriSettings) GetUri()(*string) {
         return m.uri
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RedirectUriSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["index"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *RedirectUriSettings) GetFieldDeserializers()(map[string]func(interface{
 func (m *RedirectUriSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RedirectUriSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("index", m.GetIndex())
@@ -96,21 +94,15 @@ func (m *RedirectUriSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectUriSettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the index property value. Identifies the specific URI within the redirectURIs collection in SAML SSO flows. Defaults to null. The index is unique across all the redirectUris for the application.
-// Parameters:
-//  - value : Value to set for the index property.
+// SetIndex sets the index property value. Identifies the specific URI within the redirectURIs collection in SAML SSO flows. Defaults to null. The index is unique across all the redirectUris for the application.
 func (m *RedirectUriSettings) SetIndex(value *int32)() {
     m.index = value
 }
-// Sets the uri property value. Specifies the URI that tokens are sent to.
-// Parameters:
-//  - value : Value to set for the uri property.
+// SetUri sets the uri property value. Specifies the URI that tokens are sent to.
 func (m *RedirectUriSettings) SetUri(value *string)() {
     m.uri = value
 }

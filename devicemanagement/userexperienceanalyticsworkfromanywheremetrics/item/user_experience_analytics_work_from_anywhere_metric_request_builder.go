@@ -8,7 +8,7 @@ import (
     ic2caf0b6e98dd567ee96828b8d8b16a38ae5bc311f5a57fb5cdf060263d6b2e6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsworkfromanywheremetrics/item/metricdevices/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsWorkFromAnywhereMetrics\{userExperienceAnalyticsWorkFromAnywhereMetric-id}
+// userExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsWorkFromAnywhereMetrics\{userExperienceAnalyticsWorkFromAnywhereMetric-id}
 type UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderDeleteOptions st
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderGetOptions struc
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics work from anywhere metrics.
+// userExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderGetQueryParameters user experience analytics work from anywhere metrics.
 type UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereMetric;
@@ -55,10 +55,7 @@ type UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderPatchOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderInternal instantiates a new UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) {
     m := &UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewUserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderInternal(path
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder instantiates a new UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics work from anywhere metrics.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user experience analytics work from anywhere metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) CreateDele
     }
     return requestInfo, nil
 }
-// User experience analytics work from anywhere metrics.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics work from anywhere metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) CreateGetR
     }
     return requestInfo, nil
 }
-// User experience analytics work from anywhere metrics.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user experience analytics work from anywhere metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) CreatePatc
     }
     return requestInfo, nil
 }
-// User experience analytics work from anywhere metrics.
-// Parameters:
-//  - options : Options for the request
+// Delete user experience analytics work from anywhere metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) Delete(options *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) Delete(opt
     }
     return nil
 }
-// User experience analytics work from anywhere metrics.
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics work from anywhere metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) Get(options *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereMetric, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) Get(option
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) MetricDevices()(*iba99f863645e713540730fd9068eedb628780d4a813936eff3986ef86a299503.MetricDevicesRequestBuilder) {
     return iba99f863645e713540730fd9068eedb628780d4a813936eff3986ef86a299503.NewMetricDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsWorkFromAnywhereMetrics.item.metricDevices.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MetricDevicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsWorkFromAnywhereMetrics.item.metricDevices.item collection
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) MetricDevicesById(id string)(*ic2caf0b6e98dd567ee96828b8d8b16a38ae5bc311f5a57fb5cdf060263d6b2e6.UserExperienceAnalyticsWorkFromAnywhereDeviceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) MetricDevi
     }
     return ic2caf0b6e98dd567ee96828b8d8b16a38ae5bc311f5a57fb5cdf060263d6b2e6.NewUserExperienceAnalyticsWorkFromAnywhereDeviceRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// User experience analytics work from anywhere metrics.
-// Parameters:
-//  - options : Options for the request
+// Patch user experience analytics work from anywhere metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilder) Patch(options *UserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

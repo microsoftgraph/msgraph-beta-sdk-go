@@ -8,7 +8,7 @@ import (
     i4abf2aa8e317cc89385618458da306fd175e40c86fad758084e638b76ed2bb21 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/activities/item/listitem"
 )
 
-// Builds and executes requests for operations under \drive\list\activities\{itemActivityOLD-id}
+// itemActivityOLDRequestBuilder builds and executes requests for operations under \drive\list\activities\{itemActivityOLD-id}
 type ItemActivityOLDRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ItemActivityOLDRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ItemActivityOLDRequestBuilderDeleteOptions options for Delete
 type ItemActivityOLDRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ItemActivityOLDRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ItemActivityOLDRequestBuilderGetOptions options for Get
 type ItemActivityOLDRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type ItemActivityOLDRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The recent activities that took place within this list.
+// itemActivityOLDRequestBuilderGetQueryParameters the recent activities that took place within this list.
 type ItemActivityOLDRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ItemActivityOLDRequestBuilderPatchOptions options for Patch
 type ItemActivityOLDRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemActivityOLD;
@@ -55,10 +55,7 @@ type ItemActivityOLDRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ItemActivityOLDRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemActivityOLDRequestBuilderInternal instantiates a new ItemActivityOLDRequestBuilder and sets the default values.
 func NewItemActivityOLDRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemActivityOLDRequestBuilder) {
     m := &ItemActivityOLDRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewItemActivityOLDRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ItemActivityOLDRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemActivityOLDRequestBuilder instantiates a new ItemActivityOLDRequestBuilder and sets the default values.
 func NewItemActivityOLDRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemActivityOLDRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemActivityOLDRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The recent activities that took place within this list.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the recent activities that took place within this list.
 func (m *ItemActivityOLDRequestBuilder) CreateDeleteRequestInformation(options *ItemActivityOLDRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *ItemActivityOLDRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The recent activities that took place within this list.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the recent activities that took place within this list.
 func (m *ItemActivityOLDRequestBuilder) CreateGetRequestInformation(options *ItemActivityOLDRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ItemActivityOLDRequestBuilder) CreateGetRequestInformation(options *Ite
     }
     return requestInfo, nil
 }
-// The recent activities that took place within this list.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the recent activities that took place within this list.
 func (m *ItemActivityOLDRequestBuilder) CreatePatchRequestInformation(options *ItemActivityOLDRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *ItemActivityOLDRequestBuilder) CreatePatchRequestInformation(options *I
     }
     return requestInfo, nil
 }
-// The recent activities that took place within this list.
-// Parameters:
-//  - options : Options for the request
+// Delete the recent activities that took place within this list.
 func (m *ItemActivityOLDRequestBuilder) Delete(options *ItemActivityOLDRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *ItemActivityOLDRequestBuilder) Delete(options *ItemActivityOLDRequestBu
 func (m *ItemActivityOLDRequestBuilder) DriveItem()(*i0f9f3727149d2b57d5d95a10cd80fe7e2b9f612a497fa50fa787b5d171a64ce0.DriveItemRequestBuilder) {
     return i0f9f3727149d2b57d5d95a10cd80fe7e2b9f612a497fa50fa787b5d171a64ce0.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The recent activities that took place within this list.
-// Parameters:
-//  - options : Options for the request
+// Get the recent activities that took place within this list.
 func (m *ItemActivityOLDRequestBuilder) Get(options *ItemActivityOLDRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemActivityOLD, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *ItemActivityOLDRequestBuilder) Get(options *ItemActivityOLDRequestBuild
 func (m *ItemActivityOLDRequestBuilder) ListItem()(*i4abf2aa8e317cc89385618458da306fd175e40c86fad758084e638b76ed2bb21.ListItemRequestBuilder) {
     return i4abf2aa8e317cc89385618458da306fd175e40c86fad758084e638b76ed2bb21.NewListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The recent activities that took place within this list.
-// Parameters:
-//  - options : Options for the request
+// Patch the recent activities that took place within this list.
 func (m *ItemActivityOLDRequestBuilder) Patch(options *ItemActivityOLDRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     ibac8eb5e8bb42c7e8c92e7024b822d703e6c45c3d6f437550124c797d08fe88a "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/generalledgerentries/item/account"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\generalLedgerEntries\{generalLedgerEntry-id}
+// generalLedgerEntryRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\generalLedgerEntries\{generalLedgerEntry-id}
 type GeneralLedgerEntryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GeneralLedgerEntryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GeneralLedgerEntryRequestBuilderDeleteOptions options for Delete
 type GeneralLedgerEntryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type GeneralLedgerEntryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GeneralLedgerEntryRequestBuilderGetOptions options for Get
 type GeneralLedgerEntryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type GeneralLedgerEntryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get generalLedgerEntries from financials
+// generalLedgerEntryRequestBuilderGetQueryParameters get generalLedgerEntries from financials
 type GeneralLedgerEntryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GeneralLedgerEntryRequestBuilderPatchOptions options for Patch
 type GeneralLedgerEntryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntry;
@@ -57,10 +57,7 @@ type GeneralLedgerEntryRequestBuilderPatchOptions struct {
 func (m *GeneralLedgerEntryRequestBuilder) Account()(*ibac8eb5e8bb42c7e8c92e7024b822d703e6c45c3d6f437550124c797d08fe88a.AccountRequestBuilder) {
     return ibac8eb5e8bb42c7e8c92e7024b822d703e6c45c3d6f437550124c797d08fe88a.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new GeneralLedgerEntryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGeneralLedgerEntryRequestBuilderInternal instantiates a new GeneralLedgerEntryRequestBuilder and sets the default values.
 func NewGeneralLedgerEntryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GeneralLedgerEntryRequestBuilder) {
     m := &GeneralLedgerEntryRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewGeneralLedgerEntryRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GeneralLedgerEntryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGeneralLedgerEntryRequestBuilder instantiates a new GeneralLedgerEntryRequestBuilder and sets the default values.
 func NewGeneralLedgerEntryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GeneralLedgerEntryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGeneralLedgerEntryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property generalLedgerEntries for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property generalLedgerEntries for financials
 func (m *GeneralLedgerEntryRequestBuilder) CreateDeleteRequestInformation(options *GeneralLedgerEntryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *GeneralLedgerEntryRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get generalLedgerEntries from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get generalLedgerEntries from financials
 func (m *GeneralLedgerEntryRequestBuilder) CreateGetRequestInformation(options *GeneralLedgerEntryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *GeneralLedgerEntryRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Update the navigation property generalLedgerEntries in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property generalLedgerEntries in financials
 func (m *GeneralLedgerEntryRequestBuilder) CreatePatchRequestInformation(options *GeneralLedgerEntryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *GeneralLedgerEntryRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete navigation property generalLedgerEntries for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property generalLedgerEntries for financials
 func (m *GeneralLedgerEntryRequestBuilder) Delete(options *GeneralLedgerEntryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *GeneralLedgerEntryRequestBuilder) Delete(options *GeneralLedgerEntryReq
     }
     return nil
 }
-// Get generalLedgerEntries from financials
-// Parameters:
-//  - options : Options for the request
+// Get get generalLedgerEntries from financials
 func (m *GeneralLedgerEntryRequestBuilder) Get(options *GeneralLedgerEntryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntry, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *GeneralLedgerEntryRequestBuilder) Get(options *GeneralLedgerEntryReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GeneralLedgerEntry), nil
 }
-// Update the navigation property generalLedgerEntries in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property generalLedgerEntries in financials
 func (m *GeneralLedgerEntryRequestBuilder) Patch(options *GeneralLedgerEntryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

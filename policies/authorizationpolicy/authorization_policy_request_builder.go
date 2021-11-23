@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\authorizationPolicy
+// authorizationPolicyRequestBuilder builds and executes requests for operations under \policies\authorizationPolicy
 type AuthorizationPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AuthorizationPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AuthorizationPolicyRequestBuilderGetOptions options for Get
 type AuthorizationPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AuthorizationPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy that controls Azure AD authorization settings.
+// authorizationPolicyRequestBuilderGetQueryParameters the policy that controls Azure AD authorization settings.
 type AuthorizationPolicyRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AuthorizationPolicyRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AuthorizationPolicyRequestBuilderPostOptions options for Post
 type AuthorizationPolicyRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthorizationPolicy;
@@ -56,10 +56,7 @@ type AuthorizationPolicyRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AuthorizationPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthorizationPolicyRequestBuilderInternal instantiates a new AuthorizationPolicyRequestBuilder and sets the default values.
 func NewAuthorizationPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthorizationPolicyRequestBuilder) {
     m := &AuthorizationPolicyRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAuthorizationPolicyRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AuthorizationPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthorizationPolicyRequestBuilder instantiates a new AuthorizationPolicyRequestBuilder and sets the default values.
 func NewAuthorizationPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthorizationPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthorizationPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy that controls Azure AD authorization settings.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy that controls Azure AD authorization settings.
 func (m *AuthorizationPolicyRequestBuilder) CreateGetRequestInformation(options *AuthorizationPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AuthorizationPolicyRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The policy that controls Azure AD authorization settings.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the policy that controls Azure AD authorization settings.
 func (m *AuthorizationPolicyRequestBuilder) CreatePostRequestInformation(options *AuthorizationPolicyRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AuthorizationPolicyRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// The policy that controls Azure AD authorization settings.
-// Parameters:
-//  - options : Options for the request
+// Get the policy that controls Azure AD authorization settings.
 func (m *AuthorizationPolicyRequestBuilder) Get(options *AuthorizationPolicyRequestBuilderGetOptions)(*AuthorizationPolicyResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AuthorizationPolicyRequestBuilder) Get(options *AuthorizationPolicyRequ
     }
     return res.(*AuthorizationPolicyResponse), nil
 }
-// The policy that controls Azure AD authorization settings.
-// Parameters:
-//  - options : Options for the request
+// Post the policy that controls Azure AD authorization settings.
 func (m *AuthorizationPolicyRequestBuilder) Post(options *AuthorizationPolicyRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthorizationPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

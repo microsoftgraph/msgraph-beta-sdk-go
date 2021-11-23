@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\iosLobAppProvisioningConfigurations\{iosLobAppProvisioningConfiguration-id}\assignments\{iosLobAppProvisioningConfigurationAssignment-id}
+// iosLobAppProvisioningConfigurationAssignmentRequestBuilder builds and executes requests for operations under \deviceAppManagement\iosLobAppProvisioningConfigurations\{iosLobAppProvisioningConfiguration-id}\assignments\{iosLobAppProvisioningConfigurationAssignment-id}
 type IosLobAppProvisioningConfigurationAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IosLobAppProvisioningConfigurationAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// IosLobAppProvisioningConfigurationAssignmentRequestBuilderDeleteOptions options for Delete
 type IosLobAppProvisioningConfigurationAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type IosLobAppProvisioningConfigurationAssignmentRequestBuilderDeleteOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// IosLobAppProvisioningConfigurationAssignmentRequestBuilderGetOptions options for Get
 type IosLobAppProvisioningConfigurationAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type IosLobAppProvisioningConfigurationAssignmentRequestBuilderGetOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The associated group assignments for IosLobAppProvisioningConfiguration.
+// iosLobAppProvisioningConfigurationAssignmentRequestBuilderGetQueryParameters the associated group assignments for IosLobAppProvisioningConfiguration.
 type IosLobAppProvisioningConfigurationAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// IosLobAppProvisioningConfigurationAssignmentRequestBuilderPatchOptions options for Patch
 type IosLobAppProvisioningConfigurationAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosLobAppProvisioningConfigurationAssignment;
@@ -53,10 +53,7 @@ type IosLobAppProvisioningConfigurationAssignmentRequestBuilderPatchOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IosLobAppProvisioningConfigurationAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosLobAppProvisioningConfigurationAssignmentRequestBuilderInternal instantiates a new IosLobAppProvisioningConfigurationAssignmentRequestBuilder and sets the default values.
 func NewIosLobAppProvisioningConfigurationAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosLobAppProvisioningConfigurationAssignmentRequestBuilder) {
     m := &IosLobAppProvisioningConfigurationAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewIosLobAppProvisioningConfigurationAssignmentRequestBuilderInternal(pathP
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IosLobAppProvisioningConfigurationAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosLobAppProvisioningConfigurationAssignmentRequestBuilder instantiates a new IosLobAppProvisioningConfigurationAssignmentRequestBuilder and sets the default values.
 func NewIosLobAppProvisioningConfigurationAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosLobAppProvisioningConfigurationAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIosLobAppProvisioningConfigurationAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The associated group assignments for IosLobAppProvisioningConfiguration.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfigurationAssignmentRequestBuilder) CreateDeleteRequestInformation(options *IosLobAppProvisioningConfigurationAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *IosLobAppProvisioningConfigurationAssignmentRequestBuilder) CreateDelet
     }
     return requestInfo, nil
 }
-// The associated group assignments for IosLobAppProvisioningConfiguration.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfigurationAssignmentRequestBuilder) CreateGetRequestInformation(options *IosLobAppProvisioningConfigurationAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *IosLobAppProvisioningConfigurationAssignmentRequestBuilder) CreateGetRe
     }
     return requestInfo, nil
 }
-// The associated group assignments for IosLobAppProvisioningConfiguration.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfigurationAssignmentRequestBuilder) CreatePatchRequestInformation(options *IosLobAppProvisioningConfigurationAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *IosLobAppProvisioningConfigurationAssignmentRequestBuilder) CreatePatch
     }
     return requestInfo, nil
 }
-// The associated group assignments for IosLobAppProvisioningConfiguration.
-// Parameters:
-//  - options : Options for the request
+// Delete the associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfigurationAssignmentRequestBuilder) Delete(options *IosLobAppProvisioningConfigurationAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *IosLobAppProvisioningConfigurationAssignmentRequestBuilder) Delete(opti
     }
     return nil
 }
-// The associated group assignments for IosLobAppProvisioningConfiguration.
-// Parameters:
-//  - options : Options for the request
+// Get the associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfigurationAssignmentRequestBuilder) Get(options *IosLobAppProvisioningConfigurationAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosLobAppProvisioningConfigurationAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *IosLobAppProvisioningConfigurationAssignmentRequestBuilder) Get(options
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IosLobAppProvisioningConfigurationAssignment), nil
 }
-// The associated group assignments for IosLobAppProvisioningConfiguration.
-// Parameters:
-//  - options : Options for the request
+// Patch the associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfigurationAssignmentRequestBuilder) Patch(options *IosLobAppProvisioningConfigurationAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

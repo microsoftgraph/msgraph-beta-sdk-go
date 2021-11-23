@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// alterationResponse 
 type AlterationResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type AlterationResponse struct {
     // Defines the type of the spelling correction. Possible values are suggestion, modification.
     queryAlterationType *SearchAlterationType;
 }
-// Instantiates a new alterationResponse and sets the default values.
+// NewAlterationResponse instantiates a new alterationResponse and sets the default values.
 func NewAlterationResponse()(*AlterationResponse) {
     m := &AlterationResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlterationResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *AlterationResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the originalQueryString property value. Defines the original user query string.
+// GetOriginalQueryString gets the originalQueryString property value. Defines the original user query string.
 func (m *AlterationResponse) GetOriginalQueryString()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *AlterationResponse) GetOriginalQueryString()(*string) {
         return m.originalQueryString
     }
 }
-// Gets the queryAlteration property value. Defines the details of alteration information for the spelling correction.
+// GetQueryAlteration gets the queryAlteration property value. Defines the details of alteration information for the spelling correction.
 func (m *AlterationResponse) GetQueryAlteration()(*SearchAlteration) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *AlterationResponse) GetQueryAlteration()(*SearchAlteration) {
         return m.queryAlteration
     }
 }
-// Gets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are suggestion, modification.
+// GetQueryAlterationType gets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are suggestion, modification.
 func (m *AlterationResponse) GetQueryAlterationType()(*SearchAlterationType) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *AlterationResponse) GetQueryAlterationType()(*SearchAlterationType) {
         return m.queryAlterationType
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AlterationResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["originalQueryString"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,9 +93,7 @@ func (m *AlterationResponse) GetFieldDeserializers()(map[string]func(interface{}
 func (m *AlterationResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AlterationResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("originalQueryString", m.GetOriginalQueryString())
@@ -124,27 +122,19 @@ func (m *AlterationResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlterationResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the originalQueryString property value. Defines the original user query string.
-// Parameters:
-//  - value : Value to set for the originalQueryString property.
+// SetOriginalQueryString sets the originalQueryString property value. Defines the original user query string.
 func (m *AlterationResponse) SetOriginalQueryString(value *string)() {
     m.originalQueryString = value
 }
-// Sets the queryAlteration property value. Defines the details of alteration information for the spelling correction.
-// Parameters:
-//  - value : Value to set for the queryAlteration property.
+// SetQueryAlteration sets the queryAlteration property value. Defines the details of alteration information for the spelling correction.
 func (m *AlterationResponse) SetQueryAlteration(value *SearchAlteration)() {
     m.queryAlteration = value
 }
-// Sets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are suggestion, modification.
-// Parameters:
-//  - value : Value to set for the queryAlterationType property.
+// SetQueryAlterationType sets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are suggestion, modification.
 func (m *AlterationResponse) SetQueryAlterationType(value *SearchAlterationType)() {
     m.queryAlterationType = value
 }

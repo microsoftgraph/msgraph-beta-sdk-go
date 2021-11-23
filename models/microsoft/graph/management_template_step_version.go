@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// managementTemplateStepVersion 
 type ManagementTemplateStepVersion struct {
     Entity
     // 
@@ -18,14 +18,14 @@ type ManagementTemplateStepVersion struct {
     // 
     version *int32;
 }
-// Instantiates a new managementTemplateStepVersion and sets the default values.
+// NewManagementTemplateStepVersion instantiates a new managementTemplateStepVersion and sets the default values.
 func NewManagementTemplateStepVersion()(*ManagementTemplateStepVersion) {
     m := &ManagementTemplateStepVersion{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the configurationAction property value. 
+// GetConfigurationAction gets the configurationAction property value. 
 func (m *ManagementTemplateStepVersion) GetConfigurationAction()(*TemplateAction) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *ManagementTemplateStepVersion) GetConfigurationAction()(*TemplateAction
         return m.configurationAction
     }
 }
-// Gets the deployments property value. 
+// GetDeployments gets the deployments property value. 
 func (m *ManagementTemplateStepVersion) GetDeployments()([]ManagementTemplateStepDeployment) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *ManagementTemplateStepVersion) GetDeployments()([]ManagementTemplateSte
         return m.deployments
     }
 }
-// Gets the templateStep property value. 
+// GetTemplateStep gets the templateStep property value. 
 func (m *ManagementTemplateStepVersion) GetTemplateStep()(*ManagementTemplateStep) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *ManagementTemplateStepVersion) GetTemplateStep()(*ManagementTemplateSte
         return m.templateStep
     }
 }
-// Gets the validationAction property value. 
+// GetValidationAction gets the validationAction property value. 
 func (m *ManagementTemplateStepVersion) GetValidationAction()(*TemplateAction) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *ManagementTemplateStepVersion) GetValidationAction()(*TemplateAction) {
         return m.validationAction
     }
 }
-// Gets the version property value. 
+// GetVersion gets the version property value. 
 func (m *ManagementTemplateStepVersion) GetVersion()(*int32) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *ManagementTemplateStepVersion) GetVersion()(*int32) {
         return m.version
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configurationAction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,9 +127,7 @@ func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(
 func (m *ManagementTemplateStepVersion) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagementTemplateStepVersion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -172,33 +170,23 @@ func (m *ManagementTemplateStepVersion) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the configurationAction property value. 
-// Parameters:
-//  - value : Value to set for the configurationAction property.
+// SetConfigurationAction sets the configurationAction property value. 
 func (m *ManagementTemplateStepVersion) SetConfigurationAction(value *TemplateAction)() {
     m.configurationAction = value
 }
-// Sets the deployments property value. 
-// Parameters:
-//  - value : Value to set for the deployments property.
+// SetDeployments sets the deployments property value. 
 func (m *ManagementTemplateStepVersion) SetDeployments(value []ManagementTemplateStepDeployment)() {
     m.deployments = value
 }
-// Sets the templateStep property value. 
-// Parameters:
-//  - value : Value to set for the templateStep property.
+// SetTemplateStep sets the templateStep property value. 
 func (m *ManagementTemplateStepVersion) SetTemplateStep(value *ManagementTemplateStep)() {
     m.templateStep = value
 }
-// Sets the validationAction property value. 
-// Parameters:
-//  - value : Value to set for the validationAction property.
+// SetValidationAction sets the validationAction property value. 
 func (m *ManagementTemplateStepVersion) SetValidationAction(value *TemplateAction)() {
     m.validationAction = value
 }
-// Sets the version property value. 
-// Parameters:
-//  - value : Value to set for the version property.
+// SetVersion sets the version property value. 
 func (m *ManagementTemplateStepVersion) SetVersion(value *int32)() {
     m.version = value
 }

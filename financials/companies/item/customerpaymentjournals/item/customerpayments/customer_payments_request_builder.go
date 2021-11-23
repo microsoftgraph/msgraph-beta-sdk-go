@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\customerPaymentJournals\{customerPaymentJournal-id}\customerPayments
+// customerPaymentsRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\customerPaymentJournals\{customerPaymentJournal-id}\customerPayments
 type CustomerPaymentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CustomerPaymentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CustomerPaymentsRequestBuilderGetOptions options for Get
 type CustomerPaymentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CustomerPaymentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get customerPayments from financials
+// customerPaymentsRequestBuilderGetQueryParameters get customerPayments from financials
 type CustomerPaymentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CustomerPaymentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CustomerPaymentsRequestBuilderPostOptions options for Post
 type CustomerPaymentsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomerPayment;
@@ -56,10 +56,7 @@ type CustomerPaymentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CustomerPaymentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustomerPaymentsRequestBuilderInternal instantiates a new CustomerPaymentsRequestBuilder and sets the default values.
 func NewCustomerPaymentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustomerPaymentsRequestBuilder) {
     m := &CustomerPaymentsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCustomerPaymentsRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CustomerPaymentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustomerPaymentsRequestBuilder instantiates a new CustomerPaymentsRequestBuilder and sets the default values.
 func NewCustomerPaymentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustomerPaymentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCustomerPaymentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get customerPayments from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get customerPayments from financials
 func (m *CustomerPaymentsRequestBuilder) CreateGetRequestInformation(options *CustomerPaymentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CustomerPaymentsRequestBuilder) CreateGetRequestInformation(options *Cu
     }
     return requestInfo, nil
 }
-// Create new navigation property to customerPayments for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to customerPayments for financials
 func (m *CustomerPaymentsRequestBuilder) CreatePostRequestInformation(options *CustomerPaymentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CustomerPaymentsRequestBuilder) CreatePostRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// Get customerPayments from financials
-// Parameters:
-//  - options : Options for the request
+// Get get customerPayments from financials
 func (m *CustomerPaymentsRequestBuilder) Get(options *CustomerPaymentsRequestBuilderGetOptions)(*CustomerPaymentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CustomerPaymentsRequestBuilder) Get(options *CustomerPaymentsRequestBui
     }
     return res.(*CustomerPaymentsResponse), nil
 }
-// Create new navigation property to customerPayments for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to customerPayments for financials
 func (m *CustomerPaymentsRequestBuilder) Post(options *CustomerPaymentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomerPayment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// sydRequestBody 
 type SydRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,14 +18,14 @@ type SydRequestBody struct {
     // 
     salvage *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
-// Instantiates a new sydRequestBody and sets the default values.
+// NewSydRequestBody instantiates a new sydRequestBody and sets the default values.
 func NewSydRequestBody()(*SydRequestBody) {
     m := &SydRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SydRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *SydRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the cost property value. 
+// GetCost gets the cost property value. 
 func (m *SydRequestBody) GetCost()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *SydRequestBody) GetCost()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6
         return m.cost
     }
 }
-// Gets the life property value. 
+// GetLife gets the life property value. 
 func (m *SydRequestBody) GetLife()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *SydRequestBody) GetLife()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6
         return m.life
     }
 }
-// Gets the per property value. 
+// GetPer gets the per property value. 
 func (m *SydRequestBody) GetPer()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *SydRequestBody) GetPer()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6c
         return m.per
     }
 }
-// Gets the salvage property value. 
+// GetSalvage gets the salvage property value. 
 func (m *SydRequestBody) GetSalvage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *SydRequestBody) GetSalvage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f7
         return m.salvage
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SydRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["cost"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,9 +113,7 @@ func (m *SydRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *SydRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SydRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("cost", m.GetCost())
@@ -149,33 +147,23 @@ func (m *SydRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SydRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the cost property value. 
-// Parameters:
-//  - value : Value to set for the cost property.
+// SetCost sets the cost property value. 
 func (m *SydRequestBody) SetCost(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.cost = value
 }
-// Sets the life property value. 
-// Parameters:
-//  - value : Value to set for the life property.
+// SetLife sets the life property value. 
 func (m *SydRequestBody) SetLife(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.life = value
 }
-// Sets the per property value. 
-// Parameters:
-//  - value : Value to set for the per property.
+// SetPer sets the per property value. 
 func (m *SydRequestBody) SetPer(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.per = value
 }
-// Sets the salvage property value. 
-// Parameters:
-//  - value : Value to set for the salvage property.
+// SetSalvage sets the salvage property value. 
 func (m *SydRequestBody) SetSalvage(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.salvage = value
 }

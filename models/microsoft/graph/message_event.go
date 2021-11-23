@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// messageEvent 
 type MessageEvent struct {
     Entity
     // 
@@ -15,14 +15,14 @@ type MessageEvent struct {
     // 
     eventType *MessageEventType;
 }
-// Instantiates a new messageEvent and sets the default values.
+// NewMessageEvent instantiates a new messageEvent and sets the default values.
 func NewMessageEvent()(*MessageEvent) {
     m := &MessageEvent{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the dateTime property value. 
+// GetDateTime gets the dateTime property value. 
 func (m *MessageEvent) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *MessageEvent) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
         return m.dateTime
     }
 }
-// Gets the description property value. 
+// GetDescription gets the description property value. 
 func (m *MessageEvent) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *MessageEvent) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the eventType property value. 
+// GetEventType gets the eventType property value. 
 func (m *MessageEvent) GetEventType()(*MessageEventType) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *MessageEvent) GetEventType()(*MessageEventType) {
         return m.eventType
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MessageEvent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["dateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -85,9 +85,7 @@ func (m *MessageEvent) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *MessageEvent) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MessageEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -114,21 +112,15 @@ func (m *MessageEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the dateTime property value. 
-// Parameters:
-//  - value : Value to set for the dateTime property.
+// SetDateTime sets the dateTime property value. 
 func (m *MessageEvent) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.dateTime = value
 }
-// Sets the description property value. 
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. 
 func (m *MessageEvent) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the eventType property value. 
-// Parameters:
-//  - value : Value to set for the eventType property.
+// SetEventType sets the eventType property value. 
 func (m *MessageEvent) SetEventType(value *MessageEventType)() {
     m.eventType = value
 }

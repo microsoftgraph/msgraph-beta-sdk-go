@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\microsoft.graph.wipeAndBlockManagedApps
+// wipeAndBlockManagedAppsRequestBuilder builds and executes requests for operations under \me\microsoft.graph.wipeAndBlockManagedApps
 type WipeAndBlockManagedAppsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type WipeAndBlockManagedAppsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// WipeAndBlockManagedAppsRequestBuilderPostOptions options for Post
 type WipeAndBlockManagedAppsRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type WipeAndBlockManagedAppsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WipeAndBlockManagedAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWipeAndBlockManagedAppsRequestBuilderInternal instantiates a new WipeAndBlockManagedAppsRequestBuilder and sets the default values.
 func NewWipeAndBlockManagedAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WipeAndBlockManagedAppsRequestBuilder) {
     m := &WipeAndBlockManagedAppsRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewWipeAndBlockManagedAppsRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WipeAndBlockManagedAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWipeAndBlockManagedAppsRequestBuilder instantiates a new WipeAndBlockManagedAppsRequestBuilder and sets the default values.
 func NewWipeAndBlockManagedAppsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WipeAndBlockManagedAppsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWipeAndBlockManagedAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Blocks the managed app user from app check-in.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation blocks the managed app user from app check-in.
 func (m *WipeAndBlockManagedAppsRequestBuilder) CreatePostRequestInformation(options *WipeAndBlockManagedAppsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *WipeAndBlockManagedAppsRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Blocks the managed app user from app check-in.
-// Parameters:
-//  - options : Options for the request
+// Post blocks the managed app user from app check-in.
 func (m *WipeAndBlockManagedAppsRequestBuilder) Post(options *WipeAndBlockManagedAppsRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

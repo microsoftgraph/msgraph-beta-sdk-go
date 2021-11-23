@@ -7,7 +7,7 @@ import (
     i5b05b57841b989a46b71baf62a919e31b311eaf72e23e96a94706db86b5b80da "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/deviceappmanagementtasks/item/updatestatus"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\deviceAppManagementTasks\{deviceAppManagementTask-id}
+// deviceAppManagementTaskRequestBuilder builds and executes requests for operations under \deviceAppManagement\deviceAppManagementTasks\{deviceAppManagementTask-id}
 type DeviceAppManagementTaskRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceAppManagementTaskRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceAppManagementTaskRequestBuilderDeleteOptions options for Delete
 type DeviceAppManagementTaskRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type DeviceAppManagementTaskRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceAppManagementTaskRequestBuilderGetOptions options for Get
 type DeviceAppManagementTaskRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type DeviceAppManagementTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Device app management tasks.
+// deviceAppManagementTaskRequestBuilderGetQueryParameters device app management tasks.
 type DeviceAppManagementTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceAppManagementTaskRequestBuilderPatchOptions options for Patch
 type DeviceAppManagementTaskRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagementTask;
@@ -54,10 +54,7 @@ type DeviceAppManagementTaskRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceAppManagementTaskRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceAppManagementTaskRequestBuilderInternal instantiates a new DeviceAppManagementTaskRequestBuilder and sets the default values.
 func NewDeviceAppManagementTaskRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceAppManagementTaskRequestBuilder) {
     m := &DeviceAppManagementTaskRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewDeviceAppManagementTaskRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceAppManagementTaskRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceAppManagementTaskRequestBuilder instantiates a new DeviceAppManagementTaskRequestBuilder and sets the default values.
 func NewDeviceAppManagementTaskRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceAppManagementTaskRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceAppManagementTaskRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Device app management tasks.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation device app management tasks.
 func (m *DeviceAppManagementTaskRequestBuilder) CreateDeleteRequestInformation(options *DeviceAppManagementTaskRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *DeviceAppManagementTaskRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// Device app management tasks.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation device app management tasks.
 func (m *DeviceAppManagementTaskRequestBuilder) CreateGetRequestInformation(options *DeviceAppManagementTaskRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *DeviceAppManagementTaskRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Device app management tasks.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation device app management tasks.
 func (m *DeviceAppManagementTaskRequestBuilder) CreatePatchRequestInformation(options *DeviceAppManagementTaskRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *DeviceAppManagementTaskRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// Device app management tasks.
-// Parameters:
-//  - options : Options for the request
+// Delete device app management tasks.
 func (m *DeviceAppManagementTaskRequestBuilder) Delete(options *DeviceAppManagementTaskRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *DeviceAppManagementTaskRequestBuilder) Delete(options *DeviceAppManagem
     }
     return nil
 }
-// Device app management tasks.
-// Parameters:
-//  - options : Options for the request
+// Get device app management tasks.
 func (m *DeviceAppManagementTaskRequestBuilder) Get(options *DeviceAppManagementTaskRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagementTask, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *DeviceAppManagementTaskRequestBuilder) Get(options *DeviceAppManagement
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagementTask), nil
 }
-// Device app management tasks.
-// Parameters:
-//  - options : Options for the request
+// Patch device app management tasks.
 func (m *DeviceAppManagementTaskRequestBuilder) Patch(options *DeviceAppManagementTaskRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

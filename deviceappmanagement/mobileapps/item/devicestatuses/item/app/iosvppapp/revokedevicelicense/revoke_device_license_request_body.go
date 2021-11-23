@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// revokeDeviceLicenseRequestBody 
 type RevokeDeviceLicenseRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type RevokeDeviceLicenseRequestBody struct {
     // 
     notifyManagedDevices *bool;
 }
-// Instantiates a new revokeDeviceLicenseRequestBody and sets the default values.
+// NewRevokeDeviceLicenseRequestBody instantiates a new revokeDeviceLicenseRequestBody and sets the default values.
 func NewRevokeDeviceLicenseRequestBody()(*RevokeDeviceLicenseRequestBody) {
     m := &RevokeDeviceLicenseRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RevokeDeviceLicenseRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *RevokeDeviceLicenseRequestBody) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// Gets the managedDeviceId property value. 
+// GetManagedDeviceId gets the managedDeviceId property value. 
 func (m *RevokeDeviceLicenseRequestBody) GetManagedDeviceId()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *RevokeDeviceLicenseRequestBody) GetManagedDeviceId()(*string) {
         return m.managedDeviceId
     }
 }
-// Gets the notifyManagedDevices property value. 
+// GetNotifyManagedDevices gets the notifyManagedDevices property value. 
 func (m *RevokeDeviceLicenseRequestBody) GetNotifyManagedDevices()(*bool) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *RevokeDeviceLicenseRequestBody) GetNotifyManagedDevices()(*bool) {
         return m.notifyManagedDevices
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RevokeDeviceLicenseRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["managedDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *RevokeDeviceLicenseRequestBody) GetFieldDeserializers()(map[string]func
 func (m *RevokeDeviceLicenseRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RevokeDeviceLicenseRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("managedDeviceId", m.GetManagedDeviceId())
@@ -96,21 +94,15 @@ func (m *RevokeDeviceLicenseRequestBody) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RevokeDeviceLicenseRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the managedDeviceId property value. 
-// Parameters:
-//  - value : Value to set for the managedDeviceId property.
+// SetManagedDeviceId sets the managedDeviceId property value. 
 func (m *RevokeDeviceLicenseRequestBody) SetManagedDeviceId(value *string)() {
     m.managedDeviceId = value
 }
-// Sets the notifyManagedDevices property value. 
-// Parameters:
-//  - value : Value to set for the notifyManagedDevices property.
+// SetNotifyManagedDevices sets the notifyManagedDevices property value. 
 func (m *RevokeDeviceLicenseRequestBody) SetNotifyManagedDevices(value *bool)() {
     m.notifyManagedDevices = value
 }

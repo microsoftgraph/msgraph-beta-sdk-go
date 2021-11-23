@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\meetingAttendanceReport
+// meetingAttendanceReportRequestBuilder builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\meetingAttendanceReport
 type MeetingAttendanceReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MeetingAttendanceReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MeetingAttendanceReportRequestBuilderDeleteOptions options for Delete
 type MeetingAttendanceReportRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MeetingAttendanceReportRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MeetingAttendanceReportRequestBuilderGetOptions options for Get
 type MeetingAttendanceReportRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type MeetingAttendanceReportRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The attendance report of an online meeting. Read-only.
+// meetingAttendanceReportRequestBuilderGetQueryParameters the attendance report of an online meeting. Read-only.
 type MeetingAttendanceReportRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MeetingAttendanceReportRequestBuilderPatchOptions options for Patch
 type MeetingAttendanceReportRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingAttendanceReport;
@@ -53,10 +53,7 @@ type MeetingAttendanceReportRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MeetingAttendanceReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMeetingAttendanceReportRequestBuilderInternal instantiates a new MeetingAttendanceReportRequestBuilder and sets the default values.
 func NewMeetingAttendanceReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MeetingAttendanceReportRequestBuilder) {
     m := &MeetingAttendanceReportRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewMeetingAttendanceReportRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MeetingAttendanceReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMeetingAttendanceReportRequestBuilder instantiates a new MeetingAttendanceReportRequestBuilder and sets the default values.
 func NewMeetingAttendanceReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MeetingAttendanceReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMeetingAttendanceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The attendance report of an online meeting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the attendance report of an online meeting. Read-only.
 func (m *MeetingAttendanceReportRequestBuilder) CreateDeleteRequestInformation(options *MeetingAttendanceReportRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *MeetingAttendanceReportRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// The attendance report of an online meeting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the attendance report of an online meeting. Read-only.
 func (m *MeetingAttendanceReportRequestBuilder) CreateGetRequestInformation(options *MeetingAttendanceReportRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MeetingAttendanceReportRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The attendance report of an online meeting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the attendance report of an online meeting. Read-only.
 func (m *MeetingAttendanceReportRequestBuilder) CreatePatchRequestInformation(options *MeetingAttendanceReportRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *MeetingAttendanceReportRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// The attendance report of an online meeting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete the attendance report of an online meeting. Read-only.
 func (m *MeetingAttendanceReportRequestBuilder) Delete(options *MeetingAttendanceReportRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *MeetingAttendanceReportRequestBuilder) Delete(options *MeetingAttendanc
     }
     return nil
 }
-// The attendance report of an online meeting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the attendance report of an online meeting. Read-only.
 func (m *MeetingAttendanceReportRequestBuilder) Get(options *MeetingAttendanceReportRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingAttendanceReport, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *MeetingAttendanceReportRequestBuilder) Get(options *MeetingAttendanceRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingAttendanceReport), nil
 }
-// The attendance report of an online meeting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch the attendance report of an online meeting. Read-only.
 func (m *MeetingAttendanceReportRequestBuilder) Patch(options *MeetingAttendanceReportRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

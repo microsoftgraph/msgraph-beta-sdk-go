@@ -7,7 +7,7 @@ import (
     i9bbc63ecfb3c17113a88e6bb1f57cc8becc5b8aeafcf3e24e73297f2da1c601b "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/target/connectedorganization/ref"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\target\connectedOrganization
+// connectedOrganizationRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\target\connectedOrganization
 type ConnectedOrganizationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ConnectedOrganizationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ConnectedOrganizationRequestBuilderGetOptions options for Get
 type ConnectedOrganizationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ConnectedOrganizationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The connected organization of the subject. Read-only. Nullable.
+// connectedOrganizationRequestBuilderGetQueryParameters the connected organization of the subject. Read-only. Nullable.
 type ConnectedOrganizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ConnectedOrganizationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConnectedOrganizationRequestBuilderInternal instantiates a new ConnectedOrganizationRequestBuilder and sets the default values.
 func NewConnectedOrganizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectedOrganizationRequestBuilder) {
     m := &ConnectedOrganizationRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewConnectedOrganizationRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConnectedOrganizationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConnectedOrganizationRequestBuilder instantiates a new ConnectedOrganizationRequestBuilder and sets the default values.
 func NewConnectedOrganizationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectedOrganizationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConnectedOrganizationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The connected organization of the subject. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the connected organization of the subject. Read-only. Nullable.
 func (m *ConnectedOrganizationRequestBuilder) CreateGetRequestInformation(options *ConnectedOrganizationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ConnectedOrganizationRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// The connected organization of the subject. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the connected organization of the subject. Read-only. Nullable.
 func (m *ConnectedOrganizationRequestBuilder) Get(options *ConnectedOrganizationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectedOrganization, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

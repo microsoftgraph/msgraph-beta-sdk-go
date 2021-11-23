@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// personAnnualEvent 
 type PersonAnnualEvent struct {
     ItemFacet
     // 
@@ -14,14 +14,14 @@ type PersonAnnualEvent struct {
     // 
     type_escaped *PersonAnnualEventType;
 }
-// Instantiates a new personAnnualEvent and sets the default values.
+// NewPersonAnnualEvent instantiates a new personAnnualEvent and sets the default values.
 func NewPersonAnnualEvent()(*PersonAnnualEvent) {
     m := &PersonAnnualEvent{
         ItemFacet: *NewItemFacet(),
     }
     return m
 }
-// Gets the date property value. 
+// GetDate gets the date property value. 
 func (m *PersonAnnualEvent) GetDate()(*string) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *PersonAnnualEvent) GetDate()(*string) {
         return m.date
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *PersonAnnualEvent) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *PersonAnnualEvent) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the type_escaped property value. 
+// GetType_escaped gets the type_escaped property value. 
 func (m *PersonAnnualEvent) GetType_escaped()(*PersonAnnualEventType) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *PersonAnnualEvent) GetType_escaped()(*PersonAnnualEventType) {
         return m.type_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["date"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,9 +84,7 @@ func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(interface{},
 func (m *PersonAnnualEvent) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PersonAnnualEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ItemFacet.Serialize(writer)
     if err != nil {
@@ -113,21 +111,15 @@ func (m *PersonAnnualEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the date property value. 
-// Parameters:
-//  - value : Value to set for the date property.
+// SetDate sets the date property value. 
 func (m *PersonAnnualEvent) SetDate(value *string)() {
     m.date = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *PersonAnnualEvent) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the type_escaped property value. 
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. 
 func (m *PersonAnnualEvent) SetType_escaped(value *PersonAnnualEventType)() {
     m.type_escaped = value
 }

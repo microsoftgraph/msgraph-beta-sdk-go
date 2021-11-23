@@ -14,7 +14,7 @@ import (
     if55ecae688a10dbb886807245aafc677f67cea3c48410b03a702f3b53ea391ee "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackageassignmentresourceroles/item"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment
+// accessPackageAssignmentRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment
 type AccessPackageAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -23,7 +23,7 @@ type AccessPackageAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessPackageAssignmentRequestBuilderDeleteOptions options for Delete
 type AccessPackageAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -32,7 +32,7 @@ type AccessPackageAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessPackageAssignmentRequestBuilderGetOptions options for Get
 type AccessPackageAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -43,14 +43,14 @@ type AccessPackageAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+// accessPackageAssignmentRequestBuilderGetQueryParameters for a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 type AccessPackageAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessPackageAssignmentRequestBuilderPatchOptions options for Patch
 type AccessPackageAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignment;
@@ -70,9 +70,7 @@ func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentPolicy()(
 func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentRequests()(*i13f41d0331cc43f6c13d7c89468e8cb6cf6311138579b9a58c63193c5f4a6eb8.AccessPackageAssignmentRequestsRequestBuilder) {
     return i13f41d0331cc43f6c13d7c89468e8cb6cf6311138579b9a58c63193c5f4a6eb8.NewAccessPackageAssignmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentRequests.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AccessPackageAssignmentRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentRequests.item collection
 func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentRequestsById(id string)(*i2e7e1a5d943fabb7337bc89fb080c5087bc61ffc498b45630a0ff7889e031424.AccessPackageAssignmentRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -86,9 +84,7 @@ func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentRequestsB
 func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentResourceRoles()(*i285c876d5a8cc7e7023c1b2fc27c8fb12db6522a9b8e69ebf43628adcad931b7.AccessPackageAssignmentResourceRolesRequestBuilder) {
     return i285c876d5a8cc7e7023c1b2fc27c8fb12db6522a9b8e69ebf43628adcad931b7.NewAccessPackageAssignmentResourceRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentResourceRoles.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AccessPackageAssignmentResourceRolesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentRequests.item.accessPackageAssignment.accessPackageAssignmentResourceRoles.item collection
 func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentResourceRolesById(id string)(*if55ecae688a10dbb886807245aafc677f67cea3c48410b03a702f3b53ea391ee.AccessPackageAssignmentResourceRoleRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -99,10 +95,7 @@ func (m *AccessPackageAssignmentRequestBuilder) AccessPackageAssignmentResourceR
     }
     return if55ecae688a10dbb886807245aafc677f67cea3c48410b03a702f3b53ea391ee.NewAccessPackageAssignmentResourceRoleRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new AccessPackageAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageAssignmentRequestBuilderInternal instantiates a new AccessPackageAssignmentRequestBuilder and sets the default values.
 func NewAccessPackageAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageAssignmentRequestBuilder) {
     m := &AccessPackageAssignmentRequestBuilder{
     }
@@ -115,18 +108,13 @@ func NewAccessPackageAssignmentRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackageAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageAssignmentRequestBuilder instantiates a new AccessPackageAssignmentRequestBuilder and sets the default values.
 func NewAccessPackageAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation for a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 func (m *AccessPackageAssignmentRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *AccessPackageAssignmentRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation for a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 func (m *AccessPackageAssignmentRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -165,9 +151,7 @@ func (m *AccessPackageAssignmentRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation for a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 func (m *AccessPackageAssignmentRequestBuilder) CreatePatchRequestInformation(options *AccessPackageAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -185,9 +169,7 @@ func (m *AccessPackageAssignmentRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Delete for a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 func (m *AccessPackageAssignmentRequestBuilder) Delete(options *AccessPackageAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -199,9 +181,7 @@ func (m *AccessPackageAssignmentRequestBuilder) Delete(options *AccessPackageAss
     }
     return nil
 }
-// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get for a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 func (m *AccessPackageAssignmentRequestBuilder) Get(options *AccessPackageAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -213,9 +193,7 @@ func (m *AccessPackageAssignmentRequestBuilder) Get(options *AccessPackageAssign
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignment), nil
 }
-// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Patch for a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
 func (m *AccessPackageAssignmentRequestBuilder) Patch(options *AccessPackageAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

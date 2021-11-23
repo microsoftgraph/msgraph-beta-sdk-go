@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// salesOrder 
 type SalesOrder struct {
     Entity
     // 
@@ -79,14 +79,14 @@ type SalesOrder struct {
     // 
     totalTaxAmount *float64;
 }
-// Instantiates a new salesOrder and sets the default values.
+// NewSalesOrder instantiates a new salesOrder and sets the default values.
 func NewSalesOrder()(*SalesOrder) {
     m := &SalesOrder{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the billingPostalAddress property value. 
+// GetBillingPostalAddress gets the billingPostalAddress property value. 
 func (m *SalesOrder) GetBillingPostalAddress()(*PostalAddressType) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *SalesOrder) GetBillingPostalAddress()(*PostalAddressType) {
         return m.billingPostalAddress
     }
 }
-// Gets the billToCustomerId property value. 
+// GetBillToCustomerId gets the billToCustomerId property value. 
 func (m *SalesOrder) GetBillToCustomerId()(*string) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *SalesOrder) GetBillToCustomerId()(*string) {
         return m.billToCustomerId
     }
 }
-// Gets the billToCustomerNumber property value. 
+// GetBillToCustomerNumber gets the billToCustomerNumber property value. 
 func (m *SalesOrder) GetBillToCustomerNumber()(*string) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *SalesOrder) GetBillToCustomerNumber()(*string) {
         return m.billToCustomerNumber
     }
 }
-// Gets the billToName property value. 
+// GetBillToName gets the billToName property value. 
 func (m *SalesOrder) GetBillToName()(*string) {
     if m == nil {
         return nil
@@ -118,7 +118,7 @@ func (m *SalesOrder) GetBillToName()(*string) {
         return m.billToName
     }
 }
-// Gets the currency property value. 
+// GetCurrency gets the currency property value. 
 func (m *SalesOrder) GetCurrency()(*Currency) {
     if m == nil {
         return nil
@@ -126,7 +126,7 @@ func (m *SalesOrder) GetCurrency()(*Currency) {
         return m.currency
     }
 }
-// Gets the currencyCode property value. 
+// GetCurrencyCode gets the currencyCode property value. 
 func (m *SalesOrder) GetCurrencyCode()(*string) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *SalesOrder) GetCurrencyCode()(*string) {
         return m.currencyCode
     }
 }
-// Gets the currencyId property value. 
+// GetCurrencyId gets the currencyId property value. 
 func (m *SalesOrder) GetCurrencyId()(*string) {
     if m == nil {
         return nil
@@ -142,7 +142,7 @@ func (m *SalesOrder) GetCurrencyId()(*string) {
         return m.currencyId
     }
 }
-// Gets the customer property value. 
+// GetCustomer gets the customer property value. 
 func (m *SalesOrder) GetCustomer()(*Customer) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *SalesOrder) GetCustomer()(*Customer) {
         return m.customer
     }
 }
-// Gets the customerId property value. 
+// GetCustomerId gets the customerId property value. 
 func (m *SalesOrder) GetCustomerId()(*string) {
     if m == nil {
         return nil
@@ -158,7 +158,7 @@ func (m *SalesOrder) GetCustomerId()(*string) {
         return m.customerId
     }
 }
-// Gets the customerName property value. 
+// GetCustomerName gets the customerName property value. 
 func (m *SalesOrder) GetCustomerName()(*string) {
     if m == nil {
         return nil
@@ -166,7 +166,7 @@ func (m *SalesOrder) GetCustomerName()(*string) {
         return m.customerName
     }
 }
-// Gets the customerNumber property value. 
+// GetCustomerNumber gets the customerNumber property value. 
 func (m *SalesOrder) GetCustomerNumber()(*string) {
     if m == nil {
         return nil
@@ -174,7 +174,7 @@ func (m *SalesOrder) GetCustomerNumber()(*string) {
         return m.customerNumber
     }
 }
-// Gets the discountAmount property value. 
+// GetDiscountAmount gets the discountAmount property value. 
 func (m *SalesOrder) GetDiscountAmount()(*float64) {
     if m == nil {
         return nil
@@ -182,7 +182,7 @@ func (m *SalesOrder) GetDiscountAmount()(*float64) {
         return m.discountAmount
     }
 }
-// Gets the discountAppliedBeforeTax property value. 
+// GetDiscountAppliedBeforeTax gets the discountAppliedBeforeTax property value. 
 func (m *SalesOrder) GetDiscountAppliedBeforeTax()(*bool) {
     if m == nil {
         return nil
@@ -190,7 +190,7 @@ func (m *SalesOrder) GetDiscountAppliedBeforeTax()(*bool) {
         return m.discountAppliedBeforeTax
     }
 }
-// Gets the email property value. 
+// GetEmail gets the email property value. 
 func (m *SalesOrder) GetEmail()(*string) {
     if m == nil {
         return nil
@@ -198,7 +198,7 @@ func (m *SalesOrder) GetEmail()(*string) {
         return m.email
     }
 }
-// Gets the externalDocumentNumber property value. 
+// GetExternalDocumentNumber gets the externalDocumentNumber property value. 
 func (m *SalesOrder) GetExternalDocumentNumber()(*string) {
     if m == nil {
         return nil
@@ -206,7 +206,7 @@ func (m *SalesOrder) GetExternalDocumentNumber()(*string) {
         return m.externalDocumentNumber
     }
 }
-// Gets the fullyShipped property value. 
+// GetFullyShipped gets the fullyShipped property value. 
 func (m *SalesOrder) GetFullyShipped()(*bool) {
     if m == nil {
         return nil
@@ -214,7 +214,7 @@ func (m *SalesOrder) GetFullyShipped()(*bool) {
         return m.fullyShipped
     }
 }
-// Gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *SalesOrder) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -222,7 +222,7 @@ func (m *SalesOrder) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.lastModifiedDateTime
     }
 }
-// Gets the number property value. 
+// GetNumber gets the number property value. 
 func (m *SalesOrder) GetNumber()(*string) {
     if m == nil {
         return nil
@@ -230,7 +230,7 @@ func (m *SalesOrder) GetNumber()(*string) {
         return m.number
     }
 }
-// Gets the orderDate property value. 
+// GetOrderDate gets the orderDate property value. 
 func (m *SalesOrder) GetOrderDate()(*string) {
     if m == nil {
         return nil
@@ -238,7 +238,7 @@ func (m *SalesOrder) GetOrderDate()(*string) {
         return m.orderDate
     }
 }
-// Gets the partialShipping property value. 
+// GetPartialShipping gets the partialShipping property value. 
 func (m *SalesOrder) GetPartialShipping()(*bool) {
     if m == nil {
         return nil
@@ -246,7 +246,7 @@ func (m *SalesOrder) GetPartialShipping()(*bool) {
         return m.partialShipping
     }
 }
-// Gets the paymentTerm property value. 
+// GetPaymentTerm gets the paymentTerm property value. 
 func (m *SalesOrder) GetPaymentTerm()(*PaymentTerm) {
     if m == nil {
         return nil
@@ -254,7 +254,7 @@ func (m *SalesOrder) GetPaymentTerm()(*PaymentTerm) {
         return m.paymentTerm
     }
 }
-// Gets the paymentTermsId property value. 
+// GetPaymentTermsId gets the paymentTermsId property value. 
 func (m *SalesOrder) GetPaymentTermsId()(*string) {
     if m == nil {
         return nil
@@ -262,7 +262,7 @@ func (m *SalesOrder) GetPaymentTermsId()(*string) {
         return m.paymentTermsId
     }
 }
-// Gets the phoneNumber property value. 
+// GetPhoneNumber gets the phoneNumber property value. 
 func (m *SalesOrder) GetPhoneNumber()(*string) {
     if m == nil {
         return nil
@@ -270,7 +270,7 @@ func (m *SalesOrder) GetPhoneNumber()(*string) {
         return m.phoneNumber
     }
 }
-// Gets the pricesIncludeTax property value. 
+// GetPricesIncludeTax gets the pricesIncludeTax property value. 
 func (m *SalesOrder) GetPricesIncludeTax()(*bool) {
     if m == nil {
         return nil
@@ -278,7 +278,7 @@ func (m *SalesOrder) GetPricesIncludeTax()(*bool) {
         return m.pricesIncludeTax
     }
 }
-// Gets the requestedDeliveryDate property value. 
+// GetRequestedDeliveryDate gets the requestedDeliveryDate property value. 
 func (m *SalesOrder) GetRequestedDeliveryDate()(*string) {
     if m == nil {
         return nil
@@ -286,7 +286,7 @@ func (m *SalesOrder) GetRequestedDeliveryDate()(*string) {
         return m.requestedDeliveryDate
     }
 }
-// Gets the salesOrderLines property value. 
+// GetSalesOrderLines gets the salesOrderLines property value. 
 func (m *SalesOrder) GetSalesOrderLines()([]SalesOrderLine) {
     if m == nil {
         return nil
@@ -294,7 +294,7 @@ func (m *SalesOrder) GetSalesOrderLines()([]SalesOrderLine) {
         return m.salesOrderLines
     }
 }
-// Gets the salesperson property value. 
+// GetSalesperson gets the salesperson property value. 
 func (m *SalesOrder) GetSalesperson()(*string) {
     if m == nil {
         return nil
@@ -302,7 +302,7 @@ func (m *SalesOrder) GetSalesperson()(*string) {
         return m.salesperson
     }
 }
-// Gets the sellingPostalAddress property value. 
+// GetSellingPostalAddress gets the sellingPostalAddress property value. 
 func (m *SalesOrder) GetSellingPostalAddress()(*PostalAddressType) {
     if m == nil {
         return nil
@@ -310,7 +310,7 @@ func (m *SalesOrder) GetSellingPostalAddress()(*PostalAddressType) {
         return m.sellingPostalAddress
     }
 }
-// Gets the shippingPostalAddress property value. 
+// GetShippingPostalAddress gets the shippingPostalAddress property value. 
 func (m *SalesOrder) GetShippingPostalAddress()(*PostalAddressType) {
     if m == nil {
         return nil
@@ -318,7 +318,7 @@ func (m *SalesOrder) GetShippingPostalAddress()(*PostalAddressType) {
         return m.shippingPostalAddress
     }
 }
-// Gets the shipToContact property value. 
+// GetShipToContact gets the shipToContact property value. 
 func (m *SalesOrder) GetShipToContact()(*string) {
     if m == nil {
         return nil
@@ -326,7 +326,7 @@ func (m *SalesOrder) GetShipToContact()(*string) {
         return m.shipToContact
     }
 }
-// Gets the shipToName property value. 
+// GetShipToName gets the shipToName property value. 
 func (m *SalesOrder) GetShipToName()(*string) {
     if m == nil {
         return nil
@@ -334,7 +334,7 @@ func (m *SalesOrder) GetShipToName()(*string) {
         return m.shipToName
     }
 }
-// Gets the status property value. 
+// GetStatus gets the status property value. 
 func (m *SalesOrder) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -342,7 +342,7 @@ func (m *SalesOrder) GetStatus()(*string) {
         return m.status
     }
 }
-// Gets the totalAmountExcludingTax property value. 
+// GetTotalAmountExcludingTax gets the totalAmountExcludingTax property value. 
 func (m *SalesOrder) GetTotalAmountExcludingTax()(*float64) {
     if m == nil {
         return nil
@@ -350,7 +350,7 @@ func (m *SalesOrder) GetTotalAmountExcludingTax()(*float64) {
         return m.totalAmountExcludingTax
     }
 }
-// Gets the totalAmountIncludingTax property value. 
+// GetTotalAmountIncludingTax gets the totalAmountIncludingTax property value. 
 func (m *SalesOrder) GetTotalAmountIncludingTax()(*float64) {
     if m == nil {
         return nil
@@ -358,7 +358,7 @@ func (m *SalesOrder) GetTotalAmountIncludingTax()(*float64) {
         return m.totalAmountIncludingTax
     }
 }
-// Gets the totalTaxAmount property value. 
+// GetTotalTaxAmount gets the totalTaxAmount property value. 
 func (m *SalesOrder) GetTotalTaxAmount()(*float64) {
     if m == nil {
         return nil
@@ -366,7 +366,7 @@ func (m *SalesOrder) GetTotalTaxAmount()(*float64) {
         return m.totalTaxAmount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SalesOrder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["billingPostalAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -728,9 +728,7 @@ func (m *SalesOrder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *SalesOrder) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SalesOrder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -953,213 +951,143 @@ func (m *SalesOrder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
-// Sets the billingPostalAddress property value. 
-// Parameters:
-//  - value : Value to set for the billingPostalAddress property.
+// SetBillingPostalAddress sets the billingPostalAddress property value. 
 func (m *SalesOrder) SetBillingPostalAddress(value *PostalAddressType)() {
     m.billingPostalAddress = value
 }
-// Sets the billToCustomerId property value. 
-// Parameters:
-//  - value : Value to set for the billToCustomerId property.
+// SetBillToCustomerId sets the billToCustomerId property value. 
 func (m *SalesOrder) SetBillToCustomerId(value *string)() {
     m.billToCustomerId = value
 }
-// Sets the billToCustomerNumber property value. 
-// Parameters:
-//  - value : Value to set for the billToCustomerNumber property.
+// SetBillToCustomerNumber sets the billToCustomerNumber property value. 
 func (m *SalesOrder) SetBillToCustomerNumber(value *string)() {
     m.billToCustomerNumber = value
 }
-// Sets the billToName property value. 
-// Parameters:
-//  - value : Value to set for the billToName property.
+// SetBillToName sets the billToName property value. 
 func (m *SalesOrder) SetBillToName(value *string)() {
     m.billToName = value
 }
-// Sets the currency property value. 
-// Parameters:
-//  - value : Value to set for the currency property.
+// SetCurrency sets the currency property value. 
 func (m *SalesOrder) SetCurrency(value *Currency)() {
     m.currency = value
 }
-// Sets the currencyCode property value. 
-// Parameters:
-//  - value : Value to set for the currencyCode property.
+// SetCurrencyCode sets the currencyCode property value. 
 func (m *SalesOrder) SetCurrencyCode(value *string)() {
     m.currencyCode = value
 }
-// Sets the currencyId property value. 
-// Parameters:
-//  - value : Value to set for the currencyId property.
+// SetCurrencyId sets the currencyId property value. 
 func (m *SalesOrder) SetCurrencyId(value *string)() {
     m.currencyId = value
 }
-// Sets the customer property value. 
-// Parameters:
-//  - value : Value to set for the customer property.
+// SetCustomer sets the customer property value. 
 func (m *SalesOrder) SetCustomer(value *Customer)() {
     m.customer = value
 }
-// Sets the customerId property value. 
-// Parameters:
-//  - value : Value to set for the customerId property.
+// SetCustomerId sets the customerId property value. 
 func (m *SalesOrder) SetCustomerId(value *string)() {
     m.customerId = value
 }
-// Sets the customerName property value. 
-// Parameters:
-//  - value : Value to set for the customerName property.
+// SetCustomerName sets the customerName property value. 
 func (m *SalesOrder) SetCustomerName(value *string)() {
     m.customerName = value
 }
-// Sets the customerNumber property value. 
-// Parameters:
-//  - value : Value to set for the customerNumber property.
+// SetCustomerNumber sets the customerNumber property value. 
 func (m *SalesOrder) SetCustomerNumber(value *string)() {
     m.customerNumber = value
 }
-// Sets the discountAmount property value. 
-// Parameters:
-//  - value : Value to set for the discountAmount property.
+// SetDiscountAmount sets the discountAmount property value. 
 func (m *SalesOrder) SetDiscountAmount(value *float64)() {
     m.discountAmount = value
 }
-// Sets the discountAppliedBeforeTax property value. 
-// Parameters:
-//  - value : Value to set for the discountAppliedBeforeTax property.
+// SetDiscountAppliedBeforeTax sets the discountAppliedBeforeTax property value. 
 func (m *SalesOrder) SetDiscountAppliedBeforeTax(value *bool)() {
     m.discountAppliedBeforeTax = value
 }
-// Sets the email property value. 
-// Parameters:
-//  - value : Value to set for the email property.
+// SetEmail sets the email property value. 
 func (m *SalesOrder) SetEmail(value *string)() {
     m.email = value
 }
-// Sets the externalDocumentNumber property value. 
-// Parameters:
-//  - value : Value to set for the externalDocumentNumber property.
+// SetExternalDocumentNumber sets the externalDocumentNumber property value. 
 func (m *SalesOrder) SetExternalDocumentNumber(value *string)() {
     m.externalDocumentNumber = value
 }
-// Sets the fullyShipped property value. 
-// Parameters:
-//  - value : Value to set for the fullyShipped property.
+// SetFullyShipped sets the fullyShipped property value. 
 func (m *SalesOrder) SetFullyShipped(value *bool)() {
     m.fullyShipped = value
 }
-// Sets the lastModifiedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *SalesOrder) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the number property value. 
-// Parameters:
-//  - value : Value to set for the number property.
+// SetNumber sets the number property value. 
 func (m *SalesOrder) SetNumber(value *string)() {
     m.number = value
 }
-// Sets the orderDate property value. 
-// Parameters:
-//  - value : Value to set for the orderDate property.
+// SetOrderDate sets the orderDate property value. 
 func (m *SalesOrder) SetOrderDate(value *string)() {
     m.orderDate = value
 }
-// Sets the partialShipping property value. 
-// Parameters:
-//  - value : Value to set for the partialShipping property.
+// SetPartialShipping sets the partialShipping property value. 
 func (m *SalesOrder) SetPartialShipping(value *bool)() {
     m.partialShipping = value
 }
-// Sets the paymentTerm property value. 
-// Parameters:
-//  - value : Value to set for the paymentTerm property.
+// SetPaymentTerm sets the paymentTerm property value. 
 func (m *SalesOrder) SetPaymentTerm(value *PaymentTerm)() {
     m.paymentTerm = value
 }
-// Sets the paymentTermsId property value. 
-// Parameters:
-//  - value : Value to set for the paymentTermsId property.
+// SetPaymentTermsId sets the paymentTermsId property value. 
 func (m *SalesOrder) SetPaymentTermsId(value *string)() {
     m.paymentTermsId = value
 }
-// Sets the phoneNumber property value. 
-// Parameters:
-//  - value : Value to set for the phoneNumber property.
+// SetPhoneNumber sets the phoneNumber property value. 
 func (m *SalesOrder) SetPhoneNumber(value *string)() {
     m.phoneNumber = value
 }
-// Sets the pricesIncludeTax property value. 
-// Parameters:
-//  - value : Value to set for the pricesIncludeTax property.
+// SetPricesIncludeTax sets the pricesIncludeTax property value. 
 func (m *SalesOrder) SetPricesIncludeTax(value *bool)() {
     m.pricesIncludeTax = value
 }
-// Sets the requestedDeliveryDate property value. 
-// Parameters:
-//  - value : Value to set for the requestedDeliveryDate property.
+// SetRequestedDeliveryDate sets the requestedDeliveryDate property value. 
 func (m *SalesOrder) SetRequestedDeliveryDate(value *string)() {
     m.requestedDeliveryDate = value
 }
-// Sets the salesOrderLines property value. 
-// Parameters:
-//  - value : Value to set for the salesOrderLines property.
+// SetSalesOrderLines sets the salesOrderLines property value. 
 func (m *SalesOrder) SetSalesOrderLines(value []SalesOrderLine)() {
     m.salesOrderLines = value
 }
-// Sets the salesperson property value. 
-// Parameters:
-//  - value : Value to set for the salesperson property.
+// SetSalesperson sets the salesperson property value. 
 func (m *SalesOrder) SetSalesperson(value *string)() {
     m.salesperson = value
 }
-// Sets the sellingPostalAddress property value. 
-// Parameters:
-//  - value : Value to set for the sellingPostalAddress property.
+// SetSellingPostalAddress sets the sellingPostalAddress property value. 
 func (m *SalesOrder) SetSellingPostalAddress(value *PostalAddressType)() {
     m.sellingPostalAddress = value
 }
-// Sets the shippingPostalAddress property value. 
-// Parameters:
-//  - value : Value to set for the shippingPostalAddress property.
+// SetShippingPostalAddress sets the shippingPostalAddress property value. 
 func (m *SalesOrder) SetShippingPostalAddress(value *PostalAddressType)() {
     m.shippingPostalAddress = value
 }
-// Sets the shipToContact property value. 
-// Parameters:
-//  - value : Value to set for the shipToContact property.
+// SetShipToContact sets the shipToContact property value. 
 func (m *SalesOrder) SetShipToContact(value *string)() {
     m.shipToContact = value
 }
-// Sets the shipToName property value. 
-// Parameters:
-//  - value : Value to set for the shipToName property.
+// SetShipToName sets the shipToName property value. 
 func (m *SalesOrder) SetShipToName(value *string)() {
     m.shipToName = value
 }
-// Sets the status property value. 
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. 
 func (m *SalesOrder) SetStatus(value *string)() {
     m.status = value
 }
-// Sets the totalAmountExcludingTax property value. 
-// Parameters:
-//  - value : Value to set for the totalAmountExcludingTax property.
+// SetTotalAmountExcludingTax sets the totalAmountExcludingTax property value. 
 func (m *SalesOrder) SetTotalAmountExcludingTax(value *float64)() {
     m.totalAmountExcludingTax = value
 }
-// Sets the totalAmountIncludingTax property value. 
-// Parameters:
-//  - value : Value to set for the totalAmountIncludingTax property.
+// SetTotalAmountIncludingTax sets the totalAmountIncludingTax property value. 
 func (m *SalesOrder) SetTotalAmountIncludingTax(value *float64)() {
     m.totalAmountIncludingTax = value
 }
-// Sets the totalTaxAmount property value. 
-// Parameters:
-//  - value : Value to set for the totalTaxAmount property.
+// SetTotalTaxAmount sets the totalTaxAmount property value. 
 func (m *SalesOrder) SetTotalTaxAmount(value *float64)() {
     m.totalTaxAmount = value
 }

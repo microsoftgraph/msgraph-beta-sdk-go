@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\employees
+// employeesRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\employees
 type EmployeesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EmployeesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// EmployeesRequestBuilderGetOptions options for Get
 type EmployeesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type EmployeesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get employees from financials
+// employeesRequestBuilderGetQueryParameters get employees from financials
 type EmployeesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type EmployeesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// EmployeesRequestBuilderPostOptions options for Post
 type EmployeesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Employee;
@@ -56,10 +56,7 @@ type EmployeesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EmployeesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmployeesRequestBuilderInternal instantiates a new EmployeesRequestBuilder and sets the default values.
 func NewEmployeesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmployeesRequestBuilder) {
     m := &EmployeesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewEmployeesRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EmployeesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmployeesRequestBuilder instantiates a new EmployeesRequestBuilder and sets the default values.
 func NewEmployeesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmployeesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEmployeesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get employees from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get employees from financials
 func (m *EmployeesRequestBuilder) CreateGetRequestInformation(options *EmployeesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *EmployeesRequestBuilder) CreateGetRequestInformation(options *Employees
     }
     return requestInfo, nil
 }
-// Create new navigation property to employees for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to employees for financials
 func (m *EmployeesRequestBuilder) CreatePostRequestInformation(options *EmployeesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *EmployeesRequestBuilder) CreatePostRequestInformation(options *Employee
     }
     return requestInfo, nil
 }
-// Get employees from financials
-// Parameters:
-//  - options : Options for the request
+// Get get employees from financials
 func (m *EmployeesRequestBuilder) Get(options *EmployeesRequestBuilderGetOptions)(*EmployeesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *EmployeesRequestBuilder) Get(options *EmployeesRequestBuilderGetOptions
     }
     return res.(*EmployeesResponse), nil
 }
-// Create new navigation property to employees for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to employees for financials
 func (m *EmployeesRequestBuilder) Post(options *EmployeesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Employee, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

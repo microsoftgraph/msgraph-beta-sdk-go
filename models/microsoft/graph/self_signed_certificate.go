@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SelfSignedCertificate 
 type SelfSignedCertificate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,14 +28,14 @@ type SelfSignedCertificate struct {
     // 
     usage *string;
 }
-// Instantiates a new SelfSignedCertificate and sets the default values.
+// NewSelfSignedCertificate instantiates a new SelfSignedCertificate and sets the default values.
 func NewSelfSignedCertificate()(*SelfSignedCertificate) {
     m := &SelfSignedCertificate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SelfSignedCertificate) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *SelfSignedCertificate) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the customKeyIdentifier property value. 
+// GetCustomKeyIdentifier gets the customKeyIdentifier property value. 
 func (m *SelfSignedCertificate) GetCustomKeyIdentifier()([]byte) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *SelfSignedCertificate) GetCustomKeyIdentifier()([]byte) {
         return m.customKeyIdentifier
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *SelfSignedCertificate) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *SelfSignedCertificate) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the endDateTime property value. 
+// GetEndDateTime gets the endDateTime property value. 
 func (m *SelfSignedCertificate) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *SelfSignedCertificate) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.endDateTime
     }
 }
-// Gets the key property value. 
+// GetKey gets the key property value. 
 func (m *SelfSignedCertificate) GetKey()([]byte) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *SelfSignedCertificate) GetKey()([]byte) {
         return m.key
     }
 }
-// Gets the keyId property value. 
+// GetKeyId gets the keyId property value. 
 func (m *SelfSignedCertificate) GetKeyId()(*string) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *SelfSignedCertificate) GetKeyId()(*string) {
         return m.keyId
     }
 }
-// Gets the startDateTime property value. 
+// GetStartDateTime gets the startDateTime property value. 
 func (m *SelfSignedCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *SelfSignedCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3a
         return m.startDateTime
     }
 }
-// Gets the thumbprint property value. 
+// GetThumbprint gets the thumbprint property value. 
 func (m *SelfSignedCertificate) GetThumbprint()(*string) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *SelfSignedCertificate) GetThumbprint()(*string) {
         return m.thumbprint
     }
 }
-// Gets the type_escaped property value. 
+// GetType_escaped gets the type_escaped property value. 
 func (m *SelfSignedCertificate) GetType_escaped()(*string) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *SelfSignedCertificate) GetType_escaped()(*string) {
         return m.type_escaped
     }
 }
-// Gets the usage property value. 
+// GetUsage gets the usage property value. 
 func (m *SelfSignedCertificate) GetUsage()(*string) {
     if m == nil {
         return nil
@@ -115,7 +115,7 @@ func (m *SelfSignedCertificate) GetUsage()(*string) {
         return m.usage
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SelfSignedCertificate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["customKeyIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -213,9 +213,7 @@ func (m *SelfSignedCertificate) GetFieldDeserializers()(map[string]func(interfac
 func (m *SelfSignedCertificate) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SelfSignedCertificate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteByteArrayValue("customKeyIdentifier", m.GetCustomKeyIdentifier())
@@ -279,63 +277,43 @@ func (m *SelfSignedCertificate) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SelfSignedCertificate) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the customKeyIdentifier property value. 
-// Parameters:
-//  - value : Value to set for the customKeyIdentifier property.
+// SetCustomKeyIdentifier sets the customKeyIdentifier property value. 
 func (m *SelfSignedCertificate) SetCustomKeyIdentifier(value []byte)() {
     m.customKeyIdentifier = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *SelfSignedCertificate) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the endDateTime property value. 
-// Parameters:
-//  - value : Value to set for the endDateTime property.
+// SetEndDateTime sets the endDateTime property value. 
 func (m *SelfSignedCertificate) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// Sets the key property value. 
-// Parameters:
-//  - value : Value to set for the key property.
+// SetKey sets the key property value. 
 func (m *SelfSignedCertificate) SetKey(value []byte)() {
     m.key = value
 }
-// Sets the keyId property value. 
-// Parameters:
-//  - value : Value to set for the keyId property.
+// SetKeyId sets the keyId property value. 
 func (m *SelfSignedCertificate) SetKeyId(value *string)() {
     m.keyId = value
 }
-// Sets the startDateTime property value. 
-// Parameters:
-//  - value : Value to set for the startDateTime property.
+// SetStartDateTime sets the startDateTime property value. 
 func (m *SelfSignedCertificate) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// Sets the thumbprint property value. 
-// Parameters:
-//  - value : Value to set for the thumbprint property.
+// SetThumbprint sets the thumbprint property value. 
 func (m *SelfSignedCertificate) SetThumbprint(value *string)() {
     m.thumbprint = value
 }
-// Sets the type_escaped property value. 
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. 
 func (m *SelfSignedCertificate) SetType_escaped(value *string)() {
     m.type_escaped = value
 }
-// Sets the usage property value. 
-// Parameters:
-//  - value : Value to set for the usage property.
+// SetUsage sets the usage property value. 
 func (m *SelfSignedCertificate) SetUsage(value *string)() {
     m.usage = value
 }

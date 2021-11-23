@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \messageEvents\{messageEvent-id}
+// messageEventRequestBuilder builds and executes requests for operations under \messageEvents\{messageEvent-id}
 type MessageEventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MessageEventRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MessageEventRequestBuilderDeleteOptions options for Delete
 type MessageEventRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MessageEventRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MessageEventRequestBuilderGetOptions options for Get
 type MessageEventRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type MessageEventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from messageEvents by key
+// messageEventRequestBuilderGetQueryParameters get entity from messageEvents by key
 type MessageEventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MessageEventRequestBuilderPatchOptions options for Patch
 type MessageEventRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageEvent;
@@ -53,10 +53,7 @@ type MessageEventRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MessageEventRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageEventRequestBuilderInternal instantiates a new MessageEventRequestBuilder and sets the default values.
 func NewMessageEventRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageEventRequestBuilder) {
     m := &MessageEventRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewMessageEventRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MessageEventRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageEventRequestBuilder instantiates a new MessageEventRequestBuilder and sets the default values.
 func NewMessageEventRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageEventRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessageEventRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from messageEvents
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from messageEvents
 func (m *MessageEventRequestBuilder) CreateDeleteRequestInformation(options *MessageEventRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *MessageEventRequestBuilder) CreateDeleteRequestInformation(options *Mes
     }
     return requestInfo, nil
 }
-// Get entity from messageEvents by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from messageEvents by key
 func (m *MessageEventRequestBuilder) CreateGetRequestInformation(options *MessageEventRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MessageEventRequestBuilder) CreateGetRequestInformation(options *Messag
     }
     return requestInfo, nil
 }
-// Update entity in messageEvents
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in messageEvents
 func (m *MessageEventRequestBuilder) CreatePatchRequestInformation(options *MessageEventRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *MessageEventRequestBuilder) CreatePatchRequestInformation(options *Mess
     }
     return requestInfo, nil
 }
-// Delete entity from messageEvents
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from messageEvents
 func (m *MessageEventRequestBuilder) Delete(options *MessageEventRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *MessageEventRequestBuilder) Delete(options *MessageEventRequestBuilderD
     }
     return nil
 }
-// Get entity from messageEvents by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from messageEvents by key
 func (m *MessageEventRequestBuilder) Get(options *MessageEventRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageEvent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *MessageEventRequestBuilder) Get(options *MessageEventRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MessageEvent), nil
 }
-// Update entity in messageEvents
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in messageEvents
 func (m *MessageEventRequestBuilder) Patch(options *MessageEventRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

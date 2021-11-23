@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \trustFramework\policies
+// policiesRequestBuilder builds and executes requests for operations under \trustFramework\policies
 type PoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PoliciesRequestBuilderGetOptions options for Get
 type PoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get policies from trustFramework
+// policiesRequestBuilderGetQueryParameters get policies from trustFramework
 type PoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PoliciesRequestBuilderPostOptions options for Post
 type PoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkPolicy;
@@ -56,10 +56,7 @@ type PoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPoliciesRequestBuilderInternal instantiates a new PoliciesRequestBuilder and sets the default values.
 func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PoliciesRequestBuilder) {
     m := &PoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPoliciesRequestBuilder instantiates a new PoliciesRequestBuilder and sets the default values.
 func NewPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get policies from trustFramework
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get policies from trustFramework
 func (m *PoliciesRequestBuilder) CreateGetRequestInformation(options *PoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PoliciesRequestBuilder) CreateGetRequestInformation(options *PoliciesRe
     }
     return requestInfo, nil
 }
-// Create new navigation property to policies for trustFramework
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to policies for trustFramework
 func (m *PoliciesRequestBuilder) CreatePostRequestInformation(options *PoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PoliciesRequestBuilder) CreatePostRequestInformation(options *PoliciesR
     }
     return requestInfo, nil
 }
-// Get policies from trustFramework
-// Parameters:
-//  - options : Options for the request
+// Get get policies from trustFramework
 func (m *PoliciesRequestBuilder) Get(options *PoliciesRequestBuilderGetOptions)(*PoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PoliciesRequestBuilder) Get(options *PoliciesRequestBuilderGetOptions)(
     }
     return res.(*PoliciesResponse), nil
 }
-// Create new navigation property to policies for trustFramework
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to policies for trustFramework
 func (m *PoliciesRequestBuilder) Post(options *PoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TrustFrameworkPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

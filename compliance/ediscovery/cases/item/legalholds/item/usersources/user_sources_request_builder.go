@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}\userSources
+// userSourcesRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}\userSources
 type UserSourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserSourcesRequestBuilderGetOptions options for Get
 type UserSourcesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserSourcesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
+// userSourcesRequestBuilderGetQueryParameters data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
 type UserSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserSourcesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserSourcesRequestBuilderPostOptions options for Post
 type UserSourcesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSource;
@@ -56,10 +56,7 @@ type UserSourcesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserSourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserSourcesRequestBuilderInternal instantiates a new UserSourcesRequestBuilder and sets the default values.
 func NewUserSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserSourcesRequestBuilder) {
     m := &UserSourcesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserSourcesRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserSourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserSourcesRequestBuilder instantiates a new UserSourcesRequestBuilder and sets the default values.
 func NewUserSourcesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserSourcesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
 func (m *UserSourcesRequestBuilder) CreateGetRequestInformation(options *UserSourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserSourcesRequestBuilder) CreateGetRequestInformation(options *UserSou
     }
     return requestInfo, nil
 }
-// Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
 func (m *UserSourcesRequestBuilder) CreatePostRequestInformation(options *UserSourcesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserSourcesRequestBuilder) CreatePostRequestInformation(options *UserSo
     }
     return requestInfo, nil
 }
-// Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
-// Parameters:
-//  - options : Options for the request
+// Get data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
 func (m *UserSourcesRequestBuilder) Get(options *UserSourcesRequestBuilderGetOptions)(*UserSourcesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserSourcesRequestBuilder) Get(options *UserSourcesRequestBuilderGetOpt
     }
     return res.(*UserSourcesResponse), nil
 }
-// Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
-// Parameters:
-//  - options : Options for the request
+// Post data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
 func (m *UserSourcesRequestBuilder) Post(options *UserSourcesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserSource, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

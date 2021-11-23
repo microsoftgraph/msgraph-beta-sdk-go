@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\advancedThreatProtectionOnboardingStateSummary\advancedThreatProtectionOnboardingDeviceSettingStates
+// advancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder builds and executes requests for operations under \deviceManagement\advancedThreatProtectionOnboardingStateSummary\advancedThreatProtectionOnboardingDeviceSettingStates
 type AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder struct 
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetOptions options for Get
 type AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetOptio
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Not yet documented
+// advancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetQueryParameters not yet documented
 type AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetQuery
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostOptions options for Post
 type AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingDeviceSettingState;
@@ -56,10 +56,7 @@ type AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostOpti
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderInternal instantiates a new AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder and sets the default values.
 func NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) {
     m := &AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderInter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder instantiates a new AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder and sets the default values.
 func NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Not yet documented
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation not yet documented
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) CreateGetRequestInformation(options *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// Not yet documented
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation not yet documented
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) CreatePostRequestInformation(options *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// Not yet documented
-// Parameters:
-//  - options : Options for the request
+// Get not yet documented
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Get(options *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetOptions)(*AdvancedThreatProtectionOnboardingDeviceSettingStatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Ge
     }
     return res.(*AdvancedThreatProtectionOnboardingDeviceSettingStatesResponse), nil
 }
-// Not yet documented
-// Parameters:
-//  - options : Options for the request
+// Post not yet documented
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Post(options *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingDeviceSettingState, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

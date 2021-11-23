@@ -11,7 +11,7 @@ import (
     i4c3467330b742e9b38808f445f2b83de61398d9e7eb0c4191bdd72e252c98629 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/devicemanagement/roleassignments/item/appscopes/item"
 )
 
-// Builds and executes requests for operations under \roleManagement\deviceManagement\roleAssignments\{unifiedRoleAssignmentMultiple-id}
+// unifiedRoleAssignmentMultipleRequestBuilder builds and executes requests for operations under \roleManagement\deviceManagement\roleAssignments\{unifiedRoleAssignmentMultiple-id}
 type UnifiedRoleAssignmentMultipleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type UnifiedRoleAssignmentMultipleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UnifiedRoleAssignmentMultipleRequestBuilderDeleteOptions options for Delete
 type UnifiedRoleAssignmentMultipleRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type UnifiedRoleAssignmentMultipleRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UnifiedRoleAssignmentMultipleRequestBuilderGetOptions options for Get
 type UnifiedRoleAssignmentMultipleRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type UnifiedRoleAssignmentMultipleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get roleAssignments from roleManagement
+// unifiedRoleAssignmentMultipleRequestBuilderGetQueryParameters get roleAssignments from roleManagement
 type UnifiedRoleAssignmentMultipleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UnifiedRoleAssignmentMultipleRequestBuilderPatchOptions options for Patch
 type UnifiedRoleAssignmentMultipleRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentMultiple;
@@ -61,9 +61,7 @@ type UnifiedRoleAssignmentMultipleRequestBuilderPatchOptions struct {
 func (m *UnifiedRoleAssignmentMultipleRequestBuilder) AppScopes()(*i9fbcca2aad84715b68bcf5e9b22ee6957d1813ee30a1a07b635e14deecf7a4c8.AppScopesRequestBuilder) {
     return i9fbcca2aad84715b68bcf5e9b22ee6957d1813ee30a1a07b635e14deecf7a4c8.NewAppScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.deviceManagement.roleAssignments.item.appScopes.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppScopesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.deviceManagement.roleAssignments.item.appScopes.item collection
 func (m *UnifiedRoleAssignmentMultipleRequestBuilder) AppScopesById(id string)(*i4c3467330b742e9b38808f445f2b83de61398d9e7eb0c4191bdd72e252c98629.AppScopeRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -74,10 +72,7 @@ func (m *UnifiedRoleAssignmentMultipleRequestBuilder) AppScopesById(id string)(*
     }
     return i4c3467330b742e9b38808f445f2b83de61398d9e7eb0c4191bdd72e252c98629.NewAppScopeRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new UnifiedRoleAssignmentMultipleRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleAssignmentMultipleRequestBuilderInternal instantiates a new UnifiedRoleAssignmentMultipleRequestBuilder and sets the default values.
 func NewUnifiedRoleAssignmentMultipleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleAssignmentMultipleRequestBuilder) {
     m := &UnifiedRoleAssignmentMultipleRequestBuilder{
     }
@@ -90,18 +85,13 @@ func NewUnifiedRoleAssignmentMultipleRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnifiedRoleAssignmentMultipleRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleAssignmentMultipleRequestBuilder instantiates a new UnifiedRoleAssignmentMultipleRequestBuilder and sets the default values.
 func NewUnifiedRoleAssignmentMultipleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleAssignmentMultipleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleAssignmentMultipleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property roleAssignments for roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property roleAssignments for roleManagement
 func (m *UnifiedRoleAssignmentMultipleRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRoleAssignmentMultipleRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,9 +108,7 @@ func (m *UnifiedRoleAssignmentMultipleRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// Get roleAssignments from roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get roleAssignments from roleManagement
 func (m *UnifiedRoleAssignmentMultipleRequestBuilder) CreateGetRequestInformation(options *UnifiedRoleAssignmentMultipleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *UnifiedRoleAssignmentMultipleRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// Update the navigation property roleAssignments in roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property roleAssignments in roleManagement
 func (m *UnifiedRoleAssignmentMultipleRequestBuilder) CreatePatchRequestInformation(options *UnifiedRoleAssignmentMultipleRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -160,9 +146,7 @@ func (m *UnifiedRoleAssignmentMultipleRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// Delete navigation property roleAssignments for roleManagement
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property roleAssignments for roleManagement
 func (m *UnifiedRoleAssignmentMultipleRequestBuilder) Delete(options *UnifiedRoleAssignmentMultipleRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -177,9 +161,7 @@ func (m *UnifiedRoleAssignmentMultipleRequestBuilder) Delete(options *UnifiedRol
 func (m *UnifiedRoleAssignmentMultipleRequestBuilder) DirectoryScopes()(*icce9ff4f56da3b598f62227e100054c17f721d52dc3ccdf101cd0e269e75ecf4.DirectoryScopesRequestBuilder) {
     return icce9ff4f56da3b598f62227e100054c17f721d52dc3ccdf101cd0e269e75ecf4.NewDirectoryScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get roleAssignments from roleManagement
-// Parameters:
-//  - options : Options for the request
+// Get get roleAssignments from roleManagement
 func (m *UnifiedRoleAssignmentMultipleRequestBuilder) Get(options *UnifiedRoleAssignmentMultipleRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentMultiple, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -191,9 +173,7 @@ func (m *UnifiedRoleAssignmentMultipleRequestBuilder) Get(options *UnifiedRoleAs
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleAssignmentMultiple), nil
 }
-// Update the navigation property roleAssignments in roleManagement
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property roleAssignments in roleManagement
 func (m *UnifiedRoleAssignmentMultipleRequestBuilder) Patch(options *UnifiedRoleAssignmentMultipleRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

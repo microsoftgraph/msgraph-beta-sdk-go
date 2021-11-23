@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// emailAuthenticationMethod 
 type EmailAuthenticationMethod struct {
     AuthenticationMethod
     // The email address registered to this user.
     emailAddress *string;
 }
-// Instantiates a new emailAuthenticationMethod and sets the default values.
+// NewEmailAuthenticationMethod instantiates a new emailAuthenticationMethod and sets the default values.
 func NewEmailAuthenticationMethod()(*EmailAuthenticationMethod) {
     m := &EmailAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
     return m
 }
-// Gets the emailAddress property value. The email address registered to this user.
+// GetEmailAddress gets the emailAddress property value. The email address registered to this user.
 func (m *EmailAuthenticationMethod) GetEmailAddress()(*string) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *EmailAuthenticationMethod) GetEmailAddress()(*string) {
         return m.emailAddress
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EmailAuthenticationMethod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
     res["emailAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -43,9 +43,7 @@ func (m *EmailAuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
 func (m *EmailAuthenticationMethod) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EmailAuthenticationMethod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.AuthenticationMethod.Serialize(writer)
     if err != nil {
@@ -59,9 +57,7 @@ func (m *EmailAuthenticationMethod) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the emailAddress property value. The email address registered to this user.
-// Parameters:
-//  - value : Value to set for the emailAddress property.
+// SetEmailAddress sets the emailAddress property value. The email address registered to this user.
 func (m *EmailAuthenticationMethod) SetEmailAddress(value *string)() {
     m.emailAddress = value
 }

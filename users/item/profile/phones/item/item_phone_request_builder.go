@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\profile\phones\{itemPhone-id}
+// itemPhoneRequestBuilder builds and executes requests for operations under \users\{user-id}\profile\phones\{itemPhone-id}
 type ItemPhoneRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ItemPhoneRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ItemPhoneRequestBuilderDeleteOptions options for Delete
 type ItemPhoneRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ItemPhoneRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ItemPhoneRequestBuilderGetOptions options for Get
 type ItemPhoneRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ItemPhoneRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents detailed information about phone numbers associated with a user in various services.
+// itemPhoneRequestBuilderGetQueryParameters represents detailed information about phone numbers associated with a user in various services.
 type ItemPhoneRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ItemPhoneRequestBuilderPatchOptions options for Patch
 type ItemPhoneRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPhone;
@@ -53,10 +53,7 @@ type ItemPhoneRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ItemPhoneRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemPhoneRequestBuilderInternal instantiates a new ItemPhoneRequestBuilder and sets the default values.
 func NewItemPhoneRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemPhoneRequestBuilder) {
     m := &ItemPhoneRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewItemPhoneRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ItemPhoneRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemPhoneRequestBuilder instantiates a new ItemPhoneRequestBuilder and sets the default values.
 func NewItemPhoneRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemPhoneRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPhoneRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents detailed information about phone numbers associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents detailed information about phone numbers associated with a user in various services.
 func (m *ItemPhoneRequestBuilder) CreateDeleteRequestInformation(options *ItemPhoneRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ItemPhoneRequestBuilder) CreateDeleteRequestInformation(options *ItemPh
     }
     return requestInfo, nil
 }
-// Represents detailed information about phone numbers associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents detailed information about phone numbers associated with a user in various services.
 func (m *ItemPhoneRequestBuilder) CreateGetRequestInformation(options *ItemPhoneRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ItemPhoneRequestBuilder) CreateGetRequestInformation(options *ItemPhone
     }
     return requestInfo, nil
 }
-// Represents detailed information about phone numbers associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents detailed information about phone numbers associated with a user in various services.
 func (m *ItemPhoneRequestBuilder) CreatePatchRequestInformation(options *ItemPhoneRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ItemPhoneRequestBuilder) CreatePatchRequestInformation(options *ItemPho
     }
     return requestInfo, nil
 }
-// Represents detailed information about phone numbers associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// Delete represents detailed information about phone numbers associated with a user in various services.
 func (m *ItemPhoneRequestBuilder) Delete(options *ItemPhoneRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ItemPhoneRequestBuilder) Delete(options *ItemPhoneRequestBuilderDeleteO
     }
     return nil
 }
-// Represents detailed information about phone numbers associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// Get represents detailed information about phone numbers associated with a user in various services.
 func (m *ItemPhoneRequestBuilder) Get(options *ItemPhoneRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPhone, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ItemPhoneRequestBuilder) Get(options *ItemPhoneRequestBuilderGetOptions
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemPhone), nil
 }
-// Represents detailed information about phone numbers associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// Patch represents detailed information about phone numbers associated with a user in various services.
 func (m *ItemPhoneRequestBuilder) Patch(options *ItemPhoneRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

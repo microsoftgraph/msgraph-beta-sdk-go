@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\configurationPolicyTemplates\{deviceManagementConfigurationPolicyTemplate-id}\settingTemplates\{deviceManagementConfigurationSettingTemplate-id}\settingDefinitions
+// settingDefinitionsRequestBuilder builds and executes requests for operations under \deviceManagement\configurationPolicyTemplates\{deviceManagementConfigurationPolicyTemplate-id}\settingTemplates\{deviceManagementConfigurationSettingTemplate-id}\settingDefinitions
 type SettingDefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SettingDefinitionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SettingDefinitionsRequestBuilderGetOptions options for Get
 type SettingDefinitionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SettingDefinitionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of related Setting Definitions
+// settingDefinitionsRequestBuilderGetQueryParameters list of related Setting Definitions
 type SettingDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SettingDefinitionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SettingDefinitionsRequestBuilderPostOptions options for Post
 type SettingDefinitionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingDefinition;
@@ -56,10 +56,7 @@ type SettingDefinitionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SettingDefinitionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSettingDefinitionsRequestBuilderInternal instantiates a new SettingDefinitionsRequestBuilder and sets the default values.
 func NewSettingDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SettingDefinitionsRequestBuilder) {
     m := &SettingDefinitionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSettingDefinitionsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SettingDefinitionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSettingDefinitionsRequestBuilder instantiates a new SettingDefinitionsRequestBuilder and sets the default values.
 func NewSettingDefinitionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SettingDefinitionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSettingDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of related Setting Definitions
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of related Setting Definitions
 func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformation(options *SettingDefinitionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// List of related Setting Definitions
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of related Setting Definitions
 func (m *SettingDefinitionsRequestBuilder) CreatePostRequestInformation(options *SettingDefinitionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SettingDefinitionsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// List of related Setting Definitions
-// Parameters:
-//  - options : Options for the request
+// Get list of related Setting Definitions
 func (m *SettingDefinitionsRequestBuilder) Get(options *SettingDefinitionsRequestBuilderGetOptions)(*SettingDefinitionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SettingDefinitionsRequestBuilder) Get(options *SettingDefinitionsReques
     }
     return res.(*SettingDefinitionsResponse), nil
 }
-// List of related Setting Definitions
-// Parameters:
-//  - options : Options for the request
+// Post list of related Setting Definitions
 func (m *SettingDefinitionsRequestBuilder) Post(options *SettingDefinitionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationSettingDefinition, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

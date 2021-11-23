@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// accessReviewPolicy 
 type AccessReviewPolicy struct {
     Entity
     // Description for this policy. Read-only.
@@ -14,14 +14,14 @@ type AccessReviewPolicy struct {
     // If true, group owners can create and manage access reviews on groups they own.
     isGroupOwnerManagementEnabled *bool;
 }
-// Instantiates a new accessReviewPolicy and sets the default values.
+// NewAccessReviewPolicy instantiates a new accessReviewPolicy and sets the default values.
 func NewAccessReviewPolicy()(*AccessReviewPolicy) {
     m := &AccessReviewPolicy{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the description property value. Description for this policy. Read-only.
+// GetDescription gets the description property value. Description for this policy. Read-only.
 func (m *AccessReviewPolicy) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *AccessReviewPolicy) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Display name for this policy. Read-only.
+// GetDisplayName gets the displayName property value. Display name for this policy. Read-only.
 func (m *AccessReviewPolicy) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *AccessReviewPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the isGroupOwnerManagementEnabled property value. If true, group owners can create and manage access reviews on groups they own.
+// GetIsGroupOwnerManagementEnabled gets the isGroupOwnerManagementEnabled property value. If true, group owners can create and manage access reviews on groups they own.
 func (m *AccessReviewPolicy) GetIsGroupOwnerManagementEnabled()(*bool) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *AccessReviewPolicy) GetIsGroupOwnerManagementEnabled()(*bool) {
         return m.isGroupOwnerManagementEnabled
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,9 +83,7 @@ func (m *AccessReviewPolicy) GetFieldDeserializers()(map[string]func(interface{}
 func (m *AccessReviewPolicy) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AccessReviewPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -111,21 +109,15 @@ func (m *AccessReviewPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the description property value. Description for this policy. Read-only.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Description for this policy. Read-only.
 func (m *AccessReviewPolicy) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Display name for this policy. Read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name for this policy. Read-only.
 func (m *AccessReviewPolicy) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the isGroupOwnerManagementEnabled property value. If true, group owners can create and manage access reviews on groups they own.
-// Parameters:
-//  - value : Value to set for the isGroupOwnerManagementEnabled property.
+// SetIsGroupOwnerManagementEnabled sets the isGroupOwnerManagementEnabled property value. If true, group owners can create and manage access reviews on groups they own.
 func (m *AccessReviewPolicy) SetIsGroupOwnerManagementEnabled(value *bool)() {
     m.isGroupOwnerManagementEnabled = value
 }

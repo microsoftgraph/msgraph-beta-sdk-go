@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\websites
+// websitesRequestBuilder builds and executes requests for operations under \me\profile\websites
 type WebsitesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WebsitesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// WebsitesRequestBuilderGetOptions options for Get
 type WebsitesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WebsitesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents detailed information about websites associated with a user in various services.
+// websitesRequestBuilderGetQueryParameters represents detailed information about websites associated with a user in various services.
 type WebsitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type WebsitesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// WebsitesRequestBuilderPostOptions options for Post
 type WebsitesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonWebsite;
@@ -56,10 +56,7 @@ type WebsitesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WebsitesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWebsitesRequestBuilderInternal instantiates a new WebsitesRequestBuilder and sets the default values.
 func NewWebsitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WebsitesRequestBuilder) {
     m := &WebsitesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewWebsitesRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WebsitesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWebsitesRequestBuilder instantiates a new WebsitesRequestBuilder and sets the default values.
 func NewWebsitesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WebsitesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWebsitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents detailed information about websites associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents detailed information about websites associated with a user in various services.
 func (m *WebsitesRequestBuilder) CreateGetRequestInformation(options *WebsitesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *WebsitesRequestBuilder) CreateGetRequestInformation(options *WebsitesRe
     }
     return requestInfo, nil
 }
-// Represents detailed information about websites associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents detailed information about websites associated with a user in various services.
 func (m *WebsitesRequestBuilder) CreatePostRequestInformation(options *WebsitesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *WebsitesRequestBuilder) CreatePostRequestInformation(options *WebsitesR
     }
     return requestInfo, nil
 }
-// Represents detailed information about websites associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// Get represents detailed information about websites associated with a user in various services.
 func (m *WebsitesRequestBuilder) Get(options *WebsitesRequestBuilderGetOptions)(*WebsitesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *WebsitesRequestBuilder) Get(options *WebsitesRequestBuilderGetOptions)(
     }
     return res.(*WebsitesResponse), nil
 }
-// Represents detailed information about websites associated with a user in various services.
-// Parameters:
-//  - options : Options for the request
+// Post represents detailed information about websites associated with a user in various services.
 func (m *WebsitesRequestBuilder) Post(options *WebsitesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonWebsite, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

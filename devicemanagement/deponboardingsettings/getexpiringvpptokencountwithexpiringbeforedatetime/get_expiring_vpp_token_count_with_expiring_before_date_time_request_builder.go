@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\microsoft.graph.getExpiringVppTokenCount(expiringBeforeDateTime='{expiringBeforeDateTime}')
+// getExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\microsoft.graph.getExpiringVppTokenCount(expiringBeforeDateTime='{expiringBeforeDateTime}')
 type GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetOptions options for Get
 type GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,11 +22,7 @@ type GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetOptions 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder and sets the default values.
-// Parameters:
-//  - expiringBeforeDateTime : Usage: expiringBeforeDateTime={expiringBeforeDateTime}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal instantiates a new GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder and sets the default values.
 func NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, expiringBeforeDateTime *string)(*GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) {
     m := &GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder{
     }
@@ -42,18 +38,13 @@ func NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder instantiates a new GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder and sets the default values.
 func NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getExpiringVppTokenCount
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getExpiringVppTokenCount
 func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) CreateGetRequestInformation(options *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +61,7 @@ func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) Creat
     }
     return requestInfo, nil
 }
-// Invoke function getExpiringVppTokenCount
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getExpiringVppTokenCount
 func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) Get(options *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetOptions)(*int32, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

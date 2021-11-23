@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\microsoft.graph.getNonCompliantSettings()
+// getNonCompliantSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\microsoft.graph.getNonCompliantSettings()
 type GetNonCompliantSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetNonCompliantSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetNonCompliantSettingsRequestBuilderGetOptions options for Get
 type GetNonCompliantSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type GetNonCompliantSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetNonCompliantSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetNonCompliantSettingsRequestBuilderInternal instantiates a new GetNonCompliantSettingsRequestBuilder and sets the default values.
 func NewGetNonCompliantSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetNonCompliantSettingsRequestBuilder) {
     m := &GetNonCompliantSettingsRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewGetNonCompliantSettingsRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetNonCompliantSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetNonCompliantSettingsRequestBuilder instantiates a new GetNonCompliantSettingsRequestBuilder and sets the default values.
 func NewGetNonCompliantSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetNonCompliantSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetNonCompliantSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function getNonCompliantSettings
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getNonCompliantSettings
 func (m *GetNonCompliantSettingsRequestBuilder) CreateGetRequestInformation(options *GetNonCompliantSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *GetNonCompliantSettingsRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Invoke function getNonCompliantSettings
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getNonCompliantSettings
 func (m *GetNonCompliantSettingsRequestBuilder) Get(options *GetNonCompliantSettingsRequestBuilderGetOptions)([]GetNonCompliantSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -10,7 +10,7 @@ import (
     ibe96689de55a51f0c56d2a0e70225b89a766a6c4cdc8d088380eb648b999dd3f "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item"
 )
 
-// Builds and executes requests for operations under \app
+// appRequestBuilder builds and executes requests for operations under \app
 type AppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type AppRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppRequestBuilderGetOptions options for Get
 type AppRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,14 +30,14 @@ type AppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get app
+// appRequestBuilderGetQueryParameters get app
 type AppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AppRequestBuilderPatchOptions options for Patch
 type AppRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.App;
@@ -51,9 +51,7 @@ type AppRequestBuilderPatchOptions struct {
 func (m *AppRequestBuilder) Calls()(*ibcd7ebbfadd792f3a3f918631f2d9771cd65cc9b81894406f89550a45009a90f.CallsRequestBuilder) {
     return ibcd7ebbfadd792f3a3f918631f2d9771cd65cc9b81894406f89550a45009a90f.NewCallsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.calls.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CallsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.calls.item collection
 func (m *AppRequestBuilder) CallsById(id string)(*i0f59cb615d0a8fdb53a9db31bee9b4e4081ab7f69d9a6bbba5839e7066dfb903.CallRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -64,10 +62,7 @@ func (m *AppRequestBuilder) CallsById(id string)(*i0f59cb615d0a8fdb53a9db31bee9b
     }
     return i0f59cb615d0a8fdb53a9db31bee9b4e4081ab7f69d9a6bbba5839e7066dfb903.NewCallRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new AppRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppRequestBuilderInternal instantiates a new AppRequestBuilder and sets the default values.
 func NewAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppRequestBuilder) {
     m := &AppRequestBuilder{
     }
@@ -80,18 +75,13 @@ func NewAppRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppRequestBuilder instantiates a new AppRequestBuilder and sets the default values.
 func NewAppRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get app
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get app
 func (m *AppRequestBuilder) CreateGetRequestInformation(options *AppRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,9 +101,7 @@ func (m *AppRequestBuilder) CreateGetRequestInformation(options *AppRequestBuild
     }
     return requestInfo, nil
 }
-// Update app
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update app
 func (m *AppRequestBuilder) CreatePatchRequestInformation(options *AppRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,9 +119,7 @@ func (m *AppRequestBuilder) CreatePatchRequestInformation(options *AppRequestBui
     }
     return requestInfo, nil
 }
-// Get app
-// Parameters:
-//  - options : Options for the request
+// Get get app
 func (m *AppRequestBuilder) Get(options *AppRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CommsApplication, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -148,9 +134,7 @@ func (m *AppRequestBuilder) Get(options *AppRequestBuilderGetOptions)(*i535684e1
 func (m *AppRequestBuilder) OnlineMeetings()(*i950c82ce9946e255745879c43558e6119ec2c2d7f73ff599a8825a675691d160.OnlineMeetingsRequestBuilder) {
     return i950c82ce9946e255745879c43558e6119ec2c2d7f73ff599a8825a675691d160.NewOnlineMeetingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.onlineMeetings.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// OnlineMeetingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.onlineMeetings.item collection
 func (m *AppRequestBuilder) OnlineMeetingsById(id string)(*ibe96689de55a51f0c56d2a0e70225b89a766a6c4cdc8d088380eb648b999dd3f.OnlineMeetingRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -161,9 +145,7 @@ func (m *AppRequestBuilder) OnlineMeetingsById(id string)(*ibe96689de55a51f0c56d
     }
     return ibe96689de55a51f0c56d2a0e70225b89a766a6c4cdc8d088380eb648b999dd3f.NewOnlineMeetingRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update app
-// Parameters:
-//  - options : Options for the request
+// Patch update app
 func (m *AppRequestBuilder) Patch(options *AppRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

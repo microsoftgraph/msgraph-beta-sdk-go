@@ -7,7 +7,7 @@ import (
     i5c0ecb2f1c70cf7dab0ad86d722569219fe7567c83193d91032790c4822ae405 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configmanagercollections/getpolicysummarywithpolicyid"
 )
 
-// Builds and executes requests for operations under \deviceManagement\configManagerCollections
+// configManagerCollectionsRequestBuilder builds and executes requests for operations under \deviceManagement\configManagerCollections
 type ConfigManagerCollectionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ConfigManagerCollectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ConfigManagerCollectionsRequestBuilderGetOptions options for Get
 type ConfigManagerCollectionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ConfigManagerCollectionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of ConfigManagerCollection
+// configManagerCollectionsRequestBuilderGetQueryParameters a list of ConfigManagerCollection
 type ConfigManagerCollectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type ConfigManagerCollectionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ConfigManagerCollectionsRequestBuilderPostOptions options for Post
 type ConfigManagerCollectionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerCollection;
@@ -57,10 +57,7 @@ type ConfigManagerCollectionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConfigManagerCollectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConfigManagerCollectionsRequestBuilderInternal instantiates a new ConfigManagerCollectionsRequestBuilder and sets the default values.
 func NewConfigManagerCollectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConfigManagerCollectionsRequestBuilder) {
     m := &ConfigManagerCollectionsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewConfigManagerCollectionsRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConfigManagerCollectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConfigManagerCollectionsRequestBuilder instantiates a new ConfigManagerCollectionsRequestBuilder and sets the default values.
 func NewConfigManagerCollectionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConfigManagerCollectionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConfigManagerCollectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of ConfigManagerCollection
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of ConfigManagerCollection
 func (m *ConfigManagerCollectionsRequestBuilder) CreateGetRequestInformation(options *ConfigManagerCollectionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *ConfigManagerCollectionsRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// A list of ConfigManagerCollection
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a list of ConfigManagerCollection
 func (m *ConfigManagerCollectionsRequestBuilder) CreatePostRequestInformation(options *ConfigManagerCollectionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *ConfigManagerCollectionsRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// A list of ConfigManagerCollection
-// Parameters:
-//  - options : Options for the request
+// Get a list of ConfigManagerCollection
 func (m *ConfigManagerCollectionsRequestBuilder) Get(options *ConfigManagerCollectionsRequestBuilderGetOptions)(*ConfigManagerCollectionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,15 +126,11 @@ func (m *ConfigManagerCollectionsRequestBuilder) Get(options *ConfigManagerColle
     }
     return res.(*ConfigManagerCollectionsResponse), nil
 }
-// Builds and executes requests for operations under \deviceManagement\configManagerCollections\microsoft.graph.getPolicySummary(policyId='{policyId}')
-// Parameters:
-//  - policyId : Usage: policyId={policyId}
+// GetPolicySummaryWithPolicyId builds and executes requests for operations under \deviceManagement\configManagerCollections\microsoft.graph.getPolicySummary(policyId='{policyId}')
 func (m *ConfigManagerCollectionsRequestBuilder) GetPolicySummaryWithPolicyId(policyId *string)(*i5c0ecb2f1c70cf7dab0ad86d722569219fe7567c83193d91032790c4822ae405.GetPolicySummaryWithPolicyIdRequestBuilder) {
     return i5c0ecb2f1c70cf7dab0ad86d722569219fe7567c83193d91032790c4822ae405.NewGetPolicySummaryWithPolicyIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, policyId);
 }
-// A list of ConfigManagerCollection
-// Parameters:
-//  - options : Options for the request
+// Post a list of ConfigManagerCollection
 func (m *ConfigManagerCollectionsRequestBuilder) Post(options *ConfigManagerCollectionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerCollection, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

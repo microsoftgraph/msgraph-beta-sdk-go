@@ -7,7 +7,7 @@ import (
     i43526d35583dd9080b4876a8e2b3266a57f601e7f67dd2aca6820e77a95d1611 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/createdonbehalfof/ref"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\createdOnBehalfOf
+// createdOnBehalfOfRequestBuilder builds and executes requests for operations under \applications\{application-id}\createdOnBehalfOf
 type CreatedOnBehalfOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type CreatedOnBehalfOfRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CreatedOnBehalfOfRequestBuilderGetOptions options for Get
 type CreatedOnBehalfOfRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type CreatedOnBehalfOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only.
+// createdOnBehalfOfRequestBuilderGetQueryParameters read-only.
 type CreatedOnBehalfOfRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new CreatedOnBehalfOfRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreatedOnBehalfOfRequestBuilderInternal instantiates a new CreatedOnBehalfOfRequestBuilder and sets the default values.
 func NewCreatedOnBehalfOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreatedOnBehalfOfRequestBuilder) {
     m := &CreatedOnBehalfOfRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewCreatedOnBehalfOfRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CreatedOnBehalfOfRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreatedOnBehalfOfRequestBuilder instantiates a new CreatedOnBehalfOfRequestBuilder and sets the default values.
 func NewCreatedOnBehalfOfRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreatedOnBehalfOfRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCreatedOnBehalfOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only.
 func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformation(options *CreatedOnBehalfOfRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get read-only.
 func (m *CreatedOnBehalfOfRequestBuilder) Get(options *CreatedOnBehalfOfRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryObject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

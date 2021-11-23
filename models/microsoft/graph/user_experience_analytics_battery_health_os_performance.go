@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// userExperienceAnalyticsBatteryHealthOsPerformance 
 type UserExperienceAnalyticsBatteryHealthOsPerformance struct {
     Entity
     // Number of active devices for that os version. Valid values -2147483648 to 2147483647
@@ -20,14 +20,14 @@ type UserExperienceAnalyticsBatteryHealthOsPerformance struct {
     // Version of the operating system.
     osVersion *string;
 }
-// Instantiates a new userExperienceAnalyticsBatteryHealthOsPerformance and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthOsPerformance instantiates a new userExperienceAnalyticsBatteryHealthOsPerformance and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthOsPerformance()(*UserExperienceAnalyticsBatteryHealthOsPerformance) {
     m := &UserExperienceAnalyticsBatteryHealthOsPerformance{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the activeDevices property value. Number of active devices for that os version. Valid values -2147483648 to 2147483647
+// GetActiveDevices gets the activeDevices property value. Number of active devices for that os version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetActiveDevices()(*int32) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetActiveDevices()(*
         return m.activeDevices
     }
 }
-// Gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+// GetAverageBatteryAgeInDays gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageBatteryAgeInDays()(*int32) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageBatteryAge
         return m.averageBatteryAgeInDays
     }
 }
-// Gets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647
+// GetAverageEstimatedRuntimeInMinutes gets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageEstimatedRuntimeInMinutes()(*int32) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageEstimatedR
         return m.averageEstimatedRuntimeInMinutes
     }
 }
-// Gets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+// GetAverageMaxCapacityPercentage gets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageMaxCapacityPercentage()(*int32) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageMaxCapacit
         return m.averageMaxCapacityPercentage
     }
 }
-// Gets the osBuildNumber property value. Build number of the operating system.
+// GetOsBuildNumber gets the osBuildNumber property value. Build number of the operating system.
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsBuildNumber()(*string) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsBuildNumber()(*
         return m.osBuildNumber
     }
 }
-// Gets the osVersion property value. Version of the operating system.
+// GetOsVersion gets the osVersion property value. Version of the operating system.
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsVersion()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsVersion()(*stri
         return m.osVersion
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,9 +143,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetFieldDeserializer
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -189,39 +187,27 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) Serialize(writer i04
     }
     return nil
 }
-// Sets the activeDevices property value. Number of active devices for that os version. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the activeDevices property.
+// SetActiveDevices sets the activeDevices property value. Number of active devices for that os version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetActiveDevices(value *int32)() {
     m.activeDevices = value
 }
-// Sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the averageBatteryAgeInDays property.
+// SetAverageBatteryAgeInDays sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetAverageBatteryAgeInDays(value *int32)() {
     m.averageBatteryAgeInDays = value
 }
-// Sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the averageEstimatedRuntimeInMinutes property.
+// SetAverageEstimatedRuntimeInMinutes sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetAverageEstimatedRuntimeInMinutes(value *int32)() {
     m.averageEstimatedRuntimeInMinutes = value
 }
-// Sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the averageMaxCapacityPercentage property.
+// SetAverageMaxCapacityPercentage sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetAverageMaxCapacityPercentage(value *int32)() {
     m.averageMaxCapacityPercentage = value
 }
-// Sets the osBuildNumber property value. Build number of the operating system.
-// Parameters:
-//  - value : Value to set for the osBuildNumber property.
+// SetOsBuildNumber sets the osBuildNumber property value. Build number of the operating system.
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetOsBuildNumber(value *string)() {
     m.osBuildNumber = value
 }
-// Sets the osVersion property value. Version of the operating system.
-// Parameters:
-//  - value : Value to set for the osVersion property.
+// SetOsVersion sets the osVersion property value. Version of the operating system.
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetOsVersion(value *string)() {
     m.osVersion = value
 }

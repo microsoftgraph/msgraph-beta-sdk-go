@@ -20,7 +20,7 @@ import (
     i7d3d41b3c182984a4875637200cb5f4c401fec09228cccd72c9da2b28993aea9 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/tables/item/worksheet/charts/item/series/item"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}
+// workbookChartRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}
 type WorkbookChartRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type WorkbookChartRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorkbookChartRequestBuilderDeleteOptions options for Delete
 type WorkbookChartRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -38,7 +38,7 @@ type WorkbookChartRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorkbookChartRequestBuilderGetOptions options for Get
 type WorkbookChartRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -49,14 +49,14 @@ type WorkbookChartRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns collection of charts that are part of the worksheet. Read-only.
+// workbookChartRequestBuilderGetQueryParameters returns collection of charts that are part of the worksheet. Read-only.
 type WorkbookChartRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorkbookChartRequestBuilderPatchOptions options for Patch
 type WorkbookChartRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookChart;
@@ -70,10 +70,7 @@ type WorkbookChartRequestBuilderPatchOptions struct {
 func (m *WorkbookChartRequestBuilder) Axes()(*i6c767d0f0aeafa0422ac258cb03f2f748ab5ff0f24e33eb53db0105c62751f12.AxesRequestBuilder) {
     return i6c767d0f0aeafa0422ac258cb03f2f748ab5ff0f24e33eb53db0105c62751f12.NewAxesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new WorkbookChartRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookChartRequestBuilderInternal instantiates a new WorkbookChartRequestBuilder and sets the default values.
 func NewWorkbookChartRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookChartRequestBuilder) {
     m := &WorkbookChartRequestBuilder{
     }
@@ -86,18 +83,13 @@ func NewWorkbookChartRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbookChartRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookChartRequestBuilder instantiates a new WorkbookChartRequestBuilder and sets the default values.
 func NewWorkbookChartRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookChartRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorkbookChartRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns collection of charts that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation returns collection of charts that are part of the worksheet. Read-only.
 func (m *WorkbookChartRequestBuilder) CreateDeleteRequestInformation(options *WorkbookChartRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,9 +106,7 @@ func (m *WorkbookChartRequestBuilder) CreateDeleteRequestInformation(options *Wo
     }
     return requestInfo, nil
 }
-// Returns collection of charts that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns collection of charts that are part of the worksheet. Read-only.
 func (m *WorkbookChartRequestBuilder) CreateGetRequestInformation(options *WorkbookChartRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -136,9 +126,7 @@ func (m *WorkbookChartRequestBuilder) CreateGetRequestInformation(options *Workb
     }
     return requestInfo, nil
 }
-// Returns collection of charts that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation returns collection of charts that are part of the worksheet. Read-only.
 func (m *WorkbookChartRequestBuilder) CreatePatchRequestInformation(options *WorkbookChartRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -159,9 +147,7 @@ func (m *WorkbookChartRequestBuilder) CreatePatchRequestInformation(options *Wor
 func (m *WorkbookChartRequestBuilder) DataLabels()(*ifd66e8b22d6f091a1e8f1971387da931b57b37d5067f454ebf033a330227893d.DataLabelsRequestBuilder) {
     return ifd66e8b22d6f091a1e8f1971387da931b57b37d5067f454ebf033a330227893d.NewDataLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Returns collection of charts that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete returns collection of charts that are part of the worksheet. Read-only.
 func (m *WorkbookChartRequestBuilder) Delete(options *WorkbookChartRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -176,9 +162,7 @@ func (m *WorkbookChartRequestBuilder) Delete(options *WorkbookChartRequestBuilde
 func (m *WorkbookChartRequestBuilder) Format()(*ibd0c451689424d53c5dd6e330bc9ec2dc6c43431343e4fef77249490a2a0a8bf.FormatRequestBuilder) {
     return ibd0c451689424d53c5dd6e330bc9ec2dc6c43431343e4fef77249490a2a0a8bf.NewFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Returns collection of charts that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get returns collection of charts that are part of the worksheet. Read-only.
 func (m *WorkbookChartRequestBuilder) Get(options *WorkbookChartRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookChart, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -190,37 +174,26 @@ func (m *WorkbookChartRequestBuilder) Get(options *WorkbookChartRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookChart), nil
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\microsoft.graph.image()
+// Image builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\microsoft.graph.image()
 func (m *WorkbookChartRequestBuilder) Image()(*i8718ad311741532f01f0e102a7ec6ee973acf27cc6b7486c1057be248645b83d.ImageRequestBuilder) {
     return i8718ad311741532f01f0e102a7ec6ee973acf27cc6b7486c1057be248645b83d.NewImageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\microsoft.graph.image(width={width})
-// Parameters:
-//  - width : Usage: width={width}
+// ImageWithWidth builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\microsoft.graph.image(width={width})
 func (m *WorkbookChartRequestBuilder) ImageWithWidth(width *int32)(*i6f7c0fdf59d27b7f6e35df125c5e04485948ede897cc39b55525df5269deee99.ImageWithWidthRequestBuilder) {
     return i6f7c0fdf59d27b7f6e35df125c5e04485948ede897cc39b55525df5269deee99.NewImageWithWidthRequestBuilderInternal(m.pathParameters, m.requestAdapter, width);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\microsoft.graph.image(width={width},height={height})
-// Parameters:
-//  - height : Usage: height={height}
-//  - width : Usage: width={width}
+// ImageWithWidthWithHeight builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\microsoft.graph.image(width={width},height={height})
 func (m *WorkbookChartRequestBuilder) ImageWithWidthWithHeight(width *int32, height *int32)(*if9d41657bb26ba2fefbba18ac0d4a84726a97f2555201028777d697a01f1e493.ImageWithWidthWithHeightRequestBuilder) {
     return if9d41657bb26ba2fefbba18ac0d4a84726a97f2555201028777d697a01f1e493.NewImageWithWidthWithHeightRequestBuilderInternal(m.pathParameters, m.requestAdapter, width, height);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\microsoft.graph.image(width={width},height={height},fittingMode='{fittingMode}')
-// Parameters:
-//  - fittingMode : Usage: fittingMode={fittingMode}
-//  - height : Usage: height={height}
-//  - width : Usage: width={width}
+// ImageWithWidthWithHeightWithFittingMode builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\microsoft.graph.image(width={width},height={height},fittingMode='{fittingMode}')
 func (m *WorkbookChartRequestBuilder) ImageWithWidthWithHeightWithFittingMode(width *int32, height *int32, fittingMode *string)(*i75490ea495a0803fdb95819346a6400eda5818426d9d2c360fd61560bbe3de50.ImageWithWidthWithHeightWithFittingModeRequestBuilder) {
     return i75490ea495a0803fdb95819346a6400eda5818426d9d2c360fd61560bbe3de50.NewImageWithWidthWithHeightWithFittingModeRequestBuilderInternal(m.pathParameters, m.requestAdapter, width, height, fittingMode);
 }
 func (m *WorkbookChartRequestBuilder) Legend()(*if9003a39f57a4011c21bf7517e3383b25de9c1c503b81f5f739649b5504c0037.LegendRequestBuilder) {
     return if9003a39f57a4011c21bf7517e3383b25de9c1c503b81f5f739649b5504c0037.NewLegendRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Returns collection of charts that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch returns collection of charts that are part of the worksheet. Read-only.
 func (m *WorkbookChartRequestBuilder) Patch(options *WorkbookChartRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -235,9 +208,7 @@ func (m *WorkbookChartRequestBuilder) Patch(options *WorkbookChartRequestBuilder
 func (m *WorkbookChartRequestBuilder) Series()(*i1a6fc94f2f407ef3ebbe51616e637c92682d9e0ba95d63e328274ae0ca5e5585.SeriesRequestBuilder) {
     return i1a6fc94f2f407ef3ebbe51616e637c92682d9e0ba95d63e328274ae0ca5e5585.NewSeriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.worksheet.charts.item.series.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SeriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.worksheet.charts.item.series.item collection
 func (m *WorkbookChartRequestBuilder) SeriesById(id string)(*i7d3d41b3c182984a4875637200cb5f4c401fec09228cccd72c9da2b28993aea9.WorkbookChartSeriesRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

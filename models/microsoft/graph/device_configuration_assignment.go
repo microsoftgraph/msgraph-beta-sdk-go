@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceConfigurationAssignment 
 type DeviceConfigurationAssignment struct {
     Entity
     // The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
@@ -16,14 +16,14 @@ type DeviceConfigurationAssignment struct {
     // The assignment target for the device configuration.
     target *DeviceAndAppManagementAssignmentTarget;
 }
-// Instantiates a new deviceConfigurationAssignment and sets the default values.
+// NewDeviceConfigurationAssignment instantiates a new deviceConfigurationAssignment and sets the default values.
 func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {
     m := &DeviceConfigurationAssignment{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the intent property value. The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
+// GetIntent gets the intent property value. The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
 func (m *DeviceConfigurationAssignment) GetIntent()(*DeviceConfigAssignmentIntent) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *DeviceConfigurationAssignment) GetIntent()(*DeviceConfigAssignmentInten
         return m.intent
     }
 }
-// Gets the source property value. The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
+// GetSource gets the source property value. The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
 func (m *DeviceConfigurationAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *DeviceConfigurationAssignment) GetSource()(*DeviceAndAppManagementAssig
         return m.source
     }
 }
-// Gets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
+// GetSourceId gets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
 func (m *DeviceConfigurationAssignment) GetSourceId()(*string) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *DeviceConfigurationAssignment) GetSourceId()(*string) {
         return m.sourceId
     }
 }
-// Gets the target property value. The assignment target for the device configuration.
+// GetTarget gets the target property value. The assignment target for the device configuration.
 func (m *DeviceConfigurationAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *DeviceConfigurationAssignment) GetTarget()(*DeviceAndAppManagementAssig
         return m.target
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["intent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,9 +105,7 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
 func (m *DeviceConfigurationAssignment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -141,27 +139,19 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the intent property value. The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
-// Parameters:
-//  - value : Value to set for the intent property.
+// SetIntent sets the intent property value. The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
 func (m *DeviceConfigurationAssignment) SetIntent(value *DeviceConfigAssignmentIntent)() {
     m.intent = value
 }
-// Sets the source property value. The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
-// Parameters:
-//  - value : Value to set for the source property.
+// SetSource sets the source property value. The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
 func (m *DeviceConfigurationAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
     m.source = value
 }
-// Sets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
-// Parameters:
-//  - value : Value to set for the sourceId property.
+// SetSourceId sets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
 func (m *DeviceConfigurationAssignment) SetSourceId(value *string)() {
     m.sourceId = value
 }
-// Sets the target property value. The assignment target for the device configuration.
-// Parameters:
-//  - value : Value to set for the target property.
+// SetTarget sets the target property value. The assignment target for the device configuration.
 func (m *DeviceConfigurationAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
     m.target = value
 }

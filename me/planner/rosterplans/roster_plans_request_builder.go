@@ -6,7 +6,7 @@ import (
     i982c6d4cdae5a39a775c15461bbd3640d3530233e29f2954e6b8fbd4f12f18fe "github.com/microsoftgraph/msgraph-beta-sdk-go/me/planner/rosterplans/ref"
 )
 
-// Builds and executes requests for operations under \me\planner\rosterPlans
+// rosterPlansRequestBuilder builds and executes requests for operations under \me\planner\rosterPlans
 type RosterPlansRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RosterPlansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RosterPlansRequestBuilderGetOptions options for Get
 type RosterPlansRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RosterPlansRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
+// rosterPlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 type RosterPlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type RosterPlansRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new RosterPlansRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRosterPlansRequestBuilderInternal instantiates a new RosterPlansRequestBuilder and sets the default values.
 func NewRosterPlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RosterPlansRequestBuilder) {
     m := &RosterPlansRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewRosterPlansRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RosterPlansRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRosterPlansRequestBuilder instantiates a new RosterPlansRequestBuilder and sets the default values.
 func NewRosterPlansRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RosterPlansRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRosterPlansRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 func (m *RosterPlansRequestBuilder) CreateGetRequestInformation(options *RosterPlansRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *RosterPlansRequestBuilder) CreateGetRequestInformation(options *RosterP
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 func (m *RosterPlansRequestBuilder) Get(options *RosterPlansRequestBuilderGetOptions)(*RosterPlansResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

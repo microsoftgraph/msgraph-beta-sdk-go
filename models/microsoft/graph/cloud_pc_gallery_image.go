@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// cloudPcGalleryImage 
 type CloudPcGalleryImage struct {
     Entity
     // The official display name of the gallery image. Read-only.
@@ -32,14 +32,14 @@ type CloudPcGalleryImage struct {
     // The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. Read-only.
     status *CloudPcGalleryImageStatus;
 }
-// Instantiates a new cloudPcGalleryImage and sets the default values.
+// NewCloudPcGalleryImage instantiates a new cloudPcGalleryImage and sets the default values.
 func NewCloudPcGalleryImage()(*CloudPcGalleryImage) {
     m := &CloudPcGalleryImage{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the displayName property value. The official display name of the gallery image. Read-only.
+// GetDisplayName gets the displayName property value. The official display name of the gallery image. Read-only.
 func (m *CloudPcGalleryImage) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *CloudPcGalleryImage) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the endDate property value. The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
+// GetEndDate gets the endDate property value. The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
 func (m *CloudPcGalleryImage) GetEndDate()(*string) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *CloudPcGalleryImage) GetEndDate()(*string) {
         return m.endDate
     }
 }
-// Gets the expirationDate property value. The date when the image is no longer available. Read-only.
+// GetExpirationDate gets the expirationDate property value. The date when the image is no longer available. Read-only.
 func (m *CloudPcGalleryImage) GetExpirationDate()(*string) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *CloudPcGalleryImage) GetExpirationDate()(*string) {
         return m.expirationDate
     }
 }
-// Gets the offer property value. The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+// GetOffer gets the offer property value. The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) GetOffer()(*string) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *CloudPcGalleryImage) GetOffer()(*string) {
         return m.offer
     }
 }
-// Gets the offerDisplayName property value. The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.
+// GetOfferDisplayName gets the offerDisplayName property value. The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.
 func (m *CloudPcGalleryImage) GetOfferDisplayName()(*string) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *CloudPcGalleryImage) GetOfferDisplayName()(*string) {
         return m.offerDisplayName
     }
 }
-// Gets the publisher property value. The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+// GetPublisher gets the publisher property value. The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) GetPublisher()(*string) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *CloudPcGalleryImage) GetPublisher()(*string) {
         return m.publisher
     }
 }
-// Gets the recommendedSku property value. Recommended Cloud PC SKU for this gallery image. Read-only.
+// GetRecommendedSku gets the recommendedSku property value. Recommended Cloud PC SKU for this gallery image. Read-only.
 func (m *CloudPcGalleryImage) GetRecommendedSku()(*string) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *CloudPcGalleryImage) GetRecommendedSku()(*string) {
         return m.recommendedSku
     }
 }
-// Gets the sizeInGB property value. The size of this image in gigabytes. Read-only.
+// GetSizeInGB gets the sizeInGB property value. The size of this image in gigabytes. Read-only.
 func (m *CloudPcGalleryImage) GetSizeInGB()(*int32) {
     if m == nil {
         return nil
@@ -103,7 +103,7 @@ func (m *CloudPcGalleryImage) GetSizeInGB()(*int32) {
         return m.sizeInGB
     }
 }
-// Gets the sku property value. The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+// GetSku gets the sku property value. The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) GetSku()(*string) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *CloudPcGalleryImage) GetSku()(*string) {
         return m.sku
     }
 }
-// Gets the skuDisplayName property value. The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.
+// GetSkuDisplayName gets the skuDisplayName property value. The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.
 func (m *CloudPcGalleryImage) GetSkuDisplayName()(*string) {
     if m == nil {
         return nil
@@ -119,7 +119,7 @@ func (m *CloudPcGalleryImage) GetSkuDisplayName()(*string) {
         return m.skuDisplayName
     }
 }
-// Gets the startDate property value. The date when the image becomes available. Read-only.
+// GetStartDate gets the startDate property value. The date when the image becomes available. Read-only.
 func (m *CloudPcGalleryImage) GetStartDate()(*string) {
     if m == nil {
         return nil
@@ -127,7 +127,7 @@ func (m *CloudPcGalleryImage) GetStartDate()(*string) {
         return m.startDate
     }
 }
-// Gets the status property value. The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. Read-only.
+// GetStatus gets the status property value. The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. Read-only.
 func (m *CloudPcGalleryImage) GetStatus()(*CloudPcGalleryImageStatus) {
     if m == nil {
         return nil
@@ -135,7 +135,7 @@ func (m *CloudPcGalleryImage) GetStatus()(*CloudPcGalleryImageStatus) {
         return m.status
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -264,9 +264,7 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
 func (m *CloudPcGalleryImage) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CloudPcGalleryImage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -347,75 +345,51 @@ func (m *CloudPcGalleryImage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the displayName property value. The official display name of the gallery image. Read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The official display name of the gallery image. Read-only.
 func (m *CloudPcGalleryImage) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the endDate property value. The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
-// Parameters:
-//  - value : Value to set for the endDate property.
+// SetEndDate sets the endDate property value. The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
 func (m *CloudPcGalleryImage) SetEndDate(value *string)() {
     m.endDate = value
 }
-// Sets the expirationDate property value. The date when the image is no longer available. Read-only.
-// Parameters:
-//  - value : Value to set for the expirationDate property.
+// SetExpirationDate sets the expirationDate property value. The date when the image is no longer available. Read-only.
 func (m *CloudPcGalleryImage) SetExpirationDate(value *string)() {
     m.expirationDate = value
 }
-// Sets the offer property value. The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
-// Parameters:
-//  - value : Value to set for the offer property.
+// SetOffer sets the offer property value. The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) SetOffer(value *string)() {
     m.offer = value
 }
-// Sets the offerDisplayName property value. The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.
-// Parameters:
-//  - value : Value to set for the offerDisplayName property.
+// SetOfferDisplayName sets the offerDisplayName property value. The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.
 func (m *CloudPcGalleryImage) SetOfferDisplayName(value *string)() {
     m.offerDisplayName = value
 }
-// Sets the publisher property value. The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
-// Parameters:
-//  - value : Value to set for the publisher property.
+// SetPublisher sets the publisher property value. The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) SetPublisher(value *string)() {
     m.publisher = value
 }
-// Sets the recommendedSku property value. Recommended Cloud PC SKU for this gallery image. Read-only.
-// Parameters:
-//  - value : Value to set for the recommendedSku property.
+// SetRecommendedSku sets the recommendedSku property value. Recommended Cloud PC SKU for this gallery image. Read-only.
 func (m *CloudPcGalleryImage) SetRecommendedSku(value *string)() {
     m.recommendedSku = value
 }
-// Sets the sizeInGB property value. The size of this image in gigabytes. Read-only.
-// Parameters:
-//  - value : Value to set for the sizeInGB property.
+// SetSizeInGB sets the sizeInGB property value. The size of this image in gigabytes. Read-only.
 func (m *CloudPcGalleryImage) SetSizeInGB(value *int32)() {
     m.sizeInGB = value
 }
-// Sets the sku property value. The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
-// Parameters:
-//  - value : Value to set for the sku property.
+// SetSku sets the sku property value. The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
 func (m *CloudPcGalleryImage) SetSku(value *string)() {
     m.sku = value
 }
-// Sets the skuDisplayName property value. The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.
-// Parameters:
-//  - value : Value to set for the skuDisplayName property.
+// SetSkuDisplayName sets the skuDisplayName property value. The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.
 func (m *CloudPcGalleryImage) SetSkuDisplayName(value *string)() {
     m.skuDisplayName = value
 }
-// Sets the startDate property value. The date when the image becomes available. Read-only.
-// Parameters:
-//  - value : Value to set for the startDate property.
+// SetStartDate sets the startDate property value. The date when the image becomes available. Read-only.
 func (m *CloudPcGalleryImage) SetStartDate(value *string)() {
     m.startDate = value
 }
-// Sets the status property value. The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. Read-only.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. Read-only.
 func (m *CloudPcGalleryImage) SetStatus(value *CloudPcGalleryImageStatus)() {
     m.status = value
 }

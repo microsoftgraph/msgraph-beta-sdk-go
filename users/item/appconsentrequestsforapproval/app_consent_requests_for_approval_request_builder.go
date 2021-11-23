@@ -7,7 +7,7 @@ import (
     i3ad7e38a1e6e366d328672a0f0b69e6cc3747fe9e03d98f0d7dcd1af3c556d28 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/appconsentrequestsforapproval/filterbycurrentuserwithon"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\appConsentRequestsForApproval
+// appConsentRequestsForApprovalRequestBuilder builds and executes requests for operations under \users\{user-id}\appConsentRequestsForApproval
 type AppConsentRequestsForApprovalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AppConsentRequestsForApprovalRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppConsentRequestsForApprovalRequestBuilderGetOptions options for Get
 type AppConsentRequestsForApprovalRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AppConsentRequestsForApprovalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get appConsentRequestsForApproval from users
+// appConsentRequestsForApprovalRequestBuilderGetQueryParameters get appConsentRequestsForApproval from users
 type AppConsentRequestsForApprovalRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type AppConsentRequestsForApprovalRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AppConsentRequestsForApprovalRequestBuilderPostOptions options for Post
 type AppConsentRequestsForApprovalRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppConsentRequest;
@@ -57,10 +57,7 @@ type AppConsentRequestsForApprovalRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppConsentRequestsForApprovalRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppConsentRequestsForApprovalRequestBuilderInternal instantiates a new AppConsentRequestsForApprovalRequestBuilder and sets the default values.
 func NewAppConsentRequestsForApprovalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppConsentRequestsForApprovalRequestBuilder) {
     m := &AppConsentRequestsForApprovalRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewAppConsentRequestsForApprovalRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppConsentRequestsForApprovalRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppConsentRequestsForApprovalRequestBuilder instantiates a new AppConsentRequestsForApprovalRequestBuilder and sets the default values.
 func NewAppConsentRequestsForApprovalRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppConsentRequestsForApprovalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppConsentRequestsForApprovalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get appConsentRequestsForApproval from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get appConsentRequestsForApproval from users
 func (m *AppConsentRequestsForApprovalRequestBuilder) CreateGetRequestInformation(options *AppConsentRequestsForApprovalRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *AppConsentRequestsForApprovalRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// Create new navigation property to appConsentRequestsForApproval for users
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to appConsentRequestsForApproval for users
 func (m *AppConsentRequestsForApprovalRequestBuilder) CreatePostRequestInformation(options *AppConsentRequestsForApprovalRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,15 +114,11 @@ func (m *AppConsentRequestsForApprovalRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \users\{user-id}\appConsentRequestsForApproval\microsoft.graph.filterByCurrentUser(on={on})
-// Parameters:
-//  - on : Usage: on={on}
+// FilterByCurrentUserWithOn builds and executes requests for operations under \users\{user-id}\appConsentRequestsForApproval\microsoft.graph.filterByCurrentUser(on={on})
 func (m *AppConsentRequestsForApprovalRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i3ad7e38a1e6e366d328672a0f0b69e6cc3747fe9e03d98f0d7dcd1af3c556d28.FilterByCurrentUserWithOnRequestBuilder) {
     return i3ad7e38a1e6e366d328672a0f0b69e6cc3747fe9e03d98f0d7dcd1af3c556d28.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get appConsentRequestsForApproval from users
-// Parameters:
-//  - options : Options for the request
+// Get get appConsentRequestsForApproval from users
 func (m *AppConsentRequestsForApprovalRequestBuilder) Get(options *AppConsentRequestsForApprovalRequestBuilderGetOptions)(*AppConsentRequestsForApprovalResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -144,9 +130,7 @@ func (m *AppConsentRequestsForApprovalRequestBuilder) Get(options *AppConsentReq
     }
     return res.(*AppConsentRequestsForApprovalResponse), nil
 }
-// Create new navigation property to appConsentRequestsForApproval for users
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to appConsentRequestsForApproval for users
 func (m *AppConsentRequestsForApprovalRequestBuilder) Post(options *AppConsentRequestsForApprovalRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppConsentRequest, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

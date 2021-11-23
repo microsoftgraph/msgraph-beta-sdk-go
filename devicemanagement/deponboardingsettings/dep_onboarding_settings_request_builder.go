@@ -7,7 +7,7 @@ import (
     ia653be664a0dd75c52af6e78b0cf052819bdf93d3b5de4be59dc76970e065611 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deponboardingsettings/getexpiringvpptokencountwithexpiringbeforedatetime"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings
+// depOnboardingSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings
 type DepOnboardingSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DepOnboardingSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DepOnboardingSettingsRequestBuilderGetOptions options for Get
 type DepOnboardingSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type DepOnboardingSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// This collections of multiple DEP tokens per-tenant.
+// depOnboardingSettingsRequestBuilderGetQueryParameters this collections of multiple DEP tokens per-tenant.
 type DepOnboardingSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type DepOnboardingSettingsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DepOnboardingSettingsRequestBuilderPostOptions options for Post
 type DepOnboardingSettingsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DepOnboardingSetting;
@@ -57,10 +57,7 @@ type DepOnboardingSettingsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDepOnboardingSettingsRequestBuilderInternal instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.
 func NewDepOnboardingSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DepOnboardingSettingsRequestBuilder) {
     m := &DepOnboardingSettingsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewDepOnboardingSettingsRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDepOnboardingSettingsRequestBuilder instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.
 func NewDepOnboardingSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DepOnboardingSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDepOnboardingSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// This collections of multiple DEP tokens per-tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation this collections of multiple DEP tokens per-tenant.
 func (m *DepOnboardingSettingsRequestBuilder) CreateGetRequestInformation(options *DepOnboardingSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *DepOnboardingSettingsRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// This collections of multiple DEP tokens per-tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation this collections of multiple DEP tokens per-tenant.
 func (m *DepOnboardingSettingsRequestBuilder) CreatePostRequestInformation(options *DepOnboardingSettingsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *DepOnboardingSettingsRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// This collections of multiple DEP tokens per-tenant.
-// Parameters:
-//  - options : Options for the request
+// Get this collections of multiple DEP tokens per-tenant.
 func (m *DepOnboardingSettingsRequestBuilder) Get(options *DepOnboardingSettingsRequestBuilderGetOptions)(*DepOnboardingSettingsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,15 +126,11 @@ func (m *DepOnboardingSettingsRequestBuilder) Get(options *DepOnboardingSettings
     }
     return res.(*DepOnboardingSettingsResponse), nil
 }
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\microsoft.graph.getExpiringVppTokenCount(expiringBeforeDateTime='{expiringBeforeDateTime}')
-// Parameters:
-//  - expiringBeforeDateTime : Usage: expiringBeforeDateTime={expiringBeforeDateTime}
+// GetExpiringVppTokenCountWithExpiringBeforeDateTime builds and executes requests for operations under \deviceManagement\depOnboardingSettings\microsoft.graph.getExpiringVppTokenCount(expiringBeforeDateTime='{expiringBeforeDateTime}')
 func (m *DepOnboardingSettingsRequestBuilder) GetExpiringVppTokenCountWithExpiringBeforeDateTime(expiringBeforeDateTime *string)(*ia653be664a0dd75c52af6e78b0cf052819bdf93d3b5de4be59dc76970e065611.GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) {
     return ia653be664a0dd75c52af6e78b0cf052819bdf93d3b5de4be59dc76970e065611.NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, expiringBeforeDateTime);
 }
-// This collections of multiple DEP tokens per-tenant.
-// Parameters:
-//  - options : Options for the request
+// Post this collections of multiple DEP tokens per-tenant.
 func (m *DepOnboardingSettingsRequestBuilder) Post(options *DepOnboardingSettingsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DepOnboardingSetting, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \planner\rosters
+// rostersRequestBuilder builds and executes requests for operations under \planner\rosters
 type RostersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RostersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RostersRequestBuilderGetOptions options for Get
 type RostersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RostersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
+// rostersRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified rosters
 type RostersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RostersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RostersRequestBuilderPostOptions options for Post
 type RostersRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerRoster;
@@ -56,10 +56,7 @@ type RostersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RostersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRostersRequestBuilderInternal instantiates a new RostersRequestBuilder and sets the default values.
 func NewRostersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RostersRequestBuilder) {
     m := &RostersRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRostersRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RostersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRostersRequestBuilder instantiates a new RostersRequestBuilder and sets the default values.
 func NewRostersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RostersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRostersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified rosters
 func (m *RostersRequestBuilder) CreateGetRequestInformation(options *RostersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RostersRequestBuilder) CreateGetRequestInformation(options *RostersRequ
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation read-only. Nullable. Returns a collection of the specified rosters
 func (m *RostersRequestBuilder) CreatePostRequestInformation(options *RostersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RostersRequestBuilder) CreatePostRequestInformation(options *RostersReq
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Returns a collection of the specified rosters
 func (m *RostersRequestBuilder) Get(options *RostersRequestBuilderGetOptions)(*RostersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RostersRequestBuilder) Get(options *RostersRequestBuilderGetOptions)(*R
     }
     return res.(*RostersResponse), nil
 }
-// Read-only. Nullable. Returns a collection of the specified rosters
-// Parameters:
-//  - options : Options for the request
+// Post read-only. Nullable. Returns a collection of the specified rosters
 func (m *RostersRequestBuilder) Post(options *RostersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerRoster, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

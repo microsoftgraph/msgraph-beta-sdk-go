@@ -8,7 +8,7 @@ import (
     i910eeff5cdb0ea7e39c034cb7a200cb7c6a260f552de68963d047895d11d1fed "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/cloudpc/roledefinitions/item/inheritspermissionsfrom/item"
 )
 
-// Builds and executes requests for operations under \roleManagement\cloudPC\roleDefinitions\{unifiedRoleDefinition-id}
+// unifiedRoleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\cloudPC\roleDefinitions\{unifiedRoleDefinition-id}
 type UnifiedRoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type UnifiedRoleDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UnifiedRoleDefinitionRequestBuilderDeleteOptions options for Delete
 type UnifiedRoleDefinitionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UnifiedRoleDefinitionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UnifiedRoleDefinitionRequestBuilderGetOptions options for Get
 type UnifiedRoleDefinitionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type UnifiedRoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get roleDefinitions from roleManagement
+// unifiedRoleDefinitionRequestBuilderGetQueryParameters get roleDefinitions from roleManagement
 type UnifiedRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UnifiedRoleDefinitionRequestBuilderPatchOptions options for Patch
 type UnifiedRoleDefinitionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleDefinition;
@@ -55,10 +55,7 @@ type UnifiedRoleDefinitionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnifiedRoleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleDefinitionRequestBuilderInternal instantiates a new UnifiedRoleDefinitionRequestBuilder and sets the default values.
 func NewUnifiedRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleDefinitionRequestBuilder) {
     m := &UnifiedRoleDefinitionRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewUnifiedRoleDefinitionRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnifiedRoleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleDefinitionRequestBuilder instantiates a new UnifiedRoleDefinitionRequestBuilder and sets the default values.
 func NewUnifiedRoleDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleDefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property roleDefinitions for roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property roleDefinitions for roleManagement
 func (m *UnifiedRoleDefinitionRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRoleDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Get roleDefinitions from roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get roleDefinitions from roleManagement
 func (m *UnifiedRoleDefinitionRequestBuilder) CreateGetRequestInformation(options *UnifiedRoleDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Update the navigation property roleDefinitions in roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property roleDefinitions in roleManagement
 func (m *UnifiedRoleDefinitionRequestBuilder) CreatePatchRequestInformation(options *UnifiedRoleDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delete navigation property roleDefinitions for roleManagement
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property roleDefinitions for roleManagement
 func (m *UnifiedRoleDefinitionRequestBuilder) Delete(options *UnifiedRoleDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) Delete(options *UnifiedRoleDefinit
     }
     return nil
 }
-// Get roleDefinitions from roleManagement
-// Parameters:
-//  - options : Options for the request
+// Get get roleDefinitions from roleManagement
 func (m *UnifiedRoleDefinitionRequestBuilder) Get(options *UnifiedRoleDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) Get(options *UnifiedRoleDefinition
 func (m *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFrom()(*i8e6c4631136e0cb0f1e183974c66f31e409705efff134f51b4672c14943db89e.InheritsPermissionsFromRequestBuilder) {
     return i8e6c4631136e0cb0f1e183974c66f31e409705efff134f51b4672c14943db89e.NewInheritsPermissionsFromRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.cloudPC.roleDefinitions.item.inheritsPermissionsFrom.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// InheritsPermissionsFromById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.cloudPC.roleDefinitions.item.inheritsPermissionsFrom.item collection
 func (m *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFromById(id string)(*i910eeff5cdb0ea7e39c034cb7a200cb7c6a260f552de68963d047895d11d1fed.UnifiedRoleDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFromById(id str
     }
     return i910eeff5cdb0ea7e39c034cb7a200cb7c6a260f552de68963d047895d11d1fed.NewUnifiedRoleDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update the navigation property roleDefinitions in roleManagement
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property roleDefinitions in roleManagement
 func (m *UnifiedRoleDefinitionRequestBuilder) Patch(options *UnifiedRoleDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

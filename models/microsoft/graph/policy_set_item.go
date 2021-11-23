@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// policySetItem 
 type PolicySetItem struct {
     Entity
     // Creation time of the PolicySetItem.
@@ -25,14 +25,14 @@ type PolicySetItem struct {
     // Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
     status *PolicySetStatus;
 }
-// Instantiates a new policySetItem and sets the default values.
+// NewPolicySetItem instantiates a new policySetItem and sets the default values.
 func NewPolicySetItem()(*PolicySetItem) {
     m := &PolicySetItem{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the createdDateTime property value. Creation time of the PolicySetItem.
+// GetCreatedDateTime gets the createdDateTime property value. Creation time of the PolicySetItem.
 func (m *PolicySetItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *PolicySetItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.createdDateTime
     }
 }
-// Gets the displayName property value. DisplayName of the PolicySetItem.
+// GetDisplayName gets the displayName property value. DisplayName of the PolicySetItem.
 func (m *PolicySetItem) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *PolicySetItem) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the errorCode property value. Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
+// GetErrorCode gets the errorCode property value. Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
 func (m *PolicySetItem) GetErrorCode()(*ErrorCode) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *PolicySetItem) GetErrorCode()(*ErrorCode) {
         return m.errorCode
     }
 }
-// Gets the guidedDeploymentTags property value. Tags of the guided deployment
+// GetGuidedDeploymentTags gets the guidedDeploymentTags property value. Tags of the guided deployment
 func (m *PolicySetItem) GetGuidedDeploymentTags()([]string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *PolicySetItem) GetGuidedDeploymentTags()([]string) {
         return m.guidedDeploymentTags
     }
 }
-// Gets the itemType property value. policySetType of the PolicySetItem.
+// GetItemType gets the itemType property value. policySetType of the PolicySetItem.
 func (m *PolicySetItem) GetItemType()(*string) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *PolicySetItem) GetItemType()(*string) {
         return m.itemType
     }
 }
-// Gets the lastModifiedDateTime property value. Last modified time of the PolicySetItem.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the PolicySetItem.
 func (m *PolicySetItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *PolicySetItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad
         return m.lastModifiedDateTime
     }
 }
-// Gets the payloadId property value. PayloadId of the PolicySetItem.
+// GetPayloadId gets the payloadId property value. PayloadId of the PolicySetItem.
 func (m *PolicySetItem) GetPayloadId()(*string) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *PolicySetItem) GetPayloadId()(*string) {
         return m.payloadId
     }
 }
-// Gets the status property value. Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
+// GetStatus gets the status property value. Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
 func (m *PolicySetItem) GetStatus()(*PolicySetStatus) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *PolicySetItem) GetStatus()(*PolicySetStatus) {
         return m.status
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,9 +190,7 @@ func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *PolicySetItem) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PolicySetItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -250,51 +248,35 @@ func (m *PolicySetItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the createdDateTime property value. Creation time of the PolicySetItem.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. Creation time of the PolicySetItem.
 func (m *PolicySetItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the displayName property value. DisplayName of the PolicySetItem.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. DisplayName of the PolicySetItem.
 func (m *PolicySetItem) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the errorCode property value. Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
-// Parameters:
-//  - value : Value to set for the errorCode property.
+// SetErrorCode sets the errorCode property value. Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
 func (m *PolicySetItem) SetErrorCode(value *ErrorCode)() {
     m.errorCode = value
 }
-// Sets the guidedDeploymentTags property value. Tags of the guided deployment
-// Parameters:
-//  - value : Value to set for the guidedDeploymentTags property.
+// SetGuidedDeploymentTags sets the guidedDeploymentTags property value. Tags of the guided deployment
 func (m *PolicySetItem) SetGuidedDeploymentTags(value []string)() {
     m.guidedDeploymentTags = value
 }
-// Sets the itemType property value. policySetType of the PolicySetItem.
-// Parameters:
-//  - value : Value to set for the itemType property.
+// SetItemType sets the itemType property value. policySetType of the PolicySetItem.
 func (m *PolicySetItem) SetItemType(value *string)() {
     m.itemType = value
 }
-// Sets the lastModifiedDateTime property value. Last modified time of the PolicySetItem.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified time of the PolicySetItem.
 func (m *PolicySetItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the payloadId property value. PayloadId of the PolicySetItem.
-// Parameters:
-//  - value : Value to set for the payloadId property.
+// SetPayloadId sets the payloadId property value. PayloadId of the PolicySetItem.
 func (m *PolicySetItem) SetPayloadId(value *string)() {
     m.payloadId = value
 }
-// Sets the status property value. Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
 func (m *PolicySetItem) SetStatus(value *PolicySetStatus)() {
     m.status = value
 }

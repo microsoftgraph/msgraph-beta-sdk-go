@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \businessFlowTemplates\{businessFlowTemplate-id}
+// businessFlowTemplateRequestBuilder builds and executes requests for operations under \businessFlowTemplates\{businessFlowTemplate-id}
 type BusinessFlowTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BusinessFlowTemplateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// BusinessFlowTemplateRequestBuilderDeleteOptions options for Delete
 type BusinessFlowTemplateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type BusinessFlowTemplateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// BusinessFlowTemplateRequestBuilderGetOptions options for Get
 type BusinessFlowTemplateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type BusinessFlowTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from businessFlowTemplates by key
+// businessFlowTemplateRequestBuilderGetQueryParameters get entity from businessFlowTemplates by key
 type BusinessFlowTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// BusinessFlowTemplateRequestBuilderPatchOptions options for Patch
 type BusinessFlowTemplateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlowTemplate;
@@ -53,10 +53,7 @@ type BusinessFlowTemplateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BusinessFlowTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBusinessFlowTemplateRequestBuilderInternal instantiates a new BusinessFlowTemplateRequestBuilder and sets the default values.
 func NewBusinessFlowTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BusinessFlowTemplateRequestBuilder) {
     m := &BusinessFlowTemplateRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewBusinessFlowTemplateRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BusinessFlowTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBusinessFlowTemplateRequestBuilder instantiates a new BusinessFlowTemplateRequestBuilder and sets the default values.
 func NewBusinessFlowTemplateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BusinessFlowTemplateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessFlowTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from businessFlowTemplates
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from businessFlowTemplates
 func (m *BusinessFlowTemplateRequestBuilder) CreateDeleteRequestInformation(options *BusinessFlowTemplateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *BusinessFlowTemplateRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get entity from businessFlowTemplates by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from businessFlowTemplates by key
 func (m *BusinessFlowTemplateRequestBuilder) CreateGetRequestInformation(options *BusinessFlowTemplateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *BusinessFlowTemplateRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update entity in businessFlowTemplates
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in businessFlowTemplates
 func (m *BusinessFlowTemplateRequestBuilder) CreatePatchRequestInformation(options *BusinessFlowTemplateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *BusinessFlowTemplateRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete entity from businessFlowTemplates
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from businessFlowTemplates
 func (m *BusinessFlowTemplateRequestBuilder) Delete(options *BusinessFlowTemplateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *BusinessFlowTemplateRequestBuilder) Delete(options *BusinessFlowTemplat
     }
     return nil
 }
-// Get entity from businessFlowTemplates by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from businessFlowTemplates by key
 func (m *BusinessFlowTemplateRequestBuilder) Get(options *BusinessFlowTemplateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlowTemplate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *BusinessFlowTemplateRequestBuilder) Get(options *BusinessFlowTemplateRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlowTemplate), nil
 }
-// Update entity in businessFlowTemplates
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in businessFlowTemplates
 func (m *BusinessFlowTemplateRequestBuilder) Patch(options *BusinessFlowTemplateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\authentication\emailMethods
+// emailMethodsRequestBuilder builds and executes requests for operations under \me\authentication\emailMethods
 type EmailMethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EmailMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// EmailMethodsRequestBuilderGetOptions options for Get
 type EmailMethodsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type EmailMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get emailMethods from me
+// emailMethodsRequestBuilderGetQueryParameters get emailMethods from me
 type EmailMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type EmailMethodsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// EmailMethodsRequestBuilderPostOptions options for Post
 type EmailMethodsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmailAuthenticationMethod;
@@ -56,10 +56,7 @@ type EmailMethodsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EmailMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmailMethodsRequestBuilderInternal instantiates a new EmailMethodsRequestBuilder and sets the default values.
 func NewEmailMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmailMethodsRequestBuilder) {
     m := &EmailMethodsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewEmailMethodsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EmailMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmailMethodsRequestBuilder instantiates a new EmailMethodsRequestBuilder and sets the default values.
 func NewEmailMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmailMethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEmailMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get emailMethods from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get emailMethods from me
 func (m *EmailMethodsRequestBuilder) CreateGetRequestInformation(options *EmailMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *EmailMethodsRequestBuilder) CreateGetRequestInformation(options *EmailM
     }
     return requestInfo, nil
 }
-// Create new navigation property to emailMethods for me
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to emailMethods for me
 func (m *EmailMethodsRequestBuilder) CreatePostRequestInformation(options *EmailMethodsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *EmailMethodsRequestBuilder) CreatePostRequestInformation(options *Email
     }
     return requestInfo, nil
 }
-// Get emailMethods from me
-// Parameters:
-//  - options : Options for the request
+// Get get emailMethods from me
 func (m *EmailMethodsRequestBuilder) Get(options *EmailMethodsRequestBuilderGetOptions)(*EmailMethodsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *EmailMethodsRequestBuilder) Get(options *EmailMethodsRequestBuilderGetO
     }
     return res.(*EmailMethodsResponse), nil
 }
-// Create new navigation property to emailMethods for me
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to emailMethods for me
 func (m *EmailMethodsRequestBuilder) Post(options *EmailMethodsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmailAuthenticationMethod, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

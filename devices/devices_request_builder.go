@@ -9,7 +9,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \devices
+// devicesRequestBuilder builds and executes requests for operations under \devices
 type DevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type DevicesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DevicesRequestBuilderGetOptions options for Get
 type DevicesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type DevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from devices
+// devicesRequestBuilderGetQueryParameters get entities from devices
 type DevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -48,7 +48,7 @@ type DevicesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DevicesRequestBuilderPostOptions options for Post
 type DevicesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Device;
@@ -59,10 +59,7 @@ type DevicesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDevicesRequestBuilderInternal instantiates a new DevicesRequestBuilder and sets the default values.
 func NewDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DevicesRequestBuilder) {
     m := &DevicesRequestBuilder{
     }
@@ -75,18 +72,13 @@ func NewDevicesRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDevicesRequestBuilder instantiates a new DevicesRequestBuilder and sets the default values.
 func NewDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DevicesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from devices
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from devices
 func (m *DevicesRequestBuilder) CreateGetRequestInformation(options *DevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,9 +98,7 @@ func (m *DevicesRequestBuilder) CreateGetRequestInformation(options *DevicesRequ
     }
     return requestInfo, nil
 }
-// Add new entity to devices
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to devices
 func (m *DevicesRequestBuilder) CreatePostRequestInformation(options *DevicesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,9 +116,7 @@ func (m *DevicesRequestBuilder) CreatePostRequestInformation(options *DevicesReq
     }
     return requestInfo, nil
 }
-// Get entities from devices
-// Parameters:
-//  - options : Options for the request
+// Get get entities from devices
 func (m *DevicesRequestBuilder) Get(options *DevicesRequestBuilderGetOptions)(*DevicesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -146,9 +134,7 @@ func (m *DevicesRequestBuilder) GetByIds()(*i9e4a267df0b64bbe015b9a9d25d41081ea1
 func (m *DevicesRequestBuilder) GetUserOwnedObjects()(*iaa64ef89c81fcefd78a49009037259473f7570a7b36120c5fd8341d50c28857b.GetUserOwnedObjectsRequestBuilder) {
     return iaa64ef89c81fcefd78a49009037259473f7570a7b36120c5fd8341d50c28857b.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to devices
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to devices
 func (m *DevicesRequestBuilder) Post(options *DevicesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Device, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

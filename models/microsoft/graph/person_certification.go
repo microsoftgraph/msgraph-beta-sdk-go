@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// personCertification 
 type PersonCertification struct {
     ItemFacet
     // The referenceable identifier for the certification.
@@ -28,14 +28,14 @@ type PersonCertification struct {
     // URL referencing the certification.
     webUrl *string;
 }
-// Instantiates a new personCertification and sets the default values.
+// NewPersonCertification instantiates a new personCertification and sets the default values.
 func NewPersonCertification()(*PersonCertification) {
     m := &PersonCertification{
         ItemFacet: *NewItemFacet(),
     }
     return m
 }
-// Gets the certificationId property value. The referenceable identifier for the certification.
+// GetCertificationId gets the certificationId property value. The referenceable identifier for the certification.
 func (m *PersonCertification) GetCertificationId()(*string) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *PersonCertification) GetCertificationId()(*string) {
         return m.certificationId
     }
 }
-// Gets the description property value. Description of the certification.
+// GetDescription gets the description property value. Description of the certification.
 func (m *PersonCertification) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *PersonCertification) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Title of the certification.
+// GetDisplayName gets the displayName property value. Title of the certification.
 func (m *PersonCertification) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *PersonCertification) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the endDate property value. The date that the certification expires.
+// GetEndDate gets the endDate property value. The date that the certification expires.
 func (m *PersonCertification) GetEndDate()(*string) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *PersonCertification) GetEndDate()(*string) {
         return m.endDate
     }
 }
-// Gets the issuedDate property value. The date that the certification was issued.
+// GetIssuedDate gets the issuedDate property value. The date that the certification was issued.
 func (m *PersonCertification) GetIssuedDate()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *PersonCertification) GetIssuedDate()(*string) {
         return m.issuedDate
     }
 }
-// Gets the issuingAuthority property value. Authority which granted the certification.
+// GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the certification.
 func (m *PersonCertification) GetIssuingAuthority()(*string) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *PersonCertification) GetIssuingAuthority()(*string) {
         return m.issuingAuthority
     }
 }
-// Gets the issuingCompany property value. Company which granted the certification.
+// GetIssuingCompany gets the issuingCompany property value. Company which granted the certification.
 func (m *PersonCertification) GetIssuingCompany()(*string) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *PersonCertification) GetIssuingCompany()(*string) {
         return m.issuingCompany
     }
 }
-// Gets the startDate property value. The date that the certification became valid.
+// GetStartDate gets the startDate property value. The date that the certification became valid.
 func (m *PersonCertification) GetStartDate()(*string) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *PersonCertification) GetStartDate()(*string) {
         return m.startDate
     }
 }
-// Gets the thumbnailUrl property value. URL referencing a thumbnail of the certification.
+// GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the certification.
 func (m *PersonCertification) GetThumbnailUrl()(*string) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *PersonCertification) GetThumbnailUrl()(*string) {
         return m.thumbnailUrl
     }
 }
-// Gets the webUrl property value. URL referencing the certification.
+// GetWebUrl gets the webUrl property value. URL referencing the certification.
 func (m *PersonCertification) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -115,7 +115,7 @@ func (m *PersonCertification) GetWebUrl()(*string) {
         return m.webUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["certificationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -223,9 +223,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
 func (m *PersonCertification) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PersonCertification) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ItemFacet.Serialize(writer)
     if err != nil {
@@ -293,63 +291,43 @@ func (m *PersonCertification) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the certificationId property value. The referenceable identifier for the certification.
-// Parameters:
-//  - value : Value to set for the certificationId property.
+// SetCertificationId sets the certificationId property value. The referenceable identifier for the certification.
 func (m *PersonCertification) SetCertificationId(value *string)() {
     m.certificationId = value
 }
-// Sets the description property value. Description of the certification.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Description of the certification.
 func (m *PersonCertification) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Title of the certification.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Title of the certification.
 func (m *PersonCertification) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the endDate property value. The date that the certification expires.
-// Parameters:
-//  - value : Value to set for the endDate property.
+// SetEndDate sets the endDate property value. The date that the certification expires.
 func (m *PersonCertification) SetEndDate(value *string)() {
     m.endDate = value
 }
-// Sets the issuedDate property value. The date that the certification was issued.
-// Parameters:
-//  - value : Value to set for the issuedDate property.
+// SetIssuedDate sets the issuedDate property value. The date that the certification was issued.
 func (m *PersonCertification) SetIssuedDate(value *string)() {
     m.issuedDate = value
 }
-// Sets the issuingAuthority property value. Authority which granted the certification.
-// Parameters:
-//  - value : Value to set for the issuingAuthority property.
+// SetIssuingAuthority sets the issuingAuthority property value. Authority which granted the certification.
 func (m *PersonCertification) SetIssuingAuthority(value *string)() {
     m.issuingAuthority = value
 }
-// Sets the issuingCompany property value. Company which granted the certification.
-// Parameters:
-//  - value : Value to set for the issuingCompany property.
+// SetIssuingCompany sets the issuingCompany property value. Company which granted the certification.
 func (m *PersonCertification) SetIssuingCompany(value *string)() {
     m.issuingCompany = value
 }
-// Sets the startDate property value. The date that the certification became valid.
-// Parameters:
-//  - value : Value to set for the startDate property.
+// SetStartDate sets the startDate property value. The date that the certification became valid.
 func (m *PersonCertification) SetStartDate(value *string)() {
     m.startDate = value
 }
-// Sets the thumbnailUrl property value. URL referencing a thumbnail of the certification.
-// Parameters:
-//  - value : Value to set for the thumbnailUrl property.
+// SetThumbnailUrl sets the thumbnailUrl property value. URL referencing a thumbnail of the certification.
 func (m *PersonCertification) SetThumbnailUrl(value *string)() {
     m.thumbnailUrl = value
 }
-// Sets the webUrl property value. URL referencing the certification.
-// Parameters:
-//  - value : Value to set for the webUrl property.
+// SetWebUrl sets the webUrl property value. URL referencing the certification.
 func (m *PersonCertification) SetWebUrl(value *string)() {
     m.webUrl = value
 }

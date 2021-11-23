@@ -44,7 +44,7 @@ import (
     ifaa214a686668e2595da116c49578208861fcd6f75a1ac2a99a03caeba4d0133 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecustomattributeshellscripts/item/userrunstates/item/devicerunstates/item/manageddevice/triggerconfigurationmanageraction"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice
+// managedDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice
 type ManagedDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -53,7 +53,7 @@ type ManagedDeviceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagedDeviceRequestBuilderGetOptions options for Get
 type ManagedDeviceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -64,7 +64,7 @@ type ManagedDeviceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The managed devices that executes the device management script.
+// managedDeviceRequestBuilderGetQueryParameters the managed devices that executes the device management script.
 type ManagedDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -80,10 +80,7 @@ func (m *ManagedDeviceRequestBuilder) BypassActivationLock()(*i27d9afdb18763182e
 func (m *ManagedDeviceRequestBuilder) CleanWindowsDevice()(*i33cca811806b97b76f83d558cdfede5c6c359d0477fc2c72135fda72cb309abc.CleanWindowsDeviceRequestBuilder) {
     return i33cca811806b97b76f83d558cdfede5c6c359d0477fc2c72135fda72cb309abc.NewCleanWindowsDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ManagedDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceRequestBuilderInternal instantiates a new ManagedDeviceRequestBuilder and sets the default values.
 func NewManagedDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceRequestBuilder) {
     m := &ManagedDeviceRequestBuilder{
     }
@@ -96,10 +93,7 @@ func NewManagedDeviceRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceRequestBuilder instantiates a new ManagedDeviceRequestBuilder and sets the default values.
 func NewManagedDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -108,9 +102,7 @@ func NewManagedDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
 func (m *ManagedDeviceRequestBuilder) CreateDeviceLogCollectionRequest()(*i9cb44657461195d581585e0e93cfa9f0c3e14feda164bac4b1cb0674607a3f0b.CreateDeviceLogCollectionRequestRequestBuilder) {
     return i9cb44657461195d581585e0e93cfa9f0c3e14feda164bac4b1cb0674607a3f0b.NewCreateDeviceLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The managed devices that executes the device management script.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the managed devices that executes the device management script.
 func (m *ManagedDeviceRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +137,7 @@ func (m *ManagedDeviceRequestBuilder) DisableLostMode()(*idb628250968416c6e069d5
 func (m *ManagedDeviceRequestBuilder) EnableLostMode()(*i205c1cfc860e83160600f12ef33c84e6ed923ab733411d7b226224570eac89a7.EnableLostModeRequestBuilder) {
     return i205c1cfc860e83160600f12ef33c84e6ed923ab733411d7b226224570eac89a7.NewEnableLostModeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The managed devices that executes the device management script.
-// Parameters:
-//  - options : Options for the request
+// Get the managed devices that executes the device management script.
 func (m *ManagedDeviceRequestBuilder) Get(options *ManagedDeviceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDevice, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -159,15 +149,15 @@ func (m *ManagedDeviceRequestBuilder) Get(options *ManagedDeviceRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDevice), nil
 }
-// Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getCloudPcRemoteActionResults()
+// GetCloudPcRemoteActionResults builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getCloudPcRemoteActionResults()
 func (m *ManagedDeviceRequestBuilder) GetCloudPcRemoteActionResults()(*i4933e01d55a93120599dff251f04036f1824b4bf0ca7f144878f51ed7f3e8dc5.GetCloudPcRemoteActionResultsRequestBuilder) {
     return i4933e01d55a93120599dff251f04036f1824b4bf0ca7f144878f51ed7f3e8dc5.NewGetCloudPcRemoteActionResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getFileVaultKey()
+// GetFileVaultKey builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getFileVaultKey()
 func (m *ManagedDeviceRequestBuilder) GetFileVaultKey()(*ie6ba3f71553a104c36f4a18cddbd6c1872f85ddaccddd9dba1cb64181fce1795.GetFileVaultKeyRequestBuilder) {
     return ie6ba3f71553a104c36f4a18cddbd6c1872f85ddaccddd9dba1cb64181fce1795.NewGetFileVaultKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getNonCompliantSettings()
+// GetNonCompliantSettings builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getNonCompliantSettings()
 func (m *ManagedDeviceRequestBuilder) GetNonCompliantSettings()(*i48ba070dfb8f7572a8e826d347a53938137f29189195b1a8484c7f15abdf8c99.GetNonCompliantSettingsRequestBuilder) {
     return i48ba070dfb8f7572a8e826d347a53938137f29189195b1a8484c7f15abdf8c99.NewGetNonCompliantSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// huntingQueryResults 
 type HuntingQueryResults struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type HuntingQueryResults struct {
     // 
     schema []SinglePropertySchema;
 }
-// Instantiates a new huntingQueryResults and sets the default values.
+// NewHuntingQueryResults instantiates a new huntingQueryResults and sets the default values.
 func NewHuntingQueryResults()(*HuntingQueryResults) {
     m := &HuntingQueryResults{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HuntingQueryResults) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *HuntingQueryResults) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the results property value. 
+// GetResults gets the results property value. 
 func (m *HuntingQueryResults) GetResults()([]HuntingRowResult) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *HuntingQueryResults) GetResults()([]HuntingRowResult) {
         return m.results
     }
 }
-// Gets the schema property value. 
+// GetSchema gets the schema property value. 
 func (m *HuntingQueryResults) GetSchema()([]SinglePropertySchema) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *HuntingQueryResults) GetSchema()([]SinglePropertySchema) {
         return m.schema
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *HuntingQueryResults) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["results"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,9 +80,7 @@ func (m *HuntingQueryResults) GetFieldDeserializers()(map[string]func(interface{
 func (m *HuntingQueryResults) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *HuntingQueryResults) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResults()))
@@ -114,21 +112,15 @@ func (m *HuntingQueryResults) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HuntingQueryResults) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the results property value. 
-// Parameters:
-//  - value : Value to set for the results property.
+// SetResults sets the results property value. 
 func (m *HuntingQueryResults) SetResults(value []HuntingRowResult)() {
     m.results = value
 }
-// Sets the schema property value. 
-// Parameters:
-//  - value : Value to set for the schema property.
+// SetSchema sets the schema property value. 
 func (m *HuntingQueryResults) SetSchema(value []SinglePropertySchema)() {
     m.schema = value
 }

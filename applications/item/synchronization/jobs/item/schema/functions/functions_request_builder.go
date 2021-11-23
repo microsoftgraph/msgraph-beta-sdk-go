@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\synchronization\jobs\{synchronizationJob-id}\schema\microsoft.graph.functions()
+// functionsRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\jobs\{synchronizationJob-id}\schema\microsoft.graph.functions()
 type FunctionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type FunctionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// FunctionsRequestBuilderGetOptions options for Get
 type FunctionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type FunctionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FunctionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFunctionsRequestBuilderInternal instantiates a new FunctionsRequestBuilder and sets the default values.
 func NewFunctionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FunctionsRequestBuilder) {
     m := &FunctionsRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewFunctionsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FunctionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFunctionsRequestBuilder instantiates a new FunctionsRequestBuilder and sets the default values.
 func NewFunctionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FunctionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFunctionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function functions
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function functions
 func (m *FunctionsRequestBuilder) CreateGetRequestInformation(options *FunctionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *FunctionsRequestBuilder) CreateGetRequestInformation(options *Functions
     }
     return requestInfo, nil
 }
-// Invoke function functions
-// Parameters:
-//  - options : Options for the request
+// Get invoke function functions
 func (m *FunctionsRequestBuilder) Get(options *FunctionsRequestBuilderGetOptions)([]Functions, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

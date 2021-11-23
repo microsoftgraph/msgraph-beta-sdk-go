@@ -7,7 +7,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \admin\windows
+// windowsRequestBuilder builds and executes requests for operations under \admin\windows
 type WindowsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type WindowsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsRequestBuilderDeleteOptions options for Delete
 type WindowsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type WindowsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsRequestBuilderGetOptions options for Get
 type WindowsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type WindowsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A container for all Windows Update for Business deployment service functionality. Read-only.
+// windowsRequestBuilderGetQueryParameters a container for all Windows Update for Business deployment service functionality. Read-only.
 type WindowsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsRequestBuilderPatchOptions options for Patch
 type WindowsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Windows;
@@ -54,10 +54,7 @@ type WindowsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsRequestBuilderInternal instantiates a new WindowsRequestBuilder and sets the default values.
 func NewWindowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsRequestBuilder) {
     m := &WindowsRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewWindowsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsRequestBuilder instantiates a new WindowsRequestBuilder and sets the default values.
 func NewWindowsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A container for all Windows Update for Business deployment service functionality. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a container for all Windows Update for Business deployment service functionality. Read-only.
 func (m *WindowsRequestBuilder) CreateDeleteRequestInformation(options *WindowsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *WindowsRequestBuilder) CreateDeleteRequestInformation(options *WindowsR
     }
     return requestInfo, nil
 }
-// A container for all Windows Update for Business deployment service functionality. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a container for all Windows Update for Business deployment service functionality. Read-only.
 func (m *WindowsRequestBuilder) CreateGetRequestInformation(options *WindowsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *WindowsRequestBuilder) CreateGetRequestInformation(options *WindowsRequ
     }
     return requestInfo, nil
 }
-// A container for all Windows Update for Business deployment service functionality. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a container for all Windows Update for Business deployment service functionality. Read-only.
 func (m *WindowsRequestBuilder) CreatePatchRequestInformation(options *WindowsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *WindowsRequestBuilder) CreatePatchRequestInformation(options *WindowsRe
     }
     return requestInfo, nil
 }
-// A container for all Windows Update for Business deployment service functionality. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete a container for all Windows Update for Business deployment service functionality. Read-only.
 func (m *WindowsRequestBuilder) Delete(options *WindowsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *WindowsRequestBuilder) Delete(options *WindowsRequestBuilderDeleteOptio
     }
     return nil
 }
-// A container for all Windows Update for Business deployment service functionality. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get a container for all Windows Update for Business deployment service functionality. Read-only.
 func (m *WindowsRequestBuilder) Get(options *WindowsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Windows, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *WindowsRequestBuilder) Get(options *WindowsRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Windows), nil
 }
-// A container for all Windows Update for Business deployment service functionality. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch a container for all Windows Update for Business deployment service functionality. Read-only.
 func (m *WindowsRequestBuilder) Patch(options *WindowsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

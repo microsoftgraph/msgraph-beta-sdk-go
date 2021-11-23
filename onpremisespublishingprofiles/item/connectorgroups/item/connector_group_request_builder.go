@@ -9,7 +9,7 @@ import (
     i753cfff90925bea726b5ebc5e71149db3f766477cada75985f673e10929c55ae "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/connectorgroups/item/members/item"
 )
 
-// Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectorGroups\{connectorGroup-id}
+// connectorGroupRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectorGroups\{connectorGroup-id}
 type ConnectorGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ConnectorGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ConnectorGroupRequestBuilderDeleteOptions options for Delete
 type ConnectorGroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ConnectorGroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ConnectorGroupRequestBuilderGetOptions options for Get
 type ConnectorGroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type ConnectorGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+// connectorGroupRequestBuilderGetQueryParameters list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 type ConnectorGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ConnectorGroupRequestBuilderPatchOptions options for Patch
 type ConnectorGroupRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectorGroup;
@@ -59,10 +59,7 @@ type ConnectorGroupRequestBuilderPatchOptions struct {
 func (m *ConnectorGroupRequestBuilder) Applications()(*i65f60af5b24192c2cf36c30b834edfc25784e306f7de673f8c1129eccf89bcdc.ApplicationsRequestBuilder) {
     return i65f60af5b24192c2cf36c30b834edfc25784e306f7de673f8c1129eccf89bcdc.NewApplicationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ConnectorGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConnectorGroupRequestBuilderInternal instantiates a new ConnectorGroupRequestBuilder and sets the default values.
 func NewConnectorGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectorGroupRequestBuilder) {
     m := &ConnectorGroupRequestBuilder{
     }
@@ -75,18 +72,13 @@ func NewConnectorGroupRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConnectorGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConnectorGroupRequestBuilder instantiates a new ConnectorGroupRequestBuilder and sets the default values.
 func NewConnectorGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectorGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConnectorGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *ConnectorGroupRequestBuilder) CreateDeleteRequestInformation(options *ConnectorGroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ConnectorGroupRequestBuilder) CreateDeleteRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *ConnectorGroupRequestBuilder) CreateGetRequestInformation(options *ConnectorGroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *ConnectorGroupRequestBuilder) CreateGetRequestInformation(options *Conn
     }
     return requestInfo, nil
 }
-// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *ConnectorGroupRequestBuilder) CreatePatchRequestInformation(options *ConnectorGroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +133,7 @@ func (m *ConnectorGroupRequestBuilder) CreatePatchRequestInformation(options *Co
     }
     return requestInfo, nil
 }
-// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *ConnectorGroupRequestBuilder) Delete(options *ConnectorGroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -159,9 +145,7 @@ func (m *ConnectorGroupRequestBuilder) Delete(options *ConnectorGroupRequestBuil
     }
     return nil
 }
-// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *ConnectorGroupRequestBuilder) Get(options *ConnectorGroupRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectorGroup, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -176,9 +160,7 @@ func (m *ConnectorGroupRequestBuilder) Get(options *ConnectorGroupRequestBuilder
 func (m *ConnectorGroupRequestBuilder) Members()(*i3033e6924fd7bdba5cc472a9ef874d137078ea8e323da669089145de32632ec9.MembersRequestBuilder) {
     return i3033e6924fd7bdba5cc472a9ef874d137078ea8e323da669089145de32632ec9.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item.members.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MembersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectorGroups.item.members.item collection
 func (m *ConnectorGroupRequestBuilder) MembersById(id string)(*i753cfff90925bea726b5ebc5e71149db3f766477cada75985f673e10929c55ae.ConnectorRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -189,9 +171,7 @@ func (m *ConnectorGroupRequestBuilder) MembersById(id string)(*i753cfff90925bea7
     }
     return i753cfff90925bea726b5ebc5e71149db3f766477cada75985f673e10929c55ae.NewConnectorRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *ConnectorGroupRequestBuilder) Patch(options *ConnectorGroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

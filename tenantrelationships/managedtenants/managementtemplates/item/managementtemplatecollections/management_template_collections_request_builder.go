@@ -6,7 +6,7 @@ import (
     if2cb735b8e1f5a4dc100e2d27310069fcdb495776e2b40116f0238c1a3805e9c "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplates/item/managementtemplatecollections/ref"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplates\{managementTemplate-id}\managementTemplateCollections
+// managementTemplateCollectionsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplates\{managementTemplate-id}\managementTemplateCollections
 type ManagementTemplateCollectionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagementTemplateCollectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagementTemplateCollectionsRequestBuilderGetOptions options for Get
 type ManagementTemplateCollectionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ManagementTemplateCollectionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get managementTemplateCollections from tenantRelationships
+// managementTemplateCollectionsRequestBuilderGetQueryParameters get managementTemplateCollections from tenantRelationships
 type ManagementTemplateCollectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type ManagementTemplateCollectionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new ManagementTemplateCollectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateCollectionsRequestBuilderInternal instantiates a new ManagementTemplateCollectionsRequestBuilder and sets the default values.
 func NewManagementTemplateCollectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateCollectionsRequestBuilder) {
     m := &ManagementTemplateCollectionsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewManagementTemplateCollectionsRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementTemplateCollectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateCollectionsRequestBuilder instantiates a new ManagementTemplateCollectionsRequestBuilder and sets the default values.
 func NewManagementTemplateCollectionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateCollectionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateCollectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get managementTemplateCollections from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get managementTemplateCollections from tenantRelationships
 func (m *ManagementTemplateCollectionsRequestBuilder) CreateGetRequestInformation(options *ManagementTemplateCollectionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *ManagementTemplateCollectionsRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// Get managementTemplateCollections from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Get get managementTemplateCollections from tenantRelationships
 func (m *ManagementTemplateCollectionsRequestBuilder) Get(options *ManagementTemplateCollectionsRequestBuilderGetOptions)(*ManagementTemplateCollectionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

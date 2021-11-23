@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\notifications\{notification-id}
+// notificationRequestBuilder builds and executes requests for operations under \users\{user-id}\notifications\{notification-id}
 type NotificationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type NotificationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// NotificationRequestBuilderDeleteOptions options for Delete
 type NotificationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type NotificationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// NotificationRequestBuilderGetOptions options for Get
 type NotificationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type NotificationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get notifications from users
+// notificationRequestBuilderGetQueryParameters get notifications from users
 type NotificationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// NotificationRequestBuilderPatchOptions options for Patch
 type NotificationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Notification;
@@ -53,10 +53,7 @@ type NotificationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new NotificationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotificationRequestBuilderInternal instantiates a new NotificationRequestBuilder and sets the default values.
 func NewNotificationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotificationRequestBuilder) {
     m := &NotificationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewNotificationRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NotificationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotificationRequestBuilder instantiates a new NotificationRequestBuilder and sets the default values.
 func NewNotificationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotificationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNotificationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property notifications for users
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property notifications for users
 func (m *NotificationRequestBuilder) CreateDeleteRequestInformation(options *NotificationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *NotificationRequestBuilder) CreateDeleteRequestInformation(options *Not
     }
     return requestInfo, nil
 }
-// Get notifications from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get notifications from users
 func (m *NotificationRequestBuilder) CreateGetRequestInformation(options *NotificationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *NotificationRequestBuilder) CreateGetRequestInformation(options *Notifi
     }
     return requestInfo, nil
 }
-// Update the navigation property notifications in users
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property notifications in users
 func (m *NotificationRequestBuilder) CreatePatchRequestInformation(options *NotificationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *NotificationRequestBuilder) CreatePatchRequestInformation(options *Noti
     }
     return requestInfo, nil
 }
-// Delete navigation property notifications for users
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property notifications for users
 func (m *NotificationRequestBuilder) Delete(options *NotificationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *NotificationRequestBuilder) Delete(options *NotificationRequestBuilderD
     }
     return nil
 }
-// Get notifications from users
-// Parameters:
-//  - options : Options for the request
+// Get get notifications from users
 func (m *NotificationRequestBuilder) Get(options *NotificationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Notification, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *NotificationRequestBuilder) Get(options *NotificationRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Notification), nil
 }
-// Update the navigation property notifications in users
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property notifications in users
 func (m *NotificationRequestBuilder) Patch(options *NotificationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

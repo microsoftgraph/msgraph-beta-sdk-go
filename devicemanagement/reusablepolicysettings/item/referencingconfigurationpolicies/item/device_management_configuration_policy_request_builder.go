@@ -12,7 +12,7 @@ import (
     i7dbe63647e96f08c5b9d73aa6d410307a762d7c0ec3381e98a0284c4ac977af6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reusablepolicysettings/item/referencingconfigurationpolicies/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reusablePolicySettings\{deviceManagementReusablePolicySetting-id}\referencingConfigurationPolicies\{deviceManagementConfigurationPolicy-id}
+// deviceManagementConfigurationPolicyRequestBuilder builds and executes requests for operations under \deviceManagement\reusablePolicySettings\{deviceManagementReusablePolicySetting-id}\referencingConfigurationPolicies\{deviceManagementConfigurationPolicy-id}
 type DeviceManagementConfigurationPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type DeviceManagementConfigurationPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementConfigurationPolicyRequestBuilderDeleteOptions options for Delete
 type DeviceManagementConfigurationPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type DeviceManagementConfigurationPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementConfigurationPolicyRequestBuilderGetOptions options for Get
 type DeviceManagementConfigurationPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -41,14 +41,14 @@ type DeviceManagementConfigurationPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
+// deviceManagementConfigurationPolicyRequestBuilderGetQueryParameters configuration policies referencing the current reusable setting. This property is read-only.
 type DeviceManagementConfigurationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementConfigurationPolicyRequestBuilderPatchOptions options for Patch
 type DeviceManagementConfigurationPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicy;
@@ -65,9 +65,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) Assign()(*i4d107188a
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) Assignments()(*id78dbb2875ade726a0e23fd4722ee6f2932822f82b0a577ae6a7f1b5c867b301.AssignmentsRequestBuilder) {
     return id78dbb2875ade726a0e23fd4722ee6f2932822f82b0a577ae6a7f1b5c867b301.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reusablePolicySettings.item.referencingConfigurationPolicies.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reusablePolicySettings.item.referencingConfigurationPolicies.item.assignments.item collection
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) AssignmentsById(id string)(*i7dbe63647e96f08c5b9d73aa6d410307a762d7c0ec3381e98a0284c4ac977af6.DeviceManagementConfigurationPolicyAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -78,10 +76,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) AssignmentsById(id s
     }
     return i7dbe63647e96f08c5b9d73aa6d410307a762d7c0ec3381e98a0284c4ac977af6.NewDeviceManagementConfigurationPolicyAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new DeviceManagementConfigurationPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationPolicyRequestBuilderInternal instantiates a new DeviceManagementConfigurationPolicyRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationPolicyRequestBuilder) {
     m := &DeviceManagementConfigurationPolicyRequestBuilder{
     }
@@ -94,10 +89,7 @@ func NewDeviceManagementConfigurationPolicyRequestBuilderInternal(pathParameters
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementConfigurationPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationPolicyRequestBuilder instantiates a new DeviceManagementConfigurationPolicyRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -106,9 +98,7 @@ func NewDeviceManagementConfigurationPolicyRequestBuilder(rawUrl string, request
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreateCopy()(*i0d5087c3ad32d953f8943c67d689d4c5195c4fb05be95af0629f34f07a60a238.CreateCopyRequestBuilder) {
     return i0d5087c3ad32d953f8943c67d689d4c5195c4fb05be95af0629f34f07a60a238.NewCreateCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation configuration policies referencing the current reusable setting. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementConfigurationPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation configuration policies referencing the current reusable setting. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreateGetRequestInformation(options *DeviceManagementConfigurationPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,9 +135,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation configuration policies referencing the current reusable setting. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementConfigurationPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -167,9 +153,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete configuration policies referencing the current reusable setting. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) Delete(options *DeviceManagementConfigurationPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -181,9 +165,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) Delete(options *Devi
     }
     return nil
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
-// Parameters:
-//  - options : Options for the request
+// Get configuration policies referencing the current reusable setting. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) Get(options *DeviceManagementConfigurationPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -195,9 +177,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) Get(options *DeviceM
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicy), nil
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch configuration policies referencing the current reusable setting. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) Patch(options *DeviceManagementConfigurationPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -212,9 +192,7 @@ func (m *DeviceManagementConfigurationPolicyRequestBuilder) Patch(options *Devic
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) Settings()(*icd6db9d110e9b5d6c4c3b85e477b0e48543f90eba93b007ff12a0ab751c123f4.SettingsRequestBuilder) {
     return icd6db9d110e9b5d6c4c3b85e477b0e48543f90eba93b007ff12a0ab751c123f4.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reusablePolicySettings.item.referencingConfigurationPolicies.item.settings.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reusablePolicySettings.item.referencingConfigurationPolicies.item.settings.item collection
 func (m *DeviceManagementConfigurationPolicyRequestBuilder) SettingsById(id string)(*i6b80f55ae6e72817db04d0c200abcf17df216061f041ed1f058dcca442672332.DeviceManagementConfigurationSettingRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

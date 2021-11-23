@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// institutionData 
 type InstitutionData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type InstitutionData struct {
     // Link to the institution or department homepage.
     webUrl *string;
 }
-// Instantiates a new institutionData and sets the default values.
+// NewInstitutionData instantiates a new institutionData and sets the default values.
 func NewInstitutionData()(*InstitutionData) {
     m := &InstitutionData{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InstitutionData) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *InstitutionData) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the description property value. Short description of the institution the user studied at.
+// GetDescription gets the description property value. Short description of the institution the user studied at.
 func (m *InstitutionData) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *InstitutionData) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Name of the institution the user studied at.
+// GetDisplayName gets the displayName property value. Name of the institution the user studied at.
 func (m *InstitutionData) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *InstitutionData) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the location property value. Address or location of the institute.
+// GetLocation gets the location property value. Address or location of the institute.
 func (m *InstitutionData) GetLocation()(*PhysicalAddress) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *InstitutionData) GetLocation()(*PhysicalAddress) {
         return m.location
     }
 }
-// Gets the webUrl property value. Link to the institution or department homepage.
+// GetWebUrl gets the webUrl property value. Link to the institution or department homepage.
 func (m *InstitutionData) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *InstitutionData) GetWebUrl()(*string) {
         return m.webUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *InstitutionData) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *InstitutionData) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *InstitutionData) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *InstitutionData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("description", m.GetDescription())
@@ -148,33 +146,23 @@ func (m *InstitutionData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InstitutionData) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the description property value. Short description of the institution the user studied at.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Short description of the institution the user studied at.
 func (m *InstitutionData) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Name of the institution the user studied at.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Name of the institution the user studied at.
 func (m *InstitutionData) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the location property value. Address or location of the institute.
-// Parameters:
-//  - value : Value to set for the location property.
+// SetLocation sets the location property value. Address or location of the institute.
 func (m *InstitutionData) SetLocation(value *PhysicalAddress)() {
     m.location = value
 }
-// Sets the webUrl property value. Link to the institution or department homepage.
-// Parameters:
-//  - value : Value to set for the webUrl property.
+// SetWebUrl sets the webUrl property value. Link to the institution or department homepage.
 func (m *InstitutionData) SetWebUrl(value *string)() {
     m.webUrl = value
 }

@@ -8,7 +8,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \external
+// externalRequestBuilder builds and executes requests for operations under \external
 type ExternalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ExternalRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ExternalRequestBuilderGetOptions options for Get
 type ExternalRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,14 +28,14 @@ type ExternalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get external
+// externalRequestBuilderGetQueryParameters get external
 type ExternalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ExternalRequestBuilderPatchOptions options for Patch
 type ExternalRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.External;
@@ -49,9 +49,7 @@ type ExternalRequestBuilderPatchOptions struct {
 func (m *ExternalRequestBuilder) Connections()(*i58d99e39282ae5d31df48fa8b20c3f8f72e2dcdf580a4fd8b923a52cd4bc6141.ConnectionsRequestBuilder) {
     return i58d99e39282ae5d31df48fa8b20c3f8f72e2dcdf580a4fd8b923a52cd4bc6141.NewConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.external.connections.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ConnectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.external.connections.item collection
 func (m *ExternalRequestBuilder) ConnectionsById(id string)(*i533bedf163cb33517e42f00c7da4a9ea77d46e9fdcb601a0e3cfddc125d6b9a6.ExternalConnectionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -62,10 +60,7 @@ func (m *ExternalRequestBuilder) ConnectionsById(id string)(*i533bedf163cb33517e
     }
     return i533bedf163cb33517e42f00c7da4a9ea77d46e9fdcb601a0e3cfddc125d6b9a6.NewExternalConnectionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new ExternalRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExternalRequestBuilderInternal instantiates a new ExternalRequestBuilder and sets the default values.
 func NewExternalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExternalRequestBuilder) {
     m := &ExternalRequestBuilder{
     }
@@ -78,18 +73,13 @@ func NewExternalRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExternalRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExternalRequestBuilder instantiates a new ExternalRequestBuilder and sets the default values.
 func NewExternalRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExternalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExternalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get external
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get external
 func (m *ExternalRequestBuilder) CreateGetRequestInformation(options *ExternalRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +99,7 @@ func (m *ExternalRequestBuilder) CreateGetRequestInformation(options *ExternalRe
     }
     return requestInfo, nil
 }
-// Update external
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update external
 func (m *ExternalRequestBuilder) CreatePatchRequestInformation(options *ExternalRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +117,7 @@ func (m *ExternalRequestBuilder) CreatePatchRequestInformation(options *External
     }
     return requestInfo, nil
 }
-// Get external
-// Parameters:
-//  - options : Options for the request
+// Get get external
 func (m *ExternalRequestBuilder) Get(options *ExternalRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.External, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -143,9 +129,7 @@ func (m *ExternalRequestBuilder) Get(options *ExternalRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.External), nil
 }
-// Update external
-// Parameters:
-//  - options : Options for the request
+// Patch update external
 func (m *ExternalRequestBuilder) Patch(options *ExternalRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

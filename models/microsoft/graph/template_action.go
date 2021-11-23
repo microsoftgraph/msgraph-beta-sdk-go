@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// templateAction 
 type TemplateAction struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type TemplateAction struct {
     // 
     templateActionId *string;
 }
-// Instantiates a new templateAction and sets the default values.
+// NewTemplateAction instantiates a new templateAction and sets the default values.
 func NewTemplateAction()(*TemplateAction) {
     m := &TemplateAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TemplateAction) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *TemplateAction) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the description property value. 
+// GetDescription gets the description property value. 
 func (m *TemplateAction) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *TemplateAction) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *TemplateAction) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *TemplateAction) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the licenses property value. 
+// GetLicenses gets the licenses property value. 
 func (m *TemplateAction) GetLicenses()(*LicenseDetails) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *TemplateAction) GetLicenses()(*LicenseDetails) {
         return m.licenses
     }
 }
-// Gets the service property value. 
+// GetService gets the service property value. 
 func (m *TemplateAction) GetService()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *TemplateAction) GetService()(*string) {
         return m.service
     }
 }
-// Gets the settings property value. 
+// GetSettings gets the settings property value. 
 func (m *TemplateAction) GetSettings()([]Setting) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *TemplateAction) GetSettings()([]Setting) {
         return m.settings
     }
 }
-// Gets the templateActionId property value. 
+// GetTemplateActionId gets the templateActionId property value. 
 func (m *TemplateAction) GetTemplateActionId()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *TemplateAction) GetTemplateActionId()(*string) {
         return m.templateActionId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TemplateAction) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,9 +156,7 @@ func (m *TemplateAction) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *TemplateAction) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TemplateAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("description", m.GetDescription())
@@ -209,45 +207,31 @@ func (m *TemplateAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TemplateAction) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the description property value. 
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. 
 func (m *TemplateAction) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *TemplateAction) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the licenses property value. 
-// Parameters:
-//  - value : Value to set for the licenses property.
+// SetLicenses sets the licenses property value. 
 func (m *TemplateAction) SetLicenses(value *LicenseDetails)() {
     m.licenses = value
 }
-// Sets the service property value. 
-// Parameters:
-//  - value : Value to set for the service property.
+// SetService sets the service property value. 
 func (m *TemplateAction) SetService(value *string)() {
     m.service = value
 }
-// Sets the settings property value. 
-// Parameters:
-//  - value : Value to set for the settings property.
+// SetSettings sets the settings property value. 
 func (m *TemplateAction) SetSettings(value []Setting)() {
     m.settings = value
 }
-// Sets the templateActionId property value. 
-// Parameters:
-//  - value : Value to set for the templateActionId property.
+// SetTemplateActionId sets the templateActionId property value. 
 func (m *TemplateAction) SetTemplateActionId(value *string)() {
     m.templateActionId = value
 }

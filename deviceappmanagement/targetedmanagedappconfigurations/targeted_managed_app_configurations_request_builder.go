@@ -7,7 +7,7 @@ import (
     i63c441d9d593382f1c0a0eab4d77625eba0d17603d57d02eb4d09e74ba042fa1 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/targetedmanagedappconfigurations/haspayloadlinks"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\targetedManagedAppConfigurations
+// targetedManagedAppConfigurationsRequestBuilder builds and executes requests for operations under \deviceAppManagement\targetedManagedAppConfigurations
 type TargetedManagedAppConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TargetedManagedAppConfigurationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TargetedManagedAppConfigurationsRequestBuilderGetOptions options for Get
 type TargetedManagedAppConfigurationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type TargetedManagedAppConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Targeted managed app configurations.
+// targetedManagedAppConfigurationsRequestBuilderGetQueryParameters targeted managed app configurations.
 type TargetedManagedAppConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type TargetedManagedAppConfigurationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TargetedManagedAppConfigurationsRequestBuilderPostOptions options for Post
 type TargetedManagedAppConfigurationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TargetedManagedAppConfiguration;
@@ -57,10 +57,7 @@ type TargetedManagedAppConfigurationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TargetedManagedAppConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetedManagedAppConfigurationsRequestBuilderInternal instantiates a new TargetedManagedAppConfigurationsRequestBuilder and sets the default values.
 func NewTargetedManagedAppConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetedManagedAppConfigurationsRequestBuilder) {
     m := &TargetedManagedAppConfigurationsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewTargetedManagedAppConfigurationsRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TargetedManagedAppConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetedManagedAppConfigurationsRequestBuilder instantiates a new TargetedManagedAppConfigurationsRequestBuilder and sets the default values.
 func NewTargetedManagedAppConfigurationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetedManagedAppConfigurationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTargetedManagedAppConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Targeted managed app configurations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation targeted managed app configurations.
 func (m *TargetedManagedAppConfigurationsRequestBuilder) CreateGetRequestInformation(options *TargetedManagedAppConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *TargetedManagedAppConfigurationsRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Targeted managed app configurations.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation targeted managed app configurations.
 func (m *TargetedManagedAppConfigurationsRequestBuilder) CreatePostRequestInformation(options *TargetedManagedAppConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *TargetedManagedAppConfigurationsRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Targeted managed app configurations.
-// Parameters:
-//  - options : Options for the request
+// Get targeted managed app configurations.
 func (m *TargetedManagedAppConfigurationsRequestBuilder) Get(options *TargetedManagedAppConfigurationsRequestBuilderGetOptions)(*TargetedManagedAppConfigurationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *TargetedManagedAppConfigurationsRequestBuilder) Get(options *TargetedMa
 func (m *TargetedManagedAppConfigurationsRequestBuilder) HasPayloadLinks()(*i63c441d9d593382f1c0a0eab4d77625eba0d17603d57d02eb4d09e74ba042fa1.HasPayloadLinksRequestBuilder) {
     return i63c441d9d593382f1c0a0eab4d77625eba0d17603d57d02eb4d09e74ba042fa1.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Targeted managed app configurations.
-// Parameters:
-//  - options : Options for the request
+// Post targeted managed app configurations.
 func (m *TargetedManagedAppConfigurationsRequestBuilder) Post(options *TargetedManagedAppConfigurationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TargetedManagedAppConfiguration, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

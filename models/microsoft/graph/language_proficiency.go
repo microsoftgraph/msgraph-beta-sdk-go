@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// languageProficiency 
 type LanguageProficiency struct {
     ItemFacet
     // Contains the long-form name for the language.
@@ -22,14 +22,14 @@ type LanguageProficiency struct {
     // Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
     written *LanguageProficiencyLevel;
 }
-// Instantiates a new languageProficiency and sets the default values.
+// NewLanguageProficiency instantiates a new languageProficiency and sets the default values.
 func NewLanguageProficiency()(*LanguageProficiency) {
     m := &LanguageProficiency{
         ItemFacet: *NewItemFacet(),
     }
     return m
 }
-// Gets the displayName property value. Contains the long-form name for the language.
+// GetDisplayName gets the displayName property value. Contains the long-form name for the language.
 func (m *LanguageProficiency) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *LanguageProficiency) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the proficiency property value. 
+// GetProficiency gets the proficiency property value. 
 func (m *LanguageProficiency) GetProficiency()(*LanguageProficiencyLevel) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *LanguageProficiency) GetProficiency()(*LanguageProficiencyLevel) {
         return m.proficiency
     }
 }
-// Gets the reading property value. Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// GetReading gets the reading property value. Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) GetReading()(*LanguageProficiencyLevel) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *LanguageProficiency) GetReading()(*LanguageProficiencyLevel) {
         return m.reading
     }
 }
-// Gets the spoken property value. Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// GetSpoken gets the spoken property value. Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) GetSpoken()(*LanguageProficiencyLevel) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *LanguageProficiency) GetSpoken()(*LanguageProficiencyLevel) {
         return m.spoken
     }
 }
-// Gets the tag property value. Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).
+// GetTag gets the tag property value. Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).
 func (m *LanguageProficiency) GetTag()(*string) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *LanguageProficiency) GetTag()(*string) {
         return m.tag
     }
 }
-// Gets the thumbnailUrl property value. 
+// GetThumbnailUrl gets the thumbnailUrl property value. 
 func (m *LanguageProficiency) GetThumbnailUrl()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *LanguageProficiency) GetThumbnailUrl()(*string) {
         return m.thumbnailUrl
     }
 }
-// Gets the written property value. Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// GetWritten gets the written property value. Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) GetWritten()(*LanguageProficiencyLevel) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *LanguageProficiency) GetWritten()(*LanguageProficiencyLevel) {
         return m.written
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,9 +167,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
 func (m *LanguageProficiency) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *LanguageProficiency) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ItemFacet.Serialize(writer)
     if err != nil {
@@ -223,45 +221,31 @@ func (m *LanguageProficiency) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the displayName property value. Contains the long-form name for the language.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Contains the long-form name for the language.
 func (m *LanguageProficiency) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the proficiency property value. 
-// Parameters:
-//  - value : Value to set for the proficiency property.
+// SetProficiency sets the proficiency property value. 
 func (m *LanguageProficiency) SetProficiency(value *LanguageProficiencyLevel)() {
     m.proficiency = value
 }
-// Sets the reading property value. Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the reading property.
+// SetReading sets the reading property value. Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) SetReading(value *LanguageProficiencyLevel)() {
     m.reading = value
 }
-// Sets the spoken property value. Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the spoken property.
+// SetSpoken sets the spoken property value. Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) SetSpoken(value *LanguageProficiencyLevel)() {
     m.spoken = value
 }
-// Sets the tag property value. Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).
-// Parameters:
-//  - value : Value to set for the tag property.
+// SetTag sets the tag property value. Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).
 func (m *LanguageProficiency) SetTag(value *string)() {
     m.tag = value
 }
-// Sets the thumbnailUrl property value. 
-// Parameters:
-//  - value : Value to set for the thumbnailUrl property.
+// SetThumbnailUrl sets the thumbnailUrl property value. 
 func (m *LanguageProficiency) SetThumbnailUrl(value *string)() {
     m.thumbnailUrl = value
 }
-// Sets the written property value. Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the written property.
+// SetWritten sets the written property value. Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) SetWritten(value *LanguageProficiencyLevel)() {
     m.written = value
 }

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\cachedReportConfigurations
+// cachedReportConfigurationsRequestBuilder builds and executes requests for operations under \deviceManagement\reports\cachedReportConfigurations
 type CachedReportConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CachedReportConfigurationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CachedReportConfigurationsRequestBuilderGetOptions options for Get
 type CachedReportConfigurationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CachedReportConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Entity representing the configuration of a cached report
+// cachedReportConfigurationsRequestBuilderGetQueryParameters entity representing the configuration of a cached report
 type CachedReportConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CachedReportConfigurationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CachedReportConfigurationsRequestBuilderPostOptions options for Post
 type CachedReportConfigurationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfiguration;
@@ -56,10 +56,7 @@ type CachedReportConfigurationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CachedReportConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCachedReportConfigurationsRequestBuilderInternal instantiates a new CachedReportConfigurationsRequestBuilder and sets the default values.
 func NewCachedReportConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CachedReportConfigurationsRequestBuilder) {
     m := &CachedReportConfigurationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCachedReportConfigurationsRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CachedReportConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCachedReportConfigurationsRequestBuilder instantiates a new CachedReportConfigurationsRequestBuilder and sets the default values.
 func NewCachedReportConfigurationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CachedReportConfigurationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCachedReportConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Entity representing the configuration of a cached report
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation entity representing the configuration of a cached report
 func (m *CachedReportConfigurationsRequestBuilder) CreateGetRequestInformation(options *CachedReportConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CachedReportConfigurationsRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// Entity representing the configuration of a cached report
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation entity representing the configuration of a cached report
 func (m *CachedReportConfigurationsRequestBuilder) CreatePostRequestInformation(options *CachedReportConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CachedReportConfigurationsRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Entity representing the configuration of a cached report
-// Parameters:
-//  - options : Options for the request
+// Get entity representing the configuration of a cached report
 func (m *CachedReportConfigurationsRequestBuilder) Get(options *CachedReportConfigurationsRequestBuilderGetOptions)(*CachedReportConfigurationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CachedReportConfigurationsRequestBuilder) Get(options *CachedReportConf
     }
     return res.(*CachedReportConfigurationsResponse), nil
 }
-// Entity representing the configuration of a cached report
-// Parameters:
-//  - options : Options for the request
+// Post entity representing the configuration of a cached report
 func (m *CachedReportConfigurationsRequestBuilder) Post(options *CachedReportConfigurationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementCachedReportConfiguration, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

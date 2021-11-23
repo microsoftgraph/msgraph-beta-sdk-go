@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// passwordValidationInformation 
 type PasswordValidationInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type PasswordValidationInformation struct {
     // The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
     validationResults []ValidationResult;
 }
-// Instantiates a new passwordValidationInformation and sets the default values.
+// NewPasswordValidationInformation instantiates a new passwordValidationInformation and sets the default values.
 func NewPasswordValidationInformation()(*PasswordValidationInformation) {
     m := &PasswordValidationInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordValidationInformation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *PasswordValidationInformation) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// Gets the isValid property value. Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
+// GetIsValid gets the isValid property value. Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
 func (m *PasswordValidationInformation) GetIsValid()(*bool) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *PasswordValidationInformation) GetIsValid()(*bool) {
         return m.isValid
     }
 }
-// Gets the validationResults property value. The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
+// GetValidationResults gets the validationResults property value. The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
 func (m *PasswordValidationInformation) GetValidationResults()([]ValidationResult) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *PasswordValidationInformation) GetValidationResults()([]ValidationResul
         return m.validationResults
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PasswordValidationInformation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["isValid"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,9 +76,7 @@ func (m *PasswordValidationInformation) GetFieldDeserializers()(map[string]func(
 func (m *PasswordValidationInformation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PasswordValidationInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isValid", m.GetIsValid())
@@ -105,21 +103,15 @@ func (m *PasswordValidationInformation) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordValidationInformation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the isValid property value. Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
-// Parameters:
-//  - value : Value to set for the isValid property.
+// SetIsValid sets the isValid property value. Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
 func (m *PasswordValidationInformation) SetIsValid(value *bool)() {
     m.isValid = value
 }
-// Sets the validationResults property value. The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
-// Parameters:
-//  - value : Value to set for the validationResults property.
+// SetValidationResults sets the validationResults property value. The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
 func (m *PasswordValidationInformation) SetValidationResults(value []ValidationResult)() {
     m.validationResults = value
 }

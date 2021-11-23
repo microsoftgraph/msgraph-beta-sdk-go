@@ -12,7 +12,7 @@ import (
     ifeaaa36be4c91c2207be47a8feb667e2c552fe82abae810a59e3babd3be24a98 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/serviceannouncement/healthoverviews/item"
 )
 
-// Builds and executes requests for operations under \admin\serviceAnnouncement
+// serviceAnnouncementRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement
 type ServiceAnnouncementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type ServiceAnnouncementRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ServiceAnnouncementRequestBuilderDeleteOptions options for Delete
 type ServiceAnnouncementRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type ServiceAnnouncementRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ServiceAnnouncementRequestBuilderGetOptions options for Get
 type ServiceAnnouncementRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -41,14 +41,14 @@ type ServiceAnnouncementRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A container for service communications resources. Read-only.
+// serviceAnnouncementRequestBuilderGetQueryParameters a container for service communications resources. Read-only.
 type ServiceAnnouncementRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ServiceAnnouncementRequestBuilderPatchOptions options for Patch
 type ServiceAnnouncementRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServiceAnnouncement;
@@ -59,10 +59,7 @@ type ServiceAnnouncementRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ServiceAnnouncementRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServiceAnnouncementRequestBuilderInternal instantiates a new ServiceAnnouncementRequestBuilder and sets the default values.
 func NewServiceAnnouncementRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServiceAnnouncementRequestBuilder) {
     m := &ServiceAnnouncementRequestBuilder{
     }
@@ -75,18 +72,13 @@ func NewServiceAnnouncementRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ServiceAnnouncementRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServiceAnnouncementRequestBuilder instantiates a new ServiceAnnouncementRequestBuilder and sets the default values.
 func NewServiceAnnouncementRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServiceAnnouncementRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A container for service communications resources. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a container for service communications resources. Read-only.
 func (m *ServiceAnnouncementRequestBuilder) CreateDeleteRequestInformation(options *ServiceAnnouncementRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ServiceAnnouncementRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// A container for service communications resources. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a container for service communications resources. Read-only.
 func (m *ServiceAnnouncementRequestBuilder) CreateGetRequestInformation(options *ServiceAnnouncementRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *ServiceAnnouncementRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// A container for service communications resources. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a container for service communications resources. Read-only.
 func (m *ServiceAnnouncementRequestBuilder) CreatePatchRequestInformation(options *ServiceAnnouncementRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +133,7 @@ func (m *ServiceAnnouncementRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// A container for service communications resources. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete a container for service communications resources. Read-only.
 func (m *ServiceAnnouncementRequestBuilder) Delete(options *ServiceAnnouncementRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -159,9 +145,7 @@ func (m *ServiceAnnouncementRequestBuilder) Delete(options *ServiceAnnouncementR
     }
     return nil
 }
-// A container for service communications resources. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get a container for service communications resources. Read-only.
 func (m *ServiceAnnouncementRequestBuilder) Get(options *ServiceAnnouncementRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServiceAnnouncement, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -176,9 +160,7 @@ func (m *ServiceAnnouncementRequestBuilder) Get(options *ServiceAnnouncementRequ
 func (m *ServiceAnnouncementRequestBuilder) HealthOverviews()(*i41ae9b5ca5aa3a84169898e2b617c6ea1d88b829fb2659c23e21b770a541a9d4.HealthOverviewsRequestBuilder) {
     return i41ae9b5ca5aa3a84169898e2b617c6ea1d88b829fb2659c23e21b770a541a9d4.NewHealthOverviewsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.serviceAnnouncement.healthOverviews.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// HealthOverviewsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.serviceAnnouncement.healthOverviews.item collection
 func (m *ServiceAnnouncementRequestBuilder) HealthOverviewsById(id string)(*ifeaaa36be4c91c2207be47a8feb667e2c552fe82abae810a59e3babd3be24a98.ServiceHealthRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -192,9 +174,7 @@ func (m *ServiceAnnouncementRequestBuilder) HealthOverviewsById(id string)(*ifea
 func (m *ServiceAnnouncementRequestBuilder) Issues()(*i6bb2abfee987b65b1b3392b8a360998369927f072881a1c395ccb59e5b16a948.IssuesRequestBuilder) {
     return i6bb2abfee987b65b1b3392b8a360998369927f072881a1c395ccb59e5b16a948.NewIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.serviceAnnouncement.issues.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// IssuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.serviceAnnouncement.issues.item collection
 func (m *ServiceAnnouncementRequestBuilder) IssuesById(id string)(*ia4194987de629e901159377d6071685c8aff20bacfa55b2cdb6c27925b728fa7.ServiceHealthIssueRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -208,9 +188,7 @@ func (m *ServiceAnnouncementRequestBuilder) IssuesById(id string)(*ia4194987de62
 func (m *ServiceAnnouncementRequestBuilder) Messages()(*iba795784a084f257c4f80d391dcf5228c541b81940b1988d008a703891f942fa.MessagesRequestBuilder) {
     return iba795784a084f257c4f80d391dcf5228c541b81940b1988d008a703891f942fa.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.serviceAnnouncement.messages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MessagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.serviceAnnouncement.messages.item collection
 func (m *ServiceAnnouncementRequestBuilder) MessagesById(id string)(*ie72cf01cf6ce5564b072dca815b13dbf9c0f248c55417fb37202d44f8b47ac04.ServiceUpdateMessageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -221,9 +199,7 @@ func (m *ServiceAnnouncementRequestBuilder) MessagesById(id string)(*ie72cf01cf6
     }
     return ie72cf01cf6ce5564b072dca815b13dbf9c0f248c55417fb37202d44f8b47ac04.NewServiceUpdateMessageRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// A container for service communications resources. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch a container for service communications resources. Read-only.
 func (m *ServiceAnnouncementRequestBuilder) Patch(options *ServiceAnnouncementRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

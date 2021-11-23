@@ -7,7 +7,7 @@ import (
     ifdcd1631502f3f3c71c9fc98000e43ad8b96769caa5b48a321bfb319bda76469 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/tags/item/childtags/ashierarchy"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\childTags
+// childTagsRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\childTags
 type ChildTagsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ChildTagsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ChildTagsRequestBuilderGetOptions options for Get
 type ChildTagsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ChildTagsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns the tags that are a child of a tag.
+// childTagsRequestBuilderGetQueryParameters returns the tags that are a child of a tag.
 type ChildTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,14 +46,11 @@ type ChildTagsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\childTags\microsoft.graph.ediscovery.asHierarchy()
+// AsHierarchy builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\childTags\microsoft.graph.ediscovery.asHierarchy()
 func (m *ChildTagsRequestBuilder) AsHierarchy()(*ifdcd1631502f3f3c71c9fc98000e43ad8b96769caa5b48a321bfb319bda76469.AsHierarchyRequestBuilder) {
     return ifdcd1631502f3f3c71c9fc98000e43ad8b96769caa5b48a321bfb319bda76469.NewAsHierarchyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ChildTagsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChildTagsRequestBuilderInternal instantiates a new ChildTagsRequestBuilder and sets the default values.
 func NewChildTagsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChildTagsRequestBuilder) {
     m := &ChildTagsRequestBuilder{
     }
@@ -66,18 +63,13 @@ func NewChildTagsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChildTagsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChildTagsRequestBuilder instantiates a new ChildTagsRequestBuilder and sets the default values.
 func NewChildTagsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChildTagsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChildTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns the tags that are a child of a tag.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns the tags that are a child of a tag.
 func (m *ChildTagsRequestBuilder) CreateGetRequestInformation(options *ChildTagsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ChildTagsRequestBuilder) CreateGetRequestInformation(options *ChildTags
     }
     return requestInfo, nil
 }
-// Returns the tags that are a child of a tag.
-// Parameters:
-//  - options : Options for the request
+// Get returns the tags that are a child of a tag.
 func (m *ChildTagsRequestBuilder) Get(options *ChildTagsRequestBuilderGetOptions)(*ChildTagsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

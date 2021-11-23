@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\dailyPrintUsageSummariesByPrinter
+// dailyPrintUsageSummariesByPrinterRequestBuilder builds and executes requests for operations under \reports\dailyPrintUsageSummariesByPrinter
 type DailyPrintUsageSummariesByPrinterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DailyPrintUsageSummariesByPrinterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DailyPrintUsageSummariesByPrinterRequestBuilderGetOptions options for Get
 type DailyPrintUsageSummariesByPrinterRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DailyPrintUsageSummariesByPrinterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get dailyPrintUsageSummariesByPrinter from reports
+// dailyPrintUsageSummariesByPrinterRequestBuilderGetQueryParameters get dailyPrintUsageSummariesByPrinter from reports
 type DailyPrintUsageSummariesByPrinterRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DailyPrintUsageSummariesByPrinterRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DailyPrintUsageSummariesByPrinterRequestBuilderPostOptions options for Post
 type DailyPrintUsageSummariesByPrinterRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByPrinter;
@@ -56,10 +56,7 @@ type DailyPrintUsageSummariesByPrinterRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DailyPrintUsageSummariesByPrinterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDailyPrintUsageSummariesByPrinterRequestBuilderInternal instantiates a new DailyPrintUsageSummariesByPrinterRequestBuilder and sets the default values.
 func NewDailyPrintUsageSummariesByPrinterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DailyPrintUsageSummariesByPrinterRequestBuilder) {
     m := &DailyPrintUsageSummariesByPrinterRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDailyPrintUsageSummariesByPrinterRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DailyPrintUsageSummariesByPrinterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDailyPrintUsageSummariesByPrinterRequestBuilder instantiates a new DailyPrintUsageSummariesByPrinterRequestBuilder and sets the default values.
 func NewDailyPrintUsageSummariesByPrinterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DailyPrintUsageSummariesByPrinterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDailyPrintUsageSummariesByPrinterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get dailyPrintUsageSummariesByPrinter from reports
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get dailyPrintUsageSummariesByPrinter from reports
 func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) CreateGetRequestInformation(options *DailyPrintUsageSummariesByPrinterRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// Create new navigation property to dailyPrintUsageSummariesByPrinter for reports
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to dailyPrintUsageSummariesByPrinter for reports
 func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) CreatePostRequestInformation(options *DailyPrintUsageSummariesByPrinterRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// Get dailyPrintUsageSummariesByPrinter from reports
-// Parameters:
-//  - options : Options for the request
+// Get get dailyPrintUsageSummariesByPrinter from reports
 func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) Get(options *DailyPrintUsageSummariesByPrinterRequestBuilderGetOptions)(*DailyPrintUsageSummariesByPrinterResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) Get(options *DailyPrin
     }
     return res.(*DailyPrintUsageSummariesByPrinterResponse), nil
 }
-// Create new navigation property to dailyPrintUsageSummariesByPrinter for reports
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to dailyPrintUsageSummariesByPrinter for reports
 func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) Post(options *DailyPrintUsageSummariesByPrinterRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByPrinter, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

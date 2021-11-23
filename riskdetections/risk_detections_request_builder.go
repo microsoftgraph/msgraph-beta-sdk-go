@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \riskDetections
+// riskDetectionsRequestBuilder builds and executes requests for operations under \riskDetections
 type RiskDetectionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RiskDetectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RiskDetectionsRequestBuilderGetOptions options for Get
 type RiskDetectionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RiskDetectionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from riskDetections
+// riskDetectionsRequestBuilderGetQueryParameters get entities from riskDetections
 type RiskDetectionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -41,7 +41,7 @@ type RiskDetectionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RiskDetectionsRequestBuilderPostOptions options for Post
 type RiskDetectionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskDetection;
@@ -52,10 +52,7 @@ type RiskDetectionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RiskDetectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRiskDetectionsRequestBuilderInternal instantiates a new RiskDetectionsRequestBuilder and sets the default values.
 func NewRiskDetectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskDetectionsRequestBuilder) {
     m := &RiskDetectionsRequestBuilder{
     }
@@ -68,18 +65,13 @@ func NewRiskDetectionsRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RiskDetectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRiskDetectionsRequestBuilder instantiates a new RiskDetectionsRequestBuilder and sets the default values.
 func NewRiskDetectionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RiskDetectionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRiskDetectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from riskDetections
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from riskDetections
 func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformation(options *RiskDetectionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformation(options *Risk
     }
     return requestInfo, nil
 }
-// Add new entity to riskDetections
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to riskDetections
 func (m *RiskDetectionsRequestBuilder) CreatePostRequestInformation(options *RiskDetectionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *RiskDetectionsRequestBuilder) CreatePostRequestInformation(options *Ris
     }
     return requestInfo, nil
 }
-// Get entities from riskDetections
-// Parameters:
-//  - options : Options for the request
+// Get get entities from riskDetections
 func (m *RiskDetectionsRequestBuilder) Get(options *RiskDetectionsRequestBuilderGetOptions)(*RiskDetectionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -133,9 +121,7 @@ func (m *RiskDetectionsRequestBuilder) Get(options *RiskDetectionsRequestBuilder
     }
     return res.(*RiskDetectionsResponse), nil
 }
-// Add new entity to riskDetections
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to riskDetections
 func (m *RiskDetectionsRequestBuilder) Post(options *RiskDetectionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RiskDetection, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

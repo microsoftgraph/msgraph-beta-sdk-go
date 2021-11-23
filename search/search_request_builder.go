@@ -13,7 +13,7 @@ import (
     i8b7285689d9aced3e20dd7af58f5c67035f37b8fe34ead1766f01cc855dbb192 "github.com/microsoftgraph/msgraph-beta-sdk-go/search/bookmarks/item"
 )
 
-// Builds and executes requests for operations under \search
+// searchRequestBuilder builds and executes requests for operations under \search
 type SearchRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type SearchRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SearchRequestBuilderGetOptions options for Get
 type SearchRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -33,14 +33,14 @@ type SearchRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get search
+// searchRequestBuilderGetQueryParameters get search
 type SearchRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SearchRequestBuilderPatchOptions options for Patch
 type SearchRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchEntity;
@@ -54,9 +54,7 @@ type SearchRequestBuilderPatchOptions struct {
 func (m *SearchRequestBuilder) Acronyms()(*ib721af151194f36463bd473df1277a52673500924a4562283e137a3f7ed94072.AcronymsRequestBuilder) {
     return ib721af151194f36463bd473df1277a52673500924a4562283e137a3f7ed94072.NewAcronymsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.acronyms.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AcronymsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.acronyms.item collection
 func (m *SearchRequestBuilder) AcronymsById(id string)(*i74358e4db7f904e8f49fdcb30f91642f6639093ec5390b7ca96d2a396083031d.AcronymRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -70,9 +68,7 @@ func (m *SearchRequestBuilder) AcronymsById(id string)(*i74358e4db7f904e8f49fdcb
 func (m *SearchRequestBuilder) Bookmarks()(*i98acee39b1010d46fe63cc02c3afafb76788d106b29f8cbe8718dc6507b1faa8.BookmarksRequestBuilder) {
     return i98acee39b1010d46fe63cc02c3afafb76788d106b29f8cbe8718dc6507b1faa8.NewBookmarksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.bookmarks.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// BookmarksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.bookmarks.item collection
 func (m *SearchRequestBuilder) BookmarksById(id string)(*i8b7285689d9aced3e20dd7af58f5c67035f37b8fe34ead1766f01cc855dbb192.BookmarkRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -83,10 +79,7 @@ func (m *SearchRequestBuilder) BookmarksById(id string)(*i8b7285689d9aced3e20dd7
     }
     return i8b7285689d9aced3e20dd7af58f5c67035f37b8fe34ead1766f01cc855dbb192.NewBookmarkRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new SearchRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSearchRequestBuilderInternal instantiates a new SearchRequestBuilder and sets the default values.
 func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SearchRequestBuilder) {
     m := &SearchRequestBuilder{
     }
@@ -99,18 +92,13 @@ func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SearchRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSearchRequestBuilder instantiates a new SearchRequestBuilder and sets the default values.
 func NewSearchRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SearchRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSearchRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get search
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get search
 func (m *SearchRequestBuilder) CreateGetRequestInformation(options *SearchRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,9 +118,7 @@ func (m *SearchRequestBuilder) CreateGetRequestInformation(options *SearchReques
     }
     return requestInfo, nil
 }
-// Update search
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update search
 func (m *SearchRequestBuilder) CreatePatchRequestInformation(options *SearchRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +136,7 @@ func (m *SearchRequestBuilder) CreatePatchRequestInformation(options *SearchRequ
     }
     return requestInfo, nil
 }
-// Get search
-// Parameters:
-//  - options : Options for the request
+// Get get search
 func (m *SearchRequestBuilder) Get(options *SearchRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchEntity, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -164,9 +148,7 @@ func (m *SearchRequestBuilder) Get(options *SearchRequestBuilderGetOptions)(*i53
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchEntity), nil
 }
-// Update search
-// Parameters:
-//  - options : Options for the request
+// Patch update search
 func (m *SearchRequestBuilder) Patch(options *SearchRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -181,9 +163,7 @@ func (m *SearchRequestBuilder) Patch(options *SearchRequestBuilderPatchOptions)(
 func (m *SearchRequestBuilder) Qnas()(*ia2bf4f3fe5831ab1e67fee5e544f828bb45264fc9a4823e780f848a593eed31e.QnasRequestBuilder) {
     return ia2bf4f3fe5831ab1e67fee5e544f828bb45264fc9a4823e780f848a593eed31e.NewQnasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.qnas.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// QnasById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.qnas.item collection
 func (m *SearchRequestBuilder) QnasById(id string)(*i5a7b1d161e5927fae4776d21687bd98261ca983357fb199581c959d3642cfc0c.QnaRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\planner\all\{plannerDelta-id}
+// plannerDeltaRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\all\{plannerDelta-id}
 type PlannerDeltaRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PlannerDeltaRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PlannerDeltaRequestBuilderDeleteOptions options for Delete
 type PlannerDeltaRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PlannerDeltaRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PlannerDeltaRequestBuilderGetOptions options for Get
 type PlannerDeltaRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PlannerDeltaRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get all from users
+// plannerDeltaRequestBuilderGetQueryParameters get all from users
 type PlannerDeltaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PlannerDeltaRequestBuilderPatchOptions options for Patch
 type PlannerDeltaRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerDelta;
@@ -53,10 +53,7 @@ type PlannerDeltaRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PlannerDeltaRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlannerDeltaRequestBuilderInternal instantiates a new PlannerDeltaRequestBuilder and sets the default values.
 func NewPlannerDeltaRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerDeltaRequestBuilder) {
     m := &PlannerDeltaRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPlannerDeltaRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PlannerDeltaRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlannerDeltaRequestBuilder instantiates a new PlannerDeltaRequestBuilder and sets the default values.
 func NewPlannerDeltaRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerDeltaRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property all for users
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property all for users
 func (m *PlannerDeltaRequestBuilder) CreateDeleteRequestInformation(options *PlannerDeltaRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PlannerDeltaRequestBuilder) CreateDeleteRequestInformation(options *Pla
     }
     return requestInfo, nil
 }
-// Get all from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get all from users
 func (m *PlannerDeltaRequestBuilder) CreateGetRequestInformation(options *PlannerDeltaRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PlannerDeltaRequestBuilder) CreateGetRequestInformation(options *Planne
     }
     return requestInfo, nil
 }
-// Update the navigation property all in users
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property all in users
 func (m *PlannerDeltaRequestBuilder) CreatePatchRequestInformation(options *PlannerDeltaRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PlannerDeltaRequestBuilder) CreatePatchRequestInformation(options *Plan
     }
     return requestInfo, nil
 }
-// Delete navigation property all for users
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property all for users
 func (m *PlannerDeltaRequestBuilder) Delete(options *PlannerDeltaRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PlannerDeltaRequestBuilder) Delete(options *PlannerDeltaRequestBuilderD
     }
     return nil
 }
-// Get all from users
-// Parameters:
-//  - options : Options for the request
+// Get get all from users
 func (m *PlannerDeltaRequestBuilder) Get(options *PlannerDeltaRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerDelta, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PlannerDeltaRequestBuilder) Get(options *PlannerDeltaRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerDelta), nil
 }
-// Update the navigation property all in users
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property all in users
 func (m *PlannerDeltaRequestBuilder) Patch(options *PlannerDeltaRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     i86e8e63e85de67171644c463e36cc57d3c920f484f6937360f52c82139946fb4 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenantgroups/tenantsearch"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\tenantGroups
+// tenantGroupsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenantGroups
 type TenantGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TenantGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TenantGroupsRequestBuilderGetOptions options for Get
 type TenantGroupsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type TenantGroupsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+// tenantGroupsRequestBuilderGetQueryParameters the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 type TenantGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type TenantGroupsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TenantGroupsRequestBuilderPostOptions options for Post
 type TenantGroupsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantGroup;
@@ -57,10 +57,7 @@ type TenantGroupsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TenantGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantGroupsRequestBuilderInternal instantiates a new TenantGroupsRequestBuilder and sets the default values.
 func NewTenantGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantGroupsRequestBuilder) {
     m := &TenantGroupsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewTenantGroupsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TenantGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantGroupsRequestBuilder instantiates a new TenantGroupsRequestBuilder and sets the default values.
 func NewTenantGroupsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantGroupsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTenantGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *TenantGroupsRequestBuilder) CreateGetRequestInformation(options *TenantGroupsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *TenantGroupsRequestBuilder) CreateGetRequestInformation(options *Tenant
     }
     return requestInfo, nil
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *TenantGroupsRequestBuilder) CreatePostRequestInformation(options *TenantGroupsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *TenantGroupsRequestBuilder) CreatePostRequestInformation(options *Tenan
     }
     return requestInfo, nil
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *TenantGroupsRequestBuilder) Get(options *TenantGroupsRequestBuilderGetOptions)(*TenantGroupsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *TenantGroupsRequestBuilder) Get(options *TenantGroupsRequestBuilderGetO
     }
     return res.(*TenantGroupsResponse), nil
 }
-// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 func (m *TenantGroupsRequestBuilder) Post(options *TenantGroupsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantGroup, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

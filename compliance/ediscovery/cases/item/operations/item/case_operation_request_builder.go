@@ -7,7 +7,7 @@ import (
     i4b926ddd6c83b037923683d8ce8fbfa2540cac08d897c5894d09cdefa07f202d "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/operations/item/caseexportoperation"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\operations\{caseOperation-id}
+// caseOperationRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\operations\{caseOperation-id}
 type CaseOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type CaseOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CaseOperationRequestBuilderDeleteOptions options for Delete
 type CaseOperationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type CaseOperationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CaseOperationRequestBuilderGetOptions options for Get
 type CaseOperationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type CaseOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns a list of case operation objects for this case. Nullable.
+// caseOperationRequestBuilderGetQueryParameters returns a list of case operation objects for this case. Nullable.
 type CaseOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CaseOperationRequestBuilderPatchOptions options for Patch
 type CaseOperationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CaseOperation;
@@ -57,10 +57,7 @@ type CaseOperationRequestBuilderPatchOptions struct {
 func (m *CaseOperationRequestBuilder) CaseExportOperation()(*i4b926ddd6c83b037923683d8ce8fbfa2540cac08d897c5894d09cdefa07f202d.CaseExportOperationRequestBuilder) {
     return i4b926ddd6c83b037923683d8ce8fbfa2540cac08d897c5894d09cdefa07f202d.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new CaseOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCaseOperationRequestBuilderInternal instantiates a new CaseOperationRequestBuilder and sets the default values.
 func NewCaseOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CaseOperationRequestBuilder) {
     m := &CaseOperationRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewCaseOperationRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CaseOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCaseOperationRequestBuilder instantiates a new CaseOperationRequestBuilder and sets the default values.
 func NewCaseOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CaseOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCaseOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns a list of case operation objects for this case. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation returns a list of case operation objects for this case. Nullable.
 func (m *CaseOperationRequestBuilder) CreateDeleteRequestInformation(options *CaseOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *CaseOperationRequestBuilder) CreateDeleteRequestInformation(options *Ca
     }
     return requestInfo, nil
 }
-// Returns a list of case operation objects for this case. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns a list of case operation objects for this case. Nullable.
 func (m *CaseOperationRequestBuilder) CreateGetRequestInformation(options *CaseOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CaseOperationRequestBuilder) CreateGetRequestInformation(options *CaseO
     }
     return requestInfo, nil
 }
-// Returns a list of case operation objects for this case. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation returns a list of case operation objects for this case. Nullable.
 func (m *CaseOperationRequestBuilder) CreatePatchRequestInformation(options *CaseOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *CaseOperationRequestBuilder) CreatePatchRequestInformation(options *Cas
     }
     return requestInfo, nil
 }
-// Returns a list of case operation objects for this case. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete returns a list of case operation objects for this case. Nullable.
 func (m *CaseOperationRequestBuilder) Delete(options *CaseOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *CaseOperationRequestBuilder) Delete(options *CaseOperationRequestBuilde
     }
     return nil
 }
-// Returns a list of case operation objects for this case. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get returns a list of case operation objects for this case. Nullable.
 func (m *CaseOperationRequestBuilder) Get(options *CaseOperationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CaseOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *CaseOperationRequestBuilder) Get(options *CaseOperationRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CaseOperation), nil
 }
-// Returns a list of case operation objects for this case. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch returns a list of case operation objects for this case. Nullable.
 func (m *CaseOperationRequestBuilder) Patch(options *CaseOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

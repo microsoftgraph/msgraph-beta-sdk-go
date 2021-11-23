@@ -11,7 +11,7 @@ import (
     ibf1ad675b59509c5f3216e9d430e98ab3b887534afb4bca984ab70b32d39075b "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates
+// updatesRequestBuilder builds and executes requests for operations under \admin\windows\updates
 type UpdatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type UpdatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UpdatesRequestBuilderDeleteOptions options for Delete
 type UpdatesRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type UpdatesRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UpdatesRequestBuilderGetOptions options for Get
 type UpdatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type UpdatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
+// updatesRequestBuilderGetQueryParameters entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 type UpdatesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UpdatesRequestBuilderPatchOptions options for Patch
 type UpdatesRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Updates;
@@ -61,10 +61,7 @@ type UpdatesRequestBuilderPatchOptions struct {
 func (m *UpdatesRequestBuilder) Catalog()(*i0475d54fef399e8dd6955c2d001134c125fb7788ce83c57eedfc935bfa992080.CatalogRequestBuilder) {
     return i0475d54fef399e8dd6955c2d001134c125fb7788ce83c57eedfc935bfa992080.NewCatalogRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new UpdatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdatesRequestBuilderInternal instantiates a new UpdatesRequestBuilder and sets the default values.
 func NewUpdatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatesRequestBuilder) {
     m := &UpdatesRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewUpdatesRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UpdatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdatesRequestBuilder instantiates a new UpdatesRequestBuilder and sets the default values.
 func NewUpdatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUpdatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 func (m *UpdatesRequestBuilder) CreateDeleteRequestInformation(options *UpdatesRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *UpdatesRequestBuilder) CreateDeleteRequestInformation(options *UpdatesR
     }
     return requestInfo, nil
 }
-// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 func (m *UpdatesRequestBuilder) CreateGetRequestInformation(options *UpdatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *UpdatesRequestBuilder) CreateGetRequestInformation(options *UpdatesRequ
     }
     return requestInfo, nil
 }
-// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 func (m *UpdatesRequestBuilder) CreatePatchRequestInformation(options *UpdatesRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,9 +135,7 @@ func (m *UpdatesRequestBuilder) CreatePatchRequestInformation(options *UpdatesRe
     }
     return requestInfo, nil
 }
-// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 func (m *UpdatesRequestBuilder) Delete(options *UpdatesRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -164,9 +150,7 @@ func (m *UpdatesRequestBuilder) Delete(options *UpdatesRequestBuilderDeleteOptio
 func (m *UpdatesRequestBuilder) Deployments()(*i387197d5cc2dce8dbb3b5340ab9e1213cb3d3d425caddd84e7d1c7ddb338d669.DeploymentsRequestBuilder) {
     return i387197d5cc2dce8dbb3b5340ab9e1213cb3d3d425caddd84e7d1c7ddb338d669.NewDeploymentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.deployments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeploymentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.deployments.item collection
 func (m *UpdatesRequestBuilder) DeploymentsById(id string)(*ibf1ad675b59509c5f3216e9d430e98ab3b887534afb4bca984ab70b32d39075b.DeploymentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -177,9 +161,7 @@ func (m *UpdatesRequestBuilder) DeploymentsById(id string)(*ibf1ad675b59509c5f32
     }
     return ibf1ad675b59509c5f3216e9d430e98ab3b887534afb4bca984ab70b32d39075b.NewDeploymentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 func (m *UpdatesRequestBuilder) Get(options *UpdatesRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Updates, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -191,9 +173,7 @@ func (m *UpdatesRequestBuilder) Get(options *UpdatesRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Updates), nil
 }
-// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 func (m *UpdatesRequestBuilder) Patch(options *UpdatesRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -208,9 +188,7 @@ func (m *UpdatesRequestBuilder) Patch(options *UpdatesRequestBuilderPatchOptions
 func (m *UpdatesRequestBuilder) UpdatableAssets()(*id8360e8943a0ee251dee4de20317b335abdd17663b8ed227f06c1426f54dc863.UpdatableAssetsRequestBuilder) {
     return id8360e8943a0ee251dee4de20317b335abdd17663b8ed227f06c1426f54dc863.NewUpdatableAssetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.updatableAssets.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UpdatableAssetsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.updatableAssets.item collection
 func (m *UpdatesRequestBuilder) UpdatableAssetsById(id string)(*i6ba3b57fd9faa032676b28e7c1ba8fbcadca736ef31ae441fd9cb31c54634f6b.UpdatableAssetRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

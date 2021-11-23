@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsScoreHistory\{userExperienceAnalyticsScoreHistory-id}
+// userExperienceAnalyticsScoreHistoryRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsScoreHistory\{userExperienceAnalyticsScoreHistory-id}
 type UserExperienceAnalyticsScoreHistoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsScoreHistoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsScoreHistoryRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsScoreHistoryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UserExperienceAnalyticsScoreHistoryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsScoreHistoryRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsScoreHistoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UserExperienceAnalyticsScoreHistoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics device Startup Score History
+// userExperienceAnalyticsScoreHistoryRequestBuilderGetQueryParameters user experience analytics device Startup Score History
 type UserExperienceAnalyticsScoreHistoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsScoreHistoryRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsScoreHistoryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsScoreHistory;
@@ -53,10 +53,7 @@ type UserExperienceAnalyticsScoreHistoryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsScoreHistoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal instantiates a new UserExperienceAnalyticsScoreHistoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsScoreHistoryRequestBuilder) {
     m := &UserExperienceAnalyticsScoreHistoryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(pathParameters
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsScoreHistoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsScoreHistoryRequestBuilder instantiates a new UserExperienceAnalyticsScoreHistoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsScoreHistoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsScoreHistoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsScoreHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics device Startup Score History
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user experience analytics device Startup Score History
 func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsScoreHistoryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// User experience analytics device Startup Score History
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics device Startup Score History
 func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsScoreHistoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// User experience analytics device Startup Score History
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user experience analytics device Startup Score History
 func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsScoreHistoryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// User experience analytics device Startup Score History
-// Parameters:
-//  - options : Options for the request
+// Delete user experience analytics device Startup Score History
 func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) Delete(options *UserExperienceAnalyticsScoreHistoryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) Delete(options *User
     }
     return nil
 }
-// User experience analytics device Startup Score History
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics device Startup Score History
 func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) Get(options *UserExperienceAnalyticsScoreHistoryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsScoreHistory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) Get(options *UserExp
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsScoreHistory), nil
 }
-// User experience analytics device Startup Score History
-// Parameters:
-//  - options : Options for the request
+// Patch user experience analytics device Startup Score History
 func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) Patch(options *UserExperienceAnalyticsScoreHistoryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

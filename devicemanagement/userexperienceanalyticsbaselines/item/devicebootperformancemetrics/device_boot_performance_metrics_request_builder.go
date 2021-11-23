@@ -7,7 +7,7 @@ import (
     i5b5cd12f65bfb5c953148247de1040135ed1d9fabecb7dac731c36d12cfc7bd1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbaselines/item/devicebootperformancemetrics/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\deviceBootPerformanceMetrics
+// deviceBootPerformanceMetricsRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\deviceBootPerformanceMetrics
 type DeviceBootPerformanceMetricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceBootPerformanceMetricsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceBootPerformanceMetricsRequestBuilderGetOptions options for Get
 type DeviceBootPerformanceMetricsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type DeviceBootPerformanceMetricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user experience analytics device boot performance metrics.
+// deviceBootPerformanceMetricsRequestBuilderGetQueryParameters the user experience analytics device boot performance metrics.
 type DeviceBootPerformanceMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new DeviceBootPerformanceMetricsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceBootPerformanceMetricsRequestBuilderInternal instantiates a new DeviceBootPerformanceMetricsRequestBuilder and sets the default values.
 func NewDeviceBootPerformanceMetricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceBootPerformanceMetricsRequestBuilder) {
     m := &DeviceBootPerformanceMetricsRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewDeviceBootPerformanceMetricsRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceBootPerformanceMetricsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceBootPerformanceMetricsRequestBuilder instantiates a new DeviceBootPerformanceMetricsRequestBuilder and sets the default values.
 func NewDeviceBootPerformanceMetricsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceBootPerformanceMetricsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceBootPerformanceMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user experience analytics device boot performance metrics.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user experience analytics device boot performance metrics.
 func (m *DeviceBootPerformanceMetricsRequestBuilder) CreateGetRequestInformation(options *DeviceBootPerformanceMetricsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *DeviceBootPerformanceMetricsRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// The user experience analytics device boot performance metrics.
-// Parameters:
-//  - options : Options for the request
+// Get the user experience analytics device boot performance metrics.
 func (m *DeviceBootPerformanceMetricsRequestBuilder) Get(options *DeviceBootPerformanceMetricsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

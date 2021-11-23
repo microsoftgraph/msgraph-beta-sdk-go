@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// userAnalytics 
 type UserAnalytics struct {
     Entity
     // The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
@@ -12,14 +12,14 @@ type UserAnalytics struct {
     // The current settings for a user to use the analytics API.
     settings *Settings;
 }
-// Instantiates a new userAnalytics and sets the default values.
+// NewUserAnalytics instantiates a new userAnalytics and sets the default values.
 func NewUserAnalytics()(*UserAnalytics) {
     m := &UserAnalytics{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
+// GetActivityStatistics gets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *UserAnalytics) GetActivityStatistics()([]ActivityStatistics) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *UserAnalytics) GetActivityStatistics()([]ActivityStatistics) {
         return m.activityStatistics
     }
 }
-// Gets the settings property value. The current settings for a user to use the analytics API.
+// GetSettings gets the settings property value. The current settings for a user to use the analytics API.
 func (m *UserAnalytics) GetSettings()(*Settings) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *UserAnalytics) GetSettings()(*Settings) {
         return m.settings
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activityStatistics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -67,9 +67,7 @@ func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *UserAnalytics) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserAnalytics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -94,15 +92,11 @@ func (m *UserAnalytics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the activityStatistics property.
+// SetActivityStatistics sets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *UserAnalytics) SetActivityStatistics(value []ActivityStatistics)() {
     m.activityStatistics = value
 }
-// Sets the settings property value. The current settings for a user to use the analytics API.
-// Parameters:
-//  - value : Value to set for the settings property.
+// SetSettings sets the settings property value. The current settings for a user to use the analytics API.
 func (m *UserAnalytics) SetSettings(value *Settings)() {
     m.settings = value
 }

@@ -9,7 +9,7 @@ import (
     i72d2db886a67ea5c8b2d447e3281e38c1b40d1586e8b0f87d60e35078106d843 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/defaultmanagedappprotections/item/apps/item"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\defaultManagedAppProtections\{defaultManagedAppProtection-id}
+// defaultManagedAppProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\defaultManagedAppProtections\{defaultManagedAppProtection-id}
 type DefaultManagedAppProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type DefaultManagedAppProtectionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DefaultManagedAppProtectionRequestBuilderDeleteOptions options for Delete
 type DefaultManagedAppProtectionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type DefaultManagedAppProtectionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DefaultManagedAppProtectionRequestBuilderGetOptions options for Get
 type DefaultManagedAppProtectionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type DefaultManagedAppProtectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Default managed app policies.
+// defaultManagedAppProtectionRequestBuilderGetQueryParameters default managed app policies.
 type DefaultManagedAppProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DefaultManagedAppProtectionRequestBuilderPatchOptions options for Patch
 type DefaultManagedAppProtectionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DefaultManagedAppProtection;
@@ -59,9 +59,7 @@ type DefaultManagedAppProtectionRequestBuilderPatchOptions struct {
 func (m *DefaultManagedAppProtectionRequestBuilder) Apps()(*i43397862a300dc9554127527a849d0259a0f44d5ba7bb4d8a944c314d42b5bc4.AppsRequestBuilder) {
     return i43397862a300dc9554127527a849d0259a0f44d5ba7bb4d8a944c314d42b5bc4.NewAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.defaultManagedAppProtections.item.apps.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.defaultManagedAppProtections.item.apps.item collection
 func (m *DefaultManagedAppProtectionRequestBuilder) AppsById(id string)(*i72d2db886a67ea5c8b2d447e3281e38c1b40d1586e8b0f87d60e35078106d843.ManagedMobileAppRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -72,10 +70,7 @@ func (m *DefaultManagedAppProtectionRequestBuilder) AppsById(id string)(*i72d2db
     }
     return i72d2db886a67ea5c8b2d447e3281e38c1b40d1586e8b0f87d60e35078106d843.NewManagedMobileAppRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new DefaultManagedAppProtectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefaultManagedAppProtectionRequestBuilderInternal instantiates a new DefaultManagedAppProtectionRequestBuilder and sets the default values.
 func NewDefaultManagedAppProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefaultManagedAppProtectionRequestBuilder) {
     m := &DefaultManagedAppProtectionRequestBuilder{
     }
@@ -88,18 +83,13 @@ func NewDefaultManagedAppProtectionRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DefaultManagedAppProtectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefaultManagedAppProtectionRequestBuilder instantiates a new DefaultManagedAppProtectionRequestBuilder and sets the default values.
 func NewDefaultManagedAppProtectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefaultManagedAppProtectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDefaultManagedAppProtectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Default managed app policies.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation default managed app policies.
 func (m *DefaultManagedAppProtectionRequestBuilder) CreateDeleteRequestInformation(options *DefaultManagedAppProtectionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,9 +106,7 @@ func (m *DefaultManagedAppProtectionRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// Default managed app policies.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation default managed app policies.
 func (m *DefaultManagedAppProtectionRequestBuilder) CreateGetRequestInformation(options *DefaultManagedAppProtectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,9 +126,7 @@ func (m *DefaultManagedAppProtectionRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// Default managed app policies.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation default managed app policies.
 func (m *DefaultManagedAppProtectionRequestBuilder) CreatePatchRequestInformation(options *DefaultManagedAppProtectionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -158,9 +144,7 @@ func (m *DefaultManagedAppProtectionRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// Default managed app policies.
-// Parameters:
-//  - options : Options for the request
+// Delete default managed app policies.
 func (m *DefaultManagedAppProtectionRequestBuilder) Delete(options *DefaultManagedAppProtectionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *DefaultManagedAppProtectionRequestBuilder) Delete(options *DefaultManag
 func (m *DefaultManagedAppProtectionRequestBuilder) DeploymentSummary()(*ib47094622049f786329af821ccfdd57ac96796bc8306eb34cf35df049811de11.DeploymentSummaryRequestBuilder) {
     return ib47094622049f786329af821ccfdd57ac96796bc8306eb34cf35df049811de11.NewDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Default managed app policies.
-// Parameters:
-//  - options : Options for the request
+// Get default managed app policies.
 func (m *DefaultManagedAppProtectionRequestBuilder) Get(options *DefaultManagedAppProtectionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DefaultManagedAppProtection, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -189,9 +171,7 @@ func (m *DefaultManagedAppProtectionRequestBuilder) Get(options *DefaultManagedA
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DefaultManagedAppProtection), nil
 }
-// Default managed app policies.
-// Parameters:
-//  - options : Options for the request
+// Patch default managed app policies.
 func (m *DefaultManagedAppProtectionRequestBuilder) Patch(options *DefaultManagedAppProtectionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// parseExpressionResponse 
 type ParseExpressionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type ParseExpressionResponse struct {
     // true if the expression was parsed successfully.
     parsingSucceeded *bool;
 }
-// Instantiates a new parseExpressionResponse and sets the default values.
+// NewParseExpressionResponse instantiates a new parseExpressionResponse and sets the default values.
 func NewParseExpressionResponse()(*ParseExpressionResponse) {
     m := &ParseExpressionResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParseExpressionResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *ParseExpressionResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the error property value. Error details, if expression evaluation resulted in an error.
+// GetError gets the error property value. Error details, if expression evaluation resulted in an error.
 func (m *ParseExpressionResponse) GetError()(*PublicError) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *ParseExpressionResponse) GetError()(*PublicError) {
         return m.error
     }
 }
-// Gets the evaluationResult property value. A collection of values produced by the evaluation of the expression.
+// GetEvaluationResult gets the evaluationResult property value. A collection of values produced by the evaluation of the expression.
 func (m *ParseExpressionResponse) GetEvaluationResult()([]string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *ParseExpressionResponse) GetEvaluationResult()([]string) {
         return m.evaluationResult
     }
 }
-// Gets the evaluationSucceeded property value. true if the evaluation was successful.
+// GetEvaluationSucceeded gets the evaluationSucceeded property value. true if the evaluation was successful.
 func (m *ParseExpressionResponse) GetEvaluationSucceeded()(*bool) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *ParseExpressionResponse) GetEvaluationSucceeded()(*bool) {
         return m.evaluationSucceeded
     }
 }
-// Gets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.
+// GetParsedExpression gets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.
 func (m *ParseExpressionResponse) GetParsedExpression()(*AttributeMappingSource) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *ParseExpressionResponse) GetParsedExpression()(*AttributeMappingSource)
         return m.parsedExpression
     }
 }
-// Gets the parsingSucceeded property value. true if the expression was parsed successfully.
+// GetParsingSucceeded gets the parsingSucceeded property value. true if the expression was parsed successfully.
 func (m *ParseExpressionResponse) GetParsingSucceeded()(*bool) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *ParseExpressionResponse) GetParsingSucceeded()(*bool) {
         return m.parsingSucceeded
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,9 +136,7 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
 func (m *ParseExpressionResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ParseExpressionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("error", m.GetError())
@@ -178,39 +176,27 @@ func (m *ParseExpressionResponse) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParseExpressionResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the error property value. Error details, if expression evaluation resulted in an error.
-// Parameters:
-//  - value : Value to set for the error property.
+// SetError sets the error property value. Error details, if expression evaluation resulted in an error.
 func (m *ParseExpressionResponse) SetError(value *PublicError)() {
     m.error = value
 }
-// Sets the evaluationResult property value. A collection of values produced by the evaluation of the expression.
-// Parameters:
-//  - value : Value to set for the evaluationResult property.
+// SetEvaluationResult sets the evaluationResult property value. A collection of values produced by the evaluation of the expression.
 func (m *ParseExpressionResponse) SetEvaluationResult(value []string)() {
     m.evaluationResult = value
 }
-// Sets the evaluationSucceeded property value. true if the evaluation was successful.
-// Parameters:
-//  - value : Value to set for the evaluationSucceeded property.
+// SetEvaluationSucceeded sets the evaluationSucceeded property value. true if the evaluation was successful.
 func (m *ParseExpressionResponse) SetEvaluationSucceeded(value *bool)() {
     m.evaluationSucceeded = value
 }
-// Sets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.
-// Parameters:
-//  - value : Value to set for the parsedExpression property.
+// SetParsedExpression sets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.
 func (m *ParseExpressionResponse) SetParsedExpression(value *AttributeMappingSource)() {
     m.parsedExpression = value
 }
-// Sets the parsingSucceeded property value. true if the expression was parsed successfully.
-// Parameters:
-//  - value : Value to set for the parsingSucceeded property.
+// SetParsingSucceeded sets the parsingSucceeded property value. true if the expression was parsed successfully.
 func (m *ParseExpressionResponse) SetParsingSucceeded(value *bool)() {
     m.parsingSucceeded = value
 }

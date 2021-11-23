@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\tenantsDetailedInformation
+// tenantsDetailedInformationRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenantsDetailedInformation
 type TenantsDetailedInformationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TenantsDetailedInformationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TenantsDetailedInformationRequestBuilderGetOptions options for Get
 type TenantsDetailedInformationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TenantsDetailedInformationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection tenant level detailed information across managed tenants.
+// tenantsDetailedInformationRequestBuilderGetQueryParameters the collection tenant level detailed information across managed tenants.
 type TenantsDetailedInformationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TenantsDetailedInformationRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TenantsDetailedInformationRequestBuilderPostOptions options for Post
 type TenantsDetailedInformationRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantDetailedInformation;
@@ -56,10 +56,7 @@ type TenantsDetailedInformationRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TenantsDetailedInformationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantsDetailedInformationRequestBuilderInternal instantiates a new TenantsDetailedInformationRequestBuilder and sets the default values.
 func NewTenantsDetailedInformationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantsDetailedInformationRequestBuilder) {
     m := &TenantsDetailedInformationRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTenantsDetailedInformationRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TenantsDetailedInformationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantsDetailedInformationRequestBuilder instantiates a new TenantsDetailedInformationRequestBuilder and sets the default values.
 func NewTenantsDetailedInformationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantsDetailedInformationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTenantsDetailedInformationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection tenant level detailed information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection tenant level detailed information across managed tenants.
 func (m *TenantsDetailedInformationRequestBuilder) CreateGetRequestInformation(options *TenantsDetailedInformationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TenantsDetailedInformationRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// The collection tenant level detailed information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection tenant level detailed information across managed tenants.
 func (m *TenantsDetailedInformationRequestBuilder) CreatePostRequestInformation(options *TenantsDetailedInformationRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TenantsDetailedInformationRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// The collection tenant level detailed information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the collection tenant level detailed information across managed tenants.
 func (m *TenantsDetailedInformationRequestBuilder) Get(options *TenantsDetailedInformationRequestBuilderGetOptions)(*TenantsDetailedInformationResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TenantsDetailedInformationRequestBuilder) Get(options *TenantsDetailedI
     }
     return res.(*TenantsDetailedInformationResponse), nil
 }
-// The collection tenant level detailed information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Post the collection tenant level detailed information across managed tenants.
 func (m *TenantsDetailedInformationRequestBuilder) Post(options *TenantsDetailedInformationRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantDetailedInformation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

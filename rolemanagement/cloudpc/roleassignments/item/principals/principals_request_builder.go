@@ -6,7 +6,7 @@ import (
     i02a173267c4ff8046d2407c10b08c33da906909e66ed4d85efbf85f0ce411c5c "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/cloudpc/roleassignments/item/principals/ref"
 )
 
-// Builds and executes requests for operations under \roleManagement\cloudPC\roleAssignments\{unifiedRoleAssignmentMultiple-id}\principals
+// principalsRequestBuilder builds and executes requests for operations under \roleManagement\cloudPC\roleAssignments\{unifiedRoleAssignmentMultiple-id}\principals
 type PrincipalsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PrincipalsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PrincipalsRequestBuilderGetOptions options for Get
 type PrincipalsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PrincipalsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+// principalsRequestBuilderGetQueryParameters read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 type PrincipalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type PrincipalsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new PrincipalsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrincipalsRequestBuilderInternal instantiates a new PrincipalsRequestBuilder and sets the default values.
 func NewPrincipalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrincipalsRequestBuilder) {
     m := &PrincipalsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewPrincipalsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrincipalsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrincipalsRequestBuilder instantiates a new PrincipalsRequestBuilder and sets the default values.
 func NewPrincipalsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrincipalsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrincipalsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *PrincipalsRequestBuilder) CreateGetRequestInformation(options *PrincipalsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *PrincipalsRequestBuilder) CreateGetRequestInformation(options *Principa
     }
     return requestInfo, nil
 }
-// Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *PrincipalsRequestBuilder) Get(options *PrincipalsRequestBuilderGetOptions)(*PrincipalsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

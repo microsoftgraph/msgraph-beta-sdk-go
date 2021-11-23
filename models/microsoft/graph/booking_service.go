@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// bookingService 
 type BookingService struct {
     BookingNamedEntity
     // 
@@ -40,14 +40,14 @@ type BookingService struct {
     // The URL a customer uses to access the service.
     webUrl *string;
 }
-// Instantiates a new bookingService and sets the default values.
+// NewBookingService instantiates a new bookingService and sets the default values.
 func NewBookingService()(*BookingService) {
     m := &BookingService{
         BookingNamedEntity: *NewBookingNamedEntity(),
     }
     return m
 }
-// Gets the additionalInformation property value. 
+// GetAdditionalInformation gets the additionalInformation property value. 
 func (m *BookingService) GetAdditionalInformation()(*string) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *BookingService) GetAdditionalInformation()(*string) {
         return m.additionalInformation
     }
 }
-// Gets the defaultDuration property value. The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
+// GetDefaultDuration gets the defaultDuration property value. The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
 func (m *BookingService) GetDefaultDuration()(*string) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *BookingService) GetDefaultDuration()(*string) {
         return m.defaultDuration
     }
 }
-// Gets the defaultLocation property value. The default physical location for the service.
+// GetDefaultLocation gets the defaultLocation property value. The default physical location for the service.
 func (m *BookingService) GetDefaultLocation()(*Location) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *BookingService) GetDefaultLocation()(*Location) {
         return m.defaultLocation
     }
 }
-// Gets the defaultPrice property value. The default monetary price for the service.
+// GetDefaultPrice gets the defaultPrice property value. The default monetary price for the service.
 func (m *BookingService) GetDefaultPrice()(*float64) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *BookingService) GetDefaultPrice()(*float64) {
         return m.defaultPrice
     }
 }
-// Gets the defaultPriceType property value. The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet.
+// GetDefaultPriceType gets the defaultPriceType property value. The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet.
 func (m *BookingService) GetDefaultPriceType()(*BookingPriceType) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *BookingService) GetDefaultPriceType()(*BookingPriceType) {
         return m.defaultPriceType
     }
 }
-// Gets the defaultReminders property value. The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
+// GetDefaultReminders gets the defaultReminders property value. The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
 func (m *BookingService) GetDefaultReminders()([]BookingReminder) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *BookingService) GetDefaultReminders()([]BookingReminder) {
         return m.defaultReminders
     }
 }
-// Gets the description property value. A text description for the service.
+// GetDescription gets the description property value. A text description for the service.
 func (m *BookingService) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -103,7 +103,7 @@ func (m *BookingService) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+// GetIsHiddenFromCustomers gets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
 func (m *BookingService) GetIsHiddenFromCustomers()(*bool) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *BookingService) GetIsHiddenFromCustomers()(*bool) {
         return m.isHiddenFromCustomers
     }
 }
-// Gets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
+// GetIsLocationOnline gets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
 func (m *BookingService) GetIsLocationOnline()(*bool) {
     if m == nil {
         return nil
@@ -119,7 +119,7 @@ func (m *BookingService) GetIsLocationOnline()(*bool) {
         return m.isLocationOnline
     }
 }
-// Gets the notes property value. Additional information about this service.
+// GetNotes gets the notes property value. Additional information about this service.
 func (m *BookingService) GetNotes()(*string) {
     if m == nil {
         return nil
@@ -127,7 +127,7 @@ func (m *BookingService) GetNotes()(*string) {
         return m.notes
     }
 }
-// Gets the postBuffer property value. The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
+// GetPostBuffer gets the postBuffer property value. The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
 func (m *BookingService) GetPostBuffer()(*string) {
     if m == nil {
         return nil
@@ -135,7 +135,7 @@ func (m *BookingService) GetPostBuffer()(*string) {
         return m.postBuffer
     }
 }
-// Gets the preBuffer property value. The time to buffer before an appointment for this service can start.
+// GetPreBuffer gets the preBuffer property value. The time to buffer before an appointment for this service can start.
 func (m *BookingService) GetPreBuffer()(*string) {
     if m == nil {
         return nil
@@ -143,7 +143,7 @@ func (m *BookingService) GetPreBuffer()(*string) {
         return m.preBuffer
     }
 }
-// Gets the schedulingPolicy property value. The set of policies that determine how appointments for this type of service should be created and managed.
+// GetSchedulingPolicy gets the schedulingPolicy property value. The set of policies that determine how appointments for this type of service should be created and managed.
 func (m *BookingService) GetSchedulingPolicy()(*BookingSchedulingPolicy) {
     if m == nil {
         return nil
@@ -151,7 +151,7 @@ func (m *BookingService) GetSchedulingPolicy()(*BookingSchedulingPolicy) {
         return m.schedulingPolicy
     }
 }
-// Gets the smsNotificationsEnabled property value. True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
+// GetSmsNotificationsEnabled gets the smsNotificationsEnabled property value. True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
 func (m *BookingService) GetSmsNotificationsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -159,7 +159,7 @@ func (m *BookingService) GetSmsNotificationsEnabled()(*bool) {
         return m.smsNotificationsEnabled
     }
 }
-// Gets the staffMemberIds property value. Represents those staff members who provide this service.
+// GetStaffMemberIds gets the staffMemberIds property value. Represents those staff members who provide this service.
 func (m *BookingService) GetStaffMemberIds()([]string) {
     if m == nil {
         return nil
@@ -167,7 +167,7 @@ func (m *BookingService) GetStaffMemberIds()([]string) {
         return m.staffMemberIds
     }
 }
-// Gets the webUrl property value. The URL a customer uses to access the service.
+// GetWebUrl gets the webUrl property value. The URL a customer uses to access the service.
 func (m *BookingService) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -175,7 +175,7 @@ func (m *BookingService) GetWebUrl()(*string) {
         return m.webUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.BookingNamedEntity.GetFieldDeserializers()
     res["additionalInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -352,9 +352,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *BookingService) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *BookingService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.BookingNamedEntity.Serialize(writer)
     if err != nil {
@@ -464,99 +462,67 @@ func (m *BookingService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the additionalInformation property value. 
-// Parameters:
-//  - value : Value to set for the additionalInformation property.
+// SetAdditionalInformation sets the additionalInformation property value. 
 func (m *BookingService) SetAdditionalInformation(value *string)() {
     m.additionalInformation = value
 }
-// Sets the defaultDuration property value. The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
-// Parameters:
-//  - value : Value to set for the defaultDuration property.
+// SetDefaultDuration sets the defaultDuration property value. The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
 func (m *BookingService) SetDefaultDuration(value *string)() {
     m.defaultDuration = value
 }
-// Sets the defaultLocation property value. The default physical location for the service.
-// Parameters:
-//  - value : Value to set for the defaultLocation property.
+// SetDefaultLocation sets the defaultLocation property value. The default physical location for the service.
 func (m *BookingService) SetDefaultLocation(value *Location)() {
     m.defaultLocation = value
 }
-// Sets the defaultPrice property value. The default monetary price for the service.
-// Parameters:
-//  - value : Value to set for the defaultPrice property.
+// SetDefaultPrice sets the defaultPrice property value. The default monetary price for the service.
 func (m *BookingService) SetDefaultPrice(value *float64)() {
     m.defaultPrice = value
 }
-// Sets the defaultPriceType property value. The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet.
-// Parameters:
-//  - value : Value to set for the defaultPriceType property.
+// SetDefaultPriceType sets the defaultPriceType property value. The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet.
 func (m *BookingService) SetDefaultPriceType(value *BookingPriceType)() {
     m.defaultPriceType = value
 }
-// Sets the defaultReminders property value. The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
-// Parameters:
-//  - value : Value to set for the defaultReminders property.
+// SetDefaultReminders sets the defaultReminders property value. The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
 func (m *BookingService) SetDefaultReminders(value []BookingReminder)() {
     m.defaultReminders = value
 }
-// Sets the description property value. A text description for the service.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. A text description for the service.
 func (m *BookingService) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
-// Parameters:
-//  - value : Value to set for the isHiddenFromCustomers property.
+// SetIsHiddenFromCustomers sets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
 func (m *BookingService) SetIsHiddenFromCustomers(value *bool)() {
     m.isHiddenFromCustomers = value
 }
-// Sets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
-// Parameters:
-//  - value : Value to set for the isLocationOnline property.
+// SetIsLocationOnline sets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
 func (m *BookingService) SetIsLocationOnline(value *bool)() {
     m.isLocationOnline = value
 }
-// Sets the notes property value. Additional information about this service.
-// Parameters:
-//  - value : Value to set for the notes property.
+// SetNotes sets the notes property value. Additional information about this service.
 func (m *BookingService) SetNotes(value *string)() {
     m.notes = value
 }
-// Sets the postBuffer property value. The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
-// Parameters:
-//  - value : Value to set for the postBuffer property.
+// SetPostBuffer sets the postBuffer property value. The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
 func (m *BookingService) SetPostBuffer(value *string)() {
     m.postBuffer = value
 }
-// Sets the preBuffer property value. The time to buffer before an appointment for this service can start.
-// Parameters:
-//  - value : Value to set for the preBuffer property.
+// SetPreBuffer sets the preBuffer property value. The time to buffer before an appointment for this service can start.
 func (m *BookingService) SetPreBuffer(value *string)() {
     m.preBuffer = value
 }
-// Sets the schedulingPolicy property value. The set of policies that determine how appointments for this type of service should be created and managed.
-// Parameters:
-//  - value : Value to set for the schedulingPolicy property.
+// SetSchedulingPolicy sets the schedulingPolicy property value. The set of policies that determine how appointments for this type of service should be created and managed.
 func (m *BookingService) SetSchedulingPolicy(value *BookingSchedulingPolicy)() {
     m.schedulingPolicy = value
 }
-// Sets the smsNotificationsEnabled property value. True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
-// Parameters:
-//  - value : Value to set for the smsNotificationsEnabled property.
+// SetSmsNotificationsEnabled sets the smsNotificationsEnabled property value. True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
 func (m *BookingService) SetSmsNotificationsEnabled(value *bool)() {
     m.smsNotificationsEnabled = value
 }
-// Sets the staffMemberIds property value. Represents those staff members who provide this service.
-// Parameters:
-//  - value : Value to set for the staffMemberIds property.
+// SetStaffMemberIds sets the staffMemberIds property value. Represents those staff members who provide this service.
 func (m *BookingService) SetStaffMemberIds(value []string)() {
     m.staffMemberIds = value
 }
-// Sets the webUrl property value. The URL a customer uses to access the service.
-// Parameters:
-//  - value : Value to set for the webUrl property.
+// SetWebUrl sets the webUrl property value. The URL a customer uses to access the service.
 func (m *BookingService) SetWebUrl(value *string)() {
     m.webUrl = value
 }

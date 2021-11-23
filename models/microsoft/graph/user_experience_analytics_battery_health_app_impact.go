@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// userExperienceAnalyticsBatteryHealthAppImpact 
 type UserExperienceAnalyticsBatteryHealthAppImpact struct {
     Entity
     // Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
@@ -20,14 +20,14 @@ type UserExperienceAnalyticsBatteryHealthAppImpact struct {
     // true if the user had active interaction with the app.
     isForegroundApp *bool;
 }
-// Instantiates a new userExperienceAnalyticsBatteryHealthAppImpact and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthAppImpact instantiates a new userExperienceAnalyticsBatteryHealthAppImpact and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthAppImpact()(*UserExperienceAnalyticsBatteryHealthAppImpact) {
     m := &UserExperienceAnalyticsBatteryHealthAppImpact{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+// GetActiveDevices gets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetActiveDevices()(*int32) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetActiveDevices()(*int3
         return m.activeDevices
     }
 }
-// Gets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
+// GetAppDisplayName gets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppDisplayName()(*string) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppDisplayName()(*str
         return m.appDisplayName
     }
 }
-// Gets the appName property value. App name. Eg: oltk.exe
+// GetAppName gets the appName property value. App name. Eg: oltk.exe
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppName()(*string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppName()(*string) {
         return m.appName
     }
 }
-// Gets the appPublisher property value. App publisher. Eg: Microsoft Corporation
+// GetAppPublisher gets the appPublisher property value. App publisher. Eg: Microsoft Corporation
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppPublisher()(*string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppPublisher()(*strin
         return m.appPublisher
     }
 }
-// Gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// GetBatteryUsagePercentage gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetBatteryUsagePercentage()(*float64) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetBatteryUsagePercentag
         return m.batteryUsagePercentage
     }
 }
-// Gets the isForegroundApp property value. true if the user had active interaction with the app.
+// GetIsForegroundApp gets the isForegroundApp property value. true if the user had active interaction with the app.
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetIsForegroundApp()(*bool) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetIsForegroundApp()(*bo
         return m.isForegroundApp
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,9 +143,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -189,39 +187,27 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) Serialize(writer i04eb53
     }
     return nil
 }
-// Sets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the activeDevices property.
+// SetActiveDevices sets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetActiveDevices(value *int32)() {
     m.activeDevices = value
 }
-// Sets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
-// Parameters:
-//  - value : Value to set for the appDisplayName property.
+// SetAppDisplayName sets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetAppDisplayName(value *string)() {
     m.appDisplayName = value
 }
-// Sets the appName property value. App name. Eg: oltk.exe
-// Parameters:
-//  - value : Value to set for the appName property.
+// SetAppName sets the appName property value. App name. Eg: oltk.exe
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetAppName(value *string)() {
     m.appName = value
 }
-// Sets the appPublisher property value. App publisher. Eg: Microsoft Corporation
-// Parameters:
-//  - value : Value to set for the appPublisher property.
+// SetAppPublisher sets the appPublisher property value. App publisher. Eg: Microsoft Corporation
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetAppPublisher(value *string)() {
     m.appPublisher = value
 }
-// Sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-// Parameters:
-//  - value : Value to set for the batteryUsagePercentage property.
+// SetBatteryUsagePercentage sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetBatteryUsagePercentage(value *float64)() {
     m.batteryUsagePercentage = value
 }
-// Sets the isForegroundApp property value. true if the user had active interaction with the app.
-// Parameters:
-//  - value : Value to set for the isForegroundApp property.
+// SetIsForegroundApp sets the isForegroundApp property value. true if the user had active interaction with the app.
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetIsForegroundApp(value *bool)() {
     m.isForegroundApp = value
 }

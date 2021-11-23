@@ -12,7 +12,7 @@ import (
     idae59aa73e78d2aa3e7943286419e2c7b77cd5e337f001c8305c745502c3740f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/termsandconditions/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}
+// termsAndConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}
 type TermsAndConditionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type TermsAndConditionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TermsAndConditionsRequestBuilderDeleteOptions options for Delete
 type TermsAndConditionsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type TermsAndConditionsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TermsAndConditionsRequestBuilderGetOptions options for Get
 type TermsAndConditionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -41,14 +41,14 @@ type TermsAndConditionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The terms and conditions associated with device management of the company.
+// termsAndConditionsRequestBuilderGetQueryParameters the terms and conditions associated with device management of the company.
 type TermsAndConditionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TermsAndConditionsRequestBuilderPatchOptions options for Patch
 type TermsAndConditionsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TermsAndConditions;
@@ -62,9 +62,7 @@ type TermsAndConditionsRequestBuilderPatchOptions struct {
 func (m *TermsAndConditionsRequestBuilder) AcceptanceStatuses()(*idf88d5dcb4048ac7ff79419fd15c7d58e83a14f8b409ce16869ccf4204ab829f.AcceptanceStatusesRequestBuilder) {
     return idf88d5dcb4048ac7ff79419fd15c7d58e83a14f8b409ce16869ccf4204ab829f.NewAcceptanceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.termsAndConditions.item.acceptanceStatuses.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AcceptanceStatusesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.termsAndConditions.item.acceptanceStatuses.item collection
 func (m *TermsAndConditionsRequestBuilder) AcceptanceStatusesById(id string)(*i605e35cc4db71e7fa4db1f4759e05ab605fd4596a0a820b7a556521d22026745.TermsAndConditionsAcceptanceStatusRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -78,9 +76,7 @@ func (m *TermsAndConditionsRequestBuilder) AcceptanceStatusesById(id string)(*i6
 func (m *TermsAndConditionsRequestBuilder) Assignments()(*ide71c0a56dd4ade2d81104d2ecb208e8db8c2910aaea2f231edb2cf623477c53.AssignmentsRequestBuilder) {
     return ide71c0a56dd4ade2d81104d2ecb208e8db8c2910aaea2f231edb2cf623477c53.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.termsAndConditions.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.termsAndConditions.item.assignments.item collection
 func (m *TermsAndConditionsRequestBuilder) AssignmentsById(id string)(*idae59aa73e78d2aa3e7943286419e2c7b77cd5e337f001c8305c745502c3740f.TermsAndConditionsAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -91,10 +87,7 @@ func (m *TermsAndConditionsRequestBuilder) AssignmentsById(id string)(*idae59aa7
     }
     return idae59aa73e78d2aa3e7943286419e2c7b77cd5e337f001c8305c745502c3740f.NewTermsAndConditionsAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermsAndConditionsRequestBuilderInternal instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
 func NewTermsAndConditionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermsAndConditionsRequestBuilder) {
     m := &TermsAndConditionsRequestBuilder{
     }
@@ -107,18 +100,13 @@ func NewTermsAndConditionsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermsAndConditionsRequestBuilder instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
 func NewTermsAndConditionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermsAndConditionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTermsAndConditionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The terms and conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the terms and conditions associated with device management of the company.
 func (m *TermsAndConditionsRequestBuilder) CreateDeleteRequestInformation(options *TermsAndConditionsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,9 +123,7 @@ func (m *TermsAndConditionsRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// The terms and conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the terms and conditions associated with device management of the company.
 func (m *TermsAndConditionsRequestBuilder) CreateGetRequestInformation(options *TermsAndConditionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,9 +143,7 @@ func (m *TermsAndConditionsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The terms and conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the terms and conditions associated with device management of the company.
 func (m *TermsAndConditionsRequestBuilder) CreatePatchRequestInformation(options *TermsAndConditionsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -177,9 +161,7 @@ func (m *TermsAndConditionsRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// The terms and conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// Delete the terms and conditions associated with device management of the company.
 func (m *TermsAndConditionsRequestBuilder) Delete(options *TermsAndConditionsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -191,9 +173,7 @@ func (m *TermsAndConditionsRequestBuilder) Delete(options *TermsAndConditionsReq
     }
     return nil
 }
-// The terms and conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// Get the terms and conditions associated with device management of the company.
 func (m *TermsAndConditionsRequestBuilder) Get(options *TermsAndConditionsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TermsAndConditions, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -208,9 +188,7 @@ func (m *TermsAndConditionsRequestBuilder) Get(options *TermsAndConditionsReques
 func (m *TermsAndConditionsRequestBuilder) GroupAssignments()(*ibe61fbd02c16db3e5f015184d8991d363a774ed55310ae904b00e97143389ee8.GroupAssignmentsRequestBuilder) {
     return ibe61fbd02c16db3e5f015184d8991d363a774ed55310ae904b00e97143389ee8.NewGroupAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.termsAndConditions.item.groupAssignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// GroupAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.termsAndConditions.item.groupAssignments.item collection
 func (m *TermsAndConditionsRequestBuilder) GroupAssignmentsById(id string)(*i5c99d94fd8ce128189bc114b673df4e56578860abd3b3eadccba77c18952a47d.TermsAndConditionsGroupAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -221,9 +199,7 @@ func (m *TermsAndConditionsRequestBuilder) GroupAssignmentsById(id string)(*i5c9
     }
     return i5c99d94fd8ce128189bc114b673df4e56578860abd3b3eadccba77c18952a47d.NewTermsAndConditionsGroupAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The terms and conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// Patch the terms and conditions associated with device management of the company.
 func (m *TermsAndConditionsRequestBuilder) Patch(options *TermsAndConditionsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

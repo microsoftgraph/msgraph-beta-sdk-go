@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// unifiedRbacResourceScope 
 type UnifiedRbacResourceScope struct {
     Entity
     // 
@@ -14,14 +14,14 @@ type UnifiedRbacResourceScope struct {
     // 
     type_escaped *string;
 }
-// Instantiates a new unifiedRbacResourceScope and sets the default values.
+// NewUnifiedRbacResourceScope instantiates a new unifiedRbacResourceScope and sets the default values.
 func NewUnifiedRbacResourceScope()(*UnifiedRbacResourceScope) {
     m := &UnifiedRbacResourceScope{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *UnifiedRbacResourceScope) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *UnifiedRbacResourceScope) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the scope property value. 
+// GetScope gets the scope property value. 
 func (m *UnifiedRbacResourceScope) GetScope()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *UnifiedRbacResourceScope) GetScope()(*string) {
         return m.scope
     }
 }
-// Gets the type_escaped property value. 
+// GetType_escaped gets the type_escaped property value. 
 func (m *UnifiedRbacResourceScope) GetType_escaped()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *UnifiedRbacResourceScope) GetType_escaped()(*string) {
         return m.type_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,9 +83,7 @@ func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(inter
 func (m *UnifiedRbacResourceScope) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UnifiedRbacResourceScope) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -111,21 +109,15 @@ func (m *UnifiedRbacResourceScope) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *UnifiedRbacResourceScope) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the scope property value. 
-// Parameters:
-//  - value : Value to set for the scope property.
+// SetScope sets the scope property value. 
 func (m *UnifiedRbacResourceScope) SetScope(value *string)() {
     m.scope = value
 }
-// Sets the type_escaped property value. 
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. 
 func (m *UnifiedRbacResourceScope) SetType_escaped(value *string)() {
     m.type_escaped = value
 }

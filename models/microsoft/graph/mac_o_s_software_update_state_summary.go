@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// macOSSoftwareUpdateStateSummary 
 type MacOSSoftwareUpdateStateSummary struct {
     Entity
     // Human readable name of the software update
@@ -21,14 +21,14 @@ type MacOSSoftwareUpdateStateSummary struct {
     // Version of the software update
     updateVersion *string;
 }
-// Instantiates a new macOSSoftwareUpdateStateSummary and sets the default values.
+// NewMacOSSoftwareUpdateStateSummary instantiates a new macOSSoftwareUpdateStateSummary and sets the default values.
 func NewMacOSSoftwareUpdateStateSummary()(*MacOSSoftwareUpdateStateSummary) {
     m := &MacOSSoftwareUpdateStateSummary{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the displayName property value. Human readable name of the software update
+// GetDisplayName gets the displayName property value. Human readable name of the software update
 func (m *MacOSSoftwareUpdateStateSummary) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastUpdatedDateTime property value. Last date time the report for this device and product key was updated.
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last date time the report for this device and product key was updated.
 func (m *MacOSSoftwareUpdateStateSummary) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetLastUpdatedDateTime()(*i336074805fc
         return m.lastUpdatedDateTime
     }
 }
-// Gets the productKey property value. Product key of the software update.
+// GetProductKey gets the productKey property value. Product key of the software update.
 func (m *MacOSSoftwareUpdateStateSummary) GetProductKey()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetProductKey()(*string) {
         return m.productKey
     }
 }
-// Gets the state property value. State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
+// GetState gets the state property value. State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
 func (m *MacOSSoftwareUpdateStateSummary) GetState()(*MacOSSoftwareUpdateState) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetState()(*MacOSSoftwareUpdateState) 
         return m.state
     }
 }
-// Gets the updateCategory property value. Software update category. Possible values are: critical, configurationDataFile, firmware, other.
+// GetUpdateCategory gets the updateCategory property value. Software update category. Possible values are: critical, configurationDataFile, firmware, other.
 func (m *MacOSSoftwareUpdateStateSummary) GetUpdateCategory()(*MacOSSoftwareUpdateCategory) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetUpdateCategory()(*MacOSSoftwareUpda
         return m.updateCategory
     }
 }
-// Gets the updateVersion property value. Version of the software update
+// GetUpdateVersion gets the updateVersion property value. Version of the software update
 func (m *MacOSSoftwareUpdateStateSummary) GetUpdateVersion()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetUpdateVersion()(*string) {
         return m.updateVersion
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,9 +146,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
 func (m *MacOSSoftwareUpdateStateSummary) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MacOSSoftwareUpdateStateSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -194,39 +192,27 @@ func (m *MacOSSoftwareUpdateStateSummary) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the displayName property value. Human readable name of the software update
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Human readable name of the software update
 func (m *MacOSSoftwareUpdateStateSummary) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastUpdatedDateTime property value. Last date time the report for this device and product key was updated.
-// Parameters:
-//  - value : Value to set for the lastUpdatedDateTime property.
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Last date time the report for this device and product key was updated.
 func (m *MacOSSoftwareUpdateStateSummary) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastUpdatedDateTime = value
 }
-// Sets the productKey property value. Product key of the software update.
-// Parameters:
-//  - value : Value to set for the productKey property.
+// SetProductKey sets the productKey property value. Product key of the software update.
 func (m *MacOSSoftwareUpdateStateSummary) SetProductKey(value *string)() {
     m.productKey = value
 }
-// Sets the state property value. State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
 func (m *MacOSSoftwareUpdateStateSummary) SetState(value *MacOSSoftwareUpdateState)() {
     m.state = value
 }
-// Sets the updateCategory property value. Software update category. Possible values are: critical, configurationDataFile, firmware, other.
-// Parameters:
-//  - value : Value to set for the updateCategory property.
+// SetUpdateCategory sets the updateCategory property value. Software update category. Possible values are: critical, configurationDataFile, firmware, other.
 func (m *MacOSSoftwareUpdateStateSummary) SetUpdateCategory(value *MacOSSoftwareUpdateCategory)() {
     m.updateCategory = value
 }
-// Sets the updateVersion property value. Version of the software update
-// Parameters:
-//  - value : Value to set for the updateVersion property.
+// SetUpdateVersion sets the updateVersion property value. Version of the software update
 func (m *MacOSSoftwareUpdateStateSummary) SetUpdateVersion(value *string)() {
     m.updateVersion = value
 }

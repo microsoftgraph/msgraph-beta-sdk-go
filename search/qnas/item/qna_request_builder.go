@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \search\qnas\{qna-id}
+// qnaRequestBuilder builds and executes requests for operations under \search\qnas\{qna-id}
 type QnaRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type QnaRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// QnaRequestBuilderDeleteOptions options for Delete
 type QnaRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type QnaRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// QnaRequestBuilderGetOptions options for Get
 type QnaRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type QnaRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get qnas from search
+// qnaRequestBuilderGetQueryParameters get qnas from search
 type QnaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// QnaRequestBuilderPatchOptions options for Patch
 type QnaRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qna;
@@ -53,10 +53,7 @@ type QnaRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new QnaRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewQnaRequestBuilderInternal instantiates a new QnaRequestBuilder and sets the default values.
 func NewQnaRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*QnaRequestBuilder) {
     m := &QnaRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewQnaRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new QnaRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewQnaRequestBuilder instantiates a new QnaRequestBuilder and sets the default values.
 func NewQnaRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*QnaRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewQnaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property qnas for search
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property qnas for search
 func (m *QnaRequestBuilder) CreateDeleteRequestInformation(options *QnaRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *QnaRequestBuilder) CreateDeleteRequestInformation(options *QnaRequestBu
     }
     return requestInfo, nil
 }
-// Get qnas from search
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get qnas from search
 func (m *QnaRequestBuilder) CreateGetRequestInformation(options *QnaRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *QnaRequestBuilder) CreateGetRequestInformation(options *QnaRequestBuild
     }
     return requestInfo, nil
 }
-// Update the navigation property qnas in search
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property qnas in search
 func (m *QnaRequestBuilder) CreatePatchRequestInformation(options *QnaRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *QnaRequestBuilder) CreatePatchRequestInformation(options *QnaRequestBui
     }
     return requestInfo, nil
 }
-// Delete navigation property qnas for search
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property qnas for search
 func (m *QnaRequestBuilder) Delete(options *QnaRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *QnaRequestBuilder) Delete(options *QnaRequestBuilderDeleteOptions)(erro
     }
     return nil
 }
-// Get qnas from search
-// Parameters:
-//  - options : Options for the request
+// Get get qnas from search
 func (m *QnaRequestBuilder) Get(options *QnaRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qna, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *QnaRequestBuilder) Get(options *QnaRequestBuilderGetOptions)(*i535684e1
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qna), nil
 }
-// Update the navigation property qnas in search
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property qnas in search
 func (m *QnaRequestBuilder) Patch(options *QnaRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

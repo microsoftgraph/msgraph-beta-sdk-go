@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\managedEBookCategories\{managedEBookCategory-id}
+// managedEBookCategoryRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBookCategories\{managedEBookCategory-id}
 type ManagedEBookCategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagedEBookCategoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedEBookCategoryRequestBuilderDeleteOptions options for Delete
 type ManagedEBookCategoryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ManagedEBookCategoryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedEBookCategoryRequestBuilderGetOptions options for Get
 type ManagedEBookCategoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ManagedEBookCategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The mobile eBook categories.
+// managedEBookCategoryRequestBuilderGetQueryParameters the mobile eBook categories.
 type ManagedEBookCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedEBookCategoryRequestBuilderPatchOptions options for Patch
 type ManagedEBookCategoryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedEBookCategory;
@@ -53,10 +53,7 @@ type ManagedEBookCategoryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagedEBookCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedEBookCategoryRequestBuilderInternal instantiates a new ManagedEBookCategoryRequestBuilder and sets the default values.
 func NewManagedEBookCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedEBookCategoryRequestBuilder) {
     m := &ManagedEBookCategoryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewManagedEBookCategoryRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedEBookCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedEBookCategoryRequestBuilder instantiates a new ManagedEBookCategoryRequestBuilder and sets the default values.
 func NewManagedEBookCategoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedEBookCategoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedEBookCategoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The mobile eBook categories.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the mobile eBook categories.
 func (m *ManagedEBookCategoryRequestBuilder) CreateDeleteRequestInformation(options *ManagedEBookCategoryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ManagedEBookCategoryRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The mobile eBook categories.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the mobile eBook categories.
 func (m *ManagedEBookCategoryRequestBuilder) CreateGetRequestInformation(options *ManagedEBookCategoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ManagedEBookCategoryRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// The mobile eBook categories.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the mobile eBook categories.
 func (m *ManagedEBookCategoryRequestBuilder) CreatePatchRequestInformation(options *ManagedEBookCategoryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ManagedEBookCategoryRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The mobile eBook categories.
-// Parameters:
-//  - options : Options for the request
+// Delete the mobile eBook categories.
 func (m *ManagedEBookCategoryRequestBuilder) Delete(options *ManagedEBookCategoryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ManagedEBookCategoryRequestBuilder) Delete(options *ManagedEBookCategor
     }
     return nil
 }
-// The mobile eBook categories.
-// Parameters:
-//  - options : Options for the request
+// Get the mobile eBook categories.
 func (m *ManagedEBookCategoryRequestBuilder) Get(options *ManagedEBookCategoryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedEBookCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ManagedEBookCategoryRequestBuilder) Get(options *ManagedEBookCategoryRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedEBookCategory), nil
 }
-// The mobile eBook categories.
-// Parameters:
-//  - options : Options for the request
+// Patch the mobile eBook categories.
 func (m *ManagedEBookCategoryRequestBuilder) Patch(options *ManagedEBookCategoryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -12,7 +12,7 @@ import (
     i1784e37a96a52968922598a56cad387d927e74025dad64e331b2b251b203ec2d "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/onenote/pages/item/parentnotebook/sectiongroups/item/sections/item/pages/item"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\onenote\pages\{onenotePage-id}\parentNotebook\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}
+// onenoteSectionRequestBuilder builds and executes requests for operations under \groups\{group-id}\onenote\pages\{onenotePage-id}\parentNotebook\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}
 type OnenoteSectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type OnenoteSectionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OnenoteSectionRequestBuilderDeleteOptions options for Delete
 type OnenoteSectionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type OnenoteSectionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OnenoteSectionRequestBuilderGetOptions options for Get
 type OnenoteSectionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -41,14 +41,14 @@ type OnenoteSectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The sections in the section group. Read-only. Nullable.
+// onenoteSectionRequestBuilderGetQueryParameters the sections in the section group. Read-only. Nullable.
 type OnenoteSectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OnenoteSectionRequestBuilderPatchOptions options for Patch
 type OnenoteSectionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSection;
@@ -59,10 +59,7 @@ type OnenoteSectionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OnenoteSectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnenoteSectionRequestBuilderInternal instantiates a new OnenoteSectionRequestBuilder and sets the default values.
 func NewOnenoteSectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenoteSectionRequestBuilder) {
     m := &OnenoteSectionRequestBuilder{
     }
@@ -75,10 +72,7 @@ func NewOnenoteSectionRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OnenoteSectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnenoteSectionRequestBuilder instantiates a new OnenoteSectionRequestBuilder and sets the default values.
 func NewOnenoteSectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenoteSectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -90,9 +84,7 @@ func (m *OnenoteSectionRequestBuilder) CopyToNotebook()(*i3e0fc5e90de32e9a12a002
 func (m *OnenoteSectionRequestBuilder) CopyToSectionGroup()(*ia6ff2396f9287ad66e00acc0097ae6cbe5ffbdbd9a9ec14291933b3b3d4a5a06.CopyToSectionGroupRequestBuilder) {
     return ia6ff2396f9287ad66e00acc0097ae6cbe5ffbdbd9a9ec14291933b3b3d4a5a06.NewCopyToSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The sections in the section group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the sections in the section group. Read-only. Nullable.
 func (m *OnenoteSectionRequestBuilder) CreateDeleteRequestInformation(options *OnenoteSectionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +101,7 @@ func (m *OnenoteSectionRequestBuilder) CreateDeleteRequestInformation(options *O
     }
     return requestInfo, nil
 }
-// The sections in the section group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the sections in the section group. Read-only. Nullable.
 func (m *OnenoteSectionRequestBuilder) CreateGetRequestInformation(options *OnenoteSectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,9 +121,7 @@ func (m *OnenoteSectionRequestBuilder) CreateGetRequestInformation(options *Onen
     }
     return requestInfo, nil
 }
-// The sections in the section group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the sections in the section group. Read-only. Nullable.
 func (m *OnenoteSectionRequestBuilder) CreatePatchRequestInformation(options *OnenoteSectionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,9 +139,7 @@ func (m *OnenoteSectionRequestBuilder) CreatePatchRequestInformation(options *On
     }
     return requestInfo, nil
 }
-// The sections in the section group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the sections in the section group. Read-only. Nullable.
 func (m *OnenoteSectionRequestBuilder) Delete(options *OnenoteSectionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -165,9 +151,7 @@ func (m *OnenoteSectionRequestBuilder) Delete(options *OnenoteSectionRequestBuil
     }
     return nil
 }
-// The sections in the section group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the sections in the section group. Read-only. Nullable.
 func (m *OnenoteSectionRequestBuilder) Get(options *OnenoteSectionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenoteSection, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -182,9 +166,7 @@ func (m *OnenoteSectionRequestBuilder) Get(options *OnenoteSectionRequestBuilder
 func (m *OnenoteSectionRequestBuilder) Pages()(*ia2e34df6b43a58495a99bb55ab74cd666d090a9626169db18fd810389a7f3d88.PagesRequestBuilder) {
     return ia2e34df6b43a58495a99bb55ab74cd666d090a9626169db18fd810389a7f3d88.NewPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.onenote.pages.item.parentNotebook.sectionGroups.item.sections.item.pages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.onenote.pages.item.parentNotebook.sectionGroups.item.sections.item.pages.item collection
 func (m *OnenoteSectionRequestBuilder) PagesById(id string)(*i1784e37a96a52968922598a56cad387d927e74025dad64e331b2b251b203ec2d.OnenotePageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -201,9 +183,7 @@ func (m *OnenoteSectionRequestBuilder) ParentNotebook()(*ia89fc0d324293d4e77f8d0
 func (m *OnenoteSectionRequestBuilder) ParentSectionGroup()(*i322d7ecc38ce97f1d24007186445f6c449a53ca4db6e534550f3cea31eba4bbc.ParentSectionGroupRequestBuilder) {
     return i322d7ecc38ce97f1d24007186445f6c449a53ca4db6e534550f3cea31eba4bbc.NewParentSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The sections in the section group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the sections in the section group. Read-only. Nullable.
 func (m *OnenoteSectionRequestBuilder) Patch(options *OnenoteSectionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

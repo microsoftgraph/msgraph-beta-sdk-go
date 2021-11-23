@@ -10,7 +10,7 @@ import (
     ie85fd90aba6dfc1ffc92628ee3e7c7005a31cc9ec42b25f47257ab099e58a968 "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/groups/item"
 )
 
-// Builds and executes requests for operations under \termStore
+// termStoreRequestBuilder builds and executes requests for operations under \termStore
 type TermStoreRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type TermStoreRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TermStoreRequestBuilderGetOptions options for Get
 type TermStoreRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,14 +30,14 @@ type TermStoreRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get termStore
+// termStoreRequestBuilderGetQueryParameters get termStore
 type TermStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TermStoreRequestBuilderPatchOptions options for Patch
 type TermStoreRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Store;
@@ -48,10 +48,7 @@ type TermStoreRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TermStoreRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermStoreRequestBuilderInternal instantiates a new TermStoreRequestBuilder and sets the default values.
 func NewTermStoreRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermStoreRequestBuilder) {
     m := &TermStoreRequestBuilder{
     }
@@ -64,18 +61,13 @@ func NewTermStoreRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TermStoreRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermStoreRequestBuilder instantiates a new TermStoreRequestBuilder and sets the default values.
 func NewTermStoreRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermStoreRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTermStoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get termStore
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get termStore
 func (m *TermStoreRequestBuilder) CreateGetRequestInformation(options *TermStoreRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,9 +87,7 @@ func (m *TermStoreRequestBuilder) CreateGetRequestInformation(options *TermStore
     }
     return requestInfo, nil
 }
-// Update termStore
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update termStore
 func (m *TermStoreRequestBuilder) CreatePatchRequestInformation(options *TermStoreRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,9 +105,7 @@ func (m *TermStoreRequestBuilder) CreatePatchRequestInformation(options *TermSto
     }
     return requestInfo, nil
 }
-// Get termStore
-// Parameters:
-//  - options : Options for the request
+// Get get termStore
 func (m *TermStoreRequestBuilder) Get(options *TermStoreRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Store, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -132,9 +120,7 @@ func (m *TermStoreRequestBuilder) Get(options *TermStoreRequestBuilderGetOptions
 func (m *TermStoreRequestBuilder) Groups()(*i0d491e0ed92613755e9ce87b7bcb61d5ac45e24bb3148376a23cd9790125ae69.GroupsRequestBuilder) {
     return i0d491e0ed92613755e9ce87b7bcb61d5ac45e24bb3148376a23cd9790125ae69.NewGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.termStore.groups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// GroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.termStore.groups.item collection
 func (m *TermStoreRequestBuilder) GroupsById(id string)(*ie85fd90aba6dfc1ffc92628ee3e7c7005a31cc9ec42b25f47257ab099e58a968.GroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -145,9 +131,7 @@ func (m *TermStoreRequestBuilder) GroupsById(id string)(*ie85fd90aba6dfc1ffc9262
     }
     return ie85fd90aba6dfc1ffc92628ee3e7c7005a31cc9ec42b25f47257ab099e58a968.NewGroupRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update termStore
-// Parameters:
-//  - options : Options for the request
+// Patch update termStore
 func (m *TermStoreRequestBuilder) Patch(options *TermStoreRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -162,9 +146,7 @@ func (m *TermStoreRequestBuilder) Patch(options *TermStoreRequestBuilderPatchOpt
 func (m *TermStoreRequestBuilder) Sets()(*i8696d51b25dc2d6a8f09c66d2c3a8a89a556550f2c721719ed3f083e08d1e4cc.SetsRequestBuilder) {
     return i8696d51b25dc2d6a8f09c66d2c3a8a89a556550f2c721719ed3f083e08d1e4cc.NewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.termStore.sets.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SetsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.termStore.sets.item collection
 func (m *TermStoreRequestBuilder) SetsById(id string)(*i8ab8307d36a2288f235f92a810e06d877f6459827fbbf4925375f0c10a27ed06.SetRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

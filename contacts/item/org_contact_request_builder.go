@@ -16,7 +16,7 @@ import (
     if78bb81960e1b033a5e4bd2fd9dc5ad58550b0ce6b418788078e981aa388315d "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts/item/transitivememberof"
 )
 
-// Builds and executes requests for operations under \contacts\{orgContact-id}
+// orgContactRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}
 type OrgContactRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -25,7 +25,7 @@ type OrgContactRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OrgContactRequestBuilderDeleteOptions options for Delete
 type OrgContactRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -34,7 +34,7 @@ type OrgContactRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OrgContactRequestBuilderGetOptions options for Get
 type OrgContactRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -45,14 +45,14 @@ type OrgContactRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from contacts by key
+// orgContactRequestBuilderGetQueryParameters get entity from contacts by key
 type OrgContactRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OrgContactRequestBuilderPatchOptions options for Patch
 type OrgContactRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OrgContact;
@@ -69,10 +69,7 @@ func (m *OrgContactRequestBuilder) CheckMemberGroups()(*i8930ff877b98d2d829bb75e
 func (m *OrgContactRequestBuilder) CheckMemberObjects()(*iaaabcbb8c60e122516c587d50e74e474d377c15f6aa8bfc4e7dc2b333a641821.CheckMemberObjectsRequestBuilder) {
     return iaaabcbb8c60e122516c587d50e74e474d377c15f6aa8bfc4e7dc2b333a641821.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new OrgContactRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOrgContactRequestBuilderInternal instantiates a new OrgContactRequestBuilder and sets the default values.
 func NewOrgContactRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OrgContactRequestBuilder) {
     m := &OrgContactRequestBuilder{
     }
@@ -85,18 +82,13 @@ func NewOrgContactRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OrgContactRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOrgContactRequestBuilder instantiates a new OrgContactRequestBuilder and sets the default values.
 func NewOrgContactRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OrgContactRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOrgContactRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from contacts
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from contacts
 func (m *OrgContactRequestBuilder) CreateDeleteRequestInformation(options *OrgContactRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,9 +105,7 @@ func (m *OrgContactRequestBuilder) CreateDeleteRequestInformation(options *OrgCo
     }
     return requestInfo, nil
 }
-// Get entity from contacts by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from contacts by key
 func (m *OrgContactRequestBuilder) CreateGetRequestInformation(options *OrgContactRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,9 +125,7 @@ func (m *OrgContactRequestBuilder) CreateGetRequestInformation(options *OrgConta
     }
     return requestInfo, nil
 }
-// Update entity in contacts
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in contacts
 func (m *OrgContactRequestBuilder) CreatePatchRequestInformation(options *OrgContactRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -155,9 +143,7 @@ func (m *OrgContactRequestBuilder) CreatePatchRequestInformation(options *OrgCon
     }
     return requestInfo, nil
 }
-// Delete entity from contacts
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from contacts
 func (m *OrgContactRequestBuilder) Delete(options *OrgContactRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -172,9 +158,7 @@ func (m *OrgContactRequestBuilder) Delete(options *OrgContactRequestBuilderDelet
 func (m *OrgContactRequestBuilder) DirectReports()(*id9d85e0537a55572b46a9bf049286ac01bd7daf191686fb4bf68f252f6cbd91a.DirectReportsRequestBuilder) {
     return id9d85e0537a55572b46a9bf049286ac01bd7daf191686fb4bf68f252f6cbd91a.NewDirectReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get entity from contacts by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from contacts by key
 func (m *OrgContactRequestBuilder) Get(options *OrgContactRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OrgContact, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -198,9 +182,7 @@ func (m *OrgContactRequestBuilder) Manager()(*ic3d1f9a92a97f0f59be23d433068e16bf
 func (m *OrgContactRequestBuilder) MemberOf()(*i3218d64770c5fb2ac858c46ce0b21eca8069f173345a45e2d0127524fe6244f5.MemberOfRequestBuilder) {
     return i3218d64770c5fb2ac858c46ce0b21eca8069f173345a45e2d0127524fe6244f5.NewMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in contacts
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in contacts
 func (m *OrgContactRequestBuilder) Patch(options *OrgContactRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

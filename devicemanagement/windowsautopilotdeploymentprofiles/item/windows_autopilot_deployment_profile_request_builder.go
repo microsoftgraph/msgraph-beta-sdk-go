@@ -11,7 +11,7 @@ import (
     ia6017df9f924cc3a6ee560c37d576949bd563ee7a9fae4b16ea59bb6d899a893 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotdeploymentprofiles/item/assigneddevices/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}
+// windowsAutopilotDeploymentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}
 type WindowsAutopilotDeploymentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type WindowsAutopilotDeploymentProfileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsAutopilotDeploymentProfileRequestBuilderDeleteOptions options for Delete
 type WindowsAutopilotDeploymentProfileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type WindowsAutopilotDeploymentProfileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsAutopilotDeploymentProfileRequestBuilderGetOptions options for Get
 type WindowsAutopilotDeploymentProfileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type WindowsAutopilotDeploymentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Windows auto pilot deployment profiles
+// windowsAutopilotDeploymentProfileRequestBuilderGetQueryParameters windows auto pilot deployment profiles
 type WindowsAutopilotDeploymentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsAutopilotDeploymentProfileRequestBuilderPatchOptions options for Patch
 type WindowsAutopilotDeploymentProfileRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfile;
@@ -64,9 +64,7 @@ func (m *WindowsAutopilotDeploymentProfileRequestBuilder) Assign()(*i67a9ff80d58
 func (m *WindowsAutopilotDeploymentProfileRequestBuilder) AssignedDevices()(*i425668063c4800a10861bb7a90edb930982863c2aa08069ec607be067c55a1d7.AssignedDevicesRequestBuilder) {
     return i425668063c4800a10861bb7a90edb930982863c2aa08069ec607be067c55a1d7.NewAssignedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsAutopilotDeploymentProfiles.item.assignedDevices.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignedDevicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsAutopilotDeploymentProfiles.item.assignedDevices.item collection
 func (m *WindowsAutopilotDeploymentProfileRequestBuilder) AssignedDevicesById(id string)(*ia6017df9f924cc3a6ee560c37d576949bd563ee7a9fae4b16ea59bb6d899a893.WindowsAutopilotDeviceIdentityRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -80,9 +78,7 @@ func (m *WindowsAutopilotDeploymentProfileRequestBuilder) AssignedDevicesById(id
 func (m *WindowsAutopilotDeploymentProfileRequestBuilder) Assignments()(*ib588024c40e95bb44ff654bf2fca2e70fc4f9b254f3553765344e6d0c0ec4a32.AssignmentsRequestBuilder) {
     return ib588024c40e95bb44ff654bf2fca2e70fc4f9b254f3553765344e6d0c0ec4a32.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsAutopilotDeploymentProfiles.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.windowsAutopilotDeploymentProfiles.item.assignments.item collection
 func (m *WindowsAutopilotDeploymentProfileRequestBuilder) AssignmentsById(id string)(*i1d904618d59e89a54c3c9f45822a76448ad3eb5947fa5abe537c63487f9edad9.WindowsAutopilotDeploymentProfileAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -93,10 +89,7 @@ func (m *WindowsAutopilotDeploymentProfileRequestBuilder) AssignmentsById(id str
     }
     return i1d904618d59e89a54c3c9f45822a76448ad3eb5947fa5abe537c63487f9edad9.NewWindowsAutopilotDeploymentProfileAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new WindowsAutopilotDeploymentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsAutopilotDeploymentProfileRequestBuilderInternal instantiates a new WindowsAutopilotDeploymentProfileRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeploymentProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsAutopilotDeploymentProfileRequestBuilder) {
     m := &WindowsAutopilotDeploymentProfileRequestBuilder{
     }
@@ -109,18 +102,13 @@ func NewWindowsAutopilotDeploymentProfileRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsAutopilotDeploymentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsAutopilotDeploymentProfileRequestBuilder instantiates a new WindowsAutopilotDeploymentProfileRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeploymentProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsAutopilotDeploymentProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeploymentProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Windows auto pilot deployment profiles
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation windows auto pilot deployment profiles
 func (m *WindowsAutopilotDeploymentProfileRequestBuilder) CreateDeleteRequestInformation(options *WindowsAutopilotDeploymentProfileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *WindowsAutopilotDeploymentProfileRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// Windows auto pilot deployment profiles
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation windows auto pilot deployment profiles
 func (m *WindowsAutopilotDeploymentProfileRequestBuilder) CreateGetRequestInformation(options *WindowsAutopilotDeploymentProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -159,9 +145,7 @@ func (m *WindowsAutopilotDeploymentProfileRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// Windows auto pilot deployment profiles
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation windows auto pilot deployment profiles
 func (m *WindowsAutopilotDeploymentProfileRequestBuilder) CreatePatchRequestInformation(options *WindowsAutopilotDeploymentProfileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -179,9 +163,7 @@ func (m *WindowsAutopilotDeploymentProfileRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// Windows auto pilot deployment profiles
-// Parameters:
-//  - options : Options for the request
+// Delete windows auto pilot deployment profiles
 func (m *WindowsAutopilotDeploymentProfileRequestBuilder) Delete(options *WindowsAutopilotDeploymentProfileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -193,9 +175,7 @@ func (m *WindowsAutopilotDeploymentProfileRequestBuilder) Delete(options *Window
     }
     return nil
 }
-// Windows auto pilot deployment profiles
-// Parameters:
-//  - options : Options for the request
+// Get windows auto pilot deployment profiles
 func (m *WindowsAutopilotDeploymentProfileRequestBuilder) Get(options *WindowsAutopilotDeploymentProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -207,9 +187,7 @@ func (m *WindowsAutopilotDeploymentProfileRequestBuilder) Get(options *WindowsAu
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfile), nil
 }
-// Windows auto pilot deployment profiles
-// Parameters:
-//  - options : Options for the request
+// Patch windows auto pilot deployment profiles
 func (m *WindowsAutopilotDeploymentProfileRequestBuilder) Patch(options *WindowsAutopilotDeploymentProfileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// recordResponseRequestBody 
 type RecordResponseRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,14 +28,14 @@ type RecordResponseRequestBody struct {
     // 
     streamWhileRecording *bool;
 }
-// Instantiates a new recordResponseRequestBody and sets the default values.
+// NewRecordResponseRequestBody instantiates a new recordResponseRequestBody and sets the default values.
 func NewRecordResponseRequestBody()(*RecordResponseRequestBody) {
     m := &RecordResponseRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordResponseRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *RecordResponseRequestBody) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// Gets the bargeInAllowed property value. 
+// GetBargeInAllowed gets the bargeInAllowed property value. 
 func (m *RecordResponseRequestBody) GetBargeInAllowed()(*bool) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *RecordResponseRequestBody) GetBargeInAllowed()(*bool) {
         return m.bargeInAllowed
     }
 }
-// Gets the clientContext property value. 
+// GetClientContext gets the clientContext property value. 
 func (m *RecordResponseRequestBody) GetClientContext()(*string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *RecordResponseRequestBody) GetClientContext()(*string) {
         return m.clientContext
     }
 }
-// Gets the initialSilenceTimeoutInSeconds property value. 
+// GetInitialSilenceTimeoutInSeconds gets the initialSilenceTimeoutInSeconds property value. 
 func (m *RecordResponseRequestBody) GetInitialSilenceTimeoutInSeconds()(*int32) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *RecordResponseRequestBody) GetInitialSilenceTimeoutInSeconds()(*int32) 
         return m.initialSilenceTimeoutInSeconds
     }
 }
-// Gets the maxRecordDurationInSeconds property value. 
+// GetMaxRecordDurationInSeconds gets the maxRecordDurationInSeconds property value. 
 func (m *RecordResponseRequestBody) GetMaxRecordDurationInSeconds()(*int32) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *RecordResponseRequestBody) GetMaxRecordDurationInSeconds()(*int32) {
         return m.maxRecordDurationInSeconds
     }
 }
-// Gets the maxSilenceTimeoutInSeconds property value. 
+// GetMaxSilenceTimeoutInSeconds gets the maxSilenceTimeoutInSeconds property value. 
 func (m *RecordResponseRequestBody) GetMaxSilenceTimeoutInSeconds()(*int32) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *RecordResponseRequestBody) GetMaxSilenceTimeoutInSeconds()(*int32) {
         return m.maxSilenceTimeoutInSeconds
     }
 }
-// Gets the playBeep property value. 
+// GetPlayBeep gets the playBeep property value. 
 func (m *RecordResponseRequestBody) GetPlayBeep()(*bool) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *RecordResponseRequestBody) GetPlayBeep()(*bool) {
         return m.playBeep
     }
 }
-// Gets the prompts property value. 
+// GetPrompts gets the prompts property value. 
 func (m *RecordResponseRequestBody) GetPrompts()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *RecordResponseRequestBody) GetPrompts()([]i535684e11b5500196ecb4b5c6634
         return m.prompts
     }
 }
-// Gets the stopTones property value. 
+// GetStopTones gets the stopTones property value. 
 func (m *RecordResponseRequestBody) GetStopTones()([]string) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *RecordResponseRequestBody) GetStopTones()([]string) {
         return m.stopTones
     }
 }
-// Gets the streamWhileRecording property value. 
+// GetStreamWhileRecording gets the streamWhileRecording property value. 
 func (m *RecordResponseRequestBody) GetStreamWhileRecording()(*bool) {
     if m == nil {
         return nil
@@ -115,7 +115,7 @@ func (m *RecordResponseRequestBody) GetStreamWhileRecording()(*bool) {
         return m.streamWhileRecording
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RecordResponseRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["bargeInAllowed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -221,9 +221,7 @@ func (m *RecordResponseRequestBody) GetFieldDeserializers()(map[string]func(inte
 func (m *RecordResponseRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RecordResponseRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("bargeInAllowed", m.GetBargeInAllowed())
@@ -292,63 +290,43 @@ func (m *RecordResponseRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordResponseRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the bargeInAllowed property value. 
-// Parameters:
-//  - value : Value to set for the bargeInAllowed property.
+// SetBargeInAllowed sets the bargeInAllowed property value. 
 func (m *RecordResponseRequestBody) SetBargeInAllowed(value *bool)() {
     m.bargeInAllowed = value
 }
-// Sets the clientContext property value. 
-// Parameters:
-//  - value : Value to set for the clientContext property.
+// SetClientContext sets the clientContext property value. 
 func (m *RecordResponseRequestBody) SetClientContext(value *string)() {
     m.clientContext = value
 }
-// Sets the initialSilenceTimeoutInSeconds property value. 
-// Parameters:
-//  - value : Value to set for the initialSilenceTimeoutInSeconds property.
+// SetInitialSilenceTimeoutInSeconds sets the initialSilenceTimeoutInSeconds property value. 
 func (m *RecordResponseRequestBody) SetInitialSilenceTimeoutInSeconds(value *int32)() {
     m.initialSilenceTimeoutInSeconds = value
 }
-// Sets the maxRecordDurationInSeconds property value. 
-// Parameters:
-//  - value : Value to set for the maxRecordDurationInSeconds property.
+// SetMaxRecordDurationInSeconds sets the maxRecordDurationInSeconds property value. 
 func (m *RecordResponseRequestBody) SetMaxRecordDurationInSeconds(value *int32)() {
     m.maxRecordDurationInSeconds = value
 }
-// Sets the maxSilenceTimeoutInSeconds property value. 
-// Parameters:
-//  - value : Value to set for the maxSilenceTimeoutInSeconds property.
+// SetMaxSilenceTimeoutInSeconds sets the maxSilenceTimeoutInSeconds property value. 
 func (m *RecordResponseRequestBody) SetMaxSilenceTimeoutInSeconds(value *int32)() {
     m.maxSilenceTimeoutInSeconds = value
 }
-// Sets the playBeep property value. 
-// Parameters:
-//  - value : Value to set for the playBeep property.
+// SetPlayBeep sets the playBeep property value. 
 func (m *RecordResponseRequestBody) SetPlayBeep(value *bool)() {
     m.playBeep = value
 }
-// Sets the prompts property value. 
-// Parameters:
-//  - value : Value to set for the prompts property.
+// SetPrompts sets the prompts property value. 
 func (m *RecordResponseRequestBody) SetPrompts(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt)() {
     m.prompts = value
 }
-// Sets the stopTones property value. 
-// Parameters:
-//  - value : Value to set for the stopTones property.
+// SetStopTones sets the stopTones property value. 
 func (m *RecordResponseRequestBody) SetStopTones(value []string)() {
     m.stopTones = value
 }
-// Sets the streamWhileRecording property value. 
-// Parameters:
-//  - value : Value to set for the streamWhileRecording property.
+// SetStreamWhileRecording sets the streamWhileRecording property value. 
 func (m *RecordResponseRequestBody) SetStreamWhileRecording(value *bool)() {
     m.streamWhileRecording = value
 }

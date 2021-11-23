@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceManagementDomainJoinConnector 
 type DeviceManagementDomainJoinConnector struct {
     Entity
     // The connector display name.
@@ -17,14 +17,14 @@ type DeviceManagementDomainJoinConnector struct {
     // The version of the connector.
     version *string;
 }
-// Instantiates a new deviceManagementDomainJoinConnector and sets the default values.
+// NewDeviceManagementDomainJoinConnector instantiates a new deviceManagementDomainJoinConnector and sets the default values.
 func NewDeviceManagementDomainJoinConnector()(*DeviceManagementDomainJoinConnector) {
     m := &DeviceManagementDomainJoinConnector{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the displayName property value. The connector display name.
+// GetDisplayName gets the displayName property value. The connector display name.
 func (m *DeviceManagementDomainJoinConnector) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *DeviceManagementDomainJoinConnector) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastConnectionDateTime property value. Last time connector contacted Intune.
+// GetLastConnectionDateTime gets the lastConnectionDateTime property value. Last time connector contacted Intune.
 func (m *DeviceManagementDomainJoinConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *DeviceManagementDomainJoinConnector) GetLastConnectionDateTime()(*i3360
         return m.lastConnectionDateTime
     }
 }
-// Gets the state property value. The connector state. Possible values are: active, error, inactive.
+// GetState gets the state property value. The connector state. Possible values are: active, error, inactive.
 func (m *DeviceManagementDomainJoinConnector) GetState()(*DeviceManagementDomainJoinConnectorState) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *DeviceManagementDomainJoinConnector) GetState()(*DeviceManagementDomain
         return m.state
     }
 }
-// Gets the version property value. The version of the connector.
+// GetVersion gets the version property value. The version of the connector.
 func (m *DeviceManagementDomainJoinConnector) GetVersion()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *DeviceManagementDomainJoinConnector) GetVersion()(*string) {
         return m.version
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementDomainJoinConnector) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,9 +105,7 @@ func (m *DeviceManagementDomainJoinConnector) GetFieldDeserializers()(map[string
 func (m *DeviceManagementDomainJoinConnector) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementDomainJoinConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -140,27 +138,19 @@ func (m *DeviceManagementDomainJoinConnector) Serialize(writer i04eb5309aeaafadd
     }
     return nil
 }
-// Sets the displayName property value. The connector display name.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The connector display name.
 func (m *DeviceManagementDomainJoinConnector) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastConnectionDateTime property value. Last time connector contacted Intune.
-// Parameters:
-//  - value : Value to set for the lastConnectionDateTime property.
+// SetLastConnectionDateTime sets the lastConnectionDateTime property value. Last time connector contacted Intune.
 func (m *DeviceManagementDomainJoinConnector) SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastConnectionDateTime = value
 }
-// Sets the state property value. The connector state. Possible values are: active, error, inactive.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. The connector state. Possible values are: active, error, inactive.
 func (m *DeviceManagementDomainJoinConnector) SetState(value *DeviceManagementDomainJoinConnectorState)() {
     m.state = value
 }
-// Sets the version property value. The version of the connector.
-// Parameters:
-//  - value : Value to set for the version property.
+// SetVersion sets the version property value. The version of the connector.
 func (m *DeviceManagementDomainJoinConnector) SetVersion(value *string)() {
     m.version = value
 }

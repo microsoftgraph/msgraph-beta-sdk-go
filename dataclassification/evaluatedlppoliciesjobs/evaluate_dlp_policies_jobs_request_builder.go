@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \dataClassification\evaluateDlpPoliciesJobs
+// evaluateDlpPoliciesJobsRequestBuilder builds and executes requests for operations under \dataClassification\evaluateDlpPoliciesJobs
 type EvaluateDlpPoliciesJobsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EvaluateDlpPoliciesJobsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// EvaluateDlpPoliciesJobsRequestBuilderGetOptions options for Get
 type EvaluateDlpPoliciesJobsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type EvaluateDlpPoliciesJobsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get evaluateDlpPoliciesJobs from dataClassification
+// evaluateDlpPoliciesJobsRequestBuilderGetQueryParameters get evaluateDlpPoliciesJobs from dataClassification
 type EvaluateDlpPoliciesJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type EvaluateDlpPoliciesJobsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// EvaluateDlpPoliciesJobsRequestBuilderPostOptions options for Post
 type EvaluateDlpPoliciesJobsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBase;
@@ -56,10 +56,7 @@ type EvaluateDlpPoliciesJobsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EvaluateDlpPoliciesJobsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEvaluateDlpPoliciesJobsRequestBuilderInternal instantiates a new EvaluateDlpPoliciesJobsRequestBuilder and sets the default values.
 func NewEvaluateDlpPoliciesJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateDlpPoliciesJobsRequestBuilder) {
     m := &EvaluateDlpPoliciesJobsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewEvaluateDlpPoliciesJobsRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EvaluateDlpPoliciesJobsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEvaluateDlpPoliciesJobsRequestBuilder instantiates a new EvaluateDlpPoliciesJobsRequestBuilder and sets the default values.
 func NewEvaluateDlpPoliciesJobsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateDlpPoliciesJobsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateDlpPoliciesJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get evaluateDlpPoliciesJobs from dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get evaluateDlpPoliciesJobs from dataClassification
 func (m *EvaluateDlpPoliciesJobsRequestBuilder) CreateGetRequestInformation(options *EvaluateDlpPoliciesJobsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *EvaluateDlpPoliciesJobsRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Create new navigation property to evaluateDlpPoliciesJobs for dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to evaluateDlpPoliciesJobs for dataClassification
 func (m *EvaluateDlpPoliciesJobsRequestBuilder) CreatePostRequestInformation(options *EvaluateDlpPoliciesJobsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *EvaluateDlpPoliciesJobsRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Get evaluateDlpPoliciesJobs from dataClassification
-// Parameters:
-//  - options : Options for the request
+// Get get evaluateDlpPoliciesJobs from dataClassification
 func (m *EvaluateDlpPoliciesJobsRequestBuilder) Get(options *EvaluateDlpPoliciesJobsRequestBuilderGetOptions)(*EvaluateDlpPoliciesJobsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *EvaluateDlpPoliciesJobsRequestBuilder) Get(options *EvaluateDlpPolicies
     }
     return res.(*EvaluateDlpPoliciesJobsResponse), nil
 }
-// Create new navigation property to evaluateDlpPoliciesJobs for dataClassification
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to evaluateDlpPoliciesJobs for dataClassification
 func (m *EvaluateDlpPoliciesJobsRequestBuilder) Post(options *EvaluateDlpPoliciesJobsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBase, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

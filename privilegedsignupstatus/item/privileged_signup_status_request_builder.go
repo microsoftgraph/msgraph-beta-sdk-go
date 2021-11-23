@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privilegedSignupStatus\{privilegedSignupStatus-id}
+// privilegedSignupStatusRequestBuilder builds and executes requests for operations under \privilegedSignupStatus\{privilegedSignupStatus-id}
 type PrivilegedSignupStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PrivilegedSignupStatusRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrivilegedSignupStatusRequestBuilderDeleteOptions options for Delete
 type PrivilegedSignupStatusRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PrivilegedSignupStatusRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrivilegedSignupStatusRequestBuilderGetOptions options for Get
 type PrivilegedSignupStatusRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PrivilegedSignupStatusRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from privilegedSignupStatus by key
+// privilegedSignupStatusRequestBuilderGetQueryParameters get entity from privilegedSignupStatus by key
 type PrivilegedSignupStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrivilegedSignupStatusRequestBuilderPatchOptions options for Patch
 type PrivilegedSignupStatusRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus;
@@ -53,10 +53,7 @@ type PrivilegedSignupStatusRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedSignupStatusRequestBuilderInternal instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
 func NewPrivilegedSignupStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedSignupStatusRequestBuilder) {
     m := &PrivilegedSignupStatusRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPrivilegedSignupStatusRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedSignupStatusRequestBuilder instantiates a new PrivilegedSignupStatusRequestBuilder and sets the default values.
 func NewPrivilegedSignupStatusRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedSignupStatusRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedSignupStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from privilegedSignupStatus
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) CreateDeleteRequestInformation(options *PrivilegedSignupStatusRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PrivilegedSignupStatusRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// Get entity from privilegedSignupStatus by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from privilegedSignupStatus by key
 func (m *PrivilegedSignupStatusRequestBuilder) CreateGetRequestInformation(options *PrivilegedSignupStatusRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PrivilegedSignupStatusRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Update entity in privilegedSignupStatus
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) CreatePatchRequestInformation(options *PrivilegedSignupStatusRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PrivilegedSignupStatusRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Delete entity from privilegedSignupStatus
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) Delete(options *PrivilegedSignupStatusRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PrivilegedSignupStatusRequestBuilder) Delete(options *PrivilegedSignupS
     }
     return nil
 }
-// Get entity from privilegedSignupStatus by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from privilegedSignupStatus by key
 func (m *PrivilegedSignupStatusRequestBuilder) Get(options *PrivilegedSignupStatusRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PrivilegedSignupStatusRequestBuilder) Get(options *PrivilegedSignupStat
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus), nil
 }
-// Update entity in privilegedSignupStatus
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in privilegedSignupStatus
 func (m *PrivilegedSignupStatusRequestBuilder) Patch(options *PrivilegedSignupStatusRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

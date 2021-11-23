@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// meetingSpeaker 
 type MeetingSpeaker struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type MeetingSpeaker struct {
     // Display name of the speaker.
     displayName *string;
 }
-// Instantiates a new meetingSpeaker and sets the default values.
+// NewMeetingSpeaker instantiates a new meetingSpeaker and sets the default values.
 func NewMeetingSpeaker()(*MeetingSpeaker) {
     m := &MeetingSpeaker{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingSpeaker) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *MeetingSpeaker) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the bio property value. Bio of the speaker.
+// GetBio gets the bio property value. Bio of the speaker.
 func (m *MeetingSpeaker) GetBio()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *MeetingSpeaker) GetBio()(*string) {
         return m.bio
     }
 }
-// Gets the displayName property value. Display name of the speaker.
+// GetDisplayName gets the displayName property value. Display name of the speaker.
 func (m *MeetingSpeaker) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *MeetingSpeaker) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingSpeaker) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["bio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *MeetingSpeaker) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *MeetingSpeaker) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MeetingSpeaker) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("bio", m.GetBio())
@@ -96,21 +94,15 @@ func (m *MeetingSpeaker) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingSpeaker) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the bio property value. Bio of the speaker.
-// Parameters:
-//  - value : Value to set for the bio property.
+// SetBio sets the bio property value. Bio of the speaker.
 func (m *MeetingSpeaker) SetBio(value *string)() {
     m.bio = value
 }
-// Sets the displayName property value. Display name of the speaker.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name of the speaker.
 func (m *MeetingSpeaker) SetDisplayName(value *string)() {
     m.displayName = value
 }

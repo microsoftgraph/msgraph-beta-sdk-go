@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id1}\microsoft.graph.reprocess
+// reprocessRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id1}\microsoft.graph.reprocess
 type ReprocessRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ReprocessRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ReprocessRequestBuilderPostOptions options for Post
 type ReprocessRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type ReprocessRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ReprocessRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReprocessRequestBuilderInternal instantiates a new ReprocessRequestBuilder and sets the default values.
 func NewReprocessRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReprocessRequestBuilder) {
     m := &ReprocessRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewReprocessRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ReprocessRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReprocessRequestBuilder instantiates a new ReprocessRequestBuilder and sets the default values.
 func NewReprocessRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReprocessRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReprocessRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action reprocess
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action reprocess
 func (m *ReprocessRequestBuilder) CreatePostRequestInformation(options *ReprocessRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *ReprocessRequestBuilder) CreatePostRequestInformation(options *Reproces
     }
     return requestInfo, nil
 }
-// Invoke action reprocess
-// Parameters:
-//  - options : Options for the request
+// Post invoke action reprocess
 func (m *ReprocessRequestBuilder) Post(options *ReprocessRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

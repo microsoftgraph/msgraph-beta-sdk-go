@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}\errors
+// errorsRequestBuilder builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}\errors
 type ErrorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ErrorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ErrorsRequestBuilderGetOptions options for Get
 type ErrorsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ErrorsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All errors associated with this synchronization profile.
+// errorsRequestBuilderGetQueryParameters all errors associated with this synchronization profile.
 type ErrorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ErrorsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ErrorsRequestBuilderPostOptions options for Post
 type ErrorsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSynchronizationError;
@@ -56,10 +56,7 @@ type ErrorsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ErrorsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewErrorsRequestBuilderInternal instantiates a new ErrorsRequestBuilder and sets the default values.
 func NewErrorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ErrorsRequestBuilder) {
     m := &ErrorsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewErrorsRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ErrorsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewErrorsRequestBuilder instantiates a new ErrorsRequestBuilder and sets the default values.
 func NewErrorsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ErrorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewErrorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All errors associated with this synchronization profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all errors associated with this synchronization profile.
 func (m *ErrorsRequestBuilder) CreateGetRequestInformation(options *ErrorsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ErrorsRequestBuilder) CreateGetRequestInformation(options *ErrorsReques
     }
     return requestInfo, nil
 }
-// All errors associated with this synchronization profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation all errors associated with this synchronization profile.
 func (m *ErrorsRequestBuilder) CreatePostRequestInformation(options *ErrorsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ErrorsRequestBuilder) CreatePostRequestInformation(options *ErrorsReque
     }
     return requestInfo, nil
 }
-// All errors associated with this synchronization profile.
-// Parameters:
-//  - options : Options for the request
+// Get all errors associated with this synchronization profile.
 func (m *ErrorsRequestBuilder) Get(options *ErrorsRequestBuilderGetOptions)(*ErrorsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ErrorsRequestBuilder) Get(options *ErrorsRequestBuilderGetOptions)(*Err
     }
     return res.(*ErrorsResponse), nil
 }
-// All errors associated with this synchronization profile.
-// Parameters:
-//  - options : Options for the request
+// Post all errors associated with this synchronization profile.
 func (m *ErrorsRequestBuilder) Post(options *ErrorsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSynchronizationError, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

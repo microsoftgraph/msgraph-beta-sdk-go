@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getCredentialUserRegistrationCount()
+// getCredentialUserRegistrationCountRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getCredentialUserRegistrationCount()
 type GetCredentialUserRegistrationCountRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetCredentialUserRegistrationCountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetCredentialUserRegistrationCountRequestBuilderGetOptions options for Get
 type GetCredentialUserRegistrationCountRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type GetCredentialUserRegistrationCountRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetCredentialUserRegistrationCountRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetCredentialUserRegistrationCountRequestBuilderInternal instantiates a new GetCredentialUserRegistrationCountRequestBuilder and sets the default values.
 func NewGetCredentialUserRegistrationCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCredentialUserRegistrationCountRequestBuilder) {
     m := &GetCredentialUserRegistrationCountRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewGetCredentialUserRegistrationCountRequestBuilderInternal(pathParameters 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetCredentialUserRegistrationCountRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetCredentialUserRegistrationCountRequestBuilder instantiates a new GetCredentialUserRegistrationCountRequestBuilder and sets the default values.
 func NewGetCredentialUserRegistrationCountRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCredentialUserRegistrationCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetCredentialUserRegistrationCountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function getCredentialUserRegistrationCount
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getCredentialUserRegistrationCount
 func (m *GetCredentialUserRegistrationCountRequestBuilder) CreateGetRequestInformation(options *GetCredentialUserRegistrationCountRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *GetCredentialUserRegistrationCountRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// Invoke function getCredentialUserRegistrationCount
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getCredentialUserRegistrationCount
 func (m *GetCredentialUserRegistrationCountRequestBuilder) Get(options *GetCredentialUserRegistrationCountRequestBuilderGetOptions)([]GetCredentialUserRegistrationCount, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

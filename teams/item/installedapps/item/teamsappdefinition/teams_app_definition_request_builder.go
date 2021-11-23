@@ -7,7 +7,7 @@ import (
     if242f5829b65ab92fa16120d6f889f73786f2e64cea2b6733a3b389a71b35c77 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/installedapps/item/teamsappdefinition/ref"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\installedApps\{teamsAppInstallation-id}\teamsAppDefinition
+// teamsAppDefinitionRequestBuilder builds and executes requests for operations under \teams\{team-id}\installedApps\{teamsAppInstallation-id}\teamsAppDefinition
 type TeamsAppDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TeamsAppDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TeamsAppDefinitionRequestBuilderGetOptions options for Get
 type TeamsAppDefinitionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type TeamsAppDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The details of this version of the app.
+// teamsAppDefinitionRequestBuilderGetQueryParameters the details of this version of the app.
 type TeamsAppDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppDefinitionRequestBuilderInternal instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.
 func NewTeamsAppDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppDefinitionRequestBuilder) {
     m := &TeamsAppDefinitionRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewTeamsAppDefinitionRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppDefinitionRequestBuilder instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.
 func NewTeamsAppDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppDefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The details of this version of the app.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the details of this version of the app.
 func (m *TeamsAppDefinitionRequestBuilder) CreateGetRequestInformation(options *TeamsAppDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *TeamsAppDefinitionRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The details of this version of the app.
-// Parameters:
-//  - options : Options for the request
+// Get the details of this version of the app.
 func (m *TeamsAppDefinitionRequestBuilder) Get(options *TeamsAppDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamsAppDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

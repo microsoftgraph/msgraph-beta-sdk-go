@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\monthlyPrintUsageSummariesByUser
+// monthlyPrintUsageSummariesByUserRequestBuilder builds and executes requests for operations under \reports\monthlyPrintUsageSummariesByUser
 type MonthlyPrintUsageSummariesByUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MonthlyPrintUsageSummariesByUserRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MonthlyPrintUsageSummariesByUserRequestBuilderGetOptions options for Get
 type MonthlyPrintUsageSummariesByUserRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MonthlyPrintUsageSummariesByUserRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get monthlyPrintUsageSummariesByUser from reports
+// monthlyPrintUsageSummariesByUserRequestBuilderGetQueryParameters get monthlyPrintUsageSummariesByUser from reports
 type MonthlyPrintUsageSummariesByUserRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MonthlyPrintUsageSummariesByUserRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MonthlyPrintUsageSummariesByUserRequestBuilderPostOptions options for Post
 type MonthlyPrintUsageSummariesByUserRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByUser;
@@ -56,10 +56,7 @@ type MonthlyPrintUsageSummariesByUserRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MonthlyPrintUsageSummariesByUserRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMonthlyPrintUsageSummariesByUserRequestBuilderInternal instantiates a new MonthlyPrintUsageSummariesByUserRequestBuilder and sets the default values.
 func NewMonthlyPrintUsageSummariesByUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MonthlyPrintUsageSummariesByUserRequestBuilder) {
     m := &MonthlyPrintUsageSummariesByUserRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMonthlyPrintUsageSummariesByUserRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MonthlyPrintUsageSummariesByUserRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMonthlyPrintUsageSummariesByUserRequestBuilder instantiates a new MonthlyPrintUsageSummariesByUserRequestBuilder and sets the default values.
 func NewMonthlyPrintUsageSummariesByUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MonthlyPrintUsageSummariesByUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMonthlyPrintUsageSummariesByUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get monthlyPrintUsageSummariesByUser from reports
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get monthlyPrintUsageSummariesByUser from reports
 func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) CreateGetRequestInformation(options *MonthlyPrintUsageSummariesByUserRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Create new navigation property to monthlyPrintUsageSummariesByUser for reports
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to monthlyPrintUsageSummariesByUser for reports
 func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) CreatePostRequestInformation(options *MonthlyPrintUsageSummariesByUserRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Get monthlyPrintUsageSummariesByUser from reports
-// Parameters:
-//  - options : Options for the request
+// Get get monthlyPrintUsageSummariesByUser from reports
 func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) Get(options *MonthlyPrintUsageSummariesByUserRequestBuilderGetOptions)(*MonthlyPrintUsageSummariesByUserResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) Get(options *MonthlyPri
     }
     return res.(*MonthlyPrintUsageSummariesByUserResponse), nil
 }
-// Create new navigation property to monthlyPrintUsageSummariesByUser for reports
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to monthlyPrintUsageSummariesByUser for reports
 func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) Post(options *MonthlyPrintUsageSummariesByUserRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrintUsageByUser, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

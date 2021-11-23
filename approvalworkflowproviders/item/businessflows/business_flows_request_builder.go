@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\businessFlows
+// businessFlowsRequestBuilder builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\businessFlows
 type BusinessFlowsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BusinessFlowsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// BusinessFlowsRequestBuilderGetOptions options for Get
 type BusinessFlowsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type BusinessFlowsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get businessFlows from approvalWorkflowProviders
+// businessFlowsRequestBuilderGetQueryParameters get businessFlows from approvalWorkflowProviders
 type BusinessFlowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type BusinessFlowsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// BusinessFlowsRequestBuilderPostOptions options for Post
 type BusinessFlowsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlow;
@@ -56,10 +56,7 @@ type BusinessFlowsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BusinessFlowsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBusinessFlowsRequestBuilderInternal instantiates a new BusinessFlowsRequestBuilder and sets the default values.
 func NewBusinessFlowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BusinessFlowsRequestBuilder) {
     m := &BusinessFlowsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewBusinessFlowsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BusinessFlowsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBusinessFlowsRequestBuilder instantiates a new BusinessFlowsRequestBuilder and sets the default values.
 func NewBusinessFlowsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BusinessFlowsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessFlowsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get businessFlows from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get businessFlows from approvalWorkflowProviders
 func (m *BusinessFlowsRequestBuilder) CreateGetRequestInformation(options *BusinessFlowsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *BusinessFlowsRequestBuilder) CreateGetRequestInformation(options *Busin
     }
     return requestInfo, nil
 }
-// Create new navigation property to businessFlows for approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to businessFlows for approvalWorkflowProviders
 func (m *BusinessFlowsRequestBuilder) CreatePostRequestInformation(options *BusinessFlowsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *BusinessFlowsRequestBuilder) CreatePostRequestInformation(options *Busi
     }
     return requestInfo, nil
 }
-// Get businessFlows from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Get get businessFlows from approvalWorkflowProviders
 func (m *BusinessFlowsRequestBuilder) Get(options *BusinessFlowsRequestBuilderGetOptions)(*BusinessFlowsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *BusinessFlowsRequestBuilder) Get(options *BusinessFlowsRequestBuilderGe
     }
     return res.(*BusinessFlowsResponse), nil
 }
-// Create new navigation property to businessFlows for approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to businessFlows for approvalWorkflowProviders
 func (m *BusinessFlowsRequestBuilder) Post(options *BusinessFlowsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlow, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

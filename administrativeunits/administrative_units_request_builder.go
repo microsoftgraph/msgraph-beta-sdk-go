@@ -10,7 +10,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \administrativeUnits
+// administrativeUnitsRequestBuilder builds and executes requests for operations under \administrativeUnits
 type AdministrativeUnitsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type AdministrativeUnitsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AdministrativeUnitsRequestBuilderGetOptions options for Get
 type AdministrativeUnitsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type AdministrativeUnitsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from administrativeUnits
+// administrativeUnitsRequestBuilderGetQueryParameters get entities from administrativeUnits
 type AdministrativeUnitsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -49,7 +49,7 @@ type AdministrativeUnitsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AdministrativeUnitsRequestBuilderPostOptions options for Post
 type AdministrativeUnitsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdministrativeUnit;
@@ -60,10 +60,7 @@ type AdministrativeUnitsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdministrativeUnitsRequestBuilderInternal instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
 func NewAdministrativeUnitsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdministrativeUnitsRequestBuilder) {
     m := &AdministrativeUnitsRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewAdministrativeUnitsRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdministrativeUnitsRequestBuilder instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
 func NewAdministrativeUnitsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdministrativeUnitsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from administrativeUnits
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from administrativeUnits
 func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformation(options *AdministrativeUnitsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Add new entity to administrativeUnits
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to administrativeUnits
 func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformation(options *AdministrativeUnitsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,13 +117,11 @@ func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \administrativeUnits\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \administrativeUnits\microsoft.graph.delta()
 func (m *AdministrativeUnitsRequestBuilder) Delta()(*if16d334c721262585664df32b0567644d1ab8a2a5c2829d1f520c68c93e0c424.DeltaRequestBuilder) {
     return if16d334c721262585664df32b0567644d1ab8a2a5c2829d1f520c68c93e0c424.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get entities from administrativeUnits
-// Parameters:
-//  - options : Options for the request
+// Get get entities from administrativeUnits
 func (m *AdministrativeUnitsRequestBuilder) Get(options *AdministrativeUnitsRequestBuilderGetOptions)(*AdministrativeUnitsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,9 +139,7 @@ func (m *AdministrativeUnitsRequestBuilder) GetByIds()(*i277b79a3b313ac8255d78ae
 func (m *AdministrativeUnitsRequestBuilder) GetUserOwnedObjects()(*ia5a3db4673512570eb5641390e08a082576bca30d7028287114d44432947b385.GetUserOwnedObjectsRequestBuilder) {
     return ia5a3db4673512570eb5641390e08a082576bca30d7028287114d44432947b385.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to administrativeUnits
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to administrativeUnits
 func (m *AdministrativeUnitsRequestBuilder) Post(options *AdministrativeUnitsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdministrativeUnit, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

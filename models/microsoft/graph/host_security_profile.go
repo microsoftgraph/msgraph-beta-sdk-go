@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// hostSecurityProfile 
 type HostSecurityProfile struct {
     Entity
     // 
@@ -45,14 +45,14 @@ type HostSecurityProfile struct {
     // 
     vendorInformation *SecurityVendorInformation;
 }
-// Instantiates a new hostSecurityProfile and sets the default values.
+// NewHostSecurityProfile instantiates a new hostSecurityProfile and sets the default values.
 func NewHostSecurityProfile()(*HostSecurityProfile) {
     m := &HostSecurityProfile{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the azureSubscriptionId property value. 
+// GetAzureSubscriptionId gets the azureSubscriptionId property value. 
 func (m *HostSecurityProfile) GetAzureSubscriptionId()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *HostSecurityProfile) GetAzureSubscriptionId()(*string) {
         return m.azureSubscriptionId
     }
 }
-// Gets the azureTenantId property value. 
+// GetAzureTenantId gets the azureTenantId property value. 
 func (m *HostSecurityProfile) GetAzureTenantId()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *HostSecurityProfile) GetAzureTenantId()(*string) {
         return m.azureTenantId
     }
 }
-// Gets the firstSeenDateTime property value. 
+// GetFirstSeenDateTime gets the firstSeenDateTime property value. 
 func (m *HostSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *HostSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe
         return m.firstSeenDateTime
     }
 }
-// Gets the fqdn property value. 
+// GetFqdn gets the fqdn property value. 
 func (m *HostSecurityProfile) GetFqdn()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *HostSecurityProfile) GetFqdn()(*string) {
         return m.fqdn
     }
 }
-// Gets the isAzureAdJoined property value. 
+// GetIsAzureAdJoined gets the isAzureAdJoined property value. 
 func (m *HostSecurityProfile) GetIsAzureAdJoined()(*bool) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *HostSecurityProfile) GetIsAzureAdJoined()(*bool) {
         return m.isAzureAdJoined
     }
 }
-// Gets the isAzureAdRegistered property value. 
+// GetIsAzureAdRegistered gets the isAzureAdRegistered property value. 
 func (m *HostSecurityProfile) GetIsAzureAdRegistered()(*bool) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *HostSecurityProfile) GetIsAzureAdRegistered()(*bool) {
         return m.isAzureAdRegistered
     }
 }
-// Gets the isHybridAzureDomainJoined property value. 
+// GetIsHybridAzureDomainJoined gets the isHybridAzureDomainJoined property value. 
 func (m *HostSecurityProfile) GetIsHybridAzureDomainJoined()(*bool) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *HostSecurityProfile) GetIsHybridAzureDomainJoined()(*bool) {
         return m.isHybridAzureDomainJoined
     }
 }
-// Gets the lastSeenDateTime property value. 
+// GetLastSeenDateTime gets the lastSeenDateTime property value. 
 func (m *HostSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *HostSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3
         return m.lastSeenDateTime
     }
 }
-// Gets the logonUsers property value. 
+// GetLogonUsers gets the logonUsers property value. 
 func (m *HostSecurityProfile) GetLogonUsers()([]LogonUser) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *HostSecurityProfile) GetLogonUsers()([]LogonUser) {
         return m.logonUsers
     }
 }
-// Gets the netBiosName property value. 
+// GetNetBiosName gets the netBiosName property value. 
 func (m *HostSecurityProfile) GetNetBiosName()(*string) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *HostSecurityProfile) GetNetBiosName()(*string) {
         return m.netBiosName
     }
 }
-// Gets the networkInterfaces property value. 
+// GetNetworkInterfaces gets the networkInterfaces property value. 
 func (m *HostSecurityProfile) GetNetworkInterfaces()([]NetworkInterface) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *HostSecurityProfile) GetNetworkInterfaces()([]NetworkInterface) {
         return m.networkInterfaces
     }
 }
-// Gets the os property value. 
+// GetOs gets the os property value. 
 func (m *HostSecurityProfile) GetOs()(*string) {
     if m == nil {
         return nil
@@ -148,7 +148,7 @@ func (m *HostSecurityProfile) GetOs()(*string) {
         return m.os
     }
 }
-// Gets the osVersion property value. 
+// GetOsVersion gets the osVersion property value. 
 func (m *HostSecurityProfile) GetOsVersion()(*string) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *HostSecurityProfile) GetOsVersion()(*string) {
         return m.osVersion
     }
 }
-// Gets the parentHost property value. 
+// GetParentHost gets the parentHost property value. 
 func (m *HostSecurityProfile) GetParentHost()(*string) {
     if m == nil {
         return nil
@@ -164,7 +164,7 @@ func (m *HostSecurityProfile) GetParentHost()(*string) {
         return m.parentHost
     }
 }
-// Gets the relatedHostIds property value. 
+// GetRelatedHostIds gets the relatedHostIds property value. 
 func (m *HostSecurityProfile) GetRelatedHostIds()([]string) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *HostSecurityProfile) GetRelatedHostIds()([]string) {
         return m.relatedHostIds
     }
 }
-// Gets the riskScore property value. 
+// GetRiskScore gets the riskScore property value. 
 func (m *HostSecurityProfile) GetRiskScore()(*string) {
     if m == nil {
         return nil
@@ -180,7 +180,7 @@ func (m *HostSecurityProfile) GetRiskScore()(*string) {
         return m.riskScore
     }
 }
-// Gets the tags property value. 
+// GetTags gets the tags property value. 
 func (m *HostSecurityProfile) GetTags()([]string) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *HostSecurityProfile) GetTags()([]string) {
         return m.tags
     }
 }
-// Gets the vendorInformation property value. 
+// GetVendorInformation gets the vendorInformation property value. 
 func (m *HostSecurityProfile) GetVendorInformation()(*SecurityVendorInformation) {
     if m == nil {
         return nil
@@ -196,7 +196,7 @@ func (m *HostSecurityProfile) GetVendorInformation()(*SecurityVendorInformation)
         return m.vendorInformation
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["azureSubscriptionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -400,9 +400,7 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
 func (m *HostSecurityProfile) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *HostSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -528,111 +526,75 @@ func (m *HostSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the azureSubscriptionId property value. 
-// Parameters:
-//  - value : Value to set for the azureSubscriptionId property.
+// SetAzureSubscriptionId sets the azureSubscriptionId property value. 
 func (m *HostSecurityProfile) SetAzureSubscriptionId(value *string)() {
     m.azureSubscriptionId = value
 }
-// Sets the azureTenantId property value. 
-// Parameters:
-//  - value : Value to set for the azureTenantId property.
+// SetAzureTenantId sets the azureTenantId property value. 
 func (m *HostSecurityProfile) SetAzureTenantId(value *string)() {
     m.azureTenantId = value
 }
-// Sets the firstSeenDateTime property value. 
-// Parameters:
-//  - value : Value to set for the firstSeenDateTime property.
+// SetFirstSeenDateTime sets the firstSeenDateTime property value. 
 func (m *HostSecurityProfile) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.firstSeenDateTime = value
 }
-// Sets the fqdn property value. 
-// Parameters:
-//  - value : Value to set for the fqdn property.
+// SetFqdn sets the fqdn property value. 
 func (m *HostSecurityProfile) SetFqdn(value *string)() {
     m.fqdn = value
 }
-// Sets the isAzureAdJoined property value. 
-// Parameters:
-//  - value : Value to set for the isAzureAdJoined property.
+// SetIsAzureAdJoined sets the isAzureAdJoined property value. 
 func (m *HostSecurityProfile) SetIsAzureAdJoined(value *bool)() {
     m.isAzureAdJoined = value
 }
-// Sets the isAzureAdRegistered property value. 
-// Parameters:
-//  - value : Value to set for the isAzureAdRegistered property.
+// SetIsAzureAdRegistered sets the isAzureAdRegistered property value. 
 func (m *HostSecurityProfile) SetIsAzureAdRegistered(value *bool)() {
     m.isAzureAdRegistered = value
 }
-// Sets the isHybridAzureDomainJoined property value. 
-// Parameters:
-//  - value : Value to set for the isHybridAzureDomainJoined property.
+// SetIsHybridAzureDomainJoined sets the isHybridAzureDomainJoined property value. 
 func (m *HostSecurityProfile) SetIsHybridAzureDomainJoined(value *bool)() {
     m.isHybridAzureDomainJoined = value
 }
-// Sets the lastSeenDateTime property value. 
-// Parameters:
-//  - value : Value to set for the lastSeenDateTime property.
+// SetLastSeenDateTime sets the lastSeenDateTime property value. 
 func (m *HostSecurityProfile) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastSeenDateTime = value
 }
-// Sets the logonUsers property value. 
-// Parameters:
-//  - value : Value to set for the logonUsers property.
+// SetLogonUsers sets the logonUsers property value. 
 func (m *HostSecurityProfile) SetLogonUsers(value []LogonUser)() {
     m.logonUsers = value
 }
-// Sets the netBiosName property value. 
-// Parameters:
-//  - value : Value to set for the netBiosName property.
+// SetNetBiosName sets the netBiosName property value. 
 func (m *HostSecurityProfile) SetNetBiosName(value *string)() {
     m.netBiosName = value
 }
-// Sets the networkInterfaces property value. 
-// Parameters:
-//  - value : Value to set for the networkInterfaces property.
+// SetNetworkInterfaces sets the networkInterfaces property value. 
 func (m *HostSecurityProfile) SetNetworkInterfaces(value []NetworkInterface)() {
     m.networkInterfaces = value
 }
-// Sets the os property value. 
-// Parameters:
-//  - value : Value to set for the os property.
+// SetOs sets the os property value. 
 func (m *HostSecurityProfile) SetOs(value *string)() {
     m.os = value
 }
-// Sets the osVersion property value. 
-// Parameters:
-//  - value : Value to set for the osVersion property.
+// SetOsVersion sets the osVersion property value. 
 func (m *HostSecurityProfile) SetOsVersion(value *string)() {
     m.osVersion = value
 }
-// Sets the parentHost property value. 
-// Parameters:
-//  - value : Value to set for the parentHost property.
+// SetParentHost sets the parentHost property value. 
 func (m *HostSecurityProfile) SetParentHost(value *string)() {
     m.parentHost = value
 }
-// Sets the relatedHostIds property value. 
-// Parameters:
-//  - value : Value to set for the relatedHostIds property.
+// SetRelatedHostIds sets the relatedHostIds property value. 
 func (m *HostSecurityProfile) SetRelatedHostIds(value []string)() {
     m.relatedHostIds = value
 }
-// Sets the riskScore property value. 
-// Parameters:
-//  - value : Value to set for the riskScore property.
+// SetRiskScore sets the riskScore property value. 
 func (m *HostSecurityProfile) SetRiskScore(value *string)() {
     m.riskScore = value
 }
-// Sets the tags property value. 
-// Parameters:
-//  - value : Value to set for the tags property.
+// SetTags sets the tags property value. 
 func (m *HostSecurityProfile) SetTags(value []string)() {
     m.tags = value
 }
-// Sets the vendorInformation property value. 
-// Parameters:
-//  - value : Value to set for the vendorInformation property.
+// SetVendorInformation sets the vendorInformation property value. 
 func (m *HostSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
     m.vendorInformation = value
 }

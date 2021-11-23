@@ -8,7 +8,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\roleScopeTags
+// roleScopeTagsRequestBuilder builds and executes requests for operations under \deviceManagement\roleScopeTags
 type RoleScopeTagsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type RoleScopeTagsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RoleScopeTagsRequestBuilderGetOptions options for Get
 type RoleScopeTagsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type RoleScopeTagsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Role Scope Tags.
+// roleScopeTagsRequestBuilderGetQueryParameters the Role Scope Tags.
 type RoleScopeTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type RoleScopeTagsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RoleScopeTagsRequestBuilderPostOptions options for Post
 type RoleScopeTagsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RoleScopeTag;
@@ -58,10 +58,7 @@ type RoleScopeTagsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RoleScopeTagsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleScopeTagsRequestBuilderInternal instantiates a new RoleScopeTagsRequestBuilder and sets the default values.
 func NewRoleScopeTagsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleScopeTagsRequestBuilder) {
     m := &RoleScopeTagsRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewRoleScopeTagsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleScopeTagsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleScopeTagsRequestBuilder instantiates a new RoleScopeTagsRequestBuilder and sets the default values.
 func NewRoleScopeTagsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleScopeTagsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleScopeTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Role Scope Tags.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Role Scope Tags.
 func (m *RoleScopeTagsRequestBuilder) CreateGetRequestInformation(options *RoleScopeTagsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *RoleScopeTagsRequestBuilder) CreateGetRequestInformation(options *RoleS
     }
     return requestInfo, nil
 }
-// The Role Scope Tags.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the Role Scope Tags.
 func (m *RoleScopeTagsRequestBuilder) CreatePostRequestInformation(options *RoleScopeTagsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *RoleScopeTagsRequestBuilder) CreatePostRequestInformation(options *Role
     }
     return requestInfo, nil
 }
-// The Role Scope Tags.
-// Parameters:
-//  - options : Options for the request
+// Get the Role Scope Tags.
 func (m *RoleScopeTagsRequestBuilder) Get(options *RoleScopeTagsRequestBuilderGetOptions)(*RoleScopeTagsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,13 +130,11 @@ func (m *RoleScopeTagsRequestBuilder) Get(options *RoleScopeTagsRequestBuilderGe
 func (m *RoleScopeTagsRequestBuilder) GetRoleScopeTagsById()(*i33808f02abca01e1267c66ae1677f591fa5a4d6e6c99557066e7ad9ab5bdeb72.GetRoleScopeTagsByIdRequestBuilder) {
     return i33808f02abca01e1267c66ae1677f591fa5a4d6e6c99557066e7ad9ab5bdeb72.NewGetRoleScopeTagsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \deviceManagement\roleScopeTags\microsoft.graph.hasCustomRoleScopeTag()
+// HasCustomRoleScopeTag builds and executes requests for operations under \deviceManagement\roleScopeTags\microsoft.graph.hasCustomRoleScopeTag()
 func (m *RoleScopeTagsRequestBuilder) HasCustomRoleScopeTag()(*i52487895386ac5b9b67d47fdade3472c4d5e919e1c2bc876ca92efd882afe9ae.HasCustomRoleScopeTagRequestBuilder) {
     return i52487895386ac5b9b67d47fdade3472c4d5e919e1c2bc876ca92efd882afe9ae.NewHasCustomRoleScopeTagRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The Role Scope Tags.
-// Parameters:
-//  - options : Options for the request
+// Post the Role Scope Tags.
 func (m *RoleScopeTagsRequestBuilder) Post(options *RoleScopeTagsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RoleScopeTag, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

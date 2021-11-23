@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\supportedRegions
+// supportedRegionsRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\supportedRegions
 type SupportedRegionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SupportedRegionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SupportedRegionsRequestBuilderGetOptions options for Get
 type SupportedRegionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SupportedRegionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Cloud PC supported regions.
+// supportedRegionsRequestBuilderGetQueryParameters cloud PC supported regions.
 type SupportedRegionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SupportedRegionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SupportedRegionsRequestBuilderPostOptions options for Post
 type SupportedRegionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcSupportedRegion;
@@ -56,10 +56,7 @@ type SupportedRegionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SupportedRegionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSupportedRegionsRequestBuilderInternal instantiates a new SupportedRegionsRequestBuilder and sets the default values.
 func NewSupportedRegionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SupportedRegionsRequestBuilder) {
     m := &SupportedRegionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSupportedRegionsRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SupportedRegionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSupportedRegionsRequestBuilder instantiates a new SupportedRegionsRequestBuilder and sets the default values.
 func NewSupportedRegionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SupportedRegionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSupportedRegionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Cloud PC supported regions.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation cloud PC supported regions.
 func (m *SupportedRegionsRequestBuilder) CreateGetRequestInformation(options *SupportedRegionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SupportedRegionsRequestBuilder) CreateGetRequestInformation(options *Su
     }
     return requestInfo, nil
 }
-// Cloud PC supported regions.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation cloud PC supported regions.
 func (m *SupportedRegionsRequestBuilder) CreatePostRequestInformation(options *SupportedRegionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SupportedRegionsRequestBuilder) CreatePostRequestInformation(options *S
     }
     return requestInfo, nil
 }
-// Cloud PC supported regions.
-// Parameters:
-//  - options : Options for the request
+// Get cloud PC supported regions.
 func (m *SupportedRegionsRequestBuilder) Get(options *SupportedRegionsRequestBuilderGetOptions)(*SupportedRegionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SupportedRegionsRequestBuilder) Get(options *SupportedRegionsRequestBui
     }
     return res.(*SupportedRegionsResponse), nil
 }
-// Cloud PC supported regions.
-// Parameters:
-//  - options : Options for the request
+// Post cloud PC supported regions.
 func (m *SupportedRegionsRequestBuilder) Post(options *SupportedRegionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcSupportedRegion, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

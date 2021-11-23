@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectors\{connector-id}\memberOf
+// memberOfRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectors\{connector-id}\memberOf
 type MemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MemberOfRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MemberOfRequestBuilderGetOptions options for Get
 type MemberOfRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MemberOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The connectorGroup that the connector is a member of. Read-only.
+// memberOfRequestBuilderGetQueryParameters the connectorGroup that the connector is a member of. Read-only.
 type MemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MemberOfRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MemberOfRequestBuilderPostOptions options for Post
 type MemberOfRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectorGroup;
@@ -56,10 +56,7 @@ type MemberOfRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MemberOfRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMemberOfRequestBuilderInternal instantiates a new MemberOfRequestBuilder and sets the default values.
 func NewMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MemberOfRequestBuilder) {
     m := &MemberOfRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMemberOfRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MemberOfRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMemberOfRequestBuilder instantiates a new MemberOfRequestBuilder and sets the default values.
 func NewMemberOfRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MemberOfRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The connectorGroup that the connector is a member of. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the connectorGroup that the connector is a member of. Read-only.
 func (m *MemberOfRequestBuilder) CreateGetRequestInformation(options *MemberOfRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MemberOfRequestBuilder) CreateGetRequestInformation(options *MemberOfRe
     }
     return requestInfo, nil
 }
-// The connectorGroup that the connector is a member of. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the connectorGroup that the connector is a member of. Read-only.
 func (m *MemberOfRequestBuilder) CreatePostRequestInformation(options *MemberOfRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MemberOfRequestBuilder) CreatePostRequestInformation(options *MemberOfR
     }
     return requestInfo, nil
 }
-// The connectorGroup that the connector is a member of. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the connectorGroup that the connector is a member of. Read-only.
 func (m *MemberOfRequestBuilder) Get(options *MemberOfRequestBuilderGetOptions)(*MemberOfResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MemberOfRequestBuilder) Get(options *MemberOfRequestBuilderGetOptions)(
     }
     return res.(*MemberOfResponse), nil
 }
-// The connectorGroup that the connector is a member of. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post the connectorGroup that the connector is a member of. Read-only.
 func (m *MemberOfRequestBuilder) Post(options *MemberOfRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectorGroup, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

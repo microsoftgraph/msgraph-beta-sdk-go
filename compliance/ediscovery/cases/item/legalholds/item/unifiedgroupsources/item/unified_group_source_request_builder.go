@@ -7,7 +7,7 @@ import (
     i0cdb2a2d0cdf4370500776bf4838432b20465784dc1a7c61c2292a8f5eec5862 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/legalholds/item/unifiedgroupsources/item/group"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}\unifiedGroupSources\{unifiedGroupSource-id}
+// unifiedGroupSourceRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}\unifiedGroupSources\{unifiedGroupSource-id}
 type UnifiedGroupSourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UnifiedGroupSourceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UnifiedGroupSourceRequestBuilderDeleteOptions options for Delete
 type UnifiedGroupSourceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type UnifiedGroupSourceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UnifiedGroupSourceRequestBuilderGetOptions options for Get
 type UnifiedGroupSourceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type UnifiedGroupSourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get unifiedGroupSources from compliance
+// unifiedGroupSourceRequestBuilderGetQueryParameters get unifiedGroupSources from compliance
 type UnifiedGroupSourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UnifiedGroupSourceRequestBuilderPatchOptions options for Patch
 type UnifiedGroupSourceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedGroupSource;
@@ -54,10 +54,7 @@ type UnifiedGroupSourceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnifiedGroupSourceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedGroupSourceRequestBuilderInternal instantiates a new UnifiedGroupSourceRequestBuilder and sets the default values.
 func NewUnifiedGroupSourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedGroupSourceRequestBuilder) {
     m := &UnifiedGroupSourceRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewUnifiedGroupSourceRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnifiedGroupSourceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedGroupSourceRequestBuilder instantiates a new UnifiedGroupSourceRequestBuilder and sets the default values.
 func NewUnifiedGroupSourceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedGroupSourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedGroupSourceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property unifiedGroupSources for compliance
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property unifiedGroupSources for compliance
 func (m *UnifiedGroupSourceRequestBuilder) CreateDeleteRequestInformation(options *UnifiedGroupSourceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *UnifiedGroupSourceRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get unifiedGroupSources from compliance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get unifiedGroupSources from compliance
 func (m *UnifiedGroupSourceRequestBuilder) CreateGetRequestInformation(options *UnifiedGroupSourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *UnifiedGroupSourceRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Update the navigation property unifiedGroupSources in compliance
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property unifiedGroupSources in compliance
 func (m *UnifiedGroupSourceRequestBuilder) CreatePatchRequestInformation(options *UnifiedGroupSourceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *UnifiedGroupSourceRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete navigation property unifiedGroupSources for compliance
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property unifiedGroupSources for compliance
 func (m *UnifiedGroupSourceRequestBuilder) Delete(options *UnifiedGroupSourceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *UnifiedGroupSourceRequestBuilder) Delete(options *UnifiedGroupSourceReq
     }
     return nil
 }
-// Get unifiedGroupSources from compliance
-// Parameters:
-//  - options : Options for the request
+// Get get unifiedGroupSources from compliance
 func (m *UnifiedGroupSourceRequestBuilder) Get(options *UnifiedGroupSourceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedGroupSource, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *UnifiedGroupSourceRequestBuilder) Get(options *UnifiedGroupSourceReques
 func (m *UnifiedGroupSourceRequestBuilder) Group()(*i0cdb2a2d0cdf4370500776bf4838432b20465784dc1a7c61c2292a8f5eec5862.GroupRequestBuilder) {
     return i0cdb2a2d0cdf4370500776bf4838432b20465784dc1a7c61c2292a8f5eec5862.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property unifiedGroupSources in compliance
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property unifiedGroupSources in compliance
 func (m *UnifiedGroupSourceRequestBuilder) Patch(options *UnifiedGroupSourceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

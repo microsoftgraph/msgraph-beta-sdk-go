@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// groupPolicyOperation 
 type GroupPolicyOperation struct {
     Entity
     // The date and time the entity was last modified.
@@ -17,14 +17,14 @@ type GroupPolicyOperation struct {
     // The group policy operation status detail.
     statusDetails *string;
 }
-// Instantiates a new groupPolicyOperation and sets the default values.
+// NewGroupPolicyOperation instantiates a new groupPolicyOperation and sets the default values.
 func NewGroupPolicyOperation()(*GroupPolicyOperation) {
     m := &GroupPolicyOperation{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *GroupPolicyOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6
         return m.lastModifiedDateTime
     }
 }
-// Gets the operationStatus property value. The group policy operation status. Possible values are: unknown, inProgress, success, failed.
+// GetOperationStatus gets the operationStatus property value. The group policy operation status. Possible values are: unknown, inProgress, success, failed.
 func (m *GroupPolicyOperation) GetOperationStatus()(*GroupPolicyOperationStatus) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *GroupPolicyOperation) GetOperationStatus()(*GroupPolicyOperationStatus)
         return m.operationStatus
     }
 }
-// Gets the operationType property value. The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.
+// GetOperationType gets the operationType property value. The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.
 func (m *GroupPolicyOperation) GetOperationType()(*GroupPolicyOperationType) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *GroupPolicyOperation) GetOperationType()(*GroupPolicyOperationType) {
         return m.operationType
     }
 }
-// Gets the statusDetails property value. The group policy operation status detail.
+// GetStatusDetails gets the statusDetails property value. The group policy operation status detail.
 func (m *GroupPolicyOperation) GetStatusDetails()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *GroupPolicyOperation) GetStatusDetails()(*string) {
         return m.statusDetails
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,9 +106,7 @@ func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(interface
 func (m *GroupPolicyOperation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GroupPolicyOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -142,27 +140,19 @@ func (m *GroupPolicyOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the lastModifiedDateTime property value. The date and time the entity was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyOperation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the operationStatus property value. The group policy operation status. Possible values are: unknown, inProgress, success, failed.
-// Parameters:
-//  - value : Value to set for the operationStatus property.
+// SetOperationStatus sets the operationStatus property value. The group policy operation status. Possible values are: unknown, inProgress, success, failed.
 func (m *GroupPolicyOperation) SetOperationStatus(value *GroupPolicyOperationStatus)() {
     m.operationStatus = value
 }
-// Sets the operationType property value. The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.
-// Parameters:
-//  - value : Value to set for the operationType property.
+// SetOperationType sets the operationType property value. The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.
 func (m *GroupPolicyOperation) SetOperationType(value *GroupPolicyOperationType)() {
     m.operationType = value
 }
-// Sets the statusDetails property value. The group policy operation status detail.
-// Parameters:
-//  - value : Value to set for the statusDetails property.
+// SetStatusDetails sets the statusDetails property value. The group policy operation status detail.
 func (m *GroupPolicyOperation) SetStatusDetails(value *string)() {
     m.statusDetails = value
 }

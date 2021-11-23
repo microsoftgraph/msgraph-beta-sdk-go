@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// microsoftTunnelServer 
 type MicrosoftTunnelServer struct {
     Entity
     // The digest of the current agent image running on this server
@@ -19,14 +19,14 @@ type MicrosoftTunnelServer struct {
     // The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
     tunnelServerHealthStatus *MicrosoftTunnelServerHealthStatus;
 }
-// Instantiates a new microsoftTunnelServer and sets the default values.
+// NewMicrosoftTunnelServer instantiates a new microsoftTunnelServer and sets the default values.
 func NewMicrosoftTunnelServer()(*MicrosoftTunnelServer) {
     m := &MicrosoftTunnelServer{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the agentImageDigest property value. The digest of the current agent image running on this server
+// GetAgentImageDigest gets the agentImageDigest property value. The digest of the current agent image running on this server
 func (m *MicrosoftTunnelServer) GetAgentImageDigest()(*string) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *MicrosoftTunnelServer) GetAgentImageDigest()(*string) {
         return m.agentImageDigest
     }
 }
-// Gets the displayName property value. The MicrosoftTunnelServer's display name
+// GetDisplayName gets the displayName property value. The MicrosoftTunnelServer's display name
 func (m *MicrosoftTunnelServer) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *MicrosoftTunnelServer) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastCheckinDateTime property value. When the MicrosoftTunnelServer last checked in
+// GetLastCheckinDateTime gets the lastCheckinDateTime property value. When the MicrosoftTunnelServer last checked in
 func (m *MicrosoftTunnelServer) GetLastCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *MicrosoftTunnelServer) GetLastCheckinDateTime()(*i336074805fc853987abe6
         return m.lastCheckinDateTime
     }
 }
-// Gets the serverImageDigest property value. The digest of the current server image running on this server
+// GetServerImageDigest gets the serverImageDigest property value. The digest of the current server image running on this server
 func (m *MicrosoftTunnelServer) GetServerImageDigest()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *MicrosoftTunnelServer) GetServerImageDigest()(*string) {
         return m.serverImageDigest
     }
 }
-// Gets the tunnelServerHealthStatus property value. The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
+// GetTunnelServerHealthStatus gets the tunnelServerHealthStatus property value. The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
 func (m *MicrosoftTunnelServer) GetTunnelServerHealthStatus()(*MicrosoftTunnelServerHealthStatus) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *MicrosoftTunnelServer) GetTunnelServerHealthStatus()(*MicrosoftTunnelSe
         return m.tunnelServerHealthStatus
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agentImageDigest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,9 +125,7 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
 func (m *MicrosoftTunnelServer) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MicrosoftTunnelServer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -166,33 +164,23 @@ func (m *MicrosoftTunnelServer) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the agentImageDigest property value. The digest of the current agent image running on this server
-// Parameters:
-//  - value : Value to set for the agentImageDigest property.
+// SetAgentImageDigest sets the agentImageDigest property value. The digest of the current agent image running on this server
 func (m *MicrosoftTunnelServer) SetAgentImageDigest(value *string)() {
     m.agentImageDigest = value
 }
-// Sets the displayName property value. The MicrosoftTunnelServer's display name
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The MicrosoftTunnelServer's display name
 func (m *MicrosoftTunnelServer) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastCheckinDateTime property value. When the MicrosoftTunnelServer last checked in
-// Parameters:
-//  - value : Value to set for the lastCheckinDateTime property.
+// SetLastCheckinDateTime sets the lastCheckinDateTime property value. When the MicrosoftTunnelServer last checked in
 func (m *MicrosoftTunnelServer) SetLastCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastCheckinDateTime = value
 }
-// Sets the serverImageDigest property value. The digest of the current server image running on this server
-// Parameters:
-//  - value : Value to set for the serverImageDigest property.
+// SetServerImageDigest sets the serverImageDigest property value. The digest of the current server image running on this server
 func (m *MicrosoftTunnelServer) SetServerImageDigest(value *string)() {
     m.serverImageDigest = value
 }
-// Sets the tunnelServerHealthStatus property value. The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
-// Parameters:
-//  - value : Value to set for the tunnelServerHealthStatus property.
+// SetTunnelServerHealthStatus sets the tunnelServerHealthStatus property value. The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
 func (m *MicrosoftTunnelServer) SetTunnelServerHealthStatus(value *MicrosoftTunnelServerHealthStatus)() {
     m.tunnelServerHealthStatus = value
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// microsoftTunnelHealthThreshold 
 type MicrosoftTunnelHealthThreshold struct {
     Entity
     // The default threshold for being healthy
@@ -16,14 +16,14 @@ type MicrosoftTunnelHealthThreshold struct {
     // The threshold for being unhealthy
     unhealthyThreshold *int64;
 }
-// Instantiates a new microsoftTunnelHealthThreshold and sets the default values.
+// NewMicrosoftTunnelHealthThreshold instantiates a new microsoftTunnelHealthThreshold and sets the default values.
 func NewMicrosoftTunnelHealthThreshold()(*MicrosoftTunnelHealthThreshold) {
     m := &MicrosoftTunnelHealthThreshold{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the defaultHealthyThreshold property value. The default threshold for being healthy
+// GetDefaultHealthyThreshold gets the defaultHealthyThreshold property value. The default threshold for being healthy
 func (m *MicrosoftTunnelHealthThreshold) GetDefaultHealthyThreshold()(*int64) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetDefaultHealthyThreshold()(*int64) {
         return m.defaultHealthyThreshold
     }
 }
-// Gets the defaultUnhealthyThreshold property value. The default threshold for being unhealthy
+// GetDefaultUnhealthyThreshold gets the defaultUnhealthyThreshold property value. The default threshold for being unhealthy
 func (m *MicrosoftTunnelHealthThreshold) GetDefaultUnhealthyThreshold()(*int64) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetDefaultUnhealthyThreshold()(*int64) 
         return m.defaultUnhealthyThreshold
     }
 }
-// Gets the healthyThreshold property value. The threshold for being healthy
+// GetHealthyThreshold gets the healthyThreshold property value. The threshold for being healthy
 func (m *MicrosoftTunnelHealthThreshold) GetHealthyThreshold()(*int64) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetHealthyThreshold()(*int64) {
         return m.healthyThreshold
     }
 }
-// Gets the unhealthyThreshold property value. The threshold for being unhealthy
+// GetUnhealthyThreshold gets the unhealthyThreshold property value. The threshold for being unhealthy
 func (m *MicrosoftTunnelHealthThreshold) GetUnhealthyThreshold()(*int64) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetUnhealthyThreshold()(*int64) {
         return m.unhealthyThreshold
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["defaultHealthyThreshold"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -103,9 +103,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
 func (m *MicrosoftTunnelHealthThreshold) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MicrosoftTunnelHealthThreshold) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -137,27 +135,19 @@ func (m *MicrosoftTunnelHealthThreshold) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// Sets the defaultHealthyThreshold property value. The default threshold for being healthy
-// Parameters:
-//  - value : Value to set for the defaultHealthyThreshold property.
+// SetDefaultHealthyThreshold sets the defaultHealthyThreshold property value. The default threshold for being healthy
 func (m *MicrosoftTunnelHealthThreshold) SetDefaultHealthyThreshold(value *int64)() {
     m.defaultHealthyThreshold = value
 }
-// Sets the defaultUnhealthyThreshold property value. The default threshold for being unhealthy
-// Parameters:
-//  - value : Value to set for the defaultUnhealthyThreshold property.
+// SetDefaultUnhealthyThreshold sets the defaultUnhealthyThreshold property value. The default threshold for being unhealthy
 func (m *MicrosoftTunnelHealthThreshold) SetDefaultUnhealthyThreshold(value *int64)() {
     m.defaultUnhealthyThreshold = value
 }
-// Sets the healthyThreshold property value. The threshold for being healthy
-// Parameters:
-//  - value : Value to set for the healthyThreshold property.
+// SetHealthyThreshold sets the healthyThreshold property value. The threshold for being healthy
 func (m *MicrosoftTunnelHealthThreshold) SetHealthyThreshold(value *int64)() {
     m.healthyThreshold = value
 }
-// Sets the unhealthyThreshold property value. The threshold for being unhealthy
-// Parameters:
-//  - value : Value to set for the unhealthyThreshold property.
+// SetUnhealthyThreshold sets the unhealthyThreshold property value. The threshold for being unhealthy
 func (m *MicrosoftTunnelHealthThreshold) SetUnhealthyThreshold(value *int64)() {
     m.unhealthyThreshold = value
 }

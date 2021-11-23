@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\windowsInformationProtectionWipeActions\{windowsInformationProtectionWipeAction-id}
+// windowsInformationProtectionWipeActionRequestBuilder builds and executes requests for operations under \deviceAppManagement\windowsInformationProtectionWipeActions\{windowsInformationProtectionWipeAction-id}
 type WindowsInformationProtectionWipeActionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsInformationProtectionWipeActionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsInformationProtectionWipeActionRequestBuilderDeleteOptions options for Delete
 type WindowsInformationProtectionWipeActionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type WindowsInformationProtectionWipeActionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsInformationProtectionWipeActionRequestBuilderGetOptions options for Get
 type WindowsInformationProtectionWipeActionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type WindowsInformationProtectionWipeActionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Windows information protection wipe actions.
+// windowsInformationProtectionWipeActionRequestBuilderGetQueryParameters windows information protection wipe actions.
 type WindowsInformationProtectionWipeActionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsInformationProtectionWipeActionRequestBuilderPatchOptions options for Patch
 type WindowsInformationProtectionWipeActionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsInformationProtectionWipeAction;
@@ -53,10 +53,7 @@ type WindowsInformationProtectionWipeActionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsInformationProtectionWipeActionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsInformationProtectionWipeActionRequestBuilderInternal instantiates a new WindowsInformationProtectionWipeActionRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionWipeActionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsInformationProtectionWipeActionRequestBuilder) {
     m := &WindowsInformationProtectionWipeActionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewWindowsInformationProtectionWipeActionRequestBuilderInternal(pathParamet
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsInformationProtectionWipeActionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsInformationProtectionWipeActionRequestBuilder instantiates a new WindowsInformationProtectionWipeActionRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionWipeActionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsInformationProtectionWipeActionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionWipeActionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Windows information protection wipe actions.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation windows information protection wipe actions.
 func (m *WindowsInformationProtectionWipeActionRequestBuilder) CreateDeleteRequestInformation(options *WindowsInformationProtectionWipeActionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *WindowsInformationProtectionWipeActionRequestBuilder) CreateDeleteReque
     }
     return requestInfo, nil
 }
-// Windows information protection wipe actions.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation windows information protection wipe actions.
 func (m *WindowsInformationProtectionWipeActionRequestBuilder) CreateGetRequestInformation(options *WindowsInformationProtectionWipeActionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *WindowsInformationProtectionWipeActionRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// Windows information protection wipe actions.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation windows information protection wipe actions.
 func (m *WindowsInformationProtectionWipeActionRequestBuilder) CreatePatchRequestInformation(options *WindowsInformationProtectionWipeActionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *WindowsInformationProtectionWipeActionRequestBuilder) CreatePatchReques
     }
     return requestInfo, nil
 }
-// Windows information protection wipe actions.
-// Parameters:
-//  - options : Options for the request
+// Delete windows information protection wipe actions.
 func (m *WindowsInformationProtectionWipeActionRequestBuilder) Delete(options *WindowsInformationProtectionWipeActionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *WindowsInformationProtectionWipeActionRequestBuilder) Delete(options *W
     }
     return nil
 }
-// Windows information protection wipe actions.
-// Parameters:
-//  - options : Options for the request
+// Get windows information protection wipe actions.
 func (m *WindowsInformationProtectionWipeActionRequestBuilder) Get(options *WindowsInformationProtectionWipeActionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsInformationProtectionWipeAction, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *WindowsInformationProtectionWipeActionRequestBuilder) Get(options *Wind
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsInformationProtectionWipeAction), nil
 }
-// Windows information protection wipe actions.
-// Parameters:
-//  - options : Options for the request
+// Patch windows information protection wipe actions.
 func (m *WindowsInformationProtectionWipeActionRequestBuilder) Patch(options *WindowsInformationProtectionWipeActionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions\microsoft.graph.windowsUpdates.unenrollAssetsById
+// unenrollAssetsByIdRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions\microsoft.graph.windowsUpdates.unenrollAssetsById
 type UnenrollAssetsByIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UnenrollAssetsByIdRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UnenrollAssetsByIdRequestBuilderPostOptions options for Post
 type UnenrollAssetsByIdRequestBuilderPostOptions struct {
     // 
     Body *UnenrollAssetsByIdRequestBody;
@@ -24,10 +24,7 @@ type UnenrollAssetsByIdRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnenrollAssetsByIdRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnenrollAssetsByIdRequestBuilderInternal instantiates a new UnenrollAssetsByIdRequestBuilder and sets the default values.
 func NewUnenrollAssetsByIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnenrollAssetsByIdRequestBuilder) {
     m := &UnenrollAssetsByIdRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewUnenrollAssetsByIdRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnenrollAssetsByIdRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnenrollAssetsByIdRequestBuilder instantiates a new UnenrollAssetsByIdRequestBuilder and sets the default values.
 func NewUnenrollAssetsByIdRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnenrollAssetsByIdRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnenrollAssetsByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action unenrollAssetsById
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action unenrollAssetsById
 func (m *UnenrollAssetsByIdRequestBuilder) CreatePostRequestInformation(options *UnenrollAssetsByIdRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *UnenrollAssetsByIdRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Invoke action unenrollAssetsById
-// Parameters:
-//  - options : Options for the request
+// Post invoke action unenrollAssetsById
 func (m *UnenrollAssetsByIdRequestBuilder) Post(options *UnenrollAssetsByIdRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

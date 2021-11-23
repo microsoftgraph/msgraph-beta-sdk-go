@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// timeCard 
 type TimeCard struct {
     ChangeTrackedEntity
     // The list of breaks associated with the timeCard.
@@ -24,14 +24,14 @@ type TimeCard struct {
     // User ID to which  the timeCard belongs.
     userId *string;
 }
-// Instantiates a new timeCard and sets the default values.
+// NewTimeCard instantiates a new timeCard and sets the default values.
 func NewTimeCard()(*TimeCard) {
     m := &TimeCard{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
     return m
 }
-// Gets the breaks property value. The list of breaks associated with the timeCard.
+// GetBreaks gets the breaks property value. The list of breaks associated with the timeCard.
 func (m *TimeCard) GetBreaks()([]TimeCardBreak) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *TimeCard) GetBreaks()([]TimeCardBreak) {
         return m.breaks
     }
 }
-// Gets the clockInEvent property value. The clock-in event of the timeCard.
+// GetClockInEvent gets the clockInEvent property value. The clock-in event of the timeCard.
 func (m *TimeCard) GetClockInEvent()(*TimeCardEvent) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *TimeCard) GetClockInEvent()(*TimeCardEvent) {
         return m.clockInEvent
     }
 }
-// Gets the clockOutEvent property value. The clock-out event of the timeCard.
+// GetClockOutEvent gets the clockOutEvent property value. The clock-out event of the timeCard.
 func (m *TimeCard) GetClockOutEvent()(*TimeCardEvent) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *TimeCard) GetClockOutEvent()(*TimeCardEvent) {
         return m.clockOutEvent
     }
 }
-// Gets the confirmedBy property value. Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
+// GetConfirmedBy gets the confirmedBy property value. Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
 func (m *TimeCard) GetConfirmedBy()(*ConfirmedBy) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *TimeCard) GetConfirmedBy()(*ConfirmedBy) {
         return m.confirmedBy
     }
 }
-// Gets the notes property value. Notes about the timeCard.
+// GetNotes gets the notes property value. Notes about the timeCard.
 func (m *TimeCard) GetNotes()(*ItemBody) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *TimeCard) GetNotes()(*ItemBody) {
         return m.notes
     }
 }
-// Gets the originalEntry property value. The original timeCardEntry of the timeCard, before user edits.
+// GetOriginalEntry gets the originalEntry property value. The original timeCardEntry of the timeCard, before user edits.
 func (m *TimeCard) GetOriginalEntry()(*TimeCardEntry) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *TimeCard) GetOriginalEntry()(*TimeCardEntry) {
         return m.originalEntry
     }
 }
-// Gets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
+// GetState gets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
 func (m *TimeCard) GetState()(*TimeCardState) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *TimeCard) GetState()(*TimeCardState) {
         return m.state
     }
 }
-// Gets the userId property value. User ID to which  the timeCard belongs.
+// GetUserId gets the userId property value. User ID to which  the timeCard belongs.
 func (m *TimeCard) GetUserId()(*string) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *TimeCard) GetUserId()(*string) {
         return m.userId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["breaks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -189,9 +189,7 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *TimeCard) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TimeCard) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ChangeTrackedEntity.Serialize(writer)
     if err != nil {
@@ -254,51 +252,35 @@ func (m *TimeCard) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// Sets the breaks property value. The list of breaks associated with the timeCard.
-// Parameters:
-//  - value : Value to set for the breaks property.
+// SetBreaks sets the breaks property value. The list of breaks associated with the timeCard.
 func (m *TimeCard) SetBreaks(value []TimeCardBreak)() {
     m.breaks = value
 }
-// Sets the clockInEvent property value. The clock-in event of the timeCard.
-// Parameters:
-//  - value : Value to set for the clockInEvent property.
+// SetClockInEvent sets the clockInEvent property value. The clock-in event of the timeCard.
 func (m *TimeCard) SetClockInEvent(value *TimeCardEvent)() {
     m.clockInEvent = value
 }
-// Sets the clockOutEvent property value. The clock-out event of the timeCard.
-// Parameters:
-//  - value : Value to set for the clockOutEvent property.
+// SetClockOutEvent sets the clockOutEvent property value. The clock-out event of the timeCard.
 func (m *TimeCard) SetClockOutEvent(value *TimeCardEvent)() {
     m.clockOutEvent = value
 }
-// Sets the confirmedBy property value. Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the confirmedBy property.
+// SetConfirmedBy sets the confirmedBy property value. Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
 func (m *TimeCard) SetConfirmedBy(value *ConfirmedBy)() {
     m.confirmedBy = value
 }
-// Sets the notes property value. Notes about the timeCard.
-// Parameters:
-//  - value : Value to set for the notes property.
+// SetNotes sets the notes property value. Notes about the timeCard.
 func (m *TimeCard) SetNotes(value *ItemBody)() {
     m.notes = value
 }
-// Sets the originalEntry property value. The original timeCardEntry of the timeCard, before user edits.
-// Parameters:
-//  - value : Value to set for the originalEntry property.
+// SetOriginalEntry sets the originalEntry property value. The original timeCardEntry of the timeCard, before user edits.
 func (m *TimeCard) SetOriginalEntry(value *TimeCardEntry)() {
     m.originalEntry = value
 }
-// Sets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
 func (m *TimeCard) SetState(value *TimeCardState)() {
     m.state = value
 }
-// Sets the userId property value. User ID to which  the timeCard belongs.
-// Parameters:
-//  - value : Value to set for the userId property.
+// SetUserId sets the userId property value. User ID to which  the timeCard belongs.
 func (m *TimeCard) SetUserId(value *string)() {
     m.userId = value
 }

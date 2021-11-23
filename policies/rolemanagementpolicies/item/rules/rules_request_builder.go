@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\roleManagementPolicies\{unifiedRoleManagementPolicy-id}\rules
+// rulesRequestBuilder builds and executes requests for operations under \policies\roleManagementPolicies\{unifiedRoleManagementPolicy-id}\rules
 type RulesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RulesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RulesRequestBuilderGetOptions options for Get
 type RulesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RulesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of rules like approval rule, expiration rule, etc.
+// rulesRequestBuilderGetQueryParameters the collection of rules like approval rule, expiration rule, etc.
 type RulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RulesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RulesRequestBuilderPostOptions options for Post
 type RulesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyRule;
@@ -56,10 +56,7 @@ type RulesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RulesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRulesRequestBuilderInternal instantiates a new RulesRequestBuilder and sets the default values.
 func NewRulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RulesRequestBuilder) {
     m := &RulesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRulesRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RulesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRulesRequestBuilder instantiates a new RulesRequestBuilder and sets the default values.
 func NewRulesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RulesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRulesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of rules like approval rule, expiration rule, etc.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of rules like approval rule, expiration rule, etc.
 func (m *RulesRequestBuilder) CreateGetRequestInformation(options *RulesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RulesRequestBuilder) CreateGetRequestInformation(options *RulesRequestB
     }
     return requestInfo, nil
 }
-// The collection of rules like approval rule, expiration rule, etc.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of rules like approval rule, expiration rule, etc.
 func (m *RulesRequestBuilder) CreatePostRequestInformation(options *RulesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RulesRequestBuilder) CreatePostRequestInformation(options *RulesRequest
     }
     return requestInfo, nil
 }
-// The collection of rules like approval rule, expiration rule, etc.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of rules like approval rule, expiration rule, etc.
 func (m *RulesRequestBuilder) Get(options *RulesRequestBuilderGetOptions)(*RulesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RulesRequestBuilder) Get(options *RulesRequestBuilderGetOptions)(*Rules
     }
     return res.(*RulesResponse), nil
 }
-// The collection of rules like approval rule, expiration rule, etc.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of rules like approval rule, expiration rule, etc.
 func (m *RulesRequestBuilder) Post(options *RulesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicyRule, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

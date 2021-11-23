@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// educationSynchronizationLicenseAssignment 
 type EducationSynchronizationLicenseAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type EducationSynchronizationLicenseAssignment struct {
     // Represents the SKU identifiers of the licenses to assign.
     skuIds []string;
 }
-// Instantiates a new educationSynchronizationLicenseAssignment and sets the default values.
+// NewEducationSynchronizationLicenseAssignment instantiates a new educationSynchronizationLicenseAssignment and sets the default values.
 func NewEducationSynchronizationLicenseAssignment()(*EducationSynchronizationLicenseAssignment) {
     m := &EducationSynchronizationLicenseAssignment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationSynchronizationLicenseAssignment) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *EducationSynchronizationLicenseAssignment) GetAdditionalData()(map[stri
         return m.additionalData
     }
 }
-// Gets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
+// GetAppliesTo gets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
 func (m *EducationSynchronizationLicenseAssignment) GetAppliesTo()(*EducationUserRole) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *EducationSynchronizationLicenseAssignment) GetAppliesTo()(*EducationUse
         return m.appliesTo
     }
 }
-// Gets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
+// GetSkuIds gets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
 func (m *EducationSynchronizationLicenseAssignment) GetSkuIds()([]string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *EducationSynchronizationLicenseAssignment) GetSkuIds()([]string) {
         return m.skuIds
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EducationSynchronizationLicenseAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["appliesTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,9 +77,7 @@ func (m *EducationSynchronizationLicenseAssignment) GetFieldDeserializers()(map[
 func (m *EducationSynchronizationLicenseAssignment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EducationSynchronizationLicenseAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAppliesTo() != nil {
         cast := m.GetAppliesTo().String()
@@ -102,21 +100,15 @@ func (m *EducationSynchronizationLicenseAssignment) Serialize(writer i04eb5309ae
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationSynchronizationLicenseAssignment) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
-// Parameters:
-//  - value : Value to set for the appliesTo property.
+// SetAppliesTo sets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
 func (m *EducationSynchronizationLicenseAssignment) SetAppliesTo(value *EducationUserRole)() {
     m.appliesTo = value
 }
-// Sets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
-// Parameters:
-//  - value : Value to set for the skuIds property.
+// SetSkuIds sets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
 func (m *EducationSynchronizationLicenseAssignment) SetSkuIds(value []string)() {
     m.skuIds = value
 }

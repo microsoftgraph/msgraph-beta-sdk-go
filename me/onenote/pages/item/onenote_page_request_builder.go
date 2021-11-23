@@ -12,7 +12,7 @@ import (
     if3f03d5b402a9dd599db6efd0076b73a02afef311f53fa655dcc578640033ca7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onenote/pages/item/parentsection"
 )
 
-// Builds and executes requests for operations under \me\onenote\pages\{onenotePage-id}
+// onenotePageRequestBuilder builds and executes requests for operations under \me\onenote\pages\{onenotePage-id}
 type OnenotePageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type OnenotePageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OnenotePageRequestBuilderDeleteOptions options for Delete
 type OnenotePageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type OnenotePageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OnenotePageRequestBuilderGetOptions options for Get
 type OnenotePageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -41,14 +41,14 @@ type OnenotePageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// onenotePageRequestBuilderGetQueryParameters the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 type OnenotePageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OnenotePageRequestBuilderPatchOptions options for Patch
 type OnenotePageRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePage;
@@ -59,10 +59,7 @@ type OnenotePageRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OnenotePageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnenotePageRequestBuilderInternal instantiates a new OnenotePageRequestBuilder and sets the default values.
 func NewOnenotePageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenotePageRequestBuilder) {
     m := &OnenotePageRequestBuilder{
     }
@@ -75,10 +72,7 @@ func NewOnenotePageRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OnenotePageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnenotePageRequestBuilder instantiates a new OnenotePageRequestBuilder and sets the default values.
 func NewOnenotePageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenotePageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -90,9 +84,7 @@ func (m *OnenotePageRequestBuilder) Content()(*i451c025aa220beeb4fb51b8b093fc5ef
 func (m *OnenotePageRequestBuilder) CopyToSection()(*i5a522d346490d892f5e57f163d1de63ef54efe1de0506b59fae67f6b8cc3c5e0.CopyToSectionRequestBuilder) {
     return i5a522d346490d892f5e57f163d1de63ef54efe1de0506b59fae67f6b8cc3c5e0.NewCopyToSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) CreateDeleteRequestInformation(options *OnenotePageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +101,7 @@ func (m *OnenotePageRequestBuilder) CreateDeleteRequestInformation(options *Onen
     }
     return requestInfo, nil
 }
-// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) CreateGetRequestInformation(options *OnenotePageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,9 +121,7 @@ func (m *OnenotePageRequestBuilder) CreateGetRequestInformation(options *Onenote
     }
     return requestInfo, nil
 }
-// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) CreatePatchRequestInformation(options *OnenotePageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,9 +139,7 @@ func (m *OnenotePageRequestBuilder) CreatePatchRequestInformation(options *Oneno
     }
     return requestInfo, nil
 }
-// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) Delete(options *OnenotePageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -165,9 +151,7 @@ func (m *OnenotePageRequestBuilder) Delete(options *OnenotePageRequestBuilderDel
     }
     return nil
 }
-// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) Get(options *OnenotePageRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnenotePage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -188,9 +172,7 @@ func (m *OnenotePageRequestBuilder) ParentNotebook()(*i1daaf4c3ecf2363d24cd0e200
 func (m *OnenotePageRequestBuilder) ParentSection()(*if3f03d5b402a9dd599db6efd0076b73a02afef311f53fa655dcc578640033ca7.ParentSectionRequestBuilder) {
     return if3f03d5b402a9dd599db6efd0076b73a02afef311f53fa655dcc578640033ca7.NewParentSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) Patch(options *OnenotePageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -202,7 +184,7 @@ func (m *OnenotePageRequestBuilder) Patch(options *OnenotePageRequestBuilderPatc
     }
     return nil
 }
-// Builds and executes requests for operations under \me\onenote\pages\{onenotePage-id}\microsoft.graph.preview()
+// Preview builds and executes requests for operations under \me\onenote\pages\{onenotePage-id}\microsoft.graph.preview()
 func (m *OnenotePageRequestBuilder) Preview()(*i402753b0167f1a0e92645e87797f47d23e4cfcb5f71767a419f3878578b8018f.PreviewRequestBuilder) {
     return i402753b0167f1a0e92645e87797f47d23e4cfcb5f71767a419f3878578b8018f.NewPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -8,7 +8,7 @@ import (
     ie085268c4afc45c8557c32136e2f1d802878f154575855708ba0169a6e547fde "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/policy/labels/item"
 )
 
-// Builds and executes requests for operations under \informationProtection\policy
+// policyRequestBuilder builds and executes requests for operations under \informationProtection\policy
 type PolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type PolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PolicyRequestBuilderDeleteOptions options for Delete
 type PolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PolicyRequestBuilderGetOptions options for Get
 type PolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type PolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get policy from informationProtection
+// policyRequestBuilderGetQueryParameters get policy from informationProtection
 type PolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PolicyRequestBuilderPatchOptions options for Patch
 type PolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionPolicy;
@@ -55,10 +55,7 @@ type PolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicyRequestBuilderInternal instantiates a new PolicyRequestBuilder and sets the default values.
 func NewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyRequestBuilder) {
     m := &PolicyRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicyRequestBuilder instantiates a new PolicyRequestBuilder and sets the default values.
 func NewPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property policy for informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property policy for informationProtection
 func (m *PolicyRequestBuilder) CreateDeleteRequestInformation(options *PolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *PolicyRequestBuilder) CreateDeleteRequestInformation(options *PolicyReq
     }
     return requestInfo, nil
 }
-// Get policy from informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get policy from informationProtection
 func (m *PolicyRequestBuilder) CreateGetRequestInformation(options *PolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *PolicyRequestBuilder) CreateGetRequestInformation(options *PolicyReques
     }
     return requestInfo, nil
 }
-// Update the navigation property policy in informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property policy in informationProtection
 func (m *PolicyRequestBuilder) CreatePatchRequestInformation(options *PolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *PolicyRequestBuilder) CreatePatchRequestInformation(options *PolicyRequ
     }
     return requestInfo, nil
 }
-// Delete navigation property policy for informationProtection
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property policy for informationProtection
 func (m *PolicyRequestBuilder) Delete(options *PolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *PolicyRequestBuilder) Delete(options *PolicyRequestBuilderDeleteOptions
     }
     return nil
 }
-// Get policy from informationProtection
-// Parameters:
-//  - options : Options for the request
+// Get get policy from informationProtection
 func (m *PolicyRequestBuilder) Get(options *PolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InformationProtectionPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *PolicyRequestBuilder) Get(options *PolicyRequestBuilderGetOptions)(*i53
 func (m *PolicyRequestBuilder) Labels()(*i1900faee127036955bb1240ae0350b96972d27bcc96727ffbe45aff2a8b4338d.LabelsRequestBuilder) {
     return i1900faee127036955bb1240ae0350b96972d27bcc96727ffbe45aff2a8b4338d.NewLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.informationProtection.policy.labels.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// LabelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.informationProtection.policy.labels.item collection
 func (m *PolicyRequestBuilder) LabelsById(id string)(*ie085268c4afc45c8557c32136e2f1d802878f154575855708ba0169a6e547fde.InformationProtectionLabelRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *PolicyRequestBuilder) LabelsById(id string)(*ie085268c4afc45c8557c32136
     }
     return ie085268c4afc45c8557c32136e2f1d802878f154575855708ba0169a6e547fde.NewInformationProtectionLabelRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update the navigation property policy in informationProtection
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property policy in informationProtection
 func (m *PolicyRequestBuilder) Patch(options *PolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

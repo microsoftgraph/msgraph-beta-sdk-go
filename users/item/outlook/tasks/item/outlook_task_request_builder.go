@@ -13,7 +13,7 @@ import (
     i682e26936704da1fcbc018d796323c7a7bfa541b0cba81f5d501f2e178dabe65 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/outlook/tasks/item/multivalueextendedproperties/item"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\outlook\tasks\{outlookTask-id}
+// outlookTaskRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook\tasks\{outlookTask-id}
 type OutlookTaskRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type OutlookTaskRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OutlookTaskRequestBuilderDeleteOptions options for Delete
 type OutlookTaskRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type OutlookTaskRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OutlookTaskRequestBuilderGetOptions options for Get
 type OutlookTaskRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,12 +42,12 @@ type OutlookTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get tasks from users
+// outlookTaskRequestBuilderGetQueryParameters get tasks from users
 type OutlookTaskRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OutlookTaskRequestBuilderPatchOptions options for Patch
 type OutlookTaskRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookTask;
@@ -61,9 +61,7 @@ type OutlookTaskRequestBuilderPatchOptions struct {
 func (m *OutlookTaskRequestBuilder) Attachments()(*i5f9147d736494d2f3513c196dabc85442955ac41d807005c7a3f2575c751bfb7.AttachmentsRequestBuilder) {
     return i5f9147d736494d2f3513c196dabc85442955ac41d807005c7a3f2575c751bfb7.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.tasks.item.attachments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.tasks.item.attachments.item collection
 func (m *OutlookTaskRequestBuilder) AttachmentsById(id string)(*i217dd05f0714bded4927301b5d1219654d224978a3d8c839f6c12da84106b4db.AttachmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -77,10 +75,7 @@ func (m *OutlookTaskRequestBuilder) AttachmentsById(id string)(*i217dd05f0714bde
 func (m *OutlookTaskRequestBuilder) Complete()(*i877daa06d4ce14c4194ae0939ce1a6fcb72c37e83096ec8d4e05bcd37e6108db.CompleteRequestBuilder) {
     return i877daa06d4ce14c4194ae0939ce1a6fcb72c37e83096ec8d4e05bcd37e6108db.NewCompleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new OutlookTaskRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOutlookTaskRequestBuilderInternal instantiates a new OutlookTaskRequestBuilder and sets the default values.
 func NewOutlookTaskRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlookTaskRequestBuilder) {
     m := &OutlookTaskRequestBuilder{
     }
@@ -93,18 +88,13 @@ func NewOutlookTaskRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OutlookTaskRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOutlookTaskRequestBuilder instantiates a new OutlookTaskRequestBuilder and sets the default values.
 func NewOutlookTaskRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlookTaskRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOutlookTaskRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property tasks for users
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property tasks for users
 func (m *OutlookTaskRequestBuilder) CreateDeleteRequestInformation(options *OutlookTaskRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *OutlookTaskRequestBuilder) CreateDeleteRequestInformation(options *Outl
     }
     return requestInfo, nil
 }
-// Get tasks from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get tasks from users
 func (m *OutlookTaskRequestBuilder) CreateGetRequestInformation(options *OutlookTaskRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *OutlookTaskRequestBuilder) CreateGetRequestInformation(options *Outlook
     }
     return requestInfo, nil
 }
-// Update the navigation property tasks in users
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property tasks in users
 func (m *OutlookTaskRequestBuilder) CreatePatchRequestInformation(options *OutlookTaskRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -163,9 +149,7 @@ func (m *OutlookTaskRequestBuilder) CreatePatchRequestInformation(options *Outlo
     }
     return requestInfo, nil
 }
-// Delete navigation property tasks for users
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property tasks for users
 func (m *OutlookTaskRequestBuilder) Delete(options *OutlookTaskRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -177,9 +161,7 @@ func (m *OutlookTaskRequestBuilder) Delete(options *OutlookTaskRequestBuilderDel
     }
     return nil
 }
-// Get tasks from users
-// Parameters:
-//  - options : Options for the request
+// Get get tasks from users
 func (m *OutlookTaskRequestBuilder) Get(options *OutlookTaskRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookTask, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -194,9 +176,7 @@ func (m *OutlookTaskRequestBuilder) Get(options *OutlookTaskRequestBuilderGetOpt
 func (m *OutlookTaskRequestBuilder) MultiValueExtendedProperties()(*i4b9d4654b2d0be177a461cbf7bc3120b7d72197137ebdad70610309e863012de.MultiValueExtendedPropertiesRequestBuilder) {
     return i4b9d4654b2d0be177a461cbf7bc3120b7d72197137ebdad70610309e863012de.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.tasks.item.multiValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.tasks.item.multiValueExtendedProperties.item collection
 func (m *OutlookTaskRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i682e26936704da1fcbc018d796323c7a7bfa541b0cba81f5d501f2e178dabe65.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -207,9 +187,7 @@ func (m *OutlookTaskRequestBuilder) MultiValueExtendedPropertiesById(id string)(
     }
     return i682e26936704da1fcbc018d796323c7a7bfa541b0cba81f5d501f2e178dabe65.NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update the navigation property tasks in users
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property tasks in users
 func (m *OutlookTaskRequestBuilder) Patch(options *OutlookTaskRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -224,9 +202,7 @@ func (m *OutlookTaskRequestBuilder) Patch(options *OutlookTaskRequestBuilderPatc
 func (m *OutlookTaskRequestBuilder) SingleValueExtendedProperties()(*i6421a31b795ecc630a1fd0f306d37a2948ceb176d58fee3cacbb70bdda3be196.SingleValueExtendedPropertiesRequestBuilder) {
     return i6421a31b795ecc630a1fd0f306d37a2948ceb176d58fee3cacbb70bdda3be196.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.tasks.item.singleValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.tasks.item.singleValueExtendedProperties.item collection
 func (m *OutlookTaskRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i512f019a5c0b6347bfc14ade805130177db816ece605df9b57db754d6e5b7816.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\servicePrincipalCreationPolicies\{servicePrincipalCreationPolicy-id}\excludes\{servicePrincipalCreationConditionSet-id}
+// servicePrincipalCreationConditionSetRequestBuilder builds and executes requests for operations under \policies\servicePrincipalCreationPolicies\{servicePrincipalCreationPolicy-id}\excludes\{servicePrincipalCreationConditionSet-id}
 type ServicePrincipalCreationConditionSetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ServicePrincipalCreationConditionSetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ServicePrincipalCreationConditionSetRequestBuilderDeleteOptions options for Delete
 type ServicePrincipalCreationConditionSetRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ServicePrincipalCreationConditionSetRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ServicePrincipalCreationConditionSetRequestBuilderGetOptions options for Get
 type ServicePrincipalCreationConditionSetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ServicePrincipalCreationConditionSetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get excludes from policies
+// servicePrincipalCreationConditionSetRequestBuilderGetQueryParameters get excludes from policies
 type ServicePrincipalCreationConditionSetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ServicePrincipalCreationConditionSetRequestBuilderPatchOptions options for Patch
 type ServicePrincipalCreationConditionSetRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationConditionSet;
@@ -53,10 +53,7 @@ type ServicePrincipalCreationConditionSetRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ServicePrincipalCreationConditionSetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServicePrincipalCreationConditionSetRequestBuilderInternal instantiates a new ServicePrincipalCreationConditionSetRequestBuilder and sets the default values.
 func NewServicePrincipalCreationConditionSetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServicePrincipalCreationConditionSetRequestBuilder) {
     m := &ServicePrincipalCreationConditionSetRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewServicePrincipalCreationConditionSetRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ServicePrincipalCreationConditionSetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServicePrincipalCreationConditionSetRequestBuilder instantiates a new ServicePrincipalCreationConditionSetRequestBuilder and sets the default values.
 func NewServicePrincipalCreationConditionSetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServicePrincipalCreationConditionSetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServicePrincipalCreationConditionSetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property excludes for policies
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property excludes for policies
 func (m *ServicePrincipalCreationConditionSetRequestBuilder) CreateDeleteRequestInformation(options *ServicePrincipalCreationConditionSetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ServicePrincipalCreationConditionSetRequestBuilder) CreateDeleteRequest
     }
     return requestInfo, nil
 }
-// Get excludes from policies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get excludes from policies
 func (m *ServicePrincipalCreationConditionSetRequestBuilder) CreateGetRequestInformation(options *ServicePrincipalCreationConditionSetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ServicePrincipalCreationConditionSetRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// Update the navigation property excludes in policies
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property excludes in policies
 func (m *ServicePrincipalCreationConditionSetRequestBuilder) CreatePatchRequestInformation(options *ServicePrincipalCreationConditionSetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ServicePrincipalCreationConditionSetRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// Delete navigation property excludes for policies
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property excludes for policies
 func (m *ServicePrincipalCreationConditionSetRequestBuilder) Delete(options *ServicePrincipalCreationConditionSetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ServicePrincipalCreationConditionSetRequestBuilder) Delete(options *Ser
     }
     return nil
 }
-// Get excludes from policies
-// Parameters:
-//  - options : Options for the request
+// Get get excludes from policies
 func (m *ServicePrincipalCreationConditionSetRequestBuilder) Get(options *ServicePrincipalCreationConditionSetRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationConditionSet, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ServicePrincipalCreationConditionSetRequestBuilder) Get(options *Servic
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServicePrincipalCreationConditionSet), nil
 }
-// Update the navigation property excludes in policies
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property excludes in policies
 func (m *ServicePrincipalCreationConditionSetRequestBuilder) Patch(options *ServicePrincipalCreationConditionSetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

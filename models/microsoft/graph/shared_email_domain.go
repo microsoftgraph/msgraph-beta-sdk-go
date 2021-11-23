@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// sharedEmailDomain 
 type SharedEmailDomain struct {
     Entity
     // 
     provisioningStatus *string;
 }
-// Instantiates a new sharedEmailDomain and sets the default values.
+// NewSharedEmailDomain instantiates a new sharedEmailDomain and sets the default values.
 func NewSharedEmailDomain()(*SharedEmailDomain) {
     m := &SharedEmailDomain{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the provisioningStatus property value. 
+// GetProvisioningStatus gets the provisioningStatus property value. 
 func (m *SharedEmailDomain) GetProvisioningStatus()(*string) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *SharedEmailDomain) GetProvisioningStatus()(*string) {
         return m.provisioningStatus
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SharedEmailDomain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["provisioningStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -43,9 +43,7 @@ func (m *SharedEmailDomain) GetFieldDeserializers()(map[string]func(interface{},
 func (m *SharedEmailDomain) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SharedEmailDomain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -59,9 +57,7 @@ func (m *SharedEmailDomain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the provisioningStatus property value. 
-// Parameters:
-//  - value : Value to set for the provisioningStatus property.
+// SetProvisioningStatus sets the provisioningStatus property value. 
 func (m *SharedEmailDomain) SetProvisioningStatus(value *string)() {
     m.provisioningStatus = value
 }

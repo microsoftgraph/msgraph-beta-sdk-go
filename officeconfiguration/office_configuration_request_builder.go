@@ -8,7 +8,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \officeConfiguration
+// officeConfigurationRequestBuilder builds and executes requests for operations under \officeConfiguration
 type OfficeConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type OfficeConfigurationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// OfficeConfigurationRequestBuilderGetOptions options for Get
 type OfficeConfigurationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,14 +28,14 @@ type OfficeConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get officeConfiguration
+// officeConfigurationRequestBuilderGetQueryParameters get officeConfiguration
 type OfficeConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OfficeConfigurationRequestBuilderPatchOptions options for Patch
 type OfficeConfigurationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeConfiguration;
@@ -49,9 +49,7 @@ type OfficeConfigurationRequestBuilderPatchOptions struct {
 func (m *OfficeConfigurationRequestBuilder) ClientConfigurations()(*ib51775d0103f2848789780fed67e4a5c9a298b92986a1aeabcf8f735e6666d7f.ClientConfigurationsRequestBuilder) {
     return ib51775d0103f2848789780fed67e4a5c9a298b92986a1aeabcf8f735e6666d7f.NewClientConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.officeConfiguration.clientConfigurations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ClientConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.officeConfiguration.clientConfigurations.item collection
 func (m *OfficeConfigurationRequestBuilder) ClientConfigurationsById(id string)(*i4f3ec96b42f2d1014637f13f95e0e6619fd4e35e09fad4a2b5571a24e4f6d381.OfficeClientConfigurationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -62,10 +60,7 @@ func (m *OfficeConfigurationRequestBuilder) ClientConfigurationsById(id string)(
     }
     return i4f3ec96b42f2d1014637f13f95e0e6619fd4e35e09fad4a2b5571a24e4f6d381.NewOfficeClientConfigurationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new OfficeConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOfficeConfigurationRequestBuilderInternal instantiates a new OfficeConfigurationRequestBuilder and sets the default values.
 func NewOfficeConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OfficeConfigurationRequestBuilder) {
     m := &OfficeConfigurationRequestBuilder{
     }
@@ -78,18 +73,13 @@ func NewOfficeConfigurationRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OfficeConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOfficeConfigurationRequestBuilder instantiates a new OfficeConfigurationRequestBuilder and sets the default values.
 func NewOfficeConfigurationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OfficeConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOfficeConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get officeConfiguration
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get officeConfiguration
 func (m *OfficeConfigurationRequestBuilder) CreateGetRequestInformation(options *OfficeConfigurationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +99,7 @@ func (m *OfficeConfigurationRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Update officeConfiguration
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update officeConfiguration
 func (m *OfficeConfigurationRequestBuilder) CreatePatchRequestInformation(options *OfficeConfigurationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +117,7 @@ func (m *OfficeConfigurationRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get officeConfiguration
-// Parameters:
-//  - options : Options for the request
+// Get get officeConfiguration
 func (m *OfficeConfigurationRequestBuilder) Get(options *OfficeConfigurationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeConfiguration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -143,9 +129,7 @@ func (m *OfficeConfigurationRequestBuilder) Get(options *OfficeConfigurationRequ
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeConfiguration), nil
 }
-// Update officeConfiguration
-// Parameters:
-//  - options : Options for the request
+// Patch update officeConfiguration
 func (m *OfficeConfigurationRequestBuilder) Patch(options *OfficeConfigurationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

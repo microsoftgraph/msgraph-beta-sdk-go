@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\remoteActionAudits
+// remoteActionAuditsRequestBuilder builds and executes requests for operations under \deviceManagement\remoteActionAudits
 type RemoteActionAuditsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RemoteActionAuditsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RemoteActionAuditsRequestBuilderGetOptions options for Get
 type RemoteActionAuditsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RemoteActionAuditsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of device remote action audits with the tenant.
+// remoteActionAuditsRequestBuilderGetQueryParameters the list of device remote action audits with the tenant.
 type RemoteActionAuditsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RemoteActionAuditsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RemoteActionAuditsRequestBuilderPostOptions options for Post
 type RemoteActionAuditsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RemoteActionAudit;
@@ -56,10 +56,7 @@ type RemoteActionAuditsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RemoteActionAuditsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoteActionAuditsRequestBuilderInternal instantiates a new RemoteActionAuditsRequestBuilder and sets the default values.
 func NewRemoteActionAuditsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoteActionAuditsRequestBuilder) {
     m := &RemoteActionAuditsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRemoteActionAuditsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RemoteActionAuditsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoteActionAuditsRequestBuilder instantiates a new RemoteActionAuditsRequestBuilder and sets the default values.
 func NewRemoteActionAuditsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoteActionAuditsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRemoteActionAuditsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of device remote action audits with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of device remote action audits with the tenant.
 func (m *RemoteActionAuditsRequestBuilder) CreateGetRequestInformation(options *RemoteActionAuditsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RemoteActionAuditsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The list of device remote action audits with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of device remote action audits with the tenant.
 func (m *RemoteActionAuditsRequestBuilder) CreatePostRequestInformation(options *RemoteActionAuditsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RemoteActionAuditsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The list of device remote action audits with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of device remote action audits with the tenant.
 func (m *RemoteActionAuditsRequestBuilder) Get(options *RemoteActionAuditsRequestBuilderGetOptions)(*RemoteActionAuditsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RemoteActionAuditsRequestBuilder) Get(options *RemoteActionAuditsReques
     }
     return res.(*RemoteActionAuditsResponse), nil
 }
-// The list of device remote action audits with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Post the list of device remote action audits with the tenant.
 func (m *RemoteActionAuditsRequestBuilder) Post(options *RemoteActionAuditsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RemoteActionAudit, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -64,7 +64,7 @@ import (
     if607fcbf4c23ed3b14db77b88b46a29896a853e746acfffd003d215b0fb83a02 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/exportjobs/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports
+// reportsRequestBuilder builds and executes requests for operations under \deviceManagement\reports
 type ReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -73,7 +73,7 @@ type ReportsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ReportsRequestBuilderDeleteOptions options for Delete
 type ReportsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -82,7 +82,7 @@ type ReportsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ReportsRequestBuilderGetOptions options for Get
 type ReportsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -93,14 +93,14 @@ type ReportsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Reports singleton
+// reportsRequestBuilderGetQueryParameters reports singleton
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ReportsRequestBuilderPatchOptions options for Patch
 type ReportsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReports;
@@ -114,9 +114,7 @@ type ReportsRequestBuilderPatchOptions struct {
 func (m *ReportsRequestBuilder) CachedReportConfigurations()(*i2a7e95d28bcab38f85f05fe3f131357d5c408f5fbd47fb213b7aac8dbd71328a.CachedReportConfigurationsRequestBuilder) {
     return i2a7e95d28bcab38f85f05fe3f131357d5c408f5fbd47fb213b7aac8dbd71328a.NewCachedReportConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reports.cachedReportConfigurations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CachedReportConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reports.cachedReportConfigurations.item collection
 func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*i2bf9ce7fb7bd0fa9fc75119c61d3de5e2e31a446f3ebba40eaf7f289544d9943.DeviceManagementCachedReportConfigurationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -127,10 +125,7 @@ func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*i2bf9
     }
     return i2bf9ce7fb7bd0fa9fc75119c61d3de5e2e31a446f3ebba40eaf7f289544d9943.NewDeviceManagementCachedReportConfigurationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new ReportsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReportsRequestBuilderInternal instantiates a new ReportsRequestBuilder and sets the default values.
 func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReportsRequestBuilder) {
     m := &ReportsRequestBuilder{
     }
@@ -143,18 +138,13 @@ func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ReportsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReportsRequestBuilder instantiates a new ReportsRequestBuilder and sets the default values.
 func NewReportsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReportsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Reports singleton
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation reports singleton
 func (m *ReportsRequestBuilder) CreateDeleteRequestInformation(options *ReportsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -171,9 +161,7 @@ func (m *ReportsRequestBuilder) CreateDeleteRequestInformation(options *ReportsR
     }
     return requestInfo, nil
 }
-// Reports singleton
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation reports singleton
 func (m *ReportsRequestBuilder) CreateGetRequestInformation(options *ReportsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -193,9 +181,7 @@ func (m *ReportsRequestBuilder) CreateGetRequestInformation(options *ReportsRequ
     }
     return requestInfo, nil
 }
-// Reports singleton
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation reports singleton
 func (m *ReportsRequestBuilder) CreatePatchRequestInformation(options *ReportsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -213,9 +199,7 @@ func (m *ReportsRequestBuilder) CreatePatchRequestInformation(options *ReportsRe
     }
     return requestInfo, nil
 }
-// Reports singleton
-// Parameters:
-//  - options : Options for the request
+// Delete reports singleton
 func (m *ReportsRequestBuilder) Delete(options *ReportsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -230,9 +214,7 @@ func (m *ReportsRequestBuilder) Delete(options *ReportsRequestBuilderDeleteOptio
 func (m *ReportsRequestBuilder) ExportJobs()(*if7d41ece7783a25f185dc8071dfbd2363227c4fb6d8e08d2a9412f206c7279a9.ExportJobsRequestBuilder) {
     return if7d41ece7783a25f185dc8071dfbd2363227c4fb6d8e08d2a9412f206c7279a9.NewExportJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reports.exportJobs.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExportJobsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reports.exportJobs.item collection
 func (m *ReportsRequestBuilder) ExportJobsById(id string)(*if607fcbf4c23ed3b14db77b88b46a29896a853e746acfffd003d215b0fb83a02.DeviceManagementExportJobRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -243,9 +225,7 @@ func (m *ReportsRequestBuilder) ExportJobsById(id string)(*if607fcbf4c23ed3b14db
     }
     return if607fcbf4c23ed3b14db77b88b46a29896a853e746acfffd003d215b0fb83a02.NewDeviceManagementExportJobRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Reports singleton
-// Parameters:
-//  - options : Options for the request
+// Get reports singleton
 func (m *ReportsRequestBuilder) Get(options *ReportsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReports, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -413,9 +393,7 @@ func (m *ReportsRequestBuilder) GetWindowsUpdateAlertsPerPolicyPerDeviceReport()
 func (m *ReportsRequestBuilder) GetWindowsUpdateAlertSummaryReport()(*i95054c49fc60448e61ba13d5075f71dd6ae5b29fcc1f0307e8b5e38c80345642.GetWindowsUpdateAlertSummaryReportRequestBuilder) {
     return i95054c49fc60448e61ba13d5075f71dd6ae5b29fcc1f0307e8b5e38c80345642.NewGetWindowsUpdateAlertSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Reports singleton
-// Parameters:
-//  - options : Options for the request
+// Patch reports singleton
 func (m *ReportsRequestBuilder) Patch(options *ReportsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -430,9 +408,7 @@ func (m *ReportsRequestBuilder) Patch(options *ReportsRequestBuilderPatchOptions
 func (m *ReportsRequestBuilder) ReportSchedules()(*iea8e9eceb6829c23694025f220d78170445e17ec05d7949319503a9dfef6f2dc.ReportSchedulesRequestBuilder) {
     return iea8e9eceb6829c23694025f220d78170445e17ec05d7949319503a9dfef6f2dc.NewReportSchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reports.reportSchedules.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ReportSchedulesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reports.reportSchedules.item collection
 func (m *ReportsRequestBuilder) ReportSchedulesById(id string)(*id6b331ae2f0cb2af60ba8b44c9282d7a2ff2e031c38004db15739c1402e76714.DeviceManagementReportScheduleRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

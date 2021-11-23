@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \dataClassification\sensitiveTypes
+// sensitiveTypesRequestBuilder builds and executes requests for operations under \dataClassification\sensitiveTypes
 type SensitiveTypesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SensitiveTypesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SensitiveTypesRequestBuilderGetOptions options for Get
 type SensitiveTypesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SensitiveTypesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get sensitiveTypes from dataClassification
+// sensitiveTypesRequestBuilderGetQueryParameters get sensitiveTypes from dataClassification
 type SensitiveTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SensitiveTypesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SensitiveTypesRequestBuilderPostOptions options for Post
 type SensitiveTypesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveType;
@@ -56,10 +56,7 @@ type SensitiveTypesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SensitiveTypesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSensitiveTypesRequestBuilderInternal instantiates a new SensitiveTypesRequestBuilder and sets the default values.
 func NewSensitiveTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SensitiveTypesRequestBuilder) {
     m := &SensitiveTypesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSensitiveTypesRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SensitiveTypesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSensitiveTypesRequestBuilder instantiates a new SensitiveTypesRequestBuilder and sets the default values.
 func NewSensitiveTypesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SensitiveTypesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSensitiveTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get sensitiveTypes from dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get sensitiveTypes from dataClassification
 func (m *SensitiveTypesRequestBuilder) CreateGetRequestInformation(options *SensitiveTypesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SensitiveTypesRequestBuilder) CreateGetRequestInformation(options *Sens
     }
     return requestInfo, nil
 }
-// Create new navigation property to sensitiveTypes for dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to sensitiveTypes for dataClassification
 func (m *SensitiveTypesRequestBuilder) CreatePostRequestInformation(options *SensitiveTypesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SensitiveTypesRequestBuilder) CreatePostRequestInformation(options *Sen
     }
     return requestInfo, nil
 }
-// Get sensitiveTypes from dataClassification
-// Parameters:
-//  - options : Options for the request
+// Get get sensitiveTypes from dataClassification
 func (m *SensitiveTypesRequestBuilder) Get(options *SensitiveTypesRequestBuilderGetOptions)(*SensitiveTypesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SensitiveTypesRequestBuilder) Get(options *SensitiveTypesRequestBuilder
     }
     return res.(*SensitiveTypesResponse), nil
 }
-// Create new navigation property to sensitiveTypes for dataClassification
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to sensitiveTypes for dataClassification
 func (m *SensitiveTypesRequestBuilder) Post(options *SensitiveTypesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveType, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

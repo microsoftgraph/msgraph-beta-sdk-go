@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceHealthScriptRemediationSummary 
 type DeviceHealthScriptRemediationSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type DeviceHealthScriptRemediationSummary struct {
     // The number of device health scripts deployed.
     scriptCount *int32;
 }
-// Instantiates a new deviceHealthScriptRemediationSummary and sets the default values.
+// NewDeviceHealthScriptRemediationSummary instantiates a new deviceHealthScriptRemediationSummary and sets the default values.
 func NewDeviceHealthScriptRemediationSummary()(*DeviceHealthScriptRemediationSummary) {
     m := &DeviceHealthScriptRemediationSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthScriptRemediationSummary) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *DeviceHealthScriptRemediationSummary) GetAdditionalData()(map[string]in
         return m.additionalData
     }
 }
-// Gets the remediatedDeviceCount property value. The number of devices remediated by device health scripts.
+// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. The number of devices remediated by device health scripts.
 func (m *DeviceHealthScriptRemediationSummary) GetRemediatedDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *DeviceHealthScriptRemediationSummary) GetRemediatedDeviceCount()(*int32
         return m.remediatedDeviceCount
     }
 }
-// Gets the scriptCount property value. The number of device health scripts deployed.
+// GetScriptCount gets the scriptCount property value. The number of device health scripts deployed.
 func (m *DeviceHealthScriptRemediationSummary) GetScriptCount()(*int32) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *DeviceHealthScriptRemediationSummary) GetScriptCount()(*int32) {
         return m.scriptCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptRemediationSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["remediatedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *DeviceHealthScriptRemediationSummary) GetFieldDeserializers()(map[strin
 func (m *DeviceHealthScriptRemediationSummary) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceHealthScriptRemediationSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("remediatedDeviceCount", m.GetRemediatedDeviceCount())
@@ -96,21 +94,15 @@ func (m *DeviceHealthScriptRemediationSummary) Serialize(writer i04eb5309aeaafad
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthScriptRemediationSummary) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the remediatedDeviceCount property value. The number of devices remediated by device health scripts.
-// Parameters:
-//  - value : Value to set for the remediatedDeviceCount property.
+// SetRemediatedDeviceCount sets the remediatedDeviceCount property value. The number of devices remediated by device health scripts.
 func (m *DeviceHealthScriptRemediationSummary) SetRemediatedDeviceCount(value *int32)() {
     m.remediatedDeviceCount = value
 }
-// Sets the scriptCount property value. The number of device health scripts deployed.
-// Parameters:
-//  - value : Value to set for the scriptCount property.
+// SetScriptCount sets the scriptCount property value. The number of device health scripts deployed.
 func (m *DeviceHealthScriptRemediationSummary) SetScriptCount(value *int32)() {
     m.scriptCount = value
 }

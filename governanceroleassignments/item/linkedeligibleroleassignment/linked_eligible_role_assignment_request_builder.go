@@ -7,7 +7,7 @@ import (
     ifce0086a65b63cb68af1b72091f1b3cc941492ace3db6dab7be9f94d0969b8a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments/item/linkedeligibleroleassignment/ref"
 )
 
-// Builds and executes requests for operations under \governanceRoleAssignments\{governanceRoleAssignment-id}\linkedEligibleRoleAssignment
+// linkedEligibleRoleAssignmentRequestBuilder builds and executes requests for operations under \governanceRoleAssignments\{governanceRoleAssignment-id}\linkedEligibleRoleAssignment
 type LinkedEligibleRoleAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type LinkedEligibleRoleAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// LinkedEligibleRoleAssignmentRequestBuilderGetOptions options for Get
 type LinkedEligibleRoleAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type LinkedEligibleRoleAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
+// linkedEligibleRoleAssignmentRequestBuilderGetQueryParameters read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
 type LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new LinkedEligibleRoleAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLinkedEligibleRoleAssignmentRequestBuilderInternal instantiates a new LinkedEligibleRoleAssignmentRequestBuilder and sets the default values.
 func NewLinkedEligibleRoleAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LinkedEligibleRoleAssignmentRequestBuilder) {
     m := &LinkedEligibleRoleAssignmentRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewLinkedEligibleRoleAssignmentRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LinkedEligibleRoleAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLinkedEligibleRoleAssignmentRequestBuilder instantiates a new LinkedEligibleRoleAssignmentRequestBuilder and sets the default values.
 func NewLinkedEligibleRoleAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LinkedEligibleRoleAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLinkedEligibleRoleAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
 func (m *LinkedEligibleRoleAssignmentRequestBuilder) CreateGetRequestInformation(options *LinkedEligibleRoleAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *LinkedEligibleRoleAssignmentRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
 func (m *LinkedEligibleRoleAssignmentRequestBuilder) Get(options *LinkedEligibleRoleAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

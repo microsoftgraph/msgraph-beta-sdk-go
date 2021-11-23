@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managementConditionStatements\{managementConditionStatement-id}\microsoft.graph.getManagementConditionStatementExpressionString()
+// getManagementConditionStatementExpressionStringRequestBuilder builds and executes requests for operations under \deviceManagement\managementConditionStatements\{managementConditionStatement-id}\microsoft.graph.getManagementConditionStatementExpressionString()
 type GetManagementConditionStatementExpressionStringRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GetManagementConditionStatementExpressionStringRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetManagementConditionStatementExpressionStringRequestBuilderGetOptions options for Get
 type GetManagementConditionStatementExpressionStringRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type GetManagementConditionStatementExpressionStringRequestBuilderGetOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes managementConditionExpressionString
+// getManagementConditionStatementExpressionStringResponse union type wrapper for classes managementConditionExpressionString
 type GetManagementConditionStatementExpressionStringResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type managementConditionExpressionString
     managementConditionExpressionString *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionExpressionString;
 }
-// Instantiates a new getManagementConditionStatementExpressionStringResponse and sets the default values.
+// NewGetManagementConditionStatementExpressionStringResponse instantiates a new getManagementConditionStatementExpressionStringResponse and sets the default values.
 func NewGetManagementConditionStatementExpressionStringResponse()(*GetManagementConditionStatementExpressionStringResponse) {
     m := &GetManagementConditionStatementExpressionStringResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetManagementConditionStatementExpressionStringResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *GetManagementConditionStatementExpressionStringResponse) GetAdditionalD
         return m.additionalData
     }
 }
-// Gets the managementConditionExpressionString property value. Union type representation for type managementConditionExpressionString
+// GetManagementConditionExpressionString gets the managementConditionExpressionString property value. Union type representation for type managementConditionExpressionString
 func (m *GetManagementConditionStatementExpressionStringResponse) GetManagementConditionExpressionString()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionExpressionString) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *GetManagementConditionStatementExpressionStringResponse) GetManagementC
         return m.managementConditionExpressionString
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetManagementConditionStatementExpressionStringResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["managementConditionExpressionString"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *GetManagementConditionStatementExpressionStringResponse) GetFieldDeseri
 func (m *GetManagementConditionStatementExpressionStringResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetManagementConditionStatementExpressionStringResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("managementConditionExpressionString", m.GetManagementConditionExpressionString())
@@ -90,22 +88,15 @@ func (m *GetManagementConditionStatementExpressionStringResponse) Serialize(writ
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetManagementConditionStatementExpressionStringResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the managementConditionExpressionString property value. Union type representation for type managementConditionExpressionString
-// Parameters:
-//  - value : Value to set for the managementConditionExpressionString property.
+// SetManagementConditionExpressionString sets the managementConditionExpressionString property value. Union type representation for type managementConditionExpressionString
 func (m *GetManagementConditionStatementExpressionStringResponse) SetManagementConditionExpressionString(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementConditionExpressionString)() {
     m.managementConditionExpressionString = value
 }
-// Instantiates a new GetManagementConditionStatementExpressionStringRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetManagementConditionStatementExpressionStringRequestBuilderInternal instantiates a new GetManagementConditionStatementExpressionStringRequestBuilder and sets the default values.
 func NewGetManagementConditionStatementExpressionStringRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetManagementConditionStatementExpressionStringRequestBuilder) {
     m := &GetManagementConditionStatementExpressionStringRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewGetManagementConditionStatementExpressionStringRequestBuilderInternal(pa
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetManagementConditionStatementExpressionStringRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetManagementConditionStatementExpressionStringRequestBuilder instantiates a new GetManagementConditionStatementExpressionStringRequestBuilder and sets the default values.
 func NewGetManagementConditionStatementExpressionStringRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetManagementConditionStatementExpressionStringRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetManagementConditionStatementExpressionStringRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function getManagementConditionStatementExpressionString
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getManagementConditionStatementExpressionString
 func (m *GetManagementConditionStatementExpressionStringRequestBuilder) CreateGetRequestInformation(options *GetManagementConditionStatementExpressionStringRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *GetManagementConditionStatementExpressionStringRequestBuilder) CreateGe
     }
     return requestInfo, nil
 }
-// Invoke function getManagementConditionStatementExpressionString
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getManagementConditionStatementExpressionString
 func (m *GetManagementConditionStatementExpressionStringRequestBuilder) Get(options *GetManagementConditionStatementExpressionStringRequestBuilderGetOptions)(*GetManagementConditionStatementExpressionStringResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

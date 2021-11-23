@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\policySets\microsoft.graph.getPolicySets
+// getPolicySetsRequestBuilder builds and executes requests for operations under \deviceAppManagement\policySets\microsoft.graph.getPolicySets
 type GetPolicySetsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetPolicySetsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetPolicySetsRequestBuilderPostOptions options for Post
 type GetPolicySetsRequestBuilderPostOptions struct {
     // 
     Body *GetPolicySetsRequestBody;
@@ -25,10 +25,7 @@ type GetPolicySetsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetPolicySetsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetPolicySetsRequestBuilderInternal instantiates a new GetPolicySetsRequestBuilder and sets the default values.
 func NewGetPolicySetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetPolicySetsRequestBuilder) {
     m := &GetPolicySetsRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewGetPolicySetsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetPolicySetsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetPolicySetsRequestBuilder instantiates a new GetPolicySetsRequestBuilder and sets the default values.
 func NewGetPolicySetsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetPolicySetsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetPolicySetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getPolicySets
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getPolicySets
 func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformation(options *GetPolicySetsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformation(options *GetP
     }
     return requestInfo, nil
 }
-// Invoke action getPolicySets
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getPolicySets
 func (m *GetPolicySetsRequestBuilder) Post(options *GetPolicySetsRequestBuilderPostOptions)([]GetPolicySets, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

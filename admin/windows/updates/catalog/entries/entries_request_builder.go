@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\catalog\entries
+// entriesRequestBuilder builds and executes requests for operations under \admin\windows\updates\catalog\entries
 type EntriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EntriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// EntriesRequestBuilderGetOptions options for Get
 type EntriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type EntriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Lists the content that you can approve for deployment. Read-only.
+// entriesRequestBuilderGetQueryParameters lists the content that you can approve for deployment. Read-only.
 type EntriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type EntriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// EntriesRequestBuilderPostOptions options for Post
 type EntriesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CatalogEntry;
@@ -56,10 +56,7 @@ type EntriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EntriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEntriesRequestBuilderInternal instantiates a new EntriesRequestBuilder and sets the default values.
 func NewEntriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EntriesRequestBuilder) {
     m := &EntriesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewEntriesRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EntriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEntriesRequestBuilder instantiates a new EntriesRequestBuilder and sets the default values.
 func NewEntriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EntriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Lists the content that you can approve for deployment. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation lists the content that you can approve for deployment. Read-only.
 func (m *EntriesRequestBuilder) CreateGetRequestInformation(options *EntriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *EntriesRequestBuilder) CreateGetRequestInformation(options *EntriesRequ
     }
     return requestInfo, nil
 }
-// Lists the content that you can approve for deployment. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation lists the content that you can approve for deployment. Read-only.
 func (m *EntriesRequestBuilder) CreatePostRequestInformation(options *EntriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *EntriesRequestBuilder) CreatePostRequestInformation(options *EntriesReq
     }
     return requestInfo, nil
 }
-// Lists the content that you can approve for deployment. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get lists the content that you can approve for deployment. Read-only.
 func (m *EntriesRequestBuilder) Get(options *EntriesRequestBuilderGetOptions)(*EntriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *EntriesRequestBuilder) Get(options *EntriesRequestBuilderGetOptions)(*E
     }
     return res.(*EntriesResponse), nil
 }
-// Lists the content that you can approve for deployment. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post lists the content that you can approve for deployment. Read-only.
 func (m *EntriesRequestBuilder) Post(options *EntriesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CatalogEntry, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

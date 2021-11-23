@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \informationProtection\sensitivityLabels\{sensitivityLabel-id}\sublabels\microsoft.graph.evaluate
+// evaluateRequestBuilder builds and executes requests for operations under \informationProtection\sensitivityLabels\{sensitivityLabel-id}\sublabels\microsoft.graph.evaluate
 type EvaluateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EvaluateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// EvaluateRequestBuilderPostOptions options for Post
 type EvaluateRequestBuilderPostOptions struct {
     // 
     Body *EvaluateRequestBody;
@@ -26,21 +26,21 @@ type EvaluateRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes evaluateLabelJobResponse
+// evaluateResponse union type wrapper for classes evaluateLabelJobResponse
 type EvaluateResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type evaluateLabelJobResponse
     evaluateLabelJobResponse *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponse;
 }
-// Instantiates a new evaluateResponse and sets the default values.
+// NewEvaluateResponse instantiates a new evaluateResponse and sets the default values.
 func NewEvaluateResponse()(*EvaluateResponse) {
     m := &EvaluateResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *EvaluateResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the evaluateLabelJobResponse property value. Union type representation for type evaluateLabelJobResponse
+// GetEvaluateLabelJobResponse gets the evaluateLabelJobResponse property value. Union type representation for type evaluateLabelJobResponse
 func (m *EvaluateResponse) GetEvaluateLabelJobResponse()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponse) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *EvaluateResponse) GetEvaluateLabelJobResponse()(*i535684e11b5500196ecb4
         return m.evaluateLabelJobResponse
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EvaluateResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["evaluateLabelJobResponse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *EvaluateResponse) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *EvaluateResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EvaluateResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("evaluateLabelJobResponse", m.GetEvaluateLabelJobResponse())
@@ -92,22 +90,15 @@ func (m *EvaluateResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the evaluateLabelJobResponse property value. Union type representation for type evaluateLabelJobResponse
-// Parameters:
-//  - value : Value to set for the evaluateLabelJobResponse property.
+// SetEvaluateLabelJobResponse sets the evaluateLabelJobResponse property value. Union type representation for type evaluateLabelJobResponse
 func (m *EvaluateResponse) SetEvaluateLabelJobResponse(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EvaluateLabelJobResponse)() {
     m.evaluateLabelJobResponse = value
 }
-// Instantiates a new EvaluateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEvaluateRequestBuilderInternal instantiates a new EvaluateRequestBuilder and sets the default values.
 func NewEvaluateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateRequestBuilder) {
     m := &EvaluateRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewEvaluateRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EvaluateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEvaluateRequestBuilder instantiates a new EvaluateRequestBuilder and sets the default values.
 func NewEvaluateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EvaluateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action evaluate
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action evaluate
 func (m *EvaluateRequestBuilder) CreatePostRequestInformation(options *EvaluateRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *EvaluateRequestBuilder) CreatePostRequestInformation(options *EvaluateR
     }
     return requestInfo, nil
 }
-// Invoke action evaluate
-// Parameters:
-//  - options : Options for the request
+// Post invoke action evaluate
 func (m *EvaluateRequestBuilder) Post(options *EvaluateRequestBuilderPostOptions)(*EvaluateResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

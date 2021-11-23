@@ -8,7 +8,7 @@ import (
     i8ed42469cc87a553b3cd8749bdd04e937f267d96ef2528e79e78a8822e6f6112 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/dimensions/item/dimensionvalues/item"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\dimensions\{dimension-id}
+// dimensionRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\dimensions\{dimension-id}
 type DimensionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type DimensionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DimensionRequestBuilderDeleteOptions options for Delete
 type DimensionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DimensionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DimensionRequestBuilderGetOptions options for Get
 type DimensionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type DimensionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get dimensions from financials
+// dimensionRequestBuilderGetQueryParameters get dimensions from financials
 type DimensionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DimensionRequestBuilderPatchOptions options for Patch
 type DimensionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Dimension;
@@ -55,10 +55,7 @@ type DimensionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DimensionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDimensionRequestBuilderInternal instantiates a new DimensionRequestBuilder and sets the default values.
 func NewDimensionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DimensionRequestBuilder) {
     m := &DimensionRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewDimensionRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DimensionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDimensionRequestBuilder instantiates a new DimensionRequestBuilder and sets the default values.
 func NewDimensionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DimensionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDimensionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property dimensions for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property dimensions for financials
 func (m *DimensionRequestBuilder) CreateDeleteRequestInformation(options *DimensionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *DimensionRequestBuilder) CreateDeleteRequestInformation(options *Dimens
     }
     return requestInfo, nil
 }
-// Get dimensions from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get dimensions from financials
 func (m *DimensionRequestBuilder) CreateGetRequestInformation(options *DimensionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *DimensionRequestBuilder) CreateGetRequestInformation(options *Dimension
     }
     return requestInfo, nil
 }
-// Update the navigation property dimensions in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property dimensions in financials
 func (m *DimensionRequestBuilder) CreatePatchRequestInformation(options *DimensionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *DimensionRequestBuilder) CreatePatchRequestInformation(options *Dimensi
     }
     return requestInfo, nil
 }
-// Delete navigation property dimensions for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property dimensions for financials
 func (m *DimensionRequestBuilder) Delete(options *DimensionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *DimensionRequestBuilder) Delete(options *DimensionRequestBuilderDeleteO
 func (m *DimensionRequestBuilder) DimensionValues()(*i234f9ceec46f67f5e601f3edb10d34513a18ecd109769d4b121a078d1b5a44d3.DimensionValuesRequestBuilder) {
     return i234f9ceec46f67f5e601f3edb10d34513a18ecd109769d4b121a078d1b5a44d3.NewDimensionValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.dimensions.item.dimensionValues.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DimensionValuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.dimensions.item.dimensionValues.item collection
 func (m *DimensionRequestBuilder) DimensionValuesById(id string)(*i8ed42469cc87a553b3cd8749bdd04e937f267d96ef2528e79e78a8822e6f6112.DimensionValueRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -171,9 +155,7 @@ func (m *DimensionRequestBuilder) DimensionValuesById(id string)(*i8ed42469cc87a
     }
     return i8ed42469cc87a553b3cd8749bdd04e937f267d96ef2528e79e78a8822e6f6112.NewDimensionValueRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get dimensions from financials
-// Parameters:
-//  - options : Options for the request
+// Get get dimensions from financials
 func (m *DimensionRequestBuilder) Get(options *DimensionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Dimension, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *DimensionRequestBuilder) Get(options *DimensionRequestBuilderGetOptions
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Dimension), nil
 }
-// Update the navigation property dimensions in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property dimensions in financials
 func (m *DimensionRequestBuilder) Patch(options *DimensionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

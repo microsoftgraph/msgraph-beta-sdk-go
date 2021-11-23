@@ -7,7 +7,7 @@ import (
     ifd31a3e36ec294a0032acde68f76fc0ddc7a900ad292d52922a35ae87687c2df "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/schedule/timecards/clockin"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\timeCards
+// timeCardsRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeCards
 type TimeCardsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TimeCardsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TimeCardsRequestBuilderGetOptions options for Get
 type TimeCardsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type TimeCardsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get timeCards from teams
+// timeCardsRequestBuilderGetQueryParameters get timeCards from teams
 type TimeCardsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type TimeCardsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TimeCardsRequestBuilderPostOptions options for Post
 type TimeCardsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeCard;
@@ -60,10 +60,7 @@ type TimeCardsRequestBuilderPostOptions struct {
 func (m *TimeCardsRequestBuilder) ClockIn()(*ifd31a3e36ec294a0032acde68f76fc0ddc7a900ad292d52922a35ae87687c2df.ClockInRequestBuilder) {
     return ifd31a3e36ec294a0032acde68f76fc0ddc7a900ad292d52922a35ae87687c2df.NewClockInRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new TimeCardsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTimeCardsRequestBuilderInternal instantiates a new TimeCardsRequestBuilder and sets the default values.
 func NewTimeCardsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TimeCardsRequestBuilder) {
     m := &TimeCardsRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewTimeCardsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TimeCardsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTimeCardsRequestBuilder instantiates a new TimeCardsRequestBuilder and sets the default values.
 func NewTimeCardsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TimeCardsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTimeCardsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get timeCards from teams
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get timeCards from teams
 func (m *TimeCardsRequestBuilder) CreateGetRequestInformation(options *TimeCardsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *TimeCardsRequestBuilder) CreateGetRequestInformation(options *TimeCards
     }
     return requestInfo, nil
 }
-// Create new navigation property to timeCards for teams
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to timeCards for teams
 func (m *TimeCardsRequestBuilder) CreatePostRequestInformation(options *TimeCardsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *TimeCardsRequestBuilder) CreatePostRequestInformation(options *TimeCard
     }
     return requestInfo, nil
 }
-// Get timeCards from teams
-// Parameters:
-//  - options : Options for the request
+// Get get timeCards from teams
 func (m *TimeCardsRequestBuilder) Get(options *TimeCardsRequestBuilderGetOptions)(*TimeCardsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *TimeCardsRequestBuilder) Get(options *TimeCardsRequestBuilderGetOptions
     }
     return res.(*TimeCardsResponse), nil
 }
-// Create new navigation property to timeCards for teams
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to timeCards for teams
 func (m *TimeCardsRequestBuilder) Post(options *TimeCardsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeCard, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

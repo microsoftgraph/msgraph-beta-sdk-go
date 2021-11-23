@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// companyInformation 
 type CompanyInformation struct {
     Entity
     // 
@@ -33,14 +33,14 @@ type CompanyInformation struct {
     // 
     website *string;
 }
-// Instantiates a new companyInformation and sets the default values.
+// NewCompanyInformation instantiates a new companyInformation and sets the default values.
 func NewCompanyInformation()(*CompanyInformation) {
     m := &CompanyInformation{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the address property value. 
+// GetAddress gets the address property value. 
 func (m *CompanyInformation) GetAddress()(*PostalAddressType) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *CompanyInformation) GetAddress()(*PostalAddressType) {
         return m.address
     }
 }
-// Gets the currencyCode property value. 
+// GetCurrencyCode gets the currencyCode property value. 
 func (m *CompanyInformation) GetCurrencyCode()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *CompanyInformation) GetCurrencyCode()(*string) {
         return m.currencyCode
     }
 }
-// Gets the currentFiscalYearStartDate property value. 
+// GetCurrentFiscalYearStartDate gets the currentFiscalYearStartDate property value. 
 func (m *CompanyInformation) GetCurrentFiscalYearStartDate()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *CompanyInformation) GetCurrentFiscalYearStartDate()(*string) {
         return m.currentFiscalYearStartDate
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *CompanyInformation) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *CompanyInformation) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the email property value. 
+// GetEmail gets the email property value. 
 func (m *CompanyInformation) GetEmail()(*string) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *CompanyInformation) GetEmail()(*string) {
         return m.email
     }
 }
-// Gets the faxNumber property value. 
+// GetFaxNumber gets the faxNumber property value. 
 func (m *CompanyInformation) GetFaxNumber()(*string) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *CompanyInformation) GetFaxNumber()(*string) {
         return m.faxNumber
     }
 }
-// Gets the industry property value. 
+// GetIndustry gets the industry property value. 
 func (m *CompanyInformation) GetIndustry()(*string) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *CompanyInformation) GetIndustry()(*string) {
         return m.industry
     }
 }
-// Gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *CompanyInformation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -104,7 +104,7 @@ func (m *CompanyInformation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
         return m.lastModifiedDateTime
     }
 }
-// Gets the phoneNumber property value. 
+// GetPhoneNumber gets the phoneNumber property value. 
 func (m *CompanyInformation) GetPhoneNumber()(*string) {
     if m == nil {
         return nil
@@ -112,7 +112,7 @@ func (m *CompanyInformation) GetPhoneNumber()(*string) {
         return m.phoneNumber
     }
 }
-// Gets the picture property value. 
+// GetPicture gets the picture property value. 
 func (m *CompanyInformation) GetPicture()([]byte) {
     if m == nil {
         return nil
@@ -120,7 +120,7 @@ func (m *CompanyInformation) GetPicture()([]byte) {
         return m.picture
     }
 }
-// Gets the taxRegistrationNumber property value. 
+// GetTaxRegistrationNumber gets the taxRegistrationNumber property value. 
 func (m *CompanyInformation) GetTaxRegistrationNumber()(*string) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *CompanyInformation) GetTaxRegistrationNumber()(*string) {
         return m.taxRegistrationNumber
     }
 }
-// Gets the website property value. 
+// GetWebsite gets the website property value. 
 func (m *CompanyInformation) GetWebsite()(*string) {
     if m == nil {
         return nil
@@ -136,7 +136,7 @@ func (m *CompanyInformation) GetWebsite()(*string) {
         return m.website
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -264,9 +264,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
 func (m *CompanyInformation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CompanyInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -346,75 +344,51 @@ func (m *CompanyInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the address property value. 
-// Parameters:
-//  - value : Value to set for the address property.
+// SetAddress sets the address property value. 
 func (m *CompanyInformation) SetAddress(value *PostalAddressType)() {
     m.address = value
 }
-// Sets the currencyCode property value. 
-// Parameters:
-//  - value : Value to set for the currencyCode property.
+// SetCurrencyCode sets the currencyCode property value. 
 func (m *CompanyInformation) SetCurrencyCode(value *string)() {
     m.currencyCode = value
 }
-// Sets the currentFiscalYearStartDate property value. 
-// Parameters:
-//  - value : Value to set for the currentFiscalYearStartDate property.
+// SetCurrentFiscalYearStartDate sets the currentFiscalYearStartDate property value. 
 func (m *CompanyInformation) SetCurrentFiscalYearStartDate(value *string)() {
     m.currentFiscalYearStartDate = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *CompanyInformation) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the email property value. 
-// Parameters:
-//  - value : Value to set for the email property.
+// SetEmail sets the email property value. 
 func (m *CompanyInformation) SetEmail(value *string)() {
     m.email = value
 }
-// Sets the faxNumber property value. 
-// Parameters:
-//  - value : Value to set for the faxNumber property.
+// SetFaxNumber sets the faxNumber property value. 
 func (m *CompanyInformation) SetFaxNumber(value *string)() {
     m.faxNumber = value
 }
-// Sets the industry property value. 
-// Parameters:
-//  - value : Value to set for the industry property.
+// SetIndustry sets the industry property value. 
 func (m *CompanyInformation) SetIndustry(value *string)() {
     m.industry = value
 }
-// Sets the lastModifiedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *CompanyInformation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the phoneNumber property value. 
-// Parameters:
-//  - value : Value to set for the phoneNumber property.
+// SetPhoneNumber sets the phoneNumber property value. 
 func (m *CompanyInformation) SetPhoneNumber(value *string)() {
     m.phoneNumber = value
 }
-// Sets the picture property value. 
-// Parameters:
-//  - value : Value to set for the picture property.
+// SetPicture sets the picture property value. 
 func (m *CompanyInformation) SetPicture(value []byte)() {
     m.picture = value
 }
-// Sets the taxRegistrationNumber property value. 
-// Parameters:
-//  - value : Value to set for the taxRegistrationNumber property.
+// SetTaxRegistrationNumber sets the taxRegistrationNumber property value. 
 func (m *CompanyInformation) SetTaxRegistrationNumber(value *string)() {
     m.taxRegistrationNumber = value
 }
-// Sets the website property value. 
-// Parameters:
-//  - value : Value to set for the website property.
+// SetWebsite sets the website property value. 
 func (m *CompanyInformation) SetWebsite(value *string)() {
     m.website = value
 }

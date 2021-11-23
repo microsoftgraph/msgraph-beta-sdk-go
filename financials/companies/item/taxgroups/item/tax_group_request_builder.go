@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\taxGroups\{taxGroup-id}
+// taxGroupRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\taxGroups\{taxGroup-id}
 type TaxGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TaxGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TaxGroupRequestBuilderDeleteOptions options for Delete
 type TaxGroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TaxGroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TaxGroupRequestBuilderGetOptions options for Get
 type TaxGroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type TaxGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get taxGroups from financials
+// taxGroupRequestBuilderGetQueryParameters get taxGroups from financials
 type TaxGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TaxGroupRequestBuilderPatchOptions options for Patch
 type TaxGroupRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TaxGroup;
@@ -53,10 +53,7 @@ type TaxGroupRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TaxGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaxGroupRequestBuilderInternal instantiates a new TaxGroupRequestBuilder and sets the default values.
 func NewTaxGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaxGroupRequestBuilder) {
     m := &TaxGroupRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewTaxGroupRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TaxGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaxGroupRequestBuilder instantiates a new TaxGroupRequestBuilder and sets the default values.
 func NewTaxGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaxGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTaxGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property taxGroups for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property taxGroups for financials
 func (m *TaxGroupRequestBuilder) CreateDeleteRequestInformation(options *TaxGroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *TaxGroupRequestBuilder) CreateDeleteRequestInformation(options *TaxGrou
     }
     return requestInfo, nil
 }
-// Get taxGroups from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get taxGroups from financials
 func (m *TaxGroupRequestBuilder) CreateGetRequestInformation(options *TaxGroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *TaxGroupRequestBuilder) CreateGetRequestInformation(options *TaxGroupRe
     }
     return requestInfo, nil
 }
-// Update the navigation property taxGroups in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property taxGroups in financials
 func (m *TaxGroupRequestBuilder) CreatePatchRequestInformation(options *TaxGroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *TaxGroupRequestBuilder) CreatePatchRequestInformation(options *TaxGroup
     }
     return requestInfo, nil
 }
-// Delete navigation property taxGroups for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property taxGroups for financials
 func (m *TaxGroupRequestBuilder) Delete(options *TaxGroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *TaxGroupRequestBuilder) Delete(options *TaxGroupRequestBuilderDeleteOpt
     }
     return nil
 }
-// Get taxGroups from financials
-// Parameters:
-//  - options : Options for the request
+// Get get taxGroups from financials
 func (m *TaxGroupRequestBuilder) Get(options *TaxGroupRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TaxGroup, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *TaxGroupRequestBuilder) Get(options *TaxGroupRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TaxGroup), nil
 }
-// Update the navigation property taxGroups in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property taxGroups in financials
 func (m *TaxGroupRequestBuilder) Patch(options *TaxGroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

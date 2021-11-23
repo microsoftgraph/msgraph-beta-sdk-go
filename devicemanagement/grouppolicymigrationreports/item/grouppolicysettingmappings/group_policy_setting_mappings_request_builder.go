@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\{groupPolicyMigrationReport-id}\groupPolicySettingMappings
+// groupPolicySettingMappingsRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\{groupPolicyMigrationReport-id}\groupPolicySettingMappings
 type GroupPolicySettingMappingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GroupPolicySettingMappingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GroupPolicySettingMappingsRequestBuilderGetOptions options for Get
 type GroupPolicySettingMappingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type GroupPolicySettingMappingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of group policy settings to MDM/Intune mappings.
+// groupPolicySettingMappingsRequestBuilderGetQueryParameters a list of group policy settings to MDM/Intune mappings.
 type GroupPolicySettingMappingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type GroupPolicySettingMappingsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// GroupPolicySettingMappingsRequestBuilderPostOptions options for Post
 type GroupPolicySettingMappingsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicySettingMapping;
@@ -56,10 +56,7 @@ type GroupPolicySettingMappingsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupPolicySettingMappingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicySettingMappingsRequestBuilderInternal instantiates a new GroupPolicySettingMappingsRequestBuilder and sets the default values.
 func NewGroupPolicySettingMappingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicySettingMappingsRequestBuilder) {
     m := &GroupPolicySettingMappingsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewGroupPolicySettingMappingsRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupPolicySettingMappingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicySettingMappingsRequestBuilder instantiates a new GroupPolicySettingMappingsRequestBuilder and sets the default values.
 func NewGroupPolicySettingMappingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicySettingMappingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicySettingMappingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of group policy settings to MDM/Intune mappings.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicySettingMappingsRequestBuilder) CreateGetRequestInformation(options *GroupPolicySettingMappingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *GroupPolicySettingMappingsRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// A list of group policy settings to MDM/Intune mappings.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicySettingMappingsRequestBuilder) CreatePostRequestInformation(options *GroupPolicySettingMappingsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *GroupPolicySettingMappingsRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// A list of group policy settings to MDM/Intune mappings.
-// Parameters:
-//  - options : Options for the request
+// Get a list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicySettingMappingsRequestBuilder) Get(options *GroupPolicySettingMappingsRequestBuilderGetOptions)(*GroupPolicySettingMappingsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *GroupPolicySettingMappingsRequestBuilder) Get(options *GroupPolicySetti
     }
     return res.(*GroupPolicySettingMappingsResponse), nil
 }
-// A list of group policy settings to MDM/Intune mappings.
-// Parameters:
-//  - options : Options for the request
+// Post a list of group policy settings to MDM/Intune mappings.
 func (m *GroupPolicySettingMappingsRequestBuilder) Post(options *GroupPolicySettingMappingsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicySettingMapping, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

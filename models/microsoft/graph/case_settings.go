@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// caseSettings 
 type CaseSettings struct {
     Entity
     // The OCR (Optical Character Recognition) settings for the case.
@@ -14,14 +14,14 @@ type CaseSettings struct {
     // The Topic Modeling (Themes) settings for the case.
     topicModeling *TopicModelingSettings;
 }
-// Instantiates a new caseSettings and sets the default values.
+// NewCaseSettings instantiates a new caseSettings and sets the default values.
 func NewCaseSettings()(*CaseSettings) {
     m := &CaseSettings{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
+// GetOcr gets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
 func (m *CaseSettings) GetOcr()(*OcrSettings) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *CaseSettings) GetOcr()(*OcrSettings) {
         return m.ocr
     }
 }
-// Gets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
+// GetRedundancyDetection gets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
 func (m *CaseSettings) GetRedundancyDetection()(*RedundancyDetectionSettings) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *CaseSettings) GetRedundancyDetection()(*RedundancyDetectionSettings) {
         return m.redundancyDetection
     }
 }
-// Gets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
+// GetTopicModeling gets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
 func (m *CaseSettings) GetTopicModeling()(*TopicModelingSettings) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *CaseSettings) GetTopicModeling()(*TopicModelingSettings) {
         return m.topicModeling
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CaseSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["ocr"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,9 +83,7 @@ func (m *CaseSettings) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *CaseSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CaseSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -111,21 +109,15 @@ func (m *CaseSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
-// Parameters:
-//  - value : Value to set for the ocr property.
+// SetOcr sets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
 func (m *CaseSettings) SetOcr(value *OcrSettings)() {
     m.ocr = value
 }
-// Sets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
-// Parameters:
-//  - value : Value to set for the redundancyDetection property.
+// SetRedundancyDetection sets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
 func (m *CaseSettings) SetRedundancyDetection(value *RedundancyDetectionSettings)() {
     m.redundancyDetection = value
 }
-// Sets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
-// Parameters:
-//  - value : Value to set for the topicModeling property.
+// SetTopicModeling sets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
 func (m *CaseSettings) SetTopicModeling(value *TopicModelingSettings)() {
     m.topicModeling = value
 }

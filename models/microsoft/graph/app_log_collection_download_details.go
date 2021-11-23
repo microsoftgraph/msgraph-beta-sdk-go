@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// appLogCollectionDownloadDetails 
 type AppLogCollectionDownloadDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type AppLogCollectionDownloadDetails struct {
     // Download SAS Url for completed AppLogUploadRequest
     downloadUrl *string;
 }
-// Instantiates a new appLogCollectionDownloadDetails and sets the default values.
+// NewAppLogCollectionDownloadDetails instantiates a new appLogCollectionDownloadDetails and sets the default values.
 func NewAppLogCollectionDownloadDetails()(*AppLogCollectionDownloadDetails) {
     m := &AppLogCollectionDownloadDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppLogCollectionDownloadDetails) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *AppLogCollectionDownloadDetails) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// Gets the appLogDecryptionAlgorithm property value. DecryptionAlgorithm for Content. Possible values are: aes256.
+// GetAppLogDecryptionAlgorithm gets the appLogDecryptionAlgorithm property value. DecryptionAlgorithm for Content. Possible values are: aes256.
 func (m *AppLogCollectionDownloadDetails) GetAppLogDecryptionAlgorithm()(*AppLogDecryptionAlgorithm) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *AppLogCollectionDownloadDetails) GetAppLogDecryptionAlgorithm()(*AppLog
         return m.appLogDecryptionAlgorithm
     }
 }
-// Gets the decryptionKey property value. DecryptionKey as string
+// GetDecryptionKey gets the decryptionKey property value. DecryptionKey as string
 func (m *AppLogCollectionDownloadDetails) GetDecryptionKey()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *AppLogCollectionDownloadDetails) GetDecryptionKey()(*string) {
         return m.decryptionKey
     }
 }
-// Gets the downloadUrl property value. Download SAS Url for completed AppLogUploadRequest
+// GetDownloadUrl gets the downloadUrl property value. Download SAS Url for completed AppLogUploadRequest
 func (m *AppLogCollectionDownloadDetails) GetDownloadUrl()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *AppLogCollectionDownloadDetails) GetDownloadUrl()(*string) {
         return m.downloadUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AppLogCollectionDownloadDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["appLogDecryptionAlgorithm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,9 +93,7 @@ func (m *AppLogCollectionDownloadDetails) GetFieldDeserializers()(map[string]fun
 func (m *AppLogCollectionDownloadDetails) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AppLogCollectionDownloadDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAppLogDecryptionAlgorithm() != nil {
         cast := m.GetAppLogDecryptionAlgorithm().String()
@@ -124,27 +122,19 @@ func (m *AppLogCollectionDownloadDetails) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppLogCollectionDownloadDetails) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the appLogDecryptionAlgorithm property value. DecryptionAlgorithm for Content. Possible values are: aes256.
-// Parameters:
-//  - value : Value to set for the appLogDecryptionAlgorithm property.
+// SetAppLogDecryptionAlgorithm sets the appLogDecryptionAlgorithm property value. DecryptionAlgorithm for Content. Possible values are: aes256.
 func (m *AppLogCollectionDownloadDetails) SetAppLogDecryptionAlgorithm(value *AppLogDecryptionAlgorithm)() {
     m.appLogDecryptionAlgorithm = value
 }
-// Sets the decryptionKey property value. DecryptionKey as string
-// Parameters:
-//  - value : Value to set for the decryptionKey property.
+// SetDecryptionKey sets the decryptionKey property value. DecryptionKey as string
 func (m *AppLogCollectionDownloadDetails) SetDecryptionKey(value *string)() {
     m.decryptionKey = value
 }
-// Sets the downloadUrl property value. Download SAS Url for completed AppLogUploadRequest
-// Parameters:
-//  - value : Value to set for the downloadUrl property.
+// SetDownloadUrl sets the downloadUrl property value. Download SAS Url for completed AppLogUploadRequest
 func (m *AppLogCollectionDownloadDetails) SetDownloadUrl(value *string)() {
     m.downloadUrl = value
 }

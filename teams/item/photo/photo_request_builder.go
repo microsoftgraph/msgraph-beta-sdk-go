@@ -7,7 +7,7 @@ import (
     i0b76be23832d753e450644c4cdeb9fb66ad776701abdc8635ba5235f7092ad7e "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/photo/value"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\photo
+// photoRequestBuilder builds and executes requests for operations under \teams\{team-id}\photo
 type PhotoRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type PhotoRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PhotoRequestBuilderDeleteOptions options for Delete
 type PhotoRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type PhotoRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PhotoRequestBuilderGetOptions options for Get
 type PhotoRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type PhotoRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The team photo.
+// photoRequestBuilderGetQueryParameters the team photo.
 type PhotoRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PhotoRequestBuilderPatchOptions options for Patch
 type PhotoRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProfilePhoto;
@@ -54,10 +54,7 @@ type PhotoRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PhotoRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPhotoRequestBuilderInternal instantiates a new PhotoRequestBuilder and sets the default values.
 func NewPhotoRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PhotoRequestBuilder) {
     m := &PhotoRequestBuilder{
     }
@@ -70,10 +67,7 @@ func NewPhotoRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PhotoRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPhotoRequestBuilder instantiates a new PhotoRequestBuilder and sets the default values.
 func NewPhotoRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PhotoRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -82,9 +76,7 @@ func NewPhotoRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
 func (m *PhotoRequestBuilder) Content()(*i0b76be23832d753e450644c4cdeb9fb66ad776701abdc8635ba5235f7092ad7e.ContentRequestBuilder) {
     return i0b76be23832d753e450644c4cdeb9fb66ad776701abdc8635ba5235f7092ad7e.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The team photo.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the team photo.
 func (m *PhotoRequestBuilder) CreateDeleteRequestInformation(options *PhotoRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *PhotoRequestBuilder) CreateDeleteRequestInformation(options *PhotoReque
     }
     return requestInfo, nil
 }
-// The team photo.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the team photo.
 func (m *PhotoRequestBuilder) CreateGetRequestInformation(options *PhotoRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PhotoRequestBuilder) CreateGetRequestInformation(options *PhotoRequestB
     }
     return requestInfo, nil
 }
-// The team photo.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the team photo.
 func (m *PhotoRequestBuilder) CreatePatchRequestInformation(options *PhotoRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *PhotoRequestBuilder) CreatePatchRequestInformation(options *PhotoReques
     }
     return requestInfo, nil
 }
-// The team photo.
-// Parameters:
-//  - options : Options for the request
+// Delete the team photo.
 func (m *PhotoRequestBuilder) Delete(options *PhotoRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *PhotoRequestBuilder) Delete(options *PhotoRequestBuilderDeleteOptions)(
     }
     return nil
 }
-// The team photo.
-// Parameters:
-//  - options : Options for the request
+// Get the team photo.
 func (m *PhotoRequestBuilder) Get(options *PhotoRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProfilePhoto, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *PhotoRequestBuilder) Get(options *PhotoRequestBuilderGetOptions)(*i5356
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProfilePhoto), nil
 }
-// The team photo.
-// Parameters:
-//  - options : Options for the request
+// Patch the team photo.
 func (m *PhotoRequestBuilder) Patch(options *PhotoRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

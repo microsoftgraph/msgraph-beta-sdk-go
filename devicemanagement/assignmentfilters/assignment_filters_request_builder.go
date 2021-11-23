@@ -10,7 +10,7 @@ import (
     ia52abb7c9a696d072bbdd617cc112d98fa0fc464bcc7a2b2808b711dc8fd7208 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/assignmentfilters/validatefilter"
 )
 
-// Builds and executes requests for operations under \deviceManagement\assignmentFilters
+// assignmentFiltersRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters
 type AssignmentFiltersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type AssignmentFiltersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AssignmentFiltersRequestBuilderGetOptions options for Get
 type AssignmentFiltersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type AssignmentFiltersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of assignment filters
+// assignmentFiltersRequestBuilderGetQueryParameters the list of assignment filters
 type AssignmentFiltersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -49,7 +49,7 @@ type AssignmentFiltersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AssignmentFiltersRequestBuilderPostOptions options for Post
 type AssignmentFiltersRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter;
@@ -60,10 +60,7 @@ type AssignmentFiltersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AssignmentFiltersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignmentFiltersRequestBuilderInternal instantiates a new AssignmentFiltersRequestBuilder and sets the default values.
 func NewAssignmentFiltersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignmentFiltersRequestBuilder) {
     m := &AssignmentFiltersRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewAssignmentFiltersRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AssignmentFiltersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignmentFiltersRequestBuilder instantiates a new AssignmentFiltersRequestBuilder and sets the default values.
 func NewAssignmentFiltersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignmentFiltersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentFiltersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of assignment filters
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of assignment filters
 func (m *AssignmentFiltersRequestBuilder) CreateGetRequestInformation(options *AssignmentFiltersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *AssignmentFiltersRequestBuilder) CreateGetRequestInformation(options *A
     }
     return requestInfo, nil
 }
-// The list of assignment filters
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of assignment filters
 func (m *AssignmentFiltersRequestBuilder) CreatePostRequestInformation(options *AssignmentFiltersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,9 +120,7 @@ func (m *AssignmentFiltersRequestBuilder) CreatePostRequestInformation(options *
 func (m *AssignmentFiltersRequestBuilder) Enable()(*i971b9826d0cedaebe37e1b7dbc8d3baedb6c9f0866d25b684e1da32b17da33a6.EnableRequestBuilder) {
     return i971b9826d0cedaebe37e1b7dbc8d3baedb6c9f0866d25b684e1da32b17da33a6.NewEnableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The list of assignment filters
-// Parameters:
-//  - options : Options for the request
+// Get the list of assignment filters
 func (m *AssignmentFiltersRequestBuilder) Get(options *AssignmentFiltersRequestBuilderGetOptions)(*AssignmentFiltersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -144,19 +132,15 @@ func (m *AssignmentFiltersRequestBuilder) Get(options *AssignmentFiltersRequestB
     }
     return res.(*AssignmentFiltersResponse), nil
 }
-// Builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.getPlatformSupportedProperties(platform={platform})
-// Parameters:
-//  - platform : Usage: platform={platform}
+// GetPlatformSupportedPropertiesWithPlatform builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.getPlatformSupportedProperties(platform={platform})
 func (m *AssignmentFiltersRequestBuilder) GetPlatformSupportedPropertiesWithPlatform(platform *string)(*i6320107e367b8c68fe46a4cf86ea24694ef25a7c0c2ed084170f433fab284667.GetPlatformSupportedPropertiesWithPlatformRequestBuilder) {
     return i6320107e367b8c68fe46a4cf86ea24694ef25a7c0c2ed084170f433fab284667.NewGetPlatformSupportedPropertiesWithPlatformRequestBuilderInternal(m.pathParameters, m.requestAdapter, platform);
 }
-// Builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.getState()
+// GetState builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.getState()
 func (m *AssignmentFiltersRequestBuilder) GetState()(*ia4a12d8e28e11df7e1cb2aab68059eb462d6a64bdaf33642330dcd51be6b4c91.GetStateRequestBuilder) {
     return ia4a12d8e28e11df7e1cb2aab68059eb462d6a64bdaf33642330dcd51be6b4c91.NewGetStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The list of assignment filters
-// Parameters:
-//  - options : Options for the request
+// Post the list of assignment filters
 func (m *AssignmentFiltersRequestBuilder) Post(options *AssignmentFiltersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementAssignmentFilter, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

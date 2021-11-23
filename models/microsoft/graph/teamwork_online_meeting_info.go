@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// teamworkOnlineMeetingInfo 
 type TeamworkOnlineMeetingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type TeamworkOnlineMeetingInfo struct {
     // The organizer of the meeting.
     organizer *TeamworkUserIdentity;
 }
-// Instantiates a new teamworkOnlineMeetingInfo and sets the default values.
+// NewTeamworkOnlineMeetingInfo instantiates a new teamworkOnlineMeetingInfo and sets the default values.
 func NewTeamworkOnlineMeetingInfo()(*TeamworkOnlineMeetingInfo) {
     m := &TeamworkOnlineMeetingInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkOnlineMeetingInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *TeamworkOnlineMeetingInfo) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// Gets the calendarEventId property value. The identifier of the calendar event associated with the meeting.
+// GetCalendarEventId gets the calendarEventId property value. The identifier of the calendar event associated with the meeting.
 func (m *TeamworkOnlineMeetingInfo) GetCalendarEventId()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *TeamworkOnlineMeetingInfo) GetCalendarEventId()(*string) {
         return m.calendarEventId
     }
 }
-// Gets the joinWebUrl property value. The URL which can be clicked on to join or uniquely identify the meeting.
+// GetJoinWebUrl gets the joinWebUrl property value. The URL which can be clicked on to join or uniquely identify the meeting.
 func (m *TeamworkOnlineMeetingInfo) GetJoinWebUrl()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *TeamworkOnlineMeetingInfo) GetJoinWebUrl()(*string) {
         return m.joinWebUrl
     }
 }
-// Gets the organizer property value. The organizer of the meeting.
+// GetOrganizer gets the organizer property value. The organizer of the meeting.
 func (m *TeamworkOnlineMeetingInfo) GetOrganizer()(*TeamworkUserIdentity) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *TeamworkOnlineMeetingInfo) GetOrganizer()(*TeamworkUserIdentity) {
         return m.organizer
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkOnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["calendarEventId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *TeamworkOnlineMeetingInfo) GetFieldDeserializers()(map[string]func(inte
 func (m *TeamworkOnlineMeetingInfo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TeamworkOnlineMeetingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("calendarEventId", m.GetCalendarEventId())
@@ -122,27 +120,19 @@ func (m *TeamworkOnlineMeetingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkOnlineMeetingInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the calendarEventId property value. The identifier of the calendar event associated with the meeting.
-// Parameters:
-//  - value : Value to set for the calendarEventId property.
+// SetCalendarEventId sets the calendarEventId property value. The identifier of the calendar event associated with the meeting.
 func (m *TeamworkOnlineMeetingInfo) SetCalendarEventId(value *string)() {
     m.calendarEventId = value
 }
-// Sets the joinWebUrl property value. The URL which can be clicked on to join or uniquely identify the meeting.
-// Parameters:
-//  - value : Value to set for the joinWebUrl property.
+// SetJoinWebUrl sets the joinWebUrl property value. The URL which can be clicked on to join or uniquely identify the meeting.
 func (m *TeamworkOnlineMeetingInfo) SetJoinWebUrl(value *string)() {
     m.joinWebUrl = value
 }
-// Sets the organizer property value. The organizer of the meeting.
-// Parameters:
-//  - value : Value to set for the organizer property.
+// SetOrganizer sets the organizer property value. The organizer of the meeting.
 func (m *TeamworkOnlineMeetingInfo) SetOrganizer(value *TeamworkUserIdentity)() {
     m.organizer = value
 }

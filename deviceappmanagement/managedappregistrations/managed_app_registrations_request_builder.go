@@ -7,7 +7,7 @@ import (
     i9915ebc3ce7676f85505b20eca74c2954fb51b3b53829740df9b267614166173 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedappregistrations/getuseridswithflaggedappregistration"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations
+// managedAppRegistrationsRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations
 type ManagedAppRegistrationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ManagedAppRegistrationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagedAppRegistrationsRequestBuilderGetOptions options for Get
 type ManagedAppRegistrationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ManagedAppRegistrationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The managed app registrations.
+// managedAppRegistrationsRequestBuilderGetQueryParameters the managed app registrations.
 type ManagedAppRegistrationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type ManagedAppRegistrationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ManagedAppRegistrationsRequestBuilderPostOptions options for Post
 type ManagedAppRegistrationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedAppRegistration;
@@ -57,10 +57,7 @@ type ManagedAppRegistrationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagedAppRegistrationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedAppRegistrationsRequestBuilderInternal instantiates a new ManagedAppRegistrationsRequestBuilder and sets the default values.
 func NewManagedAppRegistrationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedAppRegistrationsRequestBuilder) {
     m := &ManagedAppRegistrationsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewManagedAppRegistrationsRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedAppRegistrationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedAppRegistrationsRequestBuilder instantiates a new ManagedAppRegistrationsRequestBuilder and sets the default values.
 func NewManagedAppRegistrationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedAppRegistrationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppRegistrationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The managed app registrations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the managed app registrations.
 func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformation(options *ManagedAppRegistrationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The managed app registrations.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the managed app registrations.
 func (m *ManagedAppRegistrationsRequestBuilder) CreatePostRequestInformation(options *ManagedAppRegistrationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *ManagedAppRegistrationsRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The managed app registrations.
-// Parameters:
-//  - options : Options for the request
+// Get the managed app registrations.
 func (m *ManagedAppRegistrationsRequestBuilder) Get(options *ManagedAppRegistrationsRequestBuilderGetOptions)(*ManagedAppRegistrationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,13 +126,11 @@ func (m *ManagedAppRegistrationsRequestBuilder) Get(options *ManagedAppRegistrat
     }
     return res.(*ManagedAppRegistrationsResponse), nil
 }
-// Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\microsoft.graph.getUserIdsWithFlaggedAppRegistration()
+// GetUserIdsWithFlaggedAppRegistration builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\microsoft.graph.getUserIdsWithFlaggedAppRegistration()
 func (m *ManagedAppRegistrationsRequestBuilder) GetUserIdsWithFlaggedAppRegistration()(*i9915ebc3ce7676f85505b20eca74c2954fb51b3b53829740df9b267614166173.GetUserIdsWithFlaggedAppRegistrationRequestBuilder) {
     return i9915ebc3ce7676f85505b20eca74c2954fb51b3b53829740df9b267614166173.NewGetUserIdsWithFlaggedAppRegistrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The managed app registrations.
-// Parameters:
-//  - options : Options for the request
+// Post the managed app registrations.
 func (m *ManagedAppRegistrationsRequestBuilder) Post(options *ManagedAppRegistrationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedAppRegistration, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

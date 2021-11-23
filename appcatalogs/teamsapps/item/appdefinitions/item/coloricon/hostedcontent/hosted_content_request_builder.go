@@ -7,7 +7,7 @@ import (
     ieaa9f6beec357cf167ed9fa53e0eb18037771cfcff37855e9e02f8054af914a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/appcatalogs/teamsapps/item/appdefinitions/item/coloricon/hostedcontent/value"
 )
 
-// Builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\colorIcon\hostedContent
+// hostedContentRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\colorIcon\hostedContent
 type HostedContentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type HostedContentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// HostedContentRequestBuilderDeleteOptions options for Delete
 type HostedContentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type HostedContentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// HostedContentRequestBuilderGetOptions options for Get
 type HostedContentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type HostedContentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The contents of the app icon if the icon is hosted within the Teams infrastructure.
+// hostedContentRequestBuilderGetQueryParameters the contents of the app icon if the icon is hosted within the Teams infrastructure.
 type HostedContentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// HostedContentRequestBuilderPatchOptions options for Patch
 type HostedContentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkHostedContent;
@@ -54,10 +54,7 @@ type HostedContentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new HostedContentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHostedContentRequestBuilderInternal instantiates a new HostedContentRequestBuilder and sets the default values.
 func NewHostedContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HostedContentRequestBuilder) {
     m := &HostedContentRequestBuilder{
     }
@@ -70,10 +67,7 @@ func NewHostedContentRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new HostedContentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHostedContentRequestBuilder instantiates a new HostedContentRequestBuilder and sets the default values.
 func NewHostedContentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HostedContentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -82,9 +76,7 @@ func NewHostedContentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
 func (m *HostedContentRequestBuilder) Content()(*ieaa9f6beec357cf167ed9fa53e0eb18037771cfcff37855e9e02f8054af914a3.ContentRequestBuilder) {
     return ieaa9f6beec357cf167ed9fa53e0eb18037771cfcff37855e9e02f8054af914a3.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The contents of the app icon if the icon is hosted within the Teams infrastructure.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the contents of the app icon if the icon is hosted within the Teams infrastructure.
 func (m *HostedContentRequestBuilder) CreateDeleteRequestInformation(options *HostedContentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *HostedContentRequestBuilder) CreateDeleteRequestInformation(options *Ho
     }
     return requestInfo, nil
 }
-// The contents of the app icon if the icon is hosted within the Teams infrastructure.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the contents of the app icon if the icon is hosted within the Teams infrastructure.
 func (m *HostedContentRequestBuilder) CreateGetRequestInformation(options *HostedContentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *HostedContentRequestBuilder) CreateGetRequestInformation(options *Hoste
     }
     return requestInfo, nil
 }
-// The contents of the app icon if the icon is hosted within the Teams infrastructure.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the contents of the app icon if the icon is hosted within the Teams infrastructure.
 func (m *HostedContentRequestBuilder) CreatePatchRequestInformation(options *HostedContentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *HostedContentRequestBuilder) CreatePatchRequestInformation(options *Hos
     }
     return requestInfo, nil
 }
-// The contents of the app icon if the icon is hosted within the Teams infrastructure.
-// Parameters:
-//  - options : Options for the request
+// Delete the contents of the app icon if the icon is hosted within the Teams infrastructure.
 func (m *HostedContentRequestBuilder) Delete(options *HostedContentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *HostedContentRequestBuilder) Delete(options *HostedContentRequestBuilde
     }
     return nil
 }
-// The contents of the app icon if the icon is hosted within the Teams infrastructure.
-// Parameters:
-//  - options : Options for the request
+// Get the contents of the app icon if the icon is hosted within the Teams infrastructure.
 func (m *HostedContentRequestBuilder) Get(options *HostedContentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkHostedContent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *HostedContentRequestBuilder) Get(options *HostedContentRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkHostedContent), nil
 }
-// The contents of the app icon if the icon is hosted within the Teams infrastructure.
-// Parameters:
-//  - options : Options for the request
+// Patch the contents of the app icon if the icon is hosted within the Teams infrastructure.
 func (m *HostedContentRequestBuilder) Patch(options *HostedContentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

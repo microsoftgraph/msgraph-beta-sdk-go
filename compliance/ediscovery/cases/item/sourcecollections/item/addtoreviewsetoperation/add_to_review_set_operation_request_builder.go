@@ -7,7 +7,7 @@ import (
     i3e461ab8d8fb4c7edda4b883dc3fc5ec0a6c31a0ada6ed226bb5392ee265e579 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/addtoreviewsetoperation/ref"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\addToReviewSetOperation
+// addToReviewSetOperationRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\addToReviewSetOperation
 type AddToReviewSetOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AddToReviewSetOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AddToReviewSetOperationRequestBuilderGetOptions options for Get
 type AddToReviewSetOperationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type AddToReviewSetOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Adds the results of the sourceCollection to the specified reviewSet.
+// addToReviewSetOperationRequestBuilderGetQueryParameters adds the results of the sourceCollection to the specified reviewSet.
 type AddToReviewSetOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new AddToReviewSetOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddToReviewSetOperationRequestBuilderInternal instantiates a new AddToReviewSetOperationRequestBuilder and sets the default values.
 func NewAddToReviewSetOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddToReviewSetOperationRequestBuilder) {
     m := &AddToReviewSetOperationRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewAddToReviewSetOperationRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AddToReviewSetOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddToReviewSetOperationRequestBuilder instantiates a new AddToReviewSetOperationRequestBuilder and sets the default values.
 func NewAddToReviewSetOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddToReviewSetOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAddToReviewSetOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Adds the results of the sourceCollection to the specified reviewSet.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation adds the results of the sourceCollection to the specified reviewSet.
 func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformation(options *AddToReviewSetOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Adds the results of the sourceCollection to the specified reviewSet.
-// Parameters:
-//  - options : Options for the request
+// Get adds the results of the sourceCollection to the specified reviewSet.
 func (m *AddToReviewSetOperationRequestBuilder) Get(options *AddToReviewSetOperationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AddToReviewSetOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

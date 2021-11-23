@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\policyTemplates\{governancePolicyTemplate-id}
+// governancePolicyTemplateRequestBuilder builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\policyTemplates\{governancePolicyTemplate-id}
 type GovernancePolicyTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GovernancePolicyTemplateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GovernancePolicyTemplateRequestBuilderDeleteOptions options for Delete
 type GovernancePolicyTemplateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type GovernancePolicyTemplateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GovernancePolicyTemplateRequestBuilderGetOptions options for Get
 type GovernancePolicyTemplateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type GovernancePolicyTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get policyTemplates from approvalWorkflowProviders
+// governancePolicyTemplateRequestBuilderGetQueryParameters get policyTemplates from approvalWorkflowProviders
 type GovernancePolicyTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GovernancePolicyTemplateRequestBuilderPatchOptions options for Patch
 type GovernancePolicyTemplateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernancePolicyTemplate;
@@ -53,10 +53,7 @@ type GovernancePolicyTemplateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GovernancePolicyTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernancePolicyTemplateRequestBuilderInternal instantiates a new GovernancePolicyTemplateRequestBuilder and sets the default values.
 func NewGovernancePolicyTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernancePolicyTemplateRequestBuilder) {
     m := &GovernancePolicyTemplateRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewGovernancePolicyTemplateRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GovernancePolicyTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernancePolicyTemplateRequestBuilder instantiates a new GovernancePolicyTemplateRequestBuilder and sets the default values.
 func NewGovernancePolicyTemplateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernancePolicyTemplateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGovernancePolicyTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property policyTemplates for approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property policyTemplates for approvalWorkflowProviders
 func (m *GovernancePolicyTemplateRequestBuilder) CreateDeleteRequestInformation(options *GovernancePolicyTemplateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *GovernancePolicyTemplateRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// Get policyTemplates from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get policyTemplates from approvalWorkflowProviders
 func (m *GovernancePolicyTemplateRequestBuilder) CreateGetRequestInformation(options *GovernancePolicyTemplateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *GovernancePolicyTemplateRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Update the navigation property policyTemplates in approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property policyTemplates in approvalWorkflowProviders
 func (m *GovernancePolicyTemplateRequestBuilder) CreatePatchRequestInformation(options *GovernancePolicyTemplateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *GovernancePolicyTemplateRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// Delete navigation property policyTemplates for approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property policyTemplates for approvalWorkflowProviders
 func (m *GovernancePolicyTemplateRequestBuilder) Delete(options *GovernancePolicyTemplateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *GovernancePolicyTemplateRequestBuilder) Delete(options *GovernancePolic
     }
     return nil
 }
-// Get policyTemplates from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Get get policyTemplates from approvalWorkflowProviders
 func (m *GovernancePolicyTemplateRequestBuilder) Get(options *GovernancePolicyTemplateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernancePolicyTemplate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *GovernancePolicyTemplateRequestBuilder) Get(options *GovernancePolicyTe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernancePolicyTemplate), nil
 }
-// Update the navigation property policyTemplates in approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property policyTemplates in approvalWorkflowProviders
 func (m *GovernancePolicyTemplateRequestBuilder) Patch(options *GovernancePolicyTemplateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

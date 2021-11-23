@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// getOffice365ActivationCounts 
 type GetOffice365ActivationCounts struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // The activation count on an Android device.
@@ -23,14 +23,14 @@ type GetOffice365ActivationCounts struct {
     // The activation count on Windows 10 mobile.
     windows10Mobile *int64;
 }
-// Instantiates a new getOffice365ActivationCounts and sets the default values.
+// NewGetOffice365ActivationCounts instantiates a new getOffice365ActivationCounts and sets the default values.
 func NewGetOffice365ActivationCounts()(*GetOffice365ActivationCounts) {
     m := &GetOffice365ActivationCounts{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
-// Gets the android property value. The activation count on an Android device.
+// GetAndroid gets the android property value. The activation count on an Android device.
 func (m *GetOffice365ActivationCounts) GetAndroid()(*int64) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *GetOffice365ActivationCounts) GetAndroid()(*int64) {
         return m.android
     }
 }
-// Gets the ios property value. The activation count on iOS.
+// GetIos gets the ios property value. The activation count on iOS.
 func (m *GetOffice365ActivationCounts) GetIos()(*int64) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *GetOffice365ActivationCounts) GetIos()(*int64) {
         return m.ios
     }
 }
-// Gets the mac property value. The activation count on Mac OS.
+// GetMac gets the mac property value. The activation count on Mac OS.
 func (m *GetOffice365ActivationCounts) GetMac()(*int64) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *GetOffice365ActivationCounts) GetMac()(*int64) {
         return m.mac
     }
 }
-// Gets the productType property value. The product type, such as 'Microsoft 365 ProPlus' or 'Project Client'.
+// GetProductType gets the productType property value. The product type, such as 'Microsoft 365 ProPlus' or 'Project Client'.
 func (m *GetOffice365ActivationCounts) GetProductType()(*string) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *GetOffice365ActivationCounts) GetProductType()(*string) {
         return m.productType
     }
 }
-// Gets the reportRefreshDate property value. The latest date of the content.
+// GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
 func (m *GetOffice365ActivationCounts) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *GetOffice365ActivationCounts) GetReportRefreshDate()(*string) {
         return m.reportRefreshDate
     }
 }
-// Gets the windows property value. The activation count on Windows. This number includes every activation on any Windows computer.
+// GetWindows gets the windows property value. The activation count on Windows. This number includes every activation on any Windows computer.
 func (m *GetOffice365ActivationCounts) GetWindows()(*int64) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *GetOffice365ActivationCounts) GetWindows()(*int64) {
         return m.windows
     }
 }
-// Gets the windows10Mobile property value. The activation count on Windows 10 mobile.
+// GetWindows10Mobile gets the windows10Mobile property value. The activation count on Windows 10 mobile.
 func (m *GetOffice365ActivationCounts) GetWindows10Mobile()(*int64) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *GetOffice365ActivationCounts) GetWindows10Mobile()(*int64) {
         return m.windows10Mobile
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetOffice365ActivationCounts) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["android"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,9 +164,7 @@ func (m *GetOffice365ActivationCounts) GetFieldDeserializers()(map[string]func(i
 func (m *GetOffice365ActivationCounts) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetOffice365ActivationCounts) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -216,45 +214,31 @@ func (m *GetOffice365ActivationCounts) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the android property value. The activation count on an Android device.
-// Parameters:
-//  - value : Value to set for the android property.
+// SetAndroid sets the android property value. The activation count on an Android device.
 func (m *GetOffice365ActivationCounts) SetAndroid(value *int64)() {
     m.android = value
 }
-// Sets the ios property value. The activation count on iOS.
-// Parameters:
-//  - value : Value to set for the ios property.
+// SetIos sets the ios property value. The activation count on iOS.
 func (m *GetOffice365ActivationCounts) SetIos(value *int64)() {
     m.ios = value
 }
-// Sets the mac property value. The activation count on Mac OS.
-// Parameters:
-//  - value : Value to set for the mac property.
+// SetMac sets the mac property value. The activation count on Mac OS.
 func (m *GetOffice365ActivationCounts) SetMac(value *int64)() {
     m.mac = value
 }
-// Sets the productType property value. The product type, such as 'Microsoft 365 ProPlus' or 'Project Client'.
-// Parameters:
-//  - value : Value to set for the productType property.
+// SetProductType sets the productType property value. The product type, such as 'Microsoft 365 ProPlus' or 'Project Client'.
 func (m *GetOffice365ActivationCounts) SetProductType(value *string)() {
     m.productType = value
 }
-// Sets the reportRefreshDate property value. The latest date of the content.
-// Parameters:
-//  - value : Value to set for the reportRefreshDate property.
+// SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *GetOffice365ActivationCounts) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
-// Sets the windows property value. The activation count on Windows. This number includes every activation on any Windows computer.
-// Parameters:
-//  - value : Value to set for the windows property.
+// SetWindows sets the windows property value. The activation count on Windows. This number includes every activation on any Windows computer.
 func (m *GetOffice365ActivationCounts) SetWindows(value *int64)() {
     m.windows = value
 }
-// Sets the windows10Mobile property value. The activation count on Windows 10 mobile.
-// Parameters:
-//  - value : Value to set for the windows10Mobile property.
+// SetWindows10Mobile sets the windows10Mobile property value. The activation count on Windows 10 mobile.
 func (m *GetOffice365ActivationCounts) SetWindows10Mobile(value *int64)() {
     m.windows10Mobile = value
 }

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\vendors
+// vendorsRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\vendors
 type VendorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type VendorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// VendorsRequestBuilderGetOptions options for Get
 type VendorsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type VendorsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get vendors from financials
+// vendorsRequestBuilderGetQueryParameters get vendors from financials
 type VendorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type VendorsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// VendorsRequestBuilderPostOptions options for Post
 type VendorsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Vendor_escaped;
@@ -56,10 +56,7 @@ type VendorsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new VendorsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVendorsRequestBuilderInternal instantiates a new VendorsRequestBuilder and sets the default values.
 func NewVendorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VendorsRequestBuilder) {
     m := &VendorsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewVendorsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new VendorsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVendorsRequestBuilder instantiates a new VendorsRequestBuilder and sets the default values.
 func NewVendorsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VendorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVendorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get vendors from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get vendors from financials
 func (m *VendorsRequestBuilder) CreateGetRequestInformation(options *VendorsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *VendorsRequestBuilder) CreateGetRequestInformation(options *VendorsRequ
     }
     return requestInfo, nil
 }
-// Create new navigation property to vendors for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to vendors for financials
 func (m *VendorsRequestBuilder) CreatePostRequestInformation(options *VendorsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *VendorsRequestBuilder) CreatePostRequestInformation(options *VendorsReq
     }
     return requestInfo, nil
 }
-// Get vendors from financials
-// Parameters:
-//  - options : Options for the request
+// Get get vendors from financials
 func (m *VendorsRequestBuilder) Get(options *VendorsRequestBuilderGetOptions)(*VendorsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *VendorsRequestBuilder) Get(options *VendorsRequestBuilderGetOptions)(*V
     }
     return res.(*VendorsResponse), nil
 }
-// Create new navigation property to vendors for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to vendors for financials
 func (m *VendorsRequestBuilder) Post(options *VendorsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Vendor_escaped, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

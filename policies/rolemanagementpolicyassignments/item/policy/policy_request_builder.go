@@ -7,7 +7,7 @@ import (
     i2d902abbb955b903dfdca754159c8c4f690ddd6cb70c7955924d4450b3dedaf5 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/rolemanagementpolicyassignments/item/policy/ref"
 )
 
-// Builds and executes requests for operations under \policies\roleManagementPolicyAssignments\{unifiedRoleManagementPolicyAssignment-id}\policy
+// policyRequestBuilder builds and executes requests for operations under \policies\roleManagementPolicyAssignments\{unifiedRoleManagementPolicyAssignment-id}\policy
 type PolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type PolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PolicyRequestBuilderGetOptions options for Get
 type PolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type PolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy for the assignment.
+// policyRequestBuilderGetQueryParameters the policy for the assignment.
 type PolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new PolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicyRequestBuilderInternal instantiates a new PolicyRequestBuilder and sets the default values.
 func NewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyRequestBuilder) {
     m := &PolicyRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicyRequestBuilder instantiates a new PolicyRequestBuilder and sets the default values.
 func NewPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy for the assignment.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy for the assignment.
 func (m *PolicyRequestBuilder) CreateGetRequestInformation(options *PolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *PolicyRequestBuilder) CreateGetRequestInformation(options *PolicyReques
     }
     return requestInfo, nil
 }
-// The policy for the assignment.
-// Parameters:
-//  - options : Options for the request
+// Get the policy for the assignment.
 func (m *PolicyRequestBuilder) Get(options *PolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRoleManagementPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

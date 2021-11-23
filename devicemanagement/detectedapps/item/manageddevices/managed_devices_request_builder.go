@@ -9,7 +9,7 @@ import (
     idc3947230f9ec3c69eb3e851f6ac557afab9214686da7582beed0fef3c1a0fd8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/detectedapps/item/manageddevices/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\detectedApps\{detectedApp-id}\managedDevices
+// managedDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\detectedApps\{detectedApp-id}\managedDevices
 type ManagedDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ManagedDevicesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagedDevicesRequestBuilderGetOptions options for Get
 type ManagedDevicesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type ManagedDevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The devices that have the discovered application installed
+// managedDevicesRequestBuilderGetQueryParameters the devices that have the discovered application installed
 type ManagedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -51,10 +51,7 @@ type ManagedDevicesRequestBuilderGetQueryParameters struct {
 func (m *ManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i247cbfb29f4a7ba9c2ae9e5a868d95fbcc0128e2c169700e507e3ba4e042bb27.BulkReprovisionCloudPcRequestBuilder) {
     return i247cbfb29f4a7ba9c2ae9e5a868d95fbcc0128e2c169700e507e3ba4e042bb27.NewBulkReprovisionCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDevicesRequestBuilderInternal instantiates a new ManagedDevicesRequestBuilder and sets the default values.
 func NewManagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDevicesRequestBuilder) {
     m := &ManagedDevicesRequestBuilder{
     }
@@ -67,18 +64,13 @@ func NewManagedDevicesRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDevicesRequestBuilder instantiates a new ManagedDevicesRequestBuilder and sets the default values.
 func NewManagedDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDevicesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The devices that have the discovered application installed
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the devices that have the discovered application installed
 func (m *ManagedDevicesRequestBuilder) CreateGetRequestInformation(options *ManagedDevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *ManagedDevicesRequestBuilder) CreateGetRequestInformation(options *Mana
 func (m *ManagedDevicesRequestBuilder) ExecuteAction()(*i1018d4869692703b9b231a9d9796ea086b51d50b4ab465fc18bfa4bfec0e9951.ExecuteActionRequestBuilder) {
     return i1018d4869692703b9b231a9d9796ea086b51d50b4ab465fc18bfa4bfec0e9951.NewExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The devices that have the discovered application installed
-// Parameters:
-//  - options : Options for the request
+// Get the devices that have the discovered application installed
 func (m *ManagedDevicesRequestBuilder) Get(options *ManagedDevicesRequestBuilderGetOptions)(*ManagedDevicesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

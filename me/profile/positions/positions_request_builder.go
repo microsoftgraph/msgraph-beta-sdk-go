@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\positions
+// positionsRequestBuilder builds and executes requests for operations under \me\profile\positions
 type PositionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PositionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PositionsRequestBuilderGetOptions options for Get
 type PositionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PositionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents detailed information about work positions associated with a user's profile.
+// positionsRequestBuilderGetQueryParameters represents detailed information about work positions associated with a user's profile.
 type PositionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PositionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PositionsRequestBuilderPostOptions options for Post
 type PositionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkPosition;
@@ -56,10 +56,7 @@ type PositionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PositionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPositionsRequestBuilderInternal instantiates a new PositionsRequestBuilder and sets the default values.
 func NewPositionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PositionsRequestBuilder) {
     m := &PositionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPositionsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PositionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPositionsRequestBuilder instantiates a new PositionsRequestBuilder and sets the default values.
 func NewPositionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PositionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPositionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents detailed information about work positions associated with a user's profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents detailed information about work positions associated with a user's profile.
 func (m *PositionsRequestBuilder) CreateGetRequestInformation(options *PositionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PositionsRequestBuilder) CreateGetRequestInformation(options *Positions
     }
     return requestInfo, nil
 }
-// Represents detailed information about work positions associated with a user's profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents detailed information about work positions associated with a user's profile.
 func (m *PositionsRequestBuilder) CreatePostRequestInformation(options *PositionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PositionsRequestBuilder) CreatePostRequestInformation(options *Position
     }
     return requestInfo, nil
 }
-// Represents detailed information about work positions associated with a user's profile.
-// Parameters:
-//  - options : Options for the request
+// Get represents detailed information about work positions associated with a user's profile.
 func (m *PositionsRequestBuilder) Get(options *PositionsRequestBuilderGetOptions)(*PositionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PositionsRequestBuilder) Get(options *PositionsRequestBuilderGetOptions
     }
     return res.(*PositionsResponse), nil
 }
-// Represents detailed information about work positions associated with a user's profile.
-// Parameters:
-//  - options : Options for the request
+// Post represents detailed information about work positions associated with a user's profile.
 func (m *PositionsRequestBuilder) Post(options *PositionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkPosition, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

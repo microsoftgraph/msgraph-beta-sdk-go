@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.signUp
+// signUpRequestBuilder builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.signUp
 type SignUpRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SignUpRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// SignUpRequestBuilderPostOptions options for Post
 type SignUpRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type SignUpRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes privilegedSignupStatus
+// signUpResponse union type wrapper for classes privilegedSignupStatus
 type SignUpResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type privilegedSignupStatus
     privilegedSignupStatus *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus;
 }
-// Instantiates a new signUpResponse and sets the default values.
+// NewSignUpResponse instantiates a new signUpResponse and sets the default values.
 func NewSignUpResponse()(*SignUpResponse) {
     m := &SignUpResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignUpResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *SignUpResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the privilegedSignupStatus property value. Union type representation for type privilegedSignupStatus
+// GetPrivilegedSignupStatus gets the privilegedSignupStatus property value. Union type representation for type privilegedSignupStatus
 func (m *SignUpResponse) GetPrivilegedSignupStatus()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *SignUpResponse) GetPrivilegedSignupStatus()(*i535684e11b5500196ecb4b5c6
         return m.privilegedSignupStatus
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SignUpResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["privilegedSignupStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *SignUpResponse) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *SignUpResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SignUpResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("privilegedSignupStatus", m.GetPrivilegedSignupStatus())
@@ -90,22 +88,15 @@ func (m *SignUpResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignUpResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the privilegedSignupStatus property value. Union type representation for type privilegedSignupStatus
-// Parameters:
-//  - value : Value to set for the privilegedSignupStatus property.
+// SetPrivilegedSignupStatus sets the privilegedSignupStatus property value. Union type representation for type privilegedSignupStatus
 func (m *SignUpResponse) SetPrivilegedSignupStatus(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus)() {
     m.privilegedSignupStatus = value
 }
-// Instantiates a new SignUpRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSignUpRequestBuilderInternal instantiates a new SignUpRequestBuilder and sets the default values.
 func NewSignUpRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SignUpRequestBuilder) {
     m := &SignUpRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewSignUpRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SignUpRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSignUpRequestBuilder instantiates a new SignUpRequestBuilder and sets the default values.
 func NewSignUpRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SignUpRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSignUpRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action signUp
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action signUp
 func (m *SignUpRequestBuilder) CreatePostRequestInformation(options *SignUpRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *SignUpRequestBuilder) CreatePostRequestInformation(options *SignUpReque
     }
     return requestInfo, nil
 }
-// Invoke action signUp
-// Parameters:
-//  - options : Options for the request
+// Post invoke action signUp
 func (m *SignUpRequestBuilder) Post(options *SignUpRequestBuilderPostOptions)(*SignUpResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

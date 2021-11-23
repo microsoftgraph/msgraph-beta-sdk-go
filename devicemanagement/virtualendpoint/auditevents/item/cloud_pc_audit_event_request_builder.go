@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\auditEvents\{cloudPcAuditEvent-id}
+// cloudPcAuditEventRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\auditEvents\{cloudPcAuditEvent-id}
 type CloudPcAuditEventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudPcAuditEventRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcAuditEventRequestBuilderDeleteOptions options for Delete
 type CloudPcAuditEventRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CloudPcAuditEventRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcAuditEventRequestBuilderGetOptions options for Get
 type CloudPcAuditEventRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CloudPcAuditEventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Cloud PC audit event.
+// cloudPcAuditEventRequestBuilderGetQueryParameters cloud PC audit event.
 type CloudPcAuditEventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcAuditEventRequestBuilderPatchOptions options for Patch
 type CloudPcAuditEventRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcAuditEvent;
@@ -53,10 +53,7 @@ type CloudPcAuditEventRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPcAuditEventRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcAuditEventRequestBuilderInternal instantiates a new CloudPcAuditEventRequestBuilder and sets the default values.
 func NewCloudPcAuditEventRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcAuditEventRequestBuilder) {
     m := &CloudPcAuditEventRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCloudPcAuditEventRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcAuditEventRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcAuditEventRequestBuilder instantiates a new CloudPcAuditEventRequestBuilder and sets the default values.
 func NewCloudPcAuditEventRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcAuditEventRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcAuditEventRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Cloud PC audit event.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation cloud PC audit event.
 func (m *CloudPcAuditEventRequestBuilder) CreateDeleteRequestInformation(options *CloudPcAuditEventRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CloudPcAuditEventRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// Cloud PC audit event.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation cloud PC audit event.
 func (m *CloudPcAuditEventRequestBuilder) CreateGetRequestInformation(options *CloudPcAuditEventRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPcAuditEventRequestBuilder) CreateGetRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// Cloud PC audit event.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation cloud PC audit event.
 func (m *CloudPcAuditEventRequestBuilder) CreatePatchRequestInformation(options *CloudPcAuditEventRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CloudPcAuditEventRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Cloud PC audit event.
-// Parameters:
-//  - options : Options for the request
+// Delete cloud PC audit event.
 func (m *CloudPcAuditEventRequestBuilder) Delete(options *CloudPcAuditEventRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CloudPcAuditEventRequestBuilder) Delete(options *CloudPcAuditEventReque
     }
     return nil
 }
-// Cloud PC audit event.
-// Parameters:
-//  - options : Options for the request
+// Get cloud PC audit event.
 func (m *CloudPcAuditEventRequestBuilder) Get(options *CloudPcAuditEventRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcAuditEvent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CloudPcAuditEventRequestBuilder) Get(options *CloudPcAuditEventRequestB
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcAuditEvent), nil
 }
-// Cloud PC audit event.
-// Parameters:
-//  - options : Options for the request
+// Patch cloud PC audit event.
 func (m *CloudPcAuditEventRequestBuilder) Patch(options *CloudPcAuditEventRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

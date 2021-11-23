@@ -9,7 +9,7 @@ import (
     ie1054a1b9157187681bd433f8846c01e56b7924bf3c589f1ade883924304dc7d "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignments/item/roleinfo"
 )
 
-// Builds and executes requests for operations under \privilegedRoleAssignments\{privilegedRoleAssignment-id}
+// privilegedRoleAssignmentRequestBuilder builds and executes requests for operations under \privilegedRoleAssignments\{privilegedRoleAssignment-id}
 type PrivilegedRoleAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type PrivilegedRoleAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrivilegedRoleAssignmentRequestBuilderDeleteOptions options for Delete
 type PrivilegedRoleAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type PrivilegedRoleAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrivilegedRoleAssignmentRequestBuilderGetOptions options for Get
 type PrivilegedRoleAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type PrivilegedRoleAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from privilegedRoleAssignments by key
+// privilegedRoleAssignmentRequestBuilderGetQueryParameters get entity from privilegedRoleAssignments by key
 type PrivilegedRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrivilegedRoleAssignmentRequestBuilderPatchOptions options for Patch
 type PrivilegedRoleAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignment;
@@ -56,10 +56,7 @@ type PrivilegedRoleAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrivilegedRoleAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedRoleAssignmentRequestBuilderInternal instantiates a new PrivilegedRoleAssignmentRequestBuilder and sets the default values.
 func NewPrivilegedRoleAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedRoleAssignmentRequestBuilder) {
     m := &PrivilegedRoleAssignmentRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPrivilegedRoleAssignmentRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrivilegedRoleAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedRoleAssignmentRequestBuilder instantiates a new PrivilegedRoleAssignmentRequestBuilder and sets the default values.
 func NewPrivilegedRoleAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedRoleAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedRoleAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from privilegedRoleAssignments
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from privilegedRoleAssignments
 func (m *PrivilegedRoleAssignmentRequestBuilder) CreateDeleteRequestInformation(options *PrivilegedRoleAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *PrivilegedRoleAssignmentRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// Get entity from privilegedRoleAssignments by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from privilegedRoleAssignments by key
 func (m *PrivilegedRoleAssignmentRequestBuilder) CreateGetRequestInformation(options *PrivilegedRoleAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *PrivilegedRoleAssignmentRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Update entity in privilegedRoleAssignments
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in privilegedRoleAssignments
 func (m *PrivilegedRoleAssignmentRequestBuilder) CreatePatchRequestInformation(options *PrivilegedRoleAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +130,7 @@ func (m *PrivilegedRoleAssignmentRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// Delete entity from privilegedRoleAssignments
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from privilegedRoleAssignments
 func (m *PrivilegedRoleAssignmentRequestBuilder) Delete(options *PrivilegedRoleAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -156,9 +142,7 @@ func (m *PrivilegedRoleAssignmentRequestBuilder) Delete(options *PrivilegedRoleA
     }
     return nil
 }
-// Get entity from privilegedRoleAssignments by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from privilegedRoleAssignments by key
 func (m *PrivilegedRoleAssignmentRequestBuilder) Get(options *PrivilegedRoleAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -176,9 +160,7 @@ func (m *PrivilegedRoleAssignmentRequestBuilder) MakeEligible()(*iaea252828cfd0b
 func (m *PrivilegedRoleAssignmentRequestBuilder) MakePermanent()(*i360fd14cb1918888dde8889252044616ef9e8bae14b63f8ac32974d2ab3ab93f.MakePermanentRequestBuilder) {
     return i360fd14cb1918888dde8889252044616ef9e8bae14b63f8ac32974d2ab3ab93f.NewMakePermanentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in privilegedRoleAssignments
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in privilegedRoleAssignments
 func (m *PrivilegedRoleAssignmentRequestBuilder) Patch(options *PrivilegedRoleAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

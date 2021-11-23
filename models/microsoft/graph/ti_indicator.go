@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// tiIndicator 
 type TiIndicator struct {
     Entity
     // The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
@@ -125,14 +125,14 @@ type TiIndicator struct {
     // 
     userAgent *string;
 }
-// Instantiates a new tiIndicator and sets the default values.
+// NewTiIndicator instantiates a new tiIndicator and sets the default values.
 func NewTiIndicator()(*TiIndicator) {
     m := &TiIndicator{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
+// GetAction gets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
 func (m *TiIndicator) GetAction()(*TiAction) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *TiIndicator) GetAction()(*TiAction) {
         return m.action
     }
 }
-// Gets the activityGroupNames property value. The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
+// GetActivityGroupNames gets the activityGroupNames property value. The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
 func (m *TiIndicator) GetActivityGroupNames()([]string) {
     if m == nil {
         return nil
@@ -148,7 +148,7 @@ func (m *TiIndicator) GetActivityGroupNames()([]string) {
         return m.activityGroupNames
     }
 }
-// Gets the additionalInformation property value. A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
+// GetAdditionalInformation gets the additionalInformation property value. A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
 func (m *TiIndicator) GetAdditionalInformation()(*string) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *TiIndicator) GetAdditionalInformation()(*string) {
         return m.additionalInformation
     }
 }
-// Gets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
+// GetAzureTenantId gets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
 func (m *TiIndicator) GetAzureTenantId()(*string) {
     if m == nil {
         return nil
@@ -164,7 +164,7 @@ func (m *TiIndicator) GetAzureTenantId()(*string) {
         return m.azureTenantId
     }
 }
-// Gets the confidence property value. An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
+// GetConfidence gets the confidence property value. An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
 func (m *TiIndicator) GetConfidence()(*int32) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *TiIndicator) GetConfidence()(*int32) {
         return m.confidence
     }
 }
-// Gets the description property value. Brief description (100 characters or less) of the threat represented by the indicator. Required.
+// GetDescription gets the description property value. Brief description (100 characters or less) of the threat represented by the indicator. Required.
 func (m *TiIndicator) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -180,7 +180,7 @@ func (m *TiIndicator) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the diamondModel property value. The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
+// GetDiamondModel gets the diamondModel property value. The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
 func (m *TiIndicator) GetDiamondModel()(*DiamondModel) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *TiIndicator) GetDiamondModel()(*DiamondModel) {
         return m.diamondModel
     }
 }
-// Gets the domainName property value. 
+// GetDomainName gets the domainName property value. 
 func (m *TiIndicator) GetDomainName()(*string) {
     if m == nil {
         return nil
@@ -196,7 +196,7 @@ func (m *TiIndicator) GetDomainName()(*string) {
         return m.domainName
     }
 }
-// Gets the emailEncoding property value. 
+// GetEmailEncoding gets the emailEncoding property value. 
 func (m *TiIndicator) GetEmailEncoding()(*string) {
     if m == nil {
         return nil
@@ -204,7 +204,7 @@ func (m *TiIndicator) GetEmailEncoding()(*string) {
         return m.emailEncoding
     }
 }
-// Gets the emailLanguage property value. 
+// GetEmailLanguage gets the emailLanguage property value. 
 func (m *TiIndicator) GetEmailLanguage()(*string) {
     if m == nil {
         return nil
@@ -212,7 +212,7 @@ func (m *TiIndicator) GetEmailLanguage()(*string) {
         return m.emailLanguage
     }
 }
-// Gets the emailRecipient property value. 
+// GetEmailRecipient gets the emailRecipient property value. 
 func (m *TiIndicator) GetEmailRecipient()(*string) {
     if m == nil {
         return nil
@@ -220,7 +220,7 @@ func (m *TiIndicator) GetEmailRecipient()(*string) {
         return m.emailRecipient
     }
 }
-// Gets the emailSenderAddress property value. 
+// GetEmailSenderAddress gets the emailSenderAddress property value. 
 func (m *TiIndicator) GetEmailSenderAddress()(*string) {
     if m == nil {
         return nil
@@ -228,7 +228,7 @@ func (m *TiIndicator) GetEmailSenderAddress()(*string) {
         return m.emailSenderAddress
     }
 }
-// Gets the emailSenderName property value. 
+// GetEmailSenderName gets the emailSenderName property value. 
 func (m *TiIndicator) GetEmailSenderName()(*string) {
     if m == nil {
         return nil
@@ -236,7 +236,7 @@ func (m *TiIndicator) GetEmailSenderName()(*string) {
         return m.emailSenderName
     }
 }
-// Gets the emailSourceDomain property value. 
+// GetEmailSourceDomain gets the emailSourceDomain property value. 
 func (m *TiIndicator) GetEmailSourceDomain()(*string) {
     if m == nil {
         return nil
@@ -244,7 +244,7 @@ func (m *TiIndicator) GetEmailSourceDomain()(*string) {
         return m.emailSourceDomain
     }
 }
-// Gets the emailSourceIpAddress property value. 
+// GetEmailSourceIpAddress gets the emailSourceIpAddress property value. 
 func (m *TiIndicator) GetEmailSourceIpAddress()(*string) {
     if m == nil {
         return nil
@@ -252,7 +252,7 @@ func (m *TiIndicator) GetEmailSourceIpAddress()(*string) {
         return m.emailSourceIpAddress
     }
 }
-// Gets the emailSubject property value. 
+// GetEmailSubject gets the emailSubject property value. 
 func (m *TiIndicator) GetEmailSubject()(*string) {
     if m == nil {
         return nil
@@ -260,7 +260,7 @@ func (m *TiIndicator) GetEmailSubject()(*string) {
         return m.emailSubject
     }
 }
-// Gets the emailXMailer property value. 
+// GetEmailXMailer gets the emailXMailer property value. 
 func (m *TiIndicator) GetEmailXMailer()(*string) {
     if m == nil {
         return nil
@@ -268,7 +268,7 @@ func (m *TiIndicator) GetEmailXMailer()(*string) {
         return m.emailXMailer
     }
 }
-// Gets the expirationDateTime property value. DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
+// GetExpirationDateTime gets the expirationDateTime property value. DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
 func (m *TiIndicator) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -276,7 +276,7 @@ func (m *TiIndicator) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return m.expirationDateTime
     }
 }
-// Gets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
+// GetExternalId gets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
 func (m *TiIndicator) GetExternalId()(*string) {
     if m == nil {
         return nil
@@ -284,7 +284,7 @@ func (m *TiIndicator) GetExternalId()(*string) {
         return m.externalId
     }
 }
-// Gets the fileCompileDateTime property value. 
+// GetFileCompileDateTime gets the fileCompileDateTime property value. 
 func (m *TiIndicator) GetFileCompileDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -292,7 +292,7 @@ func (m *TiIndicator) GetFileCompileDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.fileCompileDateTime
     }
 }
-// Gets the fileCreatedDateTime property value. 
+// GetFileCreatedDateTime gets the fileCreatedDateTime property value. 
 func (m *TiIndicator) GetFileCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -300,7 +300,7 @@ func (m *TiIndicator) GetFileCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.fileCreatedDateTime
     }
 }
-// Gets the fileHashType property value. 
+// GetFileHashType gets the fileHashType property value. 
 func (m *TiIndicator) GetFileHashType()(*FileHashType) {
     if m == nil {
         return nil
@@ -308,7 +308,7 @@ func (m *TiIndicator) GetFileHashType()(*FileHashType) {
         return m.fileHashType
     }
 }
-// Gets the fileHashValue property value. 
+// GetFileHashValue gets the fileHashValue property value. 
 func (m *TiIndicator) GetFileHashValue()(*string) {
     if m == nil {
         return nil
@@ -316,7 +316,7 @@ func (m *TiIndicator) GetFileHashValue()(*string) {
         return m.fileHashValue
     }
 }
-// Gets the fileMutexName property value. 
+// GetFileMutexName gets the fileMutexName property value. 
 func (m *TiIndicator) GetFileMutexName()(*string) {
     if m == nil {
         return nil
@@ -324,7 +324,7 @@ func (m *TiIndicator) GetFileMutexName()(*string) {
         return m.fileMutexName
     }
 }
-// Gets the fileName property value. 
+// GetFileName gets the fileName property value. 
 func (m *TiIndicator) GetFileName()(*string) {
     if m == nil {
         return nil
@@ -332,7 +332,7 @@ func (m *TiIndicator) GetFileName()(*string) {
         return m.fileName
     }
 }
-// Gets the filePacker property value. 
+// GetFilePacker gets the filePacker property value. 
 func (m *TiIndicator) GetFilePacker()(*string) {
     if m == nil {
         return nil
@@ -340,7 +340,7 @@ func (m *TiIndicator) GetFilePacker()(*string) {
         return m.filePacker
     }
 }
-// Gets the filePath property value. 
+// GetFilePath gets the filePath property value. 
 func (m *TiIndicator) GetFilePath()(*string) {
     if m == nil {
         return nil
@@ -348,7 +348,7 @@ func (m *TiIndicator) GetFilePath()(*string) {
         return m.filePath
     }
 }
-// Gets the fileSize property value. 
+// GetFileSize gets the fileSize property value. 
 func (m *TiIndicator) GetFileSize()(*int64) {
     if m == nil {
         return nil
@@ -356,7 +356,7 @@ func (m *TiIndicator) GetFileSize()(*int64) {
         return m.fileSize
     }
 }
-// Gets the fileType property value. 
+// GetFileType gets the fileType property value. 
 func (m *TiIndicator) GetFileType()(*string) {
     if m == nil {
         return nil
@@ -364,7 +364,7 @@ func (m *TiIndicator) GetFileType()(*string) {
         return m.fileType
     }
 }
-// Gets the ingestedDateTime property value. Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetIngestedDateTime gets the ingestedDateTime property value. Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *TiIndicator) GetIngestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -372,7 +372,7 @@ func (m *TiIndicator) GetIngestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return m.ingestedDateTime
     }
 }
-// Gets the isActive property value. Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.
+// GetIsActive gets the isActive property value. Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.
 func (m *TiIndicator) GetIsActive()(*bool) {
     if m == nil {
         return nil
@@ -380,7 +380,7 @@ func (m *TiIndicator) GetIsActive()(*bool) {
         return m.isActive
     }
 }
-// Gets the killChain property value. A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.
+// GetKillChain gets the killChain property value. A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.
 func (m *TiIndicator) GetKillChain()([]string) {
     if m == nil {
         return nil
@@ -388,7 +388,7 @@ func (m *TiIndicator) GetKillChain()([]string) {
         return m.killChain
     }
 }
-// Gets the knownFalsePositives property value. Scenarios in which the indicator may cause false positives. This should be human-readable text.
+// GetKnownFalsePositives gets the knownFalsePositives property value. Scenarios in which the indicator may cause false positives. This should be human-readable text.
 func (m *TiIndicator) GetKnownFalsePositives()(*string) {
     if m == nil {
         return nil
@@ -396,7 +396,7 @@ func (m *TiIndicator) GetKnownFalsePositives()(*string) {
         return m.knownFalsePositives
     }
 }
-// Gets the lastReportedDateTime property value. The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetLastReportedDateTime gets the lastReportedDateTime property value. The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *TiIndicator) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -404,7 +404,7 @@ func (m *TiIndicator) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97
         return m.lastReportedDateTime
     }
 }
-// Gets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
+// GetMalwareFamilyNames gets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
 func (m *TiIndicator) GetMalwareFamilyNames()([]string) {
     if m == nil {
         return nil
@@ -412,7 +412,7 @@ func (m *TiIndicator) GetMalwareFamilyNames()([]string) {
         return m.malwareFamilyNames
     }
 }
-// Gets the networkCidrBlock property value. 
+// GetNetworkCidrBlock gets the networkCidrBlock property value. 
 func (m *TiIndicator) GetNetworkCidrBlock()(*string) {
     if m == nil {
         return nil
@@ -420,7 +420,7 @@ func (m *TiIndicator) GetNetworkCidrBlock()(*string) {
         return m.networkCidrBlock
     }
 }
-// Gets the networkDestinationAsn property value. 
+// GetNetworkDestinationAsn gets the networkDestinationAsn property value. 
 func (m *TiIndicator) GetNetworkDestinationAsn()(*int64) {
     if m == nil {
         return nil
@@ -428,7 +428,7 @@ func (m *TiIndicator) GetNetworkDestinationAsn()(*int64) {
         return m.networkDestinationAsn
     }
 }
-// Gets the networkDestinationCidrBlock property value. 
+// GetNetworkDestinationCidrBlock gets the networkDestinationCidrBlock property value. 
 func (m *TiIndicator) GetNetworkDestinationCidrBlock()(*string) {
     if m == nil {
         return nil
@@ -436,7 +436,7 @@ func (m *TiIndicator) GetNetworkDestinationCidrBlock()(*string) {
         return m.networkDestinationCidrBlock
     }
 }
-// Gets the networkDestinationIPv4 property value. 
+// GetNetworkDestinationIPv4 gets the networkDestinationIPv4 property value. 
 func (m *TiIndicator) GetNetworkDestinationIPv4()(*string) {
     if m == nil {
         return nil
@@ -444,7 +444,7 @@ func (m *TiIndicator) GetNetworkDestinationIPv4()(*string) {
         return m.networkDestinationIPv4
     }
 }
-// Gets the networkDestinationIPv6 property value. 
+// GetNetworkDestinationIPv6 gets the networkDestinationIPv6 property value. 
 func (m *TiIndicator) GetNetworkDestinationIPv6()(*string) {
     if m == nil {
         return nil
@@ -452,7 +452,7 @@ func (m *TiIndicator) GetNetworkDestinationIPv6()(*string) {
         return m.networkDestinationIPv6
     }
 }
-// Gets the networkDestinationPort property value. 
+// GetNetworkDestinationPort gets the networkDestinationPort property value. 
 func (m *TiIndicator) GetNetworkDestinationPort()(*int32) {
     if m == nil {
         return nil
@@ -460,7 +460,7 @@ func (m *TiIndicator) GetNetworkDestinationPort()(*int32) {
         return m.networkDestinationPort
     }
 }
-// Gets the networkIPv4 property value. 
+// GetNetworkIPv4 gets the networkIPv4 property value. 
 func (m *TiIndicator) GetNetworkIPv4()(*string) {
     if m == nil {
         return nil
@@ -468,7 +468,7 @@ func (m *TiIndicator) GetNetworkIPv4()(*string) {
         return m.networkIPv4
     }
 }
-// Gets the networkIPv6 property value. 
+// GetNetworkIPv6 gets the networkIPv6 property value. 
 func (m *TiIndicator) GetNetworkIPv6()(*string) {
     if m == nil {
         return nil
@@ -476,7 +476,7 @@ func (m *TiIndicator) GetNetworkIPv6()(*string) {
         return m.networkIPv6
     }
 }
-// Gets the networkPort property value. 
+// GetNetworkPort gets the networkPort property value. 
 func (m *TiIndicator) GetNetworkPort()(*int32) {
     if m == nil {
         return nil
@@ -484,7 +484,7 @@ func (m *TiIndicator) GetNetworkPort()(*int32) {
         return m.networkPort
     }
 }
-// Gets the networkProtocol property value. 
+// GetNetworkProtocol gets the networkProtocol property value. 
 func (m *TiIndicator) GetNetworkProtocol()(*int32) {
     if m == nil {
         return nil
@@ -492,7 +492,7 @@ func (m *TiIndicator) GetNetworkProtocol()(*int32) {
         return m.networkProtocol
     }
 }
-// Gets the networkSourceAsn property value. 
+// GetNetworkSourceAsn gets the networkSourceAsn property value. 
 func (m *TiIndicator) GetNetworkSourceAsn()(*int64) {
     if m == nil {
         return nil
@@ -500,7 +500,7 @@ func (m *TiIndicator) GetNetworkSourceAsn()(*int64) {
         return m.networkSourceAsn
     }
 }
-// Gets the networkSourceCidrBlock property value. 
+// GetNetworkSourceCidrBlock gets the networkSourceCidrBlock property value. 
 func (m *TiIndicator) GetNetworkSourceCidrBlock()(*string) {
     if m == nil {
         return nil
@@ -508,7 +508,7 @@ func (m *TiIndicator) GetNetworkSourceCidrBlock()(*string) {
         return m.networkSourceCidrBlock
     }
 }
-// Gets the networkSourceIPv4 property value. 
+// GetNetworkSourceIPv4 gets the networkSourceIPv4 property value. 
 func (m *TiIndicator) GetNetworkSourceIPv4()(*string) {
     if m == nil {
         return nil
@@ -516,7 +516,7 @@ func (m *TiIndicator) GetNetworkSourceIPv4()(*string) {
         return m.networkSourceIPv4
     }
 }
-// Gets the networkSourceIPv6 property value. 
+// GetNetworkSourceIPv6 gets the networkSourceIPv6 property value. 
 func (m *TiIndicator) GetNetworkSourceIPv6()(*string) {
     if m == nil {
         return nil
@@ -524,7 +524,7 @@ func (m *TiIndicator) GetNetworkSourceIPv6()(*string) {
         return m.networkSourceIPv6
     }
 }
-// Gets the networkSourcePort property value. 
+// GetNetworkSourcePort gets the networkSourcePort property value. 
 func (m *TiIndicator) GetNetworkSourcePort()(*int32) {
     if m == nil {
         return nil
@@ -532,7 +532,7 @@ func (m *TiIndicator) GetNetworkSourcePort()(*int32) {
         return m.networkSourcePort
     }
 }
-// Gets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
+// GetPassiveOnly gets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
 func (m *TiIndicator) GetPassiveOnly()(*bool) {
     if m == nil {
         return nil
@@ -540,7 +540,7 @@ func (m *TiIndicator) GetPassiveOnly()(*bool) {
         return m.passiveOnly
     }
 }
-// Gets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
+// GetSeverity gets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
 func (m *TiIndicator) GetSeverity()(*int32) {
     if m == nil {
         return nil
@@ -548,7 +548,7 @@ func (m *TiIndicator) GetSeverity()(*int32) {
         return m.severity
     }
 }
-// Gets the tags property value. A JSON array of strings that stores arbitrary tags/keywords.
+// GetTags gets the tags property value. A JSON array of strings that stores arbitrary tags/keywords.
 func (m *TiIndicator) GetTags()([]string) {
     if m == nil {
         return nil
@@ -556,7 +556,7 @@ func (m *TiIndicator) GetTags()([]string) {
         return m.tags
     }
 }
-// Gets the targetProduct property value. A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required
+// GetTargetProduct gets the targetProduct property value. A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required
 func (m *TiIndicator) GetTargetProduct()(*string) {
     if m == nil {
         return nil
@@ -564,7 +564,7 @@ func (m *TiIndicator) GetTargetProduct()(*string) {
         return m.targetProduct
     }
 }
-// Gets the threatType property value. Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
+// GetThreatType gets the threatType property value. Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
 func (m *TiIndicator) GetThreatType()(*string) {
     if m == nil {
         return nil
@@ -572,7 +572,7 @@ func (m *TiIndicator) GetThreatType()(*string) {
         return m.threatType
     }
 }
-// Gets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
+// GetTlpLevel gets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
 func (m *TiIndicator) GetTlpLevel()(*TlpLevel) {
     if m == nil {
         return nil
@@ -580,7 +580,7 @@ func (m *TiIndicator) GetTlpLevel()(*TlpLevel) {
         return m.tlpLevel
     }
 }
-// Gets the url property value. 
+// GetUrl gets the url property value. 
 func (m *TiIndicator) GetUrl()(*string) {
     if m == nil {
         return nil
@@ -588,7 +588,7 @@ func (m *TiIndicator) GetUrl()(*string) {
         return m.url
     }
 }
-// Gets the userAgent property value. 
+// GetUserAgent gets the userAgent property value. 
 func (m *TiIndicator) GetUserAgent()(*string) {
     if m == nil {
         return nil
@@ -596,7 +596,7 @@ func (m *TiIndicator) GetUserAgent()(*string) {
         return m.userAgent
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["action"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -1204,9 +1204,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *TiIndicator) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -1566,351 +1564,235 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// Sets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
-// Parameters:
-//  - value : Value to set for the action property.
+// SetAction sets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
 func (m *TiIndicator) SetAction(value *TiAction)() {
     m.action = value
 }
-// Sets the activityGroupNames property value. The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
-// Parameters:
-//  - value : Value to set for the activityGroupNames property.
+// SetActivityGroupNames sets the activityGroupNames property value. The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
 func (m *TiIndicator) SetActivityGroupNames(value []string)() {
     m.activityGroupNames = value
 }
-// Sets the additionalInformation property value. A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
-// Parameters:
-//  - value : Value to set for the additionalInformation property.
+// SetAdditionalInformation sets the additionalInformation property value. A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
 func (m *TiIndicator) SetAdditionalInformation(value *string)() {
     m.additionalInformation = value
 }
-// Sets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
-// Parameters:
-//  - value : Value to set for the azureTenantId property.
+// SetAzureTenantId sets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
 func (m *TiIndicator) SetAzureTenantId(value *string)() {
     m.azureTenantId = value
 }
-// Sets the confidence property value. An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
-// Parameters:
-//  - value : Value to set for the confidence property.
+// SetConfidence sets the confidence property value. An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
 func (m *TiIndicator) SetConfidence(value *int32)() {
     m.confidence = value
 }
-// Sets the description property value. Brief description (100 characters or less) of the threat represented by the indicator. Required.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Brief description (100 characters or less) of the threat represented by the indicator. Required.
 func (m *TiIndicator) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the diamondModel property value. The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
-// Parameters:
-//  - value : Value to set for the diamondModel property.
+// SetDiamondModel sets the diamondModel property value. The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
 func (m *TiIndicator) SetDiamondModel(value *DiamondModel)() {
     m.diamondModel = value
 }
-// Sets the domainName property value. 
-// Parameters:
-//  - value : Value to set for the domainName property.
+// SetDomainName sets the domainName property value. 
 func (m *TiIndicator) SetDomainName(value *string)() {
     m.domainName = value
 }
-// Sets the emailEncoding property value. 
-// Parameters:
-//  - value : Value to set for the emailEncoding property.
+// SetEmailEncoding sets the emailEncoding property value. 
 func (m *TiIndicator) SetEmailEncoding(value *string)() {
     m.emailEncoding = value
 }
-// Sets the emailLanguage property value. 
-// Parameters:
-//  - value : Value to set for the emailLanguage property.
+// SetEmailLanguage sets the emailLanguage property value. 
 func (m *TiIndicator) SetEmailLanguage(value *string)() {
     m.emailLanguage = value
 }
-// Sets the emailRecipient property value. 
-// Parameters:
-//  - value : Value to set for the emailRecipient property.
+// SetEmailRecipient sets the emailRecipient property value. 
 func (m *TiIndicator) SetEmailRecipient(value *string)() {
     m.emailRecipient = value
 }
-// Sets the emailSenderAddress property value. 
-// Parameters:
-//  - value : Value to set for the emailSenderAddress property.
+// SetEmailSenderAddress sets the emailSenderAddress property value. 
 func (m *TiIndicator) SetEmailSenderAddress(value *string)() {
     m.emailSenderAddress = value
 }
-// Sets the emailSenderName property value. 
-// Parameters:
-//  - value : Value to set for the emailSenderName property.
+// SetEmailSenderName sets the emailSenderName property value. 
 func (m *TiIndicator) SetEmailSenderName(value *string)() {
     m.emailSenderName = value
 }
-// Sets the emailSourceDomain property value. 
-// Parameters:
-//  - value : Value to set for the emailSourceDomain property.
+// SetEmailSourceDomain sets the emailSourceDomain property value. 
 func (m *TiIndicator) SetEmailSourceDomain(value *string)() {
     m.emailSourceDomain = value
 }
-// Sets the emailSourceIpAddress property value. 
-// Parameters:
-//  - value : Value to set for the emailSourceIpAddress property.
+// SetEmailSourceIpAddress sets the emailSourceIpAddress property value. 
 func (m *TiIndicator) SetEmailSourceIpAddress(value *string)() {
     m.emailSourceIpAddress = value
 }
-// Sets the emailSubject property value. 
-// Parameters:
-//  - value : Value to set for the emailSubject property.
+// SetEmailSubject sets the emailSubject property value. 
 func (m *TiIndicator) SetEmailSubject(value *string)() {
     m.emailSubject = value
 }
-// Sets the emailXMailer property value. 
-// Parameters:
-//  - value : Value to set for the emailXMailer property.
+// SetEmailXMailer sets the emailXMailer property value. 
 func (m *TiIndicator) SetEmailXMailer(value *string)() {
     m.emailXMailer = value
 }
-// Sets the expirationDateTime property value. DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
-// Parameters:
-//  - value : Value to set for the expirationDateTime property.
+// SetExpirationDateTime sets the expirationDateTime property value. DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
 func (m *TiIndicator) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
 }
-// Sets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
-// Parameters:
-//  - value : Value to set for the externalId property.
+// SetExternalId sets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
 func (m *TiIndicator) SetExternalId(value *string)() {
     m.externalId = value
 }
-// Sets the fileCompileDateTime property value. 
-// Parameters:
-//  - value : Value to set for the fileCompileDateTime property.
+// SetFileCompileDateTime sets the fileCompileDateTime property value. 
 func (m *TiIndicator) SetFileCompileDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.fileCompileDateTime = value
 }
-// Sets the fileCreatedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the fileCreatedDateTime property.
+// SetFileCreatedDateTime sets the fileCreatedDateTime property value. 
 func (m *TiIndicator) SetFileCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.fileCreatedDateTime = value
 }
-// Sets the fileHashType property value. 
-// Parameters:
-//  - value : Value to set for the fileHashType property.
+// SetFileHashType sets the fileHashType property value. 
 func (m *TiIndicator) SetFileHashType(value *FileHashType)() {
     m.fileHashType = value
 }
-// Sets the fileHashValue property value. 
-// Parameters:
-//  - value : Value to set for the fileHashValue property.
+// SetFileHashValue sets the fileHashValue property value. 
 func (m *TiIndicator) SetFileHashValue(value *string)() {
     m.fileHashValue = value
 }
-// Sets the fileMutexName property value. 
-// Parameters:
-//  - value : Value to set for the fileMutexName property.
+// SetFileMutexName sets the fileMutexName property value. 
 func (m *TiIndicator) SetFileMutexName(value *string)() {
     m.fileMutexName = value
 }
-// Sets the fileName property value. 
-// Parameters:
-//  - value : Value to set for the fileName property.
+// SetFileName sets the fileName property value. 
 func (m *TiIndicator) SetFileName(value *string)() {
     m.fileName = value
 }
-// Sets the filePacker property value. 
-// Parameters:
-//  - value : Value to set for the filePacker property.
+// SetFilePacker sets the filePacker property value. 
 func (m *TiIndicator) SetFilePacker(value *string)() {
     m.filePacker = value
 }
-// Sets the filePath property value. 
-// Parameters:
-//  - value : Value to set for the filePath property.
+// SetFilePath sets the filePath property value. 
 func (m *TiIndicator) SetFilePath(value *string)() {
     m.filePath = value
 }
-// Sets the fileSize property value. 
-// Parameters:
-//  - value : Value to set for the fileSize property.
+// SetFileSize sets the fileSize property value. 
 func (m *TiIndicator) SetFileSize(value *int64)() {
     m.fileSize = value
 }
-// Sets the fileType property value. 
-// Parameters:
-//  - value : Value to set for the fileType property.
+// SetFileType sets the fileType property value. 
 func (m *TiIndicator) SetFileType(value *string)() {
     m.fileType = value
 }
-// Sets the ingestedDateTime property value. Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the ingestedDateTime property.
+// SetIngestedDateTime sets the ingestedDateTime property value. Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *TiIndicator) SetIngestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.ingestedDateTime = value
 }
-// Sets the isActive property value. Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.
-// Parameters:
-//  - value : Value to set for the isActive property.
+// SetIsActive sets the isActive property value. Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.
 func (m *TiIndicator) SetIsActive(value *bool)() {
     m.isActive = value
 }
-// Sets the killChain property value. A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.
-// Parameters:
-//  - value : Value to set for the killChain property.
+// SetKillChain sets the killChain property value. A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.
 func (m *TiIndicator) SetKillChain(value []string)() {
     m.killChain = value
 }
-// Sets the knownFalsePositives property value. Scenarios in which the indicator may cause false positives. This should be human-readable text.
-// Parameters:
-//  - value : Value to set for the knownFalsePositives property.
+// SetKnownFalsePositives sets the knownFalsePositives property value. Scenarios in which the indicator may cause false positives. This should be human-readable text.
 func (m *TiIndicator) SetKnownFalsePositives(value *string)() {
     m.knownFalsePositives = value
 }
-// Sets the lastReportedDateTime property value. The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the lastReportedDateTime property.
+// SetLastReportedDateTime sets the lastReportedDateTime property value. The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *TiIndicator) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastReportedDateTime = value
 }
-// Sets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
-// Parameters:
-//  - value : Value to set for the malwareFamilyNames property.
+// SetMalwareFamilyNames sets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
 func (m *TiIndicator) SetMalwareFamilyNames(value []string)() {
     m.malwareFamilyNames = value
 }
-// Sets the networkCidrBlock property value. 
-// Parameters:
-//  - value : Value to set for the networkCidrBlock property.
+// SetNetworkCidrBlock sets the networkCidrBlock property value. 
 func (m *TiIndicator) SetNetworkCidrBlock(value *string)() {
     m.networkCidrBlock = value
 }
-// Sets the networkDestinationAsn property value. 
-// Parameters:
-//  - value : Value to set for the networkDestinationAsn property.
+// SetNetworkDestinationAsn sets the networkDestinationAsn property value. 
 func (m *TiIndicator) SetNetworkDestinationAsn(value *int64)() {
     m.networkDestinationAsn = value
 }
-// Sets the networkDestinationCidrBlock property value. 
-// Parameters:
-//  - value : Value to set for the networkDestinationCidrBlock property.
+// SetNetworkDestinationCidrBlock sets the networkDestinationCidrBlock property value. 
 func (m *TiIndicator) SetNetworkDestinationCidrBlock(value *string)() {
     m.networkDestinationCidrBlock = value
 }
-// Sets the networkDestinationIPv4 property value. 
-// Parameters:
-//  - value : Value to set for the networkDestinationIPv4 property.
+// SetNetworkDestinationIPv4 sets the networkDestinationIPv4 property value. 
 func (m *TiIndicator) SetNetworkDestinationIPv4(value *string)() {
     m.networkDestinationIPv4 = value
 }
-// Sets the networkDestinationIPv6 property value. 
-// Parameters:
-//  - value : Value to set for the networkDestinationIPv6 property.
+// SetNetworkDestinationIPv6 sets the networkDestinationIPv6 property value. 
 func (m *TiIndicator) SetNetworkDestinationIPv6(value *string)() {
     m.networkDestinationIPv6 = value
 }
-// Sets the networkDestinationPort property value. 
-// Parameters:
-//  - value : Value to set for the networkDestinationPort property.
+// SetNetworkDestinationPort sets the networkDestinationPort property value. 
 func (m *TiIndicator) SetNetworkDestinationPort(value *int32)() {
     m.networkDestinationPort = value
 }
-// Sets the networkIPv4 property value. 
-// Parameters:
-//  - value : Value to set for the networkIPv4 property.
+// SetNetworkIPv4 sets the networkIPv4 property value. 
 func (m *TiIndicator) SetNetworkIPv4(value *string)() {
     m.networkIPv4 = value
 }
-// Sets the networkIPv6 property value. 
-// Parameters:
-//  - value : Value to set for the networkIPv6 property.
+// SetNetworkIPv6 sets the networkIPv6 property value. 
 func (m *TiIndicator) SetNetworkIPv6(value *string)() {
     m.networkIPv6 = value
 }
-// Sets the networkPort property value. 
-// Parameters:
-//  - value : Value to set for the networkPort property.
+// SetNetworkPort sets the networkPort property value. 
 func (m *TiIndicator) SetNetworkPort(value *int32)() {
     m.networkPort = value
 }
-// Sets the networkProtocol property value. 
-// Parameters:
-//  - value : Value to set for the networkProtocol property.
+// SetNetworkProtocol sets the networkProtocol property value. 
 func (m *TiIndicator) SetNetworkProtocol(value *int32)() {
     m.networkProtocol = value
 }
-// Sets the networkSourceAsn property value. 
-// Parameters:
-//  - value : Value to set for the networkSourceAsn property.
+// SetNetworkSourceAsn sets the networkSourceAsn property value. 
 func (m *TiIndicator) SetNetworkSourceAsn(value *int64)() {
     m.networkSourceAsn = value
 }
-// Sets the networkSourceCidrBlock property value. 
-// Parameters:
-//  - value : Value to set for the networkSourceCidrBlock property.
+// SetNetworkSourceCidrBlock sets the networkSourceCidrBlock property value. 
 func (m *TiIndicator) SetNetworkSourceCidrBlock(value *string)() {
     m.networkSourceCidrBlock = value
 }
-// Sets the networkSourceIPv4 property value. 
-// Parameters:
-//  - value : Value to set for the networkSourceIPv4 property.
+// SetNetworkSourceIPv4 sets the networkSourceIPv4 property value. 
 func (m *TiIndicator) SetNetworkSourceIPv4(value *string)() {
     m.networkSourceIPv4 = value
 }
-// Sets the networkSourceIPv6 property value. 
-// Parameters:
-//  - value : Value to set for the networkSourceIPv6 property.
+// SetNetworkSourceIPv6 sets the networkSourceIPv6 property value. 
 func (m *TiIndicator) SetNetworkSourceIPv6(value *string)() {
     m.networkSourceIPv6 = value
 }
-// Sets the networkSourcePort property value. 
-// Parameters:
-//  - value : Value to set for the networkSourcePort property.
+// SetNetworkSourcePort sets the networkSourcePort property value. 
 func (m *TiIndicator) SetNetworkSourcePort(value *int32)() {
     m.networkSourcePort = value
 }
-// Sets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
-// Parameters:
-//  - value : Value to set for the passiveOnly property.
+// SetPassiveOnly sets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
 func (m *TiIndicator) SetPassiveOnly(value *bool)() {
     m.passiveOnly = value
 }
-// Sets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
-// Parameters:
-//  - value : Value to set for the severity property.
+// SetSeverity sets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
 func (m *TiIndicator) SetSeverity(value *int32)() {
     m.severity = value
 }
-// Sets the tags property value. A JSON array of strings that stores arbitrary tags/keywords.
-// Parameters:
-//  - value : Value to set for the tags property.
+// SetTags sets the tags property value. A JSON array of strings that stores arbitrary tags/keywords.
 func (m *TiIndicator) SetTags(value []string)() {
     m.tags = value
 }
-// Sets the targetProduct property value. A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required
-// Parameters:
-//  - value : Value to set for the targetProduct property.
+// SetTargetProduct sets the targetProduct property value. A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required
 func (m *TiIndicator) SetTargetProduct(value *string)() {
     m.targetProduct = value
 }
-// Sets the threatType property value. Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
-// Parameters:
-//  - value : Value to set for the threatType property.
+// SetThreatType sets the threatType property value. Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
 func (m *TiIndicator) SetThreatType(value *string)() {
     m.threatType = value
 }
-// Sets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
-// Parameters:
-//  - value : Value to set for the tlpLevel property.
+// SetTlpLevel sets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
 func (m *TiIndicator) SetTlpLevel(value *TlpLevel)() {
     m.tlpLevel = value
 }
-// Sets the url property value. 
-// Parameters:
-//  - value : Value to set for the url property.
+// SetUrl sets the url property value. 
 func (m *TiIndicator) SetUrl(value *string)() {
     m.url = value
 }
-// Sets the userAgent property value. 
-// Parameters:
-//  - value : Value to set for the userAgent property.
+// SetUserAgent sets the userAgent property value. 
 func (m *TiIndicator) SetUserAgent(value *string)() {
     m.userAgent = value
 }

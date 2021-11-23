@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDevicePerformance\microsoft.graph.summarizeDevicePerformanceDevices(summarizeBy={summarizeBy})
+// summarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDevicePerformance\microsoft.graph.summarizeDevicePerformanceDevices(summarizeBy={summarizeBy})
 type SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetOptions options for Get
 type SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetOptions st
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
-//  - summarizeBy : Usage: summarizeBy={summarizeBy}
+// NewSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderInternal instantiates a new SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder and sets the default values.
 func NewSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, summarizeBy *string)(*SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) {
     m := &SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderInternal(p
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder instantiates a new SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder and sets the default values.
 func NewSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function summarizeDevicePerformanceDevices
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function summarizeDevicePerformanceDevices
 func (m *SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) CreateGetRequestInformation(options *SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) CreateG
     }
     return requestInfo, nil
 }
-// Invoke function summarizeDevicePerformanceDevices
-// Parameters:
-//  - options : Options for the request
+// Get invoke function summarizeDevicePerformanceDevices
 func (m *SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) Get(options *SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetOptions)([]SummarizeDevicePerformanceDevicesWithSummarizeBy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

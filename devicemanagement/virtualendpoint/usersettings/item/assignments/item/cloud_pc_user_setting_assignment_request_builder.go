@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\userSettings\{cloudPcUserSetting-id}\assignments\{cloudPcUserSettingAssignment-id}
+// cloudPcUserSettingAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\userSettings\{cloudPcUserSetting-id}\assignments\{cloudPcUserSettingAssignment-id}
 type CloudPcUserSettingAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudPcUserSettingAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcUserSettingAssignmentRequestBuilderDeleteOptions options for Delete
 type CloudPcUserSettingAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CloudPcUserSettingAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcUserSettingAssignmentRequestBuilderGetOptions options for Get
 type CloudPcUserSettingAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CloudPcUserSettingAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
+// cloudPcUserSettingAssignmentRequestBuilderGetQueryParameters represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
 type CloudPcUserSettingAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcUserSettingAssignmentRequestBuilderPatchOptions options for Patch
 type CloudPcUserSettingAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcUserSettingAssignment;
@@ -53,10 +53,7 @@ type CloudPcUserSettingAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPcUserSettingAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcUserSettingAssignmentRequestBuilderInternal instantiates a new CloudPcUserSettingAssignmentRequestBuilder and sets the default values.
 func NewCloudPcUserSettingAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcUserSettingAssignmentRequestBuilder) {
     m := &CloudPcUserSettingAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCloudPcUserSettingAssignmentRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcUserSettingAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcUserSettingAssignmentRequestBuilder instantiates a new CloudPcUserSettingAssignmentRequestBuilder and sets the default values.
 func NewCloudPcUserSettingAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcUserSettingAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcUserSettingAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
 func (m *CloudPcUserSettingAssignmentRequestBuilder) CreateDeleteRequestInformation(options *CloudPcUserSettingAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CloudPcUserSettingAssignmentRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
 func (m *CloudPcUserSettingAssignmentRequestBuilder) CreateGetRequestInformation(options *CloudPcUserSettingAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPcUserSettingAssignmentRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
 func (m *CloudPcUserSettingAssignmentRequestBuilder) CreatePatchRequestInformation(options *CloudPcUserSettingAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CloudPcUserSettingAssignmentRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
 func (m *CloudPcUserSettingAssignmentRequestBuilder) Delete(options *CloudPcUserSettingAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CloudPcUserSettingAssignmentRequestBuilder) Delete(options *CloudPcUser
     }
     return nil
 }
-// Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
-// Parameters:
-//  - options : Options for the request
+// Get represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
 func (m *CloudPcUserSettingAssignmentRequestBuilder) Get(options *CloudPcUserSettingAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcUserSettingAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CloudPcUserSettingAssignmentRequestBuilder) Get(options *CloudPcUserSet
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcUserSettingAssignment), nil
 }
-// Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
 func (m *CloudPcUserSettingAssignmentRequestBuilder) Patch(options *CloudPcUserSettingAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

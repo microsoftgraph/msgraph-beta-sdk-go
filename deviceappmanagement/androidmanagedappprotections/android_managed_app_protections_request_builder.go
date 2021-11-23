@@ -7,7 +7,7 @@ import (
     i72659658ca3b6fbacbe361e8d3bffc59f5940ce43ad6b33bc228ca23b65e927c "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/androidmanagedappprotections/haspayloadlinks"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\androidManagedAppProtections
+// androidManagedAppProtectionsRequestBuilder builds and executes requests for operations under \deviceAppManagement\androidManagedAppProtections
 type AndroidManagedAppProtectionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AndroidManagedAppProtectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AndroidManagedAppProtectionsRequestBuilderGetOptions options for Get
 type AndroidManagedAppProtectionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AndroidManagedAppProtectionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Android managed app policies.
+// androidManagedAppProtectionsRequestBuilderGetQueryParameters android managed app policies.
 type AndroidManagedAppProtectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type AndroidManagedAppProtectionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AndroidManagedAppProtectionsRequestBuilderPostOptions options for Post
 type AndroidManagedAppProtectionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedAppProtection;
@@ -57,10 +57,7 @@ type AndroidManagedAppProtectionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AndroidManagedAppProtectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidManagedAppProtectionsRequestBuilderInternal instantiates a new AndroidManagedAppProtectionsRequestBuilder and sets the default values.
 func NewAndroidManagedAppProtectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidManagedAppProtectionsRequestBuilder) {
     m := &AndroidManagedAppProtectionsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewAndroidManagedAppProtectionsRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AndroidManagedAppProtectionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidManagedAppProtectionsRequestBuilder instantiates a new AndroidManagedAppProtectionsRequestBuilder and sets the default values.
 func NewAndroidManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidManagedAppProtectionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidManagedAppProtectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Android managed app policies.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation android managed app policies.
 func (m *AndroidManagedAppProtectionsRequestBuilder) CreateGetRequestInformation(options *AndroidManagedAppProtectionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *AndroidManagedAppProtectionsRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Android managed app policies.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation android managed app policies.
 func (m *AndroidManagedAppProtectionsRequestBuilder) CreatePostRequestInformation(options *AndroidManagedAppProtectionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *AndroidManagedAppProtectionsRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// Android managed app policies.
-// Parameters:
-//  - options : Options for the request
+// Get android managed app policies.
 func (m *AndroidManagedAppProtectionsRequestBuilder) Get(options *AndroidManagedAppProtectionsRequestBuilderGetOptions)(*AndroidManagedAppProtectionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *AndroidManagedAppProtectionsRequestBuilder) Get(options *AndroidManaged
 func (m *AndroidManagedAppProtectionsRequestBuilder) HasPayloadLinks()(*i72659658ca3b6fbacbe361e8d3bffc59f5940ce43ad6b33bc228ca23b65e927c.HasPayloadLinksRequestBuilder) {
     return i72659658ca3b6fbacbe361e8d3bffc59f5940ce43ad6b33bc228ca23b65e927c.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Android managed app policies.
-// Parameters:
-//  - options : Options for the request
+// Post android managed app policies.
 func (m *AndroidManagedAppProtectionsRequestBuilder) Post(options *AndroidManagedAppProtectionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedAppProtection, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

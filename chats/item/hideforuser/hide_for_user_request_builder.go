@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.hideForUser
+// hideForUserRequestBuilder builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.hideForUser
 type HideForUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type HideForUserRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// HideForUserRequestBuilderPostOptions options for Post
 type HideForUserRequestBuilderPostOptions struct {
     // 
     Body *HideForUserRequestBody;
@@ -24,10 +24,7 @@ type HideForUserRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new HideForUserRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHideForUserRequestBuilderInternal instantiates a new HideForUserRequestBuilder and sets the default values.
 func NewHideForUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HideForUserRequestBuilder) {
     m := &HideForUserRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewHideForUserRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new HideForUserRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHideForUserRequestBuilder instantiates a new HideForUserRequestBuilder and sets the default values.
 func NewHideForUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HideForUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewHideForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action hideForUser
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action hideForUser
 func (m *HideForUserRequestBuilder) CreatePostRequestInformation(options *HideForUserRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *HideForUserRequestBuilder) CreatePostRequestInformation(options *HideFo
     }
     return requestInfo, nil
 }
-// Invoke action hideForUser
-// Parameters:
-//  - options : Options for the request
+// Post invoke action hideForUser
 func (m *HideForUserRequestBuilder) Post(options *HideForUserRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

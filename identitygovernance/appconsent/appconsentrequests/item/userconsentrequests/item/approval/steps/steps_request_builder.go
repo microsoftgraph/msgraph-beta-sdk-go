@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}\approval\steps
+// stepsRequestBuilder builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}\approval\steps
 type StepsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type StepsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// StepsRequestBuilderGetOptions options for Get
 type StepsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type StepsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get steps from identityGovernance
+// stepsRequestBuilderGetQueryParameters get steps from identityGovernance
 type StepsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type StepsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// StepsRequestBuilderPostOptions options for Post
 type StepsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalStep;
@@ -56,10 +56,7 @@ type StepsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new StepsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStepsRequestBuilderInternal instantiates a new StepsRequestBuilder and sets the default values.
 func NewStepsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StepsRequestBuilder) {
     m := &StepsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewStepsRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new StepsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStepsRequestBuilder instantiates a new StepsRequestBuilder and sets the default values.
 func NewStepsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StepsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewStepsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get steps from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get steps from identityGovernance
 func (m *StepsRequestBuilder) CreateGetRequestInformation(options *StepsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *StepsRequestBuilder) CreateGetRequestInformation(options *StepsRequestB
     }
     return requestInfo, nil
 }
-// Create new navigation property to steps for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to steps for identityGovernance
 func (m *StepsRequestBuilder) CreatePostRequestInformation(options *StepsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *StepsRequestBuilder) CreatePostRequestInformation(options *StepsRequest
     }
     return requestInfo, nil
 }
-// Get steps from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get steps from identityGovernance
 func (m *StepsRequestBuilder) Get(options *StepsRequestBuilderGetOptions)(*StepsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *StepsRequestBuilder) Get(options *StepsRequestBuilderGetOptions)(*Steps
     }
     return res.(*StepsResponse), nil
 }
-// Create new navigation property to steps for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to steps for identityGovernance
 func (m *StepsRequestBuilder) Post(options *StepsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalStep, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

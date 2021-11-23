@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// importResourceActionsRequestBody 
 type ImportResourceActionsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type ImportResourceActionsRequestBody struct {
     // 
     value *string;
 }
-// Instantiates a new importResourceActionsRequestBody and sets the default values.
+// NewImportResourceActionsRequestBody instantiates a new importResourceActionsRequestBody and sets the default values.
 func NewImportResourceActionsRequestBody()(*ImportResourceActionsRequestBody) {
     m := &ImportResourceActionsRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportResourceActionsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *ImportResourceActionsRequestBody) GetAdditionalData()(map[string]interf
         return m.additionalData
     }
 }
-// Gets the format property value. 
+// GetFormat gets the format property value. 
 func (m *ImportResourceActionsRequestBody) GetFormat()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *ImportResourceActionsRequestBody) GetFormat()(*string) {
         return m.format
     }
 }
-// Gets the overwriteResourceNamespace property value. 
+// GetOverwriteResourceNamespace gets the overwriteResourceNamespace property value. 
 func (m *ImportResourceActionsRequestBody) GetOverwriteResourceNamespace()(*bool) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *ImportResourceActionsRequestBody) GetOverwriteResourceNamespace()(*bool
         return m.overwriteResourceNamespace
     }
 }
-// Gets the value property value. 
+// GetValue gets the value property value. 
 func (m *ImportResourceActionsRequestBody) GetValue()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *ImportResourceActionsRequestBody) GetValue()(*string) {
         return m.value
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ImportResourceActionsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["format"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *ImportResourceActionsRequestBody) GetFieldDeserializers()(map[string]fu
 func (m *ImportResourceActionsRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ImportResourceActionsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("format", m.GetFormat())
@@ -122,27 +120,19 @@ func (m *ImportResourceActionsRequestBody) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportResourceActionsRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the format property value. 
-// Parameters:
-//  - value : Value to set for the format property.
+// SetFormat sets the format property value. 
 func (m *ImportResourceActionsRequestBody) SetFormat(value *string)() {
     m.format = value
 }
-// Sets the overwriteResourceNamespace property value. 
-// Parameters:
-//  - value : Value to set for the overwriteResourceNamespace property.
+// SetOverwriteResourceNamespace sets the overwriteResourceNamespace property value. 
 func (m *ImportResourceActionsRequestBody) SetOverwriteResourceNamespace(value *bool)() {
     m.overwriteResourceNamespace = value
 }
-// Sets the value property value. 
-// Parameters:
-//  - value : Value to set for the value property.
+// SetValue sets the value property value. 
 func (m *ImportResourceActionsRequestBody) SetValue(value *string)() {
     m.value = value
 }

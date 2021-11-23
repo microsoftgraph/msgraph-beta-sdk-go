@@ -5,21 +5,21 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// unicodeRequestBody 
 type UnicodeRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     text *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
-// Instantiates a new unicodeRequestBody and sets the default values.
+// NewUnicodeRequestBody instantiates a new unicodeRequestBody and sets the default values.
 func NewUnicodeRequestBody()(*UnicodeRequestBody) {
     m := &UnicodeRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnicodeRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *UnicodeRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the text property value. 
+// GetText gets the text property value. 
 func (m *UnicodeRequestBody) GetText()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *UnicodeRequestBody) GetText()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f
         return m.text
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UnicodeRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["text"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -53,9 +53,7 @@ func (m *UnicodeRequestBody) GetFieldDeserializers()(map[string]func(interface{}
 func (m *UnicodeRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UnicodeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("text", m.GetText())
@@ -71,15 +69,11 @@ func (m *UnicodeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnicodeRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the text property value. 
-// Parameters:
-//  - value : Value to set for the text property.
+// SetText sets the text property value. 
 func (m *UnicodeRequestBody) SetText(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.text = value
 }

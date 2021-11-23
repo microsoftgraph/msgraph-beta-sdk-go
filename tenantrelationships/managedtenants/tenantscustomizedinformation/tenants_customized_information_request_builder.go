@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\tenantsCustomizedInformation
+// tenantsCustomizedInformationRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenantsCustomizedInformation
 type TenantsCustomizedInformationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TenantsCustomizedInformationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TenantsCustomizedInformationRequestBuilderGetOptions options for Get
 type TenantsCustomizedInformationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TenantsCustomizedInformationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of tenant level customized information across managed tenants.
+// tenantsCustomizedInformationRequestBuilderGetQueryParameters the collection of tenant level customized information across managed tenants.
 type TenantsCustomizedInformationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TenantsCustomizedInformationRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TenantsCustomizedInformationRequestBuilderPostOptions options for Post
 type TenantsCustomizedInformationRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantCustomizedInformation;
@@ -56,10 +56,7 @@ type TenantsCustomizedInformationRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TenantsCustomizedInformationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantsCustomizedInformationRequestBuilderInternal instantiates a new TenantsCustomizedInformationRequestBuilder and sets the default values.
 func NewTenantsCustomizedInformationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantsCustomizedInformationRequestBuilder) {
     m := &TenantsCustomizedInformationRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTenantsCustomizedInformationRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TenantsCustomizedInformationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantsCustomizedInformationRequestBuilder instantiates a new TenantsCustomizedInformationRequestBuilder and sets the default values.
 func NewTenantsCustomizedInformationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantsCustomizedInformationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTenantsCustomizedInformationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of tenant level customized information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of tenant level customized information across managed tenants.
 func (m *TenantsCustomizedInformationRequestBuilder) CreateGetRequestInformation(options *TenantsCustomizedInformationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TenantsCustomizedInformationRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// The collection of tenant level customized information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of tenant level customized information across managed tenants.
 func (m *TenantsCustomizedInformationRequestBuilder) CreatePostRequestInformation(options *TenantsCustomizedInformationRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TenantsCustomizedInformationRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// The collection of tenant level customized information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of tenant level customized information across managed tenants.
 func (m *TenantsCustomizedInformationRequestBuilder) Get(options *TenantsCustomizedInformationRequestBuilderGetOptions)(*TenantsCustomizedInformationResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TenantsCustomizedInformationRequestBuilder) Get(options *TenantsCustomi
     }
     return res.(*TenantsCustomizedInformationResponse), nil
 }
-// The collection of tenant level customized information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of tenant level customized information across managed tenants.
 func (m *TenantsCustomizedInformationRequestBuilder) Post(options *TenantsCustomizedInformationRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantCustomizedInformation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

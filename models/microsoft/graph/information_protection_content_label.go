@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// informationProtectionContentLabel 
 type InformationProtectionContentLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,14 +16,14 @@ type InformationProtectionContentLabel struct {
     // Details on the label that is currently applied to the file.
     label *LabelDetails;
 }
-// Instantiates a new informationProtectionContentLabel and sets the default values.
+// NewInformationProtectionContentLabel instantiates a new informationProtectionContentLabel and sets the default values.
 func NewInformationProtectionContentLabel()(*InformationProtectionContentLabel) {
     m := &InformationProtectionContentLabel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationProtectionContentLabel) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *InformationProtectionContentLabel) GetAdditionalData()(map[string]inter
         return m.additionalData
     }
 }
-// Gets the assignmentMethod property value. Possible values are: standard, privileged, auto.
+// GetAssignmentMethod gets the assignmentMethod property value. Possible values are: standard, privileged, auto.
 func (m *InformationProtectionContentLabel) GetAssignmentMethod()(*AssignmentMethod) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *InformationProtectionContentLabel) GetAssignmentMethod()(*AssignmentMet
         return m.assignmentMethod
     }
 }
-// Gets the creationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetCreationDateTime gets the creationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *InformationProtectionContentLabel) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *InformationProtectionContentLabel) GetCreationDateTime()(*i336074805fc8
         return m.creationDateTime
     }
 }
-// Gets the label property value. Details on the label that is currently applied to the file.
+// GetLabel gets the label property value. Details on the label that is currently applied to the file.
 func (m *InformationProtectionContentLabel) GetLabel()(*LabelDetails) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *InformationProtectionContentLabel) GetLabel()(*LabelDetails) {
         return m.label
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtectionContentLabel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignmentMethod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,9 +94,7 @@ func (m *InformationProtectionContentLabel) GetFieldDeserializers()(map[string]f
 func (m *InformationProtectionContentLabel) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *InformationProtectionContentLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAssignmentMethod() != nil {
         cast := m.GetAssignmentMethod().String()
@@ -125,27 +123,19 @@ func (m *InformationProtectionContentLabel) Serialize(writer i04eb5309aeaafadd28
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationProtectionContentLabel) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the assignmentMethod property value. Possible values are: standard, privileged, auto.
-// Parameters:
-//  - value : Value to set for the assignmentMethod property.
+// SetAssignmentMethod sets the assignmentMethod property value. Possible values are: standard, privileged, auto.
 func (m *InformationProtectionContentLabel) SetAssignmentMethod(value *AssignmentMethod)() {
     m.assignmentMethod = value
 }
-// Sets the creationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the creationDateTime property.
+// SetCreationDateTime sets the creationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *InformationProtectionContentLabel) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.creationDateTime = value
 }
-// Sets the label property value. Details on the label that is currently applied to the file.
-// Parameters:
-//  - value : Value to set for the label property.
+// SetLabel sets the label property value. Details on the label that is currently applied to the file.
 func (m *InformationProtectionContentLabel) SetLabel(value *LabelDetails)() {
     m.label = value
 }

@@ -7,7 +7,7 @@ import (
     i415c0d8960fb0051fd153a4cdba2e68d4f62fce0b98a786fcf6afe29efe7cabf "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salescreditmemolines/item/item/picture/item/content"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemoLines\{salesCreditMemoLine-id}\item\picture\{picture-id}
+// pictureRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemoLines\{salesCreditMemoLine-id}\item\picture\{picture-id}
 type PictureRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type PictureRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PictureRequestBuilderDeleteOptions options for Delete
 type PictureRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type PictureRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PictureRequestBuilderGetOptions options for Get
 type PictureRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type PictureRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get picture from financials
+// pictureRequestBuilderGetQueryParameters get picture from financials
 type PictureRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PictureRequestBuilderPatchOptions options for Patch
 type PictureRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Picture;
@@ -54,10 +54,7 @@ type PictureRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PictureRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPictureRequestBuilderInternal instantiates a new PictureRequestBuilder and sets the default values.
 func NewPictureRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PictureRequestBuilder) {
     m := &PictureRequestBuilder{
     }
@@ -70,10 +67,7 @@ func NewPictureRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PictureRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPictureRequestBuilder instantiates a new PictureRequestBuilder and sets the default values.
 func NewPictureRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PictureRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -82,9 +76,7 @@ func NewPictureRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
 func (m *PictureRequestBuilder) Content()(*i415c0d8960fb0051fd153a4cdba2e68d4f62fce0b98a786fcf6afe29efe7cabf.ContentRequestBuilder) {
     return i415c0d8960fb0051fd153a4cdba2e68d4f62fce0b98a786fcf6afe29efe7cabf.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete navigation property picture for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property picture for financials
 func (m *PictureRequestBuilder) CreateDeleteRequestInformation(options *PictureRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *PictureRequestBuilder) CreateDeleteRequestInformation(options *PictureR
     }
     return requestInfo, nil
 }
-// Get picture from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get picture from financials
 func (m *PictureRequestBuilder) CreateGetRequestInformation(options *PictureRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PictureRequestBuilder) CreateGetRequestInformation(options *PictureRequ
     }
     return requestInfo, nil
 }
-// Update the navigation property picture in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property picture in financials
 func (m *PictureRequestBuilder) CreatePatchRequestInformation(options *PictureRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *PictureRequestBuilder) CreatePatchRequestInformation(options *PictureRe
     }
     return requestInfo, nil
 }
-// Delete navigation property picture for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property picture for financials
 func (m *PictureRequestBuilder) Delete(options *PictureRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *PictureRequestBuilder) Delete(options *PictureRequestBuilderDeleteOptio
     }
     return nil
 }
-// Get picture from financials
-// Parameters:
-//  - options : Options for the request
+// Get get picture from financials
 func (m *PictureRequestBuilder) Get(options *PictureRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Picture, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *PictureRequestBuilder) Get(options *PictureRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Picture), nil
 }
-// Update the navigation property picture in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property picture in financials
 func (m *PictureRequestBuilder) Patch(options *PictureRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

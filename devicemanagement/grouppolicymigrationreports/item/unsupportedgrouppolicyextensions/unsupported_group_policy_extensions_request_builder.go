@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\{groupPolicyMigrationReport-id}\unsupportedGroupPolicyExtensions
+// unsupportedGroupPolicyExtensionsRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\{groupPolicyMigrationReport-id}\unsupportedGroupPolicyExtensions
 type UnsupportedGroupPolicyExtensionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UnsupportedGroupPolicyExtensionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UnsupportedGroupPolicyExtensionsRequestBuilderGetOptions options for Get
 type UnsupportedGroupPolicyExtensionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UnsupportedGroupPolicyExtensionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of unsupported group policy extensions inside the Group Policy Object.
+// unsupportedGroupPolicyExtensionsRequestBuilderGetQueryParameters a list of unsupported group policy extensions inside the Group Policy Object.
 type UnsupportedGroupPolicyExtensionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UnsupportedGroupPolicyExtensionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UnsupportedGroupPolicyExtensionsRequestBuilderPostOptions options for Post
 type UnsupportedGroupPolicyExtensionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnsupportedGroupPolicyExtension;
@@ -56,10 +56,7 @@ type UnsupportedGroupPolicyExtensionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnsupportedGroupPolicyExtensionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnsupportedGroupPolicyExtensionsRequestBuilderInternal instantiates a new UnsupportedGroupPolicyExtensionsRequestBuilder and sets the default values.
 func NewUnsupportedGroupPolicyExtensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnsupportedGroupPolicyExtensionsRequestBuilder) {
     m := &UnsupportedGroupPolicyExtensionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUnsupportedGroupPolicyExtensionsRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnsupportedGroupPolicyExtensionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnsupportedGroupPolicyExtensionsRequestBuilder instantiates a new UnsupportedGroupPolicyExtensionsRequestBuilder and sets the default values.
 func NewUnsupportedGroupPolicyExtensionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnsupportedGroupPolicyExtensionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnsupportedGroupPolicyExtensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of unsupported group policy extensions inside the Group Policy Object.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of unsupported group policy extensions inside the Group Policy Object.
 func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreateGetRequestInformation(options *UnsupportedGroupPolicyExtensionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// A list of unsupported group policy extensions inside the Group Policy Object.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a list of unsupported group policy extensions inside the Group Policy Object.
 func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreatePostRequestInformation(options *UnsupportedGroupPolicyExtensionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// A list of unsupported group policy extensions inside the Group Policy Object.
-// Parameters:
-//  - options : Options for the request
+// Get a list of unsupported group policy extensions inside the Group Policy Object.
 func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Get(options *UnsupportedGroupPolicyExtensionsRequestBuilderGetOptions)(*UnsupportedGroupPolicyExtensionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Get(options *Unsupporte
     }
     return res.(*UnsupportedGroupPolicyExtensionsResponse), nil
 }
-// A list of unsupported group policy extensions inside the Group Policy Object.
-// Parameters:
-//  - options : Options for the request
+// Post a list of unsupported group policy extensions inside the Group Policy Object.
 func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Post(options *UnsupportedGroupPolicyExtensionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnsupportedGroupPolicyExtension, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

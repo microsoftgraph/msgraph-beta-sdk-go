@@ -7,7 +7,7 @@ import (
     i6f9f07ee01f750e99fe7698694790f809ea40d7e5a800bc6568552c7183f82bf "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/deviceimages/item/reupload"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages\{cloudPcDeviceImage-id}
+// cloudPcDeviceImageRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages\{cloudPcDeviceImage-id}
 type CloudPcDeviceImageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type CloudPcDeviceImageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcDeviceImageRequestBuilderDeleteOptions options for Delete
 type CloudPcDeviceImageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type CloudPcDeviceImageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcDeviceImageRequestBuilderGetOptions options for Get
 type CloudPcDeviceImageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type CloudPcDeviceImageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The image resource on Cloud PC.
+// cloudPcDeviceImageRequestBuilderGetQueryParameters the image resource on Cloud PC.
 type CloudPcDeviceImageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcDeviceImageRequestBuilderPatchOptions options for Patch
 type CloudPcDeviceImageRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImage;
@@ -54,10 +54,7 @@ type CloudPcDeviceImageRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPcDeviceImageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcDeviceImageRequestBuilderInternal instantiates a new CloudPcDeviceImageRequestBuilder and sets the default values.
 func NewCloudPcDeviceImageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcDeviceImageRequestBuilder) {
     m := &CloudPcDeviceImageRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewCloudPcDeviceImageRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcDeviceImageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcDeviceImageRequestBuilder instantiates a new CloudPcDeviceImageRequestBuilder and sets the default values.
 func NewCloudPcDeviceImageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcDeviceImageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcDeviceImageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the image resource on Cloud PC.
 func (m *CloudPcDeviceImageRequestBuilder) CreateDeleteRequestInformation(options *CloudPcDeviceImageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *CloudPcDeviceImageRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// The image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the image resource on Cloud PC.
 func (m *CloudPcDeviceImageRequestBuilder) CreateGetRequestInformation(options *CloudPcDeviceImageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *CloudPcDeviceImageRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the image resource on Cloud PC.
 func (m *CloudPcDeviceImageRequestBuilder) CreatePatchRequestInformation(options *CloudPcDeviceImageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *CloudPcDeviceImageRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// The image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// Delete the image resource on Cloud PC.
 func (m *CloudPcDeviceImageRequestBuilder) Delete(options *CloudPcDeviceImageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *CloudPcDeviceImageRequestBuilder) Delete(options *CloudPcDeviceImageReq
     }
     return nil
 }
-// The image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// Get the image resource on Cloud PC.
 func (m *CloudPcDeviceImageRequestBuilder) Get(options *CloudPcDeviceImageRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *CloudPcDeviceImageRequestBuilder) Get(options *CloudPcDeviceImageReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImage), nil
 }
-// The image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// Patch the image resource on Cloud PC.
 func (m *CloudPcDeviceImageRequestBuilder) Patch(options *CloudPcDeviceImageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\appointments
+// appointmentsRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\appointments
 type AppointmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppointmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppointmentsRequestBuilderGetOptions options for Get
 type AppointmentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AppointmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All the appointments of this business. Read-only. Nullable.
+// appointmentsRequestBuilderGetQueryParameters all the appointments of this business. Read-only. Nullable.
 type AppointmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AppointmentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AppointmentsRequestBuilderPostOptions options for Post
 type AppointmentsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointment;
@@ -56,10 +56,7 @@ type AppointmentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppointmentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppointmentsRequestBuilderInternal instantiates a new AppointmentsRequestBuilder and sets the default values.
 func NewAppointmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppointmentsRequestBuilder) {
     m := &AppointmentsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAppointmentsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppointmentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppointmentsRequestBuilder instantiates a new AppointmentsRequestBuilder and sets the default values.
 func NewAppointmentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppointmentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppointmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All the appointments of this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all the appointments of this business. Read-only. Nullable.
 func (m *AppointmentsRequestBuilder) CreateGetRequestInformation(options *AppointmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AppointmentsRequestBuilder) CreateGetRequestInformation(options *Appoin
     }
     return requestInfo, nil
 }
-// All the appointments of this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation all the appointments of this business. Read-only. Nullable.
 func (m *AppointmentsRequestBuilder) CreatePostRequestInformation(options *AppointmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AppointmentsRequestBuilder) CreatePostRequestInformation(options *Appoi
     }
     return requestInfo, nil
 }
-// All the appointments of this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get all the appointments of this business. Read-only. Nullable.
 func (m *AppointmentsRequestBuilder) Get(options *AppointmentsRequestBuilderGetOptions)(*AppointmentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AppointmentsRequestBuilder) Get(options *AppointmentsRequestBuilderGetO
     }
     return res.(*AppointmentsResponse), nil
 }
-// All the appointments of this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post all the appointments of this business. Read-only. Nullable.
 func (m *AppointmentsRequestBuilder) Post(options *AppointmentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingAppointment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

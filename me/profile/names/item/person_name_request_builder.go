@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\names\{personName-id}
+// personNameRequestBuilder builds and executes requests for operations under \me\profile\names\{personName-id}
 type PersonNameRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PersonNameRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PersonNameRequestBuilderDeleteOptions options for Delete
 type PersonNameRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PersonNameRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PersonNameRequestBuilderGetOptions options for Get
 type PersonNameRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PersonNameRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the names a user has added to their profile.
+// personNameRequestBuilderGetQueryParameters represents the names a user has added to their profile.
 type PersonNameRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PersonNameRequestBuilderPatchOptions options for Patch
 type PersonNameRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonName;
@@ -53,10 +53,7 @@ type PersonNameRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PersonNameRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonNameRequestBuilderInternal instantiates a new PersonNameRequestBuilder and sets the default values.
 func NewPersonNameRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonNameRequestBuilder) {
     m := &PersonNameRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPersonNameRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PersonNameRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonNameRequestBuilder instantiates a new PersonNameRequestBuilder and sets the default values.
 func NewPersonNameRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonNameRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPersonNameRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the names a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the names a user has added to their profile.
 func (m *PersonNameRequestBuilder) CreateDeleteRequestInformation(options *PersonNameRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PersonNameRequestBuilder) CreateDeleteRequestInformation(options *Perso
     }
     return requestInfo, nil
 }
-// Represents the names a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the names a user has added to their profile.
 func (m *PersonNameRequestBuilder) CreateGetRequestInformation(options *PersonNameRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PersonNameRequestBuilder) CreateGetRequestInformation(options *PersonNa
     }
     return requestInfo, nil
 }
-// Represents the names a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the names a user has added to their profile.
 func (m *PersonNameRequestBuilder) CreatePatchRequestInformation(options *PersonNameRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PersonNameRequestBuilder) CreatePatchRequestInformation(options *Person
     }
     return requestInfo, nil
 }
-// Represents the names a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the names a user has added to their profile.
 func (m *PersonNameRequestBuilder) Delete(options *PersonNameRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PersonNameRequestBuilder) Delete(options *PersonNameRequestBuilderDelet
     }
     return nil
 }
-// Represents the names a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Get represents the names a user has added to their profile.
 func (m *PersonNameRequestBuilder) Get(options *PersonNameRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonName, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PersonNameRequestBuilder) Get(options *PersonNameRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PersonName), nil
 }
-// Represents the names a user has added to their profile.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the names a user has added to their profile.
 func (m *PersonNameRequestBuilder) Patch(options *PersonNameRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

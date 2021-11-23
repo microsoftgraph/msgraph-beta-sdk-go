@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// servicePrincipalCreationPolicy 
 type ServicePrincipalCreationPolicy struct {
     PolicyBase
     // 
@@ -14,14 +14,14 @@ type ServicePrincipalCreationPolicy struct {
     // 
     isBuiltIn *bool;
 }
-// Instantiates a new servicePrincipalCreationPolicy and sets the default values.
+// NewServicePrincipalCreationPolicy instantiates a new servicePrincipalCreationPolicy and sets the default values.
 func NewServicePrincipalCreationPolicy()(*ServicePrincipalCreationPolicy) {
     m := &ServicePrincipalCreationPolicy{
         PolicyBase: *NewPolicyBase(),
     }
     return m
 }
-// Gets the excludes property value. 
+// GetExcludes gets the excludes property value. 
 func (m *ServicePrincipalCreationPolicy) GetExcludes()([]ServicePrincipalCreationConditionSet) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *ServicePrincipalCreationPolicy) GetExcludes()([]ServicePrincipalCreatio
         return m.excludes
     }
 }
-// Gets the includes property value. 
+// GetIncludes gets the includes property value. 
 func (m *ServicePrincipalCreationPolicy) GetIncludes()([]ServicePrincipalCreationConditionSet) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *ServicePrincipalCreationPolicy) GetIncludes()([]ServicePrincipalCreatio
         return m.includes
     }
 }
-// Gets the isBuiltIn property value. 
+// GetIsBuiltIn gets the isBuiltIn property value. 
 func (m *ServicePrincipalCreationPolicy) GetIsBuiltIn()(*bool) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *ServicePrincipalCreationPolicy) GetIsBuiltIn()(*bool) {
         return m.isBuiltIn
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["excludes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,9 +91,7 @@ func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func
 func (m *ServicePrincipalCreationPolicy) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ServicePrincipalCreationPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.PolicyBase.Serialize(writer)
     if err != nil {
@@ -129,21 +127,15 @@ func (m *ServicePrincipalCreationPolicy) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// Sets the excludes property value. 
-// Parameters:
-//  - value : Value to set for the excludes property.
+// SetExcludes sets the excludes property value. 
 func (m *ServicePrincipalCreationPolicy) SetExcludes(value []ServicePrincipalCreationConditionSet)() {
     m.excludes = value
 }
-// Sets the includes property value. 
-// Parameters:
-//  - value : Value to set for the includes property.
+// SetIncludes sets the includes property value. 
 func (m *ServicePrincipalCreationPolicy) SetIncludes(value []ServicePrincipalCreationConditionSet)() {
     m.includes = value
 }
-// Sets the isBuiltIn property value. 
-// Parameters:
-//  - value : Value to set for the isBuiltIn property.
+// SetIsBuiltIn sets the isBuiltIn property value. 
 func (m *ServicePrincipalCreationPolicy) SetIsBuiltIn(value *bool)() {
     m.isBuiltIn = value
 }

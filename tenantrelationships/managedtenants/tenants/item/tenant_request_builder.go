@@ -8,7 +8,7 @@ import (
     ieacd2868d372b805c81fe3e286b012abdf87e755ce0974ebd6f6b405aa61a3c7 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenants/item/offboardtenant"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\tenants\{tenant-id}
+// tenantRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenants\{tenant-id}
 type TenantRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type TenantRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TenantRequestBuilderDeleteOptions options for Delete
 type TenantRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TenantRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TenantRequestBuilderGetOptions options for Get
 type TenantRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type TenantRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of tenants associated with the managing entity.
+// tenantRequestBuilderGetQueryParameters the collection of tenants associated with the managing entity.
 type TenantRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TenantRequestBuilderPatchOptions options for Patch
 type TenantRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenant;
@@ -55,10 +55,7 @@ type TenantRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TenantRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantRequestBuilderInternal instantiates a new TenantRequestBuilder and sets the default values.
 func NewTenantRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantRequestBuilder) {
     m := &TenantRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewTenantRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TenantRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTenantRequestBuilder instantiates a new TenantRequestBuilder and sets the default values.
 func NewTenantRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTenantRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of tenants associated with the managing entity.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of tenants associated with the managing entity.
 func (m *TenantRequestBuilder) CreateDeleteRequestInformation(options *TenantRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *TenantRequestBuilder) CreateDeleteRequestInformation(options *TenantReq
     }
     return requestInfo, nil
 }
-// The collection of tenants associated with the managing entity.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of tenants associated with the managing entity.
 func (m *TenantRequestBuilder) CreateGetRequestInformation(options *TenantRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *TenantRequestBuilder) CreateGetRequestInformation(options *TenantReques
     }
     return requestInfo, nil
 }
-// The collection of tenants associated with the managing entity.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of tenants associated with the managing entity.
 func (m *TenantRequestBuilder) CreatePatchRequestInformation(options *TenantRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *TenantRequestBuilder) CreatePatchRequestInformation(options *TenantRequ
     }
     return requestInfo, nil
 }
-// The collection of tenants associated with the managing entity.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of tenants associated with the managing entity.
 func (m *TenantRequestBuilder) Delete(options *TenantRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *TenantRequestBuilder) Delete(options *TenantRequestBuilderDeleteOptions
     }
     return nil
 }
-// The collection of tenants associated with the managing entity.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of tenants associated with the managing entity.
 func (m *TenantRequestBuilder) Get(options *TenantRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenant, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *TenantRequestBuilder) Get(options *TenantRequestBuilderGetOptions)(*i53
 func (m *TenantRequestBuilder) OffboardTenant()(*ieacd2868d372b805c81fe3e286b012abdf87e755ce0974ebd6f6b405aa61a3c7.OffboardTenantRequestBuilder) {
     return ieacd2868d372b805c81fe3e286b012abdf87e755ce0974ebd6f6b405aa61a3c7.NewOffboardTenantRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of tenants associated with the managing entity.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of tenants associated with the managing entity.
 func (m *TenantRequestBuilder) Patch(options *TenantRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

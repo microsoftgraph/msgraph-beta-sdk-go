@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\authentication\methods\{authenticationMethod-id}\microsoft.graph.disableSmsSignIn
+// disableSmsSignInRequestBuilder builds and executes requests for operations under \me\authentication\methods\{authenticationMethod-id}\microsoft.graph.disableSmsSignIn
 type DisableSmsSignInRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type DisableSmsSignInRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// DisableSmsSignInRequestBuilderPostOptions options for Post
 type DisableSmsSignInRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type DisableSmsSignInRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DisableSmsSignInRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDisableSmsSignInRequestBuilderInternal instantiates a new DisableSmsSignInRequestBuilder and sets the default values.
 func NewDisableSmsSignInRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DisableSmsSignInRequestBuilder) {
     m := &DisableSmsSignInRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewDisableSmsSignInRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DisableSmsSignInRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDisableSmsSignInRequestBuilder instantiates a new DisableSmsSignInRequestBuilder and sets the default values.
 func NewDisableSmsSignInRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DisableSmsSignInRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDisableSmsSignInRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action disableSmsSignIn
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action disableSmsSignIn
 func (m *DisableSmsSignInRequestBuilder) CreatePostRequestInformation(options *DisableSmsSignInRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *DisableSmsSignInRequestBuilder) CreatePostRequestInformation(options *D
     }
     return requestInfo, nil
 }
-// Invoke action disableSmsSignIn
-// Parameters:
-//  - options : Options for the request
+// Post invoke action disableSmsSignIn
 func (m *DisableSmsSignInRequestBuilder) Post(options *DisableSmsSignInRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

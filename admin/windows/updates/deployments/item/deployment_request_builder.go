@@ -7,7 +7,7 @@ import (
     ie56f34c670a0240ffc9813245b1aeb627629abdb5deb1fba39a36235ceecb0af "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item/audience"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}
+// deploymentRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}
 type DeploymentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeploymentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeploymentRequestBuilderDeleteOptions options for Delete
 type DeploymentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type DeploymentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeploymentRequestBuilderGetOptions options for Get
 type DeploymentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type DeploymentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Deployments created using the deployment service. Read-only.
+// deploymentRequestBuilderGetQueryParameters deployments created using the deployment service. Read-only.
 type DeploymentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeploymentRequestBuilderPatchOptions options for Patch
 type DeploymentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Deployment;
@@ -57,10 +57,7 @@ type DeploymentRequestBuilderPatchOptions struct {
 func (m *DeploymentRequestBuilder) Audience()(*ie56f34c670a0240ffc9813245b1aeb627629abdb5deb1fba39a36235ceecb0af.AudienceRequestBuilder) {
     return ie56f34c670a0240ffc9813245b1aeb627629abdb5deb1fba39a36235ceecb0af.NewAudienceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new DeploymentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeploymentRequestBuilderInternal instantiates a new DeploymentRequestBuilder and sets the default values.
 func NewDeploymentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeploymentRequestBuilder) {
     m := &DeploymentRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewDeploymentRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeploymentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeploymentRequestBuilder instantiates a new DeploymentRequestBuilder and sets the default values.
 func NewDeploymentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeploymentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeploymentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Deployments created using the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation deployments created using the deployment service. Read-only.
 func (m *DeploymentRequestBuilder) CreateDeleteRequestInformation(options *DeploymentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *DeploymentRequestBuilder) CreateDeleteRequestInformation(options *Deplo
     }
     return requestInfo, nil
 }
-// Deployments created using the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation deployments created using the deployment service. Read-only.
 func (m *DeploymentRequestBuilder) CreateGetRequestInformation(options *DeploymentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeploymentRequestBuilder) CreateGetRequestInformation(options *Deployme
     }
     return requestInfo, nil
 }
-// Deployments created using the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation deployments created using the deployment service. Read-only.
 func (m *DeploymentRequestBuilder) CreatePatchRequestInformation(options *DeploymentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *DeploymentRequestBuilder) CreatePatchRequestInformation(options *Deploy
     }
     return requestInfo, nil
 }
-// Deployments created using the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete deployments created using the deployment service. Read-only.
 func (m *DeploymentRequestBuilder) Delete(options *DeploymentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *DeploymentRequestBuilder) Delete(options *DeploymentRequestBuilderDelet
     }
     return nil
 }
-// Deployments created using the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get deployments created using the deployment service. Read-only.
 func (m *DeploymentRequestBuilder) Get(options *DeploymentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Deployment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *DeploymentRequestBuilder) Get(options *DeploymentRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Deployment), nil
 }
-// Deployments created using the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch deployments created using the deployment service. Read-only.
 func (m *DeploymentRequestBuilder) Patch(options *DeploymentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

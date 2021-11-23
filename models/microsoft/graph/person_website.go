@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// personWebsite 
 type PersonWebsite struct {
     ItemFacet
     // Contains categories a user has associated with the website (for example, personal, recipes).
@@ -18,14 +18,14 @@ type PersonWebsite struct {
     // Contains a link to the website itself.
     webUrl *string;
 }
-// Instantiates a new personWebsite and sets the default values.
+// NewPersonWebsite instantiates a new personWebsite and sets the default values.
 func NewPersonWebsite()(*PersonWebsite) {
     m := &PersonWebsite{
         ItemFacet: *NewItemFacet(),
     }
     return m
 }
-// Gets the categories property value. Contains categories a user has associated with the website (for example, personal, recipes).
+// GetCategories gets the categories property value. Contains categories a user has associated with the website (for example, personal, recipes).
 func (m *PersonWebsite) GetCategories()([]string) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *PersonWebsite) GetCategories()([]string) {
         return m.categories
     }
 }
-// Gets the description property value. Contains a description of the website.
+// GetDescription gets the description property value. Contains a description of the website.
 func (m *PersonWebsite) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *PersonWebsite) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Contains a friendly name for the website.
+// GetDisplayName gets the displayName property value. Contains a friendly name for the website.
 func (m *PersonWebsite) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *PersonWebsite) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the thumbnailUrl property value. 
+// GetThumbnailUrl gets the thumbnailUrl property value. 
 func (m *PersonWebsite) GetThumbnailUrl()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *PersonWebsite) GetThumbnailUrl()(*string) {
         return m.thumbnailUrl
     }
 }
-// Gets the webUrl property value. Contains a link to the website itself.
+// GetWebUrl gets the webUrl property value. Contains a link to the website itself.
 func (m *PersonWebsite) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *PersonWebsite) GetWebUrl()(*string) {
         return m.webUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PersonWebsite) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["categories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,9 +127,7 @@ func (m *PersonWebsite) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *PersonWebsite) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PersonWebsite) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ItemFacet.Serialize(writer)
     if err != nil {
@@ -167,33 +165,23 @@ func (m *PersonWebsite) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the categories property value. Contains categories a user has associated with the website (for example, personal, recipes).
-// Parameters:
-//  - value : Value to set for the categories property.
+// SetCategories sets the categories property value. Contains categories a user has associated with the website (for example, personal, recipes).
 func (m *PersonWebsite) SetCategories(value []string)() {
     m.categories = value
 }
-// Sets the description property value. Contains a description of the website.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Contains a description of the website.
 func (m *PersonWebsite) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Contains a friendly name for the website.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Contains a friendly name for the website.
 func (m *PersonWebsite) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the thumbnailUrl property value. 
-// Parameters:
-//  - value : Value to set for the thumbnailUrl property.
+// SetThumbnailUrl sets the thumbnailUrl property value. 
 func (m *PersonWebsite) SetThumbnailUrl(value *string)() {
     m.thumbnailUrl = value
 }
-// Sets the webUrl property value. Contains a link to the website itself.
-// Parameters:
-//  - value : Value to set for the webUrl property.
+// SetWebUrl sets the webUrl property value. Contains a link to the website itself.
 func (m *PersonWebsite) SetWebUrl(value *string)() {
     m.webUrl = value
 }

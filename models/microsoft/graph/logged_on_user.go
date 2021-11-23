@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// loggedOnUser 
 type LoggedOnUser struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type LoggedOnUser struct {
     // User id
     userId *string;
 }
-// Instantiates a new loggedOnUser and sets the default values.
+// NewLoggedOnUser instantiates a new loggedOnUser and sets the default values.
 func NewLoggedOnUser()(*LoggedOnUser) {
     m := &LoggedOnUser{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LoggedOnUser) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *LoggedOnUser) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the lastLogOnDateTime property value. Date time when user logs on
+// GetLastLogOnDateTime gets the lastLogOnDateTime property value. Date time when user logs on
 func (m *LoggedOnUser) GetLastLogOnDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *LoggedOnUser) GetLastLogOnDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return m.lastLogOnDateTime
     }
 }
-// Gets the userId property value. User id
+// GetUserId gets the userId property value. User id
 func (m *LoggedOnUser) GetUserId()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *LoggedOnUser) GetUserId()(*string) {
         return m.userId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *LoggedOnUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["lastLogOnDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *LoggedOnUser) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *LoggedOnUser) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *LoggedOnUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("lastLogOnDateTime", m.GetLastLogOnDateTime())
@@ -97,21 +95,15 @@ func (m *LoggedOnUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LoggedOnUser) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the lastLogOnDateTime property value. Date time when user logs on
-// Parameters:
-//  - value : Value to set for the lastLogOnDateTime property.
+// SetLastLogOnDateTime sets the lastLogOnDateTime property value. Date time when user logs on
 func (m *LoggedOnUser) SetLastLogOnDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastLogOnDateTime = value
 }
-// Sets the userId property value. User id
-// Parameters:
-//  - value : Value to set for the userId property.
+// SetUserId sets the userId property value. User id
 func (m *LoggedOnUser) SetUserId(value *string)() {
     m.userId = value
 }

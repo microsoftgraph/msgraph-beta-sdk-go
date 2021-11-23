@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// sensitiveType 
 type SensitiveType struct {
     Entity
     // 
@@ -26,14 +26,14 @@ type SensitiveType struct {
     // 
     state *string;
 }
-// Instantiates a new sensitiveType and sets the default values.
+// NewSensitiveType instantiates a new sensitiveType and sets the default values.
 func NewSensitiveType()(*SensitiveType) {
     m := &SensitiveType{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the classificationMethod property value. 
+// GetClassificationMethod gets the classificationMethod property value. 
 func (m *SensitiveType) GetClassificationMethod()(*ClassificationMethod) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *SensitiveType) GetClassificationMethod()(*ClassificationMethod) {
         return m.classificationMethod
     }
 }
-// Gets the description property value. 
+// GetDescription gets the description property value. 
 func (m *SensitiveType) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *SensitiveType) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the name property value. 
+// GetName gets the name property value. 
 func (m *SensitiveType) GetName()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *SensitiveType) GetName()(*string) {
         return m.name
     }
 }
-// Gets the publisherName property value. 
+// GetPublisherName gets the publisherName property value. 
 func (m *SensitiveType) GetPublisherName()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *SensitiveType) GetPublisherName()(*string) {
         return m.publisherName
     }
 }
-// Gets the rulePackageId property value. 
+// GetRulePackageId gets the rulePackageId property value. 
 func (m *SensitiveType) GetRulePackageId()(*string) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *SensitiveType) GetRulePackageId()(*string) {
         return m.rulePackageId
     }
 }
-// Gets the rulePackageType property value. 
+// GetRulePackageType gets the rulePackageType property value. 
 func (m *SensitiveType) GetRulePackageType()(*string) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *SensitiveType) GetRulePackageType()(*string) {
         return m.rulePackageType
     }
 }
-// Gets the scope property value. 
+// GetScope gets the scope property value. 
 func (m *SensitiveType) GetScope()(*SensitiveTypeScope) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *SensitiveType) GetScope()(*SensitiveTypeScope) {
         return m.scope
     }
 }
-// Gets the sensitiveTypeSource property value. 
+// GetSensitiveTypeSource gets the sensitiveTypeSource property value. 
 func (m *SensitiveType) GetSensitiveTypeSource()(*SensitiveTypeSource) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *SensitiveType) GetSensitiveTypeSource()(*SensitiveTypeSource) {
         return m.sensitiveTypeSource
     }
 }
-// Gets the state property value. 
+// GetState gets the state property value. 
 func (m *SensitiveType) GetState()(*string) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *SensitiveType) GetState()(*string) {
         return m.state
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["classificationMethod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,9 +206,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *SensitiveType) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SensitiveType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -273,57 +271,39 @@ func (m *SensitiveType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the classificationMethod property value. 
-// Parameters:
-//  - value : Value to set for the classificationMethod property.
+// SetClassificationMethod sets the classificationMethod property value. 
 func (m *SensitiveType) SetClassificationMethod(value *ClassificationMethod)() {
     m.classificationMethod = value
 }
-// Sets the description property value. 
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. 
 func (m *SensitiveType) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the name property value. 
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. 
 func (m *SensitiveType) SetName(value *string)() {
     m.name = value
 }
-// Sets the publisherName property value. 
-// Parameters:
-//  - value : Value to set for the publisherName property.
+// SetPublisherName sets the publisherName property value. 
 func (m *SensitiveType) SetPublisherName(value *string)() {
     m.publisherName = value
 }
-// Sets the rulePackageId property value. 
-// Parameters:
-//  - value : Value to set for the rulePackageId property.
+// SetRulePackageId sets the rulePackageId property value. 
 func (m *SensitiveType) SetRulePackageId(value *string)() {
     m.rulePackageId = value
 }
-// Sets the rulePackageType property value. 
-// Parameters:
-//  - value : Value to set for the rulePackageType property.
+// SetRulePackageType sets the rulePackageType property value. 
 func (m *SensitiveType) SetRulePackageType(value *string)() {
     m.rulePackageType = value
 }
-// Sets the scope property value. 
-// Parameters:
-//  - value : Value to set for the scope property.
+// SetScope sets the scope property value. 
 func (m *SensitiveType) SetScope(value *SensitiveTypeScope)() {
     m.scope = value
 }
-// Sets the sensitiveTypeSource property value. 
-// Parameters:
-//  - value : Value to set for the sensitiveTypeSource property.
+// SetSensitiveTypeSource sets the sensitiveTypeSource property value. 
 func (m *SensitiveType) SetSensitiveTypeSource(value *SensitiveTypeSource)() {
     m.sensitiveTypeSource = value
 }
-// Sets the state property value. 
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. 
 func (m *SensitiveType) SetState(value *string)() {
     m.state = value
 }

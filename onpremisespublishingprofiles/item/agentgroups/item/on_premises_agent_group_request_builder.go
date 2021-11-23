@@ -10,7 +10,7 @@ import (
     id6036572ca04fed5badd3bec64b71a79379dcd4ed352d04a4ca26efcc8fa4ed6 "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/agentgroups/item/agents/item"
 )
 
-// Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\agentGroups\{onPremisesAgentGroup-id}
+// onPremisesAgentGroupRequestBuilder builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\agentGroups\{onPremisesAgentGroup-id}
 type OnPremisesAgentGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type OnPremisesAgentGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OnPremisesAgentGroupRequestBuilderDeleteOptions options for Delete
 type OnPremisesAgentGroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type OnPremisesAgentGroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OnPremisesAgentGroupRequestBuilderGetOptions options for Get
 type OnPremisesAgentGroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type OnPremisesAgentGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
+// onPremisesAgentGroupRequestBuilderGetQueryParameters list of existing onPremisesAgentGroup objects. Read-only. Nullable.
 type OnPremisesAgentGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OnPremisesAgentGroupRequestBuilderPatchOptions options for Patch
 type OnPremisesAgentGroupRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnPremisesAgentGroup;
@@ -60,9 +60,7 @@ type OnPremisesAgentGroupRequestBuilderPatchOptions struct {
 func (m *OnPremisesAgentGroupRequestBuilder) Agents()(*i19ebc08305d8024aeb70498557d19e50b92342834c2372eba852ff8b2c7bc38c.AgentsRequestBuilder) {
     return i19ebc08305d8024aeb70498557d19e50b92342834c2372eba852ff8b2c7bc38c.NewAgentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.agents.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AgentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.agents.item collection
 func (m *OnPremisesAgentGroupRequestBuilder) AgentsById(id string)(*id6036572ca04fed5badd3bec64b71a79379dcd4ed352d04a4ca26efcc8fa4ed6.OnPremisesAgentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -73,10 +71,7 @@ func (m *OnPremisesAgentGroupRequestBuilder) AgentsById(id string)(*id6036572ca0
     }
     return id6036572ca04fed5badd3bec64b71a79379dcd4ed352d04a4ca26efcc8fa4ed6.NewOnPremisesAgentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new OnPremisesAgentGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnPremisesAgentGroupRequestBuilderInternal instantiates a new OnPremisesAgentGroupRequestBuilder and sets the default values.
 func NewOnPremisesAgentGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnPremisesAgentGroupRequestBuilder) {
     m := &OnPremisesAgentGroupRequestBuilder{
     }
@@ -89,18 +84,13 @@ func NewOnPremisesAgentGroupRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OnPremisesAgentGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnPremisesAgentGroupRequestBuilder instantiates a new OnPremisesAgentGroupRequestBuilder and sets the default values.
 func NewOnPremisesAgentGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnPremisesAgentGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOnPremisesAgentGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of existing onPremisesAgentGroup objects. Read-only. Nullable.
 func (m *OnPremisesAgentGroupRequestBuilder) CreateDeleteRequestInformation(options *OnPremisesAgentGroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,9 +107,7 @@ func (m *OnPremisesAgentGroupRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of existing onPremisesAgentGroup objects. Read-only. Nullable.
 func (m *OnPremisesAgentGroupRequestBuilder) CreateGetRequestInformation(options *OnPremisesAgentGroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *OnPremisesAgentGroupRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of existing onPremisesAgentGroup objects. Read-only. Nullable.
 func (m *OnPremisesAgentGroupRequestBuilder) CreatePatchRequestInformation(options *OnPremisesAgentGroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -159,9 +145,7 @@ func (m *OnPremisesAgentGroupRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete list of existing onPremisesAgentGroup objects. Read-only. Nullable.
 func (m *OnPremisesAgentGroupRequestBuilder) Delete(options *OnPremisesAgentGroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *OnPremisesAgentGroupRequestBuilder) Delete(options *OnPremisesAgentGrou
     }
     return nil
 }
-// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get list of existing onPremisesAgentGroup objects. Read-only. Nullable.
 func (m *OnPremisesAgentGroupRequestBuilder) Get(options *OnPremisesAgentGroupRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnPremisesAgentGroup, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -187,9 +169,7 @@ func (m *OnPremisesAgentGroupRequestBuilder) Get(options *OnPremisesAgentGroupRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnPremisesAgentGroup), nil
 }
-// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch list of existing onPremisesAgentGroup objects. Read-only. Nullable.
 func (m *OnPremisesAgentGroupRequestBuilder) Patch(options *OnPremisesAgentGroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -204,9 +184,7 @@ func (m *OnPremisesAgentGroupRequestBuilder) Patch(options *OnPremisesAgentGroup
 func (m *OnPremisesAgentGroupRequestBuilder) PublishedResources()(*id42635c350598b69768841bef34ccba8e937a2ab99cff155b42e58eb7f4991e4.PublishedResourcesRequestBuilder) {
     return id42635c350598b69768841bef34ccba8e937a2ab99cff155b42e58eb7f4991e4.NewPublishedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.publishedResources.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PublishedResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.agentGroups.item.publishedResources.item collection
 func (m *OnPremisesAgentGroupRequestBuilder) PublishedResourcesById(id string)(*i3a56cac0ec805de8b5e133f140b642c0d2dc07a3691ad68c64879efefe4b9140.PublishedResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

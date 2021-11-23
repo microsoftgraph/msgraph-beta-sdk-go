@@ -7,7 +7,7 @@ import (
     id957426e3b4923c6c1bd2d98016573a74452d809cb2a0033d00c3f2ba74a6501 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/approvals/filterbycurrentuserwithon"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\approvals
+// approvalsRequestBuilder builds and executes requests for operations under \users\{user-id}\approvals
 type ApprovalsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ApprovalsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ApprovalsRequestBuilderGetOptions options for Get
 type ApprovalsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ApprovalsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get approvals from users
+// approvalsRequestBuilderGetQueryParameters get approvals from users
 type ApprovalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type ApprovalsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ApprovalsRequestBuilderPostOptions options for Post
 type ApprovalsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approval;
@@ -57,10 +57,7 @@ type ApprovalsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApprovalsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApprovalsRequestBuilderInternal instantiates a new ApprovalsRequestBuilder and sets the default values.
 func NewApprovalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalsRequestBuilder) {
     m := &ApprovalsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewApprovalsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApprovalsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApprovalsRequestBuilder instantiates a new ApprovalsRequestBuilder and sets the default values.
 func NewApprovalsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get approvals from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get approvals from users
 func (m *ApprovalsRequestBuilder) CreateGetRequestInformation(options *ApprovalsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *ApprovalsRequestBuilder) CreateGetRequestInformation(options *Approvals
     }
     return requestInfo, nil
 }
-// Create new navigation property to approvals for users
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to approvals for users
 func (m *ApprovalsRequestBuilder) CreatePostRequestInformation(options *ApprovalsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,15 +114,11 @@ func (m *ApprovalsRequestBuilder) CreatePostRequestInformation(options *Approval
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \users\{user-id}\approvals\microsoft.graph.filterByCurrentUser(on={on})
-// Parameters:
-//  - on : Usage: on={on}
+// FilterByCurrentUserWithOn builds and executes requests for operations under \users\{user-id}\approvals\microsoft.graph.filterByCurrentUser(on={on})
 func (m *ApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*id957426e3b4923c6c1bd2d98016573a74452d809cb2a0033d00c3f2ba74a6501.FilterByCurrentUserWithOnRequestBuilder) {
     return id957426e3b4923c6c1bd2d98016573a74452d809cb2a0033d00c3f2ba74a6501.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get approvals from users
-// Parameters:
-//  - options : Options for the request
+// Get get approvals from users
 func (m *ApprovalsRequestBuilder) Get(options *ApprovalsRequestBuilderGetOptions)(*ApprovalsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -144,9 +130,7 @@ func (m *ApprovalsRequestBuilder) Get(options *ApprovalsRequestBuilderGetOptions
     }
     return res.(*ApprovalsResponse), nil
 }
-// Create new navigation property to approvals for users
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to approvals for users
 func (m *ApprovalsRequestBuilder) Post(options *ApprovalsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approval, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

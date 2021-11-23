@@ -8,7 +8,7 @@ import (
     i59be9a91cd25f6b0023adba1357e480bf0af59b0340aa2e02c3ed40c236d28c4 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mobileapptroubleshootingevents/item/applogcollectionrequests/item"
 )
 
-// Builds and executes requests for operations under \me\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}
+// mobileAppTroubleshootingEventRequestBuilder builds and executes requests for operations under \me\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}
 type MobileAppTroubleshootingEventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type MobileAppTroubleshootingEventRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MobileAppTroubleshootingEventRequestBuilderDeleteOptions options for Delete
 type MobileAppTroubleshootingEventRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MobileAppTroubleshootingEventRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MobileAppTroubleshootingEventRequestBuilderGetOptions options for Get
 type MobileAppTroubleshootingEventRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type MobileAppTroubleshootingEventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of mobile app troubleshooting events for this user.
+// mobileAppTroubleshootingEventRequestBuilderGetQueryParameters the list of mobile app troubleshooting events for this user.
 type MobileAppTroubleshootingEventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MobileAppTroubleshootingEventRequestBuilderPatchOptions options for Patch
 type MobileAppTroubleshootingEventRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileAppTroubleshootingEvent;
@@ -58,9 +58,7 @@ type MobileAppTroubleshootingEventRequestBuilderPatchOptions struct {
 func (m *MobileAppTroubleshootingEventRequestBuilder) AppLogCollectionRequests()(*i509469ad7d7d1bfb7c44fead3987e6c904f9e05130da83eef6fdcdcc595fadc2.AppLogCollectionRequestsRequestBuilder) {
     return i509469ad7d7d1bfb7c44fead3987e6c904f9e05130da83eef6fdcdcc595fadc2.NewAppLogCollectionRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mobileAppTroubleshootingEvents.item.appLogCollectionRequests.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppLogCollectionRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mobileAppTroubleshootingEvents.item.appLogCollectionRequests.item collection
 func (m *MobileAppTroubleshootingEventRequestBuilder) AppLogCollectionRequestsById(id string)(*i59be9a91cd25f6b0023adba1357e480bf0af59b0340aa2e02c3ed40c236d28c4.AppLogCollectionRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -71,10 +69,7 @@ func (m *MobileAppTroubleshootingEventRequestBuilder) AppLogCollectionRequestsBy
     }
     return i59be9a91cd25f6b0023adba1357e480bf0af59b0340aa2e02c3ed40c236d28c4.NewAppLogCollectionRequestRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new MobileAppTroubleshootingEventRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppTroubleshootingEventRequestBuilderInternal instantiates a new MobileAppTroubleshootingEventRequestBuilder and sets the default values.
 func NewMobileAppTroubleshootingEventRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppTroubleshootingEventRequestBuilder) {
     m := &MobileAppTroubleshootingEventRequestBuilder{
     }
@@ -87,18 +82,13 @@ func NewMobileAppTroubleshootingEventRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MobileAppTroubleshootingEventRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppTroubleshootingEventRequestBuilder instantiates a new MobileAppTroubleshootingEventRequestBuilder and sets the default values.
 func NewMobileAppTroubleshootingEventRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppTroubleshootingEventRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppTroubleshootingEventRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of mobile app troubleshooting events for this user.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of mobile app troubleshooting events for this user.
 func (m *MobileAppTroubleshootingEventRequestBuilder) CreateDeleteRequestInformation(options *MobileAppTroubleshootingEventRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,9 +105,7 @@ func (m *MobileAppTroubleshootingEventRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// The list of mobile app troubleshooting events for this user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of mobile app troubleshooting events for this user.
 func (m *MobileAppTroubleshootingEventRequestBuilder) CreateGetRequestInformation(options *MobileAppTroubleshootingEventRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *MobileAppTroubleshootingEventRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// The list of mobile app troubleshooting events for this user.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of mobile app troubleshooting events for this user.
 func (m *MobileAppTroubleshootingEventRequestBuilder) CreatePatchRequestInformation(options *MobileAppTroubleshootingEventRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,9 +143,7 @@ func (m *MobileAppTroubleshootingEventRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// The list of mobile app troubleshooting events for this user.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of mobile app troubleshooting events for this user.
 func (m *MobileAppTroubleshootingEventRequestBuilder) Delete(options *MobileAppTroubleshootingEventRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *MobileAppTroubleshootingEventRequestBuilder) Delete(options *MobileAppT
     }
     return nil
 }
-// The list of mobile app troubleshooting events for this user.
-// Parameters:
-//  - options : Options for the request
+// Get the list of mobile app troubleshooting events for this user.
 func (m *MobileAppTroubleshootingEventRequestBuilder) Get(options *MobileAppTroubleshootingEventRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileAppTroubleshootingEvent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *MobileAppTroubleshootingEventRequestBuilder) Get(options *MobileAppTrou
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobileAppTroubleshootingEvent), nil
 }
-// The list of mobile app troubleshooting events for this user.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of mobile app troubleshooting events for this user.
 func (m *MobileAppTroubleshootingEventRequestBuilder) Patch(options *MobileAppTroubleshootingEventRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

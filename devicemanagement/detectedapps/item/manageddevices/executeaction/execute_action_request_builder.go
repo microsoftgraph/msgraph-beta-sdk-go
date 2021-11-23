@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\detectedApps\{detectedApp-id}\managedDevices\microsoft.graph.executeAction
+// executeActionRequestBuilder builds and executes requests for operations under \deviceManagement\detectedApps\{detectedApp-id}\managedDevices\microsoft.graph.executeAction
 type ExecuteActionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ExecuteActionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ExecuteActionRequestBuilderPostOptions options for Post
 type ExecuteActionRequestBuilderPostOptions struct {
     // 
     Body *ExecuteActionRequestBody;
@@ -26,21 +26,21 @@ type ExecuteActionRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes bulkManagedDeviceActionResult
+// executeActionResponse union type wrapper for classes bulkManagedDeviceActionResult
 type ExecuteActionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type bulkManagedDeviceActionResult
     bulkManagedDeviceActionResult *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResult;
 }
-// Instantiates a new executeActionResponse and sets the default values.
+// NewExecuteActionResponse instantiates a new executeActionResponse and sets the default values.
 func NewExecuteActionResponse()(*ExecuteActionResponse) {
     m := &ExecuteActionResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ExecuteActionResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the bulkManagedDeviceActionResult property value. Union type representation for type bulkManagedDeviceActionResult
+// GetBulkManagedDeviceActionResult gets the bulkManagedDeviceActionResult property value. Union type representation for type bulkManagedDeviceActionResult
 func (m *ExecuteActionResponse) GetBulkManagedDeviceActionResult()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResult) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ExecuteActionResponse) GetBulkManagedDeviceActionResult()(*i535684e11b5
         return m.bulkManagedDeviceActionResult
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ExecuteActionResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["bulkManagedDeviceActionResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *ExecuteActionResponse) GetFieldDeserializers()(map[string]func(interfac
 func (m *ExecuteActionResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ExecuteActionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("bulkManagedDeviceActionResult", m.GetBulkManagedDeviceActionResult())
@@ -92,22 +90,15 @@ func (m *ExecuteActionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the bulkManagedDeviceActionResult property value. Union type representation for type bulkManagedDeviceActionResult
-// Parameters:
-//  - value : Value to set for the bulkManagedDeviceActionResult property.
+// SetBulkManagedDeviceActionResult sets the bulkManagedDeviceActionResult property value. Union type representation for type bulkManagedDeviceActionResult
 func (m *ExecuteActionResponse) SetBulkManagedDeviceActionResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BulkManagedDeviceActionResult)() {
     m.bulkManagedDeviceActionResult = value
 }
-// Instantiates a new ExecuteActionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExecuteActionRequestBuilderInternal instantiates a new ExecuteActionRequestBuilder and sets the default values.
 func NewExecuteActionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExecuteActionRequestBuilder) {
     m := &ExecuteActionRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewExecuteActionRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExecuteActionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExecuteActionRequestBuilder instantiates a new ExecuteActionRequestBuilder and sets the default values.
 func NewExecuteActionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExecuteActionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExecuteActionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action executeAction
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action executeAction
 func (m *ExecuteActionRequestBuilder) CreatePostRequestInformation(options *ExecuteActionRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *ExecuteActionRequestBuilder) CreatePostRequestInformation(options *Exec
     }
     return requestInfo, nil
 }
-// Invoke action executeAction
-// Parameters:
-//  - options : Options for the request
+// Post invoke action executeAction
 func (m *ExecuteActionRequestBuilder) Post(options *ExecuteActionRequestBuilderPostOptions)(*ExecuteActionResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

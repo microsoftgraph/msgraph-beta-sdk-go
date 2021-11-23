@@ -7,7 +7,7 @@ import (
     ib96c1cc84625c75ab39a97d4b053a58419b41e0467bd301945c30280f3035579 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templates/item/migratableto/importoffice365deviceconfigurationpolicies"
 )
 
-// Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo
+// migratableToRequestBuilder builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo
 type MigratableToRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type MigratableToRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MigratableToRequestBuilderGetOptions options for Get
 type MigratableToRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type MigratableToRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of templates this template can migrate to
+// migratableToRequestBuilderGetQueryParameters collection of templates this template can migrate to
 type MigratableToRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type MigratableToRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MigratableToRequestBuilderPostOptions options for Post
 type MigratableToRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTemplate;
@@ -57,10 +57,7 @@ type MigratableToRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MigratableToRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMigratableToRequestBuilderInternal instantiates a new MigratableToRequestBuilder and sets the default values.
 func NewMigratableToRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MigratableToRequestBuilder) {
     m := &MigratableToRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewMigratableToRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MigratableToRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMigratableToRequestBuilder instantiates a new MigratableToRequestBuilder and sets the default values.
 func NewMigratableToRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MigratableToRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMigratableToRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of templates this template can migrate to
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of templates this template can migrate to
 func (m *MigratableToRequestBuilder) CreateGetRequestInformation(options *MigratableToRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *MigratableToRequestBuilder) CreateGetRequestInformation(options *Migrat
     }
     return requestInfo, nil
 }
-// Collection of templates this template can migrate to
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of templates this template can migrate to
 func (m *MigratableToRequestBuilder) CreatePostRequestInformation(options *MigratableToRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *MigratableToRequestBuilder) CreatePostRequestInformation(options *Migra
     }
     return requestInfo, nil
 }
-// Collection of templates this template can migrate to
-// Parameters:
-//  - options : Options for the request
+// Get collection of templates this template can migrate to
 func (m *MigratableToRequestBuilder) Get(options *MigratableToRequestBuilderGetOptions)(*MigratableToResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *MigratableToRequestBuilder) Get(options *MigratableToRequestBuilderGetO
 func (m *MigratableToRequestBuilder) ImportOffice365DeviceConfigurationPolicies()(*ib96c1cc84625c75ab39a97d4b053a58419b41e0467bd301945c30280f3035579.ImportOffice365DeviceConfigurationPoliciesRequestBuilder) {
     return ib96c1cc84625c75ab39a97d4b053a58419b41e0467bd301945c30280f3035579.NewImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Collection of templates this template can migrate to
-// Parameters:
-//  - options : Options for the request
+// Post collection of templates this template can migrate to
 func (m *MigratableToRequestBuilder) Post(options *MigratableToRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTemplate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

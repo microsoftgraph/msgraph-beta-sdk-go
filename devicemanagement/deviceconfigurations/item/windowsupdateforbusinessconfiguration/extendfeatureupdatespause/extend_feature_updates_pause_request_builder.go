@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\microsoft.graph.windowsUpdateForBusinessConfiguration\microsoft.graph.extendFeatureUpdatesPause
+// extendFeatureUpdatesPauseRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\microsoft.graph.windowsUpdateForBusinessConfiguration\microsoft.graph.extendFeatureUpdatesPause
 type ExtendFeatureUpdatesPauseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ExtendFeatureUpdatesPauseRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ExtendFeatureUpdatesPauseRequestBuilderPostOptions options for Post
 type ExtendFeatureUpdatesPauseRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type ExtendFeatureUpdatesPauseRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExtendFeatureUpdatesPauseRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtendFeatureUpdatesPauseRequestBuilderInternal instantiates a new ExtendFeatureUpdatesPauseRequestBuilder and sets the default values.
 func NewExtendFeatureUpdatesPauseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtendFeatureUpdatesPauseRequestBuilder) {
     m := &ExtendFeatureUpdatesPauseRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewExtendFeatureUpdatesPauseRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExtendFeatureUpdatesPauseRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtendFeatureUpdatesPauseRequestBuilder instantiates a new ExtendFeatureUpdatesPauseRequestBuilder and sets the default values.
 func NewExtendFeatureUpdatesPauseRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtendFeatureUpdatesPauseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExtendFeatureUpdatesPauseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Extend Feature Updates Pause for a Windows Update for Business ring.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation extend Feature Updates Pause for a Windows Update for Business ring.
 func (m *ExtendFeatureUpdatesPauseRequestBuilder) CreatePostRequestInformation(options *ExtendFeatureUpdatesPauseRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *ExtendFeatureUpdatesPauseRequestBuilder) CreatePostRequestInformation(o
     }
     return requestInfo, nil
 }
-// Extend Feature Updates Pause for a Windows Update for Business ring.
-// Parameters:
-//  - options : Options for the request
+// Post extend Feature Updates Pause for a Windows Update for Business ring.
 func (m *ExtendFeatureUpdatesPauseRequestBuilder) Post(options *ExtendFeatureUpdatesPauseRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

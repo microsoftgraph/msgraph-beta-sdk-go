@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\settings\{deviceManagementSettingInstance-id}
+// deviceManagementSettingInstanceRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\settings\{deviceManagementSettingInstance-id}
 type DeviceManagementSettingInstanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementSettingInstanceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementSettingInstanceRequestBuilderDeleteOptions options for Delete
 type DeviceManagementSettingInstanceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementSettingInstanceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementSettingInstanceRequestBuilderGetOptions options for Get
 type DeviceManagementSettingInstanceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementSettingInstanceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of all settings to be applied
+// deviceManagementSettingInstanceRequestBuilderGetQueryParameters collection of all settings to be applied
 type DeviceManagementSettingInstanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementSettingInstanceRequestBuilderPatchOptions options for Patch
 type DeviceManagementSettingInstanceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstance;
@@ -53,10 +53,7 @@ type DeviceManagementSettingInstanceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementSettingInstanceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementSettingInstanceRequestBuilderInternal instantiates a new DeviceManagementSettingInstanceRequestBuilder and sets the default values.
 func NewDeviceManagementSettingInstanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementSettingInstanceRequestBuilder) {
     m := &DeviceManagementSettingInstanceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementSettingInstanceRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementSettingInstanceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementSettingInstanceRequestBuilder instantiates a new DeviceManagementSettingInstanceRequestBuilder and sets the default values.
 func NewDeviceManagementSettingInstanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementSettingInstanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementSettingInstanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of all settings to be applied
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of all settings to be applied
 func (m *DeviceManagementSettingInstanceRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementSettingInstanceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementSettingInstanceRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// Collection of all settings to be applied
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of all settings to be applied
 func (m *DeviceManagementSettingInstanceRequestBuilder) CreateGetRequestInformation(options *DeviceManagementSettingInstanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementSettingInstanceRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Collection of all settings to be applied
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of all settings to be applied
 func (m *DeviceManagementSettingInstanceRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementSettingInstanceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementSettingInstanceRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Collection of all settings to be applied
-// Parameters:
-//  - options : Options for the request
+// Delete collection of all settings to be applied
 func (m *DeviceManagementSettingInstanceRequestBuilder) Delete(options *DeviceManagementSettingInstanceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementSettingInstanceRequestBuilder) Delete(options *DeviceMa
     }
     return nil
 }
-// Collection of all settings to be applied
-// Parameters:
-//  - options : Options for the request
+// Get collection of all settings to be applied
 func (m *DeviceManagementSettingInstanceRequestBuilder) Get(options *DeviceManagementSettingInstanceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstance, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementSettingInstanceRequestBuilder) Get(options *DeviceManag
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstance), nil
 }
-// Collection of all settings to be applied
-// Parameters:
-//  - options : Options for the request
+// Patch collection of all settings to be applied
 func (m *DeviceManagementSettingInstanceRequestBuilder) Patch(options *DeviceManagementSettingInstanceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

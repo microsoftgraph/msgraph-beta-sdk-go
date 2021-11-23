@@ -372,7 +372,7 @@ import (
     iff5d1b1deb3b8f2c2d3de6f2d3cbbc8961c3a069683ac3268635178bc77155cc "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/functions/sheets"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\functions
+// functionsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\functions
 type FunctionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -381,7 +381,7 @@ type FunctionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// FunctionsRequestBuilderDeleteOptions options for Delete
 type FunctionsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -390,7 +390,7 @@ type FunctionsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// FunctionsRequestBuilderGetOptions options for Get
 type FunctionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -401,14 +401,14 @@ type FunctionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get functions from workbooks
+// functionsRequestBuilderGetQueryParameters get functions from workbooks
 type FunctionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FunctionsRequestBuilderPatchOptions options for Patch
 type FunctionsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookFunctions;
@@ -596,10 +596,7 @@ func (m *FunctionsRequestBuilder) Confidence_Norm()(*id905b9402e0b9e259051a16830
 func (m *FunctionsRequestBuilder) Confidence_T()(*i3b57e79beeef2f08027bdf9fd759cc0858a70f39d4a35a6c44414778563012f6.Confidence_TRequestBuilder) {
     return i3b57e79beeef2f08027bdf9fd759cc0858a70f39d4a35a6c44414778563012f6.NewConfidence_TRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new FunctionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFunctionsRequestBuilderInternal instantiates a new FunctionsRequestBuilder and sets the default values.
 func NewFunctionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FunctionsRequestBuilder) {
     m := &FunctionsRequestBuilder{
     }
@@ -612,10 +609,7 @@ func NewFunctionsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FunctionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFunctionsRequestBuilder instantiates a new FunctionsRequestBuilder and sets the default values.
 func NewFunctionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FunctionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -669,9 +663,7 @@ func (m *FunctionsRequestBuilder) CoupNum()(*if12a6595734390e605b40df53030c075e2
 func (m *FunctionsRequestBuilder) CoupPcd()(*i861da83d39292b36ce13f5c2b964c9924cc966b749fc25d2b5b6a669d83dd8c6.CoupPcdRequestBuilder) {
     return i861da83d39292b36ce13f5c2b964c9924cc966b749fc25d2b5b6a669d83dd8c6.NewCoupPcdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete navigation property functions for workbooks
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property functions for workbooks
 func (m *FunctionsRequestBuilder) CreateDeleteRequestInformation(options *FunctionsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -688,9 +680,7 @@ func (m *FunctionsRequestBuilder) CreateDeleteRequestInformation(options *Functi
     }
     return requestInfo, nil
 }
-// Get functions from workbooks
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get functions from workbooks
 func (m *FunctionsRequestBuilder) CreateGetRequestInformation(options *FunctionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -710,9 +700,7 @@ func (m *FunctionsRequestBuilder) CreateGetRequestInformation(options *Functions
     }
     return requestInfo, nil
 }
-// Update the navigation property functions in workbooks
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property functions in workbooks
 func (m *FunctionsRequestBuilder) CreatePatchRequestInformation(options *FunctionsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -790,9 +778,7 @@ func (m *FunctionsRequestBuilder) Decimal()(*i9400ff8a2db8c4ce9ec4300a6fba694671
 func (m *FunctionsRequestBuilder) Degrees()(*ia1959188eafd4bcd478ecf33a6287ceea78edb264b17875aac2ffe130ca69250.DegreesRequestBuilder) {
     return ia1959188eafd4bcd478ecf33a6287ceea78edb264b17875aac2ffe130ca69250.NewDegreesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete navigation property functions for workbooks
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property functions for workbooks
 func (m *FunctionsRequestBuilder) Delete(options *FunctionsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -966,9 +952,7 @@ func (m *FunctionsRequestBuilder) GeoMean()(*ia73960e7b4da95c25edd07615a5587c36e
 func (m *FunctionsRequestBuilder) GeStep()(*i3cbb023d286ddbc3ab8433a36661c912b2091cf8e12c0464bf56e7fddaa70c16.GeStepRequestBuilder) {
     return i3cbb023d286ddbc3ab8433a36661c912b2091cf8e12c0464bf56e7fddaa70c16.NewGeStepRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get functions from workbooks
-// Parameters:
-//  - options : Options for the request
+// Get get functions from workbooks
 func (m *FunctionsRequestBuilder) Get(options *FunctionsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookFunctions, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -1295,9 +1279,7 @@ func (m *FunctionsRequestBuilder) OddLYield()(*ia41376203552bcfaba0bc85c92350471
 func (m *FunctionsRequestBuilder) Or()(*i5d6b82b7c343af5d6b219c51afe859aee013f35c73c2e618180f18bfda38f7a1.OrRequestBuilder) {
     return i5d6b82b7c343af5d6b219c51afe859aee013f35c73c2e618180f18bfda38f7a1.NewOrRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property functions in workbooks
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property functions in workbooks
 func (m *FunctionsRequestBuilder) Patch(options *FunctionsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

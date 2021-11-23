@@ -8,7 +8,7 @@ import (
     i17cd5242c756bd84355b785c450d2409fb222ae189e4e7a205efdab79ef3c7f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/appcatalogs/teamsapps/item/appdefinitions/item"
 )
 
-// Builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}
+// teamsAppRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}
 type TeamsAppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type TeamsAppRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TeamsAppRequestBuilderDeleteOptions options for Delete
 type TeamsAppRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TeamsAppRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TeamsAppRequestBuilderGetOptions options for Get
 type TeamsAppRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type TeamsAppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get teamsApps from appCatalogs
+// teamsAppRequestBuilderGetQueryParameters get teamsApps from appCatalogs
 type TeamsAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TeamsAppRequestBuilderPatchOptions options for Patch
 type TeamsAppRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamsApp;
@@ -58,9 +58,7 @@ type TeamsAppRequestBuilderPatchOptions struct {
 func (m *TeamsAppRequestBuilder) AppDefinitions()(*ia4ebc11dd032304ffa14250ed04d31f8c778e5ad4538b0fbda5634d98cdc51b4.AppDefinitionsRequestBuilder) {
     return ia4ebc11dd032304ffa14250ed04d31f8c778e5ad4538b0fbda5634d98cdc51b4.NewAppDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.appCatalogs.teamsApps.item.appDefinitions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.appCatalogs.teamsApps.item.appDefinitions.item collection
 func (m *TeamsAppRequestBuilder) AppDefinitionsById(id string)(*i17cd5242c756bd84355b785c450d2409fb222ae189e4e7a205efdab79ef3c7f2.TeamsAppDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -71,10 +69,7 @@ func (m *TeamsAppRequestBuilder) AppDefinitionsById(id string)(*i17cd5242c756bd8
     }
     return i17cd5242c756bd84355b785c450d2409fb222ae189e4e7a205efdab79ef3c7f2.NewTeamsAppDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new TeamsAppRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppRequestBuilderInternal instantiates a new TeamsAppRequestBuilder and sets the default values.
 func NewTeamsAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppRequestBuilder) {
     m := &TeamsAppRequestBuilder{
     }
@@ -87,18 +82,13 @@ func NewTeamsAppRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamsAppRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppRequestBuilder instantiates a new TeamsAppRequestBuilder and sets the default values.
 func NewTeamsAppRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property teamsApps for appCatalogs
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property teamsApps for appCatalogs
 func (m *TeamsAppRequestBuilder) CreateDeleteRequestInformation(options *TeamsAppRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,9 +105,7 @@ func (m *TeamsAppRequestBuilder) CreateDeleteRequestInformation(options *TeamsAp
     }
     return requestInfo, nil
 }
-// Get teamsApps from appCatalogs
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get teamsApps from appCatalogs
 func (m *TeamsAppRequestBuilder) CreateGetRequestInformation(options *TeamsAppRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *TeamsAppRequestBuilder) CreateGetRequestInformation(options *TeamsAppRe
     }
     return requestInfo, nil
 }
-// Update the navigation property teamsApps in appCatalogs
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property teamsApps in appCatalogs
 func (m *TeamsAppRequestBuilder) CreatePatchRequestInformation(options *TeamsAppRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,9 +143,7 @@ func (m *TeamsAppRequestBuilder) CreatePatchRequestInformation(options *TeamsApp
     }
     return requestInfo, nil
 }
-// Delete navigation property teamsApps for appCatalogs
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property teamsApps for appCatalogs
 func (m *TeamsAppRequestBuilder) Delete(options *TeamsAppRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *TeamsAppRequestBuilder) Delete(options *TeamsAppRequestBuilderDeleteOpt
     }
     return nil
 }
-// Get teamsApps from appCatalogs
-// Parameters:
-//  - options : Options for the request
+// Get get teamsApps from appCatalogs
 func (m *TeamsAppRequestBuilder) Get(options *TeamsAppRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamsApp, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *TeamsAppRequestBuilder) Get(options *TeamsAppRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamsApp), nil
 }
-// Update the navigation property teamsApps in appCatalogs
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property teamsApps in appCatalogs
 func (m *TeamsAppRequestBuilder) Patch(options *TeamsAppRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

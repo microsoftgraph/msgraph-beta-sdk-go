@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.isSignedUp()
+// isSignedUpRequestBuilder builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.isSignedUp()
 type IsSignedUpRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type IsSignedUpRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IsSignedUpRequestBuilderGetOptions options for Get
 type IsSignedUpRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type IsSignedUpRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IsSignedUpRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIsSignedUpRequestBuilderInternal instantiates a new IsSignedUpRequestBuilder and sets the default values.
 func NewIsSignedUpRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IsSignedUpRequestBuilder) {
     m := &IsSignedUpRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewIsSignedUpRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IsSignedUpRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIsSignedUpRequestBuilder instantiates a new IsSignedUpRequestBuilder and sets the default values.
 func NewIsSignedUpRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IsSignedUpRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIsSignedUpRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function isSignedUp
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function isSignedUp
 func (m *IsSignedUpRequestBuilder) CreateGetRequestInformation(options *IsSignedUpRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *IsSignedUpRequestBuilder) CreateGetRequestInformation(options *IsSigned
     }
     return requestInfo, nil
 }
-// Invoke function isSignedUp
-// Parameters:
-//  - options : Options for the request
+// Get invoke function isSignedUp
 func (m *IsSignedUpRequestBuilder) Get(options *IsSignedUpRequestBuilderGetOptions)(*bool, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

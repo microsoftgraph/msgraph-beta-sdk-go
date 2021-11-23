@@ -4,11 +4,13 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i1d8eba405fb9a387de3bc92cd3706580c107d66d82467147261e3b29e92a01bb "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/presence/clearuserpreferredpresence"
+    i5dd07c47805059d448d8c8f1e7951182fab55575575904704c1de455e4f036e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/presence/setuserpreferredpresence"
     i76a36a5967b7a0dbc74be00d4a84f2e878f560504d3a9952fb37d1b227043ead "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/presence/clearpresence"
     iba58ce57dde26291ce4951142ac6e48a720e189264fcf02a0fa187582dc0208d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/presence/setpresence"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\presence
+// presenceRequestBuilder builds and executes requests for operations under \users\{user-id}\presence
 type PresenceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +19,7 @@ type PresenceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PresenceRequestBuilderDeleteOptions options for Delete
 type PresenceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +28,7 @@ type PresenceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PresenceRequestBuilderGetOptions options for Get
 type PresenceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +39,14 @@ type PresenceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get presence from users
+// presenceRequestBuilderGetQueryParameters get presence from users
 type PresenceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PresenceRequestBuilderPatchOptions options for Patch
 type PresenceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Presence;
@@ -58,10 +60,10 @@ type PresenceRequestBuilderPatchOptions struct {
 func (m *PresenceRequestBuilder) ClearPresence()(*i76a36a5967b7a0dbc74be00d4a84f2e878f560504d3a9952fb37d1b227043ead.ClearPresenceRequestBuilder) {
     return i76a36a5967b7a0dbc74be00d4a84f2e878f560504d3a9952fb37d1b227043ead.NewClearPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new PresenceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+func (m *PresenceRequestBuilder) ClearUserPreferredPresence()(*i1d8eba405fb9a387de3bc92cd3706580c107d66d82467147261e3b29e92a01bb.ClearUserPreferredPresenceRequestBuilder) {
+    return i1d8eba405fb9a387de3bc92cd3706580c107d66d82467147261e3b29e92a01bb.NewClearUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// NewPresenceRequestBuilderInternal instantiates a new PresenceRequestBuilder and sets the default values.
 func NewPresenceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PresenceRequestBuilder) {
     m := &PresenceRequestBuilder{
     }
@@ -74,18 +76,13 @@ func NewPresenceRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PresenceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPresenceRequestBuilder instantiates a new PresenceRequestBuilder and sets the default values.
 func NewPresenceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PresenceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property presence for users
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property presence for users
 func (m *PresenceRequestBuilder) CreateDeleteRequestInformation(options *PresenceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +99,7 @@ func (m *PresenceRequestBuilder) CreateDeleteRequestInformation(options *Presenc
     }
     return requestInfo, nil
 }
-// Get presence from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get presence from users
 func (m *PresenceRequestBuilder) CreateGetRequestInformation(options *PresenceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +119,7 @@ func (m *PresenceRequestBuilder) CreateGetRequestInformation(options *PresenceRe
     }
     return requestInfo, nil
 }
-// Update the navigation property presence in users
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property presence in users
 func (m *PresenceRequestBuilder) CreatePatchRequestInformation(options *PresenceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +137,7 @@ func (m *PresenceRequestBuilder) CreatePatchRequestInformation(options *Presence
     }
     return requestInfo, nil
 }
-// Delete navigation property presence for users
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property presence for users
 func (m *PresenceRequestBuilder) Delete(options *PresenceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +149,7 @@ func (m *PresenceRequestBuilder) Delete(options *PresenceRequestBuilderDeleteOpt
     }
     return nil
 }
-// Get presence from users
-// Parameters:
-//  - options : Options for the request
+// Get get presence from users
 func (m *PresenceRequestBuilder) Get(options *PresenceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Presence, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +161,7 @@ func (m *PresenceRequestBuilder) Get(options *PresenceRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Presence), nil
 }
-// Update the navigation property presence in users
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property presence in users
 func (m *PresenceRequestBuilder) Patch(options *PresenceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -188,4 +175,7 @@ func (m *PresenceRequestBuilder) Patch(options *PresenceRequestBuilderPatchOptio
 }
 func (m *PresenceRequestBuilder) SetPresence()(*iba58ce57dde26291ce4951142ac6e48a720e189264fcf02a0fa187582dc0208d.SetPresenceRequestBuilder) {
     return iba58ce57dde26291ce4951142ac6e48a720e189264fcf02a0fa187582dc0208d.NewSetPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *PresenceRequestBuilder) SetUserPreferredPresence()(*i5dd07c47805059d448d8c8f1e7951182fab55575575904704c1de455e4f036e9.SetUserPreferredPresenceRequestBuilder) {
+    return i5dd07c47805059d448d8c8f1e7951182fab55575575904704c1de455e4f036e9.NewSetUserPreferredPresenceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

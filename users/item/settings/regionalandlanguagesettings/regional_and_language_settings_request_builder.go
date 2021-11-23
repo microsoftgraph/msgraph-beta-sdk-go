@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\settings\regionalAndLanguageSettings
+// regionalAndLanguageSettingsRequestBuilder builds and executes requests for operations under \users\{user-id}\settings\regionalAndLanguageSettings
 type RegionalAndLanguageSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RegionalAndLanguageSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RegionalAndLanguageSettingsRequestBuilderDeleteOptions options for Delete
 type RegionalAndLanguageSettingsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type RegionalAndLanguageSettingsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RegionalAndLanguageSettingsRequestBuilderGetOptions options for Get
 type RegionalAndLanguageSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type RegionalAndLanguageSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user's preferences for languages, regional locale and date/time formatting.
+// regionalAndLanguageSettingsRequestBuilderGetQueryParameters the user's preferences for languages, regional locale and date/time formatting.
 type RegionalAndLanguageSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RegionalAndLanguageSettingsRequestBuilderPatchOptions options for Patch
 type RegionalAndLanguageSettingsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RegionalAndLanguageSettings;
@@ -53,10 +53,7 @@ type RegionalAndLanguageSettingsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RegionalAndLanguageSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRegionalAndLanguageSettingsRequestBuilderInternal instantiates a new RegionalAndLanguageSettingsRequestBuilder and sets the default values.
 func NewRegionalAndLanguageSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RegionalAndLanguageSettingsRequestBuilder) {
     m := &RegionalAndLanguageSettingsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewRegionalAndLanguageSettingsRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RegionalAndLanguageSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRegionalAndLanguageSettingsRequestBuilder instantiates a new RegionalAndLanguageSettingsRequestBuilder and sets the default values.
 func NewRegionalAndLanguageSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RegionalAndLanguageSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRegionalAndLanguageSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user's preferences for languages, regional locale and date/time formatting.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the user's preferences for languages, regional locale and date/time formatting.
 func (m *RegionalAndLanguageSettingsRequestBuilder) CreateDeleteRequestInformation(options *RegionalAndLanguageSettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *RegionalAndLanguageSettingsRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// The user's preferences for languages, regional locale and date/time formatting.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user's preferences for languages, regional locale and date/time formatting.
 func (m *RegionalAndLanguageSettingsRequestBuilder) CreateGetRequestInformation(options *RegionalAndLanguageSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *RegionalAndLanguageSettingsRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// The user's preferences for languages, regional locale and date/time formatting.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the user's preferences for languages, regional locale and date/time formatting.
 func (m *RegionalAndLanguageSettingsRequestBuilder) CreatePatchRequestInformation(options *RegionalAndLanguageSettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *RegionalAndLanguageSettingsRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// The user's preferences for languages, regional locale and date/time formatting.
-// Parameters:
-//  - options : Options for the request
+// Delete the user's preferences for languages, regional locale and date/time formatting.
 func (m *RegionalAndLanguageSettingsRequestBuilder) Delete(options *RegionalAndLanguageSettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *RegionalAndLanguageSettingsRequestBuilder) Delete(options *RegionalAndL
     }
     return nil
 }
-// The user's preferences for languages, regional locale and date/time formatting.
-// Parameters:
-//  - options : Options for the request
+// Get the user's preferences for languages, regional locale and date/time formatting.
 func (m *RegionalAndLanguageSettingsRequestBuilder) Get(options *RegionalAndLanguageSettingsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RegionalAndLanguageSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *RegionalAndLanguageSettingsRequestBuilder) Get(options *RegionalAndLang
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RegionalAndLanguageSettings), nil
 }
-// The user's preferences for languages, regional locale and date/time formatting.
-// Parameters:
-//  - options : Options for the request
+// Patch the user's preferences for languages, regional locale and date/time formatting.
 func (m *RegionalAndLanguageSettingsRequestBuilder) Patch(options *RegionalAndLanguageSettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

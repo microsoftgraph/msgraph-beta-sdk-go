@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// cloudPcOverview 
 type CloudPcOverview struct {
     Entity
     // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
@@ -45,14 +45,14 @@ type CloudPcOverview struct {
     // The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
     totalCloudPcStatus *int32;
 }
-// Instantiates a new cloudPcOverview and sets the default values.
+// NewCloudPcOverview instantiates a new cloudPcOverview and sets the default values.
 func NewCloudPcOverview()(*CloudPcOverview) {
     m := &CloudPcOverview{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
+// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *CloudPcOverview) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *CloudPcOverview) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe
         return m.lastRefreshedDateTime
     }
 }
-// Gets the numberOfCloudPcConnectionStatusFailed property value. The number of cloud PC connections that have a status of failed. Optional. Read-only.
+// GetNumberOfCloudPcConnectionStatusFailed gets the numberOfCloudPcConnectionStatusFailed property value. The number of cloud PC connections that have a status of failed. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusFailed()(*int32) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusFailed()(*int32) {
         return m.numberOfCloudPcConnectionStatusFailed
     }
 }
-// Gets the numberOfCloudPcConnectionStatusPassed property value. The number of cloud PC connections that have a status of passed. Optional. Read-only.
+// GetNumberOfCloudPcConnectionStatusPassed gets the numberOfCloudPcConnectionStatusPassed property value. The number of cloud PC connections that have a status of passed. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusPassed()(*int32) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusPassed()(*int32) {
         return m.numberOfCloudPcConnectionStatusPassed
     }
 }
-// Gets the numberOfCloudPcConnectionStatusPending property value. The number of cloud PC connections that have a status of pending. Optional. Read-only.
+// GetNumberOfCloudPcConnectionStatusPending gets the numberOfCloudPcConnectionStatusPending property value. The number of cloud PC connections that have a status of pending. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusPending()(*int32) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusPending()(*int32) {
         return m.numberOfCloudPcConnectionStatusPending
     }
 }
-// Gets the numberOfCloudPcConnectionStatusRunning property value. The number of cloud PC connections that have a status of running. Optional. Read-only.
+// GetNumberOfCloudPcConnectionStatusRunning gets the numberOfCloudPcConnectionStatusRunning property value. The number of cloud PC connections that have a status of running. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusRunning()(*int32) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusRunning()(*int32) {
         return m.numberOfCloudPcConnectionStatusRunning
     }
 }
-// Gets the numberOfCloudPcConnectionStatusUnkownFutureValue property value. The number of cloud PC connections that have a status of unknownFutureValue. Optional. Read-only.
+// GetNumberOfCloudPcConnectionStatusUnkownFutureValue gets the numberOfCloudPcConnectionStatusUnkownFutureValue property value. The number of cloud PC connections that have a status of unknownFutureValue. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusUnkownFutureValue()(*int32) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusUnkownFutureValue()(
         return m.numberOfCloudPcConnectionStatusUnkownFutureValue
     }
 }
-// Gets the numberOfCloudPcStatusDeprovisioning property value. The number of cloud PCs that have a status of deprovisioning. Optional. Read-only.
+// GetNumberOfCloudPcStatusDeprovisioning gets the numberOfCloudPcStatusDeprovisioning property value. The number of cloud PCs that have a status of deprovisioning. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusDeprovisioning()(*int32) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusDeprovisioning()(*int32) {
         return m.numberOfCloudPcStatusDeprovisioning
     }
 }
-// Gets the numberOfCloudPcStatusFailed property value. The number of cloud PCs that have a status of failed. Optional. Read-only.
+// GetNumberOfCloudPcStatusFailed gets the numberOfCloudPcStatusFailed property value. The number of cloud PCs that have a status of failed. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusFailed()(*int32) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusFailed()(*int32) {
         return m.numberOfCloudPcStatusFailed
     }
 }
-// Gets the numberOfCloudPcStatusInGracePeriod property value. The number of cloud PCs that have a status of inGracePeriod. Optional. Read-only.
+// GetNumberOfCloudPcStatusInGracePeriod gets the numberOfCloudPcStatusInGracePeriod property value. The number of cloud PCs that have a status of inGracePeriod. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusInGracePeriod()(*int32) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusInGracePeriod()(*int32) {
         return m.numberOfCloudPcStatusInGracePeriod
     }
 }
-// Gets the numberOfCloudPcStatusNotProvisioned property value. The number of cloud PCs that have a status of notProvisioned. Optional. Read-only.
+// GetNumberOfCloudPcStatusNotProvisioned gets the numberOfCloudPcStatusNotProvisioned property value. The number of cloud PCs that have a status of notProvisioned. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusNotProvisioned()(*int32) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusNotProvisioned()(*int32) {
         return m.numberOfCloudPcStatusNotProvisioned
     }
 }
-// Gets the numberOfCloudPcStatusProvisioned property value. The number of cloud PCs that have a status of provisioned. Optional. Read-only.
+// GetNumberOfCloudPcStatusProvisioned gets the numberOfCloudPcStatusProvisioned property value. The number of cloud PCs that have a status of provisioned. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusProvisioned()(*int32) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusProvisioned()(*int32) {
         return m.numberOfCloudPcStatusProvisioned
     }
 }
-// Gets the numberOfCloudPcStatusProvisioning property value. The number of cloud PCs that have a status of provisioning. Optional. Read-only.
+// GetNumberOfCloudPcStatusProvisioning gets the numberOfCloudPcStatusProvisioning property value. The number of cloud PCs that have a status of provisioning. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusProvisioning()(*int32) {
     if m == nil {
         return nil
@@ -148,7 +148,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusProvisioning()(*int32) {
         return m.numberOfCloudPcStatusProvisioning
     }
 }
-// Gets the numberOfCloudPcStatusUnknown property value. The number of cloud PCs that have a status of unknown. Optional. Read-only.
+// GetNumberOfCloudPcStatusUnknown gets the numberOfCloudPcStatusUnknown property value. The number of cloud PCs that have a status of unknown. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusUnknown()(*int32) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusUnknown()(*int32) {
         return m.numberOfCloudPcStatusUnknown
     }
 }
-// Gets the numberOfCloudPcStatusUpgrading property value. The number of cloud PCs that have a status of upgrading. Optional. Read-only.
+// GetNumberOfCloudPcStatusUpgrading gets the numberOfCloudPcStatusUpgrading property value. The number of cloud PCs that have a status of upgrading. Optional. Read-only.
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusUpgrading()(*int32) {
     if m == nil {
         return nil
@@ -164,7 +164,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusUpgrading()(*int32) {
         return m.numberOfCloudPcStatusUpgrading
     }
 }
-// Gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
+// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *CloudPcOverview) GetTenantDisplayName()(*string) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *CloudPcOverview) GetTenantDisplayName()(*string) {
         return m.tenantDisplayName
     }
 }
-// Gets the tenantId property value. 
+// GetTenantId gets the tenantId property value. 
 func (m *CloudPcOverview) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -180,7 +180,7 @@ func (m *CloudPcOverview) GetTenantId()(*string) {
         return m.tenantId
     }
 }
-// Gets the totalCloudPcConnectionStatus property value. The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
+// GetTotalCloudPcConnectionStatus gets the totalCloudPcConnectionStatus property value. The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
 func (m *CloudPcOverview) GetTotalCloudPcConnectionStatus()(*int32) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *CloudPcOverview) GetTotalCloudPcConnectionStatus()(*int32) {
         return m.totalCloudPcConnectionStatus
     }
 }
-// Gets the totalCloudPcStatus property value. The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
+// GetTotalCloudPcStatus gets the totalCloudPcStatus property value. The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
 func (m *CloudPcOverview) GetTotalCloudPcStatus()(*int32) {
     if m == nil {
         return nil
@@ -196,7 +196,7 @@ func (m *CloudPcOverview) GetTotalCloudPcStatus()(*int32) {
         return m.totalCloudPcStatus
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastRefreshedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -384,9 +384,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *CloudPcOverview) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CloudPcOverview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -502,111 +500,75 @@ func (m *CloudPcOverview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the lastRefreshedDateTime property.
+// SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *CloudPcOverview) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastRefreshedDateTime = value
 }
-// Sets the numberOfCloudPcConnectionStatusFailed property value. The number of cloud PC connections that have a status of failed. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcConnectionStatusFailed property.
+// SetNumberOfCloudPcConnectionStatusFailed sets the numberOfCloudPcConnectionStatusFailed property value. The number of cloud PC connections that have a status of failed. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcConnectionStatusFailed(value *int32)() {
     m.numberOfCloudPcConnectionStatusFailed = value
 }
-// Sets the numberOfCloudPcConnectionStatusPassed property value. The number of cloud PC connections that have a status of passed. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcConnectionStatusPassed property.
+// SetNumberOfCloudPcConnectionStatusPassed sets the numberOfCloudPcConnectionStatusPassed property value. The number of cloud PC connections that have a status of passed. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcConnectionStatusPassed(value *int32)() {
     m.numberOfCloudPcConnectionStatusPassed = value
 }
-// Sets the numberOfCloudPcConnectionStatusPending property value. The number of cloud PC connections that have a status of pending. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcConnectionStatusPending property.
+// SetNumberOfCloudPcConnectionStatusPending sets the numberOfCloudPcConnectionStatusPending property value. The number of cloud PC connections that have a status of pending. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcConnectionStatusPending(value *int32)() {
     m.numberOfCloudPcConnectionStatusPending = value
 }
-// Sets the numberOfCloudPcConnectionStatusRunning property value. The number of cloud PC connections that have a status of running. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcConnectionStatusRunning property.
+// SetNumberOfCloudPcConnectionStatusRunning sets the numberOfCloudPcConnectionStatusRunning property value. The number of cloud PC connections that have a status of running. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcConnectionStatusRunning(value *int32)() {
     m.numberOfCloudPcConnectionStatusRunning = value
 }
-// Sets the numberOfCloudPcConnectionStatusUnkownFutureValue property value. The number of cloud PC connections that have a status of unknownFutureValue. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcConnectionStatusUnkownFutureValue property.
+// SetNumberOfCloudPcConnectionStatusUnkownFutureValue sets the numberOfCloudPcConnectionStatusUnkownFutureValue property value. The number of cloud PC connections that have a status of unknownFutureValue. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcConnectionStatusUnkownFutureValue(value *int32)() {
     m.numberOfCloudPcConnectionStatusUnkownFutureValue = value
 }
-// Sets the numberOfCloudPcStatusDeprovisioning property value. The number of cloud PCs that have a status of deprovisioning. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcStatusDeprovisioning property.
+// SetNumberOfCloudPcStatusDeprovisioning sets the numberOfCloudPcStatusDeprovisioning property value. The number of cloud PCs that have a status of deprovisioning. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcStatusDeprovisioning(value *int32)() {
     m.numberOfCloudPcStatusDeprovisioning = value
 }
-// Sets the numberOfCloudPcStatusFailed property value. The number of cloud PCs that have a status of failed. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcStatusFailed property.
+// SetNumberOfCloudPcStatusFailed sets the numberOfCloudPcStatusFailed property value. The number of cloud PCs that have a status of failed. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcStatusFailed(value *int32)() {
     m.numberOfCloudPcStatusFailed = value
 }
-// Sets the numberOfCloudPcStatusInGracePeriod property value. The number of cloud PCs that have a status of inGracePeriod. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcStatusInGracePeriod property.
+// SetNumberOfCloudPcStatusInGracePeriod sets the numberOfCloudPcStatusInGracePeriod property value. The number of cloud PCs that have a status of inGracePeriod. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcStatusInGracePeriod(value *int32)() {
     m.numberOfCloudPcStatusInGracePeriod = value
 }
-// Sets the numberOfCloudPcStatusNotProvisioned property value. The number of cloud PCs that have a status of notProvisioned. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcStatusNotProvisioned property.
+// SetNumberOfCloudPcStatusNotProvisioned sets the numberOfCloudPcStatusNotProvisioned property value. The number of cloud PCs that have a status of notProvisioned. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcStatusNotProvisioned(value *int32)() {
     m.numberOfCloudPcStatusNotProvisioned = value
 }
-// Sets the numberOfCloudPcStatusProvisioned property value. The number of cloud PCs that have a status of provisioned. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcStatusProvisioned property.
+// SetNumberOfCloudPcStatusProvisioned sets the numberOfCloudPcStatusProvisioned property value. The number of cloud PCs that have a status of provisioned. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcStatusProvisioned(value *int32)() {
     m.numberOfCloudPcStatusProvisioned = value
 }
-// Sets the numberOfCloudPcStatusProvisioning property value. The number of cloud PCs that have a status of provisioning. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcStatusProvisioning property.
+// SetNumberOfCloudPcStatusProvisioning sets the numberOfCloudPcStatusProvisioning property value. The number of cloud PCs that have a status of provisioning. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcStatusProvisioning(value *int32)() {
     m.numberOfCloudPcStatusProvisioning = value
 }
-// Sets the numberOfCloudPcStatusUnknown property value. The number of cloud PCs that have a status of unknown. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcStatusUnknown property.
+// SetNumberOfCloudPcStatusUnknown sets the numberOfCloudPcStatusUnknown property value. The number of cloud PCs that have a status of unknown. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcStatusUnknown(value *int32)() {
     m.numberOfCloudPcStatusUnknown = value
 }
-// Sets the numberOfCloudPcStatusUpgrading property value. The number of cloud PCs that have a status of upgrading. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the numberOfCloudPcStatusUpgrading property.
+// SetNumberOfCloudPcStatusUpgrading sets the numberOfCloudPcStatusUpgrading property value. The number of cloud PCs that have a status of upgrading. Optional. Read-only.
 func (m *CloudPcOverview) SetNumberOfCloudPcStatusUpgrading(value *int32)() {
     m.numberOfCloudPcStatusUpgrading = value
 }
-// Sets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the tenantDisplayName property.
+// SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *CloudPcOverview) SetTenantDisplayName(value *string)() {
     m.tenantDisplayName = value
 }
-// Sets the tenantId property value. 
-// Parameters:
-//  - value : Value to set for the tenantId property.
+// SetTenantId sets the tenantId property value. 
 func (m *CloudPcOverview) SetTenantId(value *string)() {
     m.tenantId = value
 }
-// Sets the totalCloudPcConnectionStatus property value. The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the totalCloudPcConnectionStatus property.
+// SetTotalCloudPcConnectionStatus sets the totalCloudPcConnectionStatus property value. The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
 func (m *CloudPcOverview) SetTotalCloudPcConnectionStatus(value *int32)() {
     m.totalCloudPcConnectionStatus = value
 }
-// Sets the totalCloudPcStatus property value. The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the totalCloudPcStatus property.
+// SetTotalCloudPcStatus sets the totalCloudPcStatus property value. The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
 func (m *CloudPcOverview) SetTotalCloudPcStatus(value *int32)() {
     m.totalCloudPcStatus = value
 }

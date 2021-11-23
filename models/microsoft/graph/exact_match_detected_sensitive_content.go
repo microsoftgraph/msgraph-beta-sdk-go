@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// exactMatchDetectedSensitiveContent 
 type ExactMatchDetectedSensitiveContent struct {
     DetectedSensitiveContentBase
     // 
     matches []SensitiveContentLocation;
 }
-// Instantiates a new exactMatchDetectedSensitiveContent and sets the default values.
+// NewExactMatchDetectedSensitiveContent instantiates a new exactMatchDetectedSensitiveContent and sets the default values.
 func NewExactMatchDetectedSensitiveContent()(*ExactMatchDetectedSensitiveContent) {
     m := &ExactMatchDetectedSensitiveContent{
         DetectedSensitiveContentBase: *NewDetectedSensitiveContentBase(),
     }
     return m
 }
-// Gets the matches property value. 
+// GetMatches gets the matches property value. 
 func (m *ExactMatchDetectedSensitiveContent) GetMatches()([]SensitiveContentLocation) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *ExactMatchDetectedSensitiveContent) GetMatches()([]SensitiveContentLoca
         return m.matches
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ExactMatchDetectedSensitiveContent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DetectedSensitiveContentBase.GetFieldDeserializers()
     res["matches"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -47,9 +47,7 @@ func (m *ExactMatchDetectedSensitiveContent) GetFieldDeserializers()(map[string]
 func (m *ExactMatchDetectedSensitiveContent) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ExactMatchDetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.DetectedSensitiveContentBase.Serialize(writer)
     if err != nil {
@@ -68,9 +66,7 @@ func (m *ExactMatchDetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd2
     }
     return nil
 }
-// Sets the matches property value. 
-// Parameters:
-//  - value : Value to set for the matches property.
+// SetMatches sets the matches property value. 
 func (m *ExactMatchDetectedSensitiveContent) SetMatches(value []SensitiveContentLocation)() {
     m.matches = value
 }

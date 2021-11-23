@@ -7,7 +7,7 @@ import (
     i0ddcec3ebabd376004d9ebf44592b0aee802011a19e8f490cebd899271d38877 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/exchangeonpremisespolicies/item/conditionalaccesssettings"
 )
 
-// Builds and executes requests for operations under \deviceManagement\exchangeOnPremisesPolicies\{deviceManagementExchangeOnPremisesPolicy-id}
+// deviceManagementExchangeOnPremisesPolicyRequestBuilder builds and executes requests for operations under \deviceManagement\exchangeOnPremisesPolicies\{deviceManagementExchangeOnPremisesPolicy-id}
 type DeviceManagementExchangeOnPremisesPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceManagementExchangeOnPremisesPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementExchangeOnPremisesPolicyRequestBuilderDeleteOptions options for Delete
 type DeviceManagementExchangeOnPremisesPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type DeviceManagementExchangeOnPremisesPolicyRequestBuilderDeleteOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementExchangeOnPremisesPolicyRequestBuilderGetOptions options for Get
 type DeviceManagementExchangeOnPremisesPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type DeviceManagementExchangeOnPremisesPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of Exchange On Premisis policies configured by the tenant.
+// deviceManagementExchangeOnPremisesPolicyRequestBuilderGetQueryParameters the list of Exchange On Premisis policies configured by the tenant.
 type DeviceManagementExchangeOnPremisesPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementExchangeOnPremisesPolicyRequestBuilderPatchOptions options for Patch
 type DeviceManagementExchangeOnPremisesPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicy;
@@ -57,10 +57,7 @@ type DeviceManagementExchangeOnPremisesPolicyRequestBuilderPatchOptions struct {
 func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) ConditionalAccessSettings()(*i0ddcec3ebabd376004d9ebf44592b0aee802011a19e8f490cebd899271d38877.ConditionalAccessSettingsRequestBuilder) {
     return i0ddcec3ebabd376004d9ebf44592b0aee802011a19e8f490cebd899271d38877.NewConditionalAccessSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new DeviceManagementExchangeOnPremisesPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementExchangeOnPremisesPolicyRequestBuilderInternal instantiates a new DeviceManagementExchangeOnPremisesPolicyRequestBuilder and sets the default values.
 func NewDeviceManagementExchangeOnPremisesPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementExchangeOnPremisesPolicyRequestBuilder) {
     m := &DeviceManagementExchangeOnPremisesPolicyRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewDeviceManagementExchangeOnPremisesPolicyRequestBuilderInternal(pathParam
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementExchangeOnPremisesPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementExchangeOnPremisesPolicyRequestBuilder instantiates a new DeviceManagementExchangeOnPremisesPolicyRequestBuilder and sets the default values.
 func NewDeviceManagementExchangeOnPremisesPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementExchangeOnPremisesPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementExchangeOnPremisesPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of Exchange On Premisis policies configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of Exchange On Premisis policies configured by the tenant.
 func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementExchangeOnPremisesPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) CreateDeleteReq
     }
     return requestInfo, nil
 }
-// The list of Exchange On Premisis policies configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of Exchange On Premisis policies configured by the tenant.
 func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) CreateGetRequestInformation(options *DeviceManagementExchangeOnPremisesPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// The list of Exchange On Premisis policies configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of Exchange On Premisis policies configured by the tenant.
 func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementExchangeOnPremisesPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) CreatePatchRequ
     }
     return requestInfo, nil
 }
-// The list of Exchange On Premisis policies configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of Exchange On Premisis policies configured by the tenant.
 func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) Delete(options *DeviceManagementExchangeOnPremisesPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) Delete(options 
     }
     return nil
 }
-// The list of Exchange On Premisis policies configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of Exchange On Premisis policies configured by the tenant.
 func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) Get(options *DeviceManagementExchangeOnPremisesPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) Get(options *De
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementExchangeOnPremisesPolicy), nil
 }
-// The list of Exchange On Premisis policies configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of Exchange On Premisis policies configured by the tenant.
 func (m *DeviceManagementExchangeOnPremisesPolicyRequestBuilder) Patch(options *DeviceManagementExchangeOnPremisesPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

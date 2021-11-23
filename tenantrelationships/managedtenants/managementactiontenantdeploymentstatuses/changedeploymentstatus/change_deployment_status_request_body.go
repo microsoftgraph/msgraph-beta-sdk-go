@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// changeDeploymentStatusRequestBody 
 type ChangeDeploymentStatusRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type ChangeDeploymentStatusRequestBody struct {
     // 
     tenantId *string;
 }
-// Instantiates a new changeDeploymentStatusRequestBody and sets the default values.
+// NewChangeDeploymentStatusRequestBody instantiates a new changeDeploymentStatusRequestBody and sets the default values.
 func NewChangeDeploymentStatusRequestBody()(*ChangeDeploymentStatusRequestBody) {
     m := &ChangeDeploymentStatusRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangeDeploymentStatusRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetAdditionalData()(map[string]inter
         return m.additionalData
     }
 }
-// Gets the managementActionId property value. 
+// GetManagementActionId gets the managementActionId property value. 
 func (m *ChangeDeploymentStatusRequestBody) GetManagementActionId()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetManagementActionId()(*string) {
         return m.managementActionId
     }
 }
-// Gets the managementTemplateId property value. 
+// GetManagementTemplateId gets the managementTemplateId property value. 
 func (m *ChangeDeploymentStatusRequestBody) GetManagementTemplateId()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetManagementTemplateId()(*string) {
         return m.managementTemplateId
     }
 }
-// Gets the managementTemplateVersion property value. 
+// GetManagementTemplateVersion gets the managementTemplateVersion property value. 
 func (m *ChangeDeploymentStatusRequestBody) GetManagementTemplateVersion()(*int32) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetManagementTemplateVersion()(*int3
         return m.managementTemplateVersion
     }
 }
-// Gets the status property value. 
+// GetStatus gets the status property value. 
 func (m *ChangeDeploymentStatusRequestBody) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetStatus()(*string) {
         return m.status
     }
 }
-// Gets the tenantGroupId property value. 
+// GetTenantGroupId gets the tenantGroupId property value. 
 func (m *ChangeDeploymentStatusRequestBody) GetTenantGroupId()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetTenantGroupId()(*string) {
         return m.tenantGroupId
     }
 }
-// Gets the tenantId property value. 
+// GetTenantId gets the tenantId property value. 
 func (m *ChangeDeploymentStatusRequestBody) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetTenantId()(*string) {
         return m.tenantId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["managementActionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,9 +152,7 @@ func (m *ChangeDeploymentStatusRequestBody) GetFieldDeserializers()(map[string]f
 func (m *ChangeDeploymentStatusRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ChangeDeploymentStatusRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("managementActionId", m.GetManagementActionId())
@@ -200,45 +198,31 @@ func (m *ChangeDeploymentStatusRequestBody) Serialize(writer i04eb5309aeaafadd28
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangeDeploymentStatusRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the managementActionId property value. 
-// Parameters:
-//  - value : Value to set for the managementActionId property.
+// SetManagementActionId sets the managementActionId property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetManagementActionId(value *string)() {
     m.managementActionId = value
 }
-// Sets the managementTemplateId property value. 
-// Parameters:
-//  - value : Value to set for the managementTemplateId property.
+// SetManagementTemplateId sets the managementTemplateId property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetManagementTemplateId(value *string)() {
     m.managementTemplateId = value
 }
-// Sets the managementTemplateVersion property value. 
-// Parameters:
-//  - value : Value to set for the managementTemplateVersion property.
+// SetManagementTemplateVersion sets the managementTemplateVersion property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetManagementTemplateVersion(value *int32)() {
     m.managementTemplateVersion = value
 }
-// Sets the status property value. 
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetStatus(value *string)() {
     m.status = value
 }
-// Sets the tenantGroupId property value. 
-// Parameters:
-//  - value : Value to set for the tenantGroupId property.
+// SetTenantGroupId sets the tenantGroupId property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetTenantGroupId(value *string)() {
     m.tenantGroupId = value
 }
-// Sets the tenantId property value. 
-// Parameters:
-//  - value : Value to set for the tenantId property.
+// SetTenantId sets the tenantId property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetTenantId(value *string)() {
     m.tenantId = value
 }

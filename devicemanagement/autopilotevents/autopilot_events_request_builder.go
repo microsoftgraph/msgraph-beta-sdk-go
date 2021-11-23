@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\autopilotEvents
+// autopilotEventsRequestBuilder builds and executes requests for operations under \deviceManagement\autopilotEvents
 type AutopilotEventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AutopilotEventsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AutopilotEventsRequestBuilderGetOptions options for Get
 type AutopilotEventsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AutopilotEventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of autopilot events for the tenant.
+// autopilotEventsRequestBuilderGetQueryParameters the list of autopilot events for the tenant.
 type AutopilotEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AutopilotEventsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AutopilotEventsRequestBuilderPostOptions options for Post
 type AutopilotEventsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotEvent;
@@ -56,10 +56,7 @@ type AutopilotEventsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AutopilotEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAutopilotEventsRequestBuilderInternal instantiates a new AutopilotEventsRequestBuilder and sets the default values.
 func NewAutopilotEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AutopilotEventsRequestBuilder) {
     m := &AutopilotEventsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAutopilotEventsRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AutopilotEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAutopilotEventsRequestBuilder instantiates a new AutopilotEventsRequestBuilder and sets the default values.
 func NewAutopilotEventsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AutopilotEventsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAutopilotEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of autopilot events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of autopilot events for the tenant.
 func (m *AutopilotEventsRequestBuilder) CreateGetRequestInformation(options *AutopilotEventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AutopilotEventsRequestBuilder) CreateGetRequestInformation(options *Aut
     }
     return requestInfo, nil
 }
-// The list of autopilot events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of autopilot events for the tenant.
 func (m *AutopilotEventsRequestBuilder) CreatePostRequestInformation(options *AutopilotEventsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AutopilotEventsRequestBuilder) CreatePostRequestInformation(options *Au
     }
     return requestInfo, nil
 }
-// The list of autopilot events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of autopilot events for the tenant.
 func (m *AutopilotEventsRequestBuilder) Get(options *AutopilotEventsRequestBuilderGetOptions)(*AutopilotEventsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AutopilotEventsRequestBuilder) Get(options *AutopilotEventsRequestBuild
     }
     return res.(*AutopilotEventsResponse), nil
 }
-// The list of autopilot events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// Post the list of autopilot events for the tenant.
 func (m *AutopilotEventsRequestBuilder) Post(options *AutopilotEventsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotEvent, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

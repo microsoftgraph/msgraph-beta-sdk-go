@@ -7,7 +7,7 @@ import (
     i997c3cf118e167d37d9a9085ce4d9863df1ae45e04b03edb36694c7f04f13af6 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackageassignmentrequests/filterbycurrentuserwithon"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentRequests
+// accessPackageAssignmentRequestsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentRequests
 type AccessPackageAssignmentRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AccessPackageAssignmentRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AccessPackageAssignmentRequestsRequestBuilderGetOptions options for Get
 type AccessPackageAssignmentRequestsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AccessPackageAssignmentRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get accessPackageAssignmentRequests from identityGovernance
+// accessPackageAssignmentRequestsRequestBuilderGetQueryParameters get accessPackageAssignmentRequests from identityGovernance
 type AccessPackageAssignmentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type AccessPackageAssignmentRequestsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AccessPackageAssignmentRequestsRequestBuilderPostOptions options for Post
 type AccessPackageAssignmentRequestsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequest;
@@ -57,10 +57,7 @@ type AccessPackageAssignmentRequestsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccessPackageAssignmentRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageAssignmentRequestsRequestBuilderInternal instantiates a new AccessPackageAssignmentRequestsRequestBuilder and sets the default values.
 func NewAccessPackageAssignmentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageAssignmentRequestsRequestBuilder) {
     m := &AccessPackageAssignmentRequestsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewAccessPackageAssignmentRequestsRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackageAssignmentRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageAssignmentRequestsRequestBuilder instantiates a new AccessPackageAssignmentRequestsRequestBuilder and sets the default values.
 func NewAccessPackageAssignmentRequestsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageAssignmentRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get accessPackageAssignmentRequests from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get accessPackageAssignmentRequests from identityGovernance
 func (m *AccessPackageAssignmentRequestsRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *AccessPackageAssignmentRequestsRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Create new navigation property to accessPackageAssignmentRequests for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to accessPackageAssignmentRequests for identityGovernance
 func (m *AccessPackageAssignmentRequestsRequestBuilder) CreatePostRequestInformation(options *AccessPackageAssignmentRequestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,15 +114,11 @@ func (m *AccessPackageAssignmentRequestsRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentRequests\microsoft.graph.filterByCurrentUser(on={on})
-// Parameters:
-//  - on : Usage: on={on}
+// FilterByCurrentUserWithOn builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\accessPackageAssignment\accessPackageAssignmentRequests\microsoft.graph.filterByCurrentUser(on={on})
 func (m *AccessPackageAssignmentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i997c3cf118e167d37d9a9085ce4d9863df1ae45e04b03edb36694c7f04f13af6.FilterByCurrentUserWithOnRequestBuilder) {
     return i997c3cf118e167d37d9a9085ce4d9863df1ae45e04b03edb36694c7f04f13af6.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get accessPackageAssignmentRequests from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get accessPackageAssignmentRequests from identityGovernance
 func (m *AccessPackageAssignmentRequestsRequestBuilder) Get(options *AccessPackageAssignmentRequestsRequestBuilderGetOptions)(*AccessPackageAssignmentRequestsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -144,9 +130,7 @@ func (m *AccessPackageAssignmentRequestsRequestBuilder) Get(options *AccessPacka
     }
     return res.(*AccessPackageAssignmentRequestsResponse), nil
 }
-// Create new navigation property to accessPackageAssignmentRequests for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to accessPackageAssignmentRequests for identityGovernance
 func (m *AccessPackageAssignmentRequestsRequestBuilder) Post(options *AccessPackageAssignmentRequestsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequest, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

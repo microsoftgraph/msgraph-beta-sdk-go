@@ -7,7 +7,7 @@ import (
     i04d7cfb29791a8d7ffb80fbe740c66d66233bf6c721009c79137d6535d6a103b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicehealthscripts/item/devicerunstates/item/manageddevice"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}\deviceRunStates\{deviceHealthScriptDeviceState-id}
+// deviceHealthScriptDeviceStateRequestBuilder builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}\deviceRunStates\{deviceHealthScriptDeviceState-id}
 type DeviceHealthScriptDeviceStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceHealthScriptDeviceStateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceHealthScriptDeviceStateRequestBuilderDeleteOptions options for Delete
 type DeviceHealthScriptDeviceStateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type DeviceHealthScriptDeviceStateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceHealthScriptDeviceStateRequestBuilderGetOptions options for Get
 type DeviceHealthScriptDeviceStateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type DeviceHealthScriptDeviceStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of run states for the device health script across all devices
+// deviceHealthScriptDeviceStateRequestBuilderGetQueryParameters list of run states for the device health script across all devices
 type DeviceHealthScriptDeviceStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceHealthScriptDeviceStateRequestBuilderPatchOptions options for Patch
 type DeviceHealthScriptDeviceStateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptDeviceState;
@@ -54,10 +54,7 @@ type DeviceHealthScriptDeviceStateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceHealthScriptDeviceStateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceHealthScriptDeviceStateRequestBuilderInternal instantiates a new DeviceHealthScriptDeviceStateRequestBuilder and sets the default values.
 func NewDeviceHealthScriptDeviceStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceHealthScriptDeviceStateRequestBuilder) {
     m := &DeviceHealthScriptDeviceStateRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewDeviceHealthScriptDeviceStateRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceHealthScriptDeviceStateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceHealthScriptDeviceStateRequestBuilder instantiates a new DeviceHealthScriptDeviceStateRequestBuilder and sets the default values.
 func NewDeviceHealthScriptDeviceStateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceHealthScriptDeviceStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceHealthScriptDeviceStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of run states for the device health script across all devices
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of run states for the device health script across all devices
 func (m *DeviceHealthScriptDeviceStateRequestBuilder) CreateDeleteRequestInformation(options *DeviceHealthScriptDeviceStateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *DeviceHealthScriptDeviceStateRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// List of run states for the device health script across all devices
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of run states for the device health script across all devices
 func (m *DeviceHealthScriptDeviceStateRequestBuilder) CreateGetRequestInformation(options *DeviceHealthScriptDeviceStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *DeviceHealthScriptDeviceStateRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// List of run states for the device health script across all devices
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of run states for the device health script across all devices
 func (m *DeviceHealthScriptDeviceStateRequestBuilder) CreatePatchRequestInformation(options *DeviceHealthScriptDeviceStateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *DeviceHealthScriptDeviceStateRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// List of run states for the device health script across all devices
-// Parameters:
-//  - options : Options for the request
+// Delete list of run states for the device health script across all devices
 func (m *DeviceHealthScriptDeviceStateRequestBuilder) Delete(options *DeviceHealthScriptDeviceStateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *DeviceHealthScriptDeviceStateRequestBuilder) Delete(options *DeviceHeal
     }
     return nil
 }
-// List of run states for the device health script across all devices
-// Parameters:
-//  - options : Options for the request
+// Get list of run states for the device health script across all devices
 func (m *DeviceHealthScriptDeviceStateRequestBuilder) Get(options *DeviceHealthScriptDeviceStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptDeviceState, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *DeviceHealthScriptDeviceStateRequestBuilder) Get(options *DeviceHealthS
 func (m *DeviceHealthScriptDeviceStateRequestBuilder) ManagedDevice()(*i04d7cfb29791a8d7ffb80fbe740c66d66233bf6c721009c79137d6535d6a103b.ManagedDeviceRequestBuilder) {
     return i04d7cfb29791a8d7ffb80fbe740c66d66233bf6c721009c79137d6535d6a103b.NewManagedDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// List of run states for the device health script across all devices
-// Parameters:
-//  - options : Options for the request
+// Patch list of run states for the device health script across all devices
 func (m *DeviceHealthScriptDeviceStateRequestBuilder) Patch(options *DeviceHealthScriptDeviceStateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

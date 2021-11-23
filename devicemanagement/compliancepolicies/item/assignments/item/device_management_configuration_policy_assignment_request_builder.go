@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\assignments\{deviceManagementConfigurationPolicyAssignment-id}
+// deviceManagementConfigurationPolicyAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\assignments\{deviceManagementConfigurationPolicyAssignment-id}
 type DeviceManagementConfigurationPolicyAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementConfigurationPolicyAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementConfigurationPolicyAssignmentRequestBuilderDeleteOptions options for Delete
 type DeviceManagementConfigurationPolicyAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementConfigurationPolicyAssignmentRequestBuilderDeleteOptions st
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementConfigurationPolicyAssignmentRequestBuilderGetOptions options for Get
 type DeviceManagementConfigurationPolicyAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementConfigurationPolicyAssignmentRequestBuilderGetOptions struc
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Policy assignments
+// deviceManagementConfigurationPolicyAssignmentRequestBuilderGetQueryParameters policy assignments
 type DeviceManagementConfigurationPolicyAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementConfigurationPolicyAssignmentRequestBuilderPatchOptions options for Patch
 type DeviceManagementConfigurationPolicyAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicyAssignment;
@@ -53,10 +53,7 @@ type DeviceManagementConfigurationPolicyAssignmentRequestBuilderPatchOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementConfigurationPolicyAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationPolicyAssignmentRequestBuilderInternal instantiates a new DeviceManagementConfigurationPolicyAssignmentRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationPolicyAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationPolicyAssignmentRequestBuilder) {
     m := &DeviceManagementConfigurationPolicyAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementConfigurationPolicyAssignmentRequestBuilderInternal(path
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementConfigurationPolicyAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementConfigurationPolicyAssignmentRequestBuilder instantiates a new DeviceManagementConfigurationPolicyAssignmentRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationPolicyAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementConfigurationPolicyAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementConfigurationPolicyAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Policy assignments
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation policy assignments
 func (m *DeviceManagementConfigurationPolicyAssignmentRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementConfigurationPolicyAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementConfigurationPolicyAssignmentRequestBuilder) CreateDele
     }
     return requestInfo, nil
 }
-// Policy assignments
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation policy assignments
 func (m *DeviceManagementConfigurationPolicyAssignmentRequestBuilder) CreateGetRequestInformation(options *DeviceManagementConfigurationPolicyAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementConfigurationPolicyAssignmentRequestBuilder) CreateGetR
     }
     return requestInfo, nil
 }
-// Policy assignments
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation policy assignments
 func (m *DeviceManagementConfigurationPolicyAssignmentRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementConfigurationPolicyAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementConfigurationPolicyAssignmentRequestBuilder) CreatePatc
     }
     return requestInfo, nil
 }
-// Policy assignments
-// Parameters:
-//  - options : Options for the request
+// Delete policy assignments
 func (m *DeviceManagementConfigurationPolicyAssignmentRequestBuilder) Delete(options *DeviceManagementConfigurationPolicyAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementConfigurationPolicyAssignmentRequestBuilder) Delete(opt
     }
     return nil
 }
-// Policy assignments
-// Parameters:
-//  - options : Options for the request
+// Get policy assignments
 func (m *DeviceManagementConfigurationPolicyAssignmentRequestBuilder) Get(options *DeviceManagementConfigurationPolicyAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicyAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementConfigurationPolicyAssignmentRequestBuilder) Get(option
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicyAssignment), nil
 }
-// Policy assignments
-// Parameters:
-//  - options : Options for the request
+// Patch policy assignments
 func (m *DeviceManagementConfigurationPolicyAssignmentRequestBuilder) Patch(options *DeviceManagementConfigurationPolicyAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

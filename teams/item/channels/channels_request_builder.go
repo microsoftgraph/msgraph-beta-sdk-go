@@ -8,7 +8,7 @@ import (
     if5b87021c025556e733e9a1ca47027358d94300c780d268156325a9b54465bd9 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/channels/allmessages"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\channels
+// channelsRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels
 type ChannelsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ChannelsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ChannelsRequestBuilderGetOptions options for Get
 type ChannelsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type ChannelsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of channels & messages associated with the team.
+// channelsRequestBuilderGetQueryParameters the collection of channels & messages associated with the team.
 type ChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type ChannelsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ChannelsRequestBuilderPostOptions options for Post
 type ChannelsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Channel;
@@ -58,14 +58,11 @@ type ChannelsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \teams\{team-id}\channels\microsoft.graph.allMessages()
+// AllMessages builds and executes requests for operations under \teams\{team-id}\channels\microsoft.graph.allMessages()
 func (m *ChannelsRequestBuilder) AllMessages()(*if5b87021c025556e733e9a1ca47027358d94300c780d268156325a9b54465bd9.AllMessagesRequestBuilder) {
     return if5b87021c025556e733e9a1ca47027358d94300c780d268156325a9b54465bd9.NewAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ChannelsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChannelsRequestBuilderInternal instantiates a new ChannelsRequestBuilder and sets the default values.
 func NewChannelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChannelsRequestBuilder) {
     m := &ChannelsRequestBuilder{
     }
@@ -78,18 +75,13 @@ func NewChannelsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChannelsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChannelsRequestBuilder instantiates a new ChannelsRequestBuilder and sets the default values.
 func NewChannelsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChannelsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChannelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of channels & messages associated with the team.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of channels & messages associated with the team.
 func (m *ChannelsRequestBuilder) CreateGetRequestInformation(options *ChannelsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +101,7 @@ func (m *ChannelsRequestBuilder) CreateGetRequestInformation(options *ChannelsRe
     }
     return requestInfo, nil
 }
-// The collection of channels & messages associated with the team.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of channels & messages associated with the team.
 func (m *ChannelsRequestBuilder) CreatePostRequestInformation(options *ChannelsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *ChannelsRequestBuilder) CreatePostRequestInformation(options *ChannelsR
     }
     return requestInfo, nil
 }
-// The collection of channels & messages associated with the team.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of channels & messages associated with the team.
 func (m *ChannelsRequestBuilder) Get(options *ChannelsRequestBuilderGetOptions)(*ChannelsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -143,13 +131,11 @@ func (m *ChannelsRequestBuilder) Get(options *ChannelsRequestBuilderGetOptions)(
     }
     return res.(*ChannelsResponse), nil
 }
-// Builds and executes requests for operations under \teams\{team-id}\channels\microsoft.graph.getAllMessages()
+// GetAllMessages builds and executes requests for operations under \teams\{team-id}\channels\microsoft.graph.getAllMessages()
 func (m *ChannelsRequestBuilder) GetAllMessages()(*i347d175e169084f11b452d87049eb355c7eb602ed2eb270e0611b9f242af9991.GetAllMessagesRequestBuilder) {
     return i347d175e169084f11b452d87049eb355c7eb602ed2eb270e0611b9f242af9991.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of channels & messages associated with the team.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of channels & messages associated with the team.
 func (m *ChannelsRequestBuilder) Post(options *ChannelsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Channel, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

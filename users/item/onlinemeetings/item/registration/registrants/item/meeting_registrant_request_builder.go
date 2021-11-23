@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\registration\registrants\{meetingRegistrant-id}
+// meetingRegistrantRequestBuilder builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\registration\registrants\{meetingRegistrant-id}
 type MeetingRegistrantRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MeetingRegistrantRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MeetingRegistrantRequestBuilderDeleteOptions options for Delete
 type MeetingRegistrantRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MeetingRegistrantRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MeetingRegistrantRequestBuilderGetOptions options for Get
 type MeetingRegistrantRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type MeetingRegistrantRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Registrants of the online meeting.
+// meetingRegistrantRequestBuilderGetQueryParameters registrants of the online meeting.
 type MeetingRegistrantRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MeetingRegistrantRequestBuilderPatchOptions options for Patch
 type MeetingRegistrantRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingRegistrant;
@@ -53,10 +53,7 @@ type MeetingRegistrantRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MeetingRegistrantRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMeetingRegistrantRequestBuilderInternal instantiates a new MeetingRegistrantRequestBuilder and sets the default values.
 func NewMeetingRegistrantRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MeetingRegistrantRequestBuilder) {
     m := &MeetingRegistrantRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewMeetingRegistrantRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MeetingRegistrantRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMeetingRegistrantRequestBuilder instantiates a new MeetingRegistrantRequestBuilder and sets the default values.
 func NewMeetingRegistrantRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MeetingRegistrantRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMeetingRegistrantRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Registrants of the online meeting.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation registrants of the online meeting.
 func (m *MeetingRegistrantRequestBuilder) CreateDeleteRequestInformation(options *MeetingRegistrantRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *MeetingRegistrantRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// Registrants of the online meeting.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation registrants of the online meeting.
 func (m *MeetingRegistrantRequestBuilder) CreateGetRequestInformation(options *MeetingRegistrantRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MeetingRegistrantRequestBuilder) CreateGetRequestInformation(options *M
     }
     return requestInfo, nil
 }
-// Registrants of the online meeting.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation registrants of the online meeting.
 func (m *MeetingRegistrantRequestBuilder) CreatePatchRequestInformation(options *MeetingRegistrantRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *MeetingRegistrantRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Registrants of the online meeting.
-// Parameters:
-//  - options : Options for the request
+// Delete registrants of the online meeting.
 func (m *MeetingRegistrantRequestBuilder) Delete(options *MeetingRegistrantRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *MeetingRegistrantRequestBuilder) Delete(options *MeetingRegistrantReque
     }
     return nil
 }
-// Registrants of the online meeting.
-// Parameters:
-//  - options : Options for the request
+// Get registrants of the online meeting.
 func (m *MeetingRegistrantRequestBuilder) Get(options *MeetingRegistrantRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingRegistrant, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *MeetingRegistrantRequestBuilder) Get(options *MeetingRegistrantRequestB
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingRegistrant), nil
 }
-// Registrants of the online meeting.
-// Parameters:
-//  - options : Options for the request
+// Patch registrants of the online meeting.
 func (m *MeetingRegistrantRequestBuilder) Patch(options *MeetingRegistrantRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

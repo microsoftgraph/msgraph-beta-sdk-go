@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \roleManagement\directory\resourceNamespaces
+// resourceNamespacesRequestBuilder builds and executes requests for operations under \roleManagement\directory\resourceNamespaces
 type ResourceNamespacesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ResourceNamespacesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ResourceNamespacesRequestBuilderGetOptions options for Get
 type ResourceNamespacesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ResourceNamespacesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get resourceNamespaces from roleManagement
+// resourceNamespacesRequestBuilderGetQueryParameters get resourceNamespaces from roleManagement
 type ResourceNamespacesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ResourceNamespacesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ResourceNamespacesRequestBuilderPostOptions options for Post
 type ResourceNamespacesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespace;
@@ -56,10 +56,7 @@ type ResourceNamespacesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ResourceNamespacesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceNamespacesRequestBuilderInternal instantiates a new ResourceNamespacesRequestBuilder and sets the default values.
 func NewResourceNamespacesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceNamespacesRequestBuilder) {
     m := &ResourceNamespacesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewResourceNamespacesRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ResourceNamespacesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceNamespacesRequestBuilder instantiates a new ResourceNamespacesRequestBuilder and sets the default values.
 func NewResourceNamespacesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceNamespacesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResourceNamespacesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get resourceNamespaces from roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get resourceNamespaces from roleManagement
 func (m *ResourceNamespacesRequestBuilder) CreateGetRequestInformation(options *ResourceNamespacesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ResourceNamespacesRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Create new navigation property to resourceNamespaces for roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to resourceNamespaces for roleManagement
 func (m *ResourceNamespacesRequestBuilder) CreatePostRequestInformation(options *ResourceNamespacesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ResourceNamespacesRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get resourceNamespaces from roleManagement
-// Parameters:
-//  - options : Options for the request
+// Get get resourceNamespaces from roleManagement
 func (m *ResourceNamespacesRequestBuilder) Get(options *ResourceNamespacesRequestBuilderGetOptions)(*ResourceNamespacesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ResourceNamespacesRequestBuilder) Get(options *ResourceNamespacesReques
     }
     return res.(*ResourceNamespacesResponse), nil
 }
-// Create new navigation property to resourceNamespaces for roleManagement
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to resourceNamespaces for roleManagement
 func (m *ResourceNamespacesRequestBuilder) Post(options *ResourceNamespacesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceNamespace, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

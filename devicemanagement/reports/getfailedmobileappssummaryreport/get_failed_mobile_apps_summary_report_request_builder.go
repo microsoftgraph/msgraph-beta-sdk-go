@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getFailedMobileAppsSummaryReport
+// getFailedMobileAppsSummaryReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getFailedMobileAppsSummaryReport
 type GetFailedMobileAppsSummaryReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetFailedMobileAppsSummaryReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetFailedMobileAppsSummaryReportRequestBuilderPostOptions options for Post
 type GetFailedMobileAppsSummaryReportRequestBuilderPostOptions struct {
     // 
     Body *GetFailedMobileAppsSummaryReportRequestBody;
@@ -24,10 +24,7 @@ type GetFailedMobileAppsSummaryReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetFailedMobileAppsSummaryReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetFailedMobileAppsSummaryReportRequestBuilderInternal instantiates a new GetFailedMobileAppsSummaryReportRequestBuilder and sets the default values.
 func NewGetFailedMobileAppsSummaryReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetFailedMobileAppsSummaryReportRequestBuilder) {
     m := &GetFailedMobileAppsSummaryReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetFailedMobileAppsSummaryReportRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetFailedMobileAppsSummaryReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetFailedMobileAppsSummaryReportRequestBuilder instantiates a new GetFailedMobileAppsSummaryReportRequestBuilder and sets the default values.
 func NewGetFailedMobileAppsSummaryReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetFailedMobileAppsSummaryReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetFailedMobileAppsSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getFailedMobileAppsSummaryReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getFailedMobileAppsSummaryReport
 func (m *GetFailedMobileAppsSummaryReportRequestBuilder) CreatePostRequestInformation(options *GetFailedMobileAppsSummaryReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetFailedMobileAppsSummaryReportRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Invoke action getFailedMobileAppsSummaryReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getFailedMobileAppsSummaryReport
 func (m *GetFailedMobileAppsSummaryReportRequestBuilder) Post(options *GetFailedMobileAppsSummaryReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

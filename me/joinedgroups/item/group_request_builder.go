@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\joinedGroups\{group-id}
+// groupRequestBuilder builds and executes requests for operations under \me\joinedGroups\{group-id}
 type GroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupRequestBuilderDeleteOptions options for Delete
 type GroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type GroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupRequestBuilderGetOptions options for Get
 type GroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,12 +35,12 @@ type GroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable.
+// groupRequestBuilderGetQueryParameters read-only. Nullable.
 type GroupRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupRequestBuilderPatchOptions options for Patch
 type GroupRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Group;
@@ -51,10 +51,7 @@ type GroupRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupRequestBuilderInternal instantiates a new GroupRequestBuilder and sets the default values.
 func NewGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupRequestBuilder) {
     m := &GroupRequestBuilder{
     }
@@ -67,18 +64,13 @@ func NewGroupRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupRequestBuilder instantiates a new GroupRequestBuilder and sets the default values.
 func NewGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable.
 func (m *GroupRequestBuilder) CreateDeleteRequestInformation(options *GroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,9 +87,7 @@ func (m *GroupRequestBuilder) CreateDeleteRequestInformation(options *GroupReque
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable.
 func (m *GroupRequestBuilder) CreateGetRequestInformation(options *GroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,9 +107,7 @@ func (m *GroupRequestBuilder) CreateGetRequestInformation(options *GroupRequestB
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable.
 func (m *GroupRequestBuilder) CreatePatchRequestInformation(options *GroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *GroupRequestBuilder) CreatePatchRequestInformation(options *GroupReques
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable.
 func (m *GroupRequestBuilder) Delete(options *GroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -151,9 +137,7 @@ func (m *GroupRequestBuilder) Delete(options *GroupRequestBuilderDeleteOptions)(
     }
     return nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable.
 func (m *GroupRequestBuilder) Get(options *GroupRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Group, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -165,9 +149,7 @@ func (m *GroupRequestBuilder) Get(options *GroupRequestBuilderGetOptions)(*i5356
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Group), nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable.
 func (m *GroupRequestBuilder) Patch(options *GroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     i98b4dc40d8c668e3d8160e58dd1175b919dc178dee9160ad5054425f21b96f45 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/printers/create"
 )
 
-// Builds and executes requests for operations under \print\printers
+// printersRequestBuilder builds and executes requests for operations under \print\printers
 type PrintersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type PrintersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PrintersRequestBuilderGetOptions options for Get
 type PrintersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type PrintersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of printers registered in the tenant.
+// printersRequestBuilderGetQueryParameters the list of printers registered in the tenant.
 type PrintersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type PrintersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PrintersRequestBuilderPostOptions options for Post
 type PrintersRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printer;
@@ -57,10 +57,7 @@ type PrintersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrintersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintersRequestBuilderInternal instantiates a new PrintersRequestBuilder and sets the default values.
 func NewPrintersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintersRequestBuilder) {
     m := &PrintersRequestBuilder{
     }
@@ -73,10 +70,7 @@ func NewPrintersRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrintersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintersRequestBuilder instantiates a new PrintersRequestBuilder and sets the default values.
 func NewPrintersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -85,9 +79,7 @@ func NewPrintersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
 func (m *PrintersRequestBuilder) Create()(*i98b4dc40d8c668e3d8160e58dd1175b919dc178dee9160ad5054425f21b96f45.CreateRequestBuilder) {
     return i98b4dc40d8c668e3d8160e58dd1175b919dc178dee9160ad5054425f21b96f45.NewCreateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The list of printers registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of printers registered in the tenant.
 func (m *PrintersRequestBuilder) CreateGetRequestInformation(options *PrintersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *PrintersRequestBuilder) CreateGetRequestInformation(options *PrintersRe
     }
     return requestInfo, nil
 }
-// The list of printers registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of printers registered in the tenant.
 func (m *PrintersRequestBuilder) CreatePostRequestInformation(options *PrintersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *PrintersRequestBuilder) CreatePostRequestInformation(options *PrintersR
     }
     return requestInfo, nil
 }
-// The list of printers registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of printers registered in the tenant.
 func (m *PrintersRequestBuilder) Get(options *PrintersRequestBuilderGetOptions)(*PrintersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *PrintersRequestBuilder) Get(options *PrintersRequestBuilderGetOptions)(
     }
     return res.(*PrintersResponse), nil
 }
-// The list of printers registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// Post the list of printers registered in the tenant.
 func (m *PrintersRequestBuilder) Post(options *PrintersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Printer, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

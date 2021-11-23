@@ -13,7 +13,7 @@ import (
     iea2a6744b4e629234021d6f6c8e9fa076a3ab8a7876d7c57abc69043cf535a5b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotdeviceidentities/item/unassignuserfromdevice"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}
+// windowsAutopilotDeviceIdentityRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}
 type WindowsAutopilotDeviceIdentityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type WindowsAutopilotDeviceIdentityRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WindowsAutopilotDeviceIdentityRequestBuilderDeleteOptions options for Delete
 type WindowsAutopilotDeviceIdentityRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type WindowsAutopilotDeviceIdentityRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WindowsAutopilotDeviceIdentityRequestBuilderGetOptions options for Get
 type WindowsAutopilotDeviceIdentityRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,14 +42,14 @@ type WindowsAutopilotDeviceIdentityRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Windows autopilot device identities contained collection.
+// windowsAutopilotDeviceIdentityRequestBuilderGetQueryParameters the Windows autopilot device identities contained collection.
 type WindowsAutopilotDeviceIdentityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WindowsAutopilotDeviceIdentityRequestBuilderPatchOptions options for Patch
 type WindowsAutopilotDeviceIdentityRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeviceIdentity;
@@ -66,10 +66,7 @@ func (m *WindowsAutopilotDeviceIdentityRequestBuilder) AssignResourceAccountToDe
 func (m *WindowsAutopilotDeviceIdentityRequestBuilder) AssignUserToDevice()(*i3f74d7cb02f41203c9cd7d155fac63204acbe2e5d81f2402d7b639e0c9a7b5f6.AssignUserToDeviceRequestBuilder) {
     return i3f74d7cb02f41203c9cd7d155fac63204acbe2e5d81f2402d7b639e0c9a7b5f6.NewAssignUserToDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new WindowsAutopilotDeviceIdentityRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsAutopilotDeviceIdentityRequestBuilderInternal instantiates a new WindowsAutopilotDeviceIdentityRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeviceIdentityRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsAutopilotDeviceIdentityRequestBuilder) {
     m := &WindowsAutopilotDeviceIdentityRequestBuilder{
     }
@@ -82,18 +79,13 @@ func NewWindowsAutopilotDeviceIdentityRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsAutopilotDeviceIdentityRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsAutopilotDeviceIdentityRequestBuilder instantiates a new WindowsAutopilotDeviceIdentityRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeviceIdentityRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsAutopilotDeviceIdentityRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeviceIdentityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Windows autopilot device identities contained collection.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Windows autopilot device identities contained collection.
 func (m *WindowsAutopilotDeviceIdentityRequestBuilder) CreateDeleteRequestInformation(options *WindowsAutopilotDeviceIdentityRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,9 +102,7 @@ func (m *WindowsAutopilotDeviceIdentityRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// The Windows autopilot device identities contained collection.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Windows autopilot device identities contained collection.
 func (m *WindowsAutopilotDeviceIdentityRequestBuilder) CreateGetRequestInformation(options *WindowsAutopilotDeviceIdentityRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,9 +122,7 @@ func (m *WindowsAutopilotDeviceIdentityRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// The Windows autopilot device identities contained collection.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Windows autopilot device identities contained collection.
 func (m *WindowsAutopilotDeviceIdentityRequestBuilder) CreatePatchRequestInformation(options *WindowsAutopilotDeviceIdentityRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -152,9 +140,7 @@ func (m *WindowsAutopilotDeviceIdentityRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// The Windows autopilot device identities contained collection.
-// Parameters:
-//  - options : Options for the request
+// Delete the Windows autopilot device identities contained collection.
 func (m *WindowsAutopilotDeviceIdentityRequestBuilder) Delete(options *WindowsAutopilotDeviceIdentityRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -169,9 +155,7 @@ func (m *WindowsAutopilotDeviceIdentityRequestBuilder) Delete(options *WindowsAu
 func (m *WindowsAutopilotDeviceIdentityRequestBuilder) DeploymentProfile()(*i08637003c24136cfb79d3be758b142dd1115777f5410f7f104df5f6983cc4367.DeploymentProfileRequestBuilder) {
     return i08637003c24136cfb79d3be758b142dd1115777f5410f7f104df5f6983cc4367.NewDeploymentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The Windows autopilot device identities contained collection.
-// Parameters:
-//  - options : Options for the request
+// Get the Windows autopilot device identities contained collection.
 func (m *WindowsAutopilotDeviceIdentityRequestBuilder) Get(options *WindowsAutopilotDeviceIdentityRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeviceIdentity, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -186,9 +170,7 @@ func (m *WindowsAutopilotDeviceIdentityRequestBuilder) Get(options *WindowsAutop
 func (m *WindowsAutopilotDeviceIdentityRequestBuilder) IntendedDeploymentProfile()(*id6142e63ae5bd7453e3630d6c28f631a110e460306d06d64699f247d9bb218f3.IntendedDeploymentProfileRequestBuilder) {
     return id6142e63ae5bd7453e3630d6c28f631a110e460306d06d64699f247d9bb218f3.NewIntendedDeploymentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The Windows autopilot device identities contained collection.
-// Parameters:
-//  - options : Options for the request
+// Patch the Windows autopilot device identities contained collection.
 func (m *WindowsAutopilotDeviceIdentityRequestBuilder) Patch(options *WindowsAutopilotDeviceIdentityRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

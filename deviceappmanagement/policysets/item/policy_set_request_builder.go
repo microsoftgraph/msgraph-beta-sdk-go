@@ -11,7 +11,7 @@ import (
     i99026bae59eb41024babc35aa8e0359f7e3892bf2e64ce282f1766881b0a8dc1 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/policysets/item/items/item"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\policySets\{policySet-id}
+// policySetRequestBuilder builds and executes requests for operations under \deviceAppManagement\policySets\{policySet-id}
 type PolicySetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type PolicySetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PolicySetRequestBuilderDeleteOptions options for Delete
 type PolicySetRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type PolicySetRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PolicySetRequestBuilderGetOptions options for Get
 type PolicySetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type PolicySetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The PolicySet of Policies and Applications
+// policySetRequestBuilderGetQueryParameters the PolicySet of Policies and Applications
 type PolicySetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PolicySetRequestBuilderPatchOptions options for Patch
 type PolicySetRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySet;
@@ -61,9 +61,7 @@ type PolicySetRequestBuilderPatchOptions struct {
 func (m *PolicySetRequestBuilder) Assignments()(*ic3b46ce500546d2dc4f9ff8392cc8eb4e3e9d6daf420cff3c3fd9477b80afa9a.AssignmentsRequestBuilder) {
     return ic3b46ce500546d2dc4f9ff8392cc8eb4e3e9d6daf420cff3c3fd9477b80afa9a.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.policySets.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.policySets.item.assignments.item collection
 func (m *PolicySetRequestBuilder) AssignmentsById(id string)(*i24f7e4e5877bd5856a1bea9781fe340d00b7d49e45ba3821ab75b408464158c4.PolicySetAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -74,10 +72,7 @@ func (m *PolicySetRequestBuilder) AssignmentsById(id string)(*i24f7e4e5877bd5856
     }
     return i24f7e4e5877bd5856a1bea9781fe340d00b7d49e45ba3821ab75b408464158c4.NewPolicySetAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new PolicySetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicySetRequestBuilderInternal instantiates a new PolicySetRequestBuilder and sets the default values.
 func NewPolicySetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicySetRequestBuilder) {
     m := &PolicySetRequestBuilder{
     }
@@ -90,18 +85,13 @@ func NewPolicySetRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PolicySetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicySetRequestBuilder instantiates a new PolicySetRequestBuilder and sets the default values.
 func NewPolicySetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicySetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPolicySetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The PolicySet of Policies and Applications
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the PolicySet of Policies and Applications
 func (m *PolicySetRequestBuilder) CreateDeleteRequestInformation(options *PolicySetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,9 +108,7 @@ func (m *PolicySetRequestBuilder) CreateDeleteRequestInformation(options *Policy
     }
     return requestInfo, nil
 }
-// The PolicySet of Policies and Applications
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the PolicySet of Policies and Applications
 func (m *PolicySetRequestBuilder) CreateGetRequestInformation(options *PolicySetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *PolicySetRequestBuilder) CreateGetRequestInformation(options *PolicySet
     }
     return requestInfo, nil
 }
-// The PolicySet of Policies and Applications
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the PolicySet of Policies and Applications
 func (m *PolicySetRequestBuilder) CreatePatchRequestInformation(options *PolicySetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -160,9 +146,7 @@ func (m *PolicySetRequestBuilder) CreatePatchRequestInformation(options *PolicyS
     }
     return requestInfo, nil
 }
-// The PolicySet of Policies and Applications
-// Parameters:
-//  - options : Options for the request
+// Delete the PolicySet of Policies and Applications
 func (m *PolicySetRequestBuilder) Delete(options *PolicySetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -174,9 +158,7 @@ func (m *PolicySetRequestBuilder) Delete(options *PolicySetRequestBuilderDeleteO
     }
     return nil
 }
-// The PolicySet of Policies and Applications
-// Parameters:
-//  - options : Options for the request
+// Get the PolicySet of Policies and Applications
 func (m *PolicySetRequestBuilder) Get(options *PolicySetRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySet, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -191,9 +173,7 @@ func (m *PolicySetRequestBuilder) Get(options *PolicySetRequestBuilderGetOptions
 func (m *PolicySetRequestBuilder) Items()(*i300bb30a733f11af1db0965deae41bf705649be04be882517d59a871d06c607d.ItemsRequestBuilder) {
     return i300bb30a733f11af1db0965deae41bf705649be04be882517d59a871d06c607d.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.policySets.item.items.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ItemsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.policySets.item.items.item collection
 func (m *PolicySetRequestBuilder) ItemsById(id string)(*i99026bae59eb41024babc35aa8e0359f7e3892bf2e64ce282f1766881b0a8dc1.PolicySetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -204,9 +184,7 @@ func (m *PolicySetRequestBuilder) ItemsById(id string)(*i99026bae59eb41024babc35
     }
     return i99026bae59eb41024babc35aa8e0359f7e3892bf2e64ce282f1766881b0a8dc1.NewPolicySetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The PolicySet of Policies and Applications
-// Parameters:
-//  - options : Options for the request
+// Patch the PolicySet of Policies and Applications
 func (m *PolicySetRequestBuilder) Patch(options *PolicySetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

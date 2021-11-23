@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id}\accessPackageAssignmentPolicy\accessPackageCatalog\accessPackages\{accessPackage-id}\accessPackagesIncompatibleWith\microsoft.graph.Search()
+// SearchRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}\accessPackageAssignments\{accessPackageAssignment-id}\accessPackageAssignmentPolicy\accessPackageCatalog\accessPackages\{accessPackage-id}\accessPackagesIncompatibleWith\microsoft.graph.Search()
 type SearchRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type SearchRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SearchRequestBuilderGetOptions options for Get
 type SearchRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type SearchRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SearchRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSearchRequestBuilderInternal instantiates a new SearchRequestBuilder and sets the default values.
 func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SearchRequestBuilder) {
     m := &SearchRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SearchRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSearchRequestBuilder instantiates a new SearchRequestBuilder and sets the default values.
 func NewSearchRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SearchRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSearchRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function Search
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function Search
 func (m *SearchRequestBuilder) CreateGetRequestInformation(options *SearchRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *SearchRequestBuilder) CreateGetRequestInformation(options *SearchReques
     }
     return requestInfo, nil
 }
-// Invoke function Search
-// Parameters:
-//  - options : Options for the request
+// Get invoke function Search
 func (m *SearchRequestBuilder) Get(options *SearchRequestBuilderGetOptions)([]Search, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

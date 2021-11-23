@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\importedDeviceIdentities\{importedDeviceIdentity-id}
+// importedDeviceIdentityRequestBuilder builds and executes requests for operations under \deviceManagement\importedDeviceIdentities\{importedDeviceIdentity-id}
 type ImportedDeviceIdentityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ImportedDeviceIdentityRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ImportedDeviceIdentityRequestBuilderDeleteOptions options for Delete
 type ImportedDeviceIdentityRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ImportedDeviceIdentityRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ImportedDeviceIdentityRequestBuilderGetOptions options for Get
 type ImportedDeviceIdentityRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ImportedDeviceIdentityRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The imported device identities.
+// importedDeviceIdentityRequestBuilderGetQueryParameters the imported device identities.
 type ImportedDeviceIdentityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ImportedDeviceIdentityRequestBuilderPatchOptions options for Patch
 type ImportedDeviceIdentityRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentity;
@@ -53,10 +53,7 @@ type ImportedDeviceIdentityRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ImportedDeviceIdentityRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportedDeviceIdentityRequestBuilderInternal instantiates a new ImportedDeviceIdentityRequestBuilder and sets the default values.
 func NewImportedDeviceIdentityRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportedDeviceIdentityRequestBuilder) {
     m := &ImportedDeviceIdentityRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewImportedDeviceIdentityRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ImportedDeviceIdentityRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportedDeviceIdentityRequestBuilder instantiates a new ImportedDeviceIdentityRequestBuilder and sets the default values.
 func NewImportedDeviceIdentityRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportedDeviceIdentityRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewImportedDeviceIdentityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The imported device identities.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the imported device identities.
 func (m *ImportedDeviceIdentityRequestBuilder) CreateDeleteRequestInformation(options *ImportedDeviceIdentityRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ImportedDeviceIdentityRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// The imported device identities.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the imported device identities.
 func (m *ImportedDeviceIdentityRequestBuilder) CreateGetRequestInformation(options *ImportedDeviceIdentityRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ImportedDeviceIdentityRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The imported device identities.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the imported device identities.
 func (m *ImportedDeviceIdentityRequestBuilder) CreatePatchRequestInformation(options *ImportedDeviceIdentityRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ImportedDeviceIdentityRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The imported device identities.
-// Parameters:
-//  - options : Options for the request
+// Delete the imported device identities.
 func (m *ImportedDeviceIdentityRequestBuilder) Delete(options *ImportedDeviceIdentityRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ImportedDeviceIdentityRequestBuilder) Delete(options *ImportedDeviceIde
     }
     return nil
 }
-// The imported device identities.
-// Parameters:
-//  - options : Options for the request
+// Get the imported device identities.
 func (m *ImportedDeviceIdentityRequestBuilder) Get(options *ImportedDeviceIdentityRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentity, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ImportedDeviceIdentityRequestBuilder) Get(options *ImportedDeviceIdenti
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentity), nil
 }
-// The imported device identities.
-// Parameters:
-//  - options : Options for the request
+// Patch the imported device identities.
 func (m *ImportedDeviceIdentityRequestBuilder) Patch(options *ImportedDeviceIdentityRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

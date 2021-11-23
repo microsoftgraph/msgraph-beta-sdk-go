@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \users\microsoft.graph.getManagedAppBlockedUsers()
+// getManagedAppBlockedUsersRequestBuilder builds and executes requests for operations under \users\microsoft.graph.getManagedAppBlockedUsers()
 type GetManagedAppBlockedUsersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetManagedAppBlockedUsersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetManagedAppBlockedUsersRequestBuilderGetOptions options for Get
 type GetManagedAppBlockedUsersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type GetManagedAppBlockedUsersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetManagedAppBlockedUsersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetManagedAppBlockedUsersRequestBuilderInternal instantiates a new GetManagedAppBlockedUsersRequestBuilder and sets the default values.
 func NewGetManagedAppBlockedUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetManagedAppBlockedUsersRequestBuilder) {
     m := &GetManagedAppBlockedUsersRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewGetManagedAppBlockedUsersRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetManagedAppBlockedUsersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetManagedAppBlockedUsersRequestBuilder instantiates a new GetManagedAppBlockedUsersRequestBuilder and sets the default values.
 func NewGetManagedAppBlockedUsersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetManagedAppBlockedUsersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetManagedAppBlockedUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function getManagedAppBlockedUsers
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getManagedAppBlockedUsers
 func (m *GetManagedAppBlockedUsersRequestBuilder) CreateGetRequestInformation(options *GetManagedAppBlockedUsersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *GetManagedAppBlockedUsersRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Invoke function getManagedAppBlockedUsers
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getManagedAppBlockedUsers
 func (m *GetManagedAppBlockedUsersRequestBuilder) Get(options *GetManagedAppBlockedUsersRequestBuilderGetOptions)([]string, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

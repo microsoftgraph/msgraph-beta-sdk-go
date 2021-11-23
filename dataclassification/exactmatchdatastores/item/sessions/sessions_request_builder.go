@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions
+// sessionsRequestBuilder builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions
 type SessionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SessionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SessionsRequestBuilderGetOptions options for Get
 type SessionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SessionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get sessions from dataClassification
+// sessionsRequestBuilderGetQueryParameters get sessions from dataClassification
 type SessionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SessionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SessionsRequestBuilderPostOptions options for Post
 type SessionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSession;
@@ -56,10 +56,7 @@ type SessionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SessionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSessionsRequestBuilderInternal instantiates a new SessionsRequestBuilder and sets the default values.
 func NewSessionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SessionsRequestBuilder) {
     m := &SessionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSessionsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SessionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSessionsRequestBuilder instantiates a new SessionsRequestBuilder and sets the default values.
 func NewSessionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SessionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSessionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get sessions from dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get sessions from dataClassification
 func (m *SessionsRequestBuilder) CreateGetRequestInformation(options *SessionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SessionsRequestBuilder) CreateGetRequestInformation(options *SessionsRe
     }
     return requestInfo, nil
 }
-// Create new navigation property to sessions for dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to sessions for dataClassification
 func (m *SessionsRequestBuilder) CreatePostRequestInformation(options *SessionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SessionsRequestBuilder) CreatePostRequestInformation(options *SessionsR
     }
     return requestInfo, nil
 }
-// Get sessions from dataClassification
-// Parameters:
-//  - options : Options for the request
+// Get get sessions from dataClassification
 func (m *SessionsRequestBuilder) Get(options *SessionsRequestBuilderGetOptions)(*SessionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SessionsRequestBuilder) Get(options *SessionsRequestBuilderGetOptions)(
     }
     return res.(*SessionsResponse), nil
 }
-// Create new navigation property to sessions for dataClassification
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to sessions for dataClassification
 func (m *SessionsRequestBuilder) Post(options *SessionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchSession, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -9,7 +9,7 @@ import (
     i4c6649ed921058137d23369f25fb530c052e741c6026b182c9c66a0903b527cd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/resourceaccessprofiles/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\resourceAccessProfiles\{deviceManagementResourceAccessProfileBase-id}
+// deviceManagementResourceAccessProfileBaseRequestBuilder builds and executes requests for operations under \deviceManagement\resourceAccessProfiles\{deviceManagementResourceAccessProfileBase-id}
 type DeviceManagementResourceAccessProfileBaseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type DeviceManagementResourceAccessProfileBaseRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementResourceAccessProfileBaseRequestBuilderDeleteOptions options for Delete
 type DeviceManagementResourceAccessProfileBaseRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type DeviceManagementResourceAccessProfileBaseRequestBuilderDeleteOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementResourceAccessProfileBaseRequestBuilderGetOptions options for Get
 type DeviceManagementResourceAccessProfileBaseRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type DeviceManagementResourceAccessProfileBaseRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of resource access settings associated with account.
+// deviceManagementResourceAccessProfileBaseRequestBuilderGetQueryParameters collection of resource access settings associated with account.
 type DeviceManagementResourceAccessProfileBaseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementResourceAccessProfileBaseRequestBuilderPatchOptions options for Patch
 type DeviceManagementResourceAccessProfileBaseRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementResourceAccessProfileBase;
@@ -62,9 +62,7 @@ func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) Assign()(*iaac
 func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) Assignments()(*i1aa4fb44cf4940a0794e33de635a58953960c975237235af78452d02bffe2854.AssignmentsRequestBuilder) {
     return i1aa4fb44cf4940a0794e33de635a58953960c975237235af78452d02bffe2854.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.resourceAccessProfiles.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.resourceAccessProfiles.item.assignments.item collection
 func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) AssignmentsById(id string)(*i4c6649ed921058137d23369f25fb530c052e741c6026b182c9c66a0903b527cd.DeviceManagementResourceAccessProfileAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,10 +73,7 @@ func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) AssignmentsByI
     }
     return i4c6649ed921058137d23369f25fb530c052e741c6026b182c9c66a0903b527cd.NewDeviceManagementResourceAccessProfileAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new DeviceManagementResourceAccessProfileBaseRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementResourceAccessProfileBaseRequestBuilderInternal instantiates a new DeviceManagementResourceAccessProfileBaseRequestBuilder and sets the default values.
 func NewDeviceManagementResourceAccessProfileBaseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementResourceAccessProfileBaseRequestBuilder) {
     m := &DeviceManagementResourceAccessProfileBaseRequestBuilder{
     }
@@ -91,18 +86,13 @@ func NewDeviceManagementResourceAccessProfileBaseRequestBuilderInternal(pathPara
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementResourceAccessProfileBaseRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementResourceAccessProfileBaseRequestBuilder instantiates a new DeviceManagementResourceAccessProfileBaseRequestBuilder and sets the default values.
 func NewDeviceManagementResourceAccessProfileBaseRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementResourceAccessProfileBaseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementResourceAccessProfileBaseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of resource access settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of resource access settings associated with account.
 func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementResourceAccessProfileBaseRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// Collection of resource access settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of resource access settings associated with account.
 func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) CreateGetRequestInformation(options *DeviceManagementResourceAccessProfileBaseRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// Collection of resource access settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of resource access settings associated with account.
 func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementResourceAccessProfileBaseRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,9 +147,7 @@ func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) CreatePatchReq
     }
     return requestInfo, nil
 }
-// Collection of resource access settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Delete collection of resource access settings associated with account.
 func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) Delete(options *DeviceManagementResourceAccessProfileBaseRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) Delete(options
     }
     return nil
 }
-// Collection of resource access settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Get collection of resource access settings associated with account.
 func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) Get(options *DeviceManagementResourceAccessProfileBaseRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementResourceAccessProfileBase, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -189,9 +171,7 @@ func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) Get(options *D
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementResourceAccessProfileBase), nil
 }
-// Collection of resource access settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Patch collection of resource access settings associated with account.
 func (m *DeviceManagementResourceAccessProfileBaseRequestBuilder) Patch(options *DeviceManagementResourceAccessProfileBaseRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

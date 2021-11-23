@@ -8,7 +8,7 @@ import (
     ib956f45626ba71f8b797fc4b16070658a39a611e2d6aa111aea4eca180955477 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/vpptokens/synclicensecounts"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\vppTokens
+// vppTokensRequestBuilder builds and executes requests for operations under \deviceAppManagement\vppTokens
 type VppTokensRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type VppTokensRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// VppTokensRequestBuilderGetOptions options for Get
 type VppTokensRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type VppTokensRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of Vpp tokens for this organization.
+// vppTokensRequestBuilderGetQueryParameters list of Vpp tokens for this organization.
 type VppTokensRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type VppTokensRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// VppTokensRequestBuilderPostOptions options for Post
 type VppTokensRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VppToken;
@@ -58,10 +58,7 @@ type VppTokensRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new VppTokensRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVppTokensRequestBuilderInternal instantiates a new VppTokensRequestBuilder and sets the default values.
 func NewVppTokensRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VppTokensRequestBuilder) {
     m := &VppTokensRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewVppTokensRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new VppTokensRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVppTokensRequestBuilder instantiates a new VppTokensRequestBuilder and sets the default values.
 func NewVppTokensRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VppTokensRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVppTokensRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of Vpp tokens for this organization.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of Vpp tokens for this organization.
 func (m *VppTokensRequestBuilder) CreateGetRequestInformation(options *VppTokensRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *VppTokensRequestBuilder) CreateGetRequestInformation(options *VppTokens
     }
     return requestInfo, nil
 }
-// List of Vpp tokens for this organization.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of Vpp tokens for this organization.
 func (m *VppTokensRequestBuilder) CreatePostRequestInformation(options *VppTokensRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *VppTokensRequestBuilder) CreatePostRequestInformation(options *VppToken
     }
     return requestInfo, nil
 }
-// List of Vpp tokens for this organization.
-// Parameters:
-//  - options : Options for the request
+// Get list of Vpp tokens for this organization.
 func (m *VppTokensRequestBuilder) Get(options *VppTokensRequestBuilderGetOptions)(*VppTokensResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -139,15 +127,11 @@ func (m *VppTokensRequestBuilder) Get(options *VppTokensRequestBuilderGetOptions
     }
     return res.(*VppTokensResponse), nil
 }
-// Builds and executes requests for operations under \deviceAppManagement\vppTokens\microsoft.graph.getLicensesForApp(bundleId='{bundleId}')
-// Parameters:
-//  - bundleId : Usage: bundleId={bundleId}
+// GetLicensesForAppWithBundleId builds and executes requests for operations under \deviceAppManagement\vppTokens\microsoft.graph.getLicensesForApp(bundleId='{bundleId}')
 func (m *VppTokensRequestBuilder) GetLicensesForAppWithBundleId(bundleId *string)(*i24db185bc1635f2b2be054ec817ced066302c11adf27d59692cd7b262f32698e.GetLicensesForAppWithBundleIdRequestBuilder) {
     return i24db185bc1635f2b2be054ec817ced066302c11adf27d59692cd7b262f32698e.NewGetLicensesForAppWithBundleIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, bundleId);
 }
-// List of Vpp tokens for this organization.
-// Parameters:
-//  - options : Options for the request
+// Post list of Vpp tokens for this organization.
 func (m *VppTokensRequestBuilder) Post(options *VppTokensRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VppToken, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

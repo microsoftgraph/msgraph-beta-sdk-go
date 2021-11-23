@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\sideLoadingKeys\{sideLoadingKey-id}
+// sideLoadingKeyRequestBuilder builds and executes requests for operations under \deviceAppManagement\sideLoadingKeys\{sideLoadingKey-id}
 type SideLoadingKeyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SideLoadingKeyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SideLoadingKeyRequestBuilderDeleteOptions options for Delete
 type SideLoadingKeyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SideLoadingKeyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SideLoadingKeyRequestBuilderGetOptions options for Get
 type SideLoadingKeyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SideLoadingKeyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+// sideLoadingKeyRequestBuilderGetQueryParameters side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
 type SideLoadingKeyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SideLoadingKeyRequestBuilderPatchOptions options for Patch
 type SideLoadingKeyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SideLoadingKey;
@@ -53,10 +53,7 @@ type SideLoadingKeyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SideLoadingKeyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSideLoadingKeyRequestBuilderInternal instantiates a new SideLoadingKeyRequestBuilder and sets the default values.
 func NewSideLoadingKeyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SideLoadingKeyRequestBuilder) {
     m := &SideLoadingKeyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSideLoadingKeyRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SideLoadingKeyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSideLoadingKeyRequestBuilder instantiates a new SideLoadingKeyRequestBuilder and sets the default values.
 func NewSideLoadingKeyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SideLoadingKeyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSideLoadingKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
 func (m *SideLoadingKeyRequestBuilder) CreateDeleteRequestInformation(options *SideLoadingKeyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SideLoadingKeyRequestBuilder) CreateDeleteRequestInformation(options *S
     }
     return requestInfo, nil
 }
-// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
 func (m *SideLoadingKeyRequestBuilder) CreateGetRequestInformation(options *SideLoadingKeyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SideLoadingKeyRequestBuilder) CreateGetRequestInformation(options *Side
     }
     return requestInfo, nil
 }
-// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
 func (m *SideLoadingKeyRequestBuilder) CreatePatchRequestInformation(options *SideLoadingKeyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SideLoadingKeyRequestBuilder) CreatePatchRequestInformation(options *Si
     }
     return requestInfo, nil
 }
-// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-// Parameters:
-//  - options : Options for the request
+// Delete side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
 func (m *SideLoadingKeyRequestBuilder) Delete(options *SideLoadingKeyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SideLoadingKeyRequestBuilder) Delete(options *SideLoadingKeyRequestBuil
     }
     return nil
 }
-// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-// Parameters:
-//  - options : Options for the request
+// Get side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
 func (m *SideLoadingKeyRequestBuilder) Get(options *SideLoadingKeyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SideLoadingKey, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SideLoadingKeyRequestBuilder) Get(options *SideLoadingKeyRequestBuilder
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SideLoadingKey), nil
 }
-// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-// Parameters:
-//  - options : Options for the request
+// Patch side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
 func (m *SideLoadingKeyRequestBuilder) Patch(options *SideLoadingKeyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

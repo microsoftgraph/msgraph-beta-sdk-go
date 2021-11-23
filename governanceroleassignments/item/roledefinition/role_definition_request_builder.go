@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \governanceRoleAssignments\{governanceRoleAssignment-id}\roleDefinition
+// roleDefinitionRequestBuilder builds and executes requests for operations under \governanceRoleAssignments\{governanceRoleAssignment-id}\roleDefinition
 type RoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RoleDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RoleDefinitionRequestBuilderDeleteOptions options for Delete
 type RoleDefinitionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type RoleDefinitionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RoleDefinitionRequestBuilderGetOptions options for Get
 type RoleDefinitionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type RoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. The role definition associated with the role assignment.
+// roleDefinitionRequestBuilderGetQueryParameters read-only. The role definition associated with the role assignment.
 type RoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RoleDefinitionRequestBuilderPatchOptions options for Patch
 type RoleDefinitionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinition;
@@ -53,10 +53,7 @@ type RoleDefinitionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RoleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleDefinitionRequestBuilderInternal instantiates a new RoleDefinitionRequestBuilder and sets the default values.
 func NewRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleDefinitionRequestBuilder) {
     m := &RoleDefinitionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleDefinitionRequestBuilder instantiates a new RoleDefinitionRequestBuilder and sets the default values.
 func NewRoleDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleDefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. The role definition associated with the role assignment.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. The role definition associated with the role assignment.
 func (m *RoleDefinitionRequestBuilder) CreateDeleteRequestInformation(options *RoleDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *RoleDefinitionRequestBuilder) CreateDeleteRequestInformation(options *R
     }
     return requestInfo, nil
 }
-// Read-only. The role definition associated with the role assignment.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. The role definition associated with the role assignment.
 func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformation(options *RoleDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformation(options *Role
     }
     return requestInfo, nil
 }
-// Read-only. The role definition associated with the role assignment.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. The role definition associated with the role assignment.
 func (m *RoleDefinitionRequestBuilder) CreatePatchRequestInformation(options *RoleDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *RoleDefinitionRequestBuilder) CreatePatchRequestInformation(options *Ro
     }
     return requestInfo, nil
 }
-// Read-only. The role definition associated with the role assignment.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. The role definition associated with the role assignment.
 func (m *RoleDefinitionRequestBuilder) Delete(options *RoleDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *RoleDefinitionRequestBuilder) Delete(options *RoleDefinitionRequestBuil
     }
     return nil
 }
-// Read-only. The role definition associated with the role assignment.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. The role definition associated with the role assignment.
 func (m *RoleDefinitionRequestBuilder) Get(options *RoleDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *RoleDefinitionRequestBuilder) Get(options *RoleDefinitionRequestBuilder
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinition), nil
 }
-// Read-only. The role definition associated with the role assignment.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. The role definition associated with the role assignment.
 func (m *RoleDefinitionRequestBuilder) Patch(options *RoleDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

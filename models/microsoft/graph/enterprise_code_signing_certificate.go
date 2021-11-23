@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// enterpriseCodeSigningCertificate 
 type EnterpriseCodeSigningCertificate struct {
     Entity
     // The Windows Enterprise Code-Signing Certificate in the raw data format.
@@ -25,14 +25,14 @@ type EnterpriseCodeSigningCertificate struct {
     // The date time of CodeSigning Cert when it is uploaded.
     uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new enterpriseCodeSigningCertificate and sets the default values.
+// NewEnterpriseCodeSigningCertificate instantiates a new enterpriseCodeSigningCertificate and sets the default values.
 func NewEnterpriseCodeSigningCertificate()(*EnterpriseCodeSigningCertificate) {
     m := &EnterpriseCodeSigningCertificate{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the content property value. The Windows Enterprise Code-Signing Certificate in the raw data format.
+// GetContent gets the content property value. The Windows Enterprise Code-Signing Certificate in the raw data format.
 func (m *EnterpriseCodeSigningCertificate) GetContent()([]byte) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *EnterpriseCodeSigningCertificate) GetContent()([]byte) {
         return m.content
     }
 }
-// Gets the expirationDateTime property value. The Cert Expiration Date.
+// GetExpirationDateTime gets the expirationDateTime property value. The Cert Expiration Date.
 func (m *EnterpriseCodeSigningCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *EnterpriseCodeSigningCertificate) GetExpirationDateTime()(*i336074805fc
         return m.expirationDateTime
     }
 }
-// Gets the issuer property value. The Issuer value for the cert.
+// GetIssuer gets the issuer property value. The Issuer value for the cert.
 func (m *EnterpriseCodeSigningCertificate) GetIssuer()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *EnterpriseCodeSigningCertificate) GetIssuer()(*string) {
         return m.issuer
     }
 }
-// Gets the issuerName property value. The Issuer Name for the cert.
+// GetIssuerName gets the issuerName property value. The Issuer Name for the cert.
 func (m *EnterpriseCodeSigningCertificate) GetIssuerName()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *EnterpriseCodeSigningCertificate) GetIssuerName()(*string) {
         return m.issuerName
     }
 }
-// Gets the status property value. The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
+// GetStatus gets the status property value. The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
 func (m *EnterpriseCodeSigningCertificate) GetStatus()(*CertificateStatus) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *EnterpriseCodeSigningCertificate) GetStatus()(*CertificateStatus) {
         return m.status
     }
 }
-// Gets the subject property value. The Subject Value for the cert.
+// GetSubject gets the subject property value. The Subject Value for the cert.
 func (m *EnterpriseCodeSigningCertificate) GetSubject()(*string) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *EnterpriseCodeSigningCertificate) GetSubject()(*string) {
         return m.subject
     }
 }
-// Gets the subjectName property value. The Subject Name for the cert.
+// GetSubjectName gets the subjectName property value. The Subject Name for the cert.
 func (m *EnterpriseCodeSigningCertificate) GetSubjectName()(*string) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *EnterpriseCodeSigningCertificate) GetSubjectName()(*string) {
         return m.subjectName
     }
 }
-// Gets the uploadDateTime property value. The date time of CodeSigning Cert when it is uploaded.
+// GetUploadDateTime gets the uploadDateTime property value. The date time of CodeSigning Cert when it is uploaded.
 func (m *EnterpriseCodeSigningCertificate) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *EnterpriseCodeSigningCertificate) GetUploadDateTime()(*i336074805fc8539
         return m.uploadDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["content"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,9 +185,7 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
 func (m *EnterpriseCodeSigningCertificate) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EnterpriseCodeSigningCertificate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -244,51 +242,35 @@ func (m *EnterpriseCodeSigningCertificate) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
-// Sets the content property value. The Windows Enterprise Code-Signing Certificate in the raw data format.
-// Parameters:
-//  - value : Value to set for the content property.
+// SetContent sets the content property value. The Windows Enterprise Code-Signing Certificate in the raw data format.
 func (m *EnterpriseCodeSigningCertificate) SetContent(value []byte)() {
     m.content = value
 }
-// Sets the expirationDateTime property value. The Cert Expiration Date.
-// Parameters:
-//  - value : Value to set for the expirationDateTime property.
+// SetExpirationDateTime sets the expirationDateTime property value. The Cert Expiration Date.
 func (m *EnterpriseCodeSigningCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
 }
-// Sets the issuer property value. The Issuer value for the cert.
-// Parameters:
-//  - value : Value to set for the issuer property.
+// SetIssuer sets the issuer property value. The Issuer value for the cert.
 func (m *EnterpriseCodeSigningCertificate) SetIssuer(value *string)() {
     m.issuer = value
 }
-// Sets the issuerName property value. The Issuer Name for the cert.
-// Parameters:
-//  - value : Value to set for the issuerName property.
+// SetIssuerName sets the issuerName property value. The Issuer Name for the cert.
 func (m *EnterpriseCodeSigningCertificate) SetIssuerName(value *string)() {
     m.issuerName = value
 }
-// Sets the status property value. The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
 func (m *EnterpriseCodeSigningCertificate) SetStatus(value *CertificateStatus)() {
     m.status = value
 }
-// Sets the subject property value. The Subject Value for the cert.
-// Parameters:
-//  - value : Value to set for the subject property.
+// SetSubject sets the subject property value. The Subject Value for the cert.
 func (m *EnterpriseCodeSigningCertificate) SetSubject(value *string)() {
     m.subject = value
 }
-// Sets the subjectName property value. The Subject Name for the cert.
-// Parameters:
-//  - value : Value to set for the subjectName property.
+// SetSubjectName sets the subjectName property value. The Subject Name for the cert.
 func (m *EnterpriseCodeSigningCertificate) SetSubjectName(value *string)() {
     m.subjectName = value
 }
-// Sets the uploadDateTime property value. The date time of CodeSigning Cert when it is uploaded.
-// Parameters:
-//  - value : Value to set for the uploadDateTime property.
+// SetUploadDateTime sets the uploadDateTime property value. The date time of CodeSigning Cert when it is uploaded.
 func (m *EnterpriseCodeSigningCertificate) SetUploadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.uploadDateTime = value
 }

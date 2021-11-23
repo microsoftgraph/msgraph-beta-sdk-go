@@ -7,7 +7,7 @@ import (
     ice9ba62d4d674101cb268c8972aa3867ec539e0c13ce0269a44d6c2c115260e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/resourcenamespaces/item/resourceactions/item/resourcescope"
 )
 
-// Builds and executes requests for operations under \roleManagement\directory\resourceNamespaces\{unifiedRbacResourceNamespace-id}\resourceActions\{unifiedRbacResourceAction-id}
+// unifiedRbacResourceActionRequestBuilder builds and executes requests for operations under \roleManagement\directory\resourceNamespaces\{unifiedRbacResourceNamespace-id}\resourceActions\{unifiedRbacResourceAction-id}
 type UnifiedRbacResourceActionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UnifiedRbacResourceActionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UnifiedRbacResourceActionRequestBuilderDeleteOptions options for Delete
 type UnifiedRbacResourceActionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type UnifiedRbacResourceActionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UnifiedRbacResourceActionRequestBuilderGetOptions options for Get
 type UnifiedRbacResourceActionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type UnifiedRbacResourceActionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get resourceActions from roleManagement
+// unifiedRbacResourceActionRequestBuilderGetQueryParameters get resourceActions from roleManagement
 type UnifiedRbacResourceActionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UnifiedRbacResourceActionRequestBuilderPatchOptions options for Patch
 type UnifiedRbacResourceActionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceAction;
@@ -54,10 +54,7 @@ type UnifiedRbacResourceActionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnifiedRbacResourceActionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRbacResourceActionRequestBuilderInternal instantiates a new UnifiedRbacResourceActionRequestBuilder and sets the default values.
 func NewUnifiedRbacResourceActionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRbacResourceActionRequestBuilder) {
     m := &UnifiedRbacResourceActionRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewUnifiedRbacResourceActionRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnifiedRbacResourceActionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRbacResourceActionRequestBuilder instantiates a new UnifiedRbacResourceActionRequestBuilder and sets the default values.
 func NewUnifiedRbacResourceActionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRbacResourceActionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRbacResourceActionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property resourceActions for roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property resourceActions for roleManagement
 func (m *UnifiedRbacResourceActionRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRbacResourceActionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *UnifiedRbacResourceActionRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// Get resourceActions from roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get resourceActions from roleManagement
 func (m *UnifiedRbacResourceActionRequestBuilder) CreateGetRequestInformation(options *UnifiedRbacResourceActionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *UnifiedRbacResourceActionRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Update the navigation property resourceActions in roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property resourceActions in roleManagement
 func (m *UnifiedRbacResourceActionRequestBuilder) CreatePatchRequestInformation(options *UnifiedRbacResourceActionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *UnifiedRbacResourceActionRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Delete navigation property resourceActions for roleManagement
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property resourceActions for roleManagement
 func (m *UnifiedRbacResourceActionRequestBuilder) Delete(options *UnifiedRbacResourceActionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *UnifiedRbacResourceActionRequestBuilder) Delete(options *UnifiedRbacRes
     }
     return nil
 }
-// Get resourceActions from roleManagement
-// Parameters:
-//  - options : Options for the request
+// Get get resourceActions from roleManagement
 func (m *UnifiedRbacResourceActionRequestBuilder) Get(options *UnifiedRbacResourceActionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceAction, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *UnifiedRbacResourceActionRequestBuilder) Get(options *UnifiedRbacResour
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceAction), nil
 }
-// Update the navigation property resourceActions in roleManagement
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property resourceActions in roleManagement
 func (m *UnifiedRbacResourceActionRequestBuilder) Patch(options *UnifiedRbacResourceActionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

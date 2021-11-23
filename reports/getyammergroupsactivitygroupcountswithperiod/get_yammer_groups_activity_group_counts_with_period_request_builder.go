@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getYammerGroupsActivityGroupCounts(period='{period}')
+// getYammerGroupsActivityGroupCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getYammerGroupsActivityGroupCounts(period='{period}')
 type GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderInternal instantiates a new GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) {
     m := &GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderInternal(pathP
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder instantiates a new GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getYammerGroupsActivityGroupCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getYammerGroupsActivityGroupCounts
 func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) CreateGetRe
     }
     return requestInfo, nil
 }
-// Invoke function getYammerGroupsActivityGroupCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getYammerGroupsActivityGroupCounts
 func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) Get(options *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetOptions)([]GetYammerGroupsActivityGroupCountsWithPeriod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

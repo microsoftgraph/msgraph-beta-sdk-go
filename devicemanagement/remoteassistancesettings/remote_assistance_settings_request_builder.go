@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\remoteAssistanceSettings
+// remoteAssistanceSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\remoteAssistanceSettings
 type RemoteAssistanceSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RemoteAssistanceSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RemoteAssistanceSettingsRequestBuilderDeleteOptions options for Delete
 type RemoteAssistanceSettingsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type RemoteAssistanceSettingsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RemoteAssistanceSettingsRequestBuilderGetOptions options for Get
 type RemoteAssistanceSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type RemoteAssistanceSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The remote assistance settings singleton
+// remoteAssistanceSettingsRequestBuilderGetQueryParameters the remote assistance settings singleton
 type RemoteAssistanceSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RemoteAssistanceSettingsRequestBuilderPatchOptions options for Patch
 type RemoteAssistanceSettingsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RemoteAssistanceSettings;
@@ -53,10 +53,7 @@ type RemoteAssistanceSettingsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RemoteAssistanceSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoteAssistanceSettingsRequestBuilderInternal instantiates a new RemoteAssistanceSettingsRequestBuilder and sets the default values.
 func NewRemoteAssistanceSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoteAssistanceSettingsRequestBuilder) {
     m := &RemoteAssistanceSettingsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewRemoteAssistanceSettingsRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RemoteAssistanceSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoteAssistanceSettingsRequestBuilder instantiates a new RemoteAssistanceSettingsRequestBuilder and sets the default values.
 func NewRemoteAssistanceSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoteAssistanceSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRemoteAssistanceSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The remote assistance settings singleton
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the remote assistance settings singleton
 func (m *RemoteAssistanceSettingsRequestBuilder) CreateDeleteRequestInformation(options *RemoteAssistanceSettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *RemoteAssistanceSettingsRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// The remote assistance settings singleton
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the remote assistance settings singleton
 func (m *RemoteAssistanceSettingsRequestBuilder) CreateGetRequestInformation(options *RemoteAssistanceSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *RemoteAssistanceSettingsRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The remote assistance settings singleton
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the remote assistance settings singleton
 func (m *RemoteAssistanceSettingsRequestBuilder) CreatePatchRequestInformation(options *RemoteAssistanceSettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *RemoteAssistanceSettingsRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// The remote assistance settings singleton
-// Parameters:
-//  - options : Options for the request
+// Delete the remote assistance settings singleton
 func (m *RemoteAssistanceSettingsRequestBuilder) Delete(options *RemoteAssistanceSettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *RemoteAssistanceSettingsRequestBuilder) Delete(options *RemoteAssistanc
     }
     return nil
 }
-// The remote assistance settings singleton
-// Parameters:
-//  - options : Options for the request
+// Get the remote assistance settings singleton
 func (m *RemoteAssistanceSettingsRequestBuilder) Get(options *RemoteAssistanceSettingsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RemoteAssistanceSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *RemoteAssistanceSettingsRequestBuilder) Get(options *RemoteAssistanceSe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RemoteAssistanceSettings), nil
 }
-// The remote assistance settings singleton
-// Parameters:
-//  - options : Options for the request
+// Patch the remote assistance settings singleton
 func (m *RemoteAssistanceSettingsRequestBuilder) Patch(options *RemoteAssistanceSettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

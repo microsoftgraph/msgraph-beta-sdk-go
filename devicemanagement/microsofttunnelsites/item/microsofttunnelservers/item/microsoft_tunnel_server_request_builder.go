@@ -9,7 +9,7 @@ import (
     ia9fb0847e9b7d23ecba981329a874216f6257bc66e680123b5b5de57e3c5785f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/microsofttunnelsites/item/microsofttunnelservers/item/gethealthmetrics"
 )
 
-// Builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelServers\{microsoftTunnelServer-id}
+// microsoftTunnelServerRequestBuilder builds and executes requests for operations under \deviceManagement\microsoftTunnelSites\{microsoftTunnelSite-id}\microsoftTunnelServers\{microsoftTunnelServer-id}
 type MicrosoftTunnelServerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type MicrosoftTunnelServerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MicrosoftTunnelServerRequestBuilderDeleteOptions options for Delete
 type MicrosoftTunnelServerRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type MicrosoftTunnelServerRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MicrosoftTunnelServerRequestBuilderGetOptions options for Get
 type MicrosoftTunnelServerRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type MicrosoftTunnelServerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
+// microsoftTunnelServerRequestBuilderGetQueryParameters a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 type MicrosoftTunnelServerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MicrosoftTunnelServerRequestBuilderPatchOptions options for Patch
 type MicrosoftTunnelServerRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServer;
@@ -56,10 +56,7 @@ type MicrosoftTunnelServerRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MicrosoftTunnelServerRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelServerRequestBuilderInternal instantiates a new MicrosoftTunnelServerRequestBuilder and sets the default values.
 func NewMicrosoftTunnelServerRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelServerRequestBuilder) {
     m := &MicrosoftTunnelServerRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMicrosoftTunnelServerRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MicrosoftTunnelServerRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftTunnelServerRequestBuilder instantiates a new MicrosoftTunnelServerRequestBuilder and sets the default values.
 func NewMicrosoftTunnelServerRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftTunnelServerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelServerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelServerRequestBuilder) CreateDeleteRequestInformation(options *MicrosoftTunnelServerRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *MicrosoftTunnelServerRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelServerRequestBuilder) CreateGetRequestInformation(options *MicrosoftTunnelServerRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *MicrosoftTunnelServerRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelServerRequestBuilder) CreatePatchRequestInformation(options *MicrosoftTunnelServerRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +133,7 @@ func (m *MicrosoftTunnelServerRequestBuilder) CreatePatchRequestInformation(opti
 func (m *MicrosoftTunnelServerRequestBuilder) CreateServerLogCollectionRequest()(*i9c30fe64f3cadb8062e1e80b68b8d12a9b9727c1f84ad283d585cd25e965ef20.CreateServerLogCollectionRequestRequestBuilder) {
     return i9c30fe64f3cadb8062e1e80b68b8d12a9b9727c1f84ad283d585cd25e965ef20.NewCreateServerLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// Delete a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelServerRequestBuilder) Delete(options *MicrosoftTunnelServerRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -159,9 +145,7 @@ func (m *MicrosoftTunnelServerRequestBuilder) Delete(options *MicrosoftTunnelSer
     }
     return nil
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// Get a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelServerRequestBuilder) Get(options *MicrosoftTunnelServerRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MicrosoftTunnelServer, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -179,9 +163,7 @@ func (m *MicrosoftTunnelServerRequestBuilder) GetHealthMetrics()(*ia9fb0847e9b7d
 func (m *MicrosoftTunnelServerRequestBuilder) GetHealthMetricTimeSeries()(*i1cd82da38eaeb9697597d203dbe05121215aa83c60f4bb16b4c4bb0ae1e829f2.GetHealthMetricTimeSeriesRequestBuilder) {
     return i1cd82da38eaeb9697597d203dbe05121215aa83c60f4bb16b4c4bb0ae1e829f2.NewGetHealthMetricTimeSeriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-// Parameters:
-//  - options : Options for the request
+// Patch a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelServerRequestBuilder) Patch(options *MicrosoftTunnelServerRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

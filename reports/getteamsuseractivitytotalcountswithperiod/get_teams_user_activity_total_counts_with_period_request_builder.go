@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityTotalCounts(period='{period}')
+// getTeamsUserActivityTotalCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityTotalCounts(period='{period}')
 type GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetTeamsUserActivityTotalCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetTeamsUserActivityTotalCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,11 +22,7 @@ type GetTeamsUserActivityTotalCountsWithPeriodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTeamsUserActivityTotalCountsWithPeriodRequestBuilderInternal instantiates a new GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetTeamsUserActivityTotalCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder) {
     m := &GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder{
     }
@@ -42,18 +38,13 @@ func NewGetTeamsUserActivityTotalCountsWithPeriodRequestBuilderInternal(pathPara
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTeamsUserActivityTotalCountsWithPeriodRequestBuilder instantiates a new GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetTeamsUserActivityTotalCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsUserActivityTotalCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getTeamsUserActivityTotalCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getTeamsUserActivityTotalCounts
 func (m *GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetTeamsUserActivityTotalCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +61,7 @@ func (m *GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// Invoke function getTeamsUserActivityTotalCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getTeamsUserActivityTotalCounts
 func (m *GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder) Get(options *GetTeamsUserActivityTotalCountsWithPeriodRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

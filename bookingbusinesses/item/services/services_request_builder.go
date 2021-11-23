@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\services
+// servicesRequestBuilder builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\services
 type ServicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ServicesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ServicesRequestBuilderGetOptions options for Get
 type ServicesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ServicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All the services offered by this business. Read-only. Nullable.
+// servicesRequestBuilderGetQueryParameters all the services offered by this business. Read-only. Nullable.
 type ServicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ServicesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ServicesRequestBuilderPostOptions options for Post
 type ServicesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingService;
@@ -56,10 +56,7 @@ type ServicesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ServicesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServicesRequestBuilderInternal instantiates a new ServicesRequestBuilder and sets the default values.
 func NewServicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServicesRequestBuilder) {
     m := &ServicesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewServicesRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ServicesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServicesRequestBuilder instantiates a new ServicesRequestBuilder and sets the default values.
 func NewServicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServicesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All the services offered by this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all the services offered by this business. Read-only. Nullable.
 func (m *ServicesRequestBuilder) CreateGetRequestInformation(options *ServicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ServicesRequestBuilder) CreateGetRequestInformation(options *ServicesRe
     }
     return requestInfo, nil
 }
-// All the services offered by this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation all the services offered by this business. Read-only. Nullable.
 func (m *ServicesRequestBuilder) CreatePostRequestInformation(options *ServicesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ServicesRequestBuilder) CreatePostRequestInformation(options *ServicesR
     }
     return requestInfo, nil
 }
-// All the services offered by this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get all the services offered by this business. Read-only. Nullable.
 func (m *ServicesRequestBuilder) Get(options *ServicesRequestBuilderGetOptions)(*ServicesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ServicesRequestBuilder) Get(options *ServicesRequestBuilderGetOptions)(
     }
     return res.(*ServicesResponse), nil
 }
-// All the services offered by this business. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post all the services offered by this business. Read-only. Nullable.
 func (m *ServicesRequestBuilder) Post(options *ServicesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingService, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

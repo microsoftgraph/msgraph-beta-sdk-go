@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\assignments\{deviceManagementScriptAssignment-id}
+// deviceManagementScriptAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\assignments\{deviceManagementScriptAssignment-id}
 type DeviceManagementScriptAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementScriptAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementScriptAssignmentRequestBuilderDeleteOptions options for Delete
 type DeviceManagementScriptAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementScriptAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementScriptAssignmentRequestBuilderGetOptions options for Get
 type DeviceManagementScriptAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementScriptAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of group assignments for the device management script.
+// deviceManagementScriptAssignmentRequestBuilderGetQueryParameters the list of group assignments for the device management script.
 type DeviceManagementScriptAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementScriptAssignmentRequestBuilderPatchOptions options for Patch
 type DeviceManagementScriptAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptAssignment;
@@ -53,10 +53,7 @@ type DeviceManagementScriptAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementScriptAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementScriptAssignmentRequestBuilderInternal instantiates a new DeviceManagementScriptAssignmentRequestBuilder and sets the default values.
 func NewDeviceManagementScriptAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementScriptAssignmentRequestBuilder) {
     m := &DeviceManagementScriptAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementScriptAssignmentRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementScriptAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementScriptAssignmentRequestBuilder instantiates a new DeviceManagementScriptAssignmentRequestBuilder and sets the default values.
 func NewDeviceManagementScriptAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementScriptAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementScriptAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of group assignments for the device management script.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of group assignments for the device management script.
 func (m *DeviceManagementScriptAssignmentRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementScriptAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementScriptAssignmentRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// The list of group assignments for the device management script.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of group assignments for the device management script.
 func (m *DeviceManagementScriptAssignmentRequestBuilder) CreateGetRequestInformation(options *DeviceManagementScriptAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementScriptAssignmentRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// The list of group assignments for the device management script.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of group assignments for the device management script.
 func (m *DeviceManagementScriptAssignmentRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementScriptAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementScriptAssignmentRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// The list of group assignments for the device management script.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of group assignments for the device management script.
 func (m *DeviceManagementScriptAssignmentRequestBuilder) Delete(options *DeviceManagementScriptAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementScriptAssignmentRequestBuilder) Delete(options *DeviceM
     }
     return nil
 }
-// The list of group assignments for the device management script.
-// Parameters:
-//  - options : Options for the request
+// Get the list of group assignments for the device management script.
 func (m *DeviceManagementScriptAssignmentRequestBuilder) Get(options *DeviceManagementScriptAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementScriptAssignmentRequestBuilder) Get(options *DeviceMana
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptAssignment), nil
 }
-// The list of group assignments for the device management script.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of group assignments for the device management script.
 func (m *DeviceManagementScriptAssignmentRequestBuilder) Patch(options *DeviceManagementScriptAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

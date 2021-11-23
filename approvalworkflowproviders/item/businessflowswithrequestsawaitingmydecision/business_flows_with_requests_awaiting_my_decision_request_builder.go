@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\businessFlowsWithRequestsAwaitingMyDecision
+// businessFlowsWithRequestsAwaitingMyDecisionRequestBuilder builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\businessFlowsWithRequestsAwaitingMyDecision
 type BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetOptions options for Get
 type BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
+// businessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
 type BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderPostOptions options for Post
 type BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlow;
@@ -56,10 +56,7 @@ type BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderPostOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal instantiates a new BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder and sets the default values.
 func NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) {
     m := &BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(pathPa
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder instantiates a new BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder and sets the default values.
 func NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
 func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) CreateGetRequestInformation(options *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// Create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
 func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) CreatePostRequestInformation(options *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) CreatePostRe
     }
     return requestInfo, nil
 }
-// Get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Get get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
 func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) Get(options *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetOptions)(*BusinessFlowsWithRequestsAwaitingMyDecisionResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) Get(options 
     }
     return res.(*BusinessFlowsWithRequestsAwaitingMyDecisionResponse), nil
 }
-// Create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
 func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) Post(options *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BusinessFlow, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

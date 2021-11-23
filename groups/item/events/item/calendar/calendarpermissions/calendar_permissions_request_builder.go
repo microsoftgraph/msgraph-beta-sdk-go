@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\events\{event-id}\calendar\calendarPermissions
+// calendarPermissionsRequestBuilder builds and executes requests for operations under \groups\{group-id}\events\{event-id}\calendar\calendarPermissions
 type CalendarPermissionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CalendarPermissionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CalendarPermissionsRequestBuilderGetOptions options for Get
 type CalendarPermissionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CalendarPermissionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The permissions of the users with whom the calendar is shared.
+// calendarPermissionsRequestBuilderGetQueryParameters the permissions of the users with whom the calendar is shared.
 type CalendarPermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -41,7 +41,7 @@ type CalendarPermissionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CalendarPermissionsRequestBuilderPostOptions options for Post
 type CalendarPermissionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarPermission;
@@ -52,10 +52,7 @@ type CalendarPermissionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CalendarPermissionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCalendarPermissionsRequestBuilderInternal instantiates a new CalendarPermissionsRequestBuilder and sets the default values.
 func NewCalendarPermissionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarPermissionsRequestBuilder) {
     m := &CalendarPermissionsRequestBuilder{
     }
@@ -68,18 +65,13 @@ func NewCalendarPermissionsRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CalendarPermissionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCalendarPermissionsRequestBuilder instantiates a new CalendarPermissionsRequestBuilder and sets the default values.
 func NewCalendarPermissionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarPermissionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarPermissionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The permissions of the users with whom the calendar is shared.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the permissions of the users with whom the calendar is shared.
 func (m *CalendarPermissionsRequestBuilder) CreateGetRequestInformation(options *CalendarPermissionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *CalendarPermissionsRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The permissions of the users with whom the calendar is shared.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the permissions of the users with whom the calendar is shared.
 func (m *CalendarPermissionsRequestBuilder) CreatePostRequestInformation(options *CalendarPermissionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CalendarPermissionsRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// The permissions of the users with whom the calendar is shared.
-// Parameters:
-//  - options : Options for the request
+// Get the permissions of the users with whom the calendar is shared.
 func (m *CalendarPermissionsRequestBuilder) Get(options *CalendarPermissionsRequestBuilderGetOptions)(*CalendarPermissionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -133,9 +121,7 @@ func (m *CalendarPermissionsRequestBuilder) Get(options *CalendarPermissionsRequ
     }
     return res.(*CalendarPermissionsResponse), nil
 }
-// The permissions of the users with whom the calendar is shared.
-// Parameters:
-//  - options : Options for the request
+// Post the permissions of the users with whom the calendar is shared.
 func (m *CalendarPermissionsRequestBuilder) Post(options *CalendarPermissionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CalendarPermission, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

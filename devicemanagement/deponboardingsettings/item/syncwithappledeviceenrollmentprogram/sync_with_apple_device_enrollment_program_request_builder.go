@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.syncWithAppleDeviceEnrollmentProgram
+// syncWithAppleDeviceEnrollmentProgramRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.syncWithAppleDeviceEnrollmentProgram
 type SyncWithAppleDeviceEnrollmentProgramRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type SyncWithAppleDeviceEnrollmentProgramRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// SyncWithAppleDeviceEnrollmentProgramRequestBuilderPostOptions options for Post
 type SyncWithAppleDeviceEnrollmentProgramRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type SyncWithAppleDeviceEnrollmentProgramRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SyncWithAppleDeviceEnrollmentProgramRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSyncWithAppleDeviceEnrollmentProgramRequestBuilderInternal instantiates a new SyncWithAppleDeviceEnrollmentProgramRequestBuilder and sets the default values.
 func NewSyncWithAppleDeviceEnrollmentProgramRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SyncWithAppleDeviceEnrollmentProgramRequestBuilder) {
     m := &SyncWithAppleDeviceEnrollmentProgramRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewSyncWithAppleDeviceEnrollmentProgramRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SyncWithAppleDeviceEnrollmentProgramRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSyncWithAppleDeviceEnrollmentProgramRequestBuilder instantiates a new SyncWithAppleDeviceEnrollmentProgramRequestBuilder and sets the default values.
 func NewSyncWithAppleDeviceEnrollmentProgramRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SyncWithAppleDeviceEnrollmentProgramRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSyncWithAppleDeviceEnrollmentProgramRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Synchronizes between Apple Device Enrollment Program and Intune
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation synchronizes between Apple Device Enrollment Program and Intune
 func (m *SyncWithAppleDeviceEnrollmentProgramRequestBuilder) CreatePostRequestInformation(options *SyncWithAppleDeviceEnrollmentProgramRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *SyncWithAppleDeviceEnrollmentProgramRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// Synchronizes between Apple Device Enrollment Program and Intune
-// Parameters:
-//  - options : Options for the request
+// Post synchronizes between Apple Device Enrollment Program and Intune
 func (m *SyncWithAppleDeviceEnrollmentProgramRequestBuilder) Post(options *SyncWithAppleDeviceEnrollmentProgramRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

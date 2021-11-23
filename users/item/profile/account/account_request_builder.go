@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\profile\account
+// accountRequestBuilder builds and executes requests for operations under \users\{user-id}\profile\account
 type AccountRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AccountRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AccountRequestBuilderGetOptions options for Get
 type AccountRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AccountRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get account from users
+// accountRequestBuilderGetQueryParameters get account from users
 type AccountRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AccountRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AccountRequestBuilderPostOptions options for Post
 type AccountRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserAccountInformation;
@@ -56,10 +56,7 @@ type AccountRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccountRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccountRequestBuilderInternal instantiates a new AccountRequestBuilder and sets the default values.
 func NewAccountRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccountRequestBuilder) {
     m := &AccountRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAccountRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccountRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccountRequestBuilder instantiates a new AccountRequestBuilder and sets the default values.
 func NewAccountRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get account from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get account from users
 func (m *AccountRequestBuilder) CreateGetRequestInformation(options *AccountRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AccountRequestBuilder) CreateGetRequestInformation(options *AccountRequ
     }
     return requestInfo, nil
 }
-// Create new navigation property to account for users
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to account for users
 func (m *AccountRequestBuilder) CreatePostRequestInformation(options *AccountRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AccountRequestBuilder) CreatePostRequestInformation(options *AccountReq
     }
     return requestInfo, nil
 }
-// Get account from users
-// Parameters:
-//  - options : Options for the request
+// Get get account from users
 func (m *AccountRequestBuilder) Get(options *AccountRequestBuilderGetOptions)(*AccountResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AccountRequestBuilder) Get(options *AccountRequestBuilderGetOptions)(*A
     }
     return res.(*AccountResponse), nil
 }
-// Create new navigation property to account for users
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to account for users
 func (m *AccountRequestBuilder) Post(options *AccountRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserAccountInformation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

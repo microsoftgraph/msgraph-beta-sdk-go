@@ -17,7 +17,7 @@ import (
     iaffe5863c3d1d6c8c2d7abc4fc3d594133e2a40279216bc540d6d0ad80f03059 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/outlook/taskgroups/item"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\outlook
+// outlookRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook
 type OutlookRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type OutlookRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OutlookRequestBuilderDeleteOptions options for Delete
 type OutlookRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -35,7 +35,7 @@ type OutlookRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OutlookRequestBuilderGetOptions options for Get
 type OutlookRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -46,12 +46,12 @@ type OutlookRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only.
+// outlookRequestBuilderGetQueryParameters read-only.
 type OutlookRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OutlookRequestBuilderPatchOptions options for Patch
 type OutlookRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookUser;
@@ -62,10 +62,7 @@ type OutlookRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OutlookRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOutlookRequestBuilderInternal instantiates a new OutlookRequestBuilder and sets the default values.
 func NewOutlookRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlookRequestBuilder) {
     m := &OutlookRequestBuilder{
     }
@@ -78,18 +75,13 @@ func NewOutlookRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OutlookRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOutlookRequestBuilder instantiates a new OutlookRequestBuilder and sets the default values.
 func NewOutlookRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlookRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOutlookRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only.
 func (m *OutlookRequestBuilder) CreateDeleteRequestInformation(options *OutlookRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,9 +98,7 @@ func (m *OutlookRequestBuilder) CreateDeleteRequestInformation(options *OutlookR
     }
     return requestInfo, nil
 }
-// Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only.
 func (m *OutlookRequestBuilder) CreateGetRequestInformation(options *OutlookRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,9 +118,7 @@ func (m *OutlookRequestBuilder) CreateGetRequestInformation(options *OutlookRequ
     }
     return requestInfo, nil
 }
-// Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only.
 func (m *OutlookRequestBuilder) CreatePatchRequestInformation(options *OutlookRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,9 +136,7 @@ func (m *OutlookRequestBuilder) CreatePatchRequestInformation(options *OutlookRe
     }
     return requestInfo, nil
 }
-// Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only.
 func (m *OutlookRequestBuilder) Delete(options *OutlookRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -162,9 +148,7 @@ func (m *OutlookRequestBuilder) Delete(options *OutlookRequestBuilderDeleteOptio
     }
     return nil
 }
-// Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get read-only.
 func (m *OutlookRequestBuilder) Get(options *OutlookRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OutlookUser, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -179,9 +163,7 @@ func (m *OutlookRequestBuilder) Get(options *OutlookRequestBuilderGetOptions)(*i
 func (m *OutlookRequestBuilder) MasterCategories()(*i360efeb2914ada10b422929cbecf0f7f8fa695d7b1022878848afca7acfd0ddf.MasterCategoriesRequestBuilder) {
     return i360efeb2914ada10b422929cbecf0f7f8fa695d7b1022878848afca7acfd0ddf.NewMasterCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.masterCategories.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MasterCategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.masterCategories.item collection
 func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*iacb0aac7a3842511fec05c93f217164eb10589c31806a96bf05179087b60e399.OutlookCategoryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -192,9 +174,7 @@ func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*iacb0aac7a38425
     }
     return iacb0aac7a3842511fec05c93f217164eb10589c31806a96bf05179087b60e399.NewOutlookCategoryRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only.
 func (m *OutlookRequestBuilder) Patch(options *OutlookRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -206,26 +186,22 @@ func (m *OutlookRequestBuilder) Patch(options *OutlookRequestBuilderPatchOptions
     }
     return nil
 }
-// Builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedLanguages()
+// SupportedLanguages builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedLanguages()
 func (m *OutlookRequestBuilder) SupportedLanguages()(*ia668b41f7ac335c1f54bbbbdde0f0ba9b8edb241acbb56fd81a1b8db3fb2ff10.SupportedLanguagesRequestBuilder) {
     return ia668b41f7ac335c1f54bbbbdde0f0ba9b8edb241acbb56fd81a1b8db3fb2ff10.NewSupportedLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedTimeZones()
+// SupportedTimeZones builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedTimeZones()
 func (m *OutlookRequestBuilder) SupportedTimeZones()(*i6913acf90458035b6558bc17364451cf3efd2854e0918e1ebc3a438b11ba8b04.SupportedTimeZonesRequestBuilder) {
     return i6913acf90458035b6558bc17364451cf3efd2854e0918e1ebc3a438b11ba8b04.NewSupportedTimeZonesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedTimeZones(TimeZoneStandard={TimeZoneStandard})
-// Parameters:
-//  - TimeZoneStandard : Usage: TimeZoneStandard={TimeZoneStandard}
+// SupportedTimeZonesWithTimeZoneStandard builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedTimeZones(TimeZoneStandard={TimeZoneStandard})
 func (m *OutlookRequestBuilder) SupportedTimeZonesWithTimeZoneStandard(timeZoneStandard *string)(*i0d34dad914e82d03ae5a89b298e4a19b8b8b6bf4eb26a5999888bd525b1fd9c5.SupportedTimeZonesWithTimeZoneStandardRequestBuilder) {
     return i0d34dad914e82d03ae5a89b298e4a19b8b8b6bf4eb26a5999888bd525b1fd9c5.NewSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(m.pathParameters, m.requestAdapter, timeZoneStandard);
 }
 func (m *OutlookRequestBuilder) TaskFolders()(*idbf17811c520d1085f831150de278ee1bb194206c8b3ab498e0d0292a6511ace.TaskFoldersRequestBuilder) {
     return idbf17811c520d1085f831150de278ee1bb194206c8b3ab498e0d0292a6511ace.NewTaskFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskFolders.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TaskFoldersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskFolders.item collection
 func (m *OutlookRequestBuilder) TaskFoldersById(id string)(*i74db178f0907a8ff4bbfcfc53a94d5520a643e2563712703082afd071884dd1e.OutlookTaskFolderRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -239,9 +215,7 @@ func (m *OutlookRequestBuilder) TaskFoldersById(id string)(*i74db178f0907a8ff4bb
 func (m *OutlookRequestBuilder) TaskGroups()(*i54cf645f94c231fabc20f9cde8f9bb429da86a32c740ad8c7fcbc3a398e8be24.TaskGroupsRequestBuilder) {
     return i54cf645f94c231fabc20f9cde8f9bb429da86a32c740ad8c7fcbc3a398e8be24.NewTaskGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskGroups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TaskGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.taskGroups.item collection
 func (m *OutlookRequestBuilder) TaskGroupsById(id string)(*iaffe5863c3d1d6c8c2d7abc4fc3d594133e2a40279216bc540d6d0ad80f03059.OutlookTaskGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -255,9 +229,7 @@ func (m *OutlookRequestBuilder) TaskGroupsById(id string)(*iaffe5863c3d1d6c8c2d7
 func (m *OutlookRequestBuilder) Tasks()(*ib512bb7334ff30b38cfa6d102f049adfcb6a68103965b326b25efbd5874ed400.TasksRequestBuilder) {
     return ib512bb7334ff30b38cfa6d102f049adfcb6a68103965b326b25efbd5874ed400.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.tasks.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.outlook.tasks.item collection
 func (m *OutlookRequestBuilder) TasksById(id string)(*i5301c0330f5e20cf6591fab9dc299a0ee36c9818473c8c38663b5f5a43673c06.OutlookTaskRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

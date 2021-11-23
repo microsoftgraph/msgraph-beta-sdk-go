@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getAppsInstallSummaryReport
+// getAppsInstallSummaryReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getAppsInstallSummaryReport
 type GetAppsInstallSummaryReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetAppsInstallSummaryReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetAppsInstallSummaryReportRequestBuilderPostOptions options for Post
 type GetAppsInstallSummaryReportRequestBuilderPostOptions struct {
     // 
     Body *GetAppsInstallSummaryReportRequestBody;
@@ -24,10 +24,7 @@ type GetAppsInstallSummaryReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetAppsInstallSummaryReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetAppsInstallSummaryReportRequestBuilderInternal instantiates a new GetAppsInstallSummaryReportRequestBuilder and sets the default values.
 func NewGetAppsInstallSummaryReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetAppsInstallSummaryReportRequestBuilder) {
     m := &GetAppsInstallSummaryReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetAppsInstallSummaryReportRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetAppsInstallSummaryReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetAppsInstallSummaryReportRequestBuilder instantiates a new GetAppsInstallSummaryReportRequestBuilder and sets the default values.
 func NewGetAppsInstallSummaryReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetAppsInstallSummaryReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetAppsInstallSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getAppsInstallSummaryReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getAppsInstallSummaryReport
 func (m *GetAppsInstallSummaryReportRequestBuilder) CreatePostRequestInformation(options *GetAppsInstallSummaryReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetAppsInstallSummaryReportRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// Invoke action getAppsInstallSummaryReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getAppsInstallSummaryReport
 func (m *GetAppsInstallSummaryReportRequestBuilder) Post(options *GetAppsInstallSummaryReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

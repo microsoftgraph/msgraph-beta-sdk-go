@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}\deviceRunStates
+// deviceRunStatesRequestBuilder builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}\deviceRunStates
 type DeviceRunStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceRunStatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceRunStatesRequestBuilderGetOptions options for Get
 type DeviceRunStatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceRunStatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of run states for the device health script across all devices
+// deviceRunStatesRequestBuilderGetQueryParameters list of run states for the device health script across all devices
 type DeviceRunStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceRunStatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceRunStatesRequestBuilderPostOptions options for Post
 type DeviceRunStatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptDeviceState;
@@ -56,10 +56,7 @@ type DeviceRunStatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceRunStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceRunStatesRequestBuilderInternal instantiates a new DeviceRunStatesRequestBuilder and sets the default values.
 func NewDeviceRunStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceRunStatesRequestBuilder) {
     m := &DeviceRunStatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceRunStatesRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceRunStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceRunStatesRequestBuilder instantiates a new DeviceRunStatesRequestBuilder and sets the default values.
 func NewDeviceRunStatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceRunStatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceRunStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of run states for the device health script across all devices
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of run states for the device health script across all devices
 func (m *DeviceRunStatesRequestBuilder) CreateGetRequestInformation(options *DeviceRunStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceRunStatesRequestBuilder) CreateGetRequestInformation(options *Dev
     }
     return requestInfo, nil
 }
-// List of run states for the device health script across all devices
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of run states for the device health script across all devices
 func (m *DeviceRunStatesRequestBuilder) CreatePostRequestInformation(options *DeviceRunStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceRunStatesRequestBuilder) CreatePostRequestInformation(options *De
     }
     return requestInfo, nil
 }
-// List of run states for the device health script across all devices
-// Parameters:
-//  - options : Options for the request
+// Get list of run states for the device health script across all devices
 func (m *DeviceRunStatesRequestBuilder) Get(options *DeviceRunStatesRequestBuilderGetOptions)(*DeviceRunStatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceRunStatesRequestBuilder) Get(options *DeviceRunStatesRequestBuild
     }
     return res.(*DeviceRunStatesResponse), nil
 }
-// List of run states for the device health script across all devices
-// Parameters:
-//  - options : Options for the request
+// Post list of run states for the device health script across all devices
 func (m *DeviceRunStatesRequestBuilder) Post(options *DeviceRunStatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceHealthScriptDeviceState, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

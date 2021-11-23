@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identity\conditionalAccess\authenticationContextClassReferences
+// authenticationContextClassReferencesRequestBuilder builds and executes requests for operations under \identity\conditionalAccess\authenticationContextClassReferences
 type AuthenticationContextClassReferencesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AuthenticationContextClassReferencesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AuthenticationContextClassReferencesRequestBuilderGetOptions options for Get
 type AuthenticationContextClassReferencesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AuthenticationContextClassReferencesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Returns a collection of the specified authentication context class references.
+// authenticationContextClassReferencesRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified authentication context class references.
 type AuthenticationContextClassReferencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AuthenticationContextClassReferencesRequestBuilderGetQueryParameters struct
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AuthenticationContextClassReferencesRequestBuilderPostOptions options for Post
 type AuthenticationContextClassReferencesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationContextClassReference;
@@ -56,10 +56,7 @@ type AuthenticationContextClassReferencesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AuthenticationContextClassReferencesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthenticationContextClassReferencesRequestBuilderInternal instantiates a new AuthenticationContextClassReferencesRequestBuilder and sets the default values.
 func NewAuthenticationContextClassReferencesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationContextClassReferencesRequestBuilder) {
     m := &AuthenticationContextClassReferencesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAuthenticationContextClassReferencesRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AuthenticationContextClassReferencesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthenticationContextClassReferencesRequestBuilder instantiates a new AuthenticationContextClassReferencesRequestBuilder and sets the default values.
 func NewAuthenticationContextClassReferencesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationContextClassReferencesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationContextClassReferencesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Returns a collection of the specified authentication context class references.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified authentication context class references.
 func (m *AuthenticationContextClassReferencesRequestBuilder) CreateGetRequestInformation(options *AuthenticationContextClassReferencesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AuthenticationContextClassReferencesRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified authentication context class references.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation read-only. Nullable. Returns a collection of the specified authentication context class references.
 func (m *AuthenticationContextClassReferencesRequestBuilder) CreatePostRequestInformation(options *AuthenticationContextClassReferencesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AuthenticationContextClassReferencesRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified authentication context class references.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Returns a collection of the specified authentication context class references.
 func (m *AuthenticationContextClassReferencesRequestBuilder) Get(options *AuthenticationContextClassReferencesRequestBuilderGetOptions)(*AuthenticationContextClassReferencesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AuthenticationContextClassReferencesRequestBuilder) Get(options *Authen
     }
     return res.(*AuthenticationContextClassReferencesResponse), nil
 }
-// Read-only. Nullable. Returns a collection of the specified authentication context class references.
-// Parameters:
-//  - options : Options for the request
+// Post read-only. Nullable. Returns a collection of the specified authentication context class references.
 func (m *AuthenticationContextClassReferencesRequestBuilder) Post(options *AuthenticationContextClassReferencesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationContextClassReference, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

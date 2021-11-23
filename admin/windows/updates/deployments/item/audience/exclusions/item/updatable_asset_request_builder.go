@@ -10,7 +10,7 @@ import (
     if09247f50a62b73060b83df7a38cb520f78f6d06ce735570e8585a8632ca9542 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item/audience/exclusions/item/addmembers"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions\{updatableAsset-id}
+// updatableAssetRequestBuilder builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions\{updatableAsset-id}
 type UpdatableAssetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type UpdatableAssetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UpdatableAssetRequestBuilderDeleteOptions options for Delete
 type UpdatableAssetRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type UpdatableAssetRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UpdatableAssetRequestBuilderGetOptions options for Get
 type UpdatableAssetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type UpdatableAssetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Specifies the assets to exclude from the audience.
+// updatableAssetRequestBuilderGetQueryParameters specifies the assets to exclude from the audience.
 type UpdatableAssetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UpdatableAssetRequestBuilderPatchOptions options for Patch
 type UpdatableAssetRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset;
@@ -63,10 +63,7 @@ func (m *UpdatableAssetRequestBuilder) AddMembers()(*if09247f50a62b73060b83df7a3
 func (m *UpdatableAssetRequestBuilder) AddMembersById()(*id976fda7cf3837c62cb909768a45cf653bcaefbdbba660d43bc7d7490545d920.AddMembersByIdRequestBuilder) {
     return id976fda7cf3837c62cb909768a45cf653bcaefbdbba660d43bc7d7490545d920.NewAddMembersByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new UpdatableAssetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdatableAssetRequestBuilderInternal instantiates a new UpdatableAssetRequestBuilder and sets the default values.
 func NewUpdatableAssetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatableAssetRequestBuilder) {
     m := &UpdatableAssetRequestBuilder{
     }
@@ -79,18 +76,13 @@ func NewUpdatableAssetRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UpdatableAssetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdatableAssetRequestBuilder instantiates a new UpdatableAssetRequestBuilder and sets the default values.
 func NewUpdatableAssetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatableAssetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUpdatableAssetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Specifies the assets to exclude from the audience.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation specifies the assets to exclude from the audience.
 func (m *UpdatableAssetRequestBuilder) CreateDeleteRequestInformation(options *UpdatableAssetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *UpdatableAssetRequestBuilder) CreateDeleteRequestInformation(options *U
     }
     return requestInfo, nil
 }
-// Specifies the assets to exclude from the audience.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation specifies the assets to exclude from the audience.
 func (m *UpdatableAssetRequestBuilder) CreateGetRequestInformation(options *UpdatableAssetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *UpdatableAssetRequestBuilder) CreateGetRequestInformation(options *Upda
     }
     return requestInfo, nil
 }
-// Specifies the assets to exclude from the audience.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation specifies the assets to exclude from the audience.
 func (m *UpdatableAssetRequestBuilder) CreatePatchRequestInformation(options *UpdatableAssetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +137,7 @@ func (m *UpdatableAssetRequestBuilder) CreatePatchRequestInformation(options *Up
     }
     return requestInfo, nil
 }
-// Specifies the assets to exclude from the audience.
-// Parameters:
-//  - options : Options for the request
+// Delete specifies the assets to exclude from the audience.
 func (m *UpdatableAssetRequestBuilder) Delete(options *UpdatableAssetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -163,9 +149,7 @@ func (m *UpdatableAssetRequestBuilder) Delete(options *UpdatableAssetRequestBuil
     }
     return nil
 }
-// Specifies the assets to exclude from the audience.
-// Parameters:
-//  - options : Options for the request
+// Get specifies the assets to exclude from the audience.
 func (m *UpdatableAssetRequestBuilder) Get(options *UpdatableAssetRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -177,9 +161,7 @@ func (m *UpdatableAssetRequestBuilder) Get(options *UpdatableAssetRequestBuilder
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset), nil
 }
-// Specifies the assets to exclude from the audience.
-// Parameters:
-//  - options : Options for the request
+// Patch specifies the assets to exclude from the audience.
 func (m *UpdatableAssetRequestBuilder) Patch(options *UpdatableAssetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

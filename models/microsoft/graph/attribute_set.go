@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// attributeSet 
 type AttributeSet struct {
     Entity
     // 
@@ -12,14 +12,14 @@ type AttributeSet struct {
     // 
     maxAttributesPerSet *int32;
 }
-// Instantiates a new attributeSet and sets the default values.
+// NewAttributeSet instantiates a new attributeSet and sets the default values.
 func NewAttributeSet()(*AttributeSet) {
     m := &AttributeSet{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the description property value. 
+// GetDescription gets the description property value. 
 func (m *AttributeSet) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *AttributeSet) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the maxAttributesPerSet property value. 
+// GetMaxAttributesPerSet gets the maxAttributesPerSet property value. 
 func (m *AttributeSet) GetMaxAttributesPerSet()(*int32) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *AttributeSet) GetMaxAttributesPerSet()(*int32) {
         return m.maxAttributesPerSet
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AttributeSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,9 +63,7 @@ func (m *AttributeSet) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *AttributeSet) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AttributeSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -85,15 +83,11 @@ func (m *AttributeSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the description property value. 
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. 
 func (m *AttributeSet) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the maxAttributesPerSet property value. 
-// Parameters:
-//  - value : Value to set for the maxAttributesPerSet property.
+// SetMaxAttributesPerSet sets the maxAttributesPerSet property value. 
 func (m *AttributeSet) SetMaxAttributesPerSet(value *int32)() {
     m.maxAttributesPerSet = value
 }

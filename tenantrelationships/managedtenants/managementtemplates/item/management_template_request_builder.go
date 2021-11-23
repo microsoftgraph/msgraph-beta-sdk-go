@@ -8,7 +8,7 @@ import (
     i817300fec4353a94961a22d7d43713f1760b3be7d58d66387e43a18eed5dbe12 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplates/item/managementtemplatesteps"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplates\{managementTemplate-id}
+// managementTemplateRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplates\{managementTemplate-id}
 type ManagementTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ManagementTemplateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagementTemplateRequestBuilderDeleteOptions options for Delete
 type ManagementTemplateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ManagementTemplateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagementTemplateRequestBuilderGetOptions options for Get
 type ManagementTemplateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type ManagementTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of baseline management templates across managed tenants.
+// managementTemplateRequestBuilderGetQueryParameters the collection of baseline management templates across managed tenants.
 type ManagementTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagementTemplateRequestBuilderPatchOptions options for Patch
 type ManagementTemplateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplate;
@@ -55,10 +55,7 @@ type ManagementTemplateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagementTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateRequestBuilderInternal instantiates a new ManagementTemplateRequestBuilder and sets the default values.
 func NewManagementTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateRequestBuilder) {
     m := &ManagementTemplateRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewManagementTemplateRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateRequestBuilder instantiates a new ManagementTemplateRequestBuilder and sets the default values.
 func NewManagementTemplateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of baseline management templates across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of baseline management templates across managed tenants.
 func (m *ManagementTemplateRequestBuilder) CreateDeleteRequestInformation(options *ManagementTemplateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *ManagementTemplateRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// The collection of baseline management templates across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of baseline management templates across managed tenants.
 func (m *ManagementTemplateRequestBuilder) CreateGetRequestInformation(options *ManagementTemplateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ManagementTemplateRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The collection of baseline management templates across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of baseline management templates across managed tenants.
 func (m *ManagementTemplateRequestBuilder) CreatePatchRequestInformation(options *ManagementTemplateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *ManagementTemplateRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// The collection of baseline management templates across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of baseline management templates across managed tenants.
 func (m *ManagementTemplateRequestBuilder) Delete(options *ManagementTemplateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *ManagementTemplateRequestBuilder) Delete(options *ManagementTemplateReq
     }
     return nil
 }
-// The collection of baseline management templates across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of baseline management templates across managed tenants.
 func (m *ManagementTemplateRequestBuilder) Get(options *ManagementTemplateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *ManagementTemplateRequestBuilder) ManagementTemplateCollections()(*i2c3
 func (m *ManagementTemplateRequestBuilder) ManagementTemplateSteps()(*i817300fec4353a94961a22d7d43713f1760b3be7d58d66387e43a18eed5dbe12.ManagementTemplateStepsRequestBuilder) {
     return i817300fec4353a94961a22d7d43713f1760b3be7d58d66387e43a18eed5dbe12.NewManagementTemplateStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of baseline management templates across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of baseline management templates across managed tenants.
 func (m *ManagementTemplateRequestBuilder) Patch(options *ManagementTemplateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

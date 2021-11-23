@@ -7,7 +7,7 @@ import (
     i8b5b82b09e6be312a78e6cc24fcaaee87d5fb4b696e12a1262d2d7c7bac11e4e "github.com/microsoftgraph/msgraph-beta-sdk-go/education/schools/delta"
 )
 
-// Builds and executes requests for operations under \education\schools
+// schoolsRequestBuilder builds and executes requests for operations under \education\schools
 type SchoolsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type SchoolsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SchoolsRequestBuilderGetOptions options for Get
 type SchoolsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type SchoolsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get schools from education
+// schoolsRequestBuilderGetQueryParameters get schools from education
 type SchoolsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type SchoolsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SchoolsRequestBuilderPostOptions options for Post
 type SchoolsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSchool;
@@ -57,10 +57,7 @@ type SchoolsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SchoolsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSchoolsRequestBuilderInternal instantiates a new SchoolsRequestBuilder and sets the default values.
 func NewSchoolsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SchoolsRequestBuilder) {
     m := &SchoolsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewSchoolsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SchoolsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSchoolsRequestBuilder instantiates a new SchoolsRequestBuilder and sets the default values.
 func NewSchoolsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SchoolsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get schools from education
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get schools from education
 func (m *SchoolsRequestBuilder) CreateGetRequestInformation(options *SchoolsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *SchoolsRequestBuilder) CreateGetRequestInformation(options *SchoolsRequ
     }
     return requestInfo, nil
 }
-// Create new navigation property to schools for education
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to schools for education
 func (m *SchoolsRequestBuilder) CreatePostRequestInformation(options *SchoolsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,13 +114,11 @@ func (m *SchoolsRequestBuilder) CreatePostRequestInformation(options *SchoolsReq
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \education\schools\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \education\schools\microsoft.graph.delta()
 func (m *SchoolsRequestBuilder) Delta()(*i8b5b82b09e6be312a78e6cc24fcaaee87d5fb4b696e12a1262d2d7c7bac11e4e.DeltaRequestBuilder) {
     return i8b5b82b09e6be312a78e6cc24fcaaee87d5fb4b696e12a1262d2d7c7bac11e4e.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get schools from education
-// Parameters:
-//  - options : Options for the request
+// Get get schools from education
 func (m *SchoolsRequestBuilder) Get(options *SchoolsRequestBuilderGetOptions)(*SchoolsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,9 +130,7 @@ func (m *SchoolsRequestBuilder) Get(options *SchoolsRequestBuilderGetOptions)(*S
     }
     return res.(*SchoolsResponse), nil
 }
-// Create new navigation property to schools for education
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to schools for education
 func (m *SchoolsRequestBuilder) Post(options *SchoolsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSchool, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\userCredentialUsageDetails\{userCredentialUsageDetails-id}
+// userCredentialUsageDetailsRequestBuilder builds and executes requests for operations under \reports\userCredentialUsageDetails\{userCredentialUsageDetails-id}
 type UserCredentialUsageDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserCredentialUsageDetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserCredentialUsageDetailsRequestBuilderDeleteOptions options for Delete
 type UserCredentialUsageDetailsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UserCredentialUsageDetailsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserCredentialUsageDetailsRequestBuilderGetOptions options for Get
 type UserCredentialUsageDetailsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UserCredentialUsageDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get userCredentialUsageDetails from reports
+// userCredentialUsageDetailsRequestBuilderGetQueryParameters get userCredentialUsageDetails from reports
 type UserCredentialUsageDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserCredentialUsageDetailsRequestBuilderPatchOptions options for Patch
 type UserCredentialUsageDetailsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserCredentialUsageDetails;
@@ -53,10 +53,7 @@ type UserCredentialUsageDetailsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserCredentialUsageDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserCredentialUsageDetailsRequestBuilderInternal instantiates a new UserCredentialUsageDetailsRequestBuilder and sets the default values.
 func NewUserCredentialUsageDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserCredentialUsageDetailsRequestBuilder) {
     m := &UserCredentialUsageDetailsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUserCredentialUsageDetailsRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserCredentialUsageDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserCredentialUsageDetailsRequestBuilder instantiates a new UserCredentialUsageDetailsRequestBuilder and sets the default values.
 func NewUserCredentialUsageDetailsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserCredentialUsageDetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserCredentialUsageDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property userCredentialUsageDetails for reports
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property userCredentialUsageDetails for reports
 func (m *UserCredentialUsageDetailsRequestBuilder) CreateDeleteRequestInformation(options *UserCredentialUsageDetailsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) CreateDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// Get userCredentialUsageDetails from reports
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get userCredentialUsageDetails from reports
 func (m *UserCredentialUsageDetailsRequestBuilder) CreateGetRequestInformation(options *UserCredentialUsageDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// Update the navigation property userCredentialUsageDetails in reports
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property userCredentialUsageDetails in reports
 func (m *UserCredentialUsageDetailsRequestBuilder) CreatePatchRequestInformation(options *UserCredentialUsageDetailsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// Delete navigation property userCredentialUsageDetails for reports
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property userCredentialUsageDetails for reports
 func (m *UserCredentialUsageDetailsRequestBuilder) Delete(options *UserCredentialUsageDetailsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) Delete(options *UserCredentia
     }
     return nil
 }
-// Get userCredentialUsageDetails from reports
-// Parameters:
-//  - options : Options for the request
+// Get get userCredentialUsageDetails from reports
 func (m *UserCredentialUsageDetailsRequestBuilder) Get(options *UserCredentialUsageDetailsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserCredentialUsageDetails, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) Get(options *UserCredentialUs
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserCredentialUsageDetails), nil
 }
-// Update the navigation property userCredentialUsageDetails in reports
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property userCredentialUsageDetails in reports
 func (m *UserCredentialUsageDetailsRequestBuilder) Patch(options *UserCredentialUsageDetailsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

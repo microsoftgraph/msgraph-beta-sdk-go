@@ -7,7 +7,7 @@ import (
     i0a9350281709a329bd95b39637dafbbff443c53b9e03257fbc06cfe35ef615a1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/logcollectionrequests/item/createdownloadurl"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\logCollectionRequests\{deviceLogCollectionResponse-id}
+// deviceLogCollectionResponseRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\logCollectionRequests\{deviceLogCollectionResponse-id}
 type DeviceLogCollectionResponseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceLogCollectionResponseRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceLogCollectionResponseRequestBuilderDeleteOptions options for Delete
 type DeviceLogCollectionResponseRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type DeviceLogCollectionResponseRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceLogCollectionResponseRequestBuilderGetOptions options for Get
 type DeviceLogCollectionResponseRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type DeviceLogCollectionResponseRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of log collection requests
+// deviceLogCollectionResponseRequestBuilderGetQueryParameters list of log collection requests
 type DeviceLogCollectionResponseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceLogCollectionResponseRequestBuilderPatchOptions options for Patch
 type DeviceLogCollectionResponseRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionResponse;
@@ -54,10 +54,7 @@ type DeviceLogCollectionResponseRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceLogCollectionResponseRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceLogCollectionResponseRequestBuilderInternal instantiates a new DeviceLogCollectionResponseRequestBuilder and sets the default values.
 func NewDeviceLogCollectionResponseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceLogCollectionResponseRequestBuilder) {
     m := &DeviceLogCollectionResponseRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewDeviceLogCollectionResponseRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceLogCollectionResponseRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceLogCollectionResponseRequestBuilder instantiates a new DeviceLogCollectionResponseRequestBuilder and sets the default values.
 func NewDeviceLogCollectionResponseRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceLogCollectionResponseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceLogCollectionResponseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of log collection requests
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of log collection requests
 func (m *DeviceLogCollectionResponseRequestBuilder) CreateDeleteRequestInformation(options *DeviceLogCollectionResponseRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *DeviceLogCollectionResponseRequestBuilder) CreateDeleteRequestInformati
 func (m *DeviceLogCollectionResponseRequestBuilder) CreateDownloadUrl()(*i0a9350281709a329bd95b39637dafbbff443c53b9e03257fbc06cfe35ef615a1.CreateDownloadUrlRequestBuilder) {
     return i0a9350281709a329bd95b39637dafbbff443c53b9e03257fbc06cfe35ef615a1.NewCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// List of log collection requests
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of log collection requests
 func (m *DeviceLogCollectionResponseRequestBuilder) CreateGetRequestInformation(options *DeviceLogCollectionResponseRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceLogCollectionResponseRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// List of log collection requests
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of log collection requests
 func (m *DeviceLogCollectionResponseRequestBuilder) CreatePatchRequestInformation(options *DeviceLogCollectionResponseRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *DeviceLogCollectionResponseRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// List of log collection requests
-// Parameters:
-//  - options : Options for the request
+// Delete list of log collection requests
 func (m *DeviceLogCollectionResponseRequestBuilder) Delete(options *DeviceLogCollectionResponseRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *DeviceLogCollectionResponseRequestBuilder) Delete(options *DeviceLogCol
     }
     return nil
 }
-// List of log collection requests
-// Parameters:
-//  - options : Options for the request
+// Get list of log collection requests
 func (m *DeviceLogCollectionResponseRequestBuilder) Get(options *DeviceLogCollectionResponseRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *DeviceLogCollectionResponseRequestBuilder) Get(options *DeviceLogCollec
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceLogCollectionResponse), nil
 }
-// List of log collection requests
-// Parameters:
-//  - options : Options for the request
+// Patch list of log collection requests
 func (m *DeviceLogCollectionResponseRequestBuilder) Patch(options *DeviceLogCollectionResponseRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

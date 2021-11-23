@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+// userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
 type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilde
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilde
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilde
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics work from anywhere hardware readiness metrics.
+// userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderGetQueryParameters user experience analytics work from anywhere hardware readiness metrics.
 type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric;
@@ -53,10 +53,7 @@ type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilde
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderInternal instantiates a new UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) {
     m := &UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBui
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder instantiates a new UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics work from anywhere hardware readiness metrics.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user experience analytics work from anywhere hardware readiness metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBu
     }
     return requestInfo, nil
 }
-// User experience analytics work from anywhere hardware readiness metrics.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics work from anywhere hardware readiness metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBu
     }
     return requestInfo, nil
 }
-// User experience analytics work from anywhere hardware readiness metrics.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user experience analytics work from anywhere hardware readiness metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBu
     }
     return requestInfo, nil
 }
-// User experience analytics work from anywhere hardware readiness metrics.
-// Parameters:
-//  - options : Options for the request
+// Delete user experience analytics work from anywhere hardware readiness metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) Delete(options *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBu
     }
     return nil
 }
-// User experience analytics work from anywhere hardware readiness metrics.
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics work from anywhere hardware readiness metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) Get(options *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBu
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric), nil
 }
-// User experience analytics work from anywhere hardware readiness metrics.
-// Parameters:
-//  - options : Options for the request
+// Patch user experience analytics work from anywhere hardware readiness metrics.
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder) Patch(options *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

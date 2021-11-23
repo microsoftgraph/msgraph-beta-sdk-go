@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\profile\addresses\{itemAddress-id}
+// itemAddressRequestBuilder builds and executes requests for operations under \users\{user-id}\profile\addresses\{itemAddress-id}
 type ItemAddressRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ItemAddressRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ItemAddressRequestBuilderDeleteOptions options for Delete
 type ItemAddressRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ItemAddressRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ItemAddressRequestBuilderGetOptions options for Get
 type ItemAddressRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ItemAddressRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents details of addresses associated with the user.
+// itemAddressRequestBuilderGetQueryParameters represents details of addresses associated with the user.
 type ItemAddressRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ItemAddressRequestBuilderPatchOptions options for Patch
 type ItemAddressRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemAddress;
@@ -53,10 +53,7 @@ type ItemAddressRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ItemAddressRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemAddressRequestBuilderInternal instantiates a new ItemAddressRequestBuilder and sets the default values.
 func NewItemAddressRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemAddressRequestBuilder) {
     m := &ItemAddressRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewItemAddressRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ItemAddressRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemAddressRequestBuilder instantiates a new ItemAddressRequestBuilder and sets the default values.
 func NewItemAddressRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemAddressRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemAddressRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents details of addresses associated with the user.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents details of addresses associated with the user.
 func (m *ItemAddressRequestBuilder) CreateDeleteRequestInformation(options *ItemAddressRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ItemAddressRequestBuilder) CreateDeleteRequestInformation(options *Item
     }
     return requestInfo, nil
 }
-// Represents details of addresses associated with the user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents details of addresses associated with the user.
 func (m *ItemAddressRequestBuilder) CreateGetRequestInformation(options *ItemAddressRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ItemAddressRequestBuilder) CreateGetRequestInformation(options *ItemAdd
     }
     return requestInfo, nil
 }
-// Represents details of addresses associated with the user.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents details of addresses associated with the user.
 func (m *ItemAddressRequestBuilder) CreatePatchRequestInformation(options *ItemAddressRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ItemAddressRequestBuilder) CreatePatchRequestInformation(options *ItemA
     }
     return requestInfo, nil
 }
-// Represents details of addresses associated with the user.
-// Parameters:
-//  - options : Options for the request
+// Delete represents details of addresses associated with the user.
 func (m *ItemAddressRequestBuilder) Delete(options *ItemAddressRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ItemAddressRequestBuilder) Delete(options *ItemAddressRequestBuilderDel
     }
     return nil
 }
-// Represents details of addresses associated with the user.
-// Parameters:
-//  - options : Options for the request
+// Get represents details of addresses associated with the user.
 func (m *ItemAddressRequestBuilder) Get(options *ItemAddressRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemAddress, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ItemAddressRequestBuilder) Get(options *ItemAddressRequestBuilderGetOpt
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemAddress), nil
 }
-// Represents details of addresses associated with the user.
-// Parameters:
-//  - options : Options for the request
+// Patch represents details of addresses associated with the user.
 func (m *ItemAddressRequestBuilder) Patch(options *ItemAddressRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

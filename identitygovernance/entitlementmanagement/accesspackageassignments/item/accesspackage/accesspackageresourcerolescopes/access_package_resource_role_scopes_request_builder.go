@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\accessPackageResourceRoleScopes
+// accessPackageResourceRoleScopesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\accessPackageResourceRoleScopes
 type AccessPackageResourceRoleScopesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AccessPackageResourceRoleScopesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AccessPackageResourceRoleScopesRequestBuilderGetOptions options for Get
 type AccessPackageResourceRoleScopesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AccessPackageResourceRoleScopesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Nullable.
+// accessPackageResourceRoleScopesRequestBuilderGetQueryParameters nullable.
 type AccessPackageResourceRoleScopesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AccessPackageResourceRoleScopesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AccessPackageResourceRoleScopesRequestBuilderPostOptions options for Post
 type AccessPackageResourceRoleScopesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRoleScope;
@@ -56,10 +56,7 @@ type AccessPackageResourceRoleScopesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccessPackageResourceRoleScopesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageResourceRoleScopesRequestBuilderInternal instantiates a new AccessPackageResourceRoleScopesRequestBuilder and sets the default values.
 func NewAccessPackageResourceRoleScopesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageResourceRoleScopesRequestBuilder) {
     m := &AccessPackageResourceRoleScopesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAccessPackageResourceRoleScopesRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackageResourceRoleScopesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageResourceRoleScopesRequestBuilder instantiates a new AccessPackageResourceRoleScopesRequestBuilder and sets the default values.
 func NewAccessPackageResourceRoleScopesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageResourceRoleScopesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceRoleScopesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation nullable.
 func (m *AccessPackageResourceRoleScopesRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourceRoleScopesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AccessPackageResourceRoleScopesRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation nullable.
 func (m *AccessPackageResourceRoleScopesRequestBuilder) CreatePostRequestInformation(options *AccessPackageResourceRoleScopesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AccessPackageResourceRoleScopesRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get nullable.
 func (m *AccessPackageResourceRoleScopesRequestBuilder) Get(options *AccessPackageResourceRoleScopesRequestBuilderGetOptions)(*AccessPackageResourceRoleScopesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AccessPackageResourceRoleScopesRequestBuilder) Get(options *AccessPacka
     }
     return res.(*AccessPackageResourceRoleScopesResponse), nil
 }
-// Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post nullable.
 func (m *AccessPackageResourceRoleScopesRequestBuilder) Post(options *AccessPackageResourceRoleScopesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRoleScope, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -10,7 +10,7 @@ import (
     i9b7b56068ae594d878d9164fec1e047566feb9a550ec5e453c176a1f0a5f2796 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/updatableassets/unenrollassetsbyid"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\updatableAssets
+// updatableAssetsRequestBuilder builds and executes requests for operations under \admin\windows\updates\updatableAssets
 type UpdatableAssetsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type UpdatableAssetsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UpdatableAssetsRequestBuilderGetOptions options for Get
 type UpdatableAssetsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type UpdatableAssetsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Assets registered with the deployment service that can receive updates. Read-only.
+// updatableAssetsRequestBuilderGetQueryParameters assets registered with the deployment service that can receive updates. Read-only.
 type UpdatableAssetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -49,7 +49,7 @@ type UpdatableAssetsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UpdatableAssetsRequestBuilderPostOptions options for Post
 type UpdatableAssetsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset;
@@ -60,10 +60,7 @@ type UpdatableAssetsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UpdatableAssetsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdatableAssetsRequestBuilderInternal instantiates a new UpdatableAssetsRequestBuilder and sets the default values.
 func NewUpdatableAssetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatableAssetsRequestBuilder) {
     m := &UpdatableAssetsRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewUpdatableAssetsRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UpdatableAssetsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdatableAssetsRequestBuilder instantiates a new UpdatableAssetsRequestBuilder and sets the default values.
 func NewUpdatableAssetsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdatableAssetsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUpdatableAssetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Assets registered with the deployment service that can receive updates. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation assets registered with the deployment service that can receive updates. Read-only.
 func (m *UpdatableAssetsRequestBuilder) CreateGetRequestInformation(options *UpdatableAssetsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *UpdatableAssetsRequestBuilder) CreateGetRequestInformation(options *Upd
     }
     return requestInfo, nil
 }
-// Assets registered with the deployment service that can receive updates. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation assets registered with the deployment service that can receive updates. Read-only.
 func (m *UpdatableAssetsRequestBuilder) CreatePostRequestInformation(options *UpdatableAssetsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,9 +123,7 @@ func (m *UpdatableAssetsRequestBuilder) EnrollAssets()(*i5e033ef8b15c49341c073fc
 func (m *UpdatableAssetsRequestBuilder) EnrollAssetsById()(*i1ad9e4f03fd41b4ff3469626c2221aacd3c3b097757de111b29a11d0e40e5af7.EnrollAssetsByIdRequestBuilder) {
     return i1ad9e4f03fd41b4ff3469626c2221aacd3c3b097757de111b29a11d0e40e5af7.NewEnrollAssetsByIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Assets registered with the deployment service that can receive updates. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get assets registered with the deployment service that can receive updates. Read-only.
 func (m *UpdatableAssetsRequestBuilder) Get(options *UpdatableAssetsRequestBuilderGetOptions)(*UpdatableAssetsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -147,9 +135,7 @@ func (m *UpdatableAssetsRequestBuilder) Get(options *UpdatableAssetsRequestBuild
     }
     return res.(*UpdatableAssetsResponse), nil
 }
-// Assets registered with the deployment service that can receive updates. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post assets registered with the deployment service that can receive updates. Read-only.
 func (m *UpdatableAssetsRequestBuilder) Post(options *UpdatableAssetsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

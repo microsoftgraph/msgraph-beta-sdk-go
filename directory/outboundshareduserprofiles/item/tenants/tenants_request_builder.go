@@ -1,12 +1,13 @@
-package ref
+package tenants
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\scheduledActionsForRule\{deviceManagementComplianceScheduledActionForRule-id}\scheduledActionConfigurations\$ref
-type RefRequestBuilder struct {
+// tenantsRequestBuilder builds and executes requests for operations under \directory\outboundSharedUserProfiles\{outboundSharedUserProfile-userId}\tenants
+type TenantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
     // The request adapter to use to execute the requests.
@@ -14,36 +15,40 @@ type RefRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
-type RefRequestBuilderGetOptions struct {
+// TenantsRequestBuilderGetOptions options for Get
+type TenantsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
     // Request options
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Request query parameters
-    Q *RefRequestBuilderGetQueryParameters;
+    Q *TenantsRequestBuilderGetQueryParameters;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-type RefRequestBuilderGetQueryParameters struct {
+// tenantsRequestBuilderGetQueryParameters get tenants from directory
+type TenantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
+    // Expand related entities
+    Expand []string;
     // Filter items by property values
     Filter *string;
     // Order items by property values
     Orderby []string;
     // Search items by search phrases
     Search *string;
+    // Select properties to be returned
+    Select_escaped []string;
     // Skip the first n items
     Skip *int32;
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
-type RefRequestBuilderPostOptions struct {
+// TenantsRequestBuilderPostOptions options for Post
+type TenantsRequestBuilderPostOptions struct {
     // 
-    Body *Ref;
+    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantReference;
     // Request headers
     H map[string]string;
     // Request options
@@ -51,14 +56,11 @@ type RefRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RefRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
-func NewRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RefRequestBuilder) {
-    m := &RefRequestBuilder{
+// NewTenantsRequestBuilderInternal instantiates a new TenantsRequestBuilder and sets the default values.
+func NewTenantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantsRequestBuilder) {
+    m := &TenantsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy_id}/scheduledActionsForRule/{deviceManagementComplianceScheduledActionForRule_id}/scheduledActionConfigurations/$ref{?top,skip,search,filter,count,orderby}";
+    m.urlTemplate = "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile_userId}/tenants{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -67,19 +69,14 @@ func NewRefRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RefRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
-func NewRefRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RefRequestBuilder) {
+// NewTenantsRequestBuilder instantiates a new TenantsRequestBuilder and sets the default values.
+func NewTenantsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TenantsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewRefRequestBuilderInternal(urlParams, requestAdapter)
+    return NewTenantsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-// Parameters:
-//  - options : Options for the request
-func (m *RefRequestBuilder) CreateGetRequestInformation(options *RefRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// CreateGetRequestInformation get tenants from directory
+func (m *TenantsRequestBuilder) CreateGetRequestInformation(options *TenantsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -98,10 +95,8 @@ func (m *RefRequestBuilder) CreateGetRequestInformation(options *RefRequestBuild
     }
     return requestInfo, nil
 }
-// The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-// Parameters:
-//  - options : Options for the request
-func (m *RefRequestBuilder) CreatePostRequestInformation(options *RefRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to tenants for directory
+func (m *TenantsRequestBuilder) CreatePostRequestInformation(options *TenantsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -118,31 +113,27 @@ func (m *RefRequestBuilder) CreatePostRequestInformation(options *RefRequestBuil
     }
     return requestInfo, nil
 }
-// The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-// Parameters:
-//  - options : Options for the request
-func (m *RefRequestBuilder) Get(options *RefRequestBuilderGetOptions)(*RefResponse, error) {
+// Get get tenants from directory
+func (m *TenantsRequestBuilder) Get(options *TenantsRequestBuilderGetOptions)(*TenantsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRefResponse() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTenantsResponse() }, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*RefResponse), nil
+    return res.(*TenantsResponse), nil
 }
-// The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-// Parameters:
-//  - options : Options for the request
-func (m *RefRequestBuilder) Post(options *RefRequestBuilderPostOptions)(*Ref, error) {
+// Post create new navigation property to tenants for directory
+func (m *TenantsRequestBuilder) Post(options *TenantsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantReference, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRef() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewTenantReference() }, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*Ref), nil
+    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TenantReference), nil
 }

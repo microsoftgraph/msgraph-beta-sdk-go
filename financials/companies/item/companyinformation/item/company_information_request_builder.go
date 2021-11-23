@@ -7,7 +7,7 @@ import (
     i8e768a92c484ff61bbb3e35f051945edb4c04836dda4fb3c30a162c5a927adce "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/companyinformation/item/picture"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\companyInformation\{companyInformation-id}
+// companyInformationRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\companyInformation\{companyInformation-id}
 type CompanyInformationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type CompanyInformationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CompanyInformationRequestBuilderDeleteOptions options for Delete
 type CompanyInformationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type CompanyInformationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CompanyInformationRequestBuilderGetOptions options for Get
 type CompanyInformationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type CompanyInformationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get companyInformation from financials
+// companyInformationRequestBuilderGetQueryParameters get companyInformation from financials
 type CompanyInformationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CompanyInformationRequestBuilderPatchOptions options for Patch
 type CompanyInformationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CompanyInformation;
@@ -54,10 +54,7 @@ type CompanyInformationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CompanyInformationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCompanyInformationRequestBuilderInternal instantiates a new CompanyInformationRequestBuilder and sets the default values.
 func NewCompanyInformationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CompanyInformationRequestBuilder) {
     m := &CompanyInformationRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewCompanyInformationRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CompanyInformationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCompanyInformationRequestBuilder instantiates a new CompanyInformationRequestBuilder and sets the default values.
 func NewCompanyInformationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CompanyInformationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompanyInformationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property companyInformation for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property companyInformation for financials
 func (m *CompanyInformationRequestBuilder) CreateDeleteRequestInformation(options *CompanyInformationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *CompanyInformationRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get companyInformation from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get companyInformation from financials
 func (m *CompanyInformationRequestBuilder) CreateGetRequestInformation(options *CompanyInformationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *CompanyInformationRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Update the navigation property companyInformation in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property companyInformation in financials
 func (m *CompanyInformationRequestBuilder) CreatePatchRequestInformation(options *CompanyInformationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *CompanyInformationRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete navigation property companyInformation for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property companyInformation for financials
 func (m *CompanyInformationRequestBuilder) Delete(options *CompanyInformationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *CompanyInformationRequestBuilder) Delete(options *CompanyInformationReq
     }
     return nil
 }
-// Get companyInformation from financials
-// Parameters:
-//  - options : Options for the request
+// Get get companyInformation from financials
 func (m *CompanyInformationRequestBuilder) Get(options *CompanyInformationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CompanyInformation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *CompanyInformationRequestBuilder) Get(options *CompanyInformationReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CompanyInformation), nil
 }
-// Update the navigation property companyInformation in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property companyInformation in financials
 func (m *CompanyInformationRequestBuilder) Patch(options *CompanyInformationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRemoteConnection
+// userExperienceAnalyticsRemoteConnectionRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRemoteConnection
 type UserExperienceAnalyticsRemoteConnectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UserExperienceAnalyticsRemoteConnectionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserExperienceAnalyticsRemoteConnectionRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsRemoteConnectionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type UserExperienceAnalyticsRemoteConnectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics remote connection
+// userExperienceAnalyticsRemoteConnectionRequestBuilderGetQueryParameters user experience analytics remote connection
 type UserExperienceAnalyticsRemoteConnectionRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type UserExperienceAnalyticsRemoteConnectionRequestBuilderGetQueryParameters str
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserExperienceAnalyticsRemoteConnectionRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsRemoteConnectionRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRemoteConnection;
@@ -57,10 +57,7 @@ type UserExperienceAnalyticsRemoteConnectionRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsRemoteConnectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsRemoteConnectionRequestBuilderInternal instantiates a new UserExperienceAnalyticsRemoteConnectionRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsRemoteConnectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsRemoteConnectionRequestBuilder) {
     m := &UserExperienceAnalyticsRemoteConnectionRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewUserExperienceAnalyticsRemoteConnectionRequestBuilderInternal(pathParame
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsRemoteConnectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsRemoteConnectionRequestBuilder instantiates a new UserExperienceAnalyticsRemoteConnectionRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsRemoteConnectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsRemoteConnectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsRemoteConnectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics remote connection
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics remote connection
 func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsRemoteConnectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// User experience analytics remote connection
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation user experience analytics remote connection
 func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsRemoteConnectionRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) CreatePostReques
     }
     return requestInfo, nil
 }
-// User experience analytics remote connection
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics remote connection
 func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) Get(options *UserExperienceAnalyticsRemoteConnectionRequestBuilderGetOptions)(*UserExperienceAnalyticsRemoteConnectionResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) Get(options *Use
     }
     return res.(*UserExperienceAnalyticsRemoteConnectionResponse), nil
 }
-// User experience analytics remote connection
-// Parameters:
-//  - options : Options for the request
+// Post user experience analytics remote connection
 func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) Post(options *UserExperienceAnalyticsRemoteConnectionRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRemoteConnection, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
@@ -152,9 +138,7 @@ func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) Post(options *Us
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsRemoteConnection), nil
 }
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRemoteConnection\microsoft.graph.summarizeDeviceRemoteConnection(summarizeBy={summarizeBy})
-// Parameters:
-//  - summarizeBy : Usage: summarizeBy={summarizeBy}
+// SummarizeDeviceRemoteConnectionWithSummarizeBy builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRemoteConnection\microsoft.graph.summarizeDeviceRemoteConnection(summarizeBy={summarizeBy})
 func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) SummarizeDeviceRemoteConnectionWithSummarizeBy(summarizeBy *string)(*i01796bfadca188d075b478c2219753fc62eb7269791c8a4122d34a3bcf9a54d0.SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) {
     return i01796bfadca188d075b478c2219753fc62eb7269791c8a4122d34a3bcf9a54d0.NewSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderInternal(m.pathParameters, m.requestAdapter, summarizeBy);
 }

@@ -8,7 +8,7 @@ import (
     i606e76decb617ef392f0a2ced4701e81499efef20fabff5ac750a6e0dabbe071 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackages/item/incompatibleaccesspackages/ref"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\{accessPackage-id}\incompatibleAccessPackages
+// incompatibleAccessPackagesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\{accessPackage-id}\incompatibleAccessPackages
 type IncompatibleAccessPackagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type IncompatibleAccessPackagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IncompatibleAccessPackagesRequestBuilderGetOptions options for Get
 type IncompatibleAccessPackagesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type IncompatibleAccessPackagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The  access packages whose assigned users are ineligible to be assigned this access package.
+// incompatibleAccessPackagesRequestBuilderGetQueryParameters the  access packages whose assigned users are ineligible to be assigned this access package.
 type IncompatibleAccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,10 +47,7 @@ type IncompatibleAccessPackagesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new IncompatibleAccessPackagesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIncompatibleAccessPackagesRequestBuilderInternal instantiates a new IncompatibleAccessPackagesRequestBuilder and sets the default values.
 func NewIncompatibleAccessPackagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IncompatibleAccessPackagesRequestBuilder) {
     m := &IncompatibleAccessPackagesRequestBuilder{
     }
@@ -63,18 +60,13 @@ func NewIncompatibleAccessPackagesRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IncompatibleAccessPackagesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIncompatibleAccessPackagesRequestBuilder instantiates a new IncompatibleAccessPackagesRequestBuilder and sets the default values.
 func NewIncompatibleAccessPackagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IncompatibleAccessPackagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIncompatibleAccessPackagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The  access packages whose assigned users are ineligible to be assigned this access package.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the  access packages whose assigned users are ineligible to be assigned this access package.
 func (m *IncompatibleAccessPackagesRequestBuilder) CreateGetRequestInformation(options *IncompatibleAccessPackagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -94,15 +86,11 @@ func (m *IncompatibleAccessPackagesRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\{accessPackage-id}\incompatibleAccessPackages\microsoft.graph.filterByCurrentUser(on={on})
-// Parameters:
-//  - on : Usage: on={on}
+// FilterByCurrentUserWithOn builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\{accessPackage-id}\incompatibleAccessPackages\microsoft.graph.filterByCurrentUser(on={on})
 func (m *IncompatibleAccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i23dc487e3641978a29545d0342f937e1cbc55e1587cdf8fb15c6d30280ecfc44.FilterByCurrentUserWithOnRequestBuilder) {
     return i23dc487e3641978a29545d0342f937e1cbc55e1587cdf8fb15c6d30280ecfc44.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// The  access packages whose assigned users are ineligible to be assigned this access package.
-// Parameters:
-//  - options : Options for the request
+// Get the  access packages whose assigned users are ineligible to be assigned this access package.
 func (m *IncompatibleAccessPackagesRequestBuilder) Get(options *IncompatibleAccessPackagesRequestBuilderGetOptions)(*IncompatibleAccessPackagesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -117,7 +105,7 @@ func (m *IncompatibleAccessPackagesRequestBuilder) Get(options *IncompatibleAcce
 func (m *IncompatibleAccessPackagesRequestBuilder) Ref()(*i606e76decb617ef392f0a2ced4701e81499efef20fabff5ac750a6e0dabbe071.RefRequestBuilder) {
     return i606e76decb617ef392f0a2ced4701e81499efef20fabff5ac750a6e0dabbe071.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\{accessPackage-id}\incompatibleAccessPackages\microsoft.graph.Search()
+// Search builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\{accessPackage-id}\incompatibleAccessPackages\microsoft.graph.Search()
 func (m *IncompatibleAccessPackagesRequestBuilder) Search()(*i32d4eb085a1ed7f6c3cdae2d6e021dbec724d19797fd5d2f47e32eac72e92f34.SearchRequestBuilder) {
     return i32d4eb085a1ed7f6c3cdae2d6e021dbec724d19797fd5d2f47e32eac72e92f34.NewSearchRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

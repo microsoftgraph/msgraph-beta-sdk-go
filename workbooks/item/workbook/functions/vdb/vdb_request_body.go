@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// vdbRequestBody 
 type VdbRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -24,14 +24,14 @@ type VdbRequestBody struct {
     // 
     startPeriod *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
-// Instantiates a new vdbRequestBody and sets the default values.
+// NewVdbRequestBody instantiates a new vdbRequestBody and sets the default values.
 func NewVdbRequestBody()(*VdbRequestBody) {
     m := &VdbRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VdbRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *VdbRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the cost property value. 
+// GetCost gets the cost property value. 
 func (m *VdbRequestBody) GetCost()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *VdbRequestBody) GetCost()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6
         return m.cost
     }
 }
-// Gets the endPeriod property value. 
+// GetEndPeriod gets the endPeriod property value. 
 func (m *VdbRequestBody) GetEndPeriod()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *VdbRequestBody) GetEndPeriod()(*i535684e11b5500196ecb4b5c6634e0651fe2c2
         return m.endPeriod
     }
 }
-// Gets the factor property value. 
+// GetFactor gets the factor property value. 
 func (m *VdbRequestBody) GetFactor()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *VdbRequestBody) GetFactor()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78
         return m.factor
     }
 }
-// Gets the life property value. 
+// GetLife gets the life property value. 
 func (m *VdbRequestBody) GetLife()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *VdbRequestBody) GetLife()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6
         return m.life
     }
 }
-// Gets the noSwitch property value. 
+// GetNoSwitch gets the noSwitch property value. 
 func (m *VdbRequestBody) GetNoSwitch()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *VdbRequestBody) GetNoSwitch()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f
         return m.noSwitch
     }
 }
-// Gets the salvage property value. 
+// GetSalvage gets the salvage property value. 
 func (m *VdbRequestBody) GetSalvage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *VdbRequestBody) GetSalvage()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f7
         return m.salvage
     }
 }
-// Gets the startPeriod property value. 
+// GetStartPeriod gets the startPeriod property value. 
 func (m *VdbRequestBody) GetStartPeriod()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *VdbRequestBody) GetStartPeriod()(*i535684e11b5500196ecb4b5c6634e0651fe2
         return m.startPeriod
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *VdbRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["cost"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,9 +173,7 @@ func (m *VdbRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *VdbRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *VdbRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("cost", m.GetCost())
@@ -227,51 +225,35 @@ func (m *VdbRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VdbRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the cost property value. 
-// Parameters:
-//  - value : Value to set for the cost property.
+// SetCost sets the cost property value. 
 func (m *VdbRequestBody) SetCost(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.cost = value
 }
-// Sets the endPeriod property value. 
-// Parameters:
-//  - value : Value to set for the endPeriod property.
+// SetEndPeriod sets the endPeriod property value. 
 func (m *VdbRequestBody) SetEndPeriod(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.endPeriod = value
 }
-// Sets the factor property value. 
-// Parameters:
-//  - value : Value to set for the factor property.
+// SetFactor sets the factor property value. 
 func (m *VdbRequestBody) SetFactor(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.factor = value
 }
-// Sets the life property value. 
-// Parameters:
-//  - value : Value to set for the life property.
+// SetLife sets the life property value. 
 func (m *VdbRequestBody) SetLife(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.life = value
 }
-// Sets the noSwitch property value. 
-// Parameters:
-//  - value : Value to set for the noSwitch property.
+// SetNoSwitch sets the noSwitch property value. 
 func (m *VdbRequestBody) SetNoSwitch(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.noSwitch = value
 }
-// Sets the salvage property value. 
-// Parameters:
-//  - value : Value to set for the salvage property.
+// SetSalvage sets the salvage property value. 
 func (m *VdbRequestBody) SetSalvage(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.salvage = value
 }
-// Sets the startPeriod property value. 
-// Parameters:
-//  - value : Value to set for the startPeriod property.
+// SetStartPeriod sets the startPeriod property value. 
 func (m *VdbRequestBody) SetStartPeriod(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.startPeriod = value
 }

@@ -7,7 +7,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groupLifecyclePolicies
+// groupLifecyclePoliciesRequestBuilder builds and executes requests for operations under \groupLifecyclePolicies
 type GroupLifecyclePoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GroupLifecyclePoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GroupLifecyclePoliciesRequestBuilderGetOptions options for Get
 type GroupLifecyclePoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type GroupLifecyclePoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from groupLifecyclePolicies
+// groupLifecyclePoliciesRequestBuilderGetQueryParameters get entities from groupLifecyclePolicies
 type GroupLifecyclePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type GroupLifecyclePoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// GroupLifecyclePoliciesRequestBuilderPostOptions options for Post
 type GroupLifecyclePoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupLifecyclePolicy;
@@ -57,10 +57,7 @@ type GroupLifecyclePoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupLifecyclePoliciesRequestBuilderInternal instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.
 func NewGroupLifecyclePoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupLifecyclePoliciesRequestBuilder) {
     m := &GroupLifecyclePoliciesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewGroupLifecyclePoliciesRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupLifecyclePoliciesRequestBuilder instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.
 func NewGroupLifecyclePoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupLifecyclePoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupLifecyclePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from groupLifecyclePolicies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from groupLifecyclePolicies
 func (m *GroupLifecyclePoliciesRequestBuilder) CreateGetRequestInformation(options *GroupLifecyclePoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *GroupLifecyclePoliciesRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Add new entity to groupLifecyclePolicies
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to groupLifecyclePolicies
 func (m *GroupLifecyclePoliciesRequestBuilder) CreatePostRequestInformation(options *GroupLifecyclePoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *GroupLifecyclePoliciesRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get entities from groupLifecyclePolicies
-// Parameters:
-//  - options : Options for the request
+// Get get entities from groupLifecyclePolicies
 func (m *GroupLifecyclePoliciesRequestBuilder) Get(options *GroupLifecyclePoliciesRequestBuilderGetOptions)(*GroupLifecyclePoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *GroupLifecyclePoliciesRequestBuilder) Get(options *GroupLifecyclePolici
     }
     return res.(*GroupLifecyclePoliciesResponse), nil
 }
-// Add new entity to groupLifecyclePolicies
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to groupLifecyclePolicies
 func (m *GroupLifecyclePoliciesRequestBuilder) Post(options *GroupLifecyclePoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupLifecyclePolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

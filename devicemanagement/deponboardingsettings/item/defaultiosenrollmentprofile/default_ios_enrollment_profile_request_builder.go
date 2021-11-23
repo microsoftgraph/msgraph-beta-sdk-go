@@ -7,7 +7,7 @@ import (
     idd246b53dd8b816e2149588d387d4e8dfb17d3f56a921204859f055f83125f9b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deponboardingsettings/item/defaultiosenrollmentprofile/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\defaultIosEnrollmentProfile
+// defaultIosEnrollmentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\defaultIosEnrollmentProfile
 type DefaultIosEnrollmentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DefaultIosEnrollmentProfileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DefaultIosEnrollmentProfileRequestBuilderGetOptions options for Get
 type DefaultIosEnrollmentProfileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type DefaultIosEnrollmentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Default iOS Enrollment Profile
+// defaultIosEnrollmentProfileRequestBuilderGetQueryParameters default iOS Enrollment Profile
 type DefaultIosEnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new DefaultIosEnrollmentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefaultIosEnrollmentProfileRequestBuilderInternal instantiates a new DefaultIosEnrollmentProfileRequestBuilder and sets the default values.
 func NewDefaultIosEnrollmentProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefaultIosEnrollmentProfileRequestBuilder) {
     m := &DefaultIosEnrollmentProfileRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewDefaultIosEnrollmentProfileRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DefaultIosEnrollmentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefaultIosEnrollmentProfileRequestBuilder instantiates a new DefaultIosEnrollmentProfileRequestBuilder and sets the default values.
 func NewDefaultIosEnrollmentProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefaultIosEnrollmentProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDefaultIosEnrollmentProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Default iOS Enrollment Profile
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation default iOS Enrollment Profile
 func (m *DefaultIosEnrollmentProfileRequestBuilder) CreateGetRequestInformation(options *DefaultIosEnrollmentProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *DefaultIosEnrollmentProfileRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// Default iOS Enrollment Profile
-// Parameters:
-//  - options : Options for the request
+// Get default iOS Enrollment Profile
 func (m *DefaultIosEnrollmentProfileRequestBuilder) Get(options *DefaultIosEnrollmentProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DepIOSEnrollmentProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

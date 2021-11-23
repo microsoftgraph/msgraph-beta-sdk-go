@@ -7,7 +7,7 @@ import (
     i5ae24f9a3712044143bf6c8de4d6dd2c51855b65924b9f12aa5fbf5998b667c7 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresourceenvironments/item/accesspackageresources"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceEnvironments\{accessPackageResourceEnvironment-id}
+// accessPackageResourceEnvironmentRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceEnvironments\{accessPackageResourceEnvironment-id}
 type AccessPackageResourceEnvironmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AccessPackageResourceEnvironmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessPackageResourceEnvironmentRequestBuilderDeleteOptions options for Delete
 type AccessPackageResourceEnvironmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type AccessPackageResourceEnvironmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessPackageResourceEnvironmentRequestBuilderGetOptions options for Get
 type AccessPackageResourceEnvironmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type AccessPackageResourceEnvironmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get accessPackageResourceEnvironments from identityGovernance
+// accessPackageResourceEnvironmentRequestBuilderGetQueryParameters get accessPackageResourceEnvironments from identityGovernance
 type AccessPackageResourceEnvironmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessPackageResourceEnvironmentRequestBuilderPatchOptions options for Patch
 type AccessPackageResourceEnvironmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceEnvironment;
@@ -57,10 +57,7 @@ type AccessPackageResourceEnvironmentRequestBuilderPatchOptions struct {
 func (m *AccessPackageResourceEnvironmentRequestBuilder) AccessPackageResources()(*i5ae24f9a3712044143bf6c8de4d6dd2c51855b65924b9f12aa5fbf5998b667c7.AccessPackageResourcesRequestBuilder) {
     return i5ae24f9a3712044143bf6c8de4d6dd2c51855b65924b9f12aa5fbf5998b667c7.NewAccessPackageResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new AccessPackageResourceEnvironmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageResourceEnvironmentRequestBuilderInternal instantiates a new AccessPackageResourceEnvironmentRequestBuilder and sets the default values.
 func NewAccessPackageResourceEnvironmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageResourceEnvironmentRequestBuilder) {
     m := &AccessPackageResourceEnvironmentRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewAccessPackageResourceEnvironmentRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackageResourceEnvironmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageResourceEnvironmentRequestBuilder instantiates a new AccessPackageResourceEnvironmentRequestBuilder and sets the default values.
 func NewAccessPackageResourceEnvironmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageResourceEnvironmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceEnvironmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property accessPackageResourceEnvironments for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property accessPackageResourceEnvironments for identityGovernance
 func (m *AccessPackageResourceEnvironmentRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageResourceEnvironmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *AccessPackageResourceEnvironmentRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// Get accessPackageResourceEnvironments from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get accessPackageResourceEnvironments from identityGovernance
 func (m *AccessPackageResourceEnvironmentRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourceEnvironmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AccessPackageResourceEnvironmentRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Update the navigation property accessPackageResourceEnvironments in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property accessPackageResourceEnvironments in identityGovernance
 func (m *AccessPackageResourceEnvironmentRequestBuilder) CreatePatchRequestInformation(options *AccessPackageResourceEnvironmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *AccessPackageResourceEnvironmentRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// Delete navigation property accessPackageResourceEnvironments for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property accessPackageResourceEnvironments for identityGovernance
 func (m *AccessPackageResourceEnvironmentRequestBuilder) Delete(options *AccessPackageResourceEnvironmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *AccessPackageResourceEnvironmentRequestBuilder) Delete(options *AccessP
     }
     return nil
 }
-// Get accessPackageResourceEnvironments from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get accessPackageResourceEnvironments from identityGovernance
 func (m *AccessPackageResourceEnvironmentRequestBuilder) Get(options *AccessPackageResourceEnvironmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceEnvironment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *AccessPackageResourceEnvironmentRequestBuilder) Get(options *AccessPack
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceEnvironment), nil
 }
-// Update the navigation property accessPackageResourceEnvironments in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property accessPackageResourceEnvironments in identityGovernance
 func (m *AccessPackageResourceEnvironmentRequestBuilder) Patch(options *AccessPackageResourceEnvironmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

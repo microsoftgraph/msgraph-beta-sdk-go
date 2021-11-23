@@ -7,7 +7,7 @@ import (
     if5ef9bcaa10533819371744a9f542bb785de1cebef9fd4963352e2be268e47ba "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/haspayloadlinks"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceManagementScripts
+// deviceManagementScriptsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceManagementScripts
 type DeviceManagementScriptsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceManagementScriptsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceManagementScriptsRequestBuilderGetOptions options for Get
 type DeviceManagementScriptsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type DeviceManagementScriptsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of device management scripts associated with the tenant.
+// deviceManagementScriptsRequestBuilderGetQueryParameters the list of device management scripts associated with the tenant.
 type DeviceManagementScriptsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type DeviceManagementScriptsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceManagementScriptsRequestBuilderPostOptions options for Post
 type DeviceManagementScriptsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScript;
@@ -57,10 +57,7 @@ type DeviceManagementScriptsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementScriptsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementScriptsRequestBuilderInternal instantiates a new DeviceManagementScriptsRequestBuilder and sets the default values.
 func NewDeviceManagementScriptsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementScriptsRequestBuilder) {
     m := &DeviceManagementScriptsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewDeviceManagementScriptsRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementScriptsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementScriptsRequestBuilder instantiates a new DeviceManagementScriptsRequestBuilder and sets the default values.
 func NewDeviceManagementScriptsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementScriptsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementScriptsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of device management scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of device management scripts associated with the tenant.
 func (m *DeviceManagementScriptsRequestBuilder) CreateGetRequestInformation(options *DeviceManagementScriptsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *DeviceManagementScriptsRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The list of device management scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of device management scripts associated with the tenant.
 func (m *DeviceManagementScriptsRequestBuilder) CreatePostRequestInformation(options *DeviceManagementScriptsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *DeviceManagementScriptsRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The list of device management scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of device management scripts associated with the tenant.
 func (m *DeviceManagementScriptsRequestBuilder) Get(options *DeviceManagementScriptsRequestBuilderGetOptions)(*DeviceManagementScriptsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *DeviceManagementScriptsRequestBuilder) Get(options *DeviceManagementScr
 func (m *DeviceManagementScriptsRequestBuilder) HasPayloadLinks()(*if5ef9bcaa10533819371744a9f542bb785de1cebef9fd4963352e2be268e47ba.HasPayloadLinksRequestBuilder) {
     return if5ef9bcaa10533819371744a9f542bb785de1cebef9fd4963352e2be268e47ba.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The list of device management scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Post the list of device management scripts associated with the tenant.
 func (m *DeviceManagementScriptsRequestBuilder) Post(options *DeviceManagementScriptsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScript, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

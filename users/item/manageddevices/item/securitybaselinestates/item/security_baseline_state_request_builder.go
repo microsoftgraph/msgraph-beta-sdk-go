@@ -8,7 +8,7 @@ import (
     id053ea3d5bc635d6ccfc94bdc721142a88d882ac2c76384142b42f7c8eb43657 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/securitybaselinestates/item/settingstates/item"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\securityBaselineStates\{securityBaselineState-id}
+// securityBaselineStateRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\securityBaselineStates\{securityBaselineState-id}
 type SecurityBaselineStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type SecurityBaselineStateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SecurityBaselineStateRequestBuilderDeleteOptions options for Delete
 type SecurityBaselineStateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SecurityBaselineStateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SecurityBaselineStateRequestBuilderGetOptions options for Get
 type SecurityBaselineStateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type SecurityBaselineStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Security baseline states for this device.
+// securityBaselineStateRequestBuilderGetQueryParameters security baseline states for this device.
 type SecurityBaselineStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SecurityBaselineStateRequestBuilderPatchOptions options for Patch
 type SecurityBaselineStateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineState;
@@ -55,10 +55,7 @@ type SecurityBaselineStateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SecurityBaselineStateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSecurityBaselineStateRequestBuilderInternal instantiates a new SecurityBaselineStateRequestBuilder and sets the default values.
 func NewSecurityBaselineStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecurityBaselineStateRequestBuilder) {
     m := &SecurityBaselineStateRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewSecurityBaselineStateRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SecurityBaselineStateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSecurityBaselineStateRequestBuilder instantiates a new SecurityBaselineStateRequestBuilder and sets the default values.
 func NewSecurityBaselineStateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecurityBaselineStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityBaselineStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Security baseline states for this device.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation security baseline states for this device.
 func (m *SecurityBaselineStateRequestBuilder) CreateDeleteRequestInformation(options *SecurityBaselineStateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *SecurityBaselineStateRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Security baseline states for this device.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation security baseline states for this device.
 func (m *SecurityBaselineStateRequestBuilder) CreateGetRequestInformation(options *SecurityBaselineStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *SecurityBaselineStateRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Security baseline states for this device.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation security baseline states for this device.
 func (m *SecurityBaselineStateRequestBuilder) CreatePatchRequestInformation(options *SecurityBaselineStateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *SecurityBaselineStateRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Security baseline states for this device.
-// Parameters:
-//  - options : Options for the request
+// Delete security baseline states for this device.
 func (m *SecurityBaselineStateRequestBuilder) Delete(options *SecurityBaselineStateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *SecurityBaselineStateRequestBuilder) Delete(options *SecurityBaselineSt
     }
     return nil
 }
-// Security baseline states for this device.
-// Parameters:
-//  - options : Options for the request
+// Get security baseline states for this device.
 func (m *SecurityBaselineStateRequestBuilder) Get(options *SecurityBaselineStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineState, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *SecurityBaselineStateRequestBuilder) Get(options *SecurityBaselineState
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineState), nil
 }
-// Security baseline states for this device.
-// Parameters:
-//  - options : Options for the request
+// Patch security baseline states for this device.
 func (m *SecurityBaselineStateRequestBuilder) Patch(options *SecurityBaselineStateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *SecurityBaselineStateRequestBuilder) Patch(options *SecurityBaselineSta
 func (m *SecurityBaselineStateRequestBuilder) SettingStates()(*i70aafda266ed48512d40299c2aeb1764c358fa5ac74245325656d31ccd11c080.SettingStatesRequestBuilder) {
     return i70aafda266ed48512d40299c2aeb1764c358fa5ac74245325656d31ccd11c080.NewSettingStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.managedDevices.item.securityBaselineStates.item.settingStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SettingStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.managedDevices.item.securityBaselineStates.item.settingStates.item collection
 func (m *SecurityBaselineStateRequestBuilder) SettingStatesById(id string)(*id053ea3d5bc635d6ccfc94bdc721142a88d882ac2c76384142b42f7c8eb43657.SecurityBaselineSettingStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

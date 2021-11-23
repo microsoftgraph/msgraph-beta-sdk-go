@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// unifiedRoleAssignment 
 type UnifiedRoleAssignment struct {
     Entity
     // Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
@@ -30,14 +30,14 @@ type UnifiedRoleAssignment struct {
     // Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
     roleDefinitionId *string;
 }
-// Instantiates a new unifiedRoleAssignment and sets the default values.
+// NewUnifiedRoleAssignment instantiates a new unifiedRoleAssignment and sets the default values.
 func NewUnifiedRoleAssignment()(*UnifiedRoleAssignment) {
     m := &UnifiedRoleAssignment{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+// GetAppScope gets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
 func (m *UnifiedRoleAssignment) GetAppScope()(*AppScope) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *UnifiedRoleAssignment) GetAppScope()(*AppScope) {
         return m.appScope
     }
 }
-// Gets the appScopeId property value. Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
+// GetAppScopeId gets the appScopeId property value. Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) GetAppScopeId()(*string) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *UnifiedRoleAssignment) GetAppScopeId()(*string) {
         return m.appScopeId
     }
 }
-// Gets the condition property value. 
+// GetCondition gets the condition property value. 
 func (m *UnifiedRoleAssignment) GetCondition()(*string) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *UnifiedRoleAssignment) GetCondition()(*string) {
         return m.condition
     }
 }
-// Gets the directoryScope property value. The directory object that is the scope of the assignment. Read-only. Supports $expand.
+// GetDirectoryScope gets the directoryScope property value. The directory object that is the scope of the assignment. Read-only. Supports $expand.
 func (m *UnifiedRoleAssignment) GetDirectoryScope()(*DirectoryObject) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *UnifiedRoleAssignment) GetDirectoryScope()(*DirectoryObject) {
         return m.directoryScope
     }
 }
-// Gets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
+// GetDirectoryScopeId gets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) GetDirectoryScopeId()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *UnifiedRoleAssignment) GetDirectoryScopeId()(*string) {
         return m.directoryScopeId
     }
 }
-// Gets the principal property value. Referencing the assigned principal. Read-only. Supports $expand.
+// GetPrincipal gets the principal property value. Referencing the assigned principal. Read-only. Supports $expand.
 func (m *UnifiedRoleAssignment) GetPrincipal()(*DirectoryObject) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *UnifiedRoleAssignment) GetPrincipal()(*DirectoryObject) {
         return m.principal
     }
 }
-// Gets the principalId property value. Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
+// GetPrincipalId gets the principalId property value. Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) GetPrincipalId()(*string) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *UnifiedRoleAssignment) GetPrincipalId()(*string) {
         return m.principalId
     }
 }
-// Gets the principalOrganizationId property value. 
+// GetPrincipalOrganizationId gets the principalOrganizationId property value. 
 func (m *UnifiedRoleAssignment) GetPrincipalOrganizationId()(*string) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *UnifiedRoleAssignment) GetPrincipalOrganizationId()(*string) {
         return m.principalOrganizationId
     }
 }
-// Gets the resourceScope property value. The scope at which the unifiedRoleAssignment applies. This is / for service-wide. DO NOT USE. This property will be deprecated soon.
+// GetResourceScope gets the resourceScope property value. The scope at which the unifiedRoleAssignment applies. This is / for service-wide. DO NOT USE. This property will be deprecated soon.
 func (m *UnifiedRoleAssignment) GetResourceScope()(*string) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *UnifiedRoleAssignment) GetResourceScope()(*string) {
         return m.resourceScope
     }
 }
-// Gets the roleDefinition property value. The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+// GetRoleDefinition gets the roleDefinition property value. The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
 func (m *UnifiedRoleAssignment) GetRoleDefinition()(*UnifiedRoleDefinition) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *UnifiedRoleAssignment) GetRoleDefinition()(*UnifiedRoleDefinition) {
         return m.roleDefinition
     }
 }
-// Gets the roleDefinitionId property value. Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
+// GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) GetRoleDefinitionId()(*string) {
     if m == nil {
         return nil
@@ -125,7 +125,7 @@ func (m *UnifiedRoleAssignment) GetRoleDefinitionId()(*string) {
         return m.roleDefinitionId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appScope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -243,9 +243,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interfac
 func (m *UnifiedRoleAssignment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UnifiedRoleAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -319,69 +317,47 @@ func (m *UnifiedRoleAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
-// Parameters:
-//  - value : Value to set for the appScope property.
+// SetAppScope sets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
 func (m *UnifiedRoleAssignment) SetAppScope(value *AppScope)() {
     m.appScope = value
 }
-// Sets the appScopeId property value. Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
-// Parameters:
-//  - value : Value to set for the appScopeId property.
+// SetAppScopeId sets the appScopeId property value. Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) SetAppScopeId(value *string)() {
     m.appScopeId = value
 }
-// Sets the condition property value. 
-// Parameters:
-//  - value : Value to set for the condition property.
+// SetCondition sets the condition property value. 
 func (m *UnifiedRoleAssignment) SetCondition(value *string)() {
     m.condition = value
 }
-// Sets the directoryScope property value. The directory object that is the scope of the assignment. Read-only. Supports $expand.
-// Parameters:
-//  - value : Value to set for the directoryScope property.
+// SetDirectoryScope sets the directoryScope property value. The directory object that is the scope of the assignment. Read-only. Supports $expand.
 func (m *UnifiedRoleAssignment) SetDirectoryScope(value *DirectoryObject)() {
     m.directoryScope = value
 }
-// Sets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
-// Parameters:
-//  - value : Value to set for the directoryScopeId property.
+// SetDirectoryScopeId sets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) SetDirectoryScopeId(value *string)() {
     m.directoryScopeId = value
 }
-// Sets the principal property value. Referencing the assigned principal. Read-only. Supports $expand.
-// Parameters:
-//  - value : Value to set for the principal property.
+// SetPrincipal sets the principal property value. Referencing the assigned principal. Read-only. Supports $expand.
 func (m *UnifiedRoleAssignment) SetPrincipal(value *DirectoryObject)() {
     m.principal = value
 }
-// Sets the principalId property value. Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
-// Parameters:
-//  - value : Value to set for the principalId property.
+// SetPrincipalId sets the principalId property value. Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) SetPrincipalId(value *string)() {
     m.principalId = value
 }
-// Sets the principalOrganizationId property value. 
-// Parameters:
-//  - value : Value to set for the principalOrganizationId property.
+// SetPrincipalOrganizationId sets the principalOrganizationId property value. 
 func (m *UnifiedRoleAssignment) SetPrincipalOrganizationId(value *string)() {
     m.principalOrganizationId = value
 }
-// Sets the resourceScope property value. The scope at which the unifiedRoleAssignment applies. This is / for service-wide. DO NOT USE. This property will be deprecated soon.
-// Parameters:
-//  - value : Value to set for the resourceScope property.
+// SetResourceScope sets the resourceScope property value. The scope at which the unifiedRoleAssignment applies. This is / for service-wide. DO NOT USE. This property will be deprecated soon.
 func (m *UnifiedRoleAssignment) SetResourceScope(value *string)() {
     m.resourceScope = value
 }
-// Sets the roleDefinition property value. The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
-// Parameters:
-//  - value : Value to set for the roleDefinition property.
+// SetRoleDefinition sets the roleDefinition property value. The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
 func (m *UnifiedRoleAssignment) SetRoleDefinition(value *UnifiedRoleDefinition)() {
     m.roleDefinition = value
 }
-// Sets the roleDefinitionId property value. Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
-// Parameters:
-//  - value : Value to set for the roleDefinitionId property.
+// SetRoleDefinitionId sets the roleDefinitionId property value. Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) SetRoleDefinitionId(value *string)() {
     m.roleDefinitionId = value
 }

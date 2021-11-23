@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\microsoft.graph.exportDeviceAndAppManagementData()
+// exportDeviceAndAppManagementDataRequestBuilder builds and executes requests for operations under \me\microsoft.graph.exportDeviceAndAppManagementData()
 type ExportDeviceAndAppManagementDataRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ExportDeviceAndAppManagementDataRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ExportDeviceAndAppManagementDataRequestBuilderGetOptions options for Get
 type ExportDeviceAndAppManagementDataRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type ExportDeviceAndAppManagementDataRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes deviceAndAppManagementData
+// exportDeviceAndAppManagementDataResponse union type wrapper for classes deviceAndAppManagementData
 type ExportDeviceAndAppManagementDataResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type deviceAndAppManagementData
     deviceAndAppManagementData *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementData;
 }
-// Instantiates a new exportDeviceAndAppManagementDataResponse and sets the default values.
+// NewExportDeviceAndAppManagementDataResponse instantiates a new exportDeviceAndAppManagementDataResponse and sets the default values.
 func NewExportDeviceAndAppManagementDataResponse()(*ExportDeviceAndAppManagementDataResponse) {
     m := &ExportDeviceAndAppManagementDataResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExportDeviceAndAppManagementDataResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *ExportDeviceAndAppManagementDataResponse) GetAdditionalData()(map[strin
         return m.additionalData
     }
 }
-// Gets the deviceAndAppManagementData property value. Union type representation for type deviceAndAppManagementData
+// GetDeviceAndAppManagementData gets the deviceAndAppManagementData property value. Union type representation for type deviceAndAppManagementData
 func (m *ExportDeviceAndAppManagementDataResponse) GetDeviceAndAppManagementData()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementData) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *ExportDeviceAndAppManagementDataResponse) GetDeviceAndAppManagementData
         return m.deviceAndAppManagementData
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ExportDeviceAndAppManagementDataResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceAndAppManagementData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *ExportDeviceAndAppManagementDataResponse) GetFieldDeserializers()(map[s
 func (m *ExportDeviceAndAppManagementDataResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ExportDeviceAndAppManagementDataResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("deviceAndAppManagementData", m.GetDeviceAndAppManagementData())
@@ -90,22 +88,15 @@ func (m *ExportDeviceAndAppManagementDataResponse) Serialize(writer i04eb5309aea
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExportDeviceAndAppManagementDataResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the deviceAndAppManagementData property value. Union type representation for type deviceAndAppManagementData
-// Parameters:
-//  - value : Value to set for the deviceAndAppManagementData property.
+// SetDeviceAndAppManagementData sets the deviceAndAppManagementData property value. Union type representation for type deviceAndAppManagementData
 func (m *ExportDeviceAndAppManagementDataResponse) SetDeviceAndAppManagementData(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAndAppManagementData)() {
     m.deviceAndAppManagementData = value
 }
-// Instantiates a new ExportDeviceAndAppManagementDataRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExportDeviceAndAppManagementDataRequestBuilderInternal instantiates a new ExportDeviceAndAppManagementDataRequestBuilder and sets the default values.
 func NewExportDeviceAndAppManagementDataRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExportDeviceAndAppManagementDataRequestBuilder) {
     m := &ExportDeviceAndAppManagementDataRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewExportDeviceAndAppManagementDataRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExportDeviceAndAppManagementDataRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExportDeviceAndAppManagementDataRequestBuilder instantiates a new ExportDeviceAndAppManagementDataRequestBuilder and sets the default values.
 func NewExportDeviceAndAppManagementDataRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExportDeviceAndAppManagementDataRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExportDeviceAndAppManagementDataRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function exportDeviceAndAppManagementData
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function exportDeviceAndAppManagementData
 func (m *ExportDeviceAndAppManagementDataRequestBuilder) CreateGetRequestInformation(options *ExportDeviceAndAppManagementDataRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *ExportDeviceAndAppManagementDataRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Invoke function exportDeviceAndAppManagementData
-// Parameters:
-//  - options : Options for the request
+// Get invoke function exportDeviceAndAppManagementData
 func (m *ExportDeviceAndAppManagementDataRequestBuilder) Get(options *ExportDeviceAndAppManagementDataRequestBuilderGetOptions)(*ExportDeviceAndAppManagementDataResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceManagementConfigurationSetting 
 type DeviceManagementConfigurationSetting struct {
     Entity
     // List of related Setting Definitions. This property is read-only.
@@ -12,14 +12,14 @@ type DeviceManagementConfigurationSetting struct {
     // Setting instance within policy
     settingInstance *DeviceManagementConfigurationSettingInstance;
 }
-// Instantiates a new deviceManagementConfigurationSetting and sets the default values.
+// NewDeviceManagementConfigurationSetting instantiates a new deviceManagementConfigurationSetting and sets the default values.
 func NewDeviceManagementConfigurationSetting()(*DeviceManagementConfigurationSetting) {
     m := &DeviceManagementConfigurationSetting{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
+// GetSettingDefinitions gets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
 func (m *DeviceManagementConfigurationSetting) GetSettingDefinitions()([]DeviceManagementConfigurationSettingDefinition) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *DeviceManagementConfigurationSetting) GetSettingDefinitions()([]DeviceM
         return m.settingDefinitions
     }
 }
-// Gets the settingInstance property value. Setting instance within policy
+// GetSettingInstance gets the settingInstance property value. Setting instance within policy
 func (m *DeviceManagementConfigurationSetting) GetSettingInstance()(*DeviceManagementConfigurationSettingInstance) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *DeviceManagementConfigurationSetting) GetSettingInstance()(*DeviceManag
         return m.settingInstance
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSetting) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["settingDefinitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -67,9 +67,7 @@ func (m *DeviceManagementConfigurationSetting) GetFieldDeserializers()(map[strin
 func (m *DeviceManagementConfigurationSetting) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -94,15 +92,11 @@ func (m *DeviceManagementConfigurationSetting) Serialize(writer i04eb5309aeaafad
     }
     return nil
 }
-// Sets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
-// Parameters:
-//  - value : Value to set for the settingDefinitions property.
+// SetSettingDefinitions sets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
 func (m *DeviceManagementConfigurationSetting) SetSettingDefinitions(value []DeviceManagementConfigurationSettingDefinition)() {
     m.settingDefinitions = value
 }
-// Sets the settingInstance property value. Setting instance within policy
-// Parameters:
-//  - value : Value to set for the settingInstance property.
+// SetSettingInstance sets the settingInstance property value. Setting instance within policy
 func (m *DeviceManagementConfigurationSetting) SetSettingInstance(value *DeviceManagementConfigurationSettingInstance)() {
     m.settingInstance = value
 }

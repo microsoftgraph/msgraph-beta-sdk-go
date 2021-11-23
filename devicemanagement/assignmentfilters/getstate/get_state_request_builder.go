@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.getState()
+// getStateRequestBuilder builds and executes requests for operations under \deviceManagement\assignmentFilters\microsoft.graph.getState()
 type GetStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GetStateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetStateRequestBuilderGetOptions options for Get
 type GetStateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type GetStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes assignmentFilterState
+// getStateResponse union type wrapper for classes assignmentFilterState
 type GetStateResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type assignmentFilterState
     assignmentFilterState *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterState;
 }
-// Instantiates a new getStateResponse and sets the default values.
+// NewGetStateResponse instantiates a new getStateResponse and sets the default values.
 func NewGetStateResponse()(*GetStateResponse) {
     m := &GetStateResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetStateResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *GetStateResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the assignmentFilterState property value. Union type representation for type assignmentFilterState
+// GetAssignmentFilterState gets the assignmentFilterState property value. Union type representation for type assignmentFilterState
 func (m *GetStateResponse) GetAssignmentFilterState()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterState) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *GetStateResponse) GetAssignmentFilterState()(*i535684e11b5500196ecb4b5c
         return m.assignmentFilterState
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetStateResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignmentFilterState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *GetStateResponse) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *GetStateResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetStateResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("assignmentFilterState", m.GetAssignmentFilterState())
@@ -90,22 +88,15 @@ func (m *GetStateResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetStateResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the assignmentFilterState property value. Union type representation for type assignmentFilterState
-// Parameters:
-//  - value : Value to set for the assignmentFilterState property.
+// SetAssignmentFilterState sets the assignmentFilterState property value. Union type representation for type assignmentFilterState
 func (m *GetStateResponse) SetAssignmentFilterState(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterState)() {
     m.assignmentFilterState = value
 }
-// Instantiates a new GetStateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetStateRequestBuilderInternal instantiates a new GetStateRequestBuilder and sets the default values.
 func NewGetStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetStateRequestBuilder) {
     m := &GetStateRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewGetStateRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetStateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetStateRequestBuilder instantiates a new GetStateRequestBuilder and sets the default values.
 func NewGetStateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function getState
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getState
 func (m *GetStateRequestBuilder) CreateGetRequestInformation(options *GetStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *GetStateRequestBuilder) CreateGetRequestInformation(options *GetStateRe
     }
     return requestInfo, nil
 }
-// Invoke function getState
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getState
 func (m *GetStateRequestBuilder) Get(options *GetStateRequestBuilderGetOptions)(*GetStateResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// displayTemplate 
 type DisplayTemplate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type DisplayTemplate struct {
     // Specifies additional rules for selecting this display template based on the item schema. Optional.
     rules []PropertyRule;
 }
-// Instantiates a new displayTemplate and sets the default values.
+// NewDisplayTemplate instantiates a new displayTemplate and sets the default values.
 func NewDisplayTemplate()(*DisplayTemplate) {
     m := &DisplayTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DisplayTemplate) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *DisplayTemplate) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the id property value. The text identifier for the display template; for example, contosoTickets.
+// GetId gets the id property value. The text identifier for the display template; for example, contosoTickets.
 func (m *DisplayTemplate) GetId()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *DisplayTemplate) GetId()(*string) {
         return m.id
     }
 }
-// Gets the layout property value. 
+// GetLayout gets the layout property value. 
 func (m *DisplayTemplate) GetLayout()(*Json) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *DisplayTemplate) GetLayout()(*Json) {
         return m.layout
     }
 }
-// Gets the priority property value. Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
+// GetPriority gets the priority property value. Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
 func (m *DisplayTemplate) GetPriority()(*int32) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *DisplayTemplate) GetPriority()(*int32) {
         return m.priority
     }
 }
-// Gets the rules property value. Specifies additional rules for selecting this display template based on the item schema. Optional.
+// GetRules gets the rules property value. Specifies additional rules for selecting this display template based on the item schema. Optional.
 func (m *DisplayTemplate) GetRules()([]PropertyRule) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *DisplayTemplate) GetRules()([]PropertyRule) {
         return m.rules
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DisplayTemplate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,9 +116,7 @@ func (m *DisplayTemplate) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *DisplayTemplate) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DisplayTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("id", m.GetId())
@@ -157,33 +155,23 @@ func (m *DisplayTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DisplayTemplate) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the id property value. The text identifier for the display template; for example, contosoTickets.
-// Parameters:
-//  - value : Value to set for the id property.
+// SetId sets the id property value. The text identifier for the display template; for example, contosoTickets.
 func (m *DisplayTemplate) SetId(value *string)() {
     m.id = value
 }
-// Sets the layout property value. 
-// Parameters:
-//  - value : Value to set for the layout property.
+// SetLayout sets the layout property value. 
 func (m *DisplayTemplate) SetLayout(value *Json)() {
     m.layout = value
 }
-// Sets the priority property value. Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
-// Parameters:
-//  - value : Value to set for the priority property.
+// SetPriority sets the priority property value. Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
 func (m *DisplayTemplate) SetPriority(value *int32)() {
     m.priority = value
 }
-// Sets the rules property value. Specifies additional rules for selecting this display template based on the item schema. Optional.
-// Parameters:
-//  - value : Value to set for the rules property.
+// SetRules sets the rules property value. Specifies additional rules for selecting this display template based on the item schema. Optional.
 func (m *DisplayTemplate) SetRules(value []PropertyRule)() {
     m.rules = value
 }

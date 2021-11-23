@@ -8,7 +8,7 @@ import (
     idf114c84645e0468be65a77c65f995d352555044fb5940745fb046992c15f7b4 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/names/addformulalocal"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\names
+// namesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\names
 type NamesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type NamesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// NamesRequestBuilderGetOptions options for Get
 type NamesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type NamesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns collection of names that are associated with the worksheet. Read-only.
+// namesRequestBuilderGetQueryParameters returns collection of names that are associated with the worksheet. Read-only.
 type NamesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type NamesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// NamesRequestBuilderPostOptions options for Post
 type NamesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookNamedItem;
@@ -64,10 +64,7 @@ func (m *NamesRequestBuilder) Add()(*i6c60c6f68ddb93af399d9fe7dcdedcc6abdcae4f19
 func (m *NamesRequestBuilder) AddFormulaLocal()(*idf114c84645e0468be65a77c65f995d352555044fb5940745fb046992c15f7b4.AddFormulaLocalRequestBuilder) {
     return idf114c84645e0468be65a77c65f995d352555044fb5940745fb046992c15f7b4.NewAddFormulaLocalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new NamesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNamesRequestBuilderInternal instantiates a new NamesRequestBuilder and sets the default values.
 func NewNamesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NamesRequestBuilder) {
     m := &NamesRequestBuilder{
     }
@@ -80,18 +77,13 @@ func NewNamesRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NamesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNamesRequestBuilder instantiates a new NamesRequestBuilder and sets the default values.
 func NewNamesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NamesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNamesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns collection of names that are associated with the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns collection of names that are associated with the worksheet. Read-only.
 func (m *NamesRequestBuilder) CreateGetRequestInformation(options *NamesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,9 +103,7 @@ func (m *NamesRequestBuilder) CreateGetRequestInformation(options *NamesRequestB
     }
     return requestInfo, nil
 }
-// Returns collection of names that are associated with the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation returns collection of names that are associated with the worksheet. Read-only.
 func (m *NamesRequestBuilder) CreatePostRequestInformation(options *NamesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,9 +121,7 @@ func (m *NamesRequestBuilder) CreatePostRequestInformation(options *NamesRequest
     }
     return requestInfo, nil
 }
-// Returns collection of names that are associated with the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get returns collection of names that are associated with the worksheet. Read-only.
 func (m *NamesRequestBuilder) Get(options *NamesRequestBuilderGetOptions)(*NamesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -145,9 +133,7 @@ func (m *NamesRequestBuilder) Get(options *NamesRequestBuilderGetOptions)(*Names
     }
     return res.(*NamesResponse), nil
 }
-// Returns collection of names that are associated with the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post returns collection of names that are associated with the worksheet. Read-only.
 func (m *NamesRequestBuilder) Post(options *NamesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookNamedItem, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

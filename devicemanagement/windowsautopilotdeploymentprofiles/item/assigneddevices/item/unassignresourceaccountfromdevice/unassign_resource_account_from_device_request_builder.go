@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}\assignedDevices\{windowsAutopilotDeviceIdentity-id}\microsoft.graph.unassignResourceAccountFromDevice
+// unassignResourceAccountFromDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}\assignedDevices\{windowsAutopilotDeviceIdentity-id}\microsoft.graph.unassignResourceAccountFromDevice
 type UnassignResourceAccountFromDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UnassignResourceAccountFromDeviceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UnassignResourceAccountFromDeviceRequestBuilderPostOptions options for Post
 type UnassignResourceAccountFromDeviceRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type UnassignResourceAccountFromDeviceRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnassignResourceAccountFromDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnassignResourceAccountFromDeviceRequestBuilderInternal instantiates a new UnassignResourceAccountFromDeviceRequestBuilder and sets the default values.
 func NewUnassignResourceAccountFromDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnassignResourceAccountFromDeviceRequestBuilder) {
     m := &UnassignResourceAccountFromDeviceRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewUnassignResourceAccountFromDeviceRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnassignResourceAccountFromDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnassignResourceAccountFromDeviceRequestBuilder instantiates a new UnassignResourceAccountFromDeviceRequestBuilder and sets the default values.
 func NewUnassignResourceAccountFromDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnassignResourceAccountFromDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnassignResourceAccountFromDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Unassigns the resource account from an Autopilot device.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation unassigns the resource account from an Autopilot device.
 func (m *UnassignResourceAccountFromDeviceRequestBuilder) CreatePostRequestInformation(options *UnassignResourceAccountFromDeviceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *UnassignResourceAccountFromDeviceRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// Unassigns the resource account from an Autopilot device.
-// Parameters:
-//  - options : Options for the request
+// Post unassigns the resource account from an Autopilot device.
 func (m *UnassignResourceAccountFromDeviceRequestBuilder) Post(options *UnassignResourceAccountFromDeviceRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

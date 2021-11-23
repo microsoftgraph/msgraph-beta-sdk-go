@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\tenants\{tenant-id}\microsoft.graph.managedTenants.resetTenantOnboardingStatus
+// resetTenantOnboardingStatusRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\tenants\{tenant-id}\microsoft.graph.managedTenants.resetTenantOnboardingStatus
 type ResetTenantOnboardingStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ResetTenantOnboardingStatusRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ResetTenantOnboardingStatusRequestBuilderPostOptions options for Post
 type ResetTenantOnboardingStatusRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type ResetTenantOnboardingStatusRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes tenant
+// resetTenantOnboardingStatusResponse union type wrapper for classes tenant
 type ResetTenantOnboardingStatusResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type tenant
     tenant *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenant;
 }
-// Instantiates a new resetTenantOnboardingStatusResponse and sets the default values.
+// NewResetTenantOnboardingStatusResponse instantiates a new resetTenantOnboardingStatusResponse and sets the default values.
 func NewResetTenantOnboardingStatusResponse()(*ResetTenantOnboardingStatusResponse) {
     m := &ResetTenantOnboardingStatusResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResetTenantOnboardingStatusResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *ResetTenantOnboardingStatusResponse) GetAdditionalData()(map[string]int
         return m.additionalData
     }
 }
-// Gets the tenant property value. Union type representation for type tenant
+// GetTenant gets the tenant property value. Union type representation for type tenant
 func (m *ResetTenantOnboardingStatusResponse) GetTenant()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenant) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *ResetTenantOnboardingStatusResponse) GetTenant()(*i535684e11b5500196ecb
         return m.tenant
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ResetTenantOnboardingStatusResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["tenant"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *ResetTenantOnboardingStatusResponse) GetFieldDeserializers()(map[string
 func (m *ResetTenantOnboardingStatusResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ResetTenantOnboardingStatusResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("tenant", m.GetTenant())
@@ -90,22 +88,15 @@ func (m *ResetTenantOnboardingStatusResponse) Serialize(writer i04eb5309aeaafadd
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResetTenantOnboardingStatusResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the tenant property value. Union type representation for type tenant
-// Parameters:
-//  - value : Value to set for the tenant property.
+// SetTenant sets the tenant property value. Union type representation for type tenant
 func (m *ResetTenantOnboardingStatusResponse) SetTenant(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tenant)() {
     m.tenant = value
 }
-// Instantiates a new ResetTenantOnboardingStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResetTenantOnboardingStatusRequestBuilderInternal instantiates a new ResetTenantOnboardingStatusRequestBuilder and sets the default values.
 func NewResetTenantOnboardingStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResetTenantOnboardingStatusRequestBuilder) {
     m := &ResetTenantOnboardingStatusRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewResetTenantOnboardingStatusRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ResetTenantOnboardingStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResetTenantOnboardingStatusRequestBuilder instantiates a new ResetTenantOnboardingStatusRequestBuilder and sets the default values.
 func NewResetTenantOnboardingStatusRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResetTenantOnboardingStatusRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResetTenantOnboardingStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action resetTenantOnboardingStatus
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action resetTenantOnboardingStatus
 func (m *ResetTenantOnboardingStatusRequestBuilder) CreatePostRequestInformation(options *ResetTenantOnboardingStatusRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *ResetTenantOnboardingStatusRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// Invoke action resetTenantOnboardingStatus
-// Parameters:
-//  - options : Options for the request
+// Post invoke action resetTenantOnboardingStatus
 func (m *ResetTenantOnboardingStatusRequestBuilder) Post(options *ResetTenantOnboardingStatusRequestBuilderPostOptions)(*ResetTenantOnboardingStatusResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

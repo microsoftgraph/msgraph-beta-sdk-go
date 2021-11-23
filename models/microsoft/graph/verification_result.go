@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// verificationResult 
 type VerificationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     signatureValid *bool;
 }
-// Instantiates a new verificationResult and sets the default values.
+// NewVerificationResult instantiates a new verificationResult and sets the default values.
 func NewVerificationResult()(*VerificationResult) {
     m := &VerificationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerificationResult) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,7 +26,7 @@ func (m *VerificationResult) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the signatureValid property value. 
+// GetSignatureValid gets the signatureValid property value. 
 func (m *VerificationResult) GetSignatureValid()(*bool) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *VerificationResult) GetSignatureValid()(*bool) {
         return m.signatureValid
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *VerificationResult) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["signatureValid"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,9 +52,7 @@ func (m *VerificationResult) GetFieldDeserializers()(map[string]func(interface{}
 func (m *VerificationResult) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *VerificationResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("signatureValid", m.GetSignatureValid())
@@ -70,15 +68,11 @@ func (m *VerificationResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerificationResult) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the signatureValid property value. 
-// Parameters:
-//  - value : Value to set for the signatureValid property.
+// SetSignatureValid sets the signatureValid property value. 
 func (m *VerificationResult) SetSignatureValid(value *bool)() {
     m.signatureValid = value
 }

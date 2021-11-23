@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\supportedRegions\{cloudPcSupportedRegion-id}
+// cloudPcSupportedRegionRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\supportedRegions\{cloudPcSupportedRegion-id}
 type CloudPcSupportedRegionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudPcSupportedRegionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcSupportedRegionRequestBuilderDeleteOptions options for Delete
 type CloudPcSupportedRegionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CloudPcSupportedRegionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcSupportedRegionRequestBuilderGetOptions options for Get
 type CloudPcSupportedRegionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CloudPcSupportedRegionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Cloud PC supported regions.
+// cloudPcSupportedRegionRequestBuilderGetQueryParameters cloud PC supported regions.
 type CloudPcSupportedRegionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcSupportedRegionRequestBuilderPatchOptions options for Patch
 type CloudPcSupportedRegionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcSupportedRegion;
@@ -53,10 +53,7 @@ type CloudPcSupportedRegionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPcSupportedRegionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcSupportedRegionRequestBuilderInternal instantiates a new CloudPcSupportedRegionRequestBuilder and sets the default values.
 func NewCloudPcSupportedRegionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcSupportedRegionRequestBuilder) {
     m := &CloudPcSupportedRegionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCloudPcSupportedRegionRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcSupportedRegionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcSupportedRegionRequestBuilder instantiates a new CloudPcSupportedRegionRequestBuilder and sets the default values.
 func NewCloudPcSupportedRegionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcSupportedRegionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcSupportedRegionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Cloud PC supported regions.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation cloud PC supported regions.
 func (m *CloudPcSupportedRegionRequestBuilder) CreateDeleteRequestInformation(options *CloudPcSupportedRegionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CloudPcSupportedRegionRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// Cloud PC supported regions.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation cloud PC supported regions.
 func (m *CloudPcSupportedRegionRequestBuilder) CreateGetRequestInformation(options *CloudPcSupportedRegionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPcSupportedRegionRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Cloud PC supported regions.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation cloud PC supported regions.
 func (m *CloudPcSupportedRegionRequestBuilder) CreatePatchRequestInformation(options *CloudPcSupportedRegionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CloudPcSupportedRegionRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Cloud PC supported regions.
-// Parameters:
-//  - options : Options for the request
+// Delete cloud PC supported regions.
 func (m *CloudPcSupportedRegionRequestBuilder) Delete(options *CloudPcSupportedRegionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CloudPcSupportedRegionRequestBuilder) Delete(options *CloudPcSupportedR
     }
     return nil
 }
-// Cloud PC supported regions.
-// Parameters:
-//  - options : Options for the request
+// Get cloud PC supported regions.
 func (m *CloudPcSupportedRegionRequestBuilder) Get(options *CloudPcSupportedRegionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcSupportedRegion, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CloudPcSupportedRegionRequestBuilder) Get(options *CloudPcSupportedRegi
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcSupportedRegion), nil
 }
-// Cloud PC supported regions.
-// Parameters:
-//  - options : Options for the request
+// Patch cloud PC supported regions.
 func (m *CloudPcSupportedRegionRequestBuilder) Patch(options *CloudPcSupportedRegionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

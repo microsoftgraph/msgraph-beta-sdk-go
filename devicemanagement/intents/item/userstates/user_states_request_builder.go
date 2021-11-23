@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\userStates
+// userStatesRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\userStates
 type UserStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserStatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserStatesRequestBuilderGetOptions options for Get
 type UserStatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserStatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of states of all users that the intent is applied to
+// userStatesRequestBuilderGetQueryParameters collection of states of all users that the intent is applied to
 type UserStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserStatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserStatesRequestBuilderPostOptions options for Post
 type UserStatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentUserState;
@@ -56,10 +56,7 @@ type UserStatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserStatesRequestBuilderInternal instantiates a new UserStatesRequestBuilder and sets the default values.
 func NewUserStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserStatesRequestBuilder) {
     m := &UserStatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserStatesRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserStatesRequestBuilder instantiates a new UserStatesRequestBuilder and sets the default values.
 func NewUserStatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserStatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of states of all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of states of all users that the intent is applied to
 func (m *UserStatesRequestBuilder) CreateGetRequestInformation(options *UserStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserStatesRequestBuilder) CreateGetRequestInformation(options *UserStat
     }
     return requestInfo, nil
 }
-// Collection of states of all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of states of all users that the intent is applied to
 func (m *UserStatesRequestBuilder) CreatePostRequestInformation(options *UserStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserStatesRequestBuilder) CreatePostRequestInformation(options *UserSta
     }
     return requestInfo, nil
 }
-// Collection of states of all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// Get collection of states of all users that the intent is applied to
 func (m *UserStatesRequestBuilder) Get(options *UserStatesRequestBuilderGetOptions)(*UserStatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserStatesRequestBuilder) Get(options *UserStatesRequestBuilderGetOptio
     }
     return res.(*UserStatesResponse), nil
 }
-// Collection of states of all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// Post collection of states of all users that the intent is applied to
 func (m *UserStatesRequestBuilder) Post(options *UserStatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentUserState, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

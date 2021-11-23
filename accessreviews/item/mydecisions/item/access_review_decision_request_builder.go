@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \accessReviews\{accessReview-id}\myDecisions\{accessReviewDecision-id}
+// accessReviewDecisionRequestBuilder builds and executes requests for operations under \accessReviews\{accessReview-id}\myDecisions\{accessReviewDecision-id}
 type AccessReviewDecisionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AccessReviewDecisionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessReviewDecisionRequestBuilderDeleteOptions options for Delete
 type AccessReviewDecisionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AccessReviewDecisionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessReviewDecisionRequestBuilderGetOptions options for Get
 type AccessReviewDecisionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AccessReviewDecisionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
+// accessReviewDecisionRequestBuilderGetQueryParameters the collection of decisions for the caller, if the caller is a reviewer.
 type AccessReviewDecisionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessReviewDecisionRequestBuilderPatchOptions options for Patch
 type AccessReviewDecisionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewDecision;
@@ -53,10 +53,7 @@ type AccessReviewDecisionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccessReviewDecisionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewDecisionRequestBuilderInternal instantiates a new AccessReviewDecisionRequestBuilder and sets the default values.
 func NewAccessReviewDecisionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewDecisionRequestBuilder) {
     m := &AccessReviewDecisionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAccessReviewDecisionRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessReviewDecisionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewDecisionRequestBuilder instantiates a new AccessReviewDecisionRequestBuilder and sets the default values.
 func NewAccessReviewDecisionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewDecisionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewDecisionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of decisions for the caller, if the caller is a reviewer.
 func (m *AccessReviewDecisionRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewDecisionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AccessReviewDecisionRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of decisions for the caller, if the caller is a reviewer.
 func (m *AccessReviewDecisionRequestBuilder) CreateGetRequestInformation(options *AccessReviewDecisionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AccessReviewDecisionRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of decisions for the caller, if the caller is a reviewer.
 func (m *AccessReviewDecisionRequestBuilder) CreatePatchRequestInformation(options *AccessReviewDecisionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AccessReviewDecisionRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of decisions for the caller, if the caller is a reviewer.
 func (m *AccessReviewDecisionRequestBuilder) Delete(options *AccessReviewDecisionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AccessReviewDecisionRequestBuilder) Delete(options *AccessReviewDecisio
     }
     return nil
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of decisions for the caller, if the caller is a reviewer.
 func (m *AccessReviewDecisionRequestBuilder) Get(options *AccessReviewDecisionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewDecision, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AccessReviewDecisionRequestBuilder) Get(options *AccessReviewDecisionRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewDecision), nil
 }
-// The collection of decisions for the caller, if the caller is a reviewer.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of decisions for the caller, if the caller is a reviewer.
 func (m *AccessReviewDecisionRequestBuilder) Patch(options *AccessReviewDecisionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

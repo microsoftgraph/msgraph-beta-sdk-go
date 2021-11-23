@@ -5,21 +5,21 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// snoozeReminderRequestBody 
 type SnoozeReminderRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     newReminderTime *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone;
 }
-// Instantiates a new snoozeReminderRequestBody and sets the default values.
+// NewSnoozeReminderRequestBody instantiates a new snoozeReminderRequestBody and sets the default values.
 func NewSnoozeReminderRequestBody()(*SnoozeReminderRequestBody) {
     m := &SnoozeReminderRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SnoozeReminderRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *SnoozeReminderRequestBody) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// Gets the NewReminderTime property value. 
+// GetNewReminderTime gets the NewReminderTime property value. 
 func (m *SnoozeReminderRequestBody) GetNewReminderTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *SnoozeReminderRequestBody) GetNewReminderTime()(*i535684e11b5500196ecb4
         return m.newReminderTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SnoozeReminderRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["newReminderTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -53,9 +53,7 @@ func (m *SnoozeReminderRequestBody) GetFieldDeserializers()(map[string]func(inte
 func (m *SnoozeReminderRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SnoozeReminderRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("newReminderTime", m.GetNewReminderTime())
@@ -71,15 +69,11 @@ func (m *SnoozeReminderRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SnoozeReminderRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the NewReminderTime property value. 
-// Parameters:
-//  - value : Value to set for the NewReminderTime property.
+// SetNewReminderTime sets the NewReminderTime property value. 
 func (m *SnoozeReminderRequestBody) SetNewReminderTime(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone)() {
     m.newReminderTime = value
 }

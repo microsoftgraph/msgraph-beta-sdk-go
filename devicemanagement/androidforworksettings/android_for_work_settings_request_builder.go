@@ -10,7 +10,7 @@ import (
     ibc8cdcda9d0880d123b6a234fd0980335960dc7e2f066cbce430ed5b5bd54ef8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androidforworksettings/unbind"
 )
 
-// Builds and executes requests for operations under \deviceManagement\androidForWorkSettings
+// androidForWorkSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\androidForWorkSettings
 type AndroidForWorkSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type AndroidForWorkSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AndroidForWorkSettingsRequestBuilderDeleteOptions options for Delete
 type AndroidForWorkSettingsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type AndroidForWorkSettingsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AndroidForWorkSettingsRequestBuilderGetOptions options for Get
 type AndroidForWorkSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type AndroidForWorkSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The singleton Android for Work settings entity.
+// androidForWorkSettingsRequestBuilderGetQueryParameters the singleton Android for Work settings entity.
 type AndroidForWorkSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AndroidForWorkSettingsRequestBuilderPatchOptions options for Patch
 type AndroidForWorkSettingsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkSettings;
@@ -60,10 +60,7 @@ type AndroidForWorkSettingsRequestBuilderPatchOptions struct {
 func (m *AndroidForWorkSettingsRequestBuilder) CompleteSignup()(*i280e19d80d7a529d2b9933cf3044f19490e2f99605f9859eeb0710b5d4c6b359.CompleteSignupRequestBuilder) {
     return i280e19d80d7a529d2b9933cf3044f19490e2f99605f9859eeb0710b5d4c6b359.NewCompleteSignupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new AndroidForWorkSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidForWorkSettingsRequestBuilderInternal instantiates a new AndroidForWorkSettingsRequestBuilder and sets the default values.
 func NewAndroidForWorkSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidForWorkSettingsRequestBuilder) {
     m := &AndroidForWorkSettingsRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewAndroidForWorkSettingsRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AndroidForWorkSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidForWorkSettingsRequestBuilder instantiates a new AndroidForWorkSettingsRequestBuilder and sets the default values.
 func NewAndroidForWorkSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidForWorkSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidForWorkSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The singleton Android for Work settings entity.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the singleton Android for Work settings entity.
 func (m *AndroidForWorkSettingsRequestBuilder) CreateDeleteRequestInformation(options *AndroidForWorkSettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *AndroidForWorkSettingsRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// The singleton Android for Work settings entity.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the singleton Android for Work settings entity.
 func (m *AndroidForWorkSettingsRequestBuilder) CreateGetRequestInformation(options *AndroidForWorkSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,9 +116,7 @@ func (m *AndroidForWorkSettingsRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The singleton Android for Work settings entity.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the singleton Android for Work settings entity.
 func (m *AndroidForWorkSettingsRequestBuilder) CreatePatchRequestInformation(options *AndroidForWorkSettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +134,7 @@ func (m *AndroidForWorkSettingsRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The singleton Android for Work settings entity.
-// Parameters:
-//  - options : Options for the request
+// Delete the singleton Android for Work settings entity.
 func (m *AndroidForWorkSettingsRequestBuilder) Delete(options *AndroidForWorkSettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -160,9 +146,7 @@ func (m *AndroidForWorkSettingsRequestBuilder) Delete(options *AndroidForWorkSet
     }
     return nil
 }
-// The singleton Android for Work settings entity.
-// Parameters:
-//  - options : Options for the request
+// Get the singleton Android for Work settings entity.
 func (m *AndroidForWorkSettingsRequestBuilder) Get(options *AndroidForWorkSettingsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -174,9 +158,7 @@ func (m *AndroidForWorkSettingsRequestBuilder) Get(options *AndroidForWorkSettin
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidForWorkSettings), nil
 }
-// The singleton Android for Work settings entity.
-// Parameters:
-//  - options : Options for the request
+// Patch the singleton Android for Work settings entity.
 func (m *AndroidForWorkSettingsRequestBuilder) Patch(options *AndroidForWorkSettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

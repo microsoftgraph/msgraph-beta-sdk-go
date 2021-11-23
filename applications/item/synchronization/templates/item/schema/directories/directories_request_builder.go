@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\synchronization\templates\{synchronizationTemplate-id}\schema\directories
+// directoriesRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\templates\{synchronizationTemplate-id}\schema\directories
 type DirectoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DirectoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DirectoriesRequestBuilderGetOptions options for Get
 type DirectoriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DirectoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Contains the collection of directories and all of their objects.
+// directoriesRequestBuilderGetQueryParameters contains the collection of directories and all of their objects.
 type DirectoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DirectoriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DirectoriesRequestBuilderPostOptions options for Post
 type DirectoriesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryDefinition;
@@ -56,10 +56,7 @@ type DirectoriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DirectoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoriesRequestBuilderInternal instantiates a new DirectoriesRequestBuilder and sets the default values.
 func NewDirectoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoriesRequestBuilder) {
     m := &DirectoriesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDirectoriesRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DirectoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoriesRequestBuilder instantiates a new DirectoriesRequestBuilder and sets the default values.
 func NewDirectoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Contains the collection of directories and all of their objects.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation contains the collection of directories and all of their objects.
 func (m *DirectoriesRequestBuilder) CreateGetRequestInformation(options *DirectoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DirectoriesRequestBuilder) CreateGetRequestInformation(options *Directo
     }
     return requestInfo, nil
 }
-// Contains the collection of directories and all of their objects.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation contains the collection of directories and all of their objects.
 func (m *DirectoriesRequestBuilder) CreatePostRequestInformation(options *DirectoriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DirectoriesRequestBuilder) CreatePostRequestInformation(options *Direct
     }
     return requestInfo, nil
 }
-// Contains the collection of directories and all of their objects.
-// Parameters:
-//  - options : Options for the request
+// Get contains the collection of directories and all of their objects.
 func (m *DirectoriesRequestBuilder) Get(options *DirectoriesRequestBuilderGetOptions)(*DirectoriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DirectoriesRequestBuilder) Get(options *DirectoriesRequestBuilderGetOpt
     }
     return res.(*DirectoriesResponse), nil
 }
-// Contains the collection of directories and all of their objects.
-// Parameters:
-//  - options : Options for the request
+// Post contains the collection of directories and all of their objects.
 func (m *DirectoriesRequestBuilder) Post(options *DirectoriesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryDefinition, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

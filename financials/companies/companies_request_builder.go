@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies
+// companiesRequestBuilder builds and executes requests for operations under \financials\companies
 type CompaniesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CompaniesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CompaniesRequestBuilderGetOptions options for Get
 type CompaniesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CompaniesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get companies from financials
+// companiesRequestBuilderGetQueryParameters get companies from financials
 type CompaniesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CompaniesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CompaniesRequestBuilderPostOptions options for Post
 type CompaniesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Company;
@@ -56,10 +56,7 @@ type CompaniesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CompaniesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCompaniesRequestBuilderInternal instantiates a new CompaniesRequestBuilder and sets the default values.
 func NewCompaniesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CompaniesRequestBuilder) {
     m := &CompaniesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCompaniesRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CompaniesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCompaniesRequestBuilder instantiates a new CompaniesRequestBuilder and sets the default values.
 func NewCompaniesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CompaniesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get companies from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get companies from financials
 func (m *CompaniesRequestBuilder) CreateGetRequestInformation(options *CompaniesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CompaniesRequestBuilder) CreateGetRequestInformation(options *Companies
     }
     return requestInfo, nil
 }
-// Create new navigation property to companies for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to companies for financials
 func (m *CompaniesRequestBuilder) CreatePostRequestInformation(options *CompaniesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CompaniesRequestBuilder) CreatePostRequestInformation(options *Companie
     }
     return requestInfo, nil
 }
-// Get companies from financials
-// Parameters:
-//  - options : Options for the request
+// Get get companies from financials
 func (m *CompaniesRequestBuilder) Get(options *CompaniesRequestBuilderGetOptions)(*CompaniesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CompaniesRequestBuilder) Get(options *CompaniesRequestBuilderGetOptions
     }
     return res.(*CompaniesResponse), nil
 }
-// Create new navigation property to companies for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to companies for financials
 func (m *CompaniesRequestBuilder) Post(options *CompaniesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Company, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

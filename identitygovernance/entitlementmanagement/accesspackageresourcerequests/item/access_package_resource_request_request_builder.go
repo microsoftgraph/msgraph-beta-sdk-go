@@ -8,7 +8,7 @@ import (
     idee36e2a92d311e871fe140e3debc444d07adc7b584e73537f9f5267d172aa4a "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresourcerequests/item/accesspackageresource"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceRequests\{accessPackageResourceRequest-id}
+// accessPackageResourceRequestRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceRequests\{accessPackageResourceRequest-id}
 type AccessPackageResourceRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type AccessPackageResourceRequestRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessPackageResourceRequestRequestBuilderDeleteOptions options for Delete
 type AccessPackageResourceRequestRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AccessPackageResourceRequestRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessPackageResourceRequestRequestBuilderGetOptions options for Get
 type AccessPackageResourceRequestRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type AccessPackageResourceRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get accessPackageResourceRequests from identityGovernance
+// accessPackageResourceRequestRequestBuilderGetQueryParameters get accessPackageResourceRequests from identityGovernance
 type AccessPackageResourceRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessPackageResourceRequestRequestBuilderPatchOptions options for Patch
 type AccessPackageResourceRequestRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRequest;
@@ -58,10 +58,7 @@ type AccessPackageResourceRequestRequestBuilderPatchOptions struct {
 func (m *AccessPackageResourceRequestRequestBuilder) AccessPackageResource()(*idee36e2a92d311e871fe140e3debc444d07adc7b584e73537f9f5267d172aa4a.AccessPackageResourceRequestBuilder) {
     return idee36e2a92d311e871fe140e3debc444d07adc7b584e73537f9f5267d172aa4a.NewAccessPackageResourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new AccessPackageResourceRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageResourceRequestRequestBuilderInternal instantiates a new AccessPackageResourceRequestRequestBuilder and sets the default values.
 func NewAccessPackageResourceRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageResourceRequestRequestBuilder) {
     m := &AccessPackageResourceRequestRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewAccessPackageResourceRequestRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackageResourceRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageResourceRequestRequestBuilder instantiates a new AccessPackageResourceRequestRequestBuilder and sets the default values.
 func NewAccessPackageResourceRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageResourceRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property accessPackageResourceRequests for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property accessPackageResourceRequests for identityGovernance
 func (m *AccessPackageResourceRequestRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageResourceRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *AccessPackageResourceRequestRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// Get accessPackageResourceRequests from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get accessPackageResourceRequests from identityGovernance
 func (m *AccessPackageResourceRequestRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourceRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *AccessPackageResourceRequestRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Update the navigation property accessPackageResourceRequests in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property accessPackageResourceRequests in identityGovernance
 func (m *AccessPackageResourceRequestRequestBuilder) CreatePatchRequestInformation(options *AccessPackageResourceRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *AccessPackageResourceRequestRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// Delete navigation property accessPackageResourceRequests for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property accessPackageResourceRequests for identityGovernance
 func (m *AccessPackageResourceRequestRequestBuilder) Delete(options *AccessPackageResourceRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *AccessPackageResourceRequestRequestBuilder) Delete(options *AccessPacka
     }
     return nil
 }
-// Get accessPackageResourceRequests from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get accessPackageResourceRequests from identityGovernance
 func (m *AccessPackageResourceRequestRequestBuilder) Get(options *AccessPackageResourceRequestRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *AccessPackageResourceRequestRequestBuilder) Get(options *AccessPackageR
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRequest), nil
 }
-// Update the navigation property accessPackageResourceRequests in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property accessPackageResourceRequests in identityGovernance
 func (m *AccessPackageResourceRequestRequestBuilder) Patch(options *AccessPackageResourceRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

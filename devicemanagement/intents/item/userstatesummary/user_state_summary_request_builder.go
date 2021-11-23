@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\userStateSummary
+// userStateSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\userStateSummary
 type UserStateSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserStateSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserStateSummaryRequestBuilderDeleteOptions options for Delete
 type UserStateSummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UserStateSummaryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserStateSummaryRequestBuilderGetOptions options for Get
 type UserStateSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UserStateSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
+// userStateSummaryRequestBuilderGetQueryParameters a summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 type UserStateSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserStateSummaryRequestBuilderPatchOptions options for Patch
 type UserStateSummaryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentUserStateSummary;
@@ -53,10 +53,7 @@ type UserStateSummaryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserStateSummaryRequestBuilderInternal instantiates a new UserStateSummaryRequestBuilder and sets the default values.
 func NewUserStateSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserStateSummaryRequestBuilder) {
     m := &UserStateSummaryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUserStateSummaryRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserStateSummaryRequestBuilder instantiates a new UserStateSummaryRequestBuilder and sets the default values.
 func NewUserStateSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserStateSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserStateSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 func (m *UserStateSummaryRequestBuilder) CreateDeleteRequestInformation(options *UserStateSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserStateSummaryRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 func (m *UserStateSummaryRequestBuilder) CreateGetRequestInformation(options *UserStateSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserStateSummaryRequestBuilder) CreateGetRequestInformation(options *Us
     }
     return requestInfo, nil
 }
-// A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 func (m *UserStateSummaryRequestBuilder) CreatePatchRequestInformation(options *UserStateSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UserStateSummaryRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// Delete a summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 func (m *UserStateSummaryRequestBuilder) Delete(options *UserStateSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UserStateSummaryRequestBuilder) Delete(options *UserStateSummaryRequest
     }
     return nil
 }
-// A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// Get a summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 func (m *UserStateSummaryRequestBuilder) Get(options *UserStateSummaryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentUserStateSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UserStateSummaryRequestBuilder) Get(options *UserStateSummaryRequestBui
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentUserStateSummary), nil
 }
-// A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// Patch a summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 func (m *UserStateSummaryRequestBuilder) Patch(options *UserStateSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// 
+// managementTemplateDetailedInfo 
 type ManagementTemplateDetailedInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,14 +18,14 @@ type ManagementTemplateDetailedInfo struct {
     // 
     version *int32;
 }
-// Instantiates a new managementTemplateDetailedInfo and sets the default values.
+// NewManagementTemplateDetailedInfo instantiates a new managementTemplateDetailedInfo and sets the default values.
 func NewManagementTemplateDetailedInfo()(*ManagementTemplateDetailedInfo) {
     m := &ManagementTemplateDetailedInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementTemplateDetailedInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *ManagementTemplateDetailedInfo) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// Gets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
+// GetCategory gets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) GetCategory()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *ManagementTemplateDetailedInfo) GetCategory()(*i5c2592132064055aae42449
         return m.category
     }
 }
-// Gets the displayName property value. The display name for the management template. Required. Read-only.
+// GetDisplayName gets the displayName property value. The display name for the management template. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *ManagementTemplateDetailedInfo) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the managementTemplateId property value. The unique identifier for the management template. Required. Read-only.
+// GetManagementTemplateId gets the managementTemplateId property value. The unique identifier for the management template. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) GetManagementTemplateId()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *ManagementTemplateDetailedInfo) GetManagementTemplateId()(*string) {
         return m.managementTemplateId
     }
 }
-// Gets the version property value. 
+// GetVersion gets the version property value. 
 func (m *ManagementTemplateDetailedInfo) GetVersion()(*int32) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *ManagementTemplateDetailedInfo) GetVersion()(*int32) {
         return m.version
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["category"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,9 +114,7 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
 func (m *ManagementTemplateDetailedInfo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagementTemplateDetailedInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetCategory() != nil {
         cast := m.GetCategory().String()
@@ -151,33 +149,23 @@ func (m *ManagementTemplateDetailedInfo) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementTemplateDetailedInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the category property.
+// SetCategory sets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) SetCategory(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)() {
     m.category = value
 }
-// Sets the displayName property value. The display name for the management template. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name for the management template. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the managementTemplateId property value. The unique identifier for the management template. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the managementTemplateId property.
+// SetManagementTemplateId sets the managementTemplateId property value. The unique identifier for the management template. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) SetManagementTemplateId(value *string)() {
     m.managementTemplateId = value
 }
-// Sets the version property value. 
-// Parameters:
-//  - value : Value to set for the version property.
+// SetVersion sets the version property value. 
 func (m *ManagementTemplateDetailedInfo) SetVersion(value *int32)() {
     m.version = value
 }

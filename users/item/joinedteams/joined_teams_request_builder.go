@@ -6,7 +6,7 @@ import (
     i9a58c41a05aa841dd115880d295734f19a9989d1632c9cb86ca9c4135577bf51 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedteams/ref"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\joinedTeams
+// joinedTeamsRequestBuilder builds and executes requests for operations under \users\{user-id}\joinedTeams
 type JoinedTeamsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type JoinedTeamsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// JoinedTeamsRequestBuilderGetOptions options for Get
 type JoinedTeamsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type JoinedTeamsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+// joinedTeamsRequestBuilderGetQueryParameters the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
 type JoinedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type JoinedTeamsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new JoinedTeamsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJoinedTeamsRequestBuilderInternal instantiates a new JoinedTeamsRequestBuilder and sets the default values.
 func NewJoinedTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JoinedTeamsRequestBuilder) {
     m := &JoinedTeamsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewJoinedTeamsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new JoinedTeamsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJoinedTeamsRequestBuilder instantiates a new JoinedTeamsRequestBuilder and sets the default values.
 func NewJoinedTeamsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JoinedTeamsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewJoinedTeamsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
 func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformation(options *JoinedTeamsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformation(options *JoinedT
     }
     return requestInfo, nil
 }
-// The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
 func (m *JoinedTeamsRequestBuilder) Get(options *JoinedTeamsRequestBuilderGetOptions)(*JoinedTeamsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

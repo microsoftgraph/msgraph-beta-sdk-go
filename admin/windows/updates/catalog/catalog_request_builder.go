@@ -8,7 +8,7 @@ import (
     id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/catalog/entries/item"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\catalog
+// catalogRequestBuilder builds and executes requests for operations under \admin\windows\updates\catalog
 type CatalogRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type CatalogRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CatalogRequestBuilderDeleteOptions options for Delete
 type CatalogRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CatalogRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CatalogRequestBuilderGetOptions options for Get
 type CatalogRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type CatalogRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Catalog of content that can be approved for deployment by the deployment service. Read-only.
+// catalogRequestBuilderGetQueryParameters catalog of content that can be approved for deployment by the deployment service. Read-only.
 type CatalogRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CatalogRequestBuilderPatchOptions options for Patch
 type CatalogRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Catalog;
@@ -55,10 +55,7 @@ type CatalogRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CatalogRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCatalogRequestBuilderInternal instantiates a new CatalogRequestBuilder and sets the default values.
 func NewCatalogRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CatalogRequestBuilder) {
     m := &CatalogRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewCatalogRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CatalogRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCatalogRequestBuilder instantiates a new CatalogRequestBuilder and sets the default values.
 func NewCatalogRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CatalogRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCatalogRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Catalog of content that can be approved for deployment by the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *CatalogRequestBuilder) CreateDeleteRequestInformation(options *CatalogRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *CatalogRequestBuilder) CreateDeleteRequestInformation(options *CatalogR
     }
     return requestInfo, nil
 }
-// Catalog of content that can be approved for deployment by the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *CatalogRequestBuilder) CreateGetRequestInformation(options *CatalogRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *CatalogRequestBuilder) CreateGetRequestInformation(options *CatalogRequ
     }
     return requestInfo, nil
 }
-// Catalog of content that can be approved for deployment by the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *CatalogRequestBuilder) CreatePatchRequestInformation(options *CatalogRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *CatalogRequestBuilder) CreatePatchRequestInformation(options *CatalogRe
     }
     return requestInfo, nil
 }
-// Catalog of content that can be approved for deployment by the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *CatalogRequestBuilder) Delete(options *CatalogRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *CatalogRequestBuilder) Delete(options *CatalogRequestBuilderDeleteOptio
 func (m *CatalogRequestBuilder) Entries()(*i4968f4ec9198198a442624bbae5280f764e604de782d3e8b5b23463d851d1581.EntriesRequestBuilder) {
     return i4968f4ec9198198a442624bbae5280f764e604de782d3e8b5b23463d851d1581.NewEntriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.catalog.entries.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// EntriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.catalog.entries.item collection
 func (m *CatalogRequestBuilder) EntriesById(id string)(*id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91.CatalogEntryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -171,9 +155,7 @@ func (m *CatalogRequestBuilder) EntriesById(id string)(*id50e9b79234f49f74c6a4b5
     }
     return id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91.NewCatalogEntryRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Catalog of content that can be approved for deployment by the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *CatalogRequestBuilder) Get(options *CatalogRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Catalog, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *CatalogRequestBuilder) Get(options *CatalogRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Catalog), nil
 }
-// Catalog of content that can be approved for deployment by the deployment service. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *CatalogRequestBuilder) Patch(options *CatalogRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

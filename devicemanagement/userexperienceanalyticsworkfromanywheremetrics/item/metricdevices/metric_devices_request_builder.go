@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsWorkFromAnywhereMetrics\{userExperienceAnalyticsWorkFromAnywhereMetric-id}\metricDevices
+// metricDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsWorkFromAnywhereMetrics\{userExperienceAnalyticsWorkFromAnywhereMetric-id}\metricDevices
 type MetricDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MetricDevicesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MetricDevicesRequestBuilderGetOptions options for Get
 type MetricDevicesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MetricDevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The work from anywhere metric devices.
+// metricDevicesRequestBuilderGetQueryParameters the work from anywhere metric devices.
 type MetricDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MetricDevicesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MetricDevicesRequestBuilderPostOptions options for Post
 type MetricDevicesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereDevice;
@@ -56,10 +56,7 @@ type MetricDevicesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MetricDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMetricDevicesRequestBuilderInternal instantiates a new MetricDevicesRequestBuilder and sets the default values.
 func NewMetricDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MetricDevicesRequestBuilder) {
     m := &MetricDevicesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMetricDevicesRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MetricDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMetricDevicesRequestBuilder instantiates a new MetricDevicesRequestBuilder and sets the default values.
 func NewMetricDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MetricDevicesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMetricDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The work from anywhere metric devices.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the work from anywhere metric devices.
 func (m *MetricDevicesRequestBuilder) CreateGetRequestInformation(options *MetricDevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MetricDevicesRequestBuilder) CreateGetRequestInformation(options *Metri
     }
     return requestInfo, nil
 }
-// The work from anywhere metric devices.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the work from anywhere metric devices.
 func (m *MetricDevicesRequestBuilder) CreatePostRequestInformation(options *MetricDevicesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MetricDevicesRequestBuilder) CreatePostRequestInformation(options *Metr
     }
     return requestInfo, nil
 }
-// The work from anywhere metric devices.
-// Parameters:
-//  - options : Options for the request
+// Get the work from anywhere metric devices.
 func (m *MetricDevicesRequestBuilder) Get(options *MetricDevicesRequestBuilderGetOptions)(*MetricDevicesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MetricDevicesRequestBuilder) Get(options *MetricDevicesRequestBuilderGe
     }
     return res.(*MetricDevicesResponse), nil
 }
-// The work from anywhere metric devices.
-// Parameters:
-//  - options : Options for the request
+// Post the work from anywhere metric devices.
 func (m *MetricDevicesRequestBuilder) Post(options *MetricDevicesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsWorkFromAnywhereDevice, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

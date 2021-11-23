@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.uploadDepToken
+// uploadDepTokenRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.uploadDepToken
 type UploadDepTokenRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UploadDepTokenRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UploadDepTokenRequestBuilderPostOptions options for Post
 type UploadDepTokenRequestBuilderPostOptions struct {
     // 
     Body *UploadDepTokenRequestBody;
@@ -24,10 +24,7 @@ type UploadDepTokenRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UploadDepTokenRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUploadDepTokenRequestBuilderInternal instantiates a new UploadDepTokenRequestBuilder and sets the default values.
 func NewUploadDepTokenRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UploadDepTokenRequestBuilder) {
     m := &UploadDepTokenRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewUploadDepTokenRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UploadDepTokenRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUploadDepTokenRequestBuilder instantiates a new UploadDepTokenRequestBuilder and sets the default values.
 func NewUploadDepTokenRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UploadDepTokenRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUploadDepTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Uploads a new Device Enrollment Program token
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation uploads a new Device Enrollment Program token
 func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformation(options *UploadDepTokenRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformation(options *Upl
     }
     return requestInfo, nil
 }
-// Uploads a new Device Enrollment Program token
-// Parameters:
-//  - options : Options for the request
+// Post uploads a new Device Enrollment Program token
 func (m *UploadDepTokenRequestBuilder) Post(options *UploadDepTokenRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -8,7 +8,7 @@ import (
     i0c67a157507f229b79bb5a42860b892b4a5eafc70b612c8f218a33421b0a7dfc "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicyconfigurations/item/definitionvalues/item/presentationvalues/item/presentation"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\definitionValues\{groupPolicyDefinitionValue-id}\presentationValues\{groupPolicyPresentationValue-id}
+// groupPolicyPresentationValueRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\definitionValues\{groupPolicyDefinitionValue-id}\presentationValues\{groupPolicyPresentationValue-id}
 type GroupPolicyPresentationValueRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type GroupPolicyPresentationValueRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupPolicyPresentationValueRequestBuilderDeleteOptions options for Delete
 type GroupPolicyPresentationValueRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type GroupPolicyPresentationValueRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupPolicyPresentationValueRequestBuilderGetOptions options for Get
 type GroupPolicyPresentationValueRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type GroupPolicyPresentationValueRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The associated group policy presentation values with the definition value.
+// groupPolicyPresentationValueRequestBuilderGetQueryParameters the associated group policy presentation values with the definition value.
 type GroupPolicyPresentationValueRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupPolicyPresentationValueRequestBuilderPatchOptions options for Patch
 type GroupPolicyPresentationValueRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyPresentationValue;
@@ -55,10 +55,7 @@ type GroupPolicyPresentationValueRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupPolicyPresentationValueRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyPresentationValueRequestBuilderInternal instantiates a new GroupPolicyPresentationValueRequestBuilder and sets the default values.
 func NewGroupPolicyPresentationValueRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyPresentationValueRequestBuilder) {
     m := &GroupPolicyPresentationValueRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewGroupPolicyPresentationValueRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupPolicyPresentationValueRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyPresentationValueRequestBuilder instantiates a new GroupPolicyPresentationValueRequestBuilder and sets the default values.
 func NewGroupPolicyPresentationValueRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyPresentationValueRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyPresentationValueRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The associated group policy presentation values with the definition value.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the associated group policy presentation values with the definition value.
 func (m *GroupPolicyPresentationValueRequestBuilder) CreateDeleteRequestInformation(options *GroupPolicyPresentationValueRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *GroupPolicyPresentationValueRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// The associated group policy presentation values with the definition value.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the associated group policy presentation values with the definition value.
 func (m *GroupPolicyPresentationValueRequestBuilder) CreateGetRequestInformation(options *GroupPolicyPresentationValueRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *GroupPolicyPresentationValueRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// The associated group policy presentation values with the definition value.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the associated group policy presentation values with the definition value.
 func (m *GroupPolicyPresentationValueRequestBuilder) CreatePatchRequestInformation(options *GroupPolicyPresentationValueRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *GroupPolicyPresentationValueRequestBuilder) CreatePatchRequestInformati
 func (m *GroupPolicyPresentationValueRequestBuilder) DefinitionValue()(*i001eb6cb139a524dd351cd98bb0c439290700a903f23d19a2f27b36ffe531777.DefinitionValueRequestBuilder) {
     return i001eb6cb139a524dd351cd98bb0c439290700a903f23d19a2f27b36ffe531777.NewDefinitionValueRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The associated group policy presentation values with the definition value.
-// Parameters:
-//  - options : Options for the request
+// Delete the associated group policy presentation values with the definition value.
 func (m *GroupPolicyPresentationValueRequestBuilder) Delete(options *GroupPolicyPresentationValueRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *GroupPolicyPresentationValueRequestBuilder) Delete(options *GroupPolicy
     }
     return nil
 }
-// The associated group policy presentation values with the definition value.
-// Parameters:
-//  - options : Options for the request
+// Get the associated group policy presentation values with the definition value.
 func (m *GroupPolicyPresentationValueRequestBuilder) Get(options *GroupPolicyPresentationValueRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyPresentationValue, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *GroupPolicyPresentationValueRequestBuilder) Get(options *GroupPolicyPre
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyPresentationValue), nil
 }
-// The associated group policy presentation values with the definition value.
-// Parameters:
-//  - options : Options for the request
+// Patch the associated group policy presentation values with the definition value.
 func (m *GroupPolicyPresentationValueRequestBuilder) Patch(options *GroupPolicyPresentationValueRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

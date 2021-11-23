@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceComplianceScriptRunSummary 
 type DeviceComplianceScriptRunSummary struct {
     Entity
     // Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647
@@ -19,14 +19,14 @@ type DeviceComplianceScriptRunSummary struct {
     // Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647
     noIssueDetectedDeviceCount *int32;
 }
-// Instantiates a new deviceComplianceScriptRunSummary and sets the default values.
+// NewDeviceComplianceScriptRunSummary instantiates a new deviceComplianceScriptRunSummary and sets the default values.
 func NewDeviceComplianceScriptRunSummary()(*DeviceComplianceScriptRunSummary) {
     m := &DeviceComplianceScriptRunSummary{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the detectionScriptErrorDeviceCount property value. Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647
+// GetDetectionScriptErrorDeviceCount gets the detectionScriptErrorDeviceCount property value. Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) GetDetectionScriptErrorDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *DeviceComplianceScriptRunSummary) GetDetectionScriptErrorDeviceCount()(
         return m.detectionScriptErrorDeviceCount
     }
 }
-// Gets the detectionScriptPendingDeviceCount property value. Number of devices which have not yet run the latest version of the device compliance script. Valid values -2147483648 to 2147483647
+// GetDetectionScriptPendingDeviceCount gets the detectionScriptPendingDeviceCount property value. Number of devices which have not yet run the latest version of the device compliance script. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) GetDetectionScriptPendingDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *DeviceComplianceScriptRunSummary) GetDetectionScriptPendingDeviceCount(
         return m.detectionScriptPendingDeviceCount
     }
 }
-// Gets the issueDetectedDeviceCount property value. Number of devices for which the detection script found an issue. Valid values -2147483648 to 2147483647
+// GetIssueDetectedDeviceCount gets the issueDetectedDeviceCount property value. Number of devices for which the detection script found an issue. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) GetIssueDetectedDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *DeviceComplianceScriptRunSummary) GetIssueDetectedDeviceCount()(*int32)
         return m.issueDetectedDeviceCount
     }
 }
-// Gets the lastScriptRunDateTime property value. Last run time for the script across all devices
+// GetLastScriptRunDateTime gets the lastScriptRunDateTime property value. Last run time for the script across all devices
 func (m *DeviceComplianceScriptRunSummary) GetLastScriptRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *DeviceComplianceScriptRunSummary) GetLastScriptRunDateTime()(*i33607480
         return m.lastScriptRunDateTime
     }
 }
-// Gets the noIssueDetectedDeviceCount property value. Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647
+// GetNoIssueDetectedDeviceCount gets the noIssueDetectedDeviceCount property value. Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) GetNoIssueDetectedDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *DeviceComplianceScriptRunSummary) GetNoIssueDetectedDeviceCount()(*int3
         return m.noIssueDetectedDeviceCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["detectionScriptErrorDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,9 +124,7 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
 func (m *DeviceComplianceScriptRunSummary) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceComplianceScriptRunSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -164,33 +162,23 @@ func (m *DeviceComplianceScriptRunSummary) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
-// Sets the detectionScriptErrorDeviceCount property value. Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the detectionScriptErrorDeviceCount property.
+// SetDetectionScriptErrorDeviceCount sets the detectionScriptErrorDeviceCount property value. Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) SetDetectionScriptErrorDeviceCount(value *int32)() {
     m.detectionScriptErrorDeviceCount = value
 }
-// Sets the detectionScriptPendingDeviceCount property value. Number of devices which have not yet run the latest version of the device compliance script. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the detectionScriptPendingDeviceCount property.
+// SetDetectionScriptPendingDeviceCount sets the detectionScriptPendingDeviceCount property value. Number of devices which have not yet run the latest version of the device compliance script. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) SetDetectionScriptPendingDeviceCount(value *int32)() {
     m.detectionScriptPendingDeviceCount = value
 }
-// Sets the issueDetectedDeviceCount property value. Number of devices for which the detection script found an issue. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the issueDetectedDeviceCount property.
+// SetIssueDetectedDeviceCount sets the issueDetectedDeviceCount property value. Number of devices for which the detection script found an issue. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) SetIssueDetectedDeviceCount(value *int32)() {
     m.issueDetectedDeviceCount = value
 }
-// Sets the lastScriptRunDateTime property value. Last run time for the script across all devices
-// Parameters:
-//  - value : Value to set for the lastScriptRunDateTime property.
+// SetLastScriptRunDateTime sets the lastScriptRunDateTime property value. Last run time for the script across all devices
 func (m *DeviceComplianceScriptRunSummary) SetLastScriptRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastScriptRunDateTime = value
 }
-// Sets the noIssueDetectedDeviceCount property value. Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the noIssueDetectedDeviceCount property.
+// SetNoIssueDetectedDeviceCount sets the noIssueDetectedDeviceCount property value. Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) SetNoIssueDetectedDeviceCount(value *int32)() {
     m.noIssueDetectedDeviceCount = value
 }

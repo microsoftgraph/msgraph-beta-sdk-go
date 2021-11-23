@@ -7,7 +7,7 @@ import (
     i12a35078573f430cee22f0ba30668e2a12832971d453bb598459e612e2510100 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/deviceimages/getsourceimages"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages
+// deviceImagesRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages
 type DeviceImagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceImagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceImagesRequestBuilderGetOptions options for Get
 type DeviceImagesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type DeviceImagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The image resource on Cloud PC.
+// deviceImagesRequestBuilderGetQueryParameters the image resource on Cloud PC.
 type DeviceImagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type DeviceImagesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceImagesRequestBuilderPostOptions options for Post
 type DeviceImagesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImage;
@@ -57,10 +57,7 @@ type DeviceImagesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceImagesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceImagesRequestBuilderInternal instantiates a new DeviceImagesRequestBuilder and sets the default values.
 func NewDeviceImagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceImagesRequestBuilder) {
     m := &DeviceImagesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewDeviceImagesRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceImagesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceImagesRequestBuilder instantiates a new DeviceImagesRequestBuilder and sets the default values.
 func NewDeviceImagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceImagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceImagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the image resource on Cloud PC.
 func (m *DeviceImagesRequestBuilder) CreateGetRequestInformation(options *DeviceImagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *DeviceImagesRequestBuilder) CreateGetRequestInformation(options *Device
     }
     return requestInfo, nil
 }
-// The image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the image resource on Cloud PC.
 func (m *DeviceImagesRequestBuilder) CreatePostRequestInformation(options *DeviceImagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *DeviceImagesRequestBuilder) CreatePostRequestInformation(options *Devic
     }
     return requestInfo, nil
 }
-// The image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// Get the image resource on Cloud PC.
 func (m *DeviceImagesRequestBuilder) Get(options *DeviceImagesRequestBuilderGetOptions)(*DeviceImagesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,13 +126,11 @@ func (m *DeviceImagesRequestBuilder) Get(options *DeviceImagesRequestBuilderGetO
     }
     return res.(*DeviceImagesResponse), nil
 }
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages\microsoft.graph.getSourceImages()
+// GetSourceImages builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages\microsoft.graph.getSourceImages()
 func (m *DeviceImagesRequestBuilder) GetSourceImages()(*i12a35078573f430cee22f0ba30668e2a12832971d453bb598459e612e2510100.GetSourceImagesRequestBuilder) {
     return i12a35078573f430cee22f0ba30668e2a12832971d453bb598459e612e2510100.NewGetSourceImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// Post the image resource on Cloud PC.
 func (m *DeviceImagesRequestBuilder) Post(options *DeviceImagesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcDeviceImage, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

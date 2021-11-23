@@ -7,7 +7,7 @@ import (
     i9b95c50aadd8f6be07e942c6f8636706d653f0a1c15712949ac8a8bd036096aa "github.com/microsoftgraph/msgraph-beta-sdk-go/education/classes/delta"
 )
 
-// Builds and executes requests for operations under \education\classes
+// classesRequestBuilder builds and executes requests for operations under \education\classes
 type ClassesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ClassesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ClassesRequestBuilderGetOptions options for Get
 type ClassesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ClassesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get classes from education
+// classesRequestBuilderGetQueryParameters get classes from education
 type ClassesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type ClassesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ClassesRequestBuilderPostOptions options for Post
 type ClassesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationClass;
@@ -57,10 +57,7 @@ type ClassesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ClassesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewClassesRequestBuilderInternal instantiates a new ClassesRequestBuilder and sets the default values.
 func NewClassesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClassesRequestBuilder) {
     m := &ClassesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewClassesRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ClassesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewClassesRequestBuilder instantiates a new ClassesRequestBuilder and sets the default values.
 func NewClassesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClassesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClassesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get classes from education
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get classes from education
 func (m *ClassesRequestBuilder) CreateGetRequestInformation(options *ClassesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *ClassesRequestBuilder) CreateGetRequestInformation(options *ClassesRequ
     }
     return requestInfo, nil
 }
-// Create new navigation property to classes for education
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to classes for education
 func (m *ClassesRequestBuilder) CreatePostRequestInformation(options *ClassesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,13 +114,11 @@ func (m *ClassesRequestBuilder) CreatePostRequestInformation(options *ClassesReq
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \education\classes\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \education\classes\microsoft.graph.delta()
 func (m *ClassesRequestBuilder) Delta()(*i9b95c50aadd8f6be07e942c6f8636706d653f0a1c15712949ac8a8bd036096aa.DeltaRequestBuilder) {
     return i9b95c50aadd8f6be07e942c6f8636706d653f0a1c15712949ac8a8bd036096aa.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get classes from education
-// Parameters:
-//  - options : Options for the request
+// Get get classes from education
 func (m *ClassesRequestBuilder) Get(options *ClassesRequestBuilderGetOptions)(*ClassesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,9 +130,7 @@ func (m *ClassesRequestBuilder) Get(options *ClassesRequestBuilderGetOptions)(*C
     }
     return res.(*ClassesResponse), nil
 }
-// Create new navigation property to classes for education
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to classes for education
 func (m *ClassesRequestBuilder) Post(options *ClassesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationClass, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i2b53e8d32167b7b8d9dbd842472314407904e34f8d9feeb85454bc41d81e5372 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/noncustodialsources/ref"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\noncustodialSources
+// noncustodialSourcesRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\noncustodialSources
 type NoncustodialSourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type NoncustodialSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// NoncustodialSourcesRequestBuilderGetOptions options for Get
 type NoncustodialSourcesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type NoncustodialSourcesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// noncustodialDataSource sources that are included in the sourceCollection
+// noncustodialSourcesRequestBuilderGetQueryParameters noncustodialDataSource sources that are included in the sourceCollection
 type NoncustodialSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type NoncustodialSourcesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new NoncustodialSourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNoncustodialSourcesRequestBuilderInternal instantiates a new NoncustodialSourcesRequestBuilder and sets the default values.
 func NewNoncustodialSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NoncustodialSourcesRequestBuilder) {
     m := &NoncustodialSourcesRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewNoncustodialSourcesRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NoncustodialSourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNoncustodialSourcesRequestBuilder instantiates a new NoncustodialSourcesRequestBuilder and sets the default values.
 func NewNoncustodialSourcesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NoncustodialSourcesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNoncustodialSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// noncustodialDataSource sources that are included in the sourceCollection
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation noncustodialDataSource sources that are included in the sourceCollection
 func (m *NoncustodialSourcesRequestBuilder) CreateGetRequestInformation(options *NoncustodialSourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *NoncustodialSourcesRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// noncustodialDataSource sources that are included in the sourceCollection
-// Parameters:
-//  - options : Options for the request
+// Get noncustodialDataSource sources that are included in the sourceCollection
 func (m *NoncustodialSourcesRequestBuilder) Get(options *NoncustodialSourcesRequestBuilderGetOptions)(*NoncustodialSourcesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

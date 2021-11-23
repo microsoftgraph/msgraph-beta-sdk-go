@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \governanceRoleDefinitions
+// governanceRoleDefinitionsRequestBuilder builds and executes requests for operations under \governanceRoleDefinitions
 type GovernanceRoleDefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GovernanceRoleDefinitionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GovernanceRoleDefinitionsRequestBuilderGetOptions options for Get
 type GovernanceRoleDefinitionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type GovernanceRoleDefinitionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from governanceRoleDefinitions
+// governanceRoleDefinitionsRequestBuilderGetQueryParameters get entities from governanceRoleDefinitions
 type GovernanceRoleDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type GovernanceRoleDefinitionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// GovernanceRoleDefinitionsRequestBuilderPostOptions options for Post
 type GovernanceRoleDefinitionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinition;
@@ -56,10 +56,7 @@ type GovernanceRoleDefinitionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GovernanceRoleDefinitionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceRoleDefinitionsRequestBuilderInternal instantiates a new GovernanceRoleDefinitionsRequestBuilder and sets the default values.
 func NewGovernanceRoleDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceRoleDefinitionsRequestBuilder) {
     m := &GovernanceRoleDefinitionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewGovernanceRoleDefinitionsRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GovernanceRoleDefinitionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceRoleDefinitionsRequestBuilder instantiates a new GovernanceRoleDefinitionsRequestBuilder and sets the default values.
 func NewGovernanceRoleDefinitionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceRoleDefinitionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceRoleDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from governanceRoleDefinitions
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from governanceRoleDefinitions
 func (m *GovernanceRoleDefinitionsRequestBuilder) CreateGetRequestInformation(options *GovernanceRoleDefinitionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *GovernanceRoleDefinitionsRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Add new entity to governanceRoleDefinitions
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to governanceRoleDefinitions
 func (m *GovernanceRoleDefinitionsRequestBuilder) CreatePostRequestInformation(options *GovernanceRoleDefinitionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *GovernanceRoleDefinitionsRequestBuilder) CreatePostRequestInformation(o
     }
     return requestInfo, nil
 }
-// Get entities from governanceRoleDefinitions
-// Parameters:
-//  - options : Options for the request
+// Get get entities from governanceRoleDefinitions
 func (m *GovernanceRoleDefinitionsRequestBuilder) Get(options *GovernanceRoleDefinitionsRequestBuilderGetOptions)(*GovernanceRoleDefinitionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *GovernanceRoleDefinitionsRequestBuilder) Get(options *GovernanceRoleDef
     }
     return res.(*GovernanceRoleDefinitionsResponse), nil
 }
-// Add new entity to governanceRoleDefinitions
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to governanceRoleDefinitions
 func (m *GovernanceRoleDefinitionsRequestBuilder) Post(options *GovernanceRoleDefinitionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleDefinition, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\languages
+// languagesRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\languages
 type LanguagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type LanguagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// LanguagesRequestBuilderGetOptions options for Get
 type LanguagesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type LanguagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
+// languagesRequestBuilderGetQueryParameters the languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
 type LanguagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type LanguagesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// LanguagesRequestBuilderPostOptions options for Post
 type LanguagesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserFlowLanguageConfiguration;
@@ -56,10 +56,7 @@ type LanguagesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LanguagesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLanguagesRequestBuilderInternal instantiates a new LanguagesRequestBuilder and sets the default values.
 func NewLanguagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LanguagesRequestBuilder) {
     m := &LanguagesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewLanguagesRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LanguagesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLanguagesRequestBuilder instantiates a new LanguagesRequestBuilder and sets the default values.
 func NewLanguagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LanguagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLanguagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
 func (m *LanguagesRequestBuilder) CreateGetRequestInformation(options *LanguagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *LanguagesRequestBuilder) CreateGetRequestInformation(options *Languages
     }
     return requestInfo, nil
 }
-// The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
 func (m *LanguagesRequestBuilder) CreatePostRequestInformation(options *LanguagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *LanguagesRequestBuilder) CreatePostRequestInformation(options *Language
     }
     return requestInfo, nil
 }
-// The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
-// Parameters:
-//  - options : Options for the request
+// Get the languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
 func (m *LanguagesRequestBuilder) Get(options *LanguagesRequestBuilderGetOptions)(*LanguagesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *LanguagesRequestBuilder) Get(options *LanguagesRequestBuilderGetOptions
     }
     return res.(*LanguagesResponse), nil
 }
-// The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
-// Parameters:
-//  - options : Options for the request
+// Post the languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
 func (m *LanguagesRequestBuilder) Post(options *LanguagesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserFlowLanguageConfiguration, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

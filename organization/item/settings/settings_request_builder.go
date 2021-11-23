@@ -5,11 +5,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i604f8b04e00513fe80f3d85b5361d4a35dbdefc791356fd0e5d7cb3820a457bf "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/settings/profilecardproperties"
+    ib5d9323a069790a40d8250ed97dce0595a704227bc01a0ff026952b59c07b6fa "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/settings/peopleinsights"
     ic8dc6584c7fcf76e945a3a597a167477455672164e6ecef2a585705bb95f06f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/settings/iteminsights"
     i164665736586dec4189f70a600626997bf7f7b32e1d5debbea1adff37d4860df "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/settings/profilecardproperties/item"
 )
 
-// Builds and executes requests for operations under \organization\{organization-id}\settings
+// settingsRequestBuilder builds and executes requests for operations under \organization\{organization-id}\settings
 type SettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +19,7 @@ type SettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SettingsRequestBuilderDeleteOptions options for Delete
 type SettingsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +28,7 @@ type SettingsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SettingsRequestBuilderGetOptions options for Get
 type SettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +39,14 @@ type SettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Retrieve the properties and relationships of organizationSettings object. Nullable.
+// settingsRequestBuilderGetQueryParameters retrieve the properties and relationships of organizationSettings object. Nullable.
 type SettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SettingsRequestBuilderPatchOptions options for Patch
 type SettingsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OrganizationSettings;
@@ -56,10 +57,7 @@ type SettingsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSettingsRequestBuilderInternal instantiates a new SettingsRequestBuilder and sets the default values.
 func NewSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SettingsRequestBuilder) {
     m := &SettingsRequestBuilder{
     }
@@ -72,18 +70,13 @@ func NewSettingsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSettingsRequestBuilder instantiates a new SettingsRequestBuilder and sets the default values.
 func NewSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Retrieve the properties and relationships of organizationSettings object. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation retrieve the properties and relationships of organizationSettings object. Nullable.
 func (m *SettingsRequestBuilder) CreateDeleteRequestInformation(options *SettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +93,7 @@ func (m *SettingsRequestBuilder) CreateDeleteRequestInformation(options *Setting
     }
     return requestInfo, nil
 }
-// Retrieve the properties and relationships of organizationSettings object. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation retrieve the properties and relationships of organizationSettings object. Nullable.
 func (m *SettingsRequestBuilder) CreateGetRequestInformation(options *SettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +113,7 @@ func (m *SettingsRequestBuilder) CreateGetRequestInformation(options *SettingsRe
     }
     return requestInfo, nil
 }
-// Retrieve the properties and relationships of organizationSettings object. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation retrieve the properties and relationships of organizationSettings object. Nullable.
 func (m *SettingsRequestBuilder) CreatePatchRequestInformation(options *SettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +131,7 @@ func (m *SettingsRequestBuilder) CreatePatchRequestInformation(options *Settings
     }
     return requestInfo, nil
 }
-// Retrieve the properties and relationships of organizationSettings object. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete retrieve the properties and relationships of organizationSettings object. Nullable.
 func (m *SettingsRequestBuilder) Delete(options *SettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -156,9 +143,7 @@ func (m *SettingsRequestBuilder) Delete(options *SettingsRequestBuilderDeleteOpt
     }
     return nil
 }
-// Retrieve the properties and relationships of organizationSettings object. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get retrieve the properties and relationships of organizationSettings object. Nullable.
 func (m *SettingsRequestBuilder) Get(options *SettingsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OrganizationSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -173,9 +158,7 @@ func (m *SettingsRequestBuilder) Get(options *SettingsRequestBuilderGetOptions)(
 func (m *SettingsRequestBuilder) ItemInsights()(*ic8dc6584c7fcf76e945a3a597a167477455672164e6ecef2a585705bb95f06f7.ItemInsightsRequestBuilder) {
     return ic8dc6584c7fcf76e945a3a597a167477455672164e6ecef2a585705bb95f06f7.NewItemInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Retrieve the properties and relationships of organizationSettings object. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch retrieve the properties and relationships of organizationSettings object. Nullable.
 func (m *SettingsRequestBuilder) Patch(options *SettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -187,12 +170,13 @@ func (m *SettingsRequestBuilder) Patch(options *SettingsRequestBuilderPatchOptio
     }
     return nil
 }
+func (m *SettingsRequestBuilder) PeopleInsights()(*ib5d9323a069790a40d8250ed97dce0595a704227bc01a0ff026952b59c07b6fa.PeopleInsightsRequestBuilder) {
+    return ib5d9323a069790a40d8250ed97dce0595a704227bc01a0ff026952b59c07b6fa.NewPeopleInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 func (m *SettingsRequestBuilder) ProfileCardProperties()(*i604f8b04e00513fe80f3d85b5361d4a35dbdefc791356fd0e5d7cb3820a457bf.ProfileCardPropertiesRequestBuilder) {
     return i604f8b04e00513fe80f3d85b5361d4a35dbdefc791356fd0e5d7cb3820a457bf.NewProfileCardPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.organization.item.settings.profileCardProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ProfileCardPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.organization.item.settings.profileCardProperties.item collection
 func (m *SettingsRequestBuilder) ProfileCardPropertiesById(id string)(*i164665736586dec4189f70a600626997bf7f7b32e1d5debbea1adff37d4860df.ProfileCardPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \activitystatistics\{activityStatistics-id}
+// activityStatisticsRequestBuilder builds and executes requests for operations under \activitystatistics\{activityStatistics-id}
 type ActivityStatisticsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ActivityStatisticsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ActivityStatisticsRequestBuilderDeleteOptions options for Delete
 type ActivityStatisticsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ActivityStatisticsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ActivityStatisticsRequestBuilderGetOptions options for Get
 type ActivityStatisticsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ActivityStatisticsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from activitystatistics by key
+// activityStatisticsRequestBuilderGetQueryParameters get entity from activitystatistics by key
 type ActivityStatisticsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ActivityStatisticsRequestBuilderPatchOptions options for Patch
 type ActivityStatisticsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatistics;
@@ -53,10 +53,7 @@ type ActivityStatisticsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ActivityStatisticsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivityStatisticsRequestBuilderInternal instantiates a new ActivityStatisticsRequestBuilder and sets the default values.
 func NewActivityStatisticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivityStatisticsRequestBuilder) {
     m := &ActivityStatisticsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewActivityStatisticsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ActivityStatisticsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivityStatisticsRequestBuilder instantiates a new ActivityStatisticsRequestBuilder and sets the default values.
 func NewActivityStatisticsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivityStatisticsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivityStatisticsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from activitystatistics
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from activitystatistics
 func (m *ActivityStatisticsRequestBuilder) CreateDeleteRequestInformation(options *ActivityStatisticsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ActivityStatisticsRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get entity from activitystatistics by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from activitystatistics by key
 func (m *ActivityStatisticsRequestBuilder) CreateGetRequestInformation(options *ActivityStatisticsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ActivityStatisticsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Update entity in activitystatistics
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in activitystatistics
 func (m *ActivityStatisticsRequestBuilder) CreatePatchRequestInformation(options *ActivityStatisticsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ActivityStatisticsRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete entity from activitystatistics
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from activitystatistics
 func (m *ActivityStatisticsRequestBuilder) Delete(options *ActivityStatisticsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ActivityStatisticsRequestBuilder) Delete(options *ActivityStatisticsReq
     }
     return nil
 }
-// Get entity from activitystatistics by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from activitystatistics by key
 func (m *ActivityStatisticsRequestBuilder) Get(options *ActivityStatisticsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatistics, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ActivityStatisticsRequestBuilder) Get(options *ActivityStatisticsReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ActivityStatistics), nil
 }
-// Update entity in activitystatistics
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in activitystatistics
 func (m *ActivityStatisticsRequestBuilder) Patch(options *ActivityStatisticsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

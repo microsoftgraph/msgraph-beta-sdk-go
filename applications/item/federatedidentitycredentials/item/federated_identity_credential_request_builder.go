@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\federatedIdentityCredentials\{federatedIdentityCredential-id}
+// federatedIdentityCredentialRequestBuilder builds and executes requests for operations under \applications\{application-id}\federatedIdentityCredentials\{federatedIdentityCredential-id}
 type FederatedIdentityCredentialRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type FederatedIdentityCredentialRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// FederatedIdentityCredentialRequestBuilderDeleteOptions options for Delete
 type FederatedIdentityCredentialRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type FederatedIdentityCredentialRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// FederatedIdentityCredentialRequestBuilderGetOptions options for Get
 type FederatedIdentityCredentialRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type FederatedIdentityCredentialRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+// federatedIdentityCredentialRequestBuilderGetQueryParameters federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 type FederatedIdentityCredentialRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FederatedIdentityCredentialRequestBuilderPatchOptions options for Patch
 type FederatedIdentityCredentialRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FederatedIdentityCredential;
@@ -53,10 +53,7 @@ type FederatedIdentityCredentialRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FederatedIdentityCredentialRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFederatedIdentityCredentialRequestBuilderInternal instantiates a new FederatedIdentityCredentialRequestBuilder and sets the default values.
 func NewFederatedIdentityCredentialRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FederatedIdentityCredentialRequestBuilder) {
     m := &FederatedIdentityCredentialRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewFederatedIdentityCredentialRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FederatedIdentityCredentialRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFederatedIdentityCredentialRequestBuilder instantiates a new FederatedIdentityCredentialRequestBuilder and sets the default values.
 func NewFederatedIdentityCredentialRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FederatedIdentityCredentialRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFederatedIdentityCredentialRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 func (m *FederatedIdentityCredentialRequestBuilder) CreateDeleteRequestInformation(options *FederatedIdentityCredentialRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *FederatedIdentityCredentialRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 func (m *FederatedIdentityCredentialRequestBuilder) CreateGetRequestInformation(options *FederatedIdentityCredentialRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *FederatedIdentityCredentialRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 func (m *FederatedIdentityCredentialRequestBuilder) CreatePatchRequestInformation(options *FederatedIdentityCredentialRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *FederatedIdentityCredentialRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
-// Parameters:
-//  - options : Options for the request
+// Delete federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 func (m *FederatedIdentityCredentialRequestBuilder) Delete(options *FederatedIdentityCredentialRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *FederatedIdentityCredentialRequestBuilder) Delete(options *FederatedIde
     }
     return nil
 }
-// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
-// Parameters:
-//  - options : Options for the request
+// Get federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 func (m *FederatedIdentityCredentialRequestBuilder) Get(options *FederatedIdentityCredentialRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FederatedIdentityCredential, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *FederatedIdentityCredentialRequestBuilder) Get(options *FederatedIdenti
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FederatedIdentityCredential), nil
 }
-// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
-// Parameters:
-//  - options : Options for the request
+// Patch federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 func (m *FederatedIdentityCredentialRequestBuilder) Patch(options *FederatedIdentityCredentialRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

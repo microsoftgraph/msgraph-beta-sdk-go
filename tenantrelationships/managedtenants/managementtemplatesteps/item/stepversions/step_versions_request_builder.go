@@ -6,7 +6,7 @@ import (
     iff673fb08c79c236f1dc447f618c13b3bc13d45c7a2b1408fd2383407bf599d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatesteps/item/stepversions/ref"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateSteps\{managementTemplateStep-id}\stepVersions
+// stepVersionsRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateSteps\{managementTemplateStep-id}\stepVersions
 type StepVersionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type StepVersionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// StepVersionsRequestBuilderGetOptions options for Get
 type StepVersionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type StepVersionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get stepVersions from tenantRelationships
+// stepVersionsRequestBuilderGetQueryParameters get stepVersions from tenantRelationships
 type StepVersionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type StepVersionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new StepVersionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStepVersionsRequestBuilderInternal instantiates a new StepVersionsRequestBuilder and sets the default values.
 func NewStepVersionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StepVersionsRequestBuilder) {
     m := &StepVersionsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewStepVersionsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new StepVersionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStepVersionsRequestBuilder instantiates a new StepVersionsRequestBuilder and sets the default values.
 func NewStepVersionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StepVersionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewStepVersionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get stepVersions from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get stepVersions from tenantRelationships
 func (m *StepVersionsRequestBuilder) CreateGetRequestInformation(options *StepVersionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *StepVersionsRequestBuilder) CreateGetRequestInformation(options *StepVe
     }
     return requestInfo, nil
 }
-// Get stepVersions from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Get get stepVersions from tenantRelationships
 func (m *StepVersionsRequestBuilder) Get(options *StepVersionsRequestBuilderGetOptions)(*StepVersionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

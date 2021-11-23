@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\credentialUserRegistrationsSummaries
+// credentialUserRegistrationsSummariesRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\credentialUserRegistrationsSummaries
 type CredentialUserRegistrationsSummariesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CredentialUserRegistrationsSummariesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CredentialUserRegistrationsSummariesRequestBuilderGetOptions options for Get
 type CredentialUserRegistrationsSummariesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CredentialUserRegistrationsSummariesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+// credentialUserRegistrationsSummariesRequestBuilderGetQueryParameters summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
 type CredentialUserRegistrationsSummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CredentialUserRegistrationsSummariesRequestBuilderGetQueryParameters struct
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CredentialUserRegistrationsSummariesRequestBuilderPostOptions options for Post
 type CredentialUserRegistrationsSummariesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CredentialUserRegistrationsSummary;
@@ -56,10 +56,7 @@ type CredentialUserRegistrationsSummariesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CredentialUserRegistrationsSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCredentialUserRegistrationsSummariesRequestBuilderInternal instantiates a new CredentialUserRegistrationsSummariesRequestBuilder and sets the default values.
 func NewCredentialUserRegistrationsSummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CredentialUserRegistrationsSummariesRequestBuilder) {
     m := &CredentialUserRegistrationsSummariesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCredentialUserRegistrationsSummariesRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CredentialUserRegistrationsSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCredentialUserRegistrationsSummariesRequestBuilder instantiates a new CredentialUserRegistrationsSummariesRequestBuilder and sets the default values.
 func NewCredentialUserRegistrationsSummariesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CredentialUserRegistrationsSummariesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCredentialUserRegistrationsSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
 func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreateGetRequestInformation(options *CredentialUserRegistrationsSummariesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
 func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreatePostRequestInformation(options *CredentialUserRegistrationsSummariesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
 func (m *CredentialUserRegistrationsSummariesRequestBuilder) Get(options *CredentialUserRegistrationsSummariesRequestBuilderGetOptions)(*CredentialUserRegistrationsSummariesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CredentialUserRegistrationsSummariesRequestBuilder) Get(options *Creden
     }
     return res.(*CredentialUserRegistrationsSummariesResponse), nil
 }
-// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Post summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
 func (m *CredentialUserRegistrationsSummariesRequestBuilder) Post(options *CredentialUserRegistrationsSummariesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CredentialUserRegistrationsSummary, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

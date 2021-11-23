@@ -8,7 +8,7 @@ import (
     ib238b18232a8f5227e7795719555b7d63044b5520a3dbc12859aedf3dde93998 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/wdacsupplementalpolicies/item/devicestatuses/item/policy/ref"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}\deviceStatuses\{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}\policy
+// policyRequestBuilder builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}\deviceStatuses\{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}\policy
 type PolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type PolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PolicyRequestBuilderGetOptions options for Get
 type PolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type PolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The navigation link to the WindowsDefenderApplicationControl supplemental policy.
+// policyRequestBuilderGetQueryParameters the navigation link to the WindowsDefenderApplicationControl supplemental policy.
 type PolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -38,10 +38,7 @@ type PolicyRequestBuilderGetQueryParameters struct {
 func (m *PolicyRequestBuilder) Assign()(*i1e5749e7103ca0f0eb45d3bcfd10adae7ed7951ace4bf469be0c5d5f8f7cc797.AssignRequestBuilder) {
     return i1e5749e7103ca0f0eb45d3bcfd10adae7ed7951ace4bf469be0c5d5f8f7cc797.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new PolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicyRequestBuilderInternal instantiates a new PolicyRequestBuilder and sets the default values.
 func NewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyRequestBuilder) {
     m := &PolicyRequestBuilder{
     }
@@ -54,18 +51,13 @@ func NewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicyRequestBuilder instantiates a new PolicyRequestBuilder and sets the default values.
 func NewPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The navigation link to the WindowsDefenderApplicationControl supplemental policy.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the navigation link to the WindowsDefenderApplicationControl supplemental policy.
 func (m *PolicyRequestBuilder) CreateGetRequestInformation(options *PolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -85,9 +77,7 @@ func (m *PolicyRequestBuilder) CreateGetRequestInformation(options *PolicyReques
     }
     return requestInfo, nil
 }
-// The navigation link to the WindowsDefenderApplicationControl supplemental policy.
-// Parameters:
-//  - options : Options for the request
+// Get the navigation link to the WindowsDefenderApplicationControl supplemental policy.
 func (m *PolicyRequestBuilder) Get(options *PolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsDefenderApplicationControlSupplementalPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

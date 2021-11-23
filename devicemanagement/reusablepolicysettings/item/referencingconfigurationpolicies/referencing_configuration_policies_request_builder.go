@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reusablePolicySettings\{deviceManagementReusablePolicySetting-id}\referencingConfigurationPolicies
+// referencingConfigurationPoliciesRequestBuilder builds and executes requests for operations under \deviceManagement\reusablePolicySettings\{deviceManagementReusablePolicySetting-id}\referencingConfigurationPolicies
 type ReferencingConfigurationPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ReferencingConfigurationPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ReferencingConfigurationPoliciesRequestBuilderGetOptions options for Get
 type ReferencingConfigurationPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ReferencingConfigurationPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
+// referencingConfigurationPoliciesRequestBuilderGetQueryParameters configuration policies referencing the current reusable setting. This property is read-only.
 type ReferencingConfigurationPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ReferencingConfigurationPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ReferencingConfigurationPoliciesRequestBuilderPostOptions options for Post
 type ReferencingConfigurationPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicy;
@@ -56,10 +56,7 @@ type ReferencingConfigurationPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ReferencingConfigurationPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReferencingConfigurationPoliciesRequestBuilderInternal instantiates a new ReferencingConfigurationPoliciesRequestBuilder and sets the default values.
 func NewReferencingConfigurationPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReferencingConfigurationPoliciesRequestBuilder) {
     m := &ReferencingConfigurationPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewReferencingConfigurationPoliciesRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ReferencingConfigurationPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReferencingConfigurationPoliciesRequestBuilder instantiates a new ReferencingConfigurationPoliciesRequestBuilder and sets the default values.
 func NewReferencingConfigurationPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReferencingConfigurationPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReferencingConfigurationPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation configuration policies referencing the current reusable setting. This property is read-only.
 func (m *ReferencingConfigurationPoliciesRequestBuilder) CreateGetRequestInformation(options *ReferencingConfigurationPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ReferencingConfigurationPoliciesRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation configuration policies referencing the current reusable setting. This property is read-only.
 func (m *ReferencingConfigurationPoliciesRequestBuilder) CreatePostRequestInformation(options *ReferencingConfigurationPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ReferencingConfigurationPoliciesRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
-// Parameters:
-//  - options : Options for the request
+// Get configuration policies referencing the current reusable setting. This property is read-only.
 func (m *ReferencingConfigurationPoliciesRequestBuilder) Get(options *ReferencingConfigurationPoliciesRequestBuilderGetOptions)(*ReferencingConfigurationPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ReferencingConfigurationPoliciesRequestBuilder) Get(options *Referencin
     }
     return res.(*ReferencingConfigurationPoliciesResponse), nil
 }
-// configuration policies referencing the current reusable setting. This property is read-only.
-// Parameters:
-//  - options : Options for the request
+// Post configuration policies referencing the current reusable setting. This property is read-only.
 func (m *ReferencingConfigurationPoliciesRequestBuilder) Post(options *ReferencingConfigurationPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

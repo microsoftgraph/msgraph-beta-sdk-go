@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\updatableAssets\{updatableAsset-id}\microsoft.graph.windowsUpdates.removeMembersById
+// removeMembersByIdRequestBuilder builds and executes requests for operations under \admin\windows\updates\updatableAssets\{updatableAsset-id}\microsoft.graph.windowsUpdates.removeMembersById
 type RemoveMembersByIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RemoveMembersByIdRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RemoveMembersByIdRequestBuilderPostOptions options for Post
 type RemoveMembersByIdRequestBuilderPostOptions struct {
     // 
     Body *RemoveMembersByIdRequestBody;
@@ -24,10 +24,7 @@ type RemoveMembersByIdRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RemoveMembersByIdRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoveMembersByIdRequestBuilderInternal instantiates a new RemoveMembersByIdRequestBuilder and sets the default values.
 func NewRemoveMembersByIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoveMembersByIdRequestBuilder) {
     m := &RemoveMembersByIdRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewRemoveMembersByIdRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RemoveMembersByIdRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoveMembersByIdRequestBuilder instantiates a new RemoveMembersByIdRequestBuilder and sets the default values.
 func NewRemoveMembersByIdRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoveMembersByIdRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveMembersByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action removeMembersById
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action removeMembersById
 func (m *RemoveMembersByIdRequestBuilder) CreatePostRequestInformation(options *RemoveMembersByIdRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *RemoveMembersByIdRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Invoke action removeMembersById
-// Parameters:
-//  - options : Options for the request
+// Post invoke action removeMembersById
 func (m *RemoveMembersByIdRequestBuilder) Post(options *RemoveMembersByIdRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

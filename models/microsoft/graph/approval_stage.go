@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// approvalStage 
 type ApprovalStage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type ApprovalStage struct {
     // The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.
     primaryApprovers []UserSet;
 }
-// Instantiates a new approvalStage and sets the default values.
+// NewApprovalStage instantiates a new approvalStage and sets the default values.
 func NewApprovalStage()(*ApprovalStage) {
     m := &ApprovalStage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApprovalStage) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ApprovalStage) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
+// GetApprovalStageTimeOutInDays gets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
 func (m *ApprovalStage) GetApprovalStageTimeOutInDays()(*int32) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *ApprovalStage) GetApprovalStageTimeOutInDays()(*int32) {
         return m.approvalStageTimeOutInDays
     }
 }
-// Gets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.
+// GetEscalationApprovers gets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.
 func (m *ApprovalStage) GetEscalationApprovers()([]UserSet) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *ApprovalStage) GetEscalationApprovers()([]UserSet) {
         return m.escalationApprovers
     }
 }
-// Gets the escalationTimeInMinutes property value. If escalation is required, the time a request can be pending a response from a primary approver.
+// GetEscalationTimeInMinutes gets the escalationTimeInMinutes property value. If escalation is required, the time a request can be pending a response from a primary approver.
 func (m *ApprovalStage) GetEscalationTimeInMinutes()(*int32) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *ApprovalStage) GetEscalationTimeInMinutes()(*int32) {
         return m.escalationTimeInMinutes
     }
 }
-// Gets the isApproverJustificationRequired property value. Indicates whether the approver is required to provide a justification for approving a request.
+// GetIsApproverJustificationRequired gets the isApproverJustificationRequired property value. Indicates whether the approver is required to provide a justification for approving a request.
 func (m *ApprovalStage) GetIsApproverJustificationRequired()(*bool) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *ApprovalStage) GetIsApproverJustificationRequired()(*bool) {
         return m.isApproverJustificationRequired
     }
 }
-// Gets the isEscalationEnabled property value. If true, then one or more escalation approvers are configured in this approval stage.
+// GetIsEscalationEnabled gets the isEscalationEnabled property value. If true, then one or more escalation approvers are configured in this approval stage.
 func (m *ApprovalStage) GetIsEscalationEnabled()(*bool) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *ApprovalStage) GetIsEscalationEnabled()(*bool) {
         return m.isEscalationEnabled
     }
 }
-// Gets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.
+// GetPrimaryApprovers gets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.
 func (m *ApprovalStage) GetPrimaryApprovers()([]UserSet) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *ApprovalStage) GetPrimaryApprovers()([]UserSet) {
         return m.primaryApprovers
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["approvalStageTimeOutInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,9 +160,7 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *ApprovalStage) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ApprovalStage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("approvalStageTimeOutInDays", m.GetApprovalStageTimeOutInDays())
@@ -218,45 +216,31 @@ func (m *ApprovalStage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApprovalStage) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
-// Parameters:
-//  - value : Value to set for the approvalStageTimeOutInDays property.
+// SetApprovalStageTimeOutInDays sets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
 func (m *ApprovalStage) SetApprovalStageTimeOutInDays(value *int32)() {
     m.approvalStageTimeOutInDays = value
 }
-// Sets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.
-// Parameters:
-//  - value : Value to set for the escalationApprovers property.
+// SetEscalationApprovers sets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.
 func (m *ApprovalStage) SetEscalationApprovers(value []UserSet)() {
     m.escalationApprovers = value
 }
-// Sets the escalationTimeInMinutes property value. If escalation is required, the time a request can be pending a response from a primary approver.
-// Parameters:
-//  - value : Value to set for the escalationTimeInMinutes property.
+// SetEscalationTimeInMinutes sets the escalationTimeInMinutes property value. If escalation is required, the time a request can be pending a response from a primary approver.
 func (m *ApprovalStage) SetEscalationTimeInMinutes(value *int32)() {
     m.escalationTimeInMinutes = value
 }
-// Sets the isApproverJustificationRequired property value. Indicates whether the approver is required to provide a justification for approving a request.
-// Parameters:
-//  - value : Value to set for the isApproverJustificationRequired property.
+// SetIsApproverJustificationRequired sets the isApproverJustificationRequired property value. Indicates whether the approver is required to provide a justification for approving a request.
 func (m *ApprovalStage) SetIsApproverJustificationRequired(value *bool)() {
     m.isApproverJustificationRequired = value
 }
-// Sets the isEscalationEnabled property value. If true, then one or more escalation approvers are configured in this approval stage.
-// Parameters:
-//  - value : Value to set for the isEscalationEnabled property.
+// SetIsEscalationEnabled sets the isEscalationEnabled property value. If true, then one or more escalation approvers are configured in this approval stage.
 func (m *ApprovalStage) SetIsEscalationEnabled(value *bool)() {
     m.isEscalationEnabled = value
 }
-// Sets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.
-// Parameters:
-//  - value : Value to set for the primaryApprovers property.
+// SetPrimaryApprovers sets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.
 func (m *ApprovalStage) SetPrimaryApprovers(value []UserSet)() {
     m.primaryApprovers = value
 }

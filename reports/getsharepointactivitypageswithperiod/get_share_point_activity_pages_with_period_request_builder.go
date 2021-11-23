@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getSharePointActivityPages(period='{period}')
+// getSharePointActivityPagesWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getSharePointActivityPages(period='{period}')
 type GetSharePointActivityPagesWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetSharePointActivityPagesWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetSharePointActivityPagesWithPeriodRequestBuilderGetOptions options for Get
 type GetSharePointActivityPagesWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type GetSharePointActivityPagesWithPeriodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetSharePointActivityPagesWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetSharePointActivityPagesWithPeriodRequestBuilderInternal instantiates a new GetSharePointActivityPagesWithPeriodRequestBuilder and sets the default values.
 func NewGetSharePointActivityPagesWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetSharePointActivityPagesWithPeriodRequestBuilder) {
     m := &GetSharePointActivityPagesWithPeriodRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewGetSharePointActivityPagesWithPeriodRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetSharePointActivityPagesWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetSharePointActivityPagesWithPeriodRequestBuilder instantiates a new GetSharePointActivityPagesWithPeriodRequestBuilder and sets the default values.
 func NewGetSharePointActivityPagesWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetSharePointActivityPagesWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetSharePointActivityPagesWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getSharePointActivityPages
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getSharePointActivityPages
 func (m *GetSharePointActivityPagesWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetSharePointActivityPagesWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *GetSharePointActivityPagesWithPeriodRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// Invoke function getSharePointActivityPages
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getSharePointActivityPages
 func (m *GetSharePointActivityPagesWithPeriodRequestBuilder) Get(options *GetSharePointActivityPagesWithPeriodRequestBuilderGetOptions)([]GetSharePointActivityPagesWithPeriod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

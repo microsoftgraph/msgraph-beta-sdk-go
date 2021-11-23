@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \dataClassification\classifyTextJobs
+// classifyTextJobsRequestBuilder builds and executes requests for operations under \dataClassification\classifyTextJobs
 type ClassifyTextJobsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ClassifyTextJobsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ClassifyTextJobsRequestBuilderGetOptions options for Get
 type ClassifyTextJobsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ClassifyTextJobsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get classifyTextJobs from dataClassification
+// classifyTextJobsRequestBuilderGetQueryParameters get classifyTextJobs from dataClassification
 type ClassifyTextJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ClassifyTextJobsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ClassifyTextJobsRequestBuilderPostOptions options for Post
 type ClassifyTextJobsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBase;
@@ -56,10 +56,7 @@ type ClassifyTextJobsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ClassifyTextJobsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewClassifyTextJobsRequestBuilderInternal instantiates a new ClassifyTextJobsRequestBuilder and sets the default values.
 func NewClassifyTextJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClassifyTextJobsRequestBuilder) {
     m := &ClassifyTextJobsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewClassifyTextJobsRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ClassifyTextJobsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewClassifyTextJobsRequestBuilder instantiates a new ClassifyTextJobsRequestBuilder and sets the default values.
 func NewClassifyTextJobsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClassifyTextJobsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClassifyTextJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get classifyTextJobs from dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get classifyTextJobs from dataClassification
 func (m *ClassifyTextJobsRequestBuilder) CreateGetRequestInformation(options *ClassifyTextJobsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ClassifyTextJobsRequestBuilder) CreateGetRequestInformation(options *Cl
     }
     return requestInfo, nil
 }
-// Create new navigation property to classifyTextJobs for dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to classifyTextJobs for dataClassification
 func (m *ClassifyTextJobsRequestBuilder) CreatePostRequestInformation(options *ClassifyTextJobsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ClassifyTextJobsRequestBuilder) CreatePostRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// Get classifyTextJobs from dataClassification
-// Parameters:
-//  - options : Options for the request
+// Get get classifyTextJobs from dataClassification
 func (m *ClassifyTextJobsRequestBuilder) Get(options *ClassifyTextJobsRequestBuilderGetOptions)(*ClassifyTextJobsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ClassifyTextJobsRequestBuilder) Get(options *ClassifyTextJobsRequestBui
     }
     return res.(*ClassifyTextJobsResponse), nil
 }
-// Create new navigation property to classifyTextJobs for dataClassification
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to classifyTextJobs for dataClassification
 func (m *ClassifyTextJobsRequestBuilder) Post(options *ClassifyTextJobsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.JobResponseBase, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

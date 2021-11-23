@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// searchEntity 
 type SearchEntity struct {
     Entity
     // 
@@ -14,14 +14,14 @@ type SearchEntity struct {
     // 
     qnas []Qna;
 }
-// Instantiates a new searchEntity and sets the default values.
+// NewSearchEntity instantiates a new searchEntity and sets the default values.
 func NewSearchEntity()(*SearchEntity) {
     m := &SearchEntity{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the acronyms property value. 
+// GetAcronyms gets the acronyms property value. 
 func (m *SearchEntity) GetAcronyms()([]Acronym) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *SearchEntity) GetAcronyms()([]Acronym) {
         return m.acronyms
     }
 }
-// Gets the bookmarks property value. 
+// GetBookmarks gets the bookmarks property value. 
 func (m *SearchEntity) GetBookmarks()([]Bookmark) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *SearchEntity) GetBookmarks()([]Bookmark) {
         return m.bookmarks
     }
 }
-// Gets the qnas property value. 
+// GetQnas gets the qnas property value. 
 func (m *SearchEntity) GetQnas()([]Qna) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *SearchEntity) GetQnas()([]Qna) {
         return m.qnas
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SearchEntity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["acronyms"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,9 +95,7 @@ func (m *SearchEntity) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *SearchEntity) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SearchEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -138,21 +136,15 @@ func (m *SearchEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the acronyms property value. 
-// Parameters:
-//  - value : Value to set for the acronyms property.
+// SetAcronyms sets the acronyms property value. 
 func (m *SearchEntity) SetAcronyms(value []Acronym)() {
     m.acronyms = value
 }
-// Sets the bookmarks property value. 
-// Parameters:
-//  - value : Value to set for the bookmarks property.
+// SetBookmarks sets the bookmarks property value. 
 func (m *SearchEntity) SetBookmarks(value []Bookmark)() {
     m.bookmarks = value
 }
-// Sets the qnas property value. 
-// Parameters:
-//  - value : Value to set for the qnas property.
+// SetQnas sets the qnas property value. 
 func (m *SearchEntity) SetQnas(value []Qna)() {
     m.qnas = value
 }

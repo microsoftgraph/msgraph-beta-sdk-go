@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}\assignedDevices
+// assignedDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}\assignedDevices
 type AssignedDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AssignedDevicesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AssignedDevicesRequestBuilderGetOptions options for Get
 type AssignedDevicesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AssignedDevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of assigned devices for the profile.
+// assignedDevicesRequestBuilderGetQueryParameters the list of assigned devices for the profile.
 type AssignedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AssignedDevicesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AssignedDevicesRequestBuilderPostOptions options for Post
 type AssignedDevicesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeviceIdentity;
@@ -56,10 +56,7 @@ type AssignedDevicesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AssignedDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignedDevicesRequestBuilderInternal instantiates a new AssignedDevicesRequestBuilder and sets the default values.
 func NewAssignedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignedDevicesRequestBuilder) {
     m := &AssignedDevicesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAssignedDevicesRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AssignedDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignedDevicesRequestBuilder instantiates a new AssignedDevicesRequestBuilder and sets the default values.
 func NewAssignedDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignedDevicesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignedDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of assigned devices for the profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of assigned devices for the profile.
 func (m *AssignedDevicesRequestBuilder) CreateGetRequestInformation(options *AssignedDevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AssignedDevicesRequestBuilder) CreateGetRequestInformation(options *Ass
     }
     return requestInfo, nil
 }
-// The list of assigned devices for the profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of assigned devices for the profile.
 func (m *AssignedDevicesRequestBuilder) CreatePostRequestInformation(options *AssignedDevicesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AssignedDevicesRequestBuilder) CreatePostRequestInformation(options *As
     }
     return requestInfo, nil
 }
-// The list of assigned devices for the profile.
-// Parameters:
-//  - options : Options for the request
+// Get the list of assigned devices for the profile.
 func (m *AssignedDevicesRequestBuilder) Get(options *AssignedDevicesRequestBuilderGetOptions)(*AssignedDevicesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AssignedDevicesRequestBuilder) Get(options *AssignedDevicesRequestBuild
     }
     return res.(*AssignedDevicesResponse), nil
 }
-// The list of assigned devices for the profile.
-// Parameters:
-//  - options : Options for the request
+// Post the list of assigned devices for the profile.
 func (m *AssignedDevicesRequestBuilder) Post(options *AssignedDevicesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeviceIdentity, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

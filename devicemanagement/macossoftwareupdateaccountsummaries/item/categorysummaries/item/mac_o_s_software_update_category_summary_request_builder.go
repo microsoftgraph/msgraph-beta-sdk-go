@@ -8,7 +8,7 @@ import (
     iff4193ecc67d59ecea24f90311b1d6953f734fe79c0d8ba60c170a0fa5dd9408 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/macossoftwareupdateaccountsummaries/item/categorysummaries/item/updatestatesummaries/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}\categorySummaries\{macOSSoftwareUpdateCategorySummary-id}
+// macOSSoftwareUpdateCategorySummaryRequestBuilder builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}\categorySummaries\{macOSSoftwareUpdateCategorySummary-id}
 type MacOSSoftwareUpdateCategorySummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type MacOSSoftwareUpdateCategorySummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MacOSSoftwareUpdateCategorySummaryRequestBuilderDeleteOptions options for Delete
 type MacOSSoftwareUpdateCategorySummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MacOSSoftwareUpdateCategorySummaryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MacOSSoftwareUpdateCategorySummaryRequestBuilderGetOptions options for Get
 type MacOSSoftwareUpdateCategorySummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type MacOSSoftwareUpdateCategorySummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Summary of the updates by category.
+// macOSSoftwareUpdateCategorySummaryRequestBuilderGetQueryParameters summary of the updates by category.
 type MacOSSoftwareUpdateCategorySummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MacOSSoftwareUpdateCategorySummaryRequestBuilderPatchOptions options for Patch
 type MacOSSoftwareUpdateCategorySummaryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateCategorySummary;
@@ -55,10 +55,7 @@ type MacOSSoftwareUpdateCategorySummaryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MacOSSoftwareUpdateCategorySummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMacOSSoftwareUpdateCategorySummaryRequestBuilderInternal instantiates a new MacOSSoftwareUpdateCategorySummaryRequestBuilder and sets the default values.
 func NewMacOSSoftwareUpdateCategorySummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MacOSSoftwareUpdateCategorySummaryRequestBuilder) {
     m := &MacOSSoftwareUpdateCategorySummaryRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewMacOSSoftwareUpdateCategorySummaryRequestBuilderInternal(pathParameters 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MacOSSoftwareUpdateCategorySummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMacOSSoftwareUpdateCategorySummaryRequestBuilder instantiates a new MacOSSoftwareUpdateCategorySummaryRequestBuilder and sets the default values.
 func NewMacOSSoftwareUpdateCategorySummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MacOSSoftwareUpdateCategorySummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMacOSSoftwareUpdateCategorySummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Summary of the updates by category.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation summary of the updates by category.
 func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) CreateDeleteRequestInformation(options *MacOSSoftwareUpdateCategorySummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// Summary of the updates by category.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation summary of the updates by category.
 func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) CreateGetRequestInformation(options *MacOSSoftwareUpdateCategorySummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// Summary of the updates by category.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation summary of the updates by category.
 func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) CreatePatchRequestInformation(options *MacOSSoftwareUpdateCategorySummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) CreatePatchRequestInf
     }
     return requestInfo, nil
 }
-// Summary of the updates by category.
-// Parameters:
-//  - options : Options for the request
+// Delete summary of the updates by category.
 func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) Delete(options *MacOSSoftwareUpdateCategorySummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) Delete(options *MacOS
     }
     return nil
 }
-// Summary of the updates by category.
-// Parameters:
-//  - options : Options for the request
+// Get summary of the updates by category.
 func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) Get(options *MacOSSoftwareUpdateCategorySummaryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateCategorySummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) Get(options *MacOSSof
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateCategorySummary), nil
 }
-// Summary of the updates by category.
-// Parameters:
-//  - options : Options for the request
+// Patch summary of the updates by category.
 func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) Patch(options *MacOSSoftwareUpdateCategorySummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) Patch(options *MacOSS
 func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) UpdateStateSummaries()(*ia704cb6be080f1ecb092ccb2ba1c744783183d7b569f3801033f58df43a201db.UpdateStateSummariesRequestBuilder) {
     return ia704cb6be080f1ecb092ccb2ba1c744783183d7b569f3801033f58df43a201db.NewUpdateStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.macOSSoftwareUpdateAccountSummaries.item.categorySummaries.item.updateStateSummaries.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UpdateStateSummariesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.macOSSoftwareUpdateAccountSummaries.item.categorySummaries.item.updateStateSummaries.item collection
 func (m *MacOSSoftwareUpdateCategorySummaryRequestBuilder) UpdateStateSummariesById(id string)(*iff4193ecc67d59ecea24f90311b1d6953f734fe79c0d8ba60c170a0fa5dd9408.MacOSSoftwareUpdateStateSummaryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

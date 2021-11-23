@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// outlookTaskFolder 
 type OutlookTaskFolder struct {
     Entity
     // The version of the task folder.
@@ -22,14 +22,14 @@ type OutlookTaskFolder struct {
     // The tasks in this task folder. Read-only. Nullable.
     tasks []OutlookTask;
 }
-// Instantiates a new outlookTaskFolder and sets the default values.
+// NewOutlookTaskFolder instantiates a new outlookTaskFolder and sets the default values.
 func NewOutlookTaskFolder()(*OutlookTaskFolder) {
     m := &OutlookTaskFolder{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the changeKey property value. The version of the task folder.
+// GetChangeKey gets the changeKey property value. The version of the task folder.
 func (m *OutlookTaskFolder) GetChangeKey()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *OutlookTaskFolder) GetChangeKey()(*string) {
         return m.changeKey
     }
 }
-// Gets the isDefaultFolder property value. True if the folder is the default task folder.
+// GetIsDefaultFolder gets the isDefaultFolder property value. True if the folder is the default task folder.
 func (m *OutlookTaskFolder) GetIsDefaultFolder()(*bool) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *OutlookTaskFolder) GetIsDefaultFolder()(*bool) {
         return m.isDefaultFolder
     }
 }
-// Gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
 func (m *OutlookTaskFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *OutlookTaskFolder) GetMultiValueExtendedProperties()([]MultiValueLegacy
         return m.multiValueExtendedProperties
     }
 }
-// Gets the name property value. The name of the task folder.
+// GetName gets the name property value. The name of the task folder.
 func (m *OutlookTaskFolder) GetName()(*string) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *OutlookTaskFolder) GetName()(*string) {
         return m.name
     }
 }
-// Gets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
+// GetParentGroupKey gets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
 func (m *OutlookTaskFolder) GetParentGroupKey()(*string) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *OutlookTaskFolder) GetParentGroupKey()(*string) {
         return m.parentGroupKey
     }
 }
-// Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
 func (m *OutlookTaskFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *OutlookTaskFolder) GetSingleValueExtendedProperties()([]SingleValueLega
         return m.singleValueExtendedProperties
     }
 }
-// Gets the tasks property value. The tasks in this task folder. Read-only. Nullable.
+// GetTasks gets the tasks property value. The tasks in this task folder. Read-only. Nullable.
 func (m *OutlookTaskFolder) GetTasks()([]OutlookTask) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *OutlookTaskFolder) GetTasks()([]OutlookTask) {
         return m.tasks
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["changeKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,9 +175,7 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(interface{},
 func (m *OutlookTaskFolder) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *OutlookTaskFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -242,45 +240,31 @@ func (m *OutlookTaskFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the changeKey property value. The version of the task folder.
-// Parameters:
-//  - value : Value to set for the changeKey property.
+// SetChangeKey sets the changeKey property value. The version of the task folder.
 func (m *OutlookTaskFolder) SetChangeKey(value *string)() {
     m.changeKey = value
 }
-// Sets the isDefaultFolder property value. True if the folder is the default task folder.
-// Parameters:
-//  - value : Value to set for the isDefaultFolder property.
+// SetIsDefaultFolder sets the isDefaultFolder property value. True if the folder is the default task folder.
 func (m *OutlookTaskFolder) SetIsDefaultFolder(value *bool)() {
     m.isDefaultFolder = value
 }
-// Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the multiValueExtendedProperties property.
+// SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
 func (m *OutlookTaskFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
     m.multiValueExtendedProperties = value
 }
-// Sets the name property value. The name of the task folder.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. The name of the task folder.
 func (m *OutlookTaskFolder) SetName(value *string)() {
     m.name = value
 }
-// Sets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
-// Parameters:
-//  - value : Value to set for the parentGroupKey property.
+// SetParentGroupKey sets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
 func (m *OutlookTaskFolder) SetParentGroupKey(value *string)() {
     m.parentGroupKey = value
 }
-// Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the singleValueExtendedProperties property.
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
 func (m *OutlookTaskFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
     m.singleValueExtendedProperties = value
 }
-// Sets the tasks property value. The tasks in this task folder. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the tasks property.
+// SetTasks sets the tasks property value. The tasks in this task folder. Read-only. Nullable.
 func (m *OutlookTaskFolder) SetTasks(value []OutlookTask)() {
     m.tasks = value
 }

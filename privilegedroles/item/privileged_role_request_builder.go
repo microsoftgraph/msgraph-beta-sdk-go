@@ -11,7 +11,7 @@ import (
     ifc2ecb6356f4c50497a05265b4b0a311af52bfc4aa6302f476a92d1df6adfafb "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroles/item/selfactivate"
 )
 
-// Builds and executes requests for operations under \privilegedRoles\{privilegedRole-id}
+// privilegedRoleRequestBuilder builds and executes requests for operations under \privilegedRoles\{privilegedRole-id}
 type PrivilegedRoleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type PrivilegedRoleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrivilegedRoleRequestBuilderDeleteOptions options for Delete
 type PrivilegedRoleRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type PrivilegedRoleRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrivilegedRoleRequestBuilderGetOptions options for Get
 type PrivilegedRoleRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type PrivilegedRoleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from privilegedRoles by key
+// privilegedRoleRequestBuilderGetQueryParameters get entity from privilegedRoles by key
 type PrivilegedRoleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrivilegedRoleRequestBuilderPatchOptions options for Patch
 type PrivilegedRoleRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRole;
@@ -61,10 +61,7 @@ type PrivilegedRoleRequestBuilderPatchOptions struct {
 func (m *PrivilegedRoleRequestBuilder) Assignments()(*i30870af67a7c7e750abaa30f5e84eff1a098db84ecc2ae53c8193d533bc3e771.AssignmentsRequestBuilder) {
     return i30870af67a7c7e750abaa30f5e84eff1a098db84ecc2ae53c8193d533bc3e771.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new PrivilegedRoleRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedRoleRequestBuilderInternal instantiates a new PrivilegedRoleRequestBuilder and sets the default values.
 func NewPrivilegedRoleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedRoleRequestBuilder) {
     m := &PrivilegedRoleRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewPrivilegedRoleRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrivilegedRoleRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivilegedRoleRequestBuilder instantiates a new PrivilegedRoleRequestBuilder and sets the default values.
 func NewPrivilegedRoleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivilegedRoleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedRoleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from privilegedRoles
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from privilegedRoles
 func (m *PrivilegedRoleRequestBuilder) CreateDeleteRequestInformation(options *PrivilegedRoleRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *PrivilegedRoleRequestBuilder) CreateDeleteRequestInformation(options *P
     }
     return requestInfo, nil
 }
-// Get entity from privilegedRoles by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from privilegedRoles by key
 func (m *PrivilegedRoleRequestBuilder) CreateGetRequestInformation(options *PrivilegedRoleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *PrivilegedRoleRequestBuilder) CreateGetRequestInformation(options *Priv
     }
     return requestInfo, nil
 }
-// Update entity in privilegedRoles
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in privilegedRoles
 func (m *PrivilegedRoleRequestBuilder) CreatePatchRequestInformation(options *PrivilegedRoleRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,9 +135,7 @@ func (m *PrivilegedRoleRequestBuilder) CreatePatchRequestInformation(options *Pr
     }
     return requestInfo, nil
 }
-// Delete entity from privilegedRoles
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from privilegedRoles
 func (m *PrivilegedRoleRequestBuilder) Delete(options *PrivilegedRoleRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -161,9 +147,7 @@ func (m *PrivilegedRoleRequestBuilder) Delete(options *PrivilegedRoleRequestBuil
     }
     return nil
 }
-// Get entity from privilegedRoles by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from privilegedRoles by key
 func (m *PrivilegedRoleRequestBuilder) Get(options *PrivilegedRoleRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRole, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *PrivilegedRoleRequestBuilder) Get(options *PrivilegedRoleRequestBuilder
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRole), nil
 }
-// Update entity in privilegedRoles
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in privilegedRoles
 func (m *PrivilegedRoleRequestBuilder) Patch(options *PrivilegedRoleRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

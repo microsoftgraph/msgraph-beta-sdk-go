@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// mobileAppTroubleshootingEvent 
 type MobileAppTroubleshootingEvent struct {
     DeviceManagementTroubleshootingEvent
     // Intune application identifier.
@@ -18,14 +18,14 @@ type MobileAppTroubleshootingEvent struct {
     // Identifier for the user that tried to enroll the device.
     userId *string;
 }
-// Instantiates a new mobileAppTroubleshootingEvent and sets the default values.
+// NewMobileAppTroubleshootingEvent instantiates a new mobileAppTroubleshootingEvent and sets the default values.
 func NewMobileAppTroubleshootingEvent()(*MobileAppTroubleshootingEvent) {
     m := &MobileAppTroubleshootingEvent{
         DeviceManagementTroubleshootingEvent: *NewDeviceManagementTroubleshootingEvent(),
     }
     return m
 }
-// Gets the applicationId property value. Intune application identifier.
+// GetApplicationId gets the applicationId property value. Intune application identifier.
 func (m *MobileAppTroubleshootingEvent) GetApplicationId()(*string) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *MobileAppTroubleshootingEvent) GetApplicationId()(*string) {
         return m.applicationId
     }
 }
-// Gets the appLogCollectionRequests property value. The collection property of AppLogUploadRequest.
+// GetAppLogCollectionRequests gets the appLogCollectionRequests property value. The collection property of AppLogUploadRequest.
 func (m *MobileAppTroubleshootingEvent) GetAppLogCollectionRequests()([]AppLogCollectionRequest) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *MobileAppTroubleshootingEvent) GetAppLogCollectionRequests()([]AppLogCo
         return m.appLogCollectionRequests
     }
 }
-// Gets the history property value. Intune Mobile Application Troubleshooting History Item
+// GetHistory gets the history property value. Intune Mobile Application Troubleshooting History Item
 func (m *MobileAppTroubleshootingEvent) GetHistory()([]MobileAppTroubleshootingHistoryItem) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *MobileAppTroubleshootingEvent) GetHistory()([]MobileAppTroubleshootingH
         return m.history
     }
 }
-// Gets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
+// GetManagedDeviceIdentifier gets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *MobileAppTroubleshootingEvent) GetManagedDeviceIdentifier()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *MobileAppTroubleshootingEvent) GetManagedDeviceIdentifier()(*string) {
         return m.managedDeviceIdentifier
     }
 }
-// Gets the userId property value. Identifier for the user that tried to enroll the device.
+// GetUserId gets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *MobileAppTroubleshootingEvent) GetUserId()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *MobileAppTroubleshootingEvent) GetUserId()(*string) {
         return m.userId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DeviceManagementTroubleshootingEvent.GetFieldDeserializers()
     res["applicationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,9 +131,7 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
 func (m *MobileAppTroubleshootingEvent) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MobileAppTroubleshootingEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.DeviceManagementTroubleshootingEvent.Serialize(writer)
     if err != nil {
@@ -181,33 +179,23 @@ func (m *MobileAppTroubleshootingEvent) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the applicationId property value. Intune application identifier.
-// Parameters:
-//  - value : Value to set for the applicationId property.
+// SetApplicationId sets the applicationId property value. Intune application identifier.
 func (m *MobileAppTroubleshootingEvent) SetApplicationId(value *string)() {
     m.applicationId = value
 }
-// Sets the appLogCollectionRequests property value. The collection property of AppLogUploadRequest.
-// Parameters:
-//  - value : Value to set for the appLogCollectionRequests property.
+// SetAppLogCollectionRequests sets the appLogCollectionRequests property value. The collection property of AppLogUploadRequest.
 func (m *MobileAppTroubleshootingEvent) SetAppLogCollectionRequests(value []AppLogCollectionRequest)() {
     m.appLogCollectionRequests = value
 }
-// Sets the history property value. Intune Mobile Application Troubleshooting History Item
-// Parameters:
-//  - value : Value to set for the history property.
+// SetHistory sets the history property value. Intune Mobile Application Troubleshooting History Item
 func (m *MobileAppTroubleshootingEvent) SetHistory(value []MobileAppTroubleshootingHistoryItem)() {
     m.history = value
 }
-// Sets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
-// Parameters:
-//  - value : Value to set for the managedDeviceIdentifier property.
+// SetManagedDeviceIdentifier sets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *MobileAppTroubleshootingEvent) SetManagedDeviceIdentifier(value *string)() {
     m.managedDeviceIdentifier = value
 }
-// Sets the userId property value. Identifier for the user that tried to enroll the device.
-// Parameters:
-//  - value : Value to set for the userId property.
+// SetUserId sets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *MobileAppTroubleshootingEvent) SetUserId(value *string)() {
     m.userId = value
 }

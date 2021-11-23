@@ -6,7 +6,7 @@ import (
     i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
-// 
+// dataSourceContainer 
 type DataSourceContainer struct {
     Entity
     // Created date and time of the dataSourceContainer entity.
@@ -22,14 +22,14 @@ type DataSourceContainer struct {
     // Latest status of the dataSourceContainer. Possible values are: Active, Released.
     status *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceContainerStatus;
 }
-// Instantiates a new dataSourceContainer and sets the default values.
+// NewDataSourceContainer instantiates a new dataSourceContainer and sets the default values.
 func NewDataSourceContainer()(*DataSourceContainer) {
     m := &DataSourceContainer{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the createdDateTime property value. Created date and time of the dataSourceContainer entity.
+// GetCreatedDateTime gets the createdDateTime property value. Created date and time of the dataSourceContainer entity.
 func (m *DataSourceContainer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *DataSourceContainer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
         return m.createdDateTime
     }
 }
-// Gets the displayName property value. Display name of the dataSourceContainer entity.
+// GetDisplayName gets the displayName property value. Display name of the dataSourceContainer entity.
 func (m *DataSourceContainer) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *DataSourceContainer) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastIndexOperation property value. 
+// GetLastIndexOperation gets the lastIndexOperation property value. 
 func (m *DataSourceContainer) GetLastIndexOperation()(*CaseIndexOperation) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *DataSourceContainer) GetLastIndexOperation()(*CaseIndexOperation) {
         return m.lastIndexOperation
     }
 }
-// Gets the lastModifiedDateTime property value. Last modified date and time of the dataSourceContainer.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date and time of the dataSourceContainer.
 func (m *DataSourceContainer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *DataSourceContainer) GetLastModifiedDateTime()(*i336074805fc853987abe6f
         return m.lastModifiedDateTime
     }
 }
-// Gets the releasedDateTime property value. Date and time that the dataSourceContainer was released from the case.
+// GetReleasedDateTime gets the releasedDateTime property value. Date and time that the dataSourceContainer was released from the case.
 func (m *DataSourceContainer) GetReleasedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *DataSourceContainer) GetReleasedDateTime()(*i336074805fc853987abe6f7fe3
         return m.releasedDateTime
     }
 }
-// Gets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
+// GetStatus gets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
 func (m *DataSourceContainer) GetStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceContainerStatus) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *DataSourceContainer) GetStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac
         return m.status
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,9 +146,7 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
 func (m *DataSourceContainer) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DataSourceContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -193,39 +191,27 @@ func (m *DataSourceContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the createdDateTime property value. Created date and time of the dataSourceContainer entity.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. Created date and time of the dataSourceContainer entity.
 func (m *DataSourceContainer) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the displayName property value. Display name of the dataSourceContainer entity.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name of the dataSourceContainer entity.
 func (m *DataSourceContainer) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastIndexOperation property value. 
-// Parameters:
-//  - value : Value to set for the lastIndexOperation property.
+// SetLastIndexOperation sets the lastIndexOperation property value. 
 func (m *DataSourceContainer) SetLastIndexOperation(value *CaseIndexOperation)() {
     m.lastIndexOperation = value
 }
-// Sets the lastModifiedDateTime property value. Last modified date and time of the dataSourceContainer.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified date and time of the dataSourceContainer.
 func (m *DataSourceContainer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the releasedDateTime property value. Date and time that the dataSourceContainer was released from the case.
-// Parameters:
-//  - value : Value to set for the releasedDateTime property.
+// SetReleasedDateTime sets the releasedDateTime property value. Date and time that the dataSourceContainer was released from the case.
 func (m *DataSourceContainer) SetReleasedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.releasedDateTime = value
 }
-// Sets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
 func (m *DataSourceContainer) SetStatus(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceContainerStatus)() {
     m.status = value
 }

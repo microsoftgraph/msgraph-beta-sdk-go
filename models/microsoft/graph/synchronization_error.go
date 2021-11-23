@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// synchronizationError 
 type SynchronizationError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type SynchronizationError struct {
     // 
     tenantActionable *bool;
 }
-// Instantiates a new synchronizationError and sets the default values.
+// NewSynchronizationError instantiates a new synchronizationError and sets the default values.
 func NewSynchronizationError()(*SynchronizationError) {
     m := &SynchronizationError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationError) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *SynchronizationError) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the code property value. 
+// GetCode gets the code property value. 
 func (m *SynchronizationError) GetCode()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *SynchronizationError) GetCode()(*string) {
         return m.code
     }
 }
-// Gets the message property value. 
+// GetMessage gets the message property value. 
 func (m *SynchronizationError) GetMessage()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *SynchronizationError) GetMessage()(*string) {
         return m.message
     }
 }
-// Gets the tenantActionable property value. 
+// GetTenantActionable gets the tenantActionable property value. 
 func (m *SynchronizationError) GetTenantActionable()(*bool) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *SynchronizationError) GetTenantActionable()(*bool) {
         return m.tenantActionable
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationError) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["code"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *SynchronizationError) GetFieldDeserializers()(map[string]func(interface
 func (m *SynchronizationError) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SynchronizationError) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("code", m.GetCode())
@@ -122,27 +120,19 @@ func (m *SynchronizationError) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationError) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the code property value. 
-// Parameters:
-//  - value : Value to set for the code property.
+// SetCode sets the code property value. 
 func (m *SynchronizationError) SetCode(value *string)() {
     m.code = value
 }
-// Sets the message property value. 
-// Parameters:
-//  - value : Value to set for the message property.
+// SetMessage sets the message property value. 
 func (m *SynchronizationError) SetMessage(value *string)() {
     m.message = value
 }
-// Sets the tenantActionable property value. 
-// Parameters:
-//  - value : Value to set for the tenantActionable property.
+// SetTenantActionable sets the tenantActionable property value. 
 func (m *SynchronizationError) SetTenantActionable(value *bool)() {
     m.tenantActionable = value
 }

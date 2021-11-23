@@ -10,7 +10,7 @@ import (
     ica7dccd05eaa145534bc59f96f938b370c66950ed7615a8ba14f5e53bfd0469f "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/registration/registrants/item"
 )
 
-// Builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}\registration
+// registrationRequestBuilder builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}\registration
 type RegistrationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type RegistrationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RegistrationRequestBuilderDeleteOptions options for Delete
 type RegistrationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type RegistrationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RegistrationRequestBuilderGetOptions options for Get
 type RegistrationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type RegistrationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+// registrationRequestBuilderGetQueryParameters the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 type RegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RegistrationRequestBuilderPatchOptions options for Patch
 type RegistrationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingRegistration;
@@ -57,10 +57,7 @@ type RegistrationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RegistrationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRegistrationRequestBuilderInternal instantiates a new RegistrationRequestBuilder and sets the default values.
 func NewRegistrationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RegistrationRequestBuilder) {
     m := &RegistrationRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewRegistrationRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RegistrationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRegistrationRequestBuilder instantiates a new RegistrationRequestBuilder and sets the default values.
 func NewRegistrationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RegistrationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRegistrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *RegistrationRequestBuilder) CreateDeleteRequestInformation(options *RegistrationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *RegistrationRequestBuilder) CreateDeleteRequestInformation(options *Reg
     }
     return requestInfo, nil
 }
-// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *RegistrationRequestBuilder) CreateGetRequestInformation(options *RegistrationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RegistrationRequestBuilder) CreateGetRequestInformation(options *Regist
     }
     return requestInfo, nil
 }
-// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *RegistrationRequestBuilder) CreatePatchRequestInformation(options *RegistrationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +134,7 @@ func (m *RegistrationRequestBuilder) CreatePatchRequestInformation(options *Regi
 func (m *RegistrationRequestBuilder) CustomQuestions()(*i8b1acecefd40015cacb48332acab4704015613d200d1caf5b420053071c45191.CustomQuestionsRequestBuilder) {
     return i8b1acecefd40015cacb48332acab4704015613d200d1caf5b420053071c45191.NewCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.onlineMeetings.item.registration.customQuestions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CustomQuestionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.onlineMeetings.item.registration.customQuestions.item collection
 func (m *RegistrationRequestBuilder) CustomQuestionsById(id string)(*ib42277fe4ce873d430664e5be2d00e9af9e96d89e8f7d228c9a3066373657e75.MeetingRegistrationQuestionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -159,9 +145,7 @@ func (m *RegistrationRequestBuilder) CustomQuestionsById(id string)(*ib42277fe4c
     }
     return ib42277fe4ce873d430664e5be2d00e9af9e96d89e8f7d228c9a3066373657e75.NewMeetingRegistrationQuestionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
-// Parameters:
-//  - options : Options for the request
+// Delete the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *RegistrationRequestBuilder) Delete(options *RegistrationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *RegistrationRequestBuilder) Delete(options *RegistrationRequestBuilderD
     }
     return nil
 }
-// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
-// Parameters:
-//  - options : Options for the request
+// Get the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *RegistrationRequestBuilder) Get(options *RegistrationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingRegistration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -187,9 +169,7 @@ func (m *RegistrationRequestBuilder) Get(options *RegistrationRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingRegistration), nil
 }
-// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
-// Parameters:
-//  - options : Options for the request
+// Patch the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *RegistrationRequestBuilder) Patch(options *RegistrationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -204,9 +184,7 @@ func (m *RegistrationRequestBuilder) Patch(options *RegistrationRequestBuilderPa
 func (m *RegistrationRequestBuilder) Registrants()(*ib1592b32561109ce162d2a5ad1c92f7d66a6ffaaf0db68b434da84f1d2b5aff5.RegistrantsRequestBuilder) {
     return ib1592b32561109ce162d2a5ad1c92f7d66a6ffaaf0db68b434da84f1d2b5aff5.NewRegistrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.onlineMeetings.item.registration.registrants.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RegistrantsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.onlineMeetings.item.registration.registrants.item collection
 func (m *RegistrationRequestBuilder) RegistrantsById(id string)(*ica7dccd05eaa145534bc59f96f938b370c66950ed7615a8ba14f5e53bfd0469f.MeetingRegistrantRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

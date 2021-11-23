@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\mobileDeviceManagementPolicies
+// mobileDeviceManagementPoliciesRequestBuilder builds and executes requests for operations under \policies\mobileDeviceManagementPolicies
 type MobileDeviceManagementPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MobileDeviceManagementPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MobileDeviceManagementPoliciesRequestBuilderGetOptions options for Get
 type MobileDeviceManagementPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MobileDeviceManagementPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get mobileDeviceManagementPolicies from policies
+// mobileDeviceManagementPoliciesRequestBuilderGetQueryParameters get mobileDeviceManagementPolicies from policies
 type MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MobileDeviceManagementPoliciesRequestBuilderPostOptions options for Post
 type MobileDeviceManagementPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicy;
@@ -56,10 +56,7 @@ type MobileDeviceManagementPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MobileDeviceManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileDeviceManagementPoliciesRequestBuilderInternal instantiates a new MobileDeviceManagementPoliciesRequestBuilder and sets the default values.
 func NewMobileDeviceManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileDeviceManagementPoliciesRequestBuilder) {
     m := &MobileDeviceManagementPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMobileDeviceManagementPoliciesRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MobileDeviceManagementPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileDeviceManagementPoliciesRequestBuilder instantiates a new MobileDeviceManagementPoliciesRequestBuilder and sets the default values.
 func NewMobileDeviceManagementPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileDeviceManagementPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileDeviceManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get mobileDeviceManagementPolicies from policies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get mobileDeviceManagementPolicies from policies
 func (m *MobileDeviceManagementPoliciesRequestBuilder) CreateGetRequestInformation(options *MobileDeviceManagementPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MobileDeviceManagementPoliciesRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Create new navigation property to mobileDeviceManagementPolicies for policies
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to mobileDeviceManagementPolicies for policies
 func (m *MobileDeviceManagementPoliciesRequestBuilder) CreatePostRequestInformation(options *MobileDeviceManagementPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MobileDeviceManagementPoliciesRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// Get mobileDeviceManagementPolicies from policies
-// Parameters:
-//  - options : Options for the request
+// Get get mobileDeviceManagementPolicies from policies
 func (m *MobileDeviceManagementPoliciesRequestBuilder) Get(options *MobileDeviceManagementPoliciesRequestBuilderGetOptions)(*MobileDeviceManagementPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MobileDeviceManagementPoliciesRequestBuilder) Get(options *MobileDevice
     }
     return res.(*MobileDeviceManagementPoliciesResponse), nil
 }
-// Create new navigation property to mobileDeviceManagementPolicies for policies
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to mobileDeviceManagementPolicies for policies
 func (m *MobileDeviceManagementPoliciesRequestBuilder) Post(options *MobileDeviceManagementPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MobilityManagementPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

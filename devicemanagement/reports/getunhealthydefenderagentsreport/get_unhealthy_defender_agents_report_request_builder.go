@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getUnhealthyDefenderAgentsReport
+// getUnhealthyDefenderAgentsReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getUnhealthyDefenderAgentsReport
 type GetUnhealthyDefenderAgentsReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetUnhealthyDefenderAgentsReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetUnhealthyDefenderAgentsReportRequestBuilderPostOptions options for Post
 type GetUnhealthyDefenderAgentsReportRequestBuilderPostOptions struct {
     // 
     Body *GetUnhealthyDefenderAgentsReportRequestBody;
@@ -24,10 +24,7 @@ type GetUnhealthyDefenderAgentsReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetUnhealthyDefenderAgentsReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetUnhealthyDefenderAgentsReportRequestBuilderInternal instantiates a new GetUnhealthyDefenderAgentsReportRequestBuilder and sets the default values.
 func NewGetUnhealthyDefenderAgentsReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetUnhealthyDefenderAgentsReportRequestBuilder) {
     m := &GetUnhealthyDefenderAgentsReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetUnhealthyDefenderAgentsReportRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetUnhealthyDefenderAgentsReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetUnhealthyDefenderAgentsReportRequestBuilder instantiates a new GetUnhealthyDefenderAgentsReportRequestBuilder and sets the default values.
 func NewGetUnhealthyDefenderAgentsReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetUnhealthyDefenderAgentsReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetUnhealthyDefenderAgentsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getUnhealthyDefenderAgentsReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getUnhealthyDefenderAgentsReport
 func (m *GetUnhealthyDefenderAgentsReportRequestBuilder) CreatePostRequestInformation(options *GetUnhealthyDefenderAgentsReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetUnhealthyDefenderAgentsReportRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Invoke action getUnhealthyDefenderAgentsReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getUnhealthyDefenderAgentsReport
 func (m *GetUnhealthyDefenderAgentsReportRequestBuilder) Post(options *GetUnhealthyDefenderAgentsReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

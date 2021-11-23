@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \approvalWorkflowProviders
+// approvalWorkflowProvidersRequestBuilder builds and executes requests for operations under \approvalWorkflowProviders
 type ApprovalWorkflowProvidersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ApprovalWorkflowProvidersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ApprovalWorkflowProvidersRequestBuilderGetOptions options for Get
 type ApprovalWorkflowProvidersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ApprovalWorkflowProvidersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from approvalWorkflowProviders
+// approvalWorkflowProvidersRequestBuilderGetQueryParameters get entities from approvalWorkflowProviders
 type ApprovalWorkflowProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ApprovalWorkflowProvidersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ApprovalWorkflowProvidersRequestBuilderPostOptions options for Post
 type ApprovalWorkflowProvidersRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalWorkflowProvider;
@@ -56,10 +56,7 @@ type ApprovalWorkflowProvidersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApprovalWorkflowProvidersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApprovalWorkflowProvidersRequestBuilderInternal instantiates a new ApprovalWorkflowProvidersRequestBuilder and sets the default values.
 func NewApprovalWorkflowProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalWorkflowProvidersRequestBuilder) {
     m := &ApprovalWorkflowProvidersRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewApprovalWorkflowProvidersRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApprovalWorkflowProvidersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApprovalWorkflowProvidersRequestBuilder instantiates a new ApprovalWorkflowProvidersRequestBuilder and sets the default values.
 func NewApprovalWorkflowProvidersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalWorkflowProvidersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalWorkflowProvidersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from approvalWorkflowProviders
 func (m *ApprovalWorkflowProvidersRequestBuilder) CreateGetRequestInformation(options *ApprovalWorkflowProvidersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ApprovalWorkflowProvidersRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Add new entity to approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to approvalWorkflowProviders
 func (m *ApprovalWorkflowProvidersRequestBuilder) CreatePostRequestInformation(options *ApprovalWorkflowProvidersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ApprovalWorkflowProvidersRequestBuilder) CreatePostRequestInformation(o
     }
     return requestInfo, nil
 }
-// Get entities from approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Get get entities from approvalWorkflowProviders
 func (m *ApprovalWorkflowProvidersRequestBuilder) Get(options *ApprovalWorkflowProvidersRequestBuilderGetOptions)(*ApprovalWorkflowProvidersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ApprovalWorkflowProvidersRequestBuilder) Get(options *ApprovalWorkflowP
     }
     return res.(*ApprovalWorkflowProvidersResponse), nil
 }
-// Add new entity to approvalWorkflowProviders
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to approvalWorkflowProviders
 func (m *ApprovalWorkflowProvidersRequestBuilder) Post(options *ApprovalWorkflowProvidersRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApprovalWorkflowProvider, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

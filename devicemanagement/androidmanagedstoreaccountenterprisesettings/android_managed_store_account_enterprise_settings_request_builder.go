@@ -13,7 +13,7 @@ import (
     ia5c047b600e80aaec8a495894dd576800c93609eea95fb0910bcad732a992e54 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androidmanagedstoreaccountenterprisesettings/approveapps"
 )
 
-// Builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings
+// androidManagedStoreAccountEnterpriseSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings
 type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderDeleteOptions options for Delete
 type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderDeleteOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetOptions options for Get
 type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,14 +42,14 @@ type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The singleton Android managed store account enterprise settings entity.
+// androidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQueryParameters the singleton Android managed store account enterprise settings entity.
 type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderPatchOptions options for Patch
 type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedStoreAccountEnterpriseSettings;
@@ -66,10 +66,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) ApproveApps
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CompleteSignup()(*i314c76ed635b4004a342dd0c841e00e8f471d83c6cb71a6344ebcca4508e202a.CompleteSignupRequestBuilder) {
     return i314c76ed635b4004a342dd0c841e00e8f471d83c6cb71a6344ebcca4508e202a.NewCompleteSignupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilderInternal instantiates a new AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder and sets the default values.
 func NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) {
     m := &AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder{
     }
@@ -82,18 +79,13 @@ func NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilderInternal(pathP
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilder instantiates a new AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder and sets the default values.
 func NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The singleton Android managed store account enterprise settings entity.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the singleton Android managed store account enterprise settings entity.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CreateDeleteRequestInformation(options *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,9 +102,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CreateDelet
     }
     return requestInfo, nil
 }
-// The singleton Android managed store account enterprise settings entity.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the singleton Android managed store account enterprise settings entity.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CreateGetRequestInformation(options *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,9 +125,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CreateGetRe
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CreateGooglePlayWebToken()(*i0f4c5b6e577471df0b671fb66a33d7c548c770695d5d464721827e7069ad5d5c.CreateGooglePlayWebTokenRequestBuilder) {
     return i0f4c5b6e577471df0b671fb66a33d7c548c770695d5d464721827e7069ad5d5c.NewCreateGooglePlayWebTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The singleton Android managed store account enterprise settings entity.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the singleton Android managed store account enterprise settings entity.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CreatePatchRequestInformation(options *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -155,9 +143,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CreatePatch
     }
     return requestInfo, nil
 }
-// The singleton Android managed store account enterprise settings entity.
-// Parameters:
-//  - options : Options for the request
+// Delete the singleton Android managed store account enterprise settings entity.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) Delete(options *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -169,9 +155,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) Delete(opti
     }
     return nil
 }
-// The singleton Android managed store account enterprise settings entity.
-// Parameters:
-//  - options : Options for the request
+// Get the singleton Android managed store account enterprise settings entity.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) Get(options *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedStoreAccountEnterpriseSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -183,9 +167,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) Get(options
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AndroidManagedStoreAccountEnterpriseSettings), nil
 }
-// The singleton Android managed store account enterprise settings entity.
-// Parameters:
-//  - options : Options for the request
+// Patch the singleton Android managed store account enterprise settings entity.
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) Patch(options *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

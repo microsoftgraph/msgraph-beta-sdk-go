@@ -7,7 +7,7 @@ import (
     ie8f3ba9c9b44ad66e0036184f0a10c98d1c6c8ed469092ddfad2e345646e34c8 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/tags/ashierarchy"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags
+// tagsRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags
 type TagsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TagsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TagsRequestBuilderGetOptions options for Get
 type TagsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type TagsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns a list of tag objects associated to this case.
+// tagsRequestBuilderGetQueryParameters returns a list of tag objects associated to this case.
 type TagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type TagsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TagsRequestBuilderPostOptions options for Post
 type TagsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tag;
@@ -57,14 +57,11 @@ type TagsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\microsoft.graph.ediscovery.asHierarchy()
+// AsHierarchy builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\microsoft.graph.ediscovery.asHierarchy()
 func (m *TagsRequestBuilder) AsHierarchy()(*ie8f3ba9c9b44ad66e0036184f0a10c98d1c6c8ed469092ddfad2e345646e34c8.AsHierarchyRequestBuilder) {
     return ie8f3ba9c9b44ad66e0036184f0a10c98d1c6c8ed469092ddfad2e345646e34c8.NewAsHierarchyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new TagsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTagsRequestBuilderInternal instantiates a new TagsRequestBuilder and sets the default values.
 func NewTagsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TagsRequestBuilder) {
     m := &TagsRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewTagsRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TagsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTagsRequestBuilder instantiates a new TagsRequestBuilder and sets the default values.
 func NewTagsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TagsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns a list of tag objects associated to this case.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns a list of tag objects associated to this case.
 func (m *TagsRequestBuilder) CreateGetRequestInformation(options *TagsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *TagsRequestBuilder) CreateGetRequestInformation(options *TagsRequestBui
     }
     return requestInfo, nil
 }
-// Returns a list of tag objects associated to this case.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation returns a list of tag objects associated to this case.
 func (m *TagsRequestBuilder) CreatePostRequestInformation(options *TagsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,9 +118,7 @@ func (m *TagsRequestBuilder) CreatePostRequestInformation(options *TagsRequestBu
     }
     return requestInfo, nil
 }
-// Returns a list of tag objects associated to this case.
-// Parameters:
-//  - options : Options for the request
+// Get returns a list of tag objects associated to this case.
 func (m *TagsRequestBuilder) Get(options *TagsRequestBuilderGetOptions)(*TagsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,9 +130,7 @@ func (m *TagsRequestBuilder) Get(options *TagsRequestBuilderGetOptions)(*TagsRes
     }
     return res.(*TagsResponse), nil
 }
-// Returns a list of tag objects associated to this case.
-// Parameters:
-//  - options : Options for the request
+// Post returns a list of tag objects associated to this case.
 func (m *TagsRequestBuilder) Post(options *TagsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tag, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

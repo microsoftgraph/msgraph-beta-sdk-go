@@ -10,7 +10,7 @@ import (
     i2f0b6d2676d4d7d989c2a4fe2f8364c4ce76a7e3409cd5fbec015451e9fdd0dd "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/todo/lists/item/extensions/item"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\todo\lists\{todoTaskList-id}
+// todoTaskListRequestBuilder builds and executes requests for operations under \users\{user-id}\todo\lists\{todoTaskList-id}
 type TodoTaskListRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type TodoTaskListRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TodoTaskListRequestBuilderDeleteOptions options for Delete
 type TodoTaskListRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type TodoTaskListRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TodoTaskListRequestBuilderGetOptions options for Get
 type TodoTaskListRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type TodoTaskListRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The task lists in the users mailbox.
+// todoTaskListRequestBuilderGetQueryParameters the task lists in the users mailbox.
 type TodoTaskListRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TodoTaskListRequestBuilderPatchOptions options for Patch
 type TodoTaskListRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TodoTaskList;
@@ -57,10 +57,7 @@ type TodoTaskListRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TodoTaskListRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTodoTaskListRequestBuilderInternal instantiates a new TodoTaskListRequestBuilder and sets the default values.
 func NewTodoTaskListRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TodoTaskListRequestBuilder) {
     m := &TodoTaskListRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewTodoTaskListRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TodoTaskListRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTodoTaskListRequestBuilder instantiates a new TodoTaskListRequestBuilder and sets the default values.
 func NewTodoTaskListRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TodoTaskListRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTodoTaskListRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The task lists in the users mailbox.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the task lists in the users mailbox.
 func (m *TodoTaskListRequestBuilder) CreateDeleteRequestInformation(options *TodoTaskListRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *TodoTaskListRequestBuilder) CreateDeleteRequestInformation(options *Tod
     }
     return requestInfo, nil
 }
-// The task lists in the users mailbox.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the task lists in the users mailbox.
 func (m *TodoTaskListRequestBuilder) CreateGetRequestInformation(options *TodoTaskListRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TodoTaskListRequestBuilder) CreateGetRequestInformation(options *TodoTa
     }
     return requestInfo, nil
 }
-// The task lists in the users mailbox.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the task lists in the users mailbox.
 func (m *TodoTaskListRequestBuilder) CreatePatchRequestInformation(options *TodoTaskListRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *TodoTaskListRequestBuilder) CreatePatchRequestInformation(options *Todo
     }
     return requestInfo, nil
 }
-// The task lists in the users mailbox.
-// Parameters:
-//  - options : Options for the request
+// Delete the task lists in the users mailbox.
 func (m *TodoTaskListRequestBuilder) Delete(options *TodoTaskListRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -160,9 +146,7 @@ func (m *TodoTaskListRequestBuilder) Delete(options *TodoTaskListRequestBuilderD
 func (m *TodoTaskListRequestBuilder) Extensions()(*i51844e6ad1945783bba52eae008e45b15a6b2ab3ea414b3e976e4aa3673b8661.ExtensionsRequestBuilder) {
     return i51844e6ad1945783bba52eae008e45b15a6b2ab3ea414b3e976e4aa3673b8661.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.extensions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.extensions.item collection
 func (m *TodoTaskListRequestBuilder) ExtensionsById(id string)(*i2f0b6d2676d4d7d989c2a4fe2f8364c4ce76a7e3409cd5fbec015451e9fdd0dd.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -173,9 +157,7 @@ func (m *TodoTaskListRequestBuilder) ExtensionsById(id string)(*i2f0b6d2676d4d7d
     }
     return i2f0b6d2676d4d7d989c2a4fe2f8364c4ce76a7e3409cd5fbec015451e9fdd0dd.NewExtensionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The task lists in the users mailbox.
-// Parameters:
-//  - options : Options for the request
+// Get the task lists in the users mailbox.
 func (m *TodoTaskListRequestBuilder) Get(options *TodoTaskListRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TodoTaskList, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -187,9 +169,7 @@ func (m *TodoTaskListRequestBuilder) Get(options *TodoTaskListRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TodoTaskList), nil
 }
-// The task lists in the users mailbox.
-// Parameters:
-//  - options : Options for the request
+// Patch the task lists in the users mailbox.
 func (m *TodoTaskListRequestBuilder) Patch(options *TodoTaskListRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -204,9 +184,7 @@ func (m *TodoTaskListRequestBuilder) Patch(options *TodoTaskListRequestBuilderPa
 func (m *TodoTaskListRequestBuilder) Tasks()(*i2cd7b734203f8bc3cb43183a0b7fa592be40d1d17bef40198b2ee83fcd0648f4.TasksRequestBuilder) {
     return i2cd7b734203f8bc3cb43183a0b7fa592be40d1d17bef40198b2ee83fcd0648f4.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.tasks.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.tasks.item collection
 func (m *TodoTaskListRequestBuilder) TasksById(id string)(*i08010241be71310a3e09edc0fe3b68805e3747b349c1bbe6e74094273231019e.TodoTaskRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

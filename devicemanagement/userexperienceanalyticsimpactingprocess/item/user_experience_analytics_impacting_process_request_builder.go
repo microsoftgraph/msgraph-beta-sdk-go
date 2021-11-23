@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsImpactingProcess\{userExperienceAnalyticsImpactingProcess-id}
+// userExperienceAnalyticsImpactingProcessRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsImpactingProcess\{userExperienceAnalyticsImpactingProcess-id}
 type UserExperienceAnalyticsImpactingProcessRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsImpactingProcessRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserExperienceAnalyticsImpactingProcessRequestBuilderDeleteOptions options for Delete
 type UserExperienceAnalyticsImpactingProcessRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type UserExperienceAnalyticsImpactingProcessRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserExperienceAnalyticsImpactingProcessRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsImpactingProcessRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type UserExperienceAnalyticsImpactingProcessRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics impacting process
+// userExperienceAnalyticsImpactingProcessRequestBuilderGetQueryParameters user experience analytics impacting process
 type UserExperienceAnalyticsImpactingProcessRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserExperienceAnalyticsImpactingProcessRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsImpactingProcessRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsImpactingProcess;
@@ -53,10 +53,7 @@ type UserExperienceAnalyticsImpactingProcessRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsImpactingProcessRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal instantiates a new UserExperienceAnalyticsImpactingProcessRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsImpactingProcessRequestBuilder) {
     m := &UserExperienceAnalyticsImpactingProcessRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal(pathParame
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsImpactingProcessRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsImpactingProcessRequestBuilder instantiates a new UserExperienceAnalyticsImpactingProcessRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsImpactingProcessRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsImpactingProcessRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics impacting process
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation user experience analytics impacting process
 func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) CreateDeleteRequestInformation(options *UserExperienceAnalyticsImpactingProcessRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) CreateDeleteRequ
     }
     return requestInfo, nil
 }
-// User experience analytics impacting process
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics impacting process
 func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsImpactingProcessRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// User experience analytics impacting process
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation user experience analytics impacting process
 func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) CreatePatchRequestInformation(options *UserExperienceAnalyticsImpactingProcessRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) CreatePatchReque
     }
     return requestInfo, nil
 }
-// User experience analytics impacting process
-// Parameters:
-//  - options : Options for the request
+// Delete user experience analytics impacting process
 func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) Delete(options *UserExperienceAnalyticsImpactingProcessRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) Delete(options *
     }
     return nil
 }
-// User experience analytics impacting process
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics impacting process
 func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) Get(options *UserExperienceAnalyticsImpactingProcessRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsImpactingProcess, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) Get(options *Use
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsImpactingProcess), nil
 }
-// User experience analytics impacting process
-// Parameters:
-//  - options : Options for the request
+// Patch user experience analytics impacting process
 func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) Patch(options *UserExperienceAnalyticsImpactingProcessRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

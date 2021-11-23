@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceManagementConfigurationSettingInstanceTemplate 
 type DeviceManagementConfigurationSettingInstanceTemplate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type DeviceManagementConfigurationSettingInstanceTemplate struct {
     // Setting Instance Template Id
     settingInstanceTemplateId *string;
 }
-// Instantiates a new deviceManagementConfigurationSettingInstanceTemplate and sets the default values.
+// NewDeviceManagementConfigurationSettingInstanceTemplate instantiates a new deviceManagementConfigurationSettingInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationSettingInstanceTemplate()(*DeviceManagementConfigurationSettingInstanceTemplate) {
     m := &DeviceManagementConfigurationSettingInstanceTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetAdditionalData
         return m.additionalData
     }
 }
-// Gets the isRequired property value. Indicates if a policy must specify this setting.
+// GetIsRequired gets the isRequired property value. Indicates if a policy must specify this setting.
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetIsRequired()(*bool) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetIsRequired()(*
         return m.isRequired
     }
 }
-// Gets the settingDefinitionId property value. Setting Definition Id
+// GetSettingDefinitionId gets the settingDefinitionId property value. Setting Definition Id
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetSettingDefinitionId()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetSettingDefinit
         return m.settingDefinitionId
     }
 }
-// Gets the settingInstanceTemplateId property value. Setting Instance Template Id
+// GetSettingInstanceTemplateId gets the settingInstanceTemplateId property value. Setting Instance Template Id
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetSettingInstanceTemplateId()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetSettingInstanc
         return m.settingInstanceTemplateId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["isRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetFieldDeseriali
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isRequired", m.GetIsRequired())
@@ -122,27 +120,19 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) Serialize(writer 
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the isRequired property value. Indicates if a policy must specify this setting.
-// Parameters:
-//  - value : Value to set for the isRequired property.
+// SetIsRequired sets the isRequired property value. Indicates if a policy must specify this setting.
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetIsRequired(value *bool)() {
     m.isRequired = value
 }
-// Sets the settingDefinitionId property value. Setting Definition Id
-// Parameters:
-//  - value : Value to set for the settingDefinitionId property.
+// SetSettingDefinitionId sets the settingDefinitionId property value. Setting Definition Id
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetSettingDefinitionId(value *string)() {
     m.settingDefinitionId = value
 }
-// Sets the settingInstanceTemplateId property value. Setting Instance Template Id
-// Parameters:
-//  - value : Value to set for the settingInstanceTemplateId property.
+// SetSettingInstanceTemplateId sets the settingInstanceTemplateId property value. Setting Instance Template Id
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetSettingInstanceTemplateId(value *string)() {
     m.settingInstanceTemplateId = value
 }

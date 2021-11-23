@@ -7,7 +7,7 @@ import (
     i51cb6449bd391c2d84a6c68c41a7de235fe9dcc5015fc92c3a5cce1b8addba7b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/deviceenrollmentconfigurations/haspayloadlinks"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\deviceEnrollmentConfigurations
+// deviceEnrollmentConfigurationsRequestBuilder builds and executes requests for operations under \users\{user-id}\deviceEnrollmentConfigurations
 type DeviceEnrollmentConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceEnrollmentConfigurationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceEnrollmentConfigurationsRequestBuilderGetOptions options for Get
 type DeviceEnrollmentConfigurationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type DeviceEnrollmentConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get enrollment configurations targeted to the user
+// deviceEnrollmentConfigurationsRequestBuilderGetQueryParameters get enrollment configurations targeted to the user
 type DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceEnrollmentConfigurationsRequestBuilderPostOptions options for Post
 type DeviceEnrollmentConfigurationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceEnrollmentConfiguration;
@@ -57,10 +57,7 @@ type DeviceEnrollmentConfigurationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceEnrollmentConfigurationsRequestBuilderInternal instantiates a new DeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
 func NewDeviceEnrollmentConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceEnrollmentConfigurationsRequestBuilder) {
     m := &DeviceEnrollmentConfigurationsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewDeviceEnrollmentConfigurationsRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceEnrollmentConfigurationsRequestBuilder instantiates a new DeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
 func NewDeviceEnrollmentConfigurationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceEnrollmentConfigurationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceEnrollmentConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get enrollment configurations targeted to the user
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get enrollment configurations targeted to the user
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequestInformation(options *DeviceEnrollmentConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Get enrollment configurations targeted to the user
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation get enrollment configurations targeted to the user
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreatePostRequestInformation(options *DeviceEnrollmentConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// Get enrollment configurations targeted to the user
-// Parameters:
-//  - options : Options for the request
+// Get get enrollment configurations targeted to the user
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) Get(options *DeviceEnrollmentConfigurationsRequestBuilderGetOptions)(*DeviceEnrollmentConfigurationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) Get(options *DeviceEnroll
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) HasPayloadLinks()(*i51cb6449bd391c2d84a6c68c41a7de235fe9dcc5015fc92c3a5cce1b8addba7b.HasPayloadLinksRequestBuilder) {
     return i51cb6449bd391c2d84a6c68c41a7de235fe9dcc5015fc92c3a5cce1b8addba7b.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get enrollment configurations targeted to the user
-// Parameters:
-//  - options : Options for the request
+// Post get enrollment configurations targeted to the user
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) Post(options *DeviceEnrollmentConfigurationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceEnrollmentConfiguration, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

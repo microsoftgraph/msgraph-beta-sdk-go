@@ -8,7 +8,7 @@ import (
     ib32d34f50255bdea0699208e320acf08a90078315ca8ef82a9c10a80d7799d4b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/autopilotevents/item/policystatusdetails/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\autopilotEvents\{deviceManagementAutopilotEvent-id}
+// deviceManagementAutopilotEventRequestBuilder builds and executes requests for operations under \deviceManagement\autopilotEvents\{deviceManagementAutopilotEvent-id}
 type DeviceManagementAutopilotEventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type DeviceManagementAutopilotEventRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementAutopilotEventRequestBuilderDeleteOptions options for Delete
 type DeviceManagementAutopilotEventRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceManagementAutopilotEventRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementAutopilotEventRequestBuilderGetOptions options for Get
 type DeviceManagementAutopilotEventRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type DeviceManagementAutopilotEventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of autopilot events for the tenant.
+// deviceManagementAutopilotEventRequestBuilderGetQueryParameters the list of autopilot events for the tenant.
 type DeviceManagementAutopilotEventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementAutopilotEventRequestBuilderPatchOptions options for Patch
 type DeviceManagementAutopilotEventRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotEvent;
@@ -55,10 +55,7 @@ type DeviceManagementAutopilotEventRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementAutopilotEventRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementAutopilotEventRequestBuilderInternal instantiates a new DeviceManagementAutopilotEventRequestBuilder and sets the default values.
 func NewDeviceManagementAutopilotEventRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementAutopilotEventRequestBuilder) {
     m := &DeviceManagementAutopilotEventRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewDeviceManagementAutopilotEventRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementAutopilotEventRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementAutopilotEventRequestBuilder instantiates a new DeviceManagementAutopilotEventRequestBuilder and sets the default values.
 func NewDeviceManagementAutopilotEventRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementAutopilotEventRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementAutopilotEventRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of autopilot events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of autopilot events for the tenant.
 func (m *DeviceManagementAutopilotEventRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementAutopilotEventRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *DeviceManagementAutopilotEventRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// The list of autopilot events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of autopilot events for the tenant.
 func (m *DeviceManagementAutopilotEventRequestBuilder) CreateGetRequestInformation(options *DeviceManagementAutopilotEventRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *DeviceManagementAutopilotEventRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// The list of autopilot events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of autopilot events for the tenant.
 func (m *DeviceManagementAutopilotEventRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementAutopilotEventRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *DeviceManagementAutopilotEventRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// The list of autopilot events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of autopilot events for the tenant.
 func (m *DeviceManagementAutopilotEventRequestBuilder) Delete(options *DeviceManagementAutopilotEventRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *DeviceManagementAutopilotEventRequestBuilder) Delete(options *DeviceMan
     }
     return nil
 }
-// The list of autopilot events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of autopilot events for the tenant.
 func (m *DeviceManagementAutopilotEventRequestBuilder) Get(options *DeviceManagementAutopilotEventRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotEvent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *DeviceManagementAutopilotEventRequestBuilder) Get(options *DeviceManage
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementAutopilotEvent), nil
 }
-// The list of autopilot events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of autopilot events for the tenant.
 func (m *DeviceManagementAutopilotEventRequestBuilder) Patch(options *DeviceManagementAutopilotEventRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *DeviceManagementAutopilotEventRequestBuilder) Patch(options *DeviceMana
 func (m *DeviceManagementAutopilotEventRequestBuilder) PolicyStatusDetails()(*if76c2cb80ed357d07ffd85f409f06a5249ec510099f57edb418f41e7bdb74e03.PolicyStatusDetailsRequestBuilder) {
     return if76c2cb80ed357d07ffd85f409f06a5249ec510099f57edb418f41e7bdb74e03.NewPolicyStatusDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.autopilotEvents.item.policyStatusDetails.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PolicyStatusDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.autopilotEvents.item.policyStatusDetails.item collection
 func (m *DeviceManagementAutopilotEventRequestBuilder) PolicyStatusDetailsById(id string)(*ib32d34f50255bdea0699208e320acf08a90078315ca8ef82a9c10a80d7799d4b.DeviceManagementAutopilotPolicyStatusDetailRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

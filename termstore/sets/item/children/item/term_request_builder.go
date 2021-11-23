@@ -11,7 +11,7 @@ import (
     i8c41d0c998190697de4b3e9f8db43880fe77b5f1eacab2484f48b7c66d6d6836 "github.com/microsoftgraph/msgraph-beta-sdk-go/termstore/sets/item/children/item/relations/item"
 )
 
-// Builds and executes requests for operations under \termStore\sets\{set-id}\children\{term-id}
+// termRequestBuilder builds and executes requests for operations under \termStore\sets\{set-id}\children\{term-id}
 type TermRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type TermRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TermRequestBuilderDeleteOptions options for Delete
 type TermRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type TermRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TermRequestBuilderGetOptions options for Get
 type TermRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type TermRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Children terms of set in term [store].
+// termRequestBuilderGetQueryParameters children terms of set in term [store].
 type TermRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TermRequestBuilderPatchOptions options for Patch
 type TermRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Term;
@@ -61,9 +61,7 @@ type TermRequestBuilderPatchOptions struct {
 func (m *TermRequestBuilder) Children()(*i75e7c2ca91afeb714ccd80a1f59aba614c728edc1b8d97bf9ea98821a5d24a0b.ChildrenRequestBuilder) {
     return i75e7c2ca91afeb714ccd80a1f59aba614c728edc1b8d97bf9ea98821a5d24a0b.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.termStore.sets.item.children.item.children.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ChildrenById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.termStore.sets.item.children.item.children.item collection
 func (m *TermRequestBuilder) ChildrenById(id string)(*i60d4636b3dc73e96047b220d2a344ac838391e14ed10d97c599064719c02861f.TermRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -74,10 +72,7 @@ func (m *TermRequestBuilder) ChildrenById(id string)(*i60d4636b3dc73e96047b220d2
     }
     return i60d4636b3dc73e96047b220d2a344ac838391e14ed10d97c599064719c02861f.NewTermRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new TermRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermRequestBuilderInternal instantiates a new TermRequestBuilder and sets the default values.
 func NewTermRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermRequestBuilder) {
     m := &TermRequestBuilder{
     }
@@ -90,18 +85,13 @@ func NewTermRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TermRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermRequestBuilder instantiates a new TermRequestBuilder and sets the default values.
 func NewTermRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTermRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Children terms of set in term [store].
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation children terms of set in term [store].
 func (m *TermRequestBuilder) CreateDeleteRequestInformation(options *TermRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,9 +108,7 @@ func (m *TermRequestBuilder) CreateDeleteRequestInformation(options *TermRequest
     }
     return requestInfo, nil
 }
-// Children terms of set in term [store].
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation children terms of set in term [store].
 func (m *TermRequestBuilder) CreateGetRequestInformation(options *TermRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *TermRequestBuilder) CreateGetRequestInformation(options *TermRequestBui
     }
     return requestInfo, nil
 }
-// Children terms of set in term [store].
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation children terms of set in term [store].
 func (m *TermRequestBuilder) CreatePatchRequestInformation(options *TermRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -160,9 +146,7 @@ func (m *TermRequestBuilder) CreatePatchRequestInformation(options *TermRequestB
     }
     return requestInfo, nil
 }
-// Children terms of set in term [store].
-// Parameters:
-//  - options : Options for the request
+// Delete children terms of set in term [store].
 func (m *TermRequestBuilder) Delete(options *TermRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -174,9 +158,7 @@ func (m *TermRequestBuilder) Delete(options *TermRequestBuilderDeleteOptions)(er
     }
     return nil
 }
-// Children terms of set in term [store].
-// Parameters:
-//  - options : Options for the request
+// Get children terms of set in term [store].
 func (m *TermRequestBuilder) Get(options *TermRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Term, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -188,9 +170,7 @@ func (m *TermRequestBuilder) Get(options *TermRequestBuilderGetOptions)(*i535684
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Term), nil
 }
-// Children terms of set in term [store].
-// Parameters:
-//  - options : Options for the request
+// Patch children terms of set in term [store].
 func (m *TermRequestBuilder) Patch(options *TermRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -205,9 +185,7 @@ func (m *TermRequestBuilder) Patch(options *TermRequestBuilderPatchOptions)(erro
 func (m *TermRequestBuilder) Relations()(*i259c4974ad05369136c91a47b0bb33bb51caf6c65426de4ff720a1fd6e261ab3.RelationsRequestBuilder) {
     return i259c4974ad05369136c91a47b0bb33bb51caf6c65426de4ff720a1fd6e261ab3.NewRelationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.termStore.sets.item.children.item.relations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RelationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.termStore.sets.item.children.item.relations.item collection
 func (m *TermRequestBuilder) RelationsById(id string)(*i8c41d0c998190697de4b3e9f8db43880fe77b5f1eacab2484f48b7c66d6d6836.RelationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

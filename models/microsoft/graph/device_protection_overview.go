@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceProtectionOverview 
 type DeviceProtectionOverview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -31,14 +31,14 @@ type DeviceProtectionOverview struct {
     // Device with threat agent state as unknown count.
     unknownStateThreatAgentDeviceCount *int32;
 }
-// Instantiates a new deviceProtectionOverview and sets the default values.
+// NewDeviceProtectionOverview instantiates a new deviceProtectionOverview and sets the default values.
 func NewDeviceProtectionOverview()(*DeviceProtectionOverview) {
     m := &DeviceProtectionOverview{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceProtectionOverview) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *DeviceProtectionOverview) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the cleanDeviceCount property value. Clean device count.
+// GetCleanDeviceCount gets the cleanDeviceCount property value. Clean device count.
 func (m *DeviceProtectionOverview) GetCleanDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *DeviceProtectionOverview) GetCleanDeviceCount()(*int32) {
         return m.cleanDeviceCount
     }
 }
-// Gets the criticalFailuresDeviceCount property value. Critical failures device count.
+// GetCriticalFailuresDeviceCount gets the criticalFailuresDeviceCount property value. Critical failures device count.
 func (m *DeviceProtectionOverview) GetCriticalFailuresDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *DeviceProtectionOverview) GetCriticalFailuresDeviceCount()(*int32) {
         return m.criticalFailuresDeviceCount
     }
 }
-// Gets the inactiveThreatAgentDeviceCount property value. Device with inactive threat agent count
+// GetInactiveThreatAgentDeviceCount gets the inactiveThreatAgentDeviceCount property value. Device with inactive threat agent count
 func (m *DeviceProtectionOverview) GetInactiveThreatAgentDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *DeviceProtectionOverview) GetInactiveThreatAgentDeviceCount()(*int32) {
         return m.inactiveThreatAgentDeviceCount
     }
 }
-// Gets the pendingFullScanDeviceCount property value. Pending full scan device count.
+// GetPendingFullScanDeviceCount gets the pendingFullScanDeviceCount property value. Pending full scan device count.
 func (m *DeviceProtectionOverview) GetPendingFullScanDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *DeviceProtectionOverview) GetPendingFullScanDeviceCount()(*int32) {
         return m.pendingFullScanDeviceCount
     }
 }
-// Gets the pendingManualStepsDeviceCount property value. Pending manual steps device count.
+// GetPendingManualStepsDeviceCount gets the pendingManualStepsDeviceCount property value. Pending manual steps device count.
 func (m *DeviceProtectionOverview) GetPendingManualStepsDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *DeviceProtectionOverview) GetPendingManualStepsDeviceCount()(*int32) {
         return m.pendingManualStepsDeviceCount
     }
 }
-// Gets the pendingOfflineScanDeviceCount property value. Pending offline scan device count.
+// GetPendingOfflineScanDeviceCount gets the pendingOfflineScanDeviceCount property value. Pending offline scan device count.
 func (m *DeviceProtectionOverview) GetPendingOfflineScanDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *DeviceProtectionOverview) GetPendingOfflineScanDeviceCount()(*int32) {
         return m.pendingOfflineScanDeviceCount
     }
 }
-// Gets the pendingQuickScanDeviceCount property value. Pending quick scan device count. Valid values -2147483648 to 2147483647
+// GetPendingQuickScanDeviceCount gets the pendingQuickScanDeviceCount property value. Pending quick scan device count. Valid values -2147483648 to 2147483647
 func (m *DeviceProtectionOverview) GetPendingQuickScanDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *DeviceProtectionOverview) GetPendingQuickScanDeviceCount()(*int32) {
         return m.pendingQuickScanDeviceCount
     }
 }
-// Gets the pendingRestartDeviceCount property value. Pending restart device count.
+// GetPendingRestartDeviceCount gets the pendingRestartDeviceCount property value. Pending restart device count.
 func (m *DeviceProtectionOverview) GetPendingRestartDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *DeviceProtectionOverview) GetPendingRestartDeviceCount()(*int32) {
         return m.pendingRestartDeviceCount
     }
 }
-// Gets the pendingSignatureUpdateDeviceCount property value. Device with old signature count.
+// GetPendingSignatureUpdateDeviceCount gets the pendingSignatureUpdateDeviceCount property value. Device with old signature count.
 func (m *DeviceProtectionOverview) GetPendingSignatureUpdateDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -118,7 +118,7 @@ func (m *DeviceProtectionOverview) GetPendingSignatureUpdateDeviceCount()(*int32
         return m.pendingSignatureUpdateDeviceCount
     }
 }
-// Gets the totalReportedDeviceCount property value. Total device count.
+// GetTotalReportedDeviceCount gets the totalReportedDeviceCount property value. Total device count.
 func (m *DeviceProtectionOverview) GetTotalReportedDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -126,7 +126,7 @@ func (m *DeviceProtectionOverview) GetTotalReportedDeviceCount()(*int32) {
         return m.totalReportedDeviceCount
     }
 }
-// Gets the unknownStateThreatAgentDeviceCount property value. Device with threat agent state as unknown count.
+// GetUnknownStateThreatAgentDeviceCount gets the unknownStateThreatAgentDeviceCount property value. Device with threat agent state as unknown count.
 func (m *DeviceProtectionOverview) GetUnknownStateThreatAgentDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *DeviceProtectionOverview) GetUnknownStateThreatAgentDeviceCount()(*int3
         return m.unknownStateThreatAgentDeviceCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["cleanDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,9 +252,7 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(inter
 func (m *DeviceProtectionOverview) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceProtectionOverview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("cleanDeviceCount", m.GetCleanDeviceCount())
@@ -330,75 +328,51 @@ func (m *DeviceProtectionOverview) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceProtectionOverview) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the cleanDeviceCount property value. Clean device count.
-// Parameters:
-//  - value : Value to set for the cleanDeviceCount property.
+// SetCleanDeviceCount sets the cleanDeviceCount property value. Clean device count.
 func (m *DeviceProtectionOverview) SetCleanDeviceCount(value *int32)() {
     m.cleanDeviceCount = value
 }
-// Sets the criticalFailuresDeviceCount property value. Critical failures device count.
-// Parameters:
-//  - value : Value to set for the criticalFailuresDeviceCount property.
+// SetCriticalFailuresDeviceCount sets the criticalFailuresDeviceCount property value. Critical failures device count.
 func (m *DeviceProtectionOverview) SetCriticalFailuresDeviceCount(value *int32)() {
     m.criticalFailuresDeviceCount = value
 }
-// Sets the inactiveThreatAgentDeviceCount property value. Device with inactive threat agent count
-// Parameters:
-//  - value : Value to set for the inactiveThreatAgentDeviceCount property.
+// SetInactiveThreatAgentDeviceCount sets the inactiveThreatAgentDeviceCount property value. Device with inactive threat agent count
 func (m *DeviceProtectionOverview) SetInactiveThreatAgentDeviceCount(value *int32)() {
     m.inactiveThreatAgentDeviceCount = value
 }
-// Sets the pendingFullScanDeviceCount property value. Pending full scan device count.
-// Parameters:
-//  - value : Value to set for the pendingFullScanDeviceCount property.
+// SetPendingFullScanDeviceCount sets the pendingFullScanDeviceCount property value. Pending full scan device count.
 func (m *DeviceProtectionOverview) SetPendingFullScanDeviceCount(value *int32)() {
     m.pendingFullScanDeviceCount = value
 }
-// Sets the pendingManualStepsDeviceCount property value. Pending manual steps device count.
-// Parameters:
-//  - value : Value to set for the pendingManualStepsDeviceCount property.
+// SetPendingManualStepsDeviceCount sets the pendingManualStepsDeviceCount property value. Pending manual steps device count.
 func (m *DeviceProtectionOverview) SetPendingManualStepsDeviceCount(value *int32)() {
     m.pendingManualStepsDeviceCount = value
 }
-// Sets the pendingOfflineScanDeviceCount property value. Pending offline scan device count.
-// Parameters:
-//  - value : Value to set for the pendingOfflineScanDeviceCount property.
+// SetPendingOfflineScanDeviceCount sets the pendingOfflineScanDeviceCount property value. Pending offline scan device count.
 func (m *DeviceProtectionOverview) SetPendingOfflineScanDeviceCount(value *int32)() {
     m.pendingOfflineScanDeviceCount = value
 }
-// Sets the pendingQuickScanDeviceCount property value. Pending quick scan device count. Valid values -2147483648 to 2147483647
-// Parameters:
-//  - value : Value to set for the pendingQuickScanDeviceCount property.
+// SetPendingQuickScanDeviceCount sets the pendingQuickScanDeviceCount property value. Pending quick scan device count. Valid values -2147483648 to 2147483647
 func (m *DeviceProtectionOverview) SetPendingQuickScanDeviceCount(value *int32)() {
     m.pendingQuickScanDeviceCount = value
 }
-// Sets the pendingRestartDeviceCount property value. Pending restart device count.
-// Parameters:
-//  - value : Value to set for the pendingRestartDeviceCount property.
+// SetPendingRestartDeviceCount sets the pendingRestartDeviceCount property value. Pending restart device count.
 func (m *DeviceProtectionOverview) SetPendingRestartDeviceCount(value *int32)() {
     m.pendingRestartDeviceCount = value
 }
-// Sets the pendingSignatureUpdateDeviceCount property value. Device with old signature count.
-// Parameters:
-//  - value : Value to set for the pendingSignatureUpdateDeviceCount property.
+// SetPendingSignatureUpdateDeviceCount sets the pendingSignatureUpdateDeviceCount property value. Device with old signature count.
 func (m *DeviceProtectionOverview) SetPendingSignatureUpdateDeviceCount(value *int32)() {
     m.pendingSignatureUpdateDeviceCount = value
 }
-// Sets the totalReportedDeviceCount property value. Total device count.
-// Parameters:
-//  - value : Value to set for the totalReportedDeviceCount property.
+// SetTotalReportedDeviceCount sets the totalReportedDeviceCount property value. Total device count.
 func (m *DeviceProtectionOverview) SetTotalReportedDeviceCount(value *int32)() {
     m.totalReportedDeviceCount = value
 }
-// Sets the unknownStateThreatAgentDeviceCount property value. Device with threat agent state as unknown count.
-// Parameters:
-//  - value : Value to set for the unknownStateThreatAgentDeviceCount property.
+// SetUnknownStateThreatAgentDeviceCount sets the unknownStateThreatAgentDeviceCount property value. Device with threat agent state as unknown count.
 func (m *DeviceProtectionOverview) SetUnknownStateThreatAgentDeviceCount(value *int32)() {
     m.unknownStateThreatAgentDeviceCount = value
 }

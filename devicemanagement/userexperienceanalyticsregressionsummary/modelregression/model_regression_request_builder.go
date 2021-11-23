@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary\modelRegression
+// modelRegressionRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary\modelRegression
 type ModelRegressionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ModelRegressionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ModelRegressionRequestBuilderGetOptions options for Get
 type ModelRegressionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ModelRegressionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The metric values for the user experience analytics model regression.
+// modelRegressionRequestBuilderGetQueryParameters the metric values for the user experience analytics model regression.
 type ModelRegressionRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ModelRegressionRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ModelRegressionRequestBuilderPostOptions options for Post
 type ModelRegressionRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetric;
@@ -56,10 +56,7 @@ type ModelRegressionRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ModelRegressionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewModelRegressionRequestBuilderInternal instantiates a new ModelRegressionRequestBuilder and sets the default values.
 func NewModelRegressionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ModelRegressionRequestBuilder) {
     m := &ModelRegressionRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewModelRegressionRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ModelRegressionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewModelRegressionRequestBuilder instantiates a new ModelRegressionRequestBuilder and sets the default values.
 func NewModelRegressionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ModelRegressionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewModelRegressionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The metric values for the user experience analytics model regression.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the metric values for the user experience analytics model regression.
 func (m *ModelRegressionRequestBuilder) CreateGetRequestInformation(options *ModelRegressionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ModelRegressionRequestBuilder) CreateGetRequestInformation(options *Mod
     }
     return requestInfo, nil
 }
-// The metric values for the user experience analytics model regression.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the metric values for the user experience analytics model regression.
 func (m *ModelRegressionRequestBuilder) CreatePostRequestInformation(options *ModelRegressionRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ModelRegressionRequestBuilder) CreatePostRequestInformation(options *Mo
     }
     return requestInfo, nil
 }
-// The metric values for the user experience analytics model regression.
-// Parameters:
-//  - options : Options for the request
+// Get the metric values for the user experience analytics model regression.
 func (m *ModelRegressionRequestBuilder) Get(options *ModelRegressionRequestBuilderGetOptions)(*ModelRegressionResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ModelRegressionRequestBuilder) Get(options *ModelRegressionRequestBuild
     }
     return res.(*ModelRegressionResponse), nil
 }
-// The metric values for the user experience analytics model regression.
-// Parameters:
-//  - options : Options for the request
+// Post the metric values for the user experience analytics model regression.
 func (m *ModelRegressionRequestBuilder) Post(options *ModelRegressionRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetric, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

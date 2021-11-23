@@ -6,7 +6,7 @@ import (
     i5b646633f3ed4ae312dba8e6efb75e2295d8bd4fad90dde5f7572994694732f9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/users/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\users
+// usersRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\users
 type UsersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UsersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UsersRequestBuilderGetOptions options for Get
 type UsersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UsersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The primary users associated with the managed device.
+// usersRequestBuilderGetQueryParameters the primary users associated with the managed device.
 type UsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type UsersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new UsersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsersRequestBuilderInternal instantiates a new UsersRequestBuilder and sets the default values.
 func NewUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsersRequestBuilder) {
     m := &UsersRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewUsersRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UsersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsersRequestBuilder instantiates a new UsersRequestBuilder and sets the default values.
 func NewUsersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The primary users associated with the managed device.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the primary users associated with the managed device.
 func (m *UsersRequestBuilder) CreateGetRequestInformation(options *UsersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *UsersRequestBuilder) CreateGetRequestInformation(options *UsersRequestB
     }
     return requestInfo, nil
 }
-// The primary users associated with the managed device.
-// Parameters:
-//  - options : Options for the request
+// Get the primary users associated with the managed device.
 func (m *UsersRequestBuilder) Get(options *UsersRequestBuilderGetOptions)(*UsersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

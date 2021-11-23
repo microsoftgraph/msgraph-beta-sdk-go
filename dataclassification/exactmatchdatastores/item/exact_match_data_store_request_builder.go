@@ -9,7 +9,7 @@ import (
     i1dcb0390b62e6994f2eedf162f9337be1ed916a12c0cd74064045e244b407892 "github.com/microsoftgraph/msgraph-beta-sdk-go/dataclassification/exactmatchdatastores/item/sessions/item"
 )
 
-// Builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}
+// exactMatchDataStoreRequestBuilder builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}
 type ExactMatchDataStoreRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ExactMatchDataStoreRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ExactMatchDataStoreRequestBuilderDeleteOptions options for Delete
 type ExactMatchDataStoreRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ExactMatchDataStoreRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ExactMatchDataStoreRequestBuilderGetOptions options for Get
 type ExactMatchDataStoreRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type ExactMatchDataStoreRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get exactMatchDataStores from dataClassification
+// exactMatchDataStoreRequestBuilderGetQueryParameters get exactMatchDataStores from dataClassification
 type ExactMatchDataStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ExactMatchDataStoreRequestBuilderPatchOptions options for Patch
 type ExactMatchDataStoreRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchDataStore;
@@ -56,10 +56,7 @@ type ExactMatchDataStoreRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExactMatchDataStoreRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExactMatchDataStoreRequestBuilderInternal instantiates a new ExactMatchDataStoreRequestBuilder and sets the default values.
 func NewExactMatchDataStoreRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExactMatchDataStoreRequestBuilder) {
     m := &ExactMatchDataStoreRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewExactMatchDataStoreRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExactMatchDataStoreRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExactMatchDataStoreRequestBuilder instantiates a new ExactMatchDataStoreRequestBuilder and sets the default values.
 func NewExactMatchDataStoreRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExactMatchDataStoreRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExactMatchDataStoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property exactMatchDataStores for dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property exactMatchDataStores for dataClassification
 func (m *ExactMatchDataStoreRequestBuilder) CreateDeleteRequestInformation(options *ExactMatchDataStoreRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *ExactMatchDataStoreRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get exactMatchDataStores from dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get exactMatchDataStores from dataClassification
 func (m *ExactMatchDataStoreRequestBuilder) CreateGetRequestInformation(options *ExactMatchDataStoreRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *ExactMatchDataStoreRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Update the navigation property exactMatchDataStores in dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property exactMatchDataStores in dataClassification
 func (m *ExactMatchDataStoreRequestBuilder) CreatePatchRequestInformation(options *ExactMatchDataStoreRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +130,7 @@ func (m *ExactMatchDataStoreRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete navigation property exactMatchDataStores for dataClassification
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property exactMatchDataStores for dataClassification
 func (m *ExactMatchDataStoreRequestBuilder) Delete(options *ExactMatchDataStoreRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -156,9 +142,7 @@ func (m *ExactMatchDataStoreRequestBuilder) Delete(options *ExactMatchDataStoreR
     }
     return nil
 }
-// Get exactMatchDataStores from dataClassification
-// Parameters:
-//  - options : Options for the request
+// Get get exactMatchDataStores from dataClassification
 func (m *ExactMatchDataStoreRequestBuilder) Get(options *ExactMatchDataStoreRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchDataStore, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *ExactMatchDataStoreRequestBuilder) Get(options *ExactMatchDataStoreRequ
 func (m *ExactMatchDataStoreRequestBuilder) Lookup()(*i29529418372c31fe11888bc42b9e925b44a4f44a558e637673b91be3e193f02d.LookupRequestBuilder) {
     return i29529418372c31fe11888bc42b9e925b44a4f44a558e637673b91be3e193f02d.NewLookupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property exactMatchDataStores in dataClassification
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property exactMatchDataStores in dataClassification
 func (m *ExactMatchDataStoreRequestBuilder) Patch(options *ExactMatchDataStoreRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -190,9 +172,7 @@ func (m *ExactMatchDataStoreRequestBuilder) Patch(options *ExactMatchDataStoreRe
 func (m *ExactMatchDataStoreRequestBuilder) Sessions()(*i2c50a6af5b17b681669f493c4dd54cac6a789f62e7a1e7e75c246aa3738d6530.SessionsRequestBuilder) {
     return i2c50a6af5b17b681669f493c4dd54cac6a789f62e7a1e7e75c246aa3738d6530.NewSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.dataClassification.exactMatchDataStores.item.sessions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SessionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.dataClassification.exactMatchDataStores.item.sessions.item collection
 func (m *ExactMatchDataStoreRequestBuilder) SessionsById(id string)(*i1dcb0390b62e6994f2eedf162f9337be1ed916a12c0cd74064045e244b407892.ExactMatchSessionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDeviceEncryptionStates
+// managedDeviceEncryptionStatesRequestBuilder builds and executes requests for operations under \deviceManagement\managedDeviceEncryptionStates
 type ManagedDeviceEncryptionStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagedDeviceEncryptionStatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagedDeviceEncryptionStatesRequestBuilderGetOptions options for Get
 type ManagedDeviceEncryptionStatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ManagedDeviceEncryptionStatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Encryption report for devices in this account
+// managedDeviceEncryptionStatesRequestBuilderGetQueryParameters encryption report for devices in this account
 type ManagedDeviceEncryptionStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ManagedDeviceEncryptionStatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ManagedDeviceEncryptionStatesRequestBuilderPostOptions options for Post
 type ManagedDeviceEncryptionStatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceEncryptionState;
@@ -56,10 +56,7 @@ type ManagedDeviceEncryptionStatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagedDeviceEncryptionStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceEncryptionStatesRequestBuilderInternal instantiates a new ManagedDeviceEncryptionStatesRequestBuilder and sets the default values.
 func NewManagedDeviceEncryptionStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceEncryptionStatesRequestBuilder) {
     m := &ManagedDeviceEncryptionStatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewManagedDeviceEncryptionStatesRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedDeviceEncryptionStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceEncryptionStatesRequestBuilder instantiates a new ManagedDeviceEncryptionStatesRequestBuilder and sets the default values.
 func NewManagedDeviceEncryptionStatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceEncryptionStatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceEncryptionStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Encryption report for devices in this account
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation encryption report for devices in this account
 func (m *ManagedDeviceEncryptionStatesRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceEncryptionStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ManagedDeviceEncryptionStatesRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// Encryption report for devices in this account
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation encryption report for devices in this account
 func (m *ManagedDeviceEncryptionStatesRequestBuilder) CreatePostRequestInformation(options *ManagedDeviceEncryptionStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ManagedDeviceEncryptionStatesRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// Encryption report for devices in this account
-// Parameters:
-//  - options : Options for the request
+// Get encryption report for devices in this account
 func (m *ManagedDeviceEncryptionStatesRequestBuilder) Get(options *ManagedDeviceEncryptionStatesRequestBuilderGetOptions)(*ManagedDeviceEncryptionStatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ManagedDeviceEncryptionStatesRequestBuilder) Get(options *ManagedDevice
     }
     return res.(*ManagedDeviceEncryptionStatesResponse), nil
 }
-// Encryption report for devices in this account
-// Parameters:
-//  - options : Options for the request
+// Post encryption report for devices in this account
 func (m *ManagedDeviceEncryptionStatesRequestBuilder) Post(options *ManagedDeviceEncryptionStatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceEncryptionState, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

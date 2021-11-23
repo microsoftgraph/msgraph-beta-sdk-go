@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \compliance\ediscovery\cases
+// casesRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases
 type CasesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CasesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CasesRequestBuilderGetOptions options for Get
 type CasesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CasesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get cases from compliance
+// casesRequestBuilderGetQueryParameters get cases from compliance
 type CasesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CasesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CasesRequestBuilderPostOptions options for Post
 type CasesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escaped;
@@ -56,10 +56,7 @@ type CasesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CasesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCasesRequestBuilderInternal instantiates a new CasesRequestBuilder and sets the default values.
 func NewCasesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CasesRequestBuilder) {
     m := &CasesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCasesRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CasesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCasesRequestBuilder instantiates a new CasesRequestBuilder and sets the default values.
 func NewCasesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CasesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCasesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get cases from compliance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get cases from compliance
 func (m *CasesRequestBuilder) CreateGetRequestInformation(options *CasesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CasesRequestBuilder) CreateGetRequestInformation(options *CasesRequestB
     }
     return requestInfo, nil
 }
-// Create new navigation property to cases for compliance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to cases for compliance
 func (m *CasesRequestBuilder) CreatePostRequestInformation(options *CasesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CasesRequestBuilder) CreatePostRequestInformation(options *CasesRequest
     }
     return requestInfo, nil
 }
-// Get cases from compliance
-// Parameters:
-//  - options : Options for the request
+// Get get cases from compliance
 func (m *CasesRequestBuilder) Get(options *CasesRequestBuilderGetOptions)(*CasesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CasesRequestBuilder) Get(options *CasesRequestBuilderGetOptions)(*Cases
     }
     return res.(*CasesResponse), nil
 }
-// Create new navigation property to cases for compliance
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to cases for compliance
 func (m *CasesRequestBuilder) Post(options *CasesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Case_escaped, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

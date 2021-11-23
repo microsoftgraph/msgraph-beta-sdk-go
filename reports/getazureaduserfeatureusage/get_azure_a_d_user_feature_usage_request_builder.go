@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getAzureADUserFeatureUsage()
+// getAzureADUserFeatureUsageRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getAzureADUserFeatureUsage()
 type GetAzureADUserFeatureUsageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetAzureADUserFeatureUsageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetAzureADUserFeatureUsageRequestBuilderGetOptions options for Get
 type GetAzureADUserFeatureUsageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type GetAzureADUserFeatureUsageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetAzureADUserFeatureUsageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetAzureADUserFeatureUsageRequestBuilderInternal instantiates a new GetAzureADUserFeatureUsageRequestBuilder and sets the default values.
 func NewGetAzureADUserFeatureUsageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetAzureADUserFeatureUsageRequestBuilder) {
     m := &GetAzureADUserFeatureUsageRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewGetAzureADUserFeatureUsageRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetAzureADUserFeatureUsageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetAzureADUserFeatureUsageRequestBuilder instantiates a new GetAzureADUserFeatureUsageRequestBuilder and sets the default values.
 func NewGetAzureADUserFeatureUsageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetAzureADUserFeatureUsageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetAzureADUserFeatureUsageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function getAzureADUserFeatureUsage
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getAzureADUserFeatureUsage
 func (m *GetAzureADUserFeatureUsageRequestBuilder) CreateGetRequestInformation(options *GetAzureADUserFeatureUsageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *GetAzureADUserFeatureUsageRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// Invoke function getAzureADUserFeatureUsage
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getAzureADUserFeatureUsage
 func (m *GetAzureADUserFeatureUsageRequestBuilder) Get(options *GetAzureADUserFeatureUsageRequestBuilderGetOptions)([]GetAzureADUserFeatureUsage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

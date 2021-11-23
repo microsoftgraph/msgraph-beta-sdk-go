@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// getTargetedUsersAndDevicesRequestBody 
 type GetTargetedUsersAndDevicesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     deviceConfigurationIds []string;
 }
-// Instantiates a new getTargetedUsersAndDevicesRequestBody and sets the default values.
+// NewGetTargetedUsersAndDevicesRequestBody instantiates a new getTargetedUsersAndDevicesRequestBody and sets the default values.
 func NewGetTargetedUsersAndDevicesRequestBody()(*GetTargetedUsersAndDevicesRequestBody) {
     m := &GetTargetedUsersAndDevicesRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetTargetedUsersAndDevicesRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,7 +26,7 @@ func (m *GetTargetedUsersAndDevicesRequestBody) GetAdditionalData()(map[string]i
         return m.additionalData
     }
 }
-// Gets the deviceConfigurationIds property value. 
+// GetDeviceConfigurationIds gets the deviceConfigurationIds property value. 
 func (m *GetTargetedUsersAndDevicesRequestBody) GetDeviceConfigurationIds()([]string) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *GetTargetedUsersAndDevicesRequestBody) GetDeviceConfigurationIds()([]st
         return m.deviceConfigurationIds
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetTargetedUsersAndDevicesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceConfigurationIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -56,9 +56,7 @@ func (m *GetTargetedUsersAndDevicesRequestBody) GetFieldDeserializers()(map[stri
 func (m *GetTargetedUsersAndDevicesRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetTargetedUsersAndDevicesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteCollectionOfStringValues("deviceConfigurationIds", m.GetDeviceConfigurationIds())
@@ -74,15 +72,11 @@ func (m *GetTargetedUsersAndDevicesRequestBody) Serialize(writer i04eb5309aeaafa
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetTargetedUsersAndDevicesRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the deviceConfigurationIds property value. 
-// Parameters:
-//  - value : Value to set for the deviceConfigurationIds property.
+// SetDeviceConfigurationIds sets the deviceConfigurationIds property value. 
 func (m *GetTargetedUsersAndDevicesRequestBody) SetDeviceConfigurationIds(value []string)() {
     m.deviceConfigurationIds = value
 }

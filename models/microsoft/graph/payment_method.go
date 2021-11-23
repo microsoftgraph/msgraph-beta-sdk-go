@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// paymentMethod 
 type PaymentMethod struct {
     Entity
     // 
@@ -15,14 +15,14 @@ type PaymentMethod struct {
     // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new paymentMethod and sets the default values.
+// NewPaymentMethod instantiates a new paymentMethod and sets the default values.
 func NewPaymentMethod()(*PaymentMethod) {
     m := &PaymentMethod{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the code property value. 
+// GetCode gets the code property value. 
 func (m *PaymentMethod) GetCode()(*string) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *PaymentMethod) GetCode()(*string) {
         return m.code
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *PaymentMethod) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *PaymentMethod) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *PaymentMethod) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *PaymentMethod) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad
         return m.lastModifiedDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PaymentMethod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["code"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,9 +84,7 @@ func (m *PaymentMethod) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *PaymentMethod) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PaymentMethod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -112,21 +110,15 @@ func (m *PaymentMethod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the code property value. 
-// Parameters:
-//  - value : Value to set for the code property.
+// SetCode sets the code property value. 
 func (m *PaymentMethod) SetCode(value *string)() {
     m.code = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *PaymentMethod) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastModifiedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *PaymentMethod) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }

@@ -8,7 +8,7 @@ import (
     i2b2a3a414a71b994fa9844041bbbfd4ab82c68beb038ee7d0441199154ef424c "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/planner/plans/item"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\planner
+// plannerRequestBuilder builds and executes requests for operations under \groups\{group-id}\planner
 type PlannerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type PlannerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PlannerRequestBuilderDeleteOptions options for Delete
 type PlannerRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PlannerRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PlannerRequestBuilderGetOptions options for Get
 type PlannerRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type PlannerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Entry-point to Planner resource that might exist for a Unified Group.
+// plannerRequestBuilderGetQueryParameters entry-point to Planner resource that might exist for a Unified Group.
 type PlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PlannerRequestBuilderPatchOptions options for Patch
 type PlannerRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerGroup;
@@ -55,10 +55,7 @@ type PlannerRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PlannerRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlannerRequestBuilderInternal instantiates a new PlannerRequestBuilder and sets the default values.
 func NewPlannerRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerRequestBuilder) {
     m := &PlannerRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewPlannerRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PlannerRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlannerRequestBuilder instantiates a new PlannerRequestBuilder and sets the default values.
 func NewPlannerRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Entry-point to Planner resource that might exist for a Unified Group.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) CreateDeleteRequestInformation(options *PlannerRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *PlannerRequestBuilder) CreateDeleteRequestInformation(options *PlannerR
     }
     return requestInfo, nil
 }
-// Entry-point to Planner resource that might exist for a Unified Group.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) CreateGetRequestInformation(options *PlannerRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *PlannerRequestBuilder) CreateGetRequestInformation(options *PlannerRequ
     }
     return requestInfo, nil
 }
-// Entry-point to Planner resource that might exist for a Unified Group.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) CreatePatchRequestInformation(options *PlannerRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *PlannerRequestBuilder) CreatePatchRequestInformation(options *PlannerRe
     }
     return requestInfo, nil
 }
-// Entry-point to Planner resource that might exist for a Unified Group.
-// Parameters:
-//  - options : Options for the request
+// Delete entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) Delete(options *PlannerRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *PlannerRequestBuilder) Delete(options *PlannerRequestBuilderDeleteOptio
     }
     return nil
 }
-// Entry-point to Planner resource that might exist for a Unified Group.
-// Parameters:
-//  - options : Options for the request
+// Get entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) Get(options *PlannerRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerGroup, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *PlannerRequestBuilder) Get(options *PlannerRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerGroup), nil
 }
-// Entry-point to Planner resource that might exist for a Unified Group.
-// Parameters:
-//  - options : Options for the request
+// Patch entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) Patch(options *PlannerRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *PlannerRequestBuilder) Patch(options *PlannerRequestBuilderPatchOptions
 func (m *PlannerRequestBuilder) Plans()(*i7608bbe80a15d71845d6e14ee6c0723d9c61c8882751a8e95288349f7072a563.PlansRequestBuilder) {
     return i7608bbe80a15d71845d6e14ee6c0723d9c61c8882751a8e95288349f7072a563.NewPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.planner.plans.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PlansById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.planner.plans.item collection
 func (m *PlannerRequestBuilder) PlansById(id string)(*i2b2a3a414a71b994fa9844041bbbfd4ab82c68beb038ee7d0441199154ef424c.PlannerPlanRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

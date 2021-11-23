@@ -7,7 +7,7 @@ import (
     id51c04bdca1b3d3df1fb0cf1a9242cd201c579ca07ebe1d61ada8f6110ca302e "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleassignmentapprovals/filterbycurrentuserwithon"
 )
 
-// Builds and executes requests for operations under \roleManagement\directory\roleAssignmentApprovals
+// roleAssignmentApprovalsRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignmentApprovals
 type RoleAssignmentApprovalsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type RoleAssignmentApprovalsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RoleAssignmentApprovalsRequestBuilderGetOptions options for Get
 type RoleAssignmentApprovalsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type RoleAssignmentApprovalsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get roleAssignmentApprovals from roleManagement
+// roleAssignmentApprovalsRequestBuilderGetQueryParameters get roleAssignmentApprovals from roleManagement
 type RoleAssignmentApprovalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type RoleAssignmentApprovalsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RoleAssignmentApprovalsRequestBuilderPostOptions options for Post
 type RoleAssignmentApprovalsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approval;
@@ -57,10 +57,7 @@ type RoleAssignmentApprovalsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RoleAssignmentApprovalsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleAssignmentApprovalsRequestBuilderInternal instantiates a new RoleAssignmentApprovalsRequestBuilder and sets the default values.
 func NewRoleAssignmentApprovalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleAssignmentApprovalsRequestBuilder) {
     m := &RoleAssignmentApprovalsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewRoleAssignmentApprovalsRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleAssignmentApprovalsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleAssignmentApprovalsRequestBuilder instantiates a new RoleAssignmentApprovalsRequestBuilder and sets the default values.
 func NewRoleAssignmentApprovalsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleAssignmentApprovalsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleAssignmentApprovalsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get roleAssignmentApprovals from roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get roleAssignmentApprovals from roleManagement
 func (m *RoleAssignmentApprovalsRequestBuilder) CreateGetRequestInformation(options *RoleAssignmentApprovalsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *RoleAssignmentApprovalsRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Create new navigation property to roleAssignmentApprovals for roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to roleAssignmentApprovals for roleManagement
 func (m *RoleAssignmentApprovalsRequestBuilder) CreatePostRequestInformation(options *RoleAssignmentApprovalsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,15 +114,11 @@ func (m *RoleAssignmentApprovalsRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \roleManagement\directory\roleAssignmentApprovals\microsoft.graph.filterByCurrentUser(on={on})
-// Parameters:
-//  - on : Usage: on={on}
+// FilterByCurrentUserWithOn builds and executes requests for operations under \roleManagement\directory\roleAssignmentApprovals\microsoft.graph.filterByCurrentUser(on={on})
 func (m *RoleAssignmentApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*id51c04bdca1b3d3df1fb0cf1a9242cd201c579ca07ebe1d61ada8f6110ca302e.FilterByCurrentUserWithOnRequestBuilder) {
     return id51c04bdca1b3d3df1fb0cf1a9242cd201c579ca07ebe1d61ada8f6110ca302e.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get roleAssignmentApprovals from roleManagement
-// Parameters:
-//  - options : Options for the request
+// Get get roleAssignmentApprovals from roleManagement
 func (m *RoleAssignmentApprovalsRequestBuilder) Get(options *RoleAssignmentApprovalsRequestBuilderGetOptions)(*RoleAssignmentApprovalsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -144,9 +130,7 @@ func (m *RoleAssignmentApprovalsRequestBuilder) Get(options *RoleAssignmentAppro
     }
     return res.(*RoleAssignmentApprovalsResponse), nil
 }
-// Create new navigation property to roleAssignmentApprovals for roleManagement
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to roleAssignmentApprovals for roleManagement
 func (m *RoleAssignmentApprovalsRequestBuilder) Post(options *RoleAssignmentApprovalsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Approval, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

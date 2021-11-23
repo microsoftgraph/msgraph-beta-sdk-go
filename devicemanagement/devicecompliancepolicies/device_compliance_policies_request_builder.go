@@ -11,7 +11,7 @@ import (
     ice8333de4faa45aa6e283d6de5cec5fb2d91ddb4641c608a190a6c8ebda92bc5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancepolicies/getdevicesscheduledtoretire"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies
+// deviceCompliancePoliciesRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies
 type DeviceCompliancePoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type DeviceCompliancePoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceCompliancePoliciesRequestBuilderGetOptions options for Get
 type DeviceCompliancePoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type DeviceCompliancePoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The device compliance policies.
+// deviceCompliancePoliciesRequestBuilderGetQueryParameters the device compliance policies.
 type DeviceCompliancePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -50,7 +50,7 @@ type DeviceCompliancePoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceCompliancePoliciesRequestBuilderPostOptions options for Post
 type DeviceCompliancePoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceCompliancePolicy;
@@ -61,10 +61,7 @@ type DeviceCompliancePoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceCompliancePoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCompliancePoliciesRequestBuilderInternal instantiates a new DeviceCompliancePoliciesRequestBuilder and sets the default values.
 func NewDeviceCompliancePoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCompliancePoliciesRequestBuilder) {
     m := &DeviceCompliancePoliciesRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewDeviceCompliancePoliciesRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceCompliancePoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCompliancePoliciesRequestBuilder instantiates a new DeviceCompliancePoliciesRequestBuilder and sets the default values.
 func NewDeviceCompliancePoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCompliancePoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCompliancePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The device compliance policies.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the device compliance policies.
 func (m *DeviceCompliancePoliciesRequestBuilder) CreateGetRequestInformation(options *DeviceCompliancePoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *DeviceCompliancePoliciesRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The device compliance policies.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the device compliance policies.
 func (m *DeviceCompliancePoliciesRequestBuilder) CreatePostRequestInformation(options *DeviceCompliancePoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,9 +118,7 @@ func (m *DeviceCompliancePoliciesRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// The device compliance policies.
-// Parameters:
-//  - options : Options for the request
+// Get the device compliance policies.
 func (m *DeviceCompliancePoliciesRequestBuilder) Get(options *DeviceCompliancePoliciesRequestBuilderGetOptions)(*DeviceCompliancePoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -148,9 +136,7 @@ func (m *DeviceCompliancePoliciesRequestBuilder) GetDevicesScheduledToRetire()(*
 func (m *DeviceCompliancePoliciesRequestBuilder) HasPayloadLinks()(*i8c922b0106272c33024960c0cdcce96f4a55b9e9d3d906cb19b2281dbb71993a.HasPayloadLinksRequestBuilder) {
     return i8c922b0106272c33024960c0cdcce96f4a55b9e9d3d906cb19b2281dbb71993a.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The device compliance policies.
-// Parameters:
-//  - options : Options for the request
+// Post the device compliance policies.
 func (m *DeviceCompliancePoliciesRequestBuilder) Post(options *DeviceCompliancePoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceCompliancePolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

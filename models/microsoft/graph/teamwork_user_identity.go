@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// teamworkUserIdentity 
 type TeamworkUserIdentity struct {
     Identity
     // Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
     userIdentityType *TeamworkUserIdentityType;
 }
-// Instantiates a new teamworkUserIdentity and sets the default values.
+// NewTeamworkUserIdentity instantiates a new teamworkUserIdentity and sets the default values.
 func NewTeamworkUserIdentity()(*TeamworkUserIdentity) {
     m := &TeamworkUserIdentity{
         Identity: *NewIdentity(),
     }
     return m
 }
-// Gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
+// GetUserIdentityType gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
 func (m *TeamworkUserIdentity) GetUserIdentityType()(*TeamworkUserIdentityType) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *TeamworkUserIdentity) GetUserIdentityType()(*TeamworkUserIdentityType) 
         return m.userIdentityType
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkUserIdentity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["userIdentityType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -44,9 +44,7 @@ func (m *TeamworkUserIdentity) GetFieldDeserializers()(map[string]func(interface
 func (m *TeamworkUserIdentity) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TeamworkUserIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Identity.Serialize(writer)
     if err != nil {
@@ -61,9 +59,7 @@ func (m *TeamworkUserIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the userIdentityType property.
+// SetUserIdentityType sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
 func (m *TeamworkUserIdentity) SetUserIdentityType(value *TeamworkUserIdentityType)() {
     m.userIdentityType = value
 }

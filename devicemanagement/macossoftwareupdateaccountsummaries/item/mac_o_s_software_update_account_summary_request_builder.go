@@ -8,7 +8,7 @@ import (
     i407f40cbdcd6e0a8c0a6957a52e770bb996c3efb0c3933a6259c21531a23bf20 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/macossoftwareupdateaccountsummaries/item/categorysummaries/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}
+// macOSSoftwareUpdateAccountSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}
 type MacOSSoftwareUpdateAccountSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type MacOSSoftwareUpdateAccountSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MacOSSoftwareUpdateAccountSummaryRequestBuilderDeleteOptions options for Delete
 type MacOSSoftwareUpdateAccountSummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MacOSSoftwareUpdateAccountSummaryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MacOSSoftwareUpdateAccountSummaryRequestBuilderGetOptions options for Get
 type MacOSSoftwareUpdateAccountSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type MacOSSoftwareUpdateAccountSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The MacOS software update account summaries for this account.
+// macOSSoftwareUpdateAccountSummaryRequestBuilderGetQueryParameters the MacOS software update account summaries for this account.
 type MacOSSoftwareUpdateAccountSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MacOSSoftwareUpdateAccountSummaryRequestBuilderPatchOptions options for Patch
 type MacOSSoftwareUpdateAccountSummaryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateAccountSummary;
@@ -58,9 +58,7 @@ type MacOSSoftwareUpdateAccountSummaryRequestBuilderPatchOptions struct {
 func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) CategorySummaries()(*i67355dbc94c107ed697494362f24074fe629475baf93f5f5554922e54a4817d7.CategorySummariesRequestBuilder) {
     return i67355dbc94c107ed697494362f24074fe629475baf93f5f5554922e54a4817d7.NewCategorySummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.macOSSoftwareUpdateAccountSummaries.item.categorySummaries.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CategorySummariesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.macOSSoftwareUpdateAccountSummaries.item.categorySummaries.item collection
 func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) CategorySummariesById(id string)(*i407f40cbdcd6e0a8c0a6957a52e770bb996c3efb0c3933a6259c21531a23bf20.MacOSSoftwareUpdateCategorySummaryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -71,10 +69,7 @@ func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) CategorySummariesById(
     }
     return i407f40cbdcd6e0a8c0a6957a52e770bb996c3efb0c3933a6259c21531a23bf20.NewMacOSSoftwareUpdateCategorySummaryRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new MacOSSoftwareUpdateAccountSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMacOSSoftwareUpdateAccountSummaryRequestBuilderInternal instantiates a new MacOSSoftwareUpdateAccountSummaryRequestBuilder and sets the default values.
 func NewMacOSSoftwareUpdateAccountSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MacOSSoftwareUpdateAccountSummaryRequestBuilder) {
     m := &MacOSSoftwareUpdateAccountSummaryRequestBuilder{
     }
@@ -87,18 +82,13 @@ func NewMacOSSoftwareUpdateAccountSummaryRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MacOSSoftwareUpdateAccountSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMacOSSoftwareUpdateAccountSummaryRequestBuilder instantiates a new MacOSSoftwareUpdateAccountSummaryRequestBuilder and sets the default values.
 func NewMacOSSoftwareUpdateAccountSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MacOSSoftwareUpdateAccountSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMacOSSoftwareUpdateAccountSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The MacOS software update account summaries for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the MacOS software update account summaries for this account.
 func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) CreateDeleteRequestInformation(options *MacOSSoftwareUpdateAccountSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,9 +105,7 @@ func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// The MacOS software update account summaries for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the MacOS software update account summaries for this account.
 func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) CreateGetRequestInformation(options *MacOSSoftwareUpdateAccountSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// The MacOS software update account summaries for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the MacOS software update account summaries for this account.
 func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) CreatePatchRequestInformation(options *MacOSSoftwareUpdateAccountSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,9 +143,7 @@ func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// The MacOS software update account summaries for this account.
-// Parameters:
-//  - options : Options for the request
+// Delete the MacOS software update account summaries for this account.
 func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) Delete(options *MacOSSoftwareUpdateAccountSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) Delete(options *MacOSS
     }
     return nil
 }
-// The MacOS software update account summaries for this account.
-// Parameters:
-//  - options : Options for the request
+// Get the MacOS software update account summaries for this account.
 func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) Get(options *MacOSSoftwareUpdateAccountSummaryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateAccountSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) Get(options *MacOSSoft
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MacOSSoftwareUpdateAccountSummary), nil
 }
-// The MacOS software update account summaries for this account.
-// Parameters:
-//  - options : Options for the request
+// Patch the MacOS software update account summaries for this account.
 func (m *MacOSSoftwareUpdateAccountSummaryRequestBuilder) Patch(options *MacOSSoftwareUpdateAccountSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

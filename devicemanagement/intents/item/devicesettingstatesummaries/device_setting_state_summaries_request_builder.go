@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\deviceSettingStateSummaries
+// deviceSettingStateSummariesRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\deviceSettingStateSummaries
 type DeviceSettingStateSummariesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceSettingStateSummariesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceSettingStateSummariesRequestBuilderGetOptions options for Get
 type DeviceSettingStateSummariesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceSettingStateSummariesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
+// deviceSettingStateSummariesRequestBuilderGetQueryParameters collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 type DeviceSettingStateSummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceSettingStateSummariesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceSettingStateSummariesRequestBuilderPostOptions options for Post
 type DeviceSettingStateSummariesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentDeviceSettingStateSummary;
@@ -56,10 +56,7 @@ type DeviceSettingStateSummariesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceSettingStateSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceSettingStateSummariesRequestBuilderInternal instantiates a new DeviceSettingStateSummariesRequestBuilder and sets the default values.
 func NewDeviceSettingStateSummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceSettingStateSummariesRequestBuilder) {
     m := &DeviceSettingStateSummariesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceSettingStateSummariesRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceSettingStateSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceSettingStateSummariesRequestBuilder instantiates a new DeviceSettingStateSummariesRequestBuilder and sets the default values.
 func NewDeviceSettingStateSummariesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceSettingStateSummariesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceSettingStateSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceSettingStateSummariesRequestBuilder) CreateGetRequestInformation(options *DeviceSettingStateSummariesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceSettingStateSummariesRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceSettingStateSummariesRequestBuilder) CreatePostRequestInformation(options *DeviceSettingStateSummariesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceSettingStateSummariesRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-// Parameters:
-//  - options : Options for the request
+// Get collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceSettingStateSummariesRequestBuilder) Get(options *DeviceSettingStateSummariesRequestBuilderGetOptions)(*DeviceSettingStateSummariesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceSettingStateSummariesRequestBuilder) Get(options *DeviceSettingSt
     }
     return res.(*DeviceSettingStateSummariesResponse), nil
 }
-// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
-// Parameters:
-//  - options : Options for the request
+// Post collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceSettingStateSummariesRequestBuilder) Post(options *DeviceSettingStateSummariesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentDeviceSettingStateSummary, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

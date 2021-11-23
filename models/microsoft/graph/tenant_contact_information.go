@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// tenantContactInformation 
 type TenantContactInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type TenantContactInformation struct {
     // The title for the contact. Required.
     title *string;
 }
-// Instantiates a new tenantContactInformation and sets the default values.
+// NewTenantContactInformation instantiates a new tenantContactInformation and sets the default values.
 func NewTenantContactInformation()(*TenantContactInformation) {
     m := &TenantContactInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantContactInformation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *TenantContactInformation) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the email property value. The email address for the contact. Optional
+// GetEmail gets the email property value. The email address for the contact. Optional
 func (m *TenantContactInformation) GetEmail()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *TenantContactInformation) GetEmail()(*string) {
         return m.email
     }
 }
-// Gets the name property value. The name for the contact. Required.
+// GetName gets the name property value. The name for the contact. Required.
 func (m *TenantContactInformation) GetName()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *TenantContactInformation) GetName()(*string) {
         return m.name
     }
 }
-// Gets the notes property value. The notes associated with the contact. Optional
+// GetNotes gets the notes property value. The notes associated with the contact. Optional
 func (m *TenantContactInformation) GetNotes()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *TenantContactInformation) GetNotes()(*string) {
         return m.notes
     }
 }
-// Gets the phone property value. The phone number for the contact. Optional.
+// GetPhone gets the phone property value. The phone number for the contact. Optional.
 func (m *TenantContactInformation) GetPhone()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *TenantContactInformation) GetPhone()(*string) {
         return m.phone
     }
 }
-// Gets the title property value. The title for the contact. Required.
+// GetTitle gets the title property value. The title for the contact. Required.
 func (m *TenantContactInformation) GetTitle()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *TenantContactInformation) GetTitle()(*string) {
         return m.title
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TenantContactInformation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["email"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,9 +132,7 @@ func (m *TenantContactInformation) GetFieldDeserializers()(map[string]func(inter
 func (m *TenantContactInformation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TenantContactInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("email", m.GetEmail())
@@ -174,39 +172,27 @@ func (m *TenantContactInformation) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantContactInformation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the email property value. The email address for the contact. Optional
-// Parameters:
-//  - value : Value to set for the email property.
+// SetEmail sets the email property value. The email address for the contact. Optional
 func (m *TenantContactInformation) SetEmail(value *string)() {
     m.email = value
 }
-// Sets the name property value. The name for the contact. Required.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. The name for the contact. Required.
 func (m *TenantContactInformation) SetName(value *string)() {
     m.name = value
 }
-// Sets the notes property value. The notes associated with the contact. Optional
-// Parameters:
-//  - value : Value to set for the notes property.
+// SetNotes sets the notes property value. The notes associated with the contact. Optional
 func (m *TenantContactInformation) SetNotes(value *string)() {
     m.notes = value
 }
-// Sets the phone property value. The phone number for the contact. Optional.
-// Parameters:
-//  - value : Value to set for the phone property.
+// SetPhone sets the phone property value. The phone number for the contact. Optional.
 func (m *TenantContactInformation) SetPhone(value *string)() {
     m.phone = value
 }
-// Sets the title property value. The title for the contact. Required.
-// Parameters:
-//  - value : Value to set for the title property.
+// SetTitle sets the title property value. The title for the contact. Required.
 func (m *TenantContactInformation) SetTitle(value *string)() {
     m.title = value
 }

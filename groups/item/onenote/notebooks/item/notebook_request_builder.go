@@ -11,7 +11,7 @@ import (
     i8c0c1cccb46ede336960e9bc9e30e28f1d0b03c22b304bcc9b4c015ff449625e "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/onenote/notebooks/item/sectiongroups/item"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\onenote\notebooks\{notebook-id}
+// notebookRequestBuilder builds and executes requests for operations under \groups\{group-id}\onenote\notebooks\{notebook-id}
 type NotebookRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type NotebookRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// NotebookRequestBuilderDeleteOptions options for Delete
 type NotebookRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type NotebookRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// NotebookRequestBuilderGetOptions options for Get
 type NotebookRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type NotebookRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// notebookRequestBuilderGetQueryParameters the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 type NotebookRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// NotebookRequestBuilderPatchOptions options for Patch
 type NotebookRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Notebook;
@@ -58,10 +58,7 @@ type NotebookRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new NotebookRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotebookRequestBuilderInternal instantiates a new NotebookRequestBuilder and sets the default values.
 func NewNotebookRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotebookRequestBuilder) {
     m := &NotebookRequestBuilder{
     }
@@ -74,10 +71,7 @@ func NewNotebookRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NotebookRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotebookRequestBuilder instantiates a new NotebookRequestBuilder and sets the default values.
 func NewNotebookRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotebookRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -86,9 +80,7 @@ func NewNotebookRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
 func (m *NotebookRequestBuilder) CopyNotebook()(*i8cae1002445f13514cd17214ebde1602548f0fdeccb72b40e8c2641de30b8f95.CopyNotebookRequestBuilder) {
     return i8cae1002445f13514cd17214ebde1602548f0fdeccb72b40e8c2641de30b8f95.NewCopyNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *NotebookRequestBuilder) CreateDeleteRequestInformation(options *NotebookRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *NotebookRequestBuilder) CreateDeleteRequestInformation(options *Noteboo
     }
     return requestInfo, nil
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *NotebookRequestBuilder) CreateGetRequestInformation(options *NotebookRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *NotebookRequestBuilder) CreateGetRequestInformation(options *NotebookRe
     }
     return requestInfo, nil
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *NotebookRequestBuilder) CreatePatchRequestInformation(options *NotebookRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,9 +135,7 @@ func (m *NotebookRequestBuilder) CreatePatchRequestInformation(options *Notebook
     }
     return requestInfo, nil
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *NotebookRequestBuilder) Delete(options *NotebookRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -161,9 +147,7 @@ func (m *NotebookRequestBuilder) Delete(options *NotebookRequestBuilderDeleteOpt
     }
     return nil
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *NotebookRequestBuilder) Get(options *NotebookRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Notebook, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *NotebookRequestBuilder) Get(options *NotebookRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Notebook), nil
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *NotebookRequestBuilder) Patch(options *NotebookRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -192,9 +174,7 @@ func (m *NotebookRequestBuilder) Patch(options *NotebookRequestBuilderPatchOptio
 func (m *NotebookRequestBuilder) SectionGroups()(*i13a4289526bad4d09f46c002819318815cb5009ad9d6118977993c39c71eb713.SectionGroupsRequestBuilder) {
     return i13a4289526bad4d09f46c002819318815cb5009ad9d6118977993c39c71eb713.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.onenote.notebooks.item.sectionGroups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SectionGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.onenote.notebooks.item.sectionGroups.item collection
 func (m *NotebookRequestBuilder) SectionGroupsById(id string)(*i8c0c1cccb46ede336960e9bc9e30e28f1d0b03c22b304bcc9b4c015ff449625e.SectionGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -208,9 +188,7 @@ func (m *NotebookRequestBuilder) SectionGroupsById(id string)(*i8c0c1cccb46ede33
 func (m *NotebookRequestBuilder) Sections()(*iaa797de12b2ff9b5e75d4e1fdd4aba3c50d394de5195ed44b0962261d1d45ffd.SectionsRequestBuilder) {
     return iaa797de12b2ff9b5e75d4e1fdd4aba3c50d394de5195ed44b0962261d1d45ffd.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.onenote.notebooks.item.sections.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.onenote.notebooks.item.sections.item collection
 func (m *NotebookRequestBuilder) SectionsById(id string)(*i4e0c85405d8104211426a14e5e081e5618c5ddabddb25835ec8c34eeeca7eb1d.OnenoteSectionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

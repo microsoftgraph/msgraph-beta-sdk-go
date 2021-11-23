@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsMetricHistory
+// userExperienceAnalyticsMetricHistoryRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsMetricHistory
 type UserExperienceAnalyticsMetricHistoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsMetricHistoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserExperienceAnalyticsMetricHistoryRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsMetricHistoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsMetricHistoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics metric history
+// userExperienceAnalyticsMetricHistoryRequestBuilderGetQueryParameters user experience analytics metric history
 type UserExperienceAnalyticsMetricHistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserExperienceAnalyticsMetricHistoryRequestBuilderGetQueryParameters struct
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserExperienceAnalyticsMetricHistoryRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsMetricHistoryRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetricHistory;
@@ -56,10 +56,7 @@ type UserExperienceAnalyticsMetricHistoryRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsMetricHistoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsMetricHistoryRequestBuilderInternal instantiates a new UserExperienceAnalyticsMetricHistoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsMetricHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsMetricHistoryRequestBuilder) {
     m := &UserExperienceAnalyticsMetricHistoryRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserExperienceAnalyticsMetricHistoryRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsMetricHistoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsMetricHistoryRequestBuilder instantiates a new UserExperienceAnalyticsMetricHistoryRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsMetricHistoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsMetricHistoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsMetricHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics metric history
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics metric history
 func (m *UserExperienceAnalyticsMetricHistoryRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsMetricHistoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserExperienceAnalyticsMetricHistoryRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// User experience analytics metric history
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation user experience analytics metric history
 func (m *UserExperienceAnalyticsMetricHistoryRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsMetricHistoryRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserExperienceAnalyticsMetricHistoryRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// User experience analytics metric history
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics metric history
 func (m *UserExperienceAnalyticsMetricHistoryRequestBuilder) Get(options *UserExperienceAnalyticsMetricHistoryRequestBuilderGetOptions)(*UserExperienceAnalyticsMetricHistoryResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserExperienceAnalyticsMetricHistoryRequestBuilder) Get(options *UserEx
     }
     return res.(*UserExperienceAnalyticsMetricHistoryResponse), nil
 }
-// User experience analytics metric history
-// Parameters:
-//  - options : Options for the request
+// Post user experience analytics metric history
 func (m *UserExperienceAnalyticsMetricHistoryRequestBuilder) Post(options *UserExperienceAnalyticsMetricHistoryRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetricHistory, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -11,7 +11,7 @@ import (
     id09b8e4f489c03439293f901405c953a7f2baba5f8592172276c8b5cb0f98731 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/worksheet/rangewithaddress"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet
+// worksheetRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet
 type WorksheetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type WorksheetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorksheetRequestBuilderDeleteOptions options for Delete
 type WorksheetRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type WorksheetRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorksheetRequestBuilderGetOptions options for Get
 type WorksheetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type WorksheetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The worksheet containing the current chart. Read-only.
+// worksheetRequestBuilderGetQueryParameters the worksheet containing the current chart. Read-only.
 type WorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorksheetRequestBuilderPatchOptions options for Patch
 type WorksheetRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookWorksheet;
@@ -58,17 +58,11 @@ type WorksheetRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet\microsoft.graph.cell(row={row},column={column})
-// Parameters:
-//  - column : Usage: column={column}
-//  - row : Usage: row={row}
+// CellWithRowWithColumn builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet\microsoft.graph.cell(row={row},column={column})
 func (m *WorksheetRequestBuilder) CellWithRowWithColumn(row *int32, column *int32)(*i8ad92e4abb57f63ac30cec5ab367502a6086fd8018044d9641dfdd769da701a6.CellWithRowWithColumnRequestBuilder) {
     return i8ad92e4abb57f63ac30cec5ab367502a6086fd8018044d9641dfdd769da701a6.NewCellWithRowWithColumnRequestBuilderInternal(m.pathParameters, m.requestAdapter, row, column);
 }
-// Instantiates a new WorksheetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorksheetRequestBuilderInternal instantiates a new WorksheetRequestBuilder and sets the default values.
 func NewWorksheetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorksheetRequestBuilder) {
     m := &WorksheetRequestBuilder{
     }
@@ -81,18 +75,13 @@ func NewWorksheetRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorksheetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorksheetRequestBuilder instantiates a new WorksheetRequestBuilder and sets the default values.
 func NewWorksheetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorksheetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorksheetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The worksheet containing the current chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the worksheet containing the current chart. Read-only.
 func (m *WorksheetRequestBuilder) CreateDeleteRequestInformation(options *WorksheetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +98,7 @@ func (m *WorksheetRequestBuilder) CreateDeleteRequestInformation(options *Worksh
     }
     return requestInfo, nil
 }
-// The worksheet containing the current chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the worksheet containing the current chart. Read-only.
 func (m *WorksheetRequestBuilder) CreateGetRequestInformation(options *WorksheetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,9 +118,7 @@ func (m *WorksheetRequestBuilder) CreateGetRequestInformation(options *Worksheet
     }
     return requestInfo, nil
 }
-// The worksheet containing the current chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the worksheet containing the current chart. Read-only.
 func (m *WorksheetRequestBuilder) CreatePatchRequestInformation(options *WorksheetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,9 +136,7 @@ func (m *WorksheetRequestBuilder) CreatePatchRequestInformation(options *Workshe
     }
     return requestInfo, nil
 }
-// The worksheet containing the current chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete the worksheet containing the current chart. Read-only.
 func (m *WorksheetRequestBuilder) Delete(options *WorksheetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -165,9 +148,7 @@ func (m *WorksheetRequestBuilder) Delete(options *WorksheetRequestBuilderDeleteO
     }
     return nil
 }
-// The worksheet containing the current chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the worksheet containing the current chart. Read-only.
 func (m *WorksheetRequestBuilder) Get(options *WorksheetRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookWorksheet, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -179,9 +160,7 @@ func (m *WorksheetRequestBuilder) Get(options *WorksheetRequestBuilderGetOptions
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookWorksheet), nil
 }
-// The worksheet containing the current chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch the worksheet containing the current chart. Read-only.
 func (m *WorksheetRequestBuilder) Patch(options *WorksheetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -193,23 +172,19 @@ func (m *WorksheetRequestBuilder) Patch(options *WorksheetRequestBuilderPatchOpt
     }
     return nil
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet\microsoft.graph.range()
+// Range_escaped builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet\microsoft.graph.range()
 func (m *WorksheetRequestBuilder) Range_escaped()(*i39ae8911fd8fc184736bed4875aebc0b6662cfacf2818b8c5633a337d17c024d.RangeRequestBuilder) {
     return i39ae8911fd8fc184736bed4875aebc0b6662cfacf2818b8c5633a337d17c024d.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet\microsoft.graph.range(address='{address}')
-// Parameters:
-//  - address : Usage: address={address}
+// RangeWithAddress builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet\microsoft.graph.range(address='{address}')
 func (m *WorksheetRequestBuilder) RangeWithAddress(address *string)(*id09b8e4f489c03439293f901405c953a7f2baba5f8592172276c8b5cb0f98731.RangeWithAddressRequestBuilder) {
     return id09b8e4f489c03439293f901405c953a7f2baba5f8592172276c8b5cb0f98731.NewRangeWithAddressRequestBuilderInternal(m.pathParameters, m.requestAdapter, address);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet\microsoft.graph.usedRange()
+// UsedRange builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet\microsoft.graph.usedRange()
 func (m *WorksheetRequestBuilder) UsedRange()(*i0309dc107a085057e6d232ddb11b3e4e5d17cc5c603848f4cfaf3cbd7381c9c7.UsedRangeRequestBuilder) {
     return i0309dc107a085057e6d232ddb11b3e4e5d17cc5c603848f4cfaf3cbd7381c9c7.NewUsedRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet\microsoft.graph.usedRange(valuesOnly={valuesOnly})
-// Parameters:
-//  - valuesOnly : Usage: valuesOnly={valuesOnly}
+// UsedRangeWithValuesOnly builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\worksheet\microsoft.graph.usedRange(valuesOnly={valuesOnly})
 func (m *WorksheetRequestBuilder) UsedRangeWithValuesOnly(valuesOnly *bool)(*ia5226808d2d6f63c23ce71b748a78e5a3594cd307f8d72fe7527a0530f8c217d.UsedRangeWithValuesOnlyRequestBuilder) {
     return ia5226808d2d6f63c23ce71b748a78e5a3594cd307f8d72fe7527a0530f8c217d.NewUsedRangeWithValuesOnlyRequestBuilderInternal(m.pathParameters, m.requestAdapter, valuesOnly);
 }

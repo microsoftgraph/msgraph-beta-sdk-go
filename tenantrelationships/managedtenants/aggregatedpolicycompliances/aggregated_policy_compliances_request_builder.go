@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\aggregatedPolicyCompliances
+// aggregatedPolicyCompliancesRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\aggregatedPolicyCompliances
 type AggregatedPolicyCompliancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AggregatedPolicyCompliancesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AggregatedPolicyCompliancesRequestBuilderGetOptions options for Get
 type AggregatedPolicyCompliancesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AggregatedPolicyCompliancesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Aggregate view of device compliance policies across managed tenants.
+// aggregatedPolicyCompliancesRequestBuilderGetQueryParameters aggregate view of device compliance policies across managed tenants.
 type AggregatedPolicyCompliancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AggregatedPolicyCompliancesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AggregatedPolicyCompliancesRequestBuilderPostOptions options for Post
 type AggregatedPolicyCompliancesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AggregatedPolicyCompliance;
@@ -56,10 +56,7 @@ type AggregatedPolicyCompliancesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AggregatedPolicyCompliancesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAggregatedPolicyCompliancesRequestBuilderInternal instantiates a new AggregatedPolicyCompliancesRequestBuilder and sets the default values.
 func NewAggregatedPolicyCompliancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AggregatedPolicyCompliancesRequestBuilder) {
     m := &AggregatedPolicyCompliancesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAggregatedPolicyCompliancesRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AggregatedPolicyCompliancesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAggregatedPolicyCompliancesRequestBuilder instantiates a new AggregatedPolicyCompliancesRequestBuilder and sets the default values.
 func NewAggregatedPolicyCompliancesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AggregatedPolicyCompliancesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAggregatedPolicyCompliancesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Aggregate view of device compliance policies across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation aggregate view of device compliance policies across managed tenants.
 func (m *AggregatedPolicyCompliancesRequestBuilder) CreateGetRequestInformation(options *AggregatedPolicyCompliancesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AggregatedPolicyCompliancesRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// Aggregate view of device compliance policies across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation aggregate view of device compliance policies across managed tenants.
 func (m *AggregatedPolicyCompliancesRequestBuilder) CreatePostRequestInformation(options *AggregatedPolicyCompliancesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AggregatedPolicyCompliancesRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// Aggregate view of device compliance policies across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get aggregate view of device compliance policies across managed tenants.
 func (m *AggregatedPolicyCompliancesRequestBuilder) Get(options *AggregatedPolicyCompliancesRequestBuilderGetOptions)(*AggregatedPolicyCompliancesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AggregatedPolicyCompliancesRequestBuilder) Get(options *AggregatedPolic
     }
     return res.(*AggregatedPolicyCompliancesResponse), nil
 }
-// Aggregate view of device compliance policies across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Post aggregate view of device compliance policies across managed tenants.
 func (m *AggregatedPolicyCompliancesRequestBuilder) Post(options *AggregatedPolicyCompliancesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AggregatedPolicyCompliance, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

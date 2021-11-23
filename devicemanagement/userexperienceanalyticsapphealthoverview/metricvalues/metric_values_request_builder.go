@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthOverview\metricValues
+// metricValuesRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthOverview\metricValues
 type MetricValuesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MetricValuesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MetricValuesRequestBuilderGetOptions options for Get
 type MetricValuesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MetricValuesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The metric values for the user experience analytics category.
+// metricValuesRequestBuilderGetQueryParameters the metric values for the user experience analytics category.
 type MetricValuesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MetricValuesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MetricValuesRequestBuilderPostOptions options for Post
 type MetricValuesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetric;
@@ -56,10 +56,7 @@ type MetricValuesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MetricValuesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMetricValuesRequestBuilderInternal instantiates a new MetricValuesRequestBuilder and sets the default values.
 func NewMetricValuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MetricValuesRequestBuilder) {
     m := &MetricValuesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMetricValuesRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MetricValuesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMetricValuesRequestBuilder instantiates a new MetricValuesRequestBuilder and sets the default values.
 func NewMetricValuesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MetricValuesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMetricValuesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The metric values for the user experience analytics category.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the metric values for the user experience analytics category.
 func (m *MetricValuesRequestBuilder) CreateGetRequestInformation(options *MetricValuesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MetricValuesRequestBuilder) CreateGetRequestInformation(options *Metric
     }
     return requestInfo, nil
 }
-// The metric values for the user experience analytics category.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the metric values for the user experience analytics category.
 func (m *MetricValuesRequestBuilder) CreatePostRequestInformation(options *MetricValuesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MetricValuesRequestBuilder) CreatePostRequestInformation(options *Metri
     }
     return requestInfo, nil
 }
-// The metric values for the user experience analytics category.
-// Parameters:
-//  - options : Options for the request
+// Get the metric values for the user experience analytics category.
 func (m *MetricValuesRequestBuilder) Get(options *MetricValuesRequestBuilderGetOptions)(*MetricValuesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MetricValuesRequestBuilder) Get(options *MetricValuesRequestBuilderGetO
     }
     return res.(*MetricValuesResponse), nil
 }
-// The metric values for the user experience analytics category.
-// Parameters:
-//  - options : Options for the request
+// Post the metric values for the user experience analytics category.
 func (m *MetricValuesRequestBuilder) Post(options *MetricValuesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetric, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

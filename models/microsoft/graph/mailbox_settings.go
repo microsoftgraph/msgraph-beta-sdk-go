@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// mailboxSettings 
 type MailboxSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -27,14 +27,14 @@ type MailboxSettings struct {
     // The days of the week and hours in a specific time zone that the user works.
     workingHours *WorkingHours;
 }
-// Instantiates a new mailboxSettings and sets the default values.
+// NewMailboxSettings instantiates a new mailboxSettings and sets the default values.
 func NewMailboxSettings()(*MailboxSettings) {
     m := &MailboxSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MailboxSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *MailboxSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the archiveFolder property value. Folder ID of an archive folder for the user.
+// GetArchiveFolder gets the archiveFolder property value. Folder ID of an archive folder for the user.
 func (m *MailboxSettings) GetArchiveFolder()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *MailboxSettings) GetArchiveFolder()(*string) {
         return m.archiveFolder
     }
 }
-// Gets the automaticRepliesSetting property value. Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
+// GetAutomaticRepliesSetting gets the automaticRepliesSetting property value. Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
 func (m *MailboxSettings) GetAutomaticRepliesSetting()(*AutomaticRepliesSetting) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *MailboxSettings) GetAutomaticRepliesSetting()(*AutomaticRepliesSetting)
         return m.automaticRepliesSetting
     }
 }
-// Gets the dateFormat property value. The date format for the user's mailbox.
+// GetDateFormat gets the dateFormat property value. The date format for the user's mailbox.
 func (m *MailboxSettings) GetDateFormat()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *MailboxSettings) GetDateFormat()(*string) {
         return m.dateFormat
     }
 }
-// Gets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
+// GetDelegateMeetingMessageDeliveryOptions gets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
 func (m *MailboxSettings) GetDelegateMeetingMessageDeliveryOptions()(*DelegateMeetingMessageDeliveryOptions) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *MailboxSettings) GetDelegateMeetingMessageDeliveryOptions()(*DelegateMe
         return m.delegateMeetingMessageDeliveryOptions
     }
 }
-// Gets the language property value. The locale information for the user, including the preferred language and country/region.
+// GetLanguage gets the language property value. The locale information for the user, including the preferred language and country/region.
 func (m *MailboxSettings) GetLanguage()(*LocaleInfo) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *MailboxSettings) GetLanguage()(*LocaleInfo) {
         return m.language
     }
 }
-// Gets the timeFormat property value. The time format for the user's mailbox.
+// GetTimeFormat gets the timeFormat property value. The time format for the user's mailbox.
 func (m *MailboxSettings) GetTimeFormat()(*string) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *MailboxSettings) GetTimeFormat()(*string) {
         return m.timeFormat
     }
 }
-// Gets the timeZone property value. The default time zone for the user's mailbox.
+// GetTimeZone gets the timeZone property value. The default time zone for the user's mailbox.
 func (m *MailboxSettings) GetTimeZone()(*string) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *MailboxSettings) GetTimeZone()(*string) {
         return m.timeZone
     }
 }
-// Gets the userPurposeV2 property value. 
+// GetUserPurposeV2 gets the userPurposeV2 property value. 
 func (m *MailboxSettings) GetUserPurposeV2()(*MailboxRecipientType) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *MailboxSettings) GetUserPurposeV2()(*MailboxRecipientType) {
         return m.userPurposeV2
     }
 }
-// Gets the workingHours property value. The days of the week and hours in a specific time zone that the user works.
+// GetWorkingHours gets the workingHours property value. The days of the week and hours in a specific time zone that the user works.
 func (m *MailboxSettings) GetWorkingHours()(*WorkingHours) {
     if m == nil {
         return nil
@@ -114,7 +114,7 @@ func (m *MailboxSettings) GetWorkingHours()(*WorkingHours) {
         return m.workingHours
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["archiveFolder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,9 +214,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *MailboxSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MailboxSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("archiveFolder", m.GetArchiveFolder())
@@ -282,63 +280,43 @@ func (m *MailboxSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MailboxSettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the archiveFolder property value. Folder ID of an archive folder for the user.
-// Parameters:
-//  - value : Value to set for the archiveFolder property.
+// SetArchiveFolder sets the archiveFolder property value. Folder ID of an archive folder for the user.
 func (m *MailboxSettings) SetArchiveFolder(value *string)() {
     m.archiveFolder = value
 }
-// Sets the automaticRepliesSetting property value. Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
-// Parameters:
-//  - value : Value to set for the automaticRepliesSetting property.
+// SetAutomaticRepliesSetting sets the automaticRepliesSetting property value. Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
 func (m *MailboxSettings) SetAutomaticRepliesSetting(value *AutomaticRepliesSetting)() {
     m.automaticRepliesSetting = value
 }
-// Sets the dateFormat property value. The date format for the user's mailbox.
-// Parameters:
-//  - value : Value to set for the dateFormat property.
+// SetDateFormat sets the dateFormat property value. The date format for the user's mailbox.
 func (m *MailboxSettings) SetDateFormat(value *string)() {
     m.dateFormat = value
 }
-// Sets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
-// Parameters:
-//  - value : Value to set for the delegateMeetingMessageDeliveryOptions property.
+// SetDelegateMeetingMessageDeliveryOptions sets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
 func (m *MailboxSettings) SetDelegateMeetingMessageDeliveryOptions(value *DelegateMeetingMessageDeliveryOptions)() {
     m.delegateMeetingMessageDeliveryOptions = value
 }
-// Sets the language property value. The locale information for the user, including the preferred language and country/region.
-// Parameters:
-//  - value : Value to set for the language property.
+// SetLanguage sets the language property value. The locale information for the user, including the preferred language and country/region.
 func (m *MailboxSettings) SetLanguage(value *LocaleInfo)() {
     m.language = value
 }
-// Sets the timeFormat property value. The time format for the user's mailbox.
-// Parameters:
-//  - value : Value to set for the timeFormat property.
+// SetTimeFormat sets the timeFormat property value. The time format for the user's mailbox.
 func (m *MailboxSettings) SetTimeFormat(value *string)() {
     m.timeFormat = value
 }
-// Sets the timeZone property value. The default time zone for the user's mailbox.
-// Parameters:
-//  - value : Value to set for the timeZone property.
+// SetTimeZone sets the timeZone property value. The default time zone for the user's mailbox.
 func (m *MailboxSettings) SetTimeZone(value *string)() {
     m.timeZone = value
 }
-// Sets the userPurposeV2 property value. 
-// Parameters:
-//  - value : Value to set for the userPurposeV2 property.
+// SetUserPurposeV2 sets the userPurposeV2 property value. 
 func (m *MailboxSettings) SetUserPurposeV2(value *MailboxRecipientType)() {
     m.userPurposeV2 = value
 }
-// Sets the workingHours property value. The days of the week and hours in a specific time zone that the user works.
-// Parameters:
-//  - value : Value to set for the workingHours property.
+// SetWorkingHours sets the workingHours property value. The days of the week and hours in a specific time zone that the user works.
 func (m *MailboxSettings) SetWorkingHours(value *WorkingHours)() {
     m.workingHours = value
 }

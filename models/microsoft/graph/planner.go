@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// planner 
 type Planner struct {
     Entity
     // Read-only. Nullable. Returns a collection of the specified buckets
@@ -16,14 +16,14 @@ type Planner struct {
     // Read-only. Nullable. Returns a collection of the specified tasks
     tasks []PlannerTask;
 }
-// Instantiates a new planner and sets the default values.
+// NewPlanner instantiates a new planner and sets the default values.
 func NewPlanner()(*Planner) {
     m := &Planner{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
+// GetBuckets gets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
 func (m *Planner) GetBuckets()([]PlannerBucket) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *Planner) GetBuckets()([]PlannerBucket) {
         return m.buckets
     }
 }
-// Gets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
+// GetPlans gets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
 func (m *Planner) GetPlans()([]PlannerPlan) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *Planner) GetPlans()([]PlannerPlan) {
         return m.plans
     }
 }
-// Gets the rosters property value. Read-only. Nullable. Returns a collection of the specified rosters
+// GetRosters gets the rosters property value. Read-only. Nullable. Returns a collection of the specified rosters
 func (m *Planner) GetRosters()([]PlannerRoster) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *Planner) GetRosters()([]PlannerRoster) {
         return m.rosters
     }
 }
-// Gets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
+// GetTasks gets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
 func (m *Planner) GetTasks()([]PlannerTask) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *Planner) GetTasks()([]PlannerTask) {
         return m.tasks
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Planner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["buckets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,9 +119,7 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
 func (m *Planner) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -173,27 +171,19 @@ func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     }
     return nil
 }
-// Sets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
-// Parameters:
-//  - value : Value to set for the buckets property.
+// SetBuckets sets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
 func (m *Planner) SetBuckets(value []PlannerBucket)() {
     m.buckets = value
 }
-// Sets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
-// Parameters:
-//  - value : Value to set for the plans property.
+// SetPlans sets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
 func (m *Planner) SetPlans(value []PlannerPlan)() {
     m.plans = value
 }
-// Sets the rosters property value. Read-only. Nullable. Returns a collection of the specified rosters
-// Parameters:
-//  - value : Value to set for the rosters property.
+// SetRosters sets the rosters property value. Read-only. Nullable. Returns a collection of the specified rosters
 func (m *Planner) SetRosters(value []PlannerRoster)() {
     m.rosters = value
 }
-// Sets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
-// Parameters:
-//  - value : Value to set for the tasks property.
+// SetTasks sets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
 func (m *Planner) SetTasks(value []PlannerTask)() {
     m.tasks = value
 }

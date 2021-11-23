@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses
+// userStatusesRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses
 type UserStatusesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserStatusesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserStatusesRequestBuilderGetOptions options for Get
 type UserStatusesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserStatusesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of installation states for this mobile app.
+// userStatusesRequestBuilderGetQueryParameters the list of installation states for this mobile app.
 type UserStatusesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserStatusesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserStatusesRequestBuilderPostOptions options for Post
 type UserStatusesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserAppInstallStatus;
@@ -56,10 +56,7 @@ type UserStatusesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserStatusesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserStatusesRequestBuilderInternal instantiates a new UserStatusesRequestBuilder and sets the default values.
 func NewUserStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserStatusesRequestBuilder) {
     m := &UserStatusesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserStatusesRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserStatusesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserStatusesRequestBuilder instantiates a new UserStatusesRequestBuilder and sets the default values.
 func NewUserStatusesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserStatusesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserStatusesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of installation states for this mobile app.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of installation states for this mobile app.
 func (m *UserStatusesRequestBuilder) CreateGetRequestInformation(options *UserStatusesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserStatusesRequestBuilder) CreateGetRequestInformation(options *UserSt
     }
     return requestInfo, nil
 }
-// The list of installation states for this mobile app.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of installation states for this mobile app.
 func (m *UserStatusesRequestBuilder) CreatePostRequestInformation(options *UserStatusesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserStatusesRequestBuilder) CreatePostRequestInformation(options *UserS
     }
     return requestInfo, nil
 }
-// The list of installation states for this mobile app.
-// Parameters:
-//  - options : Options for the request
+// Get the list of installation states for this mobile app.
 func (m *UserStatusesRequestBuilder) Get(options *UserStatusesRequestBuilderGetOptions)(*UserStatusesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserStatusesRequestBuilder) Get(options *UserStatusesRequestBuilderGetO
     }
     return res.(*UserStatusesResponse), nil
 }
-// The list of installation states for this mobile app.
-// Parameters:
-//  - options : Options for the request
+// Post the list of installation states for this mobile app.
 func (m *UserStatusesRequestBuilder) Post(options *UserStatusesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserAppInstallStatus, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

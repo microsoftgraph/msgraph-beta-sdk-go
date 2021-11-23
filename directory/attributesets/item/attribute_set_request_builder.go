@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \directory\attributeSets\{attributeSet-id}
+// attributeSetRequestBuilder builds and executes requests for operations under \directory\attributeSets\{attributeSet-id}
 type AttributeSetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AttributeSetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AttributeSetRequestBuilderDeleteOptions options for Delete
 type AttributeSetRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AttributeSetRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AttributeSetRequestBuilderGetOptions options for Get
 type AttributeSetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AttributeSetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get attributeSets from directory
+// attributeSetRequestBuilderGetQueryParameters get attributeSets from directory
 type AttributeSetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AttributeSetRequestBuilderPatchOptions options for Patch
 type AttributeSetRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeSet;
@@ -53,10 +53,7 @@ type AttributeSetRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AttributeSetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAttributeSetRequestBuilderInternal instantiates a new AttributeSetRequestBuilder and sets the default values.
 func NewAttributeSetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AttributeSetRequestBuilder) {
     m := &AttributeSetRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAttributeSetRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AttributeSetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAttributeSetRequestBuilder instantiates a new AttributeSetRequestBuilder and sets the default values.
 func NewAttributeSetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AttributeSetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAttributeSetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property attributeSets for directory
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property attributeSets for directory
 func (m *AttributeSetRequestBuilder) CreateDeleteRequestInformation(options *AttributeSetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AttributeSetRequestBuilder) CreateDeleteRequestInformation(options *Att
     }
     return requestInfo, nil
 }
-// Get attributeSets from directory
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get attributeSets from directory
 func (m *AttributeSetRequestBuilder) CreateGetRequestInformation(options *AttributeSetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AttributeSetRequestBuilder) CreateGetRequestInformation(options *Attrib
     }
     return requestInfo, nil
 }
-// Update the navigation property attributeSets in directory
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property attributeSets in directory
 func (m *AttributeSetRequestBuilder) CreatePatchRequestInformation(options *AttributeSetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AttributeSetRequestBuilder) CreatePatchRequestInformation(options *Attr
     }
     return requestInfo, nil
 }
-// Delete navigation property attributeSets for directory
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property attributeSets for directory
 func (m *AttributeSetRequestBuilder) Delete(options *AttributeSetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AttributeSetRequestBuilder) Delete(options *AttributeSetRequestBuilderD
     }
     return nil
 }
-// Get attributeSets from directory
-// Parameters:
-//  - options : Options for the request
+// Get get attributeSets from directory
 func (m *AttributeSetRequestBuilder) Get(options *AttributeSetRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeSet, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AttributeSetRequestBuilder) Get(options *AttributeSetRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeSet), nil
 }
-// Update the navigation property attributeSets in directory
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property attributeSets in directory
 func (m *AttributeSetRequestBuilder) Patch(options *AttributeSetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// certificateConnectorSetting 
 type CertificateConnectorSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,14 +22,14 @@ type CertificateConnectorSetting struct {
     // Certificate connector status
     status *int32;
 }
-// Instantiates a new certificateConnectorSetting and sets the default values.
+// NewCertificateConnectorSetting instantiates a new certificateConnectorSetting and sets the default values.
 func NewCertificateConnectorSetting()(*CertificateConnectorSetting) {
     m := &CertificateConnectorSetting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateConnectorSetting) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *CertificateConnectorSetting) GetAdditionalData()(map[string]interface{}
         return m.additionalData
     }
 }
-// Gets the certExpiryTime property value. Certificate expire time
+// GetCertExpiryTime gets the certExpiryTime property value. Certificate expire time
 func (m *CertificateConnectorSetting) GetCertExpiryTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *CertificateConnectorSetting) GetCertExpiryTime()(*i336074805fc853987abe
         return m.certExpiryTime
     }
 }
-// Gets the connectorVersion property value. Version of certificate connector
+// GetConnectorVersion gets the connectorVersion property value. Version of certificate connector
 func (m *CertificateConnectorSetting) GetConnectorVersion()(*string) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *CertificateConnectorSetting) GetConnectorVersion()(*string) {
         return m.connectorVersion
     }
 }
-// Gets the enrollmentError property value. Certificate connector enrollment error
+// GetEnrollmentError gets the enrollmentError property value. Certificate connector enrollment error
 func (m *CertificateConnectorSetting) GetEnrollmentError()(*string) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *CertificateConnectorSetting) GetEnrollmentError()(*string) {
         return m.enrollmentError
     }
 }
-// Gets the lastConnectorConnectionTime property value. Last time certificate connector connected
+// GetLastConnectorConnectionTime gets the lastConnectorConnectionTime property value. Last time certificate connector connected
 func (m *CertificateConnectorSetting) GetLastConnectorConnectionTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *CertificateConnectorSetting) GetLastConnectorConnectionTime()(*i3360748
         return m.lastConnectorConnectionTime
     }
 }
-// Gets the lastUploadVersion property value. Version of last uploaded certificate connector
+// GetLastUploadVersion gets the lastUploadVersion property value. Version of last uploaded certificate connector
 func (m *CertificateConnectorSetting) GetLastUploadVersion()(*int64) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *CertificateConnectorSetting) GetLastUploadVersion()(*int64) {
         return m.lastUploadVersion
     }
 }
-// Gets the status property value. Certificate connector status
+// GetStatus gets the status property value. Certificate connector status
 func (m *CertificateConnectorSetting) GetStatus()(*int32) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *CertificateConnectorSetting) GetStatus()(*int32) {
         return m.status
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["certExpiryTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,9 +153,7 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
 func (m *CertificateConnectorSetting) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CertificateConnectorSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("certExpiryTime", m.GetCertExpiryTime())
@@ -201,45 +199,31 @@ func (m *CertificateConnectorSetting) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateConnectorSetting) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the certExpiryTime property value. Certificate expire time
-// Parameters:
-//  - value : Value to set for the certExpiryTime property.
+// SetCertExpiryTime sets the certExpiryTime property value. Certificate expire time
 func (m *CertificateConnectorSetting) SetCertExpiryTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.certExpiryTime = value
 }
-// Sets the connectorVersion property value. Version of certificate connector
-// Parameters:
-//  - value : Value to set for the connectorVersion property.
+// SetConnectorVersion sets the connectorVersion property value. Version of certificate connector
 func (m *CertificateConnectorSetting) SetConnectorVersion(value *string)() {
     m.connectorVersion = value
 }
-// Sets the enrollmentError property value. Certificate connector enrollment error
-// Parameters:
-//  - value : Value to set for the enrollmentError property.
+// SetEnrollmentError sets the enrollmentError property value. Certificate connector enrollment error
 func (m *CertificateConnectorSetting) SetEnrollmentError(value *string)() {
     m.enrollmentError = value
 }
-// Sets the lastConnectorConnectionTime property value. Last time certificate connector connected
-// Parameters:
-//  - value : Value to set for the lastConnectorConnectionTime property.
+// SetLastConnectorConnectionTime sets the lastConnectorConnectionTime property value. Last time certificate connector connected
 func (m *CertificateConnectorSetting) SetLastConnectorConnectionTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastConnectorConnectionTime = value
 }
-// Sets the lastUploadVersion property value. Version of last uploaded certificate connector
-// Parameters:
-//  - value : Value to set for the lastUploadVersion property.
+// SetLastUploadVersion sets the lastUploadVersion property value. Version of last uploaded certificate connector
 func (m *CertificateConnectorSetting) SetLastUploadVersion(value *int64)() {
     m.lastUploadVersion = value
 }
-// Sets the status property value. Certificate connector status
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. Certificate connector status
 func (m *CertificateConnectorSetting) SetStatus(value *int32)() {
     m.status = value
 }

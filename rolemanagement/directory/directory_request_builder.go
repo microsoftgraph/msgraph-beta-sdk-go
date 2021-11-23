@@ -28,7 +28,7 @@ import (
     if172e05e5a1d156d04fd91e88341824ca485364aaa7f2ee21ded1804029cf1f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roleassignmentscheduleinstances/item"
 )
 
-// Builds and executes requests for operations under \roleManagement\directory
+// directoryRequestBuilder builds and executes requests for operations under \roleManagement\directory
 type DirectoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type DirectoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DirectoryRequestBuilderDeleteOptions options for Delete
 type DirectoryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -46,7 +46,7 @@ type DirectoryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DirectoryRequestBuilderGetOptions options for Get
 type DirectoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -57,14 +57,14 @@ type DirectoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable.
+// directoryRequestBuilderGetQueryParameters read-only. Nullable.
 type DirectoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DirectoryRequestBuilderPatchOptions options for Patch
 type DirectoryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RbacApplication;
@@ -75,10 +75,7 @@ type DirectoryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DirectoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryRequestBuilderInternal instantiates a new DirectoryRequestBuilder and sets the default values.
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRequestBuilder) {
     m := &DirectoryRequestBuilder{
     }
@@ -91,18 +88,13 @@ func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DirectoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryRequestBuilder instantiates a new DirectoryRequestBuilder and sets the default values.
 func NewDirectoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable.
 func (m *DirectoryRequestBuilder) CreateDeleteRequestInformation(options *DirectoryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +111,7 @@ func (m *DirectoryRequestBuilder) CreateDeleteRequestInformation(options *Direct
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable.
 func (m *DirectoryRequestBuilder) CreateGetRequestInformation(options *DirectoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +131,7 @@ func (m *DirectoryRequestBuilder) CreateGetRequestInformation(options *Directory
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable.
 func (m *DirectoryRequestBuilder) CreatePatchRequestInformation(options *DirectoryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,9 +149,7 @@ func (m *DirectoryRequestBuilder) CreatePatchRequestInformation(options *Directo
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable.
 func (m *DirectoryRequestBuilder) Delete(options *DirectoryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -175,9 +161,7 @@ func (m *DirectoryRequestBuilder) Delete(options *DirectoryRequestBuilderDeleteO
     }
     return nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable.
 func (m *DirectoryRequestBuilder) Get(options *DirectoryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RbacApplication, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -189,9 +173,7 @@ func (m *DirectoryRequestBuilder) Get(options *DirectoryRequestBuilderGetOptions
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RbacApplication), nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable.
 func (m *DirectoryRequestBuilder) Patch(options *DirectoryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -206,9 +188,7 @@ func (m *DirectoryRequestBuilder) Patch(options *DirectoryRequestBuilderPatchOpt
 func (m *DirectoryRequestBuilder) ResourceNamespaces()(*if7ad3988c943ab6c47fb727c18a8349d5e50ebec53ab6cc066c11a20717d46af.ResourceNamespacesRequestBuilder) {
     return if7ad3988c943ab6c47fb727c18a8349d5e50ebec53ab6cc066c11a20717d46af.NewResourceNamespacesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.resourceNamespaces.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ResourceNamespacesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.resourceNamespaces.item collection
 func (m *DirectoryRequestBuilder) ResourceNamespacesById(id string)(*i04dea7bcc2de46d7f933671fce512fa0699d5fc5d83576e03b7ac0fe57cc5704.UnifiedRbacResourceNamespaceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -222,9 +202,7 @@ func (m *DirectoryRequestBuilder) ResourceNamespacesById(id string)(*i04dea7bcc2
 func (m *DirectoryRequestBuilder) RoleAssignmentApprovals()(*i4196e83a4bae24d0aeb92656129c7f451fb9b312487c6af458d556759a773f07.RoleAssignmentApprovalsRequestBuilder) {
     return i4196e83a4bae24d0aeb92656129c7f451fb9b312487c6af458d556759a773f07.NewRoleAssignmentApprovalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleAssignmentApprovals.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleAssignmentApprovalsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleAssignmentApprovals.item collection
 func (m *DirectoryRequestBuilder) RoleAssignmentApprovalsById(id string)(*i44fbfcce41c9eaa7ba9ff5f6ba24f61e5a9c03cdb24c3bc25beed0e1d6216960.ApprovalRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -238,9 +216,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentApprovalsById(id string)(*i44fbf
 func (m *DirectoryRequestBuilder) RoleAssignments()(*if3967cc171135f8ae89f635c0a197e13e64649a0043e1dcc96293c3c4f5ebbbe.RoleAssignmentsRequestBuilder) {
     return if3967cc171135f8ae89f635c0a197e13e64649a0043e1dcc96293c3c4f5ebbbe.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleAssignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleAssignments.item collection
 func (m *DirectoryRequestBuilder) RoleAssignmentsById(id string)(*i0dc801eaa7e34f0715fe9868f950fd4b68e0050fd9669d9d65ab28af2e0d7f73.UnifiedRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -254,9 +230,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentsById(id string)(*i0dc801eaa7e34
 func (m *DirectoryRequestBuilder) RoleAssignmentScheduleInstances()(*i955424cf34f796ced961a38c0bb409d0018463520cd1d610c06c4e0187f8f095.RoleAssignmentScheduleInstancesRequestBuilder) {
     return i955424cf34f796ced961a38c0bb409d0018463520cd1d610c06c4e0187f8f095.NewRoleAssignmentScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleAssignmentScheduleInstances.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleAssignmentScheduleInstancesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleAssignmentScheduleInstances.item collection
 func (m *DirectoryRequestBuilder) RoleAssignmentScheduleInstancesById(id string)(*if172e05e5a1d156d04fd91e88341824ca485364aaa7f2ee21ded1804029cf1f5.UnifiedRoleAssignmentScheduleInstanceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -270,9 +244,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentScheduleInstancesById(id string)
 func (m *DirectoryRequestBuilder) RoleAssignmentScheduleRequests()(*i003e247115fdc2cbce0f60f7d8a2c16dfec08ea21559d4270399d03acc2b4081.RoleAssignmentScheduleRequestsRequestBuilder) {
     return i003e247115fdc2cbce0f60f7d8a2c16dfec08ea21559d4270399d03acc2b4081.NewRoleAssignmentScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleAssignmentScheduleRequests.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleAssignmentScheduleRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleAssignmentScheduleRequests.item collection
 func (m *DirectoryRequestBuilder) RoleAssignmentScheduleRequestsById(id string)(*i1a1177924b99f8b8668ec4e5b307b5e9d537c2cfa54abdf2bf1fddde3af81044.UnifiedRoleAssignmentScheduleRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -286,9 +258,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentScheduleRequestsById(id string)(
 func (m *DirectoryRequestBuilder) RoleAssignmentSchedules()(*ie88f7587d0b612d6aad4a4cc6e4adf2df6596695dcfb937bd88d739a30fec4d4.RoleAssignmentSchedulesRequestBuilder) {
     return ie88f7587d0b612d6aad4a4cc6e4adf2df6596695dcfb937bd88d739a30fec4d4.NewRoleAssignmentSchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleAssignmentSchedules.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleAssignmentSchedulesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleAssignmentSchedules.item collection
 func (m *DirectoryRequestBuilder) RoleAssignmentSchedulesById(id string)(*i5e4e5e8e6ab57f21346122383935dbe84160f647fde997fe85fe2ae4a427c50e.UnifiedRoleAssignmentScheduleRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -302,9 +272,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentSchedulesById(id string)(*i5e4e5
 func (m *DirectoryRequestBuilder) RoleDefinitions()(*ic09a099122154ece987c7f85636fcc11aac7d11f4704eb7ea18e15d32cb118be.RoleDefinitionsRequestBuilder) {
     return ic09a099122154ece987c7f85636fcc11aac7d11f4704eb7ea18e15d32cb118be.NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleDefinitions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleDefinitions.item collection
 func (m *DirectoryRequestBuilder) RoleDefinitionsById(id string)(*i15fef4d98a25fc03a5a29e7e66cec2ffeccb757e532a20aa82098881625f052a.UnifiedRoleDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -318,9 +286,7 @@ func (m *DirectoryRequestBuilder) RoleDefinitionsById(id string)(*i15fef4d98a25f
 func (m *DirectoryRequestBuilder) RoleEligibilityScheduleInstances()(*ie00125ef63b154ab9fd6cbeba46882ef7ecf0a1bbe044d47b4e5fd94f87ff817.RoleEligibilityScheduleInstancesRequestBuilder) {
     return ie00125ef63b154ab9fd6cbeba46882ef7ecf0a1bbe044d47b4e5fd94f87ff817.NewRoleEligibilityScheduleInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleEligibilityScheduleInstances.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleEligibilityScheduleInstancesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleEligibilityScheduleInstances.item collection
 func (m *DirectoryRequestBuilder) RoleEligibilityScheduleInstancesById(id string)(*i322381699c08d5273b2d2e8a72a478e9a4b2c80cb977ad926aa502c1353b499a.UnifiedRoleEligibilityScheduleInstanceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -334,9 +300,7 @@ func (m *DirectoryRequestBuilder) RoleEligibilityScheduleInstancesById(id string
 func (m *DirectoryRequestBuilder) RoleEligibilityScheduleRequests()(*i99441748b67ef831e7259b916e604bc0f3a134120b98e3f3cec7689707945a5b.RoleEligibilityScheduleRequestsRequestBuilder) {
     return i99441748b67ef831e7259b916e604bc0f3a134120b98e3f3cec7689707945a5b.NewRoleEligibilityScheduleRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleEligibilityScheduleRequests.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleEligibilityScheduleRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleEligibilityScheduleRequests.item collection
 func (m *DirectoryRequestBuilder) RoleEligibilityScheduleRequestsById(id string)(*id0ebe1fb3bbbfdf8b2d57215ab0ec7662faabe46ca681bc46803c9c70d11cab5.UnifiedRoleEligibilityScheduleRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -350,9 +314,7 @@ func (m *DirectoryRequestBuilder) RoleEligibilityScheduleRequestsById(id string)
 func (m *DirectoryRequestBuilder) RoleEligibilitySchedules()(*ib3f3f9905e601fb21a0927cffd109f585906d82dd65ac7b379b6df162c0beec5.RoleEligibilitySchedulesRequestBuilder) {
     return ib3f3f9905e601fb21a0927cffd109f585906d82dd65ac7b379b6df162c0beec5.NewRoleEligibilitySchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleEligibilitySchedules.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleEligibilitySchedulesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.roleManagement.directory.roleEligibilitySchedules.item collection
 func (m *DirectoryRequestBuilder) RoleEligibilitySchedulesById(id string)(*i2b3fa3ea5b323a0c2dca9d12e3d5f7bdadbc4bbf1e526ea51f794a5d0f803d75.UnifiedRoleEligibilityScheduleRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -363,21 +325,11 @@ func (m *DirectoryRequestBuilder) RoleEligibilitySchedulesById(id string)(*i2b3f
     }
     return i2b3fa3ea5b323a0c2dca9d12e3d5f7bdadbc4bbf1e526ea51f794a5d0f803d75.NewUnifiedRoleEligibilityScheduleRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Builds and executes requests for operations under \roleManagement\directory\microsoft.graph.roleScheduleInstances(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')
-// Parameters:
-//  - appScopeId : Usage: appScopeId={appScopeId}
-//  - directoryScopeId : Usage: directoryScopeId={directoryScopeId}
-//  - principalId : Usage: principalId={principalId}
-//  - roleDefinitionId : Usage: roleDefinitionId={roleDefinitionId}
+// RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId builds and executes requests for operations under \roleManagement\directory\microsoft.graph.roleScheduleInstances(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')
 func (m *DirectoryRequestBuilder) RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(directoryScopeId *string, appScopeId *string, principalId *string, roleDefinitionId *string)(*ib7ee0af232e3f7f843b9fc80b2bf1bcd6bdc1aa1876b6682453a23c520194820.RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder) {
     return ib7ee0af232e3f7f843b9fc80b2bf1bcd6bdc1aa1876b6682453a23c520194820.NewRoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, directoryScopeId, appScopeId, principalId, roleDefinitionId);
 }
-// Builds and executes requests for operations under \roleManagement\directory\microsoft.graph.roleSchedules(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')
-// Parameters:
-//  - appScopeId : Usage: appScopeId={appScopeId}
-//  - directoryScopeId : Usage: directoryScopeId={directoryScopeId}
-//  - principalId : Usage: principalId={principalId}
-//  - roleDefinitionId : Usage: roleDefinitionId={roleDefinitionId}
+// RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId builds and executes requests for operations under \roleManagement\directory\microsoft.graph.roleSchedules(directoryScopeId='{directoryScopeId}',appScopeId='{appScopeId}',principalId='{principalId}',roleDefinitionId='{roleDefinitionId}')
 func (m *DirectoryRequestBuilder) RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId(directoryScopeId *string, appScopeId *string, principalId *string, roleDefinitionId *string)(*i89936fb8dab16eb5ef6964ec9e5d8aa7c54f3f69934f902cdc4a2a400db45270.RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilder) {
     return i89936fb8dab16eb5ef6964ec9e5d8aa7c54f3f69934f902cdc4a2a400db45270.NewRoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, directoryScopeId, appScopeId, principalId, roleDefinitionId);
 }

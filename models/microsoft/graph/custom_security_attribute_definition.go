@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// customSecurityAttributeDefinition 
 type CustomSecurityAttributeDefinition struct {
     Entity
     // 
@@ -26,14 +26,14 @@ type CustomSecurityAttributeDefinition struct {
     // 
     usePreDefinedValuesOnly *bool;
 }
-// Instantiates a new customSecurityAttributeDefinition and sets the default values.
+// NewCustomSecurityAttributeDefinition instantiates a new customSecurityAttributeDefinition and sets the default values.
 func NewCustomSecurityAttributeDefinition()(*CustomSecurityAttributeDefinition) {
     m := &CustomSecurityAttributeDefinition{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the allowedValues property value. 
+// GetAllowedValues gets the allowedValues property value. 
 func (m *CustomSecurityAttributeDefinition) GetAllowedValues()([]AllowedValue) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *CustomSecurityAttributeDefinition) GetAllowedValues()([]AllowedValue) {
         return m.allowedValues
     }
 }
-// Gets the attributeSet property value. 
+// GetAttributeSet gets the attributeSet property value. 
 func (m *CustomSecurityAttributeDefinition) GetAttributeSet()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *CustomSecurityAttributeDefinition) GetAttributeSet()(*string) {
         return m.attributeSet
     }
 }
-// Gets the description property value. 
+// GetDescription gets the description property value. 
 func (m *CustomSecurityAttributeDefinition) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *CustomSecurityAttributeDefinition) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the isCollection property value. 
+// GetIsCollection gets the isCollection property value. 
 func (m *CustomSecurityAttributeDefinition) GetIsCollection()(*bool) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *CustomSecurityAttributeDefinition) GetIsCollection()(*bool) {
         return m.isCollection
     }
 }
-// Gets the isSearchable property value. 
+// GetIsSearchable gets the isSearchable property value. 
 func (m *CustomSecurityAttributeDefinition) GetIsSearchable()(*bool) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *CustomSecurityAttributeDefinition) GetIsSearchable()(*bool) {
         return m.isSearchable
     }
 }
-// Gets the name property value. 
+// GetName gets the name property value. 
 func (m *CustomSecurityAttributeDefinition) GetName()(*string) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *CustomSecurityAttributeDefinition) GetName()(*string) {
         return m.name
     }
 }
-// Gets the status property value. 
+// GetStatus gets the status property value. 
 func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
         return m.status
     }
 }
-// Gets the type_escaped property value. 
+// GetType_escaped gets the type_escaped property value. 
 func (m *CustomSecurityAttributeDefinition) GetType_escaped()(*string) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *CustomSecurityAttributeDefinition) GetType_escaped()(*string) {
         return m.type_escaped
     }
 }
-// Gets the usePreDefinedValuesOnly property value. 
+// GetUsePreDefinedValuesOnly gets the usePreDefinedValuesOnly property value. 
 func (m *CustomSecurityAttributeDefinition) GetUsePreDefinedValuesOnly()(*bool) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *CustomSecurityAttributeDefinition) GetUsePreDefinedValuesOnly()(*bool) 
         return m.usePreDefinedValuesOnly
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedValues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,9 +207,7 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
 func (m *CustomSecurityAttributeDefinition) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CustomSecurityAttributeDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -276,57 +274,39 @@ func (m *CustomSecurityAttributeDefinition) Serialize(writer i04eb5309aeaafadd28
     }
     return nil
 }
-// Sets the allowedValues property value. 
-// Parameters:
-//  - value : Value to set for the allowedValues property.
+// SetAllowedValues sets the allowedValues property value. 
 func (m *CustomSecurityAttributeDefinition) SetAllowedValues(value []AllowedValue)() {
     m.allowedValues = value
 }
-// Sets the attributeSet property value. 
-// Parameters:
-//  - value : Value to set for the attributeSet property.
+// SetAttributeSet sets the attributeSet property value. 
 func (m *CustomSecurityAttributeDefinition) SetAttributeSet(value *string)() {
     m.attributeSet = value
 }
-// Sets the description property value. 
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. 
 func (m *CustomSecurityAttributeDefinition) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the isCollection property value. 
-// Parameters:
-//  - value : Value to set for the isCollection property.
+// SetIsCollection sets the isCollection property value. 
 func (m *CustomSecurityAttributeDefinition) SetIsCollection(value *bool)() {
     m.isCollection = value
 }
-// Sets the isSearchable property value. 
-// Parameters:
-//  - value : Value to set for the isSearchable property.
+// SetIsSearchable sets the isSearchable property value. 
 func (m *CustomSecurityAttributeDefinition) SetIsSearchable(value *bool)() {
     m.isSearchable = value
 }
-// Sets the name property value. 
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. 
 func (m *CustomSecurityAttributeDefinition) SetName(value *string)() {
     m.name = value
 }
-// Sets the status property value. 
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. 
 func (m *CustomSecurityAttributeDefinition) SetStatus(value *string)() {
     m.status = value
 }
-// Sets the type_escaped property value. 
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. 
 func (m *CustomSecurityAttributeDefinition) SetType_escaped(value *string)() {
     m.type_escaped = value
 }
-// Sets the usePreDefinedValuesOnly property value. 
-// Parameters:
-//  - value : Value to set for the usePreDefinedValuesOnly property.
+// SetUsePreDefinedValuesOnly sets the usePreDefinedValuesOnly property value. 
 func (m *CustomSecurityAttributeDefinition) SetUsePreDefinedValuesOnly(value *bool)() {
     m.usePreDefinedValuesOnly = value
 }

@@ -7,7 +7,7 @@ import (
     i6f99705e66ad1f58a1e2558efd6eac0d304835322c078c4a987834e4a972a746 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/managementconditions/item/managementconditionstatements"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managementConditions\{managementCondition-id}
+// managementConditionRequestBuilder builds and executes requests for operations under \deviceManagement\managementConditions\{managementCondition-id}
 type ManagementConditionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ManagementConditionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagementConditionRequestBuilderDeleteOptions options for Delete
 type ManagementConditionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type ManagementConditionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagementConditionRequestBuilderGetOptions options for Get
 type ManagementConditionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type ManagementConditionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The management conditions associated with device management of the company.
+// managementConditionRequestBuilderGetQueryParameters the management conditions associated with device management of the company.
 type ManagementConditionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagementConditionRequestBuilderPatchOptions options for Patch
 type ManagementConditionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementCondition;
@@ -54,10 +54,7 @@ type ManagementConditionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagementConditionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementConditionRequestBuilderInternal instantiates a new ManagementConditionRequestBuilder and sets the default values.
 func NewManagementConditionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementConditionRequestBuilder) {
     m := &ManagementConditionRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewManagementConditionRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementConditionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementConditionRequestBuilder instantiates a new ManagementConditionRequestBuilder and sets the default values.
 func NewManagementConditionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementConditionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementConditionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The management conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the management conditions associated with device management of the company.
 func (m *ManagementConditionRequestBuilder) CreateDeleteRequestInformation(options *ManagementConditionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *ManagementConditionRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The management conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the management conditions associated with device management of the company.
 func (m *ManagementConditionRequestBuilder) CreateGetRequestInformation(options *ManagementConditionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *ManagementConditionRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The management conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the management conditions associated with device management of the company.
 func (m *ManagementConditionRequestBuilder) CreatePatchRequestInformation(options *ManagementConditionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *ManagementConditionRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// The management conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// Delete the management conditions associated with device management of the company.
 func (m *ManagementConditionRequestBuilder) Delete(options *ManagementConditionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *ManagementConditionRequestBuilder) Delete(options *ManagementConditionR
     }
     return nil
 }
-// The management conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// Get the management conditions associated with device management of the company.
 func (m *ManagementConditionRequestBuilder) Get(options *ManagementConditionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementCondition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *ManagementConditionRequestBuilder) Get(options *ManagementConditionRequ
 func (m *ManagementConditionRequestBuilder) ManagementConditionStatements()(*i6f99705e66ad1f58a1e2558efd6eac0d304835322c078c4a987834e4a972a746.ManagementConditionStatementsRequestBuilder) {
     return i6f99705e66ad1f58a1e2558efd6eac0d304835322c078c4a987834e4a972a746.NewManagementConditionStatementsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The management conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// Patch the management conditions associated with device management of the company.
 func (m *ManagementConditionRequestBuilder) Patch(options *ManagementConditionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

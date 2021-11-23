@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDeviceStartupProcessPerformance
+// userExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDeviceStartupProcessPerformance
 type UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder struct
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderGetOpti
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics device Startup Process Performance
+// userExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderGetQueryParameters user experience analytics device Startup Process Performance
 type UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderGetQuer
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessPerformance;
@@ -56,10 +56,7 @@ type UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderPostOpt
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderInternal instantiates a new UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) {
     m := &UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderInte
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder instantiates a new UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics device Startup Process Performance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics device Startup Process Performance
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) C
     }
     return requestInfo, nil
 }
-// User experience analytics device Startup Process Performance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation user experience analytics device Startup Process Performance
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) C
     }
     return requestInfo, nil
 }
-// User experience analytics device Startup Process Performance
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics device Startup Process Performance
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) Get(options *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderGetOptions)(*UserExperienceAnalyticsDeviceStartupProcessPerformanceResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) G
     }
     return res.(*UserExperienceAnalyticsDeviceStartupProcessPerformanceResponse), nil
 }
-// User experience analytics device Startup Process Performance
-// Parameters:
-//  - options : Options for the request
+// Post user experience analytics device Startup Process Performance
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder) Post(options *UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcessPerformance, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

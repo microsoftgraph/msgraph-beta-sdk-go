@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// applyRequestBody 
 type ApplyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type ApplyRequestBody struct {
     // 
     tenantId *string;
 }
-// Instantiates a new applyRequestBody and sets the default values.
+// NewApplyRequestBody instantiates a new applyRequestBody and sets the default values.
 func NewApplyRequestBody()(*ApplyRequestBody) {
     m := &ApplyRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ApplyRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the excludeGroups property value. 
+// GetExcludeGroups gets the excludeGroups property value. 
 func (m *ApplyRequestBody) GetExcludeGroups()([]string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *ApplyRequestBody) GetExcludeGroups()([]string) {
         return m.excludeGroups
     }
 }
-// Gets the includeAllUsers property value. 
+// GetIncludeAllUsers gets the includeAllUsers property value. 
 func (m *ApplyRequestBody) GetIncludeAllUsers()(*bool) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *ApplyRequestBody) GetIncludeAllUsers()(*bool) {
         return m.includeAllUsers
     }
 }
-// Gets the includeGroups property value. 
+// GetIncludeGroups gets the includeGroups property value. 
 func (m *ApplyRequestBody) GetIncludeGroups()([]string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *ApplyRequestBody) GetIncludeGroups()([]string) {
         return m.includeGroups
     }
 }
-// Gets the managementTemplateId property value. 
+// GetManagementTemplateId gets the managementTemplateId property value. 
 func (m *ApplyRequestBody) GetManagementTemplateId()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *ApplyRequestBody) GetManagementTemplateId()(*string) {
         return m.managementTemplateId
     }
 }
-// Gets the tenantGroupId property value. 
+// GetTenantGroupId gets the tenantGroupId property value. 
 func (m *ApplyRequestBody) GetTenantGroupId()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *ApplyRequestBody) GetTenantGroupId()(*string) {
         return m.tenantGroupId
     }
 }
-// Gets the tenantId property value. 
+// GetTenantId gets the tenantId property value. 
 func (m *ApplyRequestBody) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *ApplyRequestBody) GetTenantId()(*string) {
         return m.tenantId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ApplyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["excludeGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,9 +160,7 @@ func (m *ApplyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *ApplyRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ApplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteCollectionOfStringValues("excludeGroups", m.GetExcludeGroups())
@@ -208,45 +206,31 @@ func (m *ApplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the excludeGroups property value. 
-// Parameters:
-//  - value : Value to set for the excludeGroups property.
+// SetExcludeGroups sets the excludeGroups property value. 
 func (m *ApplyRequestBody) SetExcludeGroups(value []string)() {
     m.excludeGroups = value
 }
-// Sets the includeAllUsers property value. 
-// Parameters:
-//  - value : Value to set for the includeAllUsers property.
+// SetIncludeAllUsers sets the includeAllUsers property value. 
 func (m *ApplyRequestBody) SetIncludeAllUsers(value *bool)() {
     m.includeAllUsers = value
 }
-// Sets the includeGroups property value. 
-// Parameters:
-//  - value : Value to set for the includeGroups property.
+// SetIncludeGroups sets the includeGroups property value. 
 func (m *ApplyRequestBody) SetIncludeGroups(value []string)() {
     m.includeGroups = value
 }
-// Sets the managementTemplateId property value. 
-// Parameters:
-//  - value : Value to set for the managementTemplateId property.
+// SetManagementTemplateId sets the managementTemplateId property value. 
 func (m *ApplyRequestBody) SetManagementTemplateId(value *string)() {
     m.managementTemplateId = value
 }
-// Sets the tenantGroupId property value. 
-// Parameters:
-//  - value : Value to set for the tenantGroupId property.
+// SetTenantGroupId sets the tenantGroupId property value. 
 func (m *ApplyRequestBody) SetTenantGroupId(value *string)() {
     m.tenantGroupId = value
 }
-// Sets the tenantId property value. 
-// Parameters:
-//  - value : Value to set for the tenantId property.
+// SetTenantId sets the tenantId property value. 
 func (m *ApplyRequestBody) SetTenantId(value *string)() {
     m.tenantId = value
 }

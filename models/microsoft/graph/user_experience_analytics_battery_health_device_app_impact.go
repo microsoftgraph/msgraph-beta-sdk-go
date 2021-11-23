@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// userExperienceAnalyticsBatteryHealthDeviceAppImpact 
 type UserExperienceAnalyticsBatteryHealthDeviceAppImpact struct {
     Entity
     // User friendly display name for the app. Eg: Outlook
@@ -20,14 +20,14 @@ type UserExperienceAnalyticsBatteryHealthDeviceAppImpact struct {
     // true if the user had active interaction with the app.
     isForegroundApp *bool;
 }
-// Instantiates a new userExperienceAnalyticsBatteryHealthDeviceAppImpact and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthDeviceAppImpact instantiates a new userExperienceAnalyticsBatteryHealthDeviceAppImpact and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDeviceAppImpact()(*UserExperienceAnalyticsBatteryHealthDeviceAppImpact) {
     m := &UserExperienceAnalyticsBatteryHealthDeviceAppImpact{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
+// GetAppDisplayName gets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetAppDisplayName()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetAppDisplayName(
         return m.appDisplayName
     }
 }
-// Gets the appName property value. App name. Eg: oltk.exe
+// GetAppName gets the appName property value. App name. Eg: oltk.exe
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetAppName()(*string) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetAppName()(*stri
         return m.appName
     }
 }
-// Gets the appPublisher property value. App publisher. Eg: Microsoft Corporation
+// GetAppPublisher gets the appPublisher property value. App publisher. Eg: Microsoft Corporation
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetAppPublisher()(*string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetAppPublisher()(
         return m.appPublisher
     }
 }
-// Gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// GetBatteryUsagePercentage gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetBatteryUsagePercentage()(*float64) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetBatteryUsagePer
         return m.batteryUsagePercentage
     }
 }
-// Gets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
+// GetDeviceId gets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetDeviceId()(*string) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetDeviceId()(*str
         return m.deviceId
     }
 }
-// Gets the isForegroundApp property value. true if the user had active interaction with the app.
+// GetIsForegroundApp gets the isForegroundApp property value. true if the user had active interaction with the app.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetIsForegroundApp()(*bool) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetIsForegroundApp
         return m.isForegroundApp
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,9 +143,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetFieldDeserializ
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -189,39 +187,27 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) Serialize(writer i
     }
     return nil
 }
-// Sets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
-// Parameters:
-//  - value : Value to set for the appDisplayName property.
+// SetAppDisplayName sets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetAppDisplayName(value *string)() {
     m.appDisplayName = value
 }
-// Sets the appName property value. App name. Eg: oltk.exe
-// Parameters:
-//  - value : Value to set for the appName property.
+// SetAppName sets the appName property value. App name. Eg: oltk.exe
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetAppName(value *string)() {
     m.appName = value
 }
-// Sets the appPublisher property value. App publisher. Eg: Microsoft Corporation
-// Parameters:
-//  - value : Value to set for the appPublisher property.
+// SetAppPublisher sets the appPublisher property value. App publisher. Eg: Microsoft Corporation
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetAppPublisher(value *string)() {
     m.appPublisher = value
 }
-// Sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-// Parameters:
-//  - value : Value to set for the batteryUsagePercentage property.
+// SetBatteryUsagePercentage sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetBatteryUsagePercentage(value *float64)() {
     m.batteryUsagePercentage = value
 }
-// Sets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
-// Parameters:
-//  - value : Value to set for the deviceId property.
+// SetDeviceId sets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetDeviceId(value *string)() {
     m.deviceId = value
 }
-// Sets the isForegroundApp property value. true if the user had active interaction with the app.
-// Parameters:
-//  - value : Value to set for the isForegroundApp property.
+// SetIsForegroundApp sets the isForegroundApp property value. true if the user had active interaction with the app.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetIsForegroundApp(value *bool)() {
     m.isForegroundApp = value
 }

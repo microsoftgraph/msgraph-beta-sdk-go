@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// userInsightsSettings 
 type UserInsightsSettings struct {
     Entity
     // true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
     isEnabled *bool;
 }
-// Instantiates a new userInsightsSettings and sets the default values.
+// NewUserInsightsSettings instantiates a new userInsightsSettings and sets the default values.
 func NewUserInsightsSettings()(*UserInsightsSettings) {
     m := &UserInsightsSettings{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the isEnabled property value. true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+// GetIsEnabled gets the isEnabled property value. true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
 func (m *UserInsightsSettings) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *UserInsightsSettings) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserInsightsSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -43,9 +43,7 @@ func (m *UserInsightsSettings) GetFieldDeserializers()(map[string]func(interface
 func (m *UserInsightsSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserInsightsSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -59,9 +57,7 @@ func (m *UserInsightsSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the isEnabled property value. true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
-// Parameters:
-//  - value : Value to set for the isEnabled property.
+// SetIsEnabled sets the isEnabled property value. true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
 func (m *UserInsightsSettings) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }

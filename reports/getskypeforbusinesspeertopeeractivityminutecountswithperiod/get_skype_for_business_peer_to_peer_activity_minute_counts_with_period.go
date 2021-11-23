@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// getSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod 
 type GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // 
@@ -19,14 +19,14 @@ type GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod struct {
     // 
     video *int64;
 }
-// Instantiates a new getSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod and sets the default values.
+// NewGetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod instantiates a new getSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod and sets the default values.
 func NewGetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod()(*GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) {
     m := &GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
-// Gets the audio property value. 
+// GetAudio gets the audio property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetAudio()(*int64) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetAudio()
         return m.audio
     }
 }
-// Gets the reportDate property value. 
+// GetReportDate gets the reportDate property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetReportDate()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetReportD
         return m.reportDate
     }
 }
-// Gets the reportPeriod property value. 
+// GetReportPeriod gets the reportPeriod property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetReportP
         return m.reportPeriod
     }
 }
-// Gets the reportRefreshDate property value. 
+// GetReportRefreshDate gets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetReportR
         return m.reportRefreshDate
     }
 }
-// Gets the video property value. 
+// GetVideo gets the video property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetVideo()(*int64) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetVideo()
         return m.video
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["audio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,9 +124,7 @@ func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) GetFieldDe
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -164,33 +162,23 @@ func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) Serialize(
     }
     return nil
 }
-// Sets the audio property value. 
-// Parameters:
-//  - value : Value to set for the audio property.
+// SetAudio sets the audio property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) SetAudio(value *int64)() {
     m.audio = value
 }
-// Sets the reportDate property value. 
-// Parameters:
-//  - value : Value to set for the reportDate property.
+// SetReportDate sets the reportDate property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) SetReportDate(value *string)() {
     m.reportDate = value
 }
-// Sets the reportPeriod property value. 
-// Parameters:
-//  - value : Value to set for the reportPeriod property.
+// SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
-// Sets the reportRefreshDate property value. 
-// Parameters:
-//  - value : Value to set for the reportRefreshDate property.
+// SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
-// Sets the video property value. 
-// Parameters:
-//  - value : Value to set for the video property.
+// SetVideo sets the video property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) SetVideo(value *int64)() {
     m.video = value
 }

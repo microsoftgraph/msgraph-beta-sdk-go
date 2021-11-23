@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// unifiedRoleManagementPolicyRuleTarget 
 type UnifiedRoleManagementPolicyRuleTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type UnifiedRoleManagementPolicyRuleTarget struct {
     // 
     targetObjects []DirectoryObject;
 }
-// Instantiates a new unifiedRoleManagementPolicyRuleTarget and sets the default values.
+// NewUnifiedRoleManagementPolicyRuleTarget instantiates a new unifiedRoleManagementPolicyRuleTarget and sets the default values.
 func NewUnifiedRoleManagementPolicyRuleTarget()(*UnifiedRoleManagementPolicyRuleTarget) {
     m := &UnifiedRoleManagementPolicyRuleTarget{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetAdditionalData()(map[string]i
         return m.additionalData
     }
 }
-// Gets the caller property value. The caller for the policy rule target. Allowed values are: None, Admin, EndUser.
+// GetCaller gets the caller property value. The caller for the policy rule target. Allowed values are: None, Admin, EndUser.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetCaller()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetCaller()(*string) {
         return m.caller
     }
 }
-// Gets the enforcedSettings property value. The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
+// GetEnforcedSettings gets the enforcedSettings property value. The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetEnforcedSettings()([]string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetEnforcedSettings()([]string) 
         return m.enforcedSettings
     }
 }
-// Gets the inheritableSettings property value. The list of settings which can be inherited by child scopes. Use All for all settings.
+// GetInheritableSettings gets the inheritableSettings property value. The list of settings which can be inherited by child scopes. Use All for all settings.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetInheritableSettings()([]string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetInheritableSettings()([]strin
         return m.inheritableSettings
     }
 }
-// Gets the level property value. The level for the policy rule target. Allowed values are: Eligibility, Assignment.
+// GetLevel gets the level property value. The level for the policy rule target. Allowed values are: Eligibility, Assignment.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetLevel()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetLevel()(*string) {
         return m.level
     }
 }
-// Gets the operations property value. The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
+// GetOperations gets the operations property value. The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]string) {
         return m.operations
     }
 }
-// Gets the targetObjects property value. 
+// GetTargetObjects gets the targetObjects property value. 
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetTargetObjects()([]DirectoryObject) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetTargetObjects()([]DirectoryOb
         return m.targetObjects
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["caller"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,9 +168,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[stri
 func (m *UnifiedRoleManagementPolicyRuleTarget) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UnifiedRoleManagementPolicyRuleTarget) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("caller", m.GetCaller())
@@ -221,45 +219,31 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) Serialize(writer i04eb5309aeaafa
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the caller property value. The caller for the policy rule target. Allowed values are: None, Admin, EndUser.
-// Parameters:
-//  - value : Value to set for the caller property.
+// SetCaller sets the caller property value. The caller for the policy rule target. Allowed values are: None, Admin, EndUser.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetCaller(value *string)() {
     m.caller = value
 }
-// Sets the enforcedSettings property value. The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
-// Parameters:
-//  - value : Value to set for the enforcedSettings property.
+// SetEnforcedSettings sets the enforcedSettings property value. The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetEnforcedSettings(value []string)() {
     m.enforcedSettings = value
 }
-// Sets the inheritableSettings property value. The list of settings which can be inherited by child scopes. Use All for all settings.
-// Parameters:
-//  - value : Value to set for the inheritableSettings property.
+// SetInheritableSettings sets the inheritableSettings property value. The list of settings which can be inherited by child scopes. Use All for all settings.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetInheritableSettings(value []string)() {
     m.inheritableSettings = value
 }
-// Sets the level property value. The level for the policy rule target. Allowed values are: Eligibility, Assignment.
-// Parameters:
-//  - value : Value to set for the level property.
+// SetLevel sets the level property value. The level for the policy rule target. Allowed values are: Eligibility, Assignment.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetLevel(value *string)() {
     m.level = value
 }
-// Sets the operations property value. The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
-// Parameters:
-//  - value : Value to set for the operations property.
+// SetOperations sets the operations property value. The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetOperations(value []string)() {
     m.operations = value
 }
-// Sets the targetObjects property value. 
-// Parameters:
-//  - value : Value to set for the targetObjects property.
+// SetTargetObjects sets the targetObjects property value. 
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetTargetObjects(value []DirectoryObject)() {
     m.targetObjects = value
 }

@@ -8,7 +8,7 @@ import (
     i8ac982e4babd498ccfdca8159c2c00708b65a8c1d00512bc9fe29edca2a507ca "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/advancedthreatprotectiononboardingstatesummary/advancedthreatprotectiononboardingdevicesettingstates/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\advancedThreatProtectionOnboardingStateSummary
+// advancedThreatProtectionOnboardingStateSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\advancedThreatProtectionOnboardingStateSummary
 type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteOptions options for Delete
 type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteOptions s
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetOptions options for Get
 type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The summary state of ATP onboarding state for this account.
+// advancedThreatProtectionOnboardingStateSummaryRequestBuilderGetQueryParameters the summary state of ATP onboarding state for this account.
 type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchOptions options for Patch
 type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingStateSummary;
@@ -58,9 +58,7 @@ type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchOptions st
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) AdvancedThreatProtectionOnboardingDeviceSettingStates()(*ice19fdfd521d3baa084d788d924acd2488705b59b4281e0f60085cec8edcab8d.AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) {
     return ice19fdfd521d3baa084d788d924acd2488705b59b4281e0f60085cec8edcab8d.NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.advancedThreatProtectionOnboardingStateSummary.advancedThreatProtectionOnboardingDeviceSettingStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AdvancedThreatProtectionOnboardingDeviceSettingStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.advancedThreatProtectionOnboardingStateSummary.advancedThreatProtectionOnboardingDeviceSettingStates.item collection
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) AdvancedThreatProtectionOnboardingDeviceSettingStatesById(id string)(*i8ac982e4babd498ccfdca8159c2c00708b65a8c1d00512bc9fe29edca2a507ca.AdvancedThreatProtectionOnboardingDeviceSettingStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -71,10 +69,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) AdvancedT
     }
     return i8ac982e4babd498ccfdca8159c2c00708b65a8c1d00512bc9fe29edca2a507ca.NewAdvancedThreatProtectionOnboardingDeviceSettingStateRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal instantiates a new AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder and sets the default values.
 func NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) {
     m := &AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder{
     }
@@ -87,18 +82,13 @@ func NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal(pat
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilder instantiates a new AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder and sets the default values.
 func NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The summary state of ATP onboarding state for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the summary state of ATP onboarding state for this account.
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateDeleteRequestInformation(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,9 +105,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateDel
     }
     return requestInfo, nil
 }
-// The summary state of ATP onboarding state for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the summary state of ATP onboarding state for this account.
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateGetRequestInformation(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// The summary state of ATP onboarding state for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the summary state of ATP onboarding state for this account.
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreatePatchRequestInformation(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,9 +143,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreatePat
     }
     return requestInfo, nil
 }
-// The summary state of ATP onboarding state for this account.
-// Parameters:
-//  - options : Options for the request
+// Delete the summary state of ATP onboarding state for this account.
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Delete(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Delete(op
     }
     return nil
 }
-// The summary state of ATP onboarding state for this account.
-// Parameters:
-//  - options : Options for the request
+// Get the summary state of ATP onboarding state for this account.
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Get(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingStateSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Get(optio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdvancedThreatProtectionOnboardingStateSummary), nil
 }
-// The summary state of ATP onboarding state for this account.
-// Parameters:
-//  - options : Options for the request
+// Patch the summary state of ATP onboarding state for this account.
 func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Patch(options *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

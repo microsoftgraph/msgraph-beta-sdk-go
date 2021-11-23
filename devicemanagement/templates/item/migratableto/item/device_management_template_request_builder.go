@@ -8,7 +8,7 @@ import (
     ibbba9d86d4571827dce83aaa25b29b4599b3866543dcd39dc94b898809d719ef "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/templates/item/migratableto/item/createinstance"
 )
 
-// Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\{deviceManagementTemplate-id1}
+// deviceManagementTemplateRequestBuilder builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\{deviceManagementTemplate-id1}
 type DeviceManagementTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type DeviceManagementTemplateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementTemplateRequestBuilderDeleteOptions options for Delete
 type DeviceManagementTemplateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceManagementTemplateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementTemplateRequestBuilderGetOptions options for Get
 type DeviceManagementTemplateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type DeviceManagementTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of templates this template can migrate to
+// deviceManagementTemplateRequestBuilderGetQueryParameters collection of templates this template can migrate to
 type DeviceManagementTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementTemplateRequestBuilderPatchOptions options for Patch
 type DeviceManagementTemplateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTemplate;
@@ -55,16 +55,11 @@ type DeviceManagementTemplateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\{deviceManagementTemplate-id1}\microsoft.graph.compare(templateId='{templateId}')
-// Parameters:
-//  - templateId : Usage: templateId={templateId}
+// CompareWithTemplateId builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\{deviceManagementTemplate-id1}\microsoft.graph.compare(templateId='{templateId}')
 func (m *DeviceManagementTemplateRequestBuilder) CompareWithTemplateId(templateId *string)(*ib506df1be0a8318335f725260bb81f76b9833eddbefaac64f73a5b6b975db197.CompareWithTemplateIdRequestBuilder) {
     return ib506df1be0a8318335f725260bb81f76b9833eddbefaac64f73a5b6b975db197.NewCompareWithTemplateIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, templateId);
 }
-// Instantiates a new DeviceManagementTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementTemplateRequestBuilderInternal instantiates a new DeviceManagementTemplateRequestBuilder and sets the default values.
 func NewDeviceManagementTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementTemplateRequestBuilder) {
     m := &DeviceManagementTemplateRequestBuilder{
     }
@@ -77,18 +72,13 @@ func NewDeviceManagementTemplateRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementTemplateRequestBuilder instantiates a new DeviceManagementTemplateRequestBuilder and sets the default values.
 func NewDeviceManagementTemplateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementTemplateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of templates this template can migrate to
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of templates this template can migrate to
 func (m *DeviceManagementTemplateRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementTemplateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +95,7 @@ func (m *DeviceManagementTemplateRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// Collection of templates this template can migrate to
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of templates this template can migrate to
 func (m *DeviceManagementTemplateRequestBuilder) CreateGetRequestInformation(options *DeviceManagementTemplateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,9 +118,7 @@ func (m *DeviceManagementTemplateRequestBuilder) CreateGetRequestInformation(opt
 func (m *DeviceManagementTemplateRequestBuilder) CreateInstance()(*ibbba9d86d4571827dce83aaa25b29b4599b3866543dcd39dc94b898809d719ef.CreateInstanceRequestBuilder) {
     return ibbba9d86d4571827dce83aaa25b29b4599b3866543dcd39dc94b898809d719ef.NewCreateInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Collection of templates this template can migrate to
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of templates this template can migrate to
 func (m *DeviceManagementTemplateRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementTemplateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +136,7 @@ func (m *DeviceManagementTemplateRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// Collection of templates this template can migrate to
-// Parameters:
-//  - options : Options for the request
+// Delete collection of templates this template can migrate to
 func (m *DeviceManagementTemplateRequestBuilder) Delete(options *DeviceManagementTemplateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -164,9 +148,7 @@ func (m *DeviceManagementTemplateRequestBuilder) Delete(options *DeviceManagemen
     }
     return nil
 }
-// Collection of templates this template can migrate to
-// Parameters:
-//  - options : Options for the request
+// Get collection of templates this template can migrate to
 func (m *DeviceManagementTemplateRequestBuilder) Get(options *DeviceManagementTemplateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTemplate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -178,9 +160,7 @@ func (m *DeviceManagementTemplateRequestBuilder) Get(options *DeviceManagementTe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementTemplate), nil
 }
-// Collection of templates this template can migrate to
-// Parameters:
-//  - options : Options for the request
+// Patch collection of templates this template can migrate to
 func (m *DeviceManagementTemplateRequestBuilder) Patch(options *DeviceManagementTemplateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\enterpriseCodeSigningCertificates\{enterpriseCodeSigningCertificate-id}
+// enterpriseCodeSigningCertificateRequestBuilder builds and executes requests for operations under \deviceAppManagement\enterpriseCodeSigningCertificates\{enterpriseCodeSigningCertificate-id}
 type EnterpriseCodeSigningCertificateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EnterpriseCodeSigningCertificateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EnterpriseCodeSigningCertificateRequestBuilderDeleteOptions options for Delete
 type EnterpriseCodeSigningCertificateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type EnterpriseCodeSigningCertificateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EnterpriseCodeSigningCertificateRequestBuilderGetOptions options for Get
 type EnterpriseCodeSigningCertificateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type EnterpriseCodeSigningCertificateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Windows Enterprise Code Signing Certificate.
+// enterpriseCodeSigningCertificateRequestBuilderGetQueryParameters the Windows Enterprise Code Signing Certificate.
 type EnterpriseCodeSigningCertificateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EnterpriseCodeSigningCertificateRequestBuilderPatchOptions options for Patch
 type EnterpriseCodeSigningCertificateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnterpriseCodeSigningCertificate;
@@ -53,10 +53,7 @@ type EnterpriseCodeSigningCertificateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EnterpriseCodeSigningCertificateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEnterpriseCodeSigningCertificateRequestBuilderInternal instantiates a new EnterpriseCodeSigningCertificateRequestBuilder and sets the default values.
 func NewEnterpriseCodeSigningCertificateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EnterpriseCodeSigningCertificateRequestBuilder) {
     m := &EnterpriseCodeSigningCertificateRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewEnterpriseCodeSigningCertificateRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EnterpriseCodeSigningCertificateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEnterpriseCodeSigningCertificateRequestBuilder instantiates a new EnterpriseCodeSigningCertificateRequestBuilder and sets the default values.
 func NewEnterpriseCodeSigningCertificateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EnterpriseCodeSigningCertificateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEnterpriseCodeSigningCertificateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Windows Enterprise Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Windows Enterprise Code Signing Certificate.
 func (m *EnterpriseCodeSigningCertificateRequestBuilder) CreateDeleteRequestInformation(options *EnterpriseCodeSigningCertificateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *EnterpriseCodeSigningCertificateRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// The Windows Enterprise Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Windows Enterprise Code Signing Certificate.
 func (m *EnterpriseCodeSigningCertificateRequestBuilder) CreateGetRequestInformation(options *EnterpriseCodeSigningCertificateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *EnterpriseCodeSigningCertificateRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// The Windows Enterprise Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Windows Enterprise Code Signing Certificate.
 func (m *EnterpriseCodeSigningCertificateRequestBuilder) CreatePatchRequestInformation(options *EnterpriseCodeSigningCertificateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *EnterpriseCodeSigningCertificateRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// The Windows Enterprise Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// Delete the Windows Enterprise Code Signing Certificate.
 func (m *EnterpriseCodeSigningCertificateRequestBuilder) Delete(options *EnterpriseCodeSigningCertificateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *EnterpriseCodeSigningCertificateRequestBuilder) Delete(options *Enterpr
     }
     return nil
 }
-// The Windows Enterprise Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// Get the Windows Enterprise Code Signing Certificate.
 func (m *EnterpriseCodeSigningCertificateRequestBuilder) Get(options *EnterpriseCodeSigningCertificateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnterpriseCodeSigningCertificate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *EnterpriseCodeSigningCertificateRequestBuilder) Get(options *Enterprise
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EnterpriseCodeSigningCertificate), nil
 }
-// The Windows Enterprise Code Signing Certificate.
-// Parameters:
-//  - options : Options for the request
+// Patch the Windows Enterprise Code Signing Certificate.
 func (m *EnterpriseCodeSigningCertificateRequestBuilder) Patch(options *EnterpriseCodeSigningCertificateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

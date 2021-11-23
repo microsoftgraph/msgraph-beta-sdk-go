@@ -8,7 +8,7 @@ import (
     i81e957f0658be9de81d9012275890916c58b87682a2c4e8351bd48af60285313 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item/decisions/item/insights/item"
 )
 
-// Builds and executes requests for operations under \identityGovernance\accessReviews\definitions\{accessReviewScheduleDefinition-id}\instances\{accessReviewInstance-id}\decisions\{accessReviewInstanceDecisionItem-id}
+// accessReviewInstanceDecisionItemRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\definitions\{accessReviewScheduleDefinition-id}\instances\{accessReviewInstance-id}\decisions\{accessReviewInstanceDecisionItem-id}
 type AccessReviewInstanceDecisionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type AccessReviewInstanceDecisionItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessReviewInstanceDecisionItemRequestBuilderDeleteOptions options for Delete
 type AccessReviewInstanceDecisionItemRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AccessReviewInstanceDecisionItemRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessReviewInstanceDecisionItemRequestBuilderGetOptions options for Get
 type AccessReviewInstanceDecisionItemRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type AccessReviewInstanceDecisionItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+// accessReviewInstanceDecisionItemRequestBuilderGetQueryParameters each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 type AccessReviewInstanceDecisionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessReviewInstanceDecisionItemRequestBuilderPatchOptions options for Patch
 type AccessReviewInstanceDecisionItemRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItem;
@@ -55,10 +55,7 @@ type AccessReviewInstanceDecisionItemRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccessReviewInstanceDecisionItemRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewInstanceDecisionItemRequestBuilderInternal instantiates a new AccessReviewInstanceDecisionItemRequestBuilder and sets the default values.
 func NewAccessReviewInstanceDecisionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewInstanceDecisionItemRequestBuilder) {
     m := &AccessReviewInstanceDecisionItemRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewAccessReviewInstanceDecisionItemRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessReviewInstanceDecisionItemRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewInstanceDecisionItemRequestBuilder instantiates a new AccessReviewInstanceDecisionItemRequestBuilder and sets the default values.
 func NewAccessReviewInstanceDecisionItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewInstanceDecisionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewInstanceDecisionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewInstanceDecisionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateGetRequestInformation(options *AccessReviewInstanceDecisionItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreatePatchRequestInformation(options *AccessReviewInstanceDecisionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
-// Parameters:
-//  - options : Options for the request
+// Delete each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Delete(options *AccessReviewInstanceDecisionItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) Delete(options *AccessR
     }
     return nil
 }
-// Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
-// Parameters:
-//  - options : Options for the request
+// Get each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Get(options *AccessReviewInstanceDecisionItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) Get(options *AccessRevi
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Insights()(*if87b4a169c51e9577d64cd955cbaa3a26d8d4930311e16fd4353005de86c8dbd.InsightsRequestBuilder) {
     return if87b4a169c51e9577d64cd955cbaa3a26d8d4930311e16fd4353005de86c8dbd.NewInsightsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item.decisions.item.insights.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// InsightsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item.decisions.item.insights.item collection
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) InsightsById(id string)(*i81e957f0658be9de81d9012275890916c58b87682a2c4e8351bd48af60285313.GovernanceInsightRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) InsightsById(id string)
     }
     return i81e957f0658be9de81d9012275890916c58b87682a2c4e8351bd48af60285313.NewGovernanceInsightRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
-// Parameters:
-//  - options : Options for the request
+// Patch each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Patch(options *AccessReviewInstanceDecisionItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\purchaseInvoices\{purchaseInvoice-id}\purchaseInvoiceLines
+// purchaseInvoiceLinesRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\purchaseInvoices\{purchaseInvoice-id}\purchaseInvoiceLines
 type PurchaseInvoiceLinesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PurchaseInvoiceLinesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PurchaseInvoiceLinesRequestBuilderGetOptions options for Get
 type PurchaseInvoiceLinesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PurchaseInvoiceLinesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get purchaseInvoiceLines from financials
+// purchaseInvoiceLinesRequestBuilderGetQueryParameters get purchaseInvoiceLines from financials
 type PurchaseInvoiceLinesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PurchaseInvoiceLinesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PurchaseInvoiceLinesRequestBuilderPostOptions options for Post
 type PurchaseInvoiceLinesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PurchaseInvoiceLine;
@@ -56,10 +56,7 @@ type PurchaseInvoiceLinesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PurchaseInvoiceLinesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPurchaseInvoiceLinesRequestBuilderInternal instantiates a new PurchaseInvoiceLinesRequestBuilder and sets the default values.
 func NewPurchaseInvoiceLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PurchaseInvoiceLinesRequestBuilder) {
     m := &PurchaseInvoiceLinesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPurchaseInvoiceLinesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PurchaseInvoiceLinesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPurchaseInvoiceLinesRequestBuilder instantiates a new PurchaseInvoiceLinesRequestBuilder and sets the default values.
 func NewPurchaseInvoiceLinesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PurchaseInvoiceLinesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPurchaseInvoiceLinesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get purchaseInvoiceLines from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get purchaseInvoiceLines from financials
 func (m *PurchaseInvoiceLinesRequestBuilder) CreateGetRequestInformation(options *PurchaseInvoiceLinesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PurchaseInvoiceLinesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Create new navigation property to purchaseInvoiceLines for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to purchaseInvoiceLines for financials
 func (m *PurchaseInvoiceLinesRequestBuilder) CreatePostRequestInformation(options *PurchaseInvoiceLinesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PurchaseInvoiceLinesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get purchaseInvoiceLines from financials
-// Parameters:
-//  - options : Options for the request
+// Get get purchaseInvoiceLines from financials
 func (m *PurchaseInvoiceLinesRequestBuilder) Get(options *PurchaseInvoiceLinesRequestBuilderGetOptions)(*PurchaseInvoiceLinesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PurchaseInvoiceLinesRequestBuilder) Get(options *PurchaseInvoiceLinesRe
     }
     return res.(*PurchaseInvoiceLinesResponse), nil
 }
-// Create new navigation property to purchaseInvoiceLines for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to purchaseInvoiceLines for financials
 func (m *PurchaseInvoiceLinesRequestBuilder) Post(options *PurchaseInvoiceLinesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PurchaseInvoiceLine, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

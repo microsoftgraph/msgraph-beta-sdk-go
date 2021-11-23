@@ -7,7 +7,7 @@ import (
     i4a7b9cd24778f1b7884ac9f4e703ae3d26e173e73c9417acb0937ee848e70d0c "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/appconsent/appconsentrequests/filterbycurrentuserwithon"
 )
 
-// Builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests
+// appConsentRequestsRequestBuilder builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests
 type AppConsentRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AppConsentRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppConsentRequestsRequestBuilderGetOptions options for Get
 type AppConsentRequestsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AppConsentRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get appConsentRequests from identityGovernance
+// appConsentRequestsRequestBuilderGetQueryParameters get appConsentRequests from identityGovernance
 type AppConsentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type AppConsentRequestsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AppConsentRequestsRequestBuilderPostOptions options for Post
 type AppConsentRequestsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppConsentRequest;
@@ -57,10 +57,7 @@ type AppConsentRequestsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppConsentRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppConsentRequestsRequestBuilderInternal instantiates a new AppConsentRequestsRequestBuilder and sets the default values.
 func NewAppConsentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppConsentRequestsRequestBuilder) {
     m := &AppConsentRequestsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewAppConsentRequestsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppConsentRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppConsentRequestsRequestBuilder instantiates a new AppConsentRequestsRequestBuilder and sets the default values.
 func NewAppConsentRequestsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppConsentRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppConsentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get appConsentRequests from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get appConsentRequests from identityGovernance
 func (m *AppConsentRequestsRequestBuilder) CreateGetRequestInformation(options *AppConsentRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *AppConsentRequestsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Create new navigation property to appConsentRequests for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to appConsentRequests for identityGovernance
 func (m *AppConsentRequestsRequestBuilder) CreatePostRequestInformation(options *AppConsentRequestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,15 +114,11 @@ func (m *AppConsentRequestsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\microsoft.graph.filterByCurrentUser(on={on})
-// Parameters:
-//  - on : Usage: on={on}
+// FilterByCurrentUserWithOn builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\microsoft.graph.filterByCurrentUser(on={on})
 func (m *AppConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i4a7b9cd24778f1b7884ac9f4e703ae3d26e173e73c9417acb0937ee848e70d0c.FilterByCurrentUserWithOnRequestBuilder) {
     return i4a7b9cd24778f1b7884ac9f4e703ae3d26e173e73c9417acb0937ee848e70d0c.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get appConsentRequests from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get appConsentRequests from identityGovernance
 func (m *AppConsentRequestsRequestBuilder) Get(options *AppConsentRequestsRequestBuilderGetOptions)(*AppConsentRequestsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -144,9 +130,7 @@ func (m *AppConsentRequestsRequestBuilder) Get(options *AppConsentRequestsReques
     }
     return res.(*AppConsentRequestsResponse), nil
 }
-// Create new navigation property to appConsentRequests for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to appConsentRequests for identityGovernance
 func (m *AppConsentRequestsRequestBuilder) Post(options *AppConsentRequestsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppConsentRequest, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

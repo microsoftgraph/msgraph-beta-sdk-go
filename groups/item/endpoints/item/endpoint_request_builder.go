@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\endpoints\{endpoint-id}
+// endpointRequestBuilder builds and executes requests for operations under \groups\{group-id}\endpoints\{endpoint-id}
 type EndpointRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EndpointRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EndpointRequestBuilderDeleteOptions options for Delete
 type EndpointRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type EndpointRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EndpointRequestBuilderGetOptions options for Get
 type EndpointRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type EndpointRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Endpoints for the group. Read-only. Nullable.
+// endpointRequestBuilderGetQueryParameters endpoints for the group. Read-only. Nullable.
 type EndpointRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EndpointRequestBuilderPatchOptions options for Patch
 type EndpointRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Endpoint;
@@ -53,10 +53,7 @@ type EndpointRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EndpointRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEndpointRequestBuilderInternal instantiates a new EndpointRequestBuilder and sets the default values.
 func NewEndpointRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EndpointRequestBuilder) {
     m := &EndpointRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewEndpointRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EndpointRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEndpointRequestBuilder instantiates a new EndpointRequestBuilder and sets the default values.
 func NewEndpointRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EndpointRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEndpointRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Endpoints for the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation endpoints for the group. Read-only. Nullable.
 func (m *EndpointRequestBuilder) CreateDeleteRequestInformation(options *EndpointRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *EndpointRequestBuilder) CreateDeleteRequestInformation(options *Endpoin
     }
     return requestInfo, nil
 }
-// Endpoints for the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation endpoints for the group. Read-only. Nullable.
 func (m *EndpointRequestBuilder) CreateGetRequestInformation(options *EndpointRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *EndpointRequestBuilder) CreateGetRequestInformation(options *EndpointRe
     }
     return requestInfo, nil
 }
-// Endpoints for the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation endpoints for the group. Read-only. Nullable.
 func (m *EndpointRequestBuilder) CreatePatchRequestInformation(options *EndpointRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *EndpointRequestBuilder) CreatePatchRequestInformation(options *Endpoint
     }
     return requestInfo, nil
 }
-// Endpoints for the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete endpoints for the group. Read-only. Nullable.
 func (m *EndpointRequestBuilder) Delete(options *EndpointRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *EndpointRequestBuilder) Delete(options *EndpointRequestBuilderDeleteOpt
     }
     return nil
 }
-// Endpoints for the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get endpoints for the group. Read-only. Nullable.
 func (m *EndpointRequestBuilder) Get(options *EndpointRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Endpoint, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *EndpointRequestBuilder) Get(options *EndpointRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Endpoint), nil
 }
-// Endpoints for the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch endpoints for the group. Read-only. Nullable.
 func (m *EndpointRequestBuilder) Patch(options *EndpointRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

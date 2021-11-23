@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsCategories
+// userExperienceAnalyticsCategoriesRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsCategories
 type UserExperienceAnalyticsCategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsCategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserExperienceAnalyticsCategoriesRequestBuilderGetOptions options for Get
 type UserExperienceAnalyticsCategoriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsCategoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// User experience analytics categories
+// userExperienceAnalyticsCategoriesRequestBuilderGetQueryParameters user experience analytics categories
 type UserExperienceAnalyticsCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserExperienceAnalyticsCategoriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserExperienceAnalyticsCategoriesRequestBuilderPostOptions options for Post
 type UserExperienceAnalyticsCategoriesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsCategory;
@@ -56,10 +56,7 @@ type UserExperienceAnalyticsCategoriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserExperienceAnalyticsCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsCategoriesRequestBuilderInternal instantiates a new UserExperienceAnalyticsCategoriesRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsCategoriesRequestBuilder) {
     m := &UserExperienceAnalyticsCategoriesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserExperienceAnalyticsCategoriesRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserExperienceAnalyticsCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserExperienceAnalyticsCategoriesRequestBuilder instantiates a new UserExperienceAnalyticsCategoriesRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserExperienceAnalyticsCategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// User experience analytics categories
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation user experience analytics categories
 func (m *UserExperienceAnalyticsCategoriesRequestBuilder) CreateGetRequestInformation(options *UserExperienceAnalyticsCategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserExperienceAnalyticsCategoriesRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// User experience analytics categories
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation user experience analytics categories
 func (m *UserExperienceAnalyticsCategoriesRequestBuilder) CreatePostRequestInformation(options *UserExperienceAnalyticsCategoriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserExperienceAnalyticsCategoriesRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// User experience analytics categories
-// Parameters:
-//  - options : Options for the request
+// Get user experience analytics categories
 func (m *UserExperienceAnalyticsCategoriesRequestBuilder) Get(options *UserExperienceAnalyticsCategoriesRequestBuilderGetOptions)(*UserExperienceAnalyticsCategoriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserExperienceAnalyticsCategoriesRequestBuilder) Get(options *UserExper
     }
     return res.(*UserExperienceAnalyticsCategoriesResponse), nil
 }
-// User experience analytics categories
-// Parameters:
-//  - options : Options for the request
+// Post user experience analytics categories
 func (m *UserExperienceAnalyticsCategoriesRequestBuilder) Post(options *UserExperienceAnalyticsCategoriesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsCategory, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

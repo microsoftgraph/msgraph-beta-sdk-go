@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// getSkypeForBusinessOrganizerActivityUserCountsWithPeriod 
 type GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
     // 
@@ -27,14 +27,14 @@ type GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod struct {
     // 
     web *int64;
 }
-// Instantiates a new getSkypeForBusinessOrganizerActivityUserCountsWithPeriod and sets the default values.
+// NewGetSkypeForBusinessOrganizerActivityUserCountsWithPeriod instantiates a new getSkypeForBusinessOrganizerActivityUserCountsWithPeriod and sets the default values.
 func NewGetSkypeForBusinessOrganizerActivityUserCountsWithPeriod()(*GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) {
     m := &GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod{
         Entity: *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewEntity(),
     }
     return m
 }
-// Gets the appSharing property value. 
+// GetAppSharing gets the appSharing property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetAppSharing()(*int64) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetAppSharing
         return m.appSharing
     }
 }
-// Gets the audioVideo property value. 
+// GetAudioVideo gets the audioVideo property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetAudioVideo()(*int64) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetAudioVideo
         return m.audioVideo
     }
 }
-// Gets the dialInOut3rdParty property value. 
+// GetDialInOut3rdParty gets the dialInOut3rdParty property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetDialInOut3rdParty()(*int64) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetDialInOut3
         return m.dialInOut3rdParty
     }
 }
-// Gets the dialInOutMicrosoft property value. 
+// GetDialInOutMicrosoft gets the dialInOutMicrosoft property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetDialInOutMicrosoft()(*int64) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetDialInOutM
         return m.dialInOutMicrosoft
     }
 }
-// Gets the im property value. 
+// GetIm gets the im property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetIm()(*int64) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetIm()(*int6
         return m.im
     }
 }
-// Gets the reportDate property value. 
+// GetReportDate gets the reportDate property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetReportDate()(*string) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetReportDate
         return m.reportDate
     }
 }
-// Gets the reportPeriod property value. 
+// GetReportPeriod gets the reportPeriod property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetReportPeriod()(*string) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetReportPeri
         return m.reportPeriod
     }
 }
-// Gets the reportRefreshDate property value. 
+// GetReportRefreshDate gets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetReportRefreshDate()(*string) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetReportRefr
         return m.reportRefreshDate
     }
 }
-// Gets the web property value. 
+// GetWeb gets the web property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetWeb()(*int64) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetWeb()(*int
         return m.web
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appSharing"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,9 +204,7 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) GetFieldDeser
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -268,57 +266,39 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) Serialize(wri
     }
     return nil
 }
-// Sets the appSharing property value. 
-// Parameters:
-//  - value : Value to set for the appSharing property.
+// SetAppSharing sets the appSharing property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) SetAppSharing(value *int64)() {
     m.appSharing = value
 }
-// Sets the audioVideo property value. 
-// Parameters:
-//  - value : Value to set for the audioVideo property.
+// SetAudioVideo sets the audioVideo property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) SetAudioVideo(value *int64)() {
     m.audioVideo = value
 }
-// Sets the dialInOut3rdParty property value. 
-// Parameters:
-//  - value : Value to set for the dialInOut3rdParty property.
+// SetDialInOut3rdParty sets the dialInOut3rdParty property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) SetDialInOut3rdParty(value *int64)() {
     m.dialInOut3rdParty = value
 }
-// Sets the dialInOutMicrosoft property value. 
-// Parameters:
-//  - value : Value to set for the dialInOutMicrosoft property.
+// SetDialInOutMicrosoft sets the dialInOutMicrosoft property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) SetDialInOutMicrosoft(value *int64)() {
     m.dialInOutMicrosoft = value
 }
-// Sets the im property value. 
-// Parameters:
-//  - value : Value to set for the im property.
+// SetIm sets the im property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) SetIm(value *int64)() {
     m.im = value
 }
-// Sets the reportDate property value. 
-// Parameters:
-//  - value : Value to set for the reportDate property.
+// SetReportDate sets the reportDate property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) SetReportDate(value *string)() {
     m.reportDate = value
 }
-// Sets the reportPeriod property value. 
-// Parameters:
-//  - value : Value to set for the reportPeriod property.
+// SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) SetReportPeriod(value *string)() {
     m.reportPeriod = value
 }
-// Sets the reportRefreshDate property value. 
-// Parameters:
-//  - value : Value to set for the reportRefreshDate property.
+// SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) SetReportRefreshDate(value *string)() {
     m.reportRefreshDate = value
 }
-// Sets the web property value. 
-// Parameters:
-//  - value : Value to set for the web property.
+// SetWeb sets the web property value. 
 func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod) SetWeb(value *int64)() {
     m.web = value
 }

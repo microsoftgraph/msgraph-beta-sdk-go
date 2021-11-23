@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.generateEncryptionPublicKey
+// generateEncryptionPublicKeyRequestBuilder builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.generateEncryptionPublicKey
 type GenerateEncryptionPublicKeyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GenerateEncryptionPublicKeyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GenerateEncryptionPublicKeyRequestBuilderPostOptions options for Post
 type GenerateEncryptionPublicKeyRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type GenerateEncryptionPublicKeyRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GenerateEncryptionPublicKeyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGenerateEncryptionPublicKeyRequestBuilderInternal instantiates a new GenerateEncryptionPublicKeyRequestBuilder and sets the default values.
 func NewGenerateEncryptionPublicKeyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GenerateEncryptionPublicKeyRequestBuilder) {
     m := &GenerateEncryptionPublicKeyRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewGenerateEncryptionPublicKeyRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GenerateEncryptionPublicKeyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGenerateEncryptionPublicKeyRequestBuilder instantiates a new GenerateEncryptionPublicKeyRequestBuilder and sets the default values.
 func NewGenerateEncryptionPublicKeyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GenerateEncryptionPublicKeyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGenerateEncryptionPublicKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Generate a public key to use to encrypt the Apple device enrollment program token
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation generate a public key to use to encrypt the Apple device enrollment program token
 func (m *GenerateEncryptionPublicKeyRequestBuilder) CreatePostRequestInformation(options *GenerateEncryptionPublicKeyRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *GenerateEncryptionPublicKeyRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// Generate a public key to use to encrypt the Apple device enrollment program token
-// Parameters:
-//  - options : Options for the request
+// Post generate a public key to use to encrypt the Apple device enrollment program token
 func (m *GenerateEncryptionPublicKeyRequestBuilder) Post(options *GenerateEncryptionPublicKeyRequestBuilderPostOptions)(*string, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \admin\windows\updates\updatableAssets\{updatableAsset-id}\microsoft.graph.windowsUpdates.addMembersById
+// addMembersByIdRequestBuilder builds and executes requests for operations under \admin\windows\updates\updatableAssets\{updatableAsset-id}\microsoft.graph.windowsUpdates.addMembersById
 type AddMembersByIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type AddMembersByIdRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// AddMembersByIdRequestBuilderPostOptions options for Post
 type AddMembersByIdRequestBuilderPostOptions struct {
     // 
     Body *AddMembersByIdRequestBody;
@@ -24,10 +24,7 @@ type AddMembersByIdRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AddMembersByIdRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddMembersByIdRequestBuilderInternal instantiates a new AddMembersByIdRequestBuilder and sets the default values.
 func NewAddMembersByIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddMembersByIdRequestBuilder) {
     m := &AddMembersByIdRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewAddMembersByIdRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AddMembersByIdRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddMembersByIdRequestBuilder instantiates a new AddMembersByIdRequestBuilder and sets the default values.
 func NewAddMembersByIdRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddMembersByIdRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAddMembersByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action addMembersById
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action addMembersById
 func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformation(options *AddMembersByIdRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformation(options *Add
     }
     return requestInfo, nil
 }
-// Invoke action addMembersById
-// Parameters:
-//  - options : Options for the request
+// Post invoke action addMembersById
 func (m *AddMembersByIdRequestBuilder) Post(options *AddMembersByIdRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

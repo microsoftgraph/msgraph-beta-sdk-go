@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getOffice365GroupsActivityFileCounts(period='{period}')
+// getOffice365GroupsActivityFileCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365GroupsActivityFileCounts(period='{period}')
 type GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderInternal instantiates a new GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) {
     m := &GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderInternal(pat
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder instantiates a new GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getOffice365GroupsActivityFileCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getOffice365GroupsActivityFileCounts
 func (m *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// Invoke function getOffice365GroupsActivityFileCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getOffice365GroupsActivityFileCounts
 func (m *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) Get(options *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetOptions)([]GetOffice365GroupsActivityFileCountsWithPeriod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

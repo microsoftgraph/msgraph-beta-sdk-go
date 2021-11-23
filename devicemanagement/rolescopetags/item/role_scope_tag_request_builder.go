@@ -9,7 +9,7 @@ import (
     ic12c5ef80a8671db45da105570fcb6fe91462ab2daa7529a50e81a4c171aa147 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/rolescopetags/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\roleScopeTags\{roleScopeTag-id}
+// roleScopeTagRequestBuilder builds and executes requests for operations under \deviceManagement\roleScopeTags\{roleScopeTag-id}
 type RoleScopeTagRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type RoleScopeTagRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RoleScopeTagRequestBuilderDeleteOptions options for Delete
 type RoleScopeTagRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type RoleScopeTagRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RoleScopeTagRequestBuilderGetOptions options for Get
 type RoleScopeTagRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type RoleScopeTagRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Role Scope Tags.
+// roleScopeTagRequestBuilderGetQueryParameters the Role Scope Tags.
 type RoleScopeTagRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RoleScopeTagRequestBuilderPatchOptions options for Patch
 type RoleScopeTagRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RoleScopeTag;
@@ -62,9 +62,7 @@ func (m *RoleScopeTagRequestBuilder) Assign()(*i75b21611d6b6b96c1c95e37193e653d7
 func (m *RoleScopeTagRequestBuilder) Assignments()(*iab305975e356746fe6505f00637e9813ac95de45da8b925112b990b92d6b0f57.AssignmentsRequestBuilder) {
     return iab305975e356746fe6505f00637e9813ac95de45da8b925112b990b92d6b0f57.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.roleScopeTags.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.roleScopeTags.item.assignments.item collection
 func (m *RoleScopeTagRequestBuilder) AssignmentsById(id string)(*ic12c5ef80a8671db45da105570fcb6fe91462ab2daa7529a50e81a4c171aa147.RoleScopeTagAutoAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,10 +73,7 @@ func (m *RoleScopeTagRequestBuilder) AssignmentsById(id string)(*ic12c5ef80a8671
     }
     return ic12c5ef80a8671db45da105570fcb6fe91462ab2daa7529a50e81a4c171aa147.NewRoleScopeTagAutoAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new RoleScopeTagRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleScopeTagRequestBuilderInternal instantiates a new RoleScopeTagRequestBuilder and sets the default values.
 func NewRoleScopeTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleScopeTagRequestBuilder) {
     m := &RoleScopeTagRequestBuilder{
     }
@@ -91,18 +86,13 @@ func NewRoleScopeTagRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleScopeTagRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleScopeTagRequestBuilder instantiates a new RoleScopeTagRequestBuilder and sets the default values.
 func NewRoleScopeTagRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleScopeTagRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleScopeTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Role Scope Tags.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Role Scope Tags.
 func (m *RoleScopeTagRequestBuilder) CreateDeleteRequestInformation(options *RoleScopeTagRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *RoleScopeTagRequestBuilder) CreateDeleteRequestInformation(options *Rol
     }
     return requestInfo, nil
 }
-// The Role Scope Tags.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Role Scope Tags.
 func (m *RoleScopeTagRequestBuilder) CreateGetRequestInformation(options *RoleScopeTagRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *RoleScopeTagRequestBuilder) CreateGetRequestInformation(options *RoleSc
     }
     return requestInfo, nil
 }
-// The Role Scope Tags.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Role Scope Tags.
 func (m *RoleScopeTagRequestBuilder) CreatePatchRequestInformation(options *RoleScopeTagRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,9 +147,7 @@ func (m *RoleScopeTagRequestBuilder) CreatePatchRequestInformation(options *Role
     }
     return requestInfo, nil
 }
-// The Role Scope Tags.
-// Parameters:
-//  - options : Options for the request
+// Delete the Role Scope Tags.
 func (m *RoleScopeTagRequestBuilder) Delete(options *RoleScopeTagRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *RoleScopeTagRequestBuilder) Delete(options *RoleScopeTagRequestBuilderD
     }
     return nil
 }
-// The Role Scope Tags.
-// Parameters:
-//  - options : Options for the request
+// Get the Role Scope Tags.
 func (m *RoleScopeTagRequestBuilder) Get(options *RoleScopeTagRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RoleScopeTag, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -189,9 +171,7 @@ func (m *RoleScopeTagRequestBuilder) Get(options *RoleScopeTagRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RoleScopeTag), nil
 }
-// The Role Scope Tags.
-// Parameters:
-//  - options : Options for the request
+// Patch the Role Scope Tags.
 func (m *RoleScopeTagRequestBuilder) Patch(options *RoleScopeTagRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

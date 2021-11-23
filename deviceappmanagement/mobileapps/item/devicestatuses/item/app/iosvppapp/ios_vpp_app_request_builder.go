@@ -7,7 +7,7 @@ import (
     iea6b669b897a4c035a59b5f017a44d3620d7cabef826776dd92c368838079fae "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/devicestatuses/item/app/iosvppapp/revokeuserlicense"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\deviceStatuses\{mobileAppInstallStatus-id}\app\microsoft.graph.iosVppApp
+// iosVppAppRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\deviceStatuses\{mobileAppInstallStatus-id}\app\microsoft.graph.iosVppApp
 type IosVppAppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,10 +16,7 @@ type IosVppAppRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Instantiates a new IosVppAppRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosVppAppRequestBuilderInternal instantiates a new IosVppAppRequestBuilder and sets the default values.
 func NewIosVppAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosVppAppRequestBuilder) {
     m := &IosVppAppRequestBuilder{
     }
@@ -32,10 +29,7 @@ func NewIosVppAppRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IosVppAppRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosVppAppRequestBuilder instantiates a new IosVppAppRequestBuilder and sets the default values.
 func NewIosVppAppRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosVppAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

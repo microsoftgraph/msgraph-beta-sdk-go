@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \app\onlineMeetings\{onlineMeeting-id}\recording
+// recordingRequestBuilder builds and executes requests for operations under \app\onlineMeetings\{onlineMeeting-id}\recording
 type RecordingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RecordingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RecordingRequestBuilderGetOptions options for Get
 type RecordingRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,7 +22,7 @@ type RecordingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Put
+// RecordingRequestBuilderPutOptions options for Put
 type RecordingRequestBuilderPutOptions struct {
     // Binary request body
     Body []byte;
@@ -33,10 +33,7 @@ type RecordingRequestBuilderPutOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RecordingRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRecordingRequestBuilderInternal instantiates a new RecordingRequestBuilder and sets the default values.
 func NewRecordingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RecordingRequestBuilder) {
     m := &RecordingRequestBuilder{
     }
@@ -49,18 +46,13 @@ func NewRecordingRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RecordingRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRecordingRequestBuilder instantiates a new RecordingRequestBuilder and sets the default values.
 func NewRecordingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RecordingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get media content for the navigation property onlineMeetings from app
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get media content for the navigation property onlineMeetings from app
 func (m *RecordingRequestBuilder) CreateGetRequestInformation(options *RecordingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -77,9 +69,7 @@ func (m *RecordingRequestBuilder) CreateGetRequestInformation(options *Recording
     }
     return requestInfo, nil
 }
-// Update media content for the navigation property onlineMeetings in app
-// Parameters:
-//  - options : Options for the request
+// CreatePutRequestInformation update media content for the navigation property onlineMeetings in app
 func (m *RecordingRequestBuilder) CreatePutRequestInformation(options *RecordingRequestBuilderPutOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +87,7 @@ func (m *RecordingRequestBuilder) CreatePutRequestInformation(options *Recording
     }
     return requestInfo, nil
 }
-// Get media content for the navigation property onlineMeetings from app
-// Parameters:
-//  - options : Options for the request
+// Get get media content for the navigation property onlineMeetings from app
 func (m *RecordingRequestBuilder) Get(options *RecordingRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -111,9 +99,7 @@ func (m *RecordingRequestBuilder) Get(options *RecordingRequestBuilderGetOptions
     }
     return res.([]byte), nil
 }
-// Update media content for the navigation property onlineMeetings in app
-// Parameters:
-//  - options : Options for the request
+// Put update media content for the navigation property onlineMeetings in app
 func (m *RecordingRequestBuilder) Put(options *RecordingRequestBuilderPutOptions)(error) {
     requestInfo, err := m.CreatePutRequestInformation(options);
     if err != nil {

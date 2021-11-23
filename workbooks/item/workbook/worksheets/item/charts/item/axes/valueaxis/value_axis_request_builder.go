@@ -10,7 +10,7 @@ import (
     ic76ec1a11f00f1fb99c5078f743b8b08d19a41d0892333ae1a2c75517b9edb91 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/axes/valueaxis/minorgridlines"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\valueAxis
+// valueAxisRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\valueAxis
 type ValueAxisRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type ValueAxisRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ValueAxisRequestBuilderDeleteOptions options for Delete
 type ValueAxisRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type ValueAxisRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ValueAxisRequestBuilderGetOptions options for Get
 type ValueAxisRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type ValueAxisRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the value axis in an axis. Read-only.
+// valueAxisRequestBuilderGetQueryParameters represents the value axis in an axis. Read-only.
 type ValueAxisRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ValueAxisRequestBuilderPatchOptions options for Patch
 type ValueAxisRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookChartAxis;
@@ -57,10 +57,7 @@ type ValueAxisRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ValueAxisRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewValueAxisRequestBuilderInternal instantiates a new ValueAxisRequestBuilder and sets the default values.
 func NewValueAxisRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ValueAxisRequestBuilder) {
     m := &ValueAxisRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewValueAxisRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ValueAxisRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewValueAxisRequestBuilder instantiates a new ValueAxisRequestBuilder and sets the default values.
 func NewValueAxisRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ValueAxisRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewValueAxisRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the value axis in an axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the value axis in an axis. Read-only.
 func (m *ValueAxisRequestBuilder) CreateDeleteRequestInformation(options *ValueAxisRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *ValueAxisRequestBuilder) CreateDeleteRequestInformation(options *ValueA
     }
     return requestInfo, nil
 }
-// Represents the value axis in an axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the value axis in an axis. Read-only.
 func (m *ValueAxisRequestBuilder) CreateGetRequestInformation(options *ValueAxisRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ValueAxisRequestBuilder) CreateGetRequestInformation(options *ValueAxis
     }
     return requestInfo, nil
 }
-// Represents the value axis in an axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the value axis in an axis. Read-only.
 func (m *ValueAxisRequestBuilder) CreatePatchRequestInformation(options *ValueAxisRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *ValueAxisRequestBuilder) CreatePatchRequestInformation(options *ValueAx
     }
     return requestInfo, nil
 }
-// Represents the value axis in an axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the value axis in an axis. Read-only.
 func (m *ValueAxisRequestBuilder) Delete(options *ValueAxisRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -160,9 +146,7 @@ func (m *ValueAxisRequestBuilder) Delete(options *ValueAxisRequestBuilderDeleteO
 func (m *ValueAxisRequestBuilder) Format()(*i879bdc1e56619206ae345b23dfe4c09d9ef507062fd8718e670f7112f0dba700.FormatRequestBuilder) {
     return i879bdc1e56619206ae345b23dfe4c09d9ef507062fd8718e670f7112f0dba700.NewFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents the value axis in an axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents the value axis in an axis. Read-only.
 func (m *ValueAxisRequestBuilder) Get(options *ValueAxisRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookChartAxis, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -180,9 +164,7 @@ func (m *ValueAxisRequestBuilder) MajorGridlines()(*i455f38d00e1ef2b306363db5aab
 func (m *ValueAxisRequestBuilder) MinorGridlines()(*ic76ec1a11f00f1fb99c5078f743b8b08d19a41d0892333ae1a2c75517b9edb91.MinorGridlinesRequestBuilder) {
     return ic76ec1a11f00f1fb99c5078f743b8b08d19a41d0892333ae1a2c75517b9edb91.NewMinorGridlinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents the value axis in an axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the value axis in an axis. Read-only.
 func (m *ValueAxisRequestBuilder) Patch(options *ValueAxisRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

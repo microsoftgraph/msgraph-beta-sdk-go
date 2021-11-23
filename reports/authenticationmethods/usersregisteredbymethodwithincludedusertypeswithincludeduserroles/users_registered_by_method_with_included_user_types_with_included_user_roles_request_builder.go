@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByMethod(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})
+// usersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByMethod(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})
 type UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBui
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderGetOptions options for Get
 type UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,12 +24,7 @@ type UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBui
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder and sets the default values.
-// Parameters:
-//  - includedUserRoles : Usage: includedUserRoles={includedUserRoles}
-//  - includedUserTypes : Usage: includedUserTypes={includedUserTypes}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderInternal instantiates a new UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder and sets the default values.
 func NewUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, includedUserTypes *string, includedUserRoles *string)(*UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) {
     m := &UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder{
     }
@@ -48,18 +43,13 @@ func NewUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequest
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder instantiates a new UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder and sets the default values.
 func NewUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Invoke function usersRegisteredByMethod
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function usersRegisteredByMethod
 func (m *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) CreateGetRequestInformation(options *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -76,9 +66,7 @@ func (m *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesReques
     }
     return requestInfo, nil
 }
-// Invoke function usersRegisteredByMethod
-// Parameters:
-//  - options : Options for the request
+// Get invoke function usersRegisteredByMethod
 func (m *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) Get(options *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserRegistrationMethodSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

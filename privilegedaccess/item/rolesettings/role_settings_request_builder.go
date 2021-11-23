@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}\roleSettings
+// roleSettingsRequestBuilder builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}\roleSettings
 type RoleSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RoleSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RoleSettingsRequestBuilderGetOptions options for Get
 type RoleSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RoleSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of role settings for the provider.
+// roleSettingsRequestBuilderGetQueryParameters a collection of role settings for the provider.
 type RoleSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RoleSettingsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RoleSettingsRequestBuilderPostOptions options for Post
 type RoleSettingsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleSetting;
@@ -56,10 +56,7 @@ type RoleSettingsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RoleSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleSettingsRequestBuilderInternal instantiates a new RoleSettingsRequestBuilder and sets the default values.
 func NewRoleSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleSettingsRequestBuilder) {
     m := &RoleSettingsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRoleSettingsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleSettingsRequestBuilder instantiates a new RoleSettingsRequestBuilder and sets the default values.
 func NewRoleSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of role settings for the provider.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of role settings for the provider.
 func (m *RoleSettingsRequestBuilder) CreateGetRequestInformation(options *RoleSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RoleSettingsRequestBuilder) CreateGetRequestInformation(options *RoleSe
     }
     return requestInfo, nil
 }
-// A collection of role settings for the provider.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a collection of role settings for the provider.
 func (m *RoleSettingsRequestBuilder) CreatePostRequestInformation(options *RoleSettingsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RoleSettingsRequestBuilder) CreatePostRequestInformation(options *RoleS
     }
     return requestInfo, nil
 }
-// A collection of role settings for the provider.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of role settings for the provider.
 func (m *RoleSettingsRequestBuilder) Get(options *RoleSettingsRequestBuilderGetOptions)(*RoleSettingsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RoleSettingsRequestBuilder) Get(options *RoleSettingsRequestBuilderGetO
     }
     return res.(*RoleSettingsResponse), nil
 }
-// A collection of role settings for the provider.
-// Parameters:
-//  - options : Options for the request
+// Post a collection of role settings for the provider.
 func (m *RoleSettingsRequestBuilder) Post(options *RoleSettingsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceRoleSetting, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

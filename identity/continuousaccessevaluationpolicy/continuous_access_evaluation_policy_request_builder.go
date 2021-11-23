@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identity\continuousAccessEvaluationPolicy
+// continuousAccessEvaluationPolicyRequestBuilder builds and executes requests for operations under \identity\continuousAccessEvaluationPolicy
 type ContinuousAccessEvaluationPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ContinuousAccessEvaluationPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ContinuousAccessEvaluationPolicyRequestBuilderDeleteOptions options for Delete
 type ContinuousAccessEvaluationPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ContinuousAccessEvaluationPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ContinuousAccessEvaluationPolicyRequestBuilderGetOptions options for Get
 type ContinuousAccessEvaluationPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ContinuousAccessEvaluationPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents entry point for continuous access evaluation policy.
+// continuousAccessEvaluationPolicyRequestBuilderGetQueryParameters represents entry point for continuous access evaluation policy.
 type ContinuousAccessEvaluationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ContinuousAccessEvaluationPolicyRequestBuilderPatchOptions options for Patch
 type ContinuousAccessEvaluationPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContinuousAccessEvaluationPolicy;
@@ -53,10 +53,7 @@ type ContinuousAccessEvaluationPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ContinuousAccessEvaluationPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContinuousAccessEvaluationPolicyRequestBuilderInternal instantiates a new ContinuousAccessEvaluationPolicyRequestBuilder and sets the default values.
 func NewContinuousAccessEvaluationPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContinuousAccessEvaluationPolicyRequestBuilder) {
     m := &ContinuousAccessEvaluationPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewContinuousAccessEvaluationPolicyRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ContinuousAccessEvaluationPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContinuousAccessEvaluationPolicyRequestBuilder instantiates a new ContinuousAccessEvaluationPolicyRequestBuilder and sets the default values.
 func NewContinuousAccessEvaluationPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContinuousAccessEvaluationPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewContinuousAccessEvaluationPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents entry point for continuous access evaluation policy.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents entry point for continuous access evaluation policy.
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreateDeleteRequestInformation(options *ContinuousAccessEvaluationPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// Represents entry point for continuous access evaluation policy.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents entry point for continuous access evaluation policy.
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreateGetRequestInformation(options *ContinuousAccessEvaluationPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Represents entry point for continuous access evaluation policy.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents entry point for continuous access evaluation policy.
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreatePatchRequestInformation(options *ContinuousAccessEvaluationPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// Represents entry point for continuous access evaluation policy.
-// Parameters:
-//  - options : Options for the request
+// Delete represents entry point for continuous access evaluation policy.
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Delete(options *ContinuousAccessEvaluationPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Delete(options *Continu
     }
     return nil
 }
-// Represents entry point for continuous access evaluation policy.
-// Parameters:
-//  - options : Options for the request
+// Get represents entry point for continuous access evaluation policy.
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Get(options *ContinuousAccessEvaluationPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContinuousAccessEvaluationPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Get(options *Continuous
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContinuousAccessEvaluationPolicy), nil
 }
-// Represents entry point for continuous access evaluation policy.
-// Parameters:
-//  - options : Options for the request
+// Patch represents entry point for continuous access evaluation policy.
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Patch(options *ContinuousAccessEvaluationPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

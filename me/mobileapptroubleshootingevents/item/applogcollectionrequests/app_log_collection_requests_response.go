@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// appLogCollectionRequestsResponse 
 type AppLogCollectionRequestsResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type AppLogCollectionRequestsResponse struct {
     // 
     value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionRequest;
 }
-// Instantiates a new appLogCollectionRequestsResponse and sets the default values.
+// NewAppLogCollectionRequestsResponse instantiates a new appLogCollectionRequestsResponse and sets the default values.
 func NewAppLogCollectionRequestsResponse()(*AppLogCollectionRequestsResponse) {
     m := &AppLogCollectionRequestsResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppLogCollectionRequestsResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *AppLogCollectionRequestsResponse) GetAdditionalData()(map[string]interf
         return m.additionalData
     }
 }
-// Gets the nextLink property value. 
+// GetNextLink gets the nextLink property value. 
 func (m *AppLogCollectionRequestsResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *AppLogCollectionRequestsResponse) GetNextLink()(*string) {
         return m.nextLink
     }
 }
-// Gets the value property value. 
+// GetValue gets the value property value. 
 func (m *AppLogCollectionRequestsResponse) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionRequest) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *AppLogCollectionRequestsResponse) GetValue()([]i535684e11b5500196ecb4b5
         return m.value
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AppLogCollectionRequestsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["@odata.nextLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,9 +77,7 @@ func (m *AppLogCollectionRequestsResponse) GetFieldDeserializers()(map[string]fu
 func (m *AppLogCollectionRequestsResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AppLogCollectionRequestsResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
@@ -106,21 +104,15 @@ func (m *AppLogCollectionRequestsResponse) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppLogCollectionRequestsResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the nextLink property value. 
-// Parameters:
-//  - value : Value to set for the nextLink property.
+// SetNextLink sets the nextLink property value. 
 func (m *AppLogCollectionRequestsResponse) SetNextLink(value *string)() {
     m.nextLink = value
 }
-// Sets the value property value. 
-// Parameters:
-//  - value : Value to set for the value property.
+// SetValue sets the value property value. 
 func (m *AppLogCollectionRequestsResponse) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionRequest)() {
     m.value = value
 }

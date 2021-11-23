@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\galleryImages\{cloudPcGalleryImage-id}
+// cloudPcGalleryImageRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\galleryImages\{cloudPcGalleryImage-id}
 type CloudPcGalleryImageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudPcGalleryImageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcGalleryImageRequestBuilderDeleteOptions options for Delete
 type CloudPcGalleryImageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CloudPcGalleryImageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcGalleryImageRequestBuilderGetOptions options for Get
 type CloudPcGalleryImageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CloudPcGalleryImageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The gallery image resource on Cloud PC.
+// cloudPcGalleryImageRequestBuilderGetQueryParameters the gallery image resource on Cloud PC.
 type CloudPcGalleryImageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcGalleryImageRequestBuilderPatchOptions options for Patch
 type CloudPcGalleryImageRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcGalleryImage;
@@ -53,10 +53,7 @@ type CloudPcGalleryImageRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPcGalleryImageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcGalleryImageRequestBuilderInternal instantiates a new CloudPcGalleryImageRequestBuilder and sets the default values.
 func NewCloudPcGalleryImageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcGalleryImageRequestBuilder) {
     m := &CloudPcGalleryImageRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCloudPcGalleryImageRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcGalleryImageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcGalleryImageRequestBuilder instantiates a new CloudPcGalleryImageRequestBuilder and sets the default values.
 func NewCloudPcGalleryImageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcGalleryImageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcGalleryImageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The gallery image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the gallery image resource on Cloud PC.
 func (m *CloudPcGalleryImageRequestBuilder) CreateDeleteRequestInformation(options *CloudPcGalleryImageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CloudPcGalleryImageRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The gallery image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the gallery image resource on Cloud PC.
 func (m *CloudPcGalleryImageRequestBuilder) CreateGetRequestInformation(options *CloudPcGalleryImageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPcGalleryImageRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The gallery image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the gallery image resource on Cloud PC.
 func (m *CloudPcGalleryImageRequestBuilder) CreatePatchRequestInformation(options *CloudPcGalleryImageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CloudPcGalleryImageRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// The gallery image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// Delete the gallery image resource on Cloud PC.
 func (m *CloudPcGalleryImageRequestBuilder) Delete(options *CloudPcGalleryImageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CloudPcGalleryImageRequestBuilder) Delete(options *CloudPcGalleryImageR
     }
     return nil
 }
-// The gallery image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// Get the gallery image resource on Cloud PC.
 func (m *CloudPcGalleryImageRequestBuilder) Get(options *CloudPcGalleryImageRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcGalleryImage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CloudPcGalleryImageRequestBuilder) Get(options *CloudPcGalleryImageRequ
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcGalleryImage), nil
 }
-// The gallery image resource on Cloud PC.
-// Parameters:
-//  - options : Options for the request
+// Patch the gallery image resource on Cloud PC.
 func (m *CloudPcGalleryImageRequestBuilder) Patch(options *CloudPcGalleryImageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -10,7 +10,7 @@ import (
     i22450797f858de15c310b162f7fd2d8ec26e3cdc4d1257d1de65a2cc0de71163 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/journals/item/journallines/item"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\journals\{journal-id}
+// journalRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\journals\{journal-id}
 type JournalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type JournalRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// JournalRequestBuilderDeleteOptions options for Delete
 type JournalRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type JournalRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// JournalRequestBuilderGetOptions options for Get
 type JournalRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type JournalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get journals from financials
+// journalRequestBuilderGetQueryParameters get journals from financials
 type JournalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// JournalRequestBuilderPatchOptions options for Patch
 type JournalRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Journal;
@@ -60,10 +60,7 @@ type JournalRequestBuilderPatchOptions struct {
 func (m *JournalRequestBuilder) Account()(*i7cca032aba7817ce573097d7ffcda7fe783e88b72b9694a811a3aea09de04886.AccountRequestBuilder) {
     return i7cca032aba7817ce573097d7ffcda7fe783e88b72b9694a811a3aea09de04886.NewAccountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new JournalRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJournalRequestBuilderInternal instantiates a new JournalRequestBuilder and sets the default values.
 func NewJournalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JournalRequestBuilder) {
     m := &JournalRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewJournalRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new JournalRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJournalRequestBuilder instantiates a new JournalRequestBuilder and sets the default values.
 func NewJournalRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JournalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewJournalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property journals for financials
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property journals for financials
 func (m *JournalRequestBuilder) CreateDeleteRequestInformation(options *JournalRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *JournalRequestBuilder) CreateDeleteRequestInformation(options *JournalR
     }
     return requestInfo, nil
 }
-// Get journals from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get journals from financials
 func (m *JournalRequestBuilder) CreateGetRequestInformation(options *JournalRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,9 +116,7 @@ func (m *JournalRequestBuilder) CreateGetRequestInformation(options *JournalRequ
     }
     return requestInfo, nil
 }
-// Update the navigation property journals in financials
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property journals in financials
 func (m *JournalRequestBuilder) CreatePatchRequestInformation(options *JournalRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +134,7 @@ func (m *JournalRequestBuilder) CreatePatchRequestInformation(options *JournalRe
     }
     return requestInfo, nil
 }
-// Delete navigation property journals for financials
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property journals for financials
 func (m *JournalRequestBuilder) Delete(options *JournalRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -160,9 +146,7 @@ func (m *JournalRequestBuilder) Delete(options *JournalRequestBuilderDeleteOptio
     }
     return nil
 }
-// Get journals from financials
-// Parameters:
-//  - options : Options for the request
+// Get get journals from financials
 func (m *JournalRequestBuilder) Get(options *JournalRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Journal, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -177,9 +161,7 @@ func (m *JournalRequestBuilder) Get(options *JournalRequestBuilderGetOptions)(*i
 func (m *JournalRequestBuilder) JournalLines()(*ic60d487aadcbb1c18a607e1ab79a5536b13c438e08f09a3b9d0d1a41c5a73a9f.JournalLinesRequestBuilder) {
     return ic60d487aadcbb1c18a607e1ab79a5536b13c438e08f09a3b9d0d1a41c5a73a9f.NewJournalLinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.journals.item.journalLines.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// JournalLinesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.journals.item.journalLines.item collection
 func (m *JournalRequestBuilder) JournalLinesById(id string)(*i22450797f858de15c310b162f7fd2d8ec26e3cdc4d1257d1de65a2cc0de71163.JournalLineRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -190,9 +172,7 @@ func (m *JournalRequestBuilder) JournalLinesById(id string)(*i22450797f858de15c3
     }
     return i22450797f858de15c310b162f7fd2d8ec26e3cdc4d1257d1de65a2cc0de71163.NewJournalLineRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update the navigation property journals in financials
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property journals in financials
 func (m *JournalRequestBuilder) Patch(options *JournalRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

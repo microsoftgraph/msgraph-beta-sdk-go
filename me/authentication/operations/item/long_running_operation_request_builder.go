@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\authentication\operations\{longRunningOperation-id}
+// longRunningOperationRequestBuilder builds and executes requests for operations under \me\authentication\operations\{longRunningOperation-id}
 type LongRunningOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type LongRunningOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// LongRunningOperationRequestBuilderDeleteOptions options for Delete
 type LongRunningOperationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type LongRunningOperationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// LongRunningOperationRequestBuilderGetOptions options for Get
 type LongRunningOperationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type LongRunningOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get operations from me
+// longRunningOperationRequestBuilderGetQueryParameters get operations from me
 type LongRunningOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// LongRunningOperationRequestBuilderPatchOptions options for Patch
 type LongRunningOperationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LongRunningOperation;
@@ -53,10 +53,7 @@ type LongRunningOperationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LongRunningOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLongRunningOperationRequestBuilderInternal instantiates a new LongRunningOperationRequestBuilder and sets the default values.
 func NewLongRunningOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LongRunningOperationRequestBuilder) {
     m := &LongRunningOperationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewLongRunningOperationRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LongRunningOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLongRunningOperationRequestBuilder instantiates a new LongRunningOperationRequestBuilder and sets the default values.
 func NewLongRunningOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LongRunningOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLongRunningOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property operations for me
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property operations for me
 func (m *LongRunningOperationRequestBuilder) CreateDeleteRequestInformation(options *LongRunningOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *LongRunningOperationRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get operations from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get operations from me
 func (m *LongRunningOperationRequestBuilder) CreateGetRequestInformation(options *LongRunningOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *LongRunningOperationRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update the navigation property operations in me
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property operations in me
 func (m *LongRunningOperationRequestBuilder) CreatePatchRequestInformation(options *LongRunningOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *LongRunningOperationRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete navigation property operations for me
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property operations for me
 func (m *LongRunningOperationRequestBuilder) Delete(options *LongRunningOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *LongRunningOperationRequestBuilder) Delete(options *LongRunningOperatio
     }
     return nil
 }
-// Get operations from me
-// Parameters:
-//  - options : Options for the request
+// Get get operations from me
 func (m *LongRunningOperationRequestBuilder) Get(options *LongRunningOperationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LongRunningOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *LongRunningOperationRequestBuilder) Get(options *LongRunningOperationRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LongRunningOperation), nil
 }
-// Update the navigation property operations in me
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property operations in me
 func (m *LongRunningOperationRequestBuilder) Patch(options *LongRunningOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

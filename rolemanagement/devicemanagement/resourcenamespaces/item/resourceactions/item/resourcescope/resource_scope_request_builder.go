@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \roleManagement\deviceManagement\resourceNamespaces\{unifiedRbacResourceNamespace-id}\resourceActions\{unifiedRbacResourceAction-id}\resourceScope
+// resourceScopeRequestBuilder builds and executes requests for operations under \roleManagement\deviceManagement\resourceNamespaces\{unifiedRbacResourceNamespace-id}\resourceActions\{unifiedRbacResourceAction-id}\resourceScope
 type ResourceScopeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ResourceScopeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ResourceScopeRequestBuilderDeleteOptions options for Delete
 type ResourceScopeRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ResourceScopeRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ResourceScopeRequestBuilderGetOptions options for Get
 type ResourceScopeRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ResourceScopeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get resourceScope from roleManagement
+// resourceScopeRequestBuilderGetQueryParameters get resourceScope from roleManagement
 type ResourceScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ResourceScopeRequestBuilderPatchOptions options for Patch
 type ResourceScopeRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceScope;
@@ -53,10 +53,7 @@ type ResourceScopeRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ResourceScopeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceScopeRequestBuilderInternal instantiates a new ResourceScopeRequestBuilder and sets the default values.
 func NewResourceScopeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceScopeRequestBuilder) {
     m := &ResourceScopeRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewResourceScopeRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ResourceScopeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceScopeRequestBuilder instantiates a new ResourceScopeRequestBuilder and sets the default values.
 func NewResourceScopeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceScopeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResourceScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property resourceScope for roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property resourceScope for roleManagement
 func (m *ResourceScopeRequestBuilder) CreateDeleteRequestInformation(options *ResourceScopeRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ResourceScopeRequestBuilder) CreateDeleteRequestInformation(options *Re
     }
     return requestInfo, nil
 }
-// Get resourceScope from roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get resourceScope from roleManagement
 func (m *ResourceScopeRequestBuilder) CreateGetRequestInformation(options *ResourceScopeRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ResourceScopeRequestBuilder) CreateGetRequestInformation(options *Resou
     }
     return requestInfo, nil
 }
-// Update the navigation property resourceScope in roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property resourceScope in roleManagement
 func (m *ResourceScopeRequestBuilder) CreatePatchRequestInformation(options *ResourceScopeRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ResourceScopeRequestBuilder) CreatePatchRequestInformation(options *Res
     }
     return requestInfo, nil
 }
-// Delete navigation property resourceScope for roleManagement
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property resourceScope for roleManagement
 func (m *ResourceScopeRequestBuilder) Delete(options *ResourceScopeRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ResourceScopeRequestBuilder) Delete(options *ResourceScopeRequestBuilde
     }
     return nil
 }
-// Get resourceScope from roleManagement
-// Parameters:
-//  - options : Options for the request
+// Get get resourceScope from roleManagement
 func (m *ResourceScopeRequestBuilder) Get(options *ResourceScopeRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceScope, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ResourceScopeRequestBuilder) Get(options *ResourceScopeRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceScope), nil
 }
-// Update the navigation property resourceScope in roleManagement
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property resourceScope in roleManagement
 func (m *ResourceScopeRequestBuilder) Patch(options *ResourceScopeRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -10,7 +10,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \applications
+// applicationsRequestBuilder builds and executes requests for operations under \applications
 type ApplicationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type ApplicationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ApplicationsRequestBuilderGetOptions options for Get
 type ApplicationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type ApplicationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from applications
+// applicationsRequestBuilderGetQueryParameters get entities from applications
 type ApplicationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -49,7 +49,7 @@ type ApplicationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ApplicationsRequestBuilderPostOptions options for Post
 type ApplicationsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Application;
@@ -60,10 +60,7 @@ type ApplicationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApplicationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplicationsRequestBuilderInternal instantiates a new ApplicationsRequestBuilder and sets the default values.
 func NewApplicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplicationsRequestBuilder) {
     m := &ApplicationsRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewApplicationsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApplicationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplicationsRequestBuilder instantiates a new ApplicationsRequestBuilder and sets the default values.
 func NewApplicationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplicationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from applications
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from applications
 func (m *ApplicationsRequestBuilder) CreateGetRequestInformation(options *ApplicationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *ApplicationsRequestBuilder) CreateGetRequestInformation(options *Applic
     }
     return requestInfo, nil
 }
-// Add new entity to applications
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to applications
 func (m *ApplicationsRequestBuilder) CreatePostRequestInformation(options *ApplicationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,13 +117,11 @@ func (m *ApplicationsRequestBuilder) CreatePostRequestInformation(options *Appli
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \applications\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \applications\microsoft.graph.delta()
 func (m *ApplicationsRequestBuilder) Delta()(*i19b6cc6577bf7cf252227ad0abef9dc37b552128c2c64907d4ba012be3e583ab.DeltaRequestBuilder) {
     return i19b6cc6577bf7cf252227ad0abef9dc37b552128c2c64907d4ba012be3e583ab.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get entities from applications
-// Parameters:
-//  - options : Options for the request
+// Get get entities from applications
 func (m *ApplicationsRequestBuilder) Get(options *ApplicationsRequestBuilderGetOptions)(*ApplicationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,9 +139,7 @@ func (m *ApplicationsRequestBuilder) GetByIds()(*i15d96fb11649ee1a0fc985a2513723
 func (m *ApplicationsRequestBuilder) GetUserOwnedObjects()(*idec80e72882c64f96a88602c8bb00ec1b82bd733af8fa4accef9e3a5ecbe74d1.GetUserOwnedObjectsRequestBuilder) {
     return idec80e72882c64f96a88602c8bb00ec1b82bd733af8fa4accef9e3a5ecbe74d1.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to applications
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to applications
 func (m *ApplicationsRequestBuilder) Post(options *ApplicationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Application, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

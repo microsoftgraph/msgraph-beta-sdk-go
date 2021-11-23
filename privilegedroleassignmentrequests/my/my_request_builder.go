@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \privilegedRoleAssignmentRequests\microsoft.graph.my()
+// myRequestBuilder builds and executes requests for operations under \privilegedRoleAssignmentRequests\microsoft.graph.my()
 type MyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type MyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MyRequestBuilderGetOptions options for Get
 type MyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type MyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMyRequestBuilderInternal instantiates a new MyRequestBuilder and sets the default values.
 func NewMyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MyRequestBuilder) {
     m := &MyRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewMyRequestBuilderInternal(pathParameters map[string]string, requestAdapte
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMyRequestBuilder instantiates a new MyRequestBuilder and sets the default values.
 func NewMyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function my
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function my
 func (m *MyRequestBuilder) CreateGetRequestInformation(options *MyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *MyRequestBuilder) CreateGetRequestInformation(options *MyRequestBuilder
     }
     return requestInfo, nil
 }
-// Invoke function my
-// Parameters:
-//  - options : Options for the request
+// Get invoke function my
 func (m *MyRequestBuilder) Get(options *MyRequestBuilderGetOptions)([]My, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

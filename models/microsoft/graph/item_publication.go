@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// itemPublication 
 type ItemPublication struct {
     ItemFacet
     // Description of the publication.
@@ -20,14 +20,14 @@ type ItemPublication struct {
     // URL referencing the publication.
     webUrl *string;
 }
-// Instantiates a new itemPublication and sets the default values.
+// NewItemPublication instantiates a new itemPublication and sets the default values.
 func NewItemPublication()(*ItemPublication) {
     m := &ItemPublication{
         ItemFacet: *NewItemFacet(),
     }
     return m
 }
-// Gets the description property value. Description of the publication.
+// GetDescription gets the description property value. Description of the publication.
 func (m *ItemPublication) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *ItemPublication) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Title of the publication.
+// GetDisplayName gets the displayName property value. Title of the publication.
 func (m *ItemPublication) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *ItemPublication) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the publishedDate property value. The date that the publication was published.
+// GetPublishedDate gets the publishedDate property value. The date that the publication was published.
 func (m *ItemPublication) GetPublishedDate()(*string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *ItemPublication) GetPublishedDate()(*string) {
         return m.publishedDate
     }
 }
-// Gets the publisher property value. Publication or publisher for the publication.
+// GetPublisher gets the publisher property value. Publication or publisher for the publication.
 func (m *ItemPublication) GetPublisher()(*string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *ItemPublication) GetPublisher()(*string) {
         return m.publisher
     }
 }
-// Gets the thumbnailUrl property value. URL referencing a thumbnail of the publication.
+// GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the publication.
 func (m *ItemPublication) GetThumbnailUrl()(*string) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *ItemPublication) GetThumbnailUrl()(*string) {
         return m.thumbnailUrl
     }
 }
-// Gets the webUrl property value. URL referencing the publication.
+// GetWebUrl gets the webUrl property value. URL referencing the publication.
 func (m *ItemPublication) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *ItemPublication) GetWebUrl()(*string) {
         return m.webUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ItemPublication) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,9 +143,7 @@ func (m *ItemPublication) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *ItemPublication) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ItemPublication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ItemFacet.Serialize(writer)
     if err != nil {
@@ -189,39 +187,27 @@ func (m *ItemPublication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the description property value. Description of the publication.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Description of the publication.
 func (m *ItemPublication) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Title of the publication.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Title of the publication.
 func (m *ItemPublication) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the publishedDate property value. The date that the publication was published.
-// Parameters:
-//  - value : Value to set for the publishedDate property.
+// SetPublishedDate sets the publishedDate property value. The date that the publication was published.
 func (m *ItemPublication) SetPublishedDate(value *string)() {
     m.publishedDate = value
 }
-// Sets the publisher property value. Publication or publisher for the publication.
-// Parameters:
-//  - value : Value to set for the publisher property.
+// SetPublisher sets the publisher property value. Publication or publisher for the publication.
 func (m *ItemPublication) SetPublisher(value *string)() {
     m.publisher = value
 }
-// Sets the thumbnailUrl property value. URL referencing a thumbnail of the publication.
-// Parameters:
-//  - value : Value to set for the thumbnailUrl property.
+// SetThumbnailUrl sets the thumbnailUrl property value. URL referencing a thumbnail of the publication.
 func (m *ItemPublication) SetThumbnailUrl(value *string)() {
     m.thumbnailUrl = value
 }
-// Sets the webUrl property value. URL referencing the publication.
-// Parameters:
-//  - value : Value to set for the webUrl property.
+// SetWebUrl sets the webUrl property value. URL referencing the publication.
 func (m *ItemPublication) SetWebUrl(value *string)() {
     m.webUrl = value
 }

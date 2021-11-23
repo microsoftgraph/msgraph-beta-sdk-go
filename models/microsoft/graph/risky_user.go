@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// riskyUser 
 type RiskyUser struct {
     Entity
     // The activity related to user risk level change
@@ -27,14 +27,14 @@ type RiskyUser struct {
     // Risky user principal name.
     userPrincipalName *string;
 }
-// Instantiates a new riskyUser and sets the default values.
+// NewRiskyUser instantiates a new riskyUser and sets the default values.
 func NewRiskyUser()(*RiskyUser) {
     m := &RiskyUser{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the history property value. The activity related to user risk level change
+// GetHistory gets the history property value. The activity related to user risk level change
 func (m *RiskyUser) GetHistory()([]RiskyUserHistoryItem) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *RiskyUser) GetHistory()([]RiskyUserHistoryItem) {
         return m.history
     }
 }
-// Gets the isDeleted property value. Indicates whether the user is deleted. Possible values are: true, false.
+// GetIsDeleted gets the isDeleted property value. Indicates whether the user is deleted. Possible values are: true, false.
 func (m *RiskyUser) GetIsDeleted()(*bool) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *RiskyUser) GetIsDeleted()(*bool) {
         return m.isDeleted
     }
 }
-// Gets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend.
+// GetIsProcessing gets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend.
 func (m *RiskyUser) GetIsProcessing()(*bool) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *RiskyUser) GetIsProcessing()(*bool) {
         return m.isProcessing
     }
 }
-// Gets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
+// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
 func (m *RiskyUser) GetRiskDetail()(*RiskDetail) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *RiskyUser) GetRiskDetail()(*RiskDetail) {
         return m.riskDetail
     }
 }
-// Gets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetRiskLastUpdatedDateTime gets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *RiskyUser) GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *RiskyUser) GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.riskLastUpdatedDateTime
     }
 }
-// Gets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+// GetRiskLevel gets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
 func (m *RiskyUser) GetRiskLevel()(*RiskLevel) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *RiskyUser) GetRiskLevel()(*RiskLevel) {
         return m.riskLevel
     }
 }
-// Gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// GetRiskState gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 func (m *RiskyUser) GetRiskState()(*RiskState) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *RiskyUser) GetRiskState()(*RiskState) {
         return m.riskState
     }
 }
-// Gets the userDisplayName property value. Risky user display name.
+// GetUserDisplayName gets the userDisplayName property value. Risky user display name.
 func (m *RiskyUser) GetUserDisplayName()(*string) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *RiskyUser) GetUserDisplayName()(*string) {
         return m.userDisplayName
     }
 }
-// Gets the userPrincipalName property value. Risky user principal name.
+// GetUserPrincipalName gets the userPrincipalName property value. Risky user principal name.
 func (m *RiskyUser) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *RiskyUser) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["history"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -211,9 +211,7 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
 func (m *RiskyUser) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RiskyUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -283,57 +281,39 @@ func (m *RiskyUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     }
     return nil
 }
-// Sets the history property value. The activity related to user risk level change
-// Parameters:
-//  - value : Value to set for the history property.
+// SetHistory sets the history property value. The activity related to user risk level change
 func (m *RiskyUser) SetHistory(value []RiskyUserHistoryItem)() {
     m.history = value
 }
-// Sets the isDeleted property value. Indicates whether the user is deleted. Possible values are: true, false.
-// Parameters:
-//  - value : Value to set for the isDeleted property.
+// SetIsDeleted sets the isDeleted property value. Indicates whether the user is deleted. Possible values are: true, false.
 func (m *RiskyUser) SetIsDeleted(value *bool)() {
     m.isDeleted = value
 }
-// Sets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend.
-// Parameters:
-//  - value : Value to set for the isProcessing property.
+// SetIsProcessing sets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend.
 func (m *RiskyUser) SetIsProcessing(value *bool)() {
     m.isProcessing = value
 }
-// Sets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the riskDetail property.
+// SetRiskDetail sets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
 func (m *RiskyUser) SetRiskDetail(value *RiskDetail)() {
     m.riskDetail = value
 }
-// Sets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-// Parameters:
-//  - value : Value to set for the riskLastUpdatedDateTime property.
+// SetRiskLastUpdatedDateTime sets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *RiskyUser) SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.riskLastUpdatedDateTime = value
 }
-// Sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the riskLevel property.
+// SetRiskLevel sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
 func (m *RiskyUser) SetRiskLevel(value *RiskLevel)() {
     m.riskLevel = value
 }
-// Sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the riskState property.
+// SetRiskState sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 func (m *RiskyUser) SetRiskState(value *RiskState)() {
     m.riskState = value
 }
-// Sets the userDisplayName property value. Risky user display name.
-// Parameters:
-//  - value : Value to set for the userDisplayName property.
+// SetUserDisplayName sets the userDisplayName property value. Risky user display name.
 func (m *RiskyUser) SetUserDisplayName(value *string)() {
     m.userDisplayName = value
 }
-// Sets the userPrincipalName property value. Risky user principal name.
-// Parameters:
-//  - value : Value to set for the userPrincipalName property.
+// SetUserPrincipalName sets the userPrincipalName property value. Risky user principal name.
 func (m *RiskyUser) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

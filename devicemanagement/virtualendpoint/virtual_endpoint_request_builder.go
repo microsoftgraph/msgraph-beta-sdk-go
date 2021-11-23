@@ -25,7 +25,7 @@ import (
     ic14d63ed61f1b60b506fcd81a146444ab96691619c2ac32f274b0793b622f23f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint
+// virtualEndpointRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint
 type VirtualEndpointRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -34,7 +34,7 @@ type VirtualEndpointRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// VirtualEndpointRequestBuilderDeleteOptions options for Delete
 type VirtualEndpointRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -43,7 +43,7 @@ type VirtualEndpointRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// VirtualEndpointRequestBuilderGetOptions options for Get
 type VirtualEndpointRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -54,14 +54,14 @@ type VirtualEndpointRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get virtualEndpoint from deviceManagement
+// virtualEndpointRequestBuilderGetQueryParameters get virtualEndpoint from deviceManagement
 type VirtualEndpointRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// VirtualEndpointRequestBuilderPatchOptions options for Patch
 type VirtualEndpointRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VirtualEndpoint;
@@ -75,9 +75,7 @@ type VirtualEndpointRequestBuilderPatchOptions struct {
 func (m *VirtualEndpointRequestBuilder) AuditEvents()(*i5b2233e79dc3147871fe57df3812d50c932074cfced41065bb12f77e2edec21e.AuditEventsRequestBuilder) {
     return i5b2233e79dc3147871fe57df3812d50c932074cfced41065bb12f77e2edec21e.NewAuditEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.auditEvents.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AuditEventsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.auditEvents.item collection
 func (m *VirtualEndpointRequestBuilder) AuditEventsById(id string)(*i57a7497f8ee90067ee6f4aa2a9b6074c547470907dd198f9de96f123682ddda0.CloudPcAuditEventRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -91,9 +89,7 @@ func (m *VirtualEndpointRequestBuilder) AuditEventsById(id string)(*i57a7497f8ee
 func (m *VirtualEndpointRequestBuilder) CloudPCs()(*i1529c4b52ff4b5b9e3d21861baf5f70ff01e22c7ce170e59bf3ce66277506553.CloudPCsRequestBuilder) {
     return i1529c4b52ff4b5b9e3d21861baf5f70ff01e22c7ce170e59bf3ce66277506553.NewCloudPCsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.cloudPCs.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CloudPCsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.cloudPCs.item collection
 func (m *VirtualEndpointRequestBuilder) CloudPCsById(id string)(*ic14d63ed61f1b60b506fcd81a146444ab96691619c2ac32f274b0793b622f23f.CloudPCRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -104,10 +100,7 @@ func (m *VirtualEndpointRequestBuilder) CloudPCsById(id string)(*ic14d63ed61f1b6
     }
     return ic14d63ed61f1b60b506fcd81a146444ab96691619c2ac32f274b0793b622f23f.NewCloudPCRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new VirtualEndpointRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVirtualEndpointRequestBuilderInternal instantiates a new VirtualEndpointRequestBuilder and sets the default values.
 func NewVirtualEndpointRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VirtualEndpointRequestBuilder) {
     m := &VirtualEndpointRequestBuilder{
     }
@@ -120,18 +113,13 @@ func NewVirtualEndpointRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new VirtualEndpointRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVirtualEndpointRequestBuilder instantiates a new VirtualEndpointRequestBuilder and sets the default values.
 func NewVirtualEndpointRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VirtualEndpointRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property virtualEndpoint for deviceManagement
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property virtualEndpoint for deviceManagement
 func (m *VirtualEndpointRequestBuilder) CreateDeleteRequestInformation(options *VirtualEndpointRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,9 +136,7 @@ func (m *VirtualEndpointRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get virtualEndpoint from deviceManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get virtualEndpoint from deviceManagement
 func (m *VirtualEndpointRequestBuilder) CreateGetRequestInformation(options *VirtualEndpointRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,9 +156,7 @@ func (m *VirtualEndpointRequestBuilder) CreateGetRequestInformation(options *Vir
     }
     return requestInfo, nil
 }
-// Update the navigation property virtualEndpoint in deviceManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property virtualEndpoint in deviceManagement
 func (m *VirtualEndpointRequestBuilder) CreatePatchRequestInformation(options *VirtualEndpointRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -190,9 +174,7 @@ func (m *VirtualEndpointRequestBuilder) CreatePatchRequestInformation(options *V
     }
     return requestInfo, nil
 }
-// Delete navigation property virtualEndpoint for deviceManagement
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property virtualEndpoint for deviceManagement
 func (m *VirtualEndpointRequestBuilder) Delete(options *VirtualEndpointRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -207,9 +189,7 @@ func (m *VirtualEndpointRequestBuilder) Delete(options *VirtualEndpointRequestBu
 func (m *VirtualEndpointRequestBuilder) DeviceImages()(*i1696d9b0fb89b84debc07dd2077aff8e4f8ff2b028c14e5a9b3d5139c682a3f3.DeviceImagesRequestBuilder) {
     return i1696d9b0fb89b84debc07dd2077aff8e4f8ff2b028c14e5a9b3d5139c682a3f3.NewDeviceImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.deviceImages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeviceImagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.deviceImages.item collection
 func (m *VirtualEndpointRequestBuilder) DeviceImagesById(id string)(*ia3bcb5abfa0df15f63e2a6fa1f06bcbd43b05fc488a36754660b8c694246fe0b.CloudPcDeviceImageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -223,9 +203,7 @@ func (m *VirtualEndpointRequestBuilder) DeviceImagesById(id string)(*ia3bcb5abfa
 func (m *VirtualEndpointRequestBuilder) GalleryImages()(*i13cfcdf74101f5bb07fbf44e4337504d9adaa93a962b4588144742689f3e6c49.GalleryImagesRequestBuilder) {
     return i13cfcdf74101f5bb07fbf44e4337504d9adaa93a962b4588144742689f3e6c49.NewGalleryImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.galleryImages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// GalleryImagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.galleryImages.item collection
 func (m *VirtualEndpointRequestBuilder) GalleryImagesById(id string)(*ia7d6e357762433a03086487f037283652587e5519e4f5513185ee9e97e7426e9.CloudPcGalleryImageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -236,9 +214,7 @@ func (m *VirtualEndpointRequestBuilder) GalleryImagesById(id string)(*ia7d6e3577
     }
     return ia7d6e357762433a03086487f037283652587e5519e4f5513185ee9e97e7426e9.NewCloudPcGalleryImageRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get virtualEndpoint from deviceManagement
-// Parameters:
-//  - options : Options for the request
+// Get get virtualEndpoint from deviceManagement
 func (m *VirtualEndpointRequestBuilder) Get(options *VirtualEndpointRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VirtualEndpoint, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -250,16 +226,14 @@ func (m *VirtualEndpointRequestBuilder) Get(options *VirtualEndpointRequestBuild
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.VirtualEndpoint), nil
 }
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\microsoft.graph.getEffectivePermissions()
+// GetEffectivePermissions builds and executes requests for operations under \deviceManagement\virtualEndpoint\microsoft.graph.getEffectivePermissions()
 func (m *VirtualEndpointRequestBuilder) GetEffectivePermissions()(*i641f590b75b18bc875786f11f8c01028ef7a86284da618ffc6636c5f70071b7c.GetEffectivePermissionsRequestBuilder) {
     return i641f590b75b18bc875786f11f8c01028ef7a86284da618ffc6636c5f70071b7c.NewGetEffectivePermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *VirtualEndpointRequestBuilder) OnPremisesConnections()(*ic615011cfc05f9e79dc505191df45c19871dc563dfe317f14f5eb7e21000fc23.OnPremisesConnectionsRequestBuilder) {
     return ic615011cfc05f9e79dc505191df45c19871dc563dfe317f14f5eb7e21000fc23.NewOnPremisesConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.onPremisesConnections.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// OnPremisesConnectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.onPremisesConnections.item collection
 func (m *VirtualEndpointRequestBuilder) OnPremisesConnectionsById(id string)(*i471da8905b96f5687f46d1c5dc0de1420e0c35b35374f400b7618e2937b4bf34.CloudPcOnPremisesConnectionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -270,9 +244,7 @@ func (m *VirtualEndpointRequestBuilder) OnPremisesConnectionsById(id string)(*i4
     }
     return i471da8905b96f5687f46d1c5dc0de1420e0c35b35374f400b7618e2937b4bf34.NewCloudPcOnPremisesConnectionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update the navigation property virtualEndpoint in deviceManagement
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property virtualEndpoint in deviceManagement
 func (m *VirtualEndpointRequestBuilder) Patch(options *VirtualEndpointRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -287,9 +259,7 @@ func (m *VirtualEndpointRequestBuilder) Patch(options *VirtualEndpointRequestBui
 func (m *VirtualEndpointRequestBuilder) ProvisioningPolicies()(*if4100d044fd5ea8af7d00890548b33d7f96329a5a6d63f806c3f7705cafc3c7b.ProvisioningPoliciesRequestBuilder) {
     return if4100d044fd5ea8af7d00890548b33d7f96329a5a6d63f806c3f7705cafc3c7b.NewProvisioningPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.provisioningPolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ProvisioningPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.provisioningPolicies.item collection
 func (m *VirtualEndpointRequestBuilder) ProvisioningPoliciesById(id string)(*i6c86691f21aa3210591c58f278b27fee3b5fb3a866b020940f913e3f9a20a060.CloudPcProvisioningPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -303,9 +273,7 @@ func (m *VirtualEndpointRequestBuilder) ProvisioningPoliciesById(id string)(*i6c
 func (m *VirtualEndpointRequestBuilder) ServicePlans()(*i037f17d0e70c36a0446de251c289230e77400d9881a7f0256320f00dfe653b5f.ServicePlansRequestBuilder) {
     return i037f17d0e70c36a0446de251c289230e77400d9881a7f0256320f00dfe653b5f.NewServicePlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.servicePlans.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ServicePlansById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.servicePlans.item collection
 func (m *VirtualEndpointRequestBuilder) ServicePlansById(id string)(*i41c3478ec8e1cf11d4aa0d810af05da1184e70e2f0c4b1acd5144a495b556b79.CloudPcServicePlanRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -319,9 +287,7 @@ func (m *VirtualEndpointRequestBuilder) ServicePlansById(id string)(*i41c3478ec8
 func (m *VirtualEndpointRequestBuilder) SupportedRegions()(*idd9e805dd9b76881e3c848aa7cbb09327538706813b2808dfeb729d75afef079.SupportedRegionsRequestBuilder) {
     return idd9e805dd9b76881e3c848aa7cbb09327538706813b2808dfeb729d75afef079.NewSupportedRegionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.supportedRegions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SupportedRegionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.supportedRegions.item collection
 func (m *VirtualEndpointRequestBuilder) SupportedRegionsById(id string)(*i91bd1ab7316bb059e22edb6c7fdf042441efd0af722f5ea856fc4be260402497.CloudPcSupportedRegionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -335,9 +301,7 @@ func (m *VirtualEndpointRequestBuilder) SupportedRegionsById(id string)(*i91bd1a
 func (m *VirtualEndpointRequestBuilder) UserSettings()(*i23a63a02c83d28d72ce351404f7169106e8b8114b7d9d0ca4052db2a624e6273.UserSettingsRequestBuilder) {
     return i23a63a02c83d28d72ce351404f7169106e8b8114b7d9d0ca4052db2a624e6273.NewUserSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.userSettings.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UserSettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.userSettings.item collection
 func (m *VirtualEndpointRequestBuilder) UserSettingsById(id string)(*i940a1af81d34e1d5a5cfef93acb216fcbeba9c4d02700ce3000fd8f0588fd162.CloudPcUserSettingRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

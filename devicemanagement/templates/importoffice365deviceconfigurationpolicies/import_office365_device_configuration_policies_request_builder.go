@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceManagement\templates\microsoft.graph.importOffice365DeviceConfigurationPolicies
+// importOffice365DeviceConfigurationPoliciesRequestBuilder builds and executes requests for operations under \deviceManagement\templates\microsoft.graph.importOffice365DeviceConfigurationPolicies
 type ImportOffice365DeviceConfigurationPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type ImportOffice365DeviceConfigurationPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostOptions options for Post
 type ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ImportOffice365DeviceConfigurationPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal instantiates a new ImportOffice365DeviceConfigurationPoliciesRequestBuilder and sets the default values.
 func NewImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportOffice365DeviceConfigurationPoliciesRequestBuilder) {
     m := &ImportOffice365DeviceConfigurationPoliciesRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(pathPar
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ImportOffice365DeviceConfigurationPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportOffice365DeviceConfigurationPoliciesRequestBuilder instantiates a new ImportOffice365DeviceConfigurationPoliciesRequestBuilder and sets the default values.
 func NewImportOffice365DeviceConfigurationPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportOffice365DeviceConfigurationPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action importOffice365DeviceConfigurationPolicies
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action importOffice365DeviceConfigurationPolicies
 func (m *ImportOffice365DeviceConfigurationPoliciesRequestBuilder) CreatePostRequestInformation(options *ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *ImportOffice365DeviceConfigurationPoliciesRequestBuilder) CreatePostReq
     }
     return requestInfo, nil
 }
-// Invoke action importOffice365DeviceConfigurationPolicies
-// Parameters:
-//  - options : Options for the request
+// Post invoke action importOffice365DeviceConfigurationPolicies
 func (m *ImportOffice365DeviceConfigurationPoliciesRequestBuilder) Post(options *ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostOptions)([]ImportOffice365DeviceConfigurationPolicies, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

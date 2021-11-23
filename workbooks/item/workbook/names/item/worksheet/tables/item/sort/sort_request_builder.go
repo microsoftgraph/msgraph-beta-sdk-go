@@ -9,7 +9,7 @@ import (
     i729539b889271d8060b0a0d4e19f574d7105f5406117c7aa790b804892e6d080 "github.com/microsoftgraph/msgraph-beta-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/sort/clear"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\sort
+// sortRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\sort
 type SortRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type SortRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SortRequestBuilderDeleteOptions options for Delete
 type SortRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type SortRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SortRequestBuilderGetOptions options for Get
 type SortRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type SortRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the sorting for the table. Read-only.
+// sortRequestBuilderGetQueryParameters represents the sorting for the table. Read-only.
 type SortRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SortRequestBuilderPatchOptions options for Patch
 type SortRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookTableSort;
@@ -62,10 +62,7 @@ func (m *SortRequestBuilder) Apply()(*i449b480b98727acfa59c877a634fa03245ab0f850
 func (m *SortRequestBuilder) Clear()(*i729539b889271d8060b0a0d4e19f574d7105f5406117c7aa790b804892e6d080.ClearRequestBuilder) {
     return i729539b889271d8060b0a0d4e19f574d7105f5406117c7aa790b804892e6d080.NewClearRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new SortRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSortRequestBuilderInternal instantiates a new SortRequestBuilder and sets the default values.
 func NewSortRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SortRequestBuilder) {
     m := &SortRequestBuilder{
     }
@@ -78,18 +75,13 @@ func NewSortRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SortRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSortRequestBuilder instantiates a new SortRequestBuilder and sets the default values.
 func NewSortRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SortRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSortRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the sorting for the table. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the sorting for the table. Read-only.
 func (m *SortRequestBuilder) CreateDeleteRequestInformation(options *SortRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,9 +98,7 @@ func (m *SortRequestBuilder) CreateDeleteRequestInformation(options *SortRequest
     }
     return requestInfo, nil
 }
-// Represents the sorting for the table. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the sorting for the table. Read-only.
 func (m *SortRequestBuilder) CreateGetRequestInformation(options *SortRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,9 +118,7 @@ func (m *SortRequestBuilder) CreateGetRequestInformation(options *SortRequestBui
     }
     return requestInfo, nil
 }
-// Represents the sorting for the table. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the sorting for the table. Read-only.
 func (m *SortRequestBuilder) CreatePatchRequestInformation(options *SortRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,9 +136,7 @@ func (m *SortRequestBuilder) CreatePatchRequestInformation(options *SortRequestB
     }
     return requestInfo, nil
 }
-// Represents the sorting for the table. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the sorting for the table. Read-only.
 func (m *SortRequestBuilder) Delete(options *SortRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -162,9 +148,7 @@ func (m *SortRequestBuilder) Delete(options *SortRequestBuilderDeleteOptions)(er
     }
     return nil
 }
-// Represents the sorting for the table. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents the sorting for the table. Read-only.
 func (m *SortRequestBuilder) Get(options *SortRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookTableSort, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -176,9 +160,7 @@ func (m *SortRequestBuilder) Get(options *SortRequestBuilderGetOptions)(*i535684
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WorkbookTableSort), nil
 }
-// Represents the sorting for the table. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the sorting for the table. Read-only.
 func (m *SortRequestBuilder) Patch(options *SortRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

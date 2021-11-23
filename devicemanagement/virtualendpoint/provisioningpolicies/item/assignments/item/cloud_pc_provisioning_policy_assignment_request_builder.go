@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\provisioningPolicies\{cloudPcProvisioningPolicy-id}\assignments\{cloudPcProvisioningPolicyAssignment-id}
+// cloudPcProvisioningPolicyAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\provisioningPolicies\{cloudPcProvisioningPolicy-id}\assignments\{cloudPcProvisioningPolicyAssignment-id}
 type CloudPcProvisioningPolicyAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudPcProvisioningPolicyAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcProvisioningPolicyAssignmentRequestBuilderDeleteOptions options for Delete
 type CloudPcProvisioningPolicyAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CloudPcProvisioningPolicyAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcProvisioningPolicyAssignmentRequestBuilderGetOptions options for Get
 type CloudPcProvisioningPolicyAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CloudPcProvisioningPolicyAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
+// cloudPcProvisioningPolicyAssignmentRequestBuilderGetQueryParameters a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
 type CloudPcProvisioningPolicyAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcProvisioningPolicyAssignmentRequestBuilderPatchOptions options for Patch
 type CloudPcProvisioningPolicyAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcProvisioningPolicyAssignment;
@@ -53,10 +53,7 @@ type CloudPcProvisioningPolicyAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPcProvisioningPolicyAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcProvisioningPolicyAssignmentRequestBuilderInternal instantiates a new CloudPcProvisioningPolicyAssignmentRequestBuilder and sets the default values.
 func NewCloudPcProvisioningPolicyAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcProvisioningPolicyAssignmentRequestBuilder) {
     m := &CloudPcProvisioningPolicyAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCloudPcProvisioningPolicyAssignmentRequestBuilderInternal(pathParameters
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcProvisioningPolicyAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcProvisioningPolicyAssignmentRequestBuilder instantiates a new CloudPcProvisioningPolicyAssignmentRequestBuilder and sets the default values.
 func NewCloudPcProvisioningPolicyAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcProvisioningPolicyAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcProvisioningPolicyAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
 func (m *CloudPcProvisioningPolicyAssignmentRequestBuilder) CreateDeleteRequestInformation(options *CloudPcProvisioningPolicyAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CloudPcProvisioningPolicyAssignmentRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
 func (m *CloudPcProvisioningPolicyAssignmentRequestBuilder) CreateGetRequestInformation(options *CloudPcProvisioningPolicyAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPcProvisioningPolicyAssignmentRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
 func (m *CloudPcProvisioningPolicyAssignmentRequestBuilder) CreatePatchRequestInformation(options *CloudPcProvisioningPolicyAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CloudPcProvisioningPolicyAssignmentRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-// Parameters:
-//  - options : Options for the request
+// Delete a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
 func (m *CloudPcProvisioningPolicyAssignmentRequestBuilder) Delete(options *CloudPcProvisioningPolicyAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CloudPcProvisioningPolicyAssignmentRequestBuilder) Delete(options *Clou
     }
     return nil
 }
-// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-// Parameters:
-//  - options : Options for the request
+// Get a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
 func (m *CloudPcProvisioningPolicyAssignmentRequestBuilder) Get(options *CloudPcProvisioningPolicyAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcProvisioningPolicyAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CloudPcProvisioningPolicyAssignmentRequestBuilder) Get(options *CloudPc
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcProvisioningPolicyAssignment), nil
 }
-// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-// Parameters:
-//  - options : Options for the request
+// Patch a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
 func (m *CloudPcProvisioningPolicyAssignmentRequestBuilder) Patch(options *CloudPcProvisioningPolicyAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

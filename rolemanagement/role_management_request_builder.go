@@ -10,7 +10,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \roleManagement
+// roleManagementRequestBuilder builds and executes requests for operations under \roleManagement
 type RoleManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type RoleManagementRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RoleManagementRequestBuilderGetOptions options for Get
 type RoleManagementRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,14 +30,14 @@ type RoleManagementRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get roleManagement
+// roleManagementRequestBuilderGetQueryParameters get roleManagement
 type RoleManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RoleManagementRequestBuilderPatchOptions options for Patch
 type RoleManagementRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RoleManagement;
@@ -51,10 +51,7 @@ type RoleManagementRequestBuilderPatchOptions struct {
 func (m *RoleManagementRequestBuilder) CloudPC()(*ie179728a78650b7ea21a75747c7c0c71a4b3eeffeb7edcfa3f337c75f028ffa7.CloudPCRequestBuilder) {
     return ie179728a78650b7ea21a75747c7c0c71a4b3eeffeb7edcfa3f337c75f028ffa7.NewCloudPCRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new RoleManagementRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleManagementRequestBuilderInternal instantiates a new RoleManagementRequestBuilder and sets the default values.
 func NewRoleManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleManagementRequestBuilder) {
     m := &RoleManagementRequestBuilder{
     }
@@ -67,18 +64,13 @@ func NewRoleManagementRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleManagementRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleManagementRequestBuilder instantiates a new RoleManagementRequestBuilder and sets the default values.
 func NewRoleManagementRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleManagementRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get roleManagement
 func (m *RoleManagementRequestBuilder) CreateGetRequestInformation(options *RoleManagementRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *RoleManagementRequestBuilder) CreateGetRequestInformation(options *Role
     }
     return requestInfo, nil
 }
-// Update roleManagement
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update roleManagement
 func (m *RoleManagementRequestBuilder) CreatePatchRequestInformation(options *RoleManagementRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *RoleManagementRequestBuilder) Directory()(*i8a93901c4a3aed17badfa3c9c54
 func (m *RoleManagementRequestBuilder) EntitlementManagement()(*i10372b71511cc47bf754e90b050fc97fee639d10b03f642f5ac8321f1d6eee9e.EntitlementManagementRequestBuilder) {
     return i10372b71511cc47bf754e90b050fc97fee639d10b03f642f5ac8321f1d6eee9e.NewEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get roleManagement
-// Parameters:
-//  - options : Options for the request
+// Get get roleManagement
 func (m *RoleManagementRequestBuilder) Get(options *RoleManagementRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RoleManagement, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *RoleManagementRequestBuilder) Get(options *RoleManagementRequestBuilder
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RoleManagement), nil
 }
-// Update roleManagement
-// Parameters:
-//  - options : Options for the request
+// Patch update roleManagement
 func (m *RoleManagementRequestBuilder) Patch(options *RoleManagementRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

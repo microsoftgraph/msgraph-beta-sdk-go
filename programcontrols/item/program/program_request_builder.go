@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \programControls\{programControl-id}\program
+// programRequestBuilder builds and executes requests for operations under \programControls\{programControl-id}\program
 type ProgramRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ProgramRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ProgramRequestBuilderDeleteOptions options for Delete
 type ProgramRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ProgramRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ProgramRequestBuilderGetOptions options for Get
 type ProgramRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ProgramRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The program this control is part of.
+// programRequestBuilderGetQueryParameters the program this control is part of.
 type ProgramRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ProgramRequestBuilderPatchOptions options for Patch
 type ProgramRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Program;
@@ -53,10 +53,7 @@ type ProgramRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ProgramRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProgramRequestBuilderInternal instantiates a new ProgramRequestBuilder and sets the default values.
 func NewProgramRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProgramRequestBuilder) {
     m := &ProgramRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewProgramRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ProgramRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProgramRequestBuilder instantiates a new ProgramRequestBuilder and sets the default values.
 func NewProgramRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProgramRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProgramRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The program this control is part of.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the program this control is part of.
 func (m *ProgramRequestBuilder) CreateDeleteRequestInformation(options *ProgramRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ProgramRequestBuilder) CreateDeleteRequestInformation(options *ProgramR
     }
     return requestInfo, nil
 }
-// The program this control is part of.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the program this control is part of.
 func (m *ProgramRequestBuilder) CreateGetRequestInformation(options *ProgramRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ProgramRequestBuilder) CreateGetRequestInformation(options *ProgramRequ
     }
     return requestInfo, nil
 }
-// The program this control is part of.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the program this control is part of.
 func (m *ProgramRequestBuilder) CreatePatchRequestInformation(options *ProgramRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ProgramRequestBuilder) CreatePatchRequestInformation(options *ProgramRe
     }
     return requestInfo, nil
 }
-// The program this control is part of.
-// Parameters:
-//  - options : Options for the request
+// Delete the program this control is part of.
 func (m *ProgramRequestBuilder) Delete(options *ProgramRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ProgramRequestBuilder) Delete(options *ProgramRequestBuilderDeleteOptio
     }
     return nil
 }
-// The program this control is part of.
-// Parameters:
-//  - options : Options for the request
+// Get the program this control is part of.
 func (m *ProgramRequestBuilder) Get(options *ProgramRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Program, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ProgramRequestBuilder) Get(options *ProgramRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Program), nil
 }
-// The program this control is part of.
-// Parameters:
-//  - options : Options for the request
+// Patch the program this control is part of.
 func (m *ProgramRequestBuilder) Patch(options *ProgramRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

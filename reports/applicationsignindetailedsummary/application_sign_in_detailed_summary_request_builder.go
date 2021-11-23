@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\applicationSignInDetailedSummary
+// applicationSignInDetailedSummaryRequestBuilder builds and executes requests for operations under \reports\applicationSignInDetailedSummary
 type ApplicationSignInDetailedSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ApplicationSignInDetailedSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ApplicationSignInDetailedSummaryRequestBuilderGetOptions options for Get
 type ApplicationSignInDetailedSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ApplicationSignInDetailedSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get applicationSignInDetailedSummary from reports
+// applicationSignInDetailedSummaryRequestBuilderGetQueryParameters get applicationSignInDetailedSummary from reports
 type ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ApplicationSignInDetailedSummaryRequestBuilderPostOptions options for Post
 type ApplicationSignInDetailedSummaryRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationSignInDetailedSummary;
@@ -56,10 +56,7 @@ type ApplicationSignInDetailedSummaryRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApplicationSignInDetailedSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplicationSignInDetailedSummaryRequestBuilderInternal instantiates a new ApplicationSignInDetailedSummaryRequestBuilder and sets the default values.
 func NewApplicationSignInDetailedSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplicationSignInDetailedSummaryRequestBuilder) {
     m := &ApplicationSignInDetailedSummaryRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewApplicationSignInDetailedSummaryRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApplicationSignInDetailedSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplicationSignInDetailedSummaryRequestBuilder instantiates a new ApplicationSignInDetailedSummaryRequestBuilder and sets the default values.
 func NewApplicationSignInDetailedSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplicationSignInDetailedSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationSignInDetailedSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get applicationSignInDetailedSummary from reports
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get applicationSignInDetailedSummary from reports
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreateGetRequestInformation(options *ApplicationSignInDetailedSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Create new navigation property to applicationSignInDetailedSummary for reports
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to applicationSignInDetailedSummary for reports
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreatePostRequestInformation(options *ApplicationSignInDetailedSummaryRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Get applicationSignInDetailedSummary from reports
-// Parameters:
-//  - options : Options for the request
+// Get get applicationSignInDetailedSummary from reports
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) Get(options *ApplicationSignInDetailedSummaryRequestBuilderGetOptions)(*ApplicationSignInDetailedSummaryResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) Get(options *Applicatio
     }
     return res.(*ApplicationSignInDetailedSummaryResponse), nil
 }
-// Create new navigation property to applicationSignInDetailedSummary for reports
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to applicationSignInDetailedSummary for reports
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) Post(options *ApplicationSignInDetailedSummaryRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationSignInDetailedSummary, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

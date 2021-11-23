@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// customQuestionAnswer 
 type CustomQuestionAnswer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type CustomQuestionAnswer struct {
     // Answer to the custom registration question.
     value *string;
 }
-// Instantiates a new customQuestionAnswer and sets the default values.
+// NewCustomQuestionAnswer instantiates a new customQuestionAnswer and sets the default values.
 func NewCustomQuestionAnswer()(*CustomQuestionAnswer) {
     m := &CustomQuestionAnswer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CustomQuestionAnswer) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *CustomQuestionAnswer) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the displayName property value. Display name of the custom registration question. Read-only.
+// GetDisplayName gets the displayName property value. Display name of the custom registration question. Read-only.
 func (m *CustomQuestionAnswer) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *CustomQuestionAnswer) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the questionId property value. ID the custom registration question. Read-only.
+// GetQuestionId gets the questionId property value. ID the custom registration question. Read-only.
 func (m *CustomQuestionAnswer) GetQuestionId()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *CustomQuestionAnswer) GetQuestionId()(*string) {
         return m.questionId
     }
 }
-// Gets the value property value. Answer to the custom registration question.
+// GetValue gets the value property value. Answer to the custom registration question.
 func (m *CustomQuestionAnswer) GetValue()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *CustomQuestionAnswer) GetValue()(*string) {
         return m.value
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CustomQuestionAnswer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *CustomQuestionAnswer) GetFieldDeserializers()(map[string]func(interface
 func (m *CustomQuestionAnswer) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CustomQuestionAnswer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
@@ -122,27 +120,19 @@ func (m *CustomQuestionAnswer) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CustomQuestionAnswer) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the displayName property value. Display name of the custom registration question. Read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name of the custom registration question. Read-only.
 func (m *CustomQuestionAnswer) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the questionId property value. ID the custom registration question. Read-only.
-// Parameters:
-//  - value : Value to set for the questionId property.
+// SetQuestionId sets the questionId property value. ID the custom registration question. Read-only.
 func (m *CustomQuestionAnswer) SetQuestionId(value *string)() {
     m.questionId = value
 }
-// Sets the value property value. Answer to the custom registration question.
-// Parameters:
-//  - value : Value to set for the value property.
+// SetValue sets the value property value. Answer to the custom registration question.
 func (m *CustomQuestionAnswer) SetValue(value *string)() {
     m.value = value
 }

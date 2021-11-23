@@ -7,7 +7,7 @@ import (
     ie99e2dac95e812895dc09a981511e5bcfcf3d589738bbaf03993925b5ede2ada "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/chromeosonboardingsettings/connect"
 )
 
-// Builds and executes requests for operations under \deviceManagement\chromeOSOnboardingSettings
+// chromeOSOnboardingSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\chromeOSOnboardingSettings
 type ChromeOSOnboardingSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ChromeOSOnboardingSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ChromeOSOnboardingSettingsRequestBuilderGetOptions options for Get
 type ChromeOSOnboardingSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ChromeOSOnboardingSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of ChromeOSOnboardingSettings settings associated with account.
+// chromeOSOnboardingSettingsRequestBuilderGetQueryParameters collection of ChromeOSOnboardingSettings settings associated with account.
 type ChromeOSOnboardingSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type ChromeOSOnboardingSettingsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ChromeOSOnboardingSettingsRequestBuilderPostOptions options for Post
 type ChromeOSOnboardingSettingsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChromeOSOnboardingSettings;
@@ -60,10 +60,7 @@ type ChromeOSOnboardingSettingsRequestBuilderPostOptions struct {
 func (m *ChromeOSOnboardingSettingsRequestBuilder) Connect()(*ie99e2dac95e812895dc09a981511e5bcfcf3d589738bbaf03993925b5ede2ada.ConnectRequestBuilder) {
     return ie99e2dac95e812895dc09a981511e5bcfcf3d589738bbaf03993925b5ede2ada.NewConnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ChromeOSOnboardingSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChromeOSOnboardingSettingsRequestBuilderInternal instantiates a new ChromeOSOnboardingSettingsRequestBuilder and sets the default values.
 func NewChromeOSOnboardingSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChromeOSOnboardingSettingsRequestBuilder) {
     m := &ChromeOSOnboardingSettingsRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewChromeOSOnboardingSettingsRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChromeOSOnboardingSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChromeOSOnboardingSettingsRequestBuilder instantiates a new ChromeOSOnboardingSettingsRequestBuilder and sets the default values.
 func NewChromeOSOnboardingSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChromeOSOnboardingSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChromeOSOnboardingSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of ChromeOSOnboardingSettings settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of ChromeOSOnboardingSettings settings associated with account.
 func (m *ChromeOSOnboardingSettingsRequestBuilder) CreateGetRequestInformation(options *ChromeOSOnboardingSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *ChromeOSOnboardingSettingsRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// Collection of ChromeOSOnboardingSettings settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of ChromeOSOnboardingSettings settings associated with account.
 func (m *ChromeOSOnboardingSettingsRequestBuilder) CreatePostRequestInformation(options *ChromeOSOnboardingSettingsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *ChromeOSOnboardingSettingsRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Collection of ChromeOSOnboardingSettings settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Get collection of ChromeOSOnboardingSettings settings associated with account.
 func (m *ChromeOSOnboardingSettingsRequestBuilder) Get(options *ChromeOSOnboardingSettingsRequestBuilderGetOptions)(*ChromeOSOnboardingSettingsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *ChromeOSOnboardingSettingsRequestBuilder) Get(options *ChromeOSOnboardi
     }
     return res.(*ChromeOSOnboardingSettingsResponse), nil
 }
-// Collection of ChromeOSOnboardingSettings settings associated with account.
-// Parameters:
-//  - options : Options for the request
+// Post collection of ChromeOSOnboardingSettings settings associated with account.
 func (m *ChromeOSOnboardingSettingsRequestBuilder) Post(options *ChromeOSOnboardingSettingsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChromeOSOnboardingSettings, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -17,7 +17,7 @@ import (
     ie8d02aac9f22a617e7db20c68df056fad4bb1fb1425faaa25cf4ef67594043ec "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/submissions/item/submittedresources/item"
 )
 
-// Builds and executes requests for operations under \education\users\{educationUser-id}\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}
+// educationSubmissionRequestBuilder builds and executes requests for operations under \education\users\{educationUser-id}\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}
 type EducationSubmissionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type EducationSubmissionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EducationSubmissionRequestBuilderDeleteOptions options for Delete
 type EducationSubmissionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -35,7 +35,7 @@ type EducationSubmissionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EducationSubmissionRequestBuilderGetOptions options for Get
 type EducationSubmissionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -46,14 +46,14 @@ type EducationSubmissionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+// educationSubmissionRequestBuilderGetQueryParameters once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 type EducationSubmissionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EducationSubmissionRequestBuilderPatchOptions options for Patch
 type EducationSubmissionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission;
@@ -64,10 +64,7 @@ type EducationSubmissionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EducationSubmissionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationSubmissionRequestBuilderInternal instantiates a new EducationSubmissionRequestBuilder and sets the default values.
 func NewEducationSubmissionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSubmissionRequestBuilder) {
     m := &EducationSubmissionRequestBuilder{
     }
@@ -80,18 +77,13 @@ func NewEducationSubmissionRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EducationSubmissionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationSubmissionRequestBuilder instantiates a new EducationSubmissionRequestBuilder and sets the default values.
 func NewEducationSubmissionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSubmissionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEducationSubmissionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *EducationSubmissionRequestBuilder) CreateDeleteRequestInformation(options *EducationSubmissionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *EducationSubmissionRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *EducationSubmissionRequestBuilder) CreateGetRequestInformation(options *EducationSubmissionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,9 +120,7 @@ func (m *EducationSubmissionRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *EducationSubmissionRequestBuilder) CreatePatchRequestInformation(options *EducationSubmissionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +138,7 @@ func (m *EducationSubmissionRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *EducationSubmissionRequestBuilder) Delete(options *EducationSubmissionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -164,9 +150,7 @@ func (m *EducationSubmissionRequestBuilder) Delete(options *EducationSubmissionR
     }
     return nil
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *EducationSubmissionRequestBuilder) Get(options *EducationSubmissionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationSubmission, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -181,9 +165,7 @@ func (m *EducationSubmissionRequestBuilder) Get(options *EducationSubmissionRequ
 func (m *EducationSubmissionRequestBuilder) Outcomes()(*i6ba46d6835c0a47a27d09f0253c579859dcd40873b53932a91d1e8d864ea4af4.OutcomesRequestBuilder) {
     return i6ba46d6835c0a47a27d09f0253c579859dcd40873b53932a91d1e8d864ea4af4.NewOutcomesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.users.item.assignments.item.submissions.item.outcomes.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// OutcomesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.users.item.assignments.item.submissions.item.outcomes.item collection
 func (m *EducationSubmissionRequestBuilder) OutcomesById(id string)(*idcb18db22001d0c8560f4e04f592d2ab741e41fdccd32e2bbd2826405e8162b6.EducationOutcomeRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -194,9 +176,7 @@ func (m *EducationSubmissionRequestBuilder) OutcomesById(id string)(*idcb18db220
     }
     return idcb18db22001d0c8560f4e04f592d2ab741e41fdccd32e2bbd2826405e8162b6.NewEducationOutcomeRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *EducationSubmissionRequestBuilder) Patch(options *EducationSubmissionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -214,9 +194,7 @@ func (m *EducationSubmissionRequestBuilder) Reassign()(*id4a8c5d09c4fd819ff61848
 func (m *EducationSubmissionRequestBuilder) Resources()(*i620d352f6d923470da79c3942b8c8aaaf958d8aaa2e3d4eb26af40a92833870f.ResourcesRequestBuilder) {
     return i620d352f6d923470da79c3942b8c8aaaf958d8aaa2e3d4eb26af40a92833870f.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.users.item.assignments.item.submissions.item.resources.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.users.item.assignments.item.submissions.item.resources.item collection
 func (m *EducationSubmissionRequestBuilder) ResourcesById(id string)(*ided68156635ca8883976581f28a920199cc5242c12a0b15c16f989f304e5824b.EducationSubmissionResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -239,9 +217,7 @@ func (m *EducationSubmissionRequestBuilder) Submit()(*i03a5515c9c388939cec0c6297
 func (m *EducationSubmissionRequestBuilder) SubmittedResources()(*i164979e9c6e40c75579e19bae874710bbe54a4757fa82f177ce989d7159b8115.SubmittedResourcesRequestBuilder) {
     return i164979e9c6e40c75579e19bae874710bbe54a4757fa82f177ce989d7159b8115.NewSubmittedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.users.item.assignments.item.submissions.item.submittedResources.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SubmittedResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.users.item.assignments.item.submissions.item.submittedResources.item collection
 func (m *EducationSubmissionRequestBuilder) SubmittedResourcesById(id string)(*ie8d02aac9f22a617e7db20c68df056fad4bb1fb1425faaa25cf4ef67594043ec.EducationSubmissionResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

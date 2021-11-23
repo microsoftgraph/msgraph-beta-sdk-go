@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// accessPackageResourceAttribute 
 type AccessPackageResourceAttribute struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type AccessPackageResourceAttribute struct {
     // 
     isPersistedOnAssignmentRemoval *bool;
 }
-// Instantiates a new accessPackageResourceAttribute and sets the default values.
+// NewAccessPackageResourceAttribute instantiates a new accessPackageResourceAttribute and sets the default values.
 func NewAccessPackageResourceAttribute()(*AccessPackageResourceAttribute) {
     m := &AccessPackageResourceAttribute{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageResourceAttribute) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *AccessPackageResourceAttribute) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// Gets the attributeDestination property value. 
+// GetAttributeDestination gets the attributeDestination property value. 
 func (m *AccessPackageResourceAttribute) GetAttributeDestination()(*AccessPackageResourceAttributeDestination) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *AccessPackageResourceAttribute) GetAttributeDestination()(*AccessPackag
         return m.attributeDestination
     }
 }
-// Gets the attributeName property value. 
+// GetAttributeName gets the attributeName property value. 
 func (m *AccessPackageResourceAttribute) GetAttributeName()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *AccessPackageResourceAttribute) GetAttributeName()(*string) {
         return m.attributeName
     }
 }
-// Gets the attributeSource property value. 
+// GetAttributeSource gets the attributeSource property value. 
 func (m *AccessPackageResourceAttribute) GetAttributeSource()(*AccessPackageResourceAttributeSource) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *AccessPackageResourceAttribute) GetAttributeSource()(*AccessPackageReso
         return m.attributeSource
     }
 }
-// Gets the id property value. 
+// GetId gets the id property value. 
 func (m *AccessPackageResourceAttribute) GetId()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *AccessPackageResourceAttribute) GetId()(*string) {
         return m.id
     }
 }
-// Gets the isEditable property value. 
+// GetIsEditable gets the isEditable property value. 
 func (m *AccessPackageResourceAttribute) GetIsEditable()(*bool) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *AccessPackageResourceAttribute) GetIsEditable()(*bool) {
         return m.isEditable
     }
 }
-// Gets the isPersistedOnAssignmentRemoval property value. 
+// GetIsPersistedOnAssignmentRemoval gets the isPersistedOnAssignmentRemoval property value. 
 func (m *AccessPackageResourceAttribute) GetIsPersistedOnAssignmentRemoval()(*bool) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *AccessPackageResourceAttribute) GetIsPersistedOnAssignmentRemoval()(*bo
         return m.isPersistedOnAssignmentRemoval
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["attributeDestination"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,9 +152,7 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
 func (m *AccessPackageResourceAttribute) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AccessPackageResourceAttribute) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("attributeDestination", m.GetAttributeDestination())
@@ -200,45 +198,31 @@ func (m *AccessPackageResourceAttribute) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageResourceAttribute) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the attributeDestination property value. 
-// Parameters:
-//  - value : Value to set for the attributeDestination property.
+// SetAttributeDestination sets the attributeDestination property value. 
 func (m *AccessPackageResourceAttribute) SetAttributeDestination(value *AccessPackageResourceAttributeDestination)() {
     m.attributeDestination = value
 }
-// Sets the attributeName property value. 
-// Parameters:
-//  - value : Value to set for the attributeName property.
+// SetAttributeName sets the attributeName property value. 
 func (m *AccessPackageResourceAttribute) SetAttributeName(value *string)() {
     m.attributeName = value
 }
-// Sets the attributeSource property value. 
-// Parameters:
-//  - value : Value to set for the attributeSource property.
+// SetAttributeSource sets the attributeSource property value. 
 func (m *AccessPackageResourceAttribute) SetAttributeSource(value *AccessPackageResourceAttributeSource)() {
     m.attributeSource = value
 }
-// Sets the id property value. 
-// Parameters:
-//  - value : Value to set for the id property.
+// SetId sets the id property value. 
 func (m *AccessPackageResourceAttribute) SetId(value *string)() {
     m.id = value
 }
-// Sets the isEditable property value. 
-// Parameters:
-//  - value : Value to set for the isEditable property.
+// SetIsEditable sets the isEditable property value. 
 func (m *AccessPackageResourceAttribute) SetIsEditable(value *bool)() {
     m.isEditable = value
 }
-// Sets the isPersistedOnAssignmentRemoval property value. 
-// Parameters:
-//  - value : Value to set for the isPersistedOnAssignmentRemoval property.
+// SetIsPersistedOnAssignmentRemoval sets the isPersistedOnAssignmentRemoval property value. 
 func (m *AccessPackageResourceAttribute) SetIsPersistedOnAssignmentRemoval(value *bool)() {
     m.isPersistedOnAssignmentRemoval = value
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// managedDeviceComplianceTrend 
 type ManagedDeviceComplianceTrend struct {
     Entity
     // The number of devices with a compliant status. Required. Read-only.
@@ -26,14 +26,14 @@ type ManagedDeviceComplianceTrend struct {
     // The number of devices in an unknown status. Required. Read-only.
     unknownDeviceCount *int32;
 }
-// Instantiates a new managedDeviceComplianceTrend and sets the default values.
+// NewManagedDeviceComplianceTrend instantiates a new managedDeviceComplianceTrend and sets the default values.
 func NewManagedDeviceComplianceTrend()(*ManagedDeviceComplianceTrend) {
     m := &ManagedDeviceComplianceTrend{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the compliantDeviceCount property value. The number of devices with a compliant status. Required. Read-only.
+// GetCompliantDeviceCount gets the compliantDeviceCount property value. The number of devices with a compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetCompliantDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *ManagedDeviceComplianceTrend) GetCompliantDeviceCount()(*int32) {
         return m.compliantDeviceCount
     }
 }
-// Gets the configManagerDeviceCount property value. The number of devices manged by Configuration Manager. Required. Read-only.
+// GetConfigManagerDeviceCount gets the configManagerDeviceCount property value. The number of devices manged by Configuration Manager. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetConfigManagerDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *ManagedDeviceComplianceTrend) GetConfigManagerDeviceCount()(*int32) {
         return m.configManagerDeviceCount
     }
 }
-// Gets the countDateTime property value. The date and time compliance snapshot was performed. Required. Read-only.
+// GetCountDateTime gets the countDateTime property value. The date and time compliance snapshot was performed. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetCountDateTime()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *ManagedDeviceComplianceTrend) GetCountDateTime()(*string) {
         return m.countDateTime
     }
 }
-// Gets the errorDeviceCount property value. The number of devices with an error status. Required. Read-only.
+// GetErrorDeviceCount gets the errorDeviceCount property value. The number of devices with an error status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetErrorDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *ManagedDeviceComplianceTrend) GetErrorDeviceCount()(*int32) {
         return m.errorDeviceCount
     }
 }
-// Gets the inGracePeriodDeviceCount property value. The number of devices that are in a grace period status. Required. Read-only.
+// GetInGracePeriodDeviceCount gets the inGracePeriodDeviceCount property value. The number of devices that are in a grace period status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetInGracePeriodDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *ManagedDeviceComplianceTrend) GetInGracePeriodDeviceCount()(*int32) {
         return m.inGracePeriodDeviceCount
     }
 }
-// Gets the noncompliantDeviceCount property value. The number of devices that are in a non-compliant status. Required. Read-only.
+// GetNoncompliantDeviceCount gets the noncompliantDeviceCount property value. The number of devices that are in a non-compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetNoncompliantDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *ManagedDeviceComplianceTrend) GetNoncompliantDeviceCount()(*int32) {
         return m.noncompliantDeviceCount
     }
 }
-// Gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
+// GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetTenantDisplayName()(*string) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *ManagedDeviceComplianceTrend) GetTenantDisplayName()(*string) {
         return m.tenantDisplayName
     }
 }
-// Gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *ManagedDeviceComplianceTrend) GetTenantId()(*string) {
         return m.tenantId
     }
 }
-// Gets the unknownDeviceCount property value. The number of devices in an unknown status. Required. Read-only.
+// GetUnknownDeviceCount gets the unknownDeviceCount property value. The number of devices in an unknown status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetUnknownDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *ManagedDeviceComplianceTrend) GetUnknownDeviceCount()(*int32) {
         return m.unknownDeviceCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["compliantDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -203,9 +203,7 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
 func (m *ManagedDeviceComplianceTrend) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagedDeviceComplianceTrend) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -267,57 +265,39 @@ func (m *ManagedDeviceComplianceTrend) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the compliantDeviceCount property value. The number of devices with a compliant status. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the compliantDeviceCount property.
+// SetCompliantDeviceCount sets the compliantDeviceCount property value. The number of devices with a compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetCompliantDeviceCount(value *int32)() {
     m.compliantDeviceCount = value
 }
-// Sets the configManagerDeviceCount property value. The number of devices manged by Configuration Manager. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the configManagerDeviceCount property.
+// SetConfigManagerDeviceCount sets the configManagerDeviceCount property value. The number of devices manged by Configuration Manager. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetConfigManagerDeviceCount(value *int32)() {
     m.configManagerDeviceCount = value
 }
-// Sets the countDateTime property value. The date and time compliance snapshot was performed. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the countDateTime property.
+// SetCountDateTime sets the countDateTime property value. The date and time compliance snapshot was performed. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetCountDateTime(value *string)() {
     m.countDateTime = value
 }
-// Sets the errorDeviceCount property value. The number of devices with an error status. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the errorDeviceCount property.
+// SetErrorDeviceCount sets the errorDeviceCount property value. The number of devices with an error status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetErrorDeviceCount(value *int32)() {
     m.errorDeviceCount = value
 }
-// Sets the inGracePeriodDeviceCount property value. The number of devices that are in a grace period status. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the inGracePeriodDeviceCount property.
+// SetInGracePeriodDeviceCount sets the inGracePeriodDeviceCount property value. The number of devices that are in a grace period status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetInGracePeriodDeviceCount(value *int32)() {
     m.inGracePeriodDeviceCount = value
 }
-// Sets the noncompliantDeviceCount property value. The number of devices that are in a non-compliant status. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the noncompliantDeviceCount property.
+// SetNoncompliantDeviceCount sets the noncompliantDeviceCount property value. The number of devices that are in a non-compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetNoncompliantDeviceCount(value *int32)() {
     m.noncompliantDeviceCount = value
 }
-// Sets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the tenantDisplayName property.
+// SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetTenantDisplayName(value *string)() {
     m.tenantDisplayName = value
 }
-// Sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the tenantId property.
+// SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetTenantId(value *string)() {
     m.tenantId = value
 }
-// Sets the unknownDeviceCount property value. The number of devices in an unknown status. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the unknownDeviceCount property.
+// SetUnknownDeviceCount sets the unknownDeviceCount property value. The number of devices in an unknown status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetUnknownDeviceCount(value *int32)() {
     m.unknownDeviceCount = value
 }

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \officeConfiguration\clientConfigurations\{officeClientConfiguration-id}\assignments\{officeClientConfigurationAssignment-id}
+// officeClientConfigurationAssignmentRequestBuilder builds and executes requests for operations under \officeConfiguration\clientConfigurations\{officeClientConfiguration-id}\assignments\{officeClientConfigurationAssignment-id}
 type OfficeClientConfigurationAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OfficeClientConfigurationAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OfficeClientConfigurationAssignmentRequestBuilderDeleteOptions options for Delete
 type OfficeClientConfigurationAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type OfficeClientConfigurationAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OfficeClientConfigurationAssignmentRequestBuilderGetOptions options for Get
 type OfficeClientConfigurationAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type OfficeClientConfigurationAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of group assignments for the policy.
+// officeClientConfigurationAssignmentRequestBuilderGetQueryParameters the list of group assignments for the policy.
 type OfficeClientConfigurationAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OfficeClientConfigurationAssignmentRequestBuilderPatchOptions options for Patch
 type OfficeClientConfigurationAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeClientConfigurationAssignment;
@@ -53,10 +53,7 @@ type OfficeClientConfigurationAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OfficeClientConfigurationAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOfficeClientConfigurationAssignmentRequestBuilderInternal instantiates a new OfficeClientConfigurationAssignmentRequestBuilder and sets the default values.
 func NewOfficeClientConfigurationAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OfficeClientConfigurationAssignmentRequestBuilder) {
     m := &OfficeClientConfigurationAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewOfficeClientConfigurationAssignmentRequestBuilderInternal(pathParameters
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OfficeClientConfigurationAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOfficeClientConfigurationAssignmentRequestBuilder instantiates a new OfficeClientConfigurationAssignmentRequestBuilder and sets the default values.
 func NewOfficeClientConfigurationAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OfficeClientConfigurationAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOfficeClientConfigurationAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of group assignments for the policy.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of group assignments for the policy.
 func (m *OfficeClientConfigurationAssignmentRequestBuilder) CreateDeleteRequestInformation(options *OfficeClientConfigurationAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *OfficeClientConfigurationAssignmentRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// The list of group assignments for the policy.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of group assignments for the policy.
 func (m *OfficeClientConfigurationAssignmentRequestBuilder) CreateGetRequestInformation(options *OfficeClientConfigurationAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *OfficeClientConfigurationAssignmentRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// The list of group assignments for the policy.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of group assignments for the policy.
 func (m *OfficeClientConfigurationAssignmentRequestBuilder) CreatePatchRequestInformation(options *OfficeClientConfigurationAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *OfficeClientConfigurationAssignmentRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// The list of group assignments for the policy.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of group assignments for the policy.
 func (m *OfficeClientConfigurationAssignmentRequestBuilder) Delete(options *OfficeClientConfigurationAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *OfficeClientConfigurationAssignmentRequestBuilder) Delete(options *Offi
     }
     return nil
 }
-// The list of group assignments for the policy.
-// Parameters:
-//  - options : Options for the request
+// Get the list of group assignments for the policy.
 func (m *OfficeClientConfigurationAssignmentRequestBuilder) Get(options *OfficeClientConfigurationAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeClientConfigurationAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *OfficeClientConfigurationAssignmentRequestBuilder) Get(options *OfficeC
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OfficeClientConfigurationAssignment), nil
 }
-// The list of group assignments for the policy.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of group assignments for the policy.
 func (m *OfficeClientConfigurationAssignmentRequestBuilder) Patch(options *OfficeClientConfigurationAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

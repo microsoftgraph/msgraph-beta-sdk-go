@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\deviceStates
+// deviceStatesRequestBuilder builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\deviceStates
 type DeviceStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceStatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceStatesRequestBuilderGetOptions options for Get
 type DeviceStatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceStatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of states of all devices that the intent is applied to
+// deviceStatesRequestBuilderGetQueryParameters collection of states of all devices that the intent is applied to
 type DeviceStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceStatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceStatesRequestBuilderPostOptions options for Post
 type DeviceStatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentDeviceState;
@@ -56,10 +56,7 @@ type DeviceStatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceStatesRequestBuilderInternal instantiates a new DeviceStatesRequestBuilder and sets the default values.
 func NewDeviceStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceStatesRequestBuilder) {
     m := &DeviceStatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceStatesRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceStatesRequestBuilder instantiates a new DeviceStatesRequestBuilder and sets the default values.
 func NewDeviceStatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceStatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of states of all devices that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of states of all devices that the intent is applied to
 func (m *DeviceStatesRequestBuilder) CreateGetRequestInformation(options *DeviceStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceStatesRequestBuilder) CreateGetRequestInformation(options *Device
     }
     return requestInfo, nil
 }
-// Collection of states of all devices that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of states of all devices that the intent is applied to
 func (m *DeviceStatesRequestBuilder) CreatePostRequestInformation(options *DeviceStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceStatesRequestBuilder) CreatePostRequestInformation(options *Devic
     }
     return requestInfo, nil
 }
-// Collection of states of all devices that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// Get collection of states of all devices that the intent is applied to
 func (m *DeviceStatesRequestBuilder) Get(options *DeviceStatesRequestBuilderGetOptions)(*DeviceStatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceStatesRequestBuilder) Get(options *DeviceStatesRequestBuilderGetO
     }
     return res.(*DeviceStatesResponse), nil
 }
-// Collection of states of all devices that the intent is applied to
-// Parameters:
-//  - options : Options for the request
+// Post collection of states of all devices that the intent is applied to
 func (m *DeviceStatesRequestBuilder) Post(options *DeviceStatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementIntentDeviceState, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

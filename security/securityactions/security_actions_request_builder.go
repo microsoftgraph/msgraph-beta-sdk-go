@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\securityActions
+// securityActionsRequestBuilder builds and executes requests for operations under \security\securityActions
 type SecurityActionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SecurityActionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SecurityActionsRequestBuilderGetOptions options for Get
 type SecurityActionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SecurityActionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get securityActions from security
+// securityActionsRequestBuilderGetQueryParameters get securityActions from security
 type SecurityActionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SecurityActionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SecurityActionsRequestBuilderPostOptions options for Post
 type SecurityActionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityAction;
@@ -56,10 +56,7 @@ type SecurityActionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SecurityActionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSecurityActionsRequestBuilderInternal instantiates a new SecurityActionsRequestBuilder and sets the default values.
 func NewSecurityActionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecurityActionsRequestBuilder) {
     m := &SecurityActionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSecurityActionsRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SecurityActionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSecurityActionsRequestBuilder instantiates a new SecurityActionsRequestBuilder and sets the default values.
 func NewSecurityActionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecurityActionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get securityActions from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get securityActions from security
 func (m *SecurityActionsRequestBuilder) CreateGetRequestInformation(options *SecurityActionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SecurityActionsRequestBuilder) CreateGetRequestInformation(options *Sec
     }
     return requestInfo, nil
 }
-// Create new navigation property to securityActions for security
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to securityActions for security
 func (m *SecurityActionsRequestBuilder) CreatePostRequestInformation(options *SecurityActionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SecurityActionsRequestBuilder) CreatePostRequestInformation(options *Se
     }
     return requestInfo, nil
 }
-// Get securityActions from security
-// Parameters:
-//  - options : Options for the request
+// Get get securityActions from security
 func (m *SecurityActionsRequestBuilder) Get(options *SecurityActionsRequestBuilderGetOptions)(*SecurityActionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SecurityActionsRequestBuilder) Get(options *SecurityActionsRequestBuild
     }
     return res.(*SecurityActionsResponse), nil
 }
-// Create new navigation property to securityActions for security
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to securityActions for security
 func (m *SecurityActionsRequestBuilder) Post(options *SecurityActionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityAction, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

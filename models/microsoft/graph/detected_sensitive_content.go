@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// detectedSensitiveContent 
 type DetectedSensitiveContent struct {
     DetectedSensitiveContentBase
     // 
@@ -18,14 +18,14 @@ type DetectedSensitiveContent struct {
     // 
     sensitiveTypeSource *SensitiveTypeSource;
 }
-// Instantiates a new detectedSensitiveContent and sets the default values.
+// NewDetectedSensitiveContent instantiates a new detectedSensitiveContent and sets the default values.
 func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
     m := &DetectedSensitiveContent{
         DetectedSensitiveContentBase: *NewDetectedSensitiveContentBase(),
     }
     return m
 }
-// Gets the classificationAttributes property value. 
+// GetClassificationAttributes gets the classificationAttributes property value. 
 func (m *DetectedSensitiveContent) GetClassificationAttributes()([]ClassificationAttribute) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *DetectedSensitiveContent) GetClassificationAttributes()([]Classificatio
         return m.classificationAttributes
     }
 }
-// Gets the classificationMethod property value. 
+// GetClassificationMethod gets the classificationMethod property value. 
 func (m *DetectedSensitiveContent) GetClassificationMethod()(*ClassificationMethod) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *DetectedSensitiveContent) GetClassificationMethod()(*ClassificationMeth
         return m.classificationMethod
     }
 }
-// Gets the matches property value. 
+// GetMatches gets the matches property value. 
 func (m *DetectedSensitiveContent) GetMatches()([]SensitiveContentLocation) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *DetectedSensitiveContent) GetMatches()([]SensitiveContentLocation) {
         return m.matches
     }
 }
-// Gets the scope property value. 
+// GetScope gets the scope property value. 
 func (m *DetectedSensitiveContent) GetScope()(*SensitiveTypeScope) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *DetectedSensitiveContent) GetScope()(*SensitiveTypeScope) {
         return m.scope
     }
 }
-// Gets the sensitiveTypeSource property value. 
+// GetSensitiveTypeSource gets the sensitiveTypeSource property value. 
 func (m *DetectedSensitiveContent) GetSensitiveTypeSource()(*SensitiveTypeSource) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *DetectedSensitiveContent) GetSensitiveTypeSource()(*SensitiveTypeSource
         return m.sensitiveTypeSource
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DetectedSensitiveContentBase.GetFieldDeserializers()
     res["classificationAttributes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,9 +134,7 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
 func (m *DetectedSensitiveContent) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.DetectedSensitiveContentBase.Serialize(writer)
     if err != nil {
@@ -187,33 +185,23 @@ func (m *DetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the classificationAttributes property value. 
-// Parameters:
-//  - value : Value to set for the classificationAttributes property.
+// SetClassificationAttributes sets the classificationAttributes property value. 
 func (m *DetectedSensitiveContent) SetClassificationAttributes(value []ClassificationAttribute)() {
     m.classificationAttributes = value
 }
-// Sets the classificationMethod property value. 
-// Parameters:
-//  - value : Value to set for the classificationMethod property.
+// SetClassificationMethod sets the classificationMethod property value. 
 func (m *DetectedSensitiveContent) SetClassificationMethod(value *ClassificationMethod)() {
     m.classificationMethod = value
 }
-// Sets the matches property value. 
-// Parameters:
-//  - value : Value to set for the matches property.
+// SetMatches sets the matches property value. 
 func (m *DetectedSensitiveContent) SetMatches(value []SensitiveContentLocation)() {
     m.matches = value
 }
-// Sets the scope property value. 
-// Parameters:
-//  - value : Value to set for the scope property.
+// SetScope sets the scope property value. 
 func (m *DetectedSensitiveContent) SetScope(value *SensitiveTypeScope)() {
     m.scope = value
 }
-// Sets the sensitiveTypeSource property value. 
-// Parameters:
-//  - value : Value to set for the sensitiveTypeSource property.
+// SetSensitiveTypeSource sets the sensitiveTypeSource property value. 
 func (m *DetectedSensitiveContent) SetSensitiveTypeSource(value *SensitiveTypeSource)() {
     m.sensitiveTypeSource = value
 }

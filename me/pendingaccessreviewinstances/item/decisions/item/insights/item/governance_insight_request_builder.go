@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}\decisions\{accessReviewInstanceDecisionItem-id}\insights\{governanceInsight-id}
+// governanceInsightRequestBuilder builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}\decisions\{accessReviewInstanceDecisionItem-id}\insights\{governanceInsight-id}
 type GovernanceInsightRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GovernanceInsightRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GovernanceInsightRequestBuilderDeleteOptions options for Delete
 type GovernanceInsightRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type GovernanceInsightRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GovernanceInsightRequestBuilderGetOptions options for Get
 type GovernanceInsightRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type GovernanceInsightRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get insights from me
+// governanceInsightRequestBuilderGetQueryParameters get insights from me
 type GovernanceInsightRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GovernanceInsightRequestBuilderPatchOptions options for Patch
 type GovernanceInsightRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceInsight;
@@ -53,10 +53,7 @@ type GovernanceInsightRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GovernanceInsightRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceInsightRequestBuilderInternal instantiates a new GovernanceInsightRequestBuilder and sets the default values.
 func NewGovernanceInsightRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceInsightRequestBuilder) {
     m := &GovernanceInsightRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewGovernanceInsightRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GovernanceInsightRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGovernanceInsightRequestBuilder instantiates a new GovernanceInsightRequestBuilder and sets the default values.
 func NewGovernanceInsightRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GovernanceInsightRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceInsightRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property insights for me
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property insights for me
 func (m *GovernanceInsightRequestBuilder) CreateDeleteRequestInformation(options *GovernanceInsightRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *GovernanceInsightRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// Get insights from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get insights from me
 func (m *GovernanceInsightRequestBuilder) CreateGetRequestInformation(options *GovernanceInsightRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *GovernanceInsightRequestBuilder) CreateGetRequestInformation(options *G
     }
     return requestInfo, nil
 }
-// Update the navigation property insights in me
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property insights in me
 func (m *GovernanceInsightRequestBuilder) CreatePatchRequestInformation(options *GovernanceInsightRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *GovernanceInsightRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Delete navigation property insights for me
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property insights for me
 func (m *GovernanceInsightRequestBuilder) Delete(options *GovernanceInsightRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *GovernanceInsightRequestBuilder) Delete(options *GovernanceInsightReque
     }
     return nil
 }
-// Get insights from me
-// Parameters:
-//  - options : Options for the request
+// Get get insights from me
 func (m *GovernanceInsightRequestBuilder) Get(options *GovernanceInsightRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceInsight, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *GovernanceInsightRequestBuilder) Get(options *GovernanceInsightRequestB
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceInsight), nil
 }
-// Update the navigation property insights in me
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property insights in me
 func (m *GovernanceInsightRequestBuilder) Patch(options *GovernanceInsightRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

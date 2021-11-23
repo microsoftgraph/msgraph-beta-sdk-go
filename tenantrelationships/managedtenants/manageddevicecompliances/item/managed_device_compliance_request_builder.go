@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managedDeviceCompliances\{managedDeviceCompliance-id}
+// managedDeviceComplianceRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managedDeviceCompliances\{managedDeviceCompliance-id}
 type ManagedDeviceComplianceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagedDeviceComplianceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedDeviceComplianceRequestBuilderDeleteOptions options for Delete
 type ManagedDeviceComplianceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ManagedDeviceComplianceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedDeviceComplianceRequestBuilderGetOptions options for Get
 type ManagedDeviceComplianceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ManagedDeviceComplianceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of compliance for managed devices across managed tenants.
+// managedDeviceComplianceRequestBuilderGetQueryParameters the collection of compliance for managed devices across managed tenants.
 type ManagedDeviceComplianceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedDeviceComplianceRequestBuilderPatchOptions options for Patch
 type ManagedDeviceComplianceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceCompliance;
@@ -53,10 +53,7 @@ type ManagedDeviceComplianceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagedDeviceComplianceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceComplianceRequestBuilderInternal instantiates a new ManagedDeviceComplianceRequestBuilder and sets the default values.
 func NewManagedDeviceComplianceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceComplianceRequestBuilder) {
     m := &ManagedDeviceComplianceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewManagedDeviceComplianceRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedDeviceComplianceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceComplianceRequestBuilder instantiates a new ManagedDeviceComplianceRequestBuilder and sets the default values.
 func NewManagedDeviceComplianceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceComplianceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceComplianceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of compliance for managed devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of compliance for managed devices across managed tenants.
 func (m *ManagedDeviceComplianceRequestBuilder) CreateDeleteRequestInformation(options *ManagedDeviceComplianceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ManagedDeviceComplianceRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// The collection of compliance for managed devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of compliance for managed devices across managed tenants.
 func (m *ManagedDeviceComplianceRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceComplianceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ManagedDeviceComplianceRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The collection of compliance for managed devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of compliance for managed devices across managed tenants.
 func (m *ManagedDeviceComplianceRequestBuilder) CreatePatchRequestInformation(options *ManagedDeviceComplianceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ManagedDeviceComplianceRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// The collection of compliance for managed devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of compliance for managed devices across managed tenants.
 func (m *ManagedDeviceComplianceRequestBuilder) Delete(options *ManagedDeviceComplianceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ManagedDeviceComplianceRequestBuilder) Delete(options *ManagedDeviceCom
     }
     return nil
 }
-// The collection of compliance for managed devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of compliance for managed devices across managed tenants.
 func (m *ManagedDeviceComplianceRequestBuilder) Get(options *ManagedDeviceComplianceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceCompliance, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ManagedDeviceComplianceRequestBuilder) Get(options *ManagedDeviceCompli
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceCompliance), nil
 }
-// The collection of compliance for managed devices across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of compliance for managed devices across managed tenants.
 func (m *ManagedDeviceComplianceRequestBuilder) Patch(options *ManagedDeviceComplianceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

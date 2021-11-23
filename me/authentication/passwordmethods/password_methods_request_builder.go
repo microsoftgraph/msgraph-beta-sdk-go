@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\authentication\passwordMethods
+// passwordMethodsRequestBuilder builds and executes requests for operations under \me\authentication\passwordMethods
 type PasswordMethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PasswordMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PasswordMethodsRequestBuilderGetOptions options for Get
 type PasswordMethodsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PasswordMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get passwordMethods from me
+// passwordMethodsRequestBuilderGetQueryParameters get passwordMethods from me
 type PasswordMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PasswordMethodsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PasswordMethodsRequestBuilderPostOptions options for Post
 type PasswordMethodsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordAuthenticationMethod;
@@ -56,10 +56,7 @@ type PasswordMethodsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PasswordMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPasswordMethodsRequestBuilderInternal instantiates a new PasswordMethodsRequestBuilder and sets the default values.
 func NewPasswordMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PasswordMethodsRequestBuilder) {
     m := &PasswordMethodsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPasswordMethodsRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PasswordMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPasswordMethodsRequestBuilder instantiates a new PasswordMethodsRequestBuilder and sets the default values.
 func NewPasswordMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PasswordMethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPasswordMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get passwordMethods from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get passwordMethods from me
 func (m *PasswordMethodsRequestBuilder) CreateGetRequestInformation(options *PasswordMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PasswordMethodsRequestBuilder) CreateGetRequestInformation(options *Pas
     }
     return requestInfo, nil
 }
-// Create new navigation property to passwordMethods for me
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to passwordMethods for me
 func (m *PasswordMethodsRequestBuilder) CreatePostRequestInformation(options *PasswordMethodsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PasswordMethodsRequestBuilder) CreatePostRequestInformation(options *Pa
     }
     return requestInfo, nil
 }
-// Get passwordMethods from me
-// Parameters:
-//  - options : Options for the request
+// Get get passwordMethods from me
 func (m *PasswordMethodsRequestBuilder) Get(options *PasswordMethodsRequestBuilderGetOptions)(*PasswordMethodsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PasswordMethodsRequestBuilder) Get(options *PasswordMethodsRequestBuild
     }
     return res.(*PasswordMethodsResponse), nil
 }
-// Create new navigation property to passwordMethods for me
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to passwordMethods for me
 func (m *PasswordMethodsRequestBuilder) Post(options *PasswordMethodsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PasswordAuthenticationMethod, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

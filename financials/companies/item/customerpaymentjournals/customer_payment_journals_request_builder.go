@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\customerPaymentJournals
+// customerPaymentJournalsRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\customerPaymentJournals
 type CustomerPaymentJournalsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CustomerPaymentJournalsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CustomerPaymentJournalsRequestBuilderGetOptions options for Get
 type CustomerPaymentJournalsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CustomerPaymentJournalsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get customerPaymentJournals from financials
+// customerPaymentJournalsRequestBuilderGetQueryParameters get customerPaymentJournals from financials
 type CustomerPaymentJournalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CustomerPaymentJournalsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CustomerPaymentJournalsRequestBuilderPostOptions options for Post
 type CustomerPaymentJournalsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomerPaymentJournal;
@@ -56,10 +56,7 @@ type CustomerPaymentJournalsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CustomerPaymentJournalsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustomerPaymentJournalsRequestBuilderInternal instantiates a new CustomerPaymentJournalsRequestBuilder and sets the default values.
 func NewCustomerPaymentJournalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustomerPaymentJournalsRequestBuilder) {
     m := &CustomerPaymentJournalsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCustomerPaymentJournalsRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CustomerPaymentJournalsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCustomerPaymentJournalsRequestBuilder instantiates a new CustomerPaymentJournalsRequestBuilder and sets the default values.
 func NewCustomerPaymentJournalsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustomerPaymentJournalsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCustomerPaymentJournalsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get customerPaymentJournals from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get customerPaymentJournals from financials
 func (m *CustomerPaymentJournalsRequestBuilder) CreateGetRequestInformation(options *CustomerPaymentJournalsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CustomerPaymentJournalsRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Create new navigation property to customerPaymentJournals for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to customerPaymentJournals for financials
 func (m *CustomerPaymentJournalsRequestBuilder) CreatePostRequestInformation(options *CustomerPaymentJournalsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CustomerPaymentJournalsRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Get customerPaymentJournals from financials
-// Parameters:
-//  - options : Options for the request
+// Get get customerPaymentJournals from financials
 func (m *CustomerPaymentJournalsRequestBuilder) Get(options *CustomerPaymentJournalsRequestBuilderGetOptions)(*CustomerPaymentJournalsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CustomerPaymentJournalsRequestBuilder) Get(options *CustomerPaymentJour
     }
     return res.(*CustomerPaymentJournalsResponse), nil
 }
-// Create new navigation property to customerPaymentJournals for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to customerPaymentJournals for financials
 func (m *CustomerPaymentJournalsRequestBuilder) Post(options *CustomerPaymentJournalsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomerPaymentJournal, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

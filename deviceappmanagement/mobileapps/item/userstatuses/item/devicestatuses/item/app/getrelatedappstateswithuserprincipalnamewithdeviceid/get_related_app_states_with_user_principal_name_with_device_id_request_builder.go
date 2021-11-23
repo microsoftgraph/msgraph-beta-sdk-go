@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\deviceStatuses\{mobileAppInstallStatus-id}\app\microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')
+// getRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\deviceStatuses\{mobileAppInstallStatus-id}\app\microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')
 type GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderGetOptions options for Get
 type GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,12 +23,7 @@ type GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderGetOption
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder and sets the default values.
-// Parameters:
-//  - deviceId : Usage: deviceId={deviceId}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
-//  - userPrincipalName : Usage: userPrincipalName={userPrincipalName}
+// NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderInternal instantiates a new GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder and sets the default values.
 func NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, userPrincipalName *string, deviceId *string)(*GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) {
     m := &GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder{
     }
@@ -47,18 +42,13 @@ func NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderIntern
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder instantiates a new GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder and sets the default values.
 func NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Invoke function getRelatedAppStates
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getRelatedAppStates
 func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) CreateGetRequestInformation(options *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -75,9 +65,7 @@ func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) Cre
     }
     return requestInfo, nil
 }
-// Invoke function getRelatedAppStates
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getRelatedAppStates
 func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) Get(options *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderGetOptions)([]GetRelatedAppStatesWithUserPrincipalNameWithDeviceId, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

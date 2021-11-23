@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\policySets\{policySet-id}\items\{policySetItem-id}
+// policySetItemRequestBuilder builds and executes requests for operations under \deviceAppManagement\policySets\{policySet-id}\items\{policySetItem-id}
 type PolicySetItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PolicySetItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PolicySetItemRequestBuilderDeleteOptions options for Delete
 type PolicySetItemRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PolicySetItemRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PolicySetItemRequestBuilderGetOptions options for Get
 type PolicySetItemRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PolicySetItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Items of the PolicySet with maximum count 100.
+// policySetItemRequestBuilderGetQueryParameters items of the PolicySet with maximum count 100.
 type PolicySetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PolicySetItemRequestBuilderPatchOptions options for Patch
 type PolicySetItemRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetItem;
@@ -53,10 +53,7 @@ type PolicySetItemRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PolicySetItemRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicySetItemRequestBuilderInternal instantiates a new PolicySetItemRequestBuilder and sets the default values.
 func NewPolicySetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicySetItemRequestBuilder) {
     m := &PolicySetItemRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPolicySetItemRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PolicySetItemRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPolicySetItemRequestBuilder instantiates a new PolicySetItemRequestBuilder and sets the default values.
 func NewPolicySetItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PolicySetItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPolicySetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Items of the PolicySet with maximum count 100.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation items of the PolicySet with maximum count 100.
 func (m *PolicySetItemRequestBuilder) CreateDeleteRequestInformation(options *PolicySetItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PolicySetItemRequestBuilder) CreateDeleteRequestInformation(options *Po
     }
     return requestInfo, nil
 }
-// Items of the PolicySet with maximum count 100.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation items of the PolicySet with maximum count 100.
 func (m *PolicySetItemRequestBuilder) CreateGetRequestInformation(options *PolicySetItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PolicySetItemRequestBuilder) CreateGetRequestInformation(options *Polic
     }
     return requestInfo, nil
 }
-// Items of the PolicySet with maximum count 100.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation items of the PolicySet with maximum count 100.
 func (m *PolicySetItemRequestBuilder) CreatePatchRequestInformation(options *PolicySetItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PolicySetItemRequestBuilder) CreatePatchRequestInformation(options *Pol
     }
     return requestInfo, nil
 }
-// Items of the PolicySet with maximum count 100.
-// Parameters:
-//  - options : Options for the request
+// Delete items of the PolicySet with maximum count 100.
 func (m *PolicySetItemRequestBuilder) Delete(options *PolicySetItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PolicySetItemRequestBuilder) Delete(options *PolicySetItemRequestBuilde
     }
     return nil
 }
-// Items of the PolicySet with maximum count 100.
-// Parameters:
-//  - options : Options for the request
+// Get items of the PolicySet with maximum count 100.
 func (m *PolicySetItemRequestBuilder) Get(options *PolicySetItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PolicySetItemRequestBuilder) Get(options *PolicySetItemRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PolicySetItem), nil
 }
-// Items of the PolicySet with maximum count 100.
-// Parameters:
-//  - options : Options for the request
+// Patch items of the PolicySet with maximum count 100.
 func (m *PolicySetItemRequestBuilder) Patch(options *PolicySetItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

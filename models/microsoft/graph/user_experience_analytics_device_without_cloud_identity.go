@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// userExperienceAnalyticsDeviceWithoutCloudIdentity 
 type UserExperienceAnalyticsDeviceWithoutCloudIdentity struct {
     Entity
     // Azure Active Directory Device Id
@@ -12,14 +12,14 @@ type UserExperienceAnalyticsDeviceWithoutCloudIdentity struct {
     // The tenant attach device's name.
     deviceName *string;
 }
-// Instantiates a new userExperienceAnalyticsDeviceWithoutCloudIdentity and sets the default values.
+// NewUserExperienceAnalyticsDeviceWithoutCloudIdentity instantiates a new userExperienceAnalyticsDeviceWithoutCloudIdentity and sets the default values.
 func NewUserExperienceAnalyticsDeviceWithoutCloudIdentity()(*UserExperienceAnalyticsDeviceWithoutCloudIdentity) {
     m := &UserExperienceAnalyticsDeviceWithoutCloudIdentity{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the azureAdDeviceId property value. Azure Active Directory Device Id
+// GetAzureAdDeviceId gets the azureAdDeviceId property value. Azure Active Directory Device Id
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetAzureAdDeviceId()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetAzureAdDeviceId()
         return m.azureAdDeviceId
     }
 }
-// Gets the deviceName property value. The tenant attach device's name.
+// GetDeviceName gets the deviceName property value. The tenant attach device's name.
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetDeviceName()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetDeviceName()(*str
         return m.deviceName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["azureAdDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,9 +63,7 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetFieldDeserializer
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -85,15 +83,11 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) Serialize(writer i04
     }
     return nil
 }
-// Sets the azureAdDeviceId property value. Azure Active Directory Device Id
-// Parameters:
-//  - value : Value to set for the azureAdDeviceId property.
+// SetAzureAdDeviceId sets the azureAdDeviceId property value. Azure Active Directory Device Id
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) SetAzureAdDeviceId(value *string)() {
     m.azureAdDeviceId = value
 }
-// Sets the deviceName property value. The tenant attach device's name.
-// Parameters:
-//  - value : Value to set for the deviceName property.
+// SetDeviceName sets the deviceName property value. The tenant attach device's name.
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) SetDeviceName(value *string)() {
     m.deviceName = value
 }

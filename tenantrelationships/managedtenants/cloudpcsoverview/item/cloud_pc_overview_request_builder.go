@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\cloudPcsOverview\{cloudPcOverview-tenantId}
+// cloudPcOverviewRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\cloudPcsOverview\{cloudPcOverview-tenantId}
 type CloudPcOverviewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CloudPcOverviewRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CloudPcOverviewRequestBuilderDeleteOptions options for Delete
 type CloudPcOverviewRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CloudPcOverviewRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CloudPcOverviewRequestBuilderGetOptions options for Get
 type CloudPcOverviewRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CloudPcOverviewRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Overview of cloud PC information across managed tenants.
+// cloudPcOverviewRequestBuilderGetQueryParameters overview of cloud PC information across managed tenants.
 type CloudPcOverviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CloudPcOverviewRequestBuilderPatchOptions options for Patch
 type CloudPcOverviewRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcOverview;
@@ -53,10 +53,7 @@ type CloudPcOverviewRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CloudPcOverviewRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcOverviewRequestBuilderInternal instantiates a new CloudPcOverviewRequestBuilder and sets the default values.
 func NewCloudPcOverviewRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcOverviewRequestBuilder) {
     m := &CloudPcOverviewRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCloudPcOverviewRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CloudPcOverviewRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCloudPcOverviewRequestBuilder instantiates a new CloudPcOverviewRequestBuilder and sets the default values.
 func NewCloudPcOverviewRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CloudPcOverviewRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcOverviewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Overview of cloud PC information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation overview of cloud PC information across managed tenants.
 func (m *CloudPcOverviewRequestBuilder) CreateDeleteRequestInformation(options *CloudPcOverviewRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CloudPcOverviewRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Overview of cloud PC information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation overview of cloud PC information across managed tenants.
 func (m *CloudPcOverviewRequestBuilder) CreateGetRequestInformation(options *CloudPcOverviewRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CloudPcOverviewRequestBuilder) CreateGetRequestInformation(options *Clo
     }
     return requestInfo, nil
 }
-// Overview of cloud PC information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation overview of cloud PC information across managed tenants.
 func (m *CloudPcOverviewRequestBuilder) CreatePatchRequestInformation(options *CloudPcOverviewRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CloudPcOverviewRequestBuilder) CreatePatchRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// Overview of cloud PC information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Delete overview of cloud PC information across managed tenants.
 func (m *CloudPcOverviewRequestBuilder) Delete(options *CloudPcOverviewRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CloudPcOverviewRequestBuilder) Delete(options *CloudPcOverviewRequestBu
     }
     return nil
 }
-// Overview of cloud PC information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get overview of cloud PC information across managed tenants.
 func (m *CloudPcOverviewRequestBuilder) Get(options *CloudPcOverviewRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcOverview, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CloudPcOverviewRequestBuilder) Get(options *CloudPcOverviewRequestBuild
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcOverview), nil
 }
-// Overview of cloud PC information across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Patch overview of cloud PC information across managed tenants.
 func (m *CloudPcOverviewRequestBuilder) Patch(options *CloudPcOverviewRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

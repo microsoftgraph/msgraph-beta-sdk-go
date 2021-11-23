@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// managementTemplateCollection 
 type ManagementTemplateCollection struct {
     Entity
     // 
@@ -14,14 +14,14 @@ type ManagementTemplateCollection struct {
     // 
     managementTemplates []ManagementTemplate;
 }
-// Instantiates a new managementTemplateCollection and sets the default values.
+// NewManagementTemplateCollection instantiates a new managementTemplateCollection and sets the default values.
 func NewManagementTemplateCollection()(*ManagementTemplateCollection) {
     m := &ManagementTemplateCollection{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the description property value. 
+// GetDescription gets the description property value. 
 func (m *ManagementTemplateCollection) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *ManagementTemplateCollection) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *ManagementTemplateCollection) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *ManagementTemplateCollection) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the managementTemplates property value. 
+// GetManagementTemplates gets the managementTemplates property value. 
 func (m *ManagementTemplateCollection) GetManagementTemplates()([]ManagementTemplate) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *ManagementTemplateCollection) GetManagementTemplates()([]ManagementTemp
         return m.managementTemplates
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateCollection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,9 +87,7 @@ func (m *ManagementTemplateCollection) GetFieldDeserializers()(map[string]func(i
 func (m *ManagementTemplateCollection) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagementTemplateCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -120,21 +118,15 @@ func (m *ManagementTemplateCollection) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the description property value. 
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. 
 func (m *ManagementTemplateCollection) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *ManagementTemplateCollection) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the managementTemplates property value. 
-// Parameters:
-//  - value : Value to set for the managementTemplates property.
+// SetManagementTemplates sets the managementTemplates property value. 
 func (m *ManagementTemplateCollection) SetManagementTemplates(value []ManagementTemplate)() {
     m.managementTemplates = value
 }

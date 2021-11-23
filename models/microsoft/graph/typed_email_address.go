@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// typedEmailAddress 
 type TypedEmailAddress struct {
     EmailAddress
     // To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
@@ -12,14 +12,14 @@ type TypedEmailAddress struct {
     // The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
     type_escaped *EmailType;
 }
-// Instantiates a new typedEmailAddress and sets the default values.
+// NewTypedEmailAddress instantiates a new typedEmailAddress and sets the default values.
 func NewTypedEmailAddress()(*TypedEmailAddress) {
     m := &TypedEmailAddress{
         EmailAddress: *NewEmailAddress(),
     }
     return m
 }
-// Gets the otherLabel property value. To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
+// GetOtherLabel gets the otherLabel property value. To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
 func (m *TypedEmailAddress) GetOtherLabel()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *TypedEmailAddress) GetOtherLabel()(*string) {
         return m.otherLabel
     }
 }
-// Gets the type_escaped property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
+// GetType_escaped gets the type_escaped property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
 func (m *TypedEmailAddress) GetType_escaped()(*EmailType) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *TypedEmailAddress) GetType_escaped()(*EmailType) {
         return m.type_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.EmailAddress.GetFieldDeserializers()
     res["otherLabel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,9 +64,7 @@ func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(interface{},
 func (m *TypedEmailAddress) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TypedEmailAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.EmailAddress.Serialize(writer)
     if err != nil {
@@ -87,15 +85,11 @@ func (m *TypedEmailAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the otherLabel property value. To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
-// Parameters:
-//  - value : Value to set for the otherLabel property.
+// SetOtherLabel sets the otherLabel property value. To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
 func (m *TypedEmailAddress) SetOtherLabel(value *string)() {
     m.otherLabel = value
 }
-// Sets the type_escaped property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
 func (m *TypedEmailAddress) SetType_escaped(value *EmailType)() {
     m.type_escaped = value
 }

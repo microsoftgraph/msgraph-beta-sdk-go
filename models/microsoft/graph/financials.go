@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Financials 
 type Financials struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     companies []Company;
 }
-// Instantiates a new Financials and sets the default values.
+// NewFinancials instantiates a new Financials and sets the default values.
 func NewFinancials()(*Financials) {
     m := &Financials{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Financials) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,7 +26,7 @@ func (m *Financials) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the companies property value. 
+// GetCompanies gets the companies property value. 
 func (m *Financials) GetCompanies()([]Company) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *Financials) GetCompanies()([]Company) {
         return m.companies
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Financials) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["companies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -56,9 +56,7 @@ func (m *Financials) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *Financials) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Financials) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCompanies()))
@@ -79,15 +77,11 @@ func (m *Financials) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Financials) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the companies property value. 
-// Parameters:
-//  - value : Value to set for the companies property.
+// SetCompanies sets the companies property value. 
 func (m *Financials) SetCompanies(value []Company)() {
     m.companies = value
 }

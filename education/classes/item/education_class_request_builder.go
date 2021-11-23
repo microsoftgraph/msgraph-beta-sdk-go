@@ -16,7 +16,7 @@ import (
     id33c9a2adb44743656c66ac6287fd646205cf808807397442c562d7261ab81af "github.com/microsoftgraph/msgraph-beta-sdk-go/education/classes/item/assignmentcategories/item"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}
+// educationClassRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}
 type EducationClassRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -25,7 +25,7 @@ type EducationClassRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EducationClassRequestBuilderDeleteOptions options for Delete
 type EducationClassRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -34,7 +34,7 @@ type EducationClassRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EducationClassRequestBuilderGetOptions options for Get
 type EducationClassRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -45,14 +45,14 @@ type EducationClassRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get classes from education
+// educationClassRequestBuilderGetQueryParameters get classes from education
 type EducationClassRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EducationClassRequestBuilderPatchOptions options for Patch
 type EducationClassRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationClass;
@@ -66,9 +66,7 @@ type EducationClassRequestBuilderPatchOptions struct {
 func (m *EducationClassRequestBuilder) AssignmentCategories()(*ie2d9988dc2165607477b233458b6b41efb14b20ef871a6f5407c79527c1fe3d1.AssignmentCategoriesRequestBuilder) {
     return ie2d9988dc2165607477b233458b6b41efb14b20ef871a6f5407c79527c1fe3d1.NewAssignmentCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.classes.item.assignmentCategories.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentCategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.classes.item.assignmentCategories.item collection
 func (m *EducationClassRequestBuilder) AssignmentCategoriesById(id string)(*id33c9a2adb44743656c66ac6287fd646205cf808807397442c562d7261ab81af.EducationCategoryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -85,9 +83,7 @@ func (m *EducationClassRequestBuilder) AssignmentDefaults()(*ibdb5b1525c6e65ee51
 func (m *EducationClassRequestBuilder) Assignments()(*i8e2e53960e8a6a06380d4ef2d8f516a18d60590f7da782cbf7c461851a4b2fe9.AssignmentsRequestBuilder) {
     return i8e2e53960e8a6a06380d4ef2d8f516a18d60590f7da782cbf7c461851a4b2fe9.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.classes.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.classes.item.assignments.item collection
 func (m *EducationClassRequestBuilder) AssignmentsById(id string)(*i1a0550da4eee947582946109e27a5d8b97a5dd93365d78fb41b93f4fcb684613.EducationAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -101,10 +97,7 @@ func (m *EducationClassRequestBuilder) AssignmentsById(id string)(*i1a0550da4eee
 func (m *EducationClassRequestBuilder) AssignmentSettings()(*i1a2560c3e16777ce4016204fe1a193e56b0af48fa14ae66e31d31833ad245f65.AssignmentSettingsRequestBuilder) {
     return i1a2560c3e16777ce4016204fe1a193e56b0af48fa14ae66e31d31833ad245f65.NewAssignmentSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new EducationClassRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationClassRequestBuilderInternal instantiates a new EducationClassRequestBuilder and sets the default values.
 func NewEducationClassRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationClassRequestBuilder) {
     m := &EducationClassRequestBuilder{
     }
@@ -117,18 +110,13 @@ func NewEducationClassRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EducationClassRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationClassRequestBuilder instantiates a new EducationClassRequestBuilder and sets the default values.
 func NewEducationClassRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationClassRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEducationClassRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property classes for education
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property classes for education
 func (m *EducationClassRequestBuilder) CreateDeleteRequestInformation(options *EducationClassRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +133,7 @@ func (m *EducationClassRequestBuilder) CreateDeleteRequestInformation(options *E
     }
     return requestInfo, nil
 }
-// Get classes from education
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get classes from education
 func (m *EducationClassRequestBuilder) CreateGetRequestInformation(options *EducationClassRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -167,9 +153,7 @@ func (m *EducationClassRequestBuilder) CreateGetRequestInformation(options *Educ
     }
     return requestInfo, nil
 }
-// Update the navigation property classes in education
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property classes in education
 func (m *EducationClassRequestBuilder) CreatePatchRequestInformation(options *EducationClassRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -187,9 +171,7 @@ func (m *EducationClassRequestBuilder) CreatePatchRequestInformation(options *Ed
     }
     return requestInfo, nil
 }
-// Delete navigation property classes for education
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property classes for education
 func (m *EducationClassRequestBuilder) Delete(options *EducationClassRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -201,9 +183,7 @@ func (m *EducationClassRequestBuilder) Delete(options *EducationClassRequestBuil
     }
     return nil
 }
-// Get classes from education
-// Parameters:
-//  - options : Options for the request
+// Get get classes from education
 func (m *EducationClassRequestBuilder) Get(options *EducationClassRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationClass, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -221,9 +201,7 @@ func (m *EducationClassRequestBuilder) Group()(*if2d0fdc70365b40fab81c748f0f6e31
 func (m *EducationClassRequestBuilder) Members()(*i4dc519cf190b35025011540ce15503c6dfbae11c1971b05ccbe2c89907556782.MembersRequestBuilder) {
     return i4dc519cf190b35025011540ce15503c6dfbae11c1971b05ccbe2c89907556782.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property classes in education
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property classes in education
 func (m *EducationClassRequestBuilder) Patch(options *EducationClassRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

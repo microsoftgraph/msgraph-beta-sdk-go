@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getConfigManagerDevicePolicyStatusReport
+// getConfigManagerDevicePolicyStatusReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getConfigManagerDevicePolicyStatusReport
 type GetConfigManagerDevicePolicyStatusReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetConfigManagerDevicePolicyStatusReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetConfigManagerDevicePolicyStatusReportRequestBuilderPostOptions options for Post
 type GetConfigManagerDevicePolicyStatusReportRequestBuilderPostOptions struct {
     // 
     Body *GetConfigManagerDevicePolicyStatusReportRequestBody;
@@ -24,10 +24,7 @@ type GetConfigManagerDevicePolicyStatusReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetConfigManagerDevicePolicyStatusReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetConfigManagerDevicePolicyStatusReportRequestBuilderInternal instantiates a new GetConfigManagerDevicePolicyStatusReportRequestBuilder and sets the default values.
 func NewGetConfigManagerDevicePolicyStatusReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetConfigManagerDevicePolicyStatusReportRequestBuilder) {
     m := &GetConfigManagerDevicePolicyStatusReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetConfigManagerDevicePolicyStatusReportRequestBuilderInternal(pathParam
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetConfigManagerDevicePolicyStatusReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetConfigManagerDevicePolicyStatusReportRequestBuilder instantiates a new GetConfigManagerDevicePolicyStatusReportRequestBuilder and sets the default values.
 func NewGetConfigManagerDevicePolicyStatusReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetConfigManagerDevicePolicyStatusReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetConfigManagerDevicePolicyStatusReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getConfigManagerDevicePolicyStatusReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getConfigManagerDevicePolicyStatusReport
 func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) CreatePostRequestInformation(options *GetConfigManagerDevicePolicyStatusReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) CreatePostReque
     }
     return requestInfo, nil
 }
-// Invoke action getConfigManagerDevicePolicyStatusReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getConfigManagerDevicePolicyStatusReport
 func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) Post(options *GetConfigManagerDevicePolicyStatusReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

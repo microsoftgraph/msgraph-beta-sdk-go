@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\synchronization\jobs\microsoft.graph.validateCredentials
+// validateCredentialsRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\jobs\microsoft.graph.validateCredentials
 type ValidateCredentialsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ValidateCredentialsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ValidateCredentialsRequestBuilderPostOptions options for Post
 type ValidateCredentialsRequestBuilderPostOptions struct {
     // 
     Body *ValidateCredentialsRequestBody;
@@ -24,10 +24,7 @@ type ValidateCredentialsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ValidateCredentialsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewValidateCredentialsRequestBuilderInternal instantiates a new ValidateCredentialsRequestBuilder and sets the default values.
 func NewValidateCredentialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ValidateCredentialsRequestBuilder) {
     m := &ValidateCredentialsRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewValidateCredentialsRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ValidateCredentialsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewValidateCredentialsRequestBuilder instantiates a new ValidateCredentialsRequestBuilder and sets the default values.
 func NewValidateCredentialsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ValidateCredentialsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewValidateCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action validateCredentials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action validateCredentials
 func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformation(options *ValidateCredentialsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Invoke action validateCredentials
-// Parameters:
-//  - options : Options for the request
+// Post invoke action validateCredentials
 func (m *ValidateCredentialsRequestBuilder) Post(options *ValidateCredentialsRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

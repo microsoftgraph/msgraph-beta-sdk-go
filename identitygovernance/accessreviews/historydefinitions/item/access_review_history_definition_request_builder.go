@@ -7,7 +7,7 @@ import (
     i42db7be89d115e19102580972cef749a80c405041b59920e6b1971555974a213 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/historydefinitions/item/generatedownloaduri"
 )
 
-// Builds and executes requests for operations under \identityGovernance\accessReviews\historyDefinitions\{accessReviewHistoryDefinition-id}
+// accessReviewHistoryDefinitionRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\historyDefinitions\{accessReviewHistoryDefinition-id}
 type AccessReviewHistoryDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AccessReviewHistoryDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessReviewHistoryDefinitionRequestBuilderDeleteOptions options for Delete
 type AccessReviewHistoryDefinitionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type AccessReviewHistoryDefinitionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessReviewHistoryDefinitionRequestBuilderGetOptions options for Get
 type AccessReviewHistoryDefinitionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type AccessReviewHistoryDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get historyDefinitions from identityGovernance
+// accessReviewHistoryDefinitionRequestBuilderGetQueryParameters get historyDefinitions from identityGovernance
 type AccessReviewHistoryDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessReviewHistoryDefinitionRequestBuilderPatchOptions options for Patch
 type AccessReviewHistoryDefinitionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryDefinition;
@@ -54,10 +54,7 @@ type AccessReviewHistoryDefinitionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccessReviewHistoryDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewHistoryDefinitionRequestBuilderInternal instantiates a new AccessReviewHistoryDefinitionRequestBuilder and sets the default values.
 func NewAccessReviewHistoryDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewHistoryDefinitionRequestBuilder) {
     m := &AccessReviewHistoryDefinitionRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewAccessReviewHistoryDefinitionRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessReviewHistoryDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewHistoryDefinitionRequestBuilder instantiates a new AccessReviewHistoryDefinitionRequestBuilder and sets the default values.
 func NewAccessReviewHistoryDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewHistoryDefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewHistoryDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property historyDefinitions for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property historyDefinitions for identityGovernance
 func (m *AccessReviewHistoryDefinitionRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewHistoryDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *AccessReviewHistoryDefinitionRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// Get historyDefinitions from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get historyDefinitions from identityGovernance
 func (m *AccessReviewHistoryDefinitionRequestBuilder) CreateGetRequestInformation(options *AccessReviewHistoryDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *AccessReviewHistoryDefinitionRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// Update the navigation property historyDefinitions in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property historyDefinitions in identityGovernance
 func (m *AccessReviewHistoryDefinitionRequestBuilder) CreatePatchRequestInformation(options *AccessReviewHistoryDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *AccessReviewHistoryDefinitionRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// Delete navigation property historyDefinitions for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property historyDefinitions for identityGovernance
 func (m *AccessReviewHistoryDefinitionRequestBuilder) Delete(options *AccessReviewHistoryDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *AccessReviewHistoryDefinitionRequestBuilder) Delete(options *AccessRevi
 func (m *AccessReviewHistoryDefinitionRequestBuilder) GenerateDownloadUri()(*i42db7be89d115e19102580972cef749a80c405041b59920e6b1971555974a213.GenerateDownloadUriRequestBuilder) {
     return i42db7be89d115e19102580972cef749a80c405041b59920e6b1971555974a213.NewGenerateDownloadUriRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get historyDefinitions from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get historyDefinitions from identityGovernance
 func (m *AccessReviewHistoryDefinitionRequestBuilder) Get(options *AccessReviewHistoryDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *AccessReviewHistoryDefinitionRequestBuilder) Get(options *AccessReviewH
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryDefinition), nil
 }
-// Update the navigation property historyDefinitions in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property historyDefinitions in identityGovernance
 func (m *AccessReviewHistoryDefinitionRequestBuilder) Patch(options *AccessReviewHistoryDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     idd7f87a5800cc2f448dc3af1265be2cd4f1850556ef510db37c852525dbe248c "github.com/microsoftgraph/msgraph-beta-sdk-go/informationprotection/sensitivitylabels/evaluate"
 )
 
-// Builds and executes requests for operations under \informationProtection\sensitivityLabels
+// sensitivityLabelsRequestBuilder builds and executes requests for operations under \informationProtection\sensitivityLabels
 type SensitivityLabelsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type SensitivityLabelsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SensitivityLabelsRequestBuilderGetOptions options for Get
 type SensitivityLabelsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type SensitivityLabelsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get sensitivityLabels from informationProtection
+// sensitivityLabelsRequestBuilderGetQueryParameters get sensitivityLabels from informationProtection
 type SensitivityLabelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type SensitivityLabelsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SensitivityLabelsRequestBuilderPostOptions options for Post
 type SensitivityLabelsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitivityLabel;
@@ -57,10 +57,7 @@ type SensitivityLabelsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SensitivityLabelsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSensitivityLabelsRequestBuilderInternal instantiates a new SensitivityLabelsRequestBuilder and sets the default values.
 func NewSensitivityLabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SensitivityLabelsRequestBuilder) {
     m := &SensitivityLabelsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewSensitivityLabelsRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SensitivityLabelsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSensitivityLabelsRequestBuilder instantiates a new SensitivityLabelsRequestBuilder and sets the default values.
 func NewSensitivityLabelsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SensitivityLabelsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSensitivityLabelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get sensitivityLabels from informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get sensitivityLabels from informationProtection
 func (m *SensitivityLabelsRequestBuilder) CreateGetRequestInformation(options *SensitivityLabelsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *SensitivityLabelsRequestBuilder) CreateGetRequestInformation(options *S
     }
     return requestInfo, nil
 }
-// Create new navigation property to sensitivityLabels for informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to sensitivityLabels for informationProtection
 func (m *SensitivityLabelsRequestBuilder) CreatePostRequestInformation(options *SensitivityLabelsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *SensitivityLabelsRequestBuilder) CreatePostRequestInformation(options *
 func (m *SensitivityLabelsRequestBuilder) Evaluate()(*idd7f87a5800cc2f448dc3af1265be2cd4f1850556ef510db37c852525dbe248c.EvaluateRequestBuilder) {
     return idd7f87a5800cc2f448dc3af1265be2cd4f1850556ef510db37c852525dbe248c.NewEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get sensitivityLabels from informationProtection
-// Parameters:
-//  - options : Options for the request
+// Get get sensitivityLabels from informationProtection
 func (m *SensitivityLabelsRequestBuilder) Get(options *SensitivityLabelsRequestBuilderGetOptions)(*SensitivityLabelsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *SensitivityLabelsRequestBuilder) Get(options *SensitivityLabelsRequestB
     }
     return res.(*SensitivityLabelsResponse), nil
 }
-// Create new navigation property to sensitivityLabels for informationProtection
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to sensitivityLabels for informationProtection
 func (m *SensitivityLabelsRequestBuilder) Post(options *SensitivityLabelsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitivityLabel, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

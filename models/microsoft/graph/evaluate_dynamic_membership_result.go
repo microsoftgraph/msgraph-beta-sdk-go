@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// evaluateDynamicMembershipResult 
 type EvaluateDynamicMembershipResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type EvaluateDynamicMembershipResult struct {
     // The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.
     membershipRuleEvaluationResult *bool;
 }
-// Instantiates a new evaluateDynamicMembershipResult and sets the default values.
+// NewEvaluateDynamicMembershipResult instantiates a new evaluateDynamicMembershipResult and sets the default values.
 func NewEvaluateDynamicMembershipResult()(*EvaluateDynamicMembershipResult) {
     m := &EvaluateDynamicMembershipResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateDynamicMembershipResult) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *EvaluateDynamicMembershipResult) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// Gets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
+// GetMembershipRule gets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
 func (m *EvaluateDynamicMembershipResult) GetMembershipRule()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *EvaluateDynamicMembershipResult) GetMembershipRule()(*string) {
         return m.membershipRule
     }
 }
-// Gets the membershipRuleEvaluationDetails property value. Provides a detailed anaylsis of the membership evaluation result.
+// GetMembershipRuleEvaluationDetails gets the membershipRuleEvaluationDetails property value. Provides a detailed anaylsis of the membership evaluation result.
 func (m *EvaluateDynamicMembershipResult) GetMembershipRuleEvaluationDetails()(*ExpressionEvaluationDetails) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *EvaluateDynamicMembershipResult) GetMembershipRuleEvaluationDetails()(*
         return m.membershipRuleEvaluationDetails
     }
 }
-// Gets the membershipRuleEvaluationResult property value. The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.
+// GetMembershipRuleEvaluationResult gets the membershipRuleEvaluationResult property value. The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.
 func (m *EvaluateDynamicMembershipResult) GetMembershipRuleEvaluationResult()(*bool) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *EvaluateDynamicMembershipResult) GetMembershipRuleEvaluationResult()(*b
         return m.membershipRuleEvaluationResult
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EvaluateDynamicMembershipResult) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["membershipRule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *EvaluateDynamicMembershipResult) GetFieldDeserializers()(map[string]fun
 func (m *EvaluateDynamicMembershipResult) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EvaluateDynamicMembershipResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("membershipRule", m.GetMembershipRule())
@@ -122,27 +120,19 @@ func (m *EvaluateDynamicMembershipResult) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateDynamicMembershipResult) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
-// Parameters:
-//  - value : Value to set for the membershipRule property.
+// SetMembershipRule sets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
 func (m *EvaluateDynamicMembershipResult) SetMembershipRule(value *string)() {
     m.membershipRule = value
 }
-// Sets the membershipRuleEvaluationDetails property value. Provides a detailed anaylsis of the membership evaluation result.
-// Parameters:
-//  - value : Value to set for the membershipRuleEvaluationDetails property.
+// SetMembershipRuleEvaluationDetails sets the membershipRuleEvaluationDetails property value. Provides a detailed anaylsis of the membership evaluation result.
 func (m *EvaluateDynamicMembershipResult) SetMembershipRuleEvaluationDetails(value *ExpressionEvaluationDetails)() {
     m.membershipRuleEvaluationDetails = value
 }
-// Sets the membershipRuleEvaluationResult property value. The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.
-// Parameters:
-//  - value : Value to set for the membershipRuleEvaluationResult property.
+// SetMembershipRuleEvaluationResult sets the membershipRuleEvaluationResult property value. The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.
 func (m *EvaluateDynamicMembershipResult) SetMembershipRuleEvaluationResult(value *bool)() {
     m.membershipRuleEvaluationResult = value
 }

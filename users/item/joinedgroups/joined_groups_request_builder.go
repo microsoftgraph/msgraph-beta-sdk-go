@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\joinedGroups
+// joinedGroupsRequestBuilder builds and executes requests for operations under \users\{user-id}\joinedGroups
 type JoinedGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type JoinedGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// JoinedGroupsRequestBuilderGetOptions options for Get
 type JoinedGroupsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type JoinedGroupsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable.
+// joinedGroupsRequestBuilderGetQueryParameters read-only. Nullable.
 type JoinedGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -41,7 +41,7 @@ type JoinedGroupsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// JoinedGroupsRequestBuilderPostOptions options for Post
 type JoinedGroupsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Group;
@@ -52,10 +52,7 @@ type JoinedGroupsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new JoinedGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJoinedGroupsRequestBuilderInternal instantiates a new JoinedGroupsRequestBuilder and sets the default values.
 func NewJoinedGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JoinedGroupsRequestBuilder) {
     m := &JoinedGroupsRequestBuilder{
     }
@@ -68,18 +65,13 @@ func NewJoinedGroupsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new JoinedGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewJoinedGroupsRequestBuilder instantiates a new JoinedGroupsRequestBuilder and sets the default values.
 func NewJoinedGroupsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*JoinedGroupsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewJoinedGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable.
 func (m *JoinedGroupsRequestBuilder) CreateGetRequestInformation(options *JoinedGroupsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *JoinedGroupsRequestBuilder) CreateGetRequestInformation(options *Joined
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation read-only. Nullable.
 func (m *JoinedGroupsRequestBuilder) CreatePostRequestInformation(options *JoinedGroupsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *JoinedGroupsRequestBuilder) CreatePostRequestInformation(options *Joine
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable.
 func (m *JoinedGroupsRequestBuilder) Get(options *JoinedGroupsRequestBuilderGetOptions)(*JoinedGroupsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -133,9 +121,7 @@ func (m *JoinedGroupsRequestBuilder) Get(options *JoinedGroupsRequestBuilderGetO
     }
     return res.(*JoinedGroupsResponse), nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post read-only. Nullable.
 func (m *JoinedGroupsRequestBuilder) Post(options *JoinedGroupsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Group, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

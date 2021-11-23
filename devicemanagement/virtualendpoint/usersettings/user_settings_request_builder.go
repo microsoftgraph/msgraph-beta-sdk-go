@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\userSettings
+// userSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\userSettings
 type UserSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserSettingsRequestBuilderGetOptions options for Get
 type UserSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Cloud PC user settings.
+// userSettingsRequestBuilderGetQueryParameters cloud PC user settings.
 type UserSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserSettingsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserSettingsRequestBuilderPostOptions options for Post
 type UserSettingsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcUserSetting;
@@ -56,10 +56,7 @@ type UserSettingsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserSettingsRequestBuilderInternal instantiates a new UserSettingsRequestBuilder and sets the default values.
 func NewUserSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserSettingsRequestBuilder) {
     m := &UserSettingsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserSettingsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserSettingsRequestBuilder instantiates a new UserSettingsRequestBuilder and sets the default values.
 func NewUserSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Cloud PC user settings.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation cloud PC user settings.
 func (m *UserSettingsRequestBuilder) CreateGetRequestInformation(options *UserSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserSettingsRequestBuilder) CreateGetRequestInformation(options *UserSe
     }
     return requestInfo, nil
 }
-// Cloud PC user settings.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation cloud PC user settings.
 func (m *UserSettingsRequestBuilder) CreatePostRequestInformation(options *UserSettingsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserSettingsRequestBuilder) CreatePostRequestInformation(options *UserS
     }
     return requestInfo, nil
 }
-// Cloud PC user settings.
-// Parameters:
-//  - options : Options for the request
+// Get cloud PC user settings.
 func (m *UserSettingsRequestBuilder) Get(options *UserSettingsRequestBuilderGetOptions)(*UserSettingsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserSettingsRequestBuilder) Get(options *UserSettingsRequestBuilderGetO
     }
     return res.(*UserSettingsResponse), nil
 }
-// Cloud PC user settings.
-// Parameters:
-//  - options : Options for the request
+// Post cloud PC user settings.
 func (m *UserSettingsRequestBuilder) Post(options *UserSettingsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcUserSetting, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

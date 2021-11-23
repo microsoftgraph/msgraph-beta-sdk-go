@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \devices\{device-id}\commands
+// commandsRequestBuilder builds and executes requests for operations under \devices\{device-id}\commands
 type CommandsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CommandsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CommandsRequestBuilderGetOptions options for Get
 type CommandsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CommandsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Set of commands sent to this device.
+// commandsRequestBuilderGetQueryParameters set of commands sent to this device.
 type CommandsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CommandsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CommandsRequestBuilderPostOptions options for Post
 type CommandsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Command;
@@ -56,10 +56,7 @@ type CommandsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CommandsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCommandsRequestBuilderInternal instantiates a new CommandsRequestBuilder and sets the default values.
 func NewCommandsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CommandsRequestBuilder) {
     m := &CommandsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCommandsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CommandsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCommandsRequestBuilder instantiates a new CommandsRequestBuilder and sets the default values.
 func NewCommandsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CommandsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCommandsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Set of commands sent to this device.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation set of commands sent to this device.
 func (m *CommandsRequestBuilder) CreateGetRequestInformation(options *CommandsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CommandsRequestBuilder) CreateGetRequestInformation(options *CommandsRe
     }
     return requestInfo, nil
 }
-// Set of commands sent to this device.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation set of commands sent to this device.
 func (m *CommandsRequestBuilder) CreatePostRequestInformation(options *CommandsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CommandsRequestBuilder) CreatePostRequestInformation(options *CommandsR
     }
     return requestInfo, nil
 }
-// Set of commands sent to this device.
-// Parameters:
-//  - options : Options for the request
+// Get set of commands sent to this device.
 func (m *CommandsRequestBuilder) Get(options *CommandsRequestBuilderGetOptions)(*CommandsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CommandsRequestBuilder) Get(options *CommandsRequestBuilderGetOptions)(
     }
     return res.(*CommandsResponse), nil
 }
-// Set of commands sent to this device.
-// Parameters:
-//  - options : Options for the request
+// Post set of commands sent to this device.
 func (m *CommandsRequestBuilder) Post(options *CommandsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Command, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

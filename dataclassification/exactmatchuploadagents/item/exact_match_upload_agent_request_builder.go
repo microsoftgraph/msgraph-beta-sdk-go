@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \dataClassification\exactMatchUploadAgents\{exactMatchUploadAgent-id}
+// exactMatchUploadAgentRequestBuilder builds and executes requests for operations under \dataClassification\exactMatchUploadAgents\{exactMatchUploadAgent-id}
 type ExactMatchUploadAgentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ExactMatchUploadAgentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ExactMatchUploadAgentRequestBuilderDeleteOptions options for Delete
 type ExactMatchUploadAgentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ExactMatchUploadAgentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ExactMatchUploadAgentRequestBuilderGetOptions options for Get
 type ExactMatchUploadAgentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ExactMatchUploadAgentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get exactMatchUploadAgents from dataClassification
+// exactMatchUploadAgentRequestBuilderGetQueryParameters get exactMatchUploadAgents from dataClassification
 type ExactMatchUploadAgentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ExactMatchUploadAgentRequestBuilderPatchOptions options for Patch
 type ExactMatchUploadAgentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgent;
@@ -53,10 +53,7 @@ type ExactMatchUploadAgentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExactMatchUploadAgentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExactMatchUploadAgentRequestBuilderInternal instantiates a new ExactMatchUploadAgentRequestBuilder and sets the default values.
 func NewExactMatchUploadAgentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExactMatchUploadAgentRequestBuilder) {
     m := &ExactMatchUploadAgentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewExactMatchUploadAgentRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExactMatchUploadAgentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExactMatchUploadAgentRequestBuilder instantiates a new ExactMatchUploadAgentRequestBuilder and sets the default values.
 func NewExactMatchUploadAgentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExactMatchUploadAgentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExactMatchUploadAgentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property exactMatchUploadAgents for dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property exactMatchUploadAgents for dataClassification
 func (m *ExactMatchUploadAgentRequestBuilder) CreateDeleteRequestInformation(options *ExactMatchUploadAgentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ExactMatchUploadAgentRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Get exactMatchUploadAgents from dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get exactMatchUploadAgents from dataClassification
 func (m *ExactMatchUploadAgentRequestBuilder) CreateGetRequestInformation(options *ExactMatchUploadAgentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ExactMatchUploadAgentRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Update the navigation property exactMatchUploadAgents in dataClassification
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property exactMatchUploadAgents in dataClassification
 func (m *ExactMatchUploadAgentRequestBuilder) CreatePatchRequestInformation(options *ExactMatchUploadAgentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ExactMatchUploadAgentRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delete navigation property exactMatchUploadAgents for dataClassification
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property exactMatchUploadAgents for dataClassification
 func (m *ExactMatchUploadAgentRequestBuilder) Delete(options *ExactMatchUploadAgentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ExactMatchUploadAgentRequestBuilder) Delete(options *ExactMatchUploadAg
     }
     return nil
 }
-// Get exactMatchUploadAgents from dataClassification
-// Parameters:
-//  - options : Options for the request
+// Get get exactMatchUploadAgents from dataClassification
 func (m *ExactMatchUploadAgentRequestBuilder) Get(options *ExactMatchUploadAgentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ExactMatchUploadAgentRequestBuilder) Get(options *ExactMatchUploadAgent
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExactMatchUploadAgent), nil
 }
-// Update the navigation property exactMatchUploadAgents in dataClassification
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property exactMatchUploadAgents in dataClassification
 func (m *ExactMatchUploadAgentRequestBuilder) Patch(options *ExactMatchUploadAgentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

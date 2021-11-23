@@ -7,7 +7,7 @@ import (
     i2dedd3d5f354e43cddb845e649c01b9818091a537d39a4b9327b64cba5a96696 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/calendars/item/calendarview/item/exceptionoccurrences/delta"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\calendarView\{event-id}\exceptionOccurrences
+// exceptionOccurrencesRequestBuilder builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\calendarView\{event-id}\exceptionOccurrences
 type ExceptionOccurrencesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ExceptionOccurrencesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ExceptionOccurrencesRequestBuilderGetOptions options for Get
 type ExceptionOccurrencesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ExceptionOccurrencesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get exceptionOccurrences from users
+// exceptionOccurrencesRequestBuilderGetQueryParameters get exceptionOccurrences from users
 type ExceptionOccurrencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -44,7 +44,7 @@ type ExceptionOccurrencesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ExceptionOccurrencesRequestBuilderPostOptions options for Post
 type ExceptionOccurrencesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event;
@@ -55,10 +55,7 @@ type ExceptionOccurrencesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExceptionOccurrencesRequestBuilderInternal instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
 func NewExceptionOccurrencesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExceptionOccurrencesRequestBuilder) {
     m := &ExceptionOccurrencesRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewExceptionOccurrencesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExceptionOccurrencesRequestBuilder instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
 func NewExceptionOccurrencesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExceptionOccurrencesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExceptionOccurrencesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get exceptionOccurrences from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get exceptionOccurrences from users
 func (m *ExceptionOccurrencesRequestBuilder) CreateGetRequestInformation(options *ExceptionOccurrencesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *ExceptionOccurrencesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Create new navigation property to exceptionOccurrences for users
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to exceptionOccurrences for users
 func (m *ExceptionOccurrencesRequestBuilder) CreatePostRequestInformation(options *ExceptionOccurrencesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,13 +112,11 @@ func (m *ExceptionOccurrencesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\calendarView\{event-id}\exceptionOccurrences\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\calendarView\{event-id}\exceptionOccurrences\microsoft.graph.delta()
 func (m *ExceptionOccurrencesRequestBuilder) Delta()(*i2dedd3d5f354e43cddb845e649c01b9818091a537d39a4b9327b64cba5a96696.DeltaRequestBuilder) {
     return i2dedd3d5f354e43cddb845e649c01b9818091a537d39a4b9327b64cba5a96696.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get exceptionOccurrences from users
-// Parameters:
-//  - options : Options for the request
+// Get get exceptionOccurrences from users
 func (m *ExceptionOccurrencesRequestBuilder) Get(options *ExceptionOccurrencesRequestBuilderGetOptions)(*ExceptionOccurrencesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -140,9 +128,7 @@ func (m *ExceptionOccurrencesRequestBuilder) Get(options *ExceptionOccurrencesRe
     }
     return res.(*ExceptionOccurrencesResponse), nil
 }
-// Create new navigation property to exceptionOccurrences for users
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to exceptionOccurrences for users
 func (m *ExceptionOccurrencesRequestBuilder) Post(options *ExceptionOccurrencesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

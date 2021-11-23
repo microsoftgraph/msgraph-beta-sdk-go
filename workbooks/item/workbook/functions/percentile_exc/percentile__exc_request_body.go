@@ -5,7 +5,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// percentile_ExcRequestBody 
 type Percentile_ExcRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type Percentile_ExcRequestBody struct {
     // 
     k *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
-// Instantiates a new percentile_ExcRequestBody and sets the default values.
+// NewPercentile_ExcRequestBody instantiates a new percentile_ExcRequestBody and sets the default values.
 func NewPercentile_ExcRequestBody()(*Percentile_ExcRequestBody) {
     m := &Percentile_ExcRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Percentile_ExcRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *Percentile_ExcRequestBody) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// Gets the array property value. 
+// GetArray gets the array property value. 
 func (m *Percentile_ExcRequestBody) GetArray()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *Percentile_ExcRequestBody) GetArray()(*i535684e11b5500196ecb4b5c6634e06
         return m.array
     }
 }
-// Gets the k property value. 
+// GetK gets the k property value. 
 func (m *Percentile_ExcRequestBody) GetK()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *Percentile_ExcRequestBody) GetK()(*i535684e11b5500196ecb4b5c6634e0651fe
         return m.k
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Percentile_ExcRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["array"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *Percentile_ExcRequestBody) GetFieldDeserializers()(map[string]func(inte
 func (m *Percentile_ExcRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Percentile_ExcRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("array", m.GetArray())
@@ -97,21 +95,15 @@ func (m *Percentile_ExcRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Percentile_ExcRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the array property value. 
-// Parameters:
-//  - value : Value to set for the array property.
+// SetArray sets the array property value. 
 func (m *Percentile_ExcRequestBody) SetArray(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.array = value
 }
-// Sets the k property value. 
-// Parameters:
-//  - value : Value to set for the k property.
+// SetK sets the k property value. 
 func (m *Percentile_ExcRequestBody) SetK(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     m.k = value
 }

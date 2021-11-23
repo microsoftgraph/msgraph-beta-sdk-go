@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceManagement\microsoft.graph.getRoleScopeTagsByIds(ids=@ids)
+// getRoleScopeTagsByIdsWithIdsRequestBuilder builds and executes requests for operations under \deviceManagement\microsoft.graph.getRoleScopeTagsByIds(ids=@ids)
 type GetRoleScopeTagsByIdsWithIdsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetRoleScopeTagsByIdsWithIdsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetRoleScopeTagsByIdsWithIdsRequestBuilderGetOptions options for Get
 type GetRoleScopeTagsByIdsWithIdsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -25,15 +25,12 @@ type GetRoleScopeTagsByIdsWithIdsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Invoke function getRoleScopeTagsByIds
+// getRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters invoke function getRoleScopeTagsByIds
 type GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters struct {
     // Usage: ids={ids}
     Ids *string;
 }
-// Instantiates a new GetRoleScopeTagsByIdsWithIdsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal instantiates a new GetRoleScopeTagsByIdsWithIdsRequestBuilder and sets the default values.
 func NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetRoleScopeTagsByIdsWithIdsRequestBuilder) {
     m := &GetRoleScopeTagsByIdsWithIdsRequestBuilder{
     }
@@ -46,18 +43,13 @@ func NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetRoleScopeTagsByIdsWithIdsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetRoleScopeTagsByIdsWithIdsRequestBuilder instantiates a new GetRoleScopeTagsByIdsWithIdsRequestBuilder and sets the default values.
 func NewGetRoleScopeTagsByIdsWithIdsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetRoleScopeTagsByIdsWithIdsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function getRoleScopeTagsByIds
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getRoleScopeTagsByIds
 func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) CreateGetRequestInformation(options *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -77,9 +69,7 @@ func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Invoke function getRoleScopeTagsByIds
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getRoleScopeTagsByIds
 func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) Get(options *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetOptions)([]GetRoleScopeTagsByIdsWithIds, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

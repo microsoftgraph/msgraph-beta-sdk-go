@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \bookingCurrencies
+// bookingCurrenciesRequestBuilder builds and executes requests for operations under \bookingCurrencies
 type BookingCurrenciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BookingCurrenciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// BookingCurrenciesRequestBuilderGetOptions options for Get
 type BookingCurrenciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type BookingCurrenciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from bookingCurrencies
+// bookingCurrenciesRequestBuilderGetQueryParameters get entities from bookingCurrencies
 type BookingCurrenciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type BookingCurrenciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// BookingCurrenciesRequestBuilderPostOptions options for Post
 type BookingCurrenciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingCurrency;
@@ -56,10 +56,7 @@ type BookingCurrenciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BookingCurrenciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingCurrenciesRequestBuilderInternal instantiates a new BookingCurrenciesRequestBuilder and sets the default values.
 func NewBookingCurrenciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingCurrenciesRequestBuilder) {
     m := &BookingCurrenciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewBookingCurrenciesRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BookingCurrenciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookingCurrenciesRequestBuilder instantiates a new BookingCurrenciesRequestBuilder and sets the default values.
 func NewBookingCurrenciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookingCurrenciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBookingCurrenciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from bookingCurrencies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from bookingCurrencies
 func (m *BookingCurrenciesRequestBuilder) CreateGetRequestInformation(options *BookingCurrenciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *BookingCurrenciesRequestBuilder) CreateGetRequestInformation(options *B
     }
     return requestInfo, nil
 }
-// Add new entity to bookingCurrencies
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to bookingCurrencies
 func (m *BookingCurrenciesRequestBuilder) CreatePostRequestInformation(options *BookingCurrenciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *BookingCurrenciesRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get entities from bookingCurrencies
-// Parameters:
-//  - options : Options for the request
+// Get get entities from bookingCurrencies
 func (m *BookingCurrenciesRequestBuilder) Get(options *BookingCurrenciesRequestBuilderGetOptions)(*BookingCurrenciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *BookingCurrenciesRequestBuilder) Get(options *BookingCurrenciesRequestB
     }
     return res.(*BookingCurrenciesResponse), nil
 }
-// Add new entity to bookingCurrencies
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to bookingCurrencies
 func (m *BookingCurrenciesRequestBuilder) Post(options *BookingCurrenciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BookingCurrency, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

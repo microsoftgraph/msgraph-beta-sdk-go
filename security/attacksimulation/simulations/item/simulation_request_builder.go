@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\attackSimulation\simulations\{simulation-id}
+// simulationRequestBuilder builds and executes requests for operations under \security\attackSimulation\simulations\{simulation-id}
 type SimulationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SimulationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SimulationRequestBuilderDeleteOptions options for Delete
 type SimulationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SimulationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SimulationRequestBuilderGetOptions options for Get
 type SimulationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SimulationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represent attack simulation and training campaign of a tenant.
+// simulationRequestBuilderGetQueryParameters represent attack simulation and training campaign of a tenant.
 type SimulationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SimulationRequestBuilderPatchOptions options for Patch
 type SimulationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Simulation;
@@ -53,10 +53,7 @@ type SimulationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SimulationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSimulationRequestBuilderInternal instantiates a new SimulationRequestBuilder and sets the default values.
 func NewSimulationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SimulationRequestBuilder) {
     m := &SimulationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSimulationRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SimulationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSimulationRequestBuilder instantiates a new SimulationRequestBuilder and sets the default values.
 func NewSimulationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SimulationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSimulationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represent attack simulation and training campaign of a tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represent attack simulation and training campaign of a tenant.
 func (m *SimulationRequestBuilder) CreateDeleteRequestInformation(options *SimulationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SimulationRequestBuilder) CreateDeleteRequestInformation(options *Simul
     }
     return requestInfo, nil
 }
-// Represent attack simulation and training campaign of a tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represent attack simulation and training campaign of a tenant.
 func (m *SimulationRequestBuilder) CreateGetRequestInformation(options *SimulationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SimulationRequestBuilder) CreateGetRequestInformation(options *Simulati
     }
     return requestInfo, nil
 }
-// Represent attack simulation and training campaign of a tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represent attack simulation and training campaign of a tenant.
 func (m *SimulationRequestBuilder) CreatePatchRequestInformation(options *SimulationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SimulationRequestBuilder) CreatePatchRequestInformation(options *Simula
     }
     return requestInfo, nil
 }
-// Represent attack simulation and training campaign of a tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete represent attack simulation and training campaign of a tenant.
 func (m *SimulationRequestBuilder) Delete(options *SimulationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SimulationRequestBuilder) Delete(options *SimulationRequestBuilderDelet
     }
     return nil
 }
-// Represent attack simulation and training campaign of a tenant.
-// Parameters:
-//  - options : Options for the request
+// Get represent attack simulation and training campaign of a tenant.
 func (m *SimulationRequestBuilder) Get(options *SimulationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Simulation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SimulationRequestBuilder) Get(options *SimulationRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Simulation), nil
 }
-// Represent attack simulation and training campaign of a tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch represent attack simulation and training campaign of a tenant.
 func (m *SimulationRequestBuilder) Patch(options *SimulationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

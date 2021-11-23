@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getConfigurationSettingsReport
+// getConfigurationSettingsReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getConfigurationSettingsReport
 type GetConfigurationSettingsReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetConfigurationSettingsReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetConfigurationSettingsReportRequestBuilderPostOptions options for Post
 type GetConfigurationSettingsReportRequestBuilderPostOptions struct {
     // 
     Body *GetConfigurationSettingsReportRequestBody;
@@ -24,10 +24,7 @@ type GetConfigurationSettingsReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetConfigurationSettingsReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetConfigurationSettingsReportRequestBuilderInternal instantiates a new GetConfigurationSettingsReportRequestBuilder and sets the default values.
 func NewGetConfigurationSettingsReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetConfigurationSettingsReportRequestBuilder) {
     m := &GetConfigurationSettingsReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetConfigurationSettingsReportRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetConfigurationSettingsReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetConfigurationSettingsReportRequestBuilder instantiates a new GetConfigurationSettingsReportRequestBuilder and sets the default values.
 func NewGetConfigurationSettingsReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetConfigurationSettingsReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetConfigurationSettingsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getConfigurationSettingsReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getConfigurationSettingsReport
 func (m *GetConfigurationSettingsReportRequestBuilder) CreatePostRequestInformation(options *GetConfigurationSettingsReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetConfigurationSettingsReportRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// Invoke action getConfigurationSettingsReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getConfigurationSettingsReport
 func (m *GetConfigurationSettingsReportRequestBuilder) Post(options *GetConfigurationSettingsReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

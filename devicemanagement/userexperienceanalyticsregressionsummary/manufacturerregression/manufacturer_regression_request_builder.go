@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary\manufacturerRegression
+// manufacturerRegressionRequestBuilder builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary\manufacturerRegression
 type ManufacturerRegressionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManufacturerRegressionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManufacturerRegressionRequestBuilderGetOptions options for Get
 type ManufacturerRegressionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ManufacturerRegressionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The metric values for the user experience analytics Manufacturer regression.
+// manufacturerRegressionRequestBuilderGetQueryParameters the metric values for the user experience analytics Manufacturer regression.
 type ManufacturerRegressionRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ManufacturerRegressionRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ManufacturerRegressionRequestBuilderPostOptions options for Post
 type ManufacturerRegressionRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetric;
@@ -56,10 +56,7 @@ type ManufacturerRegressionRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManufacturerRegressionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManufacturerRegressionRequestBuilderInternal instantiates a new ManufacturerRegressionRequestBuilder and sets the default values.
 func NewManufacturerRegressionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManufacturerRegressionRequestBuilder) {
     m := &ManufacturerRegressionRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewManufacturerRegressionRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManufacturerRegressionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManufacturerRegressionRequestBuilder instantiates a new ManufacturerRegressionRequestBuilder and sets the default values.
 func NewManufacturerRegressionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManufacturerRegressionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManufacturerRegressionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The metric values for the user experience analytics Manufacturer regression.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the metric values for the user experience analytics Manufacturer regression.
 func (m *ManufacturerRegressionRequestBuilder) CreateGetRequestInformation(options *ManufacturerRegressionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ManufacturerRegressionRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The metric values for the user experience analytics Manufacturer regression.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the metric values for the user experience analytics Manufacturer regression.
 func (m *ManufacturerRegressionRequestBuilder) CreatePostRequestInformation(options *ManufacturerRegressionRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ManufacturerRegressionRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The metric values for the user experience analytics Manufacturer regression.
-// Parameters:
-//  - options : Options for the request
+// Get the metric values for the user experience analytics Manufacturer regression.
 func (m *ManufacturerRegressionRequestBuilder) Get(options *ManufacturerRegressionRequestBuilderGetOptions)(*ManufacturerRegressionResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ManufacturerRegressionRequestBuilder) Get(options *ManufacturerRegressi
     }
     return res.(*ManufacturerRegressionResponse), nil
 }
-// The metric values for the user experience analytics Manufacturer regression.
-// Parameters:
-//  - options : Options for the request
+// Post the metric values for the user experience analytics Manufacturer regression.
 func (m *ManufacturerRegressionRequestBuilder) Post(options *ManufacturerRegressionRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsMetric, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

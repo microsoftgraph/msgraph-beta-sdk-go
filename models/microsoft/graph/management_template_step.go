@@ -5,7 +5,7 @@ import (
     i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/managedtenants"
 )
 
-// 
+// managementTemplateStep 
 type ManagementTemplateStep struct {
     Entity
     // 
@@ -27,14 +27,14 @@ type ManagementTemplateStep struct {
     // 
     stepVersions []ManagementTemplateStepVersion;
 }
-// Instantiates a new managementTemplateStep and sets the default values.
+// NewManagementTemplateStep instantiates a new managementTemplateStep and sets the default values.
 func NewManagementTemplateStep()(*ManagementTemplateStep) {
     m := &ManagementTemplateStep{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the category property value. 
+// GetCategory gets the category property value. 
 func (m *ManagementTemplateStep) GetCategory()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *ManagementTemplateStep) GetCategory()(*i5c2592132064055aae424492b066923
         return m.category
     }
 }
-// Gets the description property value. 
+// GetDescription gets the description property value. 
 func (m *ManagementTemplateStep) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *ManagementTemplateStep) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *ManagementTemplateStep) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *ManagementTemplateStep) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the managementPortal property value. 
+// GetManagementPortal gets the managementPortal property value. 
 func (m *ManagementTemplateStep) GetManagementPortal()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *ManagementTemplateStep) GetManagementPortal()(*string) {
         return m.managementPortal
     }
 }
-// Gets the managementTemplate property value. 
+// GetManagementTemplate gets the managementTemplate property value. 
 func (m *ManagementTemplateStep) GetManagementTemplate()(*ManagementTemplate) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *ManagementTemplateStep) GetManagementTemplate()(*ManagementTemplate) {
         return m.managementTemplate
     }
 }
-// Gets the portalLink property value. 
+// GetPortalLink gets the portalLink property value. 
 func (m *ManagementTemplateStep) GetPortalLink()(*string) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *ManagementTemplateStep) GetPortalLink()(*string) {
         return m.portalLink
     }
 }
-// Gets the priority property value. 
+// GetPriority gets the priority property value. 
 func (m *ManagementTemplateStep) GetPriority()(*int32) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *ManagementTemplateStep) GetPriority()(*int32) {
         return m.priority
     }
 }
-// Gets the provider property value. 
+// GetProvider gets the provider property value. 
 func (m *ManagementTemplateStep) GetProvider()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementProvider) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *ManagementTemplateStep) GetProvider()(*i5c2592132064055aae424492b066923
         return m.provider
     }
 }
-// Gets the stepVersions property value. 
+// GetStepVersions gets the stepVersions property value. 
 func (m *ManagementTemplateStep) GetStepVersions()([]ManagementTemplateStepVersion) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *ManagementTemplateStep) GetStepVersions()([]ManagementTemplateStepVersi
         return m.stepVersions
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,9 +210,7 @@ func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(interfa
 func (m *ManagementTemplateStep) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagementTemplateStep) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -281,57 +279,39 @@ func (m *ManagementTemplateStep) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// Sets the category property value. 
-// Parameters:
-//  - value : Value to set for the category property.
+// SetCategory sets the category property value. 
 func (m *ManagementTemplateStep) SetCategory(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)() {
     m.category = value
 }
-// Sets the description property value. 
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. 
 func (m *ManagementTemplateStep) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *ManagementTemplateStep) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the managementPortal property value. 
-// Parameters:
-//  - value : Value to set for the managementPortal property.
+// SetManagementPortal sets the managementPortal property value. 
 func (m *ManagementTemplateStep) SetManagementPortal(value *string)() {
     m.managementPortal = value
 }
-// Sets the managementTemplate property value. 
-// Parameters:
-//  - value : Value to set for the managementTemplate property.
+// SetManagementTemplate sets the managementTemplate property value. 
 func (m *ManagementTemplateStep) SetManagementTemplate(value *ManagementTemplate)() {
     m.managementTemplate = value
 }
-// Sets the portalLink property value. 
-// Parameters:
-//  - value : Value to set for the portalLink property.
+// SetPortalLink sets the portalLink property value. 
 func (m *ManagementTemplateStep) SetPortalLink(value *string)() {
     m.portalLink = value
 }
-// Sets the priority property value. 
-// Parameters:
-//  - value : Value to set for the priority property.
+// SetPriority sets the priority property value. 
 func (m *ManagementTemplateStep) SetPriority(value *int32)() {
     m.priority = value
 }
-// Sets the provider property value. 
-// Parameters:
-//  - value : Value to set for the provider property.
+// SetProvider sets the provider property value. 
 func (m *ManagementTemplateStep) SetProvider(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementProvider)() {
     m.provider = value
 }
-// Sets the stepVersions property value. 
-// Parameters:
-//  - value : Value to set for the stepVersions property.
+// SetStepVersions sets the stepVersions property value. 
 func (m *ManagementTemplateStep) SetStepVersions(value []ManagementTemplateStepVersion)() {
     m.stepVersions = value
 }

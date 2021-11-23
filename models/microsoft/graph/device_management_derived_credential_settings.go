@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceManagementDerivedCredentialSettings 
 type DeviceManagementDerivedCredentialSettings struct {
     Entity
     // The display name for the profile.
@@ -16,14 +16,14 @@ type DeviceManagementDerivedCredentialSettings struct {
     // The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
     notificationType *DeviceManagementDerivedCredentialNotificationType;
 }
-// Instantiates a new deviceManagementDerivedCredentialSettings and sets the default values.
+// NewDeviceManagementDerivedCredentialSettings instantiates a new deviceManagementDerivedCredentialSettings and sets the default values.
 func NewDeviceManagementDerivedCredentialSettings()(*DeviceManagementDerivedCredentialSettings) {
     m := &DeviceManagementDerivedCredentialSettings{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the displayName property value. The display name for the profile.
+// GetDisplayName gets the displayName property value. The display name for the profile.
 func (m *DeviceManagementDerivedCredentialSettings) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the helpUrl property value. The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
+// GetHelpUrl gets the helpUrl property value. The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
 func (m *DeviceManagementDerivedCredentialSettings) GetHelpUrl()(*string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetHelpUrl()(*string) {
         return m.helpUrl
     }
 }
-// Gets the issuer property value. The derived credential provider to use.
+// GetIssuer gets the issuer property value. The derived credential provider to use.
 func (m *DeviceManagementDerivedCredentialSettings) GetIssuer()(*DeviceManagementDerivedCredentialIssuer) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetIssuer()(*DeviceManagemen
         return m.issuer
     }
 }
-// Gets the notificationType property value. The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
+// GetNotificationType gets the notificationType property value. The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
 func (m *DeviceManagementDerivedCredentialSettings) GetNotificationType()(*DeviceManagementDerivedCredentialNotificationType) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetNotificationType()(*Devic
         return m.notificationType
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,9 +105,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
 func (m *DeviceManagementDerivedCredentialSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementDerivedCredentialSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -141,27 +139,19 @@ func (m *DeviceManagementDerivedCredentialSettings) Serialize(writer i04eb5309ae
     }
     return nil
 }
-// Sets the displayName property value. The display name for the profile.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name for the profile.
 func (m *DeviceManagementDerivedCredentialSettings) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the helpUrl property value. The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
-// Parameters:
-//  - value : Value to set for the helpUrl property.
+// SetHelpUrl sets the helpUrl property value. The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
 func (m *DeviceManagementDerivedCredentialSettings) SetHelpUrl(value *string)() {
     m.helpUrl = value
 }
-// Sets the issuer property value. The derived credential provider to use.
-// Parameters:
-//  - value : Value to set for the issuer property.
+// SetIssuer sets the issuer property value. The derived credential provider to use.
 func (m *DeviceManagementDerivedCredentialSettings) SetIssuer(value *DeviceManagementDerivedCredentialIssuer)() {
     m.issuer = value
 }
-// Sets the notificationType property value. The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
-// Parameters:
-//  - value : Value to set for the notificationType property.
+// SetNotificationType sets the notificationType property value. The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
 func (m *DeviceManagementDerivedCredentialSettings) SetNotificationType(value *DeviceManagementDerivedCredentialNotificationType)() {
     m.notificationType = value
 }

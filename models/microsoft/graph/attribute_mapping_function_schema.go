@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// attributeMappingFunctionSchema 
 type AttributeMappingFunctionSchema struct {
     Entity
     // Collection of function parameters.
     parameters []AttributeMappingParameterSchema;
 }
-// Instantiates a new attributeMappingFunctionSchema and sets the default values.
+// NewAttributeMappingFunctionSchema instantiates a new attributeMappingFunctionSchema and sets the default values.
 func NewAttributeMappingFunctionSchema()(*AttributeMappingFunctionSchema) {
     m := &AttributeMappingFunctionSchema{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the parameters property value. Collection of function parameters.
+// GetParameters gets the parameters property value. Collection of function parameters.
 func (m *AttributeMappingFunctionSchema) GetParameters()([]AttributeMappingParameterSchema) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *AttributeMappingFunctionSchema) GetParameters()([]AttributeMappingParam
         return m.parameters
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AttributeMappingFunctionSchema) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["parameters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -47,9 +47,7 @@ func (m *AttributeMappingFunctionSchema) GetFieldDeserializers()(map[string]func
 func (m *AttributeMappingFunctionSchema) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AttributeMappingFunctionSchema) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -68,9 +66,7 @@ func (m *AttributeMappingFunctionSchema) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// Sets the parameters property value. Collection of function parameters.
-// Parameters:
-//  - value : Value to set for the parameters property.
+// SetParameters sets the parameters property value. Collection of function parameters.
 func (m *AttributeMappingFunctionSchema) SetParameters(value []AttributeMappingParameterSchema)() {
     m.parameters = value
 }

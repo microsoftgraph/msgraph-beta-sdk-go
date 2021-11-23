@@ -8,7 +8,7 @@ import (
     icefc2f5f21f16f1f68518e2b6347beb6778f75c9d0f79759be765ffbad175b67 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotdeviceidentities/item/intendeddeploymentprofile/assign"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\intendedDeploymentProfile
+// intendedDeploymentProfileRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\intendedDeploymentProfile
 type IntendedDeploymentProfileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type IntendedDeploymentProfileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IntendedDeploymentProfileRequestBuilderGetOptions options for Get
 type IntendedDeploymentProfileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type IntendedDeploymentProfileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Deployment profile intended to be assigned to the Windows autopilot device.
+// intendedDeploymentProfileRequestBuilderGetQueryParameters deployment profile intended to be assigned to the Windows autopilot device.
 type IntendedDeploymentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -38,10 +38,7 @@ type IntendedDeploymentProfileRequestBuilderGetQueryParameters struct {
 func (m *IntendedDeploymentProfileRequestBuilder) Assign()(*icefc2f5f21f16f1f68518e2b6347beb6778f75c9d0f79759be765ffbad175b67.AssignRequestBuilder) {
     return icefc2f5f21f16f1f68518e2b6347beb6778f75c9d0f79759be765ffbad175b67.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new IntendedDeploymentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIntendedDeploymentProfileRequestBuilderInternal instantiates a new IntendedDeploymentProfileRequestBuilder and sets the default values.
 func NewIntendedDeploymentProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IntendedDeploymentProfileRequestBuilder) {
     m := &IntendedDeploymentProfileRequestBuilder{
     }
@@ -54,18 +51,13 @@ func NewIntendedDeploymentProfileRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IntendedDeploymentProfileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIntendedDeploymentProfileRequestBuilder instantiates a new IntendedDeploymentProfileRequestBuilder and sets the default values.
 func NewIntendedDeploymentProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IntendedDeploymentProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIntendedDeploymentProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Deployment profile intended to be assigned to the Windows autopilot device.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation deployment profile intended to be assigned to the Windows autopilot device.
 func (m *IntendedDeploymentProfileRequestBuilder) CreateGetRequestInformation(options *IntendedDeploymentProfileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -85,9 +77,7 @@ func (m *IntendedDeploymentProfileRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Deployment profile intended to be assigned to the Windows autopilot device.
-// Parameters:
-//  - options : Options for the request
+// Get deployment profile intended to be assigned to the Windows autopilot device.
 func (m *IntendedDeploymentProfileRequestBuilder) Get(options *IntendedDeploymentProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsAutopilotDeploymentProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

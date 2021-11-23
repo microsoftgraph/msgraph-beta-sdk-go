@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\appleUserInitiatedEnrollmentProfiles\{appleUserInitiatedEnrollmentProfile-id}\assignments\{appleEnrollmentProfileAssignment-id}
+// appleEnrollmentProfileAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\appleUserInitiatedEnrollmentProfiles\{appleUserInitiatedEnrollmentProfile-id}\assignments\{appleEnrollmentProfileAssignment-id}
 type AppleEnrollmentProfileAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppleEnrollmentProfileAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AppleEnrollmentProfileAssignmentRequestBuilderDeleteOptions options for Delete
 type AppleEnrollmentProfileAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AppleEnrollmentProfileAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AppleEnrollmentProfileAssignmentRequestBuilderGetOptions options for Get
 type AppleEnrollmentProfileAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AppleEnrollmentProfileAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of assignments for this profile.
+// appleEnrollmentProfileAssignmentRequestBuilderGetQueryParameters the list of assignments for this profile.
 type AppleEnrollmentProfileAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AppleEnrollmentProfileAssignmentRequestBuilderPatchOptions options for Patch
 type AppleEnrollmentProfileAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppleEnrollmentProfileAssignment;
@@ -53,10 +53,7 @@ type AppleEnrollmentProfileAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppleEnrollmentProfileAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppleEnrollmentProfileAssignmentRequestBuilderInternal instantiates a new AppleEnrollmentProfileAssignmentRequestBuilder and sets the default values.
 func NewAppleEnrollmentProfileAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppleEnrollmentProfileAssignmentRequestBuilder) {
     m := &AppleEnrollmentProfileAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAppleEnrollmentProfileAssignmentRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppleEnrollmentProfileAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppleEnrollmentProfileAssignmentRequestBuilder instantiates a new AppleEnrollmentProfileAssignmentRequestBuilder and sets the default values.
 func NewAppleEnrollmentProfileAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppleEnrollmentProfileAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppleEnrollmentProfileAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of assignments for this profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of assignments for this profile.
 func (m *AppleEnrollmentProfileAssignmentRequestBuilder) CreateDeleteRequestInformation(options *AppleEnrollmentProfileAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AppleEnrollmentProfileAssignmentRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// The list of assignments for this profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of assignments for this profile.
 func (m *AppleEnrollmentProfileAssignmentRequestBuilder) CreateGetRequestInformation(options *AppleEnrollmentProfileAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AppleEnrollmentProfileAssignmentRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// The list of assignments for this profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of assignments for this profile.
 func (m *AppleEnrollmentProfileAssignmentRequestBuilder) CreatePatchRequestInformation(options *AppleEnrollmentProfileAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AppleEnrollmentProfileAssignmentRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// The list of assignments for this profile.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of assignments for this profile.
 func (m *AppleEnrollmentProfileAssignmentRequestBuilder) Delete(options *AppleEnrollmentProfileAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AppleEnrollmentProfileAssignmentRequestBuilder) Delete(options *AppleEn
     }
     return nil
 }
-// The list of assignments for this profile.
-// Parameters:
-//  - options : Options for the request
+// Get the list of assignments for this profile.
 func (m *AppleEnrollmentProfileAssignmentRequestBuilder) Get(options *AppleEnrollmentProfileAssignmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppleEnrollmentProfileAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AppleEnrollmentProfileAssignmentRequestBuilder) Get(options *AppleEnrol
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppleEnrollmentProfileAssignment), nil
 }
-// The list of assignments for this profile.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of assignments for this profile.
 func (m *AppleEnrollmentProfileAssignmentRequestBuilder) Patch(options *AppleEnrollmentProfileAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

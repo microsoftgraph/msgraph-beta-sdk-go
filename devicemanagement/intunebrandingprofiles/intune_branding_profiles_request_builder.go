@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\intuneBrandingProfiles
+// intuneBrandingProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\intuneBrandingProfiles
 type IntuneBrandingProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IntuneBrandingProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IntuneBrandingProfilesRequestBuilderGetOptions options for Get
 type IntuneBrandingProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type IntuneBrandingProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Intune branding profiles targeted to AAD groups
+// intuneBrandingProfilesRequestBuilderGetQueryParameters intune branding profiles targeted to AAD groups
 type IntuneBrandingProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type IntuneBrandingProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// IntuneBrandingProfilesRequestBuilderPostOptions options for Post
 type IntuneBrandingProfilesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IntuneBrandingProfile;
@@ -56,10 +56,7 @@ type IntuneBrandingProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IntuneBrandingProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIntuneBrandingProfilesRequestBuilderInternal instantiates a new IntuneBrandingProfilesRequestBuilder and sets the default values.
 func NewIntuneBrandingProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IntuneBrandingProfilesRequestBuilder) {
     m := &IntuneBrandingProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewIntuneBrandingProfilesRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IntuneBrandingProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIntuneBrandingProfilesRequestBuilder instantiates a new IntuneBrandingProfilesRequestBuilder and sets the default values.
 func NewIntuneBrandingProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IntuneBrandingProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIntuneBrandingProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Intune branding profiles targeted to AAD groups
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation intune branding profiles targeted to AAD groups
 func (m *IntuneBrandingProfilesRequestBuilder) CreateGetRequestInformation(options *IntuneBrandingProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *IntuneBrandingProfilesRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Intune branding profiles targeted to AAD groups
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation intune branding profiles targeted to AAD groups
 func (m *IntuneBrandingProfilesRequestBuilder) CreatePostRequestInformation(options *IntuneBrandingProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *IntuneBrandingProfilesRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Intune branding profiles targeted to AAD groups
-// Parameters:
-//  - options : Options for the request
+// Get intune branding profiles targeted to AAD groups
 func (m *IntuneBrandingProfilesRequestBuilder) Get(options *IntuneBrandingProfilesRequestBuilderGetOptions)(*IntuneBrandingProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *IntuneBrandingProfilesRequestBuilder) Get(options *IntuneBrandingProfil
     }
     return res.(*IntuneBrandingProfilesResponse), nil
 }
-// Intune branding profiles targeted to AAD groups
-// Parameters:
-//  - options : Options for the request
+// Post intune branding profiles targeted to AAD groups
 func (m *IntuneBrandingProfilesRequestBuilder) Post(options *IntuneBrandingProfilesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IntuneBrandingProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

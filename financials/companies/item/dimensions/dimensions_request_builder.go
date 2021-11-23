@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \financials\companies\{company-id}\dimensions
+// dimensionsRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\dimensions
 type DimensionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DimensionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DimensionsRequestBuilderGetOptions options for Get
 type DimensionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DimensionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get dimensions from financials
+// dimensionsRequestBuilderGetQueryParameters get dimensions from financials
 type DimensionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DimensionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DimensionsRequestBuilderPostOptions options for Post
 type DimensionsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Dimension;
@@ -56,10 +56,7 @@ type DimensionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DimensionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDimensionsRequestBuilderInternal instantiates a new DimensionsRequestBuilder and sets the default values.
 func NewDimensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DimensionsRequestBuilder) {
     m := &DimensionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDimensionsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DimensionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDimensionsRequestBuilder instantiates a new DimensionsRequestBuilder and sets the default values.
 func NewDimensionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DimensionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDimensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get dimensions from financials
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get dimensions from financials
 func (m *DimensionsRequestBuilder) CreateGetRequestInformation(options *DimensionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DimensionsRequestBuilder) CreateGetRequestInformation(options *Dimensio
     }
     return requestInfo, nil
 }
-// Create new navigation property to dimensions for financials
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to dimensions for financials
 func (m *DimensionsRequestBuilder) CreatePostRequestInformation(options *DimensionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DimensionsRequestBuilder) CreatePostRequestInformation(options *Dimensi
     }
     return requestInfo, nil
 }
-// Get dimensions from financials
-// Parameters:
-//  - options : Options for the request
+// Get get dimensions from financials
 func (m *DimensionsRequestBuilder) Get(options *DimensionsRequestBuilderGetOptions)(*DimensionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DimensionsRequestBuilder) Get(options *DimensionsRequestBuilderGetOptio
     }
     return res.(*DimensionsResponse), nil
 }
-// Create new navigation property to dimensions for financials
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to dimensions for financials
 func (m *DimensionsRequestBuilder) Post(options *DimensionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Dimension, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

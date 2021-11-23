@@ -7,7 +7,7 @@ import (
     ib900fb8afd4a584a300fca45a7c05c1e74417f7123c17accfb9a649c6bd697f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatestepversions/item/templatestep/ref"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateStepVersions\{managementTemplateStepVersion-id}\templateStep
+// templateStepRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateStepVersions\{managementTemplateStepVersion-id}\templateStep
 type TemplateStepRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TemplateStepRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TemplateStepRequestBuilderGetOptions options for Get
 type TemplateStepRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type TemplateStepRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get templateStep from tenantRelationships
+// templateStepRequestBuilderGetQueryParameters get templateStep from tenantRelationships
 type TemplateStepRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new TemplateStepRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTemplateStepRequestBuilderInternal instantiates a new TemplateStepRequestBuilder and sets the default values.
 func NewTemplateStepRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TemplateStepRequestBuilder) {
     m := &TemplateStepRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewTemplateStepRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TemplateStepRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTemplateStepRequestBuilder instantiates a new TemplateStepRequestBuilder and sets the default values.
 func NewTemplateStepRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TemplateStepRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTemplateStepRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get templateStep from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get templateStep from tenantRelationships
 func (m *TemplateStepRequestBuilder) CreateGetRequestInformation(options *TemplateStepRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *TemplateStepRequestBuilder) CreateGetRequestInformation(options *Templa
     }
     return requestInfo, nil
 }
-// Get templateStep from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Get get templateStep from tenantRelationships
 func (m *TemplateStepRequestBuilder) Get(options *TemplateStepRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplateStep, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \search\bookmarks\{bookmark-id}
+// bookmarkRequestBuilder builds and executes requests for operations under \search\bookmarks\{bookmark-id}
 type BookmarkRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BookmarkRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// BookmarkRequestBuilderDeleteOptions options for Delete
 type BookmarkRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type BookmarkRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// BookmarkRequestBuilderGetOptions options for Get
 type BookmarkRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type BookmarkRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get bookmarks from search
+// bookmarkRequestBuilderGetQueryParameters get bookmarks from search
 type BookmarkRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// BookmarkRequestBuilderPatchOptions options for Patch
 type BookmarkRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Bookmark;
@@ -53,10 +53,7 @@ type BookmarkRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BookmarkRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookmarkRequestBuilderInternal instantiates a new BookmarkRequestBuilder and sets the default values.
 func NewBookmarkRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookmarkRequestBuilder) {
     m := &BookmarkRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewBookmarkRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BookmarkRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBookmarkRequestBuilder instantiates a new BookmarkRequestBuilder and sets the default values.
 func NewBookmarkRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BookmarkRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBookmarkRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property bookmarks for search
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property bookmarks for search
 func (m *BookmarkRequestBuilder) CreateDeleteRequestInformation(options *BookmarkRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *BookmarkRequestBuilder) CreateDeleteRequestInformation(options *Bookmar
     }
     return requestInfo, nil
 }
-// Get bookmarks from search
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get bookmarks from search
 func (m *BookmarkRequestBuilder) CreateGetRequestInformation(options *BookmarkRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *BookmarkRequestBuilder) CreateGetRequestInformation(options *BookmarkRe
     }
     return requestInfo, nil
 }
-// Update the navigation property bookmarks in search
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property bookmarks in search
 func (m *BookmarkRequestBuilder) CreatePatchRequestInformation(options *BookmarkRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *BookmarkRequestBuilder) CreatePatchRequestInformation(options *Bookmark
     }
     return requestInfo, nil
 }
-// Delete navigation property bookmarks for search
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property bookmarks for search
 func (m *BookmarkRequestBuilder) Delete(options *BookmarkRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *BookmarkRequestBuilder) Delete(options *BookmarkRequestBuilderDeleteOpt
     }
     return nil
 }
-// Get bookmarks from search
-// Parameters:
-//  - options : Options for the request
+// Get get bookmarks from search
 func (m *BookmarkRequestBuilder) Get(options *BookmarkRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Bookmark, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *BookmarkRequestBuilder) Get(options *BookmarkRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Bookmark), nil
 }
-// Update the navigation property bookmarks in search
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property bookmarks in search
 func (m *BookmarkRequestBuilder) Patch(options *BookmarkRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// tenantCustomizedInformation 
 type TenantCustomizedInformation struct {
     Entity
     // The collection of contacts for the managed tenant. Optional.
@@ -16,14 +16,14 @@ type TenantCustomizedInformation struct {
     // The website for the managed tenant. Required.
     website *string;
 }
-// Instantiates a new tenantCustomizedInformation and sets the default values.
+// NewTenantCustomizedInformation instantiates a new tenantCustomizedInformation and sets the default values.
 func NewTenantCustomizedInformation()(*TenantCustomizedInformation) {
     m := &TenantCustomizedInformation{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the contacts property value. The collection of contacts for the managed tenant. Optional.
+// GetContacts gets the contacts property value. The collection of contacts for the managed tenant. Optional.
 func (m *TenantCustomizedInformation) GetContacts()([]TenantContactInformation) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *TenantCustomizedInformation) GetContacts()([]TenantContactInformation) 
         return m.contacts
     }
 }
-// Gets the displayName property value. The display name for the managed tenant. Required. Read-only.
+// GetDisplayName gets the displayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *TenantCustomizedInformation) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *TenantCustomizedInformation) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *TenantCustomizedInformation) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *TenantCustomizedInformation) GetTenantId()(*string) {
         return m.tenantId
     }
 }
-// Gets the website property value. The website for the managed tenant. Required.
+// GetWebsite gets the website property value. The website for the managed tenant. Required.
 func (m *TenantCustomizedInformation) GetWebsite()(*string) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *TenantCustomizedInformation) GetWebsite()(*string) {
         return m.website
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contacts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,9 +107,7 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(in
 func (m *TenantCustomizedInformation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TenantCustomizedInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -146,27 +144,19 @@ func (m *TenantCustomizedInformation) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the contacts property value. The collection of contacts for the managed tenant. Optional.
-// Parameters:
-//  - value : Value to set for the contacts property.
+// SetContacts sets the contacts property value. The collection of contacts for the managed tenant. Optional.
 func (m *TenantCustomizedInformation) SetContacts(value []TenantContactInformation)() {
     m.contacts = value
 }
-// Sets the displayName property value. The display name for the managed tenant. Required. Read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *TenantCustomizedInformation) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
-// Parameters:
-//  - value : Value to set for the tenantId property.
+// SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *TenantCustomizedInformation) SetTenantId(value *string)() {
     m.tenantId = value
 }
-// Sets the website property value. The website for the managed tenant. Required.
-// Parameters:
-//  - value : Value to set for the website property.
+// SetWebsite sets the website property value. The website for the managed tenant. Required.
 func (m *TenantCustomizedInformation) SetWebsite(value *string)() {
     m.website = value
 }

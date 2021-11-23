@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\projects
+// projectsRequestBuilder builds and executes requests for operations under \me\profile\projects
 type ProjectsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ProjectsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ProjectsRequestBuilderGetOptions options for Get
 type ProjectsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ProjectsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents detailed information about projects associated with a user.
+// projectsRequestBuilderGetQueryParameters represents detailed information about projects associated with a user.
 type ProjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ProjectsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ProjectsRequestBuilderPostOptions options for Post
 type ProjectsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProjectParticipation;
@@ -56,10 +56,7 @@ type ProjectsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ProjectsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProjectsRequestBuilderInternal instantiates a new ProjectsRequestBuilder and sets the default values.
 func NewProjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProjectsRequestBuilder) {
     m := &ProjectsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewProjectsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ProjectsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProjectsRequestBuilder instantiates a new ProjectsRequestBuilder and sets the default values.
 func NewProjectsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProjectsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents detailed information about projects associated with a user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents detailed information about projects associated with a user.
 func (m *ProjectsRequestBuilder) CreateGetRequestInformation(options *ProjectsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ProjectsRequestBuilder) CreateGetRequestInformation(options *ProjectsRe
     }
     return requestInfo, nil
 }
-// Represents detailed information about projects associated with a user.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents detailed information about projects associated with a user.
 func (m *ProjectsRequestBuilder) CreatePostRequestInformation(options *ProjectsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ProjectsRequestBuilder) CreatePostRequestInformation(options *ProjectsR
     }
     return requestInfo, nil
 }
-// Represents detailed information about projects associated with a user.
-// Parameters:
-//  - options : Options for the request
+// Get represents detailed information about projects associated with a user.
 func (m *ProjectsRequestBuilder) Get(options *ProjectsRequestBuilderGetOptions)(*ProjectsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ProjectsRequestBuilder) Get(options *ProjectsRequestBuilderGetOptions)(
     }
     return res.(*ProjectsResponse), nil
 }
-// Represents detailed information about projects associated with a user.
-// Parameters:
-//  - options : Options for the request
+// Post represents detailed information about projects associated with a user.
 func (m *ProjectsRequestBuilder) Post(options *ProjectsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProjectParticipation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ipCategory 
 type IpCategory struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type IpCategory struct {
     // 
     vendor_escaped *string;
 }
-// Instantiates a new ipCategory and sets the default values.
+// NewIpCategory instantiates a new ipCategory and sets the default values.
 func NewIpCategory()(*IpCategory) {
     m := &IpCategory{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IpCategory) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *IpCategory) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the description property value. 
+// GetDescription gets the description property value. 
 func (m *IpCategory) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *IpCategory) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the name property value. 
+// GetName gets the name property value. 
 func (m *IpCategory) GetName()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *IpCategory) GetName()(*string) {
         return m.name
     }
 }
-// Gets the vendor_escaped property value. 
+// GetVendor_escaped gets the vendor_escaped property value. 
 func (m *IpCategory) GetVendor_escaped()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *IpCategory) GetVendor_escaped()(*string) {
         return m.vendor_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *IpCategory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *IpCategory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *IpCategory) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *IpCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("description", m.GetDescription())
@@ -122,27 +120,19 @@ func (m *IpCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IpCategory) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the description property value. 
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. 
 func (m *IpCategory) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the name property value. 
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. 
 func (m *IpCategory) SetName(value *string)() {
     m.name = value
 }
-// Sets the vendor_escaped property value. 
-// Parameters:
-//  - value : Value to set for the vendor_escaped property.
+// SetVendor_escaped sets the vendor_escaped property value. 
 func (m *IpCategory) SetVendor_escaped(value *string)() {
     m.vendor_escaped = value
 }

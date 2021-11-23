@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementActionTenantDeploymentStatuses\{managementActionTenantDeploymentStatus-id}
+// managementActionTenantDeploymentStatusRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementActionTenantDeploymentStatuses\{managementActionTenantDeploymentStatus-id}
 type ManagementActionTenantDeploymentStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagementActionTenantDeploymentStatusRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagementActionTenantDeploymentStatusRequestBuilderDeleteOptions options for Delete
 type ManagementActionTenantDeploymentStatusRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ManagementActionTenantDeploymentStatusRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagementActionTenantDeploymentStatusRequestBuilderGetOptions options for Get
 type ManagementActionTenantDeploymentStatusRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ManagementActionTenantDeploymentStatusRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The tenant level status of management actions across managed tenants.
+// managementActionTenantDeploymentStatusRequestBuilderGetQueryParameters the tenant level status of management actions across managed tenants.
 type ManagementActionTenantDeploymentStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagementActionTenantDeploymentStatusRequestBuilderPatchOptions options for Patch
 type ManagementActionTenantDeploymentStatusRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionTenantDeploymentStatus;
@@ -53,10 +53,7 @@ type ManagementActionTenantDeploymentStatusRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagementActionTenantDeploymentStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementActionTenantDeploymentStatusRequestBuilderInternal instantiates a new ManagementActionTenantDeploymentStatusRequestBuilder and sets the default values.
 func NewManagementActionTenantDeploymentStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementActionTenantDeploymentStatusRequestBuilder) {
     m := &ManagementActionTenantDeploymentStatusRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewManagementActionTenantDeploymentStatusRequestBuilderInternal(pathParamet
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementActionTenantDeploymentStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementActionTenantDeploymentStatusRequestBuilder instantiates a new ManagementActionTenantDeploymentStatusRequestBuilder and sets the default values.
 func NewManagementActionTenantDeploymentStatusRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementActionTenantDeploymentStatusRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementActionTenantDeploymentStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The tenant level status of management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the tenant level status of management actions across managed tenants.
 func (m *ManagementActionTenantDeploymentStatusRequestBuilder) CreateDeleteRequestInformation(options *ManagementActionTenantDeploymentStatusRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ManagementActionTenantDeploymentStatusRequestBuilder) CreateDeleteReque
     }
     return requestInfo, nil
 }
-// The tenant level status of management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the tenant level status of management actions across managed tenants.
 func (m *ManagementActionTenantDeploymentStatusRequestBuilder) CreateGetRequestInformation(options *ManagementActionTenantDeploymentStatusRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ManagementActionTenantDeploymentStatusRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// The tenant level status of management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the tenant level status of management actions across managed tenants.
 func (m *ManagementActionTenantDeploymentStatusRequestBuilder) CreatePatchRequestInformation(options *ManagementActionTenantDeploymentStatusRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ManagementActionTenantDeploymentStatusRequestBuilder) CreatePatchReques
     }
     return requestInfo, nil
 }
-// The tenant level status of management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Delete the tenant level status of management actions across managed tenants.
 func (m *ManagementActionTenantDeploymentStatusRequestBuilder) Delete(options *ManagementActionTenantDeploymentStatusRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ManagementActionTenantDeploymentStatusRequestBuilder) Delete(options *M
     }
     return nil
 }
-// The tenant level status of management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Get the tenant level status of management actions across managed tenants.
 func (m *ManagementActionTenantDeploymentStatusRequestBuilder) Get(options *ManagementActionTenantDeploymentStatusRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionTenantDeploymentStatus, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ManagementActionTenantDeploymentStatusRequestBuilder) Get(options *Mana
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementActionTenantDeploymentStatus), nil
 }
-// The tenant level status of management actions across managed tenants.
-// Parameters:
-//  - options : Options for the request
+// Patch the tenant level status of management actions across managed tenants.
 func (m *ManagementActionTenantDeploymentStatusRequestBuilder) Patch(options *ManagementActionTenantDeploymentStatusRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

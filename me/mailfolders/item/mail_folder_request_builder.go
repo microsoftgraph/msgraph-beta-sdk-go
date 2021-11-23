@@ -20,7 +20,7 @@ import (
     iede75dd69fcd9e5b626950014b98ed33d606c522a9728b4f3a33a890e6632856 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item"
 )
 
-// Builds and executes requests for operations under \me\mailFolders\{mailFolder-id}
+// mailFolderRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}
 type MailFolderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type MailFolderRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MailFolderRequestBuilderDeleteOptions options for Delete
 type MailFolderRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -38,7 +38,7 @@ type MailFolderRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MailFolderRequestBuilderGetOptions options for Get
 type MailFolderRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -49,12 +49,12 @@ type MailFolderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user's mail folders. Read-only. Nullable.
+// mailFolderRequestBuilderGetQueryParameters the user's mail folders. Read-only. Nullable.
 type MailFolderRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MailFolderRequestBuilderPatchOptions options for Patch
 type MailFolderRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MailFolder;
@@ -68,9 +68,7 @@ type MailFolderRequestBuilderPatchOptions struct {
 func (m *MailFolderRequestBuilder) ChildFolders()(*ibeb8c4168d977b698b05801a1b10798f68c64e767d766ce8595176f72fc5093b.ChildFoldersRequestBuilder) {
     return ibeb8c4168d977b698b05801a1b10798f68c64e767d766ce8595176f72fc5093b.NewChildFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ChildFoldersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.childFolders.item collection
 func (m *MailFolderRequestBuilder) ChildFoldersById(id string)(*iede75dd69fcd9e5b626950014b98ed33d606c522a9728b4f3a33a890e6632856.MailFolderRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -81,10 +79,7 @@ func (m *MailFolderRequestBuilder) ChildFoldersById(id string)(*iede75dd69fcd9e5
     }
     return iede75dd69fcd9e5b626950014b98ed33d606c522a9728b4f3a33a890e6632856.NewMailFolderRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new MailFolderRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMailFolderRequestBuilderInternal instantiates a new MailFolderRequestBuilder and sets the default values.
 func NewMailFolderRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MailFolderRequestBuilder) {
     m := &MailFolderRequestBuilder{
     }
@@ -97,10 +92,7 @@ func NewMailFolderRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MailFolderRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMailFolderRequestBuilder instantiates a new MailFolderRequestBuilder and sets the default values.
 func NewMailFolderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MailFolderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -109,9 +101,7 @@ func NewMailFolderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
 func (m *MailFolderRequestBuilder) Copy()(*if3fb3684743655c918bd082004c113091359b0d53e481b54379b0fd767244c8d.CopyRequestBuilder) {
     return if3fb3684743655c918bd082004c113091359b0d53e481b54379b0fd767244c8d.NewCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The user's mail folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the user's mail folders. Read-only. Nullable.
 func (m *MailFolderRequestBuilder) CreateDeleteRequestInformation(options *MailFolderRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,9 +118,7 @@ func (m *MailFolderRequestBuilder) CreateDeleteRequestInformation(options *MailF
     }
     return requestInfo, nil
 }
-// The user's mail folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user's mail folders. Read-only. Nullable.
 func (m *MailFolderRequestBuilder) CreateGetRequestInformation(options *MailFolderRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +138,7 @@ func (m *MailFolderRequestBuilder) CreateGetRequestInformation(options *MailFold
     }
     return requestInfo, nil
 }
-// The user's mail folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the user's mail folders. Read-only. Nullable.
 func (m *MailFolderRequestBuilder) CreatePatchRequestInformation(options *MailFolderRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -170,9 +156,7 @@ func (m *MailFolderRequestBuilder) CreatePatchRequestInformation(options *MailFo
     }
     return requestInfo, nil
 }
-// The user's mail folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the user's mail folders. Read-only. Nullable.
 func (m *MailFolderRequestBuilder) Delete(options *MailFolderRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -184,9 +168,7 @@ func (m *MailFolderRequestBuilder) Delete(options *MailFolderRequestBuilderDelet
     }
     return nil
 }
-// The user's mail folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the user's mail folders. Read-only. Nullable.
 func (m *MailFolderRequestBuilder) Get(options *MailFolderRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MailFolder, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -201,9 +183,7 @@ func (m *MailFolderRequestBuilder) Get(options *MailFolderRequestBuilderGetOptio
 func (m *MailFolderRequestBuilder) MessageRules()(*i88c04acf0aa04d581c2773f019a56cb1fdf513359c2fe21e75dcc60ebc80d511.MessageRulesRequestBuilder) {
     return i88c04acf0aa04d581c2773f019a56cb1fdf513359c2fe21e75dcc60ebc80d511.NewMessageRulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messageRules.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MessageRulesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messageRules.item collection
 func (m *MailFolderRequestBuilder) MessageRulesById(id string)(*i8ffc8cfef5f5058547bf175ad9868544c797b8dde19d8a6459fe8494963d0a24.MessageRuleRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -217,9 +197,7 @@ func (m *MailFolderRequestBuilder) MessageRulesById(id string)(*i8ffc8cfef5f5058
 func (m *MailFolderRequestBuilder) Messages()(*i541fc3399419d1ae2cab4368370a7227e59f2c04b7e54e4929b86ebe04698638.MessagesRequestBuilder) {
     return i541fc3399419d1ae2cab4368370a7227e59f2c04b7e54e4929b86ebe04698638.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MessagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.messages.item collection
 func (m *MailFolderRequestBuilder) MessagesById(id string)(*ic4853dfe79219076841dce140d8e62c905b0804ee816e62386841f353c4b1148.MessageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -236,9 +214,7 @@ func (m *MailFolderRequestBuilder) Move()(*i58c44598f2855313799f5f0ec80b7d31cf45
 func (m *MailFolderRequestBuilder) MultiValueExtendedProperties()(*id07076013853ba5080f44b31c440adb7eef26be6bf39605515485ec5ece17190.MultiValueExtendedPropertiesRequestBuilder) {
     return id07076013853ba5080f44b31c440adb7eef26be6bf39605515485ec5ece17190.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.multiValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.multiValueExtendedProperties.item collection
 func (m *MailFolderRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i779f11aeb25854b5bc2350fde107c6812b983ae14fd525417dabc92b85de7d0a.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -249,9 +225,7 @@ func (m *MailFolderRequestBuilder) MultiValueExtendedPropertiesById(id string)(*
     }
     return i779f11aeb25854b5bc2350fde107c6812b983ae14fd525417dabc92b85de7d0a.NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The user's mail folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the user's mail folders. Read-only. Nullable.
 func (m *MailFolderRequestBuilder) Patch(options *MailFolderRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -266,9 +240,7 @@ func (m *MailFolderRequestBuilder) Patch(options *MailFolderRequestBuilderPatchO
 func (m *MailFolderRequestBuilder) SingleValueExtendedProperties()(*i5bed6e35b48c78b26b58da0c35269f9fbe5e11549479f8aafb35b126f8e25ab5.SingleValueExtendedPropertiesRequestBuilder) {
     return i5bed6e35b48c78b26b58da0c35269f9fbe5e11549479f8aafb35b126f8e25ab5.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.singleValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.singleValueExtendedProperties.item collection
 func (m *MailFolderRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i5e5f56aacb3cd9d3f5d914c12525e9de5b7e2db88b3753d1b0e65ad922a94eb7.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -282,9 +254,7 @@ func (m *MailFolderRequestBuilder) SingleValueExtendedPropertiesById(id string)(
 func (m *MailFolderRequestBuilder) UserConfigurations()(*i17d1574c3c57286814540657170c4b7233c1c6f26ec60bea16e08bf0678e59a0.UserConfigurationsRequestBuilder) {
     return i17d1574c3c57286814540657170c4b7233c1c6f26ec60bea16e08bf0678e59a0.NewUserConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.userConfigurations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UserConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.mailFolders.item.userConfigurations.item collection
 func (m *MailFolderRequestBuilder) UserConfigurationsById(id string)(*i5093bb4836672beb5dd5657e003961ad167c9ffe6b1cfc7663eb7832d4a6de57.UserConfigurationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

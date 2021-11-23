@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}\microsoft.graph.start
+// startRequestBuilder builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}\microsoft.graph.start
 type StartRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type StartRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// StartRequestBuilderPostOptions options for Post
 type StartRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type StartRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new StartRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStartRequestBuilderInternal instantiates a new StartRequestBuilder and sets the default values.
 func NewStartRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StartRequestBuilder) {
     m := &StartRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewStartRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new StartRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStartRequestBuilder instantiates a new StartRequestBuilder and sets the default values.
 func NewStartRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StartRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewStartRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action start
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action start
 func (m *StartRequestBuilder) CreatePostRequestInformation(options *StartRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *StartRequestBuilder) CreatePostRequestInformation(options *StartRequest
     }
     return requestInfo, nil
 }
-// Invoke action start
-// Parameters:
-//  - options : Options for the request
+// Post invoke action start
 func (m *StartRequestBuilder) Post(options *StartRequestBuilderPostOptions)([]Start, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

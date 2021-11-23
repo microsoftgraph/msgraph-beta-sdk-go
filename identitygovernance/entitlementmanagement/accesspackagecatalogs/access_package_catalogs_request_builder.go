@@ -7,7 +7,7 @@ import (
     ic9aba159bb231e5791da24beee14e21e03b122fb58e9da1e906f53e4b5678d34 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackagecatalogs/search"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs
+// accessPackageCatalogsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs
 type AccessPackageCatalogsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AccessPackageCatalogsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AccessPackageCatalogsRequestBuilderGetOptions options for Get
 type AccessPackageCatalogsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AccessPackageCatalogsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get accessPackageCatalogs from identityGovernance
+// accessPackageCatalogsRequestBuilderGetQueryParameters get accessPackageCatalogs from identityGovernance
 type AccessPackageCatalogsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type AccessPackageCatalogsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AccessPackageCatalogsRequestBuilderPostOptions options for Post
 type AccessPackageCatalogsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageCatalog;
@@ -57,10 +57,7 @@ type AccessPackageCatalogsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccessPackageCatalogsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageCatalogsRequestBuilderInternal instantiates a new AccessPackageCatalogsRequestBuilder and sets the default values.
 func NewAccessPackageCatalogsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageCatalogsRequestBuilder) {
     m := &AccessPackageCatalogsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewAccessPackageCatalogsRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackageCatalogsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackageCatalogsRequestBuilder instantiates a new AccessPackageCatalogsRequestBuilder and sets the default values.
 func NewAccessPackageCatalogsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageCatalogsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageCatalogsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get accessPackageCatalogs from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get accessPackageCatalogs from identityGovernance
 func (m *AccessPackageCatalogsRequestBuilder) CreateGetRequestInformation(options *AccessPackageCatalogsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *AccessPackageCatalogsRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Create new navigation property to accessPackageCatalogs for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to accessPackageCatalogs for identityGovernance
 func (m *AccessPackageCatalogsRequestBuilder) CreatePostRequestInformation(options *AccessPackageCatalogsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *AccessPackageCatalogsRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get accessPackageCatalogs from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get accessPackageCatalogs from identityGovernance
 func (m *AccessPackageCatalogsRequestBuilder) Get(options *AccessPackageCatalogsRequestBuilderGetOptions)(*AccessPackageCatalogsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *AccessPackageCatalogsRequestBuilder) Get(options *AccessPackageCatalogs
     }
     return res.(*AccessPackageCatalogsResponse), nil
 }
-// Create new navigation property to accessPackageCatalogs for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to accessPackageCatalogs for identityGovernance
 func (m *AccessPackageCatalogsRequestBuilder) Post(options *AccessPackageCatalogsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageCatalog, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
@@ -152,7 +138,7 @@ func (m *AccessPackageCatalogsRequestBuilder) Post(options *AccessPackageCatalog
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageCatalog), nil
 }
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs\microsoft.graph.Search()
+// Search builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs\microsoft.graph.Search()
 func (m *AccessPackageCatalogsRequestBuilder) Search()(*ic9aba159bb231e5791da24beee14e21e03b122fb58e9da1e906f53e4b5678d34.SearchRequestBuilder) {
     return ic9aba159bb231e5791da24beee14e21e03b122fb58e9da1e906f53e4b5678d34.NewSearchRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

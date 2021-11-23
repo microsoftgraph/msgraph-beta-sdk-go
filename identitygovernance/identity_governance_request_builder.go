@@ -10,7 +10,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityGovernance
+// identityGovernanceRequestBuilder builds and executes requests for operations under \identityGovernance
 type IdentityGovernanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type IdentityGovernanceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IdentityGovernanceRequestBuilderGetOptions options for Get
 type IdentityGovernanceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -30,14 +30,14 @@ type IdentityGovernanceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get identityGovernance
+// identityGovernanceRequestBuilderGetQueryParameters get identityGovernance
 type IdentityGovernanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// IdentityGovernanceRequestBuilderPatchOptions options for Patch
 type IdentityGovernanceRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityGovernance;
@@ -54,10 +54,7 @@ func (m *IdentityGovernanceRequestBuilder) AccessReviews()(*i1634d124e13ffd0cab6
 func (m *IdentityGovernanceRequestBuilder) AppConsent()(*ia84e7b6e98da4aca360dbefe526b5e9895268f91ebdbd56a0d404de509c7705b.AppConsentRequestBuilder) {
     return ia84e7b6e98da4aca360dbefe526b5e9895268f91ebdbd56a0d404de509c7705b.NewAppConsentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new IdentityGovernanceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityGovernanceRequestBuilderInternal instantiates a new IdentityGovernanceRequestBuilder and sets the default values.
 func NewIdentityGovernanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityGovernanceRequestBuilder) {
     m := &IdentityGovernanceRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewIdentityGovernanceRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IdentityGovernanceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityGovernanceRequestBuilder instantiates a new IdentityGovernanceRequestBuilder and sets the default values.
 func NewIdentityGovernanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityGovernanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityGovernanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get identityGovernance
 func (m *IdentityGovernanceRequestBuilder) CreateGetRequestInformation(options *IdentityGovernanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *IdentityGovernanceRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Update identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update identityGovernance
 func (m *IdentityGovernanceRequestBuilder) CreatePatchRequestInformation(options *IdentityGovernanceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *IdentityGovernanceRequestBuilder) CreatePatchRequestInformation(options
 func (m *IdentityGovernanceRequestBuilder) EntitlementManagement()(*i980a16b671cb1d9b9251e92f61e0a38b85d73c7e3da0d7d33055d60e7e5583df.EntitlementManagementRequestBuilder) {
     return i980a16b671cb1d9b9251e92f61e0a38b85d73c7e3da0d7d33055d60e7e5583df.NewEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get identityGovernance
 func (m *IdentityGovernanceRequestBuilder) Get(options *IdentityGovernanceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityGovernance, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *IdentityGovernanceRequestBuilder) Get(options *IdentityGovernanceReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IdentityGovernance), nil
 }
-// Update identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Patch update identityGovernance
 func (m *IdentityGovernanceRequestBuilder) Patch(options *IdentityGovernanceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

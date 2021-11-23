@@ -7,7 +7,7 @@ import (
     i66b065f7a2182545f95faad3e73276408aa8714100c9299ac0579b8b5ca4a93b "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatecollections/item/managementtemplates"
 )
 
-// Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateCollections\{managementTemplateCollection-id}
+// managementTemplateCollectionRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateCollections\{managementTemplateCollection-id}
 type ManagementTemplateCollectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ManagementTemplateCollectionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagementTemplateCollectionRequestBuilderDeleteOptions options for Delete
 type ManagementTemplateCollectionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type ManagementTemplateCollectionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagementTemplateCollectionRequestBuilderGetOptions options for Get
 type ManagementTemplateCollectionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type ManagementTemplateCollectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get managementTemplateCollections from tenantRelationships
+// managementTemplateCollectionRequestBuilderGetQueryParameters get managementTemplateCollections from tenantRelationships
 type ManagementTemplateCollectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagementTemplateCollectionRequestBuilderPatchOptions options for Patch
 type ManagementTemplateCollectionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplateCollection;
@@ -54,10 +54,7 @@ type ManagementTemplateCollectionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagementTemplateCollectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateCollectionRequestBuilderInternal instantiates a new ManagementTemplateCollectionRequestBuilder and sets the default values.
 func NewManagementTemplateCollectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateCollectionRequestBuilder) {
     m := &ManagementTemplateCollectionRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewManagementTemplateCollectionRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagementTemplateCollectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagementTemplateCollectionRequestBuilder instantiates a new ManagementTemplateCollectionRequestBuilder and sets the default values.
 func NewManagementTemplateCollectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagementTemplateCollectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateCollectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property managementTemplateCollections for tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property managementTemplateCollections for tenantRelationships
 func (m *ManagementTemplateCollectionRequestBuilder) CreateDeleteRequestInformation(options *ManagementTemplateCollectionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *ManagementTemplateCollectionRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// Get managementTemplateCollections from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get managementTemplateCollections from tenantRelationships
 func (m *ManagementTemplateCollectionRequestBuilder) CreateGetRequestInformation(options *ManagementTemplateCollectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *ManagementTemplateCollectionRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// Update the navigation property managementTemplateCollections in tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property managementTemplateCollections in tenantRelationships
 func (m *ManagementTemplateCollectionRequestBuilder) CreatePatchRequestInformation(options *ManagementTemplateCollectionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *ManagementTemplateCollectionRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// Delete navigation property managementTemplateCollections for tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property managementTemplateCollections for tenantRelationships
 func (m *ManagementTemplateCollectionRequestBuilder) Delete(options *ManagementTemplateCollectionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *ManagementTemplateCollectionRequestBuilder) Delete(options *ManagementT
     }
     return nil
 }
-// Get managementTemplateCollections from tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Get get managementTemplateCollections from tenantRelationships
 func (m *ManagementTemplateCollectionRequestBuilder) Get(options *ManagementTemplateCollectionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplateCollection, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *ManagementTemplateCollectionRequestBuilder) Get(options *ManagementTemp
 func (m *ManagementTemplateCollectionRequestBuilder) ManagementTemplates()(*i66b065f7a2182545f95faad3e73276408aa8714100c9299ac0579b8b5ca4a93b.ManagementTemplatesRequestBuilder) {
     return i66b065f7a2182545f95faad3e73276408aa8714100c9299ac0579b8b5ca4a93b.NewManagementTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update the navigation property managementTemplateCollections in tenantRelationships
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property managementTemplateCollections in tenantRelationships
 func (m *ManagementTemplateCollectionRequestBuilder) Patch(options *ManagementTemplateCollectionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

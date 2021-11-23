@@ -6,7 +6,7 @@ import (
     id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/search"
 )
 
-// 
+// bookmark 
 type Bookmark struct {
     SearchAnswer
     // 
@@ -32,14 +32,14 @@ type Bookmark struct {
     // 
     targetedVariations []AnswerVariant;
 }
-// Instantiates a new bookmark and sets the default values.
+// NewBookmark instantiates a new bookmark and sets the default values.
 func NewBookmark()(*Bookmark) {
     m := &Bookmark{
         SearchAnswer: *NewSearchAnswer(),
     }
     return m
 }
-// Gets the availabilityEndDateTime property value. 
+// GetAvailabilityEndDateTime gets the availabilityEndDateTime property value. 
 func (m *Bookmark) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *Bookmark) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97
         return m.availabilityEndDateTime
     }
 }
-// Gets the availabilityStartDateTime property value. 
+// GetAvailabilityStartDateTime gets the availabilityStartDateTime property value. 
 func (m *Bookmark) GetAvailabilityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *Bookmark) GetAvailabilityStartDateTime()(*i336074805fc853987abe6f7fe3ad
         return m.availabilityStartDateTime
     }
 }
-// Gets the categories property value. 
+// GetCategories gets the categories property value. 
 func (m *Bookmark) GetCategories()([]string) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *Bookmark) GetCategories()([]string) {
         return m.categories
     }
 }
-// Gets the groupIds property value. 
+// GetGroupIds gets the groupIds property value. 
 func (m *Bookmark) GetGroupIds()([]string) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *Bookmark) GetGroupIds()([]string) {
         return m.groupIds
     }
 }
-// Gets the isSuggested property value. 
+// GetIsSuggested gets the isSuggested property value. 
 func (m *Bookmark) GetIsSuggested()(*bool) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *Bookmark) GetIsSuggested()(*bool) {
         return m.isSuggested
     }
 }
-// Gets the keywords property value. 
+// GetKeywords gets the keywords property value. 
 func (m *Bookmark) GetKeywords()(*AnswerKeyword) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *Bookmark) GetKeywords()(*AnswerKeyword) {
         return m.keywords
     }
 }
-// Gets the languageTags property value. 
+// GetLanguageTags gets the languageTags property value. 
 func (m *Bookmark) GetLanguageTags()([]string) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *Bookmark) GetLanguageTags()([]string) {
         return m.languageTags
     }
 }
-// Gets the platforms property value. 
+// GetPlatforms gets the platforms property value. 
 func (m *Bookmark) GetPlatforms()([]DevicePlatformType) {
     if m == nil {
         return nil
@@ -103,7 +103,7 @@ func (m *Bookmark) GetPlatforms()([]DevicePlatformType) {
         return m.platforms
     }
 }
-// Gets the powerAppIds property value. 
+// GetPowerAppIds gets the powerAppIds property value. 
 func (m *Bookmark) GetPowerAppIds()([]string) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *Bookmark) GetPowerAppIds()([]string) {
         return m.powerAppIds
     }
 }
-// Gets the state property value. 
+// GetState gets the state property value. 
 func (m *Bookmark) GetState()(*id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState) {
     if m == nil {
         return nil
@@ -119,7 +119,7 @@ func (m *Bookmark) GetState()(*id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8
         return m.state
     }
 }
-// Gets the targetedVariations property value. 
+// GetTargetedVariations gets the targetedVariations property value. 
 func (m *Bookmark) GetTargetedVariations()([]AnswerVariant) {
     if m == nil {
         return nil
@@ -127,7 +127,7 @@ func (m *Bookmark) GetTargetedVariations()([]AnswerVariant) {
         return m.targetedVariations
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.SearchAnswer.GetFieldDeserializers()
     res["availabilityEndDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -270,9 +270,7 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *Bookmark) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Bookmark) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.SearchAnswer.Serialize(writer)
     if err != nil {
@@ -352,69 +350,47 @@ func (m *Bookmark) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// Sets the availabilityEndDateTime property value. 
-// Parameters:
-//  - value : Value to set for the availabilityEndDateTime property.
+// SetAvailabilityEndDateTime sets the availabilityEndDateTime property value. 
 func (m *Bookmark) SetAvailabilityEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.availabilityEndDateTime = value
 }
-// Sets the availabilityStartDateTime property value. 
-// Parameters:
-//  - value : Value to set for the availabilityStartDateTime property.
+// SetAvailabilityStartDateTime sets the availabilityStartDateTime property value. 
 func (m *Bookmark) SetAvailabilityStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.availabilityStartDateTime = value
 }
-// Sets the categories property value. 
-// Parameters:
-//  - value : Value to set for the categories property.
+// SetCategories sets the categories property value. 
 func (m *Bookmark) SetCategories(value []string)() {
     m.categories = value
 }
-// Sets the groupIds property value. 
-// Parameters:
-//  - value : Value to set for the groupIds property.
+// SetGroupIds sets the groupIds property value. 
 func (m *Bookmark) SetGroupIds(value []string)() {
     m.groupIds = value
 }
-// Sets the isSuggested property value. 
-// Parameters:
-//  - value : Value to set for the isSuggested property.
+// SetIsSuggested sets the isSuggested property value. 
 func (m *Bookmark) SetIsSuggested(value *bool)() {
     m.isSuggested = value
 }
-// Sets the keywords property value. 
-// Parameters:
-//  - value : Value to set for the keywords property.
+// SetKeywords sets the keywords property value. 
 func (m *Bookmark) SetKeywords(value *AnswerKeyword)() {
     m.keywords = value
 }
-// Sets the languageTags property value. 
-// Parameters:
-//  - value : Value to set for the languageTags property.
+// SetLanguageTags sets the languageTags property value. 
 func (m *Bookmark) SetLanguageTags(value []string)() {
     m.languageTags = value
 }
-// Sets the platforms property value. 
-// Parameters:
-//  - value : Value to set for the platforms property.
+// SetPlatforms sets the platforms property value. 
 func (m *Bookmark) SetPlatforms(value []DevicePlatformType)() {
     m.platforms = value
 }
-// Sets the powerAppIds property value. 
-// Parameters:
-//  - value : Value to set for the powerAppIds property.
+// SetPowerAppIds sets the powerAppIds property value. 
 func (m *Bookmark) SetPowerAppIds(value []string)() {
     m.powerAppIds = value
 }
-// Sets the state property value. 
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. 
 func (m *Bookmark) SetState(value *id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState)() {
     m.state = value
 }
-// Sets the targetedVariations property value. 
-// Parameters:
-//  - value : Value to set for the targetedVariations property.
+// SetTargetedVariations sets the targetedVariations property value. 
 func (m *Bookmark) SetTargetedVariations(value []AnswerVariant)() {
     m.targetedVariations = value
 }

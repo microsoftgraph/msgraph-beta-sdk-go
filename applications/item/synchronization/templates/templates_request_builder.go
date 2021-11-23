@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\synchronization\templates
+// templatesRequestBuilder builds and executes requests for operations under \applications\{application-id}\synchronization\templates
 type TemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TemplatesRequestBuilderGetOptions options for Get
 type TemplatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TemplatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get templates from applications
+// templatesRequestBuilderGetQueryParameters get templates from applications
 type TemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TemplatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TemplatesRequestBuilderPostOptions options for Post
 type TemplatesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationTemplate;
@@ -56,10 +56,7 @@ type TemplatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTemplatesRequestBuilderInternal instantiates a new TemplatesRequestBuilder and sets the default values.
 func NewTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TemplatesRequestBuilder) {
     m := &TemplatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTemplatesRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTemplatesRequestBuilder instantiates a new TemplatesRequestBuilder and sets the default values.
 func NewTemplatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TemplatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get templates from applications
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get templates from applications
 func (m *TemplatesRequestBuilder) CreateGetRequestInformation(options *TemplatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TemplatesRequestBuilder) CreateGetRequestInformation(options *Templates
     }
     return requestInfo, nil
 }
-// Create new navigation property to templates for applications
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to templates for applications
 func (m *TemplatesRequestBuilder) CreatePostRequestInformation(options *TemplatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TemplatesRequestBuilder) CreatePostRequestInformation(options *Template
     }
     return requestInfo, nil
 }
-// Get templates from applications
-// Parameters:
-//  - options : Options for the request
+// Get get templates from applications
 func (m *TemplatesRequestBuilder) Get(options *TemplatesRequestBuilderGetOptions)(*TemplatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TemplatesRequestBuilder) Get(options *TemplatesRequestBuilderGetOptions
     }
     return res.(*TemplatesResponse), nil
 }
-// Create new navigation property to templates for applications
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to templates for applications
 func (m *TemplatesRequestBuilder) Post(options *TemplatesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationTemplate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

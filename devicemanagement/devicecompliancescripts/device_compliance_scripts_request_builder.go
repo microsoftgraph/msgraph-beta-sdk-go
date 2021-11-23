@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceComplianceScripts
+// deviceComplianceScriptsRequestBuilder builds and executes requests for operations under \deviceManagement\deviceComplianceScripts
 type DeviceComplianceScriptsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceComplianceScriptsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceComplianceScriptsRequestBuilderGetOptions options for Get
 type DeviceComplianceScriptsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceComplianceScriptsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of device compliance scripts associated with the tenant.
+// deviceComplianceScriptsRequestBuilderGetQueryParameters the list of device compliance scripts associated with the tenant.
 type DeviceComplianceScriptsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceComplianceScriptsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceComplianceScriptsRequestBuilderPostOptions options for Post
 type DeviceComplianceScriptsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScript;
@@ -56,10 +56,7 @@ type DeviceComplianceScriptsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceComplianceScriptsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceComplianceScriptsRequestBuilderInternal instantiates a new DeviceComplianceScriptsRequestBuilder and sets the default values.
 func NewDeviceComplianceScriptsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceComplianceScriptsRequestBuilder) {
     m := &DeviceComplianceScriptsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceComplianceScriptsRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceComplianceScriptsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceComplianceScriptsRequestBuilder instantiates a new DeviceComplianceScriptsRequestBuilder and sets the default values.
 func NewDeviceComplianceScriptsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceComplianceScriptsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceComplianceScriptsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of device compliance scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of device compliance scripts associated with the tenant.
 func (m *DeviceComplianceScriptsRequestBuilder) CreateGetRequestInformation(options *DeviceComplianceScriptsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceComplianceScriptsRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The list of device compliance scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of device compliance scripts associated with the tenant.
 func (m *DeviceComplianceScriptsRequestBuilder) CreatePostRequestInformation(options *DeviceComplianceScriptsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceComplianceScriptsRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The list of device compliance scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of device compliance scripts associated with the tenant.
 func (m *DeviceComplianceScriptsRequestBuilder) Get(options *DeviceComplianceScriptsRequestBuilderGetOptions)(*DeviceComplianceScriptsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceComplianceScriptsRequestBuilder) Get(options *DeviceComplianceScr
     }
     return res.(*DeviceComplianceScriptsResponse), nil
 }
-// The list of device compliance scripts associated with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Post the list of device compliance scripts associated with the tenant.
 func (m *DeviceComplianceScriptsRequestBuilder) Post(options *DeviceComplianceScriptsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScript, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

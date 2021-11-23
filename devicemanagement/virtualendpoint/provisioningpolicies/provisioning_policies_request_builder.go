@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\provisioningPolicies
+// provisioningPoliciesRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\provisioningPolicies
 type ProvisioningPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ProvisioningPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ProvisioningPoliciesRequestBuilderGetOptions options for Get
 type ProvisioningPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ProvisioningPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Cloud PC provisioning policy.
+// provisioningPoliciesRequestBuilderGetQueryParameters cloud PC provisioning policy.
 type ProvisioningPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ProvisioningPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ProvisioningPoliciesRequestBuilderPostOptions options for Post
 type ProvisioningPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcProvisioningPolicy;
@@ -56,10 +56,7 @@ type ProvisioningPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ProvisioningPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProvisioningPoliciesRequestBuilderInternal instantiates a new ProvisioningPoliciesRequestBuilder and sets the default values.
 func NewProvisioningPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProvisioningPoliciesRequestBuilder) {
     m := &ProvisioningPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewProvisioningPoliciesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ProvisioningPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProvisioningPoliciesRequestBuilder instantiates a new ProvisioningPoliciesRequestBuilder and sets the default values.
 func NewProvisioningPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProvisioningPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProvisioningPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Cloud PC provisioning policy.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation cloud PC provisioning policy.
 func (m *ProvisioningPoliciesRequestBuilder) CreateGetRequestInformation(options *ProvisioningPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ProvisioningPoliciesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Cloud PC provisioning policy.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation cloud PC provisioning policy.
 func (m *ProvisioningPoliciesRequestBuilder) CreatePostRequestInformation(options *ProvisioningPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ProvisioningPoliciesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Cloud PC provisioning policy.
-// Parameters:
-//  - options : Options for the request
+// Get cloud PC provisioning policy.
 func (m *ProvisioningPoliciesRequestBuilder) Get(options *ProvisioningPoliciesRequestBuilderGetOptions)(*ProvisioningPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ProvisioningPoliciesRequestBuilder) Get(options *ProvisioningPoliciesRe
     }
     return res.(*ProvisioningPoliciesResponse), nil
 }
-// Cloud PC provisioning policy.
-// Parameters:
-//  - options : Options for the request
+// Post cloud PC provisioning policy.
 func (m *ProvisioningPoliciesRequestBuilder) Post(options *ProvisioningPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcProvisioningPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

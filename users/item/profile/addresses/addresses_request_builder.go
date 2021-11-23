@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\profile\addresses
+// addressesRequestBuilder builds and executes requests for operations under \users\{user-id}\profile\addresses
 type AddressesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AddressesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AddressesRequestBuilderGetOptions options for Get
 type AddressesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AddressesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents details of addresses associated with the user.
+// addressesRequestBuilderGetQueryParameters represents details of addresses associated with the user.
 type AddressesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AddressesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AddressesRequestBuilderPostOptions options for Post
 type AddressesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemAddress;
@@ -56,10 +56,7 @@ type AddressesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AddressesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddressesRequestBuilderInternal instantiates a new AddressesRequestBuilder and sets the default values.
 func NewAddressesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddressesRequestBuilder) {
     m := &AddressesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAddressesRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AddressesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddressesRequestBuilder instantiates a new AddressesRequestBuilder and sets the default values.
 func NewAddressesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddressesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAddressesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents details of addresses associated with the user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents details of addresses associated with the user.
 func (m *AddressesRequestBuilder) CreateGetRequestInformation(options *AddressesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AddressesRequestBuilder) CreateGetRequestInformation(options *Addresses
     }
     return requestInfo, nil
 }
-// Represents details of addresses associated with the user.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents details of addresses associated with the user.
 func (m *AddressesRequestBuilder) CreatePostRequestInformation(options *AddressesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AddressesRequestBuilder) CreatePostRequestInformation(options *Addresse
     }
     return requestInfo, nil
 }
-// Represents details of addresses associated with the user.
-// Parameters:
-//  - options : Options for the request
+// Get represents details of addresses associated with the user.
 func (m *AddressesRequestBuilder) Get(options *AddressesRequestBuilderGetOptions)(*AddressesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AddressesRequestBuilder) Get(options *AddressesRequestBuilderGetOptions
     }
     return res.(*AddressesResponse), nil
 }
-// Represents details of addresses associated with the user.
-// Parameters:
-//  - options : Options for the request
+// Post represents details of addresses associated with the user.
 func (m *AddressesRequestBuilder) Post(options *AddressesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemAddress, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

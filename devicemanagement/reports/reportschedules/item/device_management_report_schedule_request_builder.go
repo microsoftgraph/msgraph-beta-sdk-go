@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\reportSchedules\{deviceManagementReportSchedule-id}
+// deviceManagementReportScheduleRequestBuilder builds and executes requests for operations under \deviceManagement\reports\reportSchedules\{deviceManagementReportSchedule-id}
 type DeviceManagementReportScheduleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementReportScheduleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementReportScheduleRequestBuilderDeleteOptions options for Delete
 type DeviceManagementReportScheduleRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementReportScheduleRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementReportScheduleRequestBuilderGetOptions options for Get
 type DeviceManagementReportScheduleRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementReportScheduleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Entity representing a schedule for which reports are delivered
+// deviceManagementReportScheduleRequestBuilderGetQueryParameters entity representing a schedule for which reports are delivered
 type DeviceManagementReportScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementReportScheduleRequestBuilderPatchOptions options for Patch
 type DeviceManagementReportScheduleRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReportSchedule;
@@ -53,10 +53,7 @@ type DeviceManagementReportScheduleRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementReportScheduleRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementReportScheduleRequestBuilderInternal instantiates a new DeviceManagementReportScheduleRequestBuilder and sets the default values.
 func NewDeviceManagementReportScheduleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementReportScheduleRequestBuilder) {
     m := &DeviceManagementReportScheduleRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementReportScheduleRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementReportScheduleRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementReportScheduleRequestBuilder instantiates a new DeviceManagementReportScheduleRequestBuilder and sets the default values.
 func NewDeviceManagementReportScheduleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementReportScheduleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementReportScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Entity representing a schedule for which reports are delivered
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation entity representing a schedule for which reports are delivered
 func (m *DeviceManagementReportScheduleRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementReportScheduleRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementReportScheduleRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// Entity representing a schedule for which reports are delivered
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation entity representing a schedule for which reports are delivered
 func (m *DeviceManagementReportScheduleRequestBuilder) CreateGetRequestInformation(options *DeviceManagementReportScheduleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementReportScheduleRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Entity representing a schedule for which reports are delivered
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation entity representing a schedule for which reports are delivered
 func (m *DeviceManagementReportScheduleRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementReportScheduleRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementReportScheduleRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// Entity representing a schedule for which reports are delivered
-// Parameters:
-//  - options : Options for the request
+// Delete entity representing a schedule for which reports are delivered
 func (m *DeviceManagementReportScheduleRequestBuilder) Delete(options *DeviceManagementReportScheduleRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementReportScheduleRequestBuilder) Delete(options *DeviceMan
     }
     return nil
 }
-// Entity representing a schedule for which reports are delivered
-// Parameters:
-//  - options : Options for the request
+// Get entity representing a schedule for which reports are delivered
 func (m *DeviceManagementReportScheduleRequestBuilder) Get(options *DeviceManagementReportScheduleRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReportSchedule, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementReportScheduleRequestBuilder) Get(options *DeviceManage
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementReportSchedule), nil
 }
-// Entity representing a schedule for which reports are delivered
-// Parameters:
-//  - options : Options for the request
+// Patch entity representing a schedule for which reports are delivered
 func (m *DeviceManagementReportScheduleRequestBuilder) Patch(options *DeviceManagementReportScheduleRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

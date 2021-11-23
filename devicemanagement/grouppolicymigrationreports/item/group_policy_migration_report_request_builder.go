@@ -10,7 +10,7 @@ import (
     i8771848a49e50ae62c54e7781ba80e77c5b2ae75c24c00f4ca58eac952cbd206 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicymigrationreports/item/unsupportedgrouppolicyextensions/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\{groupPolicyMigrationReport-id}
+// groupPolicyMigrationReportRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\{groupPolicyMigrationReport-id}
 type GroupPolicyMigrationReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type GroupPolicyMigrationReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupPolicyMigrationReportRequestBuilderDeleteOptions options for Delete
 type GroupPolicyMigrationReportRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type GroupPolicyMigrationReportRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupPolicyMigrationReportRequestBuilderGetOptions options for Get
 type GroupPolicyMigrationReportRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type GroupPolicyMigrationReportRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of Group Policy migration reports.
+// groupPolicyMigrationReportRequestBuilderGetQueryParameters a list of Group Policy migration reports.
 type GroupPolicyMigrationReportRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupPolicyMigrationReportRequestBuilderPatchOptions options for Patch
 type GroupPolicyMigrationReportRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyMigrationReport;
@@ -57,10 +57,7 @@ type GroupPolicyMigrationReportRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupPolicyMigrationReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyMigrationReportRequestBuilderInternal instantiates a new GroupPolicyMigrationReportRequestBuilder and sets the default values.
 func NewGroupPolicyMigrationReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyMigrationReportRequestBuilder) {
     m := &GroupPolicyMigrationReportRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewGroupPolicyMigrationReportRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupPolicyMigrationReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupPolicyMigrationReportRequestBuilder instantiates a new GroupPolicyMigrationReportRequestBuilder and sets the default values.
 func NewGroupPolicyMigrationReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupPolicyMigrationReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyMigrationReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of Group Policy migration reports.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a list of Group Policy migration reports.
 func (m *GroupPolicyMigrationReportRequestBuilder) CreateDeleteRequestInformation(options *GroupPolicyMigrationReportRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *GroupPolicyMigrationReportRequestBuilder) CreateDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// A list of Group Policy migration reports.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of Group Policy migration reports.
 func (m *GroupPolicyMigrationReportRequestBuilder) CreateGetRequestInformation(options *GroupPolicyMigrationReportRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *GroupPolicyMigrationReportRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// A list of Group Policy migration reports.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a list of Group Policy migration reports.
 func (m *GroupPolicyMigrationReportRequestBuilder) CreatePatchRequestInformation(options *GroupPolicyMigrationReportRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *GroupPolicyMigrationReportRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// A list of Group Policy migration reports.
-// Parameters:
-//  - options : Options for the request
+// Delete a list of Group Policy migration reports.
 func (m *GroupPolicyMigrationReportRequestBuilder) Delete(options *GroupPolicyMigrationReportRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *GroupPolicyMigrationReportRequestBuilder) Delete(options *GroupPolicyMi
     }
     return nil
 }
-// A list of Group Policy migration reports.
-// Parameters:
-//  - options : Options for the request
+// Get a list of Group Policy migration reports.
 func (m *GroupPolicyMigrationReportRequestBuilder) Get(options *GroupPolicyMigrationReportRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyMigrationReport, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -174,9 +158,7 @@ func (m *GroupPolicyMigrationReportRequestBuilder) Get(options *GroupPolicyMigra
 func (m *GroupPolicyMigrationReportRequestBuilder) GroupPolicySettingMappings()(*i38dcbc387461ec5f887af4b1883963552ff5d81b6dc6f5aa2953f7f8f864121b.GroupPolicySettingMappingsRequestBuilder) {
     return i38dcbc387461ec5f887af4b1883963552ff5d81b6dc6f5aa2953f7f8f864121b.NewGroupPolicySettingMappingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyMigrationReports.item.groupPolicySettingMappings.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// GroupPolicySettingMappingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyMigrationReports.item.groupPolicySettingMappings.item collection
 func (m *GroupPolicyMigrationReportRequestBuilder) GroupPolicySettingMappingsById(id string)(*i2d8bacdd344be782bb5743b2f7edb3872ac2f58bbb54c2a247c2bacadd8de35f.GroupPolicySettingMappingRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -187,9 +169,7 @@ func (m *GroupPolicyMigrationReportRequestBuilder) GroupPolicySettingMappingsByI
     }
     return i2d8bacdd344be782bb5743b2f7edb3872ac2f58bbb54c2a247c2bacadd8de35f.NewGroupPolicySettingMappingRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// A list of Group Policy migration reports.
-// Parameters:
-//  - options : Options for the request
+// Patch a list of Group Policy migration reports.
 func (m *GroupPolicyMigrationReportRequestBuilder) Patch(options *GroupPolicyMigrationReportRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -204,9 +184,7 @@ func (m *GroupPolicyMigrationReportRequestBuilder) Patch(options *GroupPolicyMig
 func (m *GroupPolicyMigrationReportRequestBuilder) UnsupportedGroupPolicyExtensions()(*ie4e5feb9f5b1a4b9a016d60fb9ac47087a8d705ab16fc0ae43f56fae55d28e34.UnsupportedGroupPolicyExtensionsRequestBuilder) {
     return ie4e5feb9f5b1a4b9a016d60fb9ac47087a8d705ab16fc0ae43f56fae55d28e34.NewUnsupportedGroupPolicyExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyMigrationReports.item.unsupportedGroupPolicyExtensions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UnsupportedGroupPolicyExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.groupPolicyMigrationReports.item.unsupportedGroupPolicyExtensions.item collection
 func (m *GroupPolicyMigrationReportRequestBuilder) UnsupportedGroupPolicyExtensionsById(id string)(*i8771848a49e50ae62c54e7781ba80e77c5b2ae75c24c00f4ca58eac952cbd206.UnsupportedGroupPolicyExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

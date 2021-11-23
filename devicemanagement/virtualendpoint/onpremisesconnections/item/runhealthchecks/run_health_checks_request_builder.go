@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\onPremisesConnections\{cloudPcOnPremisesConnection-id}\microsoft.graph.runHealthChecks
+// runHealthChecksRequestBuilder builds and executes requests for operations under \deviceManagement\virtualEndpoint\onPremisesConnections\{cloudPcOnPremisesConnection-id}\microsoft.graph.runHealthChecks
 type RunHealthChecksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RunHealthChecksRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RunHealthChecksRequestBuilderPostOptions options for Post
 type RunHealthChecksRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type RunHealthChecksRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RunHealthChecksRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRunHealthChecksRequestBuilderInternal instantiates a new RunHealthChecksRequestBuilder and sets the default values.
 func NewRunHealthChecksRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RunHealthChecksRequestBuilder) {
     m := &RunHealthChecksRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewRunHealthChecksRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RunHealthChecksRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRunHealthChecksRequestBuilder instantiates a new RunHealthChecksRequestBuilder and sets the default values.
 func NewRunHealthChecksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RunHealthChecksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRunHealthChecksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action runHealthChecks
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action runHealthChecks
 func (m *RunHealthChecksRequestBuilder) CreatePostRequestInformation(options *RunHealthChecksRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *RunHealthChecksRequestBuilder) CreatePostRequestInformation(options *Ru
     }
     return requestInfo, nil
 }
-// Invoke action runHealthChecks
-// Parameters:
-//  - options : Options for the request
+// Post invoke action runHealthChecks
 func (m *RunHealthChecksRequestBuilder) Post(options *RunHealthChecksRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

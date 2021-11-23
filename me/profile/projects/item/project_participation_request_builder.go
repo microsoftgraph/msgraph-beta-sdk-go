@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\profile\projects\{projectParticipation-id}
+// projectParticipationRequestBuilder builds and executes requests for operations under \me\profile\projects\{projectParticipation-id}
 type ProjectParticipationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ProjectParticipationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ProjectParticipationRequestBuilderDeleteOptions options for Delete
 type ProjectParticipationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ProjectParticipationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ProjectParticipationRequestBuilderGetOptions options for Get
 type ProjectParticipationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ProjectParticipationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents detailed information about projects associated with a user.
+// projectParticipationRequestBuilderGetQueryParameters represents detailed information about projects associated with a user.
 type ProjectParticipationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ProjectParticipationRequestBuilderPatchOptions options for Patch
 type ProjectParticipationRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProjectParticipation;
@@ -53,10 +53,7 @@ type ProjectParticipationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ProjectParticipationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProjectParticipationRequestBuilderInternal instantiates a new ProjectParticipationRequestBuilder and sets the default values.
 func NewProjectParticipationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProjectParticipationRequestBuilder) {
     m := &ProjectParticipationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewProjectParticipationRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ProjectParticipationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProjectParticipationRequestBuilder instantiates a new ProjectParticipationRequestBuilder and sets the default values.
 func NewProjectParticipationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProjectParticipationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProjectParticipationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents detailed information about projects associated with a user.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents detailed information about projects associated with a user.
 func (m *ProjectParticipationRequestBuilder) CreateDeleteRequestInformation(options *ProjectParticipationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ProjectParticipationRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Represents detailed information about projects associated with a user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents detailed information about projects associated with a user.
 func (m *ProjectParticipationRequestBuilder) CreateGetRequestInformation(options *ProjectParticipationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ProjectParticipationRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Represents detailed information about projects associated with a user.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents detailed information about projects associated with a user.
 func (m *ProjectParticipationRequestBuilder) CreatePatchRequestInformation(options *ProjectParticipationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ProjectParticipationRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Represents detailed information about projects associated with a user.
-// Parameters:
-//  - options : Options for the request
+// Delete represents detailed information about projects associated with a user.
 func (m *ProjectParticipationRequestBuilder) Delete(options *ProjectParticipationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ProjectParticipationRequestBuilder) Delete(options *ProjectParticipatio
     }
     return nil
 }
-// Represents detailed information about projects associated with a user.
-// Parameters:
-//  - options : Options for the request
+// Get represents detailed information about projects associated with a user.
 func (m *ProjectParticipationRequestBuilder) Get(options *ProjectParticipationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProjectParticipation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ProjectParticipationRequestBuilder) Get(options *ProjectParticipationRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ProjectParticipation), nil
 }
-// Represents detailed information about projects associated with a user.
-// Parameters:
-//  - options : Options for the request
+// Patch represents detailed information about projects associated with a user.
 func (m *ProjectParticipationRequestBuilder) Patch(options *ProjectParticipationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

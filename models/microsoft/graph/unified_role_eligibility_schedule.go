@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// unifiedRoleEligibilitySchedule 
 type UnifiedRoleEligibilitySchedule struct {
     UnifiedRoleScheduleBase
     // Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
@@ -12,14 +12,14 @@ type UnifiedRoleEligibilitySchedule struct {
     // The schedule object of the eligible role assignment request.
     scheduleInfo *RequestSchedule;
 }
-// Instantiates a new unifiedRoleEligibilitySchedule and sets the default values.
+// NewUnifiedRoleEligibilitySchedule instantiates a new unifiedRoleEligibilitySchedule and sets the default values.
 func NewUnifiedRoleEligibilitySchedule()(*UnifiedRoleEligibilitySchedule) {
     m := &UnifiedRoleEligibilitySchedule{
         UnifiedRoleScheduleBase: *NewUnifiedRoleScheduleBase(),
     }
     return m
 }
-// Gets the memberType property value. Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
+// GetMemberType gets the memberType property value. Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
 func (m *UnifiedRoleEligibilitySchedule) GetMemberType()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *UnifiedRoleEligibilitySchedule) GetMemberType()(*string) {
         return m.memberType
     }
 }
-// Gets the scheduleInfo property value. The schedule object of the eligible role assignment request.
+// GetScheduleInfo gets the scheduleInfo property value. The schedule object of the eligible role assignment request.
 func (m *UnifiedRoleEligibilitySchedule) GetScheduleInfo()(*RequestSchedule) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *UnifiedRoleEligibilitySchedule) GetScheduleInfo()(*RequestSchedule) {
         return m.scheduleInfo
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRoleEligibilitySchedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.UnifiedRoleScheduleBase.GetFieldDeserializers()
     res["memberType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,9 +63,7 @@ func (m *UnifiedRoleEligibilitySchedule) GetFieldDeserializers()(map[string]func
 func (m *UnifiedRoleEligibilitySchedule) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UnifiedRoleEligibilitySchedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.UnifiedRoleScheduleBase.Serialize(writer)
     if err != nil {
@@ -85,15 +83,11 @@ func (m *UnifiedRoleEligibilitySchedule) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// Sets the memberType property value. Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
-// Parameters:
-//  - value : Value to set for the memberType property.
+// SetMemberType sets the memberType property value. Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
 func (m *UnifiedRoleEligibilitySchedule) SetMemberType(value *string)() {
     m.memberType = value
 }
-// Sets the scheduleInfo property value. The schedule object of the eligible role assignment request.
-// Parameters:
-//  - value : Value to set for the scheduleInfo property.
+// SetScheduleInfo sets the scheduleInfo property value. The schedule object of the eligible role assignment request.
 func (m *UnifiedRoleEligibilitySchedule) SetScheduleInfo(value *RequestSchedule)() {
     m.scheduleInfo = value
 }

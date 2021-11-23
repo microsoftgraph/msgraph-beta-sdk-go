@@ -5,21 +5,21 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// 
+// addLanguageFilesRequestBody 
 type AddLanguageFilesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     groupPolicyUploadedLanguageFiles []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFile;
 }
-// Instantiates a new addLanguageFilesRequestBody and sets the default values.
+// NewAddLanguageFilesRequestBody instantiates a new addLanguageFilesRequestBody and sets the default values.
 func NewAddLanguageFilesRequestBody()(*AddLanguageFilesRequestBody) {
     m := &AddLanguageFilesRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddLanguageFilesRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *AddLanguageFilesRequestBody) GetAdditionalData()(map[string]interface{}
         return m.additionalData
     }
 }
-// Gets the groupPolicyUploadedLanguageFiles property value. 
+// GetGroupPolicyUploadedLanguageFiles gets the groupPolicyUploadedLanguageFiles property value. 
 func (m *AddLanguageFilesRequestBody) GetGroupPolicyUploadedLanguageFiles()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFile) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *AddLanguageFilesRequestBody) GetGroupPolicyUploadedLanguageFiles()([]i5
         return m.groupPolicyUploadedLanguageFiles
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AddLanguageFilesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["groupPolicyUploadedLanguageFiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -57,9 +57,7 @@ func (m *AddLanguageFilesRequestBody) GetFieldDeserializers()(map[string]func(in
 func (m *AddLanguageFilesRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AddLanguageFilesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupPolicyUploadedLanguageFiles()))
@@ -80,15 +78,11 @@ func (m *AddLanguageFilesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddLanguageFilesRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the groupPolicyUploadedLanguageFiles property value. 
-// Parameters:
-//  - value : Value to set for the groupPolicyUploadedLanguageFiles property.
+// SetGroupPolicyUploadedLanguageFiles sets the groupPolicyUploadedLanguageFiles property value. 
 func (m *AddLanguageFilesRequestBody) SetGroupPolicyUploadedLanguageFiles(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyUploadedLanguageFile)() {
     m.groupPolicyUploadedLanguageFiles = value
 }

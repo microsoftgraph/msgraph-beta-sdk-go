@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// outlookUser 
 type OutlookUser struct {
     Entity
     // A list of categories defined for the user.
@@ -16,14 +16,14 @@ type OutlookUser struct {
     // 
     tasks []OutlookTask;
 }
-// Instantiates a new outlookUser and sets the default values.
+// NewOutlookUser instantiates a new outlookUser and sets the default values.
 func NewOutlookUser()(*OutlookUser) {
     m := &OutlookUser{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the masterCategories property value. A list of categories defined for the user.
+// GetMasterCategories gets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) GetMasterCategories()([]OutlookCategory) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *OutlookUser) GetMasterCategories()([]OutlookCategory) {
         return m.masterCategories
     }
 }
-// Gets the taskFolders property value. 
+// GetTaskFolders gets the taskFolders property value. 
 func (m *OutlookUser) GetTaskFolders()([]OutlookTaskFolder) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *OutlookUser) GetTaskFolders()([]OutlookTaskFolder) {
         return m.taskFolders
     }
 }
-// Gets the taskGroups property value. 
+// GetTaskGroups gets the taskGroups property value. 
 func (m *OutlookUser) GetTaskGroups()([]OutlookTaskGroup) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *OutlookUser) GetTaskGroups()([]OutlookTaskGroup) {
         return m.taskGroups
     }
 }
-// Gets the tasks property value. 
+// GetTasks gets the tasks property value. 
 func (m *OutlookUser) GetTasks()([]OutlookTask) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *OutlookUser) GetTasks()([]OutlookTask) {
         return m.tasks
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["masterCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,9 +119,7 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *OutlookUser) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -173,27 +171,19 @@ func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// Sets the masterCategories property value. A list of categories defined for the user.
-// Parameters:
-//  - value : Value to set for the masterCategories property.
+// SetMasterCategories sets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) SetMasterCategories(value []OutlookCategory)() {
     m.masterCategories = value
 }
-// Sets the taskFolders property value. 
-// Parameters:
-//  - value : Value to set for the taskFolders property.
+// SetTaskFolders sets the taskFolders property value. 
 func (m *OutlookUser) SetTaskFolders(value []OutlookTaskFolder)() {
     m.taskFolders = value
 }
-// Sets the taskGroups property value. 
-// Parameters:
-//  - value : Value to set for the taskGroups property.
+// SetTaskGroups sets the taskGroups property value. 
 func (m *OutlookUser) SetTaskGroups(value []OutlookTaskGroup)() {
     m.taskGroups = value
 }
-// Sets the tasks property value. 
-// Parameters:
-//  - value : Value to set for the tasks property.
+// SetTasks sets the tasks property value. 
 func (m *OutlookUser) SetTasks(value []OutlookTask)() {
     m.tasks = value
 }

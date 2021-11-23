@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managementConditionStatements\microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})
+// getManagementConditionStatementsForPlatformWithPlatformRequestBuilder builds and executes requests for operations under \deviceManagement\managementConditionStatements\microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})
 type GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder struc
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetManagementConditionStatementsForPlatformWithPlatformRequestBuilderGetOptions options for Get
 type GetManagementConditionStatementsForPlatformWithPlatformRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type GetManagementConditionStatementsForPlatformWithPlatformRequestBuilderGetOpt
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - platform : Usage: platform={platform}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetManagementConditionStatementsForPlatformWithPlatformRequestBuilderInternal instantiates a new GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder and sets the default values.
 func NewGetManagementConditionStatementsForPlatformWithPlatformRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, platform *string)(*GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder) {
     m := &GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewGetManagementConditionStatementsForPlatformWithPlatformRequestBuilderInt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetManagementConditionStatementsForPlatformWithPlatformRequestBuilder instantiates a new GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder and sets the default values.
 func NewGetManagementConditionStatementsForPlatformWithPlatformRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetManagementConditionStatementsForPlatformWithPlatformRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getManagementConditionStatementsForPlatform
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getManagementConditionStatementsForPlatform
 func (m *GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder) CreateGetRequestInformation(options *GetManagementConditionStatementsForPlatformWithPlatformRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder) 
     }
     return requestInfo, nil
 }
-// Invoke function getManagementConditionStatementsForPlatform
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getManagementConditionStatementsForPlatform
 func (m *GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder) Get(options *GetManagementConditionStatementsForPlatformWithPlatformRequestBuilderGetOptions)([]GetManagementConditionStatementsForPlatformWithPlatform, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

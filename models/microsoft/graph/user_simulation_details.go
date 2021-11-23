@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// userSimulationDetails 
 type UserSimulationDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,14 +28,14 @@ type UserSimulationDetails struct {
     // List of training events of a user in the attack simulation and training campaign.
     trainingEvents []UserTrainingEventInfo;
 }
-// Instantiates a new userSimulationDetails and sets the default values.
+// NewUserSimulationDetails instantiates a new userSimulationDetails and sets the default values.
 func NewUserSimulationDetails()(*UserSimulationDetails) {
     m := &UserSimulationDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserSimulationDetails) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *UserSimulationDetails) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the assignedTrainingsCount property value. Number of trainings assigned to a user in an attack simulation and training campaign.
+// GetAssignedTrainingsCount gets the assignedTrainingsCount property value. Number of trainings assigned to a user in an attack simulation and training campaign.
 func (m *UserSimulationDetails) GetAssignedTrainingsCount()(*int32) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *UserSimulationDetails) GetAssignedTrainingsCount()(*int32) {
         return m.assignedTrainingsCount
     }
 }
-// Gets the completedTrainingsCount property value. Number of trainings completed by a user in an attack simulation and training campaign.
+// GetCompletedTrainingsCount gets the completedTrainingsCount property value. Number of trainings completed by a user in an attack simulation and training campaign.
 func (m *UserSimulationDetails) GetCompletedTrainingsCount()(*int32) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *UserSimulationDetails) GetCompletedTrainingsCount()(*int32) {
         return m.completedTrainingsCount
     }
 }
-// Gets the compromisedDateTime property value. Date and time of the compromising online action by a user in an attack simulation and training campaign.
+// GetCompromisedDateTime gets the compromisedDateTime property value. Date and time of the compromising online action by a user in an attack simulation and training campaign.
 func (m *UserSimulationDetails) GetCompromisedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *UserSimulationDetails) GetCompromisedDateTime()(*i336074805fc853987abe6
         return m.compromisedDateTime
     }
 }
-// Gets the inProgressTrainingsCount property value. Number of trainings in progress by a user in an attack simulation and training campaign.
+// GetInProgressTrainingsCount gets the inProgressTrainingsCount property value. Number of trainings in progress by a user in an attack simulation and training campaign.
 func (m *UserSimulationDetails) GetInProgressTrainingsCount()(*int32) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *UserSimulationDetails) GetInProgressTrainingsCount()(*int32) {
         return m.inProgressTrainingsCount
     }
 }
-// Gets the isCompromised property value. Flag representing if user was compromised in an attack simulation and training campaign.
+// GetIsCompromised gets the isCompromised property value. Flag representing if user was compromised in an attack simulation and training campaign.
 func (m *UserSimulationDetails) GetIsCompromised()(*bool) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *UserSimulationDetails) GetIsCompromised()(*bool) {
         return m.isCompromised
     }
 }
-// Gets the reportedPhishDateTime property value. Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
+// GetReportedPhishDateTime gets the reportedPhishDateTime property value. Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
 func (m *UserSimulationDetails) GetReportedPhishDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *UserSimulationDetails) GetReportedPhishDateTime()(*i336074805fc853987ab
         return m.reportedPhishDateTime
     }
 }
-// Gets the simulationEvents property value. List of simulation events of a user in the attack simulation and training campaign.
+// GetSimulationEvents gets the simulationEvents property value. List of simulation events of a user in the attack simulation and training campaign.
 func (m *UserSimulationDetails) GetSimulationEvents()([]UserSimulationEventInfo) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *UserSimulationDetails) GetSimulationEvents()([]UserSimulationEventInfo)
         return m.simulationEvents
     }
 }
-// Gets the simulationUser property value. User in an attack simulation and training campaign.
+// GetSimulationUser gets the simulationUser property value. User in an attack simulation and training campaign.
 func (m *UserSimulationDetails) GetSimulationUser()(*AttackSimulationUser) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *UserSimulationDetails) GetSimulationUser()(*AttackSimulationUser) {
         return m.simulationUser
     }
 }
-// Gets the trainingEvents property value. List of training events of a user in the attack simulation and training campaign.
+// GetTrainingEvents gets the trainingEvents property value. List of training events of a user in the attack simulation and training campaign.
 func (m *UserSimulationDetails) GetTrainingEvents()([]UserTrainingEventInfo) {
     if m == nil {
         return nil
@@ -115,7 +115,7 @@ func (m *UserSimulationDetails) GetTrainingEvents()([]UserTrainingEventInfo) {
         return m.trainingEvents
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignedTrainingsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -221,9 +221,7 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
 func (m *UserSimulationDetails) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserSimulationDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("assignedTrainingsCount", m.GetAssignedTrainingsCount())
@@ -297,63 +295,43 @@ func (m *UserSimulationDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserSimulationDetails) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the assignedTrainingsCount property value. Number of trainings assigned to a user in an attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the assignedTrainingsCount property.
+// SetAssignedTrainingsCount sets the assignedTrainingsCount property value. Number of trainings assigned to a user in an attack simulation and training campaign.
 func (m *UserSimulationDetails) SetAssignedTrainingsCount(value *int32)() {
     m.assignedTrainingsCount = value
 }
-// Sets the completedTrainingsCount property value. Number of trainings completed by a user in an attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the completedTrainingsCount property.
+// SetCompletedTrainingsCount sets the completedTrainingsCount property value. Number of trainings completed by a user in an attack simulation and training campaign.
 func (m *UserSimulationDetails) SetCompletedTrainingsCount(value *int32)() {
     m.completedTrainingsCount = value
 }
-// Sets the compromisedDateTime property value. Date and time of the compromising online action by a user in an attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the compromisedDateTime property.
+// SetCompromisedDateTime sets the compromisedDateTime property value. Date and time of the compromising online action by a user in an attack simulation and training campaign.
 func (m *UserSimulationDetails) SetCompromisedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.compromisedDateTime = value
 }
-// Sets the inProgressTrainingsCount property value. Number of trainings in progress by a user in an attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the inProgressTrainingsCount property.
+// SetInProgressTrainingsCount sets the inProgressTrainingsCount property value. Number of trainings in progress by a user in an attack simulation and training campaign.
 func (m *UserSimulationDetails) SetInProgressTrainingsCount(value *int32)() {
     m.inProgressTrainingsCount = value
 }
-// Sets the isCompromised property value. Flag representing if user was compromised in an attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the isCompromised property.
+// SetIsCompromised sets the isCompromised property value. Flag representing if user was compromised in an attack simulation and training campaign.
 func (m *UserSimulationDetails) SetIsCompromised(value *bool)() {
     m.isCompromised = value
 }
-// Sets the reportedPhishDateTime property value. Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the reportedPhishDateTime property.
+// SetReportedPhishDateTime sets the reportedPhishDateTime property value. Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
 func (m *UserSimulationDetails) SetReportedPhishDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.reportedPhishDateTime = value
 }
-// Sets the simulationEvents property value. List of simulation events of a user in the attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the simulationEvents property.
+// SetSimulationEvents sets the simulationEvents property value. List of simulation events of a user in the attack simulation and training campaign.
 func (m *UserSimulationDetails) SetSimulationEvents(value []UserSimulationEventInfo)() {
     m.simulationEvents = value
 }
-// Sets the simulationUser property value. User in an attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the simulationUser property.
+// SetSimulationUser sets the simulationUser property value. User in an attack simulation and training campaign.
 func (m *UserSimulationDetails) SetSimulationUser(value *AttackSimulationUser)() {
     m.simulationUser = value
 }
-// Sets the trainingEvents property value. List of training events of a user in the attack simulation and training campaign.
-// Parameters:
-//  - value : Value to set for the trainingEvents property.
+// SetTrainingEvents sets the trainingEvents property value. List of training events of a user in the attack simulation and training campaign.
 func (m *UserSimulationDetails) SetTrainingEvents(value []UserTrainingEventInfo)() {
     m.trainingEvents = value
 }

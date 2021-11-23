@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\directoryRoleAccessReviewPolicy
+// directoryRoleAccessReviewPolicyRequestBuilder builds and executes requests for operations under \policies\directoryRoleAccessReviewPolicy
 type DirectoryRoleAccessReviewPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DirectoryRoleAccessReviewPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DirectoryRoleAccessReviewPolicyRequestBuilderDeleteOptions options for Delete
 type DirectoryRoleAccessReviewPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DirectoryRoleAccessReviewPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DirectoryRoleAccessReviewPolicyRequestBuilderGetOptions options for Get
 type DirectoryRoleAccessReviewPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DirectoryRoleAccessReviewPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get directoryRoleAccessReviewPolicy from policies
+// directoryRoleAccessReviewPolicyRequestBuilderGetQueryParameters get directoryRoleAccessReviewPolicy from policies
 type DirectoryRoleAccessReviewPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DirectoryRoleAccessReviewPolicyRequestBuilderPatchOptions options for Patch
 type DirectoryRoleAccessReviewPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryRoleAccessReviewPolicy;
@@ -53,10 +53,7 @@ type DirectoryRoleAccessReviewPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DirectoryRoleAccessReviewPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryRoleAccessReviewPolicyRequestBuilderInternal instantiates a new DirectoryRoleAccessReviewPolicyRequestBuilder and sets the default values.
 func NewDirectoryRoleAccessReviewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRoleAccessReviewPolicyRequestBuilder) {
     m := &DirectoryRoleAccessReviewPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDirectoryRoleAccessReviewPolicyRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DirectoryRoleAccessReviewPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryRoleAccessReviewPolicyRequestBuilder instantiates a new DirectoryRoleAccessReviewPolicyRequestBuilder and sets the default values.
 func NewDirectoryRoleAccessReviewPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRoleAccessReviewPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleAccessReviewPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property directoryRoleAccessReviewPolicy for policies
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property directoryRoleAccessReviewPolicy for policies
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreateDeleteRequestInformation(options *DirectoryRoleAccessReviewPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// Get directoryRoleAccessReviewPolicy from policies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get directoryRoleAccessReviewPolicy from policies
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreateGetRequestInformation(options *DirectoryRoleAccessReviewPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Update the navigation property directoryRoleAccessReviewPolicy in policies
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property directoryRoleAccessReviewPolicy in policies
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreatePatchRequestInformation(options *DirectoryRoleAccessReviewPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Delete navigation property directoryRoleAccessReviewPolicy for policies
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property directoryRoleAccessReviewPolicy for policies
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Delete(options *DirectoryRoleAccessReviewPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Delete(options *Director
     }
     return nil
 }
-// Get directoryRoleAccessReviewPolicy from policies
-// Parameters:
-//  - options : Options for the request
+// Get get directoryRoleAccessReviewPolicy from policies
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Get(options *DirectoryRoleAccessReviewPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryRoleAccessReviewPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Get(options *DirectoryRo
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryRoleAccessReviewPolicy), nil
 }
-// Update the navigation property directoryRoleAccessReviewPolicy in policies
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property directoryRoleAccessReviewPolicy in policies
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Patch(options *DirectoryRoleAccessReviewPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

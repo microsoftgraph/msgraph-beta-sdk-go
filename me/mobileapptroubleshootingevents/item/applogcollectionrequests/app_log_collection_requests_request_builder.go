@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}\appLogCollectionRequests
+// appLogCollectionRequestsRequestBuilder builds and executes requests for operations under \me\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}\appLogCollectionRequests
 type AppLogCollectionRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppLogCollectionRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppLogCollectionRequestsRequestBuilderGetOptions options for Get
 type AppLogCollectionRequestsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AppLogCollectionRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection property of AppLogUploadRequest.
+// appLogCollectionRequestsRequestBuilderGetQueryParameters the collection property of AppLogUploadRequest.
 type AppLogCollectionRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AppLogCollectionRequestsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AppLogCollectionRequestsRequestBuilderPostOptions options for Post
 type AppLogCollectionRequestsRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionRequest;
@@ -56,10 +56,7 @@ type AppLogCollectionRequestsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppLogCollectionRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppLogCollectionRequestsRequestBuilderInternal instantiates a new AppLogCollectionRequestsRequestBuilder and sets the default values.
 func NewAppLogCollectionRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppLogCollectionRequestsRequestBuilder) {
     m := &AppLogCollectionRequestsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAppLogCollectionRequestsRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppLogCollectionRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppLogCollectionRequestsRequestBuilder instantiates a new AppLogCollectionRequestsRequestBuilder and sets the default values.
 func NewAppLogCollectionRequestsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppLogCollectionRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppLogCollectionRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection property of AppLogUploadRequest.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection property of AppLogUploadRequest.
 func (m *AppLogCollectionRequestsRequestBuilder) CreateGetRequestInformation(options *AppLogCollectionRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AppLogCollectionRequestsRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The collection property of AppLogUploadRequest.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection property of AppLogUploadRequest.
 func (m *AppLogCollectionRequestsRequestBuilder) CreatePostRequestInformation(options *AppLogCollectionRequestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AppLogCollectionRequestsRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// The collection property of AppLogUploadRequest.
-// Parameters:
-//  - options : Options for the request
+// Get the collection property of AppLogUploadRequest.
 func (m *AppLogCollectionRequestsRequestBuilder) Get(options *AppLogCollectionRequestsRequestBuilderGetOptions)(*AppLogCollectionRequestsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AppLogCollectionRequestsRequestBuilder) Get(options *AppLogCollectionRe
     }
     return res.(*AppLogCollectionRequestsResponse), nil
 }
-// The collection property of AppLogUploadRequest.
-// Parameters:
-//  - options : Options for the request
+// Post the collection property of AppLogUploadRequest.
 func (m *AppLogCollectionRequestsRequestBuilder) Post(options *AppLogCollectionRequestsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionRequest, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

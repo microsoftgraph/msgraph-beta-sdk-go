@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// defaultManagedAppProtection 
 type DefaultManagedAppProtection struct {
     ManagedAppProtection
     // Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
@@ -102,14 +102,14 @@ type DefaultManagedAppProtection struct {
     // Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
     wipeAfterCompanyPortalUpdateDeferralInDays *int32;
 }
-// Instantiates a new defaultManagedAppProtection and sets the default values.
+// NewDefaultManagedAppProtection instantiates a new defaultManagedAppProtection and sets the default values.
 func NewDefaultManagedAppProtection()(*DefaultManagedAppProtection) {
     m := &DefaultManagedAppProtection{
         ManagedAppProtection: *NewManagedAppProtection(),
     }
     return m
 }
-// Gets the allowedAndroidDeviceManufacturers property value. Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
+// GetAllowedAndroidDeviceManufacturers gets the allowedAndroidDeviceManufacturers property value. Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
 func (m *DefaultManagedAppProtection) GetAllowedAndroidDeviceManufacturers()(*string) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *DefaultManagedAppProtection) GetAllowedAndroidDeviceManufacturers()(*st
         return m.allowedAndroidDeviceManufacturers
     }
 }
-// Gets the allowedAndroidDeviceModels property value. List of device models allowed, as a string, for the managed app to work. (Android Only)
+// GetAllowedAndroidDeviceModels gets the allowedAndroidDeviceModels property value. List of device models allowed, as a string, for the managed app to work. (Android Only)
 func (m *DefaultManagedAppProtection) GetAllowedAndroidDeviceModels()([]string) {
     if m == nil {
         return nil
@@ -125,7 +125,7 @@ func (m *DefaultManagedAppProtection) GetAllowedAndroidDeviceModels()([]string) 
         return m.allowedAndroidDeviceModels
     }
 }
-// Gets the allowedIosDeviceModels property value. Semicolon seperated list of device models allowed, as a string, for the managed app to work. (iOS Only)
+// GetAllowedIosDeviceModels gets the allowedIosDeviceModels property value. Semicolon seperated list of device models allowed, as a string, for the managed app to work. (iOS Only)
 func (m *DefaultManagedAppProtection) GetAllowedIosDeviceModels()(*string) {
     if m == nil {
         return nil
@@ -133,7 +133,7 @@ func (m *DefaultManagedAppProtection) GetAllowedIosDeviceModels()(*string) {
         return m.allowedIosDeviceModels
     }
 }
-// Gets the appActionIfAndroidDeviceManufacturerNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. (Android only). Possible values are: block, wipe, warn.
+// GetAppActionIfAndroidDeviceManufacturerNotAllowed gets the appActionIfAndroidDeviceManufacturerNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. (Android only). Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) GetAppActionIfAndroidDeviceManufacturerNotAllowed()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *DefaultManagedAppProtection) GetAppActionIfAndroidDeviceManufacturerNot
         return m.appActionIfAndroidDeviceManufacturerNotAllowed
     }
 }
-// Gets the appActionIfAndroidDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (Android Only). Possible values are: block, wipe, warn.
+// GetAppActionIfAndroidDeviceModelNotAllowed gets the appActionIfAndroidDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (Android Only). Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) GetAppActionIfAndroidDeviceModelNotAllowed()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -149,7 +149,7 @@ func (m *DefaultManagedAppProtection) GetAppActionIfAndroidDeviceModelNotAllowed
         return m.appActionIfAndroidDeviceModelNotAllowed
     }
 }
-// Gets the appActionIfAndroidSafetyNetAppsVerificationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android App Verification requirement fails. Possible values are: block, wipe, warn.
+// GetAppActionIfAndroidSafetyNetAppsVerificationFailed gets the appActionIfAndroidSafetyNetAppsVerificationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android App Verification requirement fails. Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) GetAppActionIfAndroidSafetyNetAppsVerificationFailed()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -157,7 +157,7 @@ func (m *DefaultManagedAppProtection) GetAppActionIfAndroidSafetyNetAppsVerifica
         return m.appActionIfAndroidSafetyNetAppsVerificationFailed
     }
 }
-// Gets the appActionIfAndroidSafetyNetDeviceAttestationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirement fails. Possible values are: block, wipe, warn.
+// GetAppActionIfAndroidSafetyNetDeviceAttestationFailed gets the appActionIfAndroidSafetyNetDeviceAttestationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirement fails. Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) GetAppActionIfAndroidSafetyNetDeviceAttestationFailed()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -165,7 +165,7 @@ func (m *DefaultManagedAppProtection) GetAppActionIfAndroidSafetyNetDeviceAttest
         return m.appActionIfAndroidSafetyNetDeviceAttestationFailed
     }
 }
-// Gets the appActionIfDeviceLockNotSet property value. Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on device but is not set. (android only). Possible values are: block, wipe, warn.
+// GetAppActionIfDeviceLockNotSet gets the appActionIfDeviceLockNotSet property value. Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on device but is not set. (android only). Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) GetAppActionIfDeviceLockNotSet()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *DefaultManagedAppProtection) GetAppActionIfDeviceLockNotSet()(*ManagedA
         return m.appActionIfDeviceLockNotSet
     }
 }
-// Gets the appActionIfIosDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (iOS Only). Possible values are: block, wipe, warn.
+// GetAppActionIfIosDeviceModelNotAllowed gets the appActionIfIosDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (iOS Only). Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) GetAppActionIfIosDeviceModelNotAllowed()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -181,7 +181,7 @@ func (m *DefaultManagedAppProtection) GetAppActionIfIosDeviceModelNotAllowed()(*
         return m.appActionIfIosDeviceModelNotAllowed
     }
 }
-// Gets the appDataEncryptionType property value. Type of encryption which should be used for data in a managed app. (iOS Only). Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
+// GetAppDataEncryptionType gets the appDataEncryptionType property value. Type of encryption which should be used for data in a managed app. (iOS Only). Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
 func (m *DefaultManagedAppProtection) GetAppDataEncryptionType()(*ManagedAppDataEncryptionType) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *DefaultManagedAppProtection) GetAppDataEncryptionType()(*ManagedAppData
         return m.appDataEncryptionType
     }
 }
-// Gets the apps property value. List of apps to which the policy is deployed.
+// GetApps gets the apps property value. List of apps to which the policy is deployed.
 func (m *DefaultManagedAppProtection) GetApps()([]ManagedMobileApp) {
     if m == nil {
         return nil
@@ -197,7 +197,7 @@ func (m *DefaultManagedAppProtection) GetApps()([]ManagedMobileApp) {
         return m.apps
     }
 }
-// Gets the biometricAuthenticationBlocked property value. Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True. (Android Only)
+// GetBiometricAuthenticationBlocked gets the biometricAuthenticationBlocked property value. Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True. (Android Only)
 func (m *DefaultManagedAppProtection) GetBiometricAuthenticationBlocked()(*bool) {
     if m == nil {
         return nil
@@ -205,7 +205,7 @@ func (m *DefaultManagedAppProtection) GetBiometricAuthenticationBlocked()(*bool)
         return m.biometricAuthenticationBlocked
     }
 }
-// Gets the blockAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
+// GetBlockAfterCompanyPortalUpdateDeferralInDays gets the blockAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
 func (m *DefaultManagedAppProtection) GetBlockAfterCompanyPortalUpdateDeferralInDays()(*int32) {
     if m == nil {
         return nil
@@ -213,7 +213,7 @@ func (m *DefaultManagedAppProtection) GetBlockAfterCompanyPortalUpdateDeferralIn
         return m.blockAfterCompanyPortalUpdateDeferralInDays
     }
 }
-// Gets the connectToVpnOnLaunch property value. Whether the app should connect to the configured VPN on launch (Android only).
+// GetConnectToVpnOnLaunch gets the connectToVpnOnLaunch property value. Whether the app should connect to the configured VPN on launch (Android only).
 func (m *DefaultManagedAppProtection) GetConnectToVpnOnLaunch()(*bool) {
     if m == nil {
         return nil
@@ -221,7 +221,7 @@ func (m *DefaultManagedAppProtection) GetConnectToVpnOnLaunch()(*bool) {
         return m.connectToVpnOnLaunch
     }
 }
-// Gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. (Android only)
+// GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. (Android only)
 func (m *DefaultManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
     if m == nil {
         return nil
@@ -229,7 +229,7 @@ func (m *DefaultManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
         return m.customBrowserDisplayName
     }
 }
-// Gets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android. (Android only)
+// GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android. (Android only)
 func (m *DefaultManagedAppProtection) GetCustomBrowserPackageId()(*string) {
     if m == nil {
         return nil
@@ -237,7 +237,7 @@ func (m *DefaultManagedAppProtection) GetCustomBrowserPackageId()(*string) {
         return m.customBrowserPackageId
     }
 }
-// Gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. (iOS only)
+// GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. (iOS only)
 func (m *DefaultManagedAppProtection) GetCustomBrowserProtocol()(*string) {
     if m == nil {
         return nil
@@ -245,7 +245,7 @@ func (m *DefaultManagedAppProtection) GetCustomBrowserProtocol()(*string) {
         return m.customBrowserProtocol
     }
 }
-// Gets the customDialerAppDisplayName property value. Friendly name of a custom dialer app to click-to-open a phone number on Android.
+// GetCustomDialerAppDisplayName gets the customDialerAppDisplayName property value. Friendly name of a custom dialer app to click-to-open a phone number on Android.
 func (m *DefaultManagedAppProtection) GetCustomDialerAppDisplayName()(*string) {
     if m == nil {
         return nil
@@ -253,7 +253,7 @@ func (m *DefaultManagedAppProtection) GetCustomDialerAppDisplayName()(*string) {
         return m.customDialerAppDisplayName
     }
 }
-// Gets the customDialerAppPackageId property value. PackageId of a custom dialer app to click-to-open a phone number on Android.
+// GetCustomDialerAppPackageId gets the customDialerAppPackageId property value. PackageId of a custom dialer app to click-to-open a phone number on Android.
 func (m *DefaultManagedAppProtection) GetCustomDialerAppPackageId()(*string) {
     if m == nil {
         return nil
@@ -261,7 +261,7 @@ func (m *DefaultManagedAppProtection) GetCustomDialerAppPackageId()(*string) {
         return m.customDialerAppPackageId
     }
 }
-// Gets the customDialerAppProtocol property value. Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
+// GetCustomDialerAppProtocol gets the customDialerAppProtocol property value. Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
 func (m *DefaultManagedAppProtection) GetCustomDialerAppProtocol()(*string) {
     if m == nil {
         return nil
@@ -269,7 +269,7 @@ func (m *DefaultManagedAppProtection) GetCustomDialerAppProtocol()(*string) {
         return m.customDialerAppProtocol
     }
 }
-// Gets the customSettings property value. A set of string key and string value pairs to be sent to the affected users, unalterned by this service
+// GetCustomSettings gets the customSettings property value. A set of string key and string value pairs to be sent to the affected users, unalterned by this service
 func (m *DefaultManagedAppProtection) GetCustomSettings()([]KeyValuePair) {
     if m == nil {
         return nil
@@ -277,7 +277,7 @@ func (m *DefaultManagedAppProtection) GetCustomSettings()([]KeyValuePair) {
         return m.customSettings
     }
 }
-// Gets the deployedAppCount property value. Count of apps to which the current policy is deployed.
+// GetDeployedAppCount gets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *DefaultManagedAppProtection) GetDeployedAppCount()(*int32) {
     if m == nil {
         return nil
@@ -285,7 +285,7 @@ func (m *DefaultManagedAppProtection) GetDeployedAppCount()(*int32) {
         return m.deployedAppCount
     }
 }
-// Gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
+// GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *DefaultManagedAppProtection) GetDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) {
     if m == nil {
         return nil
@@ -293,7 +293,7 @@ func (m *DefaultManagedAppProtection) GetDeploymentSummary()(*ManagedAppPolicyDe
         return m.deploymentSummary
     }
 }
-// Gets the deviceLockRequired property value. Defines if any kind of lock must be required on device. (android only)
+// GetDeviceLockRequired gets the deviceLockRequired property value. Defines if any kind of lock must be required on device. (android only)
 func (m *DefaultManagedAppProtection) GetDeviceLockRequired()(*bool) {
     if m == nil {
         return nil
@@ -301,7 +301,7 @@ func (m *DefaultManagedAppProtection) GetDeviceLockRequired()(*bool) {
         return m.deviceLockRequired
     }
 }
-// Gets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
+// GetDisableAppEncryptionIfDeviceEncryptionIsEnabled gets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
 func (m *DefaultManagedAppProtection) GetDisableAppEncryptionIfDeviceEncryptionIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -309,7 +309,7 @@ func (m *DefaultManagedAppProtection) GetDisableAppEncryptionIfDeviceEncryptionI
         return m.disableAppEncryptionIfDeviceEncryptionIsEnabled
     }
 }
-// Gets the disableProtectionOfManagedOutboundOpenInData property value. Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps. (iOS Only)
+// GetDisableProtectionOfManagedOutboundOpenInData gets the disableProtectionOfManagedOutboundOpenInData property value. Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps. (iOS Only)
 func (m *DefaultManagedAppProtection) GetDisableProtectionOfManagedOutboundOpenInData()(*bool) {
     if m == nil {
         return nil
@@ -317,7 +317,7 @@ func (m *DefaultManagedAppProtection) GetDisableProtectionOfManagedOutboundOpenI
         return m.disableProtectionOfManagedOutboundOpenInData
     }
 }
-// Gets the encryptAppData property value. Indicates whether managed-app data should be encrypted. (Android only)
+// GetEncryptAppData gets the encryptAppData property value. Indicates whether managed-app data should be encrypted. (Android only)
 func (m *DefaultManagedAppProtection) GetEncryptAppData()(*bool) {
     if m == nil {
         return nil
@@ -325,7 +325,7 @@ func (m *DefaultManagedAppProtection) GetEncryptAppData()(*bool) {
         return m.encryptAppData
     }
 }
-// Gets the exemptedAppPackages property value. Android App packages in this list will be exempt from the policy and will be able to receive data from managed apps. (Android only)
+// GetExemptedAppPackages gets the exemptedAppPackages property value. Android App packages in this list will be exempt from the policy and will be able to receive data from managed apps. (Android only)
 func (m *DefaultManagedAppProtection) GetExemptedAppPackages()([]KeyValuePair) {
     if m == nil {
         return nil
@@ -333,7 +333,7 @@ func (m *DefaultManagedAppProtection) GetExemptedAppPackages()([]KeyValuePair) {
         return m.exemptedAppPackages
     }
 }
-// Gets the exemptedAppProtocols property value. iOS Apps in this list will be exempt from the policy and will be able to receive data from managed apps. (iOS Only)
+// GetExemptedAppProtocols gets the exemptedAppProtocols property value. iOS Apps in this list will be exempt from the policy and will be able to receive data from managed apps. (iOS Only)
 func (m *DefaultManagedAppProtection) GetExemptedAppProtocols()([]KeyValuePair) {
     if m == nil {
         return nil
@@ -341,7 +341,7 @@ func (m *DefaultManagedAppProtection) GetExemptedAppProtocols()([]KeyValuePair) 
         return m.exemptedAppProtocols
     }
 }
-// Gets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
+// GetFaceIdBlocked gets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
 func (m *DefaultManagedAppProtection) GetFaceIdBlocked()(*bool) {
     if m == nil {
         return nil
@@ -349,7 +349,7 @@ func (m *DefaultManagedAppProtection) GetFaceIdBlocked()(*bool) {
         return m.faceIdBlocked
     }
 }
-// Gets the filterOpenInToOnlyManagedApps property value. Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False. (iOS Only)
+// GetFilterOpenInToOnlyManagedApps gets the filterOpenInToOnlyManagedApps property value. Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False. (iOS Only)
 func (m *DefaultManagedAppProtection) GetFilterOpenInToOnlyManagedApps()(*bool) {
     if m == nil {
         return nil
@@ -357,7 +357,7 @@ func (m *DefaultManagedAppProtection) GetFilterOpenInToOnlyManagedApps()(*bool) 
         return m.filterOpenInToOnlyManagedApps
     }
 }
-// Gets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
+// GetMinimumRequiredCompanyPortalVersion gets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
 func (m *DefaultManagedAppProtection) GetMinimumRequiredCompanyPortalVersion()(*string) {
     if m == nil {
         return nil
@@ -365,7 +365,7 @@ func (m *DefaultManagedAppProtection) GetMinimumRequiredCompanyPortalVersion()(*
         return m.minimumRequiredCompanyPortalVersion
     }
 }
-// Gets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
+// GetMinimumRequiredPatchVersion gets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
 func (m *DefaultManagedAppProtection) GetMinimumRequiredPatchVersion()(*string) {
     if m == nil {
         return nil
@@ -373,7 +373,7 @@ func (m *DefaultManagedAppProtection) GetMinimumRequiredPatchVersion()(*string) 
         return m.minimumRequiredPatchVersion
     }
 }
-// Gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
+// GetMinimumRequiredSdkVersion gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
 func (m *DefaultManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
     if m == nil {
         return nil
@@ -381,7 +381,7 @@ func (m *DefaultManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
         return m.minimumRequiredSdkVersion
     }
 }
-// Gets the minimumWarningCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the user will receive a warning
+// GetMinimumWarningCompanyPortalVersion gets the minimumWarningCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the user will receive a warning
 func (m *DefaultManagedAppProtection) GetMinimumWarningCompanyPortalVersion()(*string) {
     if m == nil {
         return nil
@@ -389,7 +389,7 @@ func (m *DefaultManagedAppProtection) GetMinimumWarningCompanyPortalVersion()(*s
         return m.minimumWarningCompanyPortalVersion
     }
 }
-// Gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
+// GetMinimumWarningPatchVersion gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
 func (m *DefaultManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
     if m == nil {
         return nil
@@ -397,7 +397,7 @@ func (m *DefaultManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
         return m.minimumWarningPatchVersion
     }
 }
-// Gets the minimumWipeCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
+// GetMinimumWipeCompanyPortalVersion gets the minimumWipeCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
 func (m *DefaultManagedAppProtection) GetMinimumWipeCompanyPortalVersion()(*string) {
     if m == nil {
         return nil
@@ -405,7 +405,7 @@ func (m *DefaultManagedAppProtection) GetMinimumWipeCompanyPortalVersion()(*stri
         return m.minimumWipeCompanyPortalVersion
     }
 }
-// Gets the minimumWipePatchVersion property value. Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data. (Android only)
+// GetMinimumWipePatchVersion gets the minimumWipePatchVersion property value. Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data. (Android only)
 func (m *DefaultManagedAppProtection) GetMinimumWipePatchVersion()(*string) {
     if m == nil {
         return nil
@@ -413,7 +413,7 @@ func (m *DefaultManagedAppProtection) GetMinimumWipePatchVersion()(*string) {
         return m.minimumWipePatchVersion
     }
 }
-// Gets the minimumWipeSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
+// GetMinimumWipeSdkVersion gets the minimumWipeSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *DefaultManagedAppProtection) GetMinimumWipeSdkVersion()(*string) {
     if m == nil {
         return nil
@@ -421,7 +421,7 @@ func (m *DefaultManagedAppProtection) GetMinimumWipeSdkVersion()(*string) {
         return m.minimumWipeSdkVersion
     }
 }
-// Gets the protectInboundDataFromUnknownSources property value. Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps. (iOS Only)
+// GetProtectInboundDataFromUnknownSources gets the protectInboundDataFromUnknownSources property value. Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps. (iOS Only)
 func (m *DefaultManagedAppProtection) GetProtectInboundDataFromUnknownSources()(*bool) {
     if m == nil {
         return nil
@@ -429,7 +429,7 @@ func (m *DefaultManagedAppProtection) GetProtectInboundDataFromUnknownSources()(
         return m.protectInboundDataFromUnknownSources
     }
 }
-// Gets the requiredAndroidSafetyNetAppsVerificationType property value. Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
+// GetRequiredAndroidSafetyNetAppsVerificationType gets the requiredAndroidSafetyNetAppsVerificationType property value. Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
 func (m *DefaultManagedAppProtection) GetRequiredAndroidSafetyNetAppsVerificationType()(*AndroidManagedAppSafetyNetAppsVerificationType) {
     if m == nil {
         return nil
@@ -437,7 +437,7 @@ func (m *DefaultManagedAppProtection) GetRequiredAndroidSafetyNetAppsVerificatio
         return m.requiredAndroidSafetyNetAppsVerificationType
     }
 }
-// Gets the requiredAndroidSafetyNetDeviceAttestationType property value. Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
+// GetRequiredAndroidSafetyNetDeviceAttestationType gets the requiredAndroidSafetyNetDeviceAttestationType property value. Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
 func (m *DefaultManagedAppProtection) GetRequiredAndroidSafetyNetDeviceAttestationType()(*AndroidManagedAppSafetyNetDeviceAttestationType) {
     if m == nil {
         return nil
@@ -445,7 +445,7 @@ func (m *DefaultManagedAppProtection) GetRequiredAndroidSafetyNetDeviceAttestati
         return m.requiredAndroidSafetyNetDeviceAttestationType
     }
 }
-// Gets the requiredAndroidSafetyNetEvaluationType property value. Defines the Android SafetyNet evaluation type requirement for a managed app to work. (Android Only). Possible values are: basic, hardwareBacked.
+// GetRequiredAndroidSafetyNetEvaluationType gets the requiredAndroidSafetyNetEvaluationType property value. Defines the Android SafetyNet evaluation type requirement for a managed app to work. (Android Only). Possible values are: basic, hardwareBacked.
 func (m *DefaultManagedAppProtection) GetRequiredAndroidSafetyNetEvaluationType()(*AndroidManagedAppSafetyNetEvaluationType) {
     if m == nil {
         return nil
@@ -453,7 +453,7 @@ func (m *DefaultManagedAppProtection) GetRequiredAndroidSafetyNetEvaluationType(
         return m.requiredAndroidSafetyNetEvaluationType
     }
 }
-// Gets the screenCaptureBlocked property value. Indicates whether screen capture is blocked. (Android only)
+// GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether screen capture is blocked. (Android only)
 func (m *DefaultManagedAppProtection) GetScreenCaptureBlocked()(*bool) {
     if m == nil {
         return nil
@@ -461,7 +461,7 @@ func (m *DefaultManagedAppProtection) GetScreenCaptureBlocked()(*bool) {
         return m.screenCaptureBlocked
     }
 }
-// Gets the thirdPartyKeyboardsBlocked property value. Defines if third party keyboards are allowed while accessing a managed app. (iOS Only)
+// GetThirdPartyKeyboardsBlocked gets the thirdPartyKeyboardsBlocked property value. Defines if third party keyboards are allowed while accessing a managed app. (iOS Only)
 func (m *DefaultManagedAppProtection) GetThirdPartyKeyboardsBlocked()(*bool) {
     if m == nil {
         return nil
@@ -469,7 +469,7 @@ func (m *DefaultManagedAppProtection) GetThirdPartyKeyboardsBlocked()(*bool) {
         return m.thirdPartyKeyboardsBlocked
     }
 }
-// Gets the warnAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
+// GetWarnAfterCompanyPortalUpdateDeferralInDays gets the warnAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
 func (m *DefaultManagedAppProtection) GetWarnAfterCompanyPortalUpdateDeferralInDays()(*int32) {
     if m == nil {
         return nil
@@ -477,7 +477,7 @@ func (m *DefaultManagedAppProtection) GetWarnAfterCompanyPortalUpdateDeferralInD
         return m.warnAfterCompanyPortalUpdateDeferralInDays
     }
 }
-// Gets the wipeAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
+// GetWipeAfterCompanyPortalUpdateDeferralInDays gets the wipeAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
 func (m *DefaultManagedAppProtection) GetWipeAfterCompanyPortalUpdateDeferralInDays()(*int32) {
     if m == nil {
         return nil
@@ -485,7 +485,7 @@ func (m *DefaultManagedAppProtection) GetWipeAfterCompanyPortalUpdateDeferralInD
         return m.wipeAfterCompanyPortalUpdateDeferralInDays
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ManagedAppProtection.GetFieldDeserializers()
     res["allowedAndroidDeviceManufacturers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -993,9 +993,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
 func (m *DefaultManagedAppProtection) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DefaultManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ManagedAppProtection.Serialize(writer)
     if err != nil {
@@ -1315,285 +1313,191 @@ func (m *DefaultManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the allowedAndroidDeviceManufacturers property value. Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
-// Parameters:
-//  - value : Value to set for the allowedAndroidDeviceManufacturers property.
+// SetAllowedAndroidDeviceManufacturers sets the allowedAndroidDeviceManufacturers property value. Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
 func (m *DefaultManagedAppProtection) SetAllowedAndroidDeviceManufacturers(value *string)() {
     m.allowedAndroidDeviceManufacturers = value
 }
-// Sets the allowedAndroidDeviceModels property value. List of device models allowed, as a string, for the managed app to work. (Android Only)
-// Parameters:
-//  - value : Value to set for the allowedAndroidDeviceModels property.
+// SetAllowedAndroidDeviceModels sets the allowedAndroidDeviceModels property value. List of device models allowed, as a string, for the managed app to work. (Android Only)
 func (m *DefaultManagedAppProtection) SetAllowedAndroidDeviceModels(value []string)() {
     m.allowedAndroidDeviceModels = value
 }
-// Sets the allowedIosDeviceModels property value. Semicolon seperated list of device models allowed, as a string, for the managed app to work. (iOS Only)
-// Parameters:
-//  - value : Value to set for the allowedIosDeviceModels property.
+// SetAllowedIosDeviceModels sets the allowedIosDeviceModels property value. Semicolon seperated list of device models allowed, as a string, for the managed app to work. (iOS Only)
 func (m *DefaultManagedAppProtection) SetAllowedIosDeviceModels(value *string)() {
     m.allowedIosDeviceModels = value
 }
-// Sets the appActionIfAndroidDeviceManufacturerNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. (Android only). Possible values are: block, wipe, warn.
-// Parameters:
-//  - value : Value to set for the appActionIfAndroidDeviceManufacturerNotAllowed property.
+// SetAppActionIfAndroidDeviceManufacturerNotAllowed sets the appActionIfAndroidDeviceManufacturerNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. (Android only). Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) SetAppActionIfAndroidDeviceManufacturerNotAllowed(value *ManagedAppRemediationAction)() {
     m.appActionIfAndroidDeviceManufacturerNotAllowed = value
 }
-// Sets the appActionIfAndroidDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (Android Only). Possible values are: block, wipe, warn.
-// Parameters:
-//  - value : Value to set for the appActionIfAndroidDeviceModelNotAllowed property.
+// SetAppActionIfAndroidDeviceModelNotAllowed sets the appActionIfAndroidDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (Android Only). Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) SetAppActionIfAndroidDeviceModelNotAllowed(value *ManagedAppRemediationAction)() {
     m.appActionIfAndroidDeviceModelNotAllowed = value
 }
-// Sets the appActionIfAndroidSafetyNetAppsVerificationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android App Verification requirement fails. Possible values are: block, wipe, warn.
-// Parameters:
-//  - value : Value to set for the appActionIfAndroidSafetyNetAppsVerificationFailed property.
+// SetAppActionIfAndroidSafetyNetAppsVerificationFailed sets the appActionIfAndroidSafetyNetAppsVerificationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android App Verification requirement fails. Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) SetAppActionIfAndroidSafetyNetAppsVerificationFailed(value *ManagedAppRemediationAction)() {
     m.appActionIfAndroidSafetyNetAppsVerificationFailed = value
 }
-// Sets the appActionIfAndroidSafetyNetDeviceAttestationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirement fails. Possible values are: block, wipe, warn.
-// Parameters:
-//  - value : Value to set for the appActionIfAndroidSafetyNetDeviceAttestationFailed property.
+// SetAppActionIfAndroidSafetyNetDeviceAttestationFailed sets the appActionIfAndroidSafetyNetDeviceAttestationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirement fails. Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) SetAppActionIfAndroidSafetyNetDeviceAttestationFailed(value *ManagedAppRemediationAction)() {
     m.appActionIfAndroidSafetyNetDeviceAttestationFailed = value
 }
-// Sets the appActionIfDeviceLockNotSet property value. Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on device but is not set. (android only). Possible values are: block, wipe, warn.
-// Parameters:
-//  - value : Value to set for the appActionIfDeviceLockNotSet property.
+// SetAppActionIfDeviceLockNotSet sets the appActionIfDeviceLockNotSet property value. Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on device but is not set. (android only). Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) SetAppActionIfDeviceLockNotSet(value *ManagedAppRemediationAction)() {
     m.appActionIfDeviceLockNotSet = value
 }
-// Sets the appActionIfIosDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (iOS Only). Possible values are: block, wipe, warn.
-// Parameters:
-//  - value : Value to set for the appActionIfIosDeviceModelNotAllowed property.
+// SetAppActionIfIosDeviceModelNotAllowed sets the appActionIfIosDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (iOS Only). Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) SetAppActionIfIosDeviceModelNotAllowed(value *ManagedAppRemediationAction)() {
     m.appActionIfIosDeviceModelNotAllowed = value
 }
-// Sets the appDataEncryptionType property value. Type of encryption which should be used for data in a managed app. (iOS Only). Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
-// Parameters:
-//  - value : Value to set for the appDataEncryptionType property.
+// SetAppDataEncryptionType sets the appDataEncryptionType property value. Type of encryption which should be used for data in a managed app. (iOS Only). Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
 func (m *DefaultManagedAppProtection) SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)() {
     m.appDataEncryptionType = value
 }
-// Sets the apps property value. List of apps to which the policy is deployed.
-// Parameters:
-//  - value : Value to set for the apps property.
+// SetApps sets the apps property value. List of apps to which the policy is deployed.
 func (m *DefaultManagedAppProtection) SetApps(value []ManagedMobileApp)() {
     m.apps = value
 }
-// Sets the biometricAuthenticationBlocked property value. Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True. (Android Only)
-// Parameters:
-//  - value : Value to set for the biometricAuthenticationBlocked property.
+// SetBiometricAuthenticationBlocked sets the biometricAuthenticationBlocked property value. Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True. (Android Only)
 func (m *DefaultManagedAppProtection) SetBiometricAuthenticationBlocked(value *bool)() {
     m.biometricAuthenticationBlocked = value
 }
-// Sets the blockAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
-// Parameters:
-//  - value : Value to set for the blockAfterCompanyPortalUpdateDeferralInDays property.
+// SetBlockAfterCompanyPortalUpdateDeferralInDays sets the blockAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
 func (m *DefaultManagedAppProtection) SetBlockAfterCompanyPortalUpdateDeferralInDays(value *int32)() {
     m.blockAfterCompanyPortalUpdateDeferralInDays = value
 }
-// Sets the connectToVpnOnLaunch property value. Whether the app should connect to the configured VPN on launch (Android only).
-// Parameters:
-//  - value : Value to set for the connectToVpnOnLaunch property.
+// SetConnectToVpnOnLaunch sets the connectToVpnOnLaunch property value. Whether the app should connect to the configured VPN on launch (Android only).
 func (m *DefaultManagedAppProtection) SetConnectToVpnOnLaunch(value *bool)() {
     m.connectToVpnOnLaunch = value
 }
-// Sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. (Android only)
-// Parameters:
-//  - value : Value to set for the customBrowserDisplayName property.
+// SetCustomBrowserDisplayName sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. (Android only)
 func (m *DefaultManagedAppProtection) SetCustomBrowserDisplayName(value *string)() {
     m.customBrowserDisplayName = value
 }
-// Sets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android. (Android only)
-// Parameters:
-//  - value : Value to set for the customBrowserPackageId property.
+// SetCustomBrowserPackageId sets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android. (Android only)
 func (m *DefaultManagedAppProtection) SetCustomBrowserPackageId(value *string)() {
     m.customBrowserPackageId = value
 }
-// Sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. (iOS only)
-// Parameters:
-//  - value : Value to set for the customBrowserProtocol property.
+// SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. (iOS only)
 func (m *DefaultManagedAppProtection) SetCustomBrowserProtocol(value *string)() {
     m.customBrowserProtocol = value
 }
-// Sets the customDialerAppDisplayName property value. Friendly name of a custom dialer app to click-to-open a phone number on Android.
-// Parameters:
-//  - value : Value to set for the customDialerAppDisplayName property.
+// SetCustomDialerAppDisplayName sets the customDialerAppDisplayName property value. Friendly name of a custom dialer app to click-to-open a phone number on Android.
 func (m *DefaultManagedAppProtection) SetCustomDialerAppDisplayName(value *string)() {
     m.customDialerAppDisplayName = value
 }
-// Sets the customDialerAppPackageId property value. PackageId of a custom dialer app to click-to-open a phone number on Android.
-// Parameters:
-//  - value : Value to set for the customDialerAppPackageId property.
+// SetCustomDialerAppPackageId sets the customDialerAppPackageId property value. PackageId of a custom dialer app to click-to-open a phone number on Android.
 func (m *DefaultManagedAppProtection) SetCustomDialerAppPackageId(value *string)() {
     m.customDialerAppPackageId = value
 }
-// Sets the customDialerAppProtocol property value. Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
-// Parameters:
-//  - value : Value to set for the customDialerAppProtocol property.
+// SetCustomDialerAppProtocol sets the customDialerAppProtocol property value. Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
 func (m *DefaultManagedAppProtection) SetCustomDialerAppProtocol(value *string)() {
     m.customDialerAppProtocol = value
 }
-// Sets the customSettings property value. A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-// Parameters:
-//  - value : Value to set for the customSettings property.
+// SetCustomSettings sets the customSettings property value. A set of string key and string value pairs to be sent to the affected users, unalterned by this service
 func (m *DefaultManagedAppProtection) SetCustomSettings(value []KeyValuePair)() {
     m.customSettings = value
 }
-// Sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
-// Parameters:
-//  - value : Value to set for the deployedAppCount property.
+// SetDeployedAppCount sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *DefaultManagedAppProtection) SetDeployedAppCount(value *int32)() {
     m.deployedAppCount = value
 }
-// Sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-// Parameters:
-//  - value : Value to set for the deploymentSummary property.
+// SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *DefaultManagedAppProtection) SetDeploymentSummary(value *ManagedAppPolicyDeploymentSummary)() {
     m.deploymentSummary = value
 }
-// Sets the deviceLockRequired property value. Defines if any kind of lock must be required on device. (android only)
-// Parameters:
-//  - value : Value to set for the deviceLockRequired property.
+// SetDeviceLockRequired sets the deviceLockRequired property value. Defines if any kind of lock must be required on device. (android only)
 func (m *DefaultManagedAppProtection) SetDeviceLockRequired(value *bool)() {
     m.deviceLockRequired = value
 }
-// Sets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
-// Parameters:
-//  - value : Value to set for the disableAppEncryptionIfDeviceEncryptionIsEnabled property.
+// SetDisableAppEncryptionIfDeviceEncryptionIsEnabled sets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
 func (m *DefaultManagedAppProtection) SetDisableAppEncryptionIfDeviceEncryptionIsEnabled(value *bool)() {
     m.disableAppEncryptionIfDeviceEncryptionIsEnabled = value
 }
-// Sets the disableProtectionOfManagedOutboundOpenInData property value. Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps. (iOS Only)
-// Parameters:
-//  - value : Value to set for the disableProtectionOfManagedOutboundOpenInData property.
+// SetDisableProtectionOfManagedOutboundOpenInData sets the disableProtectionOfManagedOutboundOpenInData property value. Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps. (iOS Only)
 func (m *DefaultManagedAppProtection) SetDisableProtectionOfManagedOutboundOpenInData(value *bool)() {
     m.disableProtectionOfManagedOutboundOpenInData = value
 }
-// Sets the encryptAppData property value. Indicates whether managed-app data should be encrypted. (Android only)
-// Parameters:
-//  - value : Value to set for the encryptAppData property.
+// SetEncryptAppData sets the encryptAppData property value. Indicates whether managed-app data should be encrypted. (Android only)
 func (m *DefaultManagedAppProtection) SetEncryptAppData(value *bool)() {
     m.encryptAppData = value
 }
-// Sets the exemptedAppPackages property value. Android App packages in this list will be exempt from the policy and will be able to receive data from managed apps. (Android only)
-// Parameters:
-//  - value : Value to set for the exemptedAppPackages property.
+// SetExemptedAppPackages sets the exemptedAppPackages property value. Android App packages in this list will be exempt from the policy and will be able to receive data from managed apps. (Android only)
 func (m *DefaultManagedAppProtection) SetExemptedAppPackages(value []KeyValuePair)() {
     m.exemptedAppPackages = value
 }
-// Sets the exemptedAppProtocols property value. iOS Apps in this list will be exempt from the policy and will be able to receive data from managed apps. (iOS Only)
-// Parameters:
-//  - value : Value to set for the exemptedAppProtocols property.
+// SetExemptedAppProtocols sets the exemptedAppProtocols property value. iOS Apps in this list will be exempt from the policy and will be able to receive data from managed apps. (iOS Only)
 func (m *DefaultManagedAppProtection) SetExemptedAppProtocols(value []KeyValuePair)() {
     m.exemptedAppProtocols = value
 }
-// Sets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
-// Parameters:
-//  - value : Value to set for the faceIdBlocked property.
+// SetFaceIdBlocked sets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
 func (m *DefaultManagedAppProtection) SetFaceIdBlocked(value *bool)() {
     m.faceIdBlocked = value
 }
-// Sets the filterOpenInToOnlyManagedApps property value. Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False. (iOS Only)
-// Parameters:
-//  - value : Value to set for the filterOpenInToOnlyManagedApps property.
+// SetFilterOpenInToOnlyManagedApps sets the filterOpenInToOnlyManagedApps property value. Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False. (iOS Only)
 func (m *DefaultManagedAppProtection) SetFilterOpenInToOnlyManagedApps(value *bool)() {
     m.filterOpenInToOnlyManagedApps = value
 }
-// Sets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
-// Parameters:
-//  - value : Value to set for the minimumRequiredCompanyPortalVersion property.
+// SetMinimumRequiredCompanyPortalVersion sets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
 func (m *DefaultManagedAppProtection) SetMinimumRequiredCompanyPortalVersion(value *string)() {
     m.minimumRequiredCompanyPortalVersion = value
 }
-// Sets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
-// Parameters:
-//  - value : Value to set for the minimumRequiredPatchVersion property.
+// SetMinimumRequiredPatchVersion sets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
 func (m *DefaultManagedAppProtection) SetMinimumRequiredPatchVersion(value *string)() {
     m.minimumRequiredPatchVersion = value
 }
-// Sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
-// Parameters:
-//  - value : Value to set for the minimumRequiredSdkVersion property.
+// SetMinimumRequiredSdkVersion sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
 func (m *DefaultManagedAppProtection) SetMinimumRequiredSdkVersion(value *string)() {
     m.minimumRequiredSdkVersion = value
 }
-// Sets the minimumWarningCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the user will receive a warning
-// Parameters:
-//  - value : Value to set for the minimumWarningCompanyPortalVersion property.
+// SetMinimumWarningCompanyPortalVersion sets the minimumWarningCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the user will receive a warning
 func (m *DefaultManagedAppProtection) SetMinimumWarningCompanyPortalVersion(value *string)() {
     m.minimumWarningCompanyPortalVersion = value
 }
-// Sets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
-// Parameters:
-//  - value : Value to set for the minimumWarningPatchVersion property.
+// SetMinimumWarningPatchVersion sets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
 func (m *DefaultManagedAppProtection) SetMinimumWarningPatchVersion(value *string)() {
     m.minimumWarningPatchVersion = value
 }
-// Sets the minimumWipeCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
-// Parameters:
-//  - value : Value to set for the minimumWipeCompanyPortalVersion property.
+// SetMinimumWipeCompanyPortalVersion sets the minimumWipeCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
 func (m *DefaultManagedAppProtection) SetMinimumWipeCompanyPortalVersion(value *string)() {
     m.minimumWipeCompanyPortalVersion = value
 }
-// Sets the minimumWipePatchVersion property value. Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data. (Android only)
-// Parameters:
-//  - value : Value to set for the minimumWipePatchVersion property.
+// SetMinimumWipePatchVersion sets the minimumWipePatchVersion property value. Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data. (Android only)
 func (m *DefaultManagedAppProtection) SetMinimumWipePatchVersion(value *string)() {
     m.minimumWipePatchVersion = value
 }
-// Sets the minimumWipeSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
-// Parameters:
-//  - value : Value to set for the minimumWipeSdkVersion property.
+// SetMinimumWipeSdkVersion sets the minimumWipeSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *DefaultManagedAppProtection) SetMinimumWipeSdkVersion(value *string)() {
     m.minimumWipeSdkVersion = value
 }
-// Sets the protectInboundDataFromUnknownSources property value. Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps. (iOS Only)
-// Parameters:
-//  - value : Value to set for the protectInboundDataFromUnknownSources property.
+// SetProtectInboundDataFromUnknownSources sets the protectInboundDataFromUnknownSources property value. Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps. (iOS Only)
 func (m *DefaultManagedAppProtection) SetProtectInboundDataFromUnknownSources(value *bool)() {
     m.protectInboundDataFromUnknownSources = value
 }
-// Sets the requiredAndroidSafetyNetAppsVerificationType property value. Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
-// Parameters:
-//  - value : Value to set for the requiredAndroidSafetyNetAppsVerificationType property.
+// SetRequiredAndroidSafetyNetAppsVerificationType sets the requiredAndroidSafetyNetAppsVerificationType property value. Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
 func (m *DefaultManagedAppProtection) SetRequiredAndroidSafetyNetAppsVerificationType(value *AndroidManagedAppSafetyNetAppsVerificationType)() {
     m.requiredAndroidSafetyNetAppsVerificationType = value
 }
-// Sets the requiredAndroidSafetyNetDeviceAttestationType property value. Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
-// Parameters:
-//  - value : Value to set for the requiredAndroidSafetyNetDeviceAttestationType property.
+// SetRequiredAndroidSafetyNetDeviceAttestationType sets the requiredAndroidSafetyNetDeviceAttestationType property value. Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
 func (m *DefaultManagedAppProtection) SetRequiredAndroidSafetyNetDeviceAttestationType(value *AndroidManagedAppSafetyNetDeviceAttestationType)() {
     m.requiredAndroidSafetyNetDeviceAttestationType = value
 }
-// Sets the requiredAndroidSafetyNetEvaluationType property value. Defines the Android SafetyNet evaluation type requirement for a managed app to work. (Android Only). Possible values are: basic, hardwareBacked.
-// Parameters:
-//  - value : Value to set for the requiredAndroidSafetyNetEvaluationType property.
+// SetRequiredAndroidSafetyNetEvaluationType sets the requiredAndroidSafetyNetEvaluationType property value. Defines the Android SafetyNet evaluation type requirement for a managed app to work. (Android Only). Possible values are: basic, hardwareBacked.
 func (m *DefaultManagedAppProtection) SetRequiredAndroidSafetyNetEvaluationType(value *AndroidManagedAppSafetyNetEvaluationType)() {
     m.requiredAndroidSafetyNetEvaluationType = value
 }
-// Sets the screenCaptureBlocked property value. Indicates whether screen capture is blocked. (Android only)
-// Parameters:
-//  - value : Value to set for the screenCaptureBlocked property.
+// SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether screen capture is blocked. (Android only)
 func (m *DefaultManagedAppProtection) SetScreenCaptureBlocked(value *bool)() {
     m.screenCaptureBlocked = value
 }
-// Sets the thirdPartyKeyboardsBlocked property value. Defines if third party keyboards are allowed while accessing a managed app. (iOS Only)
-// Parameters:
-//  - value : Value to set for the thirdPartyKeyboardsBlocked property.
+// SetThirdPartyKeyboardsBlocked sets the thirdPartyKeyboardsBlocked property value. Defines if third party keyboards are allowed while accessing a managed app. (iOS Only)
 func (m *DefaultManagedAppProtection) SetThirdPartyKeyboardsBlocked(value *bool)() {
     m.thirdPartyKeyboardsBlocked = value
 }
-// Sets the warnAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
-// Parameters:
-//  - value : Value to set for the warnAfterCompanyPortalUpdateDeferralInDays property.
+// SetWarnAfterCompanyPortalUpdateDeferralInDays sets the warnAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
 func (m *DefaultManagedAppProtection) SetWarnAfterCompanyPortalUpdateDeferralInDays(value *int32)() {
     m.warnAfterCompanyPortalUpdateDeferralInDays = value
 }
-// Sets the wipeAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
-// Parameters:
-//  - value : Value to set for the wipeAfterCompanyPortalUpdateDeferralInDays property.
+// SetWipeAfterCompanyPortalUpdateDeferralInDays sets the wipeAfterCompanyPortalUpdateDeferralInDays property value. Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
 func (m *DefaultManagedAppProtection) SetWipeAfterCompanyPortalUpdateDeferralInDays(value *int32)() {
     m.wipeAfterCompanyPortalUpdateDeferralInDays = value
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// encryptionReportPolicyDetails 
 type EncryptionReportPolicyDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type EncryptionReportPolicyDetails struct {
     // Policy Name for Encryption Report
     policyName *string;
 }
-// Instantiates a new encryptionReportPolicyDetails and sets the default values.
+// NewEncryptionReportPolicyDetails instantiates a new encryptionReportPolicyDetails and sets the default values.
 func NewEncryptionReportPolicyDetails()(*EncryptionReportPolicyDetails) {
     m := &EncryptionReportPolicyDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EncryptionReportPolicyDetails) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *EncryptionReportPolicyDetails) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// Gets the policyId property value. Policy Id for Encryption Report
+// GetPolicyId gets the policyId property value. Policy Id for Encryption Report
 func (m *EncryptionReportPolicyDetails) GetPolicyId()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *EncryptionReportPolicyDetails) GetPolicyId()(*string) {
         return m.policyId
     }
 }
-// Gets the policyName property value. Policy Name for Encryption Report
+// GetPolicyName gets the policyName property value. Policy Name for Encryption Report
 func (m *EncryptionReportPolicyDetails) GetPolicyName()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *EncryptionReportPolicyDetails) GetPolicyName()(*string) {
         return m.policyName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EncryptionReportPolicyDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["policyId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *EncryptionReportPolicyDetails) GetFieldDeserializers()(map[string]func(
 func (m *EncryptionReportPolicyDetails) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EncryptionReportPolicyDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("policyId", m.GetPolicyId())
@@ -96,21 +94,15 @@ func (m *EncryptionReportPolicyDetails) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EncryptionReportPolicyDetails) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the policyId property value. Policy Id for Encryption Report
-// Parameters:
-//  - value : Value to set for the policyId property.
+// SetPolicyId sets the policyId property value. Policy Id for Encryption Report
 func (m *EncryptionReportPolicyDetails) SetPolicyId(value *string)() {
     m.policyId = value
 }
-// Sets the policyName property value. Policy Name for Encryption Report
-// Parameters:
-//  - value : Value to set for the policyName property.
+// SetPolicyName sets the policyName property value. Policy Name for Encryption Report
 func (m *EncryptionReportPolicyDetails) SetPolicyName(value *string)() {
     m.policyName = value
 }

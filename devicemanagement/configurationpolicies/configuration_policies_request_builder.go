@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\configurationPolicies
+// configurationPoliciesRequestBuilder builds and executes requests for operations under \deviceManagement\configurationPolicies
 type ConfigurationPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConfigurationPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ConfigurationPoliciesRequestBuilderGetOptions options for Get
 type ConfigurationPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ConfigurationPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of all Configuration policies
+// configurationPoliciesRequestBuilderGetQueryParameters list of all Configuration policies
 type ConfigurationPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ConfigurationPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ConfigurationPoliciesRequestBuilderPostOptions options for Post
 type ConfigurationPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicy;
@@ -56,10 +56,7 @@ type ConfigurationPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConfigurationPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConfigurationPoliciesRequestBuilderInternal instantiates a new ConfigurationPoliciesRequestBuilder and sets the default values.
 func NewConfigurationPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConfigurationPoliciesRequestBuilder) {
     m := &ConfigurationPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewConfigurationPoliciesRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConfigurationPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConfigurationPoliciesRequestBuilder instantiates a new ConfigurationPoliciesRequestBuilder and sets the default values.
 func NewConfigurationPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConfigurationPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConfigurationPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of all Configuration policies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of all Configuration policies
 func (m *ConfigurationPoliciesRequestBuilder) CreateGetRequestInformation(options *ConfigurationPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ConfigurationPoliciesRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// List of all Configuration policies
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of all Configuration policies
 func (m *ConfigurationPoliciesRequestBuilder) CreatePostRequestInformation(options *ConfigurationPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ConfigurationPoliciesRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// List of all Configuration policies
-// Parameters:
-//  - options : Options for the request
+// Get list of all Configuration policies
 func (m *ConfigurationPoliciesRequestBuilder) Get(options *ConfigurationPoliciesRequestBuilderGetOptions)(*ConfigurationPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ConfigurationPoliciesRequestBuilder) Get(options *ConfigurationPolicies
     }
     return res.(*ConfigurationPoliciesResponse), nil
 }
-// List of all Configuration policies
-// Parameters:
-//  - options : Options for the request
+// Post list of all Configuration policies
 func (m *ConfigurationPoliciesRequestBuilder) Post(options *ConfigurationPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementConfigurationPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

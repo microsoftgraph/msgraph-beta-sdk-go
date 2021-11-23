@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByMethod()
+// usersRegisteredByMethodRequestBuilder builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByMethod()
 type UsersRegisteredByMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UsersRegisteredByMethodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UsersRegisteredByMethodRequestBuilderGetOptions options for Get
 type UsersRegisteredByMethodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,10 +24,7 @@ type UsersRegisteredByMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UsersRegisteredByMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsersRegisteredByMethodRequestBuilderInternal instantiates a new UsersRegisteredByMethodRequestBuilder and sets the default values.
 func NewUsersRegisteredByMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsersRegisteredByMethodRequestBuilder) {
     m := &UsersRegisteredByMethodRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewUsersRegisteredByMethodRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UsersRegisteredByMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsersRegisteredByMethodRequestBuilder instantiates a new UsersRegisteredByMethodRequestBuilder and sets the default values.
 func NewUsersRegisteredByMethodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsersRegisteredByMethodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersRegisteredByMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function usersRegisteredByMethod
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function usersRegisteredByMethod
 func (m *UsersRegisteredByMethodRequestBuilder) CreateGetRequestInformation(options *UsersRegisteredByMethodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -68,9 +60,7 @@ func (m *UsersRegisteredByMethodRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Invoke function usersRegisteredByMethod
-// Parameters:
-//  - options : Options for the request
+// Get invoke function usersRegisteredByMethod
 func (m *UsersRegisteredByMethodRequestBuilder) Get(options *UsersRegisteredByMethodRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserRegistrationMethodSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

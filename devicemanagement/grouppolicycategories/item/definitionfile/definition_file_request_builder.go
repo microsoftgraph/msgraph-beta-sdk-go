@@ -7,7 +7,7 @@ import (
     ibf2781b63a27300f1ed5dadf7ac3afbfbb2c5184ee96653d78e83cfd8fe25952 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicycategories/item/definitionfile/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\definitionFile
+// definitionFileRequestBuilder builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\definitionFile
 type DefinitionFileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DefinitionFileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DefinitionFileRequestBuilderGetOptions options for Get
 type DefinitionFileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type DefinitionFileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The id of the definition file the category came from
+// definitionFileRequestBuilderGetQueryParameters the id of the definition file the category came from
 type DefinitionFileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new DefinitionFileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefinitionFileRequestBuilderInternal instantiates a new DefinitionFileRequestBuilder and sets the default values.
 func NewDefinitionFileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefinitionFileRequestBuilder) {
     m := &DefinitionFileRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewDefinitionFileRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DefinitionFileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDefinitionFileRequestBuilder instantiates a new DefinitionFileRequestBuilder and sets the default values.
 func NewDefinitionFileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DefinitionFileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDefinitionFileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The id of the definition file the category came from
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the id of the definition file the category came from
 func (m *DefinitionFileRequestBuilder) CreateGetRequestInformation(options *DefinitionFileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *DefinitionFileRequestBuilder) CreateGetRequestInformation(options *Defi
     }
     return requestInfo, nil
 }
-// The id of the definition file the category came from
-// Parameters:
-//  - options : Options for the request
+// Get the id of the definition file the category came from
 func (m *DefinitionFileRequestBuilder) Get(options *DefinitionFileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GroupPolicyDefinitionFile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

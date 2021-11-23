@@ -7,7 +7,7 @@ import (
     i5f42c2f44d66f0c8c4aedf1f788a41bcb8fc4dda9c400fcd569f7128301beed5 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedapproval/item/request/ref"
 )
 
-// Builds and executes requests for operations under \privilegedApproval\{privilegedApproval-id}\request
+// requestRequestBuilder builds and executes requests for operations under \privilegedApproval\{privilegedApproval-id}\request
 type RequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type RequestRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RequestRequestBuilderGetOptions options for Get
 type RequestRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type RequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. The role assignment request for this approval object
+// requestRequestBuilderGetQueryParameters read-only. The role assignment request for this approval object
 type RequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new RequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRequestRequestBuilderInternal instantiates a new RequestRequestBuilder and sets the default values.
 func NewRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RequestRequestBuilder) {
     m := &RequestRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewRequestRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRequestRequestBuilder instantiates a new RequestRequestBuilder and sets the default values.
 func NewRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. The role assignment request for this approval object
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. The role assignment request for this approval object
 func (m *RequestRequestBuilder) CreateGetRequestInformation(options *RequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *RequestRequestBuilder) CreateGetRequestInformation(options *RequestRequ
     }
     return requestInfo, nil
 }
-// Read-only. The role assignment request for this approval object
-// Parameters:
-//  - options : Options for the request
+// Get read-only. The role assignment request for this approval object
 func (m *RequestRequestBuilder) Get(options *RequestRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedRoleAssignmentRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

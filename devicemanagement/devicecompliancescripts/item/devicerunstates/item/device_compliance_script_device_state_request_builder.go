@@ -7,7 +7,7 @@ import (
     i19a63f2b15203acaac6189a999bb295cf2c5803855da2a97309802ed8f87c931 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancescripts/item/devicerunstates/item/manageddevice"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceComplianceScripts\{deviceComplianceScript-id}\deviceRunStates\{deviceComplianceScriptDeviceState-id}
+// deviceComplianceScriptDeviceStateRequestBuilder builds and executes requests for operations under \deviceManagement\deviceComplianceScripts\{deviceComplianceScript-id}\deviceRunStates\{deviceComplianceScriptDeviceState-id}
 type DeviceComplianceScriptDeviceStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceComplianceScriptDeviceStateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceComplianceScriptDeviceStateRequestBuilderDeleteOptions options for Delete
 type DeviceComplianceScriptDeviceStateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type DeviceComplianceScriptDeviceStateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceComplianceScriptDeviceStateRequestBuilderGetOptions options for Get
 type DeviceComplianceScriptDeviceStateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type DeviceComplianceScriptDeviceStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of run states for the device compliance script across all devices
+// deviceComplianceScriptDeviceStateRequestBuilderGetQueryParameters list of run states for the device compliance script across all devices
 type DeviceComplianceScriptDeviceStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceComplianceScriptDeviceStateRequestBuilderPatchOptions options for Patch
 type DeviceComplianceScriptDeviceStateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptDeviceState;
@@ -54,10 +54,7 @@ type DeviceComplianceScriptDeviceStateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceComplianceScriptDeviceStateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceComplianceScriptDeviceStateRequestBuilderInternal instantiates a new DeviceComplianceScriptDeviceStateRequestBuilder and sets the default values.
 func NewDeviceComplianceScriptDeviceStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceComplianceScriptDeviceStateRequestBuilder) {
     m := &DeviceComplianceScriptDeviceStateRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewDeviceComplianceScriptDeviceStateRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceComplianceScriptDeviceStateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceComplianceScriptDeviceStateRequestBuilder instantiates a new DeviceComplianceScriptDeviceStateRequestBuilder and sets the default values.
 func NewDeviceComplianceScriptDeviceStateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceComplianceScriptDeviceStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceComplianceScriptDeviceStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of run states for the device compliance script across all devices
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of run states for the device compliance script across all devices
 func (m *DeviceComplianceScriptDeviceStateRequestBuilder) CreateDeleteRequestInformation(options *DeviceComplianceScriptDeviceStateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *DeviceComplianceScriptDeviceStateRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// List of run states for the device compliance script across all devices
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of run states for the device compliance script across all devices
 func (m *DeviceComplianceScriptDeviceStateRequestBuilder) CreateGetRequestInformation(options *DeviceComplianceScriptDeviceStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *DeviceComplianceScriptDeviceStateRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// List of run states for the device compliance script across all devices
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of run states for the device compliance script across all devices
 func (m *DeviceComplianceScriptDeviceStateRequestBuilder) CreatePatchRequestInformation(options *DeviceComplianceScriptDeviceStateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *DeviceComplianceScriptDeviceStateRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// List of run states for the device compliance script across all devices
-// Parameters:
-//  - options : Options for the request
+// Delete list of run states for the device compliance script across all devices
 func (m *DeviceComplianceScriptDeviceStateRequestBuilder) Delete(options *DeviceComplianceScriptDeviceStateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *DeviceComplianceScriptDeviceStateRequestBuilder) Delete(options *Device
     }
     return nil
 }
-// List of run states for the device compliance script across all devices
-// Parameters:
-//  - options : Options for the request
+// Get list of run states for the device compliance script across all devices
 func (m *DeviceComplianceScriptDeviceStateRequestBuilder) Get(options *DeviceComplianceScriptDeviceStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceComplianceScriptDeviceState, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *DeviceComplianceScriptDeviceStateRequestBuilder) Get(options *DeviceCom
 func (m *DeviceComplianceScriptDeviceStateRequestBuilder) ManagedDevice()(*i19a63f2b15203acaac6189a999bb295cf2c5803855da2a97309802ed8f87c931.ManagedDeviceRequestBuilder) {
     return i19a63f2b15203acaac6189a999bb295cf2c5803855da2a97309802ed8f87c931.NewManagedDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// List of run states for the device compliance script across all devices
-// Parameters:
-//  - options : Options for the request
+// Patch list of run states for the device compliance script across all devices
 func (m *DeviceComplianceScriptDeviceStateRequestBuilder) Patch(options *DeviceComplianceScriptDeviceStateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

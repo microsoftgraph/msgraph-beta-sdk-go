@@ -8,7 +8,7 @@ import (
     if3571b6c54a5934f63248b2965f1d7e5c509f7f2c6a258efe5191e91e0b7fce4 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/permission/revokegrants"
 )
 
-// Builds and executes requests for operations under \shares\{sharedDriveItem-id}\permission
+// permissionRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\permission
 type PermissionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type PermissionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PermissionRequestBuilderDeleteOptions options for Delete
 type PermissionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PermissionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PermissionRequestBuilderGetOptions options for Get
 type PermissionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type PermissionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Used to access the permission representing the underlying sharing link
+// permissionRequestBuilderGetQueryParameters used to access the permission representing the underlying sharing link
 type PermissionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PermissionRequestBuilderPatchOptions options for Patch
 type PermissionRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Permission;
@@ -55,10 +55,7 @@ type PermissionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PermissionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPermissionRequestBuilderInternal instantiates a new PermissionRequestBuilder and sets the default values.
 func NewPermissionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PermissionRequestBuilder) {
     m := &PermissionRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewPermissionRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PermissionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPermissionRequestBuilder instantiates a new PermissionRequestBuilder and sets the default values.
 func NewPermissionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PermissionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Used to access the permission representing the underlying sharing link
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation used to access the permission representing the underlying sharing link
 func (m *PermissionRequestBuilder) CreateDeleteRequestInformation(options *PermissionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *PermissionRequestBuilder) CreateDeleteRequestInformation(options *Permi
     }
     return requestInfo, nil
 }
-// Used to access the permission representing the underlying sharing link
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation used to access the permission representing the underlying sharing link
 func (m *PermissionRequestBuilder) CreateGetRequestInformation(options *PermissionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *PermissionRequestBuilder) CreateGetRequestInformation(options *Permissi
     }
     return requestInfo, nil
 }
-// Used to access the permission representing the underlying sharing link
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation used to access the permission representing the underlying sharing link
 func (m *PermissionRequestBuilder) CreatePatchRequestInformation(options *PermissionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *PermissionRequestBuilder) CreatePatchRequestInformation(options *Permis
     }
     return requestInfo, nil
 }
-// Used to access the permission representing the underlying sharing link
-// Parameters:
-//  - options : Options for the request
+// Delete used to access the permission representing the underlying sharing link
 func (m *PermissionRequestBuilder) Delete(options *PermissionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *PermissionRequestBuilder) Delete(options *PermissionRequestBuilderDelet
     }
     return nil
 }
-// Used to access the permission representing the underlying sharing link
-// Parameters:
-//  - options : Options for the request
+// Get used to access the permission representing the underlying sharing link
 func (m *PermissionRequestBuilder) Get(options *PermissionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Permission, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *PermissionRequestBuilder) Get(options *PermissionRequestBuilderGetOptio
 func (m *PermissionRequestBuilder) Grant()(*ib469fedb4cba5f97b471693c7e3dab0a69c7dc4c933a4162b67c8e8892974a82.GrantRequestBuilder) {
     return ib469fedb4cba5f97b471693c7e3dab0a69c7dc4c933a4162b67c8e8892974a82.NewGrantRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Used to access the permission representing the underlying sharing link
-// Parameters:
-//  - options : Options for the request
+// Patch used to access the permission representing the underlying sharing link
 func (m *PermissionRequestBuilder) Patch(options *PermissionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

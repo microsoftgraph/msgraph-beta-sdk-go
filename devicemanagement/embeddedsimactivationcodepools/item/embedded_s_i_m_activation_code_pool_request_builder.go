@@ -11,7 +11,7 @@ import (
     if044a617b4d30ce4a26c463e72b94403997b338b8aeafd10eb8d535111e4cc01 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/embeddedsimactivationcodepools/item/devicestates/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools\{embeddedSIMActivationCodePool-id}
+// embeddedSIMActivationCodePoolRequestBuilder builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools\{embeddedSIMActivationCodePool-id}
 type EmbeddedSIMActivationCodePoolRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type EmbeddedSIMActivationCodePoolRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EmbeddedSIMActivationCodePoolRequestBuilderDeleteOptions options for Delete
 type EmbeddedSIMActivationCodePoolRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type EmbeddedSIMActivationCodePoolRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EmbeddedSIMActivationCodePoolRequestBuilderGetOptions options for Get
 type EmbeddedSIMActivationCodePoolRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type EmbeddedSIMActivationCodePoolRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The embedded SIM activation code pools created by this account.
+// embeddedSIMActivationCodePoolRequestBuilderGetQueryParameters the embedded SIM activation code pools created by this account.
 type EmbeddedSIMActivationCodePoolRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EmbeddedSIMActivationCodePoolRequestBuilderPatchOptions options for Patch
 type EmbeddedSIMActivationCodePoolRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMActivationCodePool;
@@ -64,9 +64,7 @@ func (m *EmbeddedSIMActivationCodePoolRequestBuilder) Assign()(*i1a8c6326f7b7449
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) Assignments()(*i14f99bca7a957a331b5e7cb13fd8a56e803d7b84d2e6c38be90eb5551714c94e.AssignmentsRequestBuilder) {
     return i14f99bca7a957a331b5e7cb13fd8a56e803d7b84d2e6c38be90eb5551714c94e.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.embeddedSIMActivationCodePools.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.embeddedSIMActivationCodePools.item.assignments.item collection
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) AssignmentsById(id string)(*i4a0e4526cd89dcbf6b464d731ad1079beb451ea477a00769d03119affe5e8e45.EmbeddedSIMActivationCodePoolAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -77,10 +75,7 @@ func (m *EmbeddedSIMActivationCodePoolRequestBuilder) AssignmentsById(id string)
     }
     return i4a0e4526cd89dcbf6b464d731ad1079beb451ea477a00769d03119affe5e8e45.NewEmbeddedSIMActivationCodePoolAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new EmbeddedSIMActivationCodePoolRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmbeddedSIMActivationCodePoolRequestBuilderInternal instantiates a new EmbeddedSIMActivationCodePoolRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmbeddedSIMActivationCodePoolRequestBuilder) {
     m := &EmbeddedSIMActivationCodePoolRequestBuilder{
     }
@@ -93,18 +88,13 @@ func NewEmbeddedSIMActivationCodePoolRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EmbeddedSIMActivationCodePoolRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEmbeddedSIMActivationCodePoolRequestBuilder instantiates a new EmbeddedSIMActivationCodePoolRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EmbeddedSIMActivationCodePoolRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEmbeddedSIMActivationCodePoolRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The embedded SIM activation code pools created by this account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the embedded SIM activation code pools created by this account.
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) CreateDeleteRequestInformation(options *EmbeddedSIMActivationCodePoolRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *EmbeddedSIMActivationCodePoolRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// The embedded SIM activation code pools created by this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the embedded SIM activation code pools created by this account.
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) CreateGetRequestInformation(options *EmbeddedSIMActivationCodePoolRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *EmbeddedSIMActivationCodePoolRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// The embedded SIM activation code pools created by this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the embedded SIM activation code pools created by this account.
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) CreatePatchRequestInformation(options *EmbeddedSIMActivationCodePoolRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -163,9 +149,7 @@ func (m *EmbeddedSIMActivationCodePoolRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// The embedded SIM activation code pools created by this account.
-// Parameters:
-//  - options : Options for the request
+// Delete the embedded SIM activation code pools created by this account.
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) Delete(options *EmbeddedSIMActivationCodePoolRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -180,9 +164,7 @@ func (m *EmbeddedSIMActivationCodePoolRequestBuilder) Delete(options *EmbeddedSI
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) DeviceStates()(*ic4dac275164f8d53c7fa85048cdeb7907d2f7d42ec422190e6843e16ab03bfd3.DeviceStatesRequestBuilder) {
     return ic4dac275164f8d53c7fa85048cdeb7907d2f7d42ec422190e6843e16ab03bfd3.NewDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.embeddedSIMActivationCodePools.item.deviceStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeviceStatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.embeddedSIMActivationCodePools.item.deviceStates.item collection
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) DeviceStatesById(id string)(*if044a617b4d30ce4a26c463e72b94403997b338b8aeafd10eb8d535111e4cc01.EmbeddedSIMDeviceStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -193,9 +175,7 @@ func (m *EmbeddedSIMActivationCodePoolRequestBuilder) DeviceStatesById(id string
     }
     return if044a617b4d30ce4a26c463e72b94403997b338b8aeafd10eb8d535111e4cc01.NewEmbeddedSIMDeviceStateRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The embedded SIM activation code pools created by this account.
-// Parameters:
-//  - options : Options for the request
+// Get the embedded SIM activation code pools created by this account.
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) Get(options *EmbeddedSIMActivationCodePoolRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMActivationCodePool, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -207,9 +187,7 @@ func (m *EmbeddedSIMActivationCodePoolRequestBuilder) Get(options *EmbeddedSIMAc
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EmbeddedSIMActivationCodePool), nil
 }
-// The embedded SIM activation code pools created by this account.
-// Parameters:
-//  - options : Options for the request
+// Patch the embedded SIM activation code pools created by this account.
 func (m *EmbeddedSIMActivationCodePoolRequestBuilder) Patch(options *EmbeddedSIMActivationCodePoolRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

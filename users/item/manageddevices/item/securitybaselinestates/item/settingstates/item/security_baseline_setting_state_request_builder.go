@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\securityBaselineStates\{securityBaselineState-id}\settingStates\{securityBaselineSettingState-id}
+// securityBaselineSettingStateRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\securityBaselineStates\{securityBaselineState-id}\settingStates\{securityBaselineSettingState-id}
 type SecurityBaselineSettingStateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SecurityBaselineSettingStateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SecurityBaselineSettingStateRequestBuilderDeleteOptions options for Delete
 type SecurityBaselineSettingStateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SecurityBaselineSettingStateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SecurityBaselineSettingStateRequestBuilderGetOptions options for Get
 type SecurityBaselineSettingStateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SecurityBaselineSettingStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The security baseline state for different settings for a device
+// securityBaselineSettingStateRequestBuilderGetQueryParameters the security baseline state for different settings for a device
 type SecurityBaselineSettingStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SecurityBaselineSettingStateRequestBuilderPatchOptions options for Patch
 type SecurityBaselineSettingStateRequestBuilderPatchOptions struct {
     // 
     Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineSettingState;
@@ -53,10 +53,7 @@ type SecurityBaselineSettingStateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SecurityBaselineSettingStateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSecurityBaselineSettingStateRequestBuilderInternal instantiates a new SecurityBaselineSettingStateRequestBuilder and sets the default values.
 func NewSecurityBaselineSettingStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecurityBaselineSettingStateRequestBuilder) {
     m := &SecurityBaselineSettingStateRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSecurityBaselineSettingStateRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SecurityBaselineSettingStateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSecurityBaselineSettingStateRequestBuilder instantiates a new SecurityBaselineSettingStateRequestBuilder and sets the default values.
 func NewSecurityBaselineSettingStateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecurityBaselineSettingStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityBaselineSettingStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The security baseline state for different settings for a device
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the security baseline state for different settings for a device
 func (m *SecurityBaselineSettingStateRequestBuilder) CreateDeleteRequestInformation(options *SecurityBaselineSettingStateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SecurityBaselineSettingStateRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// The security baseline state for different settings for a device
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the security baseline state for different settings for a device
 func (m *SecurityBaselineSettingStateRequestBuilder) CreateGetRequestInformation(options *SecurityBaselineSettingStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SecurityBaselineSettingStateRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// The security baseline state for different settings for a device
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the security baseline state for different settings for a device
 func (m *SecurityBaselineSettingStateRequestBuilder) CreatePatchRequestInformation(options *SecurityBaselineSettingStateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SecurityBaselineSettingStateRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// The security baseline state for different settings for a device
-// Parameters:
-//  - options : Options for the request
+// Delete the security baseline state for different settings for a device
 func (m *SecurityBaselineSettingStateRequestBuilder) Delete(options *SecurityBaselineSettingStateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SecurityBaselineSettingStateRequestBuilder) Delete(options *SecurityBas
     }
     return nil
 }
-// The security baseline state for different settings for a device
-// Parameters:
-//  - options : Options for the request
+// Get the security baseline state for different settings for a device
 func (m *SecurityBaselineSettingStateRequestBuilder) Get(options *SecurityBaselineSettingStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineSettingState, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SecurityBaselineSettingStateRequestBuilder) Get(options *SecurityBaseli
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SecurityBaselineSettingState), nil
 }
-// The security baseline state for different settings for a device
-// Parameters:
-//  - options : Options for the request
+// Patch the security baseline state for different settings for a device
 func (m *SecurityBaselineSettingStateRequestBuilder) Patch(options *SecurityBaselineSettingStateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
