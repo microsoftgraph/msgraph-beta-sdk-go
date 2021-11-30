@@ -6,9 +6,11 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i28844d8a5d325bb0845a1778d6df0388d975703f04633f34ffc2f4073b871389 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/registration"
     i3a2bfcc71796b9365b1b580ed5a11589b09828c31bbc6758b6afbd6ee2ee53a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/attendeereport"
+    i973f10e60f8f0226efcd773b4162b5082a7c2927993ac09fbb3f58bd0fb4fa4d "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/attendancereports"
     ia176566273a5afb80848389bc0868b65818d8d6d3ab8bc727ddcd5d4015393f9 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/recording"
     ie765355a32ec6cb4ba90da216a62ec4fb6b7b232eb3780cefe410dc49551bbe5 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/meetingattendancereport"
     ifa2556b906140d07529e0b82dd914940679909ab68a2bc38a29559eceb0566e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/alternativerecording"
+    ib99f82b2686be9ab3c0709927e690dd3df4c41d545906785c734827457ee1d56 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/attendancereports/item"
 )
 
 // OnlineMeetingRequestBuilder builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}
@@ -60,6 +62,20 @@ type OnlineMeetingRequestBuilderPatchOptions struct {
 }
 func (m *OnlineMeetingRequestBuilder) AlternativeRecording()(*ifa2556b906140d07529e0b82dd914940679909ab68a2bc38a29559eceb0566e9.AlternativeRecordingRequestBuilder) {
     return ifa2556b906140d07529e0b82dd914940679909ab68a2bc38a29559eceb0566e9.NewAlternativeRecordingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *OnlineMeetingRequestBuilder) AttendanceReports()(*i973f10e60f8f0226efcd773b4162b5082a7c2927993ac09fbb3f58bd0fb4fa4d.AttendanceReportsRequestBuilder) {
+    return i973f10e60f8f0226efcd773b4162b5082a7c2927993ac09fbb3f58bd0fb4fa4d.NewAttendanceReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AttendanceReportsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.onlineMeetings.item.attendanceReports.item collection
+func (m *OnlineMeetingRequestBuilder) AttendanceReportsById(id string)(*ib99f82b2686be9ab3c0709927e690dd3df4c41d545906785c734827457ee1d56.MeetingAttendanceReportRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["meetingAttendanceReport_id"] = id
+    }
+    return ib99f82b2686be9ab3c0709927e690dd3df4c41d545906785c734827457ee1d56.NewMeetingAttendanceReportRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *OnlineMeetingRequestBuilder) AttendeeReport()(*i3a2bfcc71796b9365b1b580ed5a11589b09828c31bbc6758b6afbd6ee2ee53a9.AttendeeReportRequestBuilder) {
     return i3a2bfcc71796b9365b1b580ed5a11589b09828c31bbc6758b6afbd6ee2ee53a9.NewAttendeeReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);

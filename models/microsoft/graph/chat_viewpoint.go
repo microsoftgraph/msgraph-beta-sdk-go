@@ -9,9 +9,9 @@ import (
 type ChatViewpoint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Indicates whether the chat is hidden for the current user.
     isHidden *bool;
-    // Represents the dateTime up until which the calling user has read chatMessages in a specific chat.
+    // Represents the dateTime up until which the current user has read chatMessages in a specific chat.
     lastMessageReadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
 // NewChatViewpoint instantiates a new chatViewpoint and sets the default values.
@@ -29,7 +29,7 @@ func (m *ChatViewpoint) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetIsHidden gets the isHidden property value. 
+// GetIsHidden gets the isHidden property value. Indicates whether the chat is hidden for the current user.
 func (m *ChatViewpoint) GetIsHidden()(*bool) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *ChatViewpoint) GetIsHidden()(*bool) {
         return m.isHidden
     }
 }
-// GetLastMessageReadDateTime gets the lastMessageReadDateTime property value. Represents the dateTime up until which the calling user has read chatMessages in a specific chat.
+// GetLastMessageReadDateTime gets the lastMessageReadDateTime property value. Represents the dateTime up until which the current user has read chatMessages in a specific chat.
 func (m *ChatViewpoint) GetLastMessageReadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -99,11 +99,11 @@ func (m *ChatViewpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 func (m *ChatViewpoint) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// SetIsHidden sets the isHidden property value. 
+// SetIsHidden sets the isHidden property value. Indicates whether the chat is hidden for the current user.
 func (m *ChatViewpoint) SetIsHidden(value *bool)() {
     m.isHidden = value
 }
-// SetLastMessageReadDateTime sets the lastMessageReadDateTime property value. Represents the dateTime up until which the calling user has read chatMessages in a specific chat.
+// SetLastMessageReadDateTime sets the lastMessageReadDateTime property value. Represents the dateTime up until which the current user has read chatMessages in a specific chat.
 func (m *ChatViewpoint) SetLastMessageReadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastMessageReadDateTime = value
 }

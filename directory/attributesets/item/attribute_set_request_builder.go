@@ -35,7 +35,7 @@ type AttributeSetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AttributeSetRequestBuilderGetQueryParameters get attributeSets from directory
+// AttributeSetRequestBuilderGetQueryParameters group of related custom security attribute definitions.
 type AttributeSetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewAttributeSetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams["request-raw-url"] = rawUrl
     return NewAttributeSetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property attributeSets for directory
+// CreateDeleteRequestInformation group of related custom security attribute definitions.
 func (m *AttributeSetRequestBuilder) CreateDeleteRequestInformation(options *AttributeSetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *AttributeSetRequestBuilder) CreateDeleteRequestInformation(options *Att
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get attributeSets from directory
+// CreateGetRequestInformation group of related custom security attribute definitions.
 func (m *AttributeSetRequestBuilder) CreateGetRequestInformation(options *AttributeSetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *AttributeSetRequestBuilder) CreateGetRequestInformation(options *Attrib
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property attributeSets in directory
+// CreatePatchRequestInformation group of related custom security attribute definitions.
 func (m *AttributeSetRequestBuilder) CreatePatchRequestInformation(options *AttributeSetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *AttributeSetRequestBuilder) CreatePatchRequestInformation(options *Attr
     }
     return requestInfo, nil
 }
-// Delete delete navigation property attributeSets for directory
+// Delete group of related custom security attribute definitions.
 func (m *AttributeSetRequestBuilder) Delete(options *AttributeSetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *AttributeSetRequestBuilder) Delete(options *AttributeSetRequestBuilderD
     }
     return nil
 }
-// Get get attributeSets from directory
+// Get group of related custom security attribute definitions.
 func (m *AttributeSetRequestBuilder) Get(options *AttributeSetRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeSet, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *AttributeSetRequestBuilder) Get(options *AttributeSetRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeSet), nil
 }
-// Patch update the navigation property attributeSets in directory
+// Patch group of related custom security attribute definitions.
 func (m *AttributeSetRequestBuilder) Patch(options *AttributeSetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

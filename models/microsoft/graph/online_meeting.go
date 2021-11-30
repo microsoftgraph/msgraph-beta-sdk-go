@@ -22,6 +22,8 @@ type OnlineMeeting struct {
     allowTeamworkReactions *bool;
     // The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
     alternativeRecording []byte;
+    // The attendance reports of an online meeting. Read-only.
+    attendanceReports []MeetingAttendanceReport;
     // The content stream of the attendee report of a Microsoft Teams live event. Read-only.
     attendeeReport []byte;
     // The phone access (dial-in) information for an online meeting. Read-only.
@@ -56,7 +58,7 @@ type OnlineMeeting struct {
     joinUrl *string;
     // Specifies which participants can bypass the meeting   lobby.
     lobbyBypassSettings *LobbyBypassSettings;
-    // The attendance report of an online meeting. Read-only.
+    // 
     meetingAttendanceReport *MeetingAttendanceReport;
     // The participants associated with the online meeting.  This includes the organizer and the attendees.
     participants *MeetingParticipants;
@@ -134,6 +136,14 @@ func (m *OnlineMeeting) GetAlternativeRecording()([]byte) {
         return nil
     } else {
         return m.alternativeRecording
+    }
+}
+// GetAttendanceReports gets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
+func (m *OnlineMeeting) GetAttendanceReports()([]MeetingAttendanceReport) {
+    if m == nil {
+        return nil
+    } else {
+        return m.attendanceReports
     }
 }
 // GetAttendeeReport gets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
@@ -272,7 +282,7 @@ func (m *OnlineMeeting) GetLobbyBypassSettings()(*LobbyBypassSettings) {
         return m.lobbyBypassSettings
     }
 }
-// GetMeetingAttendanceReport gets the meetingAttendanceReport property value. The attendance report of an online meeting. Read-only.
+// GetMeetingAttendanceReport gets the meetingAttendanceReport property value. 
 func (m *OnlineMeeting) GetMeetingAttendanceReport()(*MeetingAttendanceReport) {
     if m == nil {
         return nil
@@ -409,6 +419,20 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         if val != nil {
             m.SetAlternativeRecording(val)
+        }
+        return nil
+    }
+    res["attendanceReports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMeetingAttendanceReport() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MeetingAttendanceReport, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MeetingAttendanceReport))
+            }
+            m.SetAttendanceReports(res)
         }
         return nil
     }
@@ -723,6 +747,17 @@ func (m *OnlineMeeting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttendanceReports()))
+        for i, v := range m.GetAttendanceReports() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("attendanceReports", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteByteArrayValue("attendeeReport", m.GetAttendeeReport())
         if err != nil {
             return err
@@ -902,6 +937,10 @@ func (m *OnlineMeeting) SetAllowTeamworkReactions(value *bool)() {
 func (m *OnlineMeeting) SetAlternativeRecording(value []byte)() {
     m.alternativeRecording = value
 }
+// SetAttendanceReports sets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
+func (m *OnlineMeeting) SetAttendanceReports(value []MeetingAttendanceReport)() {
+    m.attendanceReports = value
+}
 // SetAttendeeReport sets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
 func (m *OnlineMeeting) SetAttendeeReport(value []byte)() {
     m.attendeeReport = value
@@ -970,7 +1009,7 @@ func (m *OnlineMeeting) SetJoinUrl(value *string)() {
 func (m *OnlineMeeting) SetLobbyBypassSettings(value *LobbyBypassSettings)() {
     m.lobbyBypassSettings = value
 }
-// SetMeetingAttendanceReport sets the meetingAttendanceReport property value. The attendance report of an online meeting. Read-only.
+// SetMeetingAttendanceReport sets the meetingAttendanceReport property value. 
 func (m *OnlineMeeting) SetMeetingAttendanceReport(value *MeetingAttendanceReport)() {
     m.meetingAttendanceReport = value
 }

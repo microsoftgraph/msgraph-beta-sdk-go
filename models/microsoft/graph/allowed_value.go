@@ -7,7 +7,7 @@ import (
 // AllowedValue 
 type AllowedValue struct {
     Entity
-    // 
+    // Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
     isActive *bool;
 }
 // NewAllowedValue instantiates a new allowedValue and sets the default values.
@@ -17,7 +17,7 @@ func NewAllowedValue()(*AllowedValue) {
     }
     return m
 }
-// GetIsActive gets the isActive property value. 
+// GetIsActive gets the isActive property value. Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
 func (m *AllowedValue) GetIsActive()(*bool) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *AllowedValue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// SetIsActive sets the isActive property value. 
+// SetIsActive sets the isActive property value. Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
 func (m *AllowedValue) SetIsActive(value *bool)() {
     m.isActive = value
 }
