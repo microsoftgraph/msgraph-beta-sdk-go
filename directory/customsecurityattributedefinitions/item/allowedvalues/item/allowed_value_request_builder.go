@@ -35,7 +35,7 @@ type AllowedValueRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AllowedValueRequestBuilderGetQueryParameters get allowedValues from directory
+// AllowedValueRequestBuilderGetQueryParameters values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 type AllowedValueRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewAllowedValueRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams["request-raw-url"] = rawUrl
     return NewAllowedValueRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property allowedValues for directory
+// CreateDeleteRequestInformation values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 func (m *AllowedValueRequestBuilder) CreateDeleteRequestInformation(options *AllowedValueRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *AllowedValueRequestBuilder) CreateDeleteRequestInformation(options *All
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get allowedValues from directory
+// CreateGetRequestInformation values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 func (m *AllowedValueRequestBuilder) CreateGetRequestInformation(options *AllowedValueRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *AllowedValueRequestBuilder) CreateGetRequestInformation(options *Allowe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property allowedValues in directory
+// CreatePatchRequestInformation values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 func (m *AllowedValueRequestBuilder) CreatePatchRequestInformation(options *AllowedValueRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *AllowedValueRequestBuilder) CreatePatchRequestInformation(options *Allo
     }
     return requestInfo, nil
 }
-// Delete delete navigation property allowedValues for directory
+// Delete values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 func (m *AllowedValueRequestBuilder) Delete(options *AllowedValueRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *AllowedValueRequestBuilder) Delete(options *AllowedValueRequestBuilderD
     }
     return nil
 }
-// Get get allowedValues from directory
+// Get values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 func (m *AllowedValueRequestBuilder) Get(options *AllowedValueRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AllowedValue, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *AllowedValueRequestBuilder) Get(options *AllowedValueRequestBuilderGetO
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AllowedValue), nil
 }
-// Patch update the navigation property allowedValues in directory
+// Patch values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 func (m *AllowedValueRequestBuilder) Patch(options *AllowedValueRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

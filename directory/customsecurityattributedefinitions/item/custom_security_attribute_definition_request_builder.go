@@ -37,7 +37,7 @@ type CustomSecurityAttributeDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// CustomSecurityAttributeDefinitionRequestBuilderGetQueryParameters get customSecurityAttributeDefinitions from directory
+// CustomSecurityAttributeDefinitionRequestBuilderGetQueryParameters schema of a custom security attributes (key-value pairs).
 type CustomSecurityAttributeDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -88,7 +88,7 @@ func NewCustomSecurityAttributeDefinitionRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewCustomSecurityAttributeDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property customSecurityAttributeDefinitions for directory
+// CreateDeleteRequestInformation schema of a custom security attributes (key-value pairs).
 func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreateDeleteRequestInformation(options *CustomSecurityAttributeDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,7 +105,7 @@ func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get customSecurityAttributeDefinitions from directory
+// CreateGetRequestInformation schema of a custom security attributes (key-value pairs).
 func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreateGetRequestInformation(options *CustomSecurityAttributeDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,7 +125,7 @@ func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property customSecurityAttributeDefinitions in directory
+// CreatePatchRequestInformation schema of a custom security attributes (key-value pairs).
 func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreatePatchRequestInformation(options *CustomSecurityAttributeDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *CustomSecurityAttributeDefinitionRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// Delete delete navigation property customSecurityAttributeDefinitions for directory
+// Delete schema of a custom security attributes (key-value pairs).
 func (m *CustomSecurityAttributeDefinitionRequestBuilder) Delete(options *CustomSecurityAttributeDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,7 +155,7 @@ func (m *CustomSecurityAttributeDefinitionRequestBuilder) Delete(options *Custom
     }
     return nil
 }
-// Get get customSecurityAttributeDefinitions from directory
+// Get schema of a custom security attributes (key-value pairs).
 func (m *CustomSecurityAttributeDefinitionRequestBuilder) Get(options *CustomSecurityAttributeDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomSecurityAttributeDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,7 +167,7 @@ func (m *CustomSecurityAttributeDefinitionRequestBuilder) Get(options *CustomSec
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomSecurityAttributeDefinition), nil
 }
-// Patch update the navigation property customSecurityAttributeDefinitions in directory
+// Patch schema of a custom security attributes (key-value pairs).
 func (m *CustomSecurityAttributeDefinitionRequestBuilder) Patch(options *CustomSecurityAttributeDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

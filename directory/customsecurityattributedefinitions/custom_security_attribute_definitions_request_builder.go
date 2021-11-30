@@ -26,7 +26,7 @@ type CustomSecurityAttributeDefinitionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// CustomSecurityAttributeDefinitionsRequestBuilderGetQueryParameters get customSecurityAttributeDefinitions from directory
+// CustomSecurityAttributeDefinitionsRequestBuilderGetQueryParameters schema of a custom security attributes (key-value pairs).
 type CustomSecurityAttributeDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewCustomSecurityAttributeDefinitionsRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewCustomSecurityAttributeDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get customSecurityAttributeDefinitions from directory
+// CreateGetRequestInformation schema of a custom security attributes (key-value pairs).
 func (m *CustomSecurityAttributeDefinitionsRequestBuilder) CreateGetRequestInformation(options *CustomSecurityAttributeDefinitionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *CustomSecurityAttributeDefinitionsRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to customSecurityAttributeDefinitions for directory
+// CreatePostRequestInformation schema of a custom security attributes (key-value pairs).
 func (m *CustomSecurityAttributeDefinitionsRequestBuilder) CreatePostRequestInformation(options *CustomSecurityAttributeDefinitionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *CustomSecurityAttributeDefinitionsRequestBuilder) CreatePostRequestInfo
     }
     return requestInfo, nil
 }
-// Get get customSecurityAttributeDefinitions from directory
+// Get schema of a custom security attributes (key-value pairs).
 func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Get(options *CustomSecurityAttributeDefinitionsRequestBuilderGetOptions)(*CustomSecurityAttributeDefinitionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Get(options *CustomSe
     }
     return res.(*CustomSecurityAttributeDefinitionsResponse), nil
 }
-// Post create new navigation property to customSecurityAttributeDefinitions for directory
+// Post schema of a custom security attributes (key-value pairs).
 func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Post(options *CustomSecurityAttributeDefinitionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CustomSecurityAttributeDefinition, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

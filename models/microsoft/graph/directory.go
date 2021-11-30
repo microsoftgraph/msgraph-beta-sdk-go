@@ -9,9 +9,9 @@ type Directory struct {
     Entity
     // Conceptual container for user and group directory objects.
     administrativeUnits []AdministrativeUnit;
-    // 
+    // Group of related custom security attribute definitions.
     attributeSets []AttributeSet;
-    // 
+    // Schema of a custom security attributes (key-value pairs).
     customSecurityAttributeDefinitions []CustomSecurityAttributeDefinition;
     // Recently deleted items. Read-only. Nullable.
     deletedItems []DirectoryObject;
@@ -20,9 +20,13 @@ type Directory struct {
     // Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
     federationConfigurations []IdentityProviderBase;
     // 
+    impactedResources []RecommendationResource;
+    // 
     inboundSharedUserProfiles []InboundSharedUserProfile;
     // 
     outboundSharedUserProfiles []OutboundSharedUserProfile;
+    // 
+    recommendations []Recommendation;
     // 
     sharedEmailDomains []SharedEmailDomain;
 }
@@ -41,7 +45,7 @@ func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnit) {
         return m.administrativeUnits
     }
 }
-// GetAttributeSets gets the attributeSets property value. 
+// GetAttributeSets gets the attributeSets property value. Group of related custom security attribute definitions.
 func (m *Directory) GetAttributeSets()([]AttributeSet) {
     if m == nil {
         return nil
@@ -49,7 +53,7 @@ func (m *Directory) GetAttributeSets()([]AttributeSet) {
         return m.attributeSets
     }
 }
-// GetCustomSecurityAttributeDefinitions gets the customSecurityAttributeDefinitions property value. 
+// GetCustomSecurityAttributeDefinitions gets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
 func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinition) {
     if m == nil {
         return nil
@@ -81,6 +85,14 @@ func (m *Directory) GetFederationConfigurations()([]IdentityProviderBase) {
         return m.federationConfigurations
     }
 }
+// GetImpactedResources gets the impactedResources property value. 
+func (m *Directory) GetImpactedResources()([]RecommendationResource) {
+    if m == nil {
+        return nil
+    } else {
+        return m.impactedResources
+    }
+}
 // GetInboundSharedUserProfiles gets the inboundSharedUserProfiles property value. 
 func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfile) {
     if m == nil {
@@ -95,6 +107,14 @@ func (m *Directory) GetOutboundSharedUserProfiles()([]OutboundSharedUserProfile)
         return nil
     } else {
         return m.outboundSharedUserProfiles
+    }
+}
+// GetRecommendations gets the recommendations property value. 
+func (m *Directory) GetRecommendations()([]Recommendation) {
+    if m == nil {
+        return nil
+    } else {
+        return m.recommendations
     }
 }
 // GetSharedEmailDomains gets the sharedEmailDomains property value. 
@@ -192,6 +212,20 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         }
         return nil
     }
+    res["impactedResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecommendationResource() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RecommendationResource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RecommendationResource))
+            }
+            m.SetImpactedResources(res)
+        }
+        return nil
+    }
     res["inboundSharedUserProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInboundSharedUserProfile() })
         if err != nil {
@@ -217,6 +251,20 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
                 res[i] = *(v.(*OutboundSharedUserProfile))
             }
             m.SetOutboundSharedUserProfiles(res)
+        }
+        return nil
+    }
+    res["recommendations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecommendation() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Recommendation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Recommendation))
+            }
+            m.SetRecommendations(res)
         }
         return nil
     }
@@ -312,6 +360,17 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetImpactedResources()))
+        for i, v := range m.GetImpactedResources() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("impactedResources", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInboundSharedUserProfiles()))
         for i, v := range m.GetInboundSharedUserProfiles() {
             temp := v
@@ -334,6 +393,17 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecommendations()))
+        for i, v := range m.GetRecommendations() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("recommendations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSharedEmailDomains()))
         for i, v := range m.GetSharedEmailDomains() {
             temp := v
@@ -350,11 +420,11 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnit)() {
     m.administrativeUnits = value
 }
-// SetAttributeSets sets the attributeSets property value. 
+// SetAttributeSets sets the attributeSets property value. Group of related custom security attribute definitions.
 func (m *Directory) SetAttributeSets(value []AttributeSet)() {
     m.attributeSets = value
 }
-// SetCustomSecurityAttributeDefinitions sets the customSecurityAttributeDefinitions property value. 
+// SetCustomSecurityAttributeDefinitions sets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
 func (m *Directory) SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinition)() {
     m.customSecurityAttributeDefinitions = value
 }
@@ -370,6 +440,10 @@ func (m *Directory) SetFeatureRolloutPolicies(value []FeatureRolloutPolicy)() {
 func (m *Directory) SetFederationConfigurations(value []IdentityProviderBase)() {
     m.federationConfigurations = value
 }
+// SetImpactedResources sets the impactedResources property value. 
+func (m *Directory) SetImpactedResources(value []RecommendationResource)() {
+    m.impactedResources = value
+}
 // SetInboundSharedUserProfiles sets the inboundSharedUserProfiles property value. 
 func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfile)() {
     m.inboundSharedUserProfiles = value
@@ -377,6 +451,10 @@ func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfil
 // SetOutboundSharedUserProfiles sets the outboundSharedUserProfiles property value. 
 func (m *Directory) SetOutboundSharedUserProfiles(value []OutboundSharedUserProfile)() {
     m.outboundSharedUserProfiles = value
+}
+// SetRecommendations sets the recommendations property value. 
+func (m *Directory) SetRecommendations(value []Recommendation)() {
+    m.recommendations = value
 }
 // SetSharedEmailDomains sets the sharedEmailDomains property value. 
 func (m *Directory) SetSharedEmailDomains(value []SharedEmailDomain)() {

@@ -26,7 +26,7 @@ type AttributeSetsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AttributeSetsRequestBuilderGetQueryParameters get attributeSets from directory
+// AttributeSetsRequestBuilderGetQueryParameters group of related custom security attribute definitions.
 type AttributeSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAttributeSetsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams["request-raw-url"] = rawUrl
     return NewAttributeSetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get attributeSets from directory
+// CreateGetRequestInformation group of related custom security attribute definitions.
 func (m *AttributeSetsRequestBuilder) CreateGetRequestInformation(options *AttributeSetsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AttributeSetsRequestBuilder) CreateGetRequestInformation(options *Attri
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to attributeSets for directory
+// CreatePostRequestInformation group of related custom security attribute definitions.
 func (m *AttributeSetsRequestBuilder) CreatePostRequestInformation(options *AttributeSetsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AttributeSetsRequestBuilder) CreatePostRequestInformation(options *Attr
     }
     return requestInfo, nil
 }
-// Get get attributeSets from directory
+// Get group of related custom security attribute definitions.
 func (m *AttributeSetsRequestBuilder) Get(options *AttributeSetsRequestBuilderGetOptions)(*AttributeSetsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AttributeSetsRequestBuilder) Get(options *AttributeSetsRequestBuilderGe
     }
     return res.(*AttributeSetsResponse), nil
 }
-// Post create new navigation property to attributeSets for directory
+// Post group of related custom security attribute definitions.
 func (m *AttributeSetsRequestBuilder) Post(options *AttributeSetsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeSet, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

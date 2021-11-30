@@ -18,17 +18,17 @@ type Application struct {
     appRoles []AppRole;
     // The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
     connectorGroup *ConnectorGroup;
-    // The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, NOT, ge, le, in, and eq on null values) and $orderBy.
+    // The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only.
     createdOnBehalfOf *DirectoryObject;
     // The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Azure AD sends the token to this redirect URI. Azure AD also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
     defaultRedirectUri *string;
-    // An optional description of the application. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
+    // An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string;
-    // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).
+    // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
     disabledByMicrosoftStatus *string;
-    // The display name for the application. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+    // The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string;
     // Read-only. Nullable.
     extensionProperties []ExtensionProperty;
@@ -40,13 +40,13 @@ type Application struct {
     homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicy;
     // Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
     identifierUris []string;
-    // Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
+    // Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
     info *InformationalUrl;
     // Specifies whether this application supports device authentication without a user. The default is false.
     isDeviceOnlyAuthSupported *bool;
     // Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
     isFallbackPublicClient *bool;
-    // The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, NOT, ge, le).
+    // The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
     keyCredentials []KeyCredential;
     // The main logo for the application. Not nullable.
     logo []byte;
@@ -66,15 +66,15 @@ type Application struct {
     publicClient *PublicClientApplication;
     // The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
     publisherDomain *string;
-    // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, NOT, ge, le).
+    // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
     requiredResourceAccess []RequiredResourceAccess;
-    // Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, NOT).
+    // Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
     signInAudience *string;
     // Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
     spa *SpaApplication;
     // 
     synchronization *Synchronization;
-    // Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
+    // Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
     tags []string;
     // Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
     tokenEncryptionKeyId *string;
@@ -136,7 +136,7 @@ func (m *Application) GetConnectorGroup()(*ConnectorGroup) {
         return m.connectorGroup
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, NOT, ge, le, in, and eq on null values) and $orderBy.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
 func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -160,7 +160,7 @@ func (m *Application) GetDefaultRedirectUri()(*string) {
         return m.defaultRedirectUri
     }
 }
-// GetDescription gets the description property value. An optional description of the application. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
+// GetDescription gets the description property value. An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -168,7 +168,7 @@ func (m *Application) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisabledByMicrosoftStatus gets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).
+// GetDisabledByMicrosoftStatus gets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
 func (m *Application) GetDisabledByMicrosoftStatus()(*string) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *Application) GetDisabledByMicrosoftStatus()(*string) {
         return m.disabledByMicrosoftStatus
     }
 }
-// GetDisplayName gets the displayName property value. The display name for the application. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// GetDisplayName gets the displayName property value. The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Application) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -224,7 +224,7 @@ func (m *Application) GetIdentifierUris()([]string) {
         return m.identifierUris
     }
 }
-// GetInfo gets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
+// GetInfo gets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *Application) GetInfo()(*InformationalUrl) {
     if m == nil {
         return nil
@@ -248,7 +248,7 @@ func (m *Application) GetIsFallbackPublicClient()(*bool) {
         return m.isFallbackPublicClient
     }
 }
-// GetKeyCredentials gets the keyCredentials property value. The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, NOT, ge, le).
+// GetKeyCredentials gets the keyCredentials property value. The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) GetKeyCredentials()([]KeyCredential) {
     if m == nil {
         return nil
@@ -328,7 +328,7 @@ func (m *Application) GetPublisherDomain()(*string) {
         return m.publisherDomain
     }
 }
-// GetRequiredResourceAccess gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, NOT, ge, le).
+// GetRequiredResourceAccess gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) GetRequiredResourceAccess()([]RequiredResourceAccess) {
     if m == nil {
         return nil
@@ -336,7 +336,7 @@ func (m *Application) GetRequiredResourceAccess()([]RequiredResourceAccess) {
         return m.requiredResourceAccess
     }
 }
-// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, NOT).
+// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
 func (m *Application) GetSignInAudience()(*string) {
     if m == nil {
         return nil
@@ -360,7 +360,7 @@ func (m *Application) GetSynchronization()(*Synchronization) {
         return m.synchronization
     }
 }
-// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
+// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
 func (m *Application) GetTags()([]string) {
     if m == nil {
         return nil
@@ -1199,7 +1199,7 @@ func (m *Application) SetAppRoles(value []AppRole)() {
 func (m *Application) SetConnectorGroup(value *ConnectorGroup)() {
     m.connectorGroup = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, NOT, ge, le, in, and eq on null values) and $orderBy.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
 func (m *Application) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
@@ -1211,15 +1211,15 @@ func (m *Application) SetCreatedOnBehalfOf(value *DirectoryObject)() {
 func (m *Application) SetDefaultRedirectUri(value *string)() {
     m.defaultRedirectUri = value
 }
-// SetDescription sets the description property value. An optional description of the application. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
+// SetDescription sets the description property value. An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisabledByMicrosoftStatus sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).
+// SetDisabledByMicrosoftStatus sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
 func (m *Application) SetDisabledByMicrosoftStatus(value *string)() {
     m.disabledByMicrosoftStatus = value
 }
-// SetDisplayName sets the displayName property value. The display name for the application. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// SetDisplayName sets the displayName property value. The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Application) SetDisplayName(value *string)() {
     m.displayName = value
 }
@@ -1243,7 +1243,7 @@ func (m *Application) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPo
 func (m *Application) SetIdentifierUris(value []string)() {
     m.identifierUris = value
 }
-// SetInfo sets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
+// SetInfo sets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *Application) SetInfo(value *InformationalUrl)() {
     m.info = value
 }
@@ -1255,7 +1255,7 @@ func (m *Application) SetIsDeviceOnlyAuthSupported(value *bool)() {
 func (m *Application) SetIsFallbackPublicClient(value *bool)() {
     m.isFallbackPublicClient = value
 }
-// SetKeyCredentials sets the keyCredentials property value. The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, NOT, ge, le).
+// SetKeyCredentials sets the keyCredentials property value. The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) SetKeyCredentials(value []KeyCredential)() {
     m.keyCredentials = value
 }
@@ -1295,11 +1295,11 @@ func (m *Application) SetPublicClient(value *PublicClientApplication)() {
 func (m *Application) SetPublisherDomain(value *string)() {
     m.publisherDomain = value
 }
-// SetRequiredResourceAccess sets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, NOT, ge, le).
+// SetRequiredResourceAccess sets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) SetRequiredResourceAccess(value []RequiredResourceAccess)() {
     m.requiredResourceAccess = value
 }
-// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, NOT).
+// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
 func (m *Application) SetSignInAudience(value *string)() {
     m.signInAudience = value
 }
@@ -1311,7 +1311,7 @@ func (m *Application) SetSpa(value *SpaApplication)() {
 func (m *Application) SetSynchronization(value *Synchronization)() {
     m.synchronization = value
 }
-// SetTags sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
+// SetTags sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
 func (m *Application) SetTags(value []string)() {
     m.tags = value
 }
