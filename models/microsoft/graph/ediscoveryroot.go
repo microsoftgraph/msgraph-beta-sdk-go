@@ -8,7 +8,7 @@ import (
 type Ediscoveryroot struct {
     Entity
     // 
-    cases []Case_escaped;
+    cases []Case;
 }
 // NewEdiscoveryroot instantiates a new ediscoveryroot and sets the default values.
 func NewEdiscoveryroot()(*Ediscoveryroot) {
@@ -18,7 +18,7 @@ func NewEdiscoveryroot()(*Ediscoveryroot) {
     return m
 }
 // GetCases gets the cases property value. 
-func (m *Ediscoveryroot) GetCases()([]Case_escaped) {
+func (m *Ediscoveryroot) GetCases()([]Case) {
     if m == nil {
         return nil
     } else {
@@ -29,14 +29,14 @@ func (m *Ediscoveryroot) GetCases()([]Case_escaped) {
 func (m *Ediscoveryroot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["cases"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCase_escaped() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCase() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Case_escaped, len(val))
+            res := make([]Case, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Case_escaped))
+                res[i] = *(v.(*Case))
             }
             m.SetCases(res)
         }
@@ -67,6 +67,8 @@ func (m *Ediscoveryroot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     return nil
 }
 // SetCases sets the cases property value. 
-func (m *Ediscoveryroot) SetCases(value []Case_escaped)() {
-    m.cases = value
+func (m *Ediscoveryroot) SetCases(value []Case)() {
+    if m != nil {
+        m.cases = value
+    }
 }

@@ -153,21 +153,31 @@ func (m *AnswerRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAcceptedModalities sets the acceptedModalities property value. 
 func (m *AnswerRequestBody) SetAcceptedModalities(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Modality)() {
-    m.acceptedModalities = value
+    if m != nil {
+        m.acceptedModalities = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCallbackUri sets the callbackUri property value. 
 func (m *AnswerRequestBody) SetCallbackUri(value *string)() {
-    m.callbackUri = value
+    if m != nil {
+        m.callbackUri = value
+    }
 }
 // SetMediaConfig sets the mediaConfig property value. 
 func (m *AnswerRequestBody) SetMediaConfig(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MediaConfig)() {
-    m.mediaConfig = value
+    if m != nil {
+        m.mediaConfig = value
+    }
 }
 // SetParticipantCapacity sets the participantCapacity property value. 
 func (m *AnswerRequestBody) SetParticipantCapacity(value *int32)() {
-    m.participantCapacity = value
+    if m != nil {
+        m.participantCapacity = value
+    }
 }

@@ -85,9 +85,13 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) Serialize(writer i04
 }
 // SetAzureAdDeviceId sets the azureAdDeviceId property value. Azure Active Directory Device Id
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) SetAzureAdDeviceId(value *string)() {
-    m.azureAdDeviceId = value
+    if m != nil {
+        m.azureAdDeviceId = value
+    }
 }
 // SetDeviceName sets the deviceName property value. The tenant attach device's name.
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }

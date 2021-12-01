@@ -40,7 +40,7 @@ type GovernanceInsightRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // GovernanceInsightRequestBuilderPatchOptions options for Patch
 type GovernanceInsightRequestBuilderPatchOptions struct {

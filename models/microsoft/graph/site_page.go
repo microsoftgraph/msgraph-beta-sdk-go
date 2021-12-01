@@ -172,21 +172,31 @@ func (m *SitePage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetContentType sets the contentType property value. The content type of the page.
 func (m *SitePage) SetContentType(value *ContentTypeInfo)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }
 // SetPageLayoutType sets the pageLayoutType property value. 
 func (m *SitePage) SetPageLayoutType(value *string)() {
-    m.pageLayoutType = value
+    if m != nil {
+        m.pageLayoutType = value
+    }
 }
 // SetPublishingState sets the publishingState property value. 
 func (m *SitePage) SetPublishingState(value *PublicationFacet)() {
-    m.publishingState = value
+    if m != nil {
+        m.publishingState = value
+    }
 }
 // SetTitle sets the title property value. 
 func (m *SitePage) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }
 // SetWebParts sets the webParts property value. 
 func (m *SitePage) SetWebParts(value []WebPart)() {
-    m.webParts = value
+    if m != nil {
+        m.webParts = value
+    }
 }

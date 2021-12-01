@@ -96,13 +96,19 @@ func (m *ExpeditedWindowsQualityUpdateSettings) Serialize(writer i04eb5309aeaafa
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpeditedWindowsQualityUpdateSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDaysUntilForcedReboot sets the daysUntilForcedReboot property value. The number of days after installation that forced reboot will happen.
 func (m *ExpeditedWindowsQualityUpdateSettings) SetDaysUntilForcedReboot(value *int32)() {
-    m.daysUntilForcedReboot = value
+    if m != nil {
+        m.daysUntilForcedReboot = value
+    }
 }
 // SetQualityUpdateRelease sets the qualityUpdateRelease property value. The release date to identify a quality update.
 func (m *ExpeditedWindowsQualityUpdateSettings) SetQualityUpdateRelease(value *string)() {
-    m.qualityUpdateRelease = value
+    if m != nil {
+        m.qualityUpdateRelease = value
+    }
 }

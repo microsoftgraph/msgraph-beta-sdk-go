@@ -96,13 +96,19 @@ func (m *ResetPasswordRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResetPasswordRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNewPassword sets the newPassword property value. 
 func (m *ResetPasswordRequestBody) SetNewPassword(value *string)() {
-    m.newPassword = value
+    if m != nil {
+        m.newPassword = value
+    }
 }
 // SetRequireChangeOnNextSignIn sets the requireChangeOnNextSignIn property value. 
 func (m *ResetPasswordRequestBody) SetRequireChangeOnNextSignIn(value *bool)() {
-    m.requireChangeOnNextSignIn = value
+    if m != nil {
+        m.requireChangeOnNextSignIn = value
+    }
 }

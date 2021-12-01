@@ -164,21 +164,31 @@ func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) Serialize(
 }
 // SetAudio sets the audio property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) SetAudio(value *int64)() {
-    m.audio = value
+    if m != nil {
+        m.audio = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetVideo sets the video property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod) SetVideo(value *int64)() {
-    m.video = value
+    if m != nil {
+        m.video = value
+    }
 }

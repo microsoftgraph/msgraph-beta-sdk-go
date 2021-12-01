@@ -241,33 +241,49 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAccessibilityScreenDisabled sets the accessibilityScreenDisabled property value. Indicates if Accessibility screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetAccessibilityScreenDisabled(value *bool)() {
-    m.accessibilityScreenDisabled = value
+    if m != nil {
+        m.accessibilityScreenDisabled = value
+    }
 }
 // SetChooseYourLockScreenDisabled sets the chooseYourLockScreenDisabled property value. Indicates if iCloud Documents and Desktop screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetChooseYourLockScreenDisabled(value *bool)() {
-    m.chooseYourLockScreenDisabled = value
+    if m != nil {
+        m.chooseYourLockScreenDisabled = value
+    }
 }
 // SetFileVaultDisabled sets the fileVaultDisabled property value. Indicates if file vault is disabled
 func (m *DepMacOSEnrollmentProfile) SetFileVaultDisabled(value *bool)() {
-    m.fileVaultDisabled = value
+    if m != nil {
+        m.fileVaultDisabled = value
+    }
 }
 // SetICloudDiagnosticsDisabled sets the iCloudDiagnosticsDisabled property value. Indicates if iCloud Analytics screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetICloudDiagnosticsDisabled(value *bool)() {
-    m.iCloudDiagnosticsDisabled = value
+    if m != nil {
+        m.iCloudDiagnosticsDisabled = value
+    }
 }
 // SetICloudStorageDisabled sets the iCloudStorageDisabled property value. Indicates if iCloud Documents and Desktop screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetICloudStorageDisabled(value *bool)() {
-    m.iCloudStorageDisabled = value
+    if m != nil {
+        m.iCloudStorageDisabled = value
+    }
 }
 // SetPassCodeDisabled sets the passCodeDisabled property value. Indicates if Passcode setup pane is disabled
 func (m *DepMacOSEnrollmentProfile) SetPassCodeDisabled(value *bool)() {
-    m.passCodeDisabled = value
+    if m != nil {
+        m.passCodeDisabled = value
+    }
 }
 // SetRegistrationDisabled sets the registrationDisabled property value. Indicates if registration is disabled
 func (m *DepMacOSEnrollmentProfile) SetRegistrationDisabled(value *bool)() {
-    m.registrationDisabled = value
+    if m != nil {
+        m.registrationDisabled = value
+    }
 }
 // SetZoomDisabled sets the zoomDisabled property value. Indicates if zoom setup pane is disabled
 func (m *DepMacOSEnrollmentProfile) SetZoomDisabled(value *bool)() {
-    m.zoomDisabled = value
+    if m != nil {
+        m.zoomDisabled = value
+    }
 }

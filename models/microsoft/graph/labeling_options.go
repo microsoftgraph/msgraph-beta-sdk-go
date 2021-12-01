@@ -159,21 +159,31 @@ func (m *LabelingOptions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LabelingOptions) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignmentMethod sets the assignmentMethod property value. Possible values are: standard, privileged, auto.
 func (m *LabelingOptions) SetAssignmentMethod(value *AssignmentMethod)() {
-    m.assignmentMethod = value
+    if m != nil {
+        m.assignmentMethod = value
+    }
 }
 // SetDowngradeJustification sets the downgradeJustification property value. The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
 func (m *LabelingOptions) SetDowngradeJustification(value *DowngradeJustification)() {
-    m.downgradeJustification = value
+    if m != nil {
+        m.downgradeJustification = value
+    }
 }
 // SetExtendedProperties sets the extendedProperties property value. Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.
 func (m *LabelingOptions) SetExtendedProperties(value []KeyValuePair)() {
-    m.extendedProperties = value
+    if m != nil {
+        m.extendedProperties = value
+    }
 }
 // SetLabelId sets the labelId property value. The GUID of the label that should be applied to the information.
 func (m *LabelingOptions) SetLabelId(value *string)() {
-    m.labelId = value
+    if m != nil {
+        m.labelId = value
+    }
 }

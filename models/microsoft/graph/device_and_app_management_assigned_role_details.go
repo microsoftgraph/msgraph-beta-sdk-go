@@ -104,13 +104,19 @@ func (m *DeviceAndAppManagementAssignedRoleDetails) Serialize(writer i04eb5309ae
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceAndAppManagementAssignedRoleDetails) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRoleAssignmentIds sets the roleAssignmentIds property value. Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.
 func (m *DeviceAndAppManagementAssignedRoleDetails) SetRoleAssignmentIds(value []string)() {
-    m.roleAssignmentIds = value
+    if m != nil {
+        m.roleAssignmentIds = value
+    }
 }
 // SetRoleDefinitionIds sets the roleDefinitionIds property value. Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.
 func (m *DeviceAndAppManagementAssignedRoleDetails) SetRoleDefinitionIds(value []string)() {
-    m.roleDefinitionIds = value
+    if m != nil {
+        m.roleDefinitionIds = value
+    }
 }

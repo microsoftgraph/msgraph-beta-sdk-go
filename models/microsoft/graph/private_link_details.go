@@ -148,21 +148,31 @@ func (m *PrivateLinkDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrivateLinkDetails) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPolicyId sets the policyId property value. 
 func (m *PrivateLinkDetails) SetPolicyId(value *string)() {
-    m.policyId = value
+    if m != nil {
+        m.policyId = value
+    }
 }
 // SetPolicyName sets the policyName property value. 
 func (m *PrivateLinkDetails) SetPolicyName(value *string)() {
-    m.policyName = value
+    if m != nil {
+        m.policyName = value
+    }
 }
 // SetPolicyTenantId sets the policyTenantId property value. 
 func (m *PrivateLinkDetails) SetPolicyTenantId(value *string)() {
-    m.policyTenantId = value
+    if m != nil {
+        m.policyTenantId = value
+    }
 }
 // SetResourceId sets the resourceId property value. 
 func (m *PrivateLinkDetails) SetResourceId(value *string)() {
-    m.resourceId = value
+    if m != nil {
+        m.resourceId = value
+    }
 }

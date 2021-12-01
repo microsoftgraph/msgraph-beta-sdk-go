@@ -137,17 +137,25 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) Serialize(writer i0
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetActiveDevices(value *int32)() {
-    m.activeDevices = value
+    if m != nil {
+        m.activeDevices = value
+    }
 }
 // SetBatteryRuntimeFair sets the batteryRuntimeFair property value. Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetBatteryRuntimeFair(value *int32)() {
-    m.batteryRuntimeFair = value
+    if m != nil {
+        m.batteryRuntimeFair = value
+    }
 }
 // SetBatteryRuntimeGood sets the batteryRuntimeGood property value. Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetBatteryRuntimeGood(value *int32)() {
-    m.batteryRuntimeGood = value
+    if m != nil {
+        m.batteryRuntimeGood = value
+    }
 }
 // SetBatteryRuntimePoor sets the batteryRuntimePoor property value. Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetails) SetBatteryRuntimePoor(value *int32)() {
-    m.batteryRuntimePoor = value
+    if m != nil {
+        m.batteryRuntimePoor = value
+    }
 }

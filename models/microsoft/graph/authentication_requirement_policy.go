@@ -98,13 +98,19 @@ func (m *AuthenticationRequirementPolicy) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationRequirementPolicy) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDetail sets the detail property value. 
 func (m *AuthenticationRequirementPolicy) SetDetail(value *string)() {
-    m.detail = value
+    if m != nil {
+        m.detail = value
+    }
 }
 // SetRequirementProvider sets the requirementProvider property value. 
 func (m *AuthenticationRequirementPolicy) SetRequirementProvider(value *RequirementProvider)() {
-    m.requirementProvider = value
+    if m != nil {
+        m.requirementProvider = value
+    }
 }

@@ -217,25 +217,37 @@ func (m *Custodian) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAcknowledgedDateTime sets the acknowledgedDateTime property value. Date and time the custodian acknowledged a hold notification.
 func (m *Custodian) SetAcknowledgedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.acknowledgedDateTime = value
+    if m != nil {
+        m.acknowledgedDateTime = value
+    }
 }
 // SetApplyHoldToSources sets the applyHoldToSources property value. Identifies whether a custodian's sources were placed on hold during creation.
 func (m *Custodian) SetApplyHoldToSources(value *bool)() {
-    m.applyHoldToSources = value
+    if m != nil {
+        m.applyHoldToSources = value
+    }
 }
 // SetEmail sets the email property value. Email address of the custodian.
 func (m *Custodian) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetSiteSources sets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.
 func (m *Custodian) SetSiteSources(value []SiteSource)() {
-    m.siteSources = value
+    if m != nil {
+        m.siteSources = value
+    }
 }
 // SetUnifiedGroupSources sets the unifiedGroupSources property value. Data source entity for groups associated with the custodian.
 func (m *Custodian) SetUnifiedGroupSources(value []UnifiedGroupSource)() {
-    m.unifiedGroupSources = value
+    if m != nil {
+        m.unifiedGroupSources = value
+    }
 }
 // SetUserSources sets the userSources property value. Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *Custodian) SetUserSources(value []UserSource)() {
-    m.userSources = value
+    if m != nil {
+        m.userSources = value
+    }
 }

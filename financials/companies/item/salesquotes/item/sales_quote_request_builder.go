@@ -48,7 +48,7 @@ type SalesQuoteRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // SalesQuoteRequestBuilderPatchOptions options for Patch
 type SalesQuoteRequestBuilderPatchOptions struct {

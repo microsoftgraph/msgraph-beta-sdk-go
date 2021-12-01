@@ -295,41 +295,61 @@ func (m *TenantStatusInformation) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantStatusInformation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDelegatedPrivilegeStatus sets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) SetDelegatedPrivilegeStatus(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.DelegatedPrivilegeStatus)() {
-    m.delegatedPrivilegeStatus = value
+    if m != nil {
+        m.delegatedPrivilegeStatus = value
+    }
 }
 // SetLastDelegatedPrivilegeRefreshDateTime sets the lastDelegatedPrivilegeRefreshDateTime property value. The date and time the delegated admin privileges status was updated. Optional. Read-only.
 func (m *TenantStatusInformation) SetLastDelegatedPrivilegeRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastDelegatedPrivilegeRefreshDateTime = value
+    if m != nil {
+        m.lastDelegatedPrivilegeRefreshDateTime = value
+    }
 }
 // SetOffboardedByUserId sets the offboardedByUserId property value. The identifier for the account that offboarded the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) SetOffboardedByUserId(value *string)() {
-    m.offboardedByUserId = value
+    if m != nil {
+        m.offboardedByUserId = value
+    }
 }
 // SetOffboardedDateTime sets the offboardedDateTime property value. The date and time when the managed tenant was offboarded. Optional. Read-only.
 func (m *TenantStatusInformation) SetOffboardedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.offboardedDateTime = value
+    if m != nil {
+        m.offboardedDateTime = value
+    }
 }
 // SetOnboardedByUserId sets the onboardedByUserId property value. The identifier for the account that onboarded the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) SetOnboardedByUserId(value *string)() {
-    m.onboardedByUserId = value
+    if m != nil {
+        m.onboardedByUserId = value
+    }
 }
 // SetOnboardedDateTime sets the onboardedDateTime property value. The date and time when the managed tenant was onboarded. Optional. Read-only.
 func (m *TenantStatusInformation) SetOnboardedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.onboardedDateTime = value
+    if m != nil {
+        m.onboardedDateTime = value
+    }
 }
 // SetOnboardingStatus sets the onboardingStatus property value. The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) SetOnboardingStatus(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingStatus)() {
-    m.onboardingStatus = value
+    if m != nil {
+        m.onboardingStatus = value
+    }
 }
 // SetTenantOnboardingEligibilityReason sets the tenantOnboardingEligibilityReason property value. 
 func (m *TenantStatusInformation) SetTenantOnboardingEligibilityReason(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason)() {
-    m.tenantOnboardingEligibilityReason = value
+    if m != nil {
+        m.tenantOnboardingEligibilityReason = value
+    }
 }
 // SetWorkloadStatuses sets the workloadStatuses property value. The collection of workload statues for the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) SetWorkloadStatuses(value []WorkloadStatus)() {
-    m.workloadStatuses = value
+    if m != nil {
+        m.workloadStatuses = value
+    }
 }

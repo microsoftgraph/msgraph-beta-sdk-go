@@ -21,7 +21,7 @@ type PhysicalAddress struct {
     // The street.
     street *string;
     // The type of address. Possible values are: unknown, home, business, other.
-    type_escaped *PhysicalAddressType;
+    type *PhysicalAddressType;
 }
 // NewPhysicalAddress instantiates a new physicalAddress and sets the default values.
 func NewPhysicalAddress()(*PhysicalAddress) {
@@ -86,12 +86,12 @@ func (m *PhysicalAddress) GetStreet()(*string) {
         return m.street
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of address. Possible values are: unknown, home, business, other.
-func (m *PhysicalAddress) GetType_escaped()(*PhysicalAddressType) {
+// GetType gets the type property value. The type of address. Possible values are: unknown, home, business, other.
+func (m *PhysicalAddress) GetType()(*PhysicalAddressType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -157,14 +157,14 @@ func (m *PhysicalAddress) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParsePhysicalAddressType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(PhysicalAddressType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -211,9 +211,9 @@ func (m *PhysicalAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -228,33 +228,49 @@ func (m *PhysicalAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PhysicalAddress) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCity sets the city property value. The city.
 func (m *PhysicalAddress) SetCity(value *string)() {
-    m.city = value
+    if m != nil {
+        m.city = value
+    }
 }
 // SetCountryOrRegion sets the countryOrRegion property value. The country or region. It's a free-format string value, for example, 'United States'.
 func (m *PhysicalAddress) SetCountryOrRegion(value *string)() {
-    m.countryOrRegion = value
+    if m != nil {
+        m.countryOrRegion = value
+    }
 }
 // SetPostalCode sets the postalCode property value. The postal code.
 func (m *PhysicalAddress) SetPostalCode(value *string)() {
-    m.postalCode = value
+    if m != nil {
+        m.postalCode = value
+    }
 }
 // SetPostOfficeBox sets the postOfficeBox property value. The post office box number.
 func (m *PhysicalAddress) SetPostOfficeBox(value *string)() {
-    m.postOfficeBox = value
+    if m != nil {
+        m.postOfficeBox = value
+    }
 }
 // SetState sets the state property value. The state.
 func (m *PhysicalAddress) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetStreet sets the street property value. The street.
 func (m *PhysicalAddress) SetStreet(value *string)() {
-    m.street = value
+    if m != nil {
+        m.street = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The type of address. Possible values are: unknown, home, business, other.
-func (m *PhysicalAddress) SetType_escaped(value *PhysicalAddressType)() {
-    m.type_escaped = value
+// SetType sets the type property value. The type of address. Possible values are: unknown, home, business, other.
+func (m *PhysicalAddress) SetType(value *PhysicalAddressType)() {
+    if m != nil {
+        m.type = value
+    }
 }

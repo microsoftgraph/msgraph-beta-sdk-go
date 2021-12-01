@@ -367,49 +367,73 @@ func (m *Incident) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAssignedTo sets the assignedTo property value. 
 func (m *Incident) SetAssignedTo(value *string)() {
-    m.assignedTo = value
+    if m != nil {
+        m.assignedTo = value
+    }
 }
 // SetClassification sets the classification property value. 
 func (m *Incident) SetClassification(value *M365AlertClassification)() {
-    m.classification = value
+    if m != nil {
+        m.classification = value
+    }
 }
 // SetComments sets the comments property value. 
 func (m *Incident) SetComments(value []M365AlertComment)() {
-    m.comments = value
+    if m != nil {
+        m.comments = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. 
 func (m *Incident) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDetermination sets the determination property value. 
 func (m *Incident) SetDetermination(value *M365AlertDetermination)() {
-    m.determination = value
+    if m != nil {
+        m.determination = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *Incident) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIncidentWebUrl sets the incidentWebUrl property value. 
 func (m *Incident) SetIncidentWebUrl(value *string)() {
-    m.incidentWebUrl = value
+    if m != nil {
+        m.incidentWebUrl = value
+    }
 }
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. 
 func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdateDateTime = value
+    if m != nil {
+        m.lastUpdateDateTime = value
+    }
 }
 // SetRedirectIncidentId sets the redirectIncidentId property value. 
 func (m *Incident) SetRedirectIncidentId(value *string)() {
-    m.redirectIncidentId = value
+    if m != nil {
+        m.redirectIncidentId = value
+    }
 }
 // SetSeverity sets the severity property value. 
 func (m *Incident) SetSeverity(value *M365AlertSeverity)() {
-    m.severity = value
+    if m != nil {
+        m.severity = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *Incident) SetStatus(value *IncidentStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTags sets the tags property value. 
 func (m *Incident) SetTags(value []string)() {
-    m.tags = value
+    if m != nil {
+        m.tags = value
+    }
 }

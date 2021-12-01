@@ -98,13 +98,19 @@ func (m *DeviceManagementExchangeAccessRule) Serialize(writer i04eb5309aeaafadd2
 }
 // SetAccessLevel sets the accessLevel property value. Access Level for Exchange granted by this rule. Possible values are: none, allow, block, quarantine.
 func (m *DeviceManagementExchangeAccessRule) SetAccessLevel(value *DeviceManagementExchangeAccessLevel)() {
-    m.accessLevel = value
+    if m != nil {
+        m.accessLevel = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementExchangeAccessRule) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceClass sets the deviceClass property value. Device Class which will be impacted by this rule.
 func (m *DeviceManagementExchangeAccessRule) SetDeviceClass(value *DeviceManagementExchangeDeviceClass)() {
-    m.deviceClass = value
+    if m != nil {
+        m.deviceClass = value
+    }
 }

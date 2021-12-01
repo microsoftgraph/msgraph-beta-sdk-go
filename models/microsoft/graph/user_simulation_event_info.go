@@ -175,25 +175,37 @@ func (m *UserSimulationEventInfo) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserSimulationEventInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBrowser sets the browser property value. Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) SetBrowser(value *string)() {
-    m.browser = value
+    if m != nil {
+        m.browser = value
+    }
 }
 // SetEventDateTime sets the eventDateTime property value. Date and time of the simulation event by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.eventDateTime = value
+    if m != nil {
+        m.eventDateTime = value
+    }
 }
 // SetEventName sets the eventName property value. Name of the simulation event by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) SetEventName(value *string)() {
-    m.eventName = value
+    if m != nil {
+        m.eventName = value
+    }
 }
 // SetIpAddress sets the ipAddress property value. IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    if m != nil {
+        m.ipAddress = value
+    }
 }
 // SetOsPlatformDeviceDetails sets the osPlatformDeviceDetails property value. The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) SetOsPlatformDeviceDetails(value *string)() {
-    m.osPlatformDeviceDetails = value
+    if m != nil {
+        m.osPlatformDeviceDetails = value
+    }
 }

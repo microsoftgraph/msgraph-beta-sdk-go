@@ -480,61 +480,91 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
 }
 // SetChatType sets the chatType property value. Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
 func (m *Chat) SetChatType(value *ChatType)() {
-    m.chatType = value
+    if m != nil {
+        m.chatType = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time at which the chat was created. Read-only.
 func (m *Chat) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetInstalledApps sets the installedApps property value. A collection of all the apps in the chat. Nullable.
 func (m *Chat) SetInstalledApps(value []TeamsAppInstallation)() {
-    m.installedApps = value
+    if m != nil {
+        m.installedApps = value
+    }
 }
 // SetLastMessagePreview sets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
 func (m *Chat) SetLastMessagePreview(value *ChatMessageInfo)() {
-    m.lastMessagePreview = value
+    if m != nil {
+        m.lastMessagePreview = value
+    }
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
 func (m *Chat) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdatedDateTime = value
+    if m != nil {
+        m.lastUpdatedDateTime = value
+    }
 }
 // SetMembers sets the members property value. A collection of all the members in the chat. Nullable.
 func (m *Chat) SetMembers(value []ConversationMember)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }
 // SetMessages sets the messages property value. A collection of all the messages in the chat. Nullable.
 func (m *Chat) SetMessages(value []ChatMessage)() {
-    m.messages = value
+    if m != nil {
+        m.messages = value
+    }
 }
 // SetOnlineMeetingInfo sets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
 func (m *Chat) SetOnlineMeetingInfo(value *TeamworkOnlineMeetingInfo)() {
-    m.onlineMeetingInfo = value
+    if m != nil {
+        m.onlineMeetingInfo = value
+    }
 }
 // SetOperations sets the operations property value. A collection of all the Teams async operations that ran or are running on the chat. Nullable.
 func (m *Chat) SetOperations(value []TeamsAsyncOperation)() {
-    m.operations = value
+    if m != nil {
+        m.operations = value
+    }
 }
 // SetPermissionGrants sets the permissionGrants property value. A collection of permissions granted to apps for the chat.
 func (m *Chat) SetPermissionGrants(value []ResourceSpecificPermissionGrant)() {
-    m.permissionGrants = value
+    if m != nil {
+        m.permissionGrants = value
+    }
 }
 // SetTabs sets the tabs property value. 
 func (m *Chat) SetTabs(value []TeamsTab)() {
-    m.tabs = value
+    if m != nil {
+        m.tabs = value
+    }
 }
 // SetTenantId sets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
 func (m *Chat) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }
 // SetTopic sets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.
 func (m *Chat) SetTopic(value *string)() {
-    m.topic = value
+    if m != nil {
+        m.topic = value
+    }
 }
 // SetViewpoint sets the viewpoint property value. Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
 func (m *Chat) SetViewpoint(value *ChatViewpoint)() {
-    m.viewpoint = value
+    if m != nil {
+        m.viewpoint = value
+    }
 }
 // SetWebUrl sets the webUrl property value. A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.
 func (m *Chat) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

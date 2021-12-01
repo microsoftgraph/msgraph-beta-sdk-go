@@ -189,25 +189,37 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) Serialize(writer 
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices for that model. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetActiveDevices(value *int32)() {
-    m.activeDevices = value
+    if m != nil {
+        m.activeDevices = value
+    }
 }
 // SetAverageBatteryAgeInDays sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetAverageBatteryAgeInDays(value *int32)() {
-    m.averageBatteryAgeInDays = value
+    if m != nil {
+        m.averageBatteryAgeInDays = value
+    }
 }
 // SetAverageEstimatedRuntimeInMinutes sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetAverageEstimatedRuntimeInMinutes(value *int32)() {
-    m.averageEstimatedRuntimeInMinutes = value
+    if m != nil {
+        m.averageEstimatedRuntimeInMinutes = value
+    }
 }
 // SetAverageMaxCapacityPercentage sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetAverageMaxCapacityPercentage(value *int32)() {
-    m.averageMaxCapacityPercentage = value
+    if m != nil {
+        m.averageMaxCapacityPercentage = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. Name of the device manufacturer.
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetModel sets the model property value. The model name of the device.
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }

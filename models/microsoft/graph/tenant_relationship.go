@@ -59,5 +59,7 @@ func (m *TenantRelationship) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetManagedTenants sets the managedTenants property value. The operations available to interact with the multi-tenant management platform.
 func (m *TenantRelationship) SetManagedTenants(value *ManagedTenant)() {
-    m.managedTenants = value
+    if m != nil {
+        m.managedTenants = value
+    }
 }

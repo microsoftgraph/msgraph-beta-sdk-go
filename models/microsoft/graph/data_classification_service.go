@@ -348,37 +348,55 @@ func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetClassifyFileJobs sets the classifyFileJobs property value. 
 func (m *DataClassificationService) SetClassifyFileJobs(value []JobResponseBase)() {
-    m.classifyFileJobs = value
+    if m != nil {
+        m.classifyFileJobs = value
+    }
 }
 // SetClassifyTextJobs sets the classifyTextJobs property value. 
 func (m *DataClassificationService) SetClassifyTextJobs(value []JobResponseBase)() {
-    m.classifyTextJobs = value
+    if m != nil {
+        m.classifyTextJobs = value
+    }
 }
 // SetEvaluateDlpPoliciesJobs sets the evaluateDlpPoliciesJobs property value. 
 func (m *DataClassificationService) SetEvaluateDlpPoliciesJobs(value []JobResponseBase)() {
-    m.evaluateDlpPoliciesJobs = value
+    if m != nil {
+        m.evaluateDlpPoliciesJobs = value
+    }
 }
 // SetEvaluateLabelJobs sets the evaluateLabelJobs property value. 
 func (m *DataClassificationService) SetEvaluateLabelJobs(value []JobResponseBase)() {
-    m.evaluateLabelJobs = value
+    if m != nil {
+        m.evaluateLabelJobs = value
+    }
 }
 // SetExactMatchDataStores sets the exactMatchDataStores property value. 
 func (m *DataClassificationService) SetExactMatchDataStores(value []ExactMatchDataStore)() {
-    m.exactMatchDataStores = value
+    if m != nil {
+        m.exactMatchDataStores = value
+    }
 }
 // SetExactMatchUploadAgents sets the exactMatchUploadAgents property value. 
 func (m *DataClassificationService) SetExactMatchUploadAgents(value []ExactMatchUploadAgent)() {
-    m.exactMatchUploadAgents = value
+    if m != nil {
+        m.exactMatchUploadAgents = value
+    }
 }
 // SetJobs sets the jobs property value. 
 func (m *DataClassificationService) SetJobs(value []JobResponseBase)() {
-    m.jobs = value
+    if m != nil {
+        m.jobs = value
+    }
 }
 // SetSensitiveTypes sets the sensitiveTypes property value. 
 func (m *DataClassificationService) SetSensitiveTypes(value []SensitiveType)() {
-    m.sensitiveTypes = value
+    if m != nil {
+        m.sensitiveTypes = value
+    }
 }
 // SetSensitivityLabels sets the sensitivityLabels property value. 
 func (m *DataClassificationService) SetSensitivityLabels(value []SensitivityLabel)() {
-    m.sensitivityLabels = value
+    if m != nil {
+        m.sensitivityLabels = value
+    }
 }

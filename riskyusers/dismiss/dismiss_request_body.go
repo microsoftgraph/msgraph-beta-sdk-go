@@ -74,9 +74,13 @@ func (m *DismissRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DismissRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetUserIds sets the userIds property value. 
 func (m *DismissRequestBody) SetUserIds(value []string)() {
-    m.userIds = value
+    if m != nil {
+        m.userIds = value
+    }
 }

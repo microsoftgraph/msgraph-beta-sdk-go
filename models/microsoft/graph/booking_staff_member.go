@@ -200,25 +200,37 @@ func (m *BookingStaffMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAvailabilityIsAffectedByPersonalCalendar sets the availabilityIsAffectedByPersonalCalendar property value. True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
 func (m *BookingStaffMember) SetAvailabilityIsAffectedByPersonalCalendar(value *bool)() {
-    m.availabilityIsAffectedByPersonalCalendar = value
+    if m != nil {
+        m.availabilityIsAffectedByPersonalCalendar = value
+    }
 }
 // SetColorIndex sets the colorIndex property value. Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
 func (m *BookingStaffMember) SetColorIndex(value *int32)() {
-    m.colorIndex = value
+    if m != nil {
+        m.colorIndex = value
+    }
 }
 // SetRole sets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, scheduler, and member. Required.
 func (m *BookingStaffMember) SetRole(value *BookingStaffRole)() {
-    m.role = value
+    if m != nil {
+        m.role = value
+    }
 }
 // SetTimeZone sets the timeZone property value. The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
 func (m *BookingStaffMember) SetTimeZone(value *string)() {
-    m.timeZone = value
+    if m != nil {
+        m.timeZone = value
+    }
 }
 // SetUseBusinessHours sets the useBusinessHours property value. True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
 func (m *BookingStaffMember) SetUseBusinessHours(value *bool)() {
-    m.useBusinessHours = value
+    if m != nil {
+        m.useBusinessHours = value
+    }
 }
 // SetWorkingHours sets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
 func (m *BookingStaffMember) SetWorkingHours(value []BookingWorkHours)() {
-    m.workingHours = value
+    if m != nil {
+        m.workingHours = value
+    }
 }

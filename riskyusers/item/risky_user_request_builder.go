@@ -42,7 +42,7 @@ type RiskyUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // RiskyUserRequestBuilderPatchOptions options for Patch
 type RiskyUserRequestBuilderPatchOptions struct {

@@ -24,7 +24,7 @@ type AccessPackageSubject struct {
     // The principal name, if known, of the subject.
     principalName *string;
     // The resource type of the subject.
-    type_escaped *string;
+    type *string;
 }
 // NewAccessPackageSubject instantiates a new accessPackageSubject and sets the default values.
 func NewAccessPackageSubject()(*AccessPackageSubject) {
@@ -97,12 +97,12 @@ func (m *AccessPackageSubject) GetPrincipalName()(*string) {
         return m.principalName
     }
 }
-// GetType_escaped gets the type_escaped property value. The resource type of the subject.
-func (m *AccessPackageSubject) GetType_escaped()(*string) {
+// GetType gets the type property value. The resource type of the subject.
+func (m *AccessPackageSubject) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -188,13 +188,13 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -258,7 +258,7 @@ func (m *AccessPackageSubject) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -267,37 +267,55 @@ func (m *AccessPackageSubject) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAltSecId sets the altSecId property value. 
 func (m *AccessPackageSubject) SetAltSecId(value *string)() {
-    m.altSecId = value
+    if m != nil {
+        m.altSecId = value
+    }
 }
 // SetConnectedOrganization sets the connectedOrganization property value. The connected organization of the subject. Read-only. Nullable.
 func (m *AccessPackageSubject) SetConnectedOrganization(value *ConnectedOrganization)() {
-    m.connectedOrganization = value
+    if m != nil {
+        m.connectedOrganization = value
+    }
 }
 // SetConnectedOrganizationId sets the connectedOrganizationId property value. The identifier of the connected organization of the subject.
 func (m *AccessPackageSubject) SetConnectedOrganizationId(value *string)() {
-    m.connectedOrganizationId = value
+    if m != nil {
+        m.connectedOrganizationId = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the subject.
 func (m *AccessPackageSubject) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEmail sets the email property value. The email address of the subject.
 func (m *AccessPackageSubject) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetObjectId sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
 func (m *AccessPackageSubject) SetObjectId(value *string)() {
-    m.objectId = value
+    if m != nil {
+        m.objectId = value
+    }
 }
 // SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. 
 func (m *AccessPackageSubject) SetOnPremisesSecurityIdentifier(value *string)() {
-    m.onPremisesSecurityIdentifier = value
+    if m != nil {
+        m.onPremisesSecurityIdentifier = value
+    }
 }
 // SetPrincipalName sets the principalName property value. The principal name, if known, of the subject.
 func (m *AccessPackageSubject) SetPrincipalName(value *string)() {
-    m.principalName = value
+    if m != nil {
+        m.principalName = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The resource type of the subject.
-func (m *AccessPackageSubject) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. The resource type of the subject.
+func (m *AccessPackageSubject) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }

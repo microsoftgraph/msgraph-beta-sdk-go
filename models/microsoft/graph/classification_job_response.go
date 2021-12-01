@@ -59,5 +59,7 @@ func (m *ClassificationJobResponse) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetResult sets the result property value. 
 func (m *ClassificationJobResponse) SetResult(value *DetectedSensitiveContentWrapper)() {
-    m.result = value
+    if m != nil {
+        m.result = value
+    }
 }

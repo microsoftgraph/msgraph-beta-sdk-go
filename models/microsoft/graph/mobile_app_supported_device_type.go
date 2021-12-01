@@ -13,7 +13,7 @@ type MobileAppSupportedDeviceType struct {
     // Minimum OS version
     minimumOperatingSystemVersion *string;
     // Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
-    type_escaped *DeviceType;
+    type *DeviceType;
 }
 // NewMobileAppSupportedDeviceType instantiates a new mobileAppSupportedDeviceType and sets the default values.
 func NewMobileAppSupportedDeviceType()(*MobileAppSupportedDeviceType) {
@@ -46,12 +46,12 @@ func (m *MobileAppSupportedDeviceType) GetMinimumOperatingSystemVersion()(*strin
         return m.minimumOperatingSystemVersion
     }
 }
-// GetType_escaped gets the type_escaped property value. Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
-func (m *MobileAppSupportedDeviceType) GetType_escaped()(*DeviceType) {
+// GetType gets the type property value. Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
+func (m *MobileAppSupportedDeviceType) GetType()(*DeviceType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -77,14 +77,14 @@ func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(DeviceType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -107,9 +107,9 @@ func (m *MobileAppSupportedDeviceType) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -124,17 +124,25 @@ func (m *MobileAppSupportedDeviceType) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppSupportedDeviceType) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMaximumOperatingSystemVersion sets the maximumOperatingSystemVersion property value. Maximum OS version
 func (m *MobileAppSupportedDeviceType) SetMaximumOperatingSystemVersion(value *string)() {
-    m.maximumOperatingSystemVersion = value
+    if m != nil {
+        m.maximumOperatingSystemVersion = value
+    }
 }
 // SetMinimumOperatingSystemVersion sets the minimumOperatingSystemVersion property value. Minimum OS version
 func (m *MobileAppSupportedDeviceType) SetMinimumOperatingSystemVersion(value *string)() {
-    m.minimumOperatingSystemVersion = value
+    if m != nil {
+        m.minimumOperatingSystemVersion = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
-func (m *MobileAppSupportedDeviceType) SetType_escaped(value *DeviceType)() {
-    m.type_escaped = value
+// SetType sets the type property value. Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
+func (m *MobileAppSupportedDeviceType) SetType(value *DeviceType)() {
+    if m != nil {
+        m.type = value
+    }
 }

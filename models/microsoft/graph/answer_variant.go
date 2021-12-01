@@ -176,25 +176,37 @@ func (m *AnswerVariant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerVariant) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *AnswerVariant) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *AnswerVariant) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLanguageTag sets the languageTag property value. 
 func (m *AnswerVariant) SetLanguageTag(value *string)() {
-    m.languageTag = value
+    if m != nil {
+        m.languageTag = value
+    }
 }
 // SetPlatform sets the platform property value. 
 func (m *AnswerVariant) SetPlatform(value *DevicePlatformType)() {
-    m.platform = value
+    if m != nil {
+        m.platform = value
+    }
 }
 // SetWebUrl sets the webUrl property value. 
 func (m *AnswerVariant) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

@@ -141,17 +141,25 @@ func (m *WindowsPrivacyDataAccessControlItem) Serialize(writer i04eb5309aeaafadd
 }
 // SetAccessLevel sets the accessLevel property value. This indicates an access level for the privacy data category to which the specified application will be given to. Possible values are: notConfigured, forceAllow, forceDeny, userInControl.
 func (m *WindowsPrivacyDataAccessControlItem) SetAccessLevel(value *WindowsPrivacyDataAccessLevel)() {
-    m.accessLevel = value
+    if m != nil {
+        m.accessLevel = value
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
 func (m *WindowsPrivacyDataAccessControlItem) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    if m != nil {
+        m.appDisplayName = value
+    }
 }
 // SetAppPackageFamilyName sets the appPackageFamilyName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
 func (m *WindowsPrivacyDataAccessControlItem) SetAppPackageFamilyName(value *string)() {
-    m.appPackageFamilyName = value
+    if m != nil {
+        m.appPackageFamilyName = value
+    }
 }
 // SetDataCategory sets the dataCategory property value. This indicates a privacy data category to which the specific access control will apply. Possible values are: notConfigured, accountInfo, appsRunInBackground, calendar, callHistory, camera, contacts, diagnosticsInfo, email, location, messaging, microphone, motion, notifications, phone, radios, tasks, syncWithDevices, trustedDevices.
 func (m *WindowsPrivacyDataAccessControlItem) SetDataCategory(value *WindowsPrivacyDataCategory)() {
-    m.dataCategory = value
+    if m != nil {
+        m.dataCategory = value
+    }
 }

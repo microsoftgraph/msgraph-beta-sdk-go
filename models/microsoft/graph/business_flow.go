@@ -267,37 +267,55 @@ func (m *BusinessFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetCustomData sets the customData property value. 
 func (m *BusinessFlow) SetCustomData(value *string)() {
-    m.customData = value
+    if m != nil {
+        m.customData = value
+    }
 }
 // SetDeDuplicationId sets the deDuplicationId property value. 
 func (m *BusinessFlow) SetDeDuplicationId(value *string)() {
-    m.deDuplicationId = value
+    if m != nil {
+        m.deDuplicationId = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *BusinessFlow) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *BusinessFlow) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetPolicy sets the policy property value. 
 func (m *BusinessFlow) SetPolicy(value *GovernancePolicy)() {
-    m.policy = value
+    if m != nil {
+        m.policy = value
+    }
 }
 // SetPolicyTemplateId sets the policyTemplateId property value. 
 func (m *BusinessFlow) SetPolicyTemplateId(value *string)() {
-    m.policyTemplateId = value
+    if m != nil {
+        m.policyTemplateId = value
+    }
 }
 // SetRecordVersion sets the recordVersion property value. 
 func (m *BusinessFlow) SetRecordVersion(value *string)() {
-    m.recordVersion = value
+    if m != nil {
+        m.recordVersion = value
+    }
 }
 // SetSchemaId sets the schemaId property value. 
 func (m *BusinessFlow) SetSchemaId(value *string)() {
-    m.schemaId = value
+    if m != nil {
+        m.schemaId = value
+    }
 }
 // SetSettings sets the settings property value. 
 func (m *BusinessFlow) SetSettings(value *BusinessFlowSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }

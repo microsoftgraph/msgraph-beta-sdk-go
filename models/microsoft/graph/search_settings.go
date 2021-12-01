@@ -79,9 +79,13 @@ func (m *SearchSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSearchResultTemplates sets the searchResultTemplates property value. Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.
 func (m *SearchSettings) SetSearchResultTemplates(value []DisplayTemplate)() {
-    m.searchResultTemplates = value
+    if m != nil {
+        m.searchResultTemplates = value
+    }
 }

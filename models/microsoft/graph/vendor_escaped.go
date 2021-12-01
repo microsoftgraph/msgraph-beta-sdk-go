@@ -537,77 +537,115 @@ func (m *Vendor_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAddress sets the address property value. 
 func (m *Vendor_escaped) SetAddress(value *PostalAddressType)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetBalance sets the balance property value. 
 func (m *Vendor_escaped) SetBalance(value *float64)() {
-    m.balance = value
+    if m != nil {
+        m.balance = value
+    }
 }
 // SetBlocked sets the blocked property value. 
 func (m *Vendor_escaped) SetBlocked(value *string)() {
-    m.blocked = value
+    if m != nil {
+        m.blocked = value
+    }
 }
 // SetCurrency sets the currency property value. 
 func (m *Vendor_escaped) SetCurrency(value *Currency)() {
-    m.currency = value
+    if m != nil {
+        m.currency = value
+    }
 }
 // SetCurrencyCode sets the currencyCode property value. 
 func (m *Vendor_escaped) SetCurrencyCode(value *string)() {
-    m.currencyCode = value
+    if m != nil {
+        m.currencyCode = value
+    }
 }
 // SetCurrencyId sets the currencyId property value. 
 func (m *Vendor_escaped) SetCurrencyId(value *string)() {
-    m.currencyId = value
+    if m != nil {
+        m.currencyId = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *Vendor_escaped) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEmail sets the email property value. 
 func (m *Vendor_escaped) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *Vendor_escaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetNumber sets the number property value. 
 func (m *Vendor_escaped) SetNumber(value *string)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetPaymentMethod sets the paymentMethod property value. 
 func (m *Vendor_escaped) SetPaymentMethod(value *PaymentMethod)() {
-    m.paymentMethod = value
+    if m != nil {
+        m.paymentMethod = value
+    }
 }
 // SetPaymentMethodId sets the paymentMethodId property value. 
 func (m *Vendor_escaped) SetPaymentMethodId(value *string)() {
-    m.paymentMethodId = value
+    if m != nil {
+        m.paymentMethodId = value
+    }
 }
 // SetPaymentTerm sets the paymentTerm property value. 
 func (m *Vendor_escaped) SetPaymentTerm(value *PaymentTerm)() {
-    m.paymentTerm = value
+    if m != nil {
+        m.paymentTerm = value
+    }
 }
 // SetPaymentTermsId sets the paymentTermsId property value. 
 func (m *Vendor_escaped) SetPaymentTermsId(value *string)() {
-    m.paymentTermsId = value
+    if m != nil {
+        m.paymentTermsId = value
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. 
 func (m *Vendor_escaped) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    if m != nil {
+        m.phoneNumber = value
+    }
 }
 // SetPicture sets the picture property value. 
 func (m *Vendor_escaped) SetPicture(value []Picture)() {
-    m.picture = value
+    if m != nil {
+        m.picture = value
+    }
 }
 // SetTaxLiable sets the taxLiable property value. 
 func (m *Vendor_escaped) SetTaxLiable(value *bool)() {
-    m.taxLiable = value
+    if m != nil {
+        m.taxLiable = value
+    }
 }
 // SetTaxRegistrationNumber sets the taxRegistrationNumber property value. 
 func (m *Vendor_escaped) SetTaxRegistrationNumber(value *string)() {
-    m.taxRegistrationNumber = value
+    if m != nil {
+        m.taxRegistrationNumber = value
+    }
 }
 // SetWebsite sets the website property value. 
 func (m *Vendor_escaped) SetWebsite(value *string)() {
-    m.website = value
+    if m != nil {
+        m.website = value
+    }
 }

@@ -12,7 +12,7 @@ type SumIfRequestBody struct {
     // 
     criteria *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
     // 
-    range_escaped *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    range *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
     // 
     sumRange *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
@@ -39,12 +39,12 @@ func (m *SumIfRequestBody) GetCriteria()(*i535684e11b5500196ecb4b5c6634e0651fe2c
         return m.criteria
     }
 }
-// GetRange_escaped gets the range_escaped property value. 
-func (m *SumIfRequestBody) GetRange_escaped()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
+// GetRange gets the range property value. 
+func (m *SumIfRequestBody) GetRange()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
     } else {
-        return m.range_escaped
+        return m.range
     }
 }
 // GetSumRange gets the sumRange property value. 
@@ -68,13 +68,13 @@ func (m *SumIfRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["range_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["range"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewJson() })
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRange_escaped(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+            m.SetRange(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
         }
         return nil
     }
@@ -102,7 +102,7 @@ func (m *SumIfRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
-        err := writer.WriteObjectValue("range_escaped", m.GetRange_escaped())
+        err := writer.WriteObjectValue("range", m.GetRange())
         if err != nil {
             return err
         }
@@ -123,17 +123,25 @@ func (m *SumIfRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SumIfRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCriteria sets the criteria property value. 
 func (m *SumIfRequestBody) SetCriteria(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.criteria = value
+    if m != nil {
+        m.criteria = value
+    }
 }
-// SetRange_escaped sets the range_escaped property value. 
-func (m *SumIfRequestBody) SetRange_escaped(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.range_escaped = value
+// SetRange sets the range property value. 
+func (m *SumIfRequestBody) SetRange(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
+    if m != nil {
+        m.range = value
+    }
 }
 // SetSumRange sets the sumRange property value. 
 func (m *SumIfRequestBody) SetSumRange(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.sumRange = value
+    if m != nil {
+        m.sumRange = value
+    }
 }

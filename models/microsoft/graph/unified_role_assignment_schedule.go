@@ -137,17 +137,25 @@ func (m *UnifiedRoleAssignmentSchedule) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetActivatedUsing sets the activatedUsing property value. If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.
 func (m *UnifiedRoleAssignmentSchedule) SetActivatedUsing(value *UnifiedRoleEligibilitySchedule)() {
-    m.activatedUsing = value
+    if m != nil {
+        m.activatedUsing = value
+    }
 }
 // SetAssignmentType sets the assignmentType property value. Type of the assignment. It can either be Assigned or Activated.
 func (m *UnifiedRoleAssignmentSchedule) SetAssignmentType(value *string)() {
-    m.assignmentType = value
+    if m != nil {
+        m.assignmentType = value
+    }
 }
 // SetMemberType sets the memberType property value. Membership type of the assignment. It can either be Inherited, Direct, or Group.
 func (m *UnifiedRoleAssignmentSchedule) SetMemberType(value *string)() {
-    m.memberType = value
+    if m != nil {
+        m.memberType = value
+    }
 }
 // SetScheduleInfo sets the scheduleInfo property value. The schedule object of the role assignment request.
 func (m *UnifiedRoleAssignmentSchedule) SetScheduleInfo(value *RequestSchedule)() {
-    m.scheduleInfo = value
+    if m != nil {
+        m.scheduleInfo = value
+    }
 }

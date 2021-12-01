@@ -38,7 +38,7 @@ type UserConfigurationRequestBuilderGetOptions struct {
 // UserConfigurationRequestBuilderGetQueryParameters get userConfigurations from users
 type UserConfigurationRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UserConfigurationRequestBuilderPatchOptions options for Patch
 type UserConfigurationRequestBuilderPatchOptions struct {

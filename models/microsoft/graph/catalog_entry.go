@@ -112,13 +112,19 @@ func (m *CatalogEntry) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetDeployableUntilDateTime sets the deployableUntilDateTime property value. The date on which the content is no longer available to deploy using the service. Read-only.
 func (m *CatalogEntry) SetDeployableUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.deployableUntilDateTime = value
+    if m != nil {
+        m.deployableUntilDateTime = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the content. Read-only.
 func (m *CatalogEntry) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetReleaseDateTime sets the releaseDateTime property value. The release date for the content. Read-only.
 func (m *CatalogEntry) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.releaseDateTime = value
+    if m != nil {
+        m.releaseDateTime = value
+    }
 }

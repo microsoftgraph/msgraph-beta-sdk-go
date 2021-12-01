@@ -59,5 +59,7 @@ func (m *DlpEvaluatePoliciesJobResponse) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetResult sets the result property value. 
 func (m *DlpEvaluatePoliciesJobResponse) SetResult(value *DlpPoliciesJobResult)() {
-    m.result = value
+    if m != nil {
+        m.result = value
+    }
 }

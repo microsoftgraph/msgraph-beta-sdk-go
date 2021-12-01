@@ -11,7 +11,7 @@ type SinglePropertySchema struct {
     // 
     name *string;
     // 
-    type_escaped *string;
+    type *string;
 }
 // NewSinglePropertySchema instantiates a new singlePropertySchema and sets the default values.
 func NewSinglePropertySchema()(*SinglePropertySchema) {
@@ -36,12 +36,12 @@ func (m *SinglePropertySchema) GetName()(*string) {
         return m.name
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *SinglePropertySchema) GetType_escaped()(*string) {
+// GetType gets the type property value. 
+func (m *SinglePropertySchema) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -57,13 +57,13 @@ func (m *SinglePropertySchema) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -81,7 +81,7 @@ func (m *SinglePropertySchema) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -96,13 +96,19 @@ func (m *SinglePropertySchema) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SinglePropertySchema) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetName sets the name property value. 
 func (m *SinglePropertySchema) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *SinglePropertySchema) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. 
+func (m *SinglePropertySchema) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }

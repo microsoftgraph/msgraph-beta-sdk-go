@@ -21,7 +21,7 @@ type CloudPcAuditActor struct {
     // Service Principal Name (SPN).
     servicePrincipalName *string;
     // The actor type. Possible values include ItPro, Application, Partner and Unknown.
-    type_escaped *CloudPcAuditActorType;
+    type *CloudPcAuditActorType;
     // Azure AD user ID.
     userId *string;
     // List of user permissions and application permissions when the audit event was performed.
@@ -94,12 +94,12 @@ func (m *CloudPcAuditActor) GetServicePrincipalName()(*string) {
         return m.servicePrincipalName
     }
 }
-// GetType_escaped gets the type_escaped property value. The actor type. Possible values include ItPro, Application, Partner and Unknown.
-func (m *CloudPcAuditActor) GetType_escaped()(*CloudPcAuditActorType) {
+// GetType gets the type property value. The actor type. Possible values include ItPro, Application, Partner and Unknown.
+func (m *CloudPcAuditActor) GetType()(*CloudPcAuditActorType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetUserId gets the userId property value. Azure AD user ID.
@@ -197,14 +197,14 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcAuditActorType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(CloudPcAuditActorType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -299,9 +299,9 @@ func (m *CloudPcAuditActor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -345,49 +345,73 @@ func (m *CloudPcAuditActor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcAuditActor) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicationDisplayName sets the applicationDisplayName property value. Name of the application.
 func (m *CloudPcAuditActor) SetApplicationDisplayName(value *string)() {
-    m.applicationDisplayName = value
+    if m != nil {
+        m.applicationDisplayName = value
+    }
 }
 // SetApplicationId sets the applicationId property value. Azure AD application ID.
 func (m *CloudPcAuditActor) SetApplicationId(value *string)() {
-    m.applicationId = value
+    if m != nil {
+        m.applicationId = value
+    }
 }
 // SetIpAddress sets the ipAddress property value. IP address.
 func (m *CloudPcAuditActor) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    if m != nil {
+        m.ipAddress = value
+    }
 }
 // SetRemoteTenantId sets the remoteTenantId property value. The delegated partner tenant ID.
 func (m *CloudPcAuditActor) SetRemoteTenantId(value *string)() {
-    m.remoteTenantId = value
+    if m != nil {
+        m.remoteTenantId = value
+    }
 }
 // SetRemoteUserId sets the remoteUserId property value. The delegated partner user ID.
 func (m *CloudPcAuditActor) SetRemoteUserId(value *string)() {
-    m.remoteUserId = value
+    if m != nil {
+        m.remoteUserId = value
+    }
 }
 // SetServicePrincipalName sets the servicePrincipalName property value. Service Principal Name (SPN).
 func (m *CloudPcAuditActor) SetServicePrincipalName(value *string)() {
-    m.servicePrincipalName = value
+    if m != nil {
+        m.servicePrincipalName = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The actor type. Possible values include ItPro, Application, Partner and Unknown.
-func (m *CloudPcAuditActor) SetType_escaped(value *CloudPcAuditActorType)() {
-    m.type_escaped = value
+// SetType sets the type property value. The actor type. Possible values include ItPro, Application, Partner and Unknown.
+func (m *CloudPcAuditActor) SetType(value *CloudPcAuditActorType)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetUserId sets the userId property value. Azure AD user ID.
 func (m *CloudPcAuditActor) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }
 // SetUserPermissions sets the userPermissions property value. List of user permissions and application permissions when the audit event was performed.
 func (m *CloudPcAuditActor) SetUserPermissions(value []string)() {
-    m.userPermissions = value
+    if m != nil {
+        m.userPermissions = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name (UPN).
 func (m *CloudPcAuditActor) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetUserRoleScopeTags sets the userRoleScopeTags property value. List of role scope tags.
 func (m *CloudPcAuditActor) SetUserRoleScopeTags(value []CloudPcUserRoleScopeTagInfo)() {
-    m.userRoleScopeTags = value
+    if m != nil {
+        m.userRoleScopeTags = value
+    }
 }

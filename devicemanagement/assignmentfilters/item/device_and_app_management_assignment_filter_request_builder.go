@@ -41,7 +41,7 @@ type DeviceAndAppManagementAssignmentFilterRequestBuilderGetQueryParameters stru
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceAndAppManagementAssignmentFilterRequestBuilderPatchOptions options for Patch
 type DeviceAndAppManagementAssignmentFilterRequestBuilderPatchOptions struct {

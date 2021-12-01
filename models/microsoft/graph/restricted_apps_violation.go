@@ -280,37 +280,55 @@ func (m *RestrictedAppsViolation) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetDeviceConfigurationId sets the deviceConfigurationId property value. Device configuration profile unique identifier, must be Guid
 func (m *RestrictedAppsViolation) SetDeviceConfigurationId(value *string)() {
-    m.deviceConfigurationId = value
+    if m != nil {
+        m.deviceConfigurationId = value
+    }
 }
 // SetDeviceConfigurationName sets the deviceConfigurationName property value. Device configuration profile name
 func (m *RestrictedAppsViolation) SetDeviceConfigurationName(value *string)() {
-    m.deviceConfigurationName = value
+    if m != nil {
+        m.deviceConfigurationName = value
+    }
 }
 // SetDeviceName sets the deviceName property value. Device name
 func (m *RestrictedAppsViolation) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. Managed device unique identifier, must be Guid
 func (m *RestrictedAppsViolation) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    if m != nil {
+        m.managedDeviceId = value
+    }
 }
 // SetPlatformType sets the platformType property value. Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
 func (m *RestrictedAppsViolation) SetPlatformType(value *PolicyPlatformType)() {
-    m.platformType = value
+    if m != nil {
+        m.platformType = value
+    }
 }
 // SetRestrictedApps sets the restrictedApps property value. List of violated restricted apps
 func (m *RestrictedAppsViolation) SetRestrictedApps(value []ManagedDeviceReportedApp)() {
-    m.restrictedApps = value
+    if m != nil {
+        m.restrictedApps = value
+    }
 }
 // SetRestrictedAppsState sets the restrictedAppsState property value. Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.
 func (m *RestrictedAppsViolation) SetRestrictedAppsState(value *RestrictedAppsState)() {
-    m.restrictedAppsState = value
+    if m != nil {
+        m.restrictedAppsState = value
+    }
 }
 // SetUserId sets the userId property value. User unique identifier, must be Guid
 func (m *RestrictedAppsViolation) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }
 // SetUserName sets the userName property value. User name
 func (m *RestrictedAppsViolation) SetUserName(value *string)() {
-    m.userName = value
+    if m != nil {
+        m.userName = value
+    }
 }

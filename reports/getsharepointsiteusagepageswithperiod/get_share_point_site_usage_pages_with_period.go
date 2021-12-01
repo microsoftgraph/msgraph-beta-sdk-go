@@ -164,21 +164,31 @@ func (m *GetSharePointSiteUsagePagesWithPeriod) Serialize(writer i04eb5309aeaafa
 }
 // SetPageViewCount sets the pageViewCount property value. 
 func (m *GetSharePointSiteUsagePagesWithPeriod) SetPageViewCount(value *int64)() {
-    m.pageViewCount = value
+    if m != nil {
+        m.pageViewCount = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetSharePointSiteUsagePagesWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSharePointSiteUsagePagesWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSharePointSiteUsagePagesWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetSiteType sets the siteType property value. 
 func (m *GetSharePointSiteUsagePagesWithPeriod) SetSiteType(value *string)() {
-    m.siteType = value
+    if m != nil {
+        m.siteType = value
+    }
 }

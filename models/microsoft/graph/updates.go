@@ -129,13 +129,19 @@ func (m *Updates) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetCatalog sets the catalog property value. Catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *Updates) SetCatalog(value *Catalog)() {
-    m.catalog = value
+    if m != nil {
+        m.catalog = value
+    }
 }
 // SetDeployments sets the deployments property value. Deployments created using the deployment service. Read-only.
 func (m *Updates) SetDeployments(value []Deployment)() {
-    m.deployments = value
+    if m != nil {
+        m.deployments = value
+    }
 }
 // SetUpdatableAssets sets the updatableAssets property value. Assets registered with the deployment service that can receive updates. Read-only.
 func (m *Updates) SetUpdatableAssets(value []UpdatableAsset)() {
-    m.updatableAssets = value
+    if m != nil {
+        m.updatableAssets = value
+    }
 }

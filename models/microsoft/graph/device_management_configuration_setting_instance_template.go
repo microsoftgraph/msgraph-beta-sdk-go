@@ -122,17 +122,25 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) Serialize(writer 
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsRequired sets the isRequired property value. Indicates if a policy must specify this setting.
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetIsRequired(value *bool)() {
-    m.isRequired = value
+    if m != nil {
+        m.isRequired = value
+    }
 }
 // SetSettingDefinitionId sets the settingDefinitionId property value. Setting Definition Id
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetSettingDefinitionId(value *string)() {
-    m.settingDefinitionId = value
+    if m != nil {
+        m.settingDefinitionId = value
+    }
 }
 // SetSettingInstanceTemplateId sets the settingInstanceTemplateId property value. Setting Instance Template Id
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetSettingInstanceTemplateId(value *string)() {
-    m.settingInstanceTemplateId = value
+    if m != nil {
+        m.settingInstanceTemplateId = value
+    }
 }

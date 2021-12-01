@@ -15,7 +15,7 @@ type AttributeMappingSource struct {
     // 
     parameters []StringKeyAttributeMappingSourceValuePair;
     // 
-    type_escaped *AttributeMappingSourceType;
+    type *AttributeMappingSourceType;
 }
 // NewAttributeMappingSource instantiates a new attributeMappingSource and sets the default values.
 func NewAttributeMappingSource()(*AttributeMappingSource) {
@@ -56,12 +56,12 @@ func (m *AttributeMappingSource) GetParameters()([]StringKeyAttributeMappingSour
         return m.parameters
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *AttributeMappingSource) GetType_escaped()(*AttributeMappingSourceType) {
+// GetType gets the type property value. 
+func (m *AttributeMappingSource) GetType()(*AttributeMappingSourceType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -101,14 +101,14 @@ func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttributeMappingSourceType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(AttributeMappingSourceType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -142,9 +142,9 @@ func (m *AttributeMappingSource) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -159,21 +159,31 @@ func (m *AttributeMappingSource) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeMappingSource) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExpression sets the expression property value. 
 func (m *AttributeMappingSource) SetExpression(value *string)() {
-    m.expression = value
+    if m != nil {
+        m.expression = value
+    }
 }
 // SetName sets the name property value. 
 func (m *AttributeMappingSource) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetParameters sets the parameters property value. 
 func (m *AttributeMappingSource) SetParameters(value []StringKeyAttributeMappingSourceValuePair)() {
-    m.parameters = value
+    if m != nil {
+        m.parameters = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *AttributeMappingSource) SetType_escaped(value *AttributeMappingSourceType)() {
-    m.type_escaped = value
+// SetType sets the type property value. 
+func (m *AttributeMappingSource) SetType(value *AttributeMappingSourceType)() {
+    if m != nil {
+        m.type = value
+    }
 }

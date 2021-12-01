@@ -114,13 +114,19 @@ func (m *TrustFramework) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TrustFramework) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetKeySets sets the keySets property value. 
 func (m *TrustFramework) SetKeySets(value []TrustFrameworkKeySet)() {
-    m.keySets = value
+    if m != nil {
+        m.keySets = value
+    }
 }
 // SetPolicies sets the policies property value. 
 func (m *TrustFramework) SetPolicies(value []TrustFrameworkPolicy)() {
-    m.policies = value
+    if m != nil {
+        m.policies = value
+    }
 }

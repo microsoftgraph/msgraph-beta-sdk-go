@@ -164,21 +164,31 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriod) Serialize(writer i04eb5
 }
 // SetActive sets the active property value. The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
 func (m *GetOffice365GroupsActivityFileCountsWithPeriod) SetActive(value *int64)() {
-    m.active = value
+    if m != nil {
+        m.active = value
+    }
 }
 // SetReportDate sets the reportDate property value. The date on which a number of files were active in the group's SharePoint site.
 func (m *GetOffice365GroupsActivityFileCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. The number of days the report covers.
 func (m *GetOffice365GroupsActivityFileCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *GetOffice365GroupsActivityFileCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetTotal sets the total property value. The total number of files in the group's SharePoint document library.
 func (m *GetOffice365GroupsActivityFileCountsWithPeriod) SetTotal(value *int64)() {
-    m.total = value
+    if m != nil {
+        m.total = value
+    }
 }

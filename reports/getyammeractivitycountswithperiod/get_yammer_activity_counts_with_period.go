@@ -190,25 +190,37 @@ func (m *GetYammerActivityCountsWithPeriod) Serialize(writer i04eb5309aeaafadd28
 }
 // SetLiked sets the liked property value. 
 func (m *GetYammerActivityCountsWithPeriod) SetLiked(value *int64)() {
-    m.liked = value
+    if m != nil {
+        m.liked = value
+    }
 }
 // SetPosted sets the posted property value. 
 func (m *GetYammerActivityCountsWithPeriod) SetPosted(value *int64)() {
-    m.posted = value
+    if m != nil {
+        m.posted = value
+    }
 }
 // SetRead sets the read property value. 
 func (m *GetYammerActivityCountsWithPeriod) SetRead(value *int64)() {
-    m.read = value
+    if m != nil {
+        m.read = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetYammerActivityCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetYammerActivityCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetYammerActivityCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }

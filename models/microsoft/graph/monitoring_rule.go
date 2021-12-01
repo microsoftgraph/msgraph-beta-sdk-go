@@ -127,17 +127,25 @@ func (m *MonitoringRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAction sets the action property value. The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
 func (m *MonitoringRule) SetAction(value *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.MonitoringAction)() {
-    m.action = value
+    if m != nil {
+        m.action = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MonitoringRule) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSignal sets the signal property value. The signal to monitor. Possible values are: rollback, unknownFutureValue.
 func (m *MonitoringRule) SetSignal(value *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.MonitoringSignal)() {
-    m.signal = value
+    if m != nil {
+        m.signal = value
+    }
 }
 // SetThreshold sets the threshold property value. The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
 func (m *MonitoringRule) SetThreshold(value *int32)() {
-    m.threshold = value
+    if m != nil {
+        m.threshold = value
+    }
 }

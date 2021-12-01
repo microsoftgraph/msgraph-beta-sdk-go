@@ -98,13 +98,19 @@ func (m *UserRegistrationFeatureCount) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserRegistrationFeatureCount) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFeature sets the feature property value. Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication. Possible values are: ssprRegistered, ssprEnabled, ssprCapable, passwordlessCapable, mfaCapable.
 func (m *UserRegistrationFeatureCount) SetFeature(value *AuthenticationMethodFeature)() {
-    m.feature = value
+    if m != nil {
+        m.feature = value
+    }
 }
 // SetUserCount sets the userCount property value. Number of users.
 func (m *UserRegistrationFeatureCount) SetUserCount(value *int64)() {
-    m.userCount = value
+    if m != nil {
+        m.userCount = value
+    }
 }

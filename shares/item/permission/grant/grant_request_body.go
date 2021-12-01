@@ -110,13 +110,19 @@ func (m *GrantRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GrantRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRecipients sets the recipients property value. 
 func (m *GrantRequestBody) SetRecipients(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipient)() {
-    m.recipients = value
+    if m != nil {
+        m.recipients = value
+    }
 }
 // SetRoles sets the roles property value. 
 func (m *GrantRequestBody) SetRoles(value []string)() {
-    m.roles = value
+    if m != nil {
+        m.roles = value
+    }
 }

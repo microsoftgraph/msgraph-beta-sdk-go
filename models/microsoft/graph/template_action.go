@@ -209,29 +209,43 @@ func (m *TemplateAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TemplateAction) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *TemplateAction) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *TemplateAction) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLicenses sets the licenses property value. 
 func (m *TemplateAction) SetLicenses(value *LicenseDetails)() {
-    m.licenses = value
+    if m != nil {
+        m.licenses = value
+    }
 }
 // SetService sets the service property value. 
 func (m *TemplateAction) SetService(value *string)() {
-    m.service = value
+    if m != nil {
+        m.service = value
+    }
 }
 // SetSettings sets the settings property value. 
 func (m *TemplateAction) SetSettings(value []Setting)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }
 // SetTemplateActionId sets the templateActionId property value. 
 func (m *TemplateAction) SetTemplateActionId(value *string)() {
-    m.templateActionId = value
+    if m != nil {
+        m.templateActionId = value
+    }
 }

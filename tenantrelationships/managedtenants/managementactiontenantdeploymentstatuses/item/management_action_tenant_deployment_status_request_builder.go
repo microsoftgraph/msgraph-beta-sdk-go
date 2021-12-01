@@ -40,7 +40,7 @@ type ManagementActionTenantDeploymentStatusRequestBuilderGetQueryParameters stru
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ManagementActionTenantDeploymentStatusRequestBuilderPatchOptions options for Patch
 type ManagementActionTenantDeploymentStatusRequestBuilderPatchOptions struct {

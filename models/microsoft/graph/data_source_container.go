@@ -193,25 +193,37 @@ func (m *DataSourceContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetCreatedDateTime sets the createdDateTime property value. Created date and time of the dataSourceContainer entity.
 func (m *DataSourceContainer) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the dataSourceContainer entity.
 func (m *DataSourceContainer) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastIndexOperation sets the lastIndexOperation property value. 
 func (m *DataSourceContainer) SetLastIndexOperation(value *CaseIndexOperation)() {
-    m.lastIndexOperation = value
+    if m != nil {
+        m.lastIndexOperation = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified date and time of the dataSourceContainer.
 func (m *DataSourceContainer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetReleasedDateTime sets the releasedDateTime property value. Date and time that the dataSourceContainer was released from the case.
 func (m *DataSourceContainer) SetReleasedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.releasedDateTime = value
+    if m != nil {
+        m.releasedDateTime = value
+    }
 }
 // SetStatus sets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
 func (m *DataSourceContainer) SetStatus(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceContainerStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

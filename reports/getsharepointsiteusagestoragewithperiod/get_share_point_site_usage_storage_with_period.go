@@ -164,21 +164,31 @@ func (m *GetSharePointSiteUsageStorageWithPeriod) Serialize(writer i04eb5309aeaa
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetSharePointSiteUsageStorageWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSharePointSiteUsageStorageWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSharePointSiteUsageStorageWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetSiteType sets the siteType property value. 
 func (m *GetSharePointSiteUsageStorageWithPeriod) SetSiteType(value *string)() {
-    m.siteType = value
+    if m != nil {
+        m.siteType = value
+    }
 }
 // SetStorageUsedInBytes sets the storageUsedInBytes property value. 
 func (m *GetSharePointSiteUsageStorageWithPeriod) SetStorageUsedInBytes(value *int64)() {
-    m.storageUsedInBytes = value
+    if m != nil {
+        m.storageUsedInBytes = value
+    }
 }

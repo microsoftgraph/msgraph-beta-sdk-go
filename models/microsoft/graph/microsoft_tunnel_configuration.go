@@ -401,53 +401,79 @@ func (m *MicrosoftTunnelConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdvancedSettings sets the advancedSettings property value. Additional settings that may be applied to the server
 func (m *MicrosoftTunnelConfiguration) SetAdvancedSettings(value []KeyValuePair)() {
-    m.advancedSettings = value
+    if m != nil {
+        m.advancedSettings = value
+    }
 }
 // SetDefaultDomainSuffix sets the defaultDomainSuffix property value. The Default Domain appendix that will be used by the clients
 func (m *MicrosoftTunnelConfiguration) SetDefaultDomainSuffix(value *string)() {
-    m.defaultDomainSuffix = value
+    if m != nil {
+        m.defaultDomainSuffix = value
+    }
 }
 // SetDescription sets the description property value. The MicrosoftTunnelConfiguration's description
 func (m *MicrosoftTunnelConfiguration) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisableUDPConnections sets the disableUDPConnections property value. When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
 func (m *MicrosoftTunnelConfiguration) SetDisableUDPConnections(value *bool)() {
-    m.disableUDPConnections = value
+    if m != nil {
+        m.disableUDPConnections = value
+    }
 }
 // SetDisplayName sets the displayName property value. The MicrosoftTunnelConfiguration's display name
 func (m *MicrosoftTunnelConfiguration) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetDnsServers sets the dnsServers property value. The DNS servers that will be used by the clients
 func (m *MicrosoftTunnelConfiguration) SetDnsServers(value []string)() {
-    m.dnsServers = value
+    if m != nil {
+        m.dnsServers = value
+    }
 }
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. When the MicrosoftTunnelConfiguration was last updated
 func (m *MicrosoftTunnelConfiguration) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdateDateTime = value
+    if m != nil {
+        m.lastUpdateDateTime = value
+    }
 }
 // SetListenPort sets the listenPort property value. The port that both TCP and UPD will listen over on the server
 func (m *MicrosoftTunnelConfiguration) SetListenPort(value *int32)() {
-    m.listenPort = value
+    if m != nil {
+        m.listenPort = value
+    }
 }
 // SetNetwork sets the network property value. The subnet that will be used to allocate virtual address for the clients
 func (m *MicrosoftTunnelConfiguration) SetNetwork(value *string)() {
-    m.network = value
+    if m != nil {
+        m.network = value
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *MicrosoftTunnelConfiguration) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    if m != nil {
+        m.roleScopeTagIds = value
+    }
 }
 // SetRoutesExclude sets the routesExclude property value. Subsets of the routes that will not be routed by the server
 func (m *MicrosoftTunnelConfiguration) SetRoutesExclude(value []string)() {
-    m.routesExclude = value
+    if m != nil {
+        m.routesExclude = value
+    }
 }
 // SetRoutesInclude sets the routesInclude property value. The routs that will be routed by the server
 func (m *MicrosoftTunnelConfiguration) SetRoutesInclude(value []string)() {
-    m.routesInclude = value
+    if m != nil {
+        m.routesInclude = value
+    }
 }
 // SetSplitDNS sets the splitDNS property value. The domains that will be resolved using the provided dns servers
 func (m *MicrosoftTunnelConfiguration) SetSplitDNS(value []string)() {
-    m.splitDNS = value
+    if m != nil {
+        m.splitDNS = value
+    }
 }

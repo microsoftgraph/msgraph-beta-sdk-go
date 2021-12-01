@@ -176,25 +176,37 @@ func (m *UserTrainingEventInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserTrainingEventInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the training.
 func (m *UserTrainingEventInfo) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLatestTrainingStatus sets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
 func (m *UserTrainingEventInfo) SetLatestTrainingStatus(value *TrainingStatus)() {
-    m.latestTrainingStatus = value
+    if m != nil {
+        m.latestTrainingStatus = value
+    }
 }
 // SetTrainingAssignedProperties sets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.
 func (m *UserTrainingEventInfo) SetTrainingAssignedProperties(value *UserTrainingContentEventInfo)() {
-    m.trainingAssignedProperties = value
+    if m != nil {
+        m.trainingAssignedProperties = value
+    }
 }
 // SetTrainingCompletedProperties sets the trainingCompletedProperties property value. Event details of the training when it was completed by the user.
 func (m *UserTrainingEventInfo) SetTrainingCompletedProperties(value *UserTrainingContentEventInfo)() {
-    m.trainingCompletedProperties = value
+    if m != nil {
+        m.trainingCompletedProperties = value
+    }
 }
 // SetTrainingUpdatedProperties sets the trainingUpdatedProperties property value. Event details of the training when it was updated/in-progress by the user.
 func (m *UserTrainingEventInfo) SetTrainingUpdatedProperties(value *UserTrainingContentEventInfo)() {
-    m.trainingUpdatedProperties = value
+    if m != nil {
+        m.trainingUpdatedProperties = value
+    }
 }

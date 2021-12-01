@@ -52,7 +52,7 @@ type DataClassificationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DataClassificationRequestBuilderPatchOptions options for Patch
 type DataClassificationRequestBuilderPatchOptions struct {

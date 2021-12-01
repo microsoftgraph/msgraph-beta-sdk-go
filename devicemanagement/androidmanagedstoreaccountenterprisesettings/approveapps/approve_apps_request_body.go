@@ -100,13 +100,19 @@ func (m *ApproveAppsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApproveAppsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApproveAllPermissions sets the approveAllPermissions property value. 
 func (m *ApproveAppsRequestBody) SetApproveAllPermissions(value *bool)() {
-    m.approveAllPermissions = value
+    if m != nil {
+        m.approveAllPermissions = value
+    }
 }
 // SetPackageIds sets the packageIds property value. 
 func (m *ApproveAppsRequestBody) SetPackageIds(value []string)() {
-    m.packageIds = value
+    if m != nil {
+        m.packageIds = value
+    }
 }

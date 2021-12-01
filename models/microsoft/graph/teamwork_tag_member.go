@@ -111,13 +111,19 @@ func (m *TeamworkTagMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetDisplayName sets the displayName property value. The member's display name.
 func (m *TeamworkTagMember) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetTenantId sets the tenantId property value. 
 func (m *TeamworkTagMember) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }
 // SetUserId sets the userId property value. 
 func (m *TeamworkTagMember) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

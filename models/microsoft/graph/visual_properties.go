@@ -96,13 +96,19 @@ func (m *VisualProperties) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VisualProperties) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBody sets the body property value. The body of a visual user notification. Body is optional.
 func (m *VisualProperties) SetBody(value *string)() {
-    m.body = value
+    if m != nil {
+        m.body = value
+    }
 }
 // SetTitle sets the title property value. The title of a visual user notification. This field is required for visual notification payloads.
 func (m *VisualProperties) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }

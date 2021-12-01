@@ -40,7 +40,7 @@ type UserAccountInformationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UserAccountInformationRequestBuilderPatchOptions options for Patch
 type UserAccountInformationRequestBuilderPatchOptions struct {

@@ -293,41 +293,61 @@ func (m *AgedAccountsPayable) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAgedAsOfDate sets the agedAsOfDate property value. 
 func (m *AgedAccountsPayable) SetAgedAsOfDate(value *string)() {
-    m.agedAsOfDate = value
+    if m != nil {
+        m.agedAsOfDate = value
+    }
 }
 // SetBalanceDue sets the balanceDue property value. 
 func (m *AgedAccountsPayable) SetBalanceDue(value *float64)() {
-    m.balanceDue = value
+    if m != nil {
+        m.balanceDue = value
+    }
 }
 // SetCurrencyCode sets the currencyCode property value. 
 func (m *AgedAccountsPayable) SetCurrencyCode(value *string)() {
-    m.currencyCode = value
+    if m != nil {
+        m.currencyCode = value
+    }
 }
 // SetCurrentAmount sets the currentAmount property value. 
 func (m *AgedAccountsPayable) SetCurrentAmount(value *float64)() {
-    m.currentAmount = value
+    if m != nil {
+        m.currentAmount = value
+    }
 }
 // SetName sets the name property value. 
 func (m *AgedAccountsPayable) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetPeriod1Amount sets the period1Amount property value. 
 func (m *AgedAccountsPayable) SetPeriod1Amount(value *float64)() {
-    m.period1Amount = value
+    if m != nil {
+        m.period1Amount = value
+    }
 }
 // SetPeriod2Amount sets the period2Amount property value. 
 func (m *AgedAccountsPayable) SetPeriod2Amount(value *float64)() {
-    m.period2Amount = value
+    if m != nil {
+        m.period2Amount = value
+    }
 }
 // SetPeriod3Amount sets the period3Amount property value. 
 func (m *AgedAccountsPayable) SetPeriod3Amount(value *float64)() {
-    m.period3Amount = value
+    if m != nil {
+        m.period3Amount = value
+    }
 }
 // SetPeriodLengthFilter sets the periodLengthFilter property value. 
 func (m *AgedAccountsPayable) SetPeriodLengthFilter(value *string)() {
-    m.periodLengthFilter = value
+    if m != nil {
+        m.periodLengthFilter = value
+    }
 }
 // SetVendorNumber sets the vendorNumber property value. 
 func (m *AgedAccountsPayable) SetVendorNumber(value *string)() {
-    m.vendorNumber = value
+    if m != nil {
+        m.vendorNumber = value
+    }
 }

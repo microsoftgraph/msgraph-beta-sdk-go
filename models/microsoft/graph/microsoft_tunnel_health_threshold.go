@@ -137,17 +137,25 @@ func (m *MicrosoftTunnelHealthThreshold) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetDefaultHealthyThreshold sets the defaultHealthyThreshold property value. The default threshold for being healthy
 func (m *MicrosoftTunnelHealthThreshold) SetDefaultHealthyThreshold(value *int64)() {
-    m.defaultHealthyThreshold = value
+    if m != nil {
+        m.defaultHealthyThreshold = value
+    }
 }
 // SetDefaultUnhealthyThreshold sets the defaultUnhealthyThreshold property value. The default threshold for being unhealthy
 func (m *MicrosoftTunnelHealthThreshold) SetDefaultUnhealthyThreshold(value *int64)() {
-    m.defaultUnhealthyThreshold = value
+    if m != nil {
+        m.defaultUnhealthyThreshold = value
+    }
 }
 // SetHealthyThreshold sets the healthyThreshold property value. The threshold for being healthy
 func (m *MicrosoftTunnelHealthThreshold) SetHealthyThreshold(value *int64)() {
-    m.healthyThreshold = value
+    if m != nil {
+        m.healthyThreshold = value
+    }
 }
 // SetUnhealthyThreshold sets the unhealthyThreshold property value. The threshold for being unhealthy
 func (m *MicrosoftTunnelHealthThreshold) SetUnhealthyThreshold(value *int64)() {
-    m.unhealthyThreshold = value
+    if m != nil {
+        m.unhealthyThreshold = value
+    }
 }

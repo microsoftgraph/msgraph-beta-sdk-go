@@ -567,81 +567,121 @@ func (m *GroupPolicySettingMapping) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdmxSettingDefinitionId sets the admxSettingDefinitionId property value. Admx Group Policy Id
 func (m *GroupPolicySettingMapping) SetAdmxSettingDefinitionId(value *string)() {
-    m.admxSettingDefinitionId = value
+    if m != nil {
+        m.admxSettingDefinitionId = value
+    }
 }
 // SetChildIdList sets the childIdList property value. List of Child Ids of the group policy setting.
 func (m *GroupPolicySettingMapping) SetChildIdList(value []string)() {
-    m.childIdList = value
+    if m != nil {
+        m.childIdList = value
+    }
 }
 // SetIntuneSettingDefinitionId sets the intuneSettingDefinitionId property value. The Intune Setting Definition Id
 func (m *GroupPolicySettingMapping) SetIntuneSettingDefinitionId(value *string)() {
-    m.intuneSettingDefinitionId = value
+    if m != nil {
+        m.intuneSettingDefinitionId = value
+    }
 }
 // SetIntuneSettingUriList sets the intuneSettingUriList property value. The list of Intune Setting URIs this group policy setting maps to
 func (m *GroupPolicySettingMapping) SetIntuneSettingUriList(value []string)() {
-    m.intuneSettingUriList = value
+    if m != nil {
+        m.intuneSettingUriList = value
+    }
 }
 // SetIsMdmSupported sets the isMdmSupported property value. Indicates if the setting is supported by Intune or not
 func (m *GroupPolicySettingMapping) SetIsMdmSupported(value *bool)() {
-    m.isMdmSupported = value
+    if m != nil {
+        m.isMdmSupported = value
+    }
 }
 // SetMdmCspName sets the mdmCspName property value. The CSP name this group policy setting maps to.
 func (m *GroupPolicySettingMapping) SetMdmCspName(value *string)() {
-    m.mdmCspName = value
+    if m != nil {
+        m.mdmCspName = value
+    }
 }
 // SetMdmMinimumOSVersion sets the mdmMinimumOSVersion property value. The minimum OS version this mdm setting supports.
 func (m *GroupPolicySettingMapping) SetMdmMinimumOSVersion(value *int32)() {
-    m.mdmMinimumOSVersion = value
+    if m != nil {
+        m.mdmMinimumOSVersion = value
+    }
 }
 // SetMdmSettingUri sets the mdmSettingUri property value. The MDM CSP URI this group policy setting maps to.
 func (m *GroupPolicySettingMapping) SetMdmSettingUri(value *string)() {
-    m.mdmSettingUri = value
+    if m != nil {
+        m.mdmSettingUri = value
+    }
 }
 // SetMdmSupportedState sets the mdmSupportedState property value. Indicates if the setting is supported in Mdm or not. Possible values are: unknown, supported, unsupported, deprecated.
 func (m *GroupPolicySettingMapping) SetMdmSupportedState(value *MdmSupportedState)() {
-    m.mdmSupportedState = value
+    if m != nil {
+        m.mdmSupportedState = value
+    }
 }
 // SetParentId sets the parentId property value. Parent Id of the group policy setting.
 func (m *GroupPolicySettingMapping) SetParentId(value *string)() {
-    m.parentId = value
+    if m != nil {
+        m.parentId = value
+    }
 }
 // SetSettingCategory sets the settingCategory property value. The category the group policy setting is in.
 func (m *GroupPolicySettingMapping) SetSettingCategory(value *string)() {
-    m.settingCategory = value
+    if m != nil {
+        m.settingCategory = value
+    }
 }
 // SetSettingDisplayName sets the settingDisplayName property value. The display name of this group policy setting.
 func (m *GroupPolicySettingMapping) SetSettingDisplayName(value *string)() {
-    m.settingDisplayName = value
+    if m != nil {
+        m.settingDisplayName = value
+    }
 }
 // SetSettingDisplayValue sets the settingDisplayValue property value. The display value of this group policy setting.
 func (m *GroupPolicySettingMapping) SetSettingDisplayValue(value *string)() {
-    m.settingDisplayValue = value
+    if m != nil {
+        m.settingDisplayValue = value
+    }
 }
 // SetSettingDisplayValueType sets the settingDisplayValueType property value. The display value type of this group policy setting.
 func (m *GroupPolicySettingMapping) SetSettingDisplayValueType(value *string)() {
-    m.settingDisplayValueType = value
+    if m != nil {
+        m.settingDisplayValueType = value
+    }
 }
 // SetSettingName sets the settingName property value. The name of this group policy setting.
 func (m *GroupPolicySettingMapping) SetSettingName(value *string)() {
-    m.settingName = value
+    if m != nil {
+        m.settingName = value
+    }
 }
 // SetSettingScope sets the settingScope property value. The scope of the setting. Possible values are: unknown, device, user.
 func (m *GroupPolicySettingMapping) SetSettingScope(value *GroupPolicySettingScope)() {
-    m.settingScope = value
+    if m != nil {
+        m.settingScope = value
+    }
 }
 // SetSettingType sets the settingType property value. The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings.
 func (m *GroupPolicySettingMapping) SetSettingType(value *GroupPolicySettingType)() {
-    m.settingType = value
+    if m != nil {
+        m.settingType = value
+    }
 }
 // SetSettingValue sets the settingValue property value. The value of this group policy setting.
 func (m *GroupPolicySettingMapping) SetSettingValue(value *string)() {
-    m.settingValue = value
+    if m != nil {
+        m.settingValue = value
+    }
 }
 // SetSettingValueDisplayUnits sets the settingValueDisplayUnits property value. The display units of this group policy setting value
 func (m *GroupPolicySettingMapping) SetSettingValueDisplayUnits(value *string)() {
-    m.settingValueDisplayUnits = value
+    if m != nil {
+        m.settingValueDisplayUnits = value
+    }
 }
 // SetSettingValueType sets the settingValueType property value. The value type of this group policy setting.
 func (m *GroupPolicySettingMapping) SetSettingValueType(value *string)() {
-    m.settingValueType = value
+    if m != nil {
+        m.settingValueType = value
+    }
 }

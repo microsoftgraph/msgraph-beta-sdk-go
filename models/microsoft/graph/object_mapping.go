@@ -272,37 +272,55 @@ func (m *ObjectMapping) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ObjectMapping) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttributeMappings sets the attributeMappings property value. Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
 func (m *ObjectMapping) SetAttributeMappings(value []AttributeMapping)() {
-    m.attributeMappings = value
+    if m != nil {
+        m.attributeMappings = value
+    }
 }
 // SetEnabled sets the enabled property value. When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
 func (m *ObjectMapping) SetEnabled(value *bool)() {
-    m.enabled = value
+    if m != nil {
+        m.enabled = value
+    }
 }
 // SetFlowTypes sets the flowTypes property value. Which flow types are enabled for this object mapping. Add creates new objects in the target directory, Update modifies existing objects, and Delete deprovisions existing users. The default is Add, Update, Delete.
 func (m *ObjectMapping) SetFlowTypes(value *ObjectFlowTypes)() {
-    m.flowTypes = value
+    if m != nil {
+        m.flowTypes = value
+    }
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
 func (m *ObjectMapping) SetMetadata(value []MetadataEntry)() {
-    m.metadata = value
+    if m != nil {
+        m.metadata = value
+    }
 }
 // SetName sets the name property value. Human-friendly name of the object mapping.
 func (m *ObjectMapping) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetScope sets the scope property value. Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
 func (m *ObjectMapping) SetScope(value *Filter)() {
-    m.scope = value
+    if m != nil {
+        m.scope = value
+    }
 }
 // SetSourceObjectName sets the sourceObjectName property value. Name of the object in the source directory. Must match the object name from the source directory definition.
 func (m *ObjectMapping) SetSourceObjectName(value *string)() {
-    m.sourceObjectName = value
+    if m != nil {
+        m.sourceObjectName = value
+    }
 }
 // SetTargetObjectName sets the targetObjectName property value. Name of the object in target directory. Must match the object name from the target directory definition.
 func (m *ObjectMapping) SetTargetObjectName(value *string)() {
-    m.targetObjectName = value
+    if m != nil {
+        m.targetObjectName = value
+    }
 }

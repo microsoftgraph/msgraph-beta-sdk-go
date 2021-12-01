@@ -138,13 +138,19 @@ func (m *Synchronization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetJobs sets the jobs property value. 
 func (m *Synchronization) SetJobs(value []SynchronizationJob)() {
-    m.jobs = value
+    if m != nil {
+        m.jobs = value
+    }
 }
 // SetSecrets sets the secrets property value. 
 func (m *Synchronization) SetSecrets(value []SynchronizationSecretKeyStringValuePair)() {
-    m.secrets = value
+    if m != nil {
+        m.secrets = value
+    }
 }
 // SetTemplates sets the templates property value. 
 func (m *Synchronization) SetTemplates(value []SynchronizationTemplate)() {
-    m.templates = value
+    if m != nil {
+        m.templates = value
+    }
 }

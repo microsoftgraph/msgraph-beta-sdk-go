@@ -47,7 +47,7 @@ type SourceCollectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // SourceCollectionRequestBuilderPatchOptions options for Patch
 type SourceCollectionRequestBuilderPatchOptions struct {

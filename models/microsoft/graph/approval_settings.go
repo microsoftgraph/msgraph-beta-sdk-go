@@ -183,25 +183,37 @@ func (m *ApprovalSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApprovalSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApprovalMode sets the approvalMode property value. One of NoApproval, SingleStage or Serial. The NoApproval is used when isApprovalRequired is false.
 func (m *ApprovalSettings) SetApprovalMode(value *string)() {
-    m.approvalMode = value
+    if m != nil {
+        m.approvalMode = value
+    }
 }
 // SetApprovalStages sets the approvalStages property value. If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
 func (m *ApprovalSettings) SetApprovalStages(value []ApprovalStage)() {
-    m.approvalStages = value
+    if m != nil {
+        m.approvalStages = value
+    }
 }
 // SetIsApprovalRequired sets the isApprovalRequired property value. If false, then approval is not required for requests in this policy.
 func (m *ApprovalSettings) SetIsApprovalRequired(value *bool)() {
-    m.isApprovalRequired = value
+    if m != nil {
+        m.isApprovalRequired = value
+    }
 }
 // SetIsApprovalRequiredForExtension sets the isApprovalRequiredForExtension property value. If false, then approval is not required for a user who already has an assignment to extend their assignment.
 func (m *ApprovalSettings) SetIsApprovalRequiredForExtension(value *bool)() {
-    m.isApprovalRequiredForExtension = value
+    if m != nil {
+        m.isApprovalRequiredForExtension = value
+    }
 }
 // SetIsRequestorJustificationRequired sets the isRequestorJustificationRequired property value. Indicates whether the requestor is required to supply a justification in their request.
 func (m *ApprovalSettings) SetIsRequestorJustificationRequired(value *bool)() {
-    m.isRequestorJustificationRequired = value
+    if m != nil {
+        m.isRequestorJustificationRequired = value
+    }
 }

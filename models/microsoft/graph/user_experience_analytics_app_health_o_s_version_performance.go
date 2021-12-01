@@ -189,25 +189,37 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) Serialize(writer 
 }
 // SetActiveDeviceCount sets the activeDeviceCount property value. The number of active devices for the OS version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetActiveDeviceCount(value *int32)() {
-    m.activeDeviceCount = value
+    if m != nil {
+        m.activeDeviceCount = value
+    }
 }
 // SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the OS version in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetMeanTimeToFailureInMinutes(value *int32)() {
-    m.meanTimeToFailureInMinutes = value
+    if m != nil {
+        m.meanTimeToFailureInMinutes = value
+    }
 }
 // SetOsBuildNumber sets the osBuildNumber property value. The OS build number installed on the device.
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsBuildNumber(value *string)() {
-    m.osBuildNumber = value
+    if m != nil {
+        m.osBuildNumber = value
+    }
 }
 // SetOsVersion sets the osVersion property value. The OS version installed on the device.
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsVersion(value *string)() {
-    m.osVersion = value
+    if m != nil {
+        m.osVersion = value
+    }
 }
 // SetOsVersionAppHealthScore sets the osVersionAppHealthScore property value. The app health score of the OS version. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsVersionAppHealthScore(value *float64)() {
-    m.osVersionAppHealthScore = value
+    if m != nil {
+        m.osVersionAppHealthScore = value
+    }
 }
 // SetOsVersionAppHealthStatus sets the osVersionAppHealthStatus property value. The overall app health status of the OS version.
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsVersionAppHealthStatus(value *string)() {
-    m.osVersionAppHealthStatus = value
+    if m != nil {
+        m.osVersionAppHealthStatus = value
+    }
 }

@@ -201,29 +201,43 @@ func (m *AuthenticationDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationDetail) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.
 func (m *AuthenticationDetail) SetAuthenticationMethod(value *string)() {
-    m.authenticationMethod = value
+    if m != nil {
+        m.authenticationMethod = value
+    }
 }
 // SetAuthenticationMethodDetail sets the authenticationMethodDetail property value. Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).
 func (m *AuthenticationDetail) SetAuthenticationMethodDetail(value *string)() {
-    m.authenticationMethodDetail = value
+    if m != nil {
+        m.authenticationMethodDetail = value
+    }
 }
 // SetAuthenticationStepDateTime sets the authenticationStepDateTime property value. Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AuthenticationDetail) SetAuthenticationStepDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.authenticationStepDateTime = value
+    if m != nil {
+        m.authenticationStepDateTime = value
+    }
 }
 // SetAuthenticationStepRequirement sets the authenticationStepRequirement property value. The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.
 func (m *AuthenticationDetail) SetAuthenticationStepRequirement(value *string)() {
-    m.authenticationStepRequirement = value
+    if m != nil {
+        m.authenticationStepRequirement = value
+    }
 }
 // SetAuthenticationStepResultDetail sets the authenticationStepResultDetail property value. Details about why the step succeeded or failed. For examples, user is blocked, fraud code entered, no phone input - timed out, phone unreachable, or claim in token.
 func (m *AuthenticationDetail) SetAuthenticationStepResultDetail(value *string)() {
-    m.authenticationStepResultDetail = value
+    if m != nil {
+        m.authenticationStepResultDetail = value
+    }
 }
 // SetSucceeded sets the succeeded property value. Indicates the status of the authentication step. Possible values: succeeded, failed.
 func (m *AuthenticationDetail) SetSucceeded(value *bool)() {
-    m.succeeded = value
+    if m != nil {
+        m.succeeded = value
+    }
 }

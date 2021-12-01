@@ -11,7 +11,7 @@ type PlannerPlanContainer struct {
     // The identifier of the resource that contains the plan.
     containerId *string;
     // The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
-    type_escaped *PlannerContainerType;
+    type *PlannerContainerType;
     // The full canonical URL of the container.
     url *string;
 }
@@ -38,12 +38,12 @@ func (m *PlannerPlanContainer) GetContainerId()(*string) {
         return m.containerId
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
-func (m *PlannerPlanContainer) GetType_escaped()(*PlannerContainerType) {
+// GetType gets the type property value. The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
+func (m *PlannerPlanContainer) GetType()(*PlannerContainerType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetUrl gets the url property value. The full canonical URL of the container.
@@ -67,14 +67,14 @@ func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParsePlannerContainerType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(PlannerContainerType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -101,9 +101,9 @@ func (m *PlannerPlanContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -124,17 +124,25 @@ func (m *PlannerPlanContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerPlanContainer) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContainerId sets the containerId property value. The identifier of the resource that contains the plan.
 func (m *PlannerPlanContainer) SetContainerId(value *string)() {
-    m.containerId = value
+    if m != nil {
+        m.containerId = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
-func (m *PlannerPlanContainer) SetType_escaped(value *PlannerContainerType)() {
-    m.type_escaped = value
+// SetType sets the type property value. The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
+func (m *PlannerPlanContainer) SetType(value *PlannerContainerType)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetUrl sets the url property value. The full canonical URL of the container.
 func (m *PlannerPlanContainer) SetUrl(value *string)() {
-    m.url = value
+    if m != nil {
+        m.url = value
+    }
 }

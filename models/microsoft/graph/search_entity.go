@@ -138,13 +138,19 @@ func (m *SearchEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAcronyms sets the acronyms property value. 
 func (m *SearchEntity) SetAcronyms(value []Acronym)() {
-    m.acronyms = value
+    if m != nil {
+        m.acronyms = value
+    }
 }
 // SetBookmarks sets the bookmarks property value. 
 func (m *SearchEntity) SetBookmarks(value []Bookmark)() {
-    m.bookmarks = value
+    if m != nil {
+        m.bookmarks = value
+    }
 }
 // SetQnas sets the qnas property value. 
 func (m *SearchEntity) SetQnas(value []Qna)() {
-    m.qnas = value
+    if m != nil {
+        m.qnas = value
+    }
 }

@@ -248,33 +248,49 @@ func (m *ImportedDeviceIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetCreatedDateTime sets the createdDateTime property value. Created Date Time of the device
 func (m *ImportedDeviceIdentity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. The description of the device
 func (m *ImportedDeviceIdentity) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetEnrollmentState sets the enrollmentState property value. The state of the device in Intune. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
 func (m *ImportedDeviceIdentity) SetEnrollmentState(value *EnrollmentState)() {
-    m.enrollmentState = value
+    if m != nil {
+        m.enrollmentState = value
+    }
 }
 // SetImportedDeviceIdentifier sets the importedDeviceIdentifier property value. Imported Device Identifier
 func (m *ImportedDeviceIdentity) SetImportedDeviceIdentifier(value *string)() {
-    m.importedDeviceIdentifier = value
+    if m != nil {
+        m.importedDeviceIdentifier = value
+    }
 }
 // SetImportedDeviceIdentityType sets the importedDeviceIdentityType property value. Type of Imported Device Identity. Possible values are: unknown, imei, serialNumber.
 func (m *ImportedDeviceIdentity) SetImportedDeviceIdentityType(value *ImportedDeviceIdentityType)() {
-    m.importedDeviceIdentityType = value
+    if m != nil {
+        m.importedDeviceIdentityType = value
+    }
 }
 // SetLastContactedDateTime sets the lastContactedDateTime property value. Last Contacted Date Time of the device
 func (m *ImportedDeviceIdentity) SetLastContactedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastContactedDateTime = value
+    if m != nil {
+        m.lastContactedDateTime = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last Modified DateTime of the description
 func (m *ImportedDeviceIdentity) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPlatform sets the platform property value. The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
 func (m *ImportedDeviceIdentity) SetPlatform(value *Platform)() {
-    m.platform = value
+    if m != nil {
+        m.platform = value
+    }
 }

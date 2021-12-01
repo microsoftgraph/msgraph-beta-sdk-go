@@ -175,25 +175,37 @@ func (m *PlannerTeamsPublicationInfo) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerTeamsPublicationInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when this task was last modified by the publication process. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPublicationId sets the publicationId property value. The identifier of the publication. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetPublicationId(value *string)() {
-    m.publicationId = value
+    if m != nil {
+        m.publicationId = value
+    }
 }
 // SetPublishedToPlanId sets the publishedToPlanId property value. The identifier of the plannerPlan this task was originally placed in. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetPublishedToPlanId(value *string)() {
-    m.publishedToPlanId = value
+    if m != nil {
+        m.publishedToPlanId = value
+    }
 }
 // SetPublishingTeamId sets the publishingTeamId property value. The identifier of the team that initiated the publication process. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetPublishingTeamId(value *string)() {
-    m.publishingTeamId = value
+    if m != nil {
+        m.publishingTeamId = value
+    }
 }
 // SetPublishingTeamName sets the publishingTeamName property value. The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetPublishingTeamName(value *string)() {
-    m.publishingTeamName = value
+    if m != nil {
+        m.publishingTeamName = value
+    }
 }

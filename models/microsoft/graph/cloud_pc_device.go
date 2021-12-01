@@ -294,41 +294,61 @@ func (m *CloudPcDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetCloudPcStatus sets the cloudPcStatus property value. The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
 func (m *CloudPcDevice) SetCloudPcStatus(value *string)() {
-    m.cloudPcStatus = value
+    if m != nil {
+        m.cloudPcStatus = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the cloud PC. Required. Read-only.
 func (m *CloudPcDevice) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
 func (m *CloudPcDevice) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastRefreshedDateTime = value
+    if m != nil {
+        m.lastRefreshedDateTime = value
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The managed device identifier for the cloud PC. Optional. Read-only.
 func (m *CloudPcDevice) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    if m != nil {
+        m.managedDeviceId = value
+    }
 }
 // SetManagedDeviceName sets the managedDeviceName property value. The managed device display name for the cloud PC. Optional. Read-only.
 func (m *CloudPcDevice) SetManagedDeviceName(value *string)() {
-    m.managedDeviceName = value
+    if m != nil {
+        m.managedDeviceName = value
+    }
 }
 // SetProvisioningPolicyId sets the provisioningPolicyId property value. The provisioning policy identifier for the cloud PC. Required. Read-only.
 func (m *CloudPcDevice) SetProvisioningPolicyId(value *string)() {
-    m.provisioningPolicyId = value
+    if m != nil {
+        m.provisioningPolicyId = value
+    }
 }
 // SetServicePlanName sets the servicePlanName property value. The service plan name for the cloud PC. Required. Read-only.
 func (m *CloudPcDevice) SetServicePlanName(value *string)() {
-    m.servicePlanName = value
+    if m != nil {
+        m.servicePlanName = value
+    }
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *CloudPcDevice) SetTenantDisplayName(value *string)() {
-    m.tenantDisplayName = value
+    if m != nil {
+        m.tenantDisplayName = value
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *CloudPcDevice) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the user assigned to the cloud PC. Required. Read-only.
 func (m *CloudPcDevice) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

@@ -44,7 +44,7 @@ type UpdatableAssetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UpdatableAssetRequestBuilderPatchOptions options for Patch
 type UpdatableAssetRequestBuilderPatchOptions struct {

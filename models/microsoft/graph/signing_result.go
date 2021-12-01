@@ -96,13 +96,19 @@ func (m *SigningResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SigningResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSignature sets the signature property value. 
 func (m *SigningResult) SetSignature(value []byte)() {
-    m.signature = value
+    if m != nil {
+        m.signature = value
+    }
 }
 // SetSigningKeyId sets the signingKeyId property value. 
 func (m *SigningResult) SetSigningKeyId(value *string)() {
-    m.signingKeyId = value
+    if m != nil {
+        m.signingKeyId = value
+    }
 }

@@ -41,7 +41,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestB
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderPatchOptions options for Patch
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilderPatchOptions struct {

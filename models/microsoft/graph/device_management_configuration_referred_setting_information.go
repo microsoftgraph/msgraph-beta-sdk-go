@@ -70,9 +70,13 @@ func (m *DeviceManagementConfigurationReferredSettingInformation) Serialize(writ
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationReferredSettingInformation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSettingDefinitionId sets the settingDefinitionId property value. Setting definition id that is being referred to a setting. Applicable for reusable setting
 func (m *DeviceManagementConfigurationReferredSettingInformation) SetSettingDefinitionId(value *string)() {
-    m.settingDefinitionId = value
+    if m != nil {
+        m.settingDefinitionId = value
+    }
 }

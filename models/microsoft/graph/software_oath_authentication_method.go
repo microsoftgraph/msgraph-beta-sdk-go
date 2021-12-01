@@ -59,5 +59,7 @@ func (m *SoftwareOathAuthenticationMethod) Serialize(writer i04eb5309aeaafadd283
 }
 // SetSecretKey sets the secretKey property value. The secret key of the method. Always returns null.
 func (m *SoftwareOathAuthenticationMethod) SetSecretKey(value *string)() {
-    m.secretKey = value
+    if m != nil {
+        m.secretKey = value
+    }
 }

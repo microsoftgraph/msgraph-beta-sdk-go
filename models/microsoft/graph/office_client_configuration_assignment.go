@@ -59,5 +59,7 @@ func (m *OfficeClientConfigurationAssignment) Serialize(writer i04eb5309aeaafadd
 }
 // SetTarget sets the target property value. The target assignment defined by the admin.
 func (m *OfficeClientConfigurationAssignment) SetTarget(value *OfficeConfigurationAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

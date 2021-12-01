@@ -90,11 +90,15 @@ func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) Serialize(writer
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSuggestedEnrollmentLimit sets the suggestedEnrollmentLimit property value. Union type representation for type suggestedEnrollmentLimit
 func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse) SetSuggestedEnrollmentLimit(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SuggestedEnrollmentLimit)() {
-    m.suggestedEnrollmentLimit = value
+    if m != nil {
+        m.suggestedEnrollmentLimit = value
+    }
 }
 // NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal instantiates a new GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder and sets the default values.
 func NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, enrollmentType *string)(*GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) {

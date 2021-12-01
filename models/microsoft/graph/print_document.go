@@ -137,17 +137,25 @@ func (m *PrintDocument) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetConfiguration sets the configuration property value. 
 func (m *PrintDocument) SetConfiguration(value *PrinterDocumentConfiguration)() {
-    m.configuration = value
+    if m != nil {
+        m.configuration = value
+    }
 }
 // SetContentType sets the contentType property value. The document's content (MIME) type. Read-only.
 func (m *PrintDocument) SetContentType(value *string)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }
 // SetDisplayName sets the displayName property value. The document's name. Read-only.
 func (m *PrintDocument) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetSize sets the size property value. The document's size in bytes. Read-only.
 func (m *PrintDocument) SetSize(value *int64)() {
-    m.size = value
+    if m != nil {
+        m.size = value
+    }
 }

@@ -71,9 +71,13 @@ func (m *EvaluateAssignmentFilterRequestBody) Serialize(writer i04eb5309aeaafadd
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateAssignmentFilterRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetData sets the data property value. 
 func (m *EvaluateAssignmentFilterRequestBody) SetData(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AssignmentFilterEvaluateRequest)() {
-    m.data = value
+    if m != nil {
+        m.data = value
+    }
 }

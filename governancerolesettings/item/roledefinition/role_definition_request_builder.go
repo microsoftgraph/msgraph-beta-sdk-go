@@ -40,7 +40,7 @@ type RoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // RoleDefinitionRequestBuilderPatchOptions options for Patch
 type RoleDefinitionRequestBuilderPatchOptions struct {

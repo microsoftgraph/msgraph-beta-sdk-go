@@ -190,25 +190,37 @@ func (m *Currency) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAmountDecimalPlaces sets the amountDecimalPlaces property value. 
 func (m *Currency) SetAmountDecimalPlaces(value *string)() {
-    m.amountDecimalPlaces = value
+    if m != nil {
+        m.amountDecimalPlaces = value
+    }
 }
 // SetAmountRoundingPrecision sets the amountRoundingPrecision property value. 
 func (m *Currency) SetAmountRoundingPrecision(value *float64)() {
-    m.amountRoundingPrecision = value
+    if m != nil {
+        m.amountRoundingPrecision = value
+    }
 }
 // SetCode sets the code property value. 
 func (m *Currency) SetCode(value *string)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *Currency) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *Currency) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetSymbol sets the symbol property value. 
 func (m *Currency) SetSymbol(value *string)() {
-    m.symbol = value
+    if m != nil {
+        m.symbol = value
+    }
 }

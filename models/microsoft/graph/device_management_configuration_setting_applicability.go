@@ -154,21 +154,31 @@ func (m *DeviceManagementConfigurationSettingApplicability) Serialize(writer i04
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingApplicability) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. description of the setting
 func (m *DeviceManagementConfigurationSettingApplicability) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDeviceMode sets the deviceMode property value. Device Mode that setting can be applied on. Possible values are: none, kiosk.
 func (m *DeviceManagementConfigurationSettingApplicability) SetDeviceMode(value *DeviceManagementConfigurationDeviceMode)() {
-    m.deviceMode = value
+    if m != nil {
+        m.deviceMode = value
+    }
 }
 // SetPlatform sets the platform property value. Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10.
 func (m *DeviceManagementConfigurationSettingApplicability) SetPlatform(value *DeviceManagementConfigurationPlatforms)() {
-    m.platform = value
+    if m != nil {
+        m.platform = value
+    }
 }
 // SetTechnologies sets the technologies property value. Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementConfigurationSettingApplicability) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
-    m.technologies = value
+    if m != nil {
+        m.technologies = value
+    }
 }

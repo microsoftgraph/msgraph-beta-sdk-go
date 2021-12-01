@@ -163,21 +163,31 @@ func (m *AccessPackageResourceRole) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAccessPackageResource sets the accessPackageResource property value. Read-only. Nullable.
 func (m *AccessPackageResourceRole) SetAccessPackageResource(value *AccessPackageResource)() {
-    m.accessPackageResource = value
+    if m != nil {
+        m.accessPackageResource = value
+    }
 }
 // SetDescription sets the description property value. A description for the resource role.
 func (m *AccessPackageResourceRole) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the resource role such as the role defined by the application.
 func (m *AccessPackageResourceRole) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetOriginId sets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
 func (m *AccessPackageResourceRole) SetOriginId(value *string)() {
-    m.originId = value
+    if m != nil {
+        m.originId = value
+    }
 }
 // SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
 func (m *AccessPackageResourceRole) SetOriginSystem(value *string)() {
-    m.originSystem = value
+    if m != nil {
+        m.originSystem = value
+    }
 }

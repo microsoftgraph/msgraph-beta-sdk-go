@@ -100,13 +100,19 @@ func (m *MuteAllRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MuteAllRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClientContext sets the clientContext property value. 
 func (m *MuteAllRequestBody) SetClientContext(value *string)() {
-    m.clientContext = value
+    if m != nil {
+        m.clientContext = value
+    }
 }
 // SetParticipants sets the participants property value. 
 func (m *MuteAllRequestBody) SetParticipants(value []string)() {
-    m.participants = value
+    if m != nil {
+        m.participants = value
+    }
 }

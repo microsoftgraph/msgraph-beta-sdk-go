@@ -15,7 +15,7 @@ type DomainRegistrant struct {
     // 
     url *string;
     // 
-    vendor_escaped *string;
+    vendor *string;
 }
 // NewDomainRegistrant instantiates a new domainRegistrant and sets the default values.
 func NewDomainRegistrant()(*DomainRegistrant) {
@@ -56,12 +56,12 @@ func (m *DomainRegistrant) GetUrl()(*string) {
         return m.url
     }
 }
-// GetVendor_escaped gets the vendor_escaped property value. 
-func (m *DomainRegistrant) GetVendor_escaped()(*string) {
+// GetVendor gets the vendor property value. 
+func (m *DomainRegistrant) GetVendor()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.vendor_escaped
+        return m.vendor
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -97,13 +97,13 @@ func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendor_escaped(val)
+            m.SetVendor(val)
         }
         return nil
     }
@@ -133,7 +133,7 @@ func (m *DomainRegistrant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
-        err := writer.WriteStringValue("vendor_escaped", m.GetVendor_escaped())
+        err := writer.WriteStringValue("vendor", m.GetVendor())
         if err != nil {
             return err
         }
@@ -148,21 +148,31 @@ func (m *DomainRegistrant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DomainRegistrant) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCountryOrRegionCode sets the countryOrRegionCode property value. 
 func (m *DomainRegistrant) SetCountryOrRegionCode(value *string)() {
-    m.countryOrRegionCode = value
+    if m != nil {
+        m.countryOrRegionCode = value
+    }
 }
 // SetOrganization sets the organization property value. 
 func (m *DomainRegistrant) SetOrganization(value *string)() {
-    m.organization = value
+    if m != nil {
+        m.organization = value
+    }
 }
 // SetUrl sets the url property value. 
 func (m *DomainRegistrant) SetUrl(value *string)() {
-    m.url = value
+    if m != nil {
+        m.url = value
+    }
 }
-// SetVendor_escaped sets the vendor_escaped property value. 
-func (m *DomainRegistrant) SetVendor_escaped(value *string)() {
-    m.vendor_escaped = value
+// SetVendor sets the vendor property value. 
+func (m *DomainRegistrant) SetVendor(value *string)() {
+    if m != nil {
+        m.vendor = value
+    }
 }

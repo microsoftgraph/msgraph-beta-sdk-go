@@ -59,5 +59,7 @@ func (m *AssignmentFilterEvaluationStatusDetails) Serialize(writer i04eb5309aeaa
 }
 // SetPayloadId sets the payloadId property value. PayloadId on which filter has been applied.
 func (m *AssignmentFilterEvaluationStatusDetails) SetPayloadId(value *string)() {
-    m.payloadId = value
+    if m != nil {
+        m.payloadId = value
+    }
 }

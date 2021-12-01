@@ -875,129 +875,193 @@ func (m *SalesCreditMemo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetBillingPostalAddress sets the billingPostalAddress property value. 
 func (m *SalesCreditMemo) SetBillingPostalAddress(value *PostalAddressType)() {
-    m.billingPostalAddress = value
+    if m != nil {
+        m.billingPostalAddress = value
+    }
 }
 // SetBillToCustomerId sets the billToCustomerId property value. 
 func (m *SalesCreditMemo) SetBillToCustomerId(value *string)() {
-    m.billToCustomerId = value
+    if m != nil {
+        m.billToCustomerId = value
+    }
 }
 // SetBillToCustomerNumber sets the billToCustomerNumber property value. 
 func (m *SalesCreditMemo) SetBillToCustomerNumber(value *string)() {
-    m.billToCustomerNumber = value
+    if m != nil {
+        m.billToCustomerNumber = value
+    }
 }
 // SetBillToName sets the billToName property value. 
 func (m *SalesCreditMemo) SetBillToName(value *string)() {
-    m.billToName = value
+    if m != nil {
+        m.billToName = value
+    }
 }
 // SetCreditMemoDate sets the creditMemoDate property value. 
 func (m *SalesCreditMemo) SetCreditMemoDate(value *string)() {
-    m.creditMemoDate = value
+    if m != nil {
+        m.creditMemoDate = value
+    }
 }
 // SetCurrency sets the currency property value. 
 func (m *SalesCreditMemo) SetCurrency(value *Currency)() {
-    m.currency = value
+    if m != nil {
+        m.currency = value
+    }
 }
 // SetCurrencyCode sets the currencyCode property value. 
 func (m *SalesCreditMemo) SetCurrencyCode(value *string)() {
-    m.currencyCode = value
+    if m != nil {
+        m.currencyCode = value
+    }
 }
 // SetCurrencyId sets the currencyId property value. 
 func (m *SalesCreditMemo) SetCurrencyId(value *string)() {
-    m.currencyId = value
+    if m != nil {
+        m.currencyId = value
+    }
 }
 // SetCustomer sets the customer property value. 
 func (m *SalesCreditMemo) SetCustomer(value *Customer)() {
-    m.customer = value
+    if m != nil {
+        m.customer = value
+    }
 }
 // SetCustomerId sets the customerId property value. 
 func (m *SalesCreditMemo) SetCustomerId(value *string)() {
-    m.customerId = value
+    if m != nil {
+        m.customerId = value
+    }
 }
 // SetCustomerName sets the customerName property value. 
 func (m *SalesCreditMemo) SetCustomerName(value *string)() {
-    m.customerName = value
+    if m != nil {
+        m.customerName = value
+    }
 }
 // SetCustomerNumber sets the customerNumber property value. 
 func (m *SalesCreditMemo) SetCustomerNumber(value *string)() {
-    m.customerNumber = value
+    if m != nil {
+        m.customerNumber = value
+    }
 }
 // SetDiscountAmount sets the discountAmount property value. 
 func (m *SalesCreditMemo) SetDiscountAmount(value *float64)() {
-    m.discountAmount = value
+    if m != nil {
+        m.discountAmount = value
+    }
 }
 // SetDiscountAppliedBeforeTax sets the discountAppliedBeforeTax property value. 
 func (m *SalesCreditMemo) SetDiscountAppliedBeforeTax(value *bool)() {
-    m.discountAppliedBeforeTax = value
+    if m != nil {
+        m.discountAppliedBeforeTax = value
+    }
 }
 // SetDueDate sets the dueDate property value. 
 func (m *SalesCreditMemo) SetDueDate(value *string)() {
-    m.dueDate = value
+    if m != nil {
+        m.dueDate = value
+    }
 }
 // SetEmail sets the email property value. 
 func (m *SalesCreditMemo) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetExternalDocumentNumber sets the externalDocumentNumber property value. 
 func (m *SalesCreditMemo) SetExternalDocumentNumber(value *string)() {
-    m.externalDocumentNumber = value
+    if m != nil {
+        m.externalDocumentNumber = value
+    }
 }
 // SetInvoiceId sets the invoiceId property value. 
 func (m *SalesCreditMemo) SetInvoiceId(value *string)() {
-    m.invoiceId = value
+    if m != nil {
+        m.invoiceId = value
+    }
 }
 // SetInvoiceNumber sets the invoiceNumber property value. 
 func (m *SalesCreditMemo) SetInvoiceNumber(value *string)() {
-    m.invoiceNumber = value
+    if m != nil {
+        m.invoiceNumber = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *SalesCreditMemo) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetNumber sets the number property value. 
 func (m *SalesCreditMemo) SetNumber(value *string)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetPaymentTerm sets the paymentTerm property value. 
 func (m *SalesCreditMemo) SetPaymentTerm(value *PaymentTerm)() {
-    m.paymentTerm = value
+    if m != nil {
+        m.paymentTerm = value
+    }
 }
 // SetPaymentTermsId sets the paymentTermsId property value. 
 func (m *SalesCreditMemo) SetPaymentTermsId(value *string)() {
-    m.paymentTermsId = value
+    if m != nil {
+        m.paymentTermsId = value
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. 
 func (m *SalesCreditMemo) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    if m != nil {
+        m.phoneNumber = value
+    }
 }
 // SetPricesIncludeTax sets the pricesIncludeTax property value. 
 func (m *SalesCreditMemo) SetPricesIncludeTax(value *bool)() {
-    m.pricesIncludeTax = value
+    if m != nil {
+        m.pricesIncludeTax = value
+    }
 }
 // SetSalesCreditMemoLines sets the salesCreditMemoLines property value. 
 func (m *SalesCreditMemo) SetSalesCreditMemoLines(value []SalesCreditMemoLine)() {
-    m.salesCreditMemoLines = value
+    if m != nil {
+        m.salesCreditMemoLines = value
+    }
 }
 // SetSalesperson sets the salesperson property value. 
 func (m *SalesCreditMemo) SetSalesperson(value *string)() {
-    m.salesperson = value
+    if m != nil {
+        m.salesperson = value
+    }
 }
 // SetSellingPostalAddress sets the sellingPostalAddress property value. 
 func (m *SalesCreditMemo) SetSellingPostalAddress(value *PostalAddressType)() {
-    m.sellingPostalAddress = value
+    if m != nil {
+        m.sellingPostalAddress = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *SalesCreditMemo) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTotalAmountExcludingTax sets the totalAmountExcludingTax property value. 
 func (m *SalesCreditMemo) SetTotalAmountExcludingTax(value *float64)() {
-    m.totalAmountExcludingTax = value
+    if m != nil {
+        m.totalAmountExcludingTax = value
+    }
 }
 // SetTotalAmountIncludingTax sets the totalAmountIncludingTax property value. 
 func (m *SalesCreditMemo) SetTotalAmountIncludingTax(value *float64)() {
-    m.totalAmountIncludingTax = value
+    if m != nil {
+        m.totalAmountIncludingTax = value
+    }
 }
 // SetTotalTaxAmount sets the totalTaxAmount property value. 
 func (m *SalesCreditMemo) SetTotalTaxAmount(value *float64)() {
-    m.totalTaxAmount = value
+    if m != nil {
+        m.totalTaxAmount = value
+    }
 }

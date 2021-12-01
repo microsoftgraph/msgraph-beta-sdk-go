@@ -164,21 +164,31 @@ func (m *ExactMatchJobBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetCompletionDateTime sets the completionDateTime property value. 
 func (m *ExactMatchJobBase) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.completionDateTime = value
+    if m != nil {
+        m.completionDateTime = value
+    }
 }
 // SetCreationDateTime sets the creationDateTime property value. 
 func (m *ExactMatchJobBase) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.creationDateTime = value
+    if m != nil {
+        m.creationDateTime = value
+    }
 }
 // SetError sets the error property value. 
 func (m *ExactMatchJobBase) SetError(value *ClassificationError)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. 
 func (m *ExactMatchJobBase) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdatedDateTime = value
+    if m != nil {
+        m.lastUpdatedDateTime = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. 
 func (m *ExactMatchJobBase) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }

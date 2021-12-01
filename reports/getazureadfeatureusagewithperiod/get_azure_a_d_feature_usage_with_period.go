@@ -113,13 +113,19 @@ func (m *GetAzureADFeatureUsageWithPeriod) Serialize(writer i04eb5309aeaafadd283
 }
 // SetFeatureName sets the featureName property value. 
 func (m *GetAzureADFeatureUsageWithPeriod) SetFeatureName(value *string)() {
-    m.featureName = value
+    if m != nil {
+        m.featureName = value
+    }
 }
 // SetSnapshotDateTime sets the snapshotDateTime property value. 
 func (m *GetAzureADFeatureUsageWithPeriod) SetSnapshotDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.snapshotDateTime = value
+    if m != nil {
+        m.snapshotDateTime = value
+    }
 }
 // SetUsage sets the usage property value. 
 func (m *GetAzureADFeatureUsageWithPeriod) SetUsage(value *int32)() {
-    m.usage = value
+    if m != nil {
+        m.usage = value
+    }
 }

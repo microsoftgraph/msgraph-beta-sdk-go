@@ -136,17 +136,25 @@ func (m *DeploymentState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeploymentState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetReasons sets the reasons property value. Specifies the reasons the deployment has its state value. Read-only.
 func (m *DeploymentState) SetReasons(value []DeploymentStateReason)() {
-    m.reasons = value
+    if m != nil {
+        m.reasons = value
+    }
 }
 // SetRequestedValue sets the requestedValue property value. Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused, unknownFutureValue.
 func (m *DeploymentState) SetRequestedValue(value *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.RequestedDeploymentStateValue)() {
-    m.requestedValue = value
+    if m != nil {
+        m.requestedValue = value
+    }
 }
 // SetValue sets the value property value. Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.
 func (m *DeploymentState) SetValue(value *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.DeploymentStateValue)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

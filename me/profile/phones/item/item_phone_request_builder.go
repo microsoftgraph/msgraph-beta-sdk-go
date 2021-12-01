@@ -40,7 +40,7 @@ type ItemPhoneRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ItemPhoneRequestBuilderPatchOptions options for Patch
 type ItemPhoneRequestBuilderPatchOptions struct {

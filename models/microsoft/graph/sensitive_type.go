@@ -273,37 +273,55 @@ func (m *SensitiveType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetClassificationMethod sets the classificationMethod property value. 
 func (m *SensitiveType) SetClassificationMethod(value *ClassificationMethod)() {
-    m.classificationMethod = value
+    if m != nil {
+        m.classificationMethod = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *SensitiveType) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetName sets the name property value. 
 func (m *SensitiveType) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetPublisherName sets the publisherName property value. 
 func (m *SensitiveType) SetPublisherName(value *string)() {
-    m.publisherName = value
+    if m != nil {
+        m.publisherName = value
+    }
 }
 // SetRulePackageId sets the rulePackageId property value. 
 func (m *SensitiveType) SetRulePackageId(value *string)() {
-    m.rulePackageId = value
+    if m != nil {
+        m.rulePackageId = value
+    }
 }
 // SetRulePackageType sets the rulePackageType property value. 
 func (m *SensitiveType) SetRulePackageType(value *string)() {
-    m.rulePackageType = value
+    if m != nil {
+        m.rulePackageType = value
+    }
 }
 // SetScope sets the scope property value. 
 func (m *SensitiveType) SetScope(value *SensitiveTypeScope)() {
-    m.scope = value
+    if m != nil {
+        m.scope = value
+    }
 }
 // SetSensitiveTypeSource sets the sensitiveTypeSource property value. 
 func (m *SensitiveType) SetSensitiveTypeSource(value *SensitiveTypeSource)() {
-    m.sensitiveTypeSource = value
+    if m != nil {
+        m.sensitiveTypeSource = value
+    }
 }
 // SetState sets the state property value. 
 func (m *SensitiveType) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

@@ -175,25 +175,37 @@ func (m *VerifiedCustomDomainCertificatesMetadata) Serialize(writer i04eb5309aea
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExpiryDate sets the expiryDate property value. The expiry date of the custom domain certificate. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetExpiryDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expiryDate = value
+    if m != nil {
+        m.expiryDate = value
+    }
 }
 // SetIssueDate sets the issueDate property value. The issue date of the custom domain. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetIssueDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.issueDate = value
+    if m != nil {
+        m.issueDate = value
+    }
 }
 // SetIssuerName sets the issuerName property value. The issuer name of the custom domain certificate.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetIssuerName(value *string)() {
-    m.issuerName = value
+    if m != nil {
+        m.issuerName = value
+    }
 }
 // SetSubjectName sets the subjectName property value. The subject name of the custom domain certificate.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetSubjectName(value *string)() {
-    m.subjectName = value
+    if m != nil {
+        m.subjectName = value
+    }
 }
 // SetThumbprint sets the thumbprint property value. The thumbprint associated with the custom domain certificate.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetThumbprint(value *string)() {
-    m.thumbprint = value
+    if m != nil {
+        m.thumbprint = value
+    }
 }

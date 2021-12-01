@@ -112,13 +112,19 @@ func (m *DataSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetCreatedBy sets the createdBy property value. The user who created the dataSource.
 func (m *DataSource) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the dataSource was created.
 func (m *DataSource) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
 func (m *DataSource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

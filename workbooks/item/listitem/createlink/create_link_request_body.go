@@ -19,7 +19,7 @@ type CreateLinkRequestBody struct {
     // 
     scope *string;
     // 
-    type_escaped *string;
+    type *string;
 }
 // NewCreateLinkRequestBody instantiates a new createLinkRequestBody and sets the default values.
 func NewCreateLinkRequestBody()(*CreateLinkRequestBody) {
@@ -68,12 +68,12 @@ func (m *CreateLinkRequestBody) GetScope()(*string) {
         return m.scope
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *CreateLinkRequestBody) GetType_escaped()(*string) {
+// GetType gets the type property value. 
+func (m *CreateLinkRequestBody) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -123,13 +123,13 @@ func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -170,7 +170,7 @@ func (m *CreateLinkRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -185,25 +185,37 @@ func (m *CreateLinkRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateLinkRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. 
 func (m *CreateLinkRequestBody) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetPassword sets the password property value. 
 func (m *CreateLinkRequestBody) SetPassword(value *string)() {
-    m.password = value
+    if m != nil {
+        m.password = value
+    }
 }
 // SetRecipients sets the recipients property value. 
 func (m *CreateLinkRequestBody) SetRecipients(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipient)() {
-    m.recipients = value
+    if m != nil {
+        m.recipients = value
+    }
 }
 // SetScope sets the scope property value. 
 func (m *CreateLinkRequestBody) SetScope(value *string)() {
-    m.scope = value
+    if m != nil {
+        m.scope = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *CreateLinkRequestBody) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. 
+func (m *CreateLinkRequestBody) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }

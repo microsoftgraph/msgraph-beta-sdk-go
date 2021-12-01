@@ -111,13 +111,19 @@ func (m *B2cAuthenticationMethodsPolicy) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetIsEmailPasswordAuthenticationEnabled sets the isEmailPasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
 func (m *B2cAuthenticationMethodsPolicy) SetIsEmailPasswordAuthenticationEnabled(value *bool)() {
-    m.isEmailPasswordAuthenticationEnabled = value
+    if m != nil {
+        m.isEmailPasswordAuthenticationEnabled = value
+    }
 }
 // SetIsPhoneOneTimePasswordAuthenticationEnabled sets the isPhoneOneTimePasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
 func (m *B2cAuthenticationMethodsPolicy) SetIsPhoneOneTimePasswordAuthenticationEnabled(value *bool)() {
-    m.isPhoneOneTimePasswordAuthenticationEnabled = value
+    if m != nil {
+        m.isPhoneOneTimePasswordAuthenticationEnabled = value
+    }
 }
 // SetIsUserNameAuthenticationEnabled sets the isUserNameAuthenticationEnabled property value. The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
 func (m *B2cAuthenticationMethodsPolicy) SetIsUserNameAuthenticationEnabled(value *bool)() {
-    m.isUserNameAuthenticationEnabled = value
+    if m != nil {
+        m.isUserNameAuthenticationEnabled = value
+    }
 }

@@ -200,25 +200,37 @@ func (m *TeamworkTag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetDescription sets the description property value. Tag description as it will appear to the user in Microsoft Teams.
 func (m *TeamworkTag) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Tag name as it will appear to the user in Microsoft Teams.
 func (m *TeamworkTag) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetMemberCount sets the memberCount property value. The number of users assigned to the tag.
 func (m *TeamworkTag) SetMemberCount(value *int32)() {
-    m.memberCount = value
+    if m != nil {
+        m.memberCount = value
+    }
 }
 // SetMembers sets the members property value. Users assigned to the tag.
 func (m *TeamworkTag) SetMembers(value []TeamworkTagMember)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }
 // SetTagType sets the tagType property value. The type of tag. Default is standard.
 func (m *TeamworkTag) SetTagType(value *TeamworkTagType)() {
-    m.tagType = value
+    if m != nil {
+        m.tagType = value
+    }
 }
 // SetTeamId sets the teamId property value. ID of the team in which the tag is defined.
 func (m *TeamworkTag) SetTeamId(value *string)() {
-    m.teamId = value
+    if m != nil {
+        m.teamId = value
+    }
 }

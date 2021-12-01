@@ -40,7 +40,7 @@ type WindowsDefenderApplicationControlSupplementalPolicyAssignmentRequestBuilder
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WindowsDefenderApplicationControlSupplementalPolicyAssignmentRequestBuilderPatchOptions options for Patch
 type WindowsDefenderApplicationControlSupplementalPolicyAssignmentRequestBuilderPatchOptions struct {

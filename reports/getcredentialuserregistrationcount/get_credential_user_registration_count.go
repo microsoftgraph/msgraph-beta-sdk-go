@@ -95,9 +95,13 @@ func (m *GetCredentialUserRegistrationCount) Serialize(writer i04eb5309aeaafadd2
 }
 // SetTotalUserCount sets the totalUserCount property value. Provides the total user count in the tenant.
 func (m *GetCredentialUserRegistrationCount) SetTotalUserCount(value *int64)() {
-    m.totalUserCount = value
+    if m != nil {
+        m.totalUserCount = value
+    }
 }
 // SetUserRegistrationCounts sets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
 func (m *GetCredentialUserRegistrationCount) SetUserRegistrationCounts(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserRegistrationCount)() {
-    m.userRegistrationCounts = value
+    if m != nil {
+        m.userRegistrationCounts = value
+    }
 }

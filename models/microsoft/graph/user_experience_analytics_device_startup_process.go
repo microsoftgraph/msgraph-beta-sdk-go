@@ -163,21 +163,31 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) Serialize(writer i04eb5309
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The user experience analytics device id.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    if m != nil {
+        m.managedDeviceId = value
+    }
 }
 // SetProcessName sets the processName property value. User experience analytics device startup process name.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetProcessName(value *string)() {
-    m.processName = value
+    if m != nil {
+        m.processName = value
+    }
 }
 // SetProductName sets the productName property value. The user experience analytics device startup process product name.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetProductName(value *string)() {
-    m.productName = value
+    if m != nil {
+        m.productName = value
+    }
 }
 // SetPublisher sets the publisher property value. The User experience analytics device startup process publisher.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetPublisher(value *string)() {
-    m.publisher = value
+    if m != nil {
+        m.publisher = value
+    }
 }
 // SetStartupImpactInMs sets the startupImpactInMs property value. User experience analytics device startup process impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetStartupImpactInMs(value *int32)() {
-    m.startupImpactInMs = value
+    if m != nil {
+        m.startupImpactInMs = value
+    }
 }

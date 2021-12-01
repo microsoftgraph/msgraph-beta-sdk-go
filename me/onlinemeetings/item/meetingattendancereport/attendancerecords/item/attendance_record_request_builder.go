@@ -40,7 +40,7 @@ type AttendanceRecordRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AttendanceRecordRequestBuilderPatchOptions options for Patch
 type AttendanceRecordRequestBuilderPatchOptions struct {

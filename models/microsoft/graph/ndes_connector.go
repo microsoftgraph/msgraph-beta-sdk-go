@@ -114,13 +114,19 @@ func (m *NdesConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetDisplayName sets the displayName property value. The friendly name of the Ndes Connector.
 func (m *NdesConnector) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastConnectionDateTime sets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
 func (m *NdesConnector) SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastConnectionDateTime = value
+    if m != nil {
+        m.lastConnectionDateTime = value
+    }
 }
 // SetState sets the state property value. Ndes Connector Status. Possible values are: none, active, inactive.
 func (m *NdesConnector) SetState(value *NdesConnectorState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

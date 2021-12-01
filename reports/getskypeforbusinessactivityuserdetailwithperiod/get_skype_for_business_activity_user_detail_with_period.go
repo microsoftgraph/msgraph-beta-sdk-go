@@ -948,141 +948,211 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) Serialize(writer i04eb
 }
 // SetAssignedProducts sets the assignedProducts property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetAssignedProducts(value []string)() {
-    m.assignedProducts = value
+    if m != nil {
+        m.assignedProducts = value
+    }
 }
 // SetDeletedDate sets the deletedDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetDeletedDate(value *string)() {
-    m.deletedDate = value
+    if m != nil {
+        m.deletedDate = value
+    }
 }
 // SetIsDeleted sets the isDeleted property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    if m != nil {
+        m.isDeleted = value
+    }
 }
 // SetLastActivityDate sets the lastActivityDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetLastActivityDate(value *string)() {
-    m.lastActivityDate = value
+    if m != nil {
+        m.lastActivityDate = value
+    }
 }
 // SetOrganizedConferenceAppSharingCount sets the organizedConferenceAppSharingCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceAppSharingCount(value *int64)() {
-    m.organizedConferenceAppSharingCount = value
+    if m != nil {
+        m.organizedConferenceAppSharingCount = value
+    }
 }
 // SetOrganizedConferenceAudioVideoCount sets the organizedConferenceAudioVideoCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceAudioVideoCount(value *int64)() {
-    m.organizedConferenceAudioVideoCount = value
+    if m != nil {
+        m.organizedConferenceAudioVideoCount = value
+    }
 }
 // SetOrganizedConferenceAudioVideoMinutes sets the organizedConferenceAudioVideoMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceAudioVideoMinutes(value *int64)() {
-    m.organizedConferenceAudioVideoMinutes = value
+    if m != nil {
+        m.organizedConferenceAudioVideoMinutes = value
+    }
 }
 // SetOrganizedConferenceCloudDialInMicrosoftMinutes sets the organizedConferenceCloudDialInMicrosoftMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceCloudDialInMicrosoftMinutes(value *int64)() {
-    m.organizedConferenceCloudDialInMicrosoftMinutes = value
+    if m != nil {
+        m.organizedConferenceCloudDialInMicrosoftMinutes = value
+    }
 }
 // SetOrganizedConferenceCloudDialInOutMicrosoftCount sets the organizedConferenceCloudDialInOutMicrosoftCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceCloudDialInOutMicrosoftCount(value *int64)() {
-    m.organizedConferenceCloudDialInOutMicrosoftCount = value
+    if m != nil {
+        m.organizedConferenceCloudDialInOutMicrosoftCount = value
+    }
 }
 // SetOrganizedConferenceCloudDialOutMicrosoftMinutes sets the organizedConferenceCloudDialOutMicrosoftMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceCloudDialOutMicrosoftMinutes(value *int64)() {
-    m.organizedConferenceCloudDialOutMicrosoftMinutes = value
+    if m != nil {
+        m.organizedConferenceCloudDialOutMicrosoftMinutes = value
+    }
 }
 // SetOrganizedConferenceDialInOut3rdPartyCount sets the organizedConferenceDialInOut3rdPartyCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceDialInOut3rdPartyCount(value *int64)() {
-    m.organizedConferenceDialInOut3rdPartyCount = value
+    if m != nil {
+        m.organizedConferenceDialInOut3rdPartyCount = value
+    }
 }
 // SetOrganizedConferenceIMCount sets the organizedConferenceIMCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceIMCount(value *int64)() {
-    m.organizedConferenceIMCount = value
+    if m != nil {
+        m.organizedConferenceIMCount = value
+    }
 }
 // SetOrganizedConferenceLastActivityDate sets the organizedConferenceLastActivityDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceLastActivityDate(value *string)() {
-    m.organizedConferenceLastActivityDate = value
+    if m != nil {
+        m.organizedConferenceLastActivityDate = value
+    }
 }
 // SetOrganizedConferenceWebCount sets the organizedConferenceWebCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetOrganizedConferenceWebCount(value *int64)() {
-    m.organizedConferenceWebCount = value
+    if m != nil {
+        m.organizedConferenceWebCount = value
+    }
 }
 // SetParticipatedConferenceAppSharingCount sets the participatedConferenceAppSharingCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceAppSharingCount(value *int64)() {
-    m.participatedConferenceAppSharingCount = value
+    if m != nil {
+        m.participatedConferenceAppSharingCount = value
+    }
 }
 // SetParticipatedConferenceAudioVideoCount sets the participatedConferenceAudioVideoCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceAudioVideoCount(value *int64)() {
-    m.participatedConferenceAudioVideoCount = value
+    if m != nil {
+        m.participatedConferenceAudioVideoCount = value
+    }
 }
 // SetParticipatedConferenceAudioVideoMinutes sets the participatedConferenceAudioVideoMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceAudioVideoMinutes(value *int64)() {
-    m.participatedConferenceAudioVideoMinutes = value
+    if m != nil {
+        m.participatedConferenceAudioVideoMinutes = value
+    }
 }
 // SetParticipatedConferenceDialInOut3rdPartyCount sets the participatedConferenceDialInOut3rdPartyCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceDialInOut3rdPartyCount(value *int64)() {
-    m.participatedConferenceDialInOut3rdPartyCount = value
+    if m != nil {
+        m.participatedConferenceDialInOut3rdPartyCount = value
+    }
 }
 // SetParticipatedConferenceIMCount sets the participatedConferenceIMCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceIMCount(value *int64)() {
-    m.participatedConferenceIMCount = value
+    if m != nil {
+        m.participatedConferenceIMCount = value
+    }
 }
 // SetParticipatedConferenceLastActivityDate sets the participatedConferenceLastActivityDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceLastActivityDate(value *string)() {
-    m.participatedConferenceLastActivityDate = value
+    if m != nil {
+        m.participatedConferenceLastActivityDate = value
+    }
 }
 // SetParticipatedConferenceWebCount sets the participatedConferenceWebCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetParticipatedConferenceWebCount(value *int64)() {
-    m.participatedConferenceWebCount = value
+    if m != nil {
+        m.participatedConferenceWebCount = value
+    }
 }
 // SetPeerToPeerAppSharingCount sets the peerToPeerAppSharingCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerAppSharingCount(value *int64)() {
-    m.peerToPeerAppSharingCount = value
+    if m != nil {
+        m.peerToPeerAppSharingCount = value
+    }
 }
 // SetPeerToPeerAudioCount sets the peerToPeerAudioCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerAudioCount(value *int64)() {
-    m.peerToPeerAudioCount = value
+    if m != nil {
+        m.peerToPeerAudioCount = value
+    }
 }
 // SetPeerToPeerAudioMinutes sets the peerToPeerAudioMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerAudioMinutes(value *int64)() {
-    m.peerToPeerAudioMinutes = value
+    if m != nil {
+        m.peerToPeerAudioMinutes = value
+    }
 }
 // SetPeerToPeerFileTransferCount sets the peerToPeerFileTransferCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerFileTransferCount(value *int64)() {
-    m.peerToPeerFileTransferCount = value
+    if m != nil {
+        m.peerToPeerFileTransferCount = value
+    }
 }
 // SetPeerToPeerIMCount sets the peerToPeerIMCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerIMCount(value *int64)() {
-    m.peerToPeerIMCount = value
+    if m != nil {
+        m.peerToPeerIMCount = value
+    }
 }
 // SetPeerToPeerLastActivityDate sets the peerToPeerLastActivityDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerLastActivityDate(value *string)() {
-    m.peerToPeerLastActivityDate = value
+    if m != nil {
+        m.peerToPeerLastActivityDate = value
+    }
 }
 // SetPeerToPeerVideoCount sets the peerToPeerVideoCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerVideoCount(value *int64)() {
-    m.peerToPeerVideoCount = value
+    if m != nil {
+        m.peerToPeerVideoCount = value
+    }
 }
 // SetPeerToPeerVideoMinutes sets the peerToPeerVideoMinutes property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetPeerToPeerVideoMinutes(value *int64)() {
-    m.peerToPeerVideoMinutes = value
+    if m != nil {
+        m.peerToPeerVideoMinutes = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetTotalOrganizedConferenceCount sets the totalOrganizedConferenceCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetTotalOrganizedConferenceCount(value *int64)() {
-    m.totalOrganizedConferenceCount = value
+    if m != nil {
+        m.totalOrganizedConferenceCount = value
+    }
 }
 // SetTotalParticipatedConferenceCount sets the totalParticipatedConferenceCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetTotalParticipatedConferenceCount(value *int64)() {
-    m.totalParticipatedConferenceCount = value
+    if m != nil {
+        m.totalParticipatedConferenceCount = value
+    }
 }
 // SetTotalPeerToPeerSessionCount sets the totalPeerToPeerSessionCount property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetTotalPeerToPeerSessionCount(value *int64)() {
-    m.totalPeerToPeerSessionCount = value
+    if m != nil {
+        m.totalPeerToPeerSessionCount = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *GetSkypeForBusinessActivityUserDetailWithPeriod) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

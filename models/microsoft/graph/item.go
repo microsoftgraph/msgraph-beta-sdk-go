@@ -37,7 +37,7 @@ type Item struct {
     // 
     taxGroupId *string;
     // 
-    type_escaped *string;
+    type *string;
     // 
     unitCost *float64;
     // 
@@ -162,12 +162,12 @@ func (m *Item) GetTaxGroupId()(*string) {
         return m.taxGroupId
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *Item) GetType_escaped()(*string) {
+// GetType gets the type property value. 
+func (m *Item) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetUnitCost gets the unitCost property value. 
@@ -333,13 +333,13 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -464,7 +464,7 @@ func (m *Item) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -485,69 +485,103 @@ func (m *Item) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
 }
 // SetBaseUnitOfMeasureId sets the baseUnitOfMeasureId property value. 
 func (m *Item) SetBaseUnitOfMeasureId(value *string)() {
-    m.baseUnitOfMeasureId = value
+    if m != nil {
+        m.baseUnitOfMeasureId = value
+    }
 }
 // SetBlocked sets the blocked property value. 
 func (m *Item) SetBlocked(value *bool)() {
-    m.blocked = value
+    if m != nil {
+        m.blocked = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *Item) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetGtin sets the gtin property value. 
 func (m *Item) SetGtin(value *string)() {
-    m.gtin = value
+    if m != nil {
+        m.gtin = value
+    }
 }
 // SetInventory sets the inventory property value. 
 func (m *Item) SetInventory(value *float64)() {
-    m.inventory = value
+    if m != nil {
+        m.inventory = value
+    }
 }
 // SetItemCategory sets the itemCategory property value. 
 func (m *Item) SetItemCategory(value *ItemCategory)() {
-    m.itemCategory = value
+    if m != nil {
+        m.itemCategory = value
+    }
 }
 // SetItemCategoryCode sets the itemCategoryCode property value. 
 func (m *Item) SetItemCategoryCode(value *string)() {
-    m.itemCategoryCode = value
+    if m != nil {
+        m.itemCategoryCode = value
+    }
 }
 // SetItemCategoryId sets the itemCategoryId property value. 
 func (m *Item) SetItemCategoryId(value *string)() {
-    m.itemCategoryId = value
+    if m != nil {
+        m.itemCategoryId = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *Item) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetNumber sets the number property value. 
 func (m *Item) SetNumber(value *string)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetPicture sets the picture property value. 
 func (m *Item) SetPicture(value []Picture)() {
-    m.picture = value
+    if m != nil {
+        m.picture = value
+    }
 }
 // SetPriceIncludesTax sets the priceIncludesTax property value. 
 func (m *Item) SetPriceIncludesTax(value *bool)() {
-    m.priceIncludesTax = value
+    if m != nil {
+        m.priceIncludesTax = value
+    }
 }
 // SetTaxGroupCode sets the taxGroupCode property value. 
 func (m *Item) SetTaxGroupCode(value *string)() {
-    m.taxGroupCode = value
+    if m != nil {
+        m.taxGroupCode = value
+    }
 }
 // SetTaxGroupId sets the taxGroupId property value. 
 func (m *Item) SetTaxGroupId(value *string)() {
-    m.taxGroupId = value
+    if m != nil {
+        m.taxGroupId = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *Item) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. 
+func (m *Item) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetUnitCost sets the unitCost property value. 
 func (m *Item) SetUnitCost(value *float64)() {
-    m.unitCost = value
+    if m != nil {
+        m.unitCost = value
+    }
 }
 // SetUnitPrice sets the unitPrice property value. 
 func (m *Item) SetUnitPrice(value *float64)() {
-    m.unitPrice = value
+    if m != nil {
+        m.unitPrice = value
+    }
 }

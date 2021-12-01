@@ -320,45 +320,67 @@ func (m *AggregatedPolicyCompliance) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetCompliancePolicyId sets the compliancePolicyId property value. Identifier for the device compliance policy. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetCompliancePolicyId(value *string)() {
-    m.compliancePolicyId = value
+    if m != nil {
+        m.compliancePolicyId = value
+    }
 }
 // SetCompliancePolicyName sets the compliancePolicyName property value. Name of the device compliance policy. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetCompliancePolicyName(value *string)() {
-    m.compliancePolicyName = value
+    if m != nil {
+        m.compliancePolicyName = value
+    }
 }
 // SetCompliancePolicyPlatform sets the compliancePolicyPlatform property value. Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetCompliancePolicyPlatform(value *string)() {
-    m.compliancePolicyPlatform = value
+    if m != nil {
+        m.compliancePolicyPlatform = value
+    }
 }
 // SetCompliancePolicyType sets the compliancePolicyType property value. The type of compliance policy. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetCompliancePolicyType(value *string)() {
-    m.compliancePolicyType = value
+    if m != nil {
+        m.compliancePolicyType = value
+    }
 }
 // SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastRefreshedDateTime = value
+    if m != nil {
+        m.lastRefreshedDateTime = value
+    }
 }
 // SetNumberOfCompliantDevices sets the numberOfCompliantDevices property value. The number of devices that are in a compliant status. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetNumberOfCompliantDevices(value *int64)() {
-    m.numberOfCompliantDevices = value
+    if m != nil {
+        m.numberOfCompliantDevices = value
+    }
 }
 // SetNumberOfErrorDevices sets the numberOfErrorDevices property value. The number of devices that are in an error status. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetNumberOfErrorDevices(value *int64)() {
-    m.numberOfErrorDevices = value
+    if m != nil {
+        m.numberOfErrorDevices = value
+    }
 }
 // SetNumberOfNonCompliantDevices sets the numberOfNonCompliantDevices property value. The number of device that are in a non-compliant status. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetNumberOfNonCompliantDevices(value *int64)() {
-    m.numberOfNonCompliantDevices = value
+    if m != nil {
+        m.numberOfNonCompliantDevices = value
+    }
 }
 // SetPolicyModifiedDateTime sets the policyModifiedDateTime property value. The date and time the device policy was last modified. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetPolicyModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.policyModifiedDateTime = value
+    if m != nil {
+        m.policyModifiedDateTime = value
+    }
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetTenantDisplayName(value *string)() {
-    m.tenantDisplayName = value
+    if m != nil {
+        m.tenantDisplayName = value
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }

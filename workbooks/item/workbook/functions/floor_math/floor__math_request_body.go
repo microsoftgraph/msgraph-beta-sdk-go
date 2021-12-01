@@ -123,17 +123,25 @@ func (m *Floor_MathRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Floor_MathRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMode sets the mode property value. 
 func (m *Floor_MathRequestBody) SetMode(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.mode = value
+    if m != nil {
+        m.mode = value
+    }
 }
 // SetNumber sets the number property value. 
 func (m *Floor_MathRequestBody) SetNumber(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetSignificance sets the significance property value. 
 func (m *Floor_MathRequestBody) SetSignificance(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.significance = value
+    if m != nil {
+        m.significance = value
+    }
 }

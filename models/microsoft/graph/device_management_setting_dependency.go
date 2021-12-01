@@ -105,13 +105,19 @@ func (m *DeviceManagementSettingDependency) Serialize(writer i04eb5309aeaafadd28
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettingDependency) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConstraints sets the constraints property value. Collection of constraints for the dependency setting value
 func (m *DeviceManagementSettingDependency) SetConstraints(value []DeviceManagementConstraint)() {
-    m.constraints = value
+    if m != nil {
+        m.constraints = value
+    }
 }
 // SetDefinitionId sets the definitionId property value. The setting definition ID of the setting depended on
 func (m *DeviceManagementSettingDependency) SetDefinitionId(value *string)() {
-    m.definitionId = value
+    if m != nil {
+        m.definitionId = value
+    }
 }

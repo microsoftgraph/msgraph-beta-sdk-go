@@ -146,17 +146,25 @@ func (m *PrivilegedRole) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAssignments sets the assignments property value. The assignments for this role. Read-only. Nullable.
 func (m *PrivilegedRole) SetAssignments(value []PrivilegedRoleAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetName sets the name property value. Role name.
 func (m *PrivilegedRole) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetSettings sets the settings property value. The settings for this role. Read-only. Nullable.
 func (m *PrivilegedRole) SetSettings(value *PrivilegedRoleSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }
 // SetSummary sets the summary property value. The summary information for this role. Read-only. Nullable.
 func (m *PrivilegedRole) SetSummary(value *PrivilegedRoleSummary)() {
-    m.summary = value
+    if m != nil {
+        m.summary = value
+    }
 }

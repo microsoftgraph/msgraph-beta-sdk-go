@@ -148,21 +148,31 @@ func (m *InstitutionData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InstitutionData) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Short description of the institution the user studied at.
 func (m *InstitutionData) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the institution the user studied at.
 func (m *InstitutionData) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLocation sets the location property value. Address or location of the institute.
 func (m *InstitutionData) SetLocation(value *PhysicalAddress)() {
-    m.location = value
+    if m != nil {
+        m.location = value
+    }
 }
 // SetWebUrl sets the webUrl property value. Link to the institution or department homepage.
 func (m *InstitutionData) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

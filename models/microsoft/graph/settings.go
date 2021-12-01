@@ -122,17 +122,25 @@ func (m *Settings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Settings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetHasGraphMailbox sets the hasGraphMailbox property value. Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
 func (m *Settings) SetHasGraphMailbox(value *bool)() {
-    m.hasGraphMailbox = value
+    if m != nil {
+        m.hasGraphMailbox = value
+    }
 }
 // SetHasLicense sets the hasLicense property value. Specifies if the user has a MyAnalytics license assigned.
 func (m *Settings) SetHasLicense(value *bool)() {
-    m.hasLicense = value
+    if m != nil {
+        m.hasLicense = value
+    }
 }
 // SetHasOptedOut sets the hasOptedOut property value. Specifies if the user opted out of MyAnalytics.
 func (m *Settings) SetHasOptedOut(value *bool)() {
-    m.hasOptedOut = value
+    if m != nil {
+        m.hasOptedOut = value
+    }
 }

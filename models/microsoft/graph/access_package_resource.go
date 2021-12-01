@@ -399,53 +399,79 @@ func (m *AccessPackageResource) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAccessPackageResourceEnvironment sets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
 func (m *AccessPackageResource) SetAccessPackageResourceEnvironment(value *AccessPackageResourceEnvironment)() {
-    m.accessPackageResourceEnvironment = value
+    if m != nil {
+        m.accessPackageResourceEnvironment = value
+    }
 }
 // SetAccessPackageResourceRoles sets the accessPackageResourceRoles property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResource) SetAccessPackageResourceRoles(value []AccessPackageResourceRole)() {
-    m.accessPackageResourceRoles = value
+    if m != nil {
+        m.accessPackageResourceRoles = value
+    }
 }
 // SetAccessPackageResourceScopes sets the accessPackageResourceScopes property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResource) SetAccessPackageResourceScopes(value []AccessPackageResourceScope)() {
-    m.accessPackageResourceScopes = value
+    if m != nil {
+        m.accessPackageResourceScopes = value
+    }
 }
 // SetAddedBy sets the addedBy property value. Read-only.
 func (m *AccessPackageResource) SetAddedBy(value *string)() {
-    m.addedBy = value
+    if m != nil {
+        m.addedBy = value
+    }
 }
 // SetAddedOn sets the addedOn property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageResource) SetAddedOn(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.addedOn = value
+    if m != nil {
+        m.addedOn = value
+    }
 }
 // SetAttributes sets the attributes property value. 
 func (m *AccessPackageResource) SetAttributes(value []AccessPackageResourceAttribute)() {
-    m.attributes = value
+    if m != nil {
+        m.attributes = value
+    }
 }
 // SetDescription sets the description property value. A description for the resource.
 func (m *AccessPackageResource) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the resource, such as the application name, group name or site name.
 func (m *AccessPackageResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsPendingOnboarding sets the isPendingOnboarding property value. True if the resource is not yet available for assignment.
 func (m *AccessPackageResource) SetIsPendingOnboarding(value *bool)() {
-    m.isPendingOnboarding = value
+    if m != nil {
+        m.isPendingOnboarding = value
+    }
 }
 // SetOriginId sets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
 func (m *AccessPackageResource) SetOriginId(value *string)() {
-    m.originId = value
+    if m != nil {
+        m.originId = value
+    }
 }
 // SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
 func (m *AccessPackageResource) SetOriginSystem(value *string)() {
-    m.originSystem = value
+    if m != nil {
+        m.originSystem = value
+    }
 }
 // SetResourceType sets the resourceType property value. The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
 func (m *AccessPackageResource) SetResourceType(value *string)() {
-    m.resourceType = value
+    if m != nil {
+        m.resourceType = value
+    }
 }
 // SetUrl sets the url property value. A unique resource locator for the resource, such as the URL for signing a user into an application.
 func (m *AccessPackageResource) SetUrl(value *string)() {
-    m.url = value
+    if m != nil {
+        m.url = value
+    }
 }

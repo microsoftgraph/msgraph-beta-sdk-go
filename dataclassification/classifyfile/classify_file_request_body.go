@@ -100,13 +100,19 @@ func (m *ClassifyFileRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyFileRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFile sets the file property value. 
 func (m *ClassifyFileRequestBody) SetFile(value []byte)() {
-    m.file = value
+    if m != nil {
+        m.file = value
+    }
 }
 // SetSensitiveTypeIds sets the sensitiveTypeIds property value. 
 func (m *ClassifyFileRequestBody) SetSensitiveTypeIds(value []string)() {
-    m.sensitiveTypeIds = value
+    if m != nil {
+        m.sensitiveTypeIds = value
+    }
 }

@@ -40,7 +40,7 @@ type ProjectParticipationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ProjectParticipationRequestBuilderPatchOptions options for Patch
 type ProjectParticipationRequestBuilderPatchOptions struct {

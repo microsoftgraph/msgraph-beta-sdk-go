@@ -251,33 +251,49 @@ func (m *MessageTrace) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetDestinationIPAddress sets the destinationIPAddress property value. 
 func (m *MessageTrace) SetDestinationIPAddress(value *string)() {
-    m.destinationIPAddress = value
+    if m != nil {
+        m.destinationIPAddress = value
+    }
 }
 // SetMessageId sets the messageId property value. 
 func (m *MessageTrace) SetMessageId(value *string)() {
-    m.messageId = value
+    if m != nil {
+        m.messageId = value
+    }
 }
 // SetReceivedDateTime sets the receivedDateTime property value. 
 func (m *MessageTrace) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.receivedDateTime = value
+    if m != nil {
+        m.receivedDateTime = value
+    }
 }
 // SetRecipients sets the recipients property value. 
 func (m *MessageTrace) SetRecipients(value []MessageRecipient)() {
-    m.recipients = value
+    if m != nil {
+        m.recipients = value
+    }
 }
 // SetSenderEmail sets the senderEmail property value. 
 func (m *MessageTrace) SetSenderEmail(value *string)() {
-    m.senderEmail = value
+    if m != nil {
+        m.senderEmail = value
+    }
 }
 // SetSize sets the size property value. 
 func (m *MessageTrace) SetSize(value *int32)() {
-    m.size = value
+    if m != nil {
+        m.size = value
+    }
 }
 // SetSourceIPAddress sets the sourceIPAddress property value. 
 func (m *MessageTrace) SetSourceIPAddress(value *string)() {
-    m.sourceIPAddress = value
+    if m != nil {
+        m.sourceIPAddress = value
+    }
 }
 // SetSubject sets the subject property value. 
 func (m *MessageTrace) SetSubject(value *string)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }

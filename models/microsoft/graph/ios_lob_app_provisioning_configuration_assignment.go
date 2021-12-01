@@ -59,5 +59,7 @@ func (m *IosLobAppProvisioningConfigurationAssignment) Serialize(writer i04eb530
 }
 // SetTarget sets the target property value. The target group assignment defined by the admin.
 func (m *IosLobAppProvisioningConfigurationAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

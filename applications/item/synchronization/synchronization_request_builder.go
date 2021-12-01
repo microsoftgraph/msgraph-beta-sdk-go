@@ -46,7 +46,7 @@ type SynchronizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // SynchronizationRequestBuilderPatchOptions options for Patch
 type SynchronizationRequestBuilderPatchOptions struct {

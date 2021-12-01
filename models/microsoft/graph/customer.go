@@ -51,7 +51,7 @@ type Customer struct {
     // 
     taxRegistrationNumber *string;
     // 
-    type_escaped *string;
+    type *string;
     // 
     website *string;
 }
@@ -230,12 +230,12 @@ func (m *Customer) GetTaxRegistrationNumber()(*string) {
         return m.taxRegistrationNumber
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *Customer) GetType_escaped()(*string) {
+// GetType gets the type property value. 
+func (m *Customer) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetWebsite gets the website property value. 
@@ -463,13 +463,13 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -626,7 +626,7 @@ func (m *Customer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -641,93 +641,139 @@ func (m *Customer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAddress sets the address property value. 
 func (m *Customer) SetAddress(value *PostalAddressType)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetBlocked sets the blocked property value. 
 func (m *Customer) SetBlocked(value *string)() {
-    m.blocked = value
+    if m != nil {
+        m.blocked = value
+    }
 }
 // SetCurrency sets the currency property value. 
 func (m *Customer) SetCurrency(value *Currency)() {
-    m.currency = value
+    if m != nil {
+        m.currency = value
+    }
 }
 // SetCurrencyCode sets the currencyCode property value. 
 func (m *Customer) SetCurrencyCode(value *string)() {
-    m.currencyCode = value
+    if m != nil {
+        m.currencyCode = value
+    }
 }
 // SetCurrencyId sets the currencyId property value. 
 func (m *Customer) SetCurrencyId(value *string)() {
-    m.currencyId = value
+    if m != nil {
+        m.currencyId = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *Customer) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEmail sets the email property value. 
 func (m *Customer) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *Customer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetNumber sets the number property value. 
 func (m *Customer) SetNumber(value *string)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetPaymentMethod sets the paymentMethod property value. 
 func (m *Customer) SetPaymentMethod(value *PaymentMethod)() {
-    m.paymentMethod = value
+    if m != nil {
+        m.paymentMethod = value
+    }
 }
 // SetPaymentMethodId sets the paymentMethodId property value. 
 func (m *Customer) SetPaymentMethodId(value *string)() {
-    m.paymentMethodId = value
+    if m != nil {
+        m.paymentMethodId = value
+    }
 }
 // SetPaymentTerm sets the paymentTerm property value. 
 func (m *Customer) SetPaymentTerm(value *PaymentTerm)() {
-    m.paymentTerm = value
+    if m != nil {
+        m.paymentTerm = value
+    }
 }
 // SetPaymentTermsId sets the paymentTermsId property value. 
 func (m *Customer) SetPaymentTermsId(value *string)() {
-    m.paymentTermsId = value
+    if m != nil {
+        m.paymentTermsId = value
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. 
 func (m *Customer) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    if m != nil {
+        m.phoneNumber = value
+    }
 }
 // SetPicture sets the picture property value. 
 func (m *Customer) SetPicture(value []Picture)() {
-    m.picture = value
+    if m != nil {
+        m.picture = value
+    }
 }
 // SetShipmentMethod sets the shipmentMethod property value. 
 func (m *Customer) SetShipmentMethod(value *ShipmentMethod)() {
-    m.shipmentMethod = value
+    if m != nil {
+        m.shipmentMethod = value
+    }
 }
 // SetShipmentMethodId sets the shipmentMethodId property value. 
 func (m *Customer) SetShipmentMethodId(value *string)() {
-    m.shipmentMethodId = value
+    if m != nil {
+        m.shipmentMethodId = value
+    }
 }
 // SetTaxAreaDisplayName sets the taxAreaDisplayName property value. 
 func (m *Customer) SetTaxAreaDisplayName(value *string)() {
-    m.taxAreaDisplayName = value
+    if m != nil {
+        m.taxAreaDisplayName = value
+    }
 }
 // SetTaxAreaId sets the taxAreaId property value. 
 func (m *Customer) SetTaxAreaId(value *string)() {
-    m.taxAreaId = value
+    if m != nil {
+        m.taxAreaId = value
+    }
 }
 // SetTaxLiable sets the taxLiable property value. 
 func (m *Customer) SetTaxLiable(value *bool)() {
-    m.taxLiable = value
+    if m != nil {
+        m.taxLiable = value
+    }
 }
 // SetTaxRegistrationNumber sets the taxRegistrationNumber property value. 
 func (m *Customer) SetTaxRegistrationNumber(value *string)() {
-    m.taxRegistrationNumber = value
+    if m != nil {
+        m.taxRegistrationNumber = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *Customer) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. 
+func (m *Customer) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetWebsite sets the website property value. 
 func (m *Customer) SetWebsite(value *string)() {
-    m.website = value
+    if m != nil {
+        m.website = value
+    }
 }

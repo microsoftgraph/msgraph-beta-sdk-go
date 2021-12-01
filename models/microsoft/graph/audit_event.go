@@ -329,45 +329,67 @@ func (m *AuditEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetActivity sets the activity property value. Friendly name of the activity.
 func (m *AuditEvent) SetActivity(value *string)() {
-    m.activity = value
+    if m != nil {
+        m.activity = value
+    }
 }
 // SetActivityDateTime sets the activityDateTime property value. The date time in UTC when the activity was performed.
 func (m *AuditEvent) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.activityDateTime = value
+    if m != nil {
+        m.activityDateTime = value
+    }
 }
 // SetActivityOperationType sets the activityOperationType property value. The HTTP operation type of the activity.
 func (m *AuditEvent) SetActivityOperationType(value *string)() {
-    m.activityOperationType = value
+    if m != nil {
+        m.activityOperationType = value
+    }
 }
 // SetActivityResult sets the activityResult property value. The result of the activity.
 func (m *AuditEvent) SetActivityResult(value *string)() {
-    m.activityResult = value
+    if m != nil {
+        m.activityResult = value
+    }
 }
 // SetActivityType sets the activityType property value. The type of activity that was being performed.
 func (m *AuditEvent) SetActivityType(value *string)() {
-    m.activityType = value
+    if m != nil {
+        m.activityType = value
+    }
 }
 // SetActor sets the actor property value. AAD user and application that are associated with the audit event.
 func (m *AuditEvent) SetActor(value *AuditActor)() {
-    m.actor = value
+    if m != nil {
+        m.actor = value
+    }
 }
 // SetCategory sets the category property value. Audit category.
 func (m *AuditEvent) SetCategory(value *string)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetComponentName sets the componentName property value. Component name.
 func (m *AuditEvent) SetComponentName(value *string)() {
-    m.componentName = value
+    if m != nil {
+        m.componentName = value
+    }
 }
 // SetCorrelationId sets the correlationId property value. The client request Id that is used to correlate activity within the system.
 func (m *AuditEvent) SetCorrelationId(value *string)() {
-    m.correlationId = value
+    if m != nil {
+        m.correlationId = value
+    }
 }
 // SetDisplayName sets the displayName property value. Event display name.
 func (m *AuditEvent) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetResources sets the resources property value. Resources being modified.
 func (m *AuditEvent) SetResources(value []AuditResource)() {
-    m.resources = value
+    if m != nil {
+        m.resources = value
+    }
 }

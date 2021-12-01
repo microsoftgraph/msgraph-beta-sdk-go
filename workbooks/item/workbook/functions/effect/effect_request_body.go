@@ -97,13 +97,19 @@ func (m *EffectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EffectRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNominalRate sets the nominalRate property value. 
 func (m *EffectRequestBody) SetNominalRate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.nominalRate = value
+    if m != nil {
+        m.nominalRate = value
+    }
 }
 // SetNpery sets the npery property value. 
 func (m *EffectRequestBody) SetNpery(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.npery = value
+    if m != nil {
+        m.npery = value
+    }
 }

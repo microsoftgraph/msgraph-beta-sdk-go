@@ -112,13 +112,19 @@ func (m *GroupPolicyPresentation) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetDefinition sets the definition property value. The group policy definition associated with the presentation.
 func (m *GroupPolicyPresentation) SetDefinition(value *GroupPolicyDefinition)() {
-    m.definition = value
+    if m != nil {
+        m.definition = value
+    }
 }
 // SetLabel sets the label property value. Localized text label for any presentation entity. The default value is empty.
 func (m *GroupPolicyPresentation) SetLabel(value *string)() {
-    m.label = value
+    if m != nil {
+        m.label = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyPresentation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }

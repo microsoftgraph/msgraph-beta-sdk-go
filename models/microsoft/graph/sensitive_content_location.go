@@ -183,25 +183,37 @@ func (m *SensitiveContentLocation) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentLocation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConfidence sets the confidence property value. 
 func (m *SensitiveContentLocation) SetConfidence(value *int32)() {
-    m.confidence = value
+    if m != nil {
+        m.confidence = value
+    }
 }
 // SetEvidences sets the evidences property value. 
 func (m *SensitiveContentLocation) SetEvidences(value []SensitiveContentEvidence)() {
-    m.evidences = value
+    if m != nil {
+        m.evidences = value
+    }
 }
 // SetIdMatch sets the idMatch property value. 
 func (m *SensitiveContentLocation) SetIdMatch(value *string)() {
-    m.idMatch = value
+    if m != nil {
+        m.idMatch = value
+    }
 }
 // SetLength sets the length property value. 
 func (m *SensitiveContentLocation) SetLength(value *int32)() {
-    m.length = value
+    if m != nil {
+        m.length = value
+    }
 }
 // SetOffset sets the offset property value. 
 func (m *SensitiveContentLocation) SetOffset(value *int32)() {
-    m.offset = value
+    if m != nil {
+        m.offset = value
+    }
 }

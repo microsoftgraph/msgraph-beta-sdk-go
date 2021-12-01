@@ -97,13 +97,19 @@ func (m *LoggedOnUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LoggedOnUser) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLastLogOnDateTime sets the lastLogOnDateTime property value. Date time when user logs on
 func (m *LoggedOnUser) SetLastLogOnDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastLogOnDateTime = value
+    if m != nil {
+        m.lastLogOnDateTime = value
+    }
 }
 // SetUserId sets the userId property value. User id
 func (m *LoggedOnUser) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

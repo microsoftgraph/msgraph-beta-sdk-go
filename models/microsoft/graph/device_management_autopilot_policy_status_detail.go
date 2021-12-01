@@ -194,25 +194,37 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) Serialize(writer i04eb5309
 }
 // SetComplianceStatus sets the complianceStatus property value. The policy compliance status. Possible values are: unknown, compliant, installed, notCompliant, notInstalled, error.
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetComplianceStatus(value *DeviceManagementAutopilotPolicyComplianceStatus)() {
-    m.complianceStatus = value
+    if m != nil {
+        m.complianceStatus = value
+    }
 }
 // SetDisplayName sets the displayName property value. The friendly name of the policy.
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetErrorCode sets the errorCode property value. The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetErrorCode(value *int32)() {
-    m.errorCode = value
+    if m != nil {
+        m.errorCode = value
+    }
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Timestamp of the reported policy status
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastReportedDateTime = value
+    if m != nil {
+        m.lastReportedDateTime = value
+    }
 }
 // SetPolicyType sets the policyType property value. The type of policy. Possible values are: unknown, application, appModel, configurationPolicy.
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetPolicyType(value *DeviceManagementAutopilotPolicyType)() {
-    m.policyType = value
+    if m != nil {
+        m.policyType = value
+    }
 }
 // SetTrackedOnEnrollmentStatus sets the trackedOnEnrollmentStatus property value. Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetTrackedOnEnrollmentStatus(value *bool)() {
-    m.trackedOnEnrollmentStatus = value
+    if m != nil {
+        m.trackedOnEnrollmentStatus = value
+    }
 }

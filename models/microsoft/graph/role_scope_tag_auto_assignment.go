@@ -59,5 +59,7 @@ func (m *RoleScopeTagAutoAssignment) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetTarget sets the target property value. The auto-assignment target for the specific Role Scope Tag.
 func (m *RoleScopeTagAutoAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

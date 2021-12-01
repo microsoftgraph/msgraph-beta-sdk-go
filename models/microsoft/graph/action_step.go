@@ -122,17 +122,25 @@ func (m *ActionStep) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetActionUrl sets the actionUrl property value. 
 func (m *ActionStep) SetActionUrl(value *ActionUrl)() {
-    m.actionUrl = value
+    if m != nil {
+        m.actionUrl = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActionStep) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetStepNumber sets the stepNumber property value. 
 func (m *ActionStep) SetStepNumber(value *int64)() {
-    m.stepNumber = value
+    if m != nil {
+        m.stepNumber = value
+    }
 }
 // SetText sets the text property value. 
 func (m *ActionStep) SetText(value *string)() {
-    m.text = value
+    if m != nil {
+        m.text = value
+    }
 }

@@ -157,21 +157,31 @@ func (m *ContentClassification) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentClassification) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConfidence sets the confidence property value. 
 func (m *ContentClassification) SetConfidence(value *int32)() {
-    m.confidence = value
+    if m != nil {
+        m.confidence = value
+    }
 }
 // SetMatches sets the matches property value. 
 func (m *ContentClassification) SetMatches(value []MatchLocation)() {
-    m.matches = value
+    if m != nil {
+        m.matches = value
+    }
 }
 // SetSensitiveTypeId sets the sensitiveTypeId property value. 
 func (m *ContentClassification) SetSensitiveTypeId(value *string)() {
-    m.sensitiveTypeId = value
+    if m != nil {
+        m.sensitiveTypeId = value
+    }
 }
 // SetUniqueCount sets the uniqueCount property value. 
 func (m *ContentClassification) SetUniqueCount(value *int32)() {
-    m.uniqueCount = value
+    if m != nil {
+        m.uniqueCount = value
+    }
 }

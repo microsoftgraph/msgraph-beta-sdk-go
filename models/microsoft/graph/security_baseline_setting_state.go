@@ -261,33 +261,49 @@ func (m *SecurityBaselineSettingState) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetContributingPolicies sets the contributingPolicies property value. The policies that contribute to this setting instance
 func (m *SecurityBaselineSettingState) SetContributingPolicies(value []SecurityBaselineContributingPolicy)() {
-    m.contributingPolicies = value
+    if m != nil {
+        m.contributingPolicies = value
+    }
 }
 // SetErrorCode sets the errorCode property value. The error code if the setting is in error state
 func (m *SecurityBaselineSettingState) SetErrorCode(value *string)() {
-    m.errorCode = value
+    if m != nil {
+        m.errorCode = value
+    }
 }
 // SetSettingCategoryId sets the settingCategoryId property value. The setting category id which this setting belongs to
 func (m *SecurityBaselineSettingState) SetSettingCategoryId(value *string)() {
-    m.settingCategoryId = value
+    if m != nil {
+        m.settingCategoryId = value
+    }
 }
 // SetSettingCategoryName sets the settingCategoryName property value. The setting category name which this setting belongs to
 func (m *SecurityBaselineSettingState) SetSettingCategoryName(value *string)() {
-    m.settingCategoryName = value
+    if m != nil {
+        m.settingCategoryName = value
+    }
 }
 // SetSettingId sets the settingId property value. The setting id guid
 func (m *SecurityBaselineSettingState) SetSettingId(value *string)() {
-    m.settingId = value
+    if m != nil {
+        m.settingId = value
+    }
 }
 // SetSettingName sets the settingName property value. The setting name that is being reported
 func (m *SecurityBaselineSettingState) SetSettingName(value *string)() {
-    m.settingName = value
+    if m != nil {
+        m.settingName = value
+    }
 }
 // SetSourcePolicies sets the sourcePolicies property value. The policies that contribute to this setting instance
 func (m *SecurityBaselineSettingState) SetSourcePolicies(value []SettingSource)() {
-    m.sourcePolicies = value
+    if m != nil {
+        m.sourcePolicies = value
+    }
 }
 // SetState sets the state property value. The compliance state of the security baseline setting
 func (m *SecurityBaselineSettingState) SetState(value *SecurityBaselineComplianceState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

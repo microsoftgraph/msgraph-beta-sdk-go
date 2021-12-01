@@ -233,33 +233,49 @@ func (m *LogonUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAccountDomain sets the accountDomain property value. Domain of user account used to logon.
 func (m *LogonUser) SetAccountDomain(value *string)() {
-    m.accountDomain = value
+    if m != nil {
+        m.accountDomain = value
+    }
 }
 // SetAccountName sets the accountName property value. Account name of user account used to logon.
 func (m *LogonUser) SetAccountName(value *string)() {
-    m.accountName = value
+    if m != nil {
+        m.accountName = value
+    }
 }
 // SetAccountType sets the accountType property value. User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.
 func (m *LogonUser) SetAccountType(value *UserAccountSecurityType)() {
-    m.accountType = value
+    if m != nil {
+        m.accountType = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LogonUser) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFirstSeenDateTime sets the firstSeenDateTime property value. DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *LogonUser) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.firstSeenDateTime = value
+    if m != nil {
+        m.firstSeenDateTime = value
+    }
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *LogonUser) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSeenDateTime = value
+    if m != nil {
+        m.lastSeenDateTime = value
+    }
 }
 // SetLogonId sets the logonId property value. User logon ID.
 func (m *LogonUser) SetLogonId(value *string)() {
-    m.logonId = value
+    if m != nil {
+        m.logonId = value
+    }
 }
 // SetLogonTypes sets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
 func (m *LogonUser) SetLogonTypes(value []LogonType)() {
-    m.logonTypes = value
+    if m != nil {
+        m.logonTypes = value
+    }
 }

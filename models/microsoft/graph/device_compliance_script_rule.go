@@ -208,29 +208,43 @@ func (m *DeviceComplianceScriptRule) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceComplianceScriptRule) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDataType sets the dataType property value. Data type specified in the rule. Possible values are: none, boolean, int64, double, string, dateTime, version, base64, xml, booleanArray, int64Array, doubleArray, stringArray, dateTimeArray, versionArray.
 func (m *DeviceComplianceScriptRule) SetDataType(value *DataType)() {
-    m.dataType = value
+    if m != nil {
+        m.dataType = value
+    }
 }
 // SetDeviceComplianceScriptRuleDataType sets the deviceComplianceScriptRuleDataType property value. Data type specified in the rule. Possible values are: none, boolean, int64, double, string, dateTime, version, base64, xml, booleanArray, int64Array, doubleArray, stringArray, dateTimeArray, versionArray.
 func (m *DeviceComplianceScriptRule) SetDeviceComplianceScriptRuleDataType(value *DeviceComplianceScriptRuleDataType)() {
-    m.deviceComplianceScriptRuleDataType = value
+    if m != nil {
+        m.deviceComplianceScriptRuleDataType = value
+    }
 }
 // SetDeviceComplianceScriptRulOperator sets the deviceComplianceScriptRulOperator property value. Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.
 func (m *DeviceComplianceScriptRule) SetDeviceComplianceScriptRulOperator(value *DeviceComplianceScriptRulOperator)() {
-    m.deviceComplianceScriptRulOperator = value
+    if m != nil {
+        m.deviceComplianceScriptRulOperator = value
+    }
 }
 // SetOperand sets the operand property value. Operand specified in the rule.
 func (m *DeviceComplianceScriptRule) SetOperand(value *string)() {
-    m.operand = value
+    if m != nil {
+        m.operand = value
+    }
 }
 // SetOperator sets the operator property value. Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.
 func (m *DeviceComplianceScriptRule) SetOperator(value *Operator)() {
-    m.operator = value
+    if m != nil {
+        m.operator = value
+    }
 }
 // SetSettingName sets the settingName property value. Setting name specified in the rule.
 func (m *DeviceComplianceScriptRule) SetSettingName(value *string)() {
-    m.settingName = value
+    if m != nil {
+        m.settingName = value
+    }
 }

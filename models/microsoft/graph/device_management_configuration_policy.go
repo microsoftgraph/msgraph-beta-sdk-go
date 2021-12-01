@@ -398,53 +398,79 @@ func (m *DeviceManagementConfigurationPolicy) Serialize(writer i04eb5309aeaafadd
 }
 // SetAssignments sets the assignments property value. Policy assignments
 func (m *DeviceManagementConfigurationPolicy) SetAssignments(value []DeviceManagementConfigurationPolicyAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Policy creation date and time. This property is read-only.
 func (m *DeviceManagementConfigurationPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetCreationSource sets the creationSource property value. Policy creation source
 func (m *DeviceManagementConfigurationPolicy) SetCreationSource(value *string)() {
-    m.creationSource = value
+    if m != nil {
+        m.creationSource = value
+    }
 }
 // SetDescription sets the description property value. Policy description
 func (m *DeviceManagementConfigurationPolicy) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetIsAssigned sets the isAssigned property value. Policy assignment status. This property is read-only.
 func (m *DeviceManagementConfigurationPolicy) SetIsAssigned(value *bool)() {
-    m.isAssigned = value
+    if m != nil {
+        m.isAssigned = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Policy last modification date and time. This property is read-only.
 func (m *DeviceManagementConfigurationPolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetName sets the name property value. Policy name
 func (m *DeviceManagementConfigurationPolicy) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetPlatforms sets the platforms property value. Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10.
 func (m *DeviceManagementConfigurationPolicy) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
-    m.platforms = value
+    if m != nil {
+        m.platforms = value
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *DeviceManagementConfigurationPolicy) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    if m != nil {
+        m.roleScopeTagIds = value
+    }
 }
 // SetSettingCount sets the settingCount property value. Number of settings. This property is read-only.
 func (m *DeviceManagementConfigurationPolicy) SetSettingCount(value *int32)() {
-    m.settingCount = value
+    if m != nil {
+        m.settingCount = value
+    }
 }
 // SetSettings sets the settings property value. Policy settings
 func (m *DeviceManagementConfigurationPolicy) SetSettings(value []DeviceManagementConfigurationSetting)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }
 // SetTechnologies sets the technologies property value. Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementConfigurationPolicy) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
-    m.technologies = value
+    if m != nil {
+        m.technologies = value
+    }
 }
 // SetTemplateReference sets the templateReference property value. Template reference information
 func (m *DeviceManagementConfigurationPolicy) SetTemplateReference(value *DeviceManagementConfigurationPolicyTemplateReference)() {
-    m.templateReference = value
+    if m != nil {
+        m.templateReference = value
+    }
 }

@@ -44,7 +44,7 @@ type TimeCardRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TimeCardRequestBuilderPatchOptions options for Patch
 type TimeCardRequestBuilderPatchOptions struct {

@@ -418,45 +418,67 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnit)() {
-    m.administrativeUnits = value
+    if m != nil {
+        m.administrativeUnits = value
+    }
 }
 // SetAttributeSets sets the attributeSets property value. Group of related custom security attribute definitions.
 func (m *Directory) SetAttributeSets(value []AttributeSet)() {
-    m.attributeSets = value
+    if m != nil {
+        m.attributeSets = value
+    }
 }
 // SetCustomSecurityAttributeDefinitions sets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
 func (m *Directory) SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinition)() {
-    m.customSecurityAttributeDefinitions = value
+    if m != nil {
+        m.customSecurityAttributeDefinitions = value
+    }
 }
 // SetDeletedItems sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
 func (m *Directory) SetDeletedItems(value []DirectoryObject)() {
-    m.deletedItems = value
+    if m != nil {
+        m.deletedItems = value
+    }
 }
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. Nullable.
 func (m *Directory) SetFeatureRolloutPolicies(value []FeatureRolloutPolicy)() {
-    m.featureRolloutPolicies = value
+    if m != nil {
+        m.featureRolloutPolicies = value
+    }
 }
 // SetFederationConfigurations sets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *Directory) SetFederationConfigurations(value []IdentityProviderBase)() {
-    m.federationConfigurations = value
+    if m != nil {
+        m.federationConfigurations = value
+    }
 }
 // SetImpactedResources sets the impactedResources property value. 
 func (m *Directory) SetImpactedResources(value []RecommendationResource)() {
-    m.impactedResources = value
+    if m != nil {
+        m.impactedResources = value
+    }
 }
 // SetInboundSharedUserProfiles sets the inboundSharedUserProfiles property value. 
 func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfile)() {
-    m.inboundSharedUserProfiles = value
+    if m != nil {
+        m.inboundSharedUserProfiles = value
+    }
 }
 // SetOutboundSharedUserProfiles sets the outboundSharedUserProfiles property value. 
 func (m *Directory) SetOutboundSharedUserProfiles(value []OutboundSharedUserProfile)() {
-    m.outboundSharedUserProfiles = value
+    if m != nil {
+        m.outboundSharedUserProfiles = value
+    }
 }
 // SetRecommendations sets the recommendations property value. 
 func (m *Directory) SetRecommendations(value []Recommendation)() {
-    m.recommendations = value
+    if m != nil {
+        m.recommendations = value
+    }
 }
 // SetSharedEmailDomains sets the sharedEmailDomains property value. 
 func (m *Directory) SetSharedEmailDomains(value []SharedEmailDomain)() {
-    m.sharedEmailDomains = value
+    if m != nil {
+        m.sharedEmailDomains = value
+    }
 }

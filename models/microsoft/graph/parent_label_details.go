@@ -252,37 +252,55 @@ func (m *ParentLabelDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParentLabelDetails) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetColor sets the color property value. The color that the user interface should display for the label, if configured.
 func (m *ParentLabelDetails) SetColor(value *string)() {
-    m.color = value
+    if m != nil {
+        m.color = value
+    }
 }
 // SetDescription sets the description property value. The admin-defined description for the label.
 func (m *ParentLabelDetails) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetId sets the id property value. The label ID is a globally unique identifier (GUID).
 func (m *ParentLabelDetails) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetIsActive sets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
 func (m *ParentLabelDetails) SetIsActive(value *bool)() {
-    m.isActive = value
+    if m != nil {
+        m.isActive = value
+    }
 }
 // SetName sets the name property value. The plaintext name of the label.
 func (m *ParentLabelDetails) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetParent sets the parent property value. 
 func (m *ParentLabelDetails) SetParent(value *ParentLabelDetails)() {
-    m.parent = value
+    if m != nil {
+        m.parent = value
+    }
 }
 // SetSensitivity sets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
 func (m *ParentLabelDetails) SetSensitivity(value *int32)() {
-    m.sensitivity = value
+    if m != nil {
+        m.sensitivity = value
+    }
 }
 // SetTooltip sets the tooltip property value. The tooltip that should be displayed for the label in a user interface.
 func (m *ParentLabelDetails) SetTooltip(value *string)() {
-    m.tooltip = value
+    if m != nil {
+        m.tooltip = value
+    }
 }

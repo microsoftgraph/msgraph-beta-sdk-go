@@ -143,17 +143,25 @@ func (m *MeetingRegistrationQuestion) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAnswerInputType sets the answerInputType property value. Answer input type of the custom registration question.
 func (m *MeetingRegistrationQuestion) SetAnswerInputType(value *AnswerInputType)() {
-    m.answerInputType = value
+    if m != nil {
+        m.answerInputType = value
+    }
 }
 // SetAnswerOptions sets the answerOptions property value. Answer options when answerInputType is radioButton.
 func (m *MeetingRegistrationQuestion) SetAnswerOptions(value []string)() {
-    m.answerOptions = value
+    if m != nil {
+        m.answerOptions = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the custom registration question.
 func (m *MeetingRegistrationQuestion) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsRequired sets the isRequired property value. Indicates whether the question is required. Default value is false.
 func (m *MeetingRegistrationQuestion) SetIsRequired(value *bool)() {
-    m.isRequired = value
+    if m != nil {
+        m.isRequired = value
+    }
 }

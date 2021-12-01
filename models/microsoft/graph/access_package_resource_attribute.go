@@ -200,29 +200,43 @@ func (m *AccessPackageResourceAttribute) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageResourceAttribute) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttributeDestination sets the attributeDestination property value. 
 func (m *AccessPackageResourceAttribute) SetAttributeDestination(value *AccessPackageResourceAttributeDestination)() {
-    m.attributeDestination = value
+    if m != nil {
+        m.attributeDestination = value
+    }
 }
 // SetAttributeName sets the attributeName property value. 
 func (m *AccessPackageResourceAttribute) SetAttributeName(value *string)() {
-    m.attributeName = value
+    if m != nil {
+        m.attributeName = value
+    }
 }
 // SetAttributeSource sets the attributeSource property value. 
 func (m *AccessPackageResourceAttribute) SetAttributeSource(value *AccessPackageResourceAttributeSource)() {
-    m.attributeSource = value
+    if m != nil {
+        m.attributeSource = value
+    }
 }
 // SetId sets the id property value. 
 func (m *AccessPackageResourceAttribute) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetIsEditable sets the isEditable property value. 
 func (m *AccessPackageResourceAttribute) SetIsEditable(value *bool)() {
-    m.isEditable = value
+    if m != nil {
+        m.isEditable = value
+    }
 }
 // SetIsPersistedOnAssignmentRemoval sets the isPersistedOnAssignmentRemoval property value. 
 func (m *AccessPackageResourceAttribute) SetIsPersistedOnAssignmentRemoval(value *bool)() {
-    m.isPersistedOnAssignmentRemoval = value
+    if m != nil {
+        m.isPersistedOnAssignmentRemoval = value
+    }
 }

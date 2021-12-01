@@ -111,13 +111,19 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) Serialize(wri
 }
 // SetDeviceId sets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetEstimatedRuntimeInMinutes sets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) SetEstimatedRuntimeInMinutes(value *int32)() {
-    m.estimatedRuntimeInMinutes = value
+    if m != nil {
+        m.estimatedRuntimeInMinutes = value
+    }
 }
 // SetRuntimeDateTime sets the runtimeDateTime property value. The datetime for the instance of runtime history.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) SetRuntimeDateTime(value *string)() {
-    m.runtimeDateTime = value
+    if m != nil {
+        m.runtimeDateTime = value
+    }
 }

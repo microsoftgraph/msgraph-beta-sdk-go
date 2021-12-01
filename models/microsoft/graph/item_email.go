@@ -12,7 +12,7 @@ type ItemEmail struct {
     // The name or label a user has associated with a particular email address.
     displayName *string;
     // The type of email address. Possible values are: unknown, work, personal, main, other.
-    type_escaped *EmailType;
+    type *EmailType;
 }
 // NewItemEmail instantiates a new itemEmail and sets the default values.
 func NewItemEmail()(*ItemEmail) {
@@ -37,12 +37,12 @@ func (m *ItemEmail) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of email address. Possible values are: unknown, work, personal, main, other.
-func (m *ItemEmail) GetType_escaped()(*EmailType) {
+// GetType gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other.
+func (m *ItemEmail) GetType()(*EmailType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,14 +68,14 @@ func (m *ItemEmail) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseEmailType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(EmailType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -102,9 +102,9 @@ func (m *ItemEmail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -113,13 +113,19 @@ func (m *ItemEmail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAddress sets the address property value. The email address itself.
 func (m *ItemEmail) SetAddress(value *string)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name or label a user has associated with a particular email address.
 func (m *ItemEmail) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The type of email address. Possible values are: unknown, work, personal, main, other.
-func (m *ItemEmail) SetType_escaped(value *EmailType)() {
-    m.type_escaped = value
+// SetType sets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other.
+func (m *ItemEmail) SetType(value *EmailType)() {
+    if m != nil {
+        m.type = value
+    }
 }

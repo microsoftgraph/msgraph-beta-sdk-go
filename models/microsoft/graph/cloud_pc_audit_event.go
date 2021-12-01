@@ -335,45 +335,67 @@ func (m *CloudPcAuditEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetActivity sets the activity property value. Friendly name of the activity. Optional.
 func (m *CloudPcAuditEvent) SetActivity(value *string)() {
-    m.activity = value
+    if m != nil {
+        m.activity = value
+    }
 }
 // SetActivityDateTime sets the activityDateTime property value. The date time in UTC when the activity was performed. Read-only.
 func (m *CloudPcAuditEvent) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.activityDateTime = value
+    if m != nil {
+        m.activityDateTime = value
+    }
 }
 // SetActivityOperationType sets the activityOperationType property value. The HTTP operation type of the activity. Possible values include create, delete, patch and other. Read-only.
 func (m *CloudPcAuditEvent) SetActivityOperationType(value *CloudPcAuditActivityOperationType)() {
-    m.activityOperationType = value
+    if m != nil {
+        m.activityOperationType = value
+    }
 }
 // SetActivityResult sets the activityResult property value. The result of the activity. Read-only.
 func (m *CloudPcAuditEvent) SetActivityResult(value *CloudPcAuditActivityResult)() {
-    m.activityResult = value
+    if m != nil {
+        m.activityResult = value
+    }
 }
 // SetActivityType sets the activityType property value. The type of activity that was performed. Read-only.
 func (m *CloudPcAuditEvent) SetActivityType(value *string)() {
-    m.activityType = value
+    if m != nil {
+        m.activityType = value
+    }
 }
 // SetActor sets the actor property value. 
 func (m *CloudPcAuditEvent) SetActor(value *CloudPcAuditActor)() {
-    m.actor = value
+    if m != nil {
+        m.actor = value
+    }
 }
 // SetCategory sets the category property value. Audit category. Read-only.
 func (m *CloudPcAuditEvent) SetCategory(value *CloudPcAuditCategory)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetComponentName sets the componentName property value. Component name. Read-only.
 func (m *CloudPcAuditEvent) SetComponentName(value *string)() {
-    m.componentName = value
+    if m != nil {
+        m.componentName = value
+    }
 }
 // SetCorrelationId sets the correlationId property value. The client request identifier, used to correlate activity within the system. Read-only.
 func (m *CloudPcAuditEvent) SetCorrelationId(value *string)() {
-    m.correlationId = value
+    if m != nil {
+        m.correlationId = value
+    }
 }
 // SetDisplayName sets the displayName property value. Event display name. Read-only.
 func (m *CloudPcAuditEvent) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetResources sets the resources property value. List of cloudPcAuditResource objects. Read-only.
 func (m *CloudPcAuditEvent) SetResources(value []CloudPcAuditResource)() {
-    m.resources = value
+    if m != nil {
+        m.resources = value
+    }
 }

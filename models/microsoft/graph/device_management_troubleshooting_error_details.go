@@ -183,25 +183,37 @@ func (m *DeviceManagementTroubleshootingErrorDetails) Serialize(writer i04eb5309
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContext sets the context property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorDetails) SetContext(value *string)() {
-    m.context = value
+    if m != nil {
+        m.context = value
+    }
 }
 // SetFailure sets the failure property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorDetails) SetFailure(value *string)() {
-    m.failure = value
+    if m != nil {
+        m.failure = value
+    }
 }
 // SetFailureDetails sets the failureDetails property value. The detailed description of what went wrong.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetFailureDetails(value *string)() {
-    m.failureDetails = value
+    if m != nil {
+        m.failureDetails = value
+    }
 }
 // SetRemediation sets the remediation property value. The detailed description of how to remediate this issue.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetRemediation(value *string)() {
-    m.remediation = value
+    if m != nil {
+        m.remediation = value
+    }
 }
 // SetResources sets the resources property value. Links to helpful documentation about this failure.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetResources(value []DeviceManagementTroubleshootingErrorResource)() {
-    m.resources = value
+    if m != nil {
+        m.resources = value
+    }
 }

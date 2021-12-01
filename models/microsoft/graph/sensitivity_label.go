@@ -402,53 +402,79 @@ func (m *SensitivityLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetApplicableTo sets the applicableTo property value. 
 func (m *SensitivityLabel) SetApplicableTo(value *SensitivityLabelTarget)() {
-    m.applicableTo = value
+    if m != nil {
+        m.applicableTo = value
+    }
 }
 // SetApplicationMode sets the applicationMode property value. 
 func (m *SensitivityLabel) SetApplicationMode(value *ApplicationMode)() {
-    m.applicationMode = value
+    if m != nil {
+        m.applicationMode = value
+    }
 }
 // SetAssignedPolicies sets the assignedPolicies property value. 
 func (m *SensitivityLabel) SetAssignedPolicies(value []LabelPolicy)() {
-    m.assignedPolicies = value
+    if m != nil {
+        m.assignedPolicies = value
+    }
 }
 // SetAutoLabeling sets the autoLabeling property value. 
 func (m *SensitivityLabel) SetAutoLabeling(value *AutoLabeling)() {
-    m.autoLabeling = value
+    if m != nil {
+        m.autoLabeling = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *SensitivityLabel) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *SensitivityLabel) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsDefault sets the isDefault property value. 
 func (m *SensitivityLabel) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetIsEndpointProtectionEnabled sets the isEndpointProtectionEnabled property value. 
 func (m *SensitivityLabel) SetIsEndpointProtectionEnabled(value *bool)() {
-    m.isEndpointProtectionEnabled = value
+    if m != nil {
+        m.isEndpointProtectionEnabled = value
+    }
 }
 // SetLabelActions sets the labelActions property value. 
 func (m *SensitivityLabel) SetLabelActions(value []LabelActionBase)() {
-    m.labelActions = value
+    if m != nil {
+        m.labelActions = value
+    }
 }
 // SetName sets the name property value. 
 func (m *SensitivityLabel) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetPriority sets the priority property value. 
 func (m *SensitivityLabel) SetPriority(value *int32)() {
-    m.priority = value
+    if m != nil {
+        m.priority = value
+    }
 }
 // SetSublabels sets the sublabels property value. 
 func (m *SensitivityLabel) SetSublabels(value []SensitivityLabel)() {
-    m.sublabels = value
+    if m != nil {
+        m.sublabels = value
+    }
 }
 // SetToolTip sets the toolTip property value. 
 func (m *SensitivityLabel) SetToolTip(value *string)() {
-    m.toolTip = value
+    if m != nil {
+        m.toolTip = value
+    }
 }

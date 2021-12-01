@@ -305,41 +305,61 @@ func (m *RecommendationResource) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAddedDateTime sets the addedDateTime property value. 
 func (m *RecommendationResource) SetAddedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.addedDateTime = value
+    if m != nil {
+        m.addedDateTime = value
+    }
 }
 // SetAdditionalDetails sets the additionalDetails property value. 
 func (m *RecommendationResource) SetAdditionalDetails(value []KeyValue)() {
-    m.additionalDetails = value
+    if m != nil {
+        m.additionalDetails = value
+    }
 }
 // SetApiUrl sets the apiUrl property value. 
 func (m *RecommendationResource) SetApiUrl(value *string)() {
-    m.apiUrl = value
+    if m != nil {
+        m.apiUrl = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *RecommendationResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetOwner sets the owner property value. 
 func (m *RecommendationResource) SetOwner(value *string)() {
-    m.owner = value
+    if m != nil {
+        m.owner = value
+    }
 }
 // SetPortalUrl sets the portalUrl property value. 
 func (m *RecommendationResource) SetPortalUrl(value *string)() {
-    m.portalUrl = value
+    if m != nil {
+        m.portalUrl = value
+    }
 }
 // SetRank sets the rank property value. 
 func (m *RecommendationResource) SetRank(value *int32)() {
-    m.rank = value
+    if m != nil {
+        m.rank = value
+    }
 }
 // SetRecommendationId sets the recommendationId property value. 
 func (m *RecommendationResource) SetRecommendationId(value *string)() {
-    m.recommendationId = value
+    if m != nil {
+        m.recommendationId = value
+    }
 }
 // SetResourceType sets the resourceType property value. 
 func (m *RecommendationResource) SetResourceType(value *string)() {
-    m.resourceType = value
+    if m != nil {
+        m.resourceType = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *RecommendationResource) SetStatus(value *RecommendationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

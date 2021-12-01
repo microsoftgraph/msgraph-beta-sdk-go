@@ -47,7 +47,7 @@ type GroupPolicyUploadedDefinitionFileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // GroupPolicyUploadedDefinitionFileRequestBuilderPatchOptions options for Patch
 type GroupPolicyUploadedDefinitionFileRequestBuilderPatchOptions struct {

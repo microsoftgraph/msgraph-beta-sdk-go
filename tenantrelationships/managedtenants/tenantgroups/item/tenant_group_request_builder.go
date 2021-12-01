@@ -40,7 +40,7 @@ type TenantGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TenantGroupRequestBuilderPatchOptions options for Patch
 type TenantGroupRequestBuilderPatchOptions struct {

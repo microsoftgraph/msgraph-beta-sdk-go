@@ -59,5 +59,7 @@ func (m *MobileAppProvisioningConfigGroupAssignment) Serialize(writer i04eb5309a
 }
 // SetTargetGroupId sets the targetGroupId property value. The ID of the AAD group in which the app provisioning configuration is being targeted.
 func (m *MobileAppProvisioningConfigGroupAssignment) SetTargetGroupId(value *string)() {
-    m.targetGroupId = value
+    if m != nil {
+        m.targetGroupId = value
+    }
 }

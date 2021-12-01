@@ -94,9 +94,13 @@ func (m *DefaultUserRoleOverride) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetIsDefault sets the isDefault property value. 
 func (m *DefaultUserRoleOverride) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetRolePermissions sets the rolePermissions property value. 
 func (m *DefaultUserRoleOverride) SetRolePermissions(value []UnifiedRolePermission)() {
-    m.rolePermissions = value
+    if m != nil {
+        m.rolePermissions = value
+    }
 }

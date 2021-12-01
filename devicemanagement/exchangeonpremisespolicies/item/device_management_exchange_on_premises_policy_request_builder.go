@@ -41,7 +41,7 @@ type DeviceManagementExchangeOnPremisesPolicyRequestBuilderGetQueryParameters st
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceManagementExchangeOnPremisesPolicyRequestBuilderPatchOptions options for Patch
 type DeviceManagementExchangeOnPremisesPolicyRequestBuilderPatchOptions struct {

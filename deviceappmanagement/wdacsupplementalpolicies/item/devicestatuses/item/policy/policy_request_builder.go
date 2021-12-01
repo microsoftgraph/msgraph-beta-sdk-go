@@ -33,7 +33,7 @@ type PolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 func (m *PolicyRequestBuilder) Assign()(*i1e5749e7103ca0f0eb45d3bcfd10adae7ed7951ace4bf469be0c5d5f8f7cc797.AssignRequestBuilder) {
     return i1e5749e7103ca0f0eb45d3bcfd10adae7ed7951ace4bf469be0c5d5f8f7cc797.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);

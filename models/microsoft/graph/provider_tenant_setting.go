@@ -17,7 +17,7 @@ type ProviderTenantSetting struct {
     // 
     provider *string;
     // 
-    vendor_escaped *string;
+    vendor *string;
 }
 // NewProviderTenantSetting instantiates a new providerTenantSetting and sets the default values.
 func NewProviderTenantSetting()(*ProviderTenantSetting) {
@@ -58,12 +58,12 @@ func (m *ProviderTenantSetting) GetProvider()(*string) {
         return m.provider
     }
 }
-// GetVendor_escaped gets the vendor_escaped property value. 
-func (m *ProviderTenantSetting) GetVendor_escaped()(*string) {
+// GetVendor gets the vendor property value. 
+func (m *ProviderTenantSetting) GetVendor()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.vendor_escaped
+        return m.vendor
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -109,13 +109,13 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendor_escaped(val)
+            m.SetVendor(val)
         }
         return nil
     }
@@ -155,7 +155,7 @@ func (m *ProviderTenantSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     {
-        err = writer.WriteStringValue("vendor_escaped", m.GetVendor_escaped())
+        err = writer.WriteStringValue("vendor", m.GetVendor())
         if err != nil {
             return err
         }
@@ -164,21 +164,31 @@ func (m *ProviderTenantSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAzureTenantId sets the azureTenantId property value. 
 func (m *ProviderTenantSetting) SetAzureTenantId(value *string)() {
-    m.azureTenantId = value
+    if m != nil {
+        m.azureTenantId = value
+    }
 }
 // SetEnabled sets the enabled property value. 
 func (m *ProviderTenantSetting) SetEnabled(value *bool)() {
-    m.enabled = value
+    if m != nil {
+        m.enabled = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *ProviderTenantSetting) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetProvider sets the provider property value. 
 func (m *ProviderTenantSetting) SetProvider(value *string)() {
-    m.provider = value
+    if m != nil {
+        m.provider = value
+    }
 }
-// SetVendor_escaped sets the vendor_escaped property value. 
-func (m *ProviderTenantSetting) SetVendor_escaped(value *string)() {
-    m.vendor_escaped = value
+// SetVendor sets the vendor property value. 
+func (m *ProviderTenantSetting) SetVendor(value *string)() {
+    if m != nil {
+        m.vendor = value
+    }
 }

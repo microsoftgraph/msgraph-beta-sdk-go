@@ -398,57 +398,85 @@ func (m *ManagedDeviceCompliance) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetComplianceStatus sets the complianceStatus property value. Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetComplianceStatus(value *string)() {
-    m.complianceStatus = value
+    if m != nil {
+        m.complianceStatus = value
+    }
 }
 // SetDeviceType sets the deviceType property value. Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetDeviceType(value *string)() {
-    m.deviceType = value
+    if m != nil {
+        m.deviceType = value
+    }
 }
 // SetInGracePeriodUntilDateTime sets the inGracePeriodUntilDateTime property value. The date and time when the grace period will expire. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetInGracePeriodUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.inGracePeriodUntilDateTime = value
+    if m != nil {
+        m.inGracePeriodUntilDateTime = value
+    }
 }
 // SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastRefreshedDateTime = value
+    if m != nil {
+        m.lastRefreshedDateTime = value
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Microsoft Endpoint Manager. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    if m != nil {
+        m.lastSyncDateTime = value
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The identifier for the managed device in Microsoft Endpoint Manager. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    if m != nil {
+        m.managedDeviceId = value
+    }
 }
 // SetManagedDeviceName sets the managedDeviceName property value. The display name for the managed device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetManagedDeviceName(value *string)() {
-    m.managedDeviceName = value
+    if m != nil {
+        m.managedDeviceName = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. The manufacture for the device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetModel sets the model property value. The model for the device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }
 // SetOsDescription sets the osDescription property value. The description of the operating system for the managed device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetOsDescription(value *string)() {
-    m.osDescription = value
+    if m != nil {
+        m.osDescription = value
+    }
 }
 // SetOsVersion sets the osVersion property value. The version of the operating system for the managed device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetOsVersion(value *string)() {
-    m.osVersion = value
+    if m != nil {
+        m.osVersion = value
+    }
 }
 // SetOwnerType sets the ownerType property value. The type of owner for the managed device. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetOwnerType(value *string)() {
-    m.ownerType = value
+    if m != nil {
+        m.ownerType = value
+    }
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetTenantDisplayName(value *string)() {
-    m.tenantDisplayName = value
+    if m != nil {
+        m.tenantDisplayName = value
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }

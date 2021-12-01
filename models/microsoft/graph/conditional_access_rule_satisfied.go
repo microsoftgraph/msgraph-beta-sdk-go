@@ -100,13 +100,19 @@ func (m *ConditionalAccessRuleSatisfied) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessRuleSatisfied) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConditionalAccessCondition sets the conditionalAccessCondition property value. 
 func (m *ConditionalAccessRuleSatisfied) SetConditionalAccessCondition(value *ConditionalAccessConditions)() {
-    m.conditionalAccessCondition = value
+    if m != nil {
+        m.conditionalAccessCondition = value
+    }
 }
 // SetRuleSatisfied sets the ruleSatisfied property value. 
 func (m *ConditionalAccessRuleSatisfied) SetRuleSatisfied(value *ConditionalAccessRule)() {
-    m.ruleSatisfied = value
+    if m != nil {
+        m.ruleSatisfied = value
+    }
 }

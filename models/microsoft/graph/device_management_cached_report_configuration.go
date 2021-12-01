@@ -21,7 +21,7 @@ type DeviceManagementCachedReportConfiguration struct {
     // Name of the report
     reportName *string;
     // Columns selected from the report
-    select_escaped []string;
+    select []string;
     // Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
     status *DeviceManagementReportStatus;
 }
@@ -80,12 +80,12 @@ func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
         return m.reportName
     }
 }
-// GetSelect_escaped gets the select_escaped property value. Columns selected from the report
-func (m *DeviceManagementCachedReportConfiguration) GetSelect_escaped()([]string) {
+// GetSelect gets the select property value. Columns selected from the report
+func (m *DeviceManagementCachedReportConfiguration) GetSelect()([]string) {
     if m == nil {
         return nil
     } else {
-        return m.select_escaped
+        return m.select
     }
 }
 // GetStatus gets the status property value. Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
@@ -163,7 +163,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetSelect_escaped(res)
+            m.SetSelect(res)
         }
         return nil
     }
@@ -236,7 +236,7 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i04eb5309ae
         }
     }
     {
-        err = writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
+        err = writer.WriteCollectionOfStringValues("select", m.GetSelect())
         if err != nil {
             return err
         }
@@ -252,33 +252,49 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i04eb5309ae
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Time that the cached report expires
 func (m *DeviceManagementCachedReportConfiguration) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetFilter sets the filter property value. Filters applied on report creation.
 func (m *DeviceManagementCachedReportConfiguration) SetFilter(value *string)() {
-    m.filter = value
+    if m != nil {
+        m.filter = value
+    }
 }
 // SetLastRefreshDateTime sets the lastRefreshDateTime property value. Time that the cached report was last refreshed
 func (m *DeviceManagementCachedReportConfiguration) SetLastRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastRefreshDateTime = value
+    if m != nil {
+        m.lastRefreshDateTime = value
+    }
 }
 // SetMetadata sets the metadata property value. Caller-managed metadata associated with the report
 func (m *DeviceManagementCachedReportConfiguration) SetMetadata(value *string)() {
-    m.metadata = value
+    if m != nil {
+        m.metadata = value
+    }
 }
 // SetOrderBy sets the orderBy property value. Ordering of columns in the report
 func (m *DeviceManagementCachedReportConfiguration) SetOrderBy(value []string)() {
-    m.orderBy = value
+    if m != nil {
+        m.orderBy = value
+    }
 }
 // SetReportName sets the reportName property value. Name of the report
 func (m *DeviceManagementCachedReportConfiguration) SetReportName(value *string)() {
-    m.reportName = value
+    if m != nil {
+        m.reportName = value
+    }
 }
-// SetSelect_escaped sets the select_escaped property value. Columns selected from the report
-func (m *DeviceManagementCachedReportConfiguration) SetSelect_escaped(value []string)() {
-    m.select_escaped = value
+// SetSelect sets the select property value. Columns selected from the report
+func (m *DeviceManagementCachedReportConfiguration) SetSelect(value []string)() {
+    if m != nil {
+        m.select = value
+    }
 }
 // SetStatus sets the status property value. Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
 func (m *DeviceManagementCachedReportConfiguration) SetStatus(value *DeviceManagementReportStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

@@ -36,7 +36,7 @@ type AppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 func (m *AppRequestBuilder) Assign()(*i8f7a908a43d617c31758f6f6191470629d663c61ebec8d28652145d6ca5de70c.AssignRequestBuilder) {
     return i8f7a908a43d617c31758f6f6191470629d663c61ebec8d28652145d6ca5de70c.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);

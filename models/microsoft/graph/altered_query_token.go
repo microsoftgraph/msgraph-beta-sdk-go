@@ -122,17 +122,25 @@ func (m *AlteredQueryToken) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlteredQueryToken) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLength sets the length property value. Defines the length of a changed segment.
 func (m *AlteredQueryToken) SetLength(value *int32)() {
-    m.length = value
+    if m != nil {
+        m.length = value
+    }
 }
 // SetOffset sets the offset property value. Defines the offset of a changed segment.
 func (m *AlteredQueryToken) SetOffset(value *int32)() {
-    m.offset = value
+    if m != nil {
+        m.offset = value
+    }
 }
 // SetSuggestion sets the suggestion property value. Represents the corrected segment string.
 func (m *AlteredQueryToken) SetSuggestion(value *string)() {
-    m.suggestion = value
+    if m != nil {
+        m.suggestion = value
+    }
 }

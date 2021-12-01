@@ -104,13 +104,19 @@ func (m *UpdatePrioritiesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdatePrioritiesRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOfficeConfigurationPolicyIds sets the officeConfigurationPolicyIds property value. 
 func (m *UpdatePrioritiesRequestBody) SetOfficeConfigurationPolicyIds(value []string)() {
-    m.officeConfigurationPolicyIds = value
+    if m != nil {
+        m.officeConfigurationPolicyIds = value
+    }
 }
 // SetOfficeConfigurationPriorities sets the officeConfigurationPriorities property value. 
 func (m *UpdatePrioritiesRequestBody) SetOfficeConfigurationPriorities(value []int32)() {
-    m.officeConfigurationPriorities = value
+    if m != nil {
+        m.officeConfigurationPriorities = value
+    }
 }

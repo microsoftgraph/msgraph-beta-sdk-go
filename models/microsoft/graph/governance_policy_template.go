@@ -111,13 +111,19 @@ func (m *GovernancePolicyTemplate) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetDisplayName sets the displayName property value. 
 func (m *GovernancePolicyTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetPolicy sets the policy property value. 
 func (m *GovernancePolicyTemplate) SetPolicy(value *GovernancePolicy)() {
-    m.policy = value
+    if m != nil {
+        m.policy = value
+    }
 }
 // SetSettings sets the settings property value. 
 func (m *GovernancePolicyTemplate) SetSettings(value *BusinessFlowSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }

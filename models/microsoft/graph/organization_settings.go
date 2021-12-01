@@ -120,13 +120,19 @@ func (m *OrganizationSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetItemInsights sets the itemInsights property value. Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.
 func (m *OrganizationSettings) SetItemInsights(value *InsightsSettings)() {
-    m.itemInsights = value
+    if m != nil {
+        m.itemInsights = value
+    }
 }
 // SetPeopleInsights sets the peopleInsights property value. 
 func (m *OrganizationSettings) SetPeopleInsights(value *InsightsSettings)() {
-    m.peopleInsights = value
+    if m != nil {
+        m.peopleInsights = value
+    }
 }
 // SetProfileCardProperties sets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
 func (m *OrganizationSettings) SetProfileCardProperties(value []ProfileCardProperty)() {
-    m.profileCardProperties = value
+    if m != nil {
+        m.profileCardProperties = value
+    }
 }

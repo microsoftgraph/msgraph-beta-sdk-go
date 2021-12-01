@@ -40,7 +40,7 @@ type DirectorySettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DirectorySettingRequestBuilderPatchOptions options for Patch
 type DirectorySettingRequestBuilderPatchOptions struct {

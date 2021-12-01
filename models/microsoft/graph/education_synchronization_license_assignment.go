@@ -102,13 +102,19 @@ func (m *EducationSynchronizationLicenseAssignment) Serialize(writer i04eb5309ae
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationSynchronizationLicenseAssignment) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppliesTo sets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
 func (m *EducationSynchronizationLicenseAssignment) SetAppliesTo(value *EducationUserRole)() {
-    m.appliesTo = value
+    if m != nil {
+        m.appliesTo = value
+    }
 }
 // SetSkuIds sets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
 func (m *EducationSynchronizationLicenseAssignment) SetSkuIds(value []string)() {
-    m.skuIds = value
+    if m != nil {
+        m.skuIds = value
+    }
 }

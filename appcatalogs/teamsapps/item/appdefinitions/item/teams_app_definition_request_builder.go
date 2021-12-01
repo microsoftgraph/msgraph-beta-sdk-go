@@ -43,7 +43,7 @@ type TeamsAppDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TeamsAppDefinitionRequestBuilderPatchOptions options for Patch
 type TeamsAppDefinitionRequestBuilderPatchOptions struct {

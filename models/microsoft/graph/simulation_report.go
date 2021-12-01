@@ -105,13 +105,19 @@ func (m *SimulationReport) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationReport) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOverview sets the overview property value. Overview of an attack simulation and training campaign.
 func (m *SimulationReport) SetOverview(value *SimulationReportOverview)() {
-    m.overview = value
+    if m != nil {
+        m.overview = value
+    }
 }
 // SetSimulationUsers sets the simulationUsers property value. Represents users of a tenant and their online actions in an attack simulation and training campaign.
 func (m *SimulationReport) SetSimulationUsers(value []UserSimulationDetails)() {
-    m.simulationUsers = value
+    if m != nil {
+        m.simulationUsers = value
+    }
 }

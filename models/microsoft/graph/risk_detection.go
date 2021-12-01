@@ -568,81 +568,121 @@ func (m *RiskDetection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to. . Possible values are: signin, user, unknownFutureValue.
 func (m *RiskDetection) SetActivity(value *ActivityType)() {
-    m.activity = value
+    if m != nil {
+        m.activity = value
+    }
 }
 // SetActivityDateTime sets the activityDateTime property value. Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
 func (m *RiskDetection) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.activityDateTime = value
+    if m != nil {
+        m.activityDateTime = value
+    }
 }
 // SetAdditionalInfo sets the additionalInfo property value. Additional information associated with the risk detection in JSON format.
 func (m *RiskDetection) SetAdditionalInfo(value *string)() {
-    m.additionalInfo = value
+    if m != nil {
+        m.additionalInfo = value
+    }
 }
 // SetCorrelationId sets the correlationId property value. Correlation ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
 func (m *RiskDetection) SetCorrelationId(value *string)() {
-    m.correlationId = value
+    if m != nil {
+        m.correlationId = value
+    }
 }
 // SetDetectedDateTime sets the detectedDateTime property value. Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
 func (m *RiskDetection) SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.detectedDateTime = value
+    if m != nil {
+        m.detectedDateTime = value
+    }
 }
 // SetDetectionTimingType sets the detectionTimingType property value. Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
 func (m *RiskDetection) SetDetectionTimingType(value *RiskDetectionTimingType)() {
-    m.detectionTimingType = value
+    if m != nil {
+        m.detectionTimingType = value
+    }
 }
 // SetIpAddress sets the ipAddress property value. Provides the IP address of the client from where the risk occurred.
 func (m *RiskDetection) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    if m != nil {
+        m.ipAddress = value
+    }
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
 func (m *RiskDetection) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdatedDateTime = value
+    if m != nil {
+        m.lastUpdatedDateTime = value
+    }
 }
 // SetLocation sets the location property value. Location of the sign-in.
 func (m *RiskDetection) SetLocation(value *SignInLocation)() {
-    m.location = value
+    if m != nil {
+        m.location = value
+    }
 }
 // SetRequestId sets the requestId property value. Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
 func (m *RiskDetection) SetRequestId(value *string)() {
-    m.requestId = value
+    if m != nil {
+        m.requestId = value
+    }
 }
 // SetRiskDetail sets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
 func (m *RiskDetection) SetRiskDetail(value *RiskDetail)() {
-    m.riskDetail = value
+    if m != nil {
+        m.riskDetail = value
+    }
 }
 // SetRiskEventType sets the riskEventType property value. The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue. If the risk detection is a premium detection, will show generic
 func (m *RiskDetection) SetRiskEventType(value *string)() {
-    m.riskEventType = value
+    if m != nil {
+        m.riskEventType = value
+    }
 }
 // SetRiskLevel sets the riskLevel property value. Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
 func (m *RiskDetection) SetRiskLevel(value *RiskLevel)() {
-    m.riskLevel = value
+    if m != nil {
+        m.riskLevel = value
+    }
 }
 // SetRiskState sets the riskState property value. The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 func (m *RiskDetection) SetRiskState(value *RiskState)() {
-    m.riskState = value
+    if m != nil {
+        m.riskState = value
+    }
 }
 // SetRiskType sets the riskType property value. List of risk event types.Note: This property is deprecated. Use riskEventType instead.
 func (m *RiskDetection) SetRiskType(value *RiskEventType)() {
-    m.riskType = value
+    if m != nil {
+        m.riskType = value
+    }
 }
 // SetSource sets the source property value. Source of the risk detection. For example, activeDirectory.
 func (m *RiskDetection) SetSource(value *string)() {
-    m.source = value
+    if m != nil {
+        m.source = value
+    }
 }
 // SetTokenIssuerType sets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
 func (m *RiskDetection) SetTokenIssuerType(value *TokenIssuerType)() {
-    m.tokenIssuerType = value
+    if m != nil {
+        m.tokenIssuerType = value
+    }
 }
 // SetUserDisplayName sets the userDisplayName property value. The user principal name (UPN) of the user.
 func (m *RiskDetection) SetUserDisplayName(value *string)() {
-    m.userDisplayName = value
+    if m != nil {
+        m.userDisplayName = value
+    }
 }
 // SetUserId sets the userId property value. Unique ID of the user.
 func (m *RiskDetection) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the user.
 func (m *RiskDetection) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

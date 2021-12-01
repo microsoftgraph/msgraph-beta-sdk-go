@@ -72,9 +72,13 @@ func (m *DlpActionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAction sets the action property value. 
 func (m *DlpActionInfo) SetAction(value *DlpAction)() {
-    m.action = value
+    if m != nil {
+        m.action = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DlpActionInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }

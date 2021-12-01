@@ -15,7 +15,7 @@ type AttributeMappingParameterSchema struct {
     // true if the parameter is required; otherwise false.
     required *bool;
     // Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
-    type_escaped *AttributeType;
+    type *AttributeType;
 }
 // NewAttributeMappingParameterSchema instantiates a new attributeMappingParameterSchema and sets the default values.
 func NewAttributeMappingParameterSchema()(*AttributeMappingParameterSchema) {
@@ -56,12 +56,12 @@ func (m *AttributeMappingParameterSchema) GetRequired()(*bool) {
         return m.required
     }
 }
-// GetType_escaped gets the type_escaped property value. Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
-func (m *AttributeMappingParameterSchema) GetType_escaped()(*AttributeType) {
+// GetType gets the type property value. Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
+func (m *AttributeMappingParameterSchema) GetType()(*AttributeType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -97,14 +97,14 @@ func (m *AttributeMappingParameterSchema) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttributeType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(AttributeType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -133,9 +133,9 @@ func (m *AttributeMappingParameterSchema) Serialize(writer i04eb5309aeaafadd2837
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -150,21 +150,31 @@ func (m *AttributeMappingParameterSchema) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeMappingParameterSchema) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowMultipleOccurrences sets the allowMultipleOccurrences property value. The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).
 func (m *AttributeMappingParameterSchema) SetAllowMultipleOccurrences(value *bool)() {
-    m.allowMultipleOccurrences = value
+    if m != nil {
+        m.allowMultipleOccurrences = value
+    }
 }
 // SetName sets the name property value. Parameter name.
 func (m *AttributeMappingParameterSchema) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetRequired sets the required property value. true if the parameter is required; otherwise false.
 func (m *AttributeMappingParameterSchema) SetRequired(value *bool)() {
-    m.required = value
+    if m != nil {
+        m.required = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
-func (m *AttributeMappingParameterSchema) SetType_escaped(value *AttributeType)() {
-    m.type_escaped = value
+// SetType sets the type property value. Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
+func (m *AttributeMappingParameterSchema) SetType(value *AttributeType)() {
+    if m != nil {
+        m.type = value
+    }
 }

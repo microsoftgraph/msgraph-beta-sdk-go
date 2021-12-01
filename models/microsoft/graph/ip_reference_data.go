@@ -19,7 +19,7 @@ type IpReferenceData struct {
     // 
     state *string;
     // 
-    vendor_escaped *string;
+    vendor *string;
 }
 // NewIpReferenceData instantiates a new ipReferenceData and sets the default values.
 func NewIpReferenceData()(*IpReferenceData) {
@@ -76,12 +76,12 @@ func (m *IpReferenceData) GetState()(*string) {
         return m.state
     }
 }
-// GetVendor_escaped gets the vendor_escaped property value. 
-func (m *IpReferenceData) GetVendor_escaped()(*string) {
+// GetVendor gets the vendor property value. 
+func (m *IpReferenceData) GetVendor()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.vendor_escaped
+        return m.vendor
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -137,13 +137,13 @@ func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendor_escaped(val)
+            m.SetVendor(val)
         }
         return nil
     }
@@ -185,7 +185,7 @@ func (m *IpReferenceData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err := writer.WriteStringValue("vendor_escaped", m.GetVendor_escaped())
+        err := writer.WriteStringValue("vendor", m.GetVendor())
         if err != nil {
             return err
         }
@@ -200,29 +200,43 @@ func (m *IpReferenceData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IpReferenceData) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAsn sets the asn property value. 
 func (m *IpReferenceData) SetAsn(value *int64)() {
-    m.asn = value
+    if m != nil {
+        m.asn = value
+    }
 }
 // SetCity sets the city property value. 
 func (m *IpReferenceData) SetCity(value *string)() {
-    m.city = value
+    if m != nil {
+        m.city = value
+    }
 }
 // SetCountryOrRegionCode sets the countryOrRegionCode property value. 
 func (m *IpReferenceData) SetCountryOrRegionCode(value *string)() {
-    m.countryOrRegionCode = value
+    if m != nil {
+        m.countryOrRegionCode = value
+    }
 }
 // SetOrganization sets the organization property value. 
 func (m *IpReferenceData) SetOrganization(value *string)() {
-    m.organization = value
+    if m != nil {
+        m.organization = value
+    }
 }
 // SetState sets the state property value. 
 func (m *IpReferenceData) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
-// SetVendor_escaped sets the vendor_escaped property value. 
-func (m *IpReferenceData) SetVendor_escaped(value *string)() {
-    m.vendor_escaped = value
+// SetVendor sets the vendor property value. 
+func (m *IpReferenceData) SetVendor(value *string)() {
+    if m != nil {
+        m.vendor = value
+    }
 }

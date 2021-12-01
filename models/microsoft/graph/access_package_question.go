@@ -174,25 +174,37 @@ func (m *AccessPackageQuestion) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageQuestion) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. ID of the question.
 func (m *AccessPackageQuestion) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetIsAnswerEditable sets the isAnswerEditable property value. 
 func (m *AccessPackageQuestion) SetIsAnswerEditable(value *bool)() {
-    m.isAnswerEditable = value
+    if m != nil {
+        m.isAnswerEditable = value
+    }
 }
 // SetIsRequired sets the isRequired property value. Whether the requestor is required to supply an answer or not.
 func (m *AccessPackageQuestion) SetIsRequired(value *bool)() {
-    m.isRequired = value
+    if m != nil {
+        m.isRequired = value
+    }
 }
 // SetSequence sets the sequence property value. Relative position of this question when displaying a list of questions to the requestor.
 func (m *AccessPackageQuestion) SetSequence(value *int32)() {
-    m.sequence = value
+    if m != nil {
+        m.sequence = value
+    }
 }
 // SetText sets the text property value. The text of the question to show to the requestor.
 func (m *AccessPackageQuestion) SetText(value *AccessPackageLocalizedContent)() {
-    m.text = value
+    if m != nil {
+        m.text = value
+    }
 }

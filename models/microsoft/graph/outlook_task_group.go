@@ -172,21 +172,31 @@ func (m *OutlookTaskGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetChangeKey sets the changeKey property value. The version of the task group.
 func (m *OutlookTaskGroup) SetChangeKey(value *string)() {
-    m.changeKey = value
+    if m != nil {
+        m.changeKey = value
+    }
 }
 // SetGroupKey sets the groupKey property value. The unique GUID identifier for the task group.
 func (m *OutlookTaskGroup) SetGroupKey(value *string)() {
-    m.groupKey = value
+    if m != nil {
+        m.groupKey = value
+    }
 }
 // SetIsDefaultGroup sets the isDefaultGroup property value. True if the task group is the default task group.
 func (m *OutlookTaskGroup) SetIsDefaultGroup(value *bool)() {
-    m.isDefaultGroup = value
+    if m != nil {
+        m.isDefaultGroup = value
+    }
 }
 // SetName sets the name property value. The name of the task group.
 func (m *OutlookTaskGroup) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetTaskFolders sets the taskFolders property value. The collection of task folders in the task group. Read-only. Nullable.
 func (m *OutlookTaskGroup) SetTaskFolders(value []OutlookTaskFolder)() {
-    m.taskFolders = value
+    if m != nil {
+        m.taskFolders = value
+    }
 }

@@ -164,17 +164,25 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetBusinessFlows sets the businessFlows property value. 
 func (m *ApprovalWorkflowProvider) SetBusinessFlows(value []BusinessFlow)() {
-    m.businessFlows = value
+    if m != nil {
+        m.businessFlows = value
+    }
 }
 // SetBusinessFlowsWithRequestsAwaitingMyDecision sets the businessFlowsWithRequestsAwaitingMyDecision property value. 
 func (m *ApprovalWorkflowProvider) SetBusinessFlowsWithRequestsAwaitingMyDecision(value []BusinessFlow)() {
-    m.businessFlowsWithRequestsAwaitingMyDecision = value
+    if m != nil {
+        m.businessFlowsWithRequestsAwaitingMyDecision = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *ApprovalWorkflowProvider) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetPolicyTemplates sets the policyTemplates property value. 
 func (m *ApprovalWorkflowProvider) SetPolicyTemplates(value []GovernancePolicyTemplate)() {
-    m.policyTemplates = value
+    if m != nil {
+        m.policyTemplates = value
+    }
 }

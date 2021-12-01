@@ -138,13 +138,19 @@ func (m *RbacApplicationMultiple) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetResourceNamespaces sets the resourceNamespaces property value. 
 func (m *RbacApplicationMultiple) SetResourceNamespaces(value []UnifiedRbacResourceNamespace)() {
-    m.resourceNamespaces = value
+    if m != nil {
+        m.resourceNamespaces = value
+    }
 }
 // SetRoleAssignments sets the roleAssignments property value. 
 func (m *RbacApplicationMultiple) SetRoleAssignments(value []UnifiedRoleAssignmentMultiple)() {
-    m.roleAssignments = value
+    if m != nil {
+        m.roleAssignments = value
+    }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. 
 func (m *RbacApplicationMultiple) SetRoleDefinitions(value []UnifiedRoleDefinition)() {
-    m.roleDefinitions = value
+    if m != nil {
+        m.roleDefinitions = value
+    }
 }

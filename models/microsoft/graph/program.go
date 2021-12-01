@@ -120,13 +120,19 @@ func (m *Program) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetControls sets the controls property value. Controls associated with the program.
 func (m *Program) SetControls(value []ProgramControl)() {
-    m.controls = value
+    if m != nil {
+        m.controls = value
+    }
 }
 // SetDescription sets the description property value. The description of the program.
 func (m *Program) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the program.  Required on create.
 func (m *Program) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

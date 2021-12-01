@@ -59,5 +59,7 @@ func (m *UnifiedRoleManagementPolicyRule) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetTarget sets the target property value. The target for the policy rule.
 func (m *UnifiedRoleManagementPolicyRule) SetTarget(value *UnifiedRoleManagementPolicyRuleTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

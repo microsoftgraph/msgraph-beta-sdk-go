@@ -352,45 +352,67 @@ func (m *Bookmark) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAvailabilityEndDateTime sets the availabilityEndDateTime property value. 
 func (m *Bookmark) SetAvailabilityEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.availabilityEndDateTime = value
+    if m != nil {
+        m.availabilityEndDateTime = value
+    }
 }
 // SetAvailabilityStartDateTime sets the availabilityStartDateTime property value. 
 func (m *Bookmark) SetAvailabilityStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.availabilityStartDateTime = value
+    if m != nil {
+        m.availabilityStartDateTime = value
+    }
 }
 // SetCategories sets the categories property value. 
 func (m *Bookmark) SetCategories(value []string)() {
-    m.categories = value
+    if m != nil {
+        m.categories = value
+    }
 }
 // SetGroupIds sets the groupIds property value. 
 func (m *Bookmark) SetGroupIds(value []string)() {
-    m.groupIds = value
+    if m != nil {
+        m.groupIds = value
+    }
 }
 // SetIsSuggested sets the isSuggested property value. 
 func (m *Bookmark) SetIsSuggested(value *bool)() {
-    m.isSuggested = value
+    if m != nil {
+        m.isSuggested = value
+    }
 }
 // SetKeywords sets the keywords property value. 
 func (m *Bookmark) SetKeywords(value *AnswerKeyword)() {
-    m.keywords = value
+    if m != nil {
+        m.keywords = value
+    }
 }
 // SetLanguageTags sets the languageTags property value. 
 func (m *Bookmark) SetLanguageTags(value []string)() {
-    m.languageTags = value
+    if m != nil {
+        m.languageTags = value
+    }
 }
 // SetPlatforms sets the platforms property value. 
 func (m *Bookmark) SetPlatforms(value []DevicePlatformType)() {
-    m.platforms = value
+    if m != nil {
+        m.platforms = value
+    }
 }
 // SetPowerAppIds sets the powerAppIds property value. 
 func (m *Bookmark) SetPowerAppIds(value []string)() {
-    m.powerAppIds = value
+    if m != nil {
+        m.powerAppIds = value
+    }
 }
 // SetState sets the state property value. 
 func (m *Bookmark) SetState(value *id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetTargetedVariations sets the targetedVariations property value. 
 func (m *Bookmark) SetTargetedVariations(value []AnswerVariant)() {
-    m.targetedVariations = value
+    if m != nil {
+        m.targetedVariations = value
+    }
 }

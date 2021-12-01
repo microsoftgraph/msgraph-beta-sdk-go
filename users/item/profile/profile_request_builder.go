@@ -78,7 +78,7 @@ type ProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ProfileRequestBuilderPatchOptions options for Patch
 type ProfileRequestBuilderPatchOptions struct {

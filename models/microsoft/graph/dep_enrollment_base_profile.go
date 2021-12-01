@@ -527,77 +527,115 @@ func (m *DepEnrollmentBaseProfile) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAppleIdDisabled sets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetAppleIdDisabled(value *bool)() {
-    m.appleIdDisabled = value
+    if m != nil {
+        m.appleIdDisabled = value
+    }
 }
 // SetApplePayDisabled sets the applePayDisabled property value. Indicates if Apple pay setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetApplePayDisabled(value *bool)() {
-    m.applePayDisabled = value
+    if m != nil {
+        m.applePayDisabled = value
+    }
 }
 // SetConfigurationWebUrl sets the configurationWebUrl property value. URL for setup assistant login
 func (m *DepEnrollmentBaseProfile) SetConfigurationWebUrl(value *bool)() {
-    m.configurationWebUrl = value
+    if m != nil {
+        m.configurationWebUrl = value
+    }
 }
 // SetDeviceNameTemplate sets the deviceNameTemplate property value. Sets a literal or name pattern.
 func (m *DepEnrollmentBaseProfile) SetDeviceNameTemplate(value *string)() {
-    m.deviceNameTemplate = value
+    if m != nil {
+        m.deviceNameTemplate = value
+    }
 }
 // SetDiagnosticsDisabled sets the diagnosticsDisabled property value. Indicates if diagnostics setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetDiagnosticsDisabled(value *bool)() {
-    m.diagnosticsDisabled = value
+    if m != nil {
+        m.diagnosticsDisabled = value
+    }
 }
 // SetDisplayToneSetupDisabled sets the displayToneSetupDisabled property value. Indicates if displaytone setup screen is disabled
 func (m *DepEnrollmentBaseProfile) SetDisplayToneSetupDisabled(value *bool)() {
-    m.displayToneSetupDisabled = value
+    if m != nil {
+        m.displayToneSetupDisabled = value
+    }
 }
 // SetIsDefault sets the isDefault property value. Indicates if this is the default profile
 func (m *DepEnrollmentBaseProfile) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetIsMandatory sets the isMandatory property value. Indicates if the profile is mandatory
 func (m *DepEnrollmentBaseProfile) SetIsMandatory(value *bool)() {
-    m.isMandatory = value
+    if m != nil {
+        m.isMandatory = value
+    }
 }
 // SetLocationDisabled sets the locationDisabled property value. Indicates if Location service setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetLocationDisabled(value *bool)() {
-    m.locationDisabled = value
+    if m != nil {
+        m.locationDisabled = value
+    }
 }
 // SetPrivacyPaneDisabled sets the privacyPaneDisabled property value. Indicates if privacy screen is disabled
 func (m *DepEnrollmentBaseProfile) SetPrivacyPaneDisabled(value *bool)() {
-    m.privacyPaneDisabled = value
+    if m != nil {
+        m.privacyPaneDisabled = value
+    }
 }
 // SetProfileRemovalDisabled sets the profileRemovalDisabled property value. Indicates if the profile removal option is disabled
 func (m *DepEnrollmentBaseProfile) SetProfileRemovalDisabled(value *bool)() {
-    m.profileRemovalDisabled = value
+    if m != nil {
+        m.profileRemovalDisabled = value
+    }
 }
 // SetRestoreBlocked sets the restoreBlocked property value. Indicates if Restore setup pane is blocked
 func (m *DepEnrollmentBaseProfile) SetRestoreBlocked(value *bool)() {
-    m.restoreBlocked = value
+    if m != nil {
+        m.restoreBlocked = value
+    }
 }
 // SetScreenTimeScreenDisabled sets the screenTimeScreenDisabled property value. Indicates if screen timeout setup is disabled
 func (m *DepEnrollmentBaseProfile) SetScreenTimeScreenDisabled(value *bool)() {
-    m.screenTimeScreenDisabled = value
+    if m != nil {
+        m.screenTimeScreenDisabled = value
+    }
 }
 // SetSiriDisabled sets the siriDisabled property value. Indicates if siri setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetSiriDisabled(value *bool)() {
-    m.siriDisabled = value
+    if m != nil {
+        m.siriDisabled = value
+    }
 }
 // SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentBaseProfile) SetSupervisedModeEnabled(value *bool)() {
-    m.supervisedModeEnabled = value
+    if m != nil {
+        m.supervisedModeEnabled = value
+    }
 }
 // SetSupportDepartment sets the supportDepartment property value. Support department information
 func (m *DepEnrollmentBaseProfile) SetSupportDepartment(value *string)() {
-    m.supportDepartment = value
+    if m != nil {
+        m.supportDepartment = value
+    }
 }
 // SetSupportPhoneNumber sets the supportPhoneNumber property value. Support phone number
 func (m *DepEnrollmentBaseProfile) SetSupportPhoneNumber(value *string)() {
-    m.supportPhoneNumber = value
+    if m != nil {
+        m.supportPhoneNumber = value
+    }
 }
 // SetTermsAndConditionsDisabled sets the termsAndConditionsDisabled property value. Indicates if 'Terms and Conditions' setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetTermsAndConditionsDisabled(value *bool)() {
-    m.termsAndConditionsDisabled = value
+    if m != nil {
+        m.termsAndConditionsDisabled = value
+    }
 }
 // SetTouchIdDisabled sets the touchIdDisabled property value. Indicates if touch id setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetTouchIdDisabled(value *bool)() {
-    m.touchIdDisabled = value
+    if m != nil {
+        m.touchIdDisabled = value
+    }
 }

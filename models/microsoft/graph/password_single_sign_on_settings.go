@@ -79,9 +79,13 @@ func (m *PasswordSingleSignOnSettings) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordSingleSignOnSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFields sets the fields property value. 
 func (m *PasswordSingleSignOnSettings) SetFields(value []PasswordSingleSignOnField)() {
-    m.fields = value
+    if m != nil {
+        m.fields = value
+    }
 }

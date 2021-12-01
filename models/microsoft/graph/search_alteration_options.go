@@ -96,13 +96,19 @@ func (m *SearchAlterationOptions) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchAlterationOptions) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnableModification sets the enableModification property value. Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.
 func (m *SearchAlterationOptions) SetEnableModification(value *bool)() {
-    m.enableModification = value
+    if m != nil {
+        m.enableModification = value
+    }
 }
 // SetEnableSuggestion sets the enableSuggestion property value. Indicates whether spelling suggestions are enabled. If enabled, user will get the search results for original search query and suggesting spelling correction in queryAlterationResponse property of the response for typos in query. Optional.
 func (m *SearchAlterationOptions) SetEnableSuggestion(value *bool)() {
-    m.enableSuggestion = value
+    if m != nil {
+        m.enableSuggestion = value
+    }
 }

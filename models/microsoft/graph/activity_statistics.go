@@ -165,21 +165,31 @@ func (m *ActivityStatistics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetActivity sets the activity property value. The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
 func (m *ActivityStatistics) SetActivity(value *AnalyticsActivityType)() {
-    m.activity = value
+    if m != nil {
+        m.activity = value
+    }
 }
 // SetDuration sets the duration property value. Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
 func (m *ActivityStatistics) SetDuration(value *string)() {
-    m.duration = value
+    if m != nil {
+        m.duration = value
+    }
 }
 // SetEndDate sets the endDate property value. Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-03' that follows the YYYY-MM-DD format.
 func (m *ActivityStatistics) SetEndDate(value *string)() {
-    m.endDate = value
+    if m != nil {
+        m.endDate = value
+    }
 }
 // SetStartDate sets the startDate property value. Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-04' that follows the YYYY-MM-DD format.
 func (m *ActivityStatistics) SetStartDate(value *string)() {
-    m.startDate = value
+    if m != nil {
+        m.startDate = value
+    }
 }
 // SetTimeZoneUsed sets the timeZoneUsed property value. The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be 'Pacific Standard Time.'
 func (m *ActivityStatistics) SetTimeZoneUsed(value *string)() {
-    m.timeZoneUsed = value
+    if m != nil {
+        m.timeZoneUsed = value
+    }
 }

@@ -166,21 +166,31 @@ func (m *WindowsManagementAppHealthState) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetDeviceName sets the deviceName property value. Name of the device on which Windows management app is installed.
 func (m *WindowsManagementAppHealthState) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetDeviceOSVersion sets the deviceOSVersion property value. Windows 10 OS version of the device on which Windows management app is installed.
 func (m *WindowsManagementAppHealthState) SetDeviceOSVersion(value *string)() {
-    m.deviceOSVersion = value
+    if m != nil {
+        m.deviceOSVersion = value
+    }
 }
 // SetHealthState sets the healthState property value. Windows management app health state. Possible values are: unknown, healthy, unhealthy.
 func (m *WindowsManagementAppHealthState) SetHealthState(value *HealthState)() {
-    m.healthState = value
+    if m != nil {
+        m.healthState = value
+    }
 }
 // SetInstalledVersion sets the installedVersion property value. Windows management app installed version.
 func (m *WindowsManagementAppHealthState) SetInstalledVersion(value *string)() {
-    m.installedVersion = value
+    if m != nil {
+        m.installedVersion = value
+    }
 }
 // SetLastCheckInDateTime sets the lastCheckInDateTime property value. Windows management app last check-in time.
 func (m *WindowsManagementAppHealthState) SetLastCheckInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastCheckInDateTime = value
+    if m != nil {
+        m.lastCheckInDateTime = value
+    }
 }

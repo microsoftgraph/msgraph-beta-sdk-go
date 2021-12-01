@@ -40,7 +40,7 @@ type UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionRequestBuilderGetQ
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionRequestBuilderPatchOptions struct {

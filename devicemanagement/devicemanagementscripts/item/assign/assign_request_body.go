@@ -115,13 +115,19 @@ func (m *AssignRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceManagementScriptAssignments sets the deviceManagementScriptAssignments property value. 
 func (m *AssignRequestBody) SetDeviceManagementScriptAssignments(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptAssignment)() {
-    m.deviceManagementScriptAssignments = value
+    if m != nil {
+        m.deviceManagementScriptAssignments = value
+    }
 }
 // SetDeviceManagementScriptGroupAssignments sets the deviceManagementScriptGroupAssignments property value. 
 func (m *AssignRequestBody) SetDeviceManagementScriptGroupAssignments(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementScriptGroupAssignment)() {
-    m.deviceManagementScriptGroupAssignments = value
+    if m != nil {
+        m.deviceManagementScriptGroupAssignments = value
+    }
 }

@@ -215,29 +215,43 @@ func (m *DeviceConfigurationUserStateSummary) Serialize(writer i04eb5309aeaafadd
 }
 // SetCompliantUserCount sets the compliantUserCount property value. Number of compliant users
 func (m *DeviceConfigurationUserStateSummary) SetCompliantUserCount(value *int32)() {
-    m.compliantUserCount = value
+    if m != nil {
+        m.compliantUserCount = value
+    }
 }
 // SetConflictUserCount sets the conflictUserCount property value. Number of conflict users
 func (m *DeviceConfigurationUserStateSummary) SetConflictUserCount(value *int32)() {
-    m.conflictUserCount = value
+    if m != nil {
+        m.conflictUserCount = value
+    }
 }
 // SetErrorUserCount sets the errorUserCount property value. Number of error users
 func (m *DeviceConfigurationUserStateSummary) SetErrorUserCount(value *int32)() {
-    m.errorUserCount = value
+    if m != nil {
+        m.errorUserCount = value
+    }
 }
 // SetNonCompliantUserCount sets the nonCompliantUserCount property value. Number of NonCompliant users
 func (m *DeviceConfigurationUserStateSummary) SetNonCompliantUserCount(value *int32)() {
-    m.nonCompliantUserCount = value
+    if m != nil {
+        m.nonCompliantUserCount = value
+    }
 }
 // SetNotApplicableUserCount sets the notApplicableUserCount property value. Number of not applicable users
 func (m *DeviceConfigurationUserStateSummary) SetNotApplicableUserCount(value *int32)() {
-    m.notApplicableUserCount = value
+    if m != nil {
+        m.notApplicableUserCount = value
+    }
 }
 // SetRemediatedUserCount sets the remediatedUserCount property value. Number of remediated users
 func (m *DeviceConfigurationUserStateSummary) SetRemediatedUserCount(value *int32)() {
-    m.remediatedUserCount = value
+    if m != nil {
+        m.remediatedUserCount = value
+    }
 }
 // SetUnknownUserCount sets the unknownUserCount property value. Number of unknown users
 func (m *DeviceConfigurationUserStateSummary) SetUnknownUserCount(value *int32)() {
-    m.unknownUserCount = value
+    if m != nil {
+        m.unknownUserCount = value
+    }
 }

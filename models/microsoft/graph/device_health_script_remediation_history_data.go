@@ -122,17 +122,25 @@ func (m *DeviceHealthScriptRemediationHistoryData) Serialize(writer i04eb5309aea
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthScriptRemediationHistoryData) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDate sets the date property value. The date on which devices were remediated by the device health script.
 func (m *DeviceHealthScriptRemediationHistoryData) SetDate(value *string)() {
-    m.date = value
+    if m != nil {
+        m.date = value
+    }
 }
 // SetNoIssueDeviceCount sets the noIssueDeviceCount property value. The number of devices that were found to have no issue by the device health script.
 func (m *DeviceHealthScriptRemediationHistoryData) SetNoIssueDeviceCount(value *int32)() {
-    m.noIssueDeviceCount = value
+    if m != nil {
+        m.noIssueDeviceCount = value
+    }
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. The number of devices remediated by the device health script.
 func (m *DeviceHealthScriptRemediationHistoryData) SetRemediatedDeviceCount(value *int32)() {
-    m.remediatedDeviceCount = value
+    if m != nil {
+        m.remediatedDeviceCount = value
+    }
 }

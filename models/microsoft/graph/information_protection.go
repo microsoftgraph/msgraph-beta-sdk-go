@@ -216,25 +216,37 @@ func (m *InformationProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetBitlocker sets the bitlocker property value. 
 func (m *InformationProtection) SetBitlocker(value *Bitlocker)() {
-    m.bitlocker = value
+    if m != nil {
+        m.bitlocker = value
+    }
 }
 // SetDataLossPreventionPolicies sets the dataLossPreventionPolicies property value. 
 func (m *InformationProtection) SetDataLossPreventionPolicies(value []DataLossPreventionPolicy)() {
-    m.dataLossPreventionPolicies = value
+    if m != nil {
+        m.dataLossPreventionPolicies = value
+    }
 }
 // SetPolicy sets the policy property value. 
 func (m *InformationProtection) SetPolicy(value *InformationProtectionPolicy)() {
-    m.policy = value
+    if m != nil {
+        m.policy = value
+    }
 }
 // SetSensitivityLabels sets the sensitivityLabels property value. 
 func (m *InformationProtection) SetSensitivityLabels(value []SensitivityLabel)() {
-    m.sensitivityLabels = value
+    if m != nil {
+        m.sensitivityLabels = value
+    }
 }
 // SetSensitivityPolicySettings sets the sensitivityPolicySettings property value. 
 func (m *InformationProtection) SetSensitivityPolicySettings(value *SensitivityPolicySettings)() {
-    m.sensitivityPolicySettings = value
+    if m != nil {
+        m.sensitivityPolicySettings = value
+    }
 }
 // SetThreatAssessmentRequests sets the threatAssessmentRequests property value. 
 func (m *InformationProtection) SetThreatAssessmentRequests(value []ThreatAssessmentRequest)() {
-    m.threatAssessmentRequests = value
+    if m != nil {
+        m.threatAssessmentRequests = value
+    }
 }

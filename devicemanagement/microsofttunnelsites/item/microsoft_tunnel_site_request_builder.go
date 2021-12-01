@@ -44,7 +44,7 @@ type MicrosoftTunnelSiteRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MicrosoftTunnelSiteRequestBuilderPatchOptions options for Patch
 type MicrosoftTunnelSiteRequestBuilderPatchOptions struct {

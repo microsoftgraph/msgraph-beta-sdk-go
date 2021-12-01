@@ -330,49 +330,73 @@ func (m *DeviceProtectionOverview) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceProtectionOverview) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCleanDeviceCount sets the cleanDeviceCount property value. Clean device count.
 func (m *DeviceProtectionOverview) SetCleanDeviceCount(value *int32)() {
-    m.cleanDeviceCount = value
+    if m != nil {
+        m.cleanDeviceCount = value
+    }
 }
 // SetCriticalFailuresDeviceCount sets the criticalFailuresDeviceCount property value. Critical failures device count.
 func (m *DeviceProtectionOverview) SetCriticalFailuresDeviceCount(value *int32)() {
-    m.criticalFailuresDeviceCount = value
+    if m != nil {
+        m.criticalFailuresDeviceCount = value
+    }
 }
 // SetInactiveThreatAgentDeviceCount sets the inactiveThreatAgentDeviceCount property value. Device with inactive threat agent count
 func (m *DeviceProtectionOverview) SetInactiveThreatAgentDeviceCount(value *int32)() {
-    m.inactiveThreatAgentDeviceCount = value
+    if m != nil {
+        m.inactiveThreatAgentDeviceCount = value
+    }
 }
 // SetPendingFullScanDeviceCount sets the pendingFullScanDeviceCount property value. Pending full scan device count.
 func (m *DeviceProtectionOverview) SetPendingFullScanDeviceCount(value *int32)() {
-    m.pendingFullScanDeviceCount = value
+    if m != nil {
+        m.pendingFullScanDeviceCount = value
+    }
 }
 // SetPendingManualStepsDeviceCount sets the pendingManualStepsDeviceCount property value. Pending manual steps device count.
 func (m *DeviceProtectionOverview) SetPendingManualStepsDeviceCount(value *int32)() {
-    m.pendingManualStepsDeviceCount = value
+    if m != nil {
+        m.pendingManualStepsDeviceCount = value
+    }
 }
 // SetPendingOfflineScanDeviceCount sets the pendingOfflineScanDeviceCount property value. Pending offline scan device count.
 func (m *DeviceProtectionOverview) SetPendingOfflineScanDeviceCount(value *int32)() {
-    m.pendingOfflineScanDeviceCount = value
+    if m != nil {
+        m.pendingOfflineScanDeviceCount = value
+    }
 }
 // SetPendingQuickScanDeviceCount sets the pendingQuickScanDeviceCount property value. Pending quick scan device count. Valid values -2147483648 to 2147483647
 func (m *DeviceProtectionOverview) SetPendingQuickScanDeviceCount(value *int32)() {
-    m.pendingQuickScanDeviceCount = value
+    if m != nil {
+        m.pendingQuickScanDeviceCount = value
+    }
 }
 // SetPendingRestartDeviceCount sets the pendingRestartDeviceCount property value. Pending restart device count.
 func (m *DeviceProtectionOverview) SetPendingRestartDeviceCount(value *int32)() {
-    m.pendingRestartDeviceCount = value
+    if m != nil {
+        m.pendingRestartDeviceCount = value
+    }
 }
 // SetPendingSignatureUpdateDeviceCount sets the pendingSignatureUpdateDeviceCount property value. Device with old signature count.
 func (m *DeviceProtectionOverview) SetPendingSignatureUpdateDeviceCount(value *int32)() {
-    m.pendingSignatureUpdateDeviceCount = value
+    if m != nil {
+        m.pendingSignatureUpdateDeviceCount = value
+    }
 }
 // SetTotalReportedDeviceCount sets the totalReportedDeviceCount property value. Total device count.
 func (m *DeviceProtectionOverview) SetTotalReportedDeviceCount(value *int32)() {
-    m.totalReportedDeviceCount = value
+    if m != nil {
+        m.totalReportedDeviceCount = value
+    }
 }
 // SetUnknownStateThreatAgentDeviceCount sets the unknownStateThreatAgentDeviceCount property value. Device with threat agent state as unknown count.
 func (m *DeviceProtectionOverview) SetUnknownStateThreatAgentDeviceCount(value *int32)() {
-    m.unknownStateThreatAgentDeviceCount = value
+    if m != nil {
+        m.unknownStateThreatAgentDeviceCount = value
+    }
 }

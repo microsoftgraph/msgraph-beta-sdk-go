@@ -122,17 +122,25 @@ func (m *OcrSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OcrSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether or not OCR is enabled for the case.
 func (m *OcrSettings) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetMaxImageSize sets the maxImageSize property value. Maximum image size that will be processed in KB).
 func (m *OcrSettings) SetMaxImageSize(value *int32)() {
-    m.maxImageSize = value
+    if m != nil {
+        m.maxImageSize = value
+    }
 }
 // SetTimeout sets the timeout property value. The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
 func (m *OcrSettings) SetTimeout(value *string)() {
-    m.timeout = value
+    if m != nil {
+        m.timeout = value
+    }
 }

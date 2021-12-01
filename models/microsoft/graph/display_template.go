@@ -157,21 +157,31 @@ func (m *DisplayTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DisplayTemplate) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. The text identifier for the display template; for example, contosoTickets.
 func (m *DisplayTemplate) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetLayout sets the layout property value. 
 func (m *DisplayTemplate) SetLayout(value *Json)() {
-    m.layout = value
+    if m != nil {
+        m.layout = value
+    }
 }
 // SetPriority sets the priority property value. Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
 func (m *DisplayTemplate) SetPriority(value *int32)() {
-    m.priority = value
+    if m != nil {
+        m.priority = value
+    }
 }
 // SetRules sets the rules property value. Specifies additional rules for selecting this display template based on the item schema. Optional.
 func (m *DisplayTemplate) SetRules(value []PropertyRule)() {
-    m.rules = value
+    if m != nil {
+        m.rules = value
+    }
 }

@@ -383,41 +383,61 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetResourceNamespaces sets the resourceNamespaces property value. 
 func (m *RbacApplication) SetResourceNamespaces(value []UnifiedRbacResourceNamespace)() {
-    m.resourceNamespaces = value
+    if m != nil {
+        m.resourceNamespaces = value
+    }
 }
 // SetRoleAssignmentApprovals sets the roleAssignmentApprovals property value. 
 func (m *RbacApplication) SetRoleAssignmentApprovals(value []Approval)() {
-    m.roleAssignmentApprovals = value
+    if m != nil {
+        m.roleAssignmentApprovals = value
+    }
 }
 // SetRoleAssignments sets the roleAssignments property value. Resource to grant access to users or groups.
 func (m *RbacApplication) SetRoleAssignments(value []UnifiedRoleAssignment)() {
-    m.roleAssignments = value
+    if m != nil {
+        m.roleAssignments = value
+    }
 }
 // SetRoleAssignmentScheduleInstances sets the roleAssignmentScheduleInstances property value. 
 func (m *RbacApplication) SetRoleAssignmentScheduleInstances(value []UnifiedRoleAssignmentScheduleInstance)() {
-    m.roleAssignmentScheduleInstances = value
+    if m != nil {
+        m.roleAssignmentScheduleInstances = value
+    }
 }
 // SetRoleAssignmentScheduleRequests sets the roleAssignmentScheduleRequests property value. 
 func (m *RbacApplication) SetRoleAssignmentScheduleRequests(value []UnifiedRoleAssignmentScheduleRequest)() {
-    m.roleAssignmentScheduleRequests = value
+    if m != nil {
+        m.roleAssignmentScheduleRequests = value
+    }
 }
 // SetRoleAssignmentSchedules sets the roleAssignmentSchedules property value. 
 func (m *RbacApplication) SetRoleAssignmentSchedules(value []UnifiedRoleAssignmentSchedule)() {
-    m.roleAssignmentSchedules = value
+    if m != nil {
+        m.roleAssignmentSchedules = value
+    }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *RbacApplication) SetRoleDefinitions(value []UnifiedRoleDefinition)() {
-    m.roleDefinitions = value
+    if m != nil {
+        m.roleDefinitions = value
+    }
 }
 // SetRoleEligibilityScheduleInstances sets the roleEligibilityScheduleInstances property value. 
 func (m *RbacApplication) SetRoleEligibilityScheduleInstances(value []UnifiedRoleEligibilityScheduleInstance)() {
-    m.roleEligibilityScheduleInstances = value
+    if m != nil {
+        m.roleEligibilityScheduleInstances = value
+    }
 }
 // SetRoleEligibilityScheduleRequests sets the roleEligibilityScheduleRequests property value. 
 func (m *RbacApplication) SetRoleEligibilityScheduleRequests(value []UnifiedRoleEligibilityScheduleRequest)() {
-    m.roleEligibilityScheduleRequests = value
+    if m != nil {
+        m.roleEligibilityScheduleRequests = value
+    }
 }
 // SetRoleEligibilitySchedules sets the roleEligibilitySchedules property value. 
 func (m *RbacApplication) SetRoleEligibilitySchedules(value []UnifiedRoleEligibilitySchedule)() {
-    m.roleEligibilitySchedules = value
+    if m != nil {
+        m.roleEligibilitySchedules = value
+    }
 }

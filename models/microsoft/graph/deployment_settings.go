@@ -122,17 +122,25 @@ func (m *DeploymentSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeploymentSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMonitoring sets the monitoring property value. Settings governing conditions to monitor and automated actions to take.
 func (m *DeploymentSettings) SetMonitoring(value *MonitoringSettings)() {
-    m.monitoring = value
+    if m != nil {
+        m.monitoring = value
+    }
 }
 // SetRollout sets the rollout property value. Settings governing how the content is rolled out.
 func (m *DeploymentSettings) SetRollout(value *RolloutSettings)() {
-    m.rollout = value
+    if m != nil {
+        m.rollout = value
+    }
 }
 // SetSafeguard sets the safeguard property value. Settings governing safeguard holds on offering content.
 func (m *DeploymentSettings) SetSafeguard(value *SafeguardSettings)() {
-    m.safeguard = value
+    if m != nil {
+        m.safeguard = value
+    }
 }

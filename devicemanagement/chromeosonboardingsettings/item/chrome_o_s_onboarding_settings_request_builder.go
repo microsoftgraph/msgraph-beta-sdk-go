@@ -40,7 +40,7 @@ type ChromeOSOnboardingSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ChromeOSOnboardingSettingsRequestBuilderPatchOptions options for Patch
 type ChromeOSOnboardingSettingsRequestBuilderPatchOptions struct {

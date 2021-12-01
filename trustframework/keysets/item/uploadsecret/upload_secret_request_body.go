@@ -148,21 +148,31 @@ func (m *UploadSecretRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadSecretRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExp sets the exp property value. 
 func (m *UploadSecretRequestBody) SetExp(value *int64)() {
-    m.exp = value
+    if m != nil {
+        m.exp = value
+    }
 }
 // SetK sets the k property value. 
 func (m *UploadSecretRequestBody) SetK(value *string)() {
-    m.k = value
+    if m != nil {
+        m.k = value
+    }
 }
 // SetNbf sets the nbf property value. 
 func (m *UploadSecretRequestBody) SetNbf(value *int64)() {
-    m.nbf = value
+    if m != nil {
+        m.nbf = value
+    }
 }
 // SetUse sets the use property value. 
 func (m *UploadSecretRequestBody) SetUse(value *string)() {
-    m.use = value
+    if m != nil {
+        m.use = value
+    }
 }

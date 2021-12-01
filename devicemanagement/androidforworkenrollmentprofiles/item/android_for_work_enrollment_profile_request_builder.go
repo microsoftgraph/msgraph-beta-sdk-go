@@ -42,7 +42,7 @@ type AndroidForWorkEnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AndroidForWorkEnrollmentProfileRequestBuilderPatchOptions options for Patch
 type AndroidForWorkEnrollmentProfileRequestBuilderPatchOptions struct {

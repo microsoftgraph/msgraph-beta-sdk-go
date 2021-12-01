@@ -14,7 +14,7 @@ type CloudPcServicePlan struct {
     // The size of the OS Disk in GB. Read-only.
     storageInGB *int32;
     // The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-    type_escaped *CloudPcServicePlanType;
+    type *CloudPcServicePlanType;
     // The size of the user profile disk in GB. Read-only.
     userProfileInGB *int32;
     // The number of vCPUs. Read-only.
@@ -51,12 +51,12 @@ func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
         return m.storageInGB
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-func (m *CloudPcServicePlan) GetType_escaped()(*CloudPcServicePlanType) {
+// GetType gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+func (m *CloudPcServicePlan) GetType()(*CloudPcServicePlanType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetUserProfileInGB gets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
@@ -108,14 +108,14 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcServicePlanType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(CloudPcServicePlanType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -168,9 +168,9 @@ func (m *CloudPcServicePlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -191,25 +191,37 @@ func (m *CloudPcServicePlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetDisplayName sets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetRamInGB sets the ramInGB property value. The size of the RAM in GB. Read-only.
 func (m *CloudPcServicePlan) SetRamInGB(value *int32)() {
-    m.ramInGB = value
+    if m != nil {
+        m.ramInGB = value
+    }
 }
 // SetStorageInGB sets the storageInGB property value. The size of the OS Disk in GB. Read-only.
 func (m *CloudPcServicePlan) SetStorageInGB(value *int32)() {
-    m.storageInGB = value
+    if m != nil {
+        m.storageInGB = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-func (m *CloudPcServicePlan) SetType_escaped(value *CloudPcServicePlanType)() {
-    m.type_escaped = value
+// SetType sets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+func (m *CloudPcServicePlan) SetType(value *CloudPcServicePlanType)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetUserProfileInGB sets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
 func (m *CloudPcServicePlan) SetUserProfileInGB(value *int32)() {
-    m.userProfileInGB = value
+    if m != nil {
+        m.userProfileInGB = value
+    }
 }
 // SetVCpuCount sets the vCpuCount property value. The number of vCPUs. Read-only.
 func (m *CloudPcServicePlan) SetVCpuCount(value *int32)() {
-    m.vCpuCount = value
+    if m != nil {
+        m.vCpuCount = value
+    }
 }

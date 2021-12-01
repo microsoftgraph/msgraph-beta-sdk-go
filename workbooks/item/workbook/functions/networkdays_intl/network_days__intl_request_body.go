@@ -149,21 +149,31 @@ func (m *NetworkDays_IntlRequestBody) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkDays_IntlRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEndDate sets the endDate property value. 
 func (m *NetworkDays_IntlRequestBody) SetEndDate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.endDate = value
+    if m != nil {
+        m.endDate = value
+    }
 }
 // SetHolidays sets the holidays property value. 
 func (m *NetworkDays_IntlRequestBody) SetHolidays(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.holidays = value
+    if m != nil {
+        m.holidays = value
+    }
 }
 // SetStartDate sets the startDate property value. 
 func (m *NetworkDays_IntlRequestBody) SetStartDate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.startDate = value
+    if m != nil {
+        m.startDate = value
+    }
 }
 // SetWeekend sets the weekend property value. 
 func (m *NetworkDays_IntlRequestBody) SetWeekend(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.weekend = value
+    if m != nil {
+        m.weekend = value
+    }
 }

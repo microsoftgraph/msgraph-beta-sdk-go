@@ -197,25 +197,37 @@ func (m *ContinuousAccessEvaluationPolicy) Serialize(writer i04eb5309aeaafadd283
 }
 // SetDescription sets the description property value. Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.
 func (m *ContinuousAccessEvaluationPolicy) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The value is always Continuous Access Evaluation. Read-only.
 func (m *ContinuousAccessEvaluationPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetGroups sets the groups property value. The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
 func (m *ContinuousAccessEvaluationPolicy) SetGroups(value []string)() {
-    m.groups = value
+    if m != nil {
+        m.groups = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
 func (m *ContinuousAccessEvaluationPolicy) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetMigrate sets the migrate property value. true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
 func (m *ContinuousAccessEvaluationPolicy) SetMigrate(value *bool)() {
-    m.migrate = value
+    if m != nil {
+        m.migrate = value
+    }
 }
 // SetUsers sets the users property value. The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
 func (m *ContinuousAccessEvaluationPolicy) SetUsers(value []string)() {
-    m.users = value
+    if m != nil {
+        m.users = value
+    }
 }

@@ -41,7 +41,7 @@ type UnifiedGroupSourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UnifiedGroupSourceRequestBuilderPatchOptions options for Patch
 type UnifiedGroupSourceRequestBuilderPatchOptions struct {

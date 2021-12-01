@@ -70,9 +70,13 @@ func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) Serialize(writer i0
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceWithoutCloudIdentityCount sets the deviceWithoutCloudIdentityCount property value. The count of devices that are not cloud identity.
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetDeviceWithoutCloudIdentityCount(value *int32)() {
-    m.deviceWithoutCloudIdentityCount = value
+    if m != nil {
+        m.deviceWithoutCloudIdentityCount = value
+    }
 }

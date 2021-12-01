@@ -11,7 +11,7 @@ type ExternalGroupMember struct {
     // The identity source that the member belongs to. Possible values are: azureActiveDirectory, external.
     identitySource *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.IdentitySourceType;
     // The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
-    type_escaped *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalGroupMemberType;
+    type *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalGroupMemberType;
 }
 // NewExternalGroupMember instantiates a new externalGroupMember and sets the default values.
 func NewExternalGroupMember()(*ExternalGroupMember) {
@@ -28,12 +28,12 @@ func (m *ExternalGroupMember) GetIdentitySource()(*i3af76fce9a0d8c03f22ff90ccd64
         return m.identitySource
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
-func (m *ExternalGroupMember) GetType_escaped()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalGroupMemberType) {
+// GetType gets the type property value. The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
+func (m *ExternalGroupMember) GetType()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalGroupMemberType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -50,14 +50,14 @@ func (m *ExternalGroupMember) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ParseExternalGroupMemberType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalGroupMemberType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -79,9 +79,9 @@ func (m *ExternalGroupMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -90,9 +90,13 @@ func (m *ExternalGroupMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetIdentitySource sets the identitySource property value. The identity source that the member belongs to. Possible values are: azureActiveDirectory, external.
 func (m *ExternalGroupMember) SetIdentitySource(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.IdentitySourceType)() {
-    m.identitySource = value
+    if m != nil {
+        m.identitySource = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
-func (m *ExternalGroupMember) SetType_escaped(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalGroupMemberType)() {
-    m.type_escaped = value
+// SetType sets the type property value. The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
+func (m *ExternalGroupMember) SetType(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalGroupMemberType)() {
+    if m != nil {
+        m.type = value
+    }
 }

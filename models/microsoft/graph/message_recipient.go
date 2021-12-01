@@ -122,13 +122,19 @@ func (m *MessageRecipient) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetDeliveryStatus sets the deliveryStatus property value. 
 func (m *MessageRecipient) SetDeliveryStatus(value *MessageStatus)() {
-    m.deliveryStatus = value
+    if m != nil {
+        m.deliveryStatus = value
+    }
 }
 // SetEvents sets the events property value. 
 func (m *MessageRecipient) SetEvents(value []MessageEvent)() {
-    m.events = value
+    if m != nil {
+        m.events = value
+    }
 }
 // SetRecipientEmail sets the recipientEmail property value. 
 func (m *MessageRecipient) SetRecipientEmail(value *string)() {
-    m.recipientEmail = value
+    if m != nil {
+        m.recipientEmail = value
+    }
 }

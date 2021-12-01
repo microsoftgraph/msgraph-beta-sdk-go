@@ -114,13 +114,19 @@ func (m *AppManagementConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppManagementConfiguration) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetKeyCredentials sets the keyCredentials property value. Collection of keyCredential restrictions settings to be applied to an application or service principal.
 func (m *AppManagementConfiguration) SetKeyCredentials(value []KeyCredentialConfiguration)() {
-    m.keyCredentials = value
+    if m != nil {
+        m.keyCredentials = value
+    }
 }
 // SetPasswordCredentials sets the passwordCredentials property value. Collection of password restrictions settings to be applied to an application or service principal.
 func (m *AppManagementConfiguration) SetPasswordCredentials(value []PasswordCredentialConfiguration)() {
-    m.passwordCredentials = value
+    if m != nil {
+        m.passwordCredentials = value
+    }
 }

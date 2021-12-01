@@ -632,93 +632,139 @@ func (m *GetSharePointSiteUsageDetailWithPeriod) Serialize(writer i04eb5309aeaaf
 }
 // SetActiveFileCount sets the activeFileCount property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetActiveFileCount(value *int64)() {
-    m.activeFileCount = value
+    if m != nil {
+        m.activeFileCount = value
+    }
 }
 // SetAnonymousLinkCount sets the anonymousLinkCount property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetAnonymousLinkCount(value *int64)() {
-    m.anonymousLinkCount = value
+    if m != nil {
+        m.anonymousLinkCount = value
+    }
 }
 // SetCompanyLinkCount sets the companyLinkCount property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetCompanyLinkCount(value *int64)() {
-    m.companyLinkCount = value
+    if m != nil {
+        m.companyLinkCount = value
+    }
 }
 // SetExternalSharing sets the externalSharing property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetExternalSharing(value *bool)() {
-    m.externalSharing = value
+    if m != nil {
+        m.externalSharing = value
+    }
 }
 // SetFileCount sets the fileCount property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetFileCount(value *int64)() {
-    m.fileCount = value
+    if m != nil {
+        m.fileCount = value
+    }
 }
 // SetGeolocation sets the geolocation property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetGeolocation(value *string)() {
-    m.geolocation = value
+    if m != nil {
+        m.geolocation = value
+    }
 }
 // SetIsDeleted sets the isDeleted property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    if m != nil {
+        m.isDeleted = value
+    }
 }
 // SetLastActivityDate sets the lastActivityDate property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetLastActivityDate(value *string)() {
-    m.lastActivityDate = value
+    if m != nil {
+        m.lastActivityDate = value
+    }
 }
 // SetOwnerDisplayName sets the ownerDisplayName property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetOwnerDisplayName(value *string)() {
-    m.ownerDisplayName = value
+    if m != nil {
+        m.ownerDisplayName = value
+    }
 }
 // SetOwnerPrincipalName sets the ownerPrincipalName property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetOwnerPrincipalName(value *string)() {
-    m.ownerPrincipalName = value
+    if m != nil {
+        m.ownerPrincipalName = value
+    }
 }
 // SetPageViewCount sets the pageViewCount property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetPageViewCount(value *int64)() {
-    m.pageViewCount = value
+    if m != nil {
+        m.pageViewCount = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetRootWebTemplate sets the rootWebTemplate property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetRootWebTemplate(value *string)() {
-    m.rootWebTemplate = value
+    if m != nil {
+        m.rootWebTemplate = value
+    }
 }
 // SetSecureLinkForGuestCount sets the secureLinkForGuestCount property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetSecureLinkForGuestCount(value *int64)() {
-    m.secureLinkForGuestCount = value
+    if m != nil {
+        m.secureLinkForGuestCount = value
+    }
 }
 // SetSecureLinkForMemberCount sets the secureLinkForMemberCount property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetSecureLinkForMemberCount(value *int64)() {
-    m.secureLinkForMemberCount = value
+    if m != nil {
+        m.secureLinkForMemberCount = value
+    }
 }
 // SetSiteId sets the siteId property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetSiteId(value *string)() {
-    m.siteId = value
+    if m != nil {
+        m.siteId = value
+    }
 }
 // SetSiteSensitivityLabelId sets the siteSensitivityLabelId property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetSiteSensitivityLabelId(value *string)() {
-    m.siteSensitivityLabelId = value
+    if m != nil {
+        m.siteSensitivityLabelId = value
+    }
 }
 // SetSiteUrl sets the siteUrl property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetSiteUrl(value *string)() {
-    m.siteUrl = value
+    if m != nil {
+        m.siteUrl = value
+    }
 }
 // SetStorageAllocatedInBytes sets the storageAllocatedInBytes property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetStorageAllocatedInBytes(value *int64)() {
-    m.storageAllocatedInBytes = value
+    if m != nil {
+        m.storageAllocatedInBytes = value
+    }
 }
 // SetStorageUsedInBytes sets the storageUsedInBytes property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetStorageUsedInBytes(value *int64)() {
-    m.storageUsedInBytes = value
+    if m != nil {
+        m.storageUsedInBytes = value
+    }
 }
 // SetUnmanagedDevicePolicy sets the unmanagedDevicePolicy property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetUnmanagedDevicePolicy(value *string)() {
-    m.unmanagedDevicePolicy = value
+    if m != nil {
+        m.unmanagedDevicePolicy = value
+    }
 }
 // SetVisitedPageCount sets the visitedPageCount property value. 
 func (m *GetSharePointSiteUsageDetailWithPeriod) SetVisitedPageCount(value *int64)() {
-    m.visitedPageCount = value
+    if m != nil {
+        m.visitedPageCount = value
+    }
 }

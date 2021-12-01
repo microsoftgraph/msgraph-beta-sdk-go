@@ -130,17 +130,25 @@ func (m *LookupRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LookupRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetKey sets the key property value. 
 func (m *LookupRequestBody) SetKey(value *string)() {
-    m.key = value
+    if m != nil {
+        m.key = value
+    }
 }
 // SetResultColumnNames sets the resultColumnNames property value. 
 func (m *LookupRequestBody) SetResultColumnNames(value []string)() {
-    m.resultColumnNames = value
+    if m != nil {
+        m.resultColumnNames = value
+    }
 }
 // SetValues sets the values property value. 
 func (m *LookupRequestBody) SetValues(value []string)() {
-    m.values = value
+    if m != nil {
+        m.values = value
+    }
 }

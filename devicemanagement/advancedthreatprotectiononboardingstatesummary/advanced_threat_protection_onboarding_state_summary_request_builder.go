@@ -42,7 +42,7 @@ type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetQueryParamet
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchOptions options for Patch
 type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchOptions struct {

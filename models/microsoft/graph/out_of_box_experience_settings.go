@@ -204,29 +204,43 @@ func (m *OutOfBoxExperienceSettings) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OutOfBoxExperienceSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceUsageType sets the deviceUsageType property value. AAD join authentication type. Possible values are: singleUser, shared.
 func (m *OutOfBoxExperienceSettings) SetDeviceUsageType(value *WindowsDeviceUsageType)() {
-    m.deviceUsageType = value
+    if m != nil {
+        m.deviceUsageType = value
+    }
 }
 // SetHideEscapeLink sets the hideEscapeLink property value. If set to true, then the user can't start over with different account, on company sign-in
 func (m *OutOfBoxExperienceSettings) SetHideEscapeLink(value *bool)() {
-    m.hideEscapeLink = value
+    if m != nil {
+        m.hideEscapeLink = value
+    }
 }
 // SetHideEULA sets the hideEULA property value. Show or hide EULA to user
 func (m *OutOfBoxExperienceSettings) SetHideEULA(value *bool)() {
-    m.hideEULA = value
+    if m != nil {
+        m.hideEULA = value
+    }
 }
 // SetHidePrivacySettings sets the hidePrivacySettings property value. Show or hide privacy settings to user
 func (m *OutOfBoxExperienceSettings) SetHidePrivacySettings(value *bool)() {
-    m.hidePrivacySettings = value
+    if m != nil {
+        m.hidePrivacySettings = value
+    }
 }
 // SetSkipKeyboardSelectionPage sets the skipKeyboardSelectionPage property value. If set, then skip the keyboard selection page if Language and Region are set
 func (m *OutOfBoxExperienceSettings) SetSkipKeyboardSelectionPage(value *bool)() {
-    m.skipKeyboardSelectionPage = value
+    if m != nil {
+        m.skipKeyboardSelectionPage = value
+    }
 }
 // SetUserType sets the userType property value. Type of user. Possible values are: administrator, standard.
 func (m *OutOfBoxExperienceSettings) SetUserType(value *WindowsUserType)() {
-    m.userType = value
+    if m != nil {
+        m.userType = value
+    }
 }

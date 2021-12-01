@@ -90,11 +90,15 @@ func (m *SignUpResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignUpResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPrivilegedSignupStatus sets the privilegedSignupStatus property value. Union type representation for type privilegedSignupStatus
 func (m *SignUpResponse) SetPrivilegedSignupStatus(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PrivilegedSignupStatus)() {
-    m.privilegedSignupStatus = value
+    if m != nil {
+        m.privilegedSignupStatus = value
+    }
 }
 // NewSignUpRequestBuilderInternal instantiates a new SignUpRequestBuilder and sets the default values.
 func NewSignUpRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SignUpRequestBuilder) {

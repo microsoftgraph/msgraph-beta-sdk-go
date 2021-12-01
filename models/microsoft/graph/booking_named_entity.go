@@ -59,5 +59,7 @@ func (m *BookingNamedEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetDisplayName sets the displayName property value. A name for the derived entity, which interfaces with customers.
 func (m *BookingNamedEntity) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

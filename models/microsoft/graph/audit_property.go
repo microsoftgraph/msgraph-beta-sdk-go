@@ -122,17 +122,25 @@ func (m *AuditProperty) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditProperty) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name.
 func (m *AuditProperty) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetNewValue sets the newValue property value. New value.
 func (m *AuditProperty) SetNewValue(value *string)() {
-    m.newValue = value
+    if m != nil {
+        m.newValue = value
+    }
 }
 // SetOldValue sets the oldValue property value. Old value.
 func (m *AuditProperty) SetOldValue(value *string)() {
-    m.oldValue = value
+    if m != nil {
+        m.oldValue = value
+    }
 }

@@ -59,5 +59,7 @@ func (m *AppleEnrollmentProfileAssignment) Serialize(writer i04eb5309aeaafadd283
 }
 // SetTarget sets the target property value. The assignment target for the Apple user initiated deployment profile.
 func (m *AppleEnrollmentProfileAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

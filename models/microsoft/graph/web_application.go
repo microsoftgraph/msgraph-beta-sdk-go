@@ -213,29 +213,43 @@ func (m *WebApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WebApplication) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetHomePageUrl sets the homePageUrl property value. Home page or landing page of the application.
 func (m *WebApplication) SetHomePageUrl(value *string)() {
-    m.homePageUrl = value
+    if m != nil {
+        m.homePageUrl = value
+    }
 }
 // SetImplicitGrantSettings sets the implicitGrantSettings property value. Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
 func (m *WebApplication) SetImplicitGrantSettings(value *ImplicitGrantSettings)() {
-    m.implicitGrantSettings = value
+    if m != nil {
+        m.implicitGrantSettings = value
+    }
 }
 // SetLogoutUrl sets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
 func (m *WebApplication) SetLogoutUrl(value *string)() {
-    m.logoutUrl = value
+    if m != nil {
+        m.logoutUrl = value
+    }
 }
 // SetOauth2AllowImplicitFlow sets the oauth2AllowImplicitFlow property value. 
 func (m *WebApplication) SetOauth2AllowImplicitFlow(value *bool)() {
-    m.oauth2AllowImplicitFlow = value
+    if m != nil {
+        m.oauth2AllowImplicitFlow = value
+    }
 }
 // SetRedirectUris sets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
 func (m *WebApplication) SetRedirectUris(value []string)() {
-    m.redirectUris = value
+    if m != nil {
+        m.redirectUris = value
+    }
 }
 // SetRedirectUriSettings sets the redirectUriSettings property value. Specifies the index of the URLs where user tokens are sent for sign-in. This is only valid for applications using SAML.
 func (m *WebApplication) SetRedirectUriSettings(value []RedirectUriSettings)() {
-    m.redirectUriSettings = value
+    if m != nil {
+        m.redirectUriSettings = value
+    }
 }

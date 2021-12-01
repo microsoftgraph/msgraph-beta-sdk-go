@@ -215,29 +215,43 @@ func (m *TeamsTab) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetConfiguration sets the configuration property value. Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
 func (m *TeamsTab) SetConfiguration(value *TeamsTabConfiguration)() {
-    m.configuration = value
+    if m != nil {
+        m.configuration = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the tab.
 func (m *TeamsTab) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetMessageId sets the messageId property value. 
 func (m *TeamsTab) SetMessageId(value *string)() {
-    m.messageId = value
+    if m != nil {
+        m.messageId = value
+    }
 }
 // SetSortOrderIndex sets the sortOrderIndex property value. Index of the order used for sorting tabs.
 func (m *TeamsTab) SetSortOrderIndex(value *string)() {
-    m.sortOrderIndex = value
+    if m != nil {
+        m.sortOrderIndex = value
+    }
 }
 // SetTeamsApp sets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.
 func (m *TeamsTab) SetTeamsApp(value *TeamsApp)() {
-    m.teamsApp = value
+    if m != nil {
+        m.teamsApp = value
+    }
 }
 // SetTeamsAppId sets the teamsAppId property value. 
 func (m *TeamsTab) SetTeamsAppId(value *string)() {
-    m.teamsAppId = value
+    if m != nil {
+        m.teamsAppId = value
+    }
 }
 // SetWebUrl sets the webUrl property value. Deep link URL of the tab instance. Read only.
 func (m *TeamsTab) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

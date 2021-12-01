@@ -267,37 +267,55 @@ func (m *ManagedDeviceComplianceTrend) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. The number of devices with a compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetCompliantDeviceCount(value *int32)() {
-    m.compliantDeviceCount = value
+    if m != nil {
+        m.compliantDeviceCount = value
+    }
 }
 // SetConfigManagerDeviceCount sets the configManagerDeviceCount property value. The number of devices manged by Configuration Manager. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetConfigManagerDeviceCount(value *int32)() {
-    m.configManagerDeviceCount = value
+    if m != nil {
+        m.configManagerDeviceCount = value
+    }
 }
 // SetCountDateTime sets the countDateTime property value. The date and time compliance snapshot was performed. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetCountDateTime(value *string)() {
-    m.countDateTime = value
+    if m != nil {
+        m.countDateTime = value
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. The number of devices with an error status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    if m != nil {
+        m.errorDeviceCount = value
+    }
 }
 // SetInGracePeriodDeviceCount sets the inGracePeriodDeviceCount property value. The number of devices that are in a grace period status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetInGracePeriodDeviceCount(value *int32)() {
-    m.inGracePeriodDeviceCount = value
+    if m != nil {
+        m.inGracePeriodDeviceCount = value
+    }
 }
 // SetNoncompliantDeviceCount sets the noncompliantDeviceCount property value. The number of devices that are in a non-compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetNoncompliantDeviceCount(value *int32)() {
-    m.noncompliantDeviceCount = value
+    if m != nil {
+        m.noncompliantDeviceCount = value
+    }
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetTenantDisplayName(value *string)() {
-    m.tenantDisplayName = value
+    if m != nil {
+        m.tenantDisplayName = value
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. The number of devices in an unknown status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    if m != nil {
+        m.unknownDeviceCount = value
+    }
 }

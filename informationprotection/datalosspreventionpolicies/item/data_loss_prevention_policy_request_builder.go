@@ -40,7 +40,7 @@ type DataLossPreventionPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DataLossPreventionPolicyRequestBuilderPatchOptions options for Patch
 type DataLossPreventionPolicyRequestBuilderPatchOptions struct {

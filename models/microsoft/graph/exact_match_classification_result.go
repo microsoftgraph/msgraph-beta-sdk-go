@@ -114,13 +114,19 @@ func (m *ExactMatchClassificationResult) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExactMatchClassificationResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClassification sets the classification property value. 
 func (m *ExactMatchClassificationResult) SetClassification(value []ExactMatchDetectedSensitiveContent)() {
-    m.classification = value
+    if m != nil {
+        m.classification = value
+    }
 }
 // SetErrors sets the errors property value. 
 func (m *ExactMatchClassificationResult) SetErrors(value []ClassificationError)() {
-    m.errors = value
+    if m != nil {
+        m.errors = value
+    }
 }

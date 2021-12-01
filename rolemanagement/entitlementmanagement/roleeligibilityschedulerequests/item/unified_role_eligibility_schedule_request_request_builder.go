@@ -46,7 +46,7 @@ type UnifiedRoleEligibilityScheduleRequestRequestBuilderGetQueryParameters struc
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UnifiedRoleEligibilityScheduleRequestRequestBuilderPatchOptions options for Patch
 type UnifiedRoleEligibilityScheduleRequestRequestBuilderPatchOptions struct {

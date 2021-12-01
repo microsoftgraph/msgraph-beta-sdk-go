@@ -205,29 +205,43 @@ func (m *CloneRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloneRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClassification sets the classification property value. 
 func (m *CloneRequestBody) SetClassification(value *string)() {
-    m.classification = value
+    if m != nil {
+        m.classification = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *CloneRequestBody) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *CloneRequestBody) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetMailNickname sets the mailNickname property value. 
 func (m *CloneRequestBody) SetMailNickname(value *string)() {
-    m.mailNickname = value
+    if m != nil {
+        m.mailNickname = value
+    }
 }
 // SetPartsToClone sets the partsToClone property value. 
 func (m *CloneRequestBody) SetPartsToClone(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ClonableTeamParts)() {
-    m.partsToClone = value
+    if m != nil {
+        m.partsToClone = value
+    }
 }
 // SetVisibility sets the visibility property value. 
 func (m *CloneRequestBody) SetVisibility(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamVisibilityType)() {
-    m.visibility = value
+    if m != nil {
+        m.visibility = value
+    }
 }

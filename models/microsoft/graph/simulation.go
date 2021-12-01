@@ -36,7 +36,7 @@ type Simulation struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
     launchDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Mode of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: real, preview, unknownFutureValue.
+    // 
     mode *SimulationMode;
     // Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
     payloadDeliveryPlatform *PayloadDeliveryPlatform;
@@ -172,7 +172,7 @@ func (m *Simulation) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.launchDateTime
     }
 }
-// GetMode gets the mode property value. Mode of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: real, preview, unknownFutureValue.
+// GetMode gets the mode property value. 
 func (m *Simulation) GetMode()(*SimulationMode) {
     if m == nil {
         return nil
@@ -622,89 +622,133 @@ func (m *Simulation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAttackTechnique sets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Simulation) SetAttackTechnique(value *SimulationAttackTechnique)() {
-    m.attackTechnique = value
+    if m != nil {
+        m.attackTechnique = value
+    }
 }
 // SetAttackType sets the attackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
 func (m *Simulation) SetAttackType(value *SimulationAttackType)() {
-    m.attackType = value
+    if m != nil {
+        m.attackType = value
+    }
 }
 // SetCleanupArtifacts sets the cleanupArtifacts property value. Flag representing if artifacts were cleaned up in the attack simulation and training campaign.
 func (m *Simulation) SetCleanupArtifacts(value *bool)() {
-    m.cleanupArtifacts = value
+    if m != nil {
+        m.cleanupArtifacts = value
+    }
 }
 // SetCompletionDateTime sets the completionDateTime property value. Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.completionDateTime = value
+    if m != nil {
+        m.completionDateTime = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user who created the attack simulation and training campaign.
 func (m *Simulation) SetCreatedBy(value *EmailIdentity)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time of creation of the attack simulation and training campaign.
 func (m *Simulation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. Description of the attack simulation and training campaign.
 func (m *Simulation) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEnableRegionTimezoneDelivery sets the enableRegionTimezoneDelivery property value. Flag representing whether to enable or disable timezone-aware delivery of phishing payload in the attack simulation and training campaign.
 func (m *Simulation) SetEnableRegionTimezoneDelivery(value *bool)() {
-    m.enableRegionTimezoneDelivery = value
+    if m != nil {
+        m.enableRegionTimezoneDelivery = value
+    }
 }
 // SetIncludeAllAccountTargets sets the includeAllAccountTargets property value. Flag representing inclusion of all the users of a tenant in the attack simulation and training campaign.
 func (m *Simulation) SetIncludeAllAccountTargets(value *bool)() {
-    m.includeAllAccountTargets = value
+    if m != nil {
+        m.includeAllAccountTargets = value
+    }
 }
 // SetIsAutomated sets the isAutomated property value. Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
 func (m *Simulation) SetIsAutomated(value *bool)() {
-    m.isAutomated = value
+    if m != nil {
+        m.isAutomated = value
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation and training campaign.
 func (m *Simulation) SetLastModifiedBy(value *EmailIdentity)() {
-    m.lastModifiedBy = value
+    if m != nil {
+        m.lastModifiedBy = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time of the most recent modification of the attack simulation and training campaign.
 func (m *Simulation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetLaunchDateTime sets the launchDateTime property value. Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
 func (m *Simulation) SetLaunchDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.launchDateTime = value
+    if m != nil {
+        m.launchDateTime = value
+    }
 }
-// SetMode sets the mode property value. Mode of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: real, preview, unknownFutureValue.
+// SetMode sets the mode property value. 
 func (m *Simulation) SetMode(value *SimulationMode)() {
-    m.mode = value
+    if m != nil {
+        m.mode = value
+    }
 }
 // SetPayloadDeliveryPlatform sets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
 func (m *Simulation) SetPayloadDeliveryPlatform(value *PayloadDeliveryPlatform)() {
-    m.payloadDeliveryPlatform = value
+    if m != nil {
+        m.payloadDeliveryPlatform = value
+    }
 }
 // SetPayloadSource sets the payloadSource property value. Source of phishing payload in the attack simulation and training campaign. Possible values are: unknown, global, tenant, unknownFutureValue.
 func (m *Simulation) SetPayloadSource(value *PayloadSource)() {
-    m.payloadSource = value
+    if m != nil {
+        m.payloadSource = value
+    }
 }
 // SetReport sets the report property value. Report of the attack simulation and training campaign.
 func (m *Simulation) SetReport(value *SimulationReport)() {
-    m.report = value
+    if m != nil {
+        m.report = value
+    }
 }
 // SetStatus sets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, inProgress, scheduled, completed, partiallyCompleted, failed, cancelled, excluded, deleted, included, unknownFutureValue.
 func (m *Simulation) SetStatus(value *SimulationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTrainingAssignmentPreference sets the trainingAssignmentPreference property value. Preference of the tenant admin to assign training to users in the attack simulation and training campaign. Possible values are: unknown, auto, manual, unknownFutureValue.
 func (m *Simulation) SetTrainingAssignmentPreference(value *TrainingAssignmentPreference)() {
-    m.trainingAssignmentPreference = value
+    if m != nil {
+        m.trainingAssignmentPreference = value
+    }
 }
 // SetTrainingContentPreference sets the trainingContentPreference property value. Preference of the tenant admin for the source of training content to assign to users in the attack simulation and training campaign. Possible values are: unknown, microsoft, custom, noTraining, unknownFutureValue.
 func (m *Simulation) SetTrainingContentPreference(value *TrainingContentPreference)() {
-    m.trainingContentPreference = value
+    if m != nil {
+        m.trainingContentPreference = value
+    }
 }
 // SetTrainingDueDateTime sets the trainingDueDateTime property value. Date and time before which the trainings need to be completed by users in the attack simulation and training campaign.
 func (m *Simulation) SetTrainingDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.trainingDueDateTime = value
+    if m != nil {
+        m.trainingDueDateTime = value
+    }
 }

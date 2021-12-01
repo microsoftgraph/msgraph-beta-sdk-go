@@ -96,13 +96,19 @@ func (m *PayloadTypes) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PayloadTypes) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRawContent sets the rawContent property value. The notification content of a raw user notification that will be delivered to and consumed by the app client on all supported platforms (Windows, iOS, Android or WebPush) receiving this notification. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.
 func (m *PayloadTypes) SetRawContent(value *string)() {
-    m.rawContent = value
+    if m != nil {
+        m.rawContent = value
+    }
 }
 // SetVisualContent sets the visualContent property value. The visual content of a visual user notification, which will be consumed by the notification platform on each supported platform (Windows, iOS and Android only) and rendered for the user. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.
 func (m *PayloadTypes) SetVisualContent(value *VisualProperties)() {
-    m.visualContent = value
+    if m != nil {
+        m.visualContent = value
+    }
 }

@@ -41,7 +41,7 @@ type UnifiedRoleAssignmentScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UnifiedRoleAssignmentScheduleRequestBuilderPatchOptions options for Patch
 type UnifiedRoleAssignmentScheduleRequestBuilderPatchOptions struct {

@@ -452,65 +452,97 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) Serialize(writer i04eb5309
 }
 // SetCoreBootTimeInMs sets the coreBootTimeInMs property value. The user experience analytics device core boot time in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetCoreBootTimeInMs(value *int32)() {
-    m.coreBootTimeInMs = value
+    if m != nil {
+        m.coreBootTimeInMs = value
+    }
 }
 // SetCoreLoginTimeInMs sets the coreLoginTimeInMs property value. The user experience analytics device core login time in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetCoreLoginTimeInMs(value *int32)() {
-    m.coreLoginTimeInMs = value
+    if m != nil {
+        m.coreLoginTimeInMs = value
+    }
 }
 // SetDeviceId sets the deviceId property value. The user experience analytics device id.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetFeatureUpdateBootTimeInMs sets the featureUpdateBootTimeInMs property value. The user experience analytics device feature update time in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetFeatureUpdateBootTimeInMs(value *int32)() {
-    m.featureUpdateBootTimeInMs = value
+    if m != nil {
+        m.featureUpdateBootTimeInMs = value
+    }
 }
 // SetGroupPolicyBootTimeInMs sets the groupPolicyBootTimeInMs property value. The User experience analytics Device group policy boot time in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetGroupPolicyBootTimeInMs(value *int32)() {
-    m.groupPolicyBootTimeInMs = value
+    if m != nil {
+        m.groupPolicyBootTimeInMs = value
+    }
 }
 // SetGroupPolicyLoginTimeInMs sets the groupPolicyLoginTimeInMs property value. The User experience analytics Device group policy login time in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetGroupPolicyLoginTimeInMs(value *int32)() {
-    m.groupPolicyLoginTimeInMs = value
+    if m != nil {
+        m.groupPolicyLoginTimeInMs = value
+    }
 }
 // SetIsFeatureUpdate sets the isFeatureUpdate property value. The user experience analytics device boot record is a feature update.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetIsFeatureUpdate(value *bool)() {
-    m.isFeatureUpdate = value
+    if m != nil {
+        m.isFeatureUpdate = value
+    }
 }
 // SetIsFirstLogin sets the isFirstLogin property value. The user experience analytics device first login.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetIsFirstLogin(value *bool)() {
-    m.isFirstLogin = value
+    if m != nil {
+        m.isFirstLogin = value
+    }
 }
 // SetOperatingSystemVersion sets the operatingSystemVersion property value. The user experience analytics device boot record's operating system version.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetOperatingSystemVersion(value *string)() {
-    m.operatingSystemVersion = value
+    if m != nil {
+        m.operatingSystemVersion = value
+    }
 }
 // SetResponsiveDesktopTimeInMs sets the responsiveDesktopTimeInMs property value. The user experience analytics responsive desktop time in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetResponsiveDesktopTimeInMs(value *int32)() {
-    m.responsiveDesktopTimeInMs = value
+    if m != nil {
+        m.responsiveDesktopTimeInMs = value
+    }
 }
 // SetRestartCategory sets the restartCategory property value. OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetRestartCategory(value *UserExperienceAnalyticsOperatingSystemRestartCategory)() {
-    m.restartCategory = value
+    if m != nil {
+        m.restartCategory = value
+    }
 }
 // SetRestartFaultBucket sets the restartFaultBucket property value. OS restart fault bucket. The fault bucket is used to find additional information about a system crash.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetRestartFaultBucket(value *string)() {
-    m.restartFaultBucket = value
+    if m != nil {
+        m.restartFaultBucket = value
+    }
 }
 // SetRestartStopCode sets the restartStopCode property value. OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetRestartStopCode(value *string)() {
-    m.restartStopCode = value
+    if m != nil {
+        m.restartStopCode = value
+    }
 }
 // SetStartTime sets the startTime property value. The user experience analytics device boot start time.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetStartTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startTime = value
+    if m != nil {
+        m.startTime = value
+    }
 }
 // SetTotalBootTimeInMs sets the totalBootTimeInMs property value. The user experience analytics device total boot time in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetTotalBootTimeInMs(value *int32)() {
-    m.totalBootTimeInMs = value
+    if m != nil {
+        m.totalBootTimeInMs = value
+    }
 }
 // SetTotalLoginTimeInMs sets the totalLoginTimeInMs property value. The user experience analytics device total login time in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetTotalLoginTimeInMs(value *int32)() {
-    m.totalLoginTimeInMs = value
+    if m != nil {
+        m.totalLoginTimeInMs = value
+    }
 }

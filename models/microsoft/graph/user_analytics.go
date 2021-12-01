@@ -94,9 +94,13 @@ func (m *UserAnalytics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetActivityStatistics sets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
 func (m *UserAnalytics) SetActivityStatistics(value []ActivityStatistics)() {
-    m.activityStatistics = value
+    if m != nil {
+        m.activityStatistics = value
+    }
 }
 // SetSettings sets the settings property value. The current settings for a user to use the analytics API.
 func (m *UserAnalytics) SetSettings(value *Settings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }

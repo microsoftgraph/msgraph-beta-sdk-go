@@ -129,13 +129,19 @@ func (m *AccessReviewSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetDefinitions sets the definitions property value. 
 func (m *AccessReviewSet) SetDefinitions(value []AccessReviewScheduleDefinition)() {
-    m.definitions = value
+    if m != nil {
+        m.definitions = value
+    }
 }
 // SetHistoryDefinitions sets the historyDefinitions property value. 
 func (m *AccessReviewSet) SetHistoryDefinitions(value []AccessReviewHistoryDefinition)() {
-    m.historyDefinitions = value
+    if m != nil {
+        m.historyDefinitions = value
+    }
 }
 // SetPolicy sets the policy property value. 
 func (m *AccessReviewSet) SetPolicy(value *AccessReviewPolicy)() {
-    m.policy = value
+    if m != nil {
+        m.policy = value
+    }
 }

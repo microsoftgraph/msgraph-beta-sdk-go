@@ -96,13 +96,19 @@ func (m *DowngradeJustification) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DowngradeJustification) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsDowngradeJustified sets the isDowngradeJustified property value. Indicates whether the downgrade is or is not justified.
 func (m *DowngradeJustification) SetIsDowngradeJustified(value *bool)() {
-    m.isDowngradeJustified = value
+    if m != nil {
+        m.isDowngradeJustified = value
+    }
 }
 // SetJustificationMessage sets the justificationMessage property value. Message that indicates why a downgrade is justified. The message will appear in administrative logs.
 func (m *DowngradeJustification) SetJustificationMessage(value *string)() {
-    m.justificationMessage = value
+    if m != nil {
+        m.justificationMessage = value
+    }
 }

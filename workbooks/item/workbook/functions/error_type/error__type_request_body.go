@@ -71,9 +71,13 @@ func (m *Error_TypeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Error_TypeRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetErrorVal sets the errorVal property value. 
 func (m *Error_TypeRequestBody) SetErrorVal(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.errorVal = value
+    if m != nil {
+        m.errorVal = value
+    }
 }

@@ -122,17 +122,25 @@ func (m *ImportResourceActionsRequestBody) Serialize(writer i04eb5309aeaafadd283
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportResourceActionsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFormat sets the format property value. 
 func (m *ImportResourceActionsRequestBody) SetFormat(value *string)() {
-    m.format = value
+    if m != nil {
+        m.format = value
+    }
 }
 // SetOverwriteResourceNamespace sets the overwriteResourceNamespace property value. 
 func (m *ImportResourceActionsRequestBody) SetOverwriteResourceNamespace(value *bool)() {
-    m.overwriteResourceNamespace = value
+    if m != nil {
+        m.overwriteResourceNamespace = value
+    }
 }
 // SetValue sets the value property value. 
 func (m *ImportResourceActionsRequestBody) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

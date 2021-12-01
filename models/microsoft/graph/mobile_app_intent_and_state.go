@@ -120,13 +120,19 @@ func (m *MobileAppIntentAndState) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetManagedDeviceIdentifier sets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *MobileAppIntentAndState) SetManagedDeviceIdentifier(value *string)() {
-    m.managedDeviceIdentifier = value
+    if m != nil {
+        m.managedDeviceIdentifier = value
+    }
 }
 // SetMobileAppList sets the mobileAppList property value. The list of payload intents and states for the tenant.
 func (m *MobileAppIntentAndState) SetMobileAppList(value []MobileAppIntentAndStateDetail)() {
-    m.mobileAppList = value
+    if m != nil {
+        m.mobileAppList = value
+    }
 }
 // SetUserId sets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *MobileAppIntentAndState) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

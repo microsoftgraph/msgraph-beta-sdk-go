@@ -41,7 +41,7 @@ type ManagementActionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ManagementActionRequestBuilderPatchOptions options for Patch
 type ManagementActionRequestBuilderPatchOptions struct {

@@ -129,13 +129,19 @@ func (m *SynchronizationSchema) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetDirectories sets the directories property value. Contains the collection of directories and all of their objects.
 func (m *SynchronizationSchema) SetDirectories(value []DirectoryDefinition)() {
-    m.directories = value
+    if m != nil {
+        m.directories = value
+    }
 }
 // SetSynchronizationRules sets the synchronizationRules property value. A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
 func (m *SynchronizationSchema) SetSynchronizationRules(value []SynchronizationRule)() {
-    m.synchronizationRules = value
+    if m != nil {
+        m.synchronizationRules = value
+    }
 }
 // SetVersion sets the version property value. The version of the schema, updated automatically with every schema change.
 func (m *SynchronizationSchema) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

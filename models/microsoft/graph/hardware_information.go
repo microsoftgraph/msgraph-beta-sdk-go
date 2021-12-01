@@ -839,125 +839,187 @@ func (m *HardwareInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HardwareInformation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBatteryChargeCycles sets the batteryChargeCycles property value. The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647
 func (m *HardwareInformation) SetBatteryChargeCycles(value *int32)() {
-    m.batteryChargeCycles = value
+    if m != nil {
+        m.batteryChargeCycles = value
+    }
 }
 // SetBatteryHealthPercentage sets the batteryHealthPercentage property value. The device’s current battery’s health percentage. Valid values 0 to 100
 func (m *HardwareInformation) SetBatteryHealthPercentage(value *int32)() {
-    m.batteryHealthPercentage = value
+    if m != nil {
+        m.batteryHealthPercentage = value
+    }
 }
 // SetBatterySerialNumber sets the batterySerialNumber property value. The serial number of the device’s current battery
 func (m *HardwareInformation) SetBatterySerialNumber(value *string)() {
-    m.batterySerialNumber = value
+    if m != nil {
+        m.batterySerialNumber = value
+    }
 }
 // SetCellularTechnology sets the cellularTechnology property value. Cellular technology of the device
 func (m *HardwareInformation) SetCellularTechnology(value *string)() {
-    m.cellularTechnology = value
+    if m != nil {
+        m.cellularTechnology = value
+    }
 }
 // SetDeviceFullQualifiedDomainName sets the deviceFullQualifiedDomainName property value. Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.
 func (m *HardwareInformation) SetDeviceFullQualifiedDomainName(value *string)() {
-    m.deviceFullQualifiedDomainName = value
+    if m != nil {
+        m.deviceFullQualifiedDomainName = value
+    }
 }
 // SetDeviceGuardLocalSystemAuthorityCredentialGuardState sets the deviceGuardLocalSystemAuthorityCredentialGuardState property value. Local System Authority (LSA) credential guard status. . Possible values are: running, rebootRequired, notLicensed, notConfigured, virtualizationBasedSecurityNotRunning.
 func (m *HardwareInformation) SetDeviceGuardLocalSystemAuthorityCredentialGuardState(value *DeviceGuardLocalSystemAuthorityCredentialGuardState)() {
-    m.deviceGuardLocalSystemAuthorityCredentialGuardState = value
+    if m != nil {
+        m.deviceGuardLocalSystemAuthorityCredentialGuardState = value
+    }
 }
 // SetDeviceGuardVirtualizationBasedSecurityHardwareRequirementState sets the deviceGuardVirtualizationBasedSecurityHardwareRequirementState property value. Virtualization-based security hardware requirement status. Possible values are: meetHardwareRequirements, secureBootRequired, dmaProtectionRequired, hyperVNotSupportedForGuestVM, hyperVNotAvailable.
 func (m *HardwareInformation) SetDeviceGuardVirtualizationBasedSecurityHardwareRequirementState(value *DeviceGuardVirtualizationBasedSecurityHardwareRequirementState)() {
-    m.deviceGuardVirtualizationBasedSecurityHardwareRequirementState = value
+    if m != nil {
+        m.deviceGuardVirtualizationBasedSecurityHardwareRequirementState = value
+    }
 }
 // SetDeviceGuardVirtualizationBasedSecurityState sets the deviceGuardVirtualizationBasedSecurityState property value. Virtualization-based security status. . Possible values are: running, rebootRequired, require64BitArchitecture, notLicensed, notConfigured, doesNotMeetHardwareRequirements, other.
 func (m *HardwareInformation) SetDeviceGuardVirtualizationBasedSecurityState(value *DeviceGuardVirtualizationBasedSecurityState)() {
-    m.deviceGuardVirtualizationBasedSecurityState = value
+    if m != nil {
+        m.deviceGuardVirtualizationBasedSecurityState = value
+    }
 }
 // SetEsimIdentifier sets the esimIdentifier property value. eSIM identifier
 func (m *HardwareInformation) SetEsimIdentifier(value *string)() {
-    m.esimIdentifier = value
+    if m != nil {
+        m.esimIdentifier = value
+    }
 }
 // SetFreeStorageSpace sets the freeStorageSpace property value. Free storage space of the device.
 func (m *HardwareInformation) SetFreeStorageSpace(value *int64)() {
-    m.freeStorageSpace = value
+    if m != nil {
+        m.freeStorageSpace = value
+    }
 }
 // SetImei sets the imei property value. IMEI
 func (m *HardwareInformation) SetImei(value *string)() {
-    m.imei = value
+    if m != nil {
+        m.imei = value
+    }
 }
 // SetIpAddressV4 sets the ipAddressV4 property value. IPAddressV4
 func (m *HardwareInformation) SetIpAddressV4(value *string)() {
-    m.ipAddressV4 = value
+    if m != nil {
+        m.ipAddressV4 = value
+    }
 }
 // SetIsEncrypted sets the isEncrypted property value. Encryption status of the device
 func (m *HardwareInformation) SetIsEncrypted(value *bool)() {
-    m.isEncrypted = value
+    if m != nil {
+        m.isEncrypted = value
+    }
 }
 // SetIsSharedDevice sets the isSharedDevice property value. Shared iPad
 func (m *HardwareInformation) SetIsSharedDevice(value *bool)() {
-    m.isSharedDevice = value
+    if m != nil {
+        m.isSharedDevice = value
+    }
 }
 // SetIsSupervised sets the isSupervised property value. Supervised mode of the device
 func (m *HardwareInformation) SetIsSupervised(value *bool)() {
-    m.isSupervised = value
+    if m != nil {
+        m.isSupervised = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. Manufacturer of the device
 func (m *HardwareInformation) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetMeid sets the meid property value. MEID
 func (m *HardwareInformation) SetMeid(value *string)() {
-    m.meid = value
+    if m != nil {
+        m.meid = value
+    }
 }
 // SetModel sets the model property value. Model of the device
 func (m *HardwareInformation) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }
 // SetOperatingSystemEdition sets the operatingSystemEdition property value. String that specifies the OS edition.
 func (m *HardwareInformation) SetOperatingSystemEdition(value *string)() {
-    m.operatingSystemEdition = value
+    if m != nil {
+        m.operatingSystemEdition = value
+    }
 }
 // SetOperatingSystemLanguage sets the operatingSystemLanguage property value. Operating system language of the device
 func (m *HardwareInformation) SetOperatingSystemLanguage(value *string)() {
-    m.operatingSystemLanguage = value
+    if m != nil {
+        m.operatingSystemLanguage = value
+    }
 }
 // SetOperatingSystemProductType sets the operatingSystemProductType property value. Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
 func (m *HardwareInformation) SetOperatingSystemProductType(value *int32)() {
-    m.operatingSystemProductType = value
+    if m != nil {
+        m.operatingSystemProductType = value
+    }
 }
 // SetOsBuildNumber sets the osBuildNumber property value. Operating System Build Number on Android device
 func (m *HardwareInformation) SetOsBuildNumber(value *string)() {
-    m.osBuildNumber = value
+    if m != nil {
+        m.osBuildNumber = value
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. Phone number of the device
 func (m *HardwareInformation) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    if m != nil {
+        m.phoneNumber = value
+    }
 }
 // SetSerialNumber sets the serialNumber property value. Serial number.
 func (m *HardwareInformation) SetSerialNumber(value *string)() {
-    m.serialNumber = value
+    if m != nil {
+        m.serialNumber = value
+    }
 }
 // SetSharedDeviceCachedUsers sets the sharedDeviceCachedUsers property value. All users on the shared Apple device
 func (m *HardwareInformation) SetSharedDeviceCachedUsers(value []SharedAppleDeviceUser)() {
-    m.sharedDeviceCachedUsers = value
+    if m != nil {
+        m.sharedDeviceCachedUsers = value
+    }
 }
 // SetSubnetAddress sets the subnetAddress property value. SubnetAddress
 func (m *HardwareInformation) SetSubnetAddress(value *string)() {
-    m.subnetAddress = value
+    if m != nil {
+        m.subnetAddress = value
+    }
 }
 // SetSubscriberCarrier sets the subscriberCarrier property value. Subscriber carrier of the device
 func (m *HardwareInformation) SetSubscriberCarrier(value *string)() {
-    m.subscriberCarrier = value
+    if m != nil {
+        m.subscriberCarrier = value
+    }
 }
 // SetTotalStorageSpace sets the totalStorageSpace property value. Total storage space of the device.
 func (m *HardwareInformation) SetTotalStorageSpace(value *int64)() {
-    m.totalStorageSpace = value
+    if m != nil {
+        m.totalStorageSpace = value
+    }
 }
 // SetTpmSpecificationVersion sets the tpmSpecificationVersion property value. String that specifies the specification version.
 func (m *HardwareInformation) SetTpmSpecificationVersion(value *string)() {
-    m.tpmSpecificationVersion = value
+    if m != nil {
+        m.tpmSpecificationVersion = value
+    }
 }
 // SetWifiMac sets the wifiMac property value. WiFi MAC address of the device
 func (m *HardwareInformation) SetWifiMac(value *string)() {
-    m.wifiMac = value
+    if m != nil {
+        m.wifiMac = value
+    }
 }

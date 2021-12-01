@@ -123,17 +123,25 @@ func (m *MirrRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MirrRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFinanceRate sets the financeRate property value. 
 func (m *MirrRequestBody) SetFinanceRate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.financeRate = value
+    if m != nil {
+        m.financeRate = value
+    }
 }
 // SetReinvestRate sets the reinvestRate property value. 
 func (m *MirrRequestBody) SetReinvestRate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.reinvestRate = value
+    if m != nil {
+        m.reinvestRate = value
+    }
 }
 // SetValues sets the values property value. 
 func (m *MirrRequestBody) SetValues(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.values = value
+    if m != nil {
+        m.values = value
+    }
 }

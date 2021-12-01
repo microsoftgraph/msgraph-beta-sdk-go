@@ -42,7 +42,7 @@ type GroupPolicyPresentationValueRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // GroupPolicyPresentationValueRequestBuilderPatchOptions options for Patch
 type GroupPolicyPresentationValueRequestBuilderPatchOptions struct {

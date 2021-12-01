@@ -220,29 +220,43 @@ func (m *UserCredentialUsageDetails) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAuthMethod sets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
 func (m *UserCredentialUsageDetails) SetAuthMethod(value *UsageAuthMethod)() {
-    m.authMethod = value
+    if m != nil {
+        m.authMethod = value
+    }
 }
 // SetEventDateTime sets the eventDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *UserCredentialUsageDetails) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.eventDateTime = value
+    if m != nil {
+        m.eventDateTime = value
+    }
 }
 // SetFailureReason sets the failureReason property value. Provides the failure reason for the corresponding reset or registration workflow.
 func (m *UserCredentialUsageDetails) SetFailureReason(value *string)() {
-    m.failureReason = value
+    if m != nil {
+        m.failureReason = value
+    }
 }
 // SetFeature sets the feature property value. Possible values are: registration, reset, unknownFutureValue.
 func (m *UserCredentialUsageDetails) SetFeature(value *FeatureType)() {
-    m.feature = value
+    if m != nil {
+        m.feature = value
+    }
 }
 // SetIsSuccess sets the isSuccess property value. Indicates success or failure of the workflow.
 func (m *UserCredentialUsageDetails) SetIsSuccess(value *bool)() {
-    m.isSuccess = value
+    if m != nil {
+        m.isSuccess = value
+    }
 }
 // SetUserDisplayName sets the userDisplayName property value. User name of the user performing the reset or registration workflow.
 func (m *UserCredentialUsageDetails) SetUserDisplayName(value *string)() {
-    m.userDisplayName = value
+    if m != nil {
+        m.userDisplayName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name of the user performing the reset or registration workflow.
 func (m *UserCredentialUsageDetails) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

@@ -123,17 +123,25 @@ func (m *ItemActivityTimeSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemActivityTimeSet) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLastRecordedDateTime sets the lastRecordedDateTime property value. 
 func (m *ItemActivityTimeSet) SetLastRecordedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastRecordedDateTime = value
+    if m != nil {
+        m.lastRecordedDateTime = value
+    }
 }
 // SetObservedDateTime sets the observedDateTime property value. When the activity was observed to take place.
 func (m *ItemActivityTimeSet) SetObservedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.observedDateTime = value
+    if m != nil {
+        m.observedDateTime = value
+    }
 }
 // SetRecordedDateTime sets the recordedDateTime property value. When the observation was recorded on the service.
 func (m *ItemActivityTimeSet) SetRecordedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.recordedDateTime = value
+    if m != nil {
+        m.recordedDateTime = value
+    }
 }

@@ -105,13 +105,19 @@ func (m *SynchronizationJobApplicationParameters) Serialize(writer i04eb5309aeaa
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationJobApplicationParameters) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRuleId sets the ruleId property value. The identifier of a the synchronizationRule to be applied.
 func (m *SynchronizationJobApplicationParameters) SetRuleId(value *string)() {
-    m.ruleId = value
+    if m != nil {
+        m.ruleId = value
+    }
 }
 // SetSubjects sets the subjects property value. The identifiers of one or more objects to which a synchronizationJob is to be applied.
 func (m *SynchronizationJobApplicationParameters) SetSubjects(value []SynchronizationJobSubject)() {
-    m.subjects = value
+    if m != nil {
+        m.subjects = value
+    }
 }

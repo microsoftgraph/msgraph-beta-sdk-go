@@ -33,7 +33,7 @@ type IntendedDeploymentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 func (m *IntendedDeploymentProfileRequestBuilder) Assign()(*i47a36770f76accda94a606e1fd41230502b1841824ab3419425eeec60fc4bf1e.AssignRequestBuilder) {
     return i47a36770f76accda94a606e1fd41230502b1841824ab3419425eeec60fc4bf1e.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);

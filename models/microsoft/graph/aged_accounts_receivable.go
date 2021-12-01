@@ -293,41 +293,61 @@ func (m *AgedAccountsReceivable) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAgedAsOfDate sets the agedAsOfDate property value. 
 func (m *AgedAccountsReceivable) SetAgedAsOfDate(value *string)() {
-    m.agedAsOfDate = value
+    if m != nil {
+        m.agedAsOfDate = value
+    }
 }
 // SetBalanceDue sets the balanceDue property value. 
 func (m *AgedAccountsReceivable) SetBalanceDue(value *float64)() {
-    m.balanceDue = value
+    if m != nil {
+        m.balanceDue = value
+    }
 }
 // SetCurrencyCode sets the currencyCode property value. 
 func (m *AgedAccountsReceivable) SetCurrencyCode(value *string)() {
-    m.currencyCode = value
+    if m != nil {
+        m.currencyCode = value
+    }
 }
 // SetCurrentAmount sets the currentAmount property value. 
 func (m *AgedAccountsReceivable) SetCurrentAmount(value *float64)() {
-    m.currentAmount = value
+    if m != nil {
+        m.currentAmount = value
+    }
 }
 // SetCustomerNumber sets the customerNumber property value. 
 func (m *AgedAccountsReceivable) SetCustomerNumber(value *string)() {
-    m.customerNumber = value
+    if m != nil {
+        m.customerNumber = value
+    }
 }
 // SetName sets the name property value. 
 func (m *AgedAccountsReceivable) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetPeriod1Amount sets the period1Amount property value. 
 func (m *AgedAccountsReceivable) SetPeriod1Amount(value *float64)() {
-    m.period1Amount = value
+    if m != nil {
+        m.period1Amount = value
+    }
 }
 // SetPeriod2Amount sets the period2Amount property value. 
 func (m *AgedAccountsReceivable) SetPeriod2Amount(value *float64)() {
-    m.period2Amount = value
+    if m != nil {
+        m.period2Amount = value
+    }
 }
 // SetPeriod3Amount sets the period3Amount property value. 
 func (m *AgedAccountsReceivable) SetPeriod3Amount(value *float64)() {
-    m.period3Amount = value
+    if m != nil {
+        m.period3Amount = value
+    }
 }
 // SetPeriodLengthFilter sets the periodLengthFilter property value. 
 func (m *AgedAccountsReceivable) SetPeriodLengthFilter(value *string)() {
-    m.periodLengthFilter = value
+    if m != nil {
+        m.periodLengthFilter = value
+    }
 }

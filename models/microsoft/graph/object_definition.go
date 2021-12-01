@@ -170,21 +170,31 @@ func (m *ObjectDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ObjectDefinition) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttributes sets the attributes property value. 
 func (m *ObjectDefinition) SetAttributes(value []AttributeDefinition)() {
-    m.attributes = value
+    if m != nil {
+        m.attributes = value
+    }
 }
 // SetMetadata sets the metadata property value. 
 func (m *ObjectDefinition) SetMetadata(value []MetadataEntry)() {
-    m.metadata = value
+    if m != nil {
+        m.metadata = value
+    }
 }
 // SetName sets the name property value. 
 func (m *ObjectDefinition) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetSupportedApis sets the supportedApis property value. 
 func (m *ObjectDefinition) SetSupportedApis(value []string)() {
-    m.supportedApis = value
+    if m != nil {
+        m.supportedApis = value
+    }
 }

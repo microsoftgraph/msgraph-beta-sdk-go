@@ -163,21 +163,31 @@ func (m *UnifiedRbacResourceAction) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetActionVerb sets the actionVerb property value. 
 func (m *UnifiedRbacResourceAction) SetActionVerb(value *string)() {
-    m.actionVerb = value
+    if m != nil {
+        m.actionVerb = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *UnifiedRbacResourceAction) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetName sets the name property value. 
 func (m *UnifiedRbacResourceAction) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetResourceScope sets the resourceScope property value. 
 func (m *UnifiedRbacResourceAction) SetResourceScope(value *UnifiedRbacResourceScope)() {
-    m.resourceScope = value
+    if m != nil {
+        m.resourceScope = value
+    }
 }
 // SetResourceScopeId sets the resourceScopeId property value. 
 func (m *UnifiedRbacResourceAction) SetResourceScopeId(value *string)() {
-    m.resourceScopeId = value
+    if m != nil {
+        m.resourceScopeId = value
+    }
 }

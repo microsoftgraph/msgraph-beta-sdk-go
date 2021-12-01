@@ -358,45 +358,67 @@ func (m *UnifiedRoleAssignmentMultiple) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAppScopeIds sets the appScopeIds property value. Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
 func (m *UnifiedRoleAssignmentMultiple) SetAppScopeIds(value []string)() {
-    m.appScopeIds = value
+    if m != nil {
+        m.appScopeIds = value
+    }
 }
 // SetAppScopes sets the appScopes property value. Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
 func (m *UnifiedRoleAssignmentMultiple) SetAppScopes(value []AppScope)() {
-    m.appScopes = value
+    if m != nil {
+        m.appScopes = value
+    }
 }
 // SetCondition sets the condition property value. 
 func (m *UnifiedRoleAssignmentMultiple) SetCondition(value *string)() {
-    m.condition = value
+    if m != nil {
+        m.condition = value
+    }
 }
 // SetDescription sets the description property value. Description of the role assignment.
 func (m *UnifiedRoleAssignmentMultiple) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDirectoryScopeIds sets the directoryScopeIds property value. Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
 func (m *UnifiedRoleAssignmentMultiple) SetDirectoryScopeIds(value []string)() {
-    m.directoryScopeIds = value
+    if m != nil {
+        m.directoryScopeIds = value
+    }
 }
 // SetDirectoryScopes sets the directoryScopes property value. Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *UnifiedRoleAssignmentMultiple) SetDirectoryScopes(value []DirectoryObject)() {
-    m.directoryScopes = value
+    if m != nil {
+        m.directoryScopes = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the role assignment. Required.
 func (m *UnifiedRoleAssignmentMultiple) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetPrincipalIds sets the principalIds property value. Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).
 func (m *UnifiedRoleAssignmentMultiple) SetPrincipalIds(value []string)() {
-    m.principalIds = value
+    if m != nil {
+        m.principalIds = value
+    }
 }
 // SetPrincipals sets the principals property value. Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
 func (m *UnifiedRoleAssignmentMultiple) SetPrincipals(value []DirectoryObject)() {
-    m.principals = value
+    if m != nil {
+        m.principals = value
+    }
 }
 // SetRoleDefinition sets the roleDefinition property value. Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
 func (m *UnifiedRoleAssignmentMultiple) SetRoleDefinition(value *UnifiedRoleDefinition)() {
-    m.roleDefinition = value
+    if m != nil {
+        m.roleDefinition = value
+    }
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for.
 func (m *UnifiedRoleAssignmentMultiple) SetRoleDefinitionId(value *string)() {
-    m.roleDefinitionId = value
+    if m != nil {
+        m.roleDefinitionId = value
+    }
 }

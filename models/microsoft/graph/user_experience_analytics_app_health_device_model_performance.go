@@ -189,25 +189,37 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) Serialize(write
 }
 // SetActiveDeviceCount sets the activeDeviceCount property value. The number of active devices for the model. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetActiveDeviceCount(value *int32)() {
-    m.activeDeviceCount = value
+    if m != nil {
+        m.activeDeviceCount = value
+    }
 }
 // SetDeviceManufacturer sets the deviceManufacturer property value. The manufacturer name of the device.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetDeviceManufacturer(value *string)() {
-    m.deviceManufacturer = value
+    if m != nil {
+        m.deviceManufacturer = value
+    }
 }
 // SetDeviceModel sets the deviceModel property value. The model name of the device.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetDeviceModel(value *string)() {
-    m.deviceModel = value
+    if m != nil {
+        m.deviceModel = value
+    }
 }
 // SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetMeanTimeToFailureInMinutes(value *int32)() {
-    m.meanTimeToFailureInMinutes = value
+    if m != nil {
+        m.meanTimeToFailureInMinutes = value
+    }
 }
 // SetModelAppHealthScore sets the modelAppHealthScore property value. The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetModelAppHealthScore(value *float64)() {
-    m.modelAppHealthScore = value
+    if m != nil {
+        m.modelAppHealthScore = value
+    }
 }
 // SetModelAppHealthStatus sets the modelAppHealthStatus property value. The overall app health status of the device model.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetModelAppHealthStatus(value *string)() {
-    m.modelAppHealthStatus = value
+    if m != nil {
+        m.modelAppHealthStatus = value
+    }
 }

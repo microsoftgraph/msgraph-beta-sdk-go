@@ -122,17 +122,25 @@ func (m *CustomQuestionAnswer) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CustomQuestionAnswer) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the custom registration question. Read-only.
 func (m *CustomQuestionAnswer) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetQuestionId sets the questionId property value. ID the custom registration question. Read-only.
 func (m *CustomQuestionAnswer) SetQuestionId(value *string)() {
-    m.questionId = value
+    if m != nil {
+        m.questionId = value
+    }
 }
 // SetValue sets the value property value. Answer to the custom registration question.
 func (m *CustomQuestionAnswer) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

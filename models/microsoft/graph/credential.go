@@ -11,7 +11,7 @@ type Credential struct {
     // The name of the field for this credential. e.g, username or password or phoneNumber. This is defined by the application. Must match what is in the html field on singleSignOnSettings/password object.
     fieldId *string;
     // The type for this credential. Valid values: username, password, or other.
-    type_escaped *string;
+    type *string;
     // The value for this credential. e.g, mysuperhiddenpassword. Note the value for passwords is write-only, the value can never be read back.
     value *string;
 }
@@ -38,12 +38,12 @@ func (m *Credential) GetFieldId()(*string) {
         return m.fieldId
     }
 }
-// GetType_escaped gets the type_escaped property value. The type for this credential. Valid values: username, password, or other.
-func (m *Credential) GetType_escaped()(*string) {
+// GetType gets the type property value. The type for this credential. Valid values: username, password, or other.
+func (m *Credential) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetValue gets the value property value. The value for this credential. e.g, mysuperhiddenpassword. Note the value for passwords is write-only, the value can never be read back.
@@ -67,13 +67,13 @@ func (m *Credential) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -101,7 +101,7 @@ func (m *Credential) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -122,17 +122,25 @@ func (m *Credential) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Credential) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFieldId sets the fieldId property value. The name of the field for this credential. e.g, username or password or phoneNumber. This is defined by the application. Must match what is in the html field on singleSignOnSettings/password object.
 func (m *Credential) SetFieldId(value *string)() {
-    m.fieldId = value
+    if m != nil {
+        m.fieldId = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The type for this credential. Valid values: username, password, or other.
-func (m *Credential) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. The type for this credential. Valid values: username, password, or other.
+func (m *Credential) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetValue sets the value property value. The value for this credential. e.g, mysuperhiddenpassword. Note the value for passwords is write-only, the value can never be read back.
 func (m *Credential) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

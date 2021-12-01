@@ -152,21 +152,31 @@ func (m *ExactDataMatchStoreColumn) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExactDataMatchStoreColumn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIgnoredDelimiters sets the ignoredDelimiters property value. 
 func (m *ExactDataMatchStoreColumn) SetIgnoredDelimiters(value []string)() {
-    m.ignoredDelimiters = value
+    if m != nil {
+        m.ignoredDelimiters = value
+    }
 }
 // SetIsCaseInsensitive sets the isCaseInsensitive property value. 
 func (m *ExactDataMatchStoreColumn) SetIsCaseInsensitive(value *bool)() {
-    m.isCaseInsensitive = value
+    if m != nil {
+        m.isCaseInsensitive = value
+    }
 }
 // SetIsSearchable sets the isSearchable property value. 
 func (m *ExactDataMatchStoreColumn) SetIsSearchable(value *bool)() {
-    m.isSearchable = value
+    if m != nil {
+        m.isSearchable = value
+    }
 }
 // SetName sets the name property value. 
 func (m *ExactDataMatchStoreColumn) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

@@ -96,13 +96,19 @@ func (m *AccessPackageLocalizedText) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageLocalizedText) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLanguageCode sets the languageCode property value. The ISO code for the intended language. Required.
 func (m *AccessPackageLocalizedText) SetLanguageCode(value *string)() {
-    m.languageCode = value
+    if m != nil {
+        m.languageCode = value
+    }
 }
 // SetText sets the text property value. The text in the specific language. Required.
 func (m *AccessPackageLocalizedText) SetText(value *string)() {
-    m.text = value
+    if m != nil {
+        m.text = value
+    }
 }

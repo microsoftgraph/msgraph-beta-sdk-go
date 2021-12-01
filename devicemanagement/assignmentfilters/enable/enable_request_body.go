@@ -70,9 +70,13 @@ func (m *EnableRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EnableRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnable sets the enable property value. 
 func (m *EnableRequestBody) SetEnable(value *bool)() {
-    m.enable = value
+    if m != nil {
+        m.enable = value
+    }
 }

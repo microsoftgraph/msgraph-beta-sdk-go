@@ -598,81 +598,121 @@ func (m *Person) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
 }
 // SetBirthday sets the birthday property value. The person's birthday.
 func (m *Person) SetBirthday(value *string)() {
-    m.birthday = value
+    if m != nil {
+        m.birthday = value
+    }
 }
 // SetCompanyName sets the companyName property value. The name of the person's company.
 func (m *Person) SetCompanyName(value *string)() {
-    m.companyName = value
+    if m != nil {
+        m.companyName = value
+    }
 }
 // SetDepartment sets the department property value. The person's department.
 func (m *Person) SetDepartment(value *string)() {
-    m.department = value
+    if m != nil {
+        m.department = value
+    }
 }
 // SetDisplayName sets the displayName property value. The person's display name.
 func (m *Person) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEmailAddresses sets the emailAddresses property value. The person's email addresses.
 func (m *Person) SetEmailAddresses(value []RankedEmailAddress)() {
-    m.emailAddresses = value
+    if m != nil {
+        m.emailAddresses = value
+    }
 }
 // SetGivenName sets the givenName property value. The person's given name.
 func (m *Person) SetGivenName(value *string)() {
-    m.givenName = value
+    if m != nil {
+        m.givenName = value
+    }
 }
 // SetIsFavorite sets the isFavorite property value. true if the user has flagged this person as a favorite.
 func (m *Person) SetIsFavorite(value *bool)() {
-    m.isFavorite = value
+    if m != nil {
+        m.isFavorite = value
+    }
 }
 // SetMailboxType sets the mailboxType property value. The type of mailbox that is represented by the person's email address.
 func (m *Person) SetMailboxType(value *string)() {
-    m.mailboxType = value
+    if m != nil {
+        m.mailboxType = value
+    }
 }
 // SetOfficeLocation sets the officeLocation property value. The location of the person's office.
 func (m *Person) SetOfficeLocation(value *string)() {
-    m.officeLocation = value
+    if m != nil {
+        m.officeLocation = value
+    }
 }
 // SetPersonNotes sets the personNotes property value. Free-form notes that the user has taken about this person.
 func (m *Person) SetPersonNotes(value *string)() {
-    m.personNotes = value
+    if m != nil {
+        m.personNotes = value
+    }
 }
 // SetPersonType sets the personType property value. The type of person.
 func (m *Person) SetPersonType(value *string)() {
-    m.personType = value
+    if m != nil {
+        m.personType = value
+    }
 }
 // SetPhones sets the phones property value. The person's phone numbers.
 func (m *Person) SetPhones(value []Phone)() {
-    m.phones = value
+    if m != nil {
+        m.phones = value
+    }
 }
 // SetPostalAddresses sets the postalAddresses property value. The person's addresses.
 func (m *Person) SetPostalAddresses(value []Location)() {
-    m.postalAddresses = value
+    if m != nil {
+        m.postalAddresses = value
+    }
 }
 // SetProfession sets the profession property value. The person's profession.
 func (m *Person) SetProfession(value *string)() {
-    m.profession = value
+    if m != nil {
+        m.profession = value
+    }
 }
 // SetSources sets the sources property value. The sources the user data comes from, for example Directory or Outlook Contacts.
 func (m *Person) SetSources(value []PersonDataSource)() {
-    m.sources = value
+    if m != nil {
+        m.sources = value
+    }
 }
 // SetSurname sets the surname property value. The person's surname.
 func (m *Person) SetSurname(value *string)() {
-    m.surname = value
+    if m != nil {
+        m.surname = value
+    }
 }
 // SetTitle sets the title property value. The person's title.
 func (m *Person) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
 func (m *Person) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetWebsites sets the websites property value. The person's websites.
 func (m *Person) SetWebsites(value []Website)() {
-    m.websites = value
+    if m != nil {
+        m.websites = value
+    }
 }
 // SetYomiCompany sets the yomiCompany property value. The phonetic Japanese name of the person's company.
 func (m *Person) SetYomiCompany(value *string)() {
-    m.yomiCompany = value
+    if m != nil {
+        m.yomiCompany = value
+    }
 }

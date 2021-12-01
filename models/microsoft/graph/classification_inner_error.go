@@ -149,21 +149,31 @@ func (m *ClassificationInnerError) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetActivityId sets the activityId property value. 
 func (m *ClassificationInnerError) SetActivityId(value *string)() {
-    m.activityId = value
+    if m != nil {
+        m.activityId = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassificationInnerError) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClientRequestId sets the clientRequestId property value. 
 func (m *ClassificationInnerError) SetClientRequestId(value *string)() {
-    m.clientRequestId = value
+    if m != nil {
+        m.clientRequestId = value
+    }
 }
 // SetCode sets the code property value. 
 func (m *ClassificationInnerError) SetCode(value *string)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetErrorDateTime sets the errorDateTime property value. 
 func (m *ClassificationInnerError) SetErrorDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.errorDateTime = value
+    if m != nil {
+        m.errorDateTime = value
+    }
 }

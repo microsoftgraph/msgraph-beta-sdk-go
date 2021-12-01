@@ -149,17 +149,25 @@ func (m *DeviceComplianceScriptValidationResult) Serialize(writer i04eb5309aeaaf
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceComplianceScriptValidationResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRuleErrors sets the ruleErrors property value. Errors in json for the script for rules.
 func (m *DeviceComplianceScriptValidationResult) SetRuleErrors(value []DeviceComplianceScriptRuleError)() {
-    m.ruleErrors = value
+    if m != nil {
+        m.ruleErrors = value
+    }
 }
 // SetRules sets the rules property value. Parsed rules from json.
 func (m *DeviceComplianceScriptValidationResult) SetRules(value []DeviceComplianceScriptRule)() {
-    m.rules = value
+    if m != nil {
+        m.rules = value
+    }
 }
 // SetScriptErrors sets the scriptErrors property value. Errors in json for the script.
 func (m *DeviceComplianceScriptValidationResult) SetScriptErrors(value []DeviceComplianceScriptError)() {
-    m.scriptErrors = value
+    if m != nil {
+        m.scriptErrors = value
+    }
 }

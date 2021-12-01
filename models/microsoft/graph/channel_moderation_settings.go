@@ -152,21 +152,31 @@ func (m *ChannelModerationSettings) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChannelModerationSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowNewMessageFromBots sets the allowNewMessageFromBots property value. Indicates whether bots are allowed to post messages.
 func (m *ChannelModerationSettings) SetAllowNewMessageFromBots(value *bool)() {
-    m.allowNewMessageFromBots = value
+    if m != nil {
+        m.allowNewMessageFromBots = value
+    }
 }
 // SetAllowNewMessageFromConnectors sets the allowNewMessageFromConnectors property value. Indicates whether connectors are allowed to post messages.
 func (m *ChannelModerationSettings) SetAllowNewMessageFromConnectors(value *bool)() {
-    m.allowNewMessageFromConnectors = value
+    if m != nil {
+        m.allowNewMessageFromConnectors = value
+    }
 }
 // SetReplyRestriction sets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
 func (m *ChannelModerationSettings) SetReplyRestriction(value *ReplyRestriction)() {
-    m.replyRestriction = value
+    if m != nil {
+        m.replyRestriction = value
+    }
 }
 // SetUserNewMessageRestriction sets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
 func (m *ChannelModerationSettings) SetUserNewMessageRestriction(value *UserNewMessageRestriction)() {
-    m.userNewMessageRestriction = value
+    if m != nil {
+        m.userNewMessageRestriction = value
+    }
 }

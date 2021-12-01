@@ -126,17 +126,25 @@ func (m *SendCustomNotificationToCompanyPortalRequestBody) Serialize(writer i04e
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendCustomNotificationToCompanyPortalRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetGroupsToNotify sets the groupsToNotify property value. 
 func (m *SendCustomNotificationToCompanyPortalRequestBody) SetGroupsToNotify(value []string)() {
-    m.groupsToNotify = value
+    if m != nil {
+        m.groupsToNotify = value
+    }
 }
 // SetNotificationBody sets the notificationBody property value. 
 func (m *SendCustomNotificationToCompanyPortalRequestBody) SetNotificationBody(value *string)() {
-    m.notificationBody = value
+    if m != nil {
+        m.notificationBody = value
+    }
 }
 // SetNotificationTitle sets the notificationTitle property value. 
 func (m *SendCustomNotificationToCompanyPortalRequestBody) SetNotificationTitle(value *string)() {
-    m.notificationTitle = value
+    if m != nil {
+        m.notificationTitle = value
+    }
 }

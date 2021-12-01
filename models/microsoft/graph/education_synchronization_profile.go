@@ -287,37 +287,55 @@ func (m *EducationSynchronizationProfile) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetDataProvider sets the dataProvider property value. 
 func (m *EducationSynchronizationProfile) SetDataProvider(value *EducationSynchronizationDataProvider)() {
-    m.dataProvider = value
+    if m != nil {
+        m.dataProvider = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the configuration profile for syncing identities.
 func (m *EducationSynchronizationProfile) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetErrors sets the errors property value. All errors associated with this synchronization profile.
 func (m *EducationSynchronizationProfile) SetErrors(value []EducationSynchronizationError)() {
-    m.errors = value
+    if m != nil {
+        m.errors = value
+    }
 }
 // SetExpirationDate sets the expirationDate property value. The date the profile should be considered expired and cease syncing. When null. the profile will never expire. (optional)
 func (m *EducationSynchronizationProfile) SetExpirationDate(value *string)() {
-    m.expirationDate = value
+    if m != nil {
+        m.expirationDate = value
+    }
 }
 // SetHandleSpecialCharacterConstraint sets the handleSpecialCharacterConstraint property value. Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.
 func (m *EducationSynchronizationProfile) SetHandleSpecialCharacterConstraint(value *bool)() {
-    m.handleSpecialCharacterConstraint = value
+    if m != nil {
+        m.handleSpecialCharacterConstraint = value
+    }
 }
 // SetIdentitySynchronizationConfiguration sets the identitySynchronizationConfiguration property value. 
 func (m *EducationSynchronizationProfile) SetIdentitySynchronizationConfiguration(value *EducationIdentitySynchronizationConfiguration)() {
-    m.identitySynchronizationConfiguration = value
+    if m != nil {
+        m.identitySynchronizationConfiguration = value
+    }
 }
 // SetLicensesToAssign sets the licensesToAssign property value. License setup configuration.
 func (m *EducationSynchronizationProfile) SetLicensesToAssign(value []EducationSynchronizationLicenseAssignment)() {
-    m.licensesToAssign = value
+    if m != nil {
+        m.licensesToAssign = value
+    }
 }
 // SetProfileStatus sets the profileStatus property value. The synchronization status.
 func (m *EducationSynchronizationProfile) SetProfileStatus(value *EducationSynchronizationProfileStatus)() {
-    m.profileStatus = value
+    if m != nil {
+        m.profileStatus = value
+    }
 }
 // SetState sets the state property value. The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
 func (m *EducationSynchronizationProfile) SetState(value *EducationSynchronizationProfileState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

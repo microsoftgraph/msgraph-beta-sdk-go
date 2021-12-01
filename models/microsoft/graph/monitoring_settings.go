@@ -79,9 +79,13 @@ func (m *MonitoringSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MonitoringSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMonitoringRules sets the monitoringRules property value. Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or'.
 func (m *MonitoringSettings) SetMonitoringRules(value []MonitoringRule)() {
-    m.monitoringRules = value
+    if m != nil {
+        m.monitoringRules = value
+    }
 }

@@ -85,9 +85,13 @@ func (m *NoncustodialDataSource) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetApplyHoldToSource sets the applyHoldToSource property value. Indicates if hold is applied to non-custodial data source (such as mailbox or site).
 func (m *NoncustodialDataSource) SetApplyHoldToSource(value *bool)() {
-    m.applyHoldToSource = value
+    if m != nil {
+        m.applyHoldToSource = value
+    }
 }
 // SetDataSource sets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
 func (m *NoncustodialDataSource) SetDataSource(value *DataSource)() {
-    m.dataSource = value
+    if m != nil {
+        m.dataSource = value
+    }
 }

@@ -11,7 +11,7 @@ type WebPart struct {
     // The required properties for the webPart (varies by webPart)
     data *SitePageData;
     // A unique identifier specifying the webPart type. Read-only.
-    type_escaped *string;
+    type *string;
 }
 // NewWebPart instantiates a new webPart and sets the default values.
 func NewWebPart()(*WebPart) {
@@ -36,12 +36,12 @@ func (m *WebPart) GetData()(*SitePageData) {
         return m.data
     }
 }
-// GetType_escaped gets the type_escaped property value. A unique identifier specifying the webPart type. Read-only.
-func (m *WebPart) GetType_escaped()(*string) {
+// GetType gets the type property value. A unique identifier specifying the webPart type. Read-only.
+func (m *WebPart) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -57,13 +57,13 @@ func (m *WebPart) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -81,7 +81,7 @@ func (m *WebPart) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -96,13 +96,19 @@ func (m *WebPart) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WebPart) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetData sets the data property value. The required properties for the webPart (varies by webPart)
 func (m *WebPart) SetData(value *SitePageData)() {
-    m.data = value
+    if m != nil {
+        m.data = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. A unique identifier specifying the webPart type. Read-only.
-func (m *WebPart) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. A unique identifier specifying the webPart type. Read-only.
+func (m *WebPart) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }

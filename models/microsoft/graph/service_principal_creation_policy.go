@@ -129,13 +129,19 @@ func (m *ServicePrincipalCreationPolicy) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetExcludes sets the excludes property value. 
 func (m *ServicePrincipalCreationPolicy) SetExcludes(value []ServicePrincipalCreationConditionSet)() {
-    m.excludes = value
+    if m != nil {
+        m.excludes = value
+    }
 }
 // SetIncludes sets the includes property value. 
 func (m *ServicePrincipalCreationPolicy) SetIncludes(value []ServicePrincipalCreationConditionSet)() {
-    m.includes = value
+    if m != nil {
+        m.includes = value
+    }
 }
 // SetIsBuiltIn sets the isBuiltIn property value. 
 func (m *ServicePrincipalCreationPolicy) SetIsBuiltIn(value *bool)() {
-    m.isBuiltIn = value
+    if m != nil {
+        m.isBuiltIn = value
+    }
 }

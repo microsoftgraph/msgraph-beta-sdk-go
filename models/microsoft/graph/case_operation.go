@@ -221,29 +221,43 @@ func (m *CaseOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAction sets the action property value. The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics
 func (m *CaseOperation) SetAction(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CaseAction)() {
-    m.action = value
+    if m != nil {
+        m.action = value
+    }
 }
 // SetCompletedDateTime sets the completedDateTime property value. The date and time the operation was completed.
 func (m *CaseOperation) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.completedDateTime = value
+    if m != nil {
+        m.completedDateTime = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. The user that created the operation.
 func (m *CaseOperation) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the operation was created.
 func (m *CaseOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetPercentProgress sets the percentProgress property value. The progress of the operation.
 func (m *CaseOperation) SetPercentProgress(value *int32)() {
-    m.percentProgress = value
+    if m != nil {
+        m.percentProgress = value
+    }
 }
 // SetResultInfo sets the resultInfo property value. Contains success and failure-specific result information.
 func (m *CaseOperation) SetResultInfo(value *ResultInfo)() {
-    m.resultInfo = value
+    if m != nil {
+        m.resultInfo = value
+    }
 }
 // SetStatus sets the status property value. The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
 func (m *CaseOperation) SetStatus(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CaseOperationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

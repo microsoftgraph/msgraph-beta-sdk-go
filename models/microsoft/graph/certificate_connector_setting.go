@@ -201,29 +201,43 @@ func (m *CertificateConnectorSetting) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateConnectorSetting) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertExpiryTime sets the certExpiryTime property value. Certificate expire time
 func (m *CertificateConnectorSetting) SetCertExpiryTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.certExpiryTime = value
+    if m != nil {
+        m.certExpiryTime = value
+    }
 }
 // SetConnectorVersion sets the connectorVersion property value. Version of certificate connector
 func (m *CertificateConnectorSetting) SetConnectorVersion(value *string)() {
-    m.connectorVersion = value
+    if m != nil {
+        m.connectorVersion = value
+    }
 }
 // SetEnrollmentError sets the enrollmentError property value. Certificate connector enrollment error
 func (m *CertificateConnectorSetting) SetEnrollmentError(value *string)() {
-    m.enrollmentError = value
+    if m != nil {
+        m.enrollmentError = value
+    }
 }
 // SetLastConnectorConnectionTime sets the lastConnectorConnectionTime property value. Last time certificate connector connected
 func (m *CertificateConnectorSetting) SetLastConnectorConnectionTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastConnectorConnectionTime = value
+    if m != nil {
+        m.lastConnectorConnectionTime = value
+    }
 }
 // SetLastUploadVersion sets the lastUploadVersion property value. Version of last uploaded certificate connector
 func (m *CertificateConnectorSetting) SetLastUploadVersion(value *int64)() {
-    m.lastUploadVersion = value
+    if m != nil {
+        m.lastUploadVersion = value
+    }
 }
 // SetStatus sets the status property value. Certificate connector status
 func (m *CertificateConnectorSetting) SetStatus(value *int32)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

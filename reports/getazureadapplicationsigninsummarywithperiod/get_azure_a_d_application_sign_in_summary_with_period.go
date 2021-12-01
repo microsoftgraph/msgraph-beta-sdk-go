@@ -138,17 +138,25 @@ func (m *GetAzureADApplicationSignInSummaryWithPeriod) Serialize(writer i04eb530
 }
 // SetAppDisplayName sets the appDisplayName property value. Name of the application that the user signed in to.
 func (m *GetAzureADApplicationSignInSummaryWithPeriod) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    if m != nil {
+        m.appDisplayName = value
+    }
 }
 // SetFailedSignInCount sets the failedSignInCount property value. Count of failed sign-ins made by the application.
 func (m *GetAzureADApplicationSignInSummaryWithPeriod) SetFailedSignInCount(value *int64)() {
-    m.failedSignInCount = value
+    if m != nil {
+        m.failedSignInCount = value
+    }
 }
 // SetSuccessfulSignInCount sets the successfulSignInCount property value. Count of successful sign-ins made by the application.
 func (m *GetAzureADApplicationSignInSummaryWithPeriod) SetSuccessfulSignInCount(value *int64)() {
-    m.successfulSignInCount = value
+    if m != nil {
+        m.successfulSignInCount = value
+    }
 }
 // SetSuccessPercentage sets the successPercentage property value. Percentage of successful sign-ins made by the application.
 func (m *GetAzureADApplicationSignInSummaryWithPeriod) SetSuccessPercentage(value *float64)() {
-    m.successPercentage = value
+    if m != nil {
+        m.successPercentage = value
+    }
 }

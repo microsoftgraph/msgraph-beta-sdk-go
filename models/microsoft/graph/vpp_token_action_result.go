@@ -151,21 +151,31 @@ func (m *VppTokenActionResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetActionName sets the actionName property value. Action name
 func (m *VppTokenActionResult) SetActionName(value *string)() {
-    m.actionName = value
+    if m != nil {
+        m.actionName = value
+    }
 }
 // SetActionState sets the actionState property value. State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.
 func (m *VppTokenActionResult) SetActionState(value *ActionState)() {
-    m.actionState = value
+    if m != nil {
+        m.actionState = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VppTokenActionResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Time the action state was last updated
 func (m *VppTokenActionResult) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdatedDateTime = value
+    if m != nil {
+        m.lastUpdatedDateTime = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. Time the action was initiated
 func (m *VppTokenActionResult) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }

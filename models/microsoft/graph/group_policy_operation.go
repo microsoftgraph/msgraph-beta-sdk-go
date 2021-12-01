@@ -142,17 +142,25 @@ func (m *GroupPolicyOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyOperation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetOperationStatus sets the operationStatus property value. The group policy operation status. Possible values are: unknown, inProgress, success, failed.
 func (m *GroupPolicyOperation) SetOperationStatus(value *GroupPolicyOperationStatus)() {
-    m.operationStatus = value
+    if m != nil {
+        m.operationStatus = value
+    }
 }
 // SetOperationType sets the operationType property value. The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.
 func (m *GroupPolicyOperation) SetOperationType(value *GroupPolicyOperationType)() {
-    m.operationType = value
+    if m != nil {
+        m.operationType = value
+    }
 }
 // SetStatusDetails sets the statusDetails property value. The group policy operation status detail.
 func (m *GroupPolicyOperation) SetStatusDetails(value *string)() {
-    m.statusDetails = value
+    if m != nil {
+        m.statusDetails = value
+    }
 }

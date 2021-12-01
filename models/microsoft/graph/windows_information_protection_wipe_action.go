@@ -192,25 +192,37 @@ func (m *WindowsInformationProtectionWipeAction) Serialize(writer i04eb5309aeaaf
 }
 // SetLastCheckInDateTime sets the lastCheckInDateTime property value. Last checkin time of the device that was targeted by this wipe action.
 func (m *WindowsInformationProtectionWipeAction) SetLastCheckInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastCheckInDateTime = value
+    if m != nil {
+        m.lastCheckInDateTime = value
+    }
 }
 // SetStatus sets the status property value. Wipe action status. Possible values are: none, pending, canceled, active, done, failed, notSupported.
 func (m *WindowsInformationProtectionWipeAction) SetStatus(value *ActionState)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTargetedDeviceMacAddress sets the targetedDeviceMacAddress property value. Targeted device Mac address.
 func (m *WindowsInformationProtectionWipeAction) SetTargetedDeviceMacAddress(value *string)() {
-    m.targetedDeviceMacAddress = value
+    if m != nil {
+        m.targetedDeviceMacAddress = value
+    }
 }
 // SetTargetedDeviceName sets the targetedDeviceName property value. Targeted device name.
 func (m *WindowsInformationProtectionWipeAction) SetTargetedDeviceName(value *string)() {
-    m.targetedDeviceName = value
+    if m != nil {
+        m.targetedDeviceName = value
+    }
 }
 // SetTargetedDeviceRegistrationId sets the targetedDeviceRegistrationId property value. The DeviceRegistrationId being targeted by this wipe action.
 func (m *WindowsInformationProtectionWipeAction) SetTargetedDeviceRegistrationId(value *string)() {
-    m.targetedDeviceRegistrationId = value
+    if m != nil {
+        m.targetedDeviceRegistrationId = value
+    }
 }
 // SetTargetedUserId sets the targetedUserId property value. The UserId being targeted by this wipe action.
 func (m *WindowsInformationProtectionWipeAction) SetTargetedUserId(value *string)() {
-    m.targetedUserId = value
+    if m != nil {
+        m.targetedUserId = value
+    }
 }

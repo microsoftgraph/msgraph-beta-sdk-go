@@ -166,21 +166,31 @@ func (m *EducationSynchronizationProfileStatus) Serialize(writer i04eb5309aeaafa
 }
 // SetErrorCount sets the errorCount property value. Number of errors during synchronization.
 func (m *EducationSynchronizationProfileStatus) SetErrorCount(value *int64)() {
-    m.errorCount = value
+    if m != nil {
+        m.errorCount = value
+    }
 }
 // SetLastActivityDateTime sets the lastActivityDateTime property value. Represents the time when most recent changes were observed in profile.
 func (m *EducationSynchronizationProfileStatus) SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActivityDateTime = value
+    if m != nil {
+        m.lastActivityDateTime = value
+    }
 }
 // SetLastSynchronizationDateTime sets the lastSynchronizationDateTime property value. Represents the time of the most recent successful  synchronization.
 func (m *EducationSynchronizationProfileStatus) SetLastSynchronizationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSynchronizationDateTime = value
+    if m != nil {
+        m.lastSynchronizationDateTime = value
+    }
 }
 // SetStatus sets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
 func (m *EducationSynchronizationProfileStatus) SetStatus(value *EducationSynchronizationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetStatusMessage sets the statusMessage property value. Status message for the current profile's synchronization stage.
 func (m *EducationSynchronizationProfileStatus) SetStatusMessage(value *string)() {
-    m.statusMessage = value
+    if m != nil {
+        m.statusMessage = value
+    }
 }

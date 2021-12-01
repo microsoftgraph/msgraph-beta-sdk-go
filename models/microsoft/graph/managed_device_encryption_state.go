@@ -340,45 +340,67 @@ func (m *ManagedDeviceEncryptionState) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdvancedBitLockerStates sets the advancedBitLockerStates property value. Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
 func (m *ManagedDeviceEncryptionState) SetAdvancedBitLockerStates(value *AdvancedBitLockerState)() {
-    m.advancedBitLockerStates = value
+    if m != nil {
+        m.advancedBitLockerStates = value
+    }
 }
 // SetDeviceName sets the deviceName property value. Device name
 func (m *ManagedDeviceEncryptionState) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetDeviceType sets the deviceType property value. Platform of the device. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, blackberry, palm, unknown.
 func (m *ManagedDeviceEncryptionState) SetDeviceType(value *DeviceTypes)() {
-    m.deviceType = value
+    if m != nil {
+        m.deviceType = value
+    }
 }
 // SetEncryptionPolicySettingState sets the encryptionPolicySettingState property value. Encryption policy setting state. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *ManagedDeviceEncryptionState) SetEncryptionPolicySettingState(value *ComplianceStatus)() {
-    m.encryptionPolicySettingState = value
+    if m != nil {
+        m.encryptionPolicySettingState = value
+    }
 }
 // SetEncryptionReadinessState sets the encryptionReadinessState property value. Encryption readiness state. Possible values are: notReady, ready.
 func (m *ManagedDeviceEncryptionState) SetEncryptionReadinessState(value *EncryptionReadinessState)() {
-    m.encryptionReadinessState = value
+    if m != nil {
+        m.encryptionReadinessState = value
+    }
 }
 // SetEncryptionState sets the encryptionState property value. Device encryption state. Possible values are: notEncrypted, encrypted.
 func (m *ManagedDeviceEncryptionState) SetEncryptionState(value *EncryptionState)() {
-    m.encryptionState = value
+    if m != nil {
+        m.encryptionState = value
+    }
 }
 // SetFileVaultStates sets the fileVaultStates property value. FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
 func (m *ManagedDeviceEncryptionState) SetFileVaultStates(value *FileVaultState)() {
-    m.fileVaultStates = value
+    if m != nil {
+        m.fileVaultStates = value
+    }
 }
 // SetOsVersion sets the osVersion property value. Operating system version of the device
 func (m *ManagedDeviceEncryptionState) SetOsVersion(value *string)() {
-    m.osVersion = value
+    if m != nil {
+        m.osVersion = value
+    }
 }
 // SetPolicyDetails sets the policyDetails property value. Policy Details
 func (m *ManagedDeviceEncryptionState) SetPolicyDetails(value []EncryptionReportPolicyDetails)() {
-    m.policyDetails = value
+    if m != nil {
+        m.policyDetails = value
+    }
 }
 // SetTpmSpecificationVersion sets the tpmSpecificationVersion property value. Device TPM Version
 func (m *ManagedDeviceEncryptionState) SetTpmSpecificationVersion(value *string)() {
-    m.tpmSpecificationVersion = value
+    if m != nil {
+        m.tpmSpecificationVersion = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User name
 func (m *ManagedDeviceEncryptionState) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

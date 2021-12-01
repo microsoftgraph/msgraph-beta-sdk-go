@@ -40,7 +40,7 @@ type OfficeClientConfigurationAssignmentRequestBuilderGetQueryParameters struct 
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OfficeClientConfigurationAssignmentRequestBuilderPatchOptions options for Patch
 type OfficeClientConfigurationAssignmentRequestBuilderPatchOptions struct {

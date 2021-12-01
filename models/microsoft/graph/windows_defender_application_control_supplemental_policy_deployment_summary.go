@@ -85,9 +85,13 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) S
 }
 // SetDeployedDeviceCount sets the deployedDeviceCount property value. Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) SetDeployedDeviceCount(value *int32)() {
-    m.deployedDeviceCount = value
+    if m != nil {
+        m.deployedDeviceCount = value
+    }
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) SetFailedDeviceCount(value *int32)() {
-    m.failedDeviceCount = value
+    if m != nil {
+        m.failedDeviceCount = value
+    }
 }

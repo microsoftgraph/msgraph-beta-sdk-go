@@ -141,17 +141,25 @@ func (m *EducationAssignmentDefaults) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAddedStudentAction sets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
 func (m *EducationAssignmentDefaults) SetAddedStudentAction(value *EducationAddedStudentAction)() {
-    m.addedStudentAction = value
+    if m != nil {
+        m.addedStudentAction = value
+    }
 }
 // SetAddToCalendarAction sets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
 func (m *EducationAssignmentDefaults) SetAddToCalendarAction(value *EducationAddToCalendarOptions)() {
-    m.addToCalendarAction = value
+    if m != nil {
+        m.addToCalendarAction = value
+    }
 }
 // SetDueTime sets the dueTime property value. Class-level default value for due time field. Default value is 23:59:00.
 func (m *EducationAssignmentDefaults) SetDueTime(value *string)() {
-    m.dueTime = value
+    if m != nil {
+        m.dueTime = value
+    }
 }
 // SetNotificationChannelUrl sets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
 func (m *EducationAssignmentDefaults) SetNotificationChannelUrl(value *string)() {
-    m.notificationChannelUrl = value
+    if m != nil {
+        m.notificationChannelUrl = value
+    }
 }

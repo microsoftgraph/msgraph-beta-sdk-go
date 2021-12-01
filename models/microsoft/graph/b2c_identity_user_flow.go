@@ -251,29 +251,43 @@ func (m *B2cIdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetApiConnectorConfiguration sets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 func (m *B2cIdentityUserFlow) SetApiConnectorConfiguration(value *UserFlowApiConnectorConfiguration)() {
-    m.apiConnectorConfiguration = value
+    if m != nil {
+        m.apiConnectorConfiguration = value
+    }
 }
 // SetDefaultLanguageTag sets the defaultLanguageTag property value. Indicates the default language of the b2cIdentityUserFlow that is used when no ui_locale tag is specified in the request. This field is RFC 5646 compliant.
 func (m *B2cIdentityUserFlow) SetDefaultLanguageTag(value *string)() {
-    m.defaultLanguageTag = value
+    if m != nil {
+        m.defaultLanguageTag = value
+    }
 }
 // SetIdentityProviders sets the identityProviders property value. 
 func (m *B2cIdentityUserFlow) SetIdentityProviders(value []IdentityProvider)() {
-    m.identityProviders = value
+    if m != nil {
+        m.identityProviders = value
+    }
 }
 // SetIsLanguageCustomizationEnabled sets the isLanguageCustomizationEnabled property value. The property that determines whether language customization is enabled within the B2C user flow. Language customization is not enabled by default for B2C user flows.
 func (m *B2cIdentityUserFlow) SetIsLanguageCustomizationEnabled(value *bool)() {
-    m.isLanguageCustomizationEnabled = value
+    if m != nil {
+        m.isLanguageCustomizationEnabled = value
+    }
 }
 // SetLanguages sets the languages property value. The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
 func (m *B2cIdentityUserFlow) SetLanguages(value []UserFlowLanguageConfiguration)() {
-    m.languages = value
+    if m != nil {
+        m.languages = value
+    }
 }
 // SetUserAttributeAssignments sets the userAttributeAssignments property value. The user attribute assignments included in the user flow.
 func (m *B2cIdentityUserFlow) SetUserAttributeAssignments(value []IdentityUserFlowAttributeAssignment)() {
-    m.userAttributeAssignments = value
+    if m != nil {
+        m.userAttributeAssignments = value
+    }
 }
 // SetUserFlowIdentityProviders sets the userFlowIdentityProviders property value. 
 func (m *B2cIdentityUserFlow) SetUserFlowIdentityProviders(value []IdentityProviderBase)() {
-    m.userFlowIdentityProviders = value
+    if m != nil {
+        m.userFlowIdentityProviders = value
+    }
 }

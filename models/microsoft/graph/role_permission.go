@@ -109,13 +109,19 @@ func (m *RolePermission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetActions sets the actions property value. Allowed Actions - Deprecated
 func (m *RolePermission) SetActions(value []string)() {
-    m.actions = value
+    if m != nil {
+        m.actions = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RolePermission) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetResourceActions sets the resourceActions property value. Resource Actions each containing a set of allowed and not allowed permissions.
 func (m *RolePermission) SetResourceActions(value []ResourceAction)() {
-    m.resourceActions = value
+    if m != nil {
+        m.resourceActions = value
+    }
 }

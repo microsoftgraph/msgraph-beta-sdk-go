@@ -70,9 +70,13 @@ func (m *PlannerTaskCreation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerTaskCreation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTeamsPublicationInfo sets the teamsPublicationInfo property value. Information about the publication process that created this task. null value indicates that the task was not created by a publication process.
 func (m *PlannerTaskCreation) SetTeamsPublicationInfo(value *PlannerTeamsPublicationInfo)() {
-    m.teamsPublicationInfo = value
+    if m != nil {
+        m.teamsPublicationInfo = value
+    }
 }

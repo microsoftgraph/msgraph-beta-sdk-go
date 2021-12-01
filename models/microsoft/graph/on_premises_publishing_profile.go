@@ -260,29 +260,43 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAgentGroups sets the agentGroups property value. List of existing onPremisesAgentGroup objects. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) SetAgentGroups(value []OnPremisesAgentGroup)() {
-    m.agentGroups = value
+    if m != nil {
+        m.agentGroups = value
+    }
 }
 // SetAgents sets the agents property value. List of existing onPremisesAgent objects. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) SetAgents(value []OnPremisesAgent)() {
-    m.agents = value
+    if m != nil {
+        m.agents = value
+    }
 }
 // SetConnectorGroups sets the connectorGroups property value. List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) SetConnectorGroups(value []ConnectorGroup)() {
-    m.connectorGroups = value
+    if m != nil {
+        m.connectorGroups = value
+    }
 }
 // SetConnectors sets the connectors property value. List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) SetConnectors(value []Connector)() {
-    m.connectors = value
+    if m != nil {
+        m.connectors = value
+    }
 }
 // SetHybridAgentUpdaterConfiguration sets the hybridAgentUpdaterConfiguration property value. Represents a hybridAgentUpdaterConfiguration object.
 func (m *OnPremisesPublishingProfile) SetHybridAgentUpdaterConfiguration(value *HybridAgentUpdaterConfiguration)() {
-    m.hybridAgentUpdaterConfiguration = value
+    if m != nil {
+        m.hybridAgentUpdaterConfiguration = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Represents if Azure AD Application Proxy is enabled for the tenant.
 func (m *OnPremisesPublishingProfile) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetPublishedResources sets the publishedResources property value. List of existing publishedResource objects. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) SetPublishedResources(value []PublishedResource)() {
-    m.publishedResources = value
+    if m != nil {
+        m.publishedResources = value
+    }
 }

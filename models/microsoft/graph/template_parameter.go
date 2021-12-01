@@ -177,25 +177,37 @@ func (m *TemplateParameter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TemplateParameter) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. The description for the template parameter. Optional. Read-only.
 func (m *TemplateParameter) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the template parameter. Required. Read-only.
 func (m *TemplateParameter) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetJsonAllowedValues sets the jsonAllowedValues property value. The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
 func (m *TemplateParameter) SetJsonAllowedValues(value *string)() {
-    m.jsonAllowedValues = value
+    if m != nil {
+        m.jsonAllowedValues = value
+    }
 }
 // SetJsonDefaultValue sets the jsonDefaultValue property value. The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
 func (m *TemplateParameter) SetJsonDefaultValue(value *string)() {
-    m.jsonDefaultValue = value
+    if m != nil {
+        m.jsonDefaultValue = value
+    }
 }
 // SetValueType sets the valueType property value. The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
 func (m *TemplateParameter) SetValueType(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType)() {
-    m.valueType = value
+    if m != nil {
+        m.valueType = value
+    }
 }

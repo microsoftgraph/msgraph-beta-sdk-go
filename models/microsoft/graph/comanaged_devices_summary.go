@@ -278,41 +278,61 @@ func (m *ComanagedDevicesSummary) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComanagedDevicesSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCompliancePolicyCount sets the compliancePolicyCount property value. Number of devices with CompliancePolicy swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetCompliancePolicyCount(value *int32)() {
-    m.compliancePolicyCount = value
+    if m != nil {
+        m.compliancePolicyCount = value
+    }
 }
 // SetConfigurationSettingsCount sets the configurationSettingsCount property value. Number of devices with ConfigurationSettings swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetConfigurationSettingsCount(value *int32)() {
-    m.configurationSettingsCount = value
+    if m != nil {
+        m.configurationSettingsCount = value
+    }
 }
 // SetEndpointProtectionCount sets the endpointProtectionCount property value. Number of devices with EndpointProtection swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetEndpointProtectionCount(value *int32)() {
-    m.endpointProtectionCount = value
+    if m != nil {
+        m.endpointProtectionCount = value
+    }
 }
 // SetInventoryCount sets the inventoryCount property value. Number of devices with Inventory swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetInventoryCount(value *int32)() {
-    m.inventoryCount = value
+    if m != nil {
+        m.inventoryCount = value
+    }
 }
 // SetModernAppsCount sets the modernAppsCount property value. Number of devices with ModernApps swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetModernAppsCount(value *int32)() {
-    m.modernAppsCount = value
+    if m != nil {
+        m.modernAppsCount = value
+    }
 }
 // SetOfficeAppsCount sets the officeAppsCount property value. Number of devices with OfficeApps swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetOfficeAppsCount(value *int32)() {
-    m.officeAppsCount = value
+    if m != nil {
+        m.officeAppsCount = value
+    }
 }
 // SetResourceAccessCount sets the resourceAccessCount property value. Number of devices with ResourceAccess swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetResourceAccessCount(value *int32)() {
-    m.resourceAccessCount = value
+    if m != nil {
+        m.resourceAccessCount = value
+    }
 }
 // SetTotalComanagedCount sets the totalComanagedCount property value. Number of Co-Managed Devices. This property is read-only.
 func (m *ComanagedDevicesSummary) SetTotalComanagedCount(value *int32)() {
-    m.totalComanagedCount = value
+    if m != nil {
+        m.totalComanagedCount = value
+    }
 }
 // SetWindowsUpdateForBusinessCount sets the windowsUpdateForBusinessCount property value. Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
 func (m *ComanagedDevicesSummary) SetWindowsUpdateForBusinessCount(value *int32)() {
-    m.windowsUpdateForBusinessCount = value
+    if m != nil {
+        m.windowsUpdateForBusinessCount = value
+    }
 }

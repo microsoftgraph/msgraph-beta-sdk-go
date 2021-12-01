@@ -46,7 +46,7 @@ type LegalHoldRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // LegalHoldRequestBuilderPatchOptions options for Patch
 type LegalHoldRequestBuilderPatchOptions struct {

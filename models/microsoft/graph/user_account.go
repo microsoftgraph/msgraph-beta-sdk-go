@@ -203,29 +203,43 @@ func (m *UserAccount) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAccount) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *UserAccount) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. 
 func (m *UserAccount) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSeenDateTime = value
+    if m != nil {
+        m.lastSeenDateTime = value
+    }
 }
 // SetRiskScore sets the riskScore property value. 
 func (m *UserAccount) SetRiskScore(value *string)() {
-    m.riskScore = value
+    if m != nil {
+        m.riskScore = value
+    }
 }
 // SetService sets the service property value. 
 func (m *UserAccount) SetService(value *string)() {
-    m.service = value
+    if m != nil {
+        m.service = value
+    }
 }
 // SetSigninName sets the signinName property value. 
 func (m *UserAccount) SetSigninName(value *string)() {
-    m.signinName = value
+    if m != nil {
+        m.signinName = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *UserAccount) SetStatus(value *AccountStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

@@ -12,7 +12,7 @@ type PersonAnnualEvent struct {
     // 
     displayName *string;
     // 
-    type_escaped *PersonAnnualEventType;
+    type *PersonAnnualEventType;
 }
 // NewPersonAnnualEvent instantiates a new personAnnualEvent and sets the default values.
 func NewPersonAnnualEvent()(*PersonAnnualEvent) {
@@ -37,12 +37,12 @@ func (m *PersonAnnualEvent) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *PersonAnnualEvent) GetType_escaped()(*PersonAnnualEventType) {
+// GetType gets the type property value. 
+func (m *PersonAnnualEvent) GetType()(*PersonAnnualEventType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -68,14 +68,14 @@ func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParsePersonAnnualEventType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(PersonAnnualEventType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -102,9 +102,9 @@ func (m *PersonAnnualEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -113,13 +113,19 @@ func (m *PersonAnnualEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetDate sets the date property value. 
 func (m *PersonAnnualEvent) SetDate(value *string)() {
-    m.date = value
+    if m != nil {
+        m.date = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *PersonAnnualEvent) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *PersonAnnualEvent) SetType_escaped(value *PersonAnnualEventType)() {
-    m.type_escaped = value
+// SetType sets the type property value. 
+func (m *PersonAnnualEvent) SetType(value *PersonAnnualEventType)() {
+    if m != nil {
+        m.type = value
+    }
 }

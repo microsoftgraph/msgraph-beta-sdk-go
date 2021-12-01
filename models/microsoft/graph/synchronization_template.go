@@ -10,7 +10,7 @@ type SynchronizationTemplate struct {
     // Identifier of the application this template belongs to.
     applicationId *string;
     // true if this template is recommended to be the default for the application.
-    default_escaped *bool;
+    default *bool;
     // Description of the template.
     description *string;
     // true if this template should appear in the collection of templates available for the application instance (service principal).
@@ -37,12 +37,12 @@ func (m *SynchronizationTemplate) GetApplicationId()(*string) {
         return m.applicationId
     }
 }
-// GetDefault_escaped gets the default_escaped property value. true if this template is recommended to be the default for the application.
-func (m *SynchronizationTemplate) GetDefault_escaped()(*bool) {
+// GetDefault gets the default property value. true if this template is recommended to be the default for the application.
+func (m *SynchronizationTemplate) GetDefault()(*bool) {
     if m == nil {
         return nil
     } else {
-        return m.default_escaped
+        return m.default
     }
 }
 // GetDescription gets the description property value. Description of the template.
@@ -98,13 +98,13 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["default_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["default"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefault_escaped(val)
+            m.SetDefault(val)
         }
         return nil
     }
@@ -180,7 +180,7 @@ func (m *SynchronizationTemplate) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     {
-        err = writer.WriteBoolValue("default_escaped", m.GetDefault_escaped())
+        err = writer.WriteBoolValue("default", m.GetDefault())
         if err != nil {
             return err
         }
@@ -224,29 +224,43 @@ func (m *SynchronizationTemplate) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetApplicationId sets the applicationId property value. Identifier of the application this template belongs to.
 func (m *SynchronizationTemplate) SetApplicationId(value *string)() {
-    m.applicationId = value
+    if m != nil {
+        m.applicationId = value
+    }
 }
-// SetDefault_escaped sets the default_escaped property value. true if this template is recommended to be the default for the application.
-func (m *SynchronizationTemplate) SetDefault_escaped(value *bool)() {
-    m.default_escaped = value
+// SetDefault sets the default property value. true if this template is recommended to be the default for the application.
+func (m *SynchronizationTemplate) SetDefault(value *bool)() {
+    if m != nil {
+        m.default = value
+    }
 }
 // SetDescription sets the description property value. Description of the template.
 func (m *SynchronizationTemplate) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDiscoverable sets the discoverable property value. true if this template should appear in the collection of templates available for the application instance (service principal).
 func (m *SynchronizationTemplate) SetDiscoverable(value *bool)() {
-    m.discoverable = value
+    if m != nil {
+        m.discoverable = value
+    }
 }
 // SetFactoryTag sets the factoryTag property value. One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
 func (m *SynchronizationTemplate) SetFactoryTag(value *string)() {
-    m.factoryTag = value
+    if m != nil {
+        m.factoryTag = value
+    }
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
 func (m *SynchronizationTemplate) SetMetadata(value []MetadataEntry)() {
-    m.metadata = value
+    if m != nil {
+        m.metadata = value
+    }
 }
 // SetSchema sets the schema property value. Default synchronization schema for the jobs based on this template.
 func (m *SynchronizationTemplate) SetSchema(value *SynchronizationSchema)() {
-    m.schema = value
+    if m != nil {
+        m.schema = value
+    }
 }

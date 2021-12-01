@@ -24,7 +24,7 @@ type Command struct {
     // 
     status *string;
     // 
-    type_escaped *string;
+    type *string;
 }
 // NewCommand instantiates a new command and sets the default values.
 func NewCommand()(*Command) {
@@ -97,12 +97,12 @@ func (m *Command) GetStatus()(*string) {
         return m.status
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *Command) GetType_escaped()(*string) {
+// GetType gets the type property value. 
+func (m *Command) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -188,13 +188,13 @@ func (m *Command) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -258,7 +258,7 @@ func (m *Command) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -267,37 +267,55 @@ func (m *Command) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetAppServiceName sets the appServiceName property value. 
 func (m *Command) SetAppServiceName(value *string)() {
-    m.appServiceName = value
+    if m != nil {
+        m.appServiceName = value
+    }
 }
 // SetError sets the error property value. 
 func (m *Command) SetError(value *string)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetPackageFamilyName sets the packageFamilyName property value. 
 func (m *Command) SetPackageFamilyName(value *string)() {
-    m.packageFamilyName = value
+    if m != nil {
+        m.packageFamilyName = value
+    }
 }
 // SetPayload sets the payload property value. 
 func (m *Command) SetPayload(value *PayloadRequest)() {
-    m.payload = value
+    if m != nil {
+        m.payload = value
+    }
 }
 // SetPermissionTicket sets the permissionTicket property value. 
 func (m *Command) SetPermissionTicket(value *string)() {
-    m.permissionTicket = value
+    if m != nil {
+        m.permissionTicket = value
+    }
 }
 // SetPostBackUri sets the postBackUri property value. 
 func (m *Command) SetPostBackUri(value *string)() {
-    m.postBackUri = value
+    if m != nil {
+        m.postBackUri = value
+    }
 }
 // SetResponsepayload sets the responsepayload property value. 
 func (m *Command) SetResponsepayload(value *PayloadResponse)() {
-    m.responsepayload = value
+    if m != nil {
+        m.responsepayload = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *Command) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *Command) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. 
+func (m *Command) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }

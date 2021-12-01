@@ -122,17 +122,25 @@ func (m *ManagementActionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementActionInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetManagementActionId sets the managementActionId property value. The identifier for the management action. Required. Read-only.
 func (m *ManagementActionInfo) SetManagementActionId(value *string)() {
-    m.managementActionId = value
+    if m != nil {
+        m.managementActionId = value
+    }
 }
 // SetManagementTemplateId sets the managementTemplateId property value. The identifier for the management template. Required. Read-only.
 func (m *ManagementActionInfo) SetManagementTemplateId(value *string)() {
-    m.managementTemplateId = value
+    if m != nil {
+        m.managementTemplateId = value
+    }
 }
 // SetManagementTemplateVersion sets the managementTemplateVersion property value. 
 func (m *ManagementActionInfo) SetManagementTemplateVersion(value *int32)() {
-    m.managementTemplateVersion = value
+    if m != nil {
+        m.managementTemplateVersion = value
+    }
 }

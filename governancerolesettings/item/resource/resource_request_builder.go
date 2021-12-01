@@ -40,7 +40,7 @@ type ResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ResourceRequestBuilderPatchOptions options for Patch
 type ResourceRequestBuilderPatchOptions struct {

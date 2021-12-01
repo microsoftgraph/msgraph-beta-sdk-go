@@ -304,45 +304,67 @@ func (m *ItemActionSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemActionSet) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetComment sets the comment property value. A comment was added to the item.
 func (m *ItemActionSet) SetComment(value *CommentAction)() {
-    m.comment = value
+    if m != nil {
+        m.comment = value
+    }
 }
 // SetCreate sets the create property value. An item was created.
 func (m *ItemActionSet) SetCreate(value *CreateAction)() {
-    m.create = value
+    if m != nil {
+        m.create = value
+    }
 }
 // SetDelete sets the delete property value. An item was deleted.
 func (m *ItemActionSet) SetDelete(value *DeleteAction)() {
-    m.delete = value
+    if m != nil {
+        m.delete = value
+    }
 }
 // SetEdit sets the edit property value. An item was edited.
 func (m *ItemActionSet) SetEdit(value *EditAction)() {
-    m.edit = value
+    if m != nil {
+        m.edit = value
+    }
 }
 // SetMention sets the mention property value. A user was mentioned in the item.
 func (m *ItemActionSet) SetMention(value *MentionAction)() {
-    m.mention = value
+    if m != nil {
+        m.mention = value
+    }
 }
 // SetMove sets the move property value. An item was moved.
 func (m *ItemActionSet) SetMove(value *MoveAction)() {
-    m.move = value
+    if m != nil {
+        m.move = value
+    }
 }
 // SetRename sets the rename property value. An item was renamed.
 func (m *ItemActionSet) SetRename(value *RenameAction)() {
-    m.rename = value
+    if m != nil {
+        m.rename = value
+    }
 }
 // SetRestore sets the restore property value. An item was restored.
 func (m *ItemActionSet) SetRestore(value *RestoreAction)() {
-    m.restore = value
+    if m != nil {
+        m.restore = value
+    }
 }
 // SetShare sets the share property value. An item was shared.
 func (m *ItemActionSet) SetShare(value *ShareAction)() {
-    m.share = value
+    if m != nil {
+        m.share = value
+    }
 }
 // SetVersion sets the version property value. An item was versioned.
 func (m *ItemActionSet) SetVersion(value *VersionAction)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

@@ -190,25 +190,37 @@ func (m *GetOneDriveUsageFileCountsWithPeriod) Serialize(writer i04eb5309aeaafad
 }
 // SetActive sets the active property value. 
 func (m *GetOneDriveUsageFileCountsWithPeriod) SetActive(value *int64)() {
-    m.active = value
+    if m != nil {
+        m.active = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetOneDriveUsageFileCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetOneDriveUsageFileCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetOneDriveUsageFileCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetSiteType sets the siteType property value. 
 func (m *GetOneDriveUsageFileCountsWithPeriod) SetSiteType(value *string)() {
-    m.siteType = value
+    if m != nil {
+        m.siteType = value
+    }
 }
 // SetTotal sets the total property value. 
 func (m *GetOneDriveUsageFileCountsWithPeriod) SetTotal(value *int64)() {
-    m.total = value
+    if m != nil {
+        m.total = value
+    }
 }

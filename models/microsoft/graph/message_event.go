@@ -114,13 +114,19 @@ func (m *MessageEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetDateTime sets the dateTime property value. 
 func (m *MessageEvent) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.dateTime = value
+    if m != nil {
+        m.dateTime = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *MessageEvent) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetEventType sets the eventType property value. 
 func (m *MessageEvent) SetEventType(value *MessageEventType)() {
-    m.eventType = value
+    if m != nil {
+        m.eventType = value
+    }
 }

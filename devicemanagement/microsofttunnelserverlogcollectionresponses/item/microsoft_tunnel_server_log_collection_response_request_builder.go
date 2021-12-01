@@ -41,7 +41,7 @@ type MicrosoftTunnelServerLogCollectionResponseRequestBuilderGetQueryParameters 
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MicrosoftTunnelServerLogCollectionResponseRequestBuilderPatchOptions options for Patch
 type MicrosoftTunnelServerLogCollectionResponseRequestBuilderPatchOptions struct {

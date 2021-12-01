@@ -111,13 +111,19 @@ func (m *RiskyUserHistoryItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetActivity sets the activity property value. The activity related to user risk level change.
 func (m *RiskyUserHistoryItem) SetActivity(value *RiskUserActivity)() {
-    m.activity = value
+    if m != nil {
+        m.activity = value
+    }
 }
 // SetInitiatedBy sets the initiatedBy property value. The id of actor that does the operation.
 func (m *RiskyUserHistoryItem) SetInitiatedBy(value *string)() {
-    m.initiatedBy = value
+    if m != nil {
+        m.initiatedBy = value
+    }
 }
 // SetUserId sets the userId property value. The id of the user.
 func (m *RiskyUserHistoryItem) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

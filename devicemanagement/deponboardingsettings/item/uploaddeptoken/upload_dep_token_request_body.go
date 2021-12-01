@@ -96,13 +96,19 @@ func (m *UploadDepTokenRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadDepTokenRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppleId sets the appleId property value. 
 func (m *UploadDepTokenRequestBody) SetAppleId(value *string)() {
-    m.appleId = value
+    if m != nil {
+        m.appleId = value
+    }
 }
 // SetDepToken sets the depToken property value. 
 func (m *UploadDepTokenRequestBody) SetDepToken(value *string)() {
-    m.depToken = value
+    if m != nil {
+        m.depToken = value
+    }
 }

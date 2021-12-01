@@ -105,13 +105,19 @@ func (m *GovernancePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernancePolicy) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDecisionMakerCriteria sets the decisionMakerCriteria property value. 
 func (m *GovernancePolicy) SetDecisionMakerCriteria(value []GovernanceCriteria)() {
-    m.decisionMakerCriteria = value
+    if m != nil {
+        m.decisionMakerCriteria = value
+    }
 }
 // SetNotificationPolicy sets the notificationPolicy property value. 
 func (m *GovernancePolicy) SetNotificationPolicy(value *GovernanceNotificationPolicy)() {
-    m.notificationPolicy = value
+    if m != nil {
+        m.notificationPolicy = value
+    }
 }

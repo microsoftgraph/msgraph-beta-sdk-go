@@ -113,13 +113,19 @@ func (m *RecordOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetCompletionReason sets the completionReason property value. Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
 func (m *RecordOperation) SetCompletionReason(value *RecordCompletionReason)() {
-    m.completionReason = value
+    if m != nil {
+        m.completionReason = value
+    }
 }
 // SetRecordingAccessToken sets the recordingAccessToken property value. The access token required to retrieve the recording.
 func (m *RecordOperation) SetRecordingAccessToken(value *string)() {
-    m.recordingAccessToken = value
+    if m != nil {
+        m.recordingAccessToken = value
+    }
 }
 // SetRecordingLocation sets the recordingLocation property value. The location where the recording is located.
 func (m *RecordOperation) SetRecordingLocation(value *string)() {
-    m.recordingLocation = value
+    if m != nil {
+        m.recordingLocation = value
+    }
 }

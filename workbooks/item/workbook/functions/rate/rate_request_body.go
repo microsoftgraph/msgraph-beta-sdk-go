@@ -20,7 +20,7 @@ type RateRequestBody struct {
     // 
     pv *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
     // 
-    type_escaped *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
+    type *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json;
 }
 // NewRateRequestBody instantiates a new rateRequestBody and sets the default values.
 func NewRateRequestBody()(*RateRequestBody) {
@@ -77,12 +77,12 @@ func (m *RateRequestBody) GetPv()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6c
         return m.pv
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *RateRequestBody) GetType_escaped()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
+// GetType gets the type property value. 
+func (m *RateRequestBody) GetType()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -138,13 +138,13 @@ func (m *RateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewJson() })
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
+            m.SetType(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json))
         }
         return nil
     }
@@ -186,7 +186,7 @@ func (m *RateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err := writer.WriteObjectValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteObjectValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -201,29 +201,43 @@ func (m *RateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RateRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFv sets the fv property value. 
 func (m *RateRequestBody) SetFv(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.fv = value
+    if m != nil {
+        m.fv = value
+    }
 }
 // SetGuess sets the guess property value. 
 func (m *RateRequestBody) SetGuess(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.guess = value
+    if m != nil {
+        m.guess = value
+    }
 }
 // SetNper sets the nper property value. 
 func (m *RateRequestBody) SetNper(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.nper = value
+    if m != nil {
+        m.nper = value
+    }
 }
 // SetPmt sets the pmt property value. 
 func (m *RateRequestBody) SetPmt(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.pmt = value
+    if m != nil {
+        m.pmt = value
+    }
 }
 // SetPv sets the pv property value. 
 func (m *RateRequestBody) SetPv(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.pv = value
+    if m != nil {
+        m.pv = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *RateRequestBody) SetType_escaped(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.type_escaped = value
+// SetType sets the type property value. 
+func (m *RateRequestBody) SetType(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
+    if m != nil {
+        m.type = value
+    }
 }

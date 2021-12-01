@@ -98,13 +98,19 @@ func (m *DeviceLogCollectionRequest) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceLogCollectionRequest) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. The unique identifier
 func (m *DeviceLogCollectionRequest) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetTemplateType sets the templateType property value. The template type that is sent with the collection request. Possible values are: predefined.
 func (m *DeviceLogCollectionRequest) SetTemplateType(value *DeviceLogCollectionTemplateType)() {
-    m.templateType = value
+    if m != nil {
+        m.templateType = value
+    }
 }

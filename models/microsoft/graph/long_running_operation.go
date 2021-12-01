@@ -166,21 +166,31 @@ func (m *LongRunningOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetCreatedDateTime sets the createdDateTime property value. 
 func (m *LongRunningOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. 
 func (m *LongRunningOperation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActionDateTime = value
+    if m != nil {
+        m.lastActionDateTime = value
+    }
 }
 // SetResourceLocation sets the resourceLocation property value. 
 func (m *LongRunningOperation) SetResourceLocation(value *string)() {
-    m.resourceLocation = value
+    if m != nil {
+        m.resourceLocation = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *LongRunningOperation) SetStatus(value *LongRunningOperationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetStatusDetail sets the statusDetail property value. 
 func (m *LongRunningOperation) SetStatusDetail(value *string)() {
-    m.statusDetail = value
+    if m != nil {
+        m.statusDetail = value
+    }
 }

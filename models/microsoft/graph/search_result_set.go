@@ -135,17 +135,25 @@ func (m *SearchResultSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchResultSet) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetHitsContainers sets the hitsContainers property value. A collection of search results.
 func (m *SearchResultSet) SetHitsContainers(value []SearchHitsContainer)() {
-    m.hitsContainers = value
+    if m != nil {
+        m.hitsContainers = value
+    }
 }
 // SetResultTemplates sets the resultTemplates property value. A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
 func (m *SearchResultSet) SetResultTemplates(value *ResultTemplateDictionary)() {
-    m.resultTemplates = value
+    if m != nil {
+        m.resultTemplates = value
+    }
 }
 // SetSearchTerms sets the searchTerms property value. Contains the search terms sent in the initial search query.
 func (m *SearchResultSet) SetSearchTerms(value []string)() {
-    m.searchTerms = value
+    if m != nil {
+        m.searchTerms = value
+    }
 }

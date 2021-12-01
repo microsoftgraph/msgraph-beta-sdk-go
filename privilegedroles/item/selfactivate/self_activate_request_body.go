@@ -148,21 +148,31 @@ func (m *SelfActivateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SelfActivateRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDuration sets the duration property value. 
 func (m *SelfActivateRequestBody) SetDuration(value *string)() {
-    m.duration = value
+    if m != nil {
+        m.duration = value
+    }
 }
 // SetReason sets the reason property value. 
 func (m *SelfActivateRequestBody) SetReason(value *string)() {
-    m.reason = value
+    if m != nil {
+        m.reason = value
+    }
 }
 // SetTicketNumber sets the ticketNumber property value. 
 func (m *SelfActivateRequestBody) SetTicketNumber(value *string)() {
-    m.ticketNumber = value
+    if m != nil {
+        m.ticketNumber = value
+    }
 }
 // SetTicketSystem sets the ticketSystem property value. 
 func (m *SelfActivateRequestBody) SetTicketSystem(value *string)() {
-    m.ticketSystem = value
+    if m != nil {
+        m.ticketSystem = value
+    }
 }

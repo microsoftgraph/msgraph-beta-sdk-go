@@ -234,29 +234,43 @@ func (m *GroupPolicyCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetChildren sets the children property value. The children categories
 func (m *GroupPolicyCategory) SetChildren(value []GroupPolicyCategory)() {
-    m.children = value
+    if m != nil {
+        m.children = value
+    }
 }
 // SetDefinitionFile sets the definitionFile property value. The id of the definition file the category came from
 func (m *GroupPolicyCategory) SetDefinitionFile(value *GroupPolicyDefinitionFile)() {
-    m.definitionFile = value
+    if m != nil {
+        m.definitionFile = value
+    }
 }
 // SetDefinitions sets the definitions property value. The immediate GroupPolicyDefinition children of the category
 func (m *GroupPolicyCategory) SetDefinitions(value []GroupPolicyDefinition)() {
-    m.definitions = value
+    if m != nil {
+        m.definitions = value
+    }
 }
 // SetDisplayName sets the displayName property value. The string id of the category's display name
 func (m *GroupPolicyCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsRoot sets the isRoot property value. Defines if the category is a root category
 func (m *GroupPolicyCategory) SetIsRoot(value *bool)() {
-    m.isRoot = value
+    if m != nil {
+        m.isRoot = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyCategory) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetParent sets the parent property value. The parent category
 func (m *GroupPolicyCategory) SetParent(value *GroupPolicyCategory)() {
-    m.parent = value
+    if m != nil {
+        m.parent = value
+    }
 }

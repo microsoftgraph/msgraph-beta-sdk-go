@@ -85,9 +85,13 @@ func (m *AddToReviewSetOperation) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetReviewSet sets the reviewSet property value. The review set to which items matching the source collection query are added to.
 func (m *AddToReviewSetOperation) SetReviewSet(value *ReviewSet)() {
-    m.reviewSet = value
+    if m != nil {
+        m.reviewSet = value
+    }
 }
 // SetSourceCollection sets the sourceCollection property value. The sourceCollection that items are being added from.
 func (m *AddToReviewSetOperation) SetSourceCollection(value *SourceCollection)() {
-    m.sourceCollection = value
+    if m != nil {
+        m.sourceCollection = value
+    }
 }

@@ -148,17 +148,25 @@ func (m *Connector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetExternalIp sets the externalIp property value. The external IP address as detected by the the connector server. Read-only.
 func (m *Connector) SetExternalIp(value *string)() {
-    m.externalIp = value
+    if m != nil {
+        m.externalIp = value
+    }
 }
 // SetMachineName sets the machineName property value. The machine name the connector is installed and running on.
 func (m *Connector) SetMachineName(value *string)() {
-    m.machineName = value
+    if m != nil {
+        m.machineName = value
+    }
 }
 // SetMemberOf sets the memberOf property value. The connectorGroup that the connector is a member of. Read-only.
 func (m *Connector) SetMemberOf(value []ConnectorGroup)() {
-    m.memberOf = value
+    if m != nil {
+        m.memberOf = value
+    }
 }
 // SetStatus sets the status property value. Indicates the status of the connector. Possible values are: active, inactive. Read-only.
 func (m *Connector) SetStatus(value *ConnectorStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

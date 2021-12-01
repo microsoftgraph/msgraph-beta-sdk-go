@@ -40,7 +40,7 @@ type AcronymRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AcronymRequestBuilderPatchOptions options for Patch
 type AcronymRequestBuilderPatchOptions struct {

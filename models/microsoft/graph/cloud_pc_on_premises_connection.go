@@ -32,7 +32,7 @@ type CloudPcOnPremisesConnection struct {
     // The name of the target Azure subscription. Read-only.
     subscriptionName *string;
     // 
-    type_escaped *CloudPcOnPremisesConnectionType;
+    type *CloudPcOnPremisesConnectionType;
     // The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
     virtualNetworkId *string;
 }
@@ -139,12 +139,12 @@ func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
         return m.subscriptionName
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *CloudPcOnPremisesConnection) GetType_escaped()(*CloudPcOnPremisesConnectionType) {
+// GetType gets the type property value. 
+func (m *CloudPcOnPremisesConnection) GetType()(*CloudPcOnPremisesConnectionType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetVirtualNetworkId gets the virtualNetworkId property value. The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
@@ -279,14 +279,14 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnectionType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(CloudPcOnPremisesConnectionType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -384,9 +384,9 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -401,57 +401,85 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdDomainName sets the adDomainName property value. The fully qualified domain name (FQDN) of the Active Directory domain you want to join.
 func (m *CloudPcOnPremisesConnection) SetAdDomainName(value *string)() {
-    m.adDomainName = value
+    if m != nil {
+        m.adDomainName = value
+    }
 }
 // SetAdDomainPassword sets the adDomainPassword property value. The password associated with adDomainUsername.
 func (m *CloudPcOnPremisesConnection) SetAdDomainPassword(value *string)() {
-    m.adDomainPassword = value
+    if m != nil {
+        m.adDomainPassword = value
+    }
 }
 // SetAdDomainUsername sets the adDomainUsername property value. The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com.
 func (m *CloudPcOnPremisesConnection) SetAdDomainUsername(value *string)() {
-    m.adDomainUsername = value
+    if m != nil {
+        m.adDomainUsername = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the on-premises connection.
 func (m *CloudPcOnPremisesConnection) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetHealthCheckStatus sets the healthCheckStatus property value. The status of the most recent health check done on the on-premises connection. For example, if status is 'passed', the on-premises connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatus(value *CloudPcOnPremisesConnectionStatus)() {
-    m.healthCheckStatus = value
+    if m != nil {
+        m.healthCheckStatus = value
+    }
 }
 // SetHealthCheckStatusDetails sets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetails(value *CloudPcOnPremisesConnectionStatusDetails)() {
-    m.healthCheckStatusDetails = value
+    if m != nil {
+        m.healthCheckStatusDetails = value
+    }
 }
 // SetInUse sets the inUse property value. When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) SetInUse(value *bool)() {
-    m.inUse = value
+    if m != nil {
+        m.inUse = value
+    }
 }
 // SetOrganizationalUnit sets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
 func (m *CloudPcOnPremisesConnection) SetOrganizationalUnit(value *string)() {
-    m.organizationalUnit = value
+    if m != nil {
+        m.organizationalUnit = value
+    }
 }
 // SetResourceGroupId sets the resourceGroupId property value. The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.
 func (m *CloudPcOnPremisesConnection) SetResourceGroupId(value *string)() {
-    m.resourceGroupId = value
+    if m != nil {
+        m.resourceGroupId = value
+    }
 }
 // SetSubnetId sets the subnetId property value. The ID of the target subnet. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'.
 func (m *CloudPcOnPremisesConnection) SetSubnetId(value *string)() {
-    m.subnetId = value
+    if m != nil {
+        m.subnetId = value
+    }
 }
 // SetSubscriptionId sets the subscriptionId property value. The ID of the target Azure subscription that’s associated with your tenant.
 func (m *CloudPcOnPremisesConnection) SetSubscriptionId(value *string)() {
-    m.subscriptionId = value
+    if m != nil {
+        m.subscriptionId = value
+    }
 }
 // SetSubscriptionName sets the subscriptionName property value. The name of the target Azure subscription. Read-only.
 func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
-    m.subscriptionName = value
+    if m != nil {
+        m.subscriptionName = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *CloudPcOnPremisesConnection) SetType_escaped(value *CloudPcOnPremisesConnectionType)() {
-    m.type_escaped = value
+// SetType sets the type property value. 
+func (m *CloudPcOnPremisesConnection) SetType(value *CloudPcOnPremisesConnectionType)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetVirtualNetworkId sets the virtualNetworkId property value. The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
 func (m *CloudPcOnPremisesConnection) SetVirtualNetworkId(value *string)() {
-    m.virtualNetworkId = value
+    if m != nil {
+        m.virtualNetworkId = value
+    }
 }

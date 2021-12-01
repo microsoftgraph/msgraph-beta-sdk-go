@@ -113,13 +113,19 @@ func (m *DeviceManagementConfigurationPolicyAssignment) Serialize(writer i04eb53
 }
 // SetSource sets the source property value. The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.
 func (m *DeviceManagementConfigurationPolicyAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
-    m.source = value
+    if m != nil {
+        m.source = value
+    }
 }
 // SetSourceId sets the sourceId property value. The identifier of the source of the assignment.
 func (m *DeviceManagementConfigurationPolicyAssignment) SetSourceId(value *string)() {
-    m.sourceId = value
+    if m != nil {
+        m.sourceId = value
+    }
 }
 // SetTarget sets the target property value. The assignment target for the DeviceManagementConfigurationPolicy.
 func (m *DeviceManagementConfigurationPolicyAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

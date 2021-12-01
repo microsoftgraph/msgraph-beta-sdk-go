@@ -1682,221 +1682,331 @@ func (m *ServicePrincipal) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
 func (m *ServicePrincipal) SetAccountEnabled(value *bool)() {
-    m.accountEnabled = value
+    if m != nil {
+        m.accountEnabled = value
+    }
 }
 // SetAddIns sets the addIns property value. Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
 func (m *ServicePrincipal) SetAddIns(value []AddIn)() {
-    m.addIns = value
+    if m != nil {
+        m.addIns = value
+    }
 }
 // SetAlternativeNames sets the alternativeNames property value. Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) SetAlternativeNames(value []string)() {
-    m.alternativeNames = value
+    if m != nil {
+        m.alternativeNames = value
+    }
 }
 // SetAppDescription sets the appDescription property value. The description exposed by the associated application.
 func (m *ServicePrincipal) SetAppDescription(value *string)() {
-    m.appDescription = value
+    if m != nil {
+        m.appDescription = value
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. The display name exposed by the associated application.
 func (m *ServicePrincipal) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    if m != nil {
+        m.appDisplayName = value
+    }
 }
 // SetAppId sets the appId property value. The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
 func (m *ServicePrincipal) SetAppId(value *string)() {
-    m.appId = value
+    if m != nil {
+        m.appId = value
+    }
 }
 // SetApplicationTemplateId sets the applicationTemplateId property value. Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).
 func (m *ServicePrincipal) SetApplicationTemplateId(value *string)() {
-    m.applicationTemplateId = value
+    if m != nil {
+        m.applicationTemplateId = value
+    }
 }
 // SetAppManagementPolicies sets the appManagementPolicies property value. The appManagementPolicy applied to this service principal.
 func (m *ServicePrincipal) SetAppManagementPolicies(value []AppManagementPolicy)() {
-    m.appManagementPolicies = value
+    if m != nil {
+        m.appManagementPolicies = value
+    }
 }
 // SetAppOwnerOrganizationId sets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
 func (m *ServicePrincipal) SetAppOwnerOrganizationId(value *string)() {
-    m.appOwnerOrganizationId = value
+    if m != nil {
+        m.appOwnerOrganizationId = value
+    }
 }
 // SetAppRoleAssignedTo sets the appRoleAssignedTo property value. App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
 func (m *ServicePrincipal) SetAppRoleAssignedTo(value []AppRoleAssignment)() {
-    m.appRoleAssignedTo = value
+    if m != nil {
+        m.appRoleAssignedTo = value
+    }
 }
 // SetAppRoleAssignmentRequired sets the appRoleAssignmentRequired property value. Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
 func (m *ServicePrincipal) SetAppRoleAssignmentRequired(value *bool)() {
-    m.appRoleAssignmentRequired = value
+    if m != nil {
+        m.appRoleAssignmentRequired = value
+    }
 }
 // SetAppRoleAssignments sets the appRoleAssignments property value. App role assignment for another app or service, granted to this service principal. Supports $expand.
 func (m *ServicePrincipal) SetAppRoleAssignments(value []AppRoleAssignment)() {
-    m.appRoleAssignments = value
+    if m != nil {
+        m.appRoleAssignments = value
+    }
 }
 // SetAppRoles sets the appRoles property value. The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
 func (m *ServicePrincipal) SetAppRoles(value []AppRole)() {
-    m.appRoles = value
+    if m != nil {
+        m.appRoles = value
+    }
 }
 // SetClaimsMappingPolicies sets the claimsMappingPolicies property value. The claimsMappingPolicies assigned to this service principal. Supports $expand.
 func (m *ServicePrincipal) SetClaimsMappingPolicies(value []ClaimsMappingPolicy)() {
-    m.claimsMappingPolicies = value
+    if m != nil {
+        m.claimsMappingPolicies = value
+    }
 }
 // SetCreatedObjects sets the createdObjects property value. Directory objects created by this service principal. Read-only. Nullable.
 func (m *ServicePrincipal) SetCreatedObjects(value []DirectoryObject)() {
-    m.createdObjects = value
+    if m != nil {
+        m.createdObjects = value
+    }
 }
 // SetCustomSecurityAttributes sets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith).
 func (m *ServicePrincipal) SetCustomSecurityAttributes(value *CustomSecurityAttributeValue)() {
-    m.customSecurityAttributes = value
+    if m != nil {
+        m.customSecurityAttributes = value
+    }
 }
 // SetDelegatedPermissionClassifications sets the delegatedPermissionClassifications property value. The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
 func (m *ServicePrincipal) SetDelegatedPermissionClassifications(value []DelegatedPermissionClassification)() {
-    m.delegatedPermissionClassifications = value
+    if m != nil {
+        m.delegatedPermissionClassifications = value
+    }
 }
 // SetDescription sets the description property value. Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *ServicePrincipal) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisabledByMicrosoftStatus sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
 func (m *ServicePrincipal) SetDisabledByMicrosoftStatus(value *string)() {
-    m.disabledByMicrosoftStatus = value
+    if m != nil {
+        m.disabledByMicrosoftStatus = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *ServicePrincipal) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEndpoints sets the endpoints property value. Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
 func (m *ServicePrincipal) SetEndpoints(value []Endpoint)() {
-    m.endpoints = value
+    if m != nil {
+        m.endpoints = value
+    }
 }
 // SetErrorUrl sets the errorUrl property value. Deprecated. Don't use.
 func (m *ServicePrincipal) SetErrorUrl(value *string)() {
-    m.errorUrl = value
+    if m != nil {
+        m.errorUrl = value
+    }
 }
 // SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. 
 func (m *ServicePrincipal) SetFederatedIdentityCredentials(value []FederatedIdentityCredential)() {
-    m.federatedIdentityCredentials = value
+    if m != nil {
+        m.federatedIdentityCredentials = value
+    }
 }
 // SetHomepage sets the homepage property value. Home page or landing page of the application.
 func (m *ServicePrincipal) SetHomepage(value *string)() {
-    m.homepage = value
+    if m != nil {
+        m.homepage = value
+    }
 }
 // SetHomeRealmDiscoveryPolicies sets the homeRealmDiscoveryPolicies property value. The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
 func (m *ServicePrincipal) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicy)() {
-    m.homeRealmDiscoveryPolicies = value
+    if m != nil {
+        m.homeRealmDiscoveryPolicies = value
+    }
 }
 // SetInfo sets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *ServicePrincipal) SetInfo(value *InformationalUrl)() {
-    m.info = value
+    if m != nil {
+        m.info = value
+    }
 }
 // SetKeyCredentials sets the keyCredentials property value. The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *ServicePrincipal) SetKeyCredentials(value []KeyCredential)() {
-    m.keyCredentials = value
+    if m != nil {
+        m.keyCredentials = value
+    }
 }
 // SetLicenseDetails sets the licenseDetails property value. 
 func (m *ServicePrincipal) SetLicenseDetails(value []LicenseDetails)() {
-    m.licenseDetails = value
+    if m != nil {
+        m.licenseDetails = value
+    }
 }
 // SetLoginUrl sets the loginUrl property value. Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
 func (m *ServicePrincipal) SetLoginUrl(value *string)() {
-    m.loginUrl = value
+    if m != nil {
+        m.loginUrl = value
+    }
 }
 // SetLogoutUrl sets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
 func (m *ServicePrincipal) SetLogoutUrl(value *string)() {
-    m.logoutUrl = value
+    if m != nil {
+        m.logoutUrl = value
+    }
 }
 // SetMemberOf sets the memberOf property value. Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
 func (m *ServicePrincipal) SetMemberOf(value []DirectoryObject)() {
-    m.memberOf = value
+    if m != nil {
+        m.memberOf = value
+    }
 }
 // SetNotes sets the notes property value. Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
 func (m *ServicePrincipal) SetNotes(value *string)() {
-    m.notes = value
+    if m != nil {
+        m.notes = value
+    }
 }
 // SetNotificationEmailAddresses sets the notificationEmailAddresses property value. Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
 func (m *ServicePrincipal) SetNotificationEmailAddresses(value []string)() {
-    m.notificationEmailAddresses = value
+    if m != nil {
+        m.notificationEmailAddresses = value
+    }
 }
 // SetOauth2PermissionGrants sets the oauth2PermissionGrants property value. Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
 func (m *ServicePrincipal) SetOauth2PermissionGrants(value []OAuth2PermissionGrant)() {
-    m.oauth2PermissionGrants = value
+    if m != nil {
+        m.oauth2PermissionGrants = value
+    }
 }
 // SetOwnedObjects sets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
 func (m *ServicePrincipal) SetOwnedObjects(value []DirectoryObject)() {
-    m.ownedObjects = value
+    if m != nil {
+        m.ownedObjects = value
+    }
 }
 // SetOwners sets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
 func (m *ServicePrincipal) SetOwners(value []DirectoryObject)() {
-    m.owners = value
+    if m != nil {
+        m.owners = value
+    }
 }
 // SetPasswordCredentials sets the passwordCredentials property value. The collection of password credentials associated with the application. Not nullable.
 func (m *ServicePrincipal) SetPasswordCredentials(value []PasswordCredential)() {
-    m.passwordCredentials = value
+    if m != nil {
+        m.passwordCredentials = value
+    }
 }
 // SetPasswordSingleSignOnSettings sets the passwordSingleSignOnSettings property value. The collection for settings related to password single sign-on. Use $select=passwordSingleSignOnSettings to read the property. Read-only for applicationTemplates except for custom applicationTemplates.
 func (m *ServicePrincipal) SetPasswordSingleSignOnSettings(value *PasswordSingleSignOnSettings)() {
-    m.passwordSingleSignOnSettings = value
+    if m != nil {
+        m.passwordSingleSignOnSettings = value
+    }
 }
 // SetPreferredSingleSignOnMode sets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
 func (m *ServicePrincipal) SetPreferredSingleSignOnMode(value *string)() {
-    m.preferredSingleSignOnMode = value
+    if m != nil {
+        m.preferredSingleSignOnMode = value
+    }
 }
 // SetPreferredTokenSigningKeyEndDateTime sets the preferredTokenSigningKeyEndDateTime property value. Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.
 func (m *ServicePrincipal) SetPreferredTokenSigningKeyEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.preferredTokenSigningKeyEndDateTime = value
+    if m != nil {
+        m.preferredTokenSigningKeyEndDateTime = value
+    }
 }
 // SetPreferredTokenSigningKeyThumbprint sets the preferredTokenSigningKeyThumbprint property value. Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
 func (m *ServicePrincipal) SetPreferredTokenSigningKeyThumbprint(value *string)() {
-    m.preferredTokenSigningKeyThumbprint = value
+    if m != nil {
+        m.preferredTokenSigningKeyThumbprint = value
+    }
 }
 // SetPublishedPermissionScopes sets the publishedPermissionScopes property value. The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
 func (m *ServicePrincipal) SetPublishedPermissionScopes(value []PermissionScope)() {
-    m.publishedPermissionScopes = value
+    if m != nil {
+        m.publishedPermissionScopes = value
+    }
 }
 // SetPublisherName sets the publisherName property value. 
 func (m *ServicePrincipal) SetPublisherName(value *string)() {
-    m.publisherName = value
+    if m != nil {
+        m.publisherName = value
+    }
 }
 // SetReplyUrls sets the replyUrls property value. The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
 func (m *ServicePrincipal) SetReplyUrls(value []string)() {
-    m.replyUrls = value
+    if m != nil {
+        m.replyUrls = value
+    }
 }
 // SetSamlMetadataUrl sets the samlMetadataUrl property value. The url where the service exposes SAML metadata for federation.
 func (m *ServicePrincipal) SetSamlMetadataUrl(value *string)() {
-    m.samlMetadataUrl = value
+    if m != nil {
+        m.samlMetadataUrl = value
+    }
 }
 // SetSamlSingleSignOnSettings sets the samlSingleSignOnSettings property value. The collection for settings related to saml single sign-on.
 func (m *ServicePrincipal) SetSamlSingleSignOnSettings(value *SamlSingleSignOnSettings)() {
-    m.samlSingleSignOnSettings = value
+    if m != nil {
+        m.samlSingleSignOnSettings = value
+    }
 }
 // SetServicePrincipalNames sets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) SetServicePrincipalNames(value []string)() {
-    m.servicePrincipalNames = value
+    if m != nil {
+        m.servicePrincipalNames = value
+    }
 }
 // SetServicePrincipalType sets the servicePrincipalType property value. Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
 func (m *ServicePrincipal) SetServicePrincipalType(value *string)() {
-    m.servicePrincipalType = value
+    if m != nil {
+        m.servicePrincipalType = value
+    }
 }
 // SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
 func (m *ServicePrincipal) SetSignInAudience(value *string)() {
-    m.signInAudience = value
+    if m != nil {
+        m.signInAudience = value
+    }
 }
 // SetSynchronization sets the synchronization property value. 
 func (m *ServicePrincipal) SetSynchronization(value *Synchronization)() {
-    m.synchronization = value
+    if m != nil {
+        m.synchronization = value
+    }
 }
 // SetTags sets the tags property value. Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) SetTags(value []string)() {
-    m.tags = value
+    if m != nil {
+        m.tags = value
+    }
 }
 // SetTokenEncryptionKeyId sets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
 func (m *ServicePrincipal) SetTokenEncryptionKeyId(value *string)() {
-    m.tokenEncryptionKeyId = value
+    if m != nil {
+        m.tokenEncryptionKeyId = value
+    }
 }
 // SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The tokenIssuancePolicies assigned to this service principal.
 func (m *ServicePrincipal) SetTokenIssuancePolicies(value []TokenIssuancePolicy)() {
-    m.tokenIssuancePolicies = value
+    if m != nil {
+        m.tokenIssuancePolicies = value
+    }
 }
 // SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. The tokenLifetimePolicies assigned to this service principal.
 func (m *ServicePrincipal) SetTokenLifetimePolicies(value []TokenLifetimePolicy)() {
-    m.tokenLifetimePolicies = value
+    if m != nil {
+        m.tokenLifetimePolicies = value
+    }
 }
 // SetTransitiveMemberOf sets the transitiveMemberOf property value. 
 func (m *ServicePrincipal) SetTransitiveMemberOf(value []DirectoryObject)() {
-    m.transitiveMemberOf = value
+    if m != nil {
+        m.transitiveMemberOf = value
+    }
 }

@@ -165,21 +165,31 @@ func (m *PrivilegedRoleSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetElevatedCount sets the elevatedCount property value. The number of users that have the role assigned and the role is activated.
 func (m *PrivilegedRoleSummary) SetElevatedCount(value *int32)() {
-    m.elevatedCount = value
+    if m != nil {
+        m.elevatedCount = value
+    }
 }
 // SetManagedCount sets the managedCount property value. The number of users that have the role assigned but the role is deactivated.
 func (m *PrivilegedRoleSummary) SetManagedCount(value *int32)() {
-    m.managedCount = value
+    if m != nil {
+        m.managedCount = value
+    }
 }
 // SetMfaEnabled sets the mfaEnabled property value. true if the role activation requires MFA. false if the role activation doesn't require MFA.
 func (m *PrivilegedRoleSummary) SetMfaEnabled(value *bool)() {
-    m.mfaEnabled = value
+    if m != nil {
+        m.mfaEnabled = value
+    }
 }
 // SetStatus sets the status property value. Possible values are: ok, bad. The value depends on the ratio of (managedCount / usersCount). If the ratio is less than a predefined threshold, ok is returned. Otherwise, bad is returned.
 func (m *PrivilegedRoleSummary) SetStatus(value *RoleSummaryStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetUsersCount sets the usersCount property value. The number of users that are assigned with the role.
 func (m *PrivilegedRoleSummary) SetUsersCount(value *int32)() {
-    m.usersCount = value
+    if m != nil {
+        m.usersCount = value
+    }
 }

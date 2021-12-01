@@ -268,37 +268,55 @@ func (m *AssignmentFilterEvaluationSummary) Serialize(writer i04eb5309aeaafadd28
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterEvaluationSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignmentFilterDisplayName sets the assignmentFilterDisplayName property value. The admin defined name for assignment filter.
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterDisplayName(value *string)() {
-    m.assignmentFilterDisplayName = value
+    if m != nil {
+        m.assignmentFilterDisplayName = value
+    }
 }
 // SetAssignmentFilterId sets the assignmentFilterId property value. Unique identifier for the assignment filter object
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterId(value *string)() {
-    m.assignmentFilterId = value
+    if m != nil {
+        m.assignmentFilterId = value
+    }
 }
 // SetAssignmentFilterLastModifiedDateTime sets the assignmentFilterLastModifiedDateTime property value. The time the assignment filter was last modified.
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.assignmentFilterLastModifiedDateTime = value
+    if m != nil {
+        m.assignmentFilterLastModifiedDateTime = value
+    }
 }
 // SetAssignmentFilterPlatform sets the assignmentFilterPlatform property value. The platform for which this assignment filter is created. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterPlatform(value *DevicePlatformType)() {
-    m.assignmentFilterPlatform = value
+    if m != nil {
+        m.assignmentFilterPlatform = value
+    }
 }
 // SetAssignmentFilterType sets the assignmentFilterType property value. Indicate filter type either include or exclude. Possible values are: none, include, exclude.
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterType(value *DeviceAndAppManagementAssignmentFilterType)() {
-    m.assignmentFilterType = value
+    if m != nil {
+        m.assignmentFilterType = value
+    }
 }
 // SetAssignmentFilterTypeAndEvaluationResults sets the assignmentFilterTypeAndEvaluationResults property value. A collection of filter types and their corresponding evaluation results.
 func (m *AssignmentFilterEvaluationSummary) SetAssignmentFilterTypeAndEvaluationResults(value []AssignmentFilterTypeAndEvaluationResult)() {
-    m.assignmentFilterTypeAndEvaluationResults = value
+    if m != nil {
+        m.assignmentFilterTypeAndEvaluationResults = value
+    }
 }
 // SetEvaluationDateTime sets the evaluationDateTime property value. The time assignment filter was evaluated.
 func (m *AssignmentFilterEvaluationSummary) SetEvaluationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.evaluationDateTime = value
+    if m != nil {
+        m.evaluationDateTime = value
+    }
 }
 // SetEvaluationResult sets the evaluationResult property value. Assignment filter evaluation result. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
 func (m *AssignmentFilterEvaluationSummary) SetEvaluationResult(value *AssignmentFilterEvaluationResult)() {
-    m.evaluationResult = value
+    if m != nil {
+        m.evaluationResult = value
+    }
 }
