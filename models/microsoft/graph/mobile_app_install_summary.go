@@ -293,41 +293,61 @@ func (m *MobileAppInstallSummary) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. Number of Devices that have failed to install this app.
 func (m *MobileAppInstallSummary) SetFailedDeviceCount(value *int32)() {
-    m.failedDeviceCount = value
+    if m != nil {
+        m.failedDeviceCount = value
+    }
 }
 // SetFailedUserCount sets the failedUserCount property value. Number of Users that have 1 or more device that failed to install this app.
 func (m *MobileAppInstallSummary) SetFailedUserCount(value *int32)() {
-    m.failedUserCount = value
+    if m != nil {
+        m.failedUserCount = value
+    }
 }
 // SetInstalledDeviceCount sets the installedDeviceCount property value. Number of Devices that have successfully installed this app.
 func (m *MobileAppInstallSummary) SetInstalledDeviceCount(value *int32)() {
-    m.installedDeviceCount = value
+    if m != nil {
+        m.installedDeviceCount = value
+    }
 }
 // SetInstalledUserCount sets the installedUserCount property value. Number of Users whose devices have all succeeded to install this app.
 func (m *MobileAppInstallSummary) SetInstalledUserCount(value *int32)() {
-    m.installedUserCount = value
+    if m != nil {
+        m.installedUserCount = value
+    }
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of Devices that are not applicable for this app.
 func (m *MobileAppInstallSummary) SetNotApplicableDeviceCount(value *int32)() {
-    m.notApplicableDeviceCount = value
+    if m != nil {
+        m.notApplicableDeviceCount = value
+    }
 }
 // SetNotApplicableUserCount sets the notApplicableUserCount property value. Number of Users whose devices were all not applicable for this app.
 func (m *MobileAppInstallSummary) SetNotApplicableUserCount(value *int32)() {
-    m.notApplicableUserCount = value
+    if m != nil {
+        m.notApplicableUserCount = value
+    }
 }
 // SetNotInstalledDeviceCount sets the notInstalledDeviceCount property value. Number of Devices that does not have this app installed.
 func (m *MobileAppInstallSummary) SetNotInstalledDeviceCount(value *int32)() {
-    m.notInstalledDeviceCount = value
+    if m != nil {
+        m.notInstalledDeviceCount = value
+    }
 }
 // SetNotInstalledUserCount sets the notInstalledUserCount property value. Number of Users that have 1 or more devices that did not install this app.
 func (m *MobileAppInstallSummary) SetNotInstalledUserCount(value *int32)() {
-    m.notInstalledUserCount = value
+    if m != nil {
+        m.notInstalledUserCount = value
+    }
 }
 // SetPendingInstallDeviceCount sets the pendingInstallDeviceCount property value. Number of Devices that have been notified to install this app.
 func (m *MobileAppInstallSummary) SetPendingInstallDeviceCount(value *int32)() {
-    m.pendingInstallDeviceCount = value
+    if m != nil {
+        m.pendingInstallDeviceCount = value
+    }
 }
 // SetPendingInstallUserCount sets the pendingInstallUserCount property value. Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.
 func (m *MobileAppInstallSummary) SetPendingInstallUserCount(value *int32)() {
-    m.pendingInstallUserCount = value
+    if m != nil {
+        m.pendingInstallUserCount = value
+    }
 }

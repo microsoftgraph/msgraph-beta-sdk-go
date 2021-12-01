@@ -70,9 +70,13 @@ func (m *UserExperienceAnalyticsWindows10DevicesSummary) Serialize(writer i04eb5
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsWindows10DevicesSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetUnsupportedOSversionDeviceCount sets the unsupportedOSversionDeviceCount property value. The count of Windows 10 devices that have unsupported OS versions.
 func (m *UserExperienceAnalyticsWindows10DevicesSummary) SetUnsupportedOSversionDeviceCount(value *int32)() {
-    m.unsupportedOSversionDeviceCount = value
+    if m != nil {
+        m.unsupportedOSversionDeviceCount = value
+    }
 }

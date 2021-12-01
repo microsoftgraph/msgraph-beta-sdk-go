@@ -40,7 +40,7 @@ type PasswordAuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PasswordAuthenticationMethodRequestBuilderPatchOptions options for Patch
 type PasswordAuthenticationMethodRequestBuilderPatchOptions struct {

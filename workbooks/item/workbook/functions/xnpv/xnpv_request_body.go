@@ -123,17 +123,25 @@ func (m *XnpvRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *XnpvRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDates sets the dates property value. 
 func (m *XnpvRequestBody) SetDates(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.dates = value
+    if m != nil {
+        m.dates = value
+    }
 }
 // SetRate sets the rate property value. 
 func (m *XnpvRequestBody) SetRate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.rate = value
+    if m != nil {
+        m.rate = value
+    }
 }
 // SetValues sets the values property value. 
 func (m *XnpvRequestBody) SetValues(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.values = value
+    if m != nil {
+        m.values = value
+    }
 }

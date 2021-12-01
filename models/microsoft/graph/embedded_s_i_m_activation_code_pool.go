@@ -243,29 +243,43 @@ func (m *EmbeddedSIMActivationCodePool) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetActivationCodeCount sets the activationCodeCount property value. The total count of activation codes which belong to this pool.
 func (m *EmbeddedSIMActivationCodePool) SetActivationCodeCount(value *int32)() {
-    m.activationCodeCount = value
+    if m != nil {
+        m.activationCodeCount = value
+    }
 }
 // SetActivationCodes sets the activationCodes property value. The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.
 func (m *EmbeddedSIMActivationCodePool) SetActivationCodes(value []EmbeddedSIMActivationCode)() {
-    m.activationCodes = value
+    if m != nil {
+        m.activationCodes = value
+    }
 }
 // SetAssignments sets the assignments property value. Navigational property to a list of targets to which this pool is assigned.
 func (m *EmbeddedSIMActivationCodePool) SetAssignments(value []EmbeddedSIMActivationCodePoolAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The time the embedded SIM activation code pool was created. Generated service side.
 func (m *EmbeddedSIMActivationCodePool) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDeviceStates sets the deviceStates property value. Navigational property to a list of device states for this pool.
 func (m *EmbeddedSIMActivationCodePool) SetDeviceStates(value []EmbeddedSIMDeviceState)() {
-    m.deviceStates = value
+    if m != nil {
+        m.deviceStates = value
+    }
 }
 // SetDisplayName sets the displayName property value. The admin defined name of the embedded SIM activation code pool.
 func (m *EmbeddedSIMActivationCodePool) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The time the embedded SIM activation code pool was last modified. Updated service side.
 func (m *EmbeddedSIMActivationCodePool) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.modifiedDateTime = value
+    if m != nil {
+        m.modifiedDateTime = value
+    }
 }

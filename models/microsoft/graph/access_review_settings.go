@@ -278,41 +278,61 @@ func (m *AccessReviewSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAccessRecommendationsEnabled sets the accessRecommendationsEnabled property value. Indicates whether showing recommendations to reviewers is enabled.
 func (m *AccessReviewSettings) SetAccessRecommendationsEnabled(value *bool)() {
-    m.accessRecommendationsEnabled = value
+    if m != nil {
+        m.accessRecommendationsEnabled = value
+    }
 }
 // SetActivityDurationInDays sets the activityDurationInDays property value. The number of days of user activities to show to reviewers.
 func (m *AccessReviewSettings) SetActivityDurationInDays(value *int32)() {
-    m.activityDurationInDays = value
+    if m != nil {
+        m.activityDurationInDays = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAutoApplyReviewResultsEnabled sets the autoApplyReviewResultsEnabled property value. Indicates whether the auto-apply capability, to automatically change the target object access resource, is enabled.  If not enabled, a user must, after the review completes, apply the access review.
 func (m *AccessReviewSettings) SetAutoApplyReviewResultsEnabled(value *bool)() {
-    m.autoApplyReviewResultsEnabled = value
+    if m != nil {
+        m.autoApplyReviewResultsEnabled = value
+    }
 }
 // SetAutoReviewEnabled sets the autoReviewEnabled property value. Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
 func (m *AccessReviewSettings) SetAutoReviewEnabled(value *bool)() {
-    m.autoReviewEnabled = value
+    if m != nil {
+        m.autoReviewEnabled = value
+    }
 }
 // SetAutoReviewSettings sets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.
 func (m *AccessReviewSettings) SetAutoReviewSettings(value *AutoReviewSettings)() {
-    m.autoReviewSettings = value
+    if m != nil {
+        m.autoReviewSettings = value
+    }
 }
 // SetJustificationRequiredOnApproval sets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide a justification when reviewing access.
 func (m *AccessReviewSettings) SetJustificationRequiredOnApproval(value *bool)() {
-    m.justificationRequiredOnApproval = value
+    if m != nil {
+        m.justificationRequiredOnApproval = value
+    }
 }
 // SetMailNotificationsEnabled sets the mailNotificationsEnabled property value. Indicates whether sending mails to reviewers and the review creator is enabled.
 func (m *AccessReviewSettings) SetMailNotificationsEnabled(value *bool)() {
-    m.mailNotificationsEnabled = value
+    if m != nil {
+        m.mailNotificationsEnabled = value
+    }
 }
 // SetRecurrenceSettings sets the recurrenceSettings property value. Detailed settings for recurrence.
 func (m *AccessReviewSettings) SetRecurrenceSettings(value *AccessReviewRecurrenceSettings)() {
-    m.recurrenceSettings = value
+    if m != nil {
+        m.recurrenceSettings = value
+    }
 }
 // SetRemindersEnabled sets the remindersEnabled property value. Indicates whether sending reminder emails to reviewers is enabled.
 func (m *AccessReviewSettings) SetRemindersEnabled(value *bool)() {
-    m.remindersEnabled = value
+    if m != nil {
+        m.remindersEnabled = value
+    }
 }

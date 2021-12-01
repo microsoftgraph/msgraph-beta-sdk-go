@@ -228,29 +228,43 @@ func (m *Tag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
 }
 // SetChildSelectability sets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
 func (m *Tag) SetChildSelectability(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ChildSelectability)() {
-    m.childSelectability = value
+    if m != nil {
+        m.childSelectability = value
+    }
 }
 // SetChildTags sets the childTags property value. Returns the tags that are a child of a tag.
 func (m *Tag) SetChildTags(value []Tag)() {
-    m.childTags = value
+    if m != nil {
+        m.childTags = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. The user who created the tag.
 func (m *Tag) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetDescription sets the description property value. The description for the tag.
 func (m *Tag) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the tag.
 func (m *Tag) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the tag was last modified.
 func (m *Tag) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetParent sets the parent property value. Returns the parent tag of the specified tag.
 func (m *Tag) SetParent(value *Tag)() {
-    m.parent = value
+    if m != nil {
+        m.parent = value
+    }
 }

@@ -133,17 +133,25 @@ func (m *DlpEvaluationInput) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAccessScope sets the accessScope property value. 
 func (m *DlpEvaluationInput) SetAccessScope(value *AccessScope)() {
-    m.accessScope = value
+    if m != nil {
+        m.accessScope = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DlpEvaluationInput) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCurrentLabel sets the currentLabel property value. 
 func (m *DlpEvaluationInput) SetCurrentLabel(value *CurrentLabel)() {
-    m.currentLabel = value
+    if m != nil {
+        m.currentLabel = value
+    }
 }
 // SetDiscoveredSensitiveTypes sets the discoveredSensitiveTypes property value. 
 func (m *DlpEvaluationInput) SetDiscoveredSensitiveTypes(value []DiscoveredSensitiveType)() {
-    m.discoveredSensitiveTypes = value
+    if m != nil {
+        m.discoveredSensitiveTypes = value
+    }
 }

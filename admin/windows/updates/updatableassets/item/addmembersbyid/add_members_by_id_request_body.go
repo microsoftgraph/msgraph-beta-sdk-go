@@ -100,13 +100,19 @@ func (m *AddMembersByIdRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddMembersByIdRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIds sets the ids property value. 
 func (m *AddMembersByIdRequestBody) SetIds(value []string)() {
-    m.ids = value
+    if m != nil {
+        m.ids = value
+    }
 }
 // SetMemberEntityType sets the memberEntityType property value. 
 func (m *AddMembersByIdRequestBody) SetMemberEntityType(value *string)() {
-    m.memberEntityType = value
+    if m != nil {
+        m.memberEntityType = value
+    }
 }

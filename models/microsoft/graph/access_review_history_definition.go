@@ -309,41 +309,61 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetCreatedBy sets the createdBy property value. 
 func (m *AccessReviewHistoryDefinition) SetCreatedBy(value *UserIdentity)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Timestamp when the access review definition was created.
 func (m *AccessReviewHistoryDefinition) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDecisions sets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
 func (m *AccessReviewHistoryDefinition) SetDecisions(value []AccessReviewHistoryDecisionFilter)() {
-    m.decisions = value
+    if m != nil {
+        m.decisions = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name for the access review history data collection. Required.
 func (m *AccessReviewHistoryDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetDownloadUri sets the downloadUri property value. Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated.
 func (m *AccessReviewHistoryDefinition) SetDownloadUri(value *string)() {
-    m.downloadUri = value
+    if m != nil {
+        m.downloadUri = value
+    }
 }
 // SetFulfilledDateTime sets the fulfilledDateTime property value. Timestamp when all of the available data for this definition was collected. This will be set after this definition's status is set to done.
 func (m *AccessReviewHistoryDefinition) SetFulfilledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.fulfilledDateTime = value
+    if m != nil {
+        m.fulfilledDateTime = value
+    }
 }
 // SetReviewHistoryPeriodEndDateTime sets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews starting on or after this date will be included in the fetched history data. Required.
 func (m *AccessReviewHistoryDefinition) SetReviewHistoryPeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.reviewHistoryPeriodEndDateTime = value
+    if m != nil {
+        m.reviewHistoryPeriodEndDateTime = value
+    }
 }
 // SetReviewHistoryPeriodStartDateTime sets the reviewHistoryPeriodStartDateTime property value. Timestamp, reviews starting on or before this date will be included in the fetched history data. Required.
 func (m *AccessReviewHistoryDefinition) SetReviewHistoryPeriodStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.reviewHistoryPeriodStartDateTime = value
+    if m != nil {
+        m.reviewHistoryPeriodStartDateTime = value
+    }
 }
 // SetScopes sets the scopes property value. Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. See accessreviewqueryscope. Required.
 func (m *AccessReviewHistoryDefinition) SetScopes(value []AccessReviewScope)() {
-    m.scopes = value
+    if m != nil {
+        m.scopes = value
+    }
 }
 // SetStatus sets the status property value. Represents the status of the review history data collection. Possible values are: done, inprogress, error, requested.
 func (m *AccessReviewHistoryDefinition) SetStatus(value *AccessReviewHistoryStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

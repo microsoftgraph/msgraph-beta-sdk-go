@@ -58,7 +58,7 @@ type EventRequestBuilderGetOptions struct {
 // EventRequestBuilderGetQueryParameters the events in the calendar. Navigation property. Read-only.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // EventRequestBuilderPatchOptions options for Patch
 type EventRequestBuilderPatchOptions struct {

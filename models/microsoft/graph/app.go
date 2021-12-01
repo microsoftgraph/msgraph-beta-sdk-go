@@ -114,13 +114,19 @@ func (m *App) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *App) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCalls sets the calls property value. 
 func (m *App) SetCalls(value []Call)() {
-    m.calls = value
+    if m != nil {
+        m.calls = value
+    }
 }
 // SetOnlineMeetings sets the onlineMeetings property value. 
 func (m *App) SetOnlineMeetings(value []OnlineMeeting)() {
-    m.onlineMeetings = value
+    if m != nil {
+        m.onlineMeetings = value
+    }
 }

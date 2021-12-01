@@ -189,25 +189,37 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) Serialize(writer i04
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices for that os version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetActiveDevices(value *int32)() {
-    m.activeDevices = value
+    if m != nil {
+        m.activeDevices = value
+    }
 }
 // SetAverageBatteryAgeInDays sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetAverageBatteryAgeInDays(value *int32)() {
-    m.averageBatteryAgeInDays = value
+    if m != nil {
+        m.averageBatteryAgeInDays = value
+    }
 }
 // SetAverageEstimatedRuntimeInMinutes sets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetAverageEstimatedRuntimeInMinutes(value *int32)() {
-    m.averageEstimatedRuntimeInMinutes = value
+    if m != nil {
+        m.averageEstimatedRuntimeInMinutes = value
+    }
 }
 // SetAverageMaxCapacityPercentage sets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetAverageMaxCapacityPercentage(value *int32)() {
-    m.averageMaxCapacityPercentage = value
+    if m != nil {
+        m.averageMaxCapacityPercentage = value
+    }
 }
 // SetOsBuildNumber sets the osBuildNumber property value. Build number of the operating system.
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetOsBuildNumber(value *string)() {
-    m.osBuildNumber = value
+    if m != nil {
+        m.osBuildNumber = value
+    }
 }
 // SetOsVersion sets the osVersion property value. Version of the operating system.
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetOsVersion(value *string)() {
-    m.osVersion = value
+    if m != nil {
+        m.osVersion = value
+    }
 }

@@ -319,45 +319,67 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) Seriali
 }
 // SetOsCheckFailedPercentage sets the osCheckFailedPercentage property value. The percentage of devices for which OS check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetOsCheckFailedPercentage(value *float64)() {
-    m.osCheckFailedPercentage = value
+    if m != nil {
+        m.osCheckFailedPercentage = value
+    }
 }
 // SetProcessor64BitCheckFailedPercentage sets the processor64BitCheckFailedPercentage property value. The percentage of devices for which processor hardware 64-bit architecture check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetProcessor64BitCheckFailedPercentage(value *float64)() {
-    m.processor64BitCheckFailedPercentage = value
+    if m != nil {
+        m.processor64BitCheckFailedPercentage = value
+    }
 }
 // SetProcessorCoreCountCheckFailedPercentage sets the processorCoreCountCheckFailedPercentage property value. The percentage of devices for which processor hardware core count check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetProcessorCoreCountCheckFailedPercentage(value *float64)() {
-    m.processorCoreCountCheckFailedPercentage = value
+    if m != nil {
+        m.processorCoreCountCheckFailedPercentage = value
+    }
 }
 // SetProcessorFamilyCheckFailedPercentage sets the processorFamilyCheckFailedPercentage property value. The percentage of devices for which processor hardware family check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetProcessorFamilyCheckFailedPercentage(value *float64)() {
-    m.processorFamilyCheckFailedPercentage = value
+    if m != nil {
+        m.processorFamilyCheckFailedPercentage = value
+    }
 }
 // SetProcessorSpeedCheckFailedPercentage sets the processorSpeedCheckFailedPercentage property value. The percentage of devices for which processor hardware speed check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetProcessorSpeedCheckFailedPercentage(value *float64)() {
-    m.processorSpeedCheckFailedPercentage = value
+    if m != nil {
+        m.processorSpeedCheckFailedPercentage = value
+    }
 }
 // SetRamCheckFailedPercentage sets the ramCheckFailedPercentage property value. The percentage of devices for which RAM hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetRamCheckFailedPercentage(value *float64)() {
-    m.ramCheckFailedPercentage = value
+    if m != nil {
+        m.ramCheckFailedPercentage = value
+    }
 }
 // SetSecureBootCheckFailedPercentage sets the secureBootCheckFailedPercentage property value. The percentage of devices for which secure boot hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetSecureBootCheckFailedPercentage(value *float64)() {
-    m.secureBootCheckFailedPercentage = value
+    if m != nil {
+        m.secureBootCheckFailedPercentage = value
+    }
 }
 // SetStorageCheckFailedPercentage sets the storageCheckFailedPercentage property value. The percentage of devices for which storage hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetStorageCheckFailedPercentage(value *float64)() {
-    m.storageCheckFailedPercentage = value
+    if m != nil {
+        m.storageCheckFailedPercentage = value
+    }
 }
 // SetTotalDeviceCount sets the totalDeviceCount property value. The count of total devices in an organization. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetTotalDeviceCount(value *int32)() {
-    m.totalDeviceCount = value
+    if m != nil {
+        m.totalDeviceCount = value
+    }
 }
 // SetTpmCheckFailedPercentage sets the tpmCheckFailedPercentage property value. The percentage of devices for which Trusted Platform Module (TPM) hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetTpmCheckFailedPercentage(value *float64)() {
-    m.tpmCheckFailedPercentage = value
+    if m != nil {
+        m.tpmCheckFailedPercentage = value
+    }
 }
 // SetUpgradeEligibleDeviceCount sets the upgradeEligibleDeviceCount property value. The count of devices in an organization eligible for windows upgrade. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetUpgradeEligibleDeviceCount(value *int32)() {
-    m.upgradeEligibleDeviceCount = value
+    if m != nil {
+        m.upgradeEligibleDeviceCount = value
+    }
 }

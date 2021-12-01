@@ -570,77 +570,115 @@ func (m *DeviceHealthScript) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the device health script
 func (m *DeviceHealthScript) SetAssignments(value []DeviceHealthScriptAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The timestamp of when the device health script was created. This property is read-only.
 func (m *DeviceHealthScript) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. Description of the device health script
 func (m *DeviceHealthScript) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDetectionScriptContent sets the detectionScriptContent property value. The entire content of the detection powershell script
 func (m *DeviceHealthScript) SetDetectionScriptContent(value []byte)() {
-    m.detectionScriptContent = value
+    if m != nil {
+        m.detectionScriptContent = value
+    }
 }
 // SetDetectionScriptParameters sets the detectionScriptParameters property value. List of ComplexType DetectionScriptParameters objects.
 func (m *DeviceHealthScript) SetDetectionScriptParameters(value []DeviceHealthScriptParameter)() {
-    m.detectionScriptParameters = value
+    if m != nil {
+        m.detectionScriptParameters = value
+    }
 }
 // SetDeviceRunStates sets the deviceRunStates property value. List of run states for the device health script across all devices
 func (m *DeviceHealthScript) SetDeviceRunStates(value []DeviceHealthScriptDeviceState)() {
-    m.deviceRunStates = value
+    if m != nil {
+        m.deviceRunStates = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the device health script
 func (m *DeviceHealthScript) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEnforceSignatureCheck sets the enforceSignatureCheck property value. Indicate whether the script signature needs be checked
 func (m *DeviceHealthScript) SetEnforceSignatureCheck(value *bool)() {
-    m.enforceSignatureCheck = value
+    if m != nil {
+        m.enforceSignatureCheck = value
+    }
 }
 // SetHighestAvailableVersion sets the highestAvailableVersion property value. Highest available version for a Microsoft Proprietary script
 func (m *DeviceHealthScript) SetHighestAvailableVersion(value *string)() {
-    m.highestAvailableVersion = value
+    if m != nil {
+        m.highestAvailableVersion = value
+    }
 }
 // SetIsGlobalScript sets the isGlobalScript property value. Determines if this is Microsoft Proprietary Script. Proprietary scripts are read-only
 func (m *DeviceHealthScript) SetIsGlobalScript(value *bool)() {
-    m.isGlobalScript = value
+    if m != nil {
+        m.isGlobalScript = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The timestamp of when the device health script was modified. This property is read-only.
 func (m *DeviceHealthScript) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPublisher sets the publisher property value. Name of the device health script publisher
 func (m *DeviceHealthScript) SetPublisher(value *string)() {
-    m.publisher = value
+    if m != nil {
+        m.publisher = value
+    }
 }
 // SetRemediationScriptContent sets the remediationScriptContent property value. The entire content of the remediation powershell script
 func (m *DeviceHealthScript) SetRemediationScriptContent(value []byte)() {
-    m.remediationScriptContent = value
+    if m != nil {
+        m.remediationScriptContent = value
+    }
 }
 // SetRemediationScriptParameters sets the remediationScriptParameters property value. List of ComplexType RemediationScriptParameters objects.
 func (m *DeviceHealthScript) SetRemediationScriptParameters(value []DeviceHealthScriptParameter)() {
-    m.remediationScriptParameters = value
+    if m != nil {
+        m.remediationScriptParameters = value
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tag IDs for the device health script
 func (m *DeviceHealthScript) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    if m != nil {
+        m.roleScopeTagIds = value
+    }
 }
 // SetRunAs32Bit sets the runAs32Bit property value. Indicate whether PowerShell script(s) should run as 32-bit
 func (m *DeviceHealthScript) SetRunAs32Bit(value *bool)() {
-    m.runAs32Bit = value
+    if m != nil {
+        m.runAs32Bit = value
+    }
 }
 // SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
 func (m *DeviceHealthScript) SetRunAsAccount(value *RunAsAccountType)() {
-    m.runAsAccount = value
+    if m != nil {
+        m.runAsAccount = value
+    }
 }
 // SetRunSummary sets the runSummary property value. High level run summary for device health script.
 func (m *DeviceHealthScript) SetRunSummary(value *DeviceHealthScriptRunSummary)() {
-    m.runSummary = value
+    if m != nil {
+        m.runSummary = value
+    }
 }
 // SetVersion sets the version property value. Version of the device health script
 func (m *DeviceHealthScript) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

@@ -122,17 +122,25 @@ func (m *EnableLostModeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EnableLostModeRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFooter sets the footer property value. 
 func (m *EnableLostModeRequestBody) SetFooter(value *string)() {
-    m.footer = value
+    if m != nil {
+        m.footer = value
+    }
 }
 // SetMessage sets the message property value. 
 func (m *EnableLostModeRequestBody) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. 
 func (m *EnableLostModeRequestBody) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    if m != nil {
+        m.phoneNumber = value
+    }
 }

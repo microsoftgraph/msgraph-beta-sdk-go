@@ -96,13 +96,19 @@ func (m *BufferEncryptionResult) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BufferEncryptionResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEncryptedBuffer sets the encryptedBuffer property value. 
 func (m *BufferEncryptionResult) SetEncryptedBuffer(value []byte)() {
-    m.encryptedBuffer = value
+    if m != nil {
+        m.encryptedBuffer = value
+    }
 }
 // SetPublishingLicense sets the publishingLicense property value. 
 func (m *BufferEncryptionResult) SetPublishingLicense(value []byte)() {
-    m.publishingLicense = value
+    if m != nil {
+        m.publishingLicense = value
+    }
 }

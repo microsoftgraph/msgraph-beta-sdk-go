@@ -129,13 +129,19 @@ func (m *AndroidManagedStoreAppConfigurationSchema) Serialize(writer i04eb5309ae
 }
 // SetExampleJson sets the exampleJson property value. UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
 func (m *AndroidManagedStoreAppConfigurationSchema) SetExampleJson(value []byte)() {
-    m.exampleJson = value
+    if m != nil {
+        m.exampleJson = value
+    }
 }
 // SetNestedSchemaItems sets the nestedSchemaItems property value. Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.
 func (m *AndroidManagedStoreAppConfigurationSchema) SetNestedSchemaItems(value []AndroidManagedStoreAppConfigurationSchemaItem)() {
-    m.nestedSchemaItems = value
+    if m != nil {
+        m.nestedSchemaItems = value
+    }
 }
 // SetSchemaItems sets the schemaItems property value. Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.
 func (m *AndroidManagedStoreAppConfigurationSchema) SetSchemaItems(value []AndroidManagedStoreAppConfigurationSchemaItem)() {
-    m.schemaItems = value
+    if m != nil {
+        m.schemaItems = value
+    }
 }

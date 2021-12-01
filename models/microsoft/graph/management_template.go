@@ -280,33 +280,49 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetCategory sets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 func (m *ManagementTemplate) SetCategory(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetDescription sets the description property value. The description for the management template. Optional. Read-only.
 func (m *ManagementTemplate) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the management template. Required. Read-only.
 func (m *ManagementTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetManagementTemplateCollections sets the managementTemplateCollections property value. 
 func (m *ManagementTemplate) SetManagementTemplateCollections(value []ManagementTemplateCollection)() {
-    m.managementTemplateCollections = value
+    if m != nil {
+        m.managementTemplateCollections = value
+    }
 }
 // SetManagementTemplateSteps sets the managementTemplateSteps property value. 
 func (m *ManagementTemplate) SetManagementTemplateSteps(value []ManagementTemplateStep)() {
-    m.managementTemplateSteps = value
+    if m != nil {
+        m.managementTemplateSteps = value
+    }
 }
 // SetParameters sets the parameters property value. The collection of parameters used by the management template. Optional. Read-only.
 func (m *ManagementTemplate) SetParameters(value []TemplateParameter)() {
-    m.parameters = value
+    if m != nil {
+        m.parameters = value
+    }
 }
 // SetVersion sets the version property value. 
 func (m *ManagementTemplate) SetVersion(value *int32)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }
 // SetWorkloadActions sets the workloadActions property value. The collection of workload actions associated with the management template. Optional. Read-only.
 func (m *ManagementTemplate) SetWorkloadActions(value []WorkloadAction)() {
-    m.workloadActions = value
+    if m != nil {
+        m.workloadActions = value
+    }
 }

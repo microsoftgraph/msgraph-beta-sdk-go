@@ -151,21 +151,31 @@ func (m *ManagementTemplateDetailedInfo) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementTemplateDetailedInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCategory sets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) SetCategory(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the management template. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetManagementTemplateId sets the managementTemplateId property value. The unique identifier for the management template. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) SetManagementTemplateId(value *string)() {
-    m.managementTemplateId = value
+    if m != nil {
+        m.managementTemplateId = value
+    }
 }
 // SetVersion sets the version property value. 
 func (m *ManagementTemplateDetailedInfo) SetVersion(value *int32)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

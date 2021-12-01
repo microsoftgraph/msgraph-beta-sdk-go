@@ -225,29 +225,43 @@ func (m *Journal) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetAccount sets the account property value. 
 func (m *Journal) SetAccount(value *Account)() {
-    m.account = value
+    if m != nil {
+        m.account = value
+    }
 }
 // SetBalancingAccountId sets the balancingAccountId property value. 
 func (m *Journal) SetBalancingAccountId(value *string)() {
-    m.balancingAccountId = value
+    if m != nil {
+        m.balancingAccountId = value
+    }
 }
 // SetBalancingAccountNumber sets the balancingAccountNumber property value. 
 func (m *Journal) SetBalancingAccountNumber(value *string)() {
-    m.balancingAccountNumber = value
+    if m != nil {
+        m.balancingAccountNumber = value
+    }
 }
 // SetCode sets the code property value. 
 func (m *Journal) SetCode(value *string)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *Journal) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetJournalLines sets the journalLines property value. 
 func (m *Journal) SetJournalLines(value []JournalLine)() {
-    m.journalLines = value
+    if m != nil {
+        m.journalLines = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *Journal) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }

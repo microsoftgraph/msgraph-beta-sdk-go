@@ -42,7 +42,7 @@ type SalesOrderLineRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // SalesOrderLineRequestBuilderPatchOptions options for Patch
 type SalesOrderLineRequestBuilderPatchOptions struct {

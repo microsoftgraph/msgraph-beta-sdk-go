@@ -105,13 +105,19 @@ func (m *FilterGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FilterGroup) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClauses sets the clauses property value. Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.
 func (m *FilterGroup) SetClauses(value []FilterClause)() {
-    m.clauses = value
+    if m != nil {
+        m.clauses = value
+    }
 }
 // SetName sets the name property value. Human-readable name of the filter group.
 func (m *FilterGroup) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

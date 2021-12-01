@@ -199,25 +199,37 @@ func (m *SkillProficiency) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetCategories sets the categories property value. Contains categories a user has associated with the skill (for example, personal, professional, hobby).
 func (m *SkillProficiency) SetCategories(value []string)() {
-    m.categories = value
+    if m != nil {
+        m.categories = value
+    }
 }
 // SetCollaborationTags sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *SkillProficiency) SetCollaborationTags(value []string)() {
-    m.collaborationTags = value
+    if m != nil {
+        m.collaborationTags = value
+    }
 }
 // SetDisplayName sets the displayName property value. Contains a friendly name for the skill.
 func (m *SkillProficiency) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetProficiency sets the proficiency property value. Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
 func (m *SkillProficiency) SetProficiency(value *SkillProficiencyLevel)() {
-    m.proficiency = value
+    if m != nil {
+        m.proficiency = value
+    }
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. 
 func (m *SkillProficiency) SetThumbnailUrl(value *string)() {
-    m.thumbnailUrl = value
+    if m != nil {
+        m.thumbnailUrl = value
+    }
 }
 // SetWebUrl sets the webUrl property value. Contains a link to an information source about the skill.
 func (m *SkillProficiency) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

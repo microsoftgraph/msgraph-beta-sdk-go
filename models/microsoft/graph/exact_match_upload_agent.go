@@ -86,9 +86,13 @@ func (m *ExactMatchUploadAgent) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetCreationDateTime sets the creationDateTime property value. 
 func (m *ExactMatchUploadAgent) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.creationDateTime = value
+    if m != nil {
+        m.creationDateTime = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *ExactMatchUploadAgent) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }

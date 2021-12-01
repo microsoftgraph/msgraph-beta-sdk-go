@@ -215,29 +215,43 @@ func (m *EstimateStatisticsOperation) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetIndexedItemCount sets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
 func (m *EstimateStatisticsOperation) SetIndexedItemCount(value *int64)() {
-    m.indexedItemCount = value
+    if m != nil {
+        m.indexedItemCount = value
+    }
 }
 // SetIndexedItemsSize sets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
 func (m *EstimateStatisticsOperation) SetIndexedItemsSize(value *int64)() {
-    m.indexedItemsSize = value
+    if m != nil {
+        m.indexedItemsSize = value
+    }
 }
 // SetMailboxCount sets the mailboxCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) SetMailboxCount(value *int32)() {
-    m.mailboxCount = value
+    if m != nil {
+        m.mailboxCount = value
+    }
 }
 // SetSiteCount sets the siteCount property value. The number of mailboxes that had search hits.
 func (m *EstimateStatisticsOperation) SetSiteCount(value *int32)() {
-    m.siteCount = value
+    if m != nil {
+        m.siteCount = value
+    }
 }
 // SetSourceCollection sets the sourceCollection property value. eDiscovery collection, commonly known as a search.
 func (m *EstimateStatisticsOperation) SetSourceCollection(value *SourceCollection)() {
-    m.sourceCollection = value
+    if m != nil {
+        m.sourceCollection = value
+    }
 }
 // SetUnindexedItemCount sets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
 func (m *EstimateStatisticsOperation) SetUnindexedItemCount(value *int64)() {
-    m.unindexedItemCount = value
+    if m != nil {
+        m.unindexedItemCount = value
+    }
 }
 // SetUnindexedItemsSize sets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
 func (m *EstimateStatisticsOperation) SetUnindexedItemsSize(value *int64)() {
-    m.unindexedItemsSize = value
+    if m != nil {
+        m.unindexedItemsSize = value
+    }
 }

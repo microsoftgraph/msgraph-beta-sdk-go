@@ -99,13 +99,19 @@ func (m *RejectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RejectRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCallbackUri sets the callbackUri property value. 
 func (m *RejectRequestBody) SetCallbackUri(value *string)() {
-    m.callbackUri = value
+    if m != nil {
+        m.callbackUri = value
+    }
 }
 // SetReason sets the reason property value. 
 func (m *RejectRequestBody) SetReason(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RejectReason)() {
-    m.reason = value
+    if m != nil {
+        m.reason = value
+    }
 }

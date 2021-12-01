@@ -96,13 +96,19 @@ func (m *MoveAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MoveAction) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFrom sets the from property value. The name of the location the item was moved from.
 func (m *MoveAction) SetFrom(value *string)() {
-    m.from = value
+    if m != nil {
+        m.from = value
+    }
 }
 // SetTo sets the to property value. The name of the location the item was moved to.
 func (m *MoveAction) SetTo(value *string)() {
-    m.to = value
+    if m != nil {
+        m.to = value
+    }
 }

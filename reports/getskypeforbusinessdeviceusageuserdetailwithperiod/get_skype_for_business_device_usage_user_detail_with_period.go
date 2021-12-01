@@ -268,37 +268,55 @@ func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) Serialize(writer i0
 }
 // SetLastActivityDate sets the lastActivityDate property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetLastActivityDate(value *string)() {
-    m.lastActivityDate = value
+    if m != nil {
+        m.lastActivityDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetUsedAndroidPhone sets the usedAndroidPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUsedAndroidPhone(value *bool)() {
-    m.usedAndroidPhone = value
+    if m != nil {
+        m.usedAndroidPhone = value
+    }
 }
 // SetUsediPad sets the usediPad property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUsediPad(value *bool)() {
-    m.usediPad = value
+    if m != nil {
+        m.usediPad = value
+    }
 }
 // SetUsediPhone sets the usediPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUsediPhone(value *bool)() {
-    m.usediPhone = value
+    if m != nil {
+        m.usediPhone = value
+    }
 }
 // SetUsedWindows sets the usedWindows property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUsedWindows(value *bool)() {
-    m.usedWindows = value
+    if m != nil {
+        m.usedWindows = value
+    }
 }
 // SetUsedWindowsPhone sets the usedWindowsPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUsedWindowsPhone(value *bool)() {
-    m.usedWindowsPhone = value
+    if m != nil {
+        m.usedWindowsPhone = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserDetailWithPeriod) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

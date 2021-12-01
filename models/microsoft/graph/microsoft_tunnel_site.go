@@ -358,49 +358,73 @@ func (m *MicrosoftTunnelSite) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetDescription sets the description property value. The MicrosoftTunnelSite's description
 func (m *MicrosoftTunnelSite) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The MicrosoftTunnelSite's display name
 func (m *MicrosoftTunnelSite) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetInternalNetworkProbeUrl sets the internalNetworkProbeUrl property value. The MicrosoftTunnelSite's Internal Network Access Probe URL
 func (m *MicrosoftTunnelSite) SetInternalNetworkProbeUrl(value *string)() {
-    m.internalNetworkProbeUrl = value
+    if m != nil {
+        m.internalNetworkProbeUrl = value
+    }
 }
 // SetMicrosoftTunnelConfiguration sets the microsoftTunnelConfiguration property value. The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelSite) SetMicrosoftTunnelConfiguration(value *MicrosoftTunnelConfiguration)() {
-    m.microsoftTunnelConfiguration = value
+    if m != nil {
+        m.microsoftTunnelConfiguration = value
+    }
 }
 // SetMicrosoftTunnelServers sets the microsoftTunnelServers property value. A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
 func (m *MicrosoftTunnelSite) SetMicrosoftTunnelServers(value []MicrosoftTunnelServer)() {
-    m.microsoftTunnelServers = value
+    if m != nil {
+        m.microsoftTunnelServers = value
+    }
 }
 // SetPublicAddress sets the publicAddress property value. The MicrosoftTunnelSite's public domain name or IP address
 func (m *MicrosoftTunnelSite) SetPublicAddress(value *string)() {
-    m.publicAddress = value
+    if m != nil {
+        m.publicAddress = value
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *MicrosoftTunnelSite) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    if m != nil {
+        m.roleScopeTagIds = value
+    }
 }
 // SetUpgradeAutomatically sets the upgradeAutomatically property value. The site's automatic upgrade setting. True for automatic upgrades, false for manual control
 func (m *MicrosoftTunnelSite) SetUpgradeAutomatically(value *bool)() {
-    m.upgradeAutomatically = value
+    if m != nil {
+        m.upgradeAutomatically = value
+    }
 }
 // SetUpgradeAvailable sets the upgradeAvailable property value. True if an upgrade is available
 func (m *MicrosoftTunnelSite) SetUpgradeAvailable(value *bool)() {
-    m.upgradeAvailable = value
+    if m != nil {
+        m.upgradeAvailable = value
+    }
 }
 // SetUpgradeWindowEndTime sets the upgradeWindowEndTime property value. The site's upgrade window end time of day
 func (m *MicrosoftTunnelSite) SetUpgradeWindowEndTime(value *string)() {
-    m.upgradeWindowEndTime = value
+    if m != nil {
+        m.upgradeWindowEndTime = value
+    }
 }
 // SetUpgradeWindowStartTime sets the upgradeWindowStartTime property value. The site's upgrade window start time of day
 func (m *MicrosoftTunnelSite) SetUpgradeWindowStartTime(value *string)() {
-    m.upgradeWindowStartTime = value
+    if m != nil {
+        m.upgradeWindowStartTime = value
+    }
 }
 // SetUpgradeWindowUtcOffsetInMinutes sets the upgradeWindowUtcOffsetInMinutes property value. The site's timezone represented as a minute offset from UTC
 func (m *MicrosoftTunnelSite) SetUpgradeWindowUtcOffsetInMinutes(value *int32)() {
-    m.upgradeWindowUtcOffsetInMinutes = value
+    if m != nil {
+        m.upgradeWindowUtcOffsetInMinutes = value
+    }
 }

@@ -415,57 +415,85 @@ func (m *DomainSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetActivityGroupNames sets the activityGroupNames property value. 
 func (m *DomainSecurityProfile) SetActivityGroupNames(value []string)() {
-    m.activityGroupNames = value
+    if m != nil {
+        m.activityGroupNames = value
+    }
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. 
 func (m *DomainSecurityProfile) SetAzureSubscriptionId(value *string)() {
-    m.azureSubscriptionId = value
+    if m != nil {
+        m.azureSubscriptionId = value
+    }
 }
 // SetAzureTenantId sets the azureTenantId property value. 
 func (m *DomainSecurityProfile) SetAzureTenantId(value *string)() {
-    m.azureTenantId = value
+    if m != nil {
+        m.azureTenantId = value
+    }
 }
 // SetCountHits sets the countHits property value. 
 func (m *DomainSecurityProfile) SetCountHits(value *int32)() {
-    m.countHits = value
+    if m != nil {
+        m.countHits = value
+    }
 }
 // SetCountInOrg sets the countInOrg property value. 
 func (m *DomainSecurityProfile) SetCountInOrg(value *int32)() {
-    m.countInOrg = value
+    if m != nil {
+        m.countInOrg = value
+    }
 }
 // SetDomainCategories sets the domainCategories property value. 
 func (m *DomainSecurityProfile) SetDomainCategories(value []ReputationCategory)() {
-    m.domainCategories = value
+    if m != nil {
+        m.domainCategories = value
+    }
 }
 // SetDomainRegisteredDateTime sets the domainRegisteredDateTime property value. 
 func (m *DomainSecurityProfile) SetDomainRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.domainRegisteredDateTime = value
+    if m != nil {
+        m.domainRegisteredDateTime = value
+    }
 }
 // SetFirstSeenDateTime sets the firstSeenDateTime property value. 
 func (m *DomainSecurityProfile) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.firstSeenDateTime = value
+    if m != nil {
+        m.firstSeenDateTime = value
+    }
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. 
 func (m *DomainSecurityProfile) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSeenDateTime = value
+    if m != nil {
+        m.lastSeenDateTime = value
+    }
 }
 // SetName sets the name property value. 
 func (m *DomainSecurityProfile) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetRegistrant sets the registrant property value. 
 func (m *DomainSecurityProfile) SetRegistrant(value *DomainRegistrant)() {
-    m.registrant = value
+    if m != nil {
+        m.registrant = value
+    }
 }
 // SetRiskScore sets the riskScore property value. 
 func (m *DomainSecurityProfile) SetRiskScore(value *string)() {
-    m.riskScore = value
+    if m != nil {
+        m.riskScore = value
+    }
 }
 // SetTags sets the tags property value. 
 func (m *DomainSecurityProfile) SetTags(value []string)() {
-    m.tags = value
+    if m != nil {
+        m.tags = value
+    }
 }
 // SetVendorInformation sets the vendorInformation property value. 
 func (m *DomainSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
-    m.vendorInformation = value
+    if m != nil {
+        m.vendorInformation = value
+    }
 }

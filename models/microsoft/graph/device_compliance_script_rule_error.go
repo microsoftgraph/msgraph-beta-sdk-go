@@ -59,5 +59,7 @@ func (m *DeviceComplianceScriptRuleError) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetSettingName sets the settingName property value. Setting name for the rule with error.
 func (m *DeviceComplianceScriptRuleError) SetSettingName(value *string)() {
-    m.settingName = value
+    if m != nil {
+        m.settingName = value
+    }
 }

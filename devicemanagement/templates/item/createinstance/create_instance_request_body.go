@@ -162,21 +162,31 @@ func (m *CreateInstanceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateInstanceRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *CreateInstanceRequestBody) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *CreateInstanceRequestBody) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. 
 func (m *CreateInstanceRequestBody) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    if m != nil {
+        m.roleScopeTagIds = value
+    }
 }
 // SetSettingsDelta sets the settingsDelta property value. 
 func (m *CreateInstanceRequestBody) SetSettingsDelta(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceManagementSettingInstance)() {
-    m.settingsDelta = value
+    if m != nil {
+        m.settingsDelta = value
+    }
 }

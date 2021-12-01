@@ -59,5 +59,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyAssignment) Serializ
 }
 // SetTarget sets the target property value. The target group assignment defined by the admin.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

@@ -96,13 +96,19 @@ func (m *SimulationEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationEvent) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCount sets the count property value. Count of occurence of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) SetCount(value *int32)() {
-    m.count = value
+    if m != nil {
+        m.count = value
+    }
 }
 // SetEventName sets the eventName property value. Name of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) SetEventName(value *string)() {
-    m.eventName = value
+    if m != nil {
+        m.eventName = value
+    }
 }

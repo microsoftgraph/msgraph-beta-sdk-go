@@ -189,25 +189,37 @@ func (m *EnrollmentProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetConfigurationEndpointUrl sets the configurationEndpointUrl property value. Configuration endpoint url to use for Enrollment
 func (m *EnrollmentProfile) SetConfigurationEndpointUrl(value *string)() {
-    m.configurationEndpointUrl = value
+    if m != nil {
+        m.configurationEndpointUrl = value
+    }
 }
 // SetDescription sets the description property value. Description of the profile
 func (m *EnrollmentProfile) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the profile
 func (m *EnrollmentProfile) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEnableAuthenticationViaCompanyPortal sets the enableAuthenticationViaCompanyPortal property value. Indicates to authenticate with Apple Setup Assistant instead of Company Portal.
 func (m *EnrollmentProfile) SetEnableAuthenticationViaCompanyPortal(value *bool)() {
-    m.enableAuthenticationViaCompanyPortal = value
+    if m != nil {
+        m.enableAuthenticationViaCompanyPortal = value
+    }
 }
 // SetRequireCompanyPortalOnSetupAssistantEnrolledDevices sets the requireCompanyPortalOnSetupAssistantEnrolledDevices property value. Indicates that Company Portal is required on setup assistant enrolled devices
 func (m *EnrollmentProfile) SetRequireCompanyPortalOnSetupAssistantEnrolledDevices(value *bool)() {
-    m.requireCompanyPortalOnSetupAssistantEnrolledDevices = value
+    if m != nil {
+        m.requireCompanyPortalOnSetupAssistantEnrolledDevices = value
+    }
 }
 // SetRequiresUserAuthentication sets the requiresUserAuthentication property value. Indicates if the profile requires user authentication
 func (m *EnrollmentProfile) SetRequiresUserAuthentication(value *bool)() {
-    m.requiresUserAuthentication = value
+    if m != nil {
+        m.requiresUserAuthentication = value
+    }
 }

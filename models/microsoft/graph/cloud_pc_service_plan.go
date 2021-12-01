@@ -191,25 +191,37 @@ func (m *CloudPcServicePlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetDisplayName sets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetRamInGB sets the ramInGB property value. The size of the RAM in GB. Read-only.
 func (m *CloudPcServicePlan) SetRamInGB(value *int32)() {
-    m.ramInGB = value
+    if m != nil {
+        m.ramInGB = value
+    }
 }
 // SetStorageInGB sets the storageInGB property value. The size of the OS Disk in GB. Read-only.
 func (m *CloudPcServicePlan) SetStorageInGB(value *int32)() {
-    m.storageInGB = value
+    if m != nil {
+        m.storageInGB = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
 func (m *CloudPcServicePlan) SetType_escaped(value *CloudPcServicePlanType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetUserProfileInGB sets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
 func (m *CloudPcServicePlan) SetUserProfileInGB(value *int32)() {
-    m.userProfileInGB = value
+    if m != nil {
+        m.userProfileInGB = value
+    }
 }
 // SetVCpuCount sets the vCpuCount property value. The number of vCPUs. Read-only.
 func (m *CloudPcServicePlan) SetVCpuCount(value *int32)() {
-    m.vCpuCount = value
+    if m != nil {
+        m.vCpuCount = value
+    }
 }

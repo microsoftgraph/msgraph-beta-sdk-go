@@ -61,5 +61,7 @@ func (m *PlayPromptOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetCompletionReason sets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
 func (m *PlayPromptOperation) SetCompletionReason(value *PlayPromptCompletionReason)() {
-    m.completionReason = value
+    if m != nil {
+        m.completionReason = value
+    }
 }

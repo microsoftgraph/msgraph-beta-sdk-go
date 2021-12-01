@@ -74,9 +74,13 @@ func (m *AssignTagRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignTagRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTenantIds sets the tenantIds property value. 
 func (m *AssignTagRequestBody) SetTenantIds(value []string)() {
-    m.tenantIds = value
+    if m != nil {
+        m.tenantIds = value
+    }
 }

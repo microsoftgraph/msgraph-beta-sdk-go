@@ -98,13 +98,19 @@ func (m *OnPremisesPublishingSingleSignOn) Serialize(writer i04eb5309aeaafadd283
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesPublishingSingleSignOn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetKerberosSignOnSettings sets the kerberosSignOnSettings property value. The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.
 func (m *OnPremisesPublishingSingleSignOn) SetKerberosSignOnSettings(value *KerberosSignOnSettings)() {
-    m.kerberosSignOnSettings = value
+    if m != nil {
+        m.kerberosSignOnSettings = value
+    }
 }
 // SetSingleSignOnMode sets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.
 func (m *OnPremisesPublishingSingleSignOn) SetSingleSignOnMode(value *SingleSignOnMode)() {
-    m.singleSignOnMode = value
+    if m != nil {
+        m.singleSignOnMode = value
+    }
 }

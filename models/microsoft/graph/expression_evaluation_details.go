@@ -157,21 +157,31 @@ func (m *ExpressionEvaluationDetails) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpressionEvaluationDetails) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExpression sets the expression property value. Represents expression which has been evaluated.
 func (m *ExpressionEvaluationDetails) SetExpression(value *string)() {
-    m.expression = value
+    if m != nil {
+        m.expression = value
+    }
 }
 // SetExpressionEvaluationDetails sets the expressionEvaluationDetails property value. Represents the details of the evaluation of the expression.
 func (m *ExpressionEvaluationDetails) SetExpressionEvaluationDetails(value []ExpressionEvaluationDetails)() {
-    m.expressionEvaluationDetails = value
+    if m != nil {
+        m.expressionEvaluationDetails = value
+    }
 }
 // SetExpressionResult sets the expressionResult property value. Represents the value of the result of the current expression.
 func (m *ExpressionEvaluationDetails) SetExpressionResult(value *bool)() {
-    m.expressionResult = value
+    if m != nil {
+        m.expressionResult = value
+    }
 }
 // SetPropertyToEvaluate sets the propertyToEvaluate property value. Defines the name of the property and the value of that property.
 func (m *ExpressionEvaluationDetails) SetPropertyToEvaluate(value *PropertyToEvaluate)() {
-    m.propertyToEvaluate = value
+    if m != nil {
+        m.propertyToEvaluate = value
+    }
 }

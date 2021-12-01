@@ -98,13 +98,19 @@ func (m *SynchronizationSecretKeyStringValuePair) Serialize(writer i04eb5309aeaa
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationSecretKeyStringValuePair) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetKey sets the key property value. Possible values are: None, UserName, Password, SecretToken, AppKey, BaseAddress, ClientIdentifier, ClientSecret, SingleSignOnType, Sandbox, Url, Domain, ConsumerKey, ConsumerSecret, TokenKey, TokenExpiration, Oauth2AccessToken, Oauth2AccessTokenCreationTime, Oauth2RefreshToken, SyncAll, InstanceName, Oauth2ClientId, Oauth2ClientSecret, CompanyId, UpdateKeyOnSoftDelete, SynchronizationSchedule, SystemOfRecord, SandboxName, EnforceDomain, SyncNotificationSettings, Server, PerformInboundEntitlementGrants, HardDeletesEnabled, SyncAgentCompatibilityKey, SyncAgentADContainer, ValidateDomain, Oauth2TokenExchangeUri, Oauth2AuthorizationUri, AuthenticationType, TestReferences, ConnectionString.
 func (m *SynchronizationSecretKeyStringValuePair) SetKey(value *SynchronizationSecret)() {
-    m.key = value
+    if m != nil {
+        m.key = value
+    }
 }
 // SetValue sets the value property value. The value of the secret.
 func (m *SynchronizationSecretKeyStringValuePair) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

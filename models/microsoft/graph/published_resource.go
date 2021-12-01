@@ -148,17 +148,25 @@ func (m *PublishedResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAgentGroups sets the agentGroups property value. List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
 func (m *PublishedResource) SetAgentGroups(value []OnPremisesAgentGroup)() {
-    m.agentGroups = value
+    if m != nil {
+        m.agentGroups = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display Name of the publishedResource.
 func (m *PublishedResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetPublishingType sets the publishingType property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
 func (m *PublishedResource) SetPublishingType(value *OnPremisesPublishingType)() {
-    m.publishingType = value
+    if m != nil {
+        m.publishingType = value
+    }
 }
 // SetResourceName sets the resourceName property value. Name of the publishedResource.
 func (m *PublishedResource) SetResourceName(value *string)() {
-    m.resourceName = value
+    if m != nil {
+        m.resourceName = value
+    }
 }

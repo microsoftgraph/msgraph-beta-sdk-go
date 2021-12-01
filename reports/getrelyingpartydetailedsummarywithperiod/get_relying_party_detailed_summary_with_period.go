@@ -335,45 +335,67 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) Serialize(writer i04eb5309aea
 }
 // SetFailedSignInCount sets the failedSignInCount property value. Number of failed sign in on Active Directory Federation Service in the period specified.
 func (m *GetRelyingPartyDetailedSummaryWithPeriod) SetFailedSignInCount(value *int64)() {
-    m.failedSignInCount = value
+    if m != nil {
+        m.failedSignInCount = value
+    }
 }
 // SetMigrationStatus sets the migrationStatus property value. Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
 func (m *GetRelyingPartyDetailedSummaryWithPeriod) SetMigrationStatus(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MigrationStatus)() {
-    m.migrationStatus = value
+    if m != nil {
+        m.migrationStatus = value
+    }
 }
 // SetMigrationValidationDetails sets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
 func (m *GetRelyingPartyDetailedSummaryWithPeriod) SetMigrationValidationDetails(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair)() {
-    m.migrationValidationDetails = value
+    if m != nil {
+        m.migrationValidationDetails = value
+    }
 }
 // SetRelyingPartyId sets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.
 func (m *GetRelyingPartyDetailedSummaryWithPeriod) SetRelyingPartyId(value *string)() {
-    m.relyingPartyId = value
+    if m != nil {
+        m.relyingPartyId = value
+    }
 }
 // SetRelyingPartyName sets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.
 func (m *GetRelyingPartyDetailedSummaryWithPeriod) SetRelyingPartyName(value *string)() {
-    m.relyingPartyName = value
+    if m != nil {
+        m.relyingPartyName = value
+    }
 }
 // SetReplyUrls sets the replyUrls property value. Specifies where the relying party expects to receive the token.
 func (m *GetRelyingPartyDetailedSummaryWithPeriod) SetReplyUrls(value []string)() {
-    m.replyUrls = value
+    if m != nil {
+        m.replyUrls = value
+    }
 }
 // SetServiceId sets the serviceId property value. Uniquely identifies the Active Directory forest.
 func (m *GetRelyingPartyDetailedSummaryWithPeriod) SetServiceId(value *string)() {
-    m.serviceId = value
+    if m != nil {
+        m.serviceId = value
+    }
 }
 // SetSignInSuccessRate sets the signInSuccessRate property value. Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.
 func (m *GetRelyingPartyDetailedSummaryWithPeriod) SetSignInSuccessRate(value *float64)() {
-    m.signInSuccessRate = value
+    if m != nil {
+        m.signInSuccessRate = value
+    }
 }
 // SetSuccessfulSignInCount sets the successfulSignInCount property value. Number of successful sign ins on Active Directory Federation Service.
 func (m *GetRelyingPartyDetailedSummaryWithPeriod) SetSuccessfulSignInCount(value *int64)() {
-    m.successfulSignInCount = value
+    if m != nil {
+        m.successfulSignInCount = value
+    }
 }
 // SetTotalSignInCount sets the totalSignInCount property value. Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.
 func (m *GetRelyingPartyDetailedSummaryWithPeriod) SetTotalSignInCount(value *int64)() {
-    m.totalSignInCount = value
+    if m != nil {
+        m.totalSignInCount = value
+    }
 }
 // SetUniqueUserCount sets the uniqueUserCount property value. Number of unique users that have signed into the application.
 func (m *GetRelyingPartyDetailedSummaryWithPeriod) SetUniqueUserCount(value *int64)() {
-    m.uniqueUserCount = value
+    if m != nil {
+        m.uniqueUserCount = value
+    }
 }

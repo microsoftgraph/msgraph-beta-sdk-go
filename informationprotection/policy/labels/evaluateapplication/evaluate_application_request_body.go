@@ -97,13 +97,19 @@ func (m *EvaluateApplicationRequestBody) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateApplicationRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentInfo sets the contentInfo property value. 
 func (m *EvaluateApplicationRequestBody) SetContentInfo(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentInfo)() {
-    m.contentInfo = value
+    if m != nil {
+        m.contentInfo = value
+    }
 }
 // SetLabelingOptions sets the labelingOptions property value. 
 func (m *EvaluateApplicationRequestBody) SetLabelingOptions(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.LabelingOptions)() {
-    m.labelingOptions = value
+    if m != nil {
+        m.labelingOptions = value
+    }
 }

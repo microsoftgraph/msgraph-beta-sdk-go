@@ -100,13 +100,19 @@ func (m *AutoLabeling) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AutoLabeling) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMessage sets the message property value. 
 func (m *AutoLabeling) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }
 // SetSensitiveTypeIds sets the sensitiveTypeIds property value. 
 func (m *AutoLabeling) SetSensitiveTypeIds(value []string)() {
-    m.sensitiveTypeIds = value
+    if m != nil {
+        m.sensitiveTypeIds = value
+    }
 }

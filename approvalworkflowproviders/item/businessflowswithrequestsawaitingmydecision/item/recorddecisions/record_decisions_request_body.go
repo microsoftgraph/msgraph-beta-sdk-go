@@ -96,13 +96,19 @@ func (m *RecordDecisionsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordDecisionsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetJustification sets the justification property value. 
 func (m *RecordDecisionsRequestBody) SetJustification(value *string)() {
-    m.justification = value
+    if m != nil {
+        m.justification = value
+    }
 }
 // SetReviewResult sets the reviewResult property value. 
 func (m *RecordDecisionsRequestBody) SetReviewResult(value *string)() {
-    m.reviewResult = value
+    if m != nil {
+        m.reviewResult = value
+    }
 }

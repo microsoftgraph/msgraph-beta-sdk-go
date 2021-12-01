@@ -254,33 +254,49 @@ func (m *TimeCard) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetBreaks sets the breaks property value. The list of breaks associated with the timeCard.
 func (m *TimeCard) SetBreaks(value []TimeCardBreak)() {
-    m.breaks = value
+    if m != nil {
+        m.breaks = value
+    }
 }
 // SetClockInEvent sets the clockInEvent property value. The clock-in event of the timeCard.
 func (m *TimeCard) SetClockInEvent(value *TimeCardEvent)() {
-    m.clockInEvent = value
+    if m != nil {
+        m.clockInEvent = value
+    }
 }
 // SetClockOutEvent sets the clockOutEvent property value. The clock-out event of the timeCard.
 func (m *TimeCard) SetClockOutEvent(value *TimeCardEvent)() {
-    m.clockOutEvent = value
+    if m != nil {
+        m.clockOutEvent = value
+    }
 }
 // SetConfirmedBy sets the confirmedBy property value. Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
 func (m *TimeCard) SetConfirmedBy(value *ConfirmedBy)() {
-    m.confirmedBy = value
+    if m != nil {
+        m.confirmedBy = value
+    }
 }
 // SetNotes sets the notes property value. Notes about the timeCard.
 func (m *TimeCard) SetNotes(value *ItemBody)() {
-    m.notes = value
+    if m != nil {
+        m.notes = value
+    }
 }
 // SetOriginalEntry sets the originalEntry property value. The original timeCardEntry of the timeCard, before user edits.
 func (m *TimeCard) SetOriginalEntry(value *TimeCardEntry)() {
-    m.originalEntry = value
+    if m != nil {
+        m.originalEntry = value
+    }
 }
 // SetState sets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
 func (m *TimeCard) SetState(value *TimeCardState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetUserId sets the userId property value. User ID to which  the timeCard belongs.
 func (m *TimeCard) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

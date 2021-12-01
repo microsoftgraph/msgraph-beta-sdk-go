@@ -96,13 +96,19 @@ func (m *StringKeyStringValuePair) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StringKeyStringValuePair) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetKey sets the key property value. Key.
 func (m *StringKeyStringValuePair) SetKey(value *string)() {
-    m.key = value
+    if m != nil {
+        m.key = value
+    }
 }
 // SetValue sets the value property value. Value.
 func (m *StringKeyStringValuePair) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

@@ -96,13 +96,19 @@ func (m *BookingWorkTimeSlot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingWorkTimeSlot) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnd sets the end property value. The time of the day when work stops. For example, 17:00:00.0000000.
 func (m *BookingWorkTimeSlot) SetEnd(value *string)() {
-    m.end = value
+    if m != nil {
+        m.end = value
+    }
 }
 // SetStart sets the start property value. The time of the day when work starts. For example, 08:00:00.0000000.
 func (m *BookingWorkTimeSlot) SetStart(value *string)() {
-    m.start = value
+    if m != nil {
+        m.start = value
+    }
 }

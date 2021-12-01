@@ -44,7 +44,7 @@ type OutlookTaskFolderRequestBuilderGetOptions struct {
 // OutlookTaskFolderRequestBuilderGetQueryParameters the collection of task folders in the task group. Read-only. Nullable.
 type OutlookTaskFolderRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OutlookTaskFolderRequestBuilderPatchOptions options for Patch
 type OutlookTaskFolderRequestBuilderPatchOptions struct {

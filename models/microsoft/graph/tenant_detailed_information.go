@@ -293,41 +293,61 @@ func (m *TenantDetailedInformation) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetCity sets the city property value. The city where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) SetCity(value *string)() {
-    m.city = value
+    if m != nil {
+        m.city = value
+    }
 }
 // SetCountryCode sets the countryCode property value. The code for the country where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) SetCountryCode(value *string)() {
-    m.countryCode = value
+    if m != nil {
+        m.countryCode = value
+    }
 }
 // SetCountryName sets the countryName property value. The name for the country where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) SetCountryName(value *string)() {
-    m.countryName = value
+    if m != nil {
+        m.countryName = value
+    }
 }
 // SetDefaultDomainName sets the defaultDomainName property value. The default domain name for the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) SetDefaultDomainName(value *string)() {
-    m.defaultDomainName = value
+    if m != nil {
+        m.defaultDomainName = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the managed tenant.
 func (m *TenantDetailedInformation) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIndustryName sets the industryName property value. The business industry associated with the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) SetIndustryName(value *string)() {
-    m.industryName = value
+    if m != nil {
+        m.industryName = value
+    }
 }
 // SetRegion sets the region property value. The region where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) SetRegion(value *string)() {
-    m.region = value
+    if m != nil {
+        m.region = value
+    }
 }
 // SetSegmentName sets the segmentName property value. The business segment associated with the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) SetSegmentName(value *string)() {
-    m.segmentName = value
+    if m != nil {
+        m.segmentName = value
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant.
 func (m *TenantDetailedInformation) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }
 // SetVerticalName sets the verticalName property value. The vertical associated with the managed tenant. Optional. Read-only.
 func (m *TenantDetailedInformation) SetVerticalName(value *string)() {
-    m.verticalName = value
+    if m != nil {
+        m.verticalName = value
+    }
 }

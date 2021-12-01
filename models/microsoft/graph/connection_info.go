@@ -70,9 +70,13 @@ func (m *ConnectionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConnectionInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetUrl sets the url property value. The endpoint that is used by Entitlement Management to communicate with the access package resource.
 func (m *ConnectionInfo) SetUrl(value *string)() {
-    m.url = value
+    if m != nil {
+        m.url = value
+    }
 }

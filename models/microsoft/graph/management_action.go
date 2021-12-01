@@ -201,25 +201,37 @@ func (m *ManagementAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetCategory sets the category property value. The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
 func (m *ManagementAction) SetCategory(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetDescription sets the description property value. The description for the management action. Optional. Read-only.
 func (m *ManagementAction) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the management action. Optional. Read-only.
 func (m *ManagementAction) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetReferenceTemplateId sets the referenceTemplateId property value. The reference for the management template used to generate the management action. Required. Read-only.
 func (m *ManagementAction) SetReferenceTemplateId(value *string)() {
-    m.referenceTemplateId = value
+    if m != nil {
+        m.referenceTemplateId = value
+    }
 }
 // SetReferenceTemplateVersion sets the referenceTemplateVersion property value. 
 func (m *ManagementAction) SetReferenceTemplateVersion(value *int32)() {
-    m.referenceTemplateVersion = value
+    if m != nil {
+        m.referenceTemplateVersion = value
+    }
 }
 // SetWorkloadActions sets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
 func (m *ManagementAction) SetWorkloadActions(value []WorkloadAction)() {
-    m.workloadActions = value
+    if m != nil {
+        m.workloadActions = value
+    }
 }

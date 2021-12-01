@@ -59,5 +59,7 @@ func (m *BookingCurrency) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetSymbol sets the symbol property value. The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.
 func (m *BookingCurrency) SetSymbol(value *string)() {
-    m.symbol = value
+    if m != nil {
+        m.symbol = value
+    }
 }

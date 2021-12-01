@@ -115,13 +115,19 @@ func (m *PlannerRosterMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetRoles sets the roles property value. Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.
 func (m *PlannerRosterMember) SetRoles(value []string)() {
-    m.roles = value
+    if m != nil {
+        m.roles = value
+    }
 }
 // SetTenantId sets the tenantId property value. Identifier of the tenant the user belongs to. Currently only the users from the same tenant can be added to a plannerRoster.
 func (m *PlannerRosterMember) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }
 // SetUserId sets the userId property value. Identifier of the user.
 func (m *PlannerRosterMember) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

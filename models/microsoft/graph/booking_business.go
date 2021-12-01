@@ -477,61 +477,91 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAddress sets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) SetAddress(value *PhysicalAddress)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetAppointments sets the appointments property value. All the appointments of this business. Read-only. Nullable.
 func (m *BookingBusiness) SetAppointments(value []BookingAppointment)() {
-    m.appointments = value
+    if m != nil {
+        m.appointments = value
+    }
 }
 // SetBusinessHours sets the businessHours property value. The hours of operation for the business.
 func (m *BookingBusiness) SetBusinessHours(value []BookingWorkHours)() {
-    m.businessHours = value
+    if m != nil {
+        m.businessHours = value
+    }
 }
 // SetBusinessType sets the businessType property value. The type of business.
 func (m *BookingBusiness) SetBusinessType(value *string)() {
-    m.businessType = value
+    if m != nil {
+        m.businessType = value
+    }
 }
 // SetCalendarView sets the calendarView property value. The set of appointments of this business in a specified date range. Read-only. Nullable.
 func (m *BookingBusiness) SetCalendarView(value []BookingAppointment)() {
-    m.calendarView = value
+    if m != nil {
+        m.calendarView = value
+    }
 }
 // SetCustomers sets the customers property value. All the customers of this business. Read-only. Nullable.
 func (m *BookingBusiness) SetCustomers(value []BookingCustomer)() {
-    m.customers = value
+    if m != nil {
+        m.customers = value
+    }
 }
 // SetDefaultCurrencyIso sets the defaultCurrencyIso property value. The code for the currency that the business operates in on Microsoft Bookings.
 func (m *BookingBusiness) SetDefaultCurrencyIso(value *string)() {
-    m.defaultCurrencyIso = value
+    if m != nil {
+        m.defaultCurrencyIso = value
+    }
 }
 // SetEmail sets the email property value. The email address for the business.
 func (m *BookingBusiness) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetIsPublished sets the isPublished property value. The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
 func (m *BookingBusiness) SetIsPublished(value *bool)() {
-    m.isPublished = value
+    if m != nil {
+        m.isPublished = value
+    }
 }
 // SetPhone sets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) SetPhone(value *string)() {
-    m.phone = value
+    if m != nil {
+        m.phone = value
+    }
 }
 // SetPublicUrl sets the publicUrl property value. The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
 func (m *BookingBusiness) SetPublicUrl(value *string)() {
-    m.publicUrl = value
+    if m != nil {
+        m.publicUrl = value
+    }
 }
 // SetSchedulingPolicy sets the schedulingPolicy property value. Specifies how bookings can be created for this business.
 func (m *BookingBusiness) SetSchedulingPolicy(value *BookingSchedulingPolicy)() {
-    m.schedulingPolicy = value
+    if m != nil {
+        m.schedulingPolicy = value
+    }
 }
 // SetServices sets the services property value. All the services offered by this business. Read-only. Nullable.
 func (m *BookingBusiness) SetServices(value []BookingService)() {
-    m.services = value
+    if m != nil {
+        m.services = value
+    }
 }
 // SetStaffMembers sets the staffMembers property value. All the staff members that provide services in this business. Read-only. Nullable.
 func (m *BookingBusiness) SetStaffMembers(value []BookingStaffMember)() {
-    m.staffMembers = value
+    if m != nil {
+        m.staffMembers = value
+    }
 }
 // SetWebSiteUrl sets the webSiteUrl property value. The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
 func (m *BookingBusiness) SetWebSiteUrl(value *string)() {
-    m.webSiteUrl = value
+    if m != nil {
+        m.webSiteUrl = value
+    }
 }

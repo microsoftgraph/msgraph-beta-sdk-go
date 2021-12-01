@@ -137,17 +137,25 @@ func (m *TranslationPreferences) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslationPreferences) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLanguageOverrides sets the languageOverrides property value. Translation override behavior for languages, if any.Returned by default.
 func (m *TranslationPreferences) SetLanguageOverrides(value []TranslationLanguageOverride)() {
-    m.languageOverrides = value
+    if m != nil {
+        m.languageOverrides = value
+    }
 }
 // SetTranslationBehavior sets the translationBehavior property value. The user's preferred translation behavior.Returned by default. Not nullable.
 func (m *TranslationPreferences) SetTranslationBehavior(value *TranslationBehavior)() {
-    m.translationBehavior = value
+    if m != nil {
+        m.translationBehavior = value
+    }
 }
 // SetUntranslatedLanguages sets the untranslatedLanguages property value. The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.
 func (m *TranslationPreferences) SetUntranslatedLanguages(value []string)() {
-    m.untranslatedLanguages = value
+    if m != nil {
+        m.untranslatedLanguages = value
+    }
 }

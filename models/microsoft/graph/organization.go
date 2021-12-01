@@ -829,113 +829,169 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAssignedPlans sets the assignedPlans property value. The collection of service plans associated with the tenant. Not nullable.
 func (m *Organization) SetAssignedPlans(value []AssignedPlan)() {
-    m.assignedPlans = value
+    if m != nil {
+        m.assignedPlans = value
+    }
 }
 // SetBranding sets the branding property value. 
 func (m *Organization) SetBranding(value *OrganizationalBranding)() {
-    m.branding = value
+    if m != nil {
+        m.branding = value
+    }
 }
 // SetBusinessPhones sets the businessPhones property value. Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
 func (m *Organization) SetBusinessPhones(value []string)() {
-    m.businessPhones = value
+    if m != nil {
+        m.businessPhones = value
+    }
 }
 // SetCertificateBasedAuthConfiguration sets the certificateBasedAuthConfiguration property value. Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
 func (m *Organization) SetCertificateBasedAuthConfiguration(value []CertificateBasedAuthConfiguration)() {
-    m.certificateBasedAuthConfiguration = value
+    if m != nil {
+        m.certificateBasedAuthConfiguration = value
+    }
 }
 // SetCertificateConnectorSetting sets the certificateConnectorSetting property value. Certificate connector setting.
 func (m *Organization) SetCertificateConnectorSetting(value *CertificateConnectorSetting)() {
-    m.certificateConnectorSetting = value
+    if m != nil {
+        m.certificateConnectorSetting = value
+    }
 }
 // SetCity sets the city property value. City name of the address for the organization.
 func (m *Organization) SetCity(value *string)() {
-    m.city = value
+    if m != nil {
+        m.city = value
+    }
 }
 // SetCountry sets the country property value. Country/region name of the address for the organization.
 func (m *Organization) SetCountry(value *string)() {
-    m.country = value
+    if m != nil {
+        m.country = value
+    }
 }
 // SetCountryLetterCode sets the countryLetterCode property value. Country or region abbreviation for the organization in ISO 3166-2 format.
 func (m *Organization) SetCountryLetterCode(value *string)() {
-    m.countryLetterCode = value
+    if m != nil {
+        m.countryLetterCode = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Organization) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDirectorySizeQuota sets the directorySizeQuota property value. The directory size quota information of an organization.
 func (m *Organization) SetDirectorySizeQuota(value *DirectorySizeQuota)() {
-    m.directorySizeQuota = value
+    if m != nil {
+        m.directorySizeQuota = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the tenant.
 func (m *Organization) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the organization. Read-only. Nullable.
 func (m *Organization) SetExtensions(value []Extension)() {
-    m.extensions = value
+    if m != nil {
+        m.extensions = value
+    }
 }
 // SetIsMultipleDataLocationsForServicesEnabled sets the isMultipleDataLocationsForServicesEnabled property value. true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
 func (m *Organization) SetIsMultipleDataLocationsForServicesEnabled(value *bool)() {
-    m.isMultipleDataLocationsForServicesEnabled = value
+    if m != nil {
+        m.isMultipleDataLocationsForServicesEnabled = value
+    }
 }
 // SetMarketingNotificationEmails sets the marketingNotificationEmails property value. Not nullable.
 func (m *Organization) SetMarketingNotificationEmails(value []string)() {
-    m.marketingNotificationEmails = value
+    if m != nil {
+        m.marketingNotificationEmails = value
+    }
 }
 // SetMobileDeviceManagementAuthority sets the mobileDeviceManagementAuthority property value. Mobile device management authority. Possible values are: unknown, intune, sccm, office365.
 func (m *Organization) SetMobileDeviceManagementAuthority(value *MdmAuthority)() {
-    m.mobileDeviceManagementAuthority = value
+    if m != nil {
+        m.mobileDeviceManagementAuthority = value
+    }
 }
 // SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Organization) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.onPremisesLastSyncDateTime = value
+    if m != nil {
+        m.onPremisesLastSyncDateTime = value
+    }
 }
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
 func (m *Organization) SetOnPremisesSyncEnabled(value *bool)() {
-    m.onPremisesSyncEnabled = value
+    if m != nil {
+        m.onPremisesSyncEnabled = value
+    }
 }
 // SetPostalCode sets the postalCode property value. Postal code of the address for the organization.
 func (m *Organization) SetPostalCode(value *string)() {
-    m.postalCode = value
+    if m != nil {
+        m.postalCode = value
+    }
 }
 // SetPreferredLanguage sets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
 func (m *Organization) SetPreferredLanguage(value *string)() {
-    m.preferredLanguage = value
+    if m != nil {
+        m.preferredLanguage = value
+    }
 }
 // SetPrivacyProfile sets the privacyProfile property value. The privacy profile of an organization.
 func (m *Organization) SetPrivacyProfile(value *PrivacyProfile)() {
-    m.privacyProfile = value
+    if m != nil {
+        m.privacyProfile = value
+    }
 }
 // SetProvisionedPlans sets the provisionedPlans property value. Not nullable.
 func (m *Organization) SetProvisionedPlans(value []ProvisionedPlan)() {
-    m.provisionedPlans = value
+    if m != nil {
+        m.provisionedPlans = value
+    }
 }
 // SetSecurityComplianceNotificationMails sets the securityComplianceNotificationMails property value. 
 func (m *Organization) SetSecurityComplianceNotificationMails(value []string)() {
-    m.securityComplianceNotificationMails = value
+    if m != nil {
+        m.securityComplianceNotificationMails = value
+    }
 }
 // SetSecurityComplianceNotificationPhones sets the securityComplianceNotificationPhones property value. 
 func (m *Organization) SetSecurityComplianceNotificationPhones(value []string)() {
-    m.securityComplianceNotificationPhones = value
+    if m != nil {
+        m.securityComplianceNotificationPhones = value
+    }
 }
 // SetSettings sets the settings property value. Retrieve the properties and relationships of organizationSettings object. Nullable.
 func (m *Organization) SetSettings(value *OrganizationSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }
 // SetState sets the state property value. State name of the address for the organization.
 func (m *Organization) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetStreet sets the street property value. Street name of the address for organization.
 func (m *Organization) SetStreet(value *string)() {
-    m.street = value
+    if m != nil {
+        m.street = value
+    }
 }
 // SetTechnicalNotificationMails sets the technicalNotificationMails property value. Not nullable.
 func (m *Organization) SetTechnicalNotificationMails(value []string)() {
-    m.technicalNotificationMails = value
+    if m != nil {
+        m.technicalNotificationMails = value
+    }
 }
 // SetVerifiedDomains sets the verifiedDomains property value. The collection of domains associated with this tenant. Not nullable.
 func (m *Organization) SetVerifiedDomains(value []VerifiedDomain)() {
-    m.verifiedDomains = value
+    if m != nil {
+        m.verifiedDomains = value
+    }
 }

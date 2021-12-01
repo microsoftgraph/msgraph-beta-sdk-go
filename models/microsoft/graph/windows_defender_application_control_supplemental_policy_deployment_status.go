@@ -296,41 +296,61 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Se
 }
 // SetDeploymentStatus sets the deploymentStatus property value. The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetDeploymentStatus(value *WindowsDefenderApplicationControlSupplementalPolicyStatuses)() {
-    m.deploymentStatus = value
+    if m != nil {
+        m.deploymentStatus = value
+    }
 }
 // SetDeviceId sets the deviceId property value. Device ID.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetDeviceName sets the deviceName property value. Device name.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last sync date time.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    if m != nil {
+        m.lastSyncDateTime = value
+    }
 }
 // SetOsDescription sets the osDescription property value. Windows OS Version Description.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetOsDescription(value *string)() {
-    m.osDescription = value
+    if m != nil {
+        m.osDescription = value
+    }
 }
 // SetOsVersion sets the osVersion property value. Windows OS Version.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetOsVersion(value *string)() {
-    m.osVersion = value
+    if m != nil {
+        m.osVersion = value
+    }
 }
 // SetPolicy sets the policy property value. The navigation link to the WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetPolicy(value *WindowsDefenderApplicationControlSupplementalPolicy)() {
-    m.policy = value
+    if m != nil {
+        m.policy = value
+    }
 }
 // SetPolicyVersion sets the policyVersion property value. Human readable version of the WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetPolicyVersion(value *string)() {
-    m.policyVersion = value
+    if m != nil {
+        m.policyVersion = value
+    }
 }
 // SetUserName sets the userName property value. The name of the user of this device.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetUserName(value *string)() {
-    m.userName = value
+    if m != nil {
+        m.userName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

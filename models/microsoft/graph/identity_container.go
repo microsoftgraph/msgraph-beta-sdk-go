@@ -306,37 +306,55 @@ func (m *IdentityContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityContainer) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApiConnectors sets the apiConnectors property value. Represents entry point for API connectors.
 func (m *IdentityContainer) SetApiConnectors(value []IdentityApiConnector)() {
-    m.apiConnectors = value
+    if m != nil {
+        m.apiConnectors = value
+    }
 }
 // SetB2cUserFlows sets the b2cUserFlows property value. Represents entry point for B2C identity userflows.
 func (m *IdentityContainer) SetB2cUserFlows(value []B2cIdentityUserFlow)() {
-    m.b2cUserFlows = value
+    if m != nil {
+        m.b2cUserFlows = value
+    }
 }
 // SetB2xUserFlows sets the b2xUserFlows property value. Represents entry point for B2X/self-service sign-up identity userflows.
 func (m *IdentityContainer) SetB2xUserFlows(value []B2xIdentityUserFlow)() {
-    m.b2xUserFlows = value
+    if m != nil {
+        m.b2xUserFlows = value
+    }
 }
 // SetConditionalAccess sets the conditionalAccess property value. the entry point for the Conditional Access (CA) object model.
 func (m *IdentityContainer) SetConditionalAccess(value *ConditionalAccessRoot)() {
-    m.conditionalAccess = value
+    if m != nil {
+        m.conditionalAccess = value
+    }
 }
 // SetContinuousAccessEvaluationPolicy sets the continuousAccessEvaluationPolicy property value. Represents entry point for continuous access evaluation policy.
 func (m *IdentityContainer) SetContinuousAccessEvaluationPolicy(value *ContinuousAccessEvaluationPolicy)() {
-    m.continuousAccessEvaluationPolicy = value
+    if m != nil {
+        m.continuousAccessEvaluationPolicy = value
+    }
 }
 // SetIdentityProviders sets the identityProviders property value. Represents entry point for identity provider base.
 func (m *IdentityContainer) SetIdentityProviders(value []IdentityProviderBase)() {
-    m.identityProviders = value
+    if m != nil {
+        m.identityProviders = value
+    }
 }
 // SetUserFlowAttributes sets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
 func (m *IdentityContainer) SetUserFlowAttributes(value []IdentityUserFlowAttribute)() {
-    m.userFlowAttributes = value
+    if m != nil {
+        m.userFlowAttributes = value
+    }
 }
 // SetUserFlows sets the userFlows property value. 
 func (m *IdentityContainer) SetUserFlows(value []IdentityUserFlow)() {
-    m.userFlows = value
+    if m != nil {
+        m.userFlows = value
+    }
 }

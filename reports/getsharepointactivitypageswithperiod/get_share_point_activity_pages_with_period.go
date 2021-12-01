@@ -138,17 +138,25 @@ func (m *GetSharePointActivityPagesWithPeriod) Serialize(writer i04eb5309aeaafad
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetSharePointActivityPagesWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSharePointActivityPagesWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSharePointActivityPagesWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetVisitedPageCount sets the visitedPageCount property value. 
 func (m *GetSharePointActivityPagesWithPeriod) SetVisitedPageCount(value *int64)() {
-    m.visitedPageCount = value
+    if m != nil {
+        m.visitedPageCount = value
+    }
 }

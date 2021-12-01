@@ -59,5 +59,7 @@ func (m *AllowedValue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetIsActive sets the isActive property value. Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
 func (m *AllowedValue) SetIsActive(value *bool)() {
-    m.isActive = value
+    if m != nil {
+        m.isActive = value
+    }
 }

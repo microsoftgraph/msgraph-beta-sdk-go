@@ -890,129 +890,193 @@ func (m *IntuneBrandingProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the branding profile
 func (m *IntuneBrandingProfile) SetAssignments(value []IntuneBrandingProfileAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetCompanyPortalBlockedActions sets the companyPortalBlockedActions property value. Collection of blocked actions on the company portal as per platform and device ownership types.
 func (m *IntuneBrandingProfile) SetCompanyPortalBlockedActions(value []CompanyPortalBlockedAction)() {
-    m.companyPortalBlockedActions = value
+    if m != nil {
+        m.companyPortalBlockedActions = value
+    }
 }
 // SetContactITEmailAddress sets the contactITEmailAddress property value. E-mail address of the person/organization responsible for IT support
 func (m *IntuneBrandingProfile) SetContactITEmailAddress(value *string)() {
-    m.contactITEmailAddress = value
+    if m != nil {
+        m.contactITEmailAddress = value
+    }
 }
 // SetContactITName sets the contactITName property value. Name of the person/organization responsible for IT support
 func (m *IntuneBrandingProfile) SetContactITName(value *string)() {
-    m.contactITName = value
+    if m != nil {
+        m.contactITName = value
+    }
 }
 // SetContactITNotes sets the contactITNotes property value. Text comments regarding the person/organization responsible for IT support
 func (m *IntuneBrandingProfile) SetContactITNotes(value *string)() {
-    m.contactITNotes = value
+    if m != nil {
+        m.contactITNotes = value
+    }
 }
 // SetContactITPhoneNumber sets the contactITPhoneNumber property value. Phone number of the person/organization responsible for IT support
 func (m *IntuneBrandingProfile) SetContactITPhoneNumber(value *string)() {
-    m.contactITPhoneNumber = value
+    if m != nil {
+        m.contactITPhoneNumber = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Time when the BrandingProfile was created
 func (m *IntuneBrandingProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetCustomCanSeePrivacyMessage sets the customCanSeePrivacyMessage property value. Text comments regarding what the admin has access to on the device
 func (m *IntuneBrandingProfile) SetCustomCanSeePrivacyMessage(value *string)() {
-    m.customCanSeePrivacyMessage = value
+    if m != nil {
+        m.customCanSeePrivacyMessage = value
+    }
 }
 // SetCustomCantSeePrivacyMessage sets the customCantSeePrivacyMessage property value. Text comments regarding what the admin doesn't have access to on the device
 func (m *IntuneBrandingProfile) SetCustomCantSeePrivacyMessage(value *string)() {
-    m.customCantSeePrivacyMessage = value
+    if m != nil {
+        m.customCantSeePrivacyMessage = value
+    }
 }
 // SetCustomPrivacyMessage sets the customPrivacyMessage property value. Text comments regarding what the admin doesn't have access to on the device
 func (m *IntuneBrandingProfile) SetCustomPrivacyMessage(value *string)() {
-    m.customPrivacyMessage = value
+    if m != nil {
+        m.customPrivacyMessage = value
+    }
 }
 // SetDisableClientTelemetry sets the disableClientTelemetry property value. Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
 func (m *IntuneBrandingProfile) SetDisableClientTelemetry(value *bool)() {
-    m.disableClientTelemetry = value
+    if m != nil {
+        m.disableClientTelemetry = value
+    }
 }
 // SetDisplayName sets the displayName property value. Company/organization name that is displayed to end users
 func (m *IntuneBrandingProfile) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEnrollmentAvailability sets the enrollmentAvailability property value. Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.
 func (m *IntuneBrandingProfile) SetEnrollmentAvailability(value *EnrollmentAvailabilityOptions)() {
-    m.enrollmentAvailability = value
+    if m != nil {
+        m.enrollmentAvailability = value
+    }
 }
 // SetIsDefaultProfile sets the isDefaultProfile property value. Boolean that represents whether the profile is used as default or not
 func (m *IntuneBrandingProfile) SetIsDefaultProfile(value *bool)() {
-    m.isDefaultProfile = value
+    if m != nil {
+        m.isDefaultProfile = value
+    }
 }
 // SetIsFactoryResetDisabled sets the isFactoryResetDisabled property value. Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.
 func (m *IntuneBrandingProfile) SetIsFactoryResetDisabled(value *bool)() {
-    m.isFactoryResetDisabled = value
+    if m != nil {
+        m.isFactoryResetDisabled = value
+    }
 }
 // SetIsRemoveDeviceDisabled sets the isRemoveDeviceDisabled property value. Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
 func (m *IntuneBrandingProfile) SetIsRemoveDeviceDisabled(value *bool)() {
-    m.isRemoveDeviceDisabled = value
+    if m != nil {
+        m.isRemoveDeviceDisabled = value
+    }
 }
 // SetLandingPageCustomizedImage sets the landingPageCustomizedImage property value. Customized image displayed in Company Portal apps landing page
 func (m *IntuneBrandingProfile) SetLandingPageCustomizedImage(value *MimeContent)() {
-    m.landingPageCustomizedImage = value
+    if m != nil {
+        m.landingPageCustomizedImage = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Time when the BrandingProfile was last modified
 func (m *IntuneBrandingProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetLightBackgroundLogo sets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo
 func (m *IntuneBrandingProfile) SetLightBackgroundLogo(value *MimeContent)() {
-    m.lightBackgroundLogo = value
+    if m != nil {
+        m.lightBackgroundLogo = value
+    }
 }
 // SetOnlineSupportSiteName sets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site
 func (m *IntuneBrandingProfile) SetOnlineSupportSiteName(value *string)() {
-    m.onlineSupportSiteName = value
+    if m != nil {
+        m.onlineSupportSiteName = value
+    }
 }
 // SetOnlineSupportSiteUrl sets the onlineSupportSiteUrl property value. URL to the company/organization’s IT helpdesk site
 func (m *IntuneBrandingProfile) SetOnlineSupportSiteUrl(value *string)() {
-    m.onlineSupportSiteUrl = value
+    if m != nil {
+        m.onlineSupportSiteUrl = value
+    }
 }
 // SetPrivacyUrl sets the privacyUrl property value. URL to the company/organization’s privacy policy
 func (m *IntuneBrandingProfile) SetPrivacyUrl(value *string)() {
-    m.privacyUrl = value
+    if m != nil {
+        m.privacyUrl = value
+    }
 }
 // SetProfileDescription sets the profileDescription property value. Description of the profile
 func (m *IntuneBrandingProfile) SetProfileDescription(value *string)() {
-    m.profileDescription = value
+    if m != nil {
+        m.profileDescription = value
+    }
 }
 // SetProfileName sets the profileName property value. Name of the profile
 func (m *IntuneBrandingProfile) SetProfileName(value *string)() {
-    m.profileName = value
+    if m != nil {
+        m.profileName = value
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of scope tags assigned to the branding profile
 func (m *IntuneBrandingProfile) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    if m != nil {
+        m.roleScopeTagIds = value
+    }
 }
 // SetSendDeviceOwnershipChangePushNotification sets the sendDeviceOwnershipChangePushNotification property value. Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
 func (m *IntuneBrandingProfile) SetSendDeviceOwnershipChangePushNotification(value *bool)() {
-    m.sendDeviceOwnershipChangePushNotification = value
+    if m != nil {
+        m.sendDeviceOwnershipChangePushNotification = value
+    }
 }
 // SetShowAzureADEnterpriseApps sets the showAzureADEnterpriseApps property value. Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
 func (m *IntuneBrandingProfile) SetShowAzureADEnterpriseApps(value *bool)() {
-    m.showAzureADEnterpriseApps = value
+    if m != nil {
+        m.showAzureADEnterpriseApps = value
+    }
 }
 // SetShowDisplayNameNextToLogo sets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image or not
 func (m *IntuneBrandingProfile) SetShowDisplayNameNextToLogo(value *bool)() {
-    m.showDisplayNameNextToLogo = value
+    if m != nil {
+        m.showDisplayNameNextToLogo = value
+    }
 }
 // SetShowLogo sets the showLogo property value. Boolean that represents whether the administrator-supplied logo images are shown or not
 func (m *IntuneBrandingProfile) SetShowLogo(value *bool)() {
-    m.showLogo = value
+    if m != nil {
+        m.showLogo = value
+    }
 }
 // SetShowOfficeWebApps sets the showOfficeWebApps property value. Boolean that indicates if Office WebApps will be shown in Company Portal
 func (m *IntuneBrandingProfile) SetShowOfficeWebApps(value *bool)() {
-    m.showOfficeWebApps = value
+    if m != nil {
+        m.showOfficeWebApps = value
+    }
 }
 // SetThemeColor sets the themeColor property value. Primary theme color used in the Company Portal applications and web portal
 func (m *IntuneBrandingProfile) SetThemeColor(value *RgbColor)() {
-    m.themeColor = value
+    if m != nil {
+        m.themeColor = value
+    }
 }
 // SetThemeColorLogo sets the themeColorLogo property value. Logo image displayed in Company Portal apps which have a theme color background behind the logo
 func (m *IntuneBrandingProfile) SetThemeColorLogo(value *MimeContent)() {
-    m.themeColorLogo = value
+    if m != nil {
+        m.themeColorLogo = value
+    }
 }

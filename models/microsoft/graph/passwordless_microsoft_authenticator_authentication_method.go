@@ -138,17 +138,25 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) Serialize(write
 }
 // SetCreatedDateTime sets the createdDateTime property value. 
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetCreationDateTime sets the creationDateTime property value. The timestamp when this method was registered to the user.
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.creationDateTime = value
+    if m != nil {
+        m.creationDateTime = value
+    }
 }
 // SetDevice sets the device property value. 
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetDevice(value *Device)() {
-    m.device = value
+    if m != nil {
+        m.device = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the mobile device as given by the user.
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

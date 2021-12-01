@@ -148,21 +148,31 @@ func (m *ClassifcationErrorBase) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifcationErrorBase) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCode sets the code property value. 
 func (m *ClassifcationErrorBase) SetCode(value *string)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetInnerError sets the innerError property value. 
 func (m *ClassifcationErrorBase) SetInnerError(value *ClassificationInnerError)() {
-    m.innerError = value
+    if m != nil {
+        m.innerError = value
+    }
 }
 // SetMessage sets the message property value. 
 func (m *ClassifcationErrorBase) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }
 // SetTarget sets the target property value. 
 func (m *ClassifcationErrorBase) SetTarget(value *string)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

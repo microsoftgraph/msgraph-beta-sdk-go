@@ -111,13 +111,19 @@ func (m *DeviceConfigurationGroupAssignment) Serialize(writer i04eb5309aeaafadd2
 }
 // SetDeviceConfiguration sets the deviceConfiguration property value. The navigation link to the Device Configuration being targeted.
 func (m *DeviceConfigurationGroupAssignment) SetDeviceConfiguration(value *DeviceConfiguration)() {
-    m.deviceConfiguration = value
+    if m != nil {
+        m.deviceConfiguration = value
+    }
 }
 // SetExcludeGroup sets the excludeGroup property value. Indicates if this group is should be excluded. Defaults that the group should be included
 func (m *DeviceConfigurationGroupAssignment) SetExcludeGroup(value *bool)() {
-    m.excludeGroup = value
+    if m != nil {
+        m.excludeGroup = value
+    }
 }
 // SetTargetGroupId sets the targetGroupId property value. The Id of the AAD group we are targeting the device configuration to.
 func (m *DeviceConfigurationGroupAssignment) SetTargetGroupId(value *string)() {
-    m.targetGroupId = value
+    if m != nil {
+        m.targetGroupId = value
+    }
 }

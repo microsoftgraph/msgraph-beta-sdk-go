@@ -42,7 +42,7 @@ type MessageTraceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MessageTraceRequestBuilderPatchOptions options for Patch
 type MessageTraceRequestBuilderPatchOptions struct {

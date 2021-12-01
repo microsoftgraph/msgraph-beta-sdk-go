@@ -94,9 +94,13 @@ func (m *DeviceManagementConfigurationSettingTemplate) Serialize(writer i04eb530
 }
 // SetSettingDefinitions sets the settingDefinitions property value. List of related Setting Definitions
 func (m *DeviceManagementConfigurationSettingTemplate) SetSettingDefinitions(value []DeviceManagementConfigurationSettingDefinition)() {
-    m.settingDefinitions = value
+    if m != nil {
+        m.settingDefinitions = value
+    }
 }
 // SetSettingInstanceTemplate sets the settingInstanceTemplate property value. Setting Instance Template
 func (m *DeviceManagementConfigurationSettingTemplate) SetSettingInstanceTemplate(value *DeviceManagementConfigurationSettingInstanceTemplate)() {
-    m.settingInstanceTemplate = value
+    if m != nil {
+        m.settingInstanceTemplate = value
+    }
 }

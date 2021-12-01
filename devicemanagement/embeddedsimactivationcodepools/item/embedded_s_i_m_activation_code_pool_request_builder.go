@@ -45,7 +45,7 @@ type EmbeddedSIMActivationCodePoolRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // EmbeddedSIMActivationCodePoolRequestBuilderPatchOptions options for Patch
 type EmbeddedSIMActivationCodePoolRequestBuilderPatchOptions struct {

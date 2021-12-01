@@ -105,13 +105,19 @@ func (m *TrainingEventsContent) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TrainingEventsContent) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedTrainingsInfos sets the assignedTrainingsInfos property value. List of assigned trainings and their information in an attack simulation and training campaign.
 func (m *TrainingEventsContent) SetAssignedTrainingsInfos(value []AssignedTrainingInfo)() {
-    m.assignedTrainingsInfos = value
+    if m != nil {
+        m.assignedTrainingsInfos = value
+    }
 }
 // SetTrainingsAssignedUserCount sets the trainingsAssignedUserCount property value. Number of users who were assigned trainings in an attack simulation and training campaign.
 func (m *TrainingEventsContent) SetTrainingsAssignedUserCount(value *int32)() {
-    m.trainingsAssignedUserCount = value
+    if m != nil {
+        m.trainingsAssignedUserCount = value
+    }
 }

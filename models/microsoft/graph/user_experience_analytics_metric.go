@@ -85,9 +85,13 @@ func (m *UserExperienceAnalyticsMetric) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetUnit sets the unit property value. The unit of the user experience analytics metric.
 func (m *UserExperienceAnalyticsMetric) SetUnit(value *string)() {
-    m.unit = value
+    if m != nil {
+        m.unit = value
+    }
 }
 // SetValue sets the value property value. The value of the user experience analytics metric.
 func (m *UserExperienceAnalyticsMetric) SetValue(value *float64)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

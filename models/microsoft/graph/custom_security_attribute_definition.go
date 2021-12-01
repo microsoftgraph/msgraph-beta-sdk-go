@@ -276,37 +276,55 @@ func (m *CustomSecurityAttributeDefinition) Serialize(writer i04eb5309aeaafadd28
 }
 // SetAllowedValues sets the allowedValues property value. Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 func (m *CustomSecurityAttributeDefinition) SetAllowedValues(value []AllowedValue)() {
-    m.allowedValues = value
+    if m != nil {
+        m.allowedValues = value
+    }
 }
 // SetAttributeSet sets the attributeSet property value. Name of the attribute set. Case insensitive.
 func (m *CustomSecurityAttributeDefinition) SetAttributeSet(value *string)() {
-    m.attributeSet = value
+    if m != nil {
+        m.attributeSet = value
+    }
 }
 // SetDescription sets the description property value. Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.
 func (m *CustomSecurityAttributeDefinition) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetIsCollection sets the isCollection property value. Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.
 func (m *CustomSecurityAttributeDefinition) SetIsCollection(value *bool)() {
-    m.isCollection = value
+    if m != nil {
+        m.isCollection = value
+    }
 }
 // SetIsSearchable sets the isSearchable property value. Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
 func (m *CustomSecurityAttributeDefinition) SetIsSearchable(value *bool)() {
-    m.isSearchable = value
+    if m != nil {
+        m.isSearchable = value
+    }
 }
 // SetName sets the name property value. Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
 func (m *CustomSecurityAttributeDefinition) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetStatus sets the status property value. Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
 func (m *CustomSecurityAttributeDefinition) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
 func (m *CustomSecurityAttributeDefinition) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetUsePreDefinedValuesOnly sets the usePreDefinedValuesOnly property value. Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
 func (m *CustomSecurityAttributeDefinition) SetUsePreDefinedValuesOnly(value *bool)() {
-    m.usePreDefinedValuesOnly = value
+    if m != nil {
+        m.usePreDefinedValuesOnly = value
+    }
 }

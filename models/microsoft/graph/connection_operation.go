@@ -88,9 +88,13 @@ func (m *ConnectionOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetError sets the error property value. If status is failed, provides more information about the error that caused the failure.
 func (m *ConnectionOperation) SetError(value *PublicError)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetStatus sets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
 func (m *ConnectionOperation) SetStatus(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionOperationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

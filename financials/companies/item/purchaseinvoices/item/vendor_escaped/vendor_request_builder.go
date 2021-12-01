@@ -44,7 +44,7 @@ type VendorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // VendorRequestBuilderPatchOptions options for Patch
 type VendorRequestBuilderPatchOptions struct {

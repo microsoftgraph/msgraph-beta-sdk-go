@@ -183,21 +183,31 @@ func (m *OnPremisesAgentGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAgents sets the agents property value. List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *OnPremisesAgentGroup) SetAgents(value []OnPremisesAgent)() {
-    m.agents = value
+    if m != nil {
+        m.agents = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the onPremisesAgentGroup.
 func (m *OnPremisesAgentGroup) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsDefault sets the isDefault property value. Indicates if the onPremisesAgentGroup is the default agent group. Only a single agent group can be the default onPremisesAgentGroup and is set by the system.
 func (m *OnPremisesAgentGroup) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetPublishedResources sets the publishedResources property value. List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
 func (m *OnPremisesAgentGroup) SetPublishedResources(value []PublishedResource)() {
-    m.publishedResources = value
+    if m != nil {
+        m.publishedResources = value
+    }
 }
 // SetPublishingType sets the publishingType property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
 func (m *OnPremisesAgentGroup) SetPublishingType(value *OnPremisesPublishingType)() {
-    m.publishingType = value
+    if m != nil {
+        m.publishingType = value
+    }
 }

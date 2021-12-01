@@ -200,29 +200,43 @@ func (m *CompanyDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CompanyDetail) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAddress sets the address property value. Address of the company.
 func (m *CompanyDetail) SetAddress(value *PhysicalAddress)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetDepartment sets the department property value. Department Name within a company.
 func (m *CompanyDetail) SetDepartment(value *string)() {
-    m.department = value
+    if m != nil {
+        m.department = value
+    }
 }
 // SetDisplayName sets the displayName property value. Company name.
 func (m *CompanyDetail) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetOfficeLocation sets the officeLocation property value. Office Location of the person referred to.
 func (m *CompanyDetail) SetOfficeLocation(value *string)() {
-    m.officeLocation = value
+    if m != nil {
+        m.officeLocation = value
+    }
 }
 // SetPronunciation sets the pronunciation property value. Pronunciation guide for the company name.
 func (m *CompanyDetail) SetPronunciation(value *string)() {
-    m.pronunciation = value
+    if m != nil {
+        m.pronunciation = value
+    }
 }
 // SetWebUrl sets the webUrl property value. Link to the company home page.
 func (m *CompanyDetail) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

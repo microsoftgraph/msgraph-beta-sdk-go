@@ -85,9 +85,13 @@ func (m *ChatMessageMentionedIdentitySet) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetConversation sets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
 func (m *ChatMessageMentionedIdentitySet) SetConversation(value *TeamworkConversationIdentity)() {
-    m.conversation = value
+    if m != nil {
+        m.conversation = value
+    }
 }
 // SetTag sets the tag property value. If present, represents a tag @mentioned in a team message.
 func (m *ChatMessageMentionedIdentitySet) SetTag(value *TeamworkTagIdentity)() {
-    m.tag = value
+    if m != nil {
+        m.tag = value
+    }
 }

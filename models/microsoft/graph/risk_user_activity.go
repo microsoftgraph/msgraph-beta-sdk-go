@@ -132,17 +132,25 @@ func (m *RiskUserActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RiskUserActivity) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDetail sets the detail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
 func (m *RiskUserActivity) SetDetail(value *RiskDetail)() {
-    m.detail = value
+    if m != nil {
+        m.detail = value
+    }
 }
 // SetEventTypes sets the eventTypes property value. List of risk event types. Deprecated. Use riskEventType instead.
 func (m *RiskUserActivity) SetEventTypes(value []RiskEventType)() {
-    m.eventTypes = value
+    if m != nil {
+        m.eventTypes = value
+    }
 }
 // SetRiskEventTypes sets the riskEventTypes property value. The type of risk event detected.
 func (m *RiskUserActivity) SetRiskEventTypes(value []string)() {
-    m.riskEventTypes = value
+    if m != nil {
+        m.riskEventTypes = value
+    }
 }

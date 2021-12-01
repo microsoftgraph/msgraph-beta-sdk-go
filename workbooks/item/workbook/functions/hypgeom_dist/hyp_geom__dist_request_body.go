@@ -175,25 +175,37 @@ func (m *HypGeom_DistRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HypGeom_DistRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCumulative sets the cumulative property value. 
 func (m *HypGeom_DistRequestBody) SetCumulative(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.cumulative = value
+    if m != nil {
+        m.cumulative = value
+    }
 }
 // SetNumberPop sets the numberPop property value. 
 func (m *HypGeom_DistRequestBody) SetNumberPop(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.numberPop = value
+    if m != nil {
+        m.numberPop = value
+    }
 }
 // SetNumberSample sets the numberSample property value. 
 func (m *HypGeom_DistRequestBody) SetNumberSample(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.numberSample = value
+    if m != nil {
+        m.numberSample = value
+    }
 }
 // SetPopulationS sets the populationS property value. 
 func (m *HypGeom_DistRequestBody) SetPopulationS(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.populationS = value
+    if m != nil {
+        m.populationS = value
+    }
 }
 // SetSampleS sets the sampleS property value. 
 func (m *HypGeom_DistRequestBody) SetSampleS(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.sampleS = value
+    if m != nil {
+        m.sampleS = value
+    }
 }

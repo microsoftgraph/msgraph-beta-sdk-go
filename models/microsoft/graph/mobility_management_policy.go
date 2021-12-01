@@ -252,33 +252,49 @@ func (m *MobilityManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAppliesTo sets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
 func (m *MobilityManagementPolicy) SetAppliesTo(value *PolicyScope)() {
-    m.appliesTo = value
+    if m != nil {
+        m.appliesTo = value
+    }
 }
 // SetComplianceUrl sets the complianceUrl property value. Compliance URL of the mobility management application.
 func (m *MobilityManagementPolicy) SetComplianceUrl(value *string)() {
-    m.complianceUrl = value
+    if m != nil {
+        m.complianceUrl = value
+    }
 }
 // SetDescription sets the description property value. Description of the mobility management application.
 func (m *MobilityManagementPolicy) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDiscoveryUrl sets the discoveryUrl property value. Discovery URL of the mobility management application.
 func (m *MobilityManagementPolicy) SetDiscoveryUrl(value *string)() {
-    m.discoveryUrl = value
+    if m != nil {
+        m.discoveryUrl = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the mobility management application.
 func (m *MobilityManagementPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIncludedGroups sets the includedGroups property value. Azure AD groups under the scope of the mobility management application if appliesTo is selected
 func (m *MobilityManagementPolicy) SetIncludedGroups(value []Group)() {
-    m.includedGroups = value
+    if m != nil {
+        m.includedGroups = value
+    }
 }
 // SetIsValid sets the isValid property value. Whether policy is valid. Invalid policies may not be updated and should be deleted.
 func (m *MobilityManagementPolicy) SetIsValid(value *bool)() {
-    m.isValid = value
+    if m != nil {
+        m.isValid = value
+    }
 }
 // SetTermsOfUseUrl sets the termsOfUseUrl property value. Terms of Use URL of the mobility management application.
 func (m *MobilityManagementPolicy) SetTermsOfUseUrl(value *string)() {
-    m.termsOfUseUrl = value
+    if m != nil {
+        m.termsOfUseUrl = value
+    }
 }

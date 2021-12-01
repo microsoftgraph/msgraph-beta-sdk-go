@@ -86,9 +86,13 @@ func (m *CloudPcUserSettingAssignment) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time this assignment was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 func (m *CloudPcUserSettingAssignment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetTarget sets the target property value. The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 func (m *CloudPcUserSettingAssignment) SetTarget(value *CloudPcManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

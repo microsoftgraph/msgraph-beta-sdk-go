@@ -74,9 +74,13 @@ func (m *HasPayloadLinksRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HasPayloadLinksRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPayloadIds sets the payloadIds property value. 
 func (m *HasPayloadLinksRequestBody) SetPayloadIds(value []string)() {
-    m.payloadIds = value
+    if m != nil {
+        m.payloadIds = value
+    }
 }

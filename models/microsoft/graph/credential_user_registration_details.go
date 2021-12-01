@@ -219,29 +219,43 @@ func (m *CredentialUserRegistrationDetails) Serialize(writer i04eb5309aeaafadd28
 }
 // SetAuthMethods sets the authMethods property value. Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
 func (m *CredentialUserRegistrationDetails) SetAuthMethods(value []RegistrationAuthMethod)() {
-    m.authMethods = value
+    if m != nil {
+        m.authMethods = value
+    }
 }
 // SetIsCapable sets the isCapable property value. Indicates whether the user is ready to perform self-service password reset or MFA.
 func (m *CredentialUserRegistrationDetails) SetIsCapable(value *bool)() {
-    m.isCapable = value
+    if m != nil {
+        m.isCapable = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether the user enabled to perform self-service password reset.
 func (m *CredentialUserRegistrationDetails) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetIsMfaRegistered sets the isMfaRegistered property value. Indicates whether the user is registered for MFA.
 func (m *CredentialUserRegistrationDetails) SetIsMfaRegistered(value *bool)() {
-    m.isMfaRegistered = value
+    if m != nil {
+        m.isMfaRegistered = value
+    }
 }
 // SetIsRegistered sets the isRegistered property value. Indicates whether the user has registered any authentication methods for self-service password reset.
 func (m *CredentialUserRegistrationDetails) SetIsRegistered(value *bool)() {
-    m.isRegistered = value
+    if m != nil {
+        m.isRegistered = value
+    }
 }
 // SetUserDisplayName sets the userDisplayName property value. Provides the user name of the corresponding user.
 func (m *CredentialUserRegistrationDetails) SetUserDisplayName(value *string)() {
-    m.userDisplayName = value
+    if m != nil {
+        m.userDisplayName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. Provides the user principal name of the corresponding user.
 func (m *CredentialUserRegistrationDetails) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

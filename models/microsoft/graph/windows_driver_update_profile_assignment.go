@@ -59,5 +59,7 @@ func (m *WindowsDriverUpdateProfileAssignment) Serialize(writer i04eb5309aeaafad
 }
 // SetTarget sets the target property value. Base type for assignment targets.
 func (m *WindowsDriverUpdateProfileAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

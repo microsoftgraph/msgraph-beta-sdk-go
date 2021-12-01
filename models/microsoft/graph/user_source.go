@@ -88,9 +88,13 @@ func (m *UserSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetEmail sets the email property value. Email address of the user's mailbox.
 func (m *UserSource) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
 func (m *UserSource) SetIncludedSources(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.SourceType)() {
-    m.includedSources = value
+    if m != nil {
+        m.includedSources = value
+    }
 }

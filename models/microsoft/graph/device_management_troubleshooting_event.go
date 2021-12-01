@@ -173,21 +173,31 @@ func (m *DeviceManagementTroubleshootingEvent) Serialize(writer i04eb5309aeaafad
 }
 // SetAdditionalInformation sets the additionalInformation property value. A set of string key and string value pairs which provides additional information on the Troubleshooting event
 func (m *DeviceManagementTroubleshootingEvent) SetAdditionalInformation(value []KeyValuePair)() {
-    m.additionalInformation = value
+    if m != nil {
+        m.additionalInformation = value
+    }
 }
 // SetCorrelationId sets the correlationId property value. Id used for tracing the failure in the service.
 func (m *DeviceManagementTroubleshootingEvent) SetCorrelationId(value *string)() {
-    m.correlationId = value
+    if m != nil {
+        m.correlationId = value
+    }
 }
 // SetEventDateTime sets the eventDateTime property value. Time when the event occurred .
 func (m *DeviceManagementTroubleshootingEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.eventDateTime = value
+    if m != nil {
+        m.eventDateTime = value
+    }
 }
 // SetEventName sets the eventName property value. Event Name corresponding to the Troubleshooting Event. It is an Optional field
 func (m *DeviceManagementTroubleshootingEvent) SetEventName(value *string)() {
-    m.eventName = value
+    if m != nil {
+        m.eventName = value
+    }
 }
 // SetTroubleshootingErrorDetails sets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
 func (m *DeviceManagementTroubleshootingEvent) SetTroubleshootingErrorDetails(value *DeviceManagementTroubleshootingErrorDetails)() {
-    m.troubleshootingErrorDetails = value
+    if m != nil {
+        m.troubleshootingErrorDetails = value
+    }
 }

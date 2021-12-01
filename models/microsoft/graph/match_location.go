@@ -96,13 +96,19 @@ func (m *MatchLocation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchLocation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLength sets the length property value. 
 func (m *MatchLocation) SetLength(value *int32)() {
-    m.length = value
+    if m != nil {
+        m.length = value
+    }
 }
 // SetOffset sets the offset property value. 
 func (m *MatchLocation) SetOffset(value *int32)() {
-    m.offset = value
+    if m != nil {
+        m.offset = value
+    }
 }

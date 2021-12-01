@@ -70,9 +70,13 @@ func (m *ResultTemplateOption) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResultTemplateOption) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnableResultTemplate sets the enableResultTemplate property value. Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.
 func (m *ResultTemplateOption) SetEnableResultTemplate(value *bool)() {
-    m.enableResultTemplate = value
+    if m != nil {
+        m.enableResultTemplate = value
+    }
 }

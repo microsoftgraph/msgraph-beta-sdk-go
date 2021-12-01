@@ -68,5 +68,7 @@ func (m *ClassificationError) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetDetails sets the details property value. 
 func (m *ClassificationError) SetDetails(value []ClassifcationErrorBase)() {
-    m.details = value
+    if m != nil {
+        m.details = value
+    }
 }

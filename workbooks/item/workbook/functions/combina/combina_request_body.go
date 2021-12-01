@@ -97,13 +97,19 @@ func (m *CombinaRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CombinaRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNumber sets the number property value. 
 func (m *CombinaRequestBody) SetNumber(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetNumberChosen sets the numberChosen property value. 
 func (m *CombinaRequestBody) SetNumberChosen(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.numberChosen = value
+    if m != nil {
+        m.numberChosen = value
+    }
 }

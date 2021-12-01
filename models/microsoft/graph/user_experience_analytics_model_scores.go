@@ -217,29 +217,43 @@ func (m *UserExperienceAnalyticsModelScores) Serialize(writer i04eb5309aeaafadd2
 }
 // SetAppReliabilityScore sets the appReliabilityScore property value. The user experience analytics model app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsModelScores) SetAppReliabilityScore(value *float64)() {
-    m.appReliabilityScore = value
+    if m != nil {
+        m.appReliabilityScore = value
+    }
 }
 // SetEndpointAnalyticsScore sets the endpointAnalyticsScore property value. The user experience analytics model score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsModelScores) SetEndpointAnalyticsScore(value *float64)() {
-    m.endpointAnalyticsScore = value
+    if m != nil {
+        m.endpointAnalyticsScore = value
+    }
 }
 // SetHealthStatus sets the healthStatus property value. The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
 func (m *UserExperienceAnalyticsModelScores) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
-    m.healthStatus = value
+    if m != nil {
+        m.healthStatus = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. A unique identifier of the user experience analytics model scores: device manufacturer.
 func (m *UserExperienceAnalyticsModelScores) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetModel sets the model property value. A unique identifier of the user experience analytics model scores: device model.
 func (m *UserExperienceAnalyticsModelScores) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }
 // SetModelDeviceCount sets the modelDeviceCount property value. The user experience analytics model device count. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
 func (m *UserExperienceAnalyticsModelScores) SetModelDeviceCount(value *int64)() {
-    m.modelDeviceCount = value
+    if m != nil {
+        m.modelDeviceCount = value
+    }
 }
 // SetStartupPerformanceScore sets the startupPerformanceScore property value. The user experience analytics model startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsModelScores) SetStartupPerformanceScore(value *float64)() {
-    m.startupPerformanceScore = value
+    if m != nil {
+        m.startupPerformanceScore = value
+    }
 }

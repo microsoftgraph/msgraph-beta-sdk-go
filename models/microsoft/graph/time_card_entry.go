@@ -131,17 +131,25 @@ func (m *TimeCardEntry) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeCardEntry) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBreaks sets the breaks property value. The list of breaks associated with the timeCard.
 func (m *TimeCardEntry) SetBreaks(value []TimeCardBreak)() {
-    m.breaks = value
+    if m != nil {
+        m.breaks = value
+    }
 }
 // SetClockInEvent sets the clockInEvent property value. The clock-in event of the timeCard.
 func (m *TimeCardEntry) SetClockInEvent(value *TimeCardEvent)() {
-    m.clockInEvent = value
+    if m != nil {
+        m.clockInEvent = value
+    }
 }
 // SetClockOutEvent sets the clockOutEvent property value. The clock-out event of the timeCard.
 func (m *TimeCardEntry) SetClockOutEvent(value *TimeCardEvent)() {
-    m.clockOutEvent = value
+    if m != nil {
+        m.clockOutEvent = value
+    }
 }

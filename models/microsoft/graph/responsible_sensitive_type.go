@@ -200,29 +200,43 @@ func (m *ResponsibleSensitiveType) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResponsibleSensitiveType) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *ResponsibleSensitiveType) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetId sets the id property value. 
 func (m *ResponsibleSensitiveType) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetName sets the name property value. 
 func (m *ResponsibleSensitiveType) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetPublisherName sets the publisherName property value. 
 func (m *ResponsibleSensitiveType) SetPublisherName(value *string)() {
-    m.publisherName = value
+    if m != nil {
+        m.publisherName = value
+    }
 }
 // SetRulePackageId sets the rulePackageId property value. 
 func (m *ResponsibleSensitiveType) SetRulePackageId(value *string)() {
-    m.rulePackageId = value
+    if m != nil {
+        m.rulePackageId = value
+    }
 }
 // SetRulePackageType sets the rulePackageType property value. 
 func (m *ResponsibleSensitiveType) SetRulePackageType(value *string)() {
-    m.rulePackageType = value
+    if m != nil {
+        m.rulePackageType = value
+    }
 }

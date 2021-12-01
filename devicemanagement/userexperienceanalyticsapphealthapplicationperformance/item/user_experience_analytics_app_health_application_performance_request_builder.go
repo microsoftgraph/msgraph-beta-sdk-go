@@ -40,7 +40,7 @@ type UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilderGetQuer
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilderPatchOptions struct {

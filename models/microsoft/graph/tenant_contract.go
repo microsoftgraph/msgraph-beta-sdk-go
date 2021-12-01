@@ -122,17 +122,25 @@ func (m *TenantContract) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantContract) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContractType sets the contractType property value. The type of relationship that exists between the managing entity and tenant. Optional. Read-only.
 func (m *TenantContract) SetContractType(value *int32)() {
-    m.contractType = value
+    if m != nil {
+        m.contractType = value
+    }
 }
 // SetDefaultDomainName sets the defaultDomainName property value. The default domain name for the tenant. Required. Read-only.
 func (m *TenantContract) SetDefaultDomainName(value *string)() {
-    m.defaultDomainName = value
+    if m != nil {
+        m.defaultDomainName = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the tenant. Optional. Read-only.
 func (m *TenantContract) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

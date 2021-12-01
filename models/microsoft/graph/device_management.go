@@ -5480,661 +5480,991 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAccountMoveCompletionDateTime sets the accountMoveCompletionDateTime property value. The date & time when tenant data moved between scaleunits.
 func (m *DeviceManagement) SetAccountMoveCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.accountMoveCompletionDateTime = value
+    if m != nil {
+        m.accountMoveCompletionDateTime = value
+    }
 }
 // SetAdminConsent sets the adminConsent property value. Admin consent information.
 func (m *DeviceManagement) SetAdminConsent(value *AdminConsent)() {
-    m.adminConsent = value
+    if m != nil {
+        m.adminConsent = value
+    }
 }
 // SetAdvancedThreatProtectionOnboardingStateSummary sets the advancedThreatProtectionOnboardingStateSummary property value. The summary state of ATP onboarding state for this account.
 func (m *DeviceManagement) SetAdvancedThreatProtectionOnboardingStateSummary(value *AdvancedThreatProtectionOnboardingStateSummary)() {
-    m.advancedThreatProtectionOnboardingStateSummary = value
+    if m != nil {
+        m.advancedThreatProtectionOnboardingStateSummary = value
+    }
 }
 // SetAndroidDeviceOwnerEnrollmentProfiles sets the androidDeviceOwnerEnrollmentProfiles property value. Android device owner enrollment profile entities.
 func (m *DeviceManagement) SetAndroidDeviceOwnerEnrollmentProfiles(value []AndroidDeviceOwnerEnrollmentProfile)() {
-    m.androidDeviceOwnerEnrollmentProfiles = value
+    if m != nil {
+        m.androidDeviceOwnerEnrollmentProfiles = value
+    }
 }
 // SetAndroidForWorkAppConfigurationSchemas sets the androidForWorkAppConfigurationSchemas property value. Android for Work app configuration schema entities.
 func (m *DeviceManagement) SetAndroidForWorkAppConfigurationSchemas(value []AndroidForWorkAppConfigurationSchema)() {
-    m.androidForWorkAppConfigurationSchemas = value
+    if m != nil {
+        m.androidForWorkAppConfigurationSchemas = value
+    }
 }
 // SetAndroidForWorkEnrollmentProfiles sets the androidForWorkEnrollmentProfiles property value. Android for Work enrollment profile entities.
 func (m *DeviceManagement) SetAndroidForWorkEnrollmentProfiles(value []AndroidForWorkEnrollmentProfile)() {
-    m.androidForWorkEnrollmentProfiles = value
+    if m != nil {
+        m.androidForWorkEnrollmentProfiles = value
+    }
 }
 // SetAndroidForWorkSettings sets the androidForWorkSettings property value. The singleton Android for Work settings entity.
 func (m *DeviceManagement) SetAndroidForWorkSettings(value *AndroidForWorkSettings)() {
-    m.androidForWorkSettings = value
+    if m != nil {
+        m.androidForWorkSettings = value
+    }
 }
 // SetAndroidManagedStoreAccountEnterpriseSettings sets the androidManagedStoreAccountEnterpriseSettings property value. The singleton Android managed store account enterprise settings entity.
 func (m *DeviceManagement) SetAndroidManagedStoreAccountEnterpriseSettings(value *AndroidManagedStoreAccountEnterpriseSettings)() {
-    m.androidManagedStoreAccountEnterpriseSettings = value
+    if m != nil {
+        m.androidManagedStoreAccountEnterpriseSettings = value
+    }
 }
 // SetAndroidManagedStoreAppConfigurationSchemas sets the androidManagedStoreAppConfigurationSchemas property value. Android Enterprise app configuration schema entities.
 func (m *DeviceManagement) SetAndroidManagedStoreAppConfigurationSchemas(value []AndroidManagedStoreAppConfigurationSchema)() {
-    m.androidManagedStoreAppConfigurationSchemas = value
+    if m != nil {
+        m.androidManagedStoreAppConfigurationSchemas = value
+    }
 }
 // SetApplePushNotificationCertificate sets the applePushNotificationCertificate property value. Apple push notification certificate.
 func (m *DeviceManagement) SetApplePushNotificationCertificate(value *ApplePushNotificationCertificate)() {
-    m.applePushNotificationCertificate = value
+    if m != nil {
+        m.applePushNotificationCertificate = value
+    }
 }
 // SetAppleUserInitiatedEnrollmentProfiles sets the appleUserInitiatedEnrollmentProfiles property value. Apple user initiated enrollment profiles
 func (m *DeviceManagement) SetAppleUserInitiatedEnrollmentProfiles(value []AppleUserInitiatedEnrollmentProfile)() {
-    m.appleUserInitiatedEnrollmentProfiles = value
+    if m != nil {
+        m.appleUserInitiatedEnrollmentProfiles = value
+    }
 }
 // SetAssignmentFilters sets the assignmentFilters property value. The list of assignment filters
 func (m *DeviceManagement) SetAssignmentFilters(value []DeviceAndAppManagementAssignmentFilter)() {
-    m.assignmentFilters = value
+    if m != nil {
+        m.assignmentFilters = value
+    }
 }
 // SetAuditEvents sets the auditEvents property value. The Audit Events
 func (m *DeviceManagement) SetAuditEvents(value []AuditEvent)() {
-    m.auditEvents = value
+    if m != nil {
+        m.auditEvents = value
+    }
 }
 // SetAutopilotEvents sets the autopilotEvents property value. The list of autopilot events for the tenant.
 func (m *DeviceManagement) SetAutopilotEvents(value []DeviceManagementAutopilotEvent)() {
-    m.autopilotEvents = value
+    if m != nil {
+        m.autopilotEvents = value
+    }
 }
 // SetCartToClassAssociations sets the cartToClassAssociations property value. The Cart To Class Associations.
 func (m *DeviceManagement) SetCartToClassAssociations(value []CartToClassAssociation)() {
-    m.cartToClassAssociations = value
+    if m != nil {
+        m.cartToClassAssociations = value
+    }
 }
 // SetCategories sets the categories property value. The available categories
 func (m *DeviceManagement) SetCategories(value []DeviceManagementSettingCategory)() {
-    m.categories = value
+    if m != nil {
+        m.categories = value
+    }
 }
 // SetCertificateConnectorDetails sets the certificateConnectorDetails property value. Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
 func (m *DeviceManagement) SetCertificateConnectorDetails(value []CertificateConnectorDetails)() {
-    m.certificateConnectorDetails = value
+    if m != nil {
+        m.certificateConnectorDetails = value
+    }
 }
 // SetChromeOSOnboardingSettings sets the chromeOSOnboardingSettings property value. Collection of ChromeOSOnboardingSettings settings associated with account.
 func (m *DeviceManagement) SetChromeOSOnboardingSettings(value []ChromeOSOnboardingSettings)() {
-    m.chromeOSOnboardingSettings = value
+    if m != nil {
+        m.chromeOSOnboardingSettings = value
+    }
 }
 // SetCloudPCConnectivityIssues sets the cloudPCConnectivityIssues property value. The list of CloudPC Connectivity Issue.
 func (m *DeviceManagement) SetCloudPCConnectivityIssues(value []CloudPCConnectivityIssue)() {
-    m.cloudPCConnectivityIssues = value
+    if m != nil {
+        m.cloudPCConnectivityIssues = value
+    }
 }
 // SetComanagedDevices sets the comanagedDevices property value. The list of co-managed devices report
 func (m *DeviceManagement) SetComanagedDevices(value []ManagedDevice)() {
-    m.comanagedDevices = value
+    if m != nil {
+        m.comanagedDevices = value
+    }
 }
 // SetComanagementEligibleDevices sets the comanagementEligibleDevices property value. The list of co-management eligible devices report
 func (m *DeviceManagement) SetComanagementEligibleDevices(value []ComanagementEligibleDevice)() {
-    m.comanagementEligibleDevices = value
+    if m != nil {
+        m.comanagementEligibleDevices = value
+    }
 }
 // SetComplianceCategories sets the complianceCategories property value. List of all compliance categories
 func (m *DeviceManagement) SetComplianceCategories(value []DeviceManagementConfigurationCategory)() {
-    m.complianceCategories = value
+    if m != nil {
+        m.complianceCategories = value
+    }
 }
 // SetComplianceManagementPartners sets the complianceManagementPartners property value. The list of Compliance Management Partners configured by the tenant.
 func (m *DeviceManagement) SetComplianceManagementPartners(value []ComplianceManagementPartner)() {
-    m.complianceManagementPartners = value
+    if m != nil {
+        m.complianceManagementPartners = value
+    }
 }
 // SetCompliancePolicies sets the compliancePolicies property value. List of all compliance policies
 func (m *DeviceManagement) SetCompliancePolicies(value []DeviceManagementCompliancePolicy)() {
-    m.compliancePolicies = value
+    if m != nil {
+        m.compliancePolicies = value
+    }
 }
 // SetComplianceSettings sets the complianceSettings property value. List of all ComplianceSettings
 func (m *DeviceManagement) SetComplianceSettings(value []DeviceManagementConfigurationSettingDefinition)() {
-    m.complianceSettings = value
+    if m != nil {
+        m.complianceSettings = value
+    }
 }
 // SetConditionalAccessSettings sets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 func (m *DeviceManagement) SetConditionalAccessSettings(value *OnPremisesConditionalAccessSettings)() {
-    m.conditionalAccessSettings = value
+    if m != nil {
+        m.conditionalAccessSettings = value
+    }
 }
 // SetConfigManagerCollections sets the configManagerCollections property value. A list of ConfigManagerCollection
 func (m *DeviceManagement) SetConfigManagerCollections(value []ConfigManagerCollection)() {
-    m.configManagerCollections = value
+    if m != nil {
+        m.configManagerCollections = value
+    }
 }
 // SetConfigurationCategories sets the configurationCategories property value. List of all Configuration Categories
 func (m *DeviceManagement) SetConfigurationCategories(value []DeviceManagementConfigurationCategory)() {
-    m.configurationCategories = value
+    if m != nil {
+        m.configurationCategories = value
+    }
 }
 // SetConfigurationPolicies sets the configurationPolicies property value. List of all Configuration policies
 func (m *DeviceManagement) SetConfigurationPolicies(value []DeviceManagementConfigurationPolicy)() {
-    m.configurationPolicies = value
+    if m != nil {
+        m.configurationPolicies = value
+    }
 }
 // SetConfigurationPolicyTemplates sets the configurationPolicyTemplates property value. List of all templates
 func (m *DeviceManagement) SetConfigurationPolicyTemplates(value []DeviceManagementConfigurationPolicyTemplate)() {
-    m.configurationPolicyTemplates = value
+    if m != nil {
+        m.configurationPolicyTemplates = value
+    }
 }
 // SetConfigurationSettings sets the configurationSettings property value. List of all ConfigurationSettings
 func (m *DeviceManagement) SetConfigurationSettings(value []DeviceManagementConfigurationSettingDefinition)() {
-    m.configurationSettings = value
+    if m != nil {
+        m.configurationSettings = value
+    }
 }
 // SetDataSharingConsents sets the dataSharingConsents property value. Data sharing consents.
 func (m *DeviceManagement) SetDataSharingConsents(value []DataSharingConsent)() {
-    m.dataSharingConsents = value
+    if m != nil {
+        m.dataSharingConsents = value
+    }
 }
 // SetDepOnboardingSettings sets the depOnboardingSettings property value. This collections of multiple DEP tokens per-tenant.
 func (m *DeviceManagement) SetDepOnboardingSettings(value []DepOnboardingSetting)() {
-    m.depOnboardingSettings = value
+    if m != nil {
+        m.depOnboardingSettings = value
+    }
 }
 // SetDerivedCredentials sets the derivedCredentials property value. Collection of Derived credential settings associated with account.
 func (m *DeviceManagement) SetDerivedCredentials(value []DeviceManagementDerivedCredentialSettings)() {
-    m.derivedCredentials = value
+    if m != nil {
+        m.derivedCredentials = value
+    }
 }
 // SetDetectedApps sets the detectedApps property value. The list of detected apps associated with a device.
 func (m *DeviceManagement) SetDetectedApps(value []DetectedApp)() {
-    m.detectedApps = value
+    if m != nil {
+        m.detectedApps = value
+    }
 }
 // SetDeviceCategories sets the deviceCategories property value. The list of device categories with the tenant.
 func (m *DeviceManagement) SetDeviceCategories(value []DeviceCategory)() {
-    m.deviceCategories = value
+    if m != nil {
+        m.deviceCategories = value
+    }
 }
 // SetDeviceCompliancePolicies sets the deviceCompliancePolicies property value. The device compliance policies.
 func (m *DeviceManagement) SetDeviceCompliancePolicies(value []DeviceCompliancePolicy)() {
-    m.deviceCompliancePolicies = value
+    if m != nil {
+        m.deviceCompliancePolicies = value
+    }
 }
 // SetDeviceCompliancePolicyDeviceStateSummary sets the deviceCompliancePolicyDeviceStateSummary property value. The device compliance state summary for this account.
 func (m *DeviceManagement) SetDeviceCompliancePolicyDeviceStateSummary(value *DeviceCompliancePolicyDeviceStateSummary)() {
-    m.deviceCompliancePolicyDeviceStateSummary = value
+    if m != nil {
+        m.deviceCompliancePolicyDeviceStateSummary = value
+    }
 }
 // SetDeviceCompliancePolicySettingStateSummaries sets the deviceCompliancePolicySettingStateSummaries property value. The summary states of compliance policy settings for this account.
 func (m *DeviceManagement) SetDeviceCompliancePolicySettingStateSummaries(value []DeviceCompliancePolicySettingStateSummary)() {
-    m.deviceCompliancePolicySettingStateSummaries = value
+    if m != nil {
+        m.deviceCompliancePolicySettingStateSummaries = value
+    }
 }
 // SetDeviceComplianceReportSummarizationDateTime sets the deviceComplianceReportSummarizationDateTime property value. The last requested time of device compliance reporting for this account. This property is read-only.
 func (m *DeviceManagement) SetDeviceComplianceReportSummarizationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.deviceComplianceReportSummarizationDateTime = value
+    if m != nil {
+        m.deviceComplianceReportSummarizationDateTime = value
+    }
 }
 // SetDeviceComplianceScripts sets the deviceComplianceScripts property value. The list of device compliance scripts associated with the tenant.
 func (m *DeviceManagement) SetDeviceComplianceScripts(value []DeviceComplianceScript)() {
-    m.deviceComplianceScripts = value
+    if m != nil {
+        m.deviceComplianceScripts = value
+    }
 }
 // SetDeviceConfigurationConflictSummary sets the deviceConfigurationConflictSummary property value. Summary of policies in conflict state for this account.
 func (m *DeviceManagement) SetDeviceConfigurationConflictSummary(value []DeviceConfigurationConflictSummary)() {
-    m.deviceConfigurationConflictSummary = value
+    if m != nil {
+        m.deviceConfigurationConflictSummary = value
+    }
 }
 // SetDeviceConfigurationDeviceStateSummaries sets the deviceConfigurationDeviceStateSummaries property value. The device configuration device state summary for this account.
 func (m *DeviceManagement) SetDeviceConfigurationDeviceStateSummaries(value *DeviceConfigurationDeviceStateSummary)() {
-    m.deviceConfigurationDeviceStateSummaries = value
+    if m != nil {
+        m.deviceConfigurationDeviceStateSummaries = value
+    }
 }
 // SetDeviceConfigurationRestrictedAppsViolations sets the deviceConfigurationRestrictedAppsViolations property value. Restricted apps violations for this account.
 func (m *DeviceManagement) SetDeviceConfigurationRestrictedAppsViolations(value []RestrictedAppsViolation)() {
-    m.deviceConfigurationRestrictedAppsViolations = value
+    if m != nil {
+        m.deviceConfigurationRestrictedAppsViolations = value
+    }
 }
 // SetDeviceConfigurations sets the deviceConfigurations property value. The device configurations.
 func (m *DeviceManagement) SetDeviceConfigurations(value []DeviceConfiguration)() {
-    m.deviceConfigurations = value
+    if m != nil {
+        m.deviceConfigurations = value
+    }
 }
 // SetDeviceConfigurationsAllManagedDeviceCertificateStates sets the deviceConfigurationsAllManagedDeviceCertificateStates property value. Summary of all certificates for all devices.
 func (m *DeviceManagement) SetDeviceConfigurationsAllManagedDeviceCertificateStates(value []ManagedAllDeviceCertificateState)() {
-    m.deviceConfigurationsAllManagedDeviceCertificateStates = value
+    if m != nil {
+        m.deviceConfigurationsAllManagedDeviceCertificateStates = value
+    }
 }
 // SetDeviceConfigurationUserStateSummaries sets the deviceConfigurationUserStateSummaries property value. The device configuration user state summary for this account.
 func (m *DeviceManagement) SetDeviceConfigurationUserStateSummaries(value *DeviceConfigurationUserStateSummary)() {
-    m.deviceConfigurationUserStateSummaries = value
+    if m != nil {
+        m.deviceConfigurationUserStateSummaries = value
+    }
 }
 // SetDeviceCustomAttributeShellScripts sets the deviceCustomAttributeShellScripts property value. The list of device custom attribute shell scripts associated with the tenant.
 func (m *DeviceManagement) SetDeviceCustomAttributeShellScripts(value []DeviceCustomAttributeShellScript)() {
-    m.deviceCustomAttributeShellScripts = value
+    if m != nil {
+        m.deviceCustomAttributeShellScripts = value
+    }
 }
 // SetDeviceEnrollmentConfigurations sets the deviceEnrollmentConfigurations property value. The list of device enrollment configurations
 func (m *DeviceManagement) SetDeviceEnrollmentConfigurations(value []DeviceEnrollmentConfiguration)() {
-    m.deviceEnrollmentConfigurations = value
+    if m != nil {
+        m.deviceEnrollmentConfigurations = value
+    }
 }
 // SetDeviceHealthScripts sets the deviceHealthScripts property value. The list of device health scripts associated with the tenant.
 func (m *DeviceManagement) SetDeviceHealthScripts(value []DeviceHealthScript)() {
-    m.deviceHealthScripts = value
+    if m != nil {
+        m.deviceHealthScripts = value
+    }
 }
 // SetDeviceManagementPartners sets the deviceManagementPartners property value. The list of Device Management Partners configured by the tenant.
 func (m *DeviceManagement) SetDeviceManagementPartners(value []DeviceManagementPartner)() {
-    m.deviceManagementPartners = value
+    if m != nil {
+        m.deviceManagementPartners = value
+    }
 }
 // SetDeviceManagementScripts sets the deviceManagementScripts property value. The list of device management scripts associated with the tenant.
 func (m *DeviceManagement) SetDeviceManagementScripts(value []DeviceManagementScript)() {
-    m.deviceManagementScripts = value
+    if m != nil {
+        m.deviceManagementScripts = value
+    }
 }
 // SetDeviceProtectionOverview sets the deviceProtectionOverview property value. Device protection overview.
 func (m *DeviceManagement) SetDeviceProtectionOverview(value *DeviceProtectionOverview)() {
-    m.deviceProtectionOverview = value
+    if m != nil {
+        m.deviceProtectionOverview = value
+    }
 }
 // SetDeviceShellScripts sets the deviceShellScripts property value. The list of device shell scripts associated with the tenant.
 func (m *DeviceManagement) SetDeviceShellScripts(value []DeviceShellScript)() {
-    m.deviceShellScripts = value
+    if m != nil {
+        m.deviceShellScripts = value
+    }
 }
 // SetDomainJoinConnectors sets the domainJoinConnectors property value. A list of connector objects.
 func (m *DeviceManagement) SetDomainJoinConnectors(value []DeviceManagementDomainJoinConnector)() {
-    m.domainJoinConnectors = value
+    if m != nil {
+        m.domainJoinConnectors = value
+    }
 }
 // SetEmbeddedSIMActivationCodePools sets the embeddedSIMActivationCodePools property value. The embedded SIM activation code pools created by this account.
 func (m *DeviceManagement) SetEmbeddedSIMActivationCodePools(value []EmbeddedSIMActivationCodePool)() {
-    m.embeddedSIMActivationCodePools = value
+    if m != nil {
+        m.embeddedSIMActivationCodePools = value
+    }
 }
 // SetExchangeConnectors sets the exchangeConnectors property value. The list of Exchange Connectors configured by the tenant.
 func (m *DeviceManagement) SetExchangeConnectors(value []DeviceManagementExchangeConnector)() {
-    m.exchangeConnectors = value
+    if m != nil {
+        m.exchangeConnectors = value
+    }
 }
 // SetExchangeOnPremisesPolicies sets the exchangeOnPremisesPolicies property value. The list of Exchange On Premisis policies configured by the tenant.
 func (m *DeviceManagement) SetExchangeOnPremisesPolicies(value []DeviceManagementExchangeOnPremisesPolicy)() {
-    m.exchangeOnPremisesPolicies = value
+    if m != nil {
+        m.exchangeOnPremisesPolicies = value
+    }
 }
 // SetExchangeOnPremisesPolicy sets the exchangeOnPremisesPolicy property value. The policy which controls mobile device access to Exchange On Premises
 func (m *DeviceManagement) SetExchangeOnPremisesPolicy(value *DeviceManagementExchangeOnPremisesPolicy)() {
-    m.exchangeOnPremisesPolicy = value
+    if m != nil {
+        m.exchangeOnPremisesPolicy = value
+    }
 }
 // SetGroupPolicyCategories sets the groupPolicyCategories property value. The available group policy categories for this account.
 func (m *DeviceManagement) SetGroupPolicyCategories(value []GroupPolicyCategory)() {
-    m.groupPolicyCategories = value
+    if m != nil {
+        m.groupPolicyCategories = value
+    }
 }
 // SetGroupPolicyConfigurations sets the groupPolicyConfigurations property value. The group policy configurations created by this account.
 func (m *DeviceManagement) SetGroupPolicyConfigurations(value []GroupPolicyConfiguration)() {
-    m.groupPolicyConfigurations = value
+    if m != nil {
+        m.groupPolicyConfigurations = value
+    }
 }
 // SetGroupPolicyDefinitionFiles sets the groupPolicyDefinitionFiles property value. The available group policy definition files for this account.
 func (m *DeviceManagement) SetGroupPolicyDefinitionFiles(value []GroupPolicyDefinitionFile)() {
-    m.groupPolicyDefinitionFiles = value
+    if m != nil {
+        m.groupPolicyDefinitionFiles = value
+    }
 }
 // SetGroupPolicyDefinitions sets the groupPolicyDefinitions property value. The available group policy definitions for this account.
 func (m *DeviceManagement) SetGroupPolicyDefinitions(value []GroupPolicyDefinition)() {
-    m.groupPolicyDefinitions = value
+    if m != nil {
+        m.groupPolicyDefinitions = value
+    }
 }
 // SetGroupPolicyMigrationReports sets the groupPolicyMigrationReports property value. A list of Group Policy migration reports.
 func (m *DeviceManagement) SetGroupPolicyMigrationReports(value []GroupPolicyMigrationReport)() {
-    m.groupPolicyMigrationReports = value
+    if m != nil {
+        m.groupPolicyMigrationReports = value
+    }
 }
 // SetGroupPolicyObjectFiles sets the groupPolicyObjectFiles property value. A list of Group Policy Object files uploaded.
 func (m *DeviceManagement) SetGroupPolicyObjectFiles(value []GroupPolicyObjectFile)() {
-    m.groupPolicyObjectFiles = value
+    if m != nil {
+        m.groupPolicyObjectFiles = value
+    }
 }
 // SetGroupPolicyUploadedDefinitionFiles sets the groupPolicyUploadedDefinitionFiles property value. The available group policy uploaded definition files for this account.
 func (m *DeviceManagement) SetGroupPolicyUploadedDefinitionFiles(value []GroupPolicyUploadedDefinitionFile)() {
-    m.groupPolicyUploadedDefinitionFiles = value
+    if m != nil {
+        m.groupPolicyUploadedDefinitionFiles = value
+    }
 }
 // SetImportedDeviceIdentities sets the importedDeviceIdentities property value. The imported device identities.
 func (m *DeviceManagement) SetImportedDeviceIdentities(value []ImportedDeviceIdentity)() {
-    m.importedDeviceIdentities = value
+    if m != nil {
+        m.importedDeviceIdentities = value
+    }
 }
 // SetImportedWindowsAutopilotDeviceIdentities sets the importedWindowsAutopilotDeviceIdentities property value. Collection of imported Windows autopilot devices.
 func (m *DeviceManagement) SetImportedWindowsAutopilotDeviceIdentities(value []ImportedWindowsAutopilotDeviceIdentity)() {
-    m.importedWindowsAutopilotDeviceIdentities = value
+    if m != nil {
+        m.importedWindowsAutopilotDeviceIdentities = value
+    }
 }
 // SetIntents sets the intents property value. The device management intents
 func (m *DeviceManagement) SetIntents(value []DeviceManagementIntent)() {
-    m.intents = value
+    if m != nil {
+        m.intents = value
+    }
 }
 // SetIntuneAccountId sets the intuneAccountId property value. Intune Account Id for given tenant
 func (m *DeviceManagement) SetIntuneAccountId(value *string)() {
-    m.intuneAccountId = value
+    if m != nil {
+        m.intuneAccountId = value
+    }
 }
 // SetIntuneBrand sets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
 func (m *DeviceManagement) SetIntuneBrand(value *IntuneBrand)() {
-    m.intuneBrand = value
+    if m != nil {
+        m.intuneBrand = value
+    }
 }
 // SetIntuneBrandingProfiles sets the intuneBrandingProfiles property value. Intune branding profiles targeted to AAD groups
 func (m *DeviceManagement) SetIntuneBrandingProfiles(value []IntuneBrandingProfile)() {
-    m.intuneBrandingProfiles = value
+    if m != nil {
+        m.intuneBrandingProfiles = value
+    }
 }
 // SetIosUpdateStatuses sets the iosUpdateStatuses property value. The IOS software update installation statuses for this account.
 func (m *DeviceManagement) SetIosUpdateStatuses(value []IosUpdateDeviceStatus)() {
-    m.iosUpdateStatuses = value
+    if m != nil {
+        m.iosUpdateStatuses = value
+    }
 }
 // SetLastReportAggregationDateTime sets the lastReportAggregationDateTime property value. The last modified time of reporting for this account. This property is read-only.
 func (m *DeviceManagement) SetLastReportAggregationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastReportAggregationDateTime = value
+    if m != nil {
+        m.lastReportAggregationDateTime = value
+    }
 }
 // SetLegacyPcManangementEnabled sets the legacyPcManangementEnabled property value. The property to enable Non-MDM managed legacy PC management for this account. This property is read-only.
 func (m *DeviceManagement) SetLegacyPcManangementEnabled(value *bool)() {
-    m.legacyPcManangementEnabled = value
+    if m != nil {
+        m.legacyPcManangementEnabled = value
+    }
 }
 // SetMacOSSoftwareUpdateAccountSummaries sets the macOSSoftwareUpdateAccountSummaries property value. The MacOS software update account summaries for this account.
 func (m *DeviceManagement) SetMacOSSoftwareUpdateAccountSummaries(value []MacOSSoftwareUpdateAccountSummary)() {
-    m.macOSSoftwareUpdateAccountSummaries = value
+    if m != nil {
+        m.macOSSoftwareUpdateAccountSummaries = value
+    }
 }
 // SetManagedDeviceCleanupSettings sets the managedDeviceCleanupSettings property value. Device cleanup rule
 func (m *DeviceManagement) SetManagedDeviceCleanupSettings(value *ManagedDeviceCleanupSettings)() {
-    m.managedDeviceCleanupSettings = value
+    if m != nil {
+        m.managedDeviceCleanupSettings = value
+    }
 }
 // SetManagedDeviceEncryptionStates sets the managedDeviceEncryptionStates property value. Encryption report for devices in this account
 func (m *DeviceManagement) SetManagedDeviceEncryptionStates(value []ManagedDeviceEncryptionState)() {
-    m.managedDeviceEncryptionStates = value
+    if m != nil {
+        m.managedDeviceEncryptionStates = value
+    }
 }
 // SetManagedDeviceOverview sets the managedDeviceOverview property value. Device overview
 func (m *DeviceManagement) SetManagedDeviceOverview(value *ManagedDeviceOverview)() {
-    m.managedDeviceOverview = value
+    if m != nil {
+        m.managedDeviceOverview = value
+    }
 }
 // SetManagedDevices sets the managedDevices property value. The list of managed devices.
 func (m *DeviceManagement) SetManagedDevices(value []ManagedDevice)() {
-    m.managedDevices = value
+    if m != nil {
+        m.managedDevices = value
+    }
 }
 // SetManagementConditions sets the managementConditions property value. The management conditions associated with device management of the company.
 func (m *DeviceManagement) SetManagementConditions(value []ManagementCondition)() {
-    m.managementConditions = value
+    if m != nil {
+        m.managementConditions = value
+    }
 }
 // SetManagementConditionStatements sets the managementConditionStatements property value. The management condition statements associated with device management of the company.
 func (m *DeviceManagement) SetManagementConditionStatements(value []ManagementConditionStatement)() {
-    m.managementConditionStatements = value
+    if m != nil {
+        m.managementConditionStatements = value
+    }
 }
 // SetMaximumDepTokens sets the maximumDepTokens property value. Maximum number of DEP tokens allowed per-tenant.
 func (m *DeviceManagement) SetMaximumDepTokens(value *int32)() {
-    m.maximumDepTokens = value
+    if m != nil {
+        m.maximumDepTokens = value
+    }
 }
 // SetMicrosoftTunnelConfigurations sets the microsoftTunnelConfigurations property value. Collection of MicrosoftTunnelConfiguration settings associated with account.
 func (m *DeviceManagement) SetMicrosoftTunnelConfigurations(value []MicrosoftTunnelConfiguration)() {
-    m.microsoftTunnelConfigurations = value
+    if m != nil {
+        m.microsoftTunnelConfigurations = value
+    }
 }
 // SetMicrosoftTunnelHealthThresholds sets the microsoftTunnelHealthThresholds property value. Collection of MicrosoftTunnelHealthThreshold settings associated with account.
 func (m *DeviceManagement) SetMicrosoftTunnelHealthThresholds(value []MicrosoftTunnelHealthThreshold)() {
-    m.microsoftTunnelHealthThresholds = value
+    if m != nil {
+        m.microsoftTunnelHealthThresholds = value
+    }
 }
 // SetMicrosoftTunnelServerLogCollectionResponses sets the microsoftTunnelServerLogCollectionResponses property value. Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
 func (m *DeviceManagement) SetMicrosoftTunnelServerLogCollectionResponses(value []MicrosoftTunnelServerLogCollectionResponse)() {
-    m.microsoftTunnelServerLogCollectionResponses = value
+    if m != nil {
+        m.microsoftTunnelServerLogCollectionResponses = value
+    }
 }
 // SetMicrosoftTunnelSites sets the microsoftTunnelSites property value. Collection of MicrosoftTunnelSite settings associated with account.
 func (m *DeviceManagement) SetMicrosoftTunnelSites(value []MicrosoftTunnelSite)() {
-    m.microsoftTunnelSites = value
+    if m != nil {
+        m.microsoftTunnelSites = value
+    }
 }
 // SetMobileAppTroubleshootingEvents sets the mobileAppTroubleshootingEvents property value. The collection property of MobileAppTroubleshootingEvent.
 func (m *DeviceManagement) SetMobileAppTroubleshootingEvents(value []MobileAppTroubleshootingEvent)() {
-    m.mobileAppTroubleshootingEvents = value
+    if m != nil {
+        m.mobileAppTroubleshootingEvents = value
+    }
 }
 // SetMobileThreatDefenseConnectors sets the mobileThreatDefenseConnectors property value. The list of Mobile threat Defense connectors configured by the tenant.
 func (m *DeviceManagement) SetMobileThreatDefenseConnectors(value []MobileThreatDefenseConnector)() {
-    m.mobileThreatDefenseConnectors = value
+    if m != nil {
+        m.mobileThreatDefenseConnectors = value
+    }
 }
 // SetNdesConnectors sets the ndesConnectors property value. The collection of Ndes connectors for this account.
 func (m *DeviceManagement) SetNdesConnectors(value []NdesConnector)() {
-    m.ndesConnectors = value
+    if m != nil {
+        m.ndesConnectors = value
+    }
 }
 // SetNotificationMessageTemplates sets the notificationMessageTemplates property value. The Notification Message Templates.
 func (m *DeviceManagement) SetNotificationMessageTemplates(value []NotificationMessageTemplate)() {
-    m.notificationMessageTemplates = value
+    if m != nil {
+        m.notificationMessageTemplates = value
+    }
 }
 // SetRemoteActionAudits sets the remoteActionAudits property value. The list of device remote action audits with the tenant.
 func (m *DeviceManagement) SetRemoteActionAudits(value []RemoteActionAudit)() {
-    m.remoteActionAudits = value
+    if m != nil {
+        m.remoteActionAudits = value
+    }
 }
 // SetRemoteAssistancePartners sets the remoteAssistancePartners property value. The remote assist partners.
 func (m *DeviceManagement) SetRemoteAssistancePartners(value []RemoteAssistancePartner)() {
-    m.remoteAssistancePartners = value
+    if m != nil {
+        m.remoteAssistancePartners = value
+    }
 }
 // SetRemoteAssistanceSettings sets the remoteAssistanceSettings property value. The remote assistance settings singleton
 func (m *DeviceManagement) SetRemoteAssistanceSettings(value *RemoteAssistanceSettings)() {
-    m.remoteAssistanceSettings = value
+    if m != nil {
+        m.remoteAssistanceSettings = value
+    }
 }
 // SetReports sets the reports property value. Reports singleton
 func (m *DeviceManagement) SetReports(value *DeviceManagementReports)() {
-    m.reports = value
+    if m != nil {
+        m.reports = value
+    }
 }
 // SetResourceAccessProfiles sets the resourceAccessProfiles property value. Collection of resource access settings associated with account.
 func (m *DeviceManagement) SetResourceAccessProfiles(value []DeviceManagementResourceAccessProfileBase)() {
-    m.resourceAccessProfiles = value
+    if m != nil {
+        m.resourceAccessProfiles = value
+    }
 }
 // SetResourceOperations sets the resourceOperations property value. The Resource Operations.
 func (m *DeviceManagement) SetResourceOperations(value []ResourceOperation)() {
-    m.resourceOperations = value
+    if m != nil {
+        m.resourceOperations = value
+    }
 }
 // SetReusablePolicySettings sets the reusablePolicySettings property value. List of all reusable settings that can be referred in a policy
 func (m *DeviceManagement) SetReusablePolicySettings(value []DeviceManagementReusablePolicySetting)() {
-    m.reusablePolicySettings = value
+    if m != nil {
+        m.reusablePolicySettings = value
+    }
 }
 // SetReusableSettings sets the reusableSettings property value. List of all reusable settings
 func (m *DeviceManagement) SetReusableSettings(value []DeviceManagementConfigurationSettingDefinition)() {
-    m.reusableSettings = value
+    if m != nil {
+        m.reusableSettings = value
+    }
 }
 // SetRoleAssignments sets the roleAssignments property value. The Role Assignments.
 func (m *DeviceManagement) SetRoleAssignments(value []DeviceAndAppManagementRoleAssignment)() {
-    m.roleAssignments = value
+    if m != nil {
+        m.roleAssignments = value
+    }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. The Role Definitions.
 func (m *DeviceManagement) SetRoleDefinitions(value []RoleDefinition)() {
-    m.roleDefinitions = value
+    if m != nil {
+        m.roleDefinitions = value
+    }
 }
 // SetRoleScopeTags sets the roleScopeTags property value. The Role Scope Tags.
 func (m *DeviceManagement) SetRoleScopeTags(value []RoleScopeTag)() {
-    m.roleScopeTags = value
+    if m != nil {
+        m.roleScopeTags = value
+    }
 }
 // SetSettingDefinitions sets the settingDefinitions property value. The device management intent setting definitions
 func (m *DeviceManagement) SetSettingDefinitions(value []DeviceManagementSettingDefinition)() {
-    m.settingDefinitions = value
+    if m != nil {
+        m.settingDefinitions = value
+    }
 }
 // SetSettings sets the settings property value. Account level settings.
 func (m *DeviceManagement) SetSettings(value *DeviceManagementSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }
 // SetSoftwareUpdateStatusSummary sets the softwareUpdateStatusSummary property value. The software update status summary.
 func (m *DeviceManagement) SetSoftwareUpdateStatusSummary(value *SoftwareUpdateStatusSummary)() {
-    m.softwareUpdateStatusSummary = value
+    if m != nil {
+        m.softwareUpdateStatusSummary = value
+    }
 }
 // SetSubscriptions sets the subscriptions property value. Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.
 func (m *DeviceManagement) SetSubscriptions(value *DeviceManagementSubscriptions)() {
-    m.subscriptions = value
+    if m != nil {
+        m.subscriptions = value
+    }
 }
 // SetSubscriptionState sets the subscriptionState property value. Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
 func (m *DeviceManagement) SetSubscriptionState(value *DeviceManagementSubscriptionState)() {
-    m.subscriptionState = value
+    if m != nil {
+        m.subscriptionState = value
+    }
 }
 // SetTelecomExpenseManagementPartners sets the telecomExpenseManagementPartners property value. The telecom expense management partners.
 func (m *DeviceManagement) SetTelecomExpenseManagementPartners(value []TelecomExpenseManagementPartner)() {
-    m.telecomExpenseManagementPartners = value
+    if m != nil {
+        m.telecomExpenseManagementPartners = value
+    }
 }
 // SetTemplates sets the templates property value. The available templates
 func (m *DeviceManagement) SetTemplates(value []DeviceManagementTemplate)() {
-    m.templates = value
+    if m != nil {
+        m.templates = value
+    }
 }
 // SetTemplateSettings sets the templateSettings property value. List of all TemplateSettings
 func (m *DeviceManagement) SetTemplateSettings(value []DeviceManagementConfigurationSettingTemplate)() {
-    m.templateSettings = value
+    if m != nil {
+        m.templateSettings = value
+    }
 }
 // SetTermsAndConditions sets the termsAndConditions property value. The terms and conditions associated with device management of the company.
 func (m *DeviceManagement) SetTermsAndConditions(value []TermsAndConditions)() {
-    m.termsAndConditions = value
+    if m != nil {
+        m.termsAndConditions = value
+    }
 }
 // SetTroubleshootingEvents sets the troubleshootingEvents property value. The list of troubleshooting events for the tenant.
 func (m *DeviceManagement) SetTroubleshootingEvents(value []DeviceManagementTroubleshootingEvent)() {
-    m.troubleshootingEvents = value
+    if m != nil {
+        m.troubleshootingEvents = value
+    }
 }
 // SetUnlicensedAdminstratorsEnabled sets the unlicensedAdminstratorsEnabled property value. When enabled, users assigned as administrators via Role Assignment Memberships do not require an assigned Intune license. Prior to this, only Intune licensed users were granted permissions with an Intune role unless they were assigned a role via Azure Active Directory. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators are unaffected, do not have to be direct members, nor does the 350 member limit apply. This property is read-only.
 func (m *DeviceManagement) SetUnlicensedAdminstratorsEnabled(value *bool)() {
-    m.unlicensedAdminstratorsEnabled = value
+    if m != nil {
+        m.unlicensedAdminstratorsEnabled = value
+    }
 }
 // SetUserExperienceAnalyticsAppHealthApplicationPerformance sets the userExperienceAnalyticsAppHealthApplicationPerformance property value. User experience analytics appHealth Application Performance
 func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthApplicationPerformance(value []UserExperienceAnalyticsAppHealthApplicationPerformance)() {
-    m.userExperienceAnalyticsAppHealthApplicationPerformance = value
+    if m != nil {
+        m.userExperienceAnalyticsAppHealthApplicationPerformance = value
+    }
 }
 // SetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion sets the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property value. User experience analytics appHealth Application Performance by App Version
 func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion(value []UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion)() {
-    m.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion = value
+    if m != nil {
+        m.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion = value
+    }
 }
 // SetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails sets the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property value. User experience analytics appHealth Application Performance by App Version details
 func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails(value []UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails)() {
-    m.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails = value
+    if m != nil {
+        m.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails = value
+    }
 }
 // SetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId sets the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property value. User experience analytics appHealth Application Performance by App Version Device Id
 func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId(value []UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId)() {
-    m.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId = value
+    if m != nil {
+        m.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId = value
+    }
 }
 // SetUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion sets the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property value. User experience analytics appHealth Application Performance by OS Version
 func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion(value []UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion)() {
-    m.userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion = value
+    if m != nil {
+        m.userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion = value
+    }
 }
 // SetUserExperienceAnalyticsAppHealthDeviceModelPerformance sets the userExperienceAnalyticsAppHealthDeviceModelPerformance property value. User experience analytics appHealth Model Performance
 func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthDeviceModelPerformance(value []UserExperienceAnalyticsAppHealthDeviceModelPerformance)() {
-    m.userExperienceAnalyticsAppHealthDeviceModelPerformance = value
+    if m != nil {
+        m.userExperienceAnalyticsAppHealthDeviceModelPerformance = value
+    }
 }
 // SetUserExperienceAnalyticsAppHealthDevicePerformance sets the userExperienceAnalyticsAppHealthDevicePerformance property value. User experience analytics appHealth Device Performance
 func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthDevicePerformance(value []UserExperienceAnalyticsAppHealthDevicePerformance)() {
-    m.userExperienceAnalyticsAppHealthDevicePerformance = value
+    if m != nil {
+        m.userExperienceAnalyticsAppHealthDevicePerformance = value
+    }
 }
 // SetUserExperienceAnalyticsAppHealthDevicePerformanceDetails sets the userExperienceAnalyticsAppHealthDevicePerformanceDetails property value. User experience analytics device performance details
 func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthDevicePerformanceDetails(value []UserExperienceAnalyticsAppHealthDevicePerformanceDetails)() {
-    m.userExperienceAnalyticsAppHealthDevicePerformanceDetails = value
+    if m != nil {
+        m.userExperienceAnalyticsAppHealthDevicePerformanceDetails = value
+    }
 }
 // SetUserExperienceAnalyticsAppHealthOSVersionPerformance sets the userExperienceAnalyticsAppHealthOSVersionPerformance property value. User experience analytics appHealth OS version Performance
 func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthOSVersionPerformance(value []UserExperienceAnalyticsAppHealthOSVersionPerformance)() {
-    m.userExperienceAnalyticsAppHealthOSVersionPerformance = value
+    if m != nil {
+        m.userExperienceAnalyticsAppHealthOSVersionPerformance = value
+    }
 }
 // SetUserExperienceAnalyticsAppHealthOverview sets the userExperienceAnalyticsAppHealthOverview property value. User experience analytics appHealth overview
 func (m *DeviceManagement) SetUserExperienceAnalyticsAppHealthOverview(value *UserExperienceAnalyticsCategory)() {
-    m.userExperienceAnalyticsAppHealthOverview = value
+    if m != nil {
+        m.userExperienceAnalyticsAppHealthOverview = value
+    }
 }
 // SetUserExperienceAnalyticsBaselines sets the userExperienceAnalyticsBaselines property value. User experience analytics baselines
 func (m *DeviceManagement) SetUserExperienceAnalyticsBaselines(value []UserExperienceAnalyticsBaseline)() {
-    m.userExperienceAnalyticsBaselines = value
+    if m != nil {
+        m.userExperienceAnalyticsBaselines = value
+    }
 }
 // SetUserExperienceAnalyticsBatteryHealthAppImpact sets the userExperienceAnalyticsBatteryHealthAppImpact property value. User Experience Analytics Battery Health App Impact
 func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthAppImpact(value []UserExperienceAnalyticsBatteryHealthAppImpact)() {
-    m.userExperienceAnalyticsBatteryHealthAppImpact = value
+    if m != nil {
+        m.userExperienceAnalyticsBatteryHealthAppImpact = value
+    }
 }
 // SetUserExperienceAnalyticsBatteryHealthCapacityDetails sets the userExperienceAnalyticsBatteryHealthCapacityDetails property value. User Experience Analytics Battery Health Capacity Details
 func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthCapacityDetails(value *UserExperienceAnalyticsBatteryHealthCapacityDetails)() {
-    m.userExperienceAnalyticsBatteryHealthCapacityDetails = value
+    if m != nil {
+        m.userExperienceAnalyticsBatteryHealthCapacityDetails = value
+    }
 }
 // SetUserExperienceAnalyticsBatteryHealthDeviceAppImpact sets the userExperienceAnalyticsBatteryHealthDeviceAppImpact property value. User Experience Analytics Battery Health Device App Impact
 func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthDeviceAppImpact(value []UserExperienceAnalyticsBatteryHealthDeviceAppImpact)() {
-    m.userExperienceAnalyticsBatteryHealthDeviceAppImpact = value
+    if m != nil {
+        m.userExperienceAnalyticsBatteryHealthDeviceAppImpact = value
+    }
 }
 // SetUserExperienceAnalyticsBatteryHealthDevicePerformance sets the userExperienceAnalyticsBatteryHealthDevicePerformance property value. User Experience Analytics Battery Health Device Performance
 func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthDevicePerformance(value []UserExperienceAnalyticsBatteryHealthDevicePerformance)() {
-    m.userExperienceAnalyticsBatteryHealthDevicePerformance = value
+    if m != nil {
+        m.userExperienceAnalyticsBatteryHealthDevicePerformance = value
+    }
 }
 // SetUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory sets the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property value. User Experience Analytics Battery Health Device Runtime History
 func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory(value []UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory)() {
-    m.userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory = value
+    if m != nil {
+        m.userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory = value
+    }
 }
 // SetUserExperienceAnalyticsBatteryHealthModelPerformance sets the userExperienceAnalyticsBatteryHealthModelPerformance property value. User Experience Analytics Battery Health Model Performance
 func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthModelPerformance(value []UserExperienceAnalyticsBatteryHealthModelPerformance)() {
-    m.userExperienceAnalyticsBatteryHealthModelPerformance = value
+    if m != nil {
+        m.userExperienceAnalyticsBatteryHealthModelPerformance = value
+    }
 }
 // SetUserExperienceAnalyticsBatteryHealthOsPerformance sets the userExperienceAnalyticsBatteryHealthOsPerformance property value. User Experience Analytics Battery Health Os Performance
 func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthOsPerformance(value []UserExperienceAnalyticsBatteryHealthOsPerformance)() {
-    m.userExperienceAnalyticsBatteryHealthOsPerformance = value
+    if m != nil {
+        m.userExperienceAnalyticsBatteryHealthOsPerformance = value
+    }
 }
 // SetUserExperienceAnalyticsBatteryHealthRuntimeDetails sets the userExperienceAnalyticsBatteryHealthRuntimeDetails property value. User Experience Analytics Battery Health Runtime Details
 func (m *DeviceManagement) SetUserExperienceAnalyticsBatteryHealthRuntimeDetails(value *UserExperienceAnalyticsBatteryHealthRuntimeDetails)() {
-    m.userExperienceAnalyticsBatteryHealthRuntimeDetails = value
+    if m != nil {
+        m.userExperienceAnalyticsBatteryHealthRuntimeDetails = value
+    }
 }
 // SetUserExperienceAnalyticsCategories sets the userExperienceAnalyticsCategories property value. User experience analytics categories
 func (m *DeviceManagement) SetUserExperienceAnalyticsCategories(value []UserExperienceAnalyticsCategory)() {
-    m.userExperienceAnalyticsCategories = value
+    if m != nil {
+        m.userExperienceAnalyticsCategories = value
+    }
 }
 // SetUserExperienceAnalyticsDeviceMetricHistory sets the userExperienceAnalyticsDeviceMetricHistory property value. User experience analytics device metric history
 func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceMetricHistory(value []UserExperienceAnalyticsMetricHistory)() {
-    m.userExperienceAnalyticsDeviceMetricHistory = value
+    if m != nil {
+        m.userExperienceAnalyticsDeviceMetricHistory = value
+    }
 }
 // SetUserExperienceAnalyticsDevicePerformance sets the userExperienceAnalyticsDevicePerformance property value. User experience analytics device performance
 func (m *DeviceManagement) SetUserExperienceAnalyticsDevicePerformance(value []UserExperienceAnalyticsDevicePerformance)() {
-    m.userExperienceAnalyticsDevicePerformance = value
+    if m != nil {
+        m.userExperienceAnalyticsDevicePerformance = value
+    }
 }
 // SetUserExperienceAnalyticsDeviceScores sets the userExperienceAnalyticsDeviceScores property value. User experience analytics device scores
 func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceScores(value []UserExperienceAnalyticsDeviceScores)() {
-    m.userExperienceAnalyticsDeviceScores = value
+    if m != nil {
+        m.userExperienceAnalyticsDeviceScores = value
+    }
 }
 // SetUserExperienceAnalyticsDeviceStartupHistory sets the userExperienceAnalyticsDeviceStartupHistory property value. User experience analytics device Startup History
 func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceStartupHistory(value []UserExperienceAnalyticsDeviceStartupHistory)() {
-    m.userExperienceAnalyticsDeviceStartupHistory = value
+    if m != nil {
+        m.userExperienceAnalyticsDeviceStartupHistory = value
+    }
 }
 // SetUserExperienceAnalyticsDeviceStartupProcesses sets the userExperienceAnalyticsDeviceStartupProcesses property value. User experience analytics device Startup Processes
 func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceStartupProcesses(value []UserExperienceAnalyticsDeviceStartupProcess)() {
-    m.userExperienceAnalyticsDeviceStartupProcesses = value
+    if m != nil {
+        m.userExperienceAnalyticsDeviceStartupProcesses = value
+    }
 }
 // SetUserExperienceAnalyticsDeviceStartupProcessPerformance sets the userExperienceAnalyticsDeviceStartupProcessPerformance property value. User experience analytics device Startup Process Performance
 func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceStartupProcessPerformance(value []UserExperienceAnalyticsDeviceStartupProcessPerformance)() {
-    m.userExperienceAnalyticsDeviceStartupProcessPerformance = value
+    if m != nil {
+        m.userExperienceAnalyticsDeviceStartupProcessPerformance = value
+    }
 }
 // SetUserExperienceAnalyticsDevicesWithoutCloudIdentity sets the userExperienceAnalyticsDevicesWithoutCloudIdentity property value. User experience analytics devices without cloud identity.
 func (m *DeviceManagement) SetUserExperienceAnalyticsDevicesWithoutCloudIdentity(value []UserExperienceAnalyticsDeviceWithoutCloudIdentity)() {
-    m.userExperienceAnalyticsDevicesWithoutCloudIdentity = value
+    if m != nil {
+        m.userExperienceAnalyticsDevicesWithoutCloudIdentity = value
+    }
 }
 // SetUserExperienceAnalyticsImpactingProcess sets the userExperienceAnalyticsImpactingProcess property value. User experience analytics impacting process
 func (m *DeviceManagement) SetUserExperienceAnalyticsImpactingProcess(value []UserExperienceAnalyticsImpactingProcess)() {
-    m.userExperienceAnalyticsImpactingProcess = value
+    if m != nil {
+        m.userExperienceAnalyticsImpactingProcess = value
+    }
 }
 // SetUserExperienceAnalyticsMetricHistory sets the userExperienceAnalyticsMetricHistory property value. User experience analytics metric history
 func (m *DeviceManagement) SetUserExperienceAnalyticsMetricHistory(value []UserExperienceAnalyticsMetricHistory)() {
-    m.userExperienceAnalyticsMetricHistory = value
+    if m != nil {
+        m.userExperienceAnalyticsMetricHistory = value
+    }
 }
 // SetUserExperienceAnalyticsModelScores sets the userExperienceAnalyticsModelScores property value. User experience analytics model scores
 func (m *DeviceManagement) SetUserExperienceAnalyticsModelScores(value []UserExperienceAnalyticsModelScores)() {
-    m.userExperienceAnalyticsModelScores = value
+    if m != nil {
+        m.userExperienceAnalyticsModelScores = value
+    }
 }
 // SetUserExperienceAnalyticsNotAutopilotReadyDevice sets the userExperienceAnalyticsNotAutopilotReadyDevice property value. User experience analytics devices not Windows Autopilot ready.
 func (m *DeviceManagement) SetUserExperienceAnalyticsNotAutopilotReadyDevice(value []UserExperienceAnalyticsNotAutopilotReadyDevice)() {
-    m.userExperienceAnalyticsNotAutopilotReadyDevice = value
+    if m != nil {
+        m.userExperienceAnalyticsNotAutopilotReadyDevice = value
+    }
 }
 // SetUserExperienceAnalyticsOverview sets the userExperienceAnalyticsOverview property value. User experience analytics overview
 func (m *DeviceManagement) SetUserExperienceAnalyticsOverview(value *UserExperienceAnalyticsOverview)() {
-    m.userExperienceAnalyticsOverview = value
+    if m != nil {
+        m.userExperienceAnalyticsOverview = value
+    }
 }
 // SetUserExperienceAnalyticsRegressionSummary sets the userExperienceAnalyticsRegressionSummary property value. User experience analytics regression summary
 func (m *DeviceManagement) SetUserExperienceAnalyticsRegressionSummary(value *UserExperienceAnalyticsRegressionSummary)() {
-    m.userExperienceAnalyticsRegressionSummary = value
+    if m != nil {
+        m.userExperienceAnalyticsRegressionSummary = value
+    }
 }
 // SetUserExperienceAnalyticsRemoteConnection sets the userExperienceAnalyticsRemoteConnection property value. User experience analytics remote connection
 func (m *DeviceManagement) SetUserExperienceAnalyticsRemoteConnection(value []UserExperienceAnalyticsRemoteConnection)() {
-    m.userExperienceAnalyticsRemoteConnection = value
+    if m != nil {
+        m.userExperienceAnalyticsRemoteConnection = value
+    }
 }
 // SetUserExperienceAnalyticsResourcePerformance sets the userExperienceAnalyticsResourcePerformance property value. User experience analytics resource performance
 func (m *DeviceManagement) SetUserExperienceAnalyticsResourcePerformance(value []UserExperienceAnalyticsResourcePerformance)() {
-    m.userExperienceAnalyticsResourcePerformance = value
+    if m != nil {
+        m.userExperienceAnalyticsResourcePerformance = value
+    }
 }
 // SetUserExperienceAnalyticsScoreHistory sets the userExperienceAnalyticsScoreHistory property value. User experience analytics device Startup Score History
 func (m *DeviceManagement) SetUserExperienceAnalyticsScoreHistory(value []UserExperienceAnalyticsScoreHistory)() {
-    m.userExperienceAnalyticsScoreHistory = value
+    if m != nil {
+        m.userExperienceAnalyticsScoreHistory = value
+    }
 }
 // SetUserExperienceAnalyticsSettings sets the userExperienceAnalyticsSettings property value. User experience analytics device settings
 func (m *DeviceManagement) SetUserExperienceAnalyticsSettings(value *UserExperienceAnalyticsSettings)() {
-    m.userExperienceAnalyticsSettings = value
+    if m != nil {
+        m.userExperienceAnalyticsSettings = value
+    }
 }
 // SetUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric sets the userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric property value. User experience analytics work from anywhere hardware readiness metrics.
 func (m *DeviceManagement) SetUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric(value *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric)() {
-    m.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric = value
+    if m != nil {
+        m.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric = value
+    }
 }
 // SetUserExperienceAnalyticsWorkFromAnywhereMetrics sets the userExperienceAnalyticsWorkFromAnywhereMetrics property value. User experience analytics work from anywhere metrics.
 func (m *DeviceManagement) SetUserExperienceAnalyticsWorkFromAnywhereMetrics(value []UserExperienceAnalyticsWorkFromAnywhereMetric)() {
-    m.userExperienceAnalyticsWorkFromAnywhereMetrics = value
+    if m != nil {
+        m.userExperienceAnalyticsWorkFromAnywhereMetrics = value
+    }
 }
 // SetUserPfxCertificates sets the userPfxCertificates property value. Collection of PFX certificates associated with a user.
 func (m *DeviceManagement) SetUserPfxCertificates(value []UserPFXCertificate)() {
-    m.userPfxCertificates = value
+    if m != nil {
+        m.userPfxCertificates = value
+    }
 }
 // SetVirtualEndpoint sets the virtualEndpoint property value. 
 func (m *DeviceManagement) SetVirtualEndpoint(value *VirtualEndpoint)() {
-    m.virtualEndpoint = value
+    if m != nil {
+        m.virtualEndpoint = value
+    }
 }
 // SetWindowsAutopilotDeploymentProfiles sets the windowsAutopilotDeploymentProfiles property value. Windows auto pilot deployment profiles
 func (m *DeviceManagement) SetWindowsAutopilotDeploymentProfiles(value []WindowsAutopilotDeploymentProfile)() {
-    m.windowsAutopilotDeploymentProfiles = value
+    if m != nil {
+        m.windowsAutopilotDeploymentProfiles = value
+    }
 }
 // SetWindowsAutopilotDeviceIdentities sets the windowsAutopilotDeviceIdentities property value. The Windows autopilot device identities contained collection.
 func (m *DeviceManagement) SetWindowsAutopilotDeviceIdentities(value []WindowsAutopilotDeviceIdentity)() {
-    m.windowsAutopilotDeviceIdentities = value
+    if m != nil {
+        m.windowsAutopilotDeviceIdentities = value
+    }
 }
 // SetWindowsAutopilotSettings sets the windowsAutopilotSettings property value. The Windows autopilot account settings.
 func (m *DeviceManagement) SetWindowsAutopilotSettings(value *WindowsAutopilotSettings)() {
-    m.windowsAutopilotSettings = value
+    if m != nil {
+        m.windowsAutopilotSettings = value
+    }
 }
 // SetWindowsDriverUpdateProfiles sets the windowsDriverUpdateProfiles property value. A collection of windows driver update profiles
 func (m *DeviceManagement) SetWindowsDriverUpdateProfiles(value []WindowsDriverUpdateProfile)() {
-    m.windowsDriverUpdateProfiles = value
+    if m != nil {
+        m.windowsDriverUpdateProfiles = value
+    }
 }
 // SetWindowsFeatureUpdateProfiles sets the windowsFeatureUpdateProfiles property value. A collection of windows feature update profiles
 func (m *DeviceManagement) SetWindowsFeatureUpdateProfiles(value []WindowsFeatureUpdateProfile)() {
-    m.windowsFeatureUpdateProfiles = value
+    if m != nil {
+        m.windowsFeatureUpdateProfiles = value
+    }
 }
 // SetWindowsInformationProtectionAppLearningSummaries sets the windowsInformationProtectionAppLearningSummaries property value. The windows information protection app learning summaries.
 func (m *DeviceManagement) SetWindowsInformationProtectionAppLearningSummaries(value []WindowsInformationProtectionAppLearningSummary)() {
-    m.windowsInformationProtectionAppLearningSummaries = value
+    if m != nil {
+        m.windowsInformationProtectionAppLearningSummaries = value
+    }
 }
 // SetWindowsInformationProtectionNetworkLearningSummaries sets the windowsInformationProtectionNetworkLearningSummaries property value. The windows information protection network learning summaries.
 func (m *DeviceManagement) SetWindowsInformationProtectionNetworkLearningSummaries(value []WindowsInformationProtectionNetworkLearningSummary)() {
-    m.windowsInformationProtectionNetworkLearningSummaries = value
+    if m != nil {
+        m.windowsInformationProtectionNetworkLearningSummaries = value
+    }
 }
 // SetWindowsMalwareInformation sets the windowsMalwareInformation property value. The list of affected malware in the tenant.
 func (m *DeviceManagement) SetWindowsMalwareInformation(value []WindowsMalwareInformation)() {
-    m.windowsMalwareInformation = value
+    if m != nil {
+        m.windowsMalwareInformation = value
+    }
 }
 // SetWindowsMalwareOverview sets the windowsMalwareOverview property value. Malware overview for windows devices.
 func (m *DeviceManagement) SetWindowsMalwareOverview(value *WindowsMalwareOverview)() {
-    m.windowsMalwareOverview = value
+    if m != nil {
+        m.windowsMalwareOverview = value
+    }
 }
 // SetWindowsQualityUpdateProfiles sets the windowsQualityUpdateProfiles property value. A collection of windows quality update profiles
 func (m *DeviceManagement) SetWindowsQualityUpdateProfiles(value []WindowsQualityUpdateProfile)() {
-    m.windowsQualityUpdateProfiles = value
+    if m != nil {
+        m.windowsQualityUpdateProfiles = value
+    }
 }
 // SetWindowsUpdateCatalogItems sets the windowsUpdateCatalogItems property value. A collection of windows update catalog items (fetaure updates item , quality updates item)
 func (m *DeviceManagement) SetWindowsUpdateCatalogItems(value []WindowsUpdateCatalogItem)() {
-    m.windowsUpdateCatalogItems = value
+    if m != nil {
+        m.windowsUpdateCatalogItems = value
+    }
 }

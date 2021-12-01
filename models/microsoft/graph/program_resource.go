@@ -59,5 +59,7 @@ func (m *ProgramResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetType_escaped sets the type_escaped property value. Type of the resource, indicating whether it is a group or an app.
 func (m *ProgramResource) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

@@ -40,7 +40,7 @@ type PersonAwardRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PersonAwardRequestBuilderPatchOptions options for Patch
 type PersonAwardRequestBuilderPatchOptions struct {

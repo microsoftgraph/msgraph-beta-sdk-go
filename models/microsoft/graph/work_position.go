@@ -176,21 +176,31 @@ func (m *WorkPosition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetCategories sets the categories property value. Categories that the user has associated with this position.
 func (m *WorkPosition) SetCategories(value []string)() {
-    m.categories = value
+    if m != nil {
+        m.categories = value
+    }
 }
 // SetColleagues sets the colleagues property value. Colleagues that are associated with this position.
 func (m *WorkPosition) SetColleagues(value []RelatedPerson)() {
-    m.colleagues = value
+    if m != nil {
+        m.colleagues = value
+    }
 }
 // SetDetail sets the detail property value. 
 func (m *WorkPosition) SetDetail(value *PositionDetail)() {
-    m.detail = value
+    if m != nil {
+        m.detail = value
+    }
 }
 // SetIsCurrent sets the isCurrent property value. Denotes whether or not the position is current.
 func (m *WorkPosition) SetIsCurrent(value *bool)() {
-    m.isCurrent = value
+    if m != nil {
+        m.isCurrent = value
+    }
 }
 // SetManager sets the manager property value. Contains detail of the user's manager in this position.
 func (m *WorkPosition) SetManager(value *RelatedPerson)() {
-    m.manager = value
+    if m != nil {
+        m.manager = value
+    }
 }

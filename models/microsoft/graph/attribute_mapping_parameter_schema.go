@@ -150,21 +150,31 @@ func (m *AttributeMappingParameterSchema) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeMappingParameterSchema) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowMultipleOccurrences sets the allowMultipleOccurrences property value. The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).
 func (m *AttributeMappingParameterSchema) SetAllowMultipleOccurrences(value *bool)() {
-    m.allowMultipleOccurrences = value
+    if m != nil {
+        m.allowMultipleOccurrences = value
+    }
 }
 // SetName sets the name property value. Parameter name.
 func (m *AttributeMappingParameterSchema) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetRequired sets the required property value. true if the parameter is required; otherwise false.
 func (m *AttributeMappingParameterSchema) SetRequired(value *bool)() {
-    m.required = value
+    if m != nil {
+        m.required = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
 func (m *AttributeMappingParameterSchema) SetType_escaped(value *AttributeType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

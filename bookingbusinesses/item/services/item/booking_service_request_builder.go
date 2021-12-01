@@ -40,7 +40,7 @@ type BookingServiceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // BookingServiceRequestBuilderPatchOptions options for Patch
 type BookingServiceRequestBuilderPatchOptions struct {

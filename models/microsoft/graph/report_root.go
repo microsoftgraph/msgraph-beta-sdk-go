@@ -444,49 +444,73 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetApplicationSignInDetailedSummary sets the applicationSignInDetailedSummary property value. 
 func (m *ReportRoot) SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummary)() {
-    m.applicationSignInDetailedSummary = value
+    if m != nil {
+        m.applicationSignInDetailedSummary = value
+    }
 }
 // SetAuthenticationMethods sets the authenticationMethods property value. 
 func (m *ReportRoot) SetAuthenticationMethods(value *AuthenticationMethodsRoot)() {
-    m.authenticationMethods = value
+    if m != nil {
+        m.authenticationMethods = value
+    }
 }
 // SetCredentialUserRegistrationDetails sets the credentialUserRegistrationDetails property value. 
 func (m *ReportRoot) SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetails)() {
-    m.credentialUserRegistrationDetails = value
+    if m != nil {
+        m.credentialUserRegistrationDetails = value
+    }
 }
 // SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. 
 func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinter)() {
-    m.dailyPrintUsageByPrinter = value
+    if m != nil {
+        m.dailyPrintUsageByPrinter = value
+    }
 }
 // SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. 
 func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUser)() {
-    m.dailyPrintUsageByUser = value
+    if m != nil {
+        m.dailyPrintUsageByUser = value
+    }
 }
 // SetDailyPrintUsageSummariesByPrinter sets the dailyPrintUsageSummariesByPrinter property value. 
 func (m *ReportRoot) SetDailyPrintUsageSummariesByPrinter(value []PrintUsageByPrinter)() {
-    m.dailyPrintUsageSummariesByPrinter = value
+    if m != nil {
+        m.dailyPrintUsageSummariesByPrinter = value
+    }
 }
 // SetDailyPrintUsageSummariesByUser sets the dailyPrintUsageSummariesByUser property value. 
 func (m *ReportRoot) SetDailyPrintUsageSummariesByUser(value []PrintUsageByUser)() {
-    m.dailyPrintUsageSummariesByUser = value
+    if m != nil {
+        m.dailyPrintUsageSummariesByUser = value
+    }
 }
 // SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. 
 func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinter)() {
-    m.monthlyPrintUsageByPrinter = value
+    if m != nil {
+        m.monthlyPrintUsageByPrinter = value
+    }
 }
 // SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. 
 func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUser)() {
-    m.monthlyPrintUsageByUser = value
+    if m != nil {
+        m.monthlyPrintUsageByUser = value
+    }
 }
 // SetMonthlyPrintUsageSummariesByPrinter sets the monthlyPrintUsageSummariesByPrinter property value. 
 func (m *ReportRoot) SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinter)() {
-    m.monthlyPrintUsageSummariesByPrinter = value
+    if m != nil {
+        m.monthlyPrintUsageSummariesByPrinter = value
+    }
 }
 // SetMonthlyPrintUsageSummariesByUser sets the monthlyPrintUsageSummariesByUser property value. 
 func (m *ReportRoot) SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUser)() {
-    m.monthlyPrintUsageSummariesByUser = value
+    if m != nil {
+        m.monthlyPrintUsageSummariesByUser = value
+    }
 }
 // SetUserCredentialUsageDetails sets the userCredentialUsageDetails property value. 
 func (m *ReportRoot) SetUserCredentialUsageDetails(value []UserCredentialUsageDetails)() {
-    m.userCredentialUsageDetails = value
+    if m != nil {
+        m.userCredentialUsageDetails = value
+    }
 }

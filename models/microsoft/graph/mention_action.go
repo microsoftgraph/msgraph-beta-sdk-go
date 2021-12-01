@@ -79,9 +79,13 @@ func (m *MentionAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MentionAction) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMentionees sets the mentionees property value. The identities of the users mentioned in this action.
 func (m *MentionAction) SetMentionees(value []IdentitySet)() {
-    m.mentionees = value
+    if m != nil {
+        m.mentionees = value
+    }
 }

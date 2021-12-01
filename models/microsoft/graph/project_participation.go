@@ -267,33 +267,49 @@ func (m *ProjectParticipation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetCategories sets the categories property value. Contains categories a user has associated with the project (for example, digital transformation, oil rig).
 func (m *ProjectParticipation) SetCategories(value []string)() {
-    m.categories = value
+    if m != nil {
+        m.categories = value
+    }
 }
 // SetClient sets the client property value. Contains detailed information about the client the project was for.
 func (m *ProjectParticipation) SetClient(value *CompanyDetail)() {
-    m.client = value
+    if m != nil {
+        m.client = value
+    }
 }
 // SetCollaborationTags sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *ProjectParticipation) SetCollaborationTags(value []string)() {
-    m.collaborationTags = value
+    if m != nil {
+        m.collaborationTags = value
+    }
 }
 // SetColleagues sets the colleagues property value. Lists people that also worked on the project.
 func (m *ProjectParticipation) SetColleagues(value []RelatedPerson)() {
-    m.colleagues = value
+    if m != nil {
+        m.colleagues = value
+    }
 }
 // SetDetail sets the detail property value. Contains detail about the user's role on the project.
 func (m *ProjectParticipation) SetDetail(value *PositionDetail)() {
-    m.detail = value
+    if m != nil {
+        m.detail = value
+    }
 }
 // SetDisplayName sets the displayName property value. Contains a friendly name for the project.
 func (m *ProjectParticipation) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetSponsors sets the sponsors property value. The Person or people who sponsored the project.
 func (m *ProjectParticipation) SetSponsors(value []RelatedPerson)() {
-    m.sponsors = value
+    if m != nil {
+        m.sponsors = value
+    }
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. 
 func (m *ProjectParticipation) SetThumbnailUrl(value *string)() {
-    m.thumbnailUrl = value
+    if m != nil {
+        m.thumbnailUrl = value
+    }
 }

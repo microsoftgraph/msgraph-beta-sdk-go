@@ -268,37 +268,55 @@ func (m *GetYammerDeviceUsageUserCountsWithPeriod) Serialize(writer i04eb5309aea
 }
 // SetAndroidPhone sets the androidPhone property value. 
 func (m *GetYammerDeviceUsageUserCountsWithPeriod) SetAndroidPhone(value *int32)() {
-    m.androidPhone = value
+    if m != nil {
+        m.androidPhone = value
+    }
 }
 // SetIPad sets the iPad property value. 
 func (m *GetYammerDeviceUsageUserCountsWithPeriod) SetIPad(value *int32)() {
-    m.iPad = value
+    if m != nil {
+        m.iPad = value
+    }
 }
 // SetIPhone sets the iPhone property value. 
 func (m *GetYammerDeviceUsageUserCountsWithPeriod) SetIPhone(value *int32)() {
-    m.iPhone = value
+    if m != nil {
+        m.iPhone = value
+    }
 }
 // SetOther sets the other property value. 
 func (m *GetYammerDeviceUsageUserCountsWithPeriod) SetOther(value *int32)() {
-    m.other = value
+    if m != nil {
+        m.other = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetYammerDeviceUsageUserCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetYammerDeviceUsageUserCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetYammerDeviceUsageUserCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetWeb sets the web property value. 
 func (m *GetYammerDeviceUsageUserCountsWithPeriod) SetWeb(value *int32)() {
-    m.web = value
+    if m != nil {
+        m.web = value
+    }
 }
 // SetWindowsPhone sets the windowsPhone property value. 
 func (m *GetYammerDeviceUsageUserCountsWithPeriod) SetWindowsPhone(value *int32)() {
-    m.windowsPhone = value
+    if m != nil {
+        m.windowsPhone = value
+    }
 }

@@ -128,17 +128,25 @@ func (m *CompanyPortalBlockedAction) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAction sets the action property value. Device Action. Possible values are: unknown, remove, reset.
 func (m *CompanyPortalBlockedAction) SetAction(value *CompanyPortalAction)() {
-    m.action = value
+    if m != nil {
+        m.action = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CompanyPortalBlockedAction) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOwnerType sets the ownerType property value. Device ownership type. Possible values are: unknown, company, personal.
 func (m *CompanyPortalBlockedAction) SetOwnerType(value *OwnerType)() {
-    m.ownerType = value
+    if m != nil {
+        m.ownerType = value
+    }
 }
 // SetPlatform sets the platform property value. Device OS/Platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
 func (m *CompanyPortalBlockedAction) SetPlatform(value *DevicePlatformType)() {
-    m.platform = value
+    if m != nil {
+        m.platform = value
+    }
 }

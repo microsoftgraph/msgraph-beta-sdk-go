@@ -307,41 +307,61 @@ func (m *UserSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAccounts sets the accounts property value. 
 func (m *UserSecurityProfile) SetAccounts(value []UserAccount)() {
-    m.accounts = value
+    if m != nil {
+        m.accounts = value
+    }
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. 
 func (m *UserSecurityProfile) SetAzureSubscriptionId(value *string)() {
-    m.azureSubscriptionId = value
+    if m != nil {
+        m.azureSubscriptionId = value
+    }
 }
 // SetAzureTenantId sets the azureTenantId property value. 
 func (m *UserSecurityProfile) SetAzureTenantId(value *string)() {
-    m.azureTenantId = value
+    if m != nil {
+        m.azureTenantId = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. 
 func (m *UserSecurityProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *UserSecurityProfile) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *UserSecurityProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetRiskScore sets the riskScore property value. 
 func (m *UserSecurityProfile) SetRiskScore(value *string)() {
-    m.riskScore = value
+    if m != nil {
+        m.riskScore = value
+    }
 }
 // SetTags sets the tags property value. 
 func (m *UserSecurityProfile) SetTags(value []string)() {
-    m.tags = value
+    if m != nil {
+        m.tags = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *UserSecurityProfile) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetVendorInformation sets the vendorInformation property value. 
 func (m *UserSecurityProfile) SetVendorInformation(value *SecurityVendorInformation)() {
-    m.vendorInformation = value
+    if m != nil {
+        m.vendorInformation = value
+    }
 }

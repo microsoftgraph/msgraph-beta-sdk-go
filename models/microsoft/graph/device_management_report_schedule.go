@@ -362,49 +362,73 @@ func (m *DeviceManagementReportSchedule) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetEmails sets the emails property value. Emails to which the scheduled reports are delivered
 func (m *DeviceManagementReportSchedule) SetEmails(value []string)() {
-    m.emails = value
+    if m != nil {
+        m.emails = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. Time that the delivery of the scheduled reports ends
 func (m *DeviceManagementReportSchedule) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetFilter sets the filter property value. Filters applied on the report
 func (m *DeviceManagementReportSchedule) SetFilter(value *string)() {
-    m.filter = value
+    if m != nil {
+        m.filter = value
+    }
 }
 // SetFormat sets the format property value. Format of the scheduled report. Possible values are: csv, pdf.
 func (m *DeviceManagementReportSchedule) SetFormat(value *DeviceManagementReportFileFormat)() {
-    m.format = value
+    if m != nil {
+        m.format = value
+    }
 }
 // SetOrderBy sets the orderBy property value. Ordering of columns in the report
 func (m *DeviceManagementReportSchedule) SetOrderBy(value []string)() {
-    m.orderBy = value
+    if m != nil {
+        m.orderBy = value
+    }
 }
 // SetRecurrence sets the recurrence property value. Frequency of scheduled report delivery. Possible values are: none, daily, weekly, monthly.
 func (m *DeviceManagementReportSchedule) SetRecurrence(value *DeviceManagementScheduledReportRecurrence)() {
-    m.recurrence = value
+    if m != nil {
+        m.recurrence = value
+    }
 }
 // SetReportName sets the reportName property value. Name of the report
 func (m *DeviceManagementReportSchedule) SetReportName(value *string)() {
-    m.reportName = value
+    if m != nil {
+        m.reportName = value
+    }
 }
 // SetReportScheduleName sets the reportScheduleName property value. Name of the schedule
 func (m *DeviceManagementReportSchedule) SetReportScheduleName(value *string)() {
-    m.reportScheduleName = value
+    if m != nil {
+        m.reportScheduleName = value
+    }
 }
 // SetSelect_escaped sets the select_escaped property value. Columns selected from the report
 func (m *DeviceManagementReportSchedule) SetSelect_escaped(value []string)() {
-    m.select_escaped = value
+    if m != nil {
+        m.select_escaped = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. Time that the delivery of the scheduled reports starts
 func (m *DeviceManagementReportSchedule) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
 // SetSubject sets the subject property value. Subject of the scheduled reports that are delivered
 func (m *DeviceManagementReportSchedule) SetSubject(value *string)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }
 // SetUserId sets the userId property value. The Id of the User who created the report
 func (m *DeviceManagementReportSchedule) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

@@ -123,17 +123,25 @@ func (m *RequestSchedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RequestSchedule) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExpiration sets the expiration property value. When the access should expire.
 func (m *RequestSchedule) SetExpiration(value *ExpirationPattern)() {
-    m.expiration = value
+    if m != nil {
+        m.expiration = value
+    }
 }
 // SetRecurrence sets the recurrence property value. For recurring access. Not used at present.
 func (m *RequestSchedule) SetRecurrence(value *PatternedRecurrence)() {
-    m.recurrence = value
+    if m != nil {
+        m.recurrence = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *RequestSchedule) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }

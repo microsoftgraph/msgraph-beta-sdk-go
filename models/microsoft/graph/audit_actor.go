@@ -343,49 +343,73 @@ func (m *AuditActor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditActor) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicationDisplayName sets the applicationDisplayName property value. Name of the Application.
 func (m *AuditActor) SetApplicationDisplayName(value *string)() {
-    m.applicationDisplayName = value
+    if m != nil {
+        m.applicationDisplayName = value
+    }
 }
 // SetApplicationId sets the applicationId property value. AAD Application Id.
 func (m *AuditActor) SetApplicationId(value *string)() {
-    m.applicationId = value
+    if m != nil {
+        m.applicationId = value
+    }
 }
 // SetIpAddress sets the ipAddress property value. IPAddress.
 func (m *AuditActor) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    if m != nil {
+        m.ipAddress = value
+    }
 }
 // SetRemoteTenantId sets the remoteTenantId property value. Remote Tenant Id
 func (m *AuditActor) SetRemoteTenantId(value *string)() {
-    m.remoteTenantId = value
+    if m != nil {
+        m.remoteTenantId = value
+    }
 }
 // SetRemoteUserId sets the remoteUserId property value. Remote User Id
 func (m *AuditActor) SetRemoteUserId(value *string)() {
-    m.remoteUserId = value
+    if m != nil {
+        m.remoteUserId = value
+    }
 }
 // SetServicePrincipalName sets the servicePrincipalName property value. Service Principal Name (SPN).
 func (m *AuditActor) SetServicePrincipalName(value *string)() {
-    m.servicePrincipalName = value
+    if m != nil {
+        m.servicePrincipalName = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Actor Type.
 func (m *AuditActor) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetUserId sets the userId property value. User Id.
 func (m *AuditActor) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }
 // SetUserPermissions sets the userPermissions property value. List of user permissions when the audit was performed.
 func (m *AuditActor) SetUserPermissions(value []string)() {
-    m.userPermissions = value
+    if m != nil {
+        m.userPermissions = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name (UPN).
 func (m *AuditActor) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetUserRoleScopeTags sets the userRoleScopeTags property value. List of user scope tags when the audit was performed.
 func (m *AuditActor) SetUserRoleScopeTags(value []RoleScopeTagInfo)() {
-    m.userRoleScopeTags = value
+    if m != nil {
+        m.userRoleScopeTags = value
+    }
 }

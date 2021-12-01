@@ -41,7 +41,7 @@ type ColorIconRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ColorIconRequestBuilderPatchOptions options for Patch
 type ColorIconRequestBuilderPatchOptions struct {

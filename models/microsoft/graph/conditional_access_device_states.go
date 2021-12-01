@@ -104,13 +104,19 @@ func (m *ConditionalAccessDeviceStates) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessDeviceStates) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExcludeStates sets the excludeStates property value. States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
 func (m *ConditionalAccessDeviceStates) SetExcludeStates(value []string)() {
-    m.excludeStates = value
+    if m != nil {
+        m.excludeStates = value
+    }
 }
 // SetIncludeStates sets the includeStates property value. States in the scope of the policy. All is the only allowed value.
 func (m *ConditionalAccessDeviceStates) SetIncludeStates(value []string)() {
-    m.includeStates = value
+    if m != nil {
+        m.includeStates = value
+    }
 }

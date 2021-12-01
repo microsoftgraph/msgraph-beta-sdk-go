@@ -2274,309 +2274,463 @@ func (m *Group) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAcceptedSenders sets the acceptedSenders property value. The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
 func (m *Group) SetAcceptedSenders(value []DirectoryObject)() {
-    m.acceptedSenders = value
+    if m != nil {
+        m.acceptedSenders = value
+    }
 }
 // SetAccessType sets the accessType property value. 
 func (m *Group) SetAccessType(value *GroupAccessType)() {
-    m.accessType = value
+    if m != nil {
+        m.accessType = value
+    }
 }
 // SetAllowExternalSenders sets the allowExternalSenders property value. Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetAllowExternalSenders(value *bool)() {
-    m.allowExternalSenders = value
+    if m != nil {
+        m.allowExternalSenders = value
+    }
 }
 // SetAppRoleAssignments sets the appRoleAssignments property value. Represents the app roles a group has been granted for an application. Supports $expand.
 func (m *Group) SetAppRoleAssignments(value []AppRoleAssignment)() {
-    m.appRoleAssignments = value
+    if m != nil {
+        m.appRoleAssignments = value
+    }
 }
 // SetAssignedLabels sets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
 func (m *Group) SetAssignedLabels(value []AssignedLabel)() {
-    m.assignedLabels = value
+    if m != nil {
+        m.assignedLabels = value
+    }
 }
 // SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
 func (m *Group) SetAssignedLicenses(value []AssignedLicense)() {
-    m.assignedLicenses = value
+    if m != nil {
+        m.assignedLicenses = value
+    }
 }
 // SetAutoSubscribeNewMembers sets the autoSubscribeNewMembers property value. Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetAutoSubscribeNewMembers(value *bool)() {
-    m.autoSubscribeNewMembers = value
+    if m != nil {
+        m.autoSubscribeNewMembers = value
+    }
 }
 // SetCalendar sets the calendar property value. The group's calendar. Read-only.
 func (m *Group) SetCalendar(value *Calendar)() {
-    m.calendar = value
+    if m != nil {
+        m.calendar = value
+    }
 }
 // SetCalendarView sets the calendarView property value. The calendar view for the calendar. Read-only.
 func (m *Group) SetCalendarView(value []Event)() {
-    m.calendarView = value
+    if m != nil {
+        m.calendarView = value
+    }
 }
 // SetClassification sets the classification property value. Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
 func (m *Group) SetClassification(value *string)() {
-    m.classification = value
+    if m != nil {
+        m.classification = value
+    }
 }
 // SetConversations sets the conversations property value. The group's conversations.
 func (m *Group) SetConversations(value []Conversation)() {
-    m.conversations = value
+    if m != nil {
+        m.conversations = value
+    }
 }
 // SetCreatedByAppId sets the createdByAppId property value. App ID of the app used to create the group. Can be null for some groups. Returned by default. Read-only. Supports $filter (eq, ne, not, in, startsWith).
 func (m *Group) SetCreatedByAppId(value *string)() {
-    m.createdByAppId = value
+    if m != nil {
+        m.createdByAppId = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
 func (m *Group) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
 func (m *Group) SetCreatedOnBehalfOf(value *DirectoryObject)() {
-    m.createdOnBehalfOf = value
+    if m != nil {
+        m.createdOnBehalfOf = value
+    }
 }
 // SetDescription sets the description property value. An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Group) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Group) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetDrive sets the drive property value. The group's default drive. Read-only.
 func (m *Group) SetDrive(value *Drive)() {
-    m.drive = value
+    if m != nil {
+        m.drive = value
+    }
 }
 // SetDrives sets the drives property value. The group's drives. Read-only.
 func (m *Group) SetDrives(value []Drive)() {
-    m.drives = value
+    if m != nil {
+        m.drives = value
+    }
 }
 // SetEndpoints sets the endpoints property value. Endpoints for the group. Read-only. Nullable.
 func (m *Group) SetEndpoints(value []Endpoint)() {
-    m.endpoints = value
+    if m != nil {
+        m.endpoints = value
+    }
 }
 // SetEvents sets the events property value. The group's calendar events.
 func (m *Group) SetEvents(value []Event)() {
-    m.events = value
+    if m != nil {
+        m.events = value
+    }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
 func (m *Group) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the group. Read-only. Nullable.
 func (m *Group) SetExtensions(value []Extension)() {
-    m.extensions = value
+    if m != nil {
+        m.extensions = value
+    }
 }
 // SetGroupLifecyclePolicies sets the groupLifecyclePolicies property value. The collection of lifecycle policies for this group. Read-only. Nullable.
 func (m *Group) SetGroupLifecyclePolicies(value []GroupLifecyclePolicy)() {
-    m.groupLifecyclePolicies = value
+    if m != nil {
+        m.groupLifecyclePolicies = value
+    }
 }
 // SetGroupTypes sets the groupTypes property value. Specifies the group type and its membership.  If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter (eq, not).
 func (m *Group) SetGroupTypes(value []string)() {
-    m.groupTypes = value
+    if m != nil {
+        m.groupTypes = value
+    }
 }
 // SetHasMembersWithLicenseErrors sets the hasMembersWithLicenseErrors property value. Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).
 func (m *Group) SetHasMembersWithLicenseErrors(value *bool)() {
-    m.hasMembersWithLicenseErrors = value
+    if m != nil {
+        m.hasMembersWithLicenseErrors = value
+    }
 }
 // SetHideFromAddressLists sets the hideFromAddressLists property value. True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetHideFromAddressLists(value *bool)() {
-    m.hideFromAddressLists = value
+    if m != nil {
+        m.hideFromAddressLists = value
+    }
 }
 // SetHideFromOutlookClients sets the hideFromOutlookClients property value. True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetHideFromOutlookClients(value *bool)() {
-    m.hideFromOutlookClients = value
+    if m != nil {
+        m.hideFromOutlookClients = value
+    }
 }
 // SetInfoCatalogs sets the infoCatalogs property value. Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
 func (m *Group) SetInfoCatalogs(value []string)() {
-    m.infoCatalogs = value
+    if m != nil {
+        m.infoCatalogs = value
+    }
 }
 // SetIsArchived sets the isArchived property value. 
 func (m *Group) SetIsArchived(value *bool)() {
-    m.isArchived = value
+    if m != nil {
+        m.isArchived = value
+    }
 }
 // SetIsAssignableToRole sets the isAssignableToRole property value. Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).
 func (m *Group) SetIsAssignableToRole(value *bool)() {
-    m.isAssignableToRole = value
+    if m != nil {
+        m.isAssignableToRole = value
+    }
 }
 // SetIsFavorite sets the isFavorite property value. 
 func (m *Group) SetIsFavorite(value *bool)() {
-    m.isFavorite = value
+    if m != nil {
+        m.isFavorite = value
+    }
 }
 // SetIsSubscribedByMail sets the isSubscribedByMail property value. Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetIsSubscribedByMail(value *bool)() {
-    m.isSubscribedByMail = value
+    if m != nil {
+        m.isSubscribedByMail = value
+    }
 }
 // SetLicenseProcessingState sets the licenseProcessingState property value. Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
 func (m *Group) SetLicenseProcessingState(value *LicenseProcessingState)() {
-    m.licenseProcessingState = value
+    if m != nil {
+        m.licenseProcessingState = value
+    }
 }
 // SetMail sets the mail property value. The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *Group) SetMail(value *string)() {
-    m.mail = value
+    if m != nil {
+        m.mail = value
+    }
 }
 // SetMailEnabled sets the mailEnabled property value. Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not).
 func (m *Group) SetMailEnabled(value *bool)() {
-    m.mailEnabled = value
+    if m != nil {
+        m.mailEnabled = value
+    }
 }
 // SetMailNickname sets the mailNickname property value. The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *Group) SetMailNickname(value *string)() {
-    m.mailNickname = value
+    if m != nil {
+        m.mailNickname = value
+    }
 }
 // SetMdmAppId sets the mdmAppId property value. 
 func (m *Group) SetMdmAppId(value *string)() {
-    m.mdmAppId = value
+    if m != nil {
+        m.mdmAppId = value
+    }
 }
 // SetMemberOf sets the memberOf property value. Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 func (m *Group) SetMemberOf(value []DirectoryObject)() {
-    m.memberOf = value
+    if m != nil {
+        m.memberOf = value
+    }
 }
 // SetMembers sets the members property value. Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable. Supports $expand.
 func (m *Group) SetMembers(value []DirectoryObject)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }
 // SetMembershipRule sets the membershipRule property value. The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
 func (m *Group) SetMembershipRule(value *string)() {
-    m.membershipRule = value
+    if m != nil {
+        m.membershipRule = value
+    }
 }
 // SetMembershipRuleProcessingState sets the membershipRuleProcessingState property value. Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, not, in).
 func (m *Group) SetMembershipRuleProcessingState(value *string)() {
-    m.membershipRuleProcessingState = value
+    if m != nil {
+        m.membershipRuleProcessingState = value
+    }
 }
 // SetMembershipRuleProcessingStatus sets the membershipRuleProcessingStatus property value. Describes the processing status for rules-based dynamic groups. The property is null for non-rule based dynamic groups or if the dynamic group processing has been paused. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}). Read-only.
 func (m *Group) SetMembershipRuleProcessingStatus(value *MembershipRuleProcessingStatus)() {
-    m.membershipRuleProcessingStatus = value
+    if m != nil {
+        m.membershipRuleProcessingStatus = value
+    }
 }
 // SetMembersWithLicenseErrors sets the membersWithLicenseErrors property value. A list of group members with license errors from this group-based license assignment. Read-only.
 func (m *Group) SetMembersWithLicenseErrors(value []DirectoryObject)() {
-    m.membersWithLicenseErrors = value
+    if m != nil {
+        m.membersWithLicenseErrors = value
+    }
 }
 // SetOnenote sets the onenote property value. Read-only.
 func (m *Group) SetOnenote(value *Onenote)() {
-    m.onenote = value
+    if m != nil {
+        m.onenote = value
+    }
 }
 // SetOnPremisesDomainName sets the onPremisesDomainName property value. Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
 func (m *Group) SetOnPremisesDomainName(value *string)() {
-    m.onPremisesDomainName = value
+    if m != nil {
+        m.onPremisesDomainName = value
+    }
 }
 // SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
 func (m *Group) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.onPremisesLastSyncDateTime = value
+    if m != nil {
+        m.onPremisesLastSyncDateTime = value
+    }
 }
 // SetOnPremisesNetBiosName sets the onPremisesNetBiosName property value. Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
 func (m *Group) SetOnPremisesNetBiosName(value *string)() {
-    m.onPremisesNetBiosName = value
+    if m != nil {
+        m.onPremisesNetBiosName = value
+    }
 }
 // SetOnPremisesProvisioningErrors sets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
 func (m *Group) SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningError)() {
-    m.onPremisesProvisioningErrors = value
+    if m != nil {
+        m.onPremisesProvisioningErrors = value
+    }
 }
 // SetOnPremisesSamAccountName sets the onPremisesSamAccountName property value. Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
 func (m *Group) SetOnPremisesSamAccountName(value *string)() {
-    m.onPremisesSamAccountName = value
+    if m != nil {
+        m.onPremisesSamAccountName = value
+    }
 }
 // SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter on null values. Read-only.
 func (m *Group) SetOnPremisesSecurityIdentifier(value *string)() {
-    m.onPremisesSecurityIdentifier = value
+    if m != nil {
+        m.onPremisesSecurityIdentifier = value
+    }
 }
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *Group) SetOnPremisesSyncEnabled(value *bool)() {
-    m.onPremisesSyncEnabled = value
+    if m != nil {
+        m.onPremisesSyncEnabled = value
+    }
 }
 // SetOrganizationId sets the organizationId property value. 
 func (m *Group) SetOrganizationId(value *string)() {
-    m.organizationId = value
+    if m != nil {
+        m.organizationId = value
+    }
 }
 // SetOwners sets the owners property value. The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand.
 func (m *Group) SetOwners(value []DirectoryObject)() {
-    m.owners = value
+    if m != nil {
+        m.owners = value
+    }
 }
 // SetPermissionGrants sets the permissionGrants property value. The permission that has been granted for a group to a specific application. Supports $expand.
 func (m *Group) SetPermissionGrants(value []ResourceSpecificPermissionGrant)() {
-    m.permissionGrants = value
+    if m != nil {
+        m.permissionGrants = value
+    }
 }
 // SetPhoto sets the photo property value. The group's profile photo
 func (m *Group) SetPhoto(value *ProfilePhoto)() {
-    m.photo = value
+    if m != nil {
+        m.photo = value
+    }
 }
 // SetPhotos sets the photos property value. The profile photos owned by the group. Read-only. Nullable.
 func (m *Group) SetPhotos(value []ProfilePhoto)() {
-    m.photos = value
+    if m != nil {
+        m.photos = value
+    }
 }
 // SetPlanner sets the planner property value. Entry-point to Planner resource that might exist for a Unified Group.
 func (m *Group) SetPlanner(value *PlannerGroup)() {
-    m.planner = value
+    if m != nil {
+        m.planner = value
+    }
 }
 // SetPreferredDataLocation sets the preferredDataLocation property value. The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see  OneDrive Online Multi-Geo. Nullable. Returned by default.
 func (m *Group) SetPreferredDataLocation(value *string)() {
-    m.preferredDataLocation = value
+    if m != nil {
+        m.preferredDataLocation = value
+    }
 }
 // SetPreferredLanguage sets the preferredLanguage property value. The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *Group) SetPreferredLanguage(value *string)() {
-    m.preferredLanguage = value
+    if m != nil {
+        m.preferredLanguage = value
+    }
 }
 // SetProxyAddresses sets the proxyAddresses property value. Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
 func (m *Group) SetProxyAddresses(value []string)() {
-    m.proxyAddresses = value
+    if m != nil {
+        m.proxyAddresses = value
+    }
 }
 // SetRejectedSenders sets the rejectedSenders property value. The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
 func (m *Group) SetRejectedSenders(value []DirectoryObject)() {
-    m.rejectedSenders = value
+    if m != nil {
+        m.rejectedSenders = value
+    }
 }
 // SetRenewedDateTime sets the renewedDateTime property value. Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
 func (m *Group) SetRenewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.renewedDateTime = value
+    if m != nil {
+        m.renewedDateTime = value
+    }
 }
 // SetResourceBehaviorOptions sets the resourceBehaviorOptions property value. Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.
 func (m *Group) SetResourceBehaviorOptions(value []string)() {
-    m.resourceBehaviorOptions = value
+    if m != nil {
+        m.resourceBehaviorOptions = value
+    }
 }
 // SetResourceProvisioningOptions sets the resourceProvisioningOptions property value. Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options.
 func (m *Group) SetResourceProvisioningOptions(value []string)() {
-    m.resourceProvisioningOptions = value
+    if m != nil {
+        m.resourceProvisioningOptions = value
+    }
 }
 // SetSecurityEnabled sets the securityEnabled property value. Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).
 func (m *Group) SetSecurityEnabled(value *bool)() {
-    m.securityEnabled = value
+    if m != nil {
+        m.securityEnabled = value
+    }
 }
 // SetSecurityIdentifier sets the securityIdentifier property value. Security identifier of the group, used in Windows scenarios. Returned by default.
 func (m *Group) SetSecurityIdentifier(value *string)() {
-    m.securityIdentifier = value
+    if m != nil {
+        m.securityIdentifier = value
+    }
 }
 // SetSettings sets the settings property value. Read-only. Nullable.
 func (m *Group) SetSettings(value []DirectorySetting)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }
 // SetSites sets the sites property value. The list of SharePoint sites in this group. Access the default site with /sites/root.
 func (m *Group) SetSites(value []Site)() {
-    m.sites = value
+    if m != nil {
+        m.sites = value
+    }
 }
 // SetTeam sets the team property value. 
 func (m *Group) SetTeam(value *Team)() {
-    m.team = value
+    if m != nil {
+        m.team = value
+    }
 }
 // SetTheme sets the theme property value. Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
 func (m *Group) SetTheme(value *string)() {
-    m.theme = value
+    if m != nil {
+        m.theme = value
+    }
 }
 // SetThreads sets the threads property value. The group's conversation threads. Nullable.
 func (m *Group) SetThreads(value []ConversationThread)() {
-    m.threads = value
+    if m != nil {
+        m.threads = value
+    }
 }
 // SetTransitiveMemberOf sets the transitiveMemberOf property value. 
 func (m *Group) SetTransitiveMemberOf(value []DirectoryObject)() {
-    m.transitiveMemberOf = value
+    if m != nil {
+        m.transitiveMemberOf = value
+    }
 }
 // SetTransitiveMembers sets the transitiveMembers property value. 
 func (m *Group) SetTransitiveMembers(value []DirectoryObject)() {
-    m.transitiveMembers = value
+    if m != nil {
+        m.transitiveMembers = value
+    }
 }
 // SetUnseenConversationsCount sets the unseenConversationsCount property value. Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
 func (m *Group) SetUnseenConversationsCount(value *int32)() {
-    m.unseenConversationsCount = value
+    if m != nil {
+        m.unseenConversationsCount = value
+    }
 }
 // SetUnseenCount sets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetUnseenCount(value *int32)() {
-    m.unseenCount = value
+    if m != nil {
+        m.unseenCount = value
+    }
 }
 // SetUnseenMessagesCount sets the unseenMessagesCount property value. Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Returned only on $select.
 func (m *Group) SetUnseenMessagesCount(value *int32)() {
-    m.unseenMessagesCount = value
+    if m != nil {
+        m.unseenMessagesCount = value
+    }
 }
 // SetVisibility sets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
 func (m *Group) SetVisibility(value *string)() {
-    m.visibility = value
+    if m != nil {
+        m.visibility = value
+    }
 }

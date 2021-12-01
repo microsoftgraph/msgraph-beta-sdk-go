@@ -40,7 +40,7 @@ type RiskDetectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // RiskDetectionRequestBuilderPatchOptions options for Patch
 type RiskDetectionRequestBuilderPatchOptions struct {

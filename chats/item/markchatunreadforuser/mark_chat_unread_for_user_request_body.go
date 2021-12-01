@@ -124,17 +124,25 @@ func (m *MarkChatUnreadForUserRequestBody) Serialize(writer i04eb5309aeaafadd283
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MarkChatUnreadForUserRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLastMessageReadDateTime sets the lastMessageReadDateTime property value. 
 func (m *MarkChatUnreadForUserRequestBody) SetLastMessageReadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastMessageReadDateTime = value
+    if m != nil {
+        m.lastMessageReadDateTime = value
+    }
 }
 // SetTenantId sets the tenantId property value. 
 func (m *MarkChatUnreadForUserRequestBody) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }
 // SetUser sets the user property value. 
 func (m *MarkChatUnreadForUserRequestBody) SetUser(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkUserIdentity)() {
-    m.user = value
+    if m != nil {
+        m.user = value
+    }
 }

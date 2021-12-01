@@ -124,17 +124,25 @@ func (m *CloudPcDomainJoinConfiguration) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcDomainJoinConfiguration) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOnPremisesConnectionId sets the onPremisesConnectionId property value. The on-premises connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.
 func (m *CloudPcDomainJoinConfiguration) SetOnPremisesConnectionId(value *string)() {
-    m.onPremisesConnectionId = value
+    if m != nil {
+        m.onPremisesConnectionId = value
+    }
 }
 // SetRegionName sets the regionName property value. The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
 func (m *CloudPcDomainJoinConfiguration) SetRegionName(value *string)() {
-    m.regionName = value
+    if m != nil {
+        m.regionName = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Specifies how the provisioned Cloud PC will be joined to Azure AD. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcDomainJoinConfiguration) SetType_escaped(value *CloudPcDomainJoinType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

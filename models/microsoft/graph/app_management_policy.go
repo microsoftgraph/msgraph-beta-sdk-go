@@ -120,13 +120,19 @@ func (m *AppManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAppliesTo sets the appliesTo property value. Collection of application and service principals to which a policy is applied.
 func (m *AppManagementPolicy) SetAppliesTo(value []DirectoryObject)() {
-    m.appliesTo = value
+    if m != nil {
+        m.appliesTo = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Denotes whether the policy is enabled.
 func (m *AppManagementPolicy) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetRestrictions sets the restrictions property value. Restrictions that apply to an application or service principal object.
 func (m *AppManagementPolicy) SetRestrictions(value *AppManagementConfiguration)() {
-    m.restrictions = value
+    if m != nil {
+        m.restrictions = value
+    }
 }

@@ -124,17 +124,25 @@ func (m *AlterationResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlterationResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOriginalQueryString sets the originalQueryString property value. Defines the original user query string.
 func (m *AlterationResponse) SetOriginalQueryString(value *string)() {
-    m.originalQueryString = value
+    if m != nil {
+        m.originalQueryString = value
+    }
 }
 // SetQueryAlteration sets the queryAlteration property value. Defines the details of alteration information for the spelling correction.
 func (m *AlterationResponse) SetQueryAlteration(value *SearchAlteration)() {
-    m.queryAlteration = value
+    if m != nil {
+        m.queryAlteration = value
+    }
 }
 // SetQueryAlterationType sets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are suggestion, modification.
 func (m *AlterationResponse) SetQueryAlterationType(value *SearchAlterationType)() {
-    m.queryAlterationType = value
+    if m != nil {
+        m.queryAlterationType = value
+    }
 }

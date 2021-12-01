@@ -593,85 +593,127 @@ func (m *PrinterDocumentConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterDocumentConfiguration) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCollate sets the collate property value. 
 func (m *PrinterDocumentConfiguration) SetCollate(value *bool)() {
-    m.collate = value
+    if m != nil {
+        m.collate = value
+    }
 }
 // SetColorMode sets the colorMode property value. 
 func (m *PrinterDocumentConfiguration) SetColorMode(value *PrintColorMode)() {
-    m.colorMode = value
+    if m != nil {
+        m.colorMode = value
+    }
 }
 // SetCopies sets the copies property value. 
 func (m *PrinterDocumentConfiguration) SetCopies(value *int32)() {
-    m.copies = value
+    if m != nil {
+        m.copies = value
+    }
 }
 // SetDpi sets the dpi property value. 
 func (m *PrinterDocumentConfiguration) SetDpi(value *int32)() {
-    m.dpi = value
+    if m != nil {
+        m.dpi = value
+    }
 }
 // SetDuplexMode sets the duplexMode property value. 
 func (m *PrinterDocumentConfiguration) SetDuplexMode(value *PrintDuplexMode)() {
-    m.duplexMode = value
+    if m != nil {
+        m.duplexMode = value
+    }
 }
 // SetFeedDirection sets the feedDirection property value. 
 func (m *PrinterDocumentConfiguration) SetFeedDirection(value *PrinterFeedDirection)() {
-    m.feedDirection = value
+    if m != nil {
+        m.feedDirection = value
+    }
 }
 // SetFeedOrientation sets the feedOrientation property value. 
 func (m *PrinterDocumentConfiguration) SetFeedOrientation(value *PrinterFeedOrientation)() {
-    m.feedOrientation = value
+    if m != nil {
+        m.feedOrientation = value
+    }
 }
 // SetFinishings sets the finishings property value. 
 func (m *PrinterDocumentConfiguration) SetFinishings(value []PrintFinishing)() {
-    m.finishings = value
+    if m != nil {
+        m.finishings = value
+    }
 }
 // SetFitPdfToPage sets the fitPdfToPage property value. 
 func (m *PrinterDocumentConfiguration) SetFitPdfToPage(value *bool)() {
-    m.fitPdfToPage = value
+    if m != nil {
+        m.fitPdfToPage = value
+    }
 }
 // SetInputBin sets the inputBin property value. 
 func (m *PrinterDocumentConfiguration) SetInputBin(value *string)() {
-    m.inputBin = value
+    if m != nil {
+        m.inputBin = value
+    }
 }
 // SetMargin sets the margin property value. 
 func (m *PrinterDocumentConfiguration) SetMargin(value *PrintMargin)() {
-    m.margin = value
+    if m != nil {
+        m.margin = value
+    }
 }
 // SetMediaSize sets the mediaSize property value. 
 func (m *PrinterDocumentConfiguration) SetMediaSize(value *string)() {
-    m.mediaSize = value
+    if m != nil {
+        m.mediaSize = value
+    }
 }
 // SetMediaType sets the mediaType property value. 
 func (m *PrinterDocumentConfiguration) SetMediaType(value *string)() {
-    m.mediaType = value
+    if m != nil {
+        m.mediaType = value
+    }
 }
 // SetMultipageLayout sets the multipageLayout property value. 
 func (m *PrinterDocumentConfiguration) SetMultipageLayout(value *PrintMultipageLayout)() {
-    m.multipageLayout = value
+    if m != nil {
+        m.multipageLayout = value
+    }
 }
 // SetOrientation sets the orientation property value. 
 func (m *PrinterDocumentConfiguration) SetOrientation(value *PrintOrientation)() {
-    m.orientation = value
+    if m != nil {
+        m.orientation = value
+    }
 }
 // SetOutputBin sets the outputBin property value. 
 func (m *PrinterDocumentConfiguration) SetOutputBin(value *string)() {
-    m.outputBin = value
+    if m != nil {
+        m.outputBin = value
+    }
 }
 // SetPageRanges sets the pageRanges property value. 
 func (m *PrinterDocumentConfiguration) SetPageRanges(value []IntegerRange)() {
-    m.pageRanges = value
+    if m != nil {
+        m.pageRanges = value
+    }
 }
 // SetPagesPerSheet sets the pagesPerSheet property value. 
 func (m *PrinterDocumentConfiguration) SetPagesPerSheet(value *int32)() {
-    m.pagesPerSheet = value
+    if m != nil {
+        m.pagesPerSheet = value
+    }
 }
 // SetQuality sets the quality property value. 
 func (m *PrinterDocumentConfiguration) SetQuality(value *PrintQuality)() {
-    m.quality = value
+    if m != nil {
+        m.quality = value
+    }
 }
 // SetScaling sets the scaling property value. 
 func (m *PrinterDocumentConfiguration) SetScaling(value *PrintScaling)() {
-    m.scaling = value
+    if m != nil {
+        m.scaling = value
+    }
 }

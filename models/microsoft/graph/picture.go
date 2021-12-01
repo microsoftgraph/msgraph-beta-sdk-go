@@ -137,17 +137,25 @@ func (m *Picture) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetContent sets the content property value. 
 func (m *Picture) SetContent(value []byte)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }
 // SetContentType sets the contentType property value. 
 func (m *Picture) SetContentType(value *string)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }
 // SetHeight sets the height property value. 
 func (m *Picture) SetHeight(value *int32)() {
-    m.height = value
+    if m != nil {
+        m.height = value
+    }
 }
 // SetWidth sets the width property value. 
 func (m *Picture) SetWidth(value *int32)() {
-    m.width = value
+    if m != nil {
+        m.width = value
+    }
 }

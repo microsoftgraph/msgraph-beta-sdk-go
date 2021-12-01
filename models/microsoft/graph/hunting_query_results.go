@@ -114,13 +114,19 @@ func (m *HuntingQueryResults) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HuntingQueryResults) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetResults sets the results property value. 
 func (m *HuntingQueryResults) SetResults(value []HuntingRowResult)() {
-    m.results = value
+    if m != nil {
+        m.results = value
+    }
 }
 // SetSchema sets the schema property value. 
 func (m *HuntingQueryResults) SetSchema(value []SinglePropertySchema)() {
-    m.schema = value
+    if m != nil {
+        m.schema = value
+    }
 }

@@ -123,17 +123,25 @@ func (m *AttendanceInterval) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttendanceInterval) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDurationInSeconds sets the durationInSeconds property value. Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
 func (m *AttendanceInterval) SetDurationInSeconds(value *int32)() {
-    m.durationInSeconds = value
+    if m != nil {
+        m.durationInSeconds = value
+    }
 }
 // SetJoinDateTime sets the joinDateTime property value. Time attendee joined in UTC.
 func (m *AttendanceInterval) SetJoinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.joinDateTime = value
+    if m != nil {
+        m.joinDateTime = value
+    }
 }
 // SetLeaveDateTime sets the leaveDateTime property value. Time attendee left in UTC.
 func (m *AttendanceInterval) SetLeaveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.leaveDateTime = value
+    if m != nil {
+        m.leaveDateTime = value
+    }
 }

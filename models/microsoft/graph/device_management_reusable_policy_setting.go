@@ -277,37 +277,55 @@ func (m *DeviceManagementReusablePolicySetting) Serialize(writer i04eb5309aeaafa
 }
 // SetCreatedDateTime sets the createdDateTime property value. reusable setting creation date and time. This property is read-only.
 func (m *DeviceManagementReusablePolicySetting) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. reusable setting description supplied by user.
 func (m *DeviceManagementReusablePolicySetting) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. reusable setting display name supplied by user.
 func (m *DeviceManagementReusablePolicySetting) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. date and time when reusable setting was last modified. This property is read-only.
 func (m *DeviceManagementReusablePolicySetting) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetReferencingConfigurationPolicies sets the referencingConfigurationPolicies property value. configuration policies referencing the current reusable setting. This property is read-only.
 func (m *DeviceManagementReusablePolicySetting) SetReferencingConfigurationPolicies(value []DeviceManagementConfigurationPolicy)() {
-    m.referencingConfigurationPolicies = value
+    if m != nil {
+        m.referencingConfigurationPolicies = value
+    }
 }
 // SetReferencingConfigurationPolicyCount sets the referencingConfigurationPolicyCount property value. count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.
 func (m *DeviceManagementReusablePolicySetting) SetReferencingConfigurationPolicyCount(value *int32)() {
-    m.referencingConfigurationPolicyCount = value
+    if m != nil {
+        m.referencingConfigurationPolicyCount = value
+    }
 }
 // SetSettingDefinitionId sets the settingDefinitionId property value. setting definition id associated with this reusable setting.
 func (m *DeviceManagementReusablePolicySetting) SetSettingDefinitionId(value *string)() {
-    m.settingDefinitionId = value
+    if m != nil {
+        m.settingDefinitionId = value
+    }
 }
 // SetSettingInstance sets the settingInstance property value. reusable setting configuration instance
 func (m *DeviceManagementReusablePolicySetting) SetSettingInstance(value *DeviceManagementConfigurationSettingInstance)() {
-    m.settingInstance = value
+    if m != nil {
+        m.settingInstance = value
+    }
 }
 // SetVersion sets the version property value. version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.
 func (m *DeviceManagementReusablePolicySetting) SetVersion(value *int32)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

@@ -40,7 +40,7 @@ type OutlookTaskGroupRequestBuilderGetOptions struct {
 // OutlookTaskGroupRequestBuilderGetQueryParameters get taskGroups from users
 type OutlookTaskGroupRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OutlookTaskGroupRequestBuilderPatchOptions options for Patch
 type OutlookTaskGroupRequestBuilderPatchOptions struct {

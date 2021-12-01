@@ -40,7 +40,7 @@ type MentionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MentionRequestBuilderPatchOptions options for Patch
 type MentionRequestBuilderPatchOptions struct {

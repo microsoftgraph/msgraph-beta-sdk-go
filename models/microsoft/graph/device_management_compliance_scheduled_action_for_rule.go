@@ -94,9 +94,13 @@ func (m *DeviceManagementComplianceScheduledActionForRule) Serialize(writer i04e
 }
 // SetRuleName sets the ruleName property value. Name of the rule which this scheduled action applies to.
 func (m *DeviceManagementComplianceScheduledActionForRule) SetRuleName(value *string)() {
-    m.ruleName = value
+    if m != nil {
+        m.ruleName = value
+    }
 }
 // SetScheduledActionConfigurations sets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
 func (m *DeviceManagementComplianceScheduledActionForRule) SetScheduledActionConfigurations(value []DeviceManagementComplianceActionItem)() {
-    m.scheduledActionConfigurations = value
+    if m != nil {
+        m.scheduledActionConfigurations = value
+    }
 }

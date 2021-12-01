@@ -164,21 +164,31 @@ func (m *CloudPcConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetDisplayName sets the displayName property value. The display name of the cloud PC connection. Required. Read-only.
 func (m *CloudPcConnection) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetHealthCheckStatus sets the healthCheckStatus property value. The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
 func (m *CloudPcConnection) SetHealthCheckStatus(value *string)() {
-    m.healthCheckStatus = value
+    if m != nil {
+        m.healthCheckStatus = value
+    }
 }
 // SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
 func (m *CloudPcConnection) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastRefreshedDateTime = value
+    if m != nil {
+        m.lastRefreshedDateTime = value
+    }
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *CloudPcConnection) SetTenantDisplayName(value *string)() {
-    m.tenantDisplayName = value
+    if m != nil {
+        m.tenantDisplayName = value
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *CloudPcConnection) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }

@@ -90,11 +90,15 @@ func (m *CreateDownloadUrlResponse) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateDownloadUrlResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppLogCollectionDownloadDetails sets the appLogCollectionDownloadDetails property value. Union type representation for type appLogCollectionDownloadDetails
 func (m *CreateDownloadUrlResponse) SetAppLogCollectionDownloadDetails(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AppLogCollectionDownloadDetails)() {
-    m.appLogCollectionDownloadDetails = value
+    if m != nil {
+        m.appLogCollectionDownloadDetails = value
+    }
 }
 // NewCreateDownloadUrlRequestBuilderInternal instantiates a new CreateDownloadUrlRequestBuilder and sets the default values.
 func NewCreateDownloadUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateDownloadUrlRequestBuilder) {

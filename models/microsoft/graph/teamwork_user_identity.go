@@ -61,5 +61,7 @@ func (m *TeamworkUserIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetUserIdentityType sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
 func (m *TeamworkUserIdentity) SetUserIdentityType(value *TeamworkUserIdentityType)() {
-    m.userIdentityType = value
+    if m != nil {
+        m.userIdentityType = value
+    }
 }

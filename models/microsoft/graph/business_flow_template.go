@@ -59,5 +59,7 @@ func (m *BusinessFlowTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetDisplayName sets the displayName property value. The name of the business flow template
 func (m *BusinessFlowTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

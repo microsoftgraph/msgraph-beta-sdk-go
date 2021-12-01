@@ -122,17 +122,25 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) Serialize(writer i04eb5
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDevicesNotAutopilotRegistered sets the devicesNotAutopilotRegistered property value. The count of intune devices that are not autopilot registerd.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetDevicesNotAutopilotRegistered(value *int32)() {
-    m.devicesNotAutopilotRegistered = value
+    if m != nil {
+        m.devicesNotAutopilotRegistered = value
+    }
 }
 // SetDevicesWithoutAutopilotProfileAssigned sets the devicesWithoutAutopilotProfileAssigned property value. The count of intune devices not autopilot profile assigned.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetDevicesWithoutAutopilotProfileAssigned(value *int32)() {
-    m.devicesWithoutAutopilotProfileAssigned = value
+    if m != nil {
+        m.devicesWithoutAutopilotProfileAssigned = value
+    }
 }
 // SetTotalWindows10DevicesWithoutTenantAttached sets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and Comanaged.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetTotalWindows10DevicesWithoutTenantAttached(value *int32)() {
-    m.totalWindows10DevicesWithoutTenantAttached = value
+    if m != nil {
+        m.totalWindows10DevicesWithoutTenantAttached = value
+    }
 }

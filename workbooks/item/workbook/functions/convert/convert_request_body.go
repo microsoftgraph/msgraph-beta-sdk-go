@@ -123,17 +123,25 @@ func (m *ConvertRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConvertRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFromUnit sets the fromUnit property value. 
 func (m *ConvertRequestBody) SetFromUnit(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.fromUnit = value
+    if m != nil {
+        m.fromUnit = value
+    }
 }
 // SetNumber sets the number property value. 
 func (m *ConvertRequestBody) SetNumber(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetToUnit sets the toUnit property value. 
 func (m *ConvertRequestBody) SetToUnit(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.toUnit = value
+    if m != nil {
+        m.toUnit = value
+    }
 }

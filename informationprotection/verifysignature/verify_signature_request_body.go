@@ -122,17 +122,25 @@ func (m *VerifySignatureRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifySignatureRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDigest sets the digest property value. 
 func (m *VerifySignatureRequestBody) SetDigest(value []byte)() {
-    m.digest = value
+    if m != nil {
+        m.digest = value
+    }
 }
 // SetSignature sets the signature property value. 
 func (m *VerifySignatureRequestBody) SetSignature(value []byte)() {
-    m.signature = value
+    if m != nil {
+        m.signature = value
+    }
 }
 // SetSigningKeyId sets the signingKeyId property value. 
 func (m *VerifySignatureRequestBody) SetSigningKeyId(value *string)() {
-    m.signingKeyId = value
+    if m != nil {
+        m.signingKeyId = value
+    }
 }

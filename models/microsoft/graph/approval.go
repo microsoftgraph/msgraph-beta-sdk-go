@@ -68,5 +68,7 @@ func (m *Approval) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetSteps sets the steps property value. 
 func (m *Approval) SetSteps(value []ApprovalStep)() {
-    m.steps = value
+    if m != nil {
+        m.steps = value
+    }
 }

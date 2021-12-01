@@ -174,25 +174,37 @@ func (m *BookingSchedulingPolicy) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingSchedulingPolicy) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowStaffSelection sets the allowStaffSelection property value. True if to allow customers to choose a specific person for the booking.
 func (m *BookingSchedulingPolicy) SetAllowStaffSelection(value *bool)() {
-    m.allowStaffSelection = value
+    if m != nil {
+        m.allowStaffSelection = value
+    }
 }
 // SetMaximumAdvance sets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
 func (m *BookingSchedulingPolicy) SetMaximumAdvance(value *string)() {
-    m.maximumAdvance = value
+    if m != nil {
+        m.maximumAdvance = value
+    }
 }
 // SetMinimumLeadTime sets the minimumLeadTime property value. The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
 func (m *BookingSchedulingPolicy) SetMinimumLeadTime(value *string)() {
-    m.minimumLeadTime = value
+    if m != nil {
+        m.minimumLeadTime = value
+    }
 }
 // SetSendConfirmationsToOwner sets the sendConfirmationsToOwner property value. True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
 func (m *BookingSchedulingPolicy) SetSendConfirmationsToOwner(value *bool)() {
-    m.sendConfirmationsToOwner = value
+    if m != nil {
+        m.sendConfirmationsToOwner = value
+    }
 }
 // SetTimeSlotInterval sets the timeSlotInterval property value. Duration of each time slot, denoted in ISO 8601 format.
 func (m *BookingSchedulingPolicy) SetTimeSlotInterval(value *string)() {
-    m.timeSlotInterval = value
+    if m != nil {
+        m.timeSlotInterval = value
+    }
 }

@@ -122,17 +122,25 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) Serialize(writer 
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCoManagedDeviceCount sets the coManagedDeviceCount property value. Total number of  co-managed devices.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetCoManagedDeviceCount(value *int32)() {
-    m.coManagedDeviceCount = value
+    if m != nil {
+        m.coManagedDeviceCount = value
+    }
 }
 // SetIntuneDeviceCount sets the intuneDeviceCount property value. The count of intune devices that are not autopilot registerd.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetIntuneDeviceCount(value *int32)() {
-    m.intuneDeviceCount = value
+    if m != nil {
+        m.intuneDeviceCount = value
+    }
 }
 // SetTenantAttachDeviceCount sets the tenantAttachDeviceCount property value. Total count of tenant attach devices.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetTenantAttachDeviceCount(value *int32)() {
-    m.tenantAttachDeviceCount = value
+    if m != nil {
+        m.tenantAttachDeviceCount = value
+    }
 }

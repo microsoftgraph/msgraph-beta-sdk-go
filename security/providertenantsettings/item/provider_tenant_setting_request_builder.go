@@ -40,7 +40,7 @@ type ProviderTenantSettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ProviderTenantSettingRequestBuilderPatchOptions options for Patch
 type ProviderTenantSettingRequestBuilderPatchOptions struct {

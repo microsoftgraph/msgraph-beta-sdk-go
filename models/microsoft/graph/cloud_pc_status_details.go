@@ -131,17 +131,25 @@ func (m *CloudPcStatusDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcStatusDetails) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdditionalInformation sets the additionalInformation property value. Any additional information about the Cloud PC status.
 func (m *CloudPcStatusDetails) SetAdditionalInformation(value []KeyValuePair)() {
-    m.additionalInformation = value
+    if m != nil {
+        m.additionalInformation = value
+    }
 }
 // SetCode sets the code property value. The code associated with the Cloud PC status.
 func (m *CloudPcStatusDetails) SetCode(value *string)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetMessage sets the message property value. The status message.
 func (m *CloudPcStatusDetails) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }

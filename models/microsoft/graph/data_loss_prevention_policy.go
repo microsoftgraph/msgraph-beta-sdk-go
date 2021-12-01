@@ -59,5 +59,7 @@ func (m *DataLossPreventionPolicy) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetName sets the name property value. 
 func (m *DataLossPreventionPolicy) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

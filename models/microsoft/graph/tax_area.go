@@ -138,17 +138,25 @@ func (m *TaxArea) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetCode sets the code property value. 
 func (m *TaxArea) SetCode(value *string)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *TaxArea) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *TaxArea) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetTaxType sets the taxType property value. 
 func (m *TaxArea) SetTaxType(value *string)() {
-    m.taxType = value
+    if m != nil {
+        m.taxType = value
+    }
 }

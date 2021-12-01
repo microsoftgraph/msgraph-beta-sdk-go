@@ -192,25 +192,37 @@ func (m *AssignmentFilterStatusDetails) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterStatusDetails) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceProperties sets the deviceProperties property value. Device properties used for filter evaluation during device check-in time.
 func (m *AssignmentFilterStatusDetails) SetDeviceProperties(value []KeyValuePair)() {
-    m.deviceProperties = value
+    if m != nil {
+        m.deviceProperties = value
+    }
 }
 // SetEvalutionSummaries sets the evalutionSummaries property value. Evaluation result summaries for each filter associated to device and payload
 func (m *AssignmentFilterStatusDetails) SetEvalutionSummaries(value []AssignmentFilterEvaluationSummary)() {
-    m.evalutionSummaries = value
+    if m != nil {
+        m.evalutionSummaries = value
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. Unique identifier for the device object.
 func (m *AssignmentFilterStatusDetails) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    if m != nil {
+        m.managedDeviceId = value
+    }
 }
 // SetPayloadId sets the payloadId property value. Unique identifier for payload object.
 func (m *AssignmentFilterStatusDetails) SetPayloadId(value *string)() {
-    m.payloadId = value
+    if m != nil {
+        m.payloadId = value
+    }
 }
 // SetUserId sets the userId property value. Unique identifier for UserId object. Can be null
 func (m *AssignmentFilterStatusDetails) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

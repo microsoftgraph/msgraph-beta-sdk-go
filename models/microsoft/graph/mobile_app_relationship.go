@@ -165,21 +165,31 @@ func (m *MobileAppRelationship) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetTargetDisplayName sets the targetDisplayName property value. The target mobile app's display name.
 func (m *MobileAppRelationship) SetTargetDisplayName(value *string)() {
-    m.targetDisplayName = value
+    if m != nil {
+        m.targetDisplayName = value
+    }
 }
 // SetTargetDisplayVersion sets the targetDisplayVersion property value. The target mobile app's display version.
 func (m *MobileAppRelationship) SetTargetDisplayVersion(value *string)() {
-    m.targetDisplayVersion = value
+    if m != nil {
+        m.targetDisplayVersion = value
+    }
 }
 // SetTargetId sets the targetId property value. The target mobile app's app id.
 func (m *MobileAppRelationship) SetTargetId(value *string)() {
-    m.targetId = value
+    if m != nil {
+        m.targetId = value
+    }
 }
 // SetTargetPublisher sets the targetPublisher property value. The target mobile app's publisher.
 func (m *MobileAppRelationship) SetTargetPublisher(value *string)() {
-    m.targetPublisher = value
+    if m != nil {
+        m.targetPublisher = value
+    }
 }
 // SetTargetType sets the targetType property value. The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
 func (m *MobileAppRelationship) SetTargetType(value *MobileAppRelationshipType)() {
-    m.targetType = value
+    if m != nil {
+        m.targetType = value
+    }
 }

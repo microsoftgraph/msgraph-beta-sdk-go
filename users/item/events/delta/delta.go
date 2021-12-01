@@ -1291,181 +1291,271 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAllowNewTimeProposals sets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
 func (m *Delta) SetAllowNewTimeProposals(value *bool)() {
-    m.allowNewTimeProposals = value
+    if m != nil {
+        m.allowNewTimeProposals = value
+    }
 }
 // SetAttachments sets the attachments property value. The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
 func (m *Delta) SetAttachments(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Attachment)() {
-    m.attachments = value
+    if m != nil {
+        m.attachments = value
+    }
 }
 // SetAttendees sets the attendees property value. The collection of attendees for the event.
 func (m *Delta) SetAttendees(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Attendee)() {
-    m.attendees = value
+    if m != nil {
+        m.attendees = value
+    }
 }
 // SetBody sets the body property value. The body of the message associated with the event. It can be in HTML or text format.
 func (m *Delta) SetBody(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBody)() {
-    m.body = value
+    if m != nil {
+        m.body = value
+    }
 }
 // SetBodyPreview sets the bodyPreview property value. The preview of the message associated with the event. It is in text format.
 func (m *Delta) SetBodyPreview(value *string)() {
-    m.bodyPreview = value
+    if m != nil {
+        m.bodyPreview = value
+    }
 }
 // SetCalendar sets the calendar property value. The calendar that contains the event. Navigation property. Read-only.
 func (m *Delta) SetCalendar(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Calendar)() {
-    m.calendar = value
+    if m != nil {
+        m.calendar = value
+    }
 }
 // SetCancelledOccurrences sets the cancelledOccurrences property value. Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
 func (m *Delta) SetCancelledOccurrences(value []string)() {
-    m.cancelledOccurrences = value
+    if m != nil {
+        m.cancelledOccurrences = value
+    }
 }
 // SetEnd sets the end property value. The date, time, and time zone that the event ends. By default, the end time is in UTC.
 func (m *Delta) SetEnd(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone)() {
-    m.end = value
+    if m != nil {
+        m.end = value
+    }
 }
 // SetExceptionOccurrences sets the exceptionOccurrences property value. 
 func (m *Delta) SetExceptionOccurrences(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event)() {
-    m.exceptionOccurrences = value
+    if m != nil {
+        m.exceptionOccurrences = value
+    }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the event. Nullable.
 func (m *Delta) SetExtensions(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Extension)() {
-    m.extensions = value
+    if m != nil {
+        m.extensions = value
+    }
 }
 // SetHasAttachments sets the hasAttachments property value. Set to true if the event has attachments.
 func (m *Delta) SetHasAttachments(value *bool)() {
-    m.hasAttachments = value
+    if m != nil {
+        m.hasAttachments = value
+    }
 }
 // SetHideAttendees sets the hideAttendees property value. When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
 func (m *Delta) SetHideAttendees(value *bool)() {
-    m.hideAttendees = value
+    if m != nil {
+        m.hideAttendees = value
+    }
 }
 // SetImportance sets the importance property value. 
 func (m *Delta) SetImportance(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Importance)() {
-    m.importance = value
+    if m != nil {
+        m.importance = value
+    }
 }
 // SetInstances sets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
 func (m *Delta) SetInstances(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event)() {
-    m.instances = value
+    if m != nil {
+        m.instances = value
+    }
 }
 // SetIsAllDay sets the isAllDay property value. 
 func (m *Delta) SetIsAllDay(value *bool)() {
-    m.isAllDay = value
+    if m != nil {
+        m.isAllDay = value
+    }
 }
 // SetIsCancelled sets the isCancelled property value. 
 func (m *Delta) SetIsCancelled(value *bool)() {
-    m.isCancelled = value
+    if m != nil {
+        m.isCancelled = value
+    }
 }
 // SetIsDraft sets the isDraft property value. 
 func (m *Delta) SetIsDraft(value *bool)() {
-    m.isDraft = value
+    if m != nil {
+        m.isDraft = value
+    }
 }
 // SetIsOnlineMeeting sets the isOnlineMeeting property value. 
 func (m *Delta) SetIsOnlineMeeting(value *bool)() {
-    m.isOnlineMeeting = value
+    if m != nil {
+        m.isOnlineMeeting = value
+    }
 }
 // SetIsOrganizer sets the isOrganizer property value. 
 func (m *Delta) SetIsOrganizer(value *bool)() {
-    m.isOrganizer = value
+    if m != nil {
+        m.isOrganizer = value
+    }
 }
 // SetIsReminderOn sets the isReminderOn property value. 
 func (m *Delta) SetIsReminderOn(value *bool)() {
-    m.isReminderOn = value
+    if m != nil {
+        m.isReminderOn = value
+    }
 }
 // SetLocation sets the location property value. 
 func (m *Delta) SetLocation(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Location)() {
-    m.location = value
+    if m != nil {
+        m.location = value
+    }
 }
 // SetLocations sets the locations property value. 
 func (m *Delta) SetLocations(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Location)() {
-    m.locations = value
+    if m != nil {
+        m.locations = value
+    }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the event. Read-only. Nullable.
 func (m *Delta) SetMultiValueExtendedProperties(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MultiValueLegacyExtendedProperty)() {
-    m.multiValueExtendedProperties = value
+    if m != nil {
+        m.multiValueExtendedProperties = value
+    }
 }
 // SetOccurrenceId sets the occurrenceId property value. 
 func (m *Delta) SetOccurrenceId(value *string)() {
-    m.occurrenceId = value
+    if m != nil {
+        m.occurrenceId = value
+    }
 }
 // SetOnlineMeeting sets the onlineMeeting property value. 
 func (m *Delta) SetOnlineMeeting(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnlineMeetingInfo)() {
-    m.onlineMeeting = value
+    if m != nil {
+        m.onlineMeeting = value
+    }
 }
 // SetOnlineMeetingProvider sets the onlineMeetingProvider property value. 
 func (m *Delta) SetOnlineMeetingProvider(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.OnlineMeetingProviderType)() {
-    m.onlineMeetingProvider = value
+    if m != nil {
+        m.onlineMeetingProvider = value
+    }
 }
 // SetOnlineMeetingUrl sets the onlineMeetingUrl property value. 
 func (m *Delta) SetOnlineMeetingUrl(value *string)() {
-    m.onlineMeetingUrl = value
+    if m != nil {
+        m.onlineMeetingUrl = value
+    }
 }
 // SetOrganizer sets the organizer property value. 
 func (m *Delta) SetOrganizer(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient)() {
-    m.organizer = value
+    if m != nil {
+        m.organizer = value
+    }
 }
 // SetOriginalEndTimeZone sets the originalEndTimeZone property value. 
 func (m *Delta) SetOriginalEndTimeZone(value *string)() {
-    m.originalEndTimeZone = value
+    if m != nil {
+        m.originalEndTimeZone = value
+    }
 }
 // SetOriginalStart sets the originalStart property value. 
 func (m *Delta) SetOriginalStart(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.originalStart = value
+    if m != nil {
+        m.originalStart = value
+    }
 }
 // SetOriginalStartTimeZone sets the originalStartTimeZone property value. 
 func (m *Delta) SetOriginalStartTimeZone(value *string)() {
-    m.originalStartTimeZone = value
+    if m != nil {
+        m.originalStartTimeZone = value
+    }
 }
 // SetRecurrence sets the recurrence property value. 
 func (m *Delta) SetRecurrence(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PatternedRecurrence)() {
-    m.recurrence = value
+    if m != nil {
+        m.recurrence = value
+    }
 }
 // SetReminderMinutesBeforeStart sets the reminderMinutesBeforeStart property value. 
 func (m *Delta) SetReminderMinutesBeforeStart(value *int32)() {
-    m.reminderMinutesBeforeStart = value
+    if m != nil {
+        m.reminderMinutesBeforeStart = value
+    }
 }
 // SetResponseRequested sets the responseRequested property value. 
 func (m *Delta) SetResponseRequested(value *bool)() {
-    m.responseRequested = value
+    if m != nil {
+        m.responseRequested = value
+    }
 }
 // SetResponseStatus sets the responseStatus property value. 
 func (m *Delta) SetResponseStatus(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResponseStatus)() {
-    m.responseStatus = value
+    if m != nil {
+        m.responseStatus = value
+    }
 }
 // SetSensitivity sets the sensitivity property value. 
 func (m *Delta) SetSensitivity(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Sensitivity)() {
-    m.sensitivity = value
+    if m != nil {
+        m.sensitivity = value
+    }
 }
 // SetSeriesMasterId sets the seriesMasterId property value. 
 func (m *Delta) SetSeriesMasterId(value *string)() {
-    m.seriesMasterId = value
+    if m != nil {
+        m.seriesMasterId = value
+    }
 }
 // SetShowAs sets the showAs property value. 
 func (m *Delta) SetShowAs(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FreeBusyStatus)() {
-    m.showAs = value
+    if m != nil {
+        m.showAs = value
+    }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the event. Read-only. Nullable.
 func (m *Delta) SetSingleValueExtendedProperties(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SingleValueLegacyExtendedProperty)() {
-    m.singleValueExtendedProperties = value
+    if m != nil {
+        m.singleValueExtendedProperties = value
+    }
 }
 // SetStart sets the start property value. 
 func (m *Delta) SetStart(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone)() {
-    m.start = value
+    if m != nil {
+        m.start = value
+    }
 }
 // SetSubject sets the subject property value. 
 func (m *Delta) SetSubject(value *string)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }
 // SetTransactionId sets the transactionId property value. 
 func (m *Delta) SetTransactionId(value *string)() {
-    m.transactionId = value
+    if m != nil {
+        m.transactionId = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. 
 func (m *Delta) SetType_escaped(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EventType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetUid sets the uid property value. 
 func (m *Delta) SetUid(value *string)() {
-    m.uid = value
+    if m != nil {
+        m.uid = value
+    }
 }
 // SetWebLink sets the webLink property value. 
 func (m *Delta) SetWebLink(value *string)() {
-    m.webLink = value
+    if m != nil {
+        m.webLink = value
+    }
 }

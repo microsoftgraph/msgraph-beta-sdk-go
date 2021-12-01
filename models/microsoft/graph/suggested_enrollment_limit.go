@@ -70,9 +70,13 @@ func (m *SuggestedEnrollmentLimit) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SuggestedEnrollmentLimit) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSuggestedDailyLimit sets the suggestedDailyLimit property value. The suggested enrollment limit within a day
 func (m *SuggestedEnrollmentLimit) SetSuggestedDailyLimit(value *int32)() {
-    m.suggestedDailyLimit = value
+    if m != nil {
+        m.suggestedDailyLimit = value
+    }
 }

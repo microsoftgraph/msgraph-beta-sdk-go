@@ -224,29 +224,43 @@ func (m *CartToClassAssociation) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetClassroomIds sets the classroomIds property value. Identifiers of classrooms to be associated with device carts.
 func (m *CartToClassAssociation) SetClassroomIds(value []string)() {
-    m.classroomIds = value
+    if m != nil {
+        m.classroomIds = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. DateTime the object was created.
 func (m *CartToClassAssociation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. Admin provided description of the CartToClassAssociation.
 func (m *CartToClassAssociation) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDeviceCartIds sets the deviceCartIds property value. Identifiers of device carts to be associated with classes.
 func (m *CartToClassAssociation) SetDeviceCartIds(value []string)() {
-    m.deviceCartIds = value
+    if m != nil {
+        m.deviceCartIds = value
+    }
 }
 // SetDisplayName sets the displayName property value. Admin provided name of the device configuration.
 func (m *CartToClassAssociation) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *CartToClassAssociation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetVersion sets the version property value. Version of the CartToClassAssociation.
 func (m *CartToClassAssociation) SetVersion(value *int32)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

@@ -43,7 +43,7 @@ type UnifiedRbacResourceNamespaceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UnifiedRbacResourceNamespaceRequestBuilderPatchOptions options for Patch
 type UnifiedRbacResourceNamespaceRequestBuilderPatchOptions struct {

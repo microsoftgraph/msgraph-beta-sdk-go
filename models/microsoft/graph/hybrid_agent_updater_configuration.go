@@ -123,17 +123,25 @@ func (m *HybridAgentUpdaterConfiguration) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HybridAgentUpdaterConfiguration) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowUpdateConfigurationOverride sets the allowUpdateConfigurationOverride property value. Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.
 func (m *HybridAgentUpdaterConfiguration) SetAllowUpdateConfigurationOverride(value *bool)() {
-    m.allowUpdateConfigurationOverride = value
+    if m != nil {
+        m.allowUpdateConfigurationOverride = value
+    }
 }
 // SetDeferUpdateDateTime sets the deferUpdateDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *HybridAgentUpdaterConfiguration) SetDeferUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.deferUpdateDateTime = value
+    if m != nil {
+        m.deferUpdateDateTime = value
+    }
 }
 // SetUpdateWindow sets the updateWindow property value. 
 func (m *HybridAgentUpdaterConfiguration) SetUpdateWindow(value *UpdateWindow)() {
-    m.updateWindow = value
+    if m != nil {
+        m.updateWindow = value
+    }
 }

@@ -45,7 +45,7 @@ type AccessPackageAssignmentResourceRoleRequestBuilderGetQueryParameters struct 
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AccessPackageAssignmentResourceRoleRequestBuilderPatchOptions options for Patch
 type AccessPackageAssignmentResourceRoleRequestBuilderPatchOptions struct {

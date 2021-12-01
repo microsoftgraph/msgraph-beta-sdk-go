@@ -172,21 +172,31 @@ func (m *AttendanceRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAttendanceIntervals sets the attendanceIntervals property value. List of time periods between joining and leaving.
 func (m *AttendanceRecord) SetAttendanceIntervals(value []AttendanceInterval)() {
-    m.attendanceIntervals = value
+    if m != nil {
+        m.attendanceIntervals = value
+    }
 }
 // SetEmailAddress sets the emailAddress property value. Email address.
 func (m *AttendanceRecord) SetEmailAddress(value *string)() {
-    m.emailAddress = value
+    if m != nil {
+        m.emailAddress = value
+    }
 }
 // SetIdentity sets the identity property value. Identifier, such as display name.
 func (m *AttendanceRecord) SetIdentity(value *Identity)() {
-    m.identity = value
+    if m != nil {
+        m.identity = value
+    }
 }
 // SetRole sets the role property value. Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.
 func (m *AttendanceRecord) SetRole(value *string)() {
-    m.role = value
+    if m != nil {
+        m.role = value
+    }
 }
 // SetTotalAttendanceInSeconds sets the totalAttendanceInSeconds property value. Total duration of the attendances in seconds.
 func (m *AttendanceRecord) SetTotalAttendanceInSeconds(value *int32)() {
-    m.totalAttendanceInSeconds = value
+    if m != nil {
+        m.totalAttendanceInSeconds = value
+    }
 }

@@ -178,21 +178,31 @@ func (m *OnPremisesAgent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAgentGroups sets the agentGroups property value. List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
 func (m *OnPremisesAgent) SetAgentGroups(value []OnPremisesAgentGroup)() {
-    m.agentGroups = value
+    if m != nil {
+        m.agentGroups = value
+    }
 }
 // SetExternalIp sets the externalIp property value. The external IP address as detected by the service for the agent machine. Read-only
 func (m *OnPremisesAgent) SetExternalIp(value *string)() {
-    m.externalIp = value
+    if m != nil {
+        m.externalIp = value
+    }
 }
 // SetMachineName sets the machineName property value. The name of the machine that the aggent is running on. Read-only
 func (m *OnPremisesAgent) SetMachineName(value *string)() {
-    m.machineName = value
+    if m != nil {
+        m.machineName = value
+    }
 }
 // SetStatus sets the status property value. Possible values are: active, inactive.
 func (m *OnPremisesAgent) SetStatus(value *AgentStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetSupportedPublishingTypes sets the supportedPublishingTypes property value. 
 func (m *OnPremisesAgent) SetSupportedPublishingTypes(value []OnPremisesPublishingType)() {
-    m.supportedPublishingTypes = value
+    if m != nil {
+        m.supportedPublishingTypes = value
+    }
 }

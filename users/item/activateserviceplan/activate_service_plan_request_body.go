@@ -96,13 +96,19 @@ func (m *ActivateServicePlanRequestBody) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActivateServicePlanRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetServicePlanId sets the servicePlanId property value. 
 func (m *ActivateServicePlanRequestBody) SetServicePlanId(value *string)() {
-    m.servicePlanId = value
+    if m != nil {
+        m.servicePlanId = value
+    }
 }
 // SetSkuId sets the skuId property value. 
 func (m *ActivateServicePlanRequestBody) SetSkuId(value *string)() {
-    m.skuId = value
+    if m != nil {
+        m.skuId = value
+    }
 }

@@ -150,21 +150,31 @@ func (m *AssignmentFilterEvaluateRequest) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterEvaluateRequest) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPlatform sets the platform property value. Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
 func (m *AssignmentFilterEvaluateRequest) SetPlatform(value *DevicePlatformType)() {
-    m.platform = value
+    if m != nil {
+        m.platform = value
+    }
 }
 // SetRule sets the rule property value. Rule definition of the Assignment Filter.
 func (m *AssignmentFilterEvaluateRequest) SetRule(value *string)() {
-    m.rule = value
+    if m != nil {
+        m.rule = value
+    }
 }
 // SetSkip sets the skip property value. Number of records to skip. Default value is 0
 func (m *AssignmentFilterEvaluateRequest) SetSkip(value *int32)() {
-    m.skip = value
+    if m != nil {
+        m.skip = value
+    }
 }
 // SetTop sets the top property value. Limit of records per request. Default value is 100, if provided less than 0 or greater than 100
 func (m *AssignmentFilterEvaluateRequest) SetTop(value *int32)() {
-    m.top = value
+    if m != nil {
+        m.top = value
+    }
 }

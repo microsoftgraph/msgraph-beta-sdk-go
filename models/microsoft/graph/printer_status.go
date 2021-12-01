@@ -212,29 +212,43 @@ func (m *PrinterStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterStatus) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. A human-readable description of the printer's current processing state. Read-only.
 func (m *PrinterStatus) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDetails sets the details property value. The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
 func (m *PrinterStatus) SetDetails(value []PrinterProcessingStateDetail)() {
-    m.details = value
+    if m != nil {
+        m.details = value
+    }
 }
 // SetProcessingState sets the processingState property value. 
 func (m *PrinterStatus) SetProcessingState(value *PrinterProcessingState)() {
-    m.processingState = value
+    if m != nil {
+        m.processingState = value
+    }
 }
 // SetProcessingStateDescription sets the processingStateDescription property value. 
 func (m *PrinterStatus) SetProcessingStateDescription(value *string)() {
-    m.processingStateDescription = value
+    if m != nil {
+        m.processingStateDescription = value
+    }
 }
 // SetProcessingStateReasons sets the processingStateReasons property value. 
 func (m *PrinterStatus) SetProcessingStateReasons(value []PrinterProcessingStateReason)() {
-    m.processingStateReasons = value
+    if m != nil {
+        m.processingStateReasons = value
+    }
 }
 // SetState sets the state property value. The current processing state. Valid values are described in the following table. Read-only.
 func (m *PrinterStatus) SetState(value *PrinterProcessingState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

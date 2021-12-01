@@ -41,7 +41,7 @@ type PictureRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PictureRequestBuilderPatchOptions options for Patch
 type PictureRequestBuilderPatchOptions struct {

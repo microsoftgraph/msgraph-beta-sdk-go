@@ -41,7 +41,7 @@ type PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetQuer
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilderPatchOptions options for Patch
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilderPatchOptions struct {

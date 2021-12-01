@@ -148,21 +148,31 @@ func (m *SharedAppleDeviceUser) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharedAppleDeviceUser) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDataQuota sets the dataQuota property value. Data quota
 func (m *SharedAppleDeviceUser) SetDataQuota(value *int64)() {
-    m.dataQuota = value
+    if m != nil {
+        m.dataQuota = value
+    }
 }
 // SetDataToSync sets the dataToSync property value. Data to sync
 func (m *SharedAppleDeviceUser) SetDataToSync(value *bool)() {
-    m.dataToSync = value
+    if m != nil {
+        m.dataToSync = value
+    }
 }
 // SetDataUsed sets the dataUsed property value. Data quota
 func (m *SharedAppleDeviceUser) SetDataUsed(value *int64)() {
-    m.dataUsed = value
+    if m != nil {
+        m.dataUsed = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User name
 func (m *SharedAppleDeviceUser) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

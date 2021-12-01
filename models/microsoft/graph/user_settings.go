@@ -163,21 +163,31 @@ func (m *UserSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetContributionToContentDiscoveryAsOrganizationDisabled sets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
 func (m *UserSettings) SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)() {
-    m.contributionToContentDiscoveryAsOrganizationDisabled = value
+    if m != nil {
+        m.contributionToContentDiscoveryAsOrganizationDisabled = value
+    }
 }
 // SetContributionToContentDiscoveryDisabled sets the contributionToContentDiscoveryDisabled property value. When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
 func (m *UserSettings) SetContributionToContentDiscoveryDisabled(value *bool)() {
-    m.contributionToContentDiscoveryDisabled = value
+    if m != nil {
+        m.contributionToContentDiscoveryDisabled = value
+    }
 }
 // SetItemInsights sets the itemInsights property value. The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
 func (m *UserSettings) SetItemInsights(value *UserInsightsSettings)() {
-    m.itemInsights = value
+    if m != nil {
+        m.itemInsights = value
+    }
 }
 // SetRegionalAndLanguageSettings sets the regionalAndLanguageSettings property value. The user's preferences for languages, regional locale and date/time formatting.
 func (m *UserSettings) SetRegionalAndLanguageSettings(value *RegionalAndLanguageSettings)() {
-    m.regionalAndLanguageSettings = value
+    if m != nil {
+        m.regionalAndLanguageSettings = value
+    }
 }
 // SetShiftPreferences sets the shiftPreferences property value. The shift preferences for the user.
 func (m *UserSettings) SetShiftPreferences(value *ShiftPreferences)() {
-    m.shiftPreferences = value
+    if m != nil {
+        m.shiftPreferences = value
+    }
 }

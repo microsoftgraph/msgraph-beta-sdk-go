@@ -190,25 +190,37 @@ func (m *PrivilegedRoleAssignment) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
 func (m *PrivilegedRoleAssignment) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetIsElevated sets the isElevated property value. true if the role assignment is activated. false if the role assignment is deactivated.
 func (m *PrivilegedRoleAssignment) SetIsElevated(value *bool)() {
-    m.isElevated = value
+    if m != nil {
+        m.isElevated = value
+    }
 }
 // SetResultMessage sets the resultMessage property value. Result message set by the service.
 func (m *PrivilegedRoleAssignment) SetResultMessage(value *string)() {
-    m.resultMessage = value
+    if m != nil {
+        m.resultMessage = value
+    }
 }
 // SetRoleId sets the roleId property value. Role identifier. In GUID string format.
 func (m *PrivilegedRoleAssignment) SetRoleId(value *string)() {
-    m.roleId = value
+    if m != nil {
+        m.roleId = value
+    }
 }
 // SetRoleInfo sets the roleInfo property value. Read-only. Nullable. The associated role information.
 func (m *PrivilegedRoleAssignment) SetRoleInfo(value *PrivilegedRole)() {
-    m.roleInfo = value
+    if m != nil {
+        m.roleInfo = value
+    }
 }
 // SetUserId sets the userId property value. User identifier. In GUID string format.
 func (m *PrivilegedRoleAssignment) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

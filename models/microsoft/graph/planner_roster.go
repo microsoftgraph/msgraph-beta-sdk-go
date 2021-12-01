@@ -103,9 +103,13 @@ func (m *PlannerRoster) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetMembers sets the members property value. Retrieves the members of the plannerRoster.
 func (m *PlannerRoster) SetMembers(value []PlannerRosterMember)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }
 // SetPlans sets the plans property value. Retrieves the plans contained by the plannerRoster.
 func (m *PlannerRoster) SetPlans(value []PlannerPlan)() {
-    m.plans = value
+    if m != nil {
+        m.plans = value
+    }
 }

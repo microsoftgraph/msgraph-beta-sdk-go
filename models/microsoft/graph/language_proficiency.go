@@ -223,29 +223,43 @@ func (m *LanguageProficiency) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetDisplayName sets the displayName property value. Contains the long-form name for the language.
 func (m *LanguageProficiency) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetProficiency sets the proficiency property value. 
 func (m *LanguageProficiency) SetProficiency(value *LanguageProficiencyLevel)() {
-    m.proficiency = value
+    if m != nil {
+        m.proficiency = value
+    }
 }
 // SetReading sets the reading property value. Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) SetReading(value *LanguageProficiencyLevel)() {
-    m.reading = value
+    if m != nil {
+        m.reading = value
+    }
 }
 // SetSpoken sets the spoken property value. Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) SetSpoken(value *LanguageProficiencyLevel)() {
-    m.spoken = value
+    if m != nil {
+        m.spoken = value
+    }
 }
 // SetTag sets the tag property value. Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).
 func (m *LanguageProficiency) SetTag(value *string)() {
-    m.tag = value
+    if m != nil {
+        m.tag = value
+    }
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. 
 func (m *LanguageProficiency) SetThumbnailUrl(value *string)() {
-    m.thumbnailUrl = value
+    if m != nil {
+        m.thumbnailUrl = value
+    }
 }
 // SetWritten sets the written property value. Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) SetWritten(value *LanguageProficiencyLevel)() {
-    m.written = value
+    if m != nil {
+        m.written = value
+    }
 }

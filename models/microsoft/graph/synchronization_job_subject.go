@@ -96,13 +96,19 @@ func (m *SynchronizationJobSubject) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationJobSubject) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetObjectId sets the objectId property value. The identifier of an object to which a synchronizationJob  is to be applied.
 func (m *SynchronizationJobSubject) SetObjectId(value *string)() {
-    m.objectId = value
+    if m != nil {
+        m.objectId = value
+    }
 }
 // SetObjectTypeName sets the objectTypeName property value. The type of the object to which a synchronizationJob  is to be applied.
 func (m *SynchronizationJobSubject) SetObjectTypeName(value *string)() {
-    m.objectTypeName = value
+    if m != nil {
+        m.objectTypeName = value
+    }
 }

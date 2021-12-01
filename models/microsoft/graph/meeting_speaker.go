@@ -96,13 +96,19 @@ func (m *MeetingSpeaker) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingSpeaker) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBio sets the bio property value. Bio of the speaker.
 func (m *MeetingSpeaker) SetBio(value *string)() {
-    m.bio = value
+    if m != nil {
+        m.bio = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the speaker.
 func (m *MeetingSpeaker) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

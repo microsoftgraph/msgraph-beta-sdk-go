@@ -59,5 +59,7 @@ func (m *IntuneBrandingProfileAssignment) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetTarget sets the target property value. Assignment target that the branding profile is assigned to.
 func (m *IntuneBrandingProfileAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

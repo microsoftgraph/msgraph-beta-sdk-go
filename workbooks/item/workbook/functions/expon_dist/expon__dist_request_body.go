@@ -123,17 +123,25 @@ func (m *Expon_DistRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Expon_DistRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCumulative sets the cumulative property value. 
 func (m *Expon_DistRequestBody) SetCumulative(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.cumulative = value
+    if m != nil {
+        m.cumulative = value
+    }
 }
 // SetLambda sets the lambda property value. 
 func (m *Expon_DistRequestBody) SetLambda(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.lambda = value
+    if m != nil {
+        m.lambda = value
+    }
 }
 // SetX sets the x property value. 
 func (m *Expon_DistRequestBody) SetX(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.x = value
+    if m != nil {
+        m.x = value
+    }
 }

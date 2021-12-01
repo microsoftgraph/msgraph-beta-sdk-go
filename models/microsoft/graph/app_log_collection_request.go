@@ -144,17 +144,25 @@ func (m *AppLogCollectionRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetCompletedDateTime sets the completedDateTime property value. Time at which the upload log request reached a terminal state
 func (m *AppLogCollectionRequest) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.completedDateTime = value
+    if m != nil {
+        m.completedDateTime = value
+    }
 }
 // SetCustomLogFolders sets the customLogFolders property value. List of log folders.
 func (m *AppLogCollectionRequest) SetCustomLogFolders(value []string)() {
-    m.customLogFolders = value
+    if m != nil {
+        m.customLogFolders = value
+    }
 }
 // SetErrorMessage sets the errorMessage property value. Error message if any during the upload process
 func (m *AppLogCollectionRequest) SetErrorMessage(value *string)() {
-    m.errorMessage = value
+    if m != nil {
+        m.errorMessage = value
+    }
 }
 // SetStatus sets the status property value. Log upload status. Possible values are: pending, completed, failed.
 func (m *AppLogCollectionRequest) SetStatus(value *AppLogUploadState)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

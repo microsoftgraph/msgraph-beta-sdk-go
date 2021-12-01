@@ -45,7 +45,7 @@ type SalesCreditMemoRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // SalesCreditMemoRequestBuilderPatchOptions options for Patch
 type SalesCreditMemoRequestBuilderPatchOptions struct {

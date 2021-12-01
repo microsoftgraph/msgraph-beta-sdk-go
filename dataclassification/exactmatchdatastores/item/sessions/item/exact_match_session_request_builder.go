@@ -44,7 +44,7 @@ type ExactMatchSessionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ExactMatchSessionRequestBuilderPatchOptions options for Patch
 type ExactMatchSessionRequestBuilderPatchOptions struct {

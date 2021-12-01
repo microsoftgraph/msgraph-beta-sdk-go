@@ -113,13 +113,19 @@ func (m *ItemPhone) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetDisplayName sets the displayName property value. Friendly name the user has assigned this phone number.
 func (m *ItemPhone) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetNumber sets the number property value. Phone number provided by the user.
 func (m *ItemPhone) SetNumber(value *string)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. The type of phone number within the object. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *ItemPhone) SetType_escaped(value *PhoneType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

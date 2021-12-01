@@ -96,13 +96,19 @@ func (m *DirectorySizeQuota) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DirectorySizeQuota) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTotal sets the total property value. Total amount of the directory quota.
 func (m *DirectorySizeQuota) SetTotal(value *int32)() {
-    m.total = value
+    if m != nil {
+        m.total = value
+    }
 }
 // SetUsed sets the used property value. Used amount of the directory quota.
 func (m *DirectorySizeQuota) SetUsed(value *int32)() {
-    m.used = value
+    if m != nil {
+        m.used = value
+    }
 }

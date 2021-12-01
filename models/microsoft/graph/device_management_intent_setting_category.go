@@ -68,5 +68,7 @@ func (m *DeviceManagementIntentSettingCategory) Serialize(writer i04eb5309aeaafa
 }
 // SetSettings sets the settings property value. The settings this category contains
 func (m *DeviceManagementIntentSettingCategory) SetSettings(value []DeviceManagementSettingInstance)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }

@@ -324,45 +324,67 @@ func (m *GetYammerActivityUserDetailWithPeriod) Serialize(writer i04eb5309aeaafa
 }
 // SetAssignedProducts sets the assignedProducts property value. 
 func (m *GetYammerActivityUserDetailWithPeriod) SetAssignedProducts(value []string)() {
-    m.assignedProducts = value
+    if m != nil {
+        m.assignedProducts = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *GetYammerActivityUserDetailWithPeriod) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastActivityDate sets the lastActivityDate property value. 
 func (m *GetYammerActivityUserDetailWithPeriod) SetLastActivityDate(value *string)() {
-    m.lastActivityDate = value
+    if m != nil {
+        m.lastActivityDate = value
+    }
 }
 // SetLikedCount sets the likedCount property value. 
 func (m *GetYammerActivityUserDetailWithPeriod) SetLikedCount(value *int64)() {
-    m.likedCount = value
+    if m != nil {
+        m.likedCount = value
+    }
 }
 // SetPostedCount sets the postedCount property value. 
 func (m *GetYammerActivityUserDetailWithPeriod) SetPostedCount(value *int64)() {
-    m.postedCount = value
+    if m != nil {
+        m.postedCount = value
+    }
 }
 // SetReadCount sets the readCount property value. 
 func (m *GetYammerActivityUserDetailWithPeriod) SetReadCount(value *int64)() {
-    m.readCount = value
+    if m != nil {
+        m.readCount = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetYammerActivityUserDetailWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetYammerActivityUserDetailWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetStateChangeDate sets the stateChangeDate property value. 
 func (m *GetYammerActivityUserDetailWithPeriod) SetStateChangeDate(value *string)() {
-    m.stateChangeDate = value
+    if m != nil {
+        m.stateChangeDate = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *GetYammerActivityUserDetailWithPeriod) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetUserState sets the userState property value. 
 func (m *GetYammerActivityUserDetailWithPeriod) SetUserState(value *string)() {
-    m.userState = value
+    if m != nil {
+        m.userState = value
+    }
 }

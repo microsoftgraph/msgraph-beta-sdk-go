@@ -189,25 +189,37 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) Serialize(writer i04eb53
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetActiveDevices(value *int32)() {
-    m.activeDevices = value
+    if m != nil {
+        m.activeDevices = value
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    if m != nil {
+        m.appDisplayName = value
+    }
 }
 // SetAppName sets the appName property value. App name. Eg: oltk.exe
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetAppName(value *string)() {
-    m.appName = value
+    if m != nil {
+        m.appName = value
+    }
 }
 // SetAppPublisher sets the appPublisher property value. App publisher. Eg: Microsoft Corporation
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetAppPublisher(value *string)() {
-    m.appPublisher = value
+    if m != nil {
+        m.appPublisher = value
+    }
 }
 // SetBatteryUsagePercentage sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetBatteryUsagePercentage(value *float64)() {
-    m.batteryUsagePercentage = value
+    if m != nil {
+        m.batteryUsagePercentage = value
+    }
 }
 // SetIsForegroundApp sets the isForegroundApp property value. true if the user had active interaction with the app.
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetIsForegroundApp(value *bool)() {
-    m.isForegroundApp = value
+    if m != nil {
+        m.isForegroundApp = value
+    }
 }

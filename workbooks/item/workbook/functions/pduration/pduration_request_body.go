@@ -123,17 +123,25 @@ func (m *PdurationRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PdurationRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFv sets the fv property value. 
 func (m *PdurationRequestBody) SetFv(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.fv = value
+    if m != nil {
+        m.fv = value
+    }
 }
 // SetPv sets the pv property value. 
 func (m *PdurationRequestBody) SetPv(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.pv = value
+    if m != nil {
+        m.pv = value
+    }
 }
 // SetRate sets the rate property value. 
 func (m *PdurationRequestBody) SetRate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.rate = value
+    if m != nil {
+        m.rate = value
+    }
 }

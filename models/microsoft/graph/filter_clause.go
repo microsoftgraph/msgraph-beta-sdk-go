@@ -122,17 +122,25 @@ func (m *FilterClause) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FilterClause) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOperatorName sets the operatorName property value. Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
 func (m *FilterClause) SetOperatorName(value *string)() {
-    m.operatorName = value
+    if m != nil {
+        m.operatorName = value
+    }
 }
 // SetSourceOperandName sets the sourceOperandName property value. Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
 func (m *FilterClause) SetSourceOperandName(value *string)() {
-    m.sourceOperandName = value
+    if m != nil {
+        m.sourceOperandName = value
+    }
 }
 // SetTargetOperand sets the targetOperand property value. Values that the source operand will be tested against.
 func (m *FilterClause) SetTargetOperand(value *FilterOperand)() {
-    m.targetOperand = value
+    if m != nil {
+        m.targetOperand = value
+    }
 }

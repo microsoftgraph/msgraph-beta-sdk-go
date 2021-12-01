@@ -201,25 +201,37 @@ func (m *DirectoryDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetDiscoverabilities sets the discoverabilities property value. Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
 func (m *DirectoryDefinition) SetDiscoverabilities(value *DirectoryDefinitionDiscoverabilities)() {
-    m.discoverabilities = value
+    if m != nil {
+        m.discoverabilities = value
+    }
 }
 // SetDiscoveryDateTime sets the discoveryDateTime property value. Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *DirectoryDefinition) SetDiscoveryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.discoveryDateTime = value
+    if m != nil {
+        m.discoveryDateTime = value
+    }
 }
 // SetName sets the name property value. Name of the directory. Must be unique within the synchronization schema. Not nullable.
 func (m *DirectoryDefinition) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetObjects sets the objects property value. Collection of objects supported by the directory.
 func (m *DirectoryDefinition) SetObjects(value []ObjectDefinition)() {
-    m.objects = value
+    if m != nil {
+        m.objects = value
+    }
 }
 // SetReadOnly sets the readOnly property value. 
 func (m *DirectoryDefinition) SetReadOnly(value *bool)() {
-    m.readOnly = value
+    if m != nil {
+        m.readOnly = value
+    }
 }
 // SetVersion sets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
 func (m *DirectoryDefinition) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

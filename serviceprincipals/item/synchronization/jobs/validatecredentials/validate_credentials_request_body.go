@@ -158,21 +158,31 @@ func (m *ValidateCredentialsRequestBody) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidateCredentialsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicationIdentifier sets the applicationIdentifier property value. 
 func (m *ValidateCredentialsRequestBody) SetApplicationIdentifier(value *string)() {
-    m.applicationIdentifier = value
+    if m != nil {
+        m.applicationIdentifier = value
+    }
 }
 // SetCredentials sets the credentials property value. 
 func (m *ValidateCredentialsRequestBody) SetCredentials(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationSecretKeyStringValuePair)() {
-    m.credentials = value
+    if m != nil {
+        m.credentials = value
+    }
 }
 // SetTemplateId sets the templateId property value. 
 func (m *ValidateCredentialsRequestBody) SetTemplateId(value *string)() {
-    m.templateId = value
+    if m != nil {
+        m.templateId = value
+    }
 }
 // SetUseSavedCredentials sets the useSavedCredentials property value. 
 func (m *ValidateCredentialsRequestBody) SetUseSavedCredentials(value *bool)() {
-    m.useSavedCredentials = value
+    if m != nil {
+        m.useSavedCredentials = value
+    }
 }

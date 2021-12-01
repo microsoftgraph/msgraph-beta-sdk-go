@@ -150,21 +150,31 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) Serialize(writer 
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationPolicyTemplateReference) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTemplateDisplayName sets the templateDisplayName property value. Template Display Name of the referenced template. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyTemplateReference) SetTemplateDisplayName(value *string)() {
-    m.templateDisplayName = value
+    if m != nil {
+        m.templateDisplayName = value
+    }
 }
 // SetTemplateDisplayVersion sets the templateDisplayVersion property value. Template Display Version of the referenced Template. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyTemplateReference) SetTemplateDisplayVersion(value *string)() {
-    m.templateDisplayVersion = value
+    if m != nil {
+        m.templateDisplayVersion = value
+    }
 }
 // SetTemplateFamily sets the templateFamily property value. Template Family of the referenced Template. This property is read-only. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
 func (m *DeviceManagementConfigurationPolicyTemplateReference) SetTemplateFamily(value *DeviceManagementConfigurationTemplateFamily)() {
-    m.templateFamily = value
+    if m != nil {
+        m.templateFamily = value
+    }
 }
 // SetTemplateId sets the templateId property value. Template id
 func (m *DeviceManagementConfigurationPolicyTemplateReference) SetTemplateId(value *string)() {
-    m.templateId = value
+    if m != nil {
+        m.templateId = value
+    }
 }

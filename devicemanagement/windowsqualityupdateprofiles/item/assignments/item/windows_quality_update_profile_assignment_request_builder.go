@@ -40,7 +40,7 @@ type WindowsQualityUpdateProfileAssignmentRequestBuilderGetQueryParameters struc
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WindowsQualityUpdateProfileAssignmentRequestBuilderPatchOptions options for Patch
 type WindowsQualityUpdateProfileAssignmentRequestBuilderPatchOptions struct {

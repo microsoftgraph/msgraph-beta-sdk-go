@@ -70,9 +70,13 @@ func (m *RegisterRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RegisterRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExternalId sets the externalId property value. 
 func (m *RegisterRequestBody) SetExternalId(value *string)() {
-    m.externalId = value
+    if m != nil {
+        m.externalId = value
+    }
 }

@@ -96,13 +96,19 @@ func (m *ClassificationAttribute) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassificationAttribute) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConfidence sets the confidence property value. 
 func (m *ClassificationAttribute) SetConfidence(value *int32)() {
-    m.confidence = value
+    if m != nil {
+        m.confidence = value
+    }
 }
 // SetCount sets the count property value. 
 func (m *ClassificationAttribute) SetCount(value *int32)() {
-    m.count = value
+    if m != nil {
+        m.count = value
+    }
 }

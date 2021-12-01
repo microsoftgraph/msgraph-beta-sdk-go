@@ -200,29 +200,43 @@ func (m *ChangeDeploymentStatusRequestBody) Serialize(writer i04eb5309aeaafadd28
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangeDeploymentStatusRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetManagementActionId sets the managementActionId property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetManagementActionId(value *string)() {
-    m.managementActionId = value
+    if m != nil {
+        m.managementActionId = value
+    }
 }
 // SetManagementTemplateId sets the managementTemplateId property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetManagementTemplateId(value *string)() {
-    m.managementTemplateId = value
+    if m != nil {
+        m.managementTemplateId = value
+    }
 }
 // SetManagementTemplateVersion sets the managementTemplateVersion property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetManagementTemplateVersion(value *int32)() {
-    m.managementTemplateVersion = value
+    if m != nil {
+        m.managementTemplateVersion = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTenantGroupId sets the tenantGroupId property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetTenantGroupId(value *string)() {
-    m.tenantGroupId = value
+    if m != nil {
+        m.tenantGroupId = value
+    }
 }
 // SetTenantId sets the tenantId property value. 
 func (m *ChangeDeploymentStatusRequestBody) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }

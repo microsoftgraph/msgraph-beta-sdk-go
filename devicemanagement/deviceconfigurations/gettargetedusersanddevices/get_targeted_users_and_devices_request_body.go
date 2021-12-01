@@ -74,9 +74,13 @@ func (m *GetTargetedUsersAndDevicesRequestBody) Serialize(writer i04eb5309aeaafa
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetTargetedUsersAndDevicesRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceConfigurationIds sets the deviceConfigurationIds property value. 
 func (m *GetTargetedUsersAndDevicesRequestBody) SetDeviceConfigurationIds(value []string)() {
-    m.deviceConfigurationIds = value
+    if m != nil {
+        m.deviceConfigurationIds = value
+    }
 }

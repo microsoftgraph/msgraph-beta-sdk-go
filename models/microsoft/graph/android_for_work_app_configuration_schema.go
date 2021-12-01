@@ -94,9 +94,13 @@ func (m *AndroidForWorkAppConfigurationSchema) Serialize(writer i04eb5309aeaafad
 }
 // SetExampleJson sets the exampleJson property value. UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
 func (m *AndroidForWorkAppConfigurationSchema) SetExampleJson(value []byte)() {
-    m.exampleJson = value
+    if m != nil {
+        m.exampleJson = value
+    }
 }
 // SetSchemaItems sets the schemaItems property value. Collection of items each representing a named configuration option in the schema
 func (m *AndroidForWorkAppConfigurationSchema) SetSchemaItems(value []AndroidForWorkAppConfigurationSchemaItem)() {
-    m.schemaItems = value
+    if m != nil {
+        m.schemaItems = value
+    }
 }

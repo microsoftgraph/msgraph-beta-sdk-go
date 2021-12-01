@@ -189,25 +189,37 @@ func (m *GovernanceRoleDefinition) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetDisplayName sets the displayName property value. The display name of the role definition.
 func (m *GovernanceRoleDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExternalId sets the externalId property value. The external id of the role definition.
 func (m *GovernanceRoleDefinition) SetExternalId(value *string)() {
-    m.externalId = value
+    if m != nil {
+        m.externalId = value
+    }
 }
 // SetResource sets the resource property value. Read-only. The associated resource for the role definition.
 func (m *GovernanceRoleDefinition) SetResource(value *GovernanceResource)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }
 // SetResourceId sets the resourceId property value. Required. The id of the resource associated with the role definition.
 func (m *GovernanceRoleDefinition) SetResourceId(value *string)() {
-    m.resourceId = value
+    if m != nil {
+        m.resourceId = value
+    }
 }
 // SetRoleSetting sets the roleSetting property value. The associated role setting for the role definition.
 func (m *GovernanceRoleDefinition) SetRoleSetting(value *GovernanceRoleSetting)() {
-    m.roleSetting = value
+    if m != nil {
+        m.roleSetting = value
+    }
 }
 // SetTemplateId sets the templateId property value. 
 func (m *GovernanceRoleDefinition) SetTemplateId(value *string)() {
-    m.templateId = value
+    if m != nil {
+        m.templateId = value
+    }
 }

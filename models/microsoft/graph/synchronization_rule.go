@@ -270,37 +270,55 @@ func (m *SynchronizationRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationRule) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEditable sets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
 func (m *SynchronizationRule) SetEditable(value *bool)() {
-    m.editable = value
+    if m != nil {
+        m.editable = value
+    }
 }
 // SetId sets the id property value. Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
 func (m *SynchronizationRule) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
 func (m *SynchronizationRule) SetMetadata(value []StringKeyStringValuePair)() {
-    m.metadata = value
+    if m != nil {
+        m.metadata = value
+    }
 }
 // SetName sets the name property value. Human-readable name of the synchronization rule. Not nullable.
 func (m *SynchronizationRule) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetObjectMappings sets the objectMappings property value. Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.
 func (m *SynchronizationRule) SetObjectMappings(value []ObjectMapping)() {
-    m.objectMappings = value
+    if m != nil {
+        m.objectMappings = value
+    }
 }
 // SetPriority sets the priority property value. Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
 func (m *SynchronizationRule) SetPriority(value *int32)() {
-    m.priority = value
+    if m != nil {
+        m.priority = value
+    }
 }
 // SetSourceDirectoryName sets the sourceDirectoryName property value. Name of the source directory. Must match one of the directory definitions in synchronizationSchema.
 func (m *SynchronizationRule) SetSourceDirectoryName(value *string)() {
-    m.sourceDirectoryName = value
+    if m != nil {
+        m.sourceDirectoryName = value
+    }
 }
 // SetTargetDirectoryName sets the targetDirectoryName property value. Name of the target directory. Must match one of the directory definitions in synchronizationSchema.
 func (m *SynchronizationRule) SetTargetDirectoryName(value *string)() {
-    m.targetDirectoryName = value
+    if m != nil {
+        m.targetDirectoryName = value
+    }
 }

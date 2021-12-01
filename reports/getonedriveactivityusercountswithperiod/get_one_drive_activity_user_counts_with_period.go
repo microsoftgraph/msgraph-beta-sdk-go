@@ -216,29 +216,43 @@ func (m *GetOneDriveActivityUserCountsWithPeriod) Serialize(writer i04eb5309aeaa
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetOneDriveActivityUserCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetOneDriveActivityUserCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetOneDriveActivityUserCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetSharedExternally sets the sharedExternally property value. 
 func (m *GetOneDriveActivityUserCountsWithPeriod) SetSharedExternally(value *int64)() {
-    m.sharedExternally = value
+    if m != nil {
+        m.sharedExternally = value
+    }
 }
 // SetSharedInternally sets the sharedInternally property value. 
 func (m *GetOneDriveActivityUserCountsWithPeriod) SetSharedInternally(value *int64)() {
-    m.sharedInternally = value
+    if m != nil {
+        m.sharedInternally = value
+    }
 }
 // SetSynced sets the synced property value. 
 func (m *GetOneDriveActivityUserCountsWithPeriod) SetSynced(value *int64)() {
-    m.synced = value
+    if m != nil {
+        m.synced = value
+    }
 }
 // SetViewedOrEdited sets the viewedOrEdited property value. 
 func (m *GetOneDriveActivityUserCountsWithPeriod) SetViewedOrEdited(value *int64)() {
-    m.viewedOrEdited = value
+    if m != nil {
+        m.viewedOrEdited = value
+    }
 }

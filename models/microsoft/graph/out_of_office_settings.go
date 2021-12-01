@@ -96,13 +96,19 @@ func (m *OutOfOfficeSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OutOfOfficeSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsOutOfOffice sets the isOutOfOffice property value. True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
 func (m *OutOfOfficeSettings) SetIsOutOfOffice(value *bool)() {
-    m.isOutOfOffice = value
+    if m != nil {
+        m.isOutOfOffice = value
+    }
 }
 // SetMessage sets the message property value. The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
 func (m *OutOfOfficeSettings) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }

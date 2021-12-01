@@ -119,13 +119,19 @@ func (m *FilterOperatorSchema) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetArity sets the arity property value. Arity of the operator. Possible values are: Binary, Unary. The default is Binary.
 func (m *FilterOperatorSchema) SetArity(value *ScopeOperatorType)() {
-    m.arity = value
+    if m != nil {
+        m.arity = value
+    }
 }
 // SetMultivaluedComparisonType sets the multivaluedComparisonType property value. Possible values are: All, Any. Applies only to multivalued attributes. All means that all values must satisfy the condition. Any means that at least one value has to satisfy the condition. The default is All.
 func (m *FilterOperatorSchema) SetMultivaluedComparisonType(value *ScopeOperatorMultiValuedComparisonType)() {
-    m.multivaluedComparisonType = value
+    if m != nil {
+        m.multivaluedComparisonType = value
+    }
 }
 // SetSupportedAttributeTypes sets the supportedAttributeTypes property value. Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
 func (m *FilterOperatorSchema) SetSupportedAttributeTypes(value []AttributeType)() {
-    m.supportedAttributeTypes = value
+    if m != nil {
+        m.supportedAttributeTypes = value
+    }
 }

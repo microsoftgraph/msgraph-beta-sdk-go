@@ -85,9 +85,13 @@ func (m *TeamsAppIcon) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetHostedContent sets the hostedContent property value. The contents of the app icon if the icon is hosted within the Teams infrastructure.
 func (m *TeamsAppIcon) SetHostedContent(value *TeamworkHostedContent)() {
-    m.hostedContent = value
+    if m != nil {
+        m.hostedContent = value
+    }
 }
 // SetWebUrl sets the webUrl property value. The web URL that can be used for downloading the image.
 func (m *TeamsAppIcon) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

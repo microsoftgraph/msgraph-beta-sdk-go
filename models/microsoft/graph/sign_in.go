@@ -1517,217 +1517,325 @@ func (m *SignIn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
 }
 // SetAppDisplayName sets the appDisplayName property value. App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    if m != nil {
+        m.appDisplayName = value
+    }
 }
 // SetAppId sets the appId property value. Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
 func (m *SignIn) SetAppId(value *string)() {
-    m.appId = value
+    if m != nil {
+        m.appId = value
+    }
 }
 // SetAppliedConditionalAccessPolicies sets the appliedConditionalAccessPolicies property value. A list of conditional access policies that are triggered by the corresponding sign-in activity.
 func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicy)() {
-    m.appliedConditionalAccessPolicies = value
+    if m != nil {
+        m.appliedConditionalAccessPolicies = value
+    }
 }
 // SetAuthenticationDetails sets the authenticationDetails property value. The result of the authentication attempt and additional details on the authentication method.
 func (m *SignIn) SetAuthenticationDetails(value []AuthenticationDetail)() {
-    m.authenticationDetails = value
+    if m != nil {
+        m.authenticationDetails = value
+    }
 }
 // SetAuthenticationMethodsUsed sets the authenticationMethodsUsed property value. The authentication methods used. Possible values: SMS, Authenticator App, App Verification code, Password, FIDO, PTA, or PHS.
 func (m *SignIn) SetAuthenticationMethodsUsed(value []string)() {
-    m.authenticationMethodsUsed = value
+    if m != nil {
+        m.authenticationMethodsUsed = value
+    }
 }
 // SetAuthenticationProcessingDetails sets the authenticationProcessingDetails property value. Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.
 func (m *SignIn) SetAuthenticationProcessingDetails(value []KeyValue)() {
-    m.authenticationProcessingDetails = value
+    if m != nil {
+        m.authenticationProcessingDetails = value
+    }
 }
 // SetAuthenticationProtocol sets the authenticationProtocol property value. 
 func (m *SignIn) SetAuthenticationProtocol(value *ProtocolType)() {
-    m.authenticationProtocol = value
+    if m != nil {
+        m.authenticationProtocol = value
+    }
 }
 // SetAuthenticationRequirement sets the authenticationRequirement property value. This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetAuthenticationRequirement(value *string)() {
-    m.authenticationRequirement = value
+    if m != nil {
+        m.authenticationRequirement = value
+    }
 }
 // SetAuthenticationRequirementPolicies sets the authenticationRequirementPolicies property value. 
 func (m *SignIn) SetAuthenticationRequirementPolicies(value []AuthenticationRequirementPolicy)() {
-    m.authenticationRequirementPolicies = value
+    if m != nil {
+        m.authenticationRequirementPolicies = value
+    }
 }
 // SetAutonomousSystemNumber sets the autonomousSystemNumber property value. 
 func (m *SignIn) SetAutonomousSystemNumber(value *int32)() {
-    m.autonomousSystemNumber = value
+    if m != nil {
+        m.autonomousSystemNumber = value
+    }
 }
 // SetClientAppUsed sets the clientAppUsed property value. Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP. Supports $filter (eq operator only).
 func (m *SignIn) SetClientAppUsed(value *string)() {
-    m.clientAppUsed = value
+    if m != nil {
+        m.clientAppUsed = value
+    }
 }
 // SetConditionalAccessStatus sets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) SetConditionalAccessStatus(value *ConditionalAccessStatus)() {
-    m.conditionalAccessStatus = value
+    if m != nil {
+        m.conditionalAccessStatus = value
+    }
 }
 // SetCorrelationId sets the correlationId property value. The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).
 func (m *SignIn) SetCorrelationId(value *string)() {
-    m.correlationId = value
+    if m != nil {
+        m.correlationId = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
 func (m *SignIn) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetCrossTenantAccessType sets the crossTenantAccessType property value. 
 func (m *SignIn) SetCrossTenantAccessType(value *SignInAccessType)() {
-    m.crossTenantAccessType = value
+    if m != nil {
+        m.crossTenantAccessType = value
+    }
 }
 // SetDeviceDetail sets the deviceDetail property value. Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.
 func (m *SignIn) SetDeviceDetail(value *DeviceDetail)() {
-    m.deviceDetail = value
+    if m != nil {
+        m.deviceDetail = value
+    }
 }
 // SetFlaggedForReview sets the flaggedForReview property value. 
 func (m *SignIn) SetFlaggedForReview(value *bool)() {
-    m.flaggedForReview = value
+    if m != nil {
+        m.flaggedForReview = value
+    }
 }
 // SetHomeTenantId sets the homeTenantId property value. 
 func (m *SignIn) SetHomeTenantId(value *string)() {
-    m.homeTenantId = value
+    if m != nil {
+        m.homeTenantId = value
+    }
 }
 // SetHomeTenantName sets the homeTenantName property value. 
 func (m *SignIn) SetHomeTenantName(value *string)() {
-    m.homeTenantName = value
+    if m != nil {
+        m.homeTenantName = value
+    }
 }
 // SetIncomingTokenType sets the incomingTokenType property value. 
 func (m *SignIn) SetIncomingTokenType(value *IncomingTokenType)() {
-    m.incomingTokenType = value
+    if m != nil {
+        m.incomingTokenType = value
+    }
 }
 // SetIpAddress sets the ipAddress property value. IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    if m != nil {
+        m.ipAddress = value
+    }
 }
 // SetIpAddressFromResourceProvider sets the ipAddressFromResourceProvider property value. 
 func (m *SignIn) SetIpAddressFromResourceProvider(value *string)() {
-    m.ipAddressFromResourceProvider = value
+    if m != nil {
+        m.ipAddressFromResourceProvider = value
+    }
 }
 // SetIsInteractive sets the isInteractive property value. Indicates if a sign-in is interactive or not.
 func (m *SignIn) SetIsInteractive(value *bool)() {
-    m.isInteractive = value
+    if m != nil {
+        m.isInteractive = value
+    }
 }
 // SetIsTenantRestricted sets the isTenantRestricted property value. 
 func (m *SignIn) SetIsTenantRestricted(value *bool)() {
-    m.isTenantRestricted = value
+    if m != nil {
+        m.isTenantRestricted = value
+    }
 }
 // SetLocation sets the location property value. Provides the city, state, and country code where the sign-in originated. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
 func (m *SignIn) SetLocation(value *SignInLocation)() {
-    m.location = value
+    if m != nil {
+        m.location = value
+    }
 }
 // SetMfaDetail sets the mfaDetail property value. 
 func (m *SignIn) SetMfaDetail(value *MfaDetail)() {
-    m.mfaDetail = value
+    if m != nil {
+        m.mfaDetail = value
+    }
 }
 // SetNetworkLocationDetails sets the networkLocationDetails property value. The network location details including the type of network used and its names.
 func (m *SignIn) SetNetworkLocationDetails(value []NetworkLocationDetail)() {
-    m.networkLocationDetails = value
+    if m != nil {
+        m.networkLocationDetails = value
+    }
 }
 // SetOriginalRequestId sets the originalRequestId property value. The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).
 func (m *SignIn) SetOriginalRequestId(value *string)() {
-    m.originalRequestId = value
+    if m != nil {
+        m.originalRequestId = value
+    }
 }
 // SetPrivateLinkDetails sets the privateLinkDetails property value. 
 func (m *SignIn) SetPrivateLinkDetails(value *PrivateLinkDetails)() {
-    m.privateLinkDetails = value
+    if m != nil {
+        m.privateLinkDetails = value
+    }
 }
 // SetProcessingTimeInMilliseconds sets the processingTimeInMilliseconds property value. The request processing time in milliseconds in AD STS.
 func (m *SignIn) SetProcessingTimeInMilliseconds(value *int32)() {
-    m.processingTimeInMilliseconds = value
+    if m != nil {
+        m.processingTimeInMilliseconds = value
+    }
 }
 // SetResourceDisplayName sets the resourceDisplayName property value. Name of the resource the user signed into. Supports $filter (eq operator only).
 func (m *SignIn) SetResourceDisplayName(value *string)() {
-    m.resourceDisplayName = value
+    if m != nil {
+        m.resourceDisplayName = value
+    }
 }
 // SetResourceId sets the resourceId property value. ID of the resource that the user signed into. Supports $filter (eq operator only).
 func (m *SignIn) SetResourceId(value *string)() {
-    m.resourceId = value
+    if m != nil {
+        m.resourceId = value
+    }
 }
 // SetResourceTenantId sets the resourceTenantId property value. 
 func (m *SignIn) SetResourceTenantId(value *string)() {
-    m.resourceTenantId = value
+    if m != nil {
+        m.resourceTenantId = value
+    }
 }
 // SetRiskDetail sets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
 func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
-    m.riskDetail = value
+    if m != nil {
+        m.riskDetail = value
+    }
 }
 // SetRiskEventTypes_v2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetRiskEventTypes_v2(value []string)() {
-    m.riskEventTypes_v2 = value
+    if m != nil {
+        m.riskEventTypes_v2 = value
+    }
 }
 // SetRiskLevelAggregated sets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
 func (m *SignIn) SetRiskLevelAggregated(value *RiskLevel)() {
-    m.riskLevelAggregated = value
+    if m != nil {
+        m.riskLevelAggregated = value
+    }
 }
 // SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
 func (m *SignIn) SetRiskLevelDuringSignIn(value *RiskLevel)() {
-    m.riskLevelDuringSignIn = value
+    if m != nil {
+        m.riskLevelDuringSignIn = value
+    }
 }
 // SetRiskState sets the riskState property value. Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) SetRiskState(value *RiskState)() {
-    m.riskState = value
+    if m != nil {
+        m.riskState = value
+    }
 }
 // SetServicePrincipalCredentialKeyId sets the servicePrincipalCredentialKeyId property value. 
 func (m *SignIn) SetServicePrincipalCredentialKeyId(value *string)() {
-    m.servicePrincipalCredentialKeyId = value
+    if m != nil {
+        m.servicePrincipalCredentialKeyId = value
+    }
 }
 // SetServicePrincipalCredentialThumbprint sets the servicePrincipalCredentialThumbprint property value. 
 func (m *SignIn) SetServicePrincipalCredentialThumbprint(value *string)() {
-    m.servicePrincipalCredentialThumbprint = value
+    if m != nil {
+        m.servicePrincipalCredentialThumbprint = value
+    }
 }
 // SetServicePrincipalId sets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetServicePrincipalId(value *string)() {
-    m.servicePrincipalId = value
+    if m != nil {
+        m.servicePrincipalId = value
+    }
 }
 // SetServicePrincipalName sets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetServicePrincipalName(value *string)() {
-    m.servicePrincipalName = value
+    if m != nil {
+        m.servicePrincipalName = value
+    }
 }
 // SetSignInEventTypes sets the signInEventTypes property value. 
 func (m *SignIn) SetSignInEventTypes(value []string)() {
-    m.signInEventTypes = value
+    if m != nil {
+        m.signInEventTypes = value
+    }
 }
 // SetSignInIdentifier sets the signInIdentifier property value. 
 func (m *SignIn) SetSignInIdentifier(value *string)() {
-    m.signInIdentifier = value
+    if m != nil {
+        m.signInIdentifier = value
+    }
 }
 // SetSignInIdentifierType sets the signInIdentifierType property value. 
 func (m *SignIn) SetSignInIdentifierType(value *SignInIdentifierType)() {
-    m.signInIdentifierType = value
+    if m != nil {
+        m.signInIdentifierType = value
+    }
 }
 // SetStatus sets the status property value. Sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
 func (m *SignIn) SetStatus(value *SignInStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTokenIssuerName sets the tokenIssuerName property value. The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).
 func (m *SignIn) SetTokenIssuerName(value *string)() {
-    m.tokenIssuerName = value
+    if m != nil {
+        m.tokenIssuerName = value
+    }
 }
 // SetTokenIssuerType sets the tokenIssuerType property value. The type of identity provider. Possible values: AzureAD, ADFederationServices, or UnknownFutureValue.
 func (m *SignIn) SetTokenIssuerType(value *TokenIssuerType)() {
-    m.tokenIssuerType = value
+    if m != nil {
+        m.tokenIssuerType = value
+    }
 }
 // SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. 
 func (m *SignIn) SetUniqueTokenIdentifier(value *string)() {
-    m.uniqueTokenIdentifier = value
+    if m != nil {
+        m.uniqueTokenIdentifier = value
+    }
 }
 // SetUserAgent sets the userAgent property value. The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetUserAgent(value *string)() {
-    m.userAgent = value
+    if m != nil {
+        m.userAgent = value
+    }
 }
 // SetUserDisplayName sets the userDisplayName property value. Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetUserDisplayName(value *string)() {
-    m.userDisplayName = value
+    if m != nil {
+        m.userDisplayName = value
+    }
 }
 // SetUserId sets the userId property value. ID of the user that initiated the sign-in. Supports $filter (eq operator only).
 func (m *SignIn) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetUserType sets the userType property value. 
 func (m *SignIn) SetUserType(value *SignInUserType)() {
-    m.userType = value
+    if m != nil {
+        m.userType = value
+    }
 }

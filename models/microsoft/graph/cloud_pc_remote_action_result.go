@@ -229,33 +229,49 @@ func (m *CloudPcRemoteActionResult) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetActionName sets the actionName property value. The specified action. Supported values: Reprovision, Resize.
 func (m *CloudPcRemoteActionResult) SetActionName(value *string)() {
-    m.actionName = value
+    if m != nil {
+        m.actionName = value
+    }
 }
 // SetActionState sets the actionState property value. State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
 func (m *CloudPcRemoteActionResult) SetActionState(value *ActionState)() {
-    m.actionState = value
+    if m != nil {
+        m.actionState = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcRemoteActionResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCloudPcId sets the cloudPcId property value. The ID of the Cloud PC device on which the remote action is performed. Read-only.
 func (m *CloudPcRemoteActionResult) SetCloudPcId(value *string)() {
-    m.cloudPcId = value
+    if m != nil {
+        m.cloudPcId = value
+    }
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
 func (m *CloudPcRemoteActionResult) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdatedDateTime = value
+    if m != nil {
+        m.lastUpdatedDateTime = value
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The ID of the Intune managed device on which the remote action is performed. Read-only.
 func (m *CloudPcRemoteActionResult) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    if m != nil {
+        m.managedDeviceId = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
 func (m *CloudPcRemoteActionResult) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
 // SetStatusDetails sets the statusDetails property value. The details of the Cloud PC status.
 func (m *CloudPcRemoteActionResult) SetStatusDetails(value *CloudPcStatusDetails)() {
-    m.statusDetails = value
+    if m != nil {
+        m.statusDetails = value
+    }
 }

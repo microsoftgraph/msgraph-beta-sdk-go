@@ -45,7 +45,7 @@ type OutlookTaskRequestBuilderGetOptions struct {
 // OutlookTaskRequestBuilderGetQueryParameters get tasks from users
 type OutlookTaskRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OutlookTaskRequestBuilderPatchOptions options for Patch
 type OutlookTaskRequestBuilderPatchOptions struct {

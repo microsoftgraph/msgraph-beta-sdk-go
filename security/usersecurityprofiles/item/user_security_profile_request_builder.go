@@ -40,7 +40,7 @@ type UserSecurityProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UserSecurityProfileRequestBuilderPatchOptions options for Patch
 type UserSecurityProfileRequestBuilderPatchOptions struct {

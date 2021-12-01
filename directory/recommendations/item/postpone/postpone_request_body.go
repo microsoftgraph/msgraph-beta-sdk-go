@@ -71,9 +71,13 @@ func (m *PostponeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PostponeRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPostponeUntilDateTime sets the postponeUntilDateTime property value. 
 func (m *PostponeRequestBody) SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.postponeUntilDateTime = value
+    if m != nil {
+        m.postponeUntilDateTime = value
+    }
 }

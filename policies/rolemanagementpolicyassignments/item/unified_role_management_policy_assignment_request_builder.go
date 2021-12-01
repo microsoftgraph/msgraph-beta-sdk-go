@@ -41,7 +41,7 @@ type UnifiedRoleManagementPolicyAssignmentRequestBuilderGetQueryParameters struc
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UnifiedRoleManagementPolicyAssignmentRequestBuilderPatchOptions options for Patch
 type UnifiedRoleManagementPolicyAssignmentRequestBuilderPatchOptions struct {

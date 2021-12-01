@@ -70,9 +70,13 @@ func (m *PasswordResetResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordResetResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNewPassword sets the newPassword property value. 
 func (m *PasswordResetResponse) SetNewPassword(value *string)() {
-    m.newPassword = value
+    if m != nil {
+        m.newPassword = value
+    }
 }

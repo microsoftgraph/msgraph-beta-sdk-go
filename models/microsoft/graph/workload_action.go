@@ -242,33 +242,49 @@ func (m *WorkloadAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetActionId sets the actionId property value. The unique identifier for the workload action. Required. Read-only.
 func (m *WorkloadAction) SetActionId(value *string)() {
-    m.actionId = value
+    if m != nil {
+        m.actionId = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkloadAction) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCategory sets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
 func (m *WorkloadAction) SetCategory(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionCategory)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetDescription sets the description property value. The description for the workload action. Optional. Read-only.
 func (m *WorkloadAction) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the workload action. Optional. Read-only.
 func (m *WorkloadAction) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLicenses sets the licenses property value. 
 func (m *WorkloadAction) SetLicenses(value []string)() {
-    m.licenses = value
+    if m != nil {
+        m.licenses = value
+    }
 }
 // SetService sets the service property value. The service associated with workload action. Optional. Read-only.
 func (m *WorkloadAction) SetService(value *string)() {
-    m.service = value
+    if m != nil {
+        m.service = value
+    }
 }
 // SetSettings sets the settings property value. The collection of settings associated with the workload action. Optional. Read-only.
 func (m *WorkloadAction) SetSettings(value []Setting)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }

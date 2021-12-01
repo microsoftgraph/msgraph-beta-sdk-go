@@ -241,33 +241,49 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) Seri
 }
 // SetAppCrashCount sets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetAppCrashCount(value *int32)() {
-    m.appCrashCount = value
+    if m != nil {
+        m.appCrashCount = value
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. The friendly name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    if m != nil {
+        m.appDisplayName = value
+    }
 }
 // SetAppName sets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetAppName(value *string)() {
-    m.appName = value
+    if m != nil {
+        m.appName = value
+    }
 }
 // SetAppPublisher sets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetAppPublisher(value *string)() {
-    m.appPublisher = value
+    if m != nil {
+        m.appPublisher = value
+    }
 }
 // SetAppVersion sets the appVersion property value. The version of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetAppVersion(value *string)() {
-    m.appVersion = value
+    if m != nil {
+        m.appVersion = value
+    }
 }
 // SetDeviceCountWithCrashes sets the deviceCountWithCrashes property value. The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetDeviceCountWithCrashes(value *int32)() {
-    m.deviceCountWithCrashes = value
+    if m != nil {
+        m.deviceCountWithCrashes = value
+    }
 }
 // SetIsLatestUsedVersion sets the isLatestUsedVersion property value. Is the version of application the latest version for that app that is in use.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetIsLatestUsedVersion(value *bool)() {
-    m.isLatestUsedVersion = value
+    if m != nil {
+        m.isLatestUsedVersion = value
+    }
 }
 // SetIsMostUsedVersion sets the isMostUsedVersion property value. Is the version of application the most used version for that app.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetIsMostUsedVersion(value *bool)() {
-    m.isMostUsedVersion = value
+    if m != nil {
+        m.isMostUsedVersion = value
+    }
 }

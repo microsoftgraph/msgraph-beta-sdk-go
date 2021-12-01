@@ -216,29 +216,43 @@ func (m *UnifiedRoleAssignmentScheduleInstance) Serialize(writer i04eb5309aeaafa
 }
 // SetActivatedUsing sets the activatedUsing property value. If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.
 func (m *UnifiedRoleAssignmentScheduleInstance) SetActivatedUsing(value *UnifiedRoleEligibilityScheduleInstance)() {
-    m.activatedUsing = value
+    if m != nil {
+        m.activatedUsing = value
+    }
 }
 // SetAssignmentType sets the assignmentType property value. Type of the assignment. It can either be Assigned or Activated.
 func (m *UnifiedRoleAssignmentScheduleInstance) SetAssignmentType(value *string)() {
-    m.assignmentType = value
+    if m != nil {
+        m.assignmentType = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. Time that the roleAssignmentInstance will expire
 func (m *UnifiedRoleAssignmentScheduleInstance) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetMemberType sets the memberType property value. Membership type of the assignment. It can either be Inherited, Direct, or Group.
 func (m *UnifiedRoleAssignmentScheduleInstance) SetMemberType(value *string)() {
-    m.memberType = value
+    if m != nil {
+        m.memberType = value
+    }
 }
 // SetRoleAssignmentOriginId sets the roleAssignmentOriginId property value. ID of the roleAssignment in the directory
 func (m *UnifiedRoleAssignmentScheduleInstance) SetRoleAssignmentOriginId(value *string)() {
-    m.roleAssignmentOriginId = value
+    if m != nil {
+        m.roleAssignmentOriginId = value
+    }
 }
 // SetRoleAssignmentScheduleId sets the roleAssignmentScheduleId property value. ID of the parent roleAssignmentSchedule for this instance
 func (m *UnifiedRoleAssignmentScheduleInstance) SetRoleAssignmentScheduleId(value *string)() {
-    m.roleAssignmentScheduleId = value
+    if m != nil {
+        m.roleAssignmentScheduleId = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. Time that the roleAssignmentInstance will start
 func (m *UnifiedRoleAssignmentScheduleInstance) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }

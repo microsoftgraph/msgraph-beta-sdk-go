@@ -174,25 +174,37 @@ func (m *SecurityProviderStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityProviderStatus) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnabled sets the enabled property value. 
 func (m *SecurityProviderStatus) SetEnabled(value *bool)() {
-    m.enabled = value
+    if m != nil {
+        m.enabled = value
+    }
 }
 // SetEndpoint sets the endpoint property value. 
 func (m *SecurityProviderStatus) SetEndpoint(value *string)() {
-    m.endpoint = value
+    if m != nil {
+        m.endpoint = value
+    }
 }
 // SetProvider sets the provider property value. 
 func (m *SecurityProviderStatus) SetProvider(value *string)() {
-    m.provider = value
+    if m != nil {
+        m.provider = value
+    }
 }
 // SetRegion sets the region property value. 
 func (m *SecurityProviderStatus) SetRegion(value *string)() {
-    m.region = value
+    if m != nil {
+        m.region = value
+    }
 }
 // SetVendor_escaped sets the vendor_escaped property value. 
 func (m *SecurityProviderStatus) SetVendor_escaped(value *string)() {
-    m.vendor_escaped = value
+    if m != nil {
+        m.vendor_escaped = value
+    }
 }

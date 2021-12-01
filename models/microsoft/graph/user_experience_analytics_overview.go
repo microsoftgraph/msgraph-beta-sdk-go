@@ -68,5 +68,7 @@ func (m *UserExperienceAnalyticsOverview) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetInsights sets the insights property value. The user experience analytics insights.
 func (m *UserExperienceAnalyticsOverview) SetInsights(value []UserExperienceAnalyticsInsight)() {
-    m.insights = value
+    if m != nil {
+        m.insights = value
+    }
 }

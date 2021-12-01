@@ -122,17 +122,25 @@ func (m *ValidationResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidationResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMessage sets the message property value. The string containing the reason for why the rule passed or not. Read-only. Not nullable.
 func (m *ValidationResult) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }
 // SetRuleName sets the ruleName property value. The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
 func (m *ValidationResult) SetRuleName(value *string)() {
-    m.ruleName = value
+    if m != nil {
+        m.ruleName = value
+    }
 }
 // SetValidationPassed sets the validationPassed property value. Whether the password passed or failed the validation rule. Read-only. Not nullable.
 func (m *ValidationResult) SetValidationPassed(value *bool)() {
-    m.validationPassed = value
+    if m != nil {
+        m.validationPassed = value
+    }
 }

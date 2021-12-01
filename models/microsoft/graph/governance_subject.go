@@ -137,17 +137,25 @@ func (m *GovernanceSubject) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetDisplayName sets the displayName property value. The display name of the subject.
 func (m *GovernanceSubject) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEmail sets the email property value. The email address of the user subject. If the subject is in other types, it is empty.
 func (m *GovernanceSubject) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetPrincipalName sets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
 func (m *GovernanceSubject) SetPrincipalName(value *string)() {
-    m.principalName = value
+    if m != nil {
+        m.principalName = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
 func (m *GovernanceSubject) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

@@ -37,7 +37,7 @@ type DeviceConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 func (m *DeviceConfigurationRequestBuilder) Assign()(*i44855f5003b56d3b7820710073dec689deaa89cd719504f222558d1f1a396d40.AssignRequestBuilder) {
     return i44855f5003b56d3b7820710073dec689deaa89cd719504f222558d1f1a396d40.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);

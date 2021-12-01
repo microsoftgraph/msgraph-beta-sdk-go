@@ -147,17 +147,25 @@ func (m *ExactMatchDataStoreBase) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetColumns sets the columns property value. 
 func (m *ExactMatchDataStoreBase) SetColumns(value []ExactDataMatchStoreColumn)() {
-    m.columns = value
+    if m != nil {
+        m.columns = value
+    }
 }
 // SetDataLastUpdatedDateTime sets the dataLastUpdatedDateTime property value. 
 func (m *ExactMatchDataStoreBase) SetDataLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.dataLastUpdatedDateTime = value
+    if m != nil {
+        m.dataLastUpdatedDateTime = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *ExactMatchDataStoreBase) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *ExactMatchDataStoreBase) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

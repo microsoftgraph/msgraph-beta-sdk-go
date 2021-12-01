@@ -138,17 +138,25 @@ func (m *CertificateConnectorDetails) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetConnectorName sets the connectorName property value. Connector name (set during enrollment).
 func (m *CertificateConnectorDetails) SetConnectorName(value *string)() {
-    m.connectorName = value
+    if m != nil {
+        m.connectorName = value
+    }
 }
 // SetEnrollmentDateTime sets the enrollmentDateTime property value. Date/time when this connector was enrolled.
 func (m *CertificateConnectorDetails) SetEnrollmentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.enrollmentDateTime = value
+    if m != nil {
+        m.enrollmentDateTime = value
+    }
 }
 // SetLastCheckinDateTime sets the lastCheckinDateTime property value. Date/time when this connector last connected to the service.
 func (m *CertificateConnectorDetails) SetLastCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastCheckinDateTime = value
+    if m != nil {
+        m.lastCheckinDateTime = value
+    }
 }
 // SetMachineName sets the machineName property value. Name of the machine hosting this connector service.
 func (m *CertificateConnectorDetails) SetMachineName(value *string)() {
-    m.machineName = value
+    if m != nil {
+        m.machineName = value
+    }
 }

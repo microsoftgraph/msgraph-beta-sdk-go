@@ -131,17 +131,25 @@ func (m *RequestorSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAcceptRequests sets the acceptRequests property value. Indicates whether new requests are accepted on this policy.
 func (m *RequestorSettings) SetAcceptRequests(value *bool)() {
-    m.acceptRequests = value
+    if m != nil {
+        m.acceptRequests = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RequestorSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedRequestors sets the allowedRequestors property value. The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.
 func (m *RequestorSettings) SetAllowedRequestors(value []UserSet)() {
-    m.allowedRequestors = value
+    if m != nil {
+        m.allowedRequestors = value
+    }
 }
 // SetScopeType sets the scopeType property value. Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.
 func (m *RequestorSettings) SetScopeType(value *string)() {
-    m.scopeType = value
+    if m != nil {
+        m.scopeType = value
+    }
 }

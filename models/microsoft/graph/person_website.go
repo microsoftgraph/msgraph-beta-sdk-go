@@ -167,21 +167,31 @@ func (m *PersonWebsite) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetCategories sets the categories property value. Contains categories a user has associated with the website (for example, personal, recipes).
 func (m *PersonWebsite) SetCategories(value []string)() {
-    m.categories = value
+    if m != nil {
+        m.categories = value
+    }
 }
 // SetDescription sets the description property value. Contains a description of the website.
 func (m *PersonWebsite) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Contains a friendly name for the website.
 func (m *PersonWebsite) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. 
 func (m *PersonWebsite) SetThumbnailUrl(value *string)() {
-    m.thumbnailUrl = value
+    if m != nil {
+        m.thumbnailUrl = value
+    }
 }
 // SetWebUrl sets the webUrl property value. Contains a link to the website itself.
 func (m *PersonWebsite) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

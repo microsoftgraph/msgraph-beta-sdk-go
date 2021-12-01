@@ -149,21 +149,31 @@ func (m *CoupDayBsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CoupDayBsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBasis sets the basis property value. 
 func (m *CoupDayBsRequestBody) SetBasis(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.basis = value
+    if m != nil {
+        m.basis = value
+    }
 }
 // SetFrequency sets the frequency property value. 
 func (m *CoupDayBsRequestBody) SetFrequency(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.frequency = value
+    if m != nil {
+        m.frequency = value
+    }
 }
 // SetMaturity sets the maturity property value. 
 func (m *CoupDayBsRequestBody) SetMaturity(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.maturity = value
+    if m != nil {
+        m.maturity = value
+    }
 }
 // SetSettlement sets the settlement property value. 
 func (m *CoupDayBsRequestBody) SetSettlement(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.settlement = value
+    if m != nil {
+        m.settlement = value
+    }
 }

@@ -103,9 +103,13 @@ func (m *BookingCustomer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAddresses sets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
 func (m *BookingCustomer) SetAddresses(value []PhysicalAddress)() {
-    m.addresses = value
+    if m != nil {
+        m.addresses = value
+    }
 }
 // SetPhones sets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
 func (m *BookingCustomer) SetPhones(value []Phone)() {
-    m.phones = value
+    if m != nil {
+        m.phones = value
+    }
 }

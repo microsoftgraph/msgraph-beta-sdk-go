@@ -42,7 +42,7 @@ type GovernanceRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // GovernanceRoleDefinitionRequestBuilderPatchOptions options for Patch
 type GovernanceRoleDefinitionRequestBuilderPatchOptions struct {

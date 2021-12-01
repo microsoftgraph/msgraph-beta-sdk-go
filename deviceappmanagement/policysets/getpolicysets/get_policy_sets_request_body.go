@@ -74,9 +74,13 @@ func (m *GetPolicySetsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetPolicySetsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPolicySetIds sets the policySetIds property value. 
 func (m *GetPolicySetsRequestBody) SetPolicySetIds(value []string)() {
-    m.policySetIds = value
+    if m != nil {
+        m.policySetIds = value
+    }
 }

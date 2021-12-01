@@ -70,9 +70,13 @@ func (m *UpdateAdDomainPasswordRequestBody) Serialize(writer i04eb5309aeaafadd28
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateAdDomainPasswordRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdDomainPassword sets the adDomainPassword property value. 
 func (m *UpdateAdDomainPasswordRequestBody) SetAdDomainPassword(value *string)() {
-    m.adDomainPassword = value
+    if m != nil {
+        m.adDomainPassword = value
+    }
 }

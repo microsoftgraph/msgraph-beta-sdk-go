@@ -59,5 +59,7 @@ func (m *EmailAuthenticationMethod) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetEmailAddress sets the emailAddress property value. The email address registered to this user.
 func (m *EmailAuthenticationMethod) SetEmailAddress(value *string)() {
-    m.emailAddress = value
+    if m != nil {
+        m.emailAddress = value
+    }
 }

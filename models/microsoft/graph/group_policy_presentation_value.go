@@ -138,17 +138,25 @@ func (m *GroupPolicyPresentationValue) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the object was created.
 func (m *GroupPolicyPresentationValue) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDefinitionValue sets the definitionValue property value. The group policy definition value associated with the presentation value.
 func (m *GroupPolicyPresentationValue) SetDefinitionValue(value *GroupPolicyDefinitionValue)() {
-    m.definitionValue = value
+    if m != nil {
+        m.definitionValue = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the object was last modified.
 func (m *GroupPolicyPresentationValue) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPresentation sets the presentation property value. The group policy presentation associated with the presentation value.
 func (m *GroupPolicyPresentationValue) SetPresentation(value *GroupPolicyPresentation)() {
-    m.presentation = value
+    if m != nil {
+        m.presentation = value
+    }
 }

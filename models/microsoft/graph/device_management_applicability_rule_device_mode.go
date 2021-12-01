@@ -126,17 +126,25 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) Serialize(writer i04eb5309
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceMode sets the deviceMode property value. Applicability rule for device mode. Possible values are: standardConfiguration, sModeConfiguration.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetDeviceMode(value *Windows10DeviceModeType)() {
-    m.deviceMode = value
+    if m != nil {
+        m.deviceMode = value
+    }
 }
 // SetName sets the name property value. Name for object.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetRuleType sets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetRuleType(value *DeviceManagementApplicabilityRuleType)() {
-    m.ruleType = value
+    if m != nil {
+        m.ruleType = value
+    }
 }

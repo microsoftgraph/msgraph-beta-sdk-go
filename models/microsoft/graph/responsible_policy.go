@@ -96,13 +96,19 @@ func (m *ResponsiblePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResponsiblePolicy) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. 
 func (m *ResponsiblePolicy) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetName sets the name property value. 
 func (m *ResponsiblePolicy) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

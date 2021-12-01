@@ -459,65 +459,97 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAccessPackage sets the accessPackage property value. The access package with this policy. Read-only. Nullable.
 func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value *AccessPackage)() {
-    m.accessPackage = value
+    if m != nil {
+        m.accessPackage = value
+    }
 }
 // SetAccessPackageCatalog sets the accessPackageCatalog property value. 
 func (m *AccessPackageAssignmentPolicy) SetAccessPackageCatalog(value *AccessPackageCatalog)() {
-    m.accessPackageCatalog = value
+    if m != nil {
+        m.accessPackageCatalog = value
+    }
 }
 // SetAccessPackageId sets the accessPackageId property value. ID of the access package.
 func (m *AccessPackageAssignmentPolicy) SetAccessPackageId(value *string)() {
-    m.accessPackageId = value
+    if m != nil {
+        m.accessPackageId = value
+    }
 }
 // SetAccessReviewSettings sets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
 func (m *AccessPackageAssignmentPolicy) SetAccessReviewSettings(value *AssignmentReviewSettings)() {
-    m.accessReviewSettings = value
+    if m != nil {
+        m.accessReviewSettings = value
+    }
 }
 // SetCanExtend sets the canExtend property value. Indicates whether a user can extend the access package assignment duration after approval.
 func (m *AccessPackageAssignmentPolicy) SetCanExtend(value *bool)() {
-    m.canExtend = value
+    if m != nil {
+        m.canExtend = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. Read-only.
 func (m *AccessPackageAssignmentPolicy) SetCreatedBy(value *string)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. The description of the policy.
 func (m *AccessPackageAssignmentPolicy) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the policy.
 func (m *AccessPackageAssignmentPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetDurationInDays sets the durationInDays property value. The number of days in which assignments from this policy last until they are expired.
 func (m *AccessPackageAssignmentPolicy) SetDurationInDays(value *int32)() {
-    m.durationInDays = value
+    if m != nil {
+        m.durationInDays = value
+    }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expiration date for assignments created in this policy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetModifiedBy sets the modifiedBy property value. Read-only.
 func (m *AccessPackageAssignmentPolicy) SetModifiedBy(value *string)() {
-    m.modifiedBy = value
+    if m != nil {
+        m.modifiedBy = value
+    }
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.modifiedDateTime = value
+    if m != nil {
+        m.modifiedDateTime = value
+    }
 }
 // SetQuestions sets the questions property value. Questions that are posed to the  requestor.
 func (m *AccessPackageAssignmentPolicy) SetQuestions(value []AccessPackageQuestion)() {
-    m.questions = value
+    if m != nil {
+        m.questions = value
+    }
 }
 // SetRequestApprovalSettings sets the requestApprovalSettings property value. Who must approve requests for access package in this policy.
 func (m *AccessPackageAssignmentPolicy) SetRequestApprovalSettings(value *ApprovalSettings)() {
-    m.requestApprovalSettings = value
+    if m != nil {
+        m.requestApprovalSettings = value
+    }
 }
 // SetRequestorSettings sets the requestorSettings property value. Who can request this access package from this policy.
 func (m *AccessPackageAssignmentPolicy) SetRequestorSettings(value *RequestorSettings)() {
-    m.requestorSettings = value
+    if m != nil {
+        m.requestorSettings = value
+    }
 }

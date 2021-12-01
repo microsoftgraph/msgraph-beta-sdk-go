@@ -124,17 +124,25 @@ func (m *SecurityBaselineContributingPolicy) Serialize(writer i04eb5309aeaafadd2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityBaselineContributingPolicy) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the policy
 func (m *SecurityBaselineContributingPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetSourceId sets the sourceId property value. Unique identifier of the policy
 func (m *SecurityBaselineContributingPolicy) SetSourceId(value *string)() {
-    m.sourceId = value
+    if m != nil {
+        m.sourceId = value
+    }
 }
 // SetSourceType sets the sourceType property value. Authoring source of the policy. Possible values are: deviceConfiguration, deviceIntent.
 func (m *SecurityBaselineContributingPolicy) SetSourceType(value *SecurityBaselinePolicySourceType)() {
-    m.sourceType = value
+    if m != nil {
+        m.sourceType = value
+    }
 }

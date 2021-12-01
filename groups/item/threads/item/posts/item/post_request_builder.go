@@ -53,7 +53,7 @@ type PostRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PostRequestBuilderPatchOptions options for Patch
 type PostRequestBuilderPatchOptions struct {

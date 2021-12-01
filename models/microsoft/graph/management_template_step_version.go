@@ -172,21 +172,31 @@ func (m *ManagementTemplateStepVersion) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetConfigurationAction sets the configurationAction property value. 
 func (m *ManagementTemplateStepVersion) SetConfigurationAction(value *TemplateAction)() {
-    m.configurationAction = value
+    if m != nil {
+        m.configurationAction = value
+    }
 }
 // SetDeployments sets the deployments property value. 
 func (m *ManagementTemplateStepVersion) SetDeployments(value []ManagementTemplateStepDeployment)() {
-    m.deployments = value
+    if m != nil {
+        m.deployments = value
+    }
 }
 // SetTemplateStep sets the templateStep property value. 
 func (m *ManagementTemplateStepVersion) SetTemplateStep(value *ManagementTemplateStep)() {
-    m.templateStep = value
+    if m != nil {
+        m.templateStep = value
+    }
 }
 // SetValidationAction sets the validationAction property value. 
 func (m *ManagementTemplateStepVersion) SetValidationAction(value *TemplateAction)() {
-    m.validationAction = value
+    if m != nil {
+        m.validationAction = value
+    }
 }
 // SetVersion sets the version property value. 
 func (m *ManagementTemplateStepVersion) SetVersion(value *int32)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

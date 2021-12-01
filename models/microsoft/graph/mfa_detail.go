@@ -96,13 +96,19 @@ func (m *MfaDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MfaDetail) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAuthDetail sets the authDetail property value. Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
 func (m *MfaDetail) SetAuthDetail(value *string)() {
-    m.authDetail = value
+    if m != nil {
+        m.authDetail = value
+    }
 }
 // SetAuthMethod sets the authMethod property value. Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
 func (m *MfaDetail) SetAuthMethod(value *string)() {
-    m.authMethod = value
+    if m != nil {
+        m.authMethod = value
+    }
 }

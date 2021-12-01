@@ -106,13 +106,19 @@ func (m *ImportDeviceIdentityListRequestBody) Serialize(writer i04eb5309aeaafadd
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportDeviceIdentityListRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetImportedDeviceIdentities sets the importedDeviceIdentities property value. 
 func (m *ImportDeviceIdentityListRequestBody) SetImportedDeviceIdentities(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ImportedDeviceIdentity)() {
-    m.importedDeviceIdentities = value
+    if m != nil {
+        m.importedDeviceIdentities = value
+    }
 }
 // SetOverwriteImportedDeviceIdentities sets the overwriteImportedDeviceIdentities property value. 
 func (m *ImportDeviceIdentityListRequestBody) SetOverwriteImportedDeviceIdentities(value *bool)() {
-    m.overwriteImportedDeviceIdentities = value
+    if m != nil {
+        m.overwriteImportedDeviceIdentities = value
+    }
 }

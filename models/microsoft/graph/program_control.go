@@ -268,37 +268,55 @@ func (m *ProgramControl) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetControlId sets the controlId property value. The controlId of the control, in particular the identifier of an access review. Required on create.
 func (m *ProgramControl) SetControlId(value *string)() {
-    m.controlId = value
+    if m != nil {
+        m.controlId = value
+    }
 }
 // SetControlTypeId sets the controlTypeId property value. The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
 func (m *ProgramControl) SetControlTypeId(value *string)() {
-    m.controlTypeId = value
+    if m != nil {
+        m.controlTypeId = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The creation date and time of the program control.
 func (m *ProgramControl) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the control.
 func (m *ProgramControl) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetOwner sets the owner property value. The user who created the program control.
 func (m *ProgramControl) SetOwner(value *UserIdentity)() {
-    m.owner = value
+    if m != nil {
+        m.owner = value
+    }
 }
 // SetProgram sets the program property value. The program this control is part of.
 func (m *ProgramControl) SetProgram(value *Program)() {
-    m.program = value
+    if m != nil {
+        m.program = value
+    }
 }
 // SetProgramId sets the programId property value. The programId of the program this control is a part of. Required on create.
 func (m *ProgramControl) SetProgramId(value *string)() {
-    m.programId = value
+    if m != nil {
+        m.programId = value
+    }
 }
 // SetResource sets the resource property value. The resource, a group or an app, targeted by this program control's access review.
 func (m *ProgramControl) SetResource(value *ProgramResource)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }
 // SetStatus sets the status property value. The life cycle status of the control.
 func (m *ProgramControl) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

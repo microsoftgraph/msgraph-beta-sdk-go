@@ -97,13 +97,19 @@ func (m *BesselJRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BesselJRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetN sets the n property value. 
 func (m *BesselJRequestBody) SetN(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.n = value
+    if m != nil {
+        m.n = value
+    }
 }
 // SetX sets the x property value. 
 func (m *BesselJRequestBody) SetX(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.x = value
+    if m != nil {
+        m.x = value
+    }
 }

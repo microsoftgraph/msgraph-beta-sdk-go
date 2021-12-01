@@ -122,17 +122,25 @@ func (m *EmbeddedSIMActivationCode) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EmbeddedSIMActivationCode) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIntegratedCircuitCardIdentifier sets the integratedCircuitCardIdentifier property value. The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.
 func (m *EmbeddedSIMActivationCode) SetIntegratedCircuitCardIdentifier(value *string)() {
-    m.integratedCircuitCardIdentifier = value
+    if m != nil {
+        m.integratedCircuitCardIdentifier = value
+    }
 }
 // SetMatchingIdentifier sets the matchingIdentifier property value. The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.
 func (m *EmbeddedSIMActivationCode) SetMatchingIdentifier(value *string)() {
-    m.matchingIdentifier = value
+    if m != nil {
+        m.matchingIdentifier = value
+    }
 }
 // SetSmdpPlusServerAddress sets the smdpPlusServerAddress property value. The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.
 func (m *EmbeddedSIMActivationCode) SetSmdpPlusServerAddress(value *string)() {
-    m.smdpPlusServerAddress = value
+    if m != nil {
+        m.smdpPlusServerAddress = value
+    }
 }

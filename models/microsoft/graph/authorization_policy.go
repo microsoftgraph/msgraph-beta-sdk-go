@@ -312,41 +312,61 @@ func (m *AuthorizationPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAllowedToSignUpEmailBasedSubscriptions sets the allowedToSignUpEmailBasedSubscriptions property value. Indicates whether users can sign up for email based subscriptions.
 func (m *AuthorizationPolicy) SetAllowedToSignUpEmailBasedSubscriptions(value *bool)() {
-    m.allowedToSignUpEmailBasedSubscriptions = value
+    if m != nil {
+        m.allowedToSignUpEmailBasedSubscriptions = value
+    }
 }
 // SetAllowedToUseSSPR sets the allowedToUseSSPR property value. Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
 func (m *AuthorizationPolicy) SetAllowedToUseSSPR(value *bool)() {
-    m.allowedToUseSSPR = value
+    if m != nil {
+        m.allowedToUseSSPR = value
+    }
 }
 // SetAllowEmailVerifiedUsersToJoinOrganization sets the allowEmailVerifiedUsersToJoinOrganization property value. Indicates whether a user can join the tenant by email validation.
 func (m *AuthorizationPolicy) SetAllowEmailVerifiedUsersToJoinOrganization(value *bool)() {
-    m.allowEmailVerifiedUsersToJoinOrganization = value
+    if m != nil {
+        m.allowEmailVerifiedUsersToJoinOrganization = value
+    }
 }
 // SetAllowInvitesFrom sets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
 func (m *AuthorizationPolicy) SetAllowInvitesFrom(value *AllowInvitesFrom)() {
-    m.allowInvitesFrom = value
+    if m != nil {
+        m.allowInvitesFrom = value
+    }
 }
 // SetBlockMsolPowerShell sets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) SetBlockMsolPowerShell(value *bool)() {
-    m.blockMsolPowerShell = value
+    if m != nil {
+        m.blockMsolPowerShell = value
+    }
 }
 // SetDefaultUserRoleOverrides sets the defaultUserRoleOverrides property value. 
 func (m *AuthorizationPolicy) SetDefaultUserRoleOverrides(value []DefaultUserRoleOverride)() {
-    m.defaultUserRoleOverrides = value
+    if m != nil {
+        m.defaultUserRoleOverrides = value
+    }
 }
 // SetDefaultUserRolePermissions sets the defaultUserRolePermissions property value. 
 func (m *AuthorizationPolicy) SetDefaultUserRolePermissions(value *DefaultUserRolePermissions)() {
-    m.defaultUserRolePermissions = value
+    if m != nil {
+        m.defaultUserRolePermissions = value
+    }
 }
 // SetEnabledPreviewFeatures sets the enabledPreviewFeatures property value. List of features enabled for private preview on the tenant.
 func (m *AuthorizationPolicy) SetEnabledPreviewFeatures(value []string)() {
-    m.enabledPreviewFeatures = value
+    if m != nil {
+        m.enabledPreviewFeatures = value
+    }
 }
 // SetGuestUserRoleId sets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 func (m *AuthorizationPolicy) SetGuestUserRoleId(value *string)() {
-    m.guestUserRoleId = value
+    if m != nil {
+        m.guestUserRoleId = value
+    }
 }
 // SetPermissionGrantPolicyIdsAssignedToDefaultUserRole sets the permissionGrantPolicyIdsAssignedToDefaultUserRole property value. Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
 func (m *AuthorizationPolicy) SetPermissionGrantPolicyIdsAssignedToDefaultUserRole(value []string)() {
-    m.permissionGrantPolicyIdsAssignedToDefaultUserRole = value
+    if m != nil {
+        m.permissionGrantPolicyIdsAssignedToDefaultUserRole = value
+    }
 }

@@ -87,9 +87,13 @@ func (m *PrivilegedSignupStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetIsRegistered sets the isRegistered property value. 
 func (m *PrivilegedSignupStatus) SetIsRegistered(value *bool)() {
-    m.isRegistered = value
+    if m != nil {
+        m.isRegistered = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *PrivilegedSignupStatus) SetStatus(value *SetupStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

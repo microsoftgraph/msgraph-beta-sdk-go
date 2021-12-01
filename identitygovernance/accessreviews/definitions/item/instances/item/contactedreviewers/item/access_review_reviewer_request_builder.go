@@ -40,7 +40,7 @@ type AccessReviewReviewerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AccessReviewReviewerRequestBuilderPatchOptions options for Patch
 type AccessReviewReviewerRequestBuilderPatchOptions struct {

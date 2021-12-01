@@ -224,29 +224,43 @@ func (m *SynchronizationTemplate) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetApplicationId sets the applicationId property value. Identifier of the application this template belongs to.
 func (m *SynchronizationTemplate) SetApplicationId(value *string)() {
-    m.applicationId = value
+    if m != nil {
+        m.applicationId = value
+    }
 }
 // SetDefault_escaped sets the default_escaped property value. true if this template is recommended to be the default for the application.
 func (m *SynchronizationTemplate) SetDefault_escaped(value *bool)() {
-    m.default_escaped = value
+    if m != nil {
+        m.default_escaped = value
+    }
 }
 // SetDescription sets the description property value. Description of the template.
 func (m *SynchronizationTemplate) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDiscoverable sets the discoverable property value. true if this template should appear in the collection of templates available for the application instance (service principal).
 func (m *SynchronizationTemplate) SetDiscoverable(value *bool)() {
-    m.discoverable = value
+    if m != nil {
+        m.discoverable = value
+    }
 }
 // SetFactoryTag sets the factoryTag property value. One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
 func (m *SynchronizationTemplate) SetFactoryTag(value *string)() {
-    m.factoryTag = value
+    if m != nil {
+        m.factoryTag = value
+    }
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
 func (m *SynchronizationTemplate) SetMetadata(value []MetadataEntry)() {
-    m.metadata = value
+    if m != nil {
+        m.metadata = value
+    }
 }
 // SetSchema sets the schema property value. Default synchronization schema for the jobs based on this template.
 func (m *SynchronizationTemplate) SetSchema(value *SynchronizationSchema)() {
-    m.schema = value
+    if m != nil {
+        m.schema = value
+    }
 }

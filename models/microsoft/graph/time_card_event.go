@@ -123,17 +123,25 @@ func (m *TimeCardEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeCardEvent) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAtApprovedLocation sets the atApprovedLocation property value. Indicates whether the entry was recorded at the approved location.
 func (m *TimeCardEvent) SetAtApprovedLocation(value *bool)() {
-    m.atApprovedLocation = value
+    if m != nil {
+        m.atApprovedLocation = value
+    }
 }
 // SetDateTime sets the dateTime property value. The time the entry is recorded.
 func (m *TimeCardEvent) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.dateTime = value
+    if m != nil {
+        m.dateTime = value
+    }
 }
 // SetNotes sets the notes property value. Notes about the timeCardEvent.
 func (m *TimeCardEvent) SetNotes(value *ItemBody)() {
-    m.notes = value
+    if m != nil {
+        m.notes = value
+    }
 }

@@ -283,37 +283,55 @@ func (m *RiskyUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetHistory sets the history property value. The activity related to user risk level change
 func (m *RiskyUser) SetHistory(value []RiskyUserHistoryItem)() {
-    m.history = value
+    if m != nil {
+        m.history = value
+    }
 }
 // SetIsDeleted sets the isDeleted property value. Indicates whether the user is deleted. Possible values are: true, false.
 func (m *RiskyUser) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    if m != nil {
+        m.isDeleted = value
+    }
 }
 // SetIsProcessing sets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend.
 func (m *RiskyUser) SetIsProcessing(value *bool)() {
-    m.isProcessing = value
+    if m != nil {
+        m.isProcessing = value
+    }
 }
 // SetRiskDetail sets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
 func (m *RiskyUser) SetRiskDetail(value *RiskDetail)() {
-    m.riskDetail = value
+    if m != nil {
+        m.riskDetail = value
+    }
 }
 // SetRiskLastUpdatedDateTime sets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *RiskyUser) SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.riskLastUpdatedDateTime = value
+    if m != nil {
+        m.riskLastUpdatedDateTime = value
+    }
 }
 // SetRiskLevel sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
 func (m *RiskyUser) SetRiskLevel(value *RiskLevel)() {
-    m.riskLevel = value
+    if m != nil {
+        m.riskLevel = value
+    }
 }
 // SetRiskState sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 func (m *RiskyUser) SetRiskState(value *RiskState)() {
-    m.riskState = value
+    if m != nil {
+        m.riskState = value
+    }
 }
 // SetUserDisplayName sets the userDisplayName property value. Risky user display name.
 func (m *RiskyUser) SetUserDisplayName(value *string)() {
-    m.userDisplayName = value
+    if m != nil {
+        m.userDisplayName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. Risky user principal name.
 func (m *RiskyUser) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

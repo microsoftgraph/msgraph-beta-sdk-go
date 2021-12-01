@@ -174,25 +174,37 @@ func (m *LoginPageTextVisibilitySettings) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LoginPageTextVisibilitySettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetHideCannotAccessYourAccount sets the hideCannotAccessYourAccount property value. 
 func (m *LoginPageTextVisibilitySettings) SetHideCannotAccessYourAccount(value *bool)() {
-    m.hideCannotAccessYourAccount = value
+    if m != nil {
+        m.hideCannotAccessYourAccount = value
+    }
 }
 // SetHideForgotMyPassword sets the hideForgotMyPassword property value. 
 func (m *LoginPageTextVisibilitySettings) SetHideForgotMyPassword(value *bool)() {
-    m.hideForgotMyPassword = value
+    if m != nil {
+        m.hideForgotMyPassword = value
+    }
 }
 // SetHidePrivacyAndCookies sets the hidePrivacyAndCookies property value. 
 func (m *LoginPageTextVisibilitySettings) SetHidePrivacyAndCookies(value *bool)() {
-    m.hidePrivacyAndCookies = value
+    if m != nil {
+        m.hidePrivacyAndCookies = value
+    }
 }
 // SetHideResetItNow sets the hideResetItNow property value. 
 func (m *LoginPageTextVisibilitySettings) SetHideResetItNow(value *bool)() {
-    m.hideResetItNow = value
+    if m != nil {
+        m.hideResetItNow = value
+    }
 }
 // SetHideTermsOfUse sets the hideTermsOfUse property value. 
 func (m *LoginPageTextVisibilitySettings) SetHideTermsOfUse(value *bool)() {
-    m.hideTermsOfUse = value
+    if m != nil {
+        m.hideTermsOfUse = value
+    }
 }

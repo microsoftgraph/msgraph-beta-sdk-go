@@ -40,7 +40,7 @@ type CloudPcProvisioningPolicyAssignmentRequestBuilderGetQueryParameters struct 
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // CloudPcProvisioningPolicyAssignmentRequestBuilderPatchOptions options for Patch
 type CloudPcProvisioningPolicyAssignmentRequestBuilderPatchOptions struct {

@@ -131,17 +131,25 @@ func (m *EvaluateLabelJobResult) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateLabelJobResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetResponsiblePolicy sets the responsiblePolicy property value. 
 func (m *EvaluateLabelJobResult) SetResponsiblePolicy(value *ResponsiblePolicy)() {
-    m.responsiblePolicy = value
+    if m != nil {
+        m.responsiblePolicy = value
+    }
 }
 // SetResponsibleSensitiveTypes sets the responsibleSensitiveTypes property value. 
 func (m *EvaluateLabelJobResult) SetResponsibleSensitiveTypes(value []ResponsibleSensitiveType)() {
-    m.responsibleSensitiveTypes = value
+    if m != nil {
+        m.responsibleSensitiveTypes = value
+    }
 }
 // SetSensitivityLabel sets the sensitivityLabel property value. 
 func (m *EvaluateLabelJobResult) SetSensitivityLabel(value *MatchingLabel)() {
-    m.sensitivityLabel = value
+    if m != nil {
+        m.sensitivityLabel = value
+    }
 }

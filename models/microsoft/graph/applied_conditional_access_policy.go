@@ -336,45 +336,67 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppliedConditionalAccessPolicy) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAuthenticationStrength sets the authenticationStrength property value. 
 func (m *AppliedConditionalAccessPolicy) SetAuthenticationStrength(value *AuthenticationStrength)() {
-    m.authenticationStrength = value
+    if m != nil {
+        m.authenticationStrength = value
+    }
 }
 // SetConditionsNotSatisfied sets the conditionsNotSatisfied property value. Refers to the conditional access policy conditions that are not satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
 func (m *AppliedConditionalAccessPolicy) SetConditionsNotSatisfied(value *ConditionalAccessConditions)() {
-    m.conditionsNotSatisfied = value
+    if m != nil {
+        m.conditionsNotSatisfied = value
+    }
 }
 // SetConditionsSatisfied sets the conditionsSatisfied property value. Refers to the conditional access policy conditions that are satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
 func (m *AppliedConditionalAccessPolicy) SetConditionsSatisfied(value *ConditionalAccessConditions)() {
-    m.conditionsSatisfied = value
+    if m != nil {
+        m.conditionsSatisfied = value
+    }
 }
 // SetDisplayName sets the displayName property value. Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
 func (m *AppliedConditionalAccessPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEnforcedGrantControls sets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
 func (m *AppliedConditionalAccessPolicy) SetEnforcedGrantControls(value []string)() {
-    m.enforcedGrantControls = value
+    if m != nil {
+        m.enforcedGrantControls = value
+    }
 }
 // SetEnforcedSessionControls sets the enforcedSessionControls property value. Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
 func (m *AppliedConditionalAccessPolicy) SetEnforcedSessionControls(value []string)() {
-    m.enforcedSessionControls = value
+    if m != nil {
+        m.enforcedSessionControls = value
+    }
 }
 // SetExcludeRulesSatisfied sets the excludeRulesSatisfied property value. 
 func (m *AppliedConditionalAccessPolicy) SetExcludeRulesSatisfied(value []ConditionalAccessRuleSatisfied)() {
-    m.excludeRulesSatisfied = value
+    if m != nil {
+        m.excludeRulesSatisfied = value
+    }
 }
 // SetId sets the id property value. An identifier of the conditional access policy.
 func (m *AppliedConditionalAccessPolicy) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetIncludeRulesSatisfied sets the includeRulesSatisfied property value. 
 func (m *AppliedConditionalAccessPolicy) SetIncludeRulesSatisfied(value []ConditionalAccessRuleSatisfied)() {
-    m.includeRulesSatisfied = value
+    if m != nil {
+        m.includeRulesSatisfied = value
+    }
 }
 // SetResult sets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
 func (m *AppliedConditionalAccessPolicy) SetResult(value *AppliedConditionalAccessPolicyResult)() {
-    m.result = value
+    if m != nil {
+        m.result = value
+    }
 }

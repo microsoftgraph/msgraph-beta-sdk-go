@@ -85,9 +85,13 @@ func (m *ProgramControlType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetControlTypeGroupId sets the controlTypeGroupId property value. 
 func (m *ProgramControlType) SetControlTypeGroupId(value *string)() {
-    m.controlTypeGroupId = value
+    if m != nil {
+        m.controlTypeGroupId = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the program control type
 func (m *ProgramControlType) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

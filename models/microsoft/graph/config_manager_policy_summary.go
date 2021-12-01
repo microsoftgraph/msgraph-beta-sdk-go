@@ -200,29 +200,43 @@ func (m *ConfigManagerPolicySummary) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigManagerPolicySummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. The number of devices evaluated to be compliant by the policy.
 func (m *ConfigManagerPolicySummary) SetCompliantDeviceCount(value *int32)() {
-    m.compliantDeviceCount = value
+    if m != nil {
+        m.compliantDeviceCount = value
+    }
 }
 // SetEnforcedDeviceCount sets the enforcedDeviceCount property value. The number of devices that have have been remediated by the policy.
 func (m *ConfigManagerPolicySummary) SetEnforcedDeviceCount(value *int32)() {
-    m.enforcedDeviceCount = value
+    if m != nil {
+        m.enforcedDeviceCount = value
+    }
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. The number of devices that failed to be evaluated by the policy.
 func (m *ConfigManagerPolicySummary) SetFailedDeviceCount(value *int32)() {
-    m.failedDeviceCount = value
+    if m != nil {
+        m.failedDeviceCount = value
+    }
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. The number of devices evaluated to be noncompliant by the policy.
 func (m *ConfigManagerPolicySummary) SetNonCompliantDeviceCount(value *int32)() {
-    m.nonCompliantDeviceCount = value
+    if m != nil {
+        m.nonCompliantDeviceCount = value
+    }
 }
 // SetPendingDeviceCount sets the pendingDeviceCount property value. The number of devices that have acknowledged the policy but are pending evaluation.
 func (m *ConfigManagerPolicySummary) SetPendingDeviceCount(value *int32)() {
-    m.pendingDeviceCount = value
+    if m != nil {
+        m.pendingDeviceCount = value
+    }
 }
 // SetTargetedDeviceCount sets the targetedDeviceCount property value. The number of devices targeted by the policy.
 func (m *ConfigManagerPolicySummary) SetTargetedDeviceCount(value *int32)() {
-    m.targetedDeviceCount = value
+    if m != nil {
+        m.targetedDeviceCount = value
+    }
 }

@@ -79,9 +79,13 @@ func (m *Financials) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Financials) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCompanies sets the companies property value. 
 func (m *Financials) SetCompanies(value []Company)() {
-    m.companies = value
+    if m != nil {
+        m.companies = value
+    }
 }

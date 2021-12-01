@@ -215,29 +215,43 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) Serialize(writer i04eb
 }
 // SetCompliantCount sets the compliantCount property value. Number of compliant devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetCompliantCount(value *int32)() {
-    m.compliantCount = value
+    if m != nil {
+        m.compliantCount = value
+    }
 }
 // SetConflictCount sets the conflictCount property value. Number of devices in conflict
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetConflictCount(value *int32)() {
-    m.conflictCount = value
+    if m != nil {
+        m.conflictCount = value
+    }
 }
 // SetErrorCount sets the errorCount property value. Number of error devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetErrorCount(value *int32)() {
-    m.errorCount = value
+    if m != nil {
+        m.errorCount = value
+    }
 }
 // SetNonCompliantCount sets the nonCompliantCount property value. Number of non compliant devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetNonCompliantCount(value *int32)() {
-    m.nonCompliantCount = value
+    if m != nil {
+        m.nonCompliantCount = value
+    }
 }
 // SetNotApplicableCount sets the notApplicableCount property value. Number of not applicable devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetNotApplicableCount(value *int32)() {
-    m.notApplicableCount = value
+    if m != nil {
+        m.notApplicableCount = value
+    }
 }
 // SetRemediatedCount sets the remediatedCount property value. Number of remediated devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetRemediatedCount(value *int32)() {
-    m.remediatedCount = value
+    if m != nil {
+        m.remediatedCount = value
+    }
 }
 // SetSettingName sets the settingName property value. Name of a setting
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetSettingName(value *string)() {
-    m.settingName = value
+    if m != nil {
+        m.settingName = value
+    }
 }

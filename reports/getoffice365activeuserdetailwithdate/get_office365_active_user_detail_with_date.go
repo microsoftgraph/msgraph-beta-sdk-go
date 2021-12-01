@@ -662,97 +662,145 @@ func (m *GetOffice365ActiveUserDetailWithDate) Serialize(writer i04eb5309aeaafad
 }
 // SetAssignedProducts sets the assignedProducts property value. All the products assigned for the user.
 func (m *GetOffice365ActiveUserDetailWithDate) SetAssignedProducts(value []string)() {
-    m.assignedProducts = value
+    if m != nil {
+        m.assignedProducts = value
+    }
 }
 // SetDeletedDate sets the deletedDate property value. The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
 func (m *GetOffice365ActiveUserDetailWithDate) SetDeletedDate(value *string)() {
-    m.deletedDate = value
+    if m != nil {
+        m.deletedDate = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
 func (m *GetOffice365ActiveUserDetailWithDate) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExchangeLastActivityDate sets the exchangeLastActivityDate property value. The date when user last read or sent email.
 func (m *GetOffice365ActiveUserDetailWithDate) SetExchangeLastActivityDate(value *string)() {
-    m.exchangeLastActivityDate = value
+    if m != nil {
+        m.exchangeLastActivityDate = value
+    }
 }
 // SetExchangeLicenseAssignDate sets the exchangeLicenseAssignDate property value. The last date when the user was assigned an Exchange license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetExchangeLicenseAssignDate(value *string)() {
-    m.exchangeLicenseAssignDate = value
+    if m != nil {
+        m.exchangeLicenseAssignDate = value
+    }
 }
 // SetHasExchangeLicense sets the hasExchangeLicense property value. Whether the user has been assigned an Exchange license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetHasExchangeLicense(value *bool)() {
-    m.hasExchangeLicense = value
+    if m != nil {
+        m.hasExchangeLicense = value
+    }
 }
 // SetHasOneDriveLicense sets the hasOneDriveLicense property value. Whether the user has been assigned a OneDrive license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetHasOneDriveLicense(value *bool)() {
-    m.hasOneDriveLicense = value
+    if m != nil {
+        m.hasOneDriveLicense = value
+    }
 }
 // SetHasSharePointLicense sets the hasSharePointLicense property value. Whether the user has been assigned a SharePoint license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetHasSharePointLicense(value *bool)() {
-    m.hasSharePointLicense = value
+    if m != nil {
+        m.hasSharePointLicense = value
+    }
 }
 // SetHasSkypeForBusinessLicense sets the hasSkypeForBusinessLicense property value. Whether the user has been assigned a Skype For Business license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetHasSkypeForBusinessLicense(value *bool)() {
-    m.hasSkypeForBusinessLicense = value
+    if m != nil {
+        m.hasSkypeForBusinessLicense = value
+    }
 }
 // SetHasTeamsLicense sets the hasTeamsLicense property value. Whether the user has been assigned a Teams license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetHasTeamsLicense(value *bool)() {
-    m.hasTeamsLicense = value
+    if m != nil {
+        m.hasTeamsLicense = value
+    }
 }
 // SetHasYammerLicense sets the hasYammerLicense property value. Whether the user has been assigned a Yammer license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetHasYammerLicense(value *bool)() {
-    m.hasYammerLicense = value
+    if m != nil {
+        m.hasYammerLicense = value
+    }
 }
 // SetIsDeleted sets the isDeleted property value. Whether this user has been deleted or soft deleted.
 func (m *GetOffice365ActiveUserDetailWithDate) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    if m != nil {
+        m.isDeleted = value
+    }
 }
 // SetOneDriveLastActivityDate sets the oneDriveLastActivityDate property value. The date when user last viewed or edited files, shared files internally or externally, or synced files.
 func (m *GetOffice365ActiveUserDetailWithDate) SetOneDriveLastActivityDate(value *string)() {
-    m.oneDriveLastActivityDate = value
+    if m != nil {
+        m.oneDriveLastActivityDate = value
+    }
 }
 // SetOneDriveLicenseAssignDate sets the oneDriveLicenseAssignDate property value. The last date when the user was assigned a OneDrive license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetOneDriveLicenseAssignDate(value *string)() {
-    m.oneDriveLicenseAssignDate = value
+    if m != nil {
+        m.oneDriveLicenseAssignDate = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *GetOffice365ActiveUserDetailWithDate) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetSharePointLastActivityDate sets the sharePointLastActivityDate property value. The date when user last viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages.
 func (m *GetOffice365ActiveUserDetailWithDate) SetSharePointLastActivityDate(value *string)() {
-    m.sharePointLastActivityDate = value
+    if m != nil {
+        m.sharePointLastActivityDate = value
+    }
 }
 // SetSharePointLicenseAssignDate sets the sharePointLicenseAssignDate property value. The last date when the user was assigned a SharePoint license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetSharePointLicenseAssignDate(value *string)() {
-    m.sharePointLicenseAssignDate = value
+    if m != nil {
+        m.sharePointLicenseAssignDate = value
+    }
 }
 // SetSkypeForBusinessLastActivityDate sets the skypeForBusinessLastActivityDate property value. The date when user last organized or participated in conferences, or joined peer-to-peer sessions.
 func (m *GetOffice365ActiveUserDetailWithDate) SetSkypeForBusinessLastActivityDate(value *string)() {
-    m.skypeForBusinessLastActivityDate = value
+    if m != nil {
+        m.skypeForBusinessLastActivityDate = value
+    }
 }
 // SetSkypeForBusinessLicenseAssignDate sets the skypeForBusinessLicenseAssignDate property value. The last date when the user was assigned a Skype For Business license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetSkypeForBusinessLicenseAssignDate(value *string)() {
-    m.skypeForBusinessLicenseAssignDate = value
+    if m != nil {
+        m.skypeForBusinessLicenseAssignDate = value
+    }
 }
 // SetTeamsLastActivityDate sets the teamsLastActivityDate property value. The date when user last posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls.
 func (m *GetOffice365ActiveUserDetailWithDate) SetTeamsLastActivityDate(value *string)() {
-    m.teamsLastActivityDate = value
+    if m != nil {
+        m.teamsLastActivityDate = value
+    }
 }
 // SetTeamsLicenseAssignDate sets the teamsLicenseAssignDate property value. The last date when the user was assigned a Teams license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetTeamsLicenseAssignDate(value *string)() {
-    m.teamsLicenseAssignDate = value
+    if m != nil {
+        m.teamsLicenseAssignDate = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.
 func (m *GetOffice365ActiveUserDetailWithDate) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetYammerLastActivityDate sets the yammerLastActivityDate property value. The date when user last posted, read, or liked message.
 func (m *GetOffice365ActiveUserDetailWithDate) SetYammerLastActivityDate(value *string)() {
-    m.yammerLastActivityDate = value
+    if m != nil {
+        m.yammerLastActivityDate = value
+    }
 }
 // SetYammerLicenseAssignDate sets the yammerLicenseAssignDate property value. The last date when the user was assigned a Yammer license.
 func (m *GetOffice365ActiveUserDetailWithDate) SetYammerLicenseAssignDate(value *string)() {
-    m.yammerLicenseAssignDate = value
+    if m != nil {
+        m.yammerLicenseAssignDate = value
+    }
 }

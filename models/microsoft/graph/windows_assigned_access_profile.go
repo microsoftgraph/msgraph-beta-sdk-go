@@ -201,25 +201,37 @@ func (m *WindowsAssignedAccessProfile) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAppUserModelIds sets the appUserModelIds property value. These are the only Windows Store Apps that will be available to launch from the Start menu.
 func (m *WindowsAssignedAccessProfile) SetAppUserModelIds(value []string)() {
-    m.appUserModelIds = value
+    if m != nil {
+        m.appUserModelIds = value
+    }
 }
 // SetDesktopAppPaths sets the desktopAppPaths property value. These are the paths of the Desktop Apps that will be available on the Start menu and the only apps the user will be able to launch.
 func (m *WindowsAssignedAccessProfile) SetDesktopAppPaths(value []string)() {
-    m.desktopAppPaths = value
+    if m != nil {
+        m.desktopAppPaths = value
+    }
 }
 // SetProfileName sets the profileName property value. This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
 func (m *WindowsAssignedAccessProfile) SetProfileName(value *string)() {
-    m.profileName = value
+    if m != nil {
+        m.profileName = value
+    }
 }
 // SetShowTaskBar sets the showTaskBar property value. This setting allows the admin to specify whether the Task Bar is shown or not.
 func (m *WindowsAssignedAccessProfile) SetShowTaskBar(value *bool)() {
-    m.showTaskBar = value
+    if m != nil {
+        m.showTaskBar = value
+    }
 }
 // SetStartMenuLayoutXml sets the startMenuLayoutXml property value. Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.
 func (m *WindowsAssignedAccessProfile) SetStartMenuLayoutXml(value []byte)() {
-    m.startMenuLayoutXml = value
+    if m != nil {
+        m.startMenuLayoutXml = value
+    }
 }
 // SetUserAccounts sets the userAccounts property value. The user accounts that will be locked to this kiosk configuration.
 func (m *WindowsAssignedAccessProfile) SetUserAccounts(value []string)() {
-    m.userAccounts = value
+    if m != nil {
+        m.userAccounts = value
+    }
 }

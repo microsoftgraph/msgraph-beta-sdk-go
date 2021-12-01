@@ -50,7 +50,7 @@ type DeviceCustomAttributeShellScriptRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceCustomAttributeShellScriptRequestBuilderPatchOptions options for Patch
 type DeviceCustomAttributeShellScriptRequestBuilderPatchOptions struct {

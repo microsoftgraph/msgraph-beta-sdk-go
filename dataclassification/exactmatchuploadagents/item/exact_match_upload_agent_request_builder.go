@@ -40,7 +40,7 @@ type ExactMatchUploadAgentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ExactMatchUploadAgentRequestBuilderPatchOptions options for Patch
 type ExactMatchUploadAgentRequestBuilderPatchOptions struct {

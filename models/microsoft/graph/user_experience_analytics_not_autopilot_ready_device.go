@@ -267,37 +267,55 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) Serialize(writer i04eb5
 }
 // SetAutoPilotProfileAssigned sets the autoPilotProfileAssigned property value. The intune device's autopilotProfileAssigned.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetAutoPilotProfileAssigned(value *bool)() {
-    m.autoPilotProfileAssigned = value
+    if m != nil {
+        m.autoPilotProfileAssigned = value
+    }
 }
 // SetAutoPilotRegistered sets the autoPilotRegistered property value. The intune device's autopilotRegistered.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetAutoPilotRegistered(value *bool)() {
-    m.autoPilotRegistered = value
+    if m != nil {
+        m.autoPilotRegistered = value
+    }
 }
 // SetAzureAdJoinType sets the azureAdJoinType property value. The intune device's azure Ad joinType.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetAzureAdJoinType(value *string)() {
-    m.azureAdJoinType = value
+    if m != nil {
+        m.azureAdJoinType = value
+    }
 }
 // SetAzureAdRegistered sets the azureAdRegistered property value. The intune device's azureAdRegistered.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetAzureAdRegistered(value *bool)() {
-    m.azureAdRegistered = value
+    if m != nil {
+        m.azureAdRegistered = value
+    }
 }
 // SetDeviceName sets the deviceName property value. The intune device's name.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetManagedBy sets the managedBy property value. The intune device's managed by.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetManagedBy(value *string)() {
-    m.managedBy = value
+    if m != nil {
+        m.managedBy = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. The intune device's manufacturer.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetModel sets the model property value. The intune device's model.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }
 // SetSerialNumber sets the serialNumber property value. The intune device's serial number.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetSerialNumber(value *string)() {
-    m.serialNumber = value
+    if m != nil {
+        m.serialNumber = value
+    }
 }

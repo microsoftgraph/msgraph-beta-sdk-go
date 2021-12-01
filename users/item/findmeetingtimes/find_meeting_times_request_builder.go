@@ -92,11 +92,15 @@ func (m *FindMeetingTimesResponse) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FindMeetingTimesResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMeetingTimeSuggestionsResult sets the meetingTimeSuggestionsResult property value. Union type representation for type meetingTimeSuggestionsResult
 func (m *FindMeetingTimesResponse) SetMeetingTimeSuggestionsResult(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MeetingTimeSuggestionsResult)() {
-    m.meetingTimeSuggestionsResult = value
+    if m != nil {
+        m.meetingTimeSuggestionsResult = value
+    }
 }
 // NewFindMeetingTimesRequestBuilderInternal instantiates a new FindMeetingTimesRequestBuilder and sets the default values.
 func NewFindMeetingTimesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FindMeetingTimesRequestBuilder) {

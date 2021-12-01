@@ -114,13 +114,19 @@ func (m *IdentityProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityProtection) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRiskDetections sets the riskDetections property value. 
 func (m *IdentityProtection) SetRiskDetections(value []RiskDetection)() {
-    m.riskDetections = value
+    if m != nil {
+        m.riskDetections = value
+    }
 }
 // SetRiskyUsers sets the riskyUsers property value. 
 func (m *IdentityProtection) SetRiskyUsers(value []RiskyUser)() {
-    m.riskyUsers = value
+    if m != nil {
+        m.riskyUsers = value
+    }
 }

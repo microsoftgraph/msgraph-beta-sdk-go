@@ -87,9 +87,13 @@ func (m *RemoteAssistanceSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAllowSessionsToUnenrolledDevices sets the allowSessionsToUnenrolledDevices property value. Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
 func (m *RemoteAssistanceSettings) SetAllowSessionsToUnenrolledDevices(value *bool)() {
-    m.allowSessionsToUnenrolledDevices = value
+    if m != nil {
+        m.allowSessionsToUnenrolledDevices = value
+    }
 }
 // SetRemoteAssistanceState sets the remoteAssistanceState property value. The current state of remote assistance for the account. Possible values are: notConfigured, disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a notConfigured state. Returned by default. Possible values are: notConfigured, disabled, enabled.
 func (m *RemoteAssistanceSettings) SetRemoteAssistanceState(value *RemoteAssistanceState)() {
-    m.remoteAssistanceState = value
+    if m != nil {
+        m.remoteAssistanceState = value
+    }
 }

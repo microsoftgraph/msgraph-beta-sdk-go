@@ -70,9 +70,13 @@ func (m *ManagedDeviceReportedApp) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceReportedApp) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppId sets the appId property value. The application or bundle identifier of the application
 func (m *ManagedDeviceReportedApp) SetAppId(value *string)() {
-    m.appId = value
+    if m != nil {
+        m.appId = value
+    }
 }

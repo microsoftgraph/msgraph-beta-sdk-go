@@ -149,17 +149,25 @@ func (m *Filter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Filter) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCategoryFilterGroups sets the categoryFilterGroups property value. *Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
 func (m *Filter) SetCategoryFilterGroups(value []FilterGroup)() {
-    m.categoryFilterGroups = value
+    if m != nil {
+        m.categoryFilterGroups = value
+    }
 }
 // SetGroups sets the groups property value. Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned'. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
 func (m *Filter) SetGroups(value []FilterGroup)() {
-    m.groups = value
+    if m != nil {
+        m.groups = value
+    }
 }
 // SetInputFilterGroups sets the inputFilterGroups property value. *Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn't satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
 func (m *Filter) SetInputFilterGroups(value []FilterGroup)() {
-    m.inputFilterGroups = value
+    if m != nil {
+        m.inputFilterGroups = value
+    }
 }

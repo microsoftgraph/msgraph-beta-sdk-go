@@ -40,7 +40,7 @@ type RunSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // RunSummaryRequestBuilderPatchOptions options for Patch
 type RunSummaryRequestBuilderPatchOptions struct {

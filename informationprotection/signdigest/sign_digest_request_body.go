@@ -70,9 +70,13 @@ func (m *SignDigestRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignDigestRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDigest sets the digest property value. 
 func (m *SignDigestRequestBody) SetDigest(value []byte)() {
-    m.digest = value
+    if m != nil {
+        m.digest = value
+    }
 }

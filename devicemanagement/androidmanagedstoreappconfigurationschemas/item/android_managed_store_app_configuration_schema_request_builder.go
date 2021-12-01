@@ -40,7 +40,7 @@ type AndroidManagedStoreAppConfigurationSchemaRequestBuilderGetQueryParameters s
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AndroidManagedStoreAppConfigurationSchemaRequestBuilderPatchOptions options for Patch
 type AndroidManagedStoreAppConfigurationSchemaRequestBuilderPatchOptions struct {

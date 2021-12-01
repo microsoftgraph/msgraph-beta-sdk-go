@@ -115,13 +115,19 @@ func (m *PhoneAuthenticationMethod) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetPhoneNumber sets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.
 func (m *PhoneAuthenticationMethod) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    if m != nil {
+        m.phoneNumber = value
+    }
 }
 // SetPhoneType sets the phoneType property value. The type of this phone. Possible values are: mobile, alternateMobile, or office.
 func (m *PhoneAuthenticationMethod) SetPhoneType(value *AuthenticationPhoneType)() {
-    m.phoneType = value
+    if m != nil {
+        m.phoneType = value
+    }
 }
 // SetSmsSignInState sets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
 func (m *PhoneAuthenticationMethod) SetSmsSignInState(value *AuthenticationMethodSignInState)() {
-    m.smsSignInState = value
+    if m != nil {
+        m.smsSignInState = value
+    }
 }

@@ -218,29 +218,43 @@ func (m *Notification) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetDisplayTimeToLive sets the displayTimeToLive property value. Sets how long (in seconds) this notification content will stay in each platform’s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user’s Windows Action Center.
 func (m *Notification) SetDisplayTimeToLive(value *int32)() {
-    m.displayTimeToLive = value
+    if m != nil {
+        m.displayTimeToLive = value
+    }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Sets a UTC expiration date and time on a user notification using ISO 8601 format (for example, midnight UTC on Jan 1, 2019 would look like this: '2019-01-01T00:00:00Z'). When time is up, the notification is removed from the Microsoft Graph notification feed store completely and is no longer part of notification history. Max value is 30 days.
 func (m *Notification) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetGroupName sets the groupName property value. The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.
 func (m *Notification) SetGroupName(value *string)() {
-    m.groupName = value
+    if m != nil {
+        m.groupName = value
+    }
 }
 // SetPayload sets the payload property value. 
 func (m *Notification) SetPayload(value *PayloadTypes)() {
-    m.payload = value
+    if m != nil {
+        m.payload = value
+    }
 }
 // SetPriority sets the priority property value. Indicates the priority of a raw user notification. Visual notifications are sent with high priority by default. Valid values are None, High and Low.
 func (m *Notification) SetPriority(value *Priority)() {
-    m.priority = value
+    if m != nil {
+        m.priority = value
+    }
 }
 // SetTargetHostName sets the targetHostName property value. Represents the host name of the app to which the calling service wants to post the notification, for the given user. If targeting web endpoints (see targetPolicy.platformTypes), ensure that targetHostName is the same as the name used when creating a subscription on the client side within the application JSON property.
 func (m *Notification) SetTargetHostName(value *string)() {
-    m.targetHostName = value
+    if m != nil {
+        m.targetHostName = value
+    }
 }
 // SetTargetPolicy sets the targetPolicy property value. Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.
 func (m *Notification) SetTargetPolicy(value *TargetPolicyEndpoints)() {
-    m.targetPolicy = value
+    if m != nil {
+        m.targetPolicy = value
+    }
 }

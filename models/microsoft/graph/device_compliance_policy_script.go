@@ -96,13 +96,19 @@ func (m *DeviceCompliancePolicyScript) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceCompliancePolicyScript) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceComplianceScriptId sets the deviceComplianceScriptId property value. Device compliance script Id.
 func (m *DeviceCompliancePolicyScript) SetDeviceComplianceScriptId(value *string)() {
-    m.deviceComplianceScriptId = value
+    if m != nil {
+        m.deviceComplianceScriptId = value
+    }
 }
 // SetRulesContent sets the rulesContent property value. Json of the rules.
 func (m *DeviceCompliancePolicyScript) SetRulesContent(value []byte)() {
-    m.rulesContent = value
+    if m != nil {
+        m.rulesContent = value
+    }
 }

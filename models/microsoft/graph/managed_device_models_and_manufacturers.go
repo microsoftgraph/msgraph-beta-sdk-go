@@ -104,13 +104,19 @@ func (m *ManagedDeviceModelsAndManufacturers) Serialize(writer i04eb5309aeaafadd
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceModelsAndManufacturers) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceManufacturers sets the deviceManufacturers property value. List of Manufactures for managed devices in the account
 func (m *ManagedDeviceModelsAndManufacturers) SetDeviceManufacturers(value []string)() {
-    m.deviceManufacturers = value
+    if m != nil {
+        m.deviceManufacturers = value
+    }
 }
 // SetDeviceModels sets the deviceModels property value. List of Models for managed devices in the account
 func (m *ManagedDeviceModelsAndManufacturers) SetDeviceModels(value []string)() {
-    m.deviceModels = value
+    if m != nil {
+        m.deviceModels = value
+    }
 }

@@ -40,7 +40,7 @@ type WorkPositionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WorkPositionRequestBuilderPatchOptions options for Patch
 type WorkPositionRequestBuilderPatchOptions struct {

@@ -190,25 +190,37 @@ func (m *ConditionalAccessDevices) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessDevices) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceFilter sets the deviceFilter property value. Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
 func (m *ConditionalAccessDevices) SetDeviceFilter(value *ConditionalAccessFilter)() {
-    m.deviceFilter = value
+    if m != nil {
+        m.deviceFilter = value
+    }
 }
 // SetExcludeDevices sets the excludeDevices property value. States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.
 func (m *ConditionalAccessDevices) SetExcludeDevices(value []string)() {
-    m.excludeDevices = value
+    if m != nil {
+        m.excludeDevices = value
+    }
 }
 // SetExcludeDeviceStates sets the excludeDeviceStates property value. 
 func (m *ConditionalAccessDevices) SetExcludeDeviceStates(value []string)() {
-    m.excludeDeviceStates = value
+    if m != nil {
+        m.excludeDeviceStates = value
+    }
 }
 // SetIncludeDevices sets the includeDevices property value. States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
 func (m *ConditionalAccessDevices) SetIncludeDevices(value []string)() {
-    m.includeDevices = value
+    if m != nil {
+        m.includeDevices = value
+    }
 }
 // SetIncludeDeviceStates sets the includeDeviceStates property value. 
 func (m *ConditionalAccessDevices) SetIncludeDeviceStates(value []string)() {
-    m.includeDeviceStates = value
+    if m != nil {
+        m.includeDeviceStates = value
+    }
 }

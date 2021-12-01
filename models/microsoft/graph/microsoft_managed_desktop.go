@@ -98,13 +98,19 @@ func (m *MicrosoftManagedDesktop) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MicrosoftManagedDesktop) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetProfile sets the profile property value. 
 func (m *MicrosoftManagedDesktop) SetProfile(value *string)() {
-    m.profile = value
+    if m != nil {
+        m.profile = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. 
 func (m *MicrosoftManagedDesktop) SetType_escaped(value *MicrosoftManagedDesktopType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

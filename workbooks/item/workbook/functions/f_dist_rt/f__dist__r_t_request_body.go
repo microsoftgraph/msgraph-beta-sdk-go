@@ -123,17 +123,25 @@ func (m *F_Dist_RTRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *F_Dist_RTRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDegFreedom1 sets the degFreedom1 property value. 
 func (m *F_Dist_RTRequestBody) SetDegFreedom1(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.degFreedom1 = value
+    if m != nil {
+        m.degFreedom1 = value
+    }
 }
 // SetDegFreedom2 sets the degFreedom2 property value. 
 func (m *F_Dist_RTRequestBody) SetDegFreedom2(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.degFreedom2 = value
+    if m != nil {
+        m.degFreedom2 = value
+    }
 }
 // SetX sets the x property value. 
 func (m *F_Dist_RTRequestBody) SetX(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.x = value
+    if m != nil {
+        m.x = value
+    }
 }

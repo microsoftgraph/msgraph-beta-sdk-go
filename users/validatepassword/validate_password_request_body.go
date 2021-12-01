@@ -70,9 +70,13 @@ func (m *ValidatePasswordRequestBody) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidatePasswordRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPassword sets the password property value. 
 func (m *ValidatePasswordRequestBody) SetPassword(value *string)() {
-    m.password = value
+    if m != nil {
+        m.password = value
+    }
 }

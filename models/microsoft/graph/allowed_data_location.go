@@ -137,17 +137,25 @@ func (m *AllowedDataLocation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAppId sets the appId property value. 
 func (m *AllowedDataLocation) SetAppId(value *string)() {
-    m.appId = value
+    if m != nil {
+        m.appId = value
+    }
 }
 // SetDomain sets the domain property value. 
 func (m *AllowedDataLocation) SetDomain(value *string)() {
-    m.domain = value
+    if m != nil {
+        m.domain = value
+    }
 }
 // SetIsDefault sets the isDefault property value. 
 func (m *AllowedDataLocation) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetLocation sets the location property value. 
 func (m *AllowedDataLocation) SetLocation(value *string)() {
-    m.location = value
+    if m != nil {
+        m.location = value
+    }
 }

@@ -412,53 +412,79 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i04eb5309aeaafadd2
 }
 // SetAssignments sets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfiguration) SetAssignments(value []IosLobAppProvisioningConfigurationAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. DateTime the object was created.
 func (m *IosLobAppProvisioningConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. Admin provided description of the Device Configuration.
 func (m *IosLobAppProvisioningConfiguration) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDeviceStatuses sets the deviceStatuses property value. The list of device installation states for this mobile app configuration.
 func (m *IosLobAppProvisioningConfiguration) SetDeviceStatuses(value []ManagedDeviceMobileAppConfigurationDeviceStatus)() {
-    m.deviceStatuses = value
+    if m != nil {
+        m.deviceStatuses = value
+    }
 }
 // SetDisplayName sets the displayName property value. Admin provided name of the device configuration.
 func (m *IosLobAppProvisioningConfiguration) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Optional profile expiration date and time.
 func (m *IosLobAppProvisioningConfiguration) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetGroupAssignments sets the groupAssignments property value. The associated group assignments.
 func (m *IosLobAppProvisioningConfiguration) SetGroupAssignments(value []MobileAppProvisioningConfigGroupAssignment)() {
-    m.groupAssignments = value
+    if m != nil {
+        m.groupAssignments = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *IosLobAppProvisioningConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPayload sets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *IosLobAppProvisioningConfiguration) SetPayload(value []byte)() {
-    m.payload = value
+    if m != nil {
+        m.payload = value
+    }
 }
 // SetPayloadFileName sets the payloadFileName property value. Payload file name (.mobileprovision
 func (m *IosLobAppProvisioningConfiguration) SetPayloadFileName(value *string)() {
-    m.payloadFileName = value
+    if m != nil {
+        m.payloadFileName = value
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this iOS LOB app provisioning configuration entity.
 func (m *IosLobAppProvisioningConfiguration) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    if m != nil {
+        m.roleScopeTagIds = value
+    }
 }
 // SetUserStatuses sets the userStatuses property value. The list of user installation states for this mobile app configuration.
 func (m *IosLobAppProvisioningConfiguration) SetUserStatuses(value []ManagedDeviceMobileAppConfigurationUserStatus)() {
-    m.userStatuses = value
+    if m != nil {
+        m.userStatuses = value
+    }
 }
 // SetVersion sets the version property value. Version of the device configuration.
 func (m *IosLobAppProvisioningConfiguration) SetVersion(value *int32)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

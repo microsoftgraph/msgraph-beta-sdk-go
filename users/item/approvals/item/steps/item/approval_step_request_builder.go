@@ -40,7 +40,7 @@ type ApprovalStepRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ApprovalStepRequestBuilderPatchOptions options for Patch
 type ApprovalStepRequestBuilderPatchOptions struct {

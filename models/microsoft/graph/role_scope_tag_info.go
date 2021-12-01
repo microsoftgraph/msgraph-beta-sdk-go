@@ -96,13 +96,19 @@ func (m *RoleScopeTagInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleScopeTagInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Scope Tag Display name.
 func (m *RoleScopeTagInfo) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetRoleScopeTagId sets the roleScopeTagId property value. Scope Tag Id.
 func (m *RoleScopeTagInfo) SetRoleScopeTagId(value *string)() {
-    m.roleScopeTagId = value
+    if m != nil {
+        m.roleScopeTagId = value
+    }
 }

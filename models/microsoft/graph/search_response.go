@@ -105,13 +105,19 @@ func (m *SearchResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetQueryAlterationResponse sets the queryAlterationResponse property value. Provides details of query alteration response for spelling correction.
 func (m *SearchResponse) SetQueryAlterationResponse(value *AlterationResponse)() {
-    m.queryAlterationResponse = value
+    if m != nil {
+        m.queryAlterationResponse = value
+    }
 }
 // SetValue sets the value property value. Represents results from a search query, and the terms used for the query.
 func (m *SearchResponse) SetValue(value []SearchResultSet)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

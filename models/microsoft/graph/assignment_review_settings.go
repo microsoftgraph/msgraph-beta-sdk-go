@@ -290,41 +290,61 @@ func (m *AssignmentReviewSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAccessReviewTimeoutBehavior sets the accessReviewTimeoutBehavior property value. The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
 func (m *AssignmentReviewSettings) SetAccessReviewTimeoutBehavior(value *AccessReviewTimeoutBehavior)() {
-    m.accessReviewTimeoutBehavior = value
+    if m != nil {
+        m.accessReviewTimeoutBehavior = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentReviewSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDurationInDays sets the durationInDays property value. The number of days within which reviewers should provide input.
 func (m *AssignmentReviewSettings) SetDurationInDays(value *int32)() {
-    m.durationInDays = value
+    if m != nil {
+        m.durationInDays = value
+    }
 }
 // SetIsAccessRecommendationEnabled sets the isAccessRecommendationEnabled property value. Specifies whether to display recommendations to the reviewer. The default value is true
 func (m *AssignmentReviewSettings) SetIsAccessRecommendationEnabled(value *bool)() {
-    m.isAccessRecommendationEnabled = value
+    if m != nil {
+        m.isAccessRecommendationEnabled = value
+    }
 }
 // SetIsApprovalJustificationRequired sets the isApprovalJustificationRequired property value. Specifies whether the reviewer must provide justification for the approval. The default value is true.
 func (m *AssignmentReviewSettings) SetIsApprovalJustificationRequired(value *bool)() {
-    m.isApprovalJustificationRequired = value
+    if m != nil {
+        m.isApprovalJustificationRequired = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. If true, access reviews are required for assignments from this policy.
 func (m *AssignmentReviewSettings) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetRecurrenceType sets the recurrenceType property value. The interval for recurrence, such as monthly or quarterly.
 func (m *AssignmentReviewSettings) SetRecurrenceType(value *string)() {
-    m.recurrenceType = value
+    if m != nil {
+        m.recurrenceType = value
+    }
 }
 // SetReviewers sets the reviewers property value. If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
 func (m *AssignmentReviewSettings) SetReviewers(value []UserSet)() {
-    m.reviewers = value
+    if m != nil {
+        m.reviewers = value
+    }
 }
 // SetReviewerType sets the reviewerType property value. Who should be asked to do the review, either Self or Reviewers.
 func (m *AssignmentReviewSettings) SetReviewerType(value *string)() {
-    m.reviewerType = value
+    if m != nil {
+        m.reviewerType = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. When the first review should start.
 func (m *AssignmentReviewSettings) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }

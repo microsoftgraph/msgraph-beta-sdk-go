@@ -300,41 +300,61 @@ func (m *CloudPcDeviceImage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetDisplayName sets the displayName property value. The image's display name.
 func (m *CloudPcDeviceImage) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExpirationDate sets the expirationDate property value. 
 func (m *CloudPcDeviceImage) SetExpirationDate(value *string)() {
-    m.expirationDate = value
+    if m != nil {
+        m.expirationDate = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
 func (m *CloudPcDeviceImage) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetOperatingSystem sets the operatingSystem property value. The image's operating system. For example: Windows 10 Enterprise.
 func (m *CloudPcDeviceImage) SetOperatingSystem(value *string)() {
-    m.operatingSystem = value
+    if m != nil {
+        m.operatingSystem = value
+    }
 }
 // SetOsBuildNumber sets the osBuildNumber property value. The image's OS build version. For example: 1909.
 func (m *CloudPcDeviceImage) SetOsBuildNumber(value *string)() {
-    m.osBuildNumber = value
+    if m != nil {
+        m.osBuildNumber = value
+    }
 }
 // SetOsStatus sets the osStatus property value. 
 func (m *CloudPcDeviceImage) SetOsStatus(value *CloudPcDeviceImageOsStatus)() {
-    m.osStatus = value
+    if m != nil {
+        m.osStatus = value
+    }
 }
 // SetSourceImageResourceId sets the sourceImageResourceId property value. The ID of the source image resource on Azure. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'.
 func (m *CloudPcDeviceImage) SetSourceImageResourceId(value *string)() {
-    m.sourceImageResourceId = value
+    if m != nil {
+        m.sourceImageResourceId = value
+    }
 }
 // SetStatus sets the status property value. The status of the image on Cloud PC. Possible values are: pending, ready, failed.
 func (m *CloudPcDeviceImage) SetStatus(value *CloudPcDeviceImageStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetStatusDetails sets the statusDetails property value. The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, and sourceImageInvalid.
 func (m *CloudPcDeviceImage) SetStatusDetails(value *CloudPcDeviceImageStatusDetails)() {
-    m.statusDetails = value
+    if m != nil {
+        m.statusDetails = value
+    }
 }
 // SetVersion sets the version property value. The image version. For example: 0.0.1, 1.5.13.
 func (m *CloudPcDeviceImage) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

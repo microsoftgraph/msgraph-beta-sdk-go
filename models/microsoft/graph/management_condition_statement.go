@@ -255,33 +255,49 @@ func (m *ManagementConditionStatement) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetApplicablePlatforms sets the applicablePlatforms property value. The applicable platforms for this management condition statement.
 func (m *ManagementConditionStatement) SetApplicablePlatforms(value []DevicePlatformType)() {
-    m.applicablePlatforms = value
+    if m != nil {
+        m.applicablePlatforms = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The time the management condition statement was created. Generated service side.
 func (m *ManagementConditionStatement) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. The admin defined description of the management condition statement.
 func (m *ManagementConditionStatement) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The admin defined name of the management condition statement.
 func (m *ManagementConditionStatement) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetETag sets the eTag property value. ETag of the management condition statement. Updated service side.
 func (m *ManagementConditionStatement) SetETag(value *string)() {
-    m.eTag = value
+    if m != nil {
+        m.eTag = value
+    }
 }
 // SetExpression sets the expression property value. The management condition statement expression used to evaluate if a management condition statement was activated/deactivated.
 func (m *ManagementConditionStatement) SetExpression(value *ManagementConditionExpression)() {
-    m.expression = value
+    if m != nil {
+        m.expression = value
+    }
 }
 // SetManagementConditions sets the managementConditions property value. The management conditions associated to the management condition statement.
 func (m *ManagementConditionStatement) SetManagementConditions(value []ManagementCondition)() {
-    m.managementConditions = value
+    if m != nil {
+        m.managementConditions = value
+    }
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The time the management condition statement was last modified. Updated service side.
 func (m *ManagementConditionStatement) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.modifiedDateTime = value
+    if m != nil {
+        m.modifiedDateTime = value
+    }
 }

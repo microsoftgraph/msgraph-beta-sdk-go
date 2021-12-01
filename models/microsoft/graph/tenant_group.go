@@ -185,21 +185,31 @@ func (m *TenantGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAllTenantsIncluded sets the allTenantsIncluded property value. A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
 func (m *TenantGroup) SetAllTenantsIncluded(value *bool)() {
-    m.allTenantsIncluded = value
+    if m != nil {
+        m.allTenantsIncluded = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetManagementActions sets the managementActions property value. The collection of management action associated with the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetManagementActions(value []ManagementActionInfo)() {
-    m.managementActions = value
+    if m != nil {
+        m.managementActions = value
+    }
 }
 // SetManagementIntents sets the managementIntents property value. The collection of management intents associated with the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetManagementIntents(value []ManagementIntentInfo)() {
-    m.managementIntents = value
+    if m != nil {
+        m.managementIntents = value
+    }
 }
 // SetTenantIds sets the tenantIds property value. The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetTenantIds(value []string)() {
-    m.tenantIds = value
+    if m != nil {
+        m.tenantIds = value
+    }
 }

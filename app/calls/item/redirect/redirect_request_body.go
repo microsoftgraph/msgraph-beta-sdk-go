@@ -212,29 +212,43 @@ func (m *RedirectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCallbackUri sets the callbackUri property value. 
 func (m *RedirectRequestBody) SetCallbackUri(value *string)() {
-    m.callbackUri = value
+    if m != nil {
+        m.callbackUri = value
+    }
 }
 // SetMaskCallee sets the maskCallee property value. 
 func (m *RedirectRequestBody) SetMaskCallee(value *bool)() {
-    m.maskCallee = value
+    if m != nil {
+        m.maskCallee = value
+    }
 }
 // SetMaskCaller sets the maskCaller property value. 
 func (m *RedirectRequestBody) SetMaskCaller(value *bool)() {
-    m.maskCaller = value
+    if m != nil {
+        m.maskCaller = value
+    }
 }
 // SetTargetDisposition sets the targetDisposition property value. 
 func (m *RedirectRequestBody) SetTargetDisposition(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CallDisposition)() {
-    m.targetDisposition = value
+    if m != nil {
+        m.targetDisposition = value
+    }
 }
 // SetTargets sets the targets property value. 
 func (m *RedirectRequestBody) SetTargets(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InvitationParticipantInfo)() {
-    m.targets = value
+    if m != nil {
+        m.targets = value
+    }
 }
 // SetTimeout sets the timeout property value. 
 func (m *RedirectRequestBody) SetTimeout(value *int32)() {
-    m.timeout = value
+    if m != nil {
+        m.timeout = value
+    }
 }

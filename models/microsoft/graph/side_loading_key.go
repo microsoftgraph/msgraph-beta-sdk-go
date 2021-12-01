@@ -163,21 +163,31 @@ func (m *SideLoadingKey) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetDescription sets the description property value. Side Loading Key description displayed to the ITPro Admins..
 func (m *SideLoadingKey) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Side Loading Key Name displayed to the ITPro Admins.
 func (m *SideLoadingKey) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Side Loading Key Last Updated Date displayed to the ITPro Admins.
 func (m *SideLoadingKey) SetLastUpdatedDateTime(value *string)() {
-    m.lastUpdatedDateTime = value
+    if m != nil {
+        m.lastUpdatedDateTime = value
+    }
 }
 // SetTotalActivation sets the totalActivation property value. Side Loading Key Total Activation displayed to the ITPro Admins.
 func (m *SideLoadingKey) SetTotalActivation(value *int32)() {
-    m.totalActivation = value
+    if m != nil {
+        m.totalActivation = value
+    }
 }
 // SetValue sets the value property value. Side Loading Key Value, it is 5x5 value, seperated by hiphens.
 func (m *SideLoadingKey) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

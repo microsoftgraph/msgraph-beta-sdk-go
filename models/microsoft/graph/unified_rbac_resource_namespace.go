@@ -94,9 +94,13 @@ func (m *UnifiedRbacResourceNamespace) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetName sets the name property value. 
 func (m *UnifiedRbacResourceNamespace) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetResourceActions sets the resourceActions property value. 
 func (m *UnifiedRbacResourceNamespace) SetResourceActions(value []UnifiedRbacResourceAction)() {
-    m.resourceActions = value
+    if m != nil {
+        m.resourceActions = value
+    }
 }

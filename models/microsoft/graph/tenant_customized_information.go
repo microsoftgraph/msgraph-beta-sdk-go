@@ -146,17 +146,25 @@ func (m *TenantCustomizedInformation) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetContacts sets the contacts property value. The collection of contacts for the managed tenant. Optional.
 func (m *TenantCustomizedInformation) SetContacts(value []TenantContactInformation)() {
-    m.contacts = value
+    if m != nil {
+        m.contacts = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *TenantCustomizedInformation) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *TenantCustomizedInformation) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }
 // SetWebsite sets the website property value. The website for the managed tenant. Required.
 func (m *TenantCustomizedInformation) SetWebsite(value *string)() {
-    m.website = value
+    if m != nil {
+        m.website = value
+    }
 }

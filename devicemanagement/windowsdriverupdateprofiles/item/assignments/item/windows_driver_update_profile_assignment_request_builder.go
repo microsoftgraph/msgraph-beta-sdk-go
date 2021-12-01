@@ -40,7 +40,7 @@ type WindowsDriverUpdateProfileAssignmentRequestBuilderGetQueryParameters struct
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WindowsDriverUpdateProfileAssignmentRequestBuilderPatchOptions options for Patch
 type WindowsDriverUpdateProfileAssignmentRequestBuilderPatchOptions struct {

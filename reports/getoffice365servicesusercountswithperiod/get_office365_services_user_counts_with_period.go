@@ -450,65 +450,97 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) Serialize(writer i04eb5309aea
 }
 // SetExchangeActive sets the exchangeActive property value. The number of active users on Exchange. Any user who can read and send email is considered an active user.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetExchangeActive(value *int64)() {
-    m.exchangeActive = value
+    if m != nil {
+        m.exchangeActive = value
+    }
 }
 // SetExchangeInactive sets the exchangeInactive property value. The number of inactive users on Exchange.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetExchangeInactive(value *int64)() {
-    m.exchangeInactive = value
+    if m != nil {
+        m.exchangeInactive = value
+    }
 }
 // SetOffice365Active sets the office365Active property value. The number of active users on Microsoft 365.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetOffice365Active(value *int64)() {
-    m.office365Active = value
+    if m != nil {
+        m.office365Active = value
+    }
 }
 // SetOffice365Inactive sets the office365Inactive property value. The number of inactive users on Microsoft 365.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetOffice365Inactive(value *int64)() {
-    m.office365Inactive = value
+    if m != nil {
+        m.office365Inactive = value
+    }
 }
 // SetOneDriveActive sets the oneDriveActive property value. The number of active users on OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetOneDriveActive(value *int64)() {
-    m.oneDriveActive = value
+    if m != nil {
+        m.oneDriveActive = value
+    }
 }
 // SetOneDriveInactive sets the oneDriveInactive property value. The number of inactive users on OneDrive.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetOneDriveInactive(value *int64)() {
-    m.oneDriveInactive = value
+    if m != nil {
+        m.oneDriveInactive = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. The number of days the report covers.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetSharePointActive sets the sharePointActive property value. The number of active users on SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetSharePointActive(value *int64)() {
-    m.sharePointActive = value
+    if m != nil {
+        m.sharePointActive = value
+    }
 }
 // SetSharePointInactive sets the sharePointInactive property value. The number of inactive users on SharePoint.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetSharePointInactive(value *int64)() {
-    m.sharePointInactive = value
+    if m != nil {
+        m.sharePointInactive = value
+    }
 }
 // SetSkypeForBusinessActive sets the skypeForBusinessActive property value. The number of active users on Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetSkypeForBusinessActive(value *int64)() {
-    m.skypeForBusinessActive = value
+    if m != nil {
+        m.skypeForBusinessActive = value
+    }
 }
 // SetSkypeForBusinessInactive sets the skypeForBusinessInactive property value. The number of inactive users on Skype For Business.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetSkypeForBusinessInactive(value *int64)() {
-    m.skypeForBusinessInactive = value
+    if m != nil {
+        m.skypeForBusinessInactive = value
+    }
 }
 // SetTeamsActive sets the teamsActive property value. The number of active users on Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetTeamsActive(value *int64)() {
-    m.teamsActive = value
+    if m != nil {
+        m.teamsActive = value
+    }
 }
 // SetTeamsInactive sets the teamsInactive property value. The number of inactive users on Microsoft Teams.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetTeamsInactive(value *int64)() {
-    m.teamsInactive = value
+    if m != nil {
+        m.teamsInactive = value
+    }
 }
 // SetYammerActive sets the yammerActive property value. The number of active users on Yammer. Any user who can post, read, or like messages is considered an active user.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetYammerActive(value *int64)() {
-    m.yammerActive = value
+    if m != nil {
+        m.yammerActive = value
+    }
 }
 // SetYammerInactive sets the yammerInactive property value. The number of inactive users on Yammer.
 func (m *GetOffice365ServicesUserCountsWithPeriod) SetYammerInactive(value *int64)() {
-    m.yammerInactive = value
+    if m != nil {
+        m.yammerInactive = value
+    }
 }

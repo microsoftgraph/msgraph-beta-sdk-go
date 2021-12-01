@@ -226,33 +226,49 @@ func (m *PositionDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PositionDetail) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCompany sets the company property value. Detail about the company or employer.
 func (m *PositionDetail) SetCompany(value *CompanyDetail)() {
-    m.company = value
+    if m != nil {
+        m.company = value
+    }
 }
 // SetDescription sets the description property value. Description of the position in question.
 func (m *PositionDetail) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetEndMonthYear sets the endMonthYear property value. When the position ended.
 func (m *PositionDetail) SetEndMonthYear(value *string)() {
-    m.endMonthYear = value
+    if m != nil {
+        m.endMonthYear = value
+    }
 }
 // SetJobTitle sets the jobTitle property value. The title held when in that position.
 func (m *PositionDetail) SetJobTitle(value *string)() {
-    m.jobTitle = value
+    if m != nil {
+        m.jobTitle = value
+    }
 }
 // SetRole sets the role property value. The role the position entailed.
 func (m *PositionDetail) SetRole(value *string)() {
-    m.role = value
+    if m != nil {
+        m.role = value
+    }
 }
 // SetStartMonthYear sets the startMonthYear property value. The start month and year of the position.
 func (m *PositionDetail) SetStartMonthYear(value *string)() {
-    m.startMonthYear = value
+    if m != nil {
+        m.startMonthYear = value
+    }
 }
 // SetSummary sets the summary property value. Short summary of the position.
 func (m *PositionDetail) SetSummary(value *string)() {
-    m.summary = value
+    if m != nil {
+        m.summary = value
+    }
 }

@@ -131,17 +131,25 @@ func (m *CommentAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CommentAction) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsReply sets the isReply property value. If true, this activity was a reply to an existing comment thread.
 func (m *CommentAction) SetIsReply(value *bool)() {
-    m.isReply = value
+    if m != nil {
+        m.isReply = value
+    }
 }
 // SetParentAuthor sets the parentAuthor property value. The identity of the user who started the comment thread.
 func (m *CommentAction) SetParentAuthor(value *IdentitySet)() {
-    m.parentAuthor = value
+    if m != nil {
+        m.parentAuthor = value
+    }
 }
 // SetParticipants sets the participants property value. The identities of the users participating in this comment thread.
 func (m *CommentAction) SetParticipants(value []IdentitySet)() {
-    m.participants = value
+    if m != nil {
+        m.participants = value
+    }
 }

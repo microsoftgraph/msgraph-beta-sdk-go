@@ -97,13 +97,19 @@ func (m *SumIfsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SumIfsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSumRange sets the sumRange property value. 
 func (m *SumIfsRequestBody) SetSumRange(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.sumRange = value
+    if m != nil {
+        m.sumRange = value
+    }
 }
 // SetValues sets the values property value. 
 func (m *SumIfsRequestBody) SetValues(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.values = value
+    if m != nil {
+        m.values = value
+    }
 }

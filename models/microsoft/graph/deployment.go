@@ -190,25 +190,37 @@ func (m *Deployment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAudience sets the audience property value. Specifies the audience to which content is deployed.
 func (m *Deployment) SetAudience(value *DeploymentAudience)() {
-    m.audience = value
+    if m != nil {
+        m.audience = value
+    }
 }
 // SetContent sets the content property value. Specifies what content to deploy. Cannot be changed. Returned by default.
 func (m *Deployment) SetContent(value *DeployableContent)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the deployment was created. Returned by default. Read-only.
 func (m *Deployment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the deployment was last modified. Returned by default. Read-only.
 func (m *Deployment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetSettings sets the settings property value. Settings specified on the specific deployment governing how to deploy content. Returned by default.
 func (m *Deployment) SetSettings(value *DeploymentSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }
 // SetState sets the state property value. Execution status of the deployment. Returned by default.
 func (m *Deployment) SetState(value *DeploymentState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

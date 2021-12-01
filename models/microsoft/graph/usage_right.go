@@ -113,13 +113,19 @@ func (m *UsageRight) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetCatalogId sets the catalogId property value. Product id corresponding to the usage right.
 func (m *UsageRight) SetCatalogId(value *string)() {
-    m.catalogId = value
+    if m != nil {
+        m.catalogId = value
+    }
 }
 // SetServiceIdentifier sets the serviceIdentifier property value. Identifier of the service corresponding to the usage right.
 func (m *UsageRight) SetServiceIdentifier(value *string)() {
-    m.serviceIdentifier = value
+    if m != nil {
+        m.serviceIdentifier = value
+    }
 }
 // SetState sets the state property value. The state of the usage right. Possible values are: active, inactive, warning, suspended.
 func (m *UsageRight) SetState(value *UsageRightState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

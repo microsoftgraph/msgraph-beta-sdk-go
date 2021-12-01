@@ -268,37 +268,55 @@ func (m *AccessReviewDecision) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAccessRecommendation sets the accessRecommendation property value. The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
 func (m *AccessReviewDecision) SetAccessRecommendation(value *string)() {
-    m.accessRecommendation = value
+    if m != nil {
+        m.accessRecommendation = value
+    }
 }
 // SetAccessReviewId sets the accessReviewId property value. The feature-generated id of the access review.
 func (m *AccessReviewDecision) SetAccessReviewId(value *string)() {
-    m.accessReviewId = value
+    if m != nil {
+        m.accessReviewId = value
+    }
 }
 // SetAppliedBy sets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.
 func (m *AccessReviewDecision) SetAppliedBy(value *UserIdentity)() {
-    m.appliedBy = value
+    if m != nil {
+        m.appliedBy = value
+    }
 }
 // SetAppliedDateTime sets the appliedDateTime property value. The date and time when the review decision was applied.
 func (m *AccessReviewDecision) SetAppliedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.appliedDateTime = value
+    if m != nil {
+        m.appliedDateTime = value
+    }
 }
 // SetApplyResult sets the applyResult property value. The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.
 func (m *AccessReviewDecision) SetApplyResult(value *string)() {
-    m.applyResult = value
+    if m != nil {
+        m.applyResult = value
+    }
 }
 // SetJustification sets the justification property value. The reviewer's business justification, if supplied.
 func (m *AccessReviewDecision) SetJustification(value *string)() {
-    m.justification = value
+    if m != nil {
+        m.justification = value
+    }
 }
 // SetReviewedBy sets the reviewedBy property value. The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.
 func (m *AccessReviewDecision) SetReviewedBy(value *UserIdentity)() {
-    m.reviewedBy = value
+    if m != nil {
+        m.reviewedBy = value
+    }
 }
 // SetReviewedDateTime sets the reviewedDateTime property value. 
 func (m *AccessReviewDecision) SetReviewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.reviewedDateTime = value
+    if m != nil {
+        m.reviewedDateTime = value
+    }
 }
 // SetReviewResult sets the reviewResult property value. The result of the review, one of NotReviewed, Deny, DontKnow or Approve.
 func (m *AccessReviewDecision) SetReviewResult(value *string)() {
-    m.reviewResult = value
+    if m != nil {
+        m.reviewResult = value
+    }
 }

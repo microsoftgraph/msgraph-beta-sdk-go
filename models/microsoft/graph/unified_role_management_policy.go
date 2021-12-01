@@ -286,37 +286,55 @@ func (m *UnifiedRoleManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetDescription sets the description property value. Description for the policy.
 func (m *UnifiedRoleManagementPolicy) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name for the policy.
 func (m *UnifiedRoleManagementPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEffectiveRules sets the effectiveRules property value. The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
 func (m *UnifiedRoleManagementPolicy) SetEffectiveRules(value []UnifiedRoleManagementPolicyRule)() {
-    m.effectiveRules = value
+    if m != nil {
+        m.effectiveRules = value
+    }
 }
 // SetIsOrganizationDefault sets the isOrganizationDefault property value. This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.
 func (m *UnifiedRoleManagementPolicy) SetIsOrganizationDefault(value *bool)() {
-    m.isOrganizationDefault = value
+    if m != nil {
+        m.isOrganizationDefault = value
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The identity who last modified the role setting.
 func (m *UnifiedRoleManagementPolicy) SetLastModifiedBy(value *Identity)() {
-    m.lastModifiedBy = value
+    if m != nil {
+        m.lastModifiedBy = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The time when the role setting was last modified.
 func (m *UnifiedRoleManagementPolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetRules sets the rules property value. The collection of rules like approval rule, expiration rule, etc.
 func (m *UnifiedRoleManagementPolicy) SetRules(value []UnifiedRoleManagementPolicyRule)() {
-    m.rules = value
+    if m != nil {
+        m.rules = value
+    }
 }
 // SetScopeId sets the scopeId property value. The id of the scope where the policy is created. E.g. '/', groupId, etc.
 func (m *UnifiedRoleManagementPolicy) SetScopeId(value *string)() {
-    m.scopeId = value
+    if m != nil {
+        m.scopeId = value
+    }
 }
 // SetScopeType sets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
 func (m *UnifiedRoleManagementPolicy) SetScopeType(value *string)() {
-    m.scopeType = value
+    if m != nil {
+        m.scopeType = value
+    }
 }

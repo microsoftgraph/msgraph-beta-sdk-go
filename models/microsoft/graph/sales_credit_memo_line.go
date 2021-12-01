@@ -657,97 +657,145 @@ func (m *SalesCreditMemoLine) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAccount sets the account property value. 
 func (m *SalesCreditMemoLine) SetAccount(value *Account)() {
-    m.account = value
+    if m != nil {
+        m.account = value
+    }
 }
 // SetAccountId sets the accountId property value. 
 func (m *SalesCreditMemoLine) SetAccountId(value *string)() {
-    m.accountId = value
+    if m != nil {
+        m.accountId = value
+    }
 }
 // SetAmountExcludingTax sets the amountExcludingTax property value. 
 func (m *SalesCreditMemoLine) SetAmountExcludingTax(value *float64)() {
-    m.amountExcludingTax = value
+    if m != nil {
+        m.amountExcludingTax = value
+    }
 }
 // SetAmountIncludingTax sets the amountIncludingTax property value. 
 func (m *SalesCreditMemoLine) SetAmountIncludingTax(value *float64)() {
-    m.amountIncludingTax = value
+    if m != nil {
+        m.amountIncludingTax = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *SalesCreditMemoLine) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDiscountAmount sets the discountAmount property value. 
 func (m *SalesCreditMemoLine) SetDiscountAmount(value *float64)() {
-    m.discountAmount = value
+    if m != nil {
+        m.discountAmount = value
+    }
 }
 // SetDiscountAppliedBeforeTax sets the discountAppliedBeforeTax property value. 
 func (m *SalesCreditMemoLine) SetDiscountAppliedBeforeTax(value *bool)() {
-    m.discountAppliedBeforeTax = value
+    if m != nil {
+        m.discountAppliedBeforeTax = value
+    }
 }
 // SetDiscountPercent sets the discountPercent property value. 
 func (m *SalesCreditMemoLine) SetDiscountPercent(value *float64)() {
-    m.discountPercent = value
+    if m != nil {
+        m.discountPercent = value
+    }
 }
 // SetDocumentId sets the documentId property value. 
 func (m *SalesCreditMemoLine) SetDocumentId(value *string)() {
-    m.documentId = value
+    if m != nil {
+        m.documentId = value
+    }
 }
 // SetInvoiceDiscountAllocation sets the invoiceDiscountAllocation property value. 
 func (m *SalesCreditMemoLine) SetInvoiceDiscountAllocation(value *float64)() {
-    m.invoiceDiscountAllocation = value
+    if m != nil {
+        m.invoiceDiscountAllocation = value
+    }
 }
 // SetItem sets the item property value. 
 func (m *SalesCreditMemoLine) SetItem(value *Item)() {
-    m.item = value
+    if m != nil {
+        m.item = value
+    }
 }
 // SetItemId sets the itemId property value. 
 func (m *SalesCreditMemoLine) SetItemId(value *string)() {
-    m.itemId = value
+    if m != nil {
+        m.itemId = value
+    }
 }
 // SetLineType sets the lineType property value. 
 func (m *SalesCreditMemoLine) SetLineType(value *string)() {
-    m.lineType = value
+    if m != nil {
+        m.lineType = value
+    }
 }
 // SetNetAmount sets the netAmount property value. 
 func (m *SalesCreditMemoLine) SetNetAmount(value *float64)() {
-    m.netAmount = value
+    if m != nil {
+        m.netAmount = value
+    }
 }
 // SetNetAmountIncludingTax sets the netAmountIncludingTax property value. 
 func (m *SalesCreditMemoLine) SetNetAmountIncludingTax(value *float64)() {
-    m.netAmountIncludingTax = value
+    if m != nil {
+        m.netAmountIncludingTax = value
+    }
 }
 // SetNetTaxAmount sets the netTaxAmount property value. 
 func (m *SalesCreditMemoLine) SetNetTaxAmount(value *float64)() {
-    m.netTaxAmount = value
+    if m != nil {
+        m.netTaxAmount = value
+    }
 }
 // SetQuantity sets the quantity property value. 
 func (m *SalesCreditMemoLine) SetQuantity(value *float64)() {
-    m.quantity = value
+    if m != nil {
+        m.quantity = value
+    }
 }
 // SetSequence sets the sequence property value. 
 func (m *SalesCreditMemoLine) SetSequence(value *int32)() {
-    m.sequence = value
+    if m != nil {
+        m.sequence = value
+    }
 }
 // SetShipmentDate sets the shipmentDate property value. 
 func (m *SalesCreditMemoLine) SetShipmentDate(value *string)() {
-    m.shipmentDate = value
+    if m != nil {
+        m.shipmentDate = value
+    }
 }
 // SetTaxCode sets the taxCode property value. 
 func (m *SalesCreditMemoLine) SetTaxCode(value *string)() {
-    m.taxCode = value
+    if m != nil {
+        m.taxCode = value
+    }
 }
 // SetTaxPercent sets the taxPercent property value. 
 func (m *SalesCreditMemoLine) SetTaxPercent(value *float64)() {
-    m.taxPercent = value
+    if m != nil {
+        m.taxPercent = value
+    }
 }
 // SetTotalTaxAmount sets the totalTaxAmount property value. 
 func (m *SalesCreditMemoLine) SetTotalTaxAmount(value *float64)() {
-    m.totalTaxAmount = value
+    if m != nil {
+        m.totalTaxAmount = value
+    }
 }
 // SetUnitOfMeasureId sets the unitOfMeasureId property value. 
 func (m *SalesCreditMemoLine) SetUnitOfMeasureId(value *string)() {
-    m.unitOfMeasureId = value
+    if m != nil {
+        m.unitOfMeasureId = value
+    }
 }
 // SetUnitPrice sets the unitPrice property value. 
 func (m *SalesCreditMemoLine) SetUnitPrice(value *float64)() {
-    m.unitPrice = value
+    if m != nil {
+        m.unitPrice = value
+    }
 }

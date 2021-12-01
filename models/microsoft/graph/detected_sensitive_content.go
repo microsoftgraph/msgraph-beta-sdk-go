@@ -187,21 +187,31 @@ func (m *DetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetClassificationAttributes sets the classificationAttributes property value. 
 func (m *DetectedSensitiveContent) SetClassificationAttributes(value []ClassificationAttribute)() {
-    m.classificationAttributes = value
+    if m != nil {
+        m.classificationAttributes = value
+    }
 }
 // SetClassificationMethod sets the classificationMethod property value. 
 func (m *DetectedSensitiveContent) SetClassificationMethod(value *ClassificationMethod)() {
-    m.classificationMethod = value
+    if m != nil {
+        m.classificationMethod = value
+    }
 }
 // SetMatches sets the matches property value. 
 func (m *DetectedSensitiveContent) SetMatches(value []SensitiveContentLocation)() {
-    m.matches = value
+    if m != nil {
+        m.matches = value
+    }
 }
 // SetScope sets the scope property value. 
 func (m *DetectedSensitiveContent) SetScope(value *SensitiveTypeScope)() {
-    m.scope = value
+    if m != nil {
+        m.scope = value
+    }
 }
 // SetSensitiveTypeSource sets the sensitiveTypeSource property value. 
 func (m *DetectedSensitiveContent) SetSensitiveTypeSource(value *SensitiveTypeSource)() {
-    m.sensitiveTypeSource = value
+    if m != nil {
+        m.sensitiveTypeSource = value
+    }
 }

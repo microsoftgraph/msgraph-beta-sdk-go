@@ -183,21 +183,31 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i04eb5309aea
 }
 // SetAccessRules sets the accessRules property value. The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetAccessRules(value []DeviceManagementExchangeAccessRule)() {
-    m.accessRules = value
+    if m != nil {
+        m.accessRules = value
+    }
 }
 // SetConditionalAccessSettings sets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetConditionalAccessSettings(value *OnPremisesConditionalAccessSettings)() {
-    m.conditionalAccessSettings = value
+    if m != nil {
+        m.conditionalAccessSettings = value
+    }
 }
 // SetDefaultAccessLevel sets the defaultAccessLevel property value. Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetDefaultAccessLevel(value *DeviceManagementExchangeAccessLevel)() {
-    m.defaultAccessLevel = value
+    if m != nil {
+        m.defaultAccessLevel = value
+    }
 }
 // SetKnownDeviceClasses sets the knownDeviceClasses property value. The list of device classes known to Exchange
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetKnownDeviceClasses(value []DeviceManagementExchangeDeviceClass)() {
-    m.knownDeviceClasses = value
+    if m != nil {
+        m.knownDeviceClasses = value
+    }
 }
 // SetNotificationContent sets the notificationContent property value. Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetNotificationContent(value []byte)() {
-    m.notificationContent = value
+    if m != nil {
+        m.notificationContent = value
+    }
 }

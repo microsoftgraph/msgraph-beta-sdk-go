@@ -105,13 +105,19 @@ func (m *PasswordSingleSignOnCredentialSet) Serialize(writer i04eb5309aeaafadd28
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordSingleSignOnCredentialSet) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCredentials sets the credentials property value. A list of credential objects that define the complete sign in flow.
 func (m *PasswordSingleSignOnCredentialSet) SetCredentials(value []Credential)() {
-    m.credentials = value
+    if m != nil {
+        m.credentials = value
+    }
 }
 // SetId sets the id property value. The ID of the user or group this credential set belongs to.
 func (m *PasswordSingleSignOnCredentialSet) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }

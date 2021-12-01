@@ -43,7 +43,7 @@ type BookingAppointmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
     // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
     Start *string;
 }

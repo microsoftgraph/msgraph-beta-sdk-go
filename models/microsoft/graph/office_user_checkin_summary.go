@@ -96,13 +96,19 @@ func (m *OfficeUserCheckinSummary) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OfficeUserCheckinSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFailedUserCount sets the failedUserCount property value. Total failed user check ins for the last 3 months.
 func (m *OfficeUserCheckinSummary) SetFailedUserCount(value *int32)() {
-    m.failedUserCount = value
+    if m != nil {
+        m.failedUserCount = value
+    }
 }
 // SetSucceededUserCount sets the succeededUserCount property value. Total successful user check ins for the last 3 months.
 func (m *OfficeUserCheckinSummary) SetSucceededUserCount(value *int32)() {
-    m.succeededUserCount = value
+    if m != nil {
+        m.succeededUserCount = value
+    }
 }

@@ -186,25 +186,37 @@ func (m *ManagementActionDeploymentStatus) Serialize(writer i04eb5309aeaafadd283
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementActionDeploymentStatus) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetManagementActionId sets the managementActionId property value. The identifier for the management action. Required. Read-only.
 func (m *ManagementActionDeploymentStatus) SetManagementActionId(value *string)() {
-    m.managementActionId = value
+    if m != nil {
+        m.managementActionId = value
+    }
 }
 // SetManagementTemplateId sets the managementTemplateId property value. The management template identifier that was used to generate the management action. Required. Read-only.
 func (m *ManagementActionDeploymentStatus) SetManagementTemplateId(value *string)() {
-    m.managementTemplateId = value
+    if m != nil {
+        m.managementTemplateId = value
+    }
 }
 // SetManagementTemplateVersion sets the managementTemplateVersion property value. 
 func (m *ManagementActionDeploymentStatus) SetManagementTemplateVersion(value *int32)() {
-    m.managementTemplateVersion = value
+    if m != nil {
+        m.managementTemplateVersion = value
+    }
 }
 // SetStatus sets the status property value. The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.
 func (m *ManagementActionDeploymentStatus) SetStatus(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementActionStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetWorkloadActionDeploymentStatuses sets the workloadActionDeploymentStatuses property value. The collection of workload action deployment statues for the given management action. Optional.
 func (m *ManagementActionDeploymentStatus) SetWorkloadActionDeploymentStatuses(value []WorkloadActionDeploymentStatus)() {
-    m.workloadActionDeploymentStatuses = value
+    if m != nil {
+        m.workloadActionDeploymentStatuses = value
+    }
 }

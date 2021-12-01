@@ -185,21 +185,31 @@ func (m *UpdateAudienceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAddExclusions sets the addExclusions property value. 
 func (m *UpdateAudienceRequestBody) SetAddExclusions(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset)() {
-    m.addExclusions = value
+    if m != nil {
+        m.addExclusions = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateAudienceRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAddMembers sets the addMembers property value. 
 func (m *UpdateAudienceRequestBody) SetAddMembers(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset)() {
-    m.addMembers = value
+    if m != nil {
+        m.addMembers = value
+    }
 }
 // SetRemoveExclusions sets the removeExclusions property value. 
 func (m *UpdateAudienceRequestBody) SetRemoveExclusions(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset)() {
-    m.removeExclusions = value
+    if m != nil {
+        m.removeExclusions = value
+    }
 }
 // SetRemoveMembers sets the removeMembers property value. 
 func (m *UpdateAudienceRequestBody) SetRemoveMembers(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UpdatableAsset)() {
-    m.removeMembers = value
+    if m != nil {
+        m.removeMembers = value
+    }
 }

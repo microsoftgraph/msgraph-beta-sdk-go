@@ -70,9 +70,13 @@ func (m *MentionsPreview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MentionsPreview) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsMentioned sets the isMentioned property value. True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
 func (m *MentionsPreview) SetIsMentioned(value *bool)() {
-    m.isMentioned = value
+    if m != nil {
+        m.isMentioned = value
+    }
 }

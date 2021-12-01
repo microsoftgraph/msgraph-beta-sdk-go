@@ -398,57 +398,85 @@ func (m *GovernanceRoleAssignment) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAssignmentState sets the assignmentState property value. The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
 func (m *GovernanceRoleAssignment) SetAssignmentState(value *string)() {
-    m.assignmentState = value
+    if m != nil {
+        m.assignmentState = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *GovernanceRoleAssignment) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetExternalId sets the externalId property value. The external ID the resource that is used to identify the role assignment in the provider.
 func (m *GovernanceRoleAssignment) SetExternalId(value *string)() {
-    m.externalId = value
+    if m != nil {
+        m.externalId = value
+    }
 }
 // SetLinkedEligibleRoleAssignment sets the linkedEligibleRoleAssignment property value. Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
 func (m *GovernanceRoleAssignment) SetLinkedEligibleRoleAssignment(value *GovernanceRoleAssignment)() {
-    m.linkedEligibleRoleAssignment = value
+    if m != nil {
+        m.linkedEligibleRoleAssignment = value
+    }
 }
 // SetLinkedEligibleRoleAssignmentId sets the linkedEligibleRoleAssignmentId property value. If this is an active assignment and created due to activation on an eligible assignment, it represents the ID of that eligible assignment; Otherwise, the value is null.
 func (m *GovernanceRoleAssignment) SetLinkedEligibleRoleAssignmentId(value *string)() {
-    m.linkedEligibleRoleAssignmentId = value
+    if m != nil {
+        m.linkedEligibleRoleAssignmentId = value
+    }
 }
 // SetMemberType sets the memberType property value. The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment is not inherited, but comes from the membership of a group assignment), or User (if the role assignment is neither inherited nor from a group assignment).
 func (m *GovernanceRoleAssignment) SetMemberType(value *string)() {
-    m.memberType = value
+    if m != nil {
+        m.memberType = value
+    }
 }
 // SetResource sets the resource property value. Read-only. The resource associated with the role assignment.
 func (m *GovernanceRoleAssignment) SetResource(value *GovernanceResource)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }
 // SetResourceId sets the resourceId property value. Required. The ID of the resource which the role assignment is associated with.
 func (m *GovernanceRoleAssignment) SetResourceId(value *string)() {
-    m.resourceId = value
+    if m != nil {
+        m.resourceId = value
+    }
 }
 // SetRoleDefinition sets the roleDefinition property value. Read-only. The role definition associated with the role assignment.
 func (m *GovernanceRoleAssignment) SetRoleDefinition(value *GovernanceRoleDefinition)() {
-    m.roleDefinition = value
+    if m != nil {
+        m.roleDefinition = value
+    }
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. Required. The ID of the role definition which the role assignment is associated with.
 func (m *GovernanceRoleAssignment) SetRoleDefinitionId(value *string)() {
-    m.roleDefinitionId = value
+    if m != nil {
+        m.roleDefinitionId = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *GovernanceRoleAssignment) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *GovernanceRoleAssignment) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetSubject sets the subject property value. Read-only. The subject associated with the role assignment.
 func (m *GovernanceRoleAssignment) SetSubject(value *GovernanceSubject)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }
 // SetSubjectId sets the subjectId property value. Required. The ID of the subject which the role assignment is associated with.
 func (m *GovernanceRoleAssignment) SetSubjectId(value *string)() {
-    m.subjectId = value
+    if m != nil {
+        m.subjectId = value
+    }
 }

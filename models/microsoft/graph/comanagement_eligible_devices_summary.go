@@ -174,25 +174,37 @@ func (m *ComanagementEligibleDevicesSummary) Serialize(writer i04eb5309aeaafadd2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComanagementEligibleDevicesSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetComanagedCount sets the comanagedCount property value. Count of devices already Co-Managed
 func (m *ComanagementEligibleDevicesSummary) SetComanagedCount(value *int32)() {
-    m.comanagedCount = value
+    if m != nil {
+        m.comanagedCount = value
+    }
 }
 // SetEligibleButNotAzureAdJoinedCount sets the eligibleButNotAzureAdJoinedCount property value. Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
 func (m *ComanagementEligibleDevicesSummary) SetEligibleButNotAzureAdJoinedCount(value *int32)() {
-    m.eligibleButNotAzureAdJoinedCount = value
+    if m != nil {
+        m.eligibleButNotAzureAdJoinedCount = value
+    }
 }
 // SetEligibleCount sets the eligibleCount property value. Count of devices fully eligible for Co-Management
 func (m *ComanagementEligibleDevicesSummary) SetEligibleCount(value *int32)() {
-    m.eligibleCount = value
+    if m != nil {
+        m.eligibleCount = value
+    }
 }
 // SetIneligibleCount sets the ineligibleCount property value. Count of devices ineligible for Co-Management
 func (m *ComanagementEligibleDevicesSummary) SetIneligibleCount(value *int32)() {
-    m.ineligibleCount = value
+    if m != nil {
+        m.ineligibleCount = value
+    }
 }
 // SetNeedsOsUpdateCount sets the needsOsUpdateCount property value. Count of devices that will be eligible for Co-Management after an OS update
 func (m *ComanagementEligibleDevicesSummary) SetNeedsOsUpdateCount(value *int32)() {
-    m.needsOsUpdateCount = value
+    if m != nil {
+        m.needsOsUpdateCount = value
+    }
 }

@@ -98,13 +98,19 @@ func (m *KerberosSignOnSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KerberosSignOnSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetKerberosServicePrincipalName sets the kerberosServicePrincipalName property value. The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.
 func (m *KerberosSignOnSettings) SetKerberosServicePrincipalName(value *string)() {
-    m.kerberosServicePrincipalName = value
+    if m != nil {
+        m.kerberosServicePrincipalName = value
+    }
 }
 // SetKerberosSignOnMappingAttributeType sets the kerberosSignOnMappingAttributeType property value. The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
 func (m *KerberosSignOnSettings) SetKerberosSignOnMappingAttributeType(value *KerberosSignOnMappingAttributeType)() {
-    m.kerberosSignOnMappingAttributeType = value
+    if m != nil {
+        m.kerberosSignOnMappingAttributeType = value
+    }
 }

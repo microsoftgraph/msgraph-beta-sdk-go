@@ -213,29 +213,43 @@ func (m *MobileAppIntentAndStateDetail) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppIntentAndStateDetail) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicationId sets the applicationId property value. MobieApp identifier.
 func (m *MobileAppIntentAndStateDetail) SetApplicationId(value *string)() {
-    m.applicationId = value
+    if m != nil {
+        m.applicationId = value
+    }
 }
 // SetDisplayName sets the displayName property value. The admin provided or imported title of the app.
 func (m *MobileAppIntentAndStateDetail) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetDisplayVersion sets the displayVersion property value. Human readable version of the application
 func (m *MobileAppIntentAndStateDetail) SetDisplayVersion(value *string)() {
-    m.displayVersion = value
+    if m != nil {
+        m.displayVersion = value
+    }
 }
 // SetInstallState sets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
 func (m *MobileAppIntentAndStateDetail) SetInstallState(value *ResultantAppState)() {
-    m.installState = value
+    if m != nil {
+        m.installState = value
+    }
 }
 // SetMobileAppIntent sets the mobileAppIntent property value. Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
 func (m *MobileAppIntentAndStateDetail) SetMobileAppIntent(value *MobileAppIntent)() {
-    m.mobileAppIntent = value
+    if m != nil {
+        m.mobileAppIntent = value
+    }
 }
 // SetSupportedDeviceTypes sets the supportedDeviceTypes property value. The supported platforms for the app.
 func (m *MobileAppIntentAndStateDetail) SetSupportedDeviceTypes(value []MobileAppSupportedDeviceType)() {
-    m.supportedDeviceTypes = value
+    if m != nil {
+        m.supportedDeviceTypes = value
+    }
 }

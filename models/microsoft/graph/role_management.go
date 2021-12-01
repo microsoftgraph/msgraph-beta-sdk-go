@@ -148,21 +148,31 @@ func (m *RoleManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleManagement) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCloudPC sets the cloudPC property value. 
 func (m *RoleManagement) SetCloudPC(value *RbacApplicationMultiple)() {
-    m.cloudPC = value
+    if m != nil {
+        m.cloudPC = value
+    }
 }
 // SetDeviceManagement sets the deviceManagement property value. The RbacApplication for Device Management
 func (m *RoleManagement) SetDeviceManagement(value *RbacApplicationMultiple)() {
-    m.deviceManagement = value
+    if m != nil {
+        m.deviceManagement = value
+    }
 }
 // SetDirectory sets the directory property value. Read-only. Nullable.
 func (m *RoleManagement) SetDirectory(value *RbacApplication)() {
-    m.directory = value
+    if m != nil {
+        m.directory = value
+    }
 }
 // SetEntitlementManagement sets the entitlementManagement property value. The RbacApplication for Entitlement Management
 func (m *RoleManagement) SetEntitlementManagement(value *RbacApplication)() {
-    m.entitlementManagement = value
+    if m != nil {
+        m.entitlementManagement = value
+    }
 }

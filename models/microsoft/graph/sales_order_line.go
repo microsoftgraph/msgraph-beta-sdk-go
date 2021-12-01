@@ -761,113 +761,169 @@ func (m *SalesOrderLine) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAccount sets the account property value. 
 func (m *SalesOrderLine) SetAccount(value *Account)() {
-    m.account = value
+    if m != nil {
+        m.account = value
+    }
 }
 // SetAccountId sets the accountId property value. 
 func (m *SalesOrderLine) SetAccountId(value *string)() {
-    m.accountId = value
+    if m != nil {
+        m.accountId = value
+    }
 }
 // SetAmountExcludingTax sets the amountExcludingTax property value. 
 func (m *SalesOrderLine) SetAmountExcludingTax(value *float64)() {
-    m.amountExcludingTax = value
+    if m != nil {
+        m.amountExcludingTax = value
+    }
 }
 // SetAmountIncludingTax sets the amountIncludingTax property value. 
 func (m *SalesOrderLine) SetAmountIncludingTax(value *float64)() {
-    m.amountIncludingTax = value
+    if m != nil {
+        m.amountIncludingTax = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *SalesOrderLine) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDiscountAmount sets the discountAmount property value. 
 func (m *SalesOrderLine) SetDiscountAmount(value *float64)() {
-    m.discountAmount = value
+    if m != nil {
+        m.discountAmount = value
+    }
 }
 // SetDiscountAppliedBeforeTax sets the discountAppliedBeforeTax property value. 
 func (m *SalesOrderLine) SetDiscountAppliedBeforeTax(value *bool)() {
-    m.discountAppliedBeforeTax = value
+    if m != nil {
+        m.discountAppliedBeforeTax = value
+    }
 }
 // SetDiscountPercent sets the discountPercent property value. 
 func (m *SalesOrderLine) SetDiscountPercent(value *float64)() {
-    m.discountPercent = value
+    if m != nil {
+        m.discountPercent = value
+    }
 }
 // SetDocumentId sets the documentId property value. 
 func (m *SalesOrderLine) SetDocumentId(value *string)() {
-    m.documentId = value
+    if m != nil {
+        m.documentId = value
+    }
 }
 // SetInvoiceDiscountAllocation sets the invoiceDiscountAllocation property value. 
 func (m *SalesOrderLine) SetInvoiceDiscountAllocation(value *float64)() {
-    m.invoiceDiscountAllocation = value
+    if m != nil {
+        m.invoiceDiscountAllocation = value
+    }
 }
 // SetInvoicedQuantity sets the invoicedQuantity property value. 
 func (m *SalesOrderLine) SetInvoicedQuantity(value *float64)() {
-    m.invoicedQuantity = value
+    if m != nil {
+        m.invoicedQuantity = value
+    }
 }
 // SetInvoiceQuantity sets the invoiceQuantity property value. 
 func (m *SalesOrderLine) SetInvoiceQuantity(value *float64)() {
-    m.invoiceQuantity = value
+    if m != nil {
+        m.invoiceQuantity = value
+    }
 }
 // SetItem sets the item property value. 
 func (m *SalesOrderLine) SetItem(value *Item)() {
-    m.item = value
+    if m != nil {
+        m.item = value
+    }
 }
 // SetItemId sets the itemId property value. 
 func (m *SalesOrderLine) SetItemId(value *string)() {
-    m.itemId = value
+    if m != nil {
+        m.itemId = value
+    }
 }
 // SetLineType sets the lineType property value. 
 func (m *SalesOrderLine) SetLineType(value *string)() {
-    m.lineType = value
+    if m != nil {
+        m.lineType = value
+    }
 }
 // SetNetAmount sets the netAmount property value. 
 func (m *SalesOrderLine) SetNetAmount(value *float64)() {
-    m.netAmount = value
+    if m != nil {
+        m.netAmount = value
+    }
 }
 // SetNetAmountIncludingTax sets the netAmountIncludingTax property value. 
 func (m *SalesOrderLine) SetNetAmountIncludingTax(value *float64)() {
-    m.netAmountIncludingTax = value
+    if m != nil {
+        m.netAmountIncludingTax = value
+    }
 }
 // SetNetTaxAmount sets the netTaxAmount property value. 
 func (m *SalesOrderLine) SetNetTaxAmount(value *float64)() {
-    m.netTaxAmount = value
+    if m != nil {
+        m.netTaxAmount = value
+    }
 }
 // SetQuantity sets the quantity property value. 
 func (m *SalesOrderLine) SetQuantity(value *float64)() {
-    m.quantity = value
+    if m != nil {
+        m.quantity = value
+    }
 }
 // SetSequence sets the sequence property value. 
 func (m *SalesOrderLine) SetSequence(value *int32)() {
-    m.sequence = value
+    if m != nil {
+        m.sequence = value
+    }
 }
 // SetShipmentDate sets the shipmentDate property value. 
 func (m *SalesOrderLine) SetShipmentDate(value *string)() {
-    m.shipmentDate = value
+    if m != nil {
+        m.shipmentDate = value
+    }
 }
 // SetShippedQuantity sets the shippedQuantity property value. 
 func (m *SalesOrderLine) SetShippedQuantity(value *float64)() {
-    m.shippedQuantity = value
+    if m != nil {
+        m.shippedQuantity = value
+    }
 }
 // SetShipQuantity sets the shipQuantity property value. 
 func (m *SalesOrderLine) SetShipQuantity(value *float64)() {
-    m.shipQuantity = value
+    if m != nil {
+        m.shipQuantity = value
+    }
 }
 // SetTaxCode sets the taxCode property value. 
 func (m *SalesOrderLine) SetTaxCode(value *string)() {
-    m.taxCode = value
+    if m != nil {
+        m.taxCode = value
+    }
 }
 // SetTaxPercent sets the taxPercent property value. 
 func (m *SalesOrderLine) SetTaxPercent(value *float64)() {
-    m.taxPercent = value
+    if m != nil {
+        m.taxPercent = value
+    }
 }
 // SetTotalTaxAmount sets the totalTaxAmount property value. 
 func (m *SalesOrderLine) SetTotalTaxAmount(value *float64)() {
-    m.totalTaxAmount = value
+    if m != nil {
+        m.totalTaxAmount = value
+    }
 }
 // SetUnitOfMeasureId sets the unitOfMeasureId property value. 
 func (m *SalesOrderLine) SetUnitOfMeasureId(value *string)() {
-    m.unitOfMeasureId = value
+    if m != nil {
+        m.unitOfMeasureId = value
+    }
 }
 // SetUnitPrice sets the unitPrice property value. 
 func (m *SalesOrderLine) SetUnitPrice(value *float64)() {
-    m.unitPrice = value
+    if m != nil {
+        m.unitPrice = value
+    }
 }

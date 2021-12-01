@@ -140,17 +140,25 @@ func (m *DeviceManagementDomainJoinConnector) Serialize(writer i04eb5309aeaafadd
 }
 // SetDisplayName sets the displayName property value. The connector display name.
 func (m *DeviceManagementDomainJoinConnector) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastConnectionDateTime sets the lastConnectionDateTime property value. Last time connector contacted Intune.
 func (m *DeviceManagementDomainJoinConnector) SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastConnectionDateTime = value
+    if m != nil {
+        m.lastConnectionDateTime = value
+    }
 }
 // SetState sets the state property value. The connector state. Possible values are: active, error, inactive.
 func (m *DeviceManagementDomainJoinConnector) SetState(value *DeviceManagementDomainJoinConnectorState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetVersion sets the version property value. The version of the connector.
 func (m *DeviceManagementDomainJoinConnector) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

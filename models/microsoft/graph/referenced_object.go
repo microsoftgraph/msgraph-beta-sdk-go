@@ -96,13 +96,19 @@ func (m *ReferencedObject) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReferencedObject) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetReferencedObjectName sets the referencedObjectName property value. Name of the referenced object. Must match one of the objects in the directory definition.
 func (m *ReferencedObject) SetReferencedObjectName(value *string)() {
-    m.referencedObjectName = value
+    if m != nil {
+        m.referencedObjectName = value
+    }
 }
 // SetReferencedProperty sets the referencedProperty property value. Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
 func (m *ReferencedObject) SetReferencedProperty(value *string)() {
-    m.referencedProperty = value
+    if m != nil {
+        m.referencedProperty = value
+    }
 }

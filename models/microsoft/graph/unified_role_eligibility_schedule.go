@@ -85,9 +85,13 @@ func (m *UnifiedRoleEligibilitySchedule) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetMemberType sets the memberType property value. Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
 func (m *UnifiedRoleEligibilitySchedule) SetMemberType(value *string)() {
-    m.memberType = value
+    if m != nil {
+        m.memberType = value
+    }
 }
 // SetScheduleInfo sets the scheduleInfo property value. The schedule object of the eligible role assignment request.
 func (m *UnifiedRoleEligibilitySchedule) SetScheduleInfo(value *RequestSchedule)() {
-    m.scheduleInfo = value
+    if m != nil {
+        m.scheduleInfo = value
+    }
 }

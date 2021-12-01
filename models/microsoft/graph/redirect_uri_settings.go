@@ -96,13 +96,19 @@ func (m *RedirectUriSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectUriSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIndex sets the index property value. Identifies the specific URI within the redirectURIs collection in SAML SSO flows. Defaults to null. The index is unique across all the redirectUris for the application.
 func (m *RedirectUriSettings) SetIndex(value *int32)() {
-    m.index = value
+    if m != nil {
+        m.index = value
+    }
 }
 // SetUri sets the uri property value. Specifies the URI that tokens are sent to.
 func (m *RedirectUriSettings) SetUri(value *string)() {
-    m.uri = value
+    if m != nil {
+        m.uri = value
+    }
 }

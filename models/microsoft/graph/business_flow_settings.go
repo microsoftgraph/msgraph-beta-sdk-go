@@ -59,5 +59,7 @@ func (m *BusinessFlowSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetDurationInDays sets the durationInDays property value. 
 func (m *BusinessFlowSettings) SetDurationInDays(value *int32)() {
-    m.durationInDays = value
+    if m != nil {
+        m.durationInDays = value
+    }
 }

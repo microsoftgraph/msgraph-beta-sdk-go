@@ -224,29 +224,43 @@ func (m *AccessPackageAssignmentResourceRole) Serialize(writer i04eb5309aeaafadd
 }
 // SetAccessPackageAssignments sets the accessPackageAssignments property value. The access package assignments resulting in this role assignment. Read-only. Nullable.
 func (m *AccessPackageAssignmentResourceRole) SetAccessPackageAssignments(value []AccessPackageAssignment)() {
-    m.accessPackageAssignments = value
+    if m != nil {
+        m.accessPackageAssignments = value
+    }
 }
 // SetAccessPackageResourceRole sets the accessPackageResourceRole property value. Read-only. Nullable.
 func (m *AccessPackageAssignmentResourceRole) SetAccessPackageResourceRole(value *AccessPackageResourceRole)() {
-    m.accessPackageResourceRole = value
+    if m != nil {
+        m.accessPackageResourceRole = value
+    }
 }
 // SetAccessPackageResourceScope sets the accessPackageResourceScope property value. Read-only. Nullable.
 func (m *AccessPackageAssignmentResourceRole) SetAccessPackageResourceScope(value *AccessPackageResourceScope)() {
-    m.accessPackageResourceScope = value
+    if m != nil {
+        m.accessPackageResourceScope = value
+    }
 }
 // SetAccessPackageSubject sets the accessPackageSubject property value. Read-only. Nullable.
 func (m *AccessPackageAssignmentResourceRole) SetAccessPackageSubject(value *AccessPackageSubject)() {
-    m.accessPackageSubject = value
+    if m != nil {
+        m.accessPackageSubject = value
+    }
 }
 // SetOriginId sets the originId property value. A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.
 func (m *AccessPackageAssignmentResourceRole) SetOriginId(value *string)() {
-    m.originId = value
+    if m != nil {
+        m.originId = value
+    }
 }
 // SetOriginSystem sets the originSystem property value. The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
 func (m *AccessPackageAssignmentResourceRole) SetOriginSystem(value *string)() {
-    m.originSystem = value
+    if m != nil {
+        m.originSystem = value
+    }
 }
 // SetStatus sets the status property value. The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
 func (m *AccessPackageAssignmentResourceRole) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

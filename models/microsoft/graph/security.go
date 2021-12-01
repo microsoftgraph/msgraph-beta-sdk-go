@@ -549,61 +549,91 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAlerts sets the alerts property value. Read-only. Nullable.
 func (m *Security) SetAlerts(value []Alert)() {
-    m.alerts = value
+    if m != nil {
+        m.alerts = value
+    }
 }
 // SetAttackSimulation sets the attackSimulation property value. Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
 func (m *Security) SetAttackSimulation(value *AttackSimulationRoot)() {
-    m.attackSimulation = value
+    if m != nil {
+        m.attackSimulation = value
+    }
 }
 // SetCloudAppSecurityProfiles sets the cloudAppSecurityProfiles property value. 
 func (m *Security) SetCloudAppSecurityProfiles(value []CloudAppSecurityProfile)() {
-    m.cloudAppSecurityProfiles = value
+    if m != nil {
+        m.cloudAppSecurityProfiles = value
+    }
 }
 // SetDomainSecurityProfiles sets the domainSecurityProfiles property value. 
 func (m *Security) SetDomainSecurityProfiles(value []DomainSecurityProfile)() {
-    m.domainSecurityProfiles = value
+    if m != nil {
+        m.domainSecurityProfiles = value
+    }
 }
 // SetFileSecurityProfiles sets the fileSecurityProfiles property value. 
 func (m *Security) SetFileSecurityProfiles(value []FileSecurityProfile)() {
-    m.fileSecurityProfiles = value
+    if m != nil {
+        m.fileSecurityProfiles = value
+    }
 }
 // SetHostSecurityProfiles sets the hostSecurityProfiles property value. 
 func (m *Security) SetHostSecurityProfiles(value []HostSecurityProfile)() {
-    m.hostSecurityProfiles = value
+    if m != nil {
+        m.hostSecurityProfiles = value
+    }
 }
 // SetIncidents sets the incidents property value. 
 func (m *Security) SetIncidents(value []Incident)() {
-    m.incidents = value
+    if m != nil {
+        m.incidents = value
+    }
 }
 // SetIpSecurityProfiles sets the ipSecurityProfiles property value. 
 func (m *Security) SetIpSecurityProfiles(value []IpSecurityProfile)() {
-    m.ipSecurityProfiles = value
+    if m != nil {
+        m.ipSecurityProfiles = value
+    }
 }
 // SetProviderStatus sets the providerStatus property value. 
 func (m *Security) SetProviderStatus(value []SecurityProviderStatus)() {
-    m.providerStatus = value
+    if m != nil {
+        m.providerStatus = value
+    }
 }
 // SetProviderTenantSettings sets the providerTenantSettings property value. 
 func (m *Security) SetProviderTenantSettings(value []ProviderTenantSetting)() {
-    m.providerTenantSettings = value
+    if m != nil {
+        m.providerTenantSettings = value
+    }
 }
 // SetSecureScoreControlProfiles sets the secureScoreControlProfiles property value. 
 func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfile)() {
-    m.secureScoreControlProfiles = value
+    if m != nil {
+        m.secureScoreControlProfiles = value
+    }
 }
 // SetSecureScores sets the secureScores property value. 
 func (m *Security) SetSecureScores(value []SecureScore)() {
-    m.secureScores = value
+    if m != nil {
+        m.secureScores = value
+    }
 }
 // SetSecurityActions sets the securityActions property value. 
 func (m *Security) SetSecurityActions(value []SecurityAction)() {
-    m.securityActions = value
+    if m != nil {
+        m.securityActions = value
+    }
 }
 // SetTiIndicators sets the tiIndicators property value. 
 func (m *Security) SetTiIndicators(value []TiIndicator)() {
-    m.tiIndicators = value
+    if m != nil {
+        m.tiIndicators = value
+    }
 }
 // SetUserSecurityProfiles sets the userSecurityProfiles property value. 
 func (m *Security) SetUserSecurityProfiles(value []UserSecurityProfile)() {
-    m.userSecurityProfiles = value
+    if m != nil {
+        m.userSecurityProfiles = value
+    }
 }

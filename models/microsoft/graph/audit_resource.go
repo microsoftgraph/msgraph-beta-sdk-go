@@ -157,21 +157,31 @@ func (m *AuditResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditResource) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name.
 func (m *AuditResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetModifiedProperties sets the modifiedProperties property value. List of modified properties.
 func (m *AuditResource) SetModifiedProperties(value []AuditProperty)() {
-    m.modifiedProperties = value
+    if m != nil {
+        m.modifiedProperties = value
+    }
 }
 // SetResourceId sets the resourceId property value. Audit resource's Id.
 func (m *AuditResource) SetResourceId(value *string)() {
-    m.resourceId = value
+    if m != nil {
+        m.resourceId = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Audit resource's type.
 func (m *AuditResource) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

@@ -329,45 +329,67 @@ func (m *DeviceManagementConfigurationCategory) Serialize(writer i04eb5309aeaafa
 }
 // SetCategoryDescription sets the categoryDescription property value. Description of the category header
 func (m *DeviceManagementConfigurationCategory) SetCategoryDescription(value *string)() {
-    m.categoryDescription = value
+    if m != nil {
+        m.categoryDescription = value
+    }
 }
 // SetChildCategoryIds sets the childCategoryIds property value. List of child ids of the category.
 func (m *DeviceManagementConfigurationCategory) SetChildCategoryIds(value []string)() {
-    m.childCategoryIds = value
+    if m != nil {
+        m.childCategoryIds = value
+    }
 }
 // SetDescription sets the description property value. Description of the item
 func (m *DeviceManagementConfigurationCategory) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the item
 func (m *DeviceManagementConfigurationCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetHelpText sets the helpText property value. Help text of the item
 func (m *DeviceManagementConfigurationCategory) SetHelpText(value *string)() {
-    m.helpText = value
+    if m != nil {
+        m.helpText = value
+    }
 }
 // SetName sets the name property value. Name of the item
 func (m *DeviceManagementConfigurationCategory) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetParentCategoryId sets the parentCategoryId property value. Parent id of the category.
 func (m *DeviceManagementConfigurationCategory) SetParentCategoryId(value *string)() {
-    m.parentCategoryId = value
+    if m != nil {
+        m.parentCategoryId = value
+    }
 }
 // SetPlatforms sets the platforms property value. Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10.
 func (m *DeviceManagementConfigurationCategory) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
-    m.platforms = value
+    if m != nil {
+        m.platforms = value
+    }
 }
 // SetRootCategoryId sets the rootCategoryId property value. Root id of the category.
 func (m *DeviceManagementConfigurationCategory) SetRootCategoryId(value *string)() {
-    m.rootCategoryId = value
+    if m != nil {
+        m.rootCategoryId = value
+    }
 }
 // SetSettingUsage sets the settingUsage property value. Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
 func (m *DeviceManagementConfigurationCategory) SetSettingUsage(value *DeviceManagementConfigurationSettingUsage)() {
-    m.settingUsage = value
+    if m != nil {
+        m.settingUsage = value
+    }
 }
 // SetTechnologies sets the technologies property value. Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementConfigurationCategory) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
-    m.technologies = value
+    if m != nil {
+        m.technologies = value
+    }
 }

@@ -104,13 +104,19 @@ func (m *ConditionalAccessClientApplications) Serialize(writer i04eb5309aeaafadd
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessClientApplications) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExcludeServicePrincipals sets the excludeServicePrincipals property value. 
 func (m *ConditionalAccessClientApplications) SetExcludeServicePrincipals(value []string)() {
-    m.excludeServicePrincipals = value
+    if m != nil {
+        m.excludeServicePrincipals = value
+    }
 }
 // SetIncludeServicePrincipals sets the includeServicePrincipals property value. 
 func (m *ConditionalAccessClientApplications) SetIncludeServicePrincipals(value []string)() {
-    m.includeServicePrincipals = value
+    if m != nil {
+        m.includeServicePrincipals = value
+    }
 }

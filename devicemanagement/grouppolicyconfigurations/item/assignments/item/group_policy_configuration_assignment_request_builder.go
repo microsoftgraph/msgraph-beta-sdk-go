@@ -40,7 +40,7 @@ type GroupPolicyConfigurationAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // GroupPolicyConfigurationAssignmentRequestBuilderPatchOptions options for Patch
 type GroupPolicyConfigurationAssignmentRequestBuilderPatchOptions struct {

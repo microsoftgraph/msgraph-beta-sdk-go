@@ -68,5 +68,7 @@ func (m *ExactMatchDataStore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetSessions sets the sessions property value. 
 func (m *ExactMatchDataStore) SetSessions(value []ExactMatchSession)() {
-    m.sessions = value
+    if m != nil {
+        m.sessions = value
+    }
 }

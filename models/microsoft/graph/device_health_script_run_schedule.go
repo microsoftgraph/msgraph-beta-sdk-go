@@ -70,9 +70,13 @@ func (m *DeviceHealthScriptRunSchedule) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthScriptRunSchedule) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetInterval sets the interval property value. The x value of every x hours for hourly schedule, every x days for Daily Schedule, every x weeks for weekly schedule, every x months for Monthly Schedule. Valid values 1 to 23
 func (m *DeviceHealthScriptRunSchedule) SetInterval(value *int32)() {
-    m.interval = value
+    if m != nil {
+        m.interval = value
+    }
 }

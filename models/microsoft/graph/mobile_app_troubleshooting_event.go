@@ -181,21 +181,31 @@ func (m *MobileAppTroubleshootingEvent) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetApplicationId sets the applicationId property value. Intune application identifier.
 func (m *MobileAppTroubleshootingEvent) SetApplicationId(value *string)() {
-    m.applicationId = value
+    if m != nil {
+        m.applicationId = value
+    }
 }
 // SetAppLogCollectionRequests sets the appLogCollectionRequests property value. The collection property of AppLogUploadRequest.
 func (m *MobileAppTroubleshootingEvent) SetAppLogCollectionRequests(value []AppLogCollectionRequest)() {
-    m.appLogCollectionRequests = value
+    if m != nil {
+        m.appLogCollectionRequests = value
+    }
 }
 // SetHistory sets the history property value. Intune Mobile Application Troubleshooting History Item
 func (m *MobileAppTroubleshootingEvent) SetHistory(value []MobileAppTroubleshootingHistoryItem)() {
-    m.history = value
+    if m != nil {
+        m.history = value
+    }
 }
 // SetManagedDeviceIdentifier sets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *MobileAppTroubleshootingEvent) SetManagedDeviceIdentifier(value *string)() {
-    m.managedDeviceIdentifier = value
+    if m != nil {
+        m.managedDeviceIdentifier = value
+    }
 }
 // SetUserId sets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *MobileAppTroubleshootingEvent) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

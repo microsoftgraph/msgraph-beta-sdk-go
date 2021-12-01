@@ -106,13 +106,19 @@ func (m *SearchResponseRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchResponseRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetQueryAlterationOptions sets the queryAlterationOptions property value. 
 func (m *SearchResponseRequestBody) SetQueryAlterationOptions(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchAlterationOptions)() {
-    m.queryAlterationOptions = value
+    if m != nil {
+        m.queryAlterationOptions = value
+    }
 }
 // SetRequests sets the requests property value. 
 func (m *SearchResponseRequestBody) SetRequests(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchRequest)() {
-    m.requests = value
+    if m != nil {
+        m.requests = value
+    }
 }

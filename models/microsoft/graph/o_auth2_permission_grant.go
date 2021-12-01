@@ -216,29 +216,43 @@ func (m *OAuth2PermissionGrant) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetClientId sets the clientId property value. The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
 func (m *OAuth2PermissionGrant) SetClientId(value *string)() {
-    m.clientId = value
+    if m != nil {
+        m.clientId = value
+    }
 }
 // SetConsentType sets the consentType property value. Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
 func (m *OAuth2PermissionGrant) SetConsentType(value *string)() {
-    m.consentType = value
+    if m != nil {
+        m.consentType = value
+    }
 }
 // SetExpiryTime sets the expiryTime property value. Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
 func (m *OAuth2PermissionGrant) SetExpiryTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expiryTime = value
+    if m != nil {
+        m.expiryTime = value
+    }
 }
 // SetPrincipalId sets the principalId property value. The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
 func (m *OAuth2PermissionGrant) SetPrincipalId(value *string)() {
-    m.principalId = value
+    if m != nil {
+        m.principalId = value
+    }
 }
 // SetResourceId sets the resourceId property value. The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
 func (m *OAuth2PermissionGrant) SetResourceId(value *string)() {
-    m.resourceId = value
+    if m != nil {
+        m.resourceId = value
+    }
 }
 // SetScope sets the scope property value. A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
 func (m *OAuth2PermissionGrant) SetScope(value *string)() {
-    m.scope = value
+    if m != nil {
+        m.scope = value
+    }
 }
 // SetStartTime sets the startTime property value. Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
 func (m *OAuth2PermissionGrant) SetStartTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startTime = value
+    if m != nil {
+        m.startTime = value
+    }
 }

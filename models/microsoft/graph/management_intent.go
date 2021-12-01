@@ -120,13 +120,19 @@ func (m *ManagementIntent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetDisplayName sets the displayName property value. The display name for the management intent. Optional. Read-only.
 func (m *ManagementIntent) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsGlobal sets the isGlobal property value. A flag indicating whether the management intent is global. Required. Read-only.
 func (m *ManagementIntent) SetIsGlobal(value *bool)() {
-    m.isGlobal = value
+    if m != nil {
+        m.isGlobal = value
+    }
 }
 // SetManagementTemplates sets the managementTemplates property value. The collection of management templates associated with the management intent. Optional. Read-only.
 func (m *ManagementIntent) SetManagementTemplates(value []ManagementTemplateDetailedInfo)() {
-    m.managementTemplates = value
+    if m != nil {
+        m.managementTemplates = value
+    }
 }

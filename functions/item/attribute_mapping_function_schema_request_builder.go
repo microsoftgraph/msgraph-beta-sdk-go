@@ -40,7 +40,7 @@ type AttributeMappingFunctionSchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AttributeMappingFunctionSchemaRequestBuilderPatchOptions options for Patch
 type AttributeMappingFunctionSchemaRequestBuilderPatchOptions struct {

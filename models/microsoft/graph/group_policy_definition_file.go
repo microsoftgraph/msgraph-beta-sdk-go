@@ -283,37 +283,55 @@ func (m *GroupPolicyDefinitionFile) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetDefinitions sets the definitions property value. The group policy definitions associated with the file.
 func (m *GroupPolicyDefinitionFile) SetDefinitions(value []GroupPolicyDefinition)() {
-    m.definitions = value
+    if m != nil {
+        m.definitions = value
+    }
 }
 // SetDescription sets the description property value. The localized description of the policy settings in the ADMX file. The default value is empty.
 func (m *GroupPolicyDefinitionFile) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The localized friendly name of the ADMX file.
 func (m *GroupPolicyDefinitionFile) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLanguageCodes sets the languageCodes property value. The supported language codes for the ADMX file.
 func (m *GroupPolicyDefinitionFile) SetLanguageCodes(value []string)() {
-    m.languageCodes = value
+    if m != nil {
+        m.languageCodes = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyDefinitionFile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPolicyType sets the policyType property value. Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
 func (m *GroupPolicyDefinitionFile) SetPolicyType(value *GroupPolicyType)() {
-    m.policyType = value
+    if m != nil {
+        m.policyType = value
+    }
 }
 // SetRevision sets the revision property value. The revision version associated with the file.
 func (m *GroupPolicyDefinitionFile) SetRevision(value *string)() {
-    m.revision = value
+    if m != nil {
+        m.revision = value
+    }
 }
 // SetTargetNamespace sets the targetNamespace property value. Specifies the URI used to identify the namespace within the ADMX file.
 func (m *GroupPolicyDefinitionFile) SetTargetNamespace(value *string)() {
-    m.targetNamespace = value
+    if m != nil {
+        m.targetNamespace = value
+    }
 }
 // SetTargetPrefix sets the targetPrefix property value. Specifies the logical name that refers to the namespace within the ADMX file.
 func (m *GroupPolicyDefinitionFile) SetTargetPrefix(value *string)() {
-    m.targetPrefix = value
+    if m != nil {
+        m.targetPrefix = value
+    }
 }

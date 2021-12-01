@@ -122,17 +122,25 @@ func (m *EvaluateDynamicMembershipResult) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateDynamicMembershipResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMembershipRule sets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
 func (m *EvaluateDynamicMembershipResult) SetMembershipRule(value *string)() {
-    m.membershipRule = value
+    if m != nil {
+        m.membershipRule = value
+    }
 }
 // SetMembershipRuleEvaluationDetails sets the membershipRuleEvaluationDetails property value. Provides a detailed anaylsis of the membership evaluation result.
 func (m *EvaluateDynamicMembershipResult) SetMembershipRuleEvaluationDetails(value *ExpressionEvaluationDetails)() {
-    m.membershipRuleEvaluationDetails = value
+    if m != nil {
+        m.membershipRuleEvaluationDetails = value
+    }
 }
 // SetMembershipRuleEvaluationResult sets the membershipRuleEvaluationResult property value. The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.
 func (m *EvaluateDynamicMembershipResult) SetMembershipRuleEvaluationResult(value *bool)() {
-    m.membershipRuleEvaluationResult = value
+    if m != nil {
+        m.membershipRuleEvaluationResult = value
+    }
 }

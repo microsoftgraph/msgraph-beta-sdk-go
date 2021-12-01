@@ -184,25 +184,37 @@ func (m *SendActivityNotificationRequestBody) Serialize(writer i04eb5309aeaafadd
 }
 // SetActivityType sets the activityType property value. 
 func (m *SendActivityNotificationRequestBody) SetActivityType(value *string)() {
-    m.activityType = value
+    if m != nil {
+        m.activityType = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendActivityNotificationRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetChainId sets the chainId property value. 
 func (m *SendActivityNotificationRequestBody) SetChainId(value *int64)() {
-    m.chainId = value
+    if m != nil {
+        m.chainId = value
+    }
 }
 // SetPreviewText sets the previewText property value. 
 func (m *SendActivityNotificationRequestBody) SetPreviewText(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBody)() {
-    m.previewText = value
+    if m != nil {
+        m.previewText = value
+    }
 }
 // SetTemplateParameters sets the templateParameters property value. 
 func (m *SendActivityNotificationRequestBody) SetTemplateParameters(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.KeyValuePair)() {
-    m.templateParameters = value
+    if m != nil {
+        m.templateParameters = value
+    }
 }
 // SetTopic sets the topic property value. 
 func (m *SendActivityNotificationRequestBody) SetTopic(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkActivityTopic)() {
-    m.topic = value
+    if m != nil {
+        m.topic = value
+    }
 }

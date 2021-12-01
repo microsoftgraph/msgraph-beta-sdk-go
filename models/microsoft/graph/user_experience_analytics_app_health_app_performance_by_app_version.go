@@ -215,29 +215,43 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) Serialize(w
 }
 // SetAppCrashCount sets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppCrashCount(value *int32)() {
-    m.appCrashCount = value
+    if m != nil {
+        m.appCrashCount = value
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. The friendly name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    if m != nil {
+        m.appDisplayName = value
+    }
 }
 // SetAppName sets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppName(value *string)() {
-    m.appName = value
+    if m != nil {
+        m.appName = value
+    }
 }
 // SetAppPublisher sets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppPublisher(value *string)() {
-    m.appPublisher = value
+    if m != nil {
+        m.appPublisher = value
+    }
 }
 // SetAppUsageDuration sets the appUsageDuration property value. The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppUsageDuration(value *int32)() {
-    m.appUsageDuration = value
+    if m != nil {
+        m.appUsageDuration = value
+    }
 }
 // SetAppVersion sets the appVersion property value. The version of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetAppVersion(value *string)() {
-    m.appVersion = value
+    if m != nil {
+        m.appVersion = value
+    }
 }
 // SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetMeanTimeToFailureInMinutes(value *int32)() {
-    m.meanTimeToFailureInMinutes = value
+    if m != nil {
+        m.meanTimeToFailureInMinutes = value
+    }
 }

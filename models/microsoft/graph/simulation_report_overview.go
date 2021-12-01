@@ -157,21 +157,31 @@ func (m *SimulationReportOverview) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationReportOverview) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRecommendedActions sets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
 func (m *SimulationReportOverview) SetRecommendedActions(value []RecommendedAction)() {
-    m.recommendedActions = value
+    if m != nil {
+        m.recommendedActions = value
+    }
 }
 // SetResolvedTargetsCount sets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetResolvedTargetsCount(value *int32)() {
-    m.resolvedTargetsCount = value
+    if m != nil {
+        m.resolvedTargetsCount = value
+    }
 }
 // SetSimulationEventsContent sets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetSimulationEventsContent(value *SimulationEventsContent)() {
-    m.simulationEventsContent = value
+    if m != nil {
+        m.simulationEventsContent = value
+    }
 }
 // SetTrainingEventsContent sets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
 func (m *SimulationReportOverview) SetTrainingEventsContent(value *TrainingEventsContent)() {
-    m.trainingEventsContent = value
+    if m != nil {
+        m.trainingEventsContent = value
+    }
 }

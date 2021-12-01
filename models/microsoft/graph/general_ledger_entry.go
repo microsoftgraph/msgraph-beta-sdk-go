@@ -294,41 +294,61 @@ func (m *GeneralLedgerEntry) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAccount sets the account property value. 
 func (m *GeneralLedgerEntry) SetAccount(value *Account)() {
-    m.account = value
+    if m != nil {
+        m.account = value
+    }
 }
 // SetAccountId sets the accountId property value. 
 func (m *GeneralLedgerEntry) SetAccountId(value *string)() {
-    m.accountId = value
+    if m != nil {
+        m.accountId = value
+    }
 }
 // SetAccountNumber sets the accountNumber property value. 
 func (m *GeneralLedgerEntry) SetAccountNumber(value *string)() {
-    m.accountNumber = value
+    if m != nil {
+        m.accountNumber = value
+    }
 }
 // SetCreditAmount sets the creditAmount property value. 
 func (m *GeneralLedgerEntry) SetCreditAmount(value *float64)() {
-    m.creditAmount = value
+    if m != nil {
+        m.creditAmount = value
+    }
 }
 // SetDebitAmount sets the debitAmount property value. 
 func (m *GeneralLedgerEntry) SetDebitAmount(value *float64)() {
-    m.debitAmount = value
+    if m != nil {
+        m.debitAmount = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *GeneralLedgerEntry) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDocumentNumber sets the documentNumber property value. 
 func (m *GeneralLedgerEntry) SetDocumentNumber(value *string)() {
-    m.documentNumber = value
+    if m != nil {
+        m.documentNumber = value
+    }
 }
 // SetDocumentType sets the documentType property value. 
 func (m *GeneralLedgerEntry) SetDocumentType(value *string)() {
-    m.documentType = value
+    if m != nil {
+        m.documentType = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *GeneralLedgerEntry) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPostingDate sets the postingDate property value. 
 func (m *GeneralLedgerEntry) SetPostingDate(value *string)() {
-    m.postingDate = value
+    if m != nil {
+        m.postingDate = value
+    }
 }

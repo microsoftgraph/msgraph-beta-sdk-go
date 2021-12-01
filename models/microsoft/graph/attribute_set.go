@@ -85,9 +85,13 @@ func (m *AttributeSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetDescription sets the description property value. Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
 func (m *AttributeSet) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetMaxAttributesPerSet sets the maxAttributesPerSet property value. Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.
 func (m *AttributeSet) SetMaxAttributesPerSet(value *int32)() {
-    m.maxAttributesPerSet = value
+    if m != nil {
+        m.maxAttributesPerSet = value
+    }
 }

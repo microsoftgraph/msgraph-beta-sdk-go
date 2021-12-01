@@ -343,45 +343,67 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i04eb5309aeaafadd28
 }
 // SetConstraints sets the constraints property value. Collection of constraints for the setting value
 func (m *DeviceManagementSettingDefinition) SetConstraints(value []DeviceManagementConstraint)() {
-    m.constraints = value
+    if m != nil {
+        m.constraints = value
+    }
 }
 // SetDependencies sets the dependencies property value. Collection of dependencies on other settings
 func (m *DeviceManagementSettingDefinition) SetDependencies(value []DeviceManagementSettingDependency)() {
-    m.dependencies = value
+    if m != nil {
+        m.dependencies = value
+    }
 }
 // SetDescription sets the description property value. The setting's description
 func (m *DeviceManagementSettingDefinition) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The setting's display name
 func (m *DeviceManagementSettingDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetDocumentationUrl sets the documentationUrl property value. Url to setting documentation
 func (m *DeviceManagementSettingDefinition) SetDocumentationUrl(value *string)() {
-    m.documentationUrl = value
+    if m != nil {
+        m.documentationUrl = value
+    }
 }
 // SetHeaderSubtitle sets the headerSubtitle property value. subtitle of the setting header for more details about the category/section
 func (m *DeviceManagementSettingDefinition) SetHeaderSubtitle(value *string)() {
-    m.headerSubtitle = value
+    if m != nil {
+        m.headerSubtitle = value
+    }
 }
 // SetHeaderTitle sets the headerTitle property value. title of the setting header represents a category/section of a setting/settings
 func (m *DeviceManagementSettingDefinition) SetHeaderTitle(value *string)() {
-    m.headerTitle = value
+    if m != nil {
+        m.headerTitle = value
+    }
 }
 // SetIsTopLevel sets the isTopLevel property value. If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting
 func (m *DeviceManagementSettingDefinition) SetIsTopLevel(value *bool)() {
-    m.isTopLevel = value
+    if m != nil {
+        m.isTopLevel = value
+    }
 }
 // SetKeywords sets the keywords property value. Keywords associated with the setting
 func (m *DeviceManagementSettingDefinition) SetKeywords(value []string)() {
-    m.keywords = value
+    if m != nil {
+        m.keywords = value
+    }
 }
 // SetPlaceholderText sets the placeholderText property value. Placeholder text as an example of valid input
 func (m *DeviceManagementSettingDefinition) SetPlaceholderText(value *string)() {
-    m.placeholderText = value
+    if m != nil {
+        m.placeholderText = value
+    }
 }
 // SetValueType sets the valueType property value. The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
 func (m *DeviceManagementSettingDefinition) SetValueType(value *DeviceManangementIntentValueType)() {
-    m.valueType = value
+    if m != nil {
+        m.valueType = value
+    }
 }

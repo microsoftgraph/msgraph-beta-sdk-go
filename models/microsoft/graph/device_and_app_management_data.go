@@ -70,9 +70,13 @@ func (m *DeviceAndAppManagementData) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceAndAppManagementData) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContent sets the content property value. Not yet documented
 func (m *DeviceAndAppManagementData) SetContent(value []byte)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }

@@ -225,29 +225,43 @@ func (m *CustomerPaymentJournal) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAccount sets the account property value. 
 func (m *CustomerPaymentJournal) SetAccount(value *Account)() {
-    m.account = value
+    if m != nil {
+        m.account = value
+    }
 }
 // SetBalancingAccountId sets the balancingAccountId property value. 
 func (m *CustomerPaymentJournal) SetBalancingAccountId(value *string)() {
-    m.balancingAccountId = value
+    if m != nil {
+        m.balancingAccountId = value
+    }
 }
 // SetBalancingAccountNumber sets the balancingAccountNumber property value. 
 func (m *CustomerPaymentJournal) SetBalancingAccountNumber(value *string)() {
-    m.balancingAccountNumber = value
+    if m != nil {
+        m.balancingAccountNumber = value
+    }
 }
 // SetCode sets the code property value. 
 func (m *CustomerPaymentJournal) SetCode(value *string)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetCustomerPayments sets the customerPayments property value. 
 func (m *CustomerPaymentJournal) SetCustomerPayments(value []CustomerPayment)() {
-    m.customerPayments = value
+    if m != nil {
+        m.customerPayments = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *CustomerPaymentJournal) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *CustomerPaymentJournal) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }

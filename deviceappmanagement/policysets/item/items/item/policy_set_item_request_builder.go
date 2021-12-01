@@ -40,7 +40,7 @@ type PolicySetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PolicySetItemRequestBuilderPatchOptions options for Patch
 type PolicySetItemRequestBuilderPatchOptions struct {

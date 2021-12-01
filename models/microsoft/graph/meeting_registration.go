@@ -323,41 +323,61 @@ func (m *MeetingRegistration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAllowedRegistrant sets the allowedRegistrant property value. Specifies who can register for the meeting.
 func (m *MeetingRegistration) SetAllowedRegistrant(value *MeetingAudience)() {
-    m.allowedRegistrant = value
+    if m != nil {
+        m.allowedRegistrant = value
+    }
 }
 // SetCustomQuestions sets the customQuestions property value. Custom registration questions.
 func (m *MeetingRegistration) SetCustomQuestions(value []MeetingRegistrationQuestion)() {
-    m.customQuestions = value
+    if m != nil {
+        m.customQuestions = value
+    }
 }
 // SetDescription sets the description property value. The description of the meeting.
 func (m *MeetingRegistration) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. The meeting end time in UTC.
 func (m *MeetingRegistration) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetRegistrants sets the registrants property value. Registrants of the online meeting.
 func (m *MeetingRegistration) SetRegistrants(value []MeetingRegistrant)() {
-    m.registrants = value
+    if m != nil {
+        m.registrants = value
+    }
 }
 // SetRegistrationPageViewCount sets the registrationPageViewCount property value. The number of times the registration page has been visited. Read-only.
 func (m *MeetingRegistration) SetRegistrationPageViewCount(value *int32)() {
-    m.registrationPageViewCount = value
+    if m != nil {
+        m.registrationPageViewCount = value
+    }
 }
 // SetRegistrationPageWebUrl sets the registrationPageWebUrl property value. The URL of the registration page. Read-only.
 func (m *MeetingRegistration) SetRegistrationPageWebUrl(value *string)() {
-    m.registrationPageWebUrl = value
+    if m != nil {
+        m.registrationPageWebUrl = value
+    }
 }
 // SetSpeakers sets the speakers property value. The meeting speaker's information.
 func (m *MeetingRegistration) SetSpeakers(value []MeetingSpeaker)() {
-    m.speakers = value
+    if m != nil {
+        m.speakers = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. The meeting start time in UTC.
 func (m *MeetingRegistration) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
 // SetSubject sets the subject property value. The subject of the meeting.
 func (m *MeetingRegistration) SetSubject(value *string)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }

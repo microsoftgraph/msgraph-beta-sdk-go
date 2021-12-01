@@ -50,7 +50,7 @@ type PrivilegedAccessRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PrivilegedAccessRequestBuilderPatchOptions options for Patch
 type PrivilegedAccessRequestBuilderPatchOptions struct {

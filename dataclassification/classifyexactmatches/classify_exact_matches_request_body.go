@@ -162,21 +162,31 @@ func (m *ClassifyExactMatchesRequestBody) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyExactMatchesRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentClassifications sets the contentClassifications property value. 
 func (m *ClassifyExactMatchesRequestBody) SetContentClassifications(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentClassification)() {
-    m.contentClassifications = value
+    if m != nil {
+        m.contentClassifications = value
+    }
 }
 // SetSensitiveTypeIds sets the sensitiveTypeIds property value. 
 func (m *ClassifyExactMatchesRequestBody) SetSensitiveTypeIds(value []string)() {
-    m.sensitiveTypeIds = value
+    if m != nil {
+        m.sensitiveTypeIds = value
+    }
 }
 // SetText sets the text property value. 
 func (m *ClassifyExactMatchesRequestBody) SetText(value *string)() {
-    m.text = value
+    if m != nil {
+        m.text = value
+    }
 }
 // SetTimeoutInMs sets the timeoutInMs property value. 
 func (m *ClassifyExactMatchesRequestBody) SetTimeoutInMs(value *string)() {
-    m.timeoutInMs = value
+    if m != nil {
+        m.timeoutInMs = value
+    }
 }

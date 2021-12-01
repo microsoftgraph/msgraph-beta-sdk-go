@@ -268,37 +268,55 @@ func (m *GetSkypeForBusinessOrganizerActivityCountsWithPeriod) Serialize(writer 
 }
 // SetAppSharing sets the appSharing property value. 
 func (m *GetSkypeForBusinessOrganizerActivityCountsWithPeriod) SetAppSharing(value *int64)() {
-    m.appSharing = value
+    if m != nil {
+        m.appSharing = value
+    }
 }
 // SetAudioVideo sets the audioVideo property value. 
 func (m *GetSkypeForBusinessOrganizerActivityCountsWithPeriod) SetAudioVideo(value *int64)() {
-    m.audioVideo = value
+    if m != nil {
+        m.audioVideo = value
+    }
 }
 // SetDialInOut3rdParty sets the dialInOut3rdParty property value. 
 func (m *GetSkypeForBusinessOrganizerActivityCountsWithPeriod) SetDialInOut3rdParty(value *int64)() {
-    m.dialInOut3rdParty = value
+    if m != nil {
+        m.dialInOut3rdParty = value
+    }
 }
 // SetDialInOutMicrosoft sets the dialInOutMicrosoft property value. 
 func (m *GetSkypeForBusinessOrganizerActivityCountsWithPeriod) SetDialInOutMicrosoft(value *int64)() {
-    m.dialInOutMicrosoft = value
+    if m != nil {
+        m.dialInOutMicrosoft = value
+    }
 }
 // SetIm sets the im property value. 
 func (m *GetSkypeForBusinessOrganizerActivityCountsWithPeriod) SetIm(value *int64)() {
-    m.im = value
+    if m != nil {
+        m.im = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetSkypeForBusinessOrganizerActivityCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessOrganizerActivityCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessOrganizerActivityCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetWeb sets the web property value. 
 func (m *GetSkypeForBusinessOrganizerActivityCountsWithPeriod) SetWeb(value *int64)() {
-    m.web = value
+    if m != nil {
+        m.web = value
+    }
 }

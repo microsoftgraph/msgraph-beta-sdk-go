@@ -306,45 +306,67 @@ func (m *DeviceManagementSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAndroidDeviceAdministratorEnrollmentEnabled sets the androidDeviceAdministratorEnrollmentEnabled property value. The property to determine if Android device administrator enrollment is enabled for this account.
 func (m *DeviceManagementSettings) SetAndroidDeviceAdministratorEnrollmentEnabled(value *bool)() {
-    m.androidDeviceAdministratorEnrollmentEnabled = value
+    if m != nil {
+        m.androidDeviceAdministratorEnrollmentEnabled = value
+    }
 }
 // SetDerivedCredentialProvider sets the derivedCredentialProvider property value. The Derived Credential Provider to use for this account. Possible values are: notConfigured, entrustDataCard, purebred, xTec, intercede.
 func (m *DeviceManagementSettings) SetDerivedCredentialProvider(value *DerivedCredentialProviderType)() {
-    m.derivedCredentialProvider = value
+    if m != nil {
+        m.derivedCredentialProvider = value
+    }
 }
 // SetDerivedCredentialUrl sets the derivedCredentialUrl property value. The Derived Credential Provider self-service URI.
 func (m *DeviceManagementSettings) SetDerivedCredentialUrl(value *string)() {
-    m.derivedCredentialUrl = value
+    if m != nil {
+        m.derivedCredentialUrl = value
+    }
 }
 // SetDeviceComplianceCheckinThresholdDays sets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
 func (m *DeviceManagementSettings) SetDeviceComplianceCheckinThresholdDays(value *int32)() {
-    m.deviceComplianceCheckinThresholdDays = value
+    if m != nil {
+        m.deviceComplianceCheckinThresholdDays = value
+    }
 }
 // SetDeviceInactivityBeforeRetirementInDay sets the deviceInactivityBeforeRetirementInDay property value. When the device does not check in for specified number of days, the company data might be removed and the device will not be under management. Valid values 30 to 270
 func (m *DeviceManagementSettings) SetDeviceInactivityBeforeRetirementInDay(value *int32)() {
-    m.deviceInactivityBeforeRetirementInDay = value
+    if m != nil {
+        m.deviceInactivityBeforeRetirementInDay = value
+    }
 }
 // SetEnableLogCollection sets the enableLogCollection property value. Determines whether the log collection feature should be available for use.
 func (m *DeviceManagementSettings) SetEnableLogCollection(value *bool)() {
-    m.enableLogCollection = value
+    if m != nil {
+        m.enableLogCollection = value
+    }
 }
 // SetEnhancedJailBreak sets the enhancedJailBreak property value. Is feature enabled or not for enhanced jailbreak detection.
 func (m *DeviceManagementSettings) SetEnhancedJailBreak(value *bool)() {
-    m.enhancedJailBreak = value
+    if m != nil {
+        m.enhancedJailBreak = value
+    }
 }
 // SetIgnoreDevicesForUnsupportedSettingsEnabled sets the ignoreDevicesForUnsupportedSettingsEnabled property value. The property to determine whether to ignore unsupported compliance settings on certian models of devices.
 func (m *DeviceManagementSettings) SetIgnoreDevicesForUnsupportedSettingsEnabled(value *bool)() {
-    m.ignoreDevicesForUnsupportedSettingsEnabled = value
+    if m != nil {
+        m.ignoreDevicesForUnsupportedSettingsEnabled = value
+    }
 }
 // SetIsScheduledActionEnabled sets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
 func (m *DeviceManagementSettings) SetIsScheduledActionEnabled(value *bool)() {
-    m.isScheduledActionEnabled = value
+    if m != nil {
+        m.isScheduledActionEnabled = value
+    }
 }
 // SetSecureByDefault sets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
 func (m *DeviceManagementSettings) SetSecureByDefault(value *bool)() {
-    m.secureByDefault = value
+    if m != nil {
+        m.secureByDefault = value
+    }
 }
