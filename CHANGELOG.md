@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Fixes an issue where select query parameters would not work https://github.com/microsoftgraph/issues/31.
+- Fixes an issue where select query parameters would not work https://github.com/microsoftgraph/msgraph-sdk-go/issues/31.
 
 ## [0.4.0] - 2021-11-30
 
