@@ -68,5 +68,7 @@ func (m *Catalog) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetEntries sets the entries property value. Lists the content that you can approve for deployment. Read-only.
 func (m *Catalog) SetEntries(value []CatalogEntry)() {
-    m.entries = value
+    if m != nil {
+        m.entries = value
+    }
 }

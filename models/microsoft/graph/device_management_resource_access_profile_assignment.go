@@ -113,13 +113,19 @@ func (m *DeviceManagementResourceAccessProfileAssignment) Serialize(writer i04eb
 }
 // SetIntent sets the intent property value. The assignment intent for the resource access profile. Possible values are: apply, remove.
 func (m *DeviceManagementResourceAccessProfileAssignment) SetIntent(value *DeviceManagementResourceAccessProfileIntent)() {
-    m.intent = value
+    if m != nil {
+        m.intent = value
+    }
 }
 // SetSourceId sets the sourceId property value. The identifier of the source of the assignment.
 func (m *DeviceManagementResourceAccessProfileAssignment) SetSourceId(value *string)() {
-    m.sourceId = value
+    if m != nil {
+        m.sourceId = value
+    }
 }
 // SetTarget sets the target property value. Base type for assignment targets.
 func (m *DeviceManagementResourceAccessProfileAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

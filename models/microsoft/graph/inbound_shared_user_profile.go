@@ -137,17 +137,25 @@ func (m *InboundSharedUserProfile) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetDisplayName sets the displayName property value. 
 func (m *InboundSharedUserProfile) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetHomeTenantId sets the homeTenantId property value. 
 func (m *InboundSharedUserProfile) SetHomeTenantId(value *string)() {
-    m.homeTenantId = value
+    if m != nil {
+        m.homeTenantId = value
+    }
 }
 // SetUserId sets the userId property value. 
 func (m *InboundSharedUserProfile) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *InboundSharedUserProfile) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

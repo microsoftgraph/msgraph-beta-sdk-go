@@ -111,13 +111,19 @@ func (m *DeviceHealthScriptAssignment) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetRunRemediationScript sets the runRemediationScript property value. Determine whether we want to run detection script only or run both detection script and remediation script
 func (m *DeviceHealthScriptAssignment) SetRunRemediationScript(value *bool)() {
-    m.runRemediationScript = value
+    if m != nil {
+        m.runRemediationScript = value
+    }
 }
 // SetRunSchedule sets the runSchedule property value. Script run schedule for the target group
 func (m *DeviceHealthScriptAssignment) SetRunSchedule(value *DeviceHealthScriptRunSchedule)() {
-    m.runSchedule = value
+    if m != nil {
+        m.runSchedule = value
+    }
 }
 // SetTarget sets the target property value. The Azure Active Directory group we are targeting the script to
 func (m *DeviceHealthScriptAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

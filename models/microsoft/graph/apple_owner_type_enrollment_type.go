@@ -100,13 +100,19 @@ func (m *AppleOwnerTypeEnrollmentType) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppleOwnerTypeEnrollmentType) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnrollmentType sets the enrollmentType property value. The enrollment type. Possible values are: unknown, device, user.
 func (m *AppleOwnerTypeEnrollmentType) SetEnrollmentType(value *AppleUserInitiatedEnrollmentType)() {
-    m.enrollmentType = value
+    if m != nil {
+        m.enrollmentType = value
+    }
 }
 // SetOwnerType sets the ownerType property value. The owner type. Possible values are: unknown, company, personal.
 func (m *AppleOwnerTypeEnrollmentType) SetOwnerType(value *ManagedDeviceOwnerType)() {
-    m.ownerType = value
+    if m != nil {
+        m.ownerType = value
+    }
 }

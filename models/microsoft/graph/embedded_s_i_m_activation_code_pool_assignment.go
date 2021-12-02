@@ -59,5 +59,7 @@ func (m *EmbeddedSIMActivationCodePoolAssignment) Serialize(writer i04eb5309aeaa
 }
 // SetTarget sets the target property value. Base type for assignment targets.
 func (m *EmbeddedSIMActivationCodePoolAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

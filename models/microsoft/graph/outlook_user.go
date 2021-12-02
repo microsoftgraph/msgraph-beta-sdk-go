@@ -173,17 +173,25 @@ func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetMasterCategories sets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) SetMasterCategories(value []OutlookCategory)() {
-    m.masterCategories = value
+    if m != nil {
+        m.masterCategories = value
+    }
 }
 // SetTaskFolders sets the taskFolders property value. 
 func (m *OutlookUser) SetTaskFolders(value []OutlookTaskFolder)() {
-    m.taskFolders = value
+    if m != nil {
+        m.taskFolders = value
+    }
 }
 // SetTaskGroups sets the taskGroups property value. 
 func (m *OutlookUser) SetTaskGroups(value []OutlookTaskGroup)() {
-    m.taskGroups = value
+    if m != nil {
+        m.taskGroups = value
+    }
 }
 // SetTasks sets the tasks property value. 
 func (m *OutlookUser) SetTasks(value []OutlookTask)() {
-    m.tasks = value
+    if m != nil {
+        m.tasks = value
+    }
 }

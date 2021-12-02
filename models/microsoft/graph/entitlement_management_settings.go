@@ -85,9 +85,13 @@ func (m *EntitlementManagementSettings) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetDaysUntilExternalUserDeletedAfterBlocked sets the daysUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.
 func (m *EntitlementManagementSettings) SetDaysUntilExternalUserDeletedAfterBlocked(value *int32)() {
-    m.daysUntilExternalUserDeletedAfterBlocked = value
+    if m != nil {
+        m.daysUntilExternalUserDeletedAfterBlocked = value
+    }
 }
 // SetExternalUserLifecycleAction sets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
 func (m *EntitlementManagementSettings) SetExternalUserLifecycleAction(value *string)() {
-    m.externalUserLifecycleAction = value
+    if m != nil {
+        m.externalUserLifecycleAction = value
+    }
 }

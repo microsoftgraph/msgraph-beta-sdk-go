@@ -59,5 +59,7 @@ func (m *CloudPcSupportedRegion) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetDisplayName sets the displayName property value. The name for the supported region. Read-only.
 func (m *CloudPcSupportedRegion) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

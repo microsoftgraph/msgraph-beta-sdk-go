@@ -324,45 +324,67 @@ func (m *GetOneDriveActivityUserDetailWithPeriod) Serialize(writer i04eb5309aeaa
 }
 // SetAssignedProducts sets the assignedProducts property value. 
 func (m *GetOneDriveActivityUserDetailWithPeriod) SetAssignedProducts(value []string)() {
-    m.assignedProducts = value
+    if m != nil {
+        m.assignedProducts = value
+    }
 }
 // SetDeletedDate sets the deletedDate property value. 
 func (m *GetOneDriveActivityUserDetailWithPeriod) SetDeletedDate(value *string)() {
-    m.deletedDate = value
+    if m != nil {
+        m.deletedDate = value
+    }
 }
 // SetIsDeleted sets the isDeleted property value. 
 func (m *GetOneDriveActivityUserDetailWithPeriod) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    if m != nil {
+        m.isDeleted = value
+    }
 }
 // SetLastActivityDate sets the lastActivityDate property value. 
 func (m *GetOneDriveActivityUserDetailWithPeriod) SetLastActivityDate(value *string)() {
-    m.lastActivityDate = value
+    if m != nil {
+        m.lastActivityDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetOneDriveActivityUserDetailWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetOneDriveActivityUserDetailWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetSharedExternallyFileCount sets the sharedExternallyFileCount property value. 
 func (m *GetOneDriveActivityUserDetailWithPeriod) SetSharedExternallyFileCount(value *int64)() {
-    m.sharedExternallyFileCount = value
+    if m != nil {
+        m.sharedExternallyFileCount = value
+    }
 }
 // SetSharedInternallyFileCount sets the sharedInternallyFileCount property value. 
 func (m *GetOneDriveActivityUserDetailWithPeriod) SetSharedInternallyFileCount(value *int64)() {
-    m.sharedInternallyFileCount = value
+    if m != nil {
+        m.sharedInternallyFileCount = value
+    }
 }
 // SetSyncedFileCount sets the syncedFileCount property value. 
 func (m *GetOneDriveActivityUserDetailWithPeriod) SetSyncedFileCount(value *int64)() {
-    m.syncedFileCount = value
+    if m != nil {
+        m.syncedFileCount = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *GetOneDriveActivityUserDetailWithPeriod) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetViewedOrEditedFileCount sets the viewedOrEditedFileCount property value. 
 func (m *GetOneDriveActivityUserDetailWithPeriod) SetViewedOrEditedFileCount(value *int64)() {
-    m.viewedOrEditedFileCount = value
+    if m != nil {
+        m.viewedOrEditedFileCount = value
+    }
 }

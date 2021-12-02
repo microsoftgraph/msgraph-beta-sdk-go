@@ -201,25 +201,37 @@ func (m *GroupPolicyDefinitionValue) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetConfigurationType sets the configurationType property value. Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.
 func (m *GroupPolicyDefinitionValue) SetConfigurationType(value *GroupPolicyConfigurationType)() {
-    m.configurationType = value
+    if m != nil {
+        m.configurationType = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the object was created.
 func (m *GroupPolicyDefinitionValue) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDefinition sets the definition property value. The associated group policy definition with the value.
 func (m *GroupPolicyDefinitionValue) SetDefinition(value *GroupPolicyDefinition)() {
-    m.definition = value
+    if m != nil {
+        m.definition = value
+    }
 }
 // SetEnabled sets the enabled property value. Enables or disables the associated group policy definition.
 func (m *GroupPolicyDefinitionValue) SetEnabled(value *bool)() {
-    m.enabled = value
+    if m != nil {
+        m.enabled = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyDefinitionValue) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPresentationValues sets the presentationValues property value. The associated group policy presentation values with the definition value.
 func (m *GroupPolicyDefinitionValue) SetPresentationValues(value []GroupPolicyPresentationValue)() {
-    m.presentationValues = value
+    if m != nil {
+        m.presentationValues = value
+    }
 }

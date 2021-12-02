@@ -489,69 +489,103 @@ func (m *GroupPolicyDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetCategory sets the category property value. The group policy category associated with the definition.
 func (m *GroupPolicyDefinition) SetCategory(value *GroupPolicyCategory)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetCategoryPath sets the categoryPath property value. The localized full category path for the policy.
 func (m *GroupPolicyDefinition) SetCategoryPath(value *string)() {
-    m.categoryPath = value
+    if m != nil {
+        m.categoryPath = value
+    }
 }
 // SetClassType sets the classType property value. Identifies the type of groups the policy can be applied to. Possible values are: user, machine.
 func (m *GroupPolicyDefinition) SetClassType(value *GroupPolicyDefinitionClassType)() {
-    m.classType = value
+    if m != nil {
+        m.classType = value
+    }
 }
 // SetDefinitionFile sets the definitionFile property value. The group policy file associated with the definition.
 func (m *GroupPolicyDefinition) SetDefinitionFile(value *GroupPolicyDefinitionFile)() {
-    m.definitionFile = value
+    if m != nil {
+        m.definitionFile = value
+    }
 }
 // SetDisplayName sets the displayName property value. The localized policy name.
 func (m *GroupPolicyDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExplainText sets the explainText property value. The localized explanation or help text associated with the policy. The default value is empty.
 func (m *GroupPolicyDefinition) SetExplainText(value *string)() {
-    m.explainText = value
+    if m != nil {
+        m.explainText = value
+    }
 }
 // SetGroupPolicyCategoryId sets the groupPolicyCategoryId property value. The category id of the parent category
 func (m *GroupPolicyDefinition) SetGroupPolicyCategoryId(value *string)() {
-    m.groupPolicyCategoryId = value
+    if m != nil {
+        m.groupPolicyCategoryId = value
+    }
 }
 // SetHasRelatedDefinitions sets the hasRelatedDefinitions property value. Signifies whether or not there are related definitions to this definition
 func (m *GroupPolicyDefinition) SetHasRelatedDefinitions(value *bool)() {
-    m.hasRelatedDefinitions = value
+    if m != nil {
+        m.hasRelatedDefinitions = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyDefinition) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetMinDeviceCspVersion sets the minDeviceCspVersion property value. Minimum required CSP version for device configuration in this definition
 func (m *GroupPolicyDefinition) SetMinDeviceCspVersion(value *string)() {
-    m.minDeviceCspVersion = value
+    if m != nil {
+        m.minDeviceCspVersion = value
+    }
 }
 // SetMinUserCspVersion sets the minUserCspVersion property value. Minimum required CSP version for user configuration in this definition
 func (m *GroupPolicyDefinition) SetMinUserCspVersion(value *string)() {
-    m.minUserCspVersion = value
+    if m != nil {
+        m.minUserCspVersion = value
+    }
 }
 // SetNextVersionDefinition sets the nextVersionDefinition property value. Definition of the next version of this definition
 func (m *GroupPolicyDefinition) SetNextVersionDefinition(value *GroupPolicyDefinition)() {
-    m.nextVersionDefinition = value
+    if m != nil {
+        m.nextVersionDefinition = value
+    }
 }
 // SetPolicyType sets the policyType property value. Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
 func (m *GroupPolicyDefinition) SetPolicyType(value *GroupPolicyType)() {
-    m.policyType = value
+    if m != nil {
+        m.policyType = value
+    }
 }
 // SetPresentations sets the presentations property value. The group policy presentations associated with the definition.
 func (m *GroupPolicyDefinition) SetPresentations(value []GroupPolicyPresentation)() {
-    m.presentations = value
+    if m != nil {
+        m.presentations = value
+    }
 }
 // SetPreviousVersionDefinition sets the previousVersionDefinition property value. Definition of the previous version of this definition
 func (m *GroupPolicyDefinition) SetPreviousVersionDefinition(value *GroupPolicyDefinition)() {
-    m.previousVersionDefinition = value
+    if m != nil {
+        m.previousVersionDefinition = value
+    }
 }
 // SetSupportedOn sets the supportedOn property value. Localized string used to specify what operating system or application version is affected by the policy.
 func (m *GroupPolicyDefinition) SetSupportedOn(value *string)() {
-    m.supportedOn = value
+    if m != nil {
+        m.supportedOn = value
+    }
 }
 // SetVersion sets the version property value. Setting definition version
 func (m *GroupPolicyDefinition) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

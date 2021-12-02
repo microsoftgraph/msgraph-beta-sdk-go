@@ -85,9 +85,13 @@ func (m *AuditUserIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetHomeTenantId sets the homeTenantId property value. 
 func (m *AuditUserIdentity) SetHomeTenantId(value *string)() {
-    m.homeTenantId = value
+    if m != nil {
+        m.homeTenantId = value
+    }
 }
 // SetHomeTenantName sets the homeTenantName property value. 
 func (m *AuditUserIdentity) SetHomeTenantName(value *string)() {
-    m.homeTenantName = value
+    if m != nil {
+        m.homeTenantName = value
+    }
 }

@@ -479,53 +479,79 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. 
 func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Approval)() {
-    m.accessPackageAssignmentApprovals = value
+    if m != nil {
+        m.accessPackageAssignmentApprovals = value
+    }
 }
 // SetAccessPackageAssignmentPolicies sets the accessPackageAssignmentPolicies property value. 
 func (m *EntitlementManagement) SetAccessPackageAssignmentPolicies(value []AccessPackageAssignmentPolicy)() {
-    m.accessPackageAssignmentPolicies = value
+    if m != nil {
+        m.accessPackageAssignmentPolicies = value
+    }
 }
 // SetAccessPackageAssignmentRequests sets the accessPackageAssignmentRequests property value. 
 func (m *EntitlementManagement) SetAccessPackageAssignmentRequests(value []AccessPackageAssignmentRequest)() {
-    m.accessPackageAssignmentRequests = value
+    if m != nil {
+        m.accessPackageAssignmentRequests = value
+    }
 }
 // SetAccessPackageAssignmentResourceRoles sets the accessPackageAssignmentResourceRoles property value. 
 func (m *EntitlementManagement) SetAccessPackageAssignmentResourceRoles(value []AccessPackageAssignmentResourceRole)() {
-    m.accessPackageAssignmentResourceRoles = value
+    if m != nil {
+        m.accessPackageAssignmentResourceRoles = value
+    }
 }
 // SetAccessPackageAssignments sets the accessPackageAssignments property value. 
 func (m *EntitlementManagement) SetAccessPackageAssignments(value []AccessPackageAssignment)() {
-    m.accessPackageAssignments = value
+    if m != nil {
+        m.accessPackageAssignments = value
+    }
 }
 // SetAccessPackageCatalogs sets the accessPackageCatalogs property value. 
 func (m *EntitlementManagement) SetAccessPackageCatalogs(value []AccessPackageCatalog)() {
-    m.accessPackageCatalogs = value
+    if m != nil {
+        m.accessPackageCatalogs = value
+    }
 }
 // SetAccessPackageResourceEnvironments sets the accessPackageResourceEnvironments property value. 
 func (m *EntitlementManagement) SetAccessPackageResourceEnvironments(value []AccessPackageResourceEnvironment)() {
-    m.accessPackageResourceEnvironments = value
+    if m != nil {
+        m.accessPackageResourceEnvironments = value
+    }
 }
 // SetAccessPackageResourceRequests sets the accessPackageResourceRequests property value. 
 func (m *EntitlementManagement) SetAccessPackageResourceRequests(value []AccessPackageResourceRequest)() {
-    m.accessPackageResourceRequests = value
+    if m != nil {
+        m.accessPackageResourceRequests = value
+    }
 }
 // SetAccessPackageResourceRoleScopes sets the accessPackageResourceRoleScopes property value. 
 func (m *EntitlementManagement) SetAccessPackageResourceRoleScopes(value []AccessPackageResourceRoleScope)() {
-    m.accessPackageResourceRoleScopes = value
+    if m != nil {
+        m.accessPackageResourceRoleScopes = value
+    }
 }
 // SetAccessPackageResources sets the accessPackageResources property value. 
 func (m *EntitlementManagement) SetAccessPackageResources(value []AccessPackageResource)() {
-    m.accessPackageResources = value
+    if m != nil {
+        m.accessPackageResources = value
+    }
 }
 // SetAccessPackages sets the accessPackages property value. 
 func (m *EntitlementManagement) SetAccessPackages(value []AccessPackage)() {
-    m.accessPackages = value
+    if m != nil {
+        m.accessPackages = value
+    }
 }
 // SetConnectedOrganizations sets the connectedOrganizations property value. 
 func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrganization)() {
-    m.connectedOrganizations = value
+    if m != nil {
+        m.connectedOrganizations = value
+    }
 }
 // SetSettings sets the settings property value. 
 func (m *EntitlementManagement) SetSettings(value *EntitlementManagementSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }

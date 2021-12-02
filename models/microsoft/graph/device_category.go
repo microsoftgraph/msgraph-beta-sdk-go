@@ -115,13 +115,19 @@ func (m *DeviceCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetDescription sets the description property value. Optional description for the device category.
 func (m *DeviceCategory) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name for the device category.
 func (m *DeviceCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. Optional role scope tags for the device category.
 func (m *DeviceCategory) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    if m != nil {
+        m.roleScopeTagIds = value
+    }
 }

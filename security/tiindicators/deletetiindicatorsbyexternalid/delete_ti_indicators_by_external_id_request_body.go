@@ -74,9 +74,13 @@ func (m *DeleteTiIndicatorsByExternalIdRequestBody) Serialize(writer i04eb5309ae
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeleteTiIndicatorsByExternalIdRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetValue sets the value property value. 
 func (m *DeleteTiIndicatorsByExternalIdRequestBody) SetValue(value []string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

@@ -242,33 +242,49 @@ func (m *ExactMatchSessionBase) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetDataStoreId sets the dataStoreId property value. 
 func (m *ExactMatchSessionBase) SetDataStoreId(value *string)() {
-    m.dataStoreId = value
+    if m != nil {
+        m.dataStoreId = value
+    }
 }
 // SetProcessingCompletionDateTime sets the processingCompletionDateTime property value. 
 func (m *ExactMatchSessionBase) SetProcessingCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.processingCompletionDateTime = value
+    if m != nil {
+        m.processingCompletionDateTime = value
+    }
 }
 // SetRemainingBlockCount sets the remainingBlockCount property value. 
 func (m *ExactMatchSessionBase) SetRemainingBlockCount(value *int32)() {
-    m.remainingBlockCount = value
+    if m != nil {
+        m.remainingBlockCount = value
+    }
 }
 // SetRemainingJobCount sets the remainingJobCount property value. 
 func (m *ExactMatchSessionBase) SetRemainingJobCount(value *int32)() {
-    m.remainingJobCount = value
+    if m != nil {
+        m.remainingJobCount = value
+    }
 }
 // SetState sets the state property value. 
 func (m *ExactMatchSessionBase) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetTotalBlockCount sets the totalBlockCount property value. 
 func (m *ExactMatchSessionBase) SetTotalBlockCount(value *int32)() {
-    m.totalBlockCount = value
+    if m != nil {
+        m.totalBlockCount = value
+    }
 }
 // SetTotalJobCount sets the totalJobCount property value. 
 func (m *ExactMatchSessionBase) SetTotalJobCount(value *int32)() {
-    m.totalJobCount = value
+    if m != nil {
+        m.totalJobCount = value
+    }
 }
 // SetUploadCompletionDateTime sets the uploadCompletionDateTime property value. 
 func (m *ExactMatchSessionBase) SetUploadCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.uploadCompletionDateTime = value
+    if m != nil {
+        m.uploadCompletionDateTime = value
+    }
 }

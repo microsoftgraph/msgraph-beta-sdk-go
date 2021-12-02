@@ -88,9 +88,13 @@ func (m *Acronym) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetStandsFor sets the standsFor property value. 
 func (m *Acronym) SetStandsFor(value *string)() {
-    m.standsFor = value
+    if m != nil {
+        m.standsFor = value
+    }
 }
 // SetState sets the state property value. 
 func (m *Acronym) SetState(value *id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

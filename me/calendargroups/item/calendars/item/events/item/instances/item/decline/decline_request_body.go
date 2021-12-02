@@ -123,17 +123,25 @@ func (m *DeclineRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeclineRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetComment sets the Comment property value. 
 func (m *DeclineRequestBody) SetComment(value *string)() {
-    m.comment = value
+    if m != nil {
+        m.comment = value
+    }
 }
 // SetProposedNewTime sets the ProposedNewTime property value. 
 func (m *DeclineRequestBody) SetProposedNewTime(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TimeSlot)() {
-    m.proposedNewTime = value
+    if m != nil {
+        m.proposedNewTime = value
+    }
 }
 // SetSendResponse sets the SendResponse property value. 
 func (m *DeclineRequestBody) SetSendResponse(value *bool)() {
-    m.sendResponse = value
+    if m != nil {
+        m.sendResponse = value
+    }
 }

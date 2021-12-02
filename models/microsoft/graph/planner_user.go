@@ -295,33 +295,49 @@ func (m *PlannerUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAll sets the all property value. 
 func (m *PlannerUser) SetAll(value []PlannerDelta)() {
-    m.all = value
+    if m != nil {
+        m.all = value
+    }
 }
 // SetFavoritePlanReferences sets the favoritePlanReferences property value. A collection containing the references to the plans that the user has marked as favorites.
 func (m *PlannerUser) SetFavoritePlanReferences(value *PlannerFavoritePlanReferenceCollection)() {
-    m.favoritePlanReferences = value
+    if m != nil {
+        m.favoritePlanReferences = value
+    }
 }
 // SetFavoritePlans sets the favoritePlans property value. Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 func (m *PlannerUser) SetFavoritePlans(value []PlannerPlan)() {
-    m.favoritePlans = value
+    if m != nil {
+        m.favoritePlans = value
+    }
 }
 // SetPlans sets the plans property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) SetPlans(value []PlannerPlan)() {
-    m.plans = value
+    if m != nil {
+        m.plans = value
+    }
 }
 // SetRecentPlanReferences sets the recentPlanReferences property value. A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
 func (m *PlannerUser) SetRecentPlanReferences(value *PlannerRecentPlanReferenceCollection)() {
-    m.recentPlanReferences = value
+    if m != nil {
+        m.recentPlanReferences = value
+    }
 }
 // SetRecentPlans sets the recentPlans property value. Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
 func (m *PlannerUser) SetRecentPlans(value []PlannerPlan)() {
-    m.recentPlans = value
+    if m != nil {
+        m.recentPlans = value
+    }
 }
 // SetRosterPlans sets the rosterPlans property value. Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 func (m *PlannerUser) SetRosterPlans(value []PlannerPlan)() {
-    m.rosterPlans = value
+    if m != nil {
+        m.rosterPlans = value
+    }
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerUser) SetTasks(value []PlannerTask)() {
-    m.tasks = value
+    if m != nil {
+        m.tasks = value
+    }
 }

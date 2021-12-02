@@ -100,13 +100,19 @@ func (m *AssignmentFilterTypeAndEvaluationResult) Serialize(writer i04eb5309aeaa
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterTypeAndEvaluationResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignmentFilterType sets the assignmentFilterType property value. Represents the filter type. Possible values are: none, include, exclude.
 func (m *AssignmentFilterTypeAndEvaluationResult) SetAssignmentFilterType(value *DeviceAndAppManagementAssignmentFilterType)() {
-    m.assignmentFilterType = value
+    if m != nil {
+        m.assignmentFilterType = value
+    }
 }
 // SetEvaluationResult sets the evaluationResult property value. Represents the evalaution result of the filter. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
 func (m *AssignmentFilterTypeAndEvaluationResult) SetEvaluationResult(value *AssignmentFilterEvaluationResult)() {
-    m.evaluationResult = value
+    if m != nil {
+        m.evaluationResult = value
+    }
 }

@@ -124,17 +124,25 @@ func (m *BookingReminder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingReminder) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMessage sets the message property value. The message in the reminder.
 func (m *BookingReminder) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }
 // SetOffset sets the offset property value. The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
 func (m *BookingReminder) SetOffset(value *string)() {
-    m.offset = value
+    if m != nil {
+        m.offset = value
+    }
 }
 // SetRecipients sets the recipients property value. The persons who shouold receive the reminder. Possible values are: allAttendees, staff, customer.
 func (m *BookingReminder) SetRecipients(value *BookingReminderRecipients)() {
-    m.recipients = value
+    if m != nil {
+        m.recipients = value
+    }
 }

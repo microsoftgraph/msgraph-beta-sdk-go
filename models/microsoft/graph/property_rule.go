@@ -157,21 +157,31 @@ func (m *PropertyRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PropertyRule) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOperation sets the operation property value. Specifies the operations to be performed during evaluation of a single propertyRule, where property and a string from the values collection are the respective operands. Possible values are: null, equals, notEquals, contains, notContains, lessThan, greaterThan, startsWith, unknownFutureValue. Required.
 func (m *PropertyRule) SetOperation(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.RuleOperation)() {
-    m.operation = value
+    if m != nil {
+        m.operation = value
+    }
 }
 // SetProperty sets the property property value. The property from the externalItem schema. Required.
 func (m *PropertyRule) SetProperty(value *string)() {
-    m.property = value
+    if m != nil {
+        m.property = value
+    }
 }
 // SetValues sets the values property value. A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
 func (m *PropertyRule) SetValues(value []string)() {
-    m.values = value
+    if m != nil {
+        m.values = value
+    }
 }
 // SetValuesJoinedBy sets the valuesJoinedBy property value. The join operator for evaluating multiple propertyRules. For example, if and is specified, then all propertyRules must be true for the propertyRule to be true. Possible values are: or, and. Required.
 func (m *PropertyRule) SetValuesJoinedBy(value *BinaryOperator)() {
-    m.valuesJoinedBy = value
+    if m != nil {
+        m.valuesJoinedBy = value
+    }
 }

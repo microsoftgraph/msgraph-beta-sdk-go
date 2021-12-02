@@ -120,13 +120,19 @@ func (m *ManagementTemplateCollection) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetDescription sets the description property value. 
 func (m *ManagementTemplateCollection) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *ManagementTemplateCollection) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetManagementTemplates sets the managementTemplates property value. 
 func (m *ManagementTemplateCollection) SetManagementTemplates(value []ManagementTemplate)() {
-    m.managementTemplates = value
+    if m != nil {
+        m.managementTemplates = value
+    }
 }

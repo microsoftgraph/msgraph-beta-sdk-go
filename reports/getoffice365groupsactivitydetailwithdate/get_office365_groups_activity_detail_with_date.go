@@ -528,77 +528,115 @@ func (m *GetOffice365GroupsActivityDetailWithDate) Serialize(writer i04eb5309aea
 }
 // SetExchangeMailboxStorageUsedInBytes sets the exchangeMailboxStorageUsedInBytes property value. The storage used of the group mailbox.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetExchangeMailboxStorageUsedInBytes(value *int64)() {
-    m.exchangeMailboxStorageUsedInBytes = value
+    if m != nil {
+        m.exchangeMailboxStorageUsedInBytes = value
+    }
 }
 // SetExchangeMailboxTotalItemCount sets the exchangeMailboxTotalItemCount property value. The number of items in the group mailbox.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetExchangeMailboxTotalItemCount(value *int64)() {
-    m.exchangeMailboxTotalItemCount = value
+    if m != nil {
+        m.exchangeMailboxTotalItemCount = value
+    }
 }
 // SetExchangeReceivedEmailCount sets the exchangeReceivedEmailCount property value. The number of email that the group mailbox received.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetExchangeReceivedEmailCount(value *int64)() {
-    m.exchangeReceivedEmailCount = value
+    if m != nil {
+        m.exchangeReceivedEmailCount = value
+    }
 }
 // SetExternalMemberCount sets the externalMemberCount property value. The group external member count.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetExternalMemberCount(value *int64)() {
-    m.externalMemberCount = value
+    if m != nil {
+        m.externalMemberCount = value
+    }
 }
 // SetGroupDisplayName sets the groupDisplayName property value. The display name of the group.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetGroupDisplayName(value *string)() {
-    m.groupDisplayName = value
+    if m != nil {
+        m.groupDisplayName = value
+    }
 }
 // SetGroupId sets the groupId property value. The group id.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetGroupId(value *string)() {
-    m.groupId = value
+    if m != nil {
+        m.groupId = value
+    }
 }
 // SetGroupType sets the groupType property value. The group type. Possible values are: Public or Private.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetGroupType(value *string)() {
-    m.groupType = value
+    if m != nil {
+        m.groupType = value
+    }
 }
 // SetIsDeleted sets the isDeleted property value. Whether this user has been deleted or soft deleted.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    if m != nil {
+        m.isDeleted = value
+    }
 }
 // SetLastActivityDate sets the lastActivityDate property value. The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetLastActivityDate(value *string)() {
-    m.lastActivityDate = value
+    if m != nil {
+        m.lastActivityDate = value
+    }
 }
 // SetMemberCount sets the memberCount property value. The group member count.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetMemberCount(value *int64)() {
-    m.memberCount = value
+    if m != nil {
+        m.memberCount = value
+    }
 }
 // SetOwnerPrincipalName sets the ownerPrincipalName property value. The group owner principal name.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetOwnerPrincipalName(value *string)() {
-    m.ownerPrincipalName = value
+    if m != nil {
+        m.ownerPrincipalName = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. The number of days the report covers.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetSharePointActiveFileCount sets the sharePointActiveFileCount property value. The number of active files in SharePoint Group site.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetSharePointActiveFileCount(value *int64)() {
-    m.sharePointActiveFileCount = value
+    if m != nil {
+        m.sharePointActiveFileCount = value
+    }
 }
 // SetSharePointSiteStorageUsedInBytes sets the sharePointSiteStorageUsedInBytes property value. The storage used by SharePoint Group site.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetSharePointSiteStorageUsedInBytes(value *int64)() {
-    m.sharePointSiteStorageUsedInBytes = value
+    if m != nil {
+        m.sharePointSiteStorageUsedInBytes = value
+    }
 }
 // SetSharePointTotalFileCount sets the sharePointTotalFileCount property value. The total number of files in SharePoint Group site.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetSharePointTotalFileCount(value *int64)() {
-    m.sharePointTotalFileCount = value
+    if m != nil {
+        m.sharePointTotalFileCount = value
+    }
 }
 // SetYammerLikedMessageCount sets the yammerLikedMessageCount property value. The number of messages liked in Yammer groups.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetYammerLikedMessageCount(value *int64)() {
-    m.yammerLikedMessageCount = value
+    if m != nil {
+        m.yammerLikedMessageCount = value
+    }
 }
 // SetYammerPostedMessageCount sets the yammerPostedMessageCount property value. The number of messages posted to Yammer groups.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetYammerPostedMessageCount(value *int64)() {
-    m.yammerPostedMessageCount = value
+    if m != nil {
+        m.yammerPostedMessageCount = value
+    }
 }
 // SetYammerReadMessageCount sets the yammerReadMessageCount property value. The number of messages read in Yammer groups.
 func (m *GetOffice365GroupsActivityDetailWithDate) SetYammerReadMessageCount(value *int64)() {
-    m.yammerReadMessageCount = value
+    if m != nil {
+        m.yammerReadMessageCount = value
+    }
 }

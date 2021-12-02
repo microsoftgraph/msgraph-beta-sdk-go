@@ -376,53 +376,79 @@ func (m *TeamsAppDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAllowedInstallationScopes sets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
 func (m *TeamsAppDefinition) SetAllowedInstallationScopes(value *TeamsAppInstallationScopes)() {
-    m.allowedInstallationScopes = value
+    if m != nil {
+        m.allowedInstallationScopes = value
+    }
 }
 // SetAzureADAppId sets the azureADAppId property value. The WebApplicationInfo.Id from the Teams app manifest.
 func (m *TeamsAppDefinition) SetAzureADAppId(value *string)() {
-    m.azureADAppId = value
+    if m != nil {
+        m.azureADAppId = value
+    }
 }
 // SetBot sets the bot property value. The details of the bot specified in the Teams app manifest.
 func (m *TeamsAppDefinition) SetBot(value *TeamworkBot)() {
-    m.bot = value
+    if m != nil {
+        m.bot = value
+    }
 }
 // SetColorIcon sets the colorIcon property value. The color version of the Teams app's icon.
 func (m *TeamsAppDefinition) SetColorIcon(value *TeamsAppIcon)() {
-    m.colorIcon = value
+    if m != nil {
+        m.colorIcon = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. 
 func (m *TeamsAppDefinition) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetDescription sets the description property value. Verbose description of the application.
 func (m *TeamsAppDefinition) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the app provided by the app developer.
 func (m *TeamsAppDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *TeamsAppDefinition) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetOutlineIcon sets the outlineIcon property value. The outline version of the Teams app's icon.
 func (m *TeamsAppDefinition) SetOutlineIcon(value *TeamsAppIcon)() {
-    m.outlineIcon = value
+    if m != nil {
+        m.outlineIcon = value
+    }
 }
 // SetPublishingState sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
 func (m *TeamsAppDefinition) SetPublishingState(value *TeamsAppPublishingState)() {
-    m.publishingState = value
+    if m != nil {
+        m.publishingState = value
+    }
 }
 // SetShortdescription sets the shortdescription property value. 
 func (m *TeamsAppDefinition) SetShortdescription(value *string)() {
-    m.shortdescription = value
+    if m != nil {
+        m.shortdescription = value
+    }
 }
 // SetTeamsAppId sets the teamsAppId property value. The ID from the Teams app manifest.
 func (m *TeamsAppDefinition) SetTeamsAppId(value *string)() {
-    m.teamsAppId = value
+    if m != nil {
+        m.teamsAppId = value
+    }
 }
 // SetVersion sets the version property value. The version number of the application.
 func (m *TeamsAppDefinition) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

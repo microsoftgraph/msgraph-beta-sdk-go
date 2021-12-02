@@ -59,5 +59,7 @@ func (m *BookingPerson) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetEmailAddress sets the emailAddress property value. The email address of the person.
 func (m *BookingPerson) SetEmailAddress(value *string)() {
-    m.emailAddress = value
+    if m != nil {
+        m.emailAddress = value
+    }
 }

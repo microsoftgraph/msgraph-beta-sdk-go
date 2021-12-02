@@ -112,13 +112,19 @@ func (m *WindowsUpdateCatalogItem) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetDisplayName sets the displayName property value. The display name for the catalog item.
 func (m *WindowsUpdateCatalogItem) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEndOfSupportDate sets the endOfSupportDate property value. The last supported date for a catalog item
 func (m *WindowsUpdateCatalogItem) SetEndOfSupportDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endOfSupportDate = value
+    if m != nil {
+        m.endOfSupportDate = value
+    }
 }
 // SetReleaseDateTime sets the releaseDateTime property value. The date the catalog item was released
 func (m *WindowsUpdateCatalogItem) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.releaseDateTime = value
+    if m != nil {
+        m.releaseDateTime = value
+    }
 }

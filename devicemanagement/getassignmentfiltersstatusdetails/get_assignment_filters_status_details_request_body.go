@@ -204,29 +204,43 @@ func (m *GetAssignmentFiltersStatusDetailsRequestBody) Serialize(writer i04eb530
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetAssignmentFiltersStatusDetailsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignmentFilterIds sets the assignmentFilterIds property value. 
 func (m *GetAssignmentFiltersStatusDetailsRequestBody) SetAssignmentFilterIds(value []string)() {
-    m.assignmentFilterIds = value
+    if m != nil {
+        m.assignmentFilterIds = value
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. 
 func (m *GetAssignmentFiltersStatusDetailsRequestBody) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    if m != nil {
+        m.managedDeviceId = value
+    }
 }
 // SetPayloadId sets the payloadId property value. 
 func (m *GetAssignmentFiltersStatusDetailsRequestBody) SetPayloadId(value *string)() {
-    m.payloadId = value
+    if m != nil {
+        m.payloadId = value
+    }
 }
 // SetSkip sets the skip property value. 
 func (m *GetAssignmentFiltersStatusDetailsRequestBody) SetSkip(value *int32)() {
-    m.skip = value
+    if m != nil {
+        m.skip = value
+    }
 }
 // SetTop sets the top property value. 
 func (m *GetAssignmentFiltersStatusDetailsRequestBody) SetTop(value *int32)() {
-    m.top = value
+    if m != nil {
+        m.top = value
+    }
 }
 // SetUserId sets the userId property value. 
 func (m *GetAssignmentFiltersStatusDetailsRequestBody) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

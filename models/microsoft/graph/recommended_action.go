@@ -122,17 +122,25 @@ func (m *RecommendedAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetActionWebUrl sets the actionWebUrl property value. Web URL to the recommended action.
 func (m *RecommendedAction) SetActionWebUrl(value *string)() {
-    m.actionWebUrl = value
+    if m != nil {
+        m.actionWebUrl = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecommendedAction) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPotentialScoreImpact sets the potentialScoreImpact property value. Potential improvement in security score of the tenant from the recommended action.
 func (m *RecommendedAction) SetPotentialScoreImpact(value *float64)() {
-    m.potentialScoreImpact = value
+    if m != nil {
+        m.potentialScoreImpact = value
+    }
 }
 // SetTitle sets the title property value. Title of the recommended action.
 func (m *RecommendedAction) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }

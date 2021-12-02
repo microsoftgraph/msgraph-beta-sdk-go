@@ -242,33 +242,49 @@ func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriod) Serialize(write
 }
 // SetAppSharing sets the appSharing property value. 
 func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriod) SetAppSharing(value *int64)() {
-    m.appSharing = value
+    if m != nil {
+        m.appSharing = value
+    }
 }
 // SetAudioVideo sets the audioVideo property value. 
 func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriod) SetAudioVideo(value *int64)() {
-    m.audioVideo = value
+    if m != nil {
+        m.audioVideo = value
+    }
 }
 // SetDialInOut3rdParty sets the dialInOut3rdParty property value. 
 func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriod) SetDialInOut3rdParty(value *int64)() {
-    m.dialInOut3rdParty = value
+    if m != nil {
+        m.dialInOut3rdParty = value
+    }
 }
 // SetIm sets the im property value. 
 func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriod) SetIm(value *int64)() {
-    m.im = value
+    if m != nil {
+        m.im = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetWeb sets the web property value. 
 func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriod) SetWeb(value *int64)() {
-    m.web = value
+    if m != nil {
+        m.web = value
+    }
 }

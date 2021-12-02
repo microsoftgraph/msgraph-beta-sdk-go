@@ -40,7 +40,7 @@ type DeviceManagementIntentDeviceStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceManagementIntentDeviceStateRequestBuilderPatchOptions options for Patch
 type DeviceManagementIntentDeviceStateRequestBuilderPatchOptions struct {

@@ -164,21 +164,31 @@ func (m *ProviderTenantSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAzureTenantId sets the azureTenantId property value. 
 func (m *ProviderTenantSetting) SetAzureTenantId(value *string)() {
-    m.azureTenantId = value
+    if m != nil {
+        m.azureTenantId = value
+    }
 }
 // SetEnabled sets the enabled property value. 
 func (m *ProviderTenantSetting) SetEnabled(value *bool)() {
-    m.enabled = value
+    if m != nil {
+        m.enabled = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *ProviderTenantSetting) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetProvider sets the provider property value. 
 func (m *ProviderTenantSetting) SetProvider(value *string)() {
-    m.provider = value
+    if m != nil {
+        m.provider = value
+    }
 }
 // SetVendor_escaped sets the vendor_escaped property value. 
 func (m *ProviderTenantSetting) SetVendor_escaped(value *string)() {
-    m.vendor_escaped = value
+    if m != nil {
+        m.vendor_escaped = value
+    }
 }

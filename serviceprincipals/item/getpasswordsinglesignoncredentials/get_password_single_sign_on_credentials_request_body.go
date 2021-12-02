@@ -70,9 +70,13 @@ func (m *GetPasswordSingleSignOnCredentialsRequestBody) Serialize(writer i04eb53
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetPasswordSingleSignOnCredentialsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. 
 func (m *GetPasswordSingleSignOnCredentialsRequestBody) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }

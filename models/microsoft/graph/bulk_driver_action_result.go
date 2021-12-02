@@ -134,17 +134,25 @@ func (m *BulkDriverActionResult) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkDriverActionResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFailedDriverIds sets the failedDriverIds property value. List of driver Ids where the action is failed.
 func (m *BulkDriverActionResult) SetFailedDriverIds(value []string)() {
-    m.failedDriverIds = value
+    if m != nil {
+        m.failedDriverIds = value
+    }
 }
 // SetNotFoundDriverIds sets the notFoundDriverIds property value. List of driver Ids that are not found.
 func (m *BulkDriverActionResult) SetNotFoundDriverIds(value []string)() {
-    m.notFoundDriverIds = value
+    if m != nil {
+        m.notFoundDriverIds = value
+    }
 }
 // SetSuccessfulDriverIds sets the successfulDriverIds property value. List of driver Ids where the action is successful.
 func (m *BulkDriverActionResult) SetSuccessfulDriverIds(value []string)() {
-    m.successfulDriverIds = value
+    if m != nil {
+        m.successfulDriverIds = value
+    }
 }

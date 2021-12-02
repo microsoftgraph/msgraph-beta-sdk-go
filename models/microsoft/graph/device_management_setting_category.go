@@ -120,13 +120,19 @@ func (m *DeviceManagementSettingCategory) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetDisplayName sets the displayName property value. The category name
 func (m *DeviceManagementSettingCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetHasRequiredSetting sets the hasRequiredSetting property value. The category contains top level required setting
 func (m *DeviceManagementSettingCategory) SetHasRequiredSetting(value *bool)() {
-    m.hasRequiredSetting = value
+    if m != nil {
+        m.hasRequiredSetting = value
+    }
 }
 // SetSettingDefinitions sets the settingDefinitions property value. The setting definitions this category contains
 func (m *DeviceManagementSettingCategory) SetSettingDefinitions(value []DeviceManagementSettingDefinition)() {
-    m.settingDefinitions = value
+    if m != nil {
+        m.settingDefinitions = value
+    }
 }

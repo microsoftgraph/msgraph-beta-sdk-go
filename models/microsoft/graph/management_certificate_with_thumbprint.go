@@ -96,13 +96,19 @@ func (m *ManagementCertificateWithThumbprint) Serialize(writer i04eb5309aeaafadd
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementCertificateWithThumbprint) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificate sets the certificate property value. The Base 64 encoded management certificate
 func (m *ManagementCertificateWithThumbprint) SetCertificate(value *string)() {
-    m.certificate = value
+    if m != nil {
+        m.certificate = value
+    }
 }
 // SetThumbprint sets the thumbprint property value. The thumbprint of the management certificate
 func (m *ManagementCertificateWithThumbprint) SetThumbprint(value *string)() {
-    m.thumbprint = value
+    if m != nil {
+        m.thumbprint = value
+    }
 }

@@ -40,7 +40,7 @@ type LanguageProficiencyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // LanguageProficiencyRequestBuilderPatchOptions options for Patch
 type LanguageProficiencyRequestBuilderPatchOptions struct {

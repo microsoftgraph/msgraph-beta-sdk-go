@@ -96,13 +96,19 @@ func (m *InferenceData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InferenceData) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConfidenceScore sets the confidenceScore property value. Confidence score reflecting the accuracy of the data inferred about the user.
 func (m *InferenceData) SetConfidenceScore(value *float64)() {
-    m.confidenceScore = value
+    if m != nil {
+        m.confidenceScore = value
+    }
 }
 // SetUserHasVerifiedAccuracy sets the userHasVerifiedAccuracy property value. Records if the user has confirmed this inference as being True or False.
 func (m *InferenceData) SetUserHasVerifiedAccuracy(value *bool)() {
-    m.userHasVerifiedAccuracy = value
+    if m != nil {
+        m.userHasVerifiedAccuracy = value
+    }
 }

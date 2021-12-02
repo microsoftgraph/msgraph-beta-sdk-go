@@ -148,21 +148,31 @@ func (m *RedundancyDetectionSettings) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedundancyDetectionSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether email threading and near duplicate detection are enabled.
 func (m *RedundancyDetectionSettings) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetMaxWords sets the maxWords property value. See Minimum/maximum number of words to learn more.
 func (m *RedundancyDetectionSettings) SetMaxWords(value *int32)() {
-    m.maxWords = value
+    if m != nil {
+        m.maxWords = value
+    }
 }
 // SetMinWords sets the minWords property value. See Minimum/maximum number of words to learn more.
 func (m *RedundancyDetectionSettings) SetMinWords(value *int32)() {
-    m.minWords = value
+    if m != nil {
+        m.minWords = value
+    }
 }
 // SetSimilarityThreshold sets the similarityThreshold property value. See Document and email similarity threshold to learn more.
 func (m *RedundancyDetectionSettings) SetSimilarityThreshold(value *int32)() {
-    m.similarityThreshold = value
+    if m != nil {
+        m.similarityThreshold = value
+    }
 }

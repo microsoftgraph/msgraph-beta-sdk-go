@@ -123,17 +123,25 @@ func (m *DgetRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DgetRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCriteria sets the criteria property value. 
 func (m *DgetRequestBody) SetCriteria(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.criteria = value
+    if m != nil {
+        m.criteria = value
+    }
 }
 // SetDatabase sets the database property value. 
 func (m *DgetRequestBody) SetDatabase(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.database = value
+    if m != nil {
+        m.database = value
+    }
 }
 // SetField sets the field property value. 
 func (m *DgetRequestBody) SetField(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.field = value
+    if m != nil {
+        m.field = value
+    }
 }

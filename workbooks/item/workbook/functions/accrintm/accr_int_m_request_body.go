@@ -175,25 +175,37 @@ func (m *AccrIntMRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccrIntMRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBasis sets the basis property value. 
 func (m *AccrIntMRequestBody) SetBasis(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.basis = value
+    if m != nil {
+        m.basis = value
+    }
 }
 // SetIssue sets the issue property value. 
 func (m *AccrIntMRequestBody) SetIssue(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.issue = value
+    if m != nil {
+        m.issue = value
+    }
 }
 // SetPar sets the par property value. 
 func (m *AccrIntMRequestBody) SetPar(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.par = value
+    if m != nil {
+        m.par = value
+    }
 }
 // SetRate sets the rate property value. 
 func (m *AccrIntMRequestBody) SetRate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.rate = value
+    if m != nil {
+        m.rate = value
+    }
 }
 // SetSettlement sets the settlement property value. 
 func (m *AccrIntMRequestBody) SetSettlement(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.settlement = value
+    if m != nil {
+        m.settlement = value
+    }
 }

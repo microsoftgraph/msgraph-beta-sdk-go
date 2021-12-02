@@ -59,5 +59,7 @@ func (m *DeviceManagementIntentAssignment) Serialize(writer i04eb5309aeaafadd283
 }
 // SetTarget sets the target property value. The assignment target
 func (m *DeviceManagementIntentAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

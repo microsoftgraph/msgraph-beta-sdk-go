@@ -372,53 +372,79 @@ func (m *GovernanceRoleAssignmentRequest) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAssignmentState sets the assignmentState property value. Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
 func (m *GovernanceRoleAssignmentRequest) SetAssignmentState(value *string)() {
-    m.assignmentState = value
+    if m != nil {
+        m.assignmentState = value
+    }
 }
 // SetLinkedEligibleRoleAssignmentId sets the linkedEligibleRoleAssignmentId property value. If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
 func (m *GovernanceRoleAssignmentRequest) SetLinkedEligibleRoleAssignmentId(value *string)() {
-    m.linkedEligibleRoleAssignmentId = value
+    if m != nil {
+        m.linkedEligibleRoleAssignmentId = value
+    }
 }
 // SetReason sets the reason property value. A message provided by users and administrators when create the request about why it is needed.
 func (m *GovernanceRoleAssignmentRequest) SetReason(value *string)() {
-    m.reason = value
+    if m != nil {
+        m.reason = value
+    }
 }
 // SetRequestedDateTime sets the requestedDateTime property value. Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *GovernanceRoleAssignmentRequest) SetRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.requestedDateTime = value
+    if m != nil {
+        m.requestedDateTime = value
+    }
 }
 // SetResource sets the resource property value. Read-only. The resource that the request aims to.
 func (m *GovernanceRoleAssignmentRequest) SetResource(value *GovernanceResource)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }
 // SetResourceId sets the resourceId property value. Required. The id of the resource which the role assignment request is associated with.
 func (m *GovernanceRoleAssignmentRequest) SetResourceId(value *string)() {
-    m.resourceId = value
+    if m != nil {
+        m.resourceId = value
+    }
 }
 // SetRoleDefinition sets the roleDefinition property value. Read-only. The role definition that the request aims to.
 func (m *GovernanceRoleAssignmentRequest) SetRoleDefinition(value *GovernanceRoleDefinition)() {
-    m.roleDefinition = value
+    if m != nil {
+        m.roleDefinition = value
+    }
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. Required. The id of the role definition which the role assignment request is associated with.
 func (m *GovernanceRoleAssignmentRequest) SetRoleDefinitionId(value *string)() {
-    m.roleDefinitionId = value
+    if m != nil {
+        m.roleDefinitionId = value
+    }
 }
 // SetSchedule sets the schedule property value. The schedule object of the role assignment request.
 func (m *GovernanceRoleAssignmentRequest) SetSchedule(value *GovernanceSchedule)() {
-    m.schedule = value
+    if m != nil {
+        m.schedule = value
+    }
 }
 // SetStatus sets the status property value. The status of the role assignment request.
 func (m *GovernanceRoleAssignmentRequest) SetStatus(value *GovernanceRoleAssignmentRequestStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetSubject sets the subject property value. Read-only. The user/group principal.
 func (m *GovernanceRoleAssignmentRequest) SetSubject(value *GovernanceSubject)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }
 // SetSubjectId sets the subjectId property value. Required. The id of the subject which the role assignment request is associated with.
 func (m *GovernanceRoleAssignmentRequest) SetSubjectId(value *string)() {
-    m.subjectId = value
+    if m != nil {
+        m.subjectId = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
 func (m *GovernanceRoleAssignmentRequest) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

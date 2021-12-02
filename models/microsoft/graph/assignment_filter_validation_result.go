@@ -70,9 +70,13 @@ func (m *AssignmentFilterValidationResult) Serialize(writer i04eb5309aeaafadd283
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentFilterValidationResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsValidRule sets the isValidRule property value. Indicator to valid or invalid rule.
 func (m *AssignmentFilterValidationResult) SetIsValidRule(value *bool)() {
-    m.isValidRule = value
+    if m != nil {
+        m.isValidRule = value
+    }
 }

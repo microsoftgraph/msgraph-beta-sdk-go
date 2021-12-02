@@ -70,9 +70,13 @@ func (m *CreateTokenRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateTokenRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTokenValidityInSeconds sets the tokenValidityInSeconds property value. 
 func (m *CreateTokenRequestBody) SetTokenValidityInSeconds(value *int32)() {
-    m.tokenValidityInSeconds = value
+    if m != nil {
+        m.tokenValidityInSeconds = value
+    }
 }

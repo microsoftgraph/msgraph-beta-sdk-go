@@ -85,9 +85,13 @@ func (m *DeviceManagementSettingInstance) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetDefinitionId sets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingInstance) SetDefinitionId(value *string)() {
-    m.definitionId = value
+    if m != nil {
+        m.definitionId = value
+    }
 }
 // SetValueJson sets the valueJson property value. JSON representation of the value
 func (m *DeviceManagementSettingInstance) SetValueJson(value *string)() {
-    m.valueJson = value
+    if m != nil {
+        m.valueJson = value
+    }
 }

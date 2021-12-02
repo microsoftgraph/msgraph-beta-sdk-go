@@ -123,17 +123,25 @@ func (m *M365AlertComment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *M365AlertComment) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetComment sets the comment property value. 
 func (m *M365AlertComment) SetComment(value *string)() {
-    m.comment = value
+    if m != nil {
+        m.comment = value
+    }
 }
 // SetCreatedByDisplayName sets the createdByDisplayName property value. 
 func (m *M365AlertComment) SetCreatedByDisplayName(value *string)() {
-    m.createdByDisplayName = value
+    if m != nil {
+        m.createdByDisplayName = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. 
 func (m *M365AlertComment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }

@@ -40,7 +40,7 @@ type TaxAreaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TaxAreaRequestBuilderPatchOptions options for Patch
 type TaxAreaRequestBuilderPatchOptions struct {

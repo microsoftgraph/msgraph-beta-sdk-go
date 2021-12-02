@@ -96,13 +96,19 @@ func (m *ConnectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConnectRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOwnerUserPrincipalName sets the ownerUserPrincipalName property value. 
 func (m *ConnectRequestBody) SetOwnerUserPrincipalName(value *string)() {
-    m.ownerUserPrincipalName = value
+    if m != nil {
+        m.ownerUserPrincipalName = value
+    }
 }
 // SetServiceAccountCredentials sets the serviceAccountCredentials property value. 
 func (m *ConnectRequestBody) SetServiceAccountCredentials(value *string)() {
-    m.serviceAccountCredentials = value
+    if m != nil {
+        m.serviceAccountCredentials = value
+    }
 }

@@ -147,17 +147,25 @@ func (m *GetOffice365ActivationsUserDetail) Serialize(writer i04eb5309aeaafadd28
 }
 // SetDisplayName sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
 func (m *GetOffice365ActivationsUserDetail) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *GetOffice365ActivationsUserDetail) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetUserActivationCounts sets the userActivationCounts property value. The user's latest product activation counts on all the platforms for all the assigned product types.
 func (m *GetOffice365ActivationsUserDetail) SetUserActivationCounts(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserActivationCounts)() {
-    m.userActivationCounts = value
+    if m != nil {
+        m.userActivationCounts = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.
 func (m *GetOffice365ActivationsUserDetail) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

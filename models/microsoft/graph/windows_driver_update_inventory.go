@@ -272,37 +272,55 @@ func (m *WindowsDriverUpdateInventory) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetApplicableDeviceCount sets the applicableDeviceCount property value. The number of devices for which this driver is applicable.
 func (m *WindowsDriverUpdateInventory) SetApplicableDeviceCount(value *int32)() {
-    m.applicableDeviceCount = value
+    if m != nil {
+        m.applicableDeviceCount = value
+    }
 }
 // SetApprovalStatus sets the approvalStatus property value. The approval status for this driver. Possible values are: needsReview, declined, approved, suspended.
 func (m *WindowsDriverUpdateInventory) SetApprovalStatus(value *DriverApprovalStatus)() {
-    m.approvalStatus = value
+    if m != nil {
+        m.approvalStatus = value
+    }
 }
 // SetCategory sets the category property value. The category for this driver. Possible values are: recommended, previouslyApproved, other.
 func (m *WindowsDriverUpdateInventory) SetCategory(value *DriverCategory)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetDeployDateTime sets the deployDateTime property value. The date time when a driver should be deployed if approvalStatus is approved.
 func (m *WindowsDriverUpdateInventory) SetDeployDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.deployDateTime = value
+    if m != nil {
+        m.deployDateTime = value
+    }
 }
 // SetDriverClass sets the driverClass property value. The class of the driver.
 func (m *WindowsDriverUpdateInventory) SetDriverClass(value *string)() {
-    m.driverClass = value
+    if m != nil {
+        m.driverClass = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. The manufacturer of the driver.
 func (m *WindowsDriverUpdateInventory) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetName sets the name property value. The name of the driver.
 func (m *WindowsDriverUpdateInventory) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetReleaseDateTime sets the releaseDateTime property value. The release date time of the driver.
 func (m *WindowsDriverUpdateInventory) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.releaseDateTime = value
+    if m != nil {
+        m.releaseDateTime = value
+    }
 }
 // SetVersion sets the version property value. The version of the driver.
 func (m *WindowsDriverUpdateInventory) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

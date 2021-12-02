@@ -122,17 +122,25 @@ func (m *DefaultUserRolePermissions) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DefaultUserRolePermissions) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedToCreateApps sets the allowedToCreateApps property value. Indicates whether the default user role can create applications.
 func (m *DefaultUserRolePermissions) SetAllowedToCreateApps(value *bool)() {
-    m.allowedToCreateApps = value
+    if m != nil {
+        m.allowedToCreateApps = value
+    }
 }
 // SetAllowedToCreateSecurityGroups sets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups.
 func (m *DefaultUserRolePermissions) SetAllowedToCreateSecurityGroups(value *bool)() {
-    m.allowedToCreateSecurityGroups = value
+    if m != nil {
+        m.allowedToCreateSecurityGroups = value
+    }
 }
 // SetAllowedToReadOtherUsers sets the allowedToReadOtherUsers property value. Indicates whether the default user role can read other users.
 func (m *DefaultUserRolePermissions) SetAllowedToReadOtherUsers(value *bool)() {
-    m.allowedToReadOtherUsers = value
+    if m != nil {
+        m.allowedToReadOtherUsers = value
+    }
 }

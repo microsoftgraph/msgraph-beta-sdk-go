@@ -96,13 +96,19 @@ func (m *DeviceManagementConfigurationSettingInstance) Serialize(writer i04eb530
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingInstance) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSettingDefinitionId sets the settingDefinitionId property value. Setting Definition Id
 func (m *DeviceManagementConfigurationSettingInstance) SetSettingDefinitionId(value *string)() {
-    m.settingDefinitionId = value
+    if m != nil {
+        m.settingDefinitionId = value
+    }
 }
 // SetSettingInstanceTemplateReference sets the settingInstanceTemplateReference property value. Setting Instance Template Reference
 func (m *DeviceManagementConfigurationSettingInstance) SetSettingInstanceTemplateReference(value *DeviceManagementConfigurationSettingInstanceTemplateReference)() {
-    m.settingInstanceTemplateReference = value
+    if m != nil {
+        m.settingInstanceTemplateReference = value
+    }
 }

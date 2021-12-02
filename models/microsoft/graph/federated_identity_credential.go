@@ -167,21 +167,31 @@ func (m *FederatedIdentityCredential) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAudiences sets the audiences property value. Lists the audiences that can appear in the external token. This field is mandatory, and defaults to 'api://AzureADTokenExchange'. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. Required.
 func (m *FederatedIdentityCredential) SetAudiences(value []string)() {
-    m.audiences = value
+    if m != nil {
+        m.audiences = value
+    }
 }
 // SetDescription sets the description property value. The un-validated, user-provided description of the federated identity credential. Optional.
 func (m *FederatedIdentityCredential) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetIssuer sets the issuer property value. The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. Required.
 func (m *FederatedIdentityCredential) SetIssuer(value *string)() {
-    m.issuer = value
+    if m != nil {
+        m.issuer = value
+    }
 }
 // SetName sets the name property value. is the unique identifier for the federated identity credential, which has a character limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
 func (m *FederatedIdentityCredential) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetSubject sets the subject property value. Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. Supports $filter (eq).
 func (m *FederatedIdentityCredential) SetSubject(value *string)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }

@@ -281,37 +281,55 @@ func (m *ManagementTemplateStep) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetCategory sets the category property value. 
 func (m *ManagementTemplateStep) SetCategory(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *ManagementTemplateStep) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *ManagementTemplateStep) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetManagementPortal sets the managementPortal property value. 
 func (m *ManagementTemplateStep) SetManagementPortal(value *string)() {
-    m.managementPortal = value
+    if m != nil {
+        m.managementPortal = value
+    }
 }
 // SetManagementTemplate sets the managementTemplate property value. 
 func (m *ManagementTemplateStep) SetManagementTemplate(value *ManagementTemplate)() {
-    m.managementTemplate = value
+    if m != nil {
+        m.managementTemplate = value
+    }
 }
 // SetPortalLink sets the portalLink property value. 
 func (m *ManagementTemplateStep) SetPortalLink(value *string)() {
-    m.portalLink = value
+    if m != nil {
+        m.portalLink = value
+    }
 }
 // SetPriority sets the priority property value. 
 func (m *ManagementTemplateStep) SetPriority(value *int32)() {
-    m.priority = value
+    if m != nil {
+        m.priority = value
+    }
 }
 // SetProvider sets the provider property value. 
 func (m *ManagementTemplateStep) SetProvider(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementProvider)() {
-    m.provider = value
+    if m != nil {
+        m.provider = value
+    }
 }
 // SetStepVersions sets the stepVersions property value. 
 func (m *ManagementTemplateStep) SetStepVersions(value []ManagementTemplateStepVersion)() {
-    m.stepVersions = value
+    if m != nil {
+        m.stepVersions = value
+    }
 }

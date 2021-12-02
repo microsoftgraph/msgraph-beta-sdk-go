@@ -98,13 +98,19 @@ func (m *UserRegistrationCount) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserRegistrationCount) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRegistrationCount sets the registrationCount property value. Provides the registration count for your tenant.
 func (m *UserRegistrationCount) SetRegistrationCount(value *int64)() {
-    m.registrationCount = value
+    if m != nil {
+        m.registrationCount = value
+    }
 }
 // SetRegistrationStatus sets the registrationStatus property value. Represents the status of user registration. Possible values are: registered, enabled, capable, and mfaRegistered.
 func (m *UserRegistrationCount) SetRegistrationStatus(value *RegistrationStatusType)() {
-    m.registrationStatus = value
+    if m != nil {
+        m.registrationStatus = value
+    }
 }

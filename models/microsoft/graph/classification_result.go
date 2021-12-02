@@ -122,17 +122,25 @@ func (m *ClassificationResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassificationResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConfidenceLevel sets the confidenceLevel property value. The confidence level, 0 to 100, of the result.
 func (m *ClassificationResult) SetConfidenceLevel(value *int32)() {
-    m.confidenceLevel = value
+    if m != nil {
+        m.confidenceLevel = value
+    }
 }
 // SetCount sets the count property value. The number of instances of the specific information type in the input.
 func (m *ClassificationResult) SetCount(value *int32)() {
-    m.count = value
+    if m != nil {
+        m.count = value
+    }
 }
 // SetSensitiveTypeId sets the sensitiveTypeId property value. The GUID of the discovered sensitive information type.
 func (m *ClassificationResult) SetSensitiveTypeId(value *string)() {
-    m.sensitiveTypeId = value
+    if m != nil {
+        m.sensitiveTypeId = value
+    }
 }

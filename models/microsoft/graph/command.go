@@ -267,37 +267,55 @@ func (m *Command) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetAppServiceName sets the appServiceName property value. 
 func (m *Command) SetAppServiceName(value *string)() {
-    m.appServiceName = value
+    if m != nil {
+        m.appServiceName = value
+    }
 }
 // SetError sets the error property value. 
 func (m *Command) SetError(value *string)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetPackageFamilyName sets the packageFamilyName property value. 
 func (m *Command) SetPackageFamilyName(value *string)() {
-    m.packageFamilyName = value
+    if m != nil {
+        m.packageFamilyName = value
+    }
 }
 // SetPayload sets the payload property value. 
 func (m *Command) SetPayload(value *PayloadRequest)() {
-    m.payload = value
+    if m != nil {
+        m.payload = value
+    }
 }
 // SetPermissionTicket sets the permissionTicket property value. 
 func (m *Command) SetPermissionTicket(value *string)() {
-    m.permissionTicket = value
+    if m != nil {
+        m.permissionTicket = value
+    }
 }
 // SetPostBackUri sets the postBackUri property value. 
 func (m *Command) SetPostBackUri(value *string)() {
-    m.postBackUri = value
+    if m != nil {
+        m.postBackUri = value
+    }
 }
 // SetResponsepayload sets the responsepayload property value. 
 func (m *Command) SetResponsepayload(value *PayloadResponse)() {
-    m.responsepayload = value
+    if m != nil {
+        m.responsepayload = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *Command) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. 
 func (m *Command) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

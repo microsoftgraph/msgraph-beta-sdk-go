@@ -59,5 +59,7 @@ func (m *DeviceManagementScriptAssignment) Serialize(writer i04eb5309aeaafadd283
 }
 // SetTarget sets the target property value. The Id of the Azure Active Directory group we are targeting the script to.
 func (m *DeviceManagementScriptAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

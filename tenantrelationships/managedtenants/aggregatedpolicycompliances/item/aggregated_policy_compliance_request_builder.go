@@ -40,7 +40,7 @@ type AggregatedPolicyComplianceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AggregatedPolicyComplianceRequestBuilderPatchOptions options for Patch
 type AggregatedPolicyComplianceRequestBuilderPatchOptions struct {

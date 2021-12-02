@@ -139,17 +139,25 @@ func (m *UnsupportedGroupPolicyExtension) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetExtensionType sets the extensionType property value. ExtensionType of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) SetExtensionType(value *string)() {
-    m.extensionType = value
+    if m != nil {
+        m.extensionType = value
+    }
 }
 // SetNamespaceUrl sets the namespaceUrl property value. Namespace Url of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) SetNamespaceUrl(value *string)() {
-    m.namespaceUrl = value
+    if m != nil {
+        m.namespaceUrl = value
+    }
 }
 // SetNodeName sets the nodeName property value. Node name of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) SetNodeName(value *string)() {
-    m.nodeName = value
+    if m != nil {
+        m.nodeName = value
+    }
 }
 // SetSettingScope sets the settingScope property value. Setting Scope of the unsupported extension. Possible values are: unknown, device, user.
 func (m *UnsupportedGroupPolicyExtension) SetSettingScope(value *GroupPolicySettingScope)() {
-    m.settingScope = value
+    if m != nil {
+        m.settingScope = value
+    }
 }

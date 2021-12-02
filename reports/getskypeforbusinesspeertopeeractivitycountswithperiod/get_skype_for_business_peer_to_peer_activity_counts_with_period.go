@@ -242,33 +242,49 @@ func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) Serialize(writer
 }
 // SetAppSharing sets the appSharing property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) SetAppSharing(value *int64)() {
-    m.appSharing = value
+    if m != nil {
+        m.appSharing = value
+    }
 }
 // SetAudio sets the audio property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) SetAudio(value *int64)() {
-    m.audio = value
+    if m != nil {
+        m.audio = value
+    }
 }
 // SetFileTransfer sets the fileTransfer property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) SetFileTransfer(value *int64)() {
-    m.fileTransfer = value
+    if m != nil {
+        m.fileTransfer = value
+    }
 }
 // SetIm sets the im property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) SetIm(value *int64)() {
-    m.im = value
+    if m != nil {
+        m.im = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetVideo sets the video property value. 
 func (m *GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod) SetVideo(value *int64)() {
-    m.video = value
+    if m != nil {
+        m.video = value
+    }
 }

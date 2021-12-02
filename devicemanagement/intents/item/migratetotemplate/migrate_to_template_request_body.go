@@ -96,13 +96,19 @@ func (m *MigrateToTemplateRequestBody) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MigrateToTemplateRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNewTemplateId sets the newTemplateId property value. 
 func (m *MigrateToTemplateRequestBody) SetNewTemplateId(value *string)() {
-    m.newTemplateId = value
+    if m != nil {
+        m.newTemplateId = value
+    }
 }
 // SetPreserveCustomValues sets the preserveCustomValues property value. 
 func (m *MigrateToTemplateRequestBody) SetPreserveCustomValues(value *bool)() {
-    m.preserveCustomValues = value
+    if m != nil {
+        m.preserveCustomValues = value
+    }
 }

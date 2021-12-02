@@ -242,33 +242,49 @@ func (m *GetYammerDeviceUsageDistributionUserCountsWithPeriod) Serialize(writer 
 }
 // SetAndroidPhone sets the androidPhone property value. 
 func (m *GetYammerDeviceUsageDistributionUserCountsWithPeriod) SetAndroidPhone(value *int32)() {
-    m.androidPhone = value
+    if m != nil {
+        m.androidPhone = value
+    }
 }
 // SetIPad sets the iPad property value. 
 func (m *GetYammerDeviceUsageDistributionUserCountsWithPeriod) SetIPad(value *int32)() {
-    m.iPad = value
+    if m != nil {
+        m.iPad = value
+    }
 }
 // SetIPhone sets the iPhone property value. 
 func (m *GetYammerDeviceUsageDistributionUserCountsWithPeriod) SetIPhone(value *int32)() {
-    m.iPhone = value
+    if m != nil {
+        m.iPhone = value
+    }
 }
 // SetOther sets the other property value. 
 func (m *GetYammerDeviceUsageDistributionUserCountsWithPeriod) SetOther(value *int32)() {
-    m.other = value
+    if m != nil {
+        m.other = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetYammerDeviceUsageDistributionUserCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetYammerDeviceUsageDistributionUserCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetWeb sets the web property value. 
 func (m *GetYammerDeviceUsageDistributionUserCountsWithPeriod) SetWeb(value *int32)() {
-    m.web = value
+    if m != nil {
+        m.web = value
+    }
 }
 // SetWindowsPhone sets the windowsPhone property value. 
 func (m *GetYammerDeviceUsageDistributionUserCountsWithPeriod) SetWindowsPhone(value *int32)() {
-    m.windowsPhone = value
+    if m != nil {
+        m.windowsPhone = value
+    }
 }

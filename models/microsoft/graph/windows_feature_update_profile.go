@@ -307,41 +307,61 @@ func (m *WindowsFeatureUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAssignments sets the assignments property value. The list of group assignments of the profile.
 func (m *WindowsFeatureUpdateProfile) SetAssignments(value []WindowsFeatureUpdateProfileAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date time that the profile was created.
 func (m *WindowsFeatureUpdateProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDeployableContentDisplayName sets the deployableContentDisplayName property value. Friendly display name of the quality update profile deployable content
 func (m *WindowsFeatureUpdateProfile) SetDeployableContentDisplayName(value *string)() {
-    m.deployableContentDisplayName = value
+    if m != nil {
+        m.deployableContentDisplayName = value
+    }
 }
 // SetDescription sets the description property value. The description of the profile which is specified by the user.
 func (m *WindowsFeatureUpdateProfile) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the profile.
 func (m *WindowsFeatureUpdateProfile) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEndOfSupportDate sets the endOfSupportDate property value. The last supported date for a feature update
 func (m *WindowsFeatureUpdateProfile) SetEndOfSupportDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endOfSupportDate = value
+    if m != nil {
+        m.endOfSupportDate = value
+    }
 }
 // SetFeatureUpdateVersion sets the featureUpdateVersion property value. The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.
 func (m *WindowsFeatureUpdateProfile) SetFeatureUpdateVersion(value *string)() {
-    m.featureUpdateVersion = value
+    if m != nil {
+        m.featureUpdateVersion = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date time that the profile was last modified.
 func (m *WindowsFeatureUpdateProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Feature Update entity.
 func (m *WindowsFeatureUpdateProfile) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    if m != nil {
+        m.roleScopeTagIds = value
+    }
 }
 // SetRolloutSettings sets the rolloutSettings property value. The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
 func (m *WindowsFeatureUpdateProfile) SetRolloutSettings(value *WindowsUpdateRolloutSettings)() {
-    m.rolloutSettings = value
+    if m != nil {
+        m.rolloutSettings = value
+    }
 }

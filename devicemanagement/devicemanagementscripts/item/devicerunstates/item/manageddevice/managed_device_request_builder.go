@@ -69,7 +69,7 @@ type ManagedDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 func (m *ManagedDeviceRequestBuilder) ActivateDeviceEsim()(*i63a60c66200dc227be5ca2d5b63a465840df9eb4645ddcb19a2d1ea1a87389e1.ActivateDeviceEsimRequestBuilder) {
     return i63a60c66200dc227be5ca2d5b63a465840df9eb4645ddcb19a2d1ea1a87389e1.NewActivateDeviceEsimRequestBuilderInternal(m.pathParameters, m.requestAdapter);

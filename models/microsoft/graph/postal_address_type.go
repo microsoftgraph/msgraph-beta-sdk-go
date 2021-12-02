@@ -174,25 +174,37 @@ func (m *PostalAddressType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PostalAddressType) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCity sets the city property value. 
 func (m *PostalAddressType) SetCity(value *string)() {
-    m.city = value
+    if m != nil {
+        m.city = value
+    }
 }
 // SetCountryLetterCode sets the countryLetterCode property value. 
 func (m *PostalAddressType) SetCountryLetterCode(value *string)() {
-    m.countryLetterCode = value
+    if m != nil {
+        m.countryLetterCode = value
+    }
 }
 // SetPostalCode sets the postalCode property value. 
 func (m *PostalAddressType) SetPostalCode(value *string)() {
-    m.postalCode = value
+    if m != nil {
+        m.postalCode = value
+    }
 }
 // SetState sets the state property value. 
 func (m *PostalAddressType) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetStreet sets the street property value. 
 func (m *PostalAddressType) SetStreet(value *string)() {
-    m.street = value
+    if m != nil {
+        m.street = value
+    }
 }

@@ -149,21 +149,31 @@ func (m *UpdateRequestRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateRequestRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignmentState sets the assignmentState property value. 
 func (m *UpdateRequestRequestBody) SetAssignmentState(value *string)() {
-    m.assignmentState = value
+    if m != nil {
+        m.assignmentState = value
+    }
 }
 // SetDecision sets the decision property value. 
 func (m *UpdateRequestRequestBody) SetDecision(value *string)() {
-    m.decision = value
+    if m != nil {
+        m.decision = value
+    }
 }
 // SetReason sets the reason property value. 
 func (m *UpdateRequestRequestBody) SetReason(value *string)() {
-    m.reason = value
+    if m != nil {
+        m.reason = value
+    }
 }
 // SetSchedule sets the schedule property value. 
 func (m *UpdateRequestRequestBody) SetSchedule(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GovernanceSchedule)() {
-    m.schedule = value
+    if m != nil {
+        m.schedule = value
+    }
 }

@@ -59,5 +59,7 @@ func (m *SharedEmailDomain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetProvisioningStatus sets the provisioningStatus property value. 
 func (m *SharedEmailDomain) SetProvisioningStatus(value *string)() {
-    m.provisioningStatus = value
+    if m != nil {
+        m.provisioningStatus = value
+    }
 }

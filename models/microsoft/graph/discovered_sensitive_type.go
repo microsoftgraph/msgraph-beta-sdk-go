@@ -157,21 +157,31 @@ func (m *DiscoveredSensitiveType) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DiscoveredSensitiveType) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClassificationAttributes sets the classificationAttributes property value. 
 func (m *DiscoveredSensitiveType) SetClassificationAttributes(value []ClassificationAttribute)() {
-    m.classificationAttributes = value
+    if m != nil {
+        m.classificationAttributes = value
+    }
 }
 // SetConfidence sets the confidence property value. 
 func (m *DiscoveredSensitiveType) SetConfidence(value *int32)() {
-    m.confidence = value
+    if m != nil {
+        m.confidence = value
+    }
 }
 // SetCount sets the count property value. 
 func (m *DiscoveredSensitiveType) SetCount(value *int32)() {
-    m.count = value
+    if m != nil {
+        m.count = value
+    }
 }
 // SetId sets the id property value. 
 func (m *DiscoveredSensitiveType) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }

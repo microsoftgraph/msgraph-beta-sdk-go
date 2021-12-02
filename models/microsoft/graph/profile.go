@@ -698,77 +698,115 @@ func (m *Profile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetAccount sets the account property value. 
 func (m *Profile) SetAccount(value []UserAccountInformation)() {
-    m.account = value
+    if m != nil {
+        m.account = value
+    }
 }
 // SetAddresses sets the addresses property value. Represents details of addresses associated with the user.
 func (m *Profile) SetAddresses(value []ItemAddress)() {
-    m.addresses = value
+    if m != nil {
+        m.addresses = value
+    }
 }
 // SetAnniversaries sets the anniversaries property value. Represents the details of meaningful dates associated with a person.
 func (m *Profile) SetAnniversaries(value []PersonAnnualEvent)() {
-    m.anniversaries = value
+    if m != nil {
+        m.anniversaries = value
+    }
 }
 // SetAwards sets the awards property value. Represents the details of awards or honors associated with a person.
 func (m *Profile) SetAwards(value []PersonAward)() {
-    m.awards = value
+    if m != nil {
+        m.awards = value
+    }
 }
 // SetCertifications sets the certifications property value. Represents the details of certifications associated with a person.
 func (m *Profile) SetCertifications(value []PersonCertification)() {
-    m.certifications = value
+    if m != nil {
+        m.certifications = value
+    }
 }
 // SetEducationalActivities sets the educationalActivities property value. Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 func (m *Profile) SetEducationalActivities(value []EducationalActivity)() {
-    m.educationalActivities = value
+    if m != nil {
+        m.educationalActivities = value
+    }
 }
 // SetEmails sets the emails property value. Represents detailed information about email addresses associated with the user.
 func (m *Profile) SetEmails(value []ItemEmail)() {
-    m.emails = value
+    if m != nil {
+        m.emails = value
+    }
 }
 // SetInterests sets the interests property value. Provides detailed information about interests the user has associated with themselves in various services.
 func (m *Profile) SetInterests(value []PersonInterest)() {
-    m.interests = value
+    if m != nil {
+        m.interests = value
+    }
 }
 // SetLanguages sets the languages property value. Represents detailed information about languages that a user has added to their profile.
 func (m *Profile) SetLanguages(value []LanguageProficiency)() {
-    m.languages = value
+    if m != nil {
+        m.languages = value
+    }
 }
 // SetNames sets the names property value. Represents the names a user has added to their profile.
 func (m *Profile) SetNames(value []PersonName)() {
-    m.names = value
+    if m != nil {
+        m.names = value
+    }
 }
 // SetNotes sets the notes property value. Represents notes that a user has added to their profile.
 func (m *Profile) SetNotes(value []PersonAnnotation)() {
-    m.notes = value
+    if m != nil {
+        m.notes = value
+    }
 }
 // SetPatents sets the patents property value. Represents patents that a user has added to their profile.
 func (m *Profile) SetPatents(value []ItemPatent)() {
-    m.patents = value
+    if m != nil {
+        m.patents = value
+    }
 }
 // SetPhones sets the phones property value. Represents detailed information about phone numbers associated with a user in various services.
 func (m *Profile) SetPhones(value []ItemPhone)() {
-    m.phones = value
+    if m != nil {
+        m.phones = value
+    }
 }
 // SetPositions sets the positions property value. Represents detailed information about work positions associated with a user's profile.
 func (m *Profile) SetPositions(value []WorkPosition)() {
-    m.positions = value
+    if m != nil {
+        m.positions = value
+    }
 }
 // SetProjects sets the projects property value. Represents detailed information about projects associated with a user.
 func (m *Profile) SetProjects(value []ProjectParticipation)() {
-    m.projects = value
+    if m != nil {
+        m.projects = value
+    }
 }
 // SetPublications sets the publications property value. Represents details of any publications a user has added to their profile.
 func (m *Profile) SetPublications(value []ItemPublication)() {
-    m.publications = value
+    if m != nil {
+        m.publications = value
+    }
 }
 // SetSkills sets the skills property value. Represents detailed information about skills associated with a user in various services.
 func (m *Profile) SetSkills(value []SkillProficiency)() {
-    m.skills = value
+    if m != nil {
+        m.skills = value
+    }
 }
 // SetWebAccounts sets the webAccounts property value. Represents web accounts the user has indicated they use or has added to their user profile.
 func (m *Profile) SetWebAccounts(value []WebAccount)() {
-    m.webAccounts = value
+    if m != nil {
+        m.webAccounts = value
+    }
 }
 // SetWebsites sets the websites property value. Represents detailed information about websites associated with a user in various services.
 func (m *Profile) SetWebsites(value []PersonWebsite)() {
-    m.websites = value
+    if m != nil {
+        m.websites = value
+    }
 }

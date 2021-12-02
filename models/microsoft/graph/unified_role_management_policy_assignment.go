@@ -163,21 +163,31 @@ func (m *UnifiedRoleManagementPolicyAssignment) Serialize(writer i04eb5309aeaafa
 }
 // SetPolicy sets the policy property value. The policy for the assignment.
 func (m *UnifiedRoleManagementPolicyAssignment) SetPolicy(value *UnifiedRoleManagementPolicy)() {
-    m.policy = value
+    if m != nil {
+        m.policy = value
+    }
 }
 // SetPolicyId sets the policyId property value. The id of the policy.
 func (m *UnifiedRoleManagementPolicyAssignment) SetPolicyId(value *string)() {
-    m.policyId = value
+    if m != nil {
+        m.policyId = value
+    }
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. The id of the role definition where the policy applies. If not specified, the policy applies to all roles.
 func (m *UnifiedRoleManagementPolicyAssignment) SetRoleDefinitionId(value *string)() {
-    m.roleDefinitionId = value
+    if m != nil {
+        m.roleDefinitionId = value
+    }
 }
 // SetScopeId sets the scopeId property value. The id of the scope where the policy is assigned. E.g. '/', groupId, etc.
 func (m *UnifiedRoleManagementPolicyAssignment) SetScopeId(value *string)() {
-    m.scopeId = value
+    if m != nil {
+        m.scopeId = value
+    }
 }
 // SetScopeType sets the scopeType property value. The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.
 func (m *UnifiedRoleManagementPolicyAssignment) SetScopeType(value *string)() {
-    m.scopeType = value
+    if m != nil {
+        m.scopeType = value
+    }
 }

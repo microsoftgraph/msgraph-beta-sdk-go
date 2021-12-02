@@ -59,5 +59,7 @@ func (m *UserInsightsSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetIsEnabled sets the isEnabled property value. true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
 func (m *UserInsightsSettings) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }

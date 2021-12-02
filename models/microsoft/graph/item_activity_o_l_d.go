@@ -163,21 +163,31 @@ func (m *ItemActivityOLD) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAction sets the action property value. 
 func (m *ItemActivityOLD) SetAction(value *ItemActionSet)() {
-    m.action = value
+    if m != nil {
+        m.action = value
+    }
 }
 // SetActor sets the actor property value. 
 func (m *ItemActivityOLD) SetActor(value *IdentitySet)() {
-    m.actor = value
+    if m != nil {
+        m.actor = value
+    }
 }
 // SetDriveItem sets the driveItem property value. 
 func (m *ItemActivityOLD) SetDriveItem(value *DriveItem)() {
-    m.driveItem = value
+    if m != nil {
+        m.driveItem = value
+    }
 }
 // SetListItem sets the listItem property value. 
 func (m *ItemActivityOLD) SetListItem(value *ListItem)() {
-    m.listItem = value
+    if m != nil {
+        m.listItem = value
+    }
 }
 // SetTimes sets the times property value. 
 func (m *ItemActivityOLD) SetTimes(value *ItemActivityTimeSet)() {
-    m.times = value
+    if m != nil {
+        m.times = value
+    }
 }

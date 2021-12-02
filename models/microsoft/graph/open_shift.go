@@ -137,17 +137,25 @@ func (m *OpenShift) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetDraftOpenShift sets the draftOpenShift property value. An unpublished open shift.
 func (m *OpenShift) SetDraftOpenShift(value *OpenShiftItem)() {
-    m.draftOpenShift = value
+    if m != nil {
+        m.draftOpenShift = value
+    }
 }
 // SetIsStagedForDeletion sets the isStagedForDeletion property value. 
 func (m *OpenShift) SetIsStagedForDeletion(value *bool)() {
-    m.isStagedForDeletion = value
+    if m != nil {
+        m.isStagedForDeletion = value
+    }
 }
 // SetSchedulingGroupId sets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
 func (m *OpenShift) SetSchedulingGroupId(value *string)() {
-    m.schedulingGroupId = value
+    if m != nil {
+        m.schedulingGroupId = value
+    }
 }
 // SetSharedOpenShift sets the sharedOpenShift property value. A published open shift.
 func (m *OpenShift) SetSharedOpenShift(value *OpenShiftItem)() {
-    m.sharedOpenShift = value
+    if m != nil {
+        m.sharedOpenShift = value
+    }
 }

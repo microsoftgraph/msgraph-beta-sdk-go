@@ -424,61 +424,91 @@ func (m *CustomerPayment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAmount sets the amount property value. 
 func (m *CustomerPayment) SetAmount(value *float64)() {
-    m.amount = value
+    if m != nil {
+        m.amount = value
+    }
 }
 // SetAppliesToInvoiceId sets the appliesToInvoiceId property value. 
 func (m *CustomerPayment) SetAppliesToInvoiceId(value *string)() {
-    m.appliesToInvoiceId = value
+    if m != nil {
+        m.appliesToInvoiceId = value
+    }
 }
 // SetAppliesToInvoiceNumber sets the appliesToInvoiceNumber property value. 
 func (m *CustomerPayment) SetAppliesToInvoiceNumber(value *string)() {
-    m.appliesToInvoiceNumber = value
+    if m != nil {
+        m.appliesToInvoiceNumber = value
+    }
 }
 // SetComment sets the comment property value. 
 func (m *CustomerPayment) SetComment(value *string)() {
-    m.comment = value
+    if m != nil {
+        m.comment = value
+    }
 }
 // SetContactId sets the contactId property value. 
 func (m *CustomerPayment) SetContactId(value *string)() {
-    m.contactId = value
+    if m != nil {
+        m.contactId = value
+    }
 }
 // SetCustomer sets the customer property value. 
 func (m *CustomerPayment) SetCustomer(value *Customer)() {
-    m.customer = value
+    if m != nil {
+        m.customer = value
+    }
 }
 // SetCustomerId sets the customerId property value. 
 func (m *CustomerPayment) SetCustomerId(value *string)() {
-    m.customerId = value
+    if m != nil {
+        m.customerId = value
+    }
 }
 // SetCustomerNumber sets the customerNumber property value. 
 func (m *CustomerPayment) SetCustomerNumber(value *string)() {
-    m.customerNumber = value
+    if m != nil {
+        m.customerNumber = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *CustomerPayment) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDocumentNumber sets the documentNumber property value. 
 func (m *CustomerPayment) SetDocumentNumber(value *string)() {
-    m.documentNumber = value
+    if m != nil {
+        m.documentNumber = value
+    }
 }
 // SetExternalDocumentNumber sets the externalDocumentNumber property value. 
 func (m *CustomerPayment) SetExternalDocumentNumber(value *string)() {
-    m.externalDocumentNumber = value
+    if m != nil {
+        m.externalDocumentNumber = value
+    }
 }
 // SetJournalDisplayName sets the journalDisplayName property value. 
 func (m *CustomerPayment) SetJournalDisplayName(value *string)() {
-    m.journalDisplayName = value
+    if m != nil {
+        m.journalDisplayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *CustomerPayment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetLineNumber sets the lineNumber property value. 
 func (m *CustomerPayment) SetLineNumber(value *int32)() {
-    m.lineNumber = value
+    if m != nil {
+        m.lineNumber = value
+    }
 }
 // SetPostingDate sets the postingDate property value. 
 func (m *CustomerPayment) SetPostingDate(value *string)() {
-    m.postingDate = value
+    if m != nil {
+        m.postingDate = value
+    }
 }

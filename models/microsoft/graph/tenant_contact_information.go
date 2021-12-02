@@ -174,25 +174,37 @@ func (m *TenantContactInformation) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantContactInformation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEmail sets the email property value. The email address for the contact. Optional
 func (m *TenantContactInformation) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetName sets the name property value. The name for the contact. Required.
 func (m *TenantContactInformation) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetNotes sets the notes property value. The notes associated with the contact. Optional
 func (m *TenantContactInformation) SetNotes(value *string)() {
-    m.notes = value
+    if m != nil {
+        m.notes = value
+    }
 }
 // SetPhone sets the phone property value. The phone number for the contact. Optional.
 func (m *TenantContactInformation) SetPhone(value *string)() {
-    m.phone = value
+    if m != nil {
+        m.phone = value
+    }
 }
 // SetTitle sets the title property value. The title for the contact. Required.
 func (m *TenantContactInformation) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }

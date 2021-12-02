@@ -460,69 +460,103 @@ func (m *DeviceOperatingSystemSummary) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceOperatingSystemSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAndroidCorporateWorkProfileCount sets the androidCorporateWorkProfileCount property value. The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647
 func (m *DeviceOperatingSystemSummary) SetAndroidCorporateWorkProfileCount(value *int32)() {
-    m.androidCorporateWorkProfileCount = value
+    if m != nil {
+        m.androidCorporateWorkProfileCount = value
+    }
 }
 // SetAndroidCount sets the androidCount property value. Number of android device count.
 func (m *DeviceOperatingSystemSummary) SetAndroidCount(value *int32)() {
-    m.androidCount = value
+    if m != nil {
+        m.androidCount = value
+    }
 }
 // SetAndroidDedicatedCount sets the androidDedicatedCount property value. Number of dedicated Android devices.
 func (m *DeviceOperatingSystemSummary) SetAndroidDedicatedCount(value *int32)() {
-    m.androidDedicatedCount = value
+    if m != nil {
+        m.androidDedicatedCount = value
+    }
 }
 // SetAndroidDeviceAdminCount sets the androidDeviceAdminCount property value. Number of device admin Android devices.
 func (m *DeviceOperatingSystemSummary) SetAndroidDeviceAdminCount(value *int32)() {
-    m.androidDeviceAdminCount = value
+    if m != nil {
+        m.androidDeviceAdminCount = value
+    }
 }
 // SetAndroidFullyManagedCount sets the androidFullyManagedCount property value. Number of fully managed Android devices.
 func (m *DeviceOperatingSystemSummary) SetAndroidFullyManagedCount(value *int32)() {
-    m.androidFullyManagedCount = value
+    if m != nil {
+        m.androidFullyManagedCount = value
+    }
 }
 // SetAndroidWorkProfileCount sets the androidWorkProfileCount property value. Number of work profile Android devices.
 func (m *DeviceOperatingSystemSummary) SetAndroidWorkProfileCount(value *int32)() {
-    m.androidWorkProfileCount = value
+    if m != nil {
+        m.androidWorkProfileCount = value
+    }
 }
 // SetAospUserAssociatedCount sets the aospUserAssociatedCount property value. Number of AOSP user-associated Android devices. Valid values 0 to 2147483647
 func (m *DeviceOperatingSystemSummary) SetAospUserAssociatedCount(value *int32)() {
-    m.aospUserAssociatedCount = value
+    if m != nil {
+        m.aospUserAssociatedCount = value
+    }
 }
 // SetAospUserlessCount sets the aospUserlessCount property value. Number of AOSP userless Android devices. Valid values 0 to 2147483647
 func (m *DeviceOperatingSystemSummary) SetAospUserlessCount(value *int32)() {
-    m.aospUserlessCount = value
+    if m != nil {
+        m.aospUserlessCount = value
+    }
 }
 // SetChromeOSCount sets the chromeOSCount property value. Number of Chrome OS devices. Valid values 0 to 2147483647
 func (m *DeviceOperatingSystemSummary) SetChromeOSCount(value *int32)() {
-    m.chromeOSCount = value
+    if m != nil {
+        m.chromeOSCount = value
+    }
 }
 // SetConfigMgrDeviceCount sets the configMgrDeviceCount property value. Number of ConfigMgr managed devices.
 func (m *DeviceOperatingSystemSummary) SetConfigMgrDeviceCount(value *int32)() {
-    m.configMgrDeviceCount = value
+    if m != nil {
+        m.configMgrDeviceCount = value
+    }
 }
 // SetIosCount sets the iosCount property value. Number of iOS device count.
 func (m *DeviceOperatingSystemSummary) SetIosCount(value *int32)() {
-    m.iosCount = value
+    if m != nil {
+        m.iosCount = value
+    }
 }
 // SetLinuxCount sets the linuxCount property value. Number of Linux OS devices. Valid values 0 to 2147483647
 func (m *DeviceOperatingSystemSummary) SetLinuxCount(value *int32)() {
-    m.linuxCount = value
+    if m != nil {
+        m.linuxCount = value
+    }
 }
 // SetMacOSCount sets the macOSCount property value. Number of Mac OS X device count.
 func (m *DeviceOperatingSystemSummary) SetMacOSCount(value *int32)() {
-    m.macOSCount = value
+    if m != nil {
+        m.macOSCount = value
+    }
 }
 // SetUnknownCount sets the unknownCount property value. Number of unknown device count.
 func (m *DeviceOperatingSystemSummary) SetUnknownCount(value *int32)() {
-    m.unknownCount = value
+    if m != nil {
+        m.unknownCount = value
+    }
 }
 // SetWindowsCount sets the windowsCount property value. Number of Windows device count.
 func (m *DeviceOperatingSystemSummary) SetWindowsCount(value *int32)() {
-    m.windowsCount = value
+    if m != nil {
+        m.windowsCount = value
+    }
 }
 // SetWindowsMobileCount sets the windowsMobileCount property value. Number of Windows mobile device count.
 func (m *DeviceOperatingSystemSummary) SetWindowsMobileCount(value *int32)() {
-    m.windowsMobileCount = value
+    if m != nil {
+        m.windowsMobileCount = value
+    }
 }

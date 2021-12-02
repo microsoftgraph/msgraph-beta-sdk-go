@@ -208,21 +208,31 @@ func (m *AuditLogRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetDirectoryAudits sets the directoryAudits property value. Read-only. Nullable.
 func (m *AuditLogRoot) SetDirectoryAudits(value []DirectoryAudit)() {
-    m.directoryAudits = value
+    if m != nil {
+        m.directoryAudits = value
+    }
 }
 // SetDirectoryProvisioning sets the directoryProvisioning property value. 
 func (m *AuditLogRoot) SetDirectoryProvisioning(value []ProvisioningObjectSummary)() {
-    m.directoryProvisioning = value
+    if m != nil {
+        m.directoryProvisioning = value
+    }
 }
 // SetProvisioning sets the provisioning property value. 
 func (m *AuditLogRoot) SetProvisioning(value []ProvisioningObjectSummary)() {
-    m.provisioning = value
+    if m != nil {
+        m.provisioning = value
+    }
 }
 // SetRestrictedSignIns sets the restrictedSignIns property value. 
 func (m *AuditLogRoot) SetRestrictedSignIns(value []RestrictedSignIn)() {
-    m.restrictedSignIns = value
+    if m != nil {
+        m.restrictedSignIns = value
+    }
 }
 // SetSignIns sets the signIns property value. Read-only. Nullable.
 func (m *AuditLogRoot) SetSignIns(value []SignIn)() {
-    m.signIns = value
+    if m != nil {
+        m.signIns = value
+    }
 }

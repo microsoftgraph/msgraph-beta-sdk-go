@@ -59,5 +59,7 @@ func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i04eb5309aeaafadd
 }
 // SetTarget sets the target property value. The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 func (m *CloudPcProvisioningPolicyAssignment) SetTarget(value *CloudPcManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

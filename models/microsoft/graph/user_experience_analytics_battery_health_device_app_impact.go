@@ -189,25 +189,37 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) Serialize(writer i
 }
 // SetAppDisplayName sets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    if m != nil {
+        m.appDisplayName = value
+    }
 }
 // SetAppName sets the appName property value. App name. Eg: oltk.exe
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetAppName(value *string)() {
-    m.appName = value
+    if m != nil {
+        m.appName = value
+    }
 }
 // SetAppPublisher sets the appPublisher property value. App publisher. Eg: Microsoft Corporation
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetAppPublisher(value *string)() {
-    m.appPublisher = value
+    if m != nil {
+        m.appPublisher = value
+    }
 }
 // SetBatteryUsagePercentage sets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetBatteryUsagePercentage(value *float64)() {
-    m.batteryUsagePercentage = value
+    if m != nil {
+        m.batteryUsagePercentage = value
+    }
 }
 // SetDeviceId sets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetIsForegroundApp sets the isForegroundApp property value. true if the user had active interaction with the app.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetIsForegroundApp(value *bool)() {
-    m.isForegroundApp = value
+    if m != nil {
+        m.isForegroundApp = value
+    }
 }

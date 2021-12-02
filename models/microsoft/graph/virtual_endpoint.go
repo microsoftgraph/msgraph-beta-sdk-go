@@ -348,37 +348,55 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAuditEvents sets the auditEvents property value. Cloud PC audit event.
 func (m *VirtualEndpoint) SetAuditEvents(value []CloudPcAuditEvent)() {
-    m.auditEvents = value
+    if m != nil {
+        m.auditEvents = value
+    }
 }
 // SetCloudPCs sets the cloudPCs property value. Cloud managed virtual desktops.
 func (m *VirtualEndpoint) SetCloudPCs(value []CloudPC)() {
-    m.cloudPCs = value
+    if m != nil {
+        m.cloudPCs = value
+    }
 }
 // SetDeviceImages sets the deviceImages property value. The image resource on Cloud PC.
 func (m *VirtualEndpoint) SetDeviceImages(value []CloudPcDeviceImage)() {
-    m.deviceImages = value
+    if m != nil {
+        m.deviceImages = value
+    }
 }
 // SetGalleryImages sets the galleryImages property value. The gallery image resource on Cloud PC.
 func (m *VirtualEndpoint) SetGalleryImages(value []CloudPcGalleryImage)() {
-    m.galleryImages = value
+    if m != nil {
+        m.galleryImages = value
+    }
 }
 // SetOnPremisesConnections sets the onPremisesConnections property value. A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 func (m *VirtualEndpoint) SetOnPremisesConnections(value []CloudPcOnPremisesConnection)() {
-    m.onPremisesConnections = value
+    if m != nil {
+        m.onPremisesConnections = value
+    }
 }
 // SetProvisioningPolicies sets the provisioningPolicies property value. Cloud PC provisioning policy.
 func (m *VirtualEndpoint) SetProvisioningPolicies(value []CloudPcProvisioningPolicy)() {
-    m.provisioningPolicies = value
+    if m != nil {
+        m.provisioningPolicies = value
+    }
 }
 // SetServicePlans sets the servicePlans property value. Cloud PC service plans.
 func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlan)() {
-    m.servicePlans = value
+    if m != nil {
+        m.servicePlans = value
+    }
 }
 // SetSupportedRegions sets the supportedRegions property value. Cloud PC supported regions.
 func (m *VirtualEndpoint) SetSupportedRegions(value []CloudPcSupportedRegion)() {
-    m.supportedRegions = value
+    if m != nil {
+        m.supportedRegions = value
+    }
 }
 // SetUserSettings sets the userSettings property value. Cloud PC user settings.
 func (m *VirtualEndpoint) SetUserSettings(value []CloudPcUserSetting)() {
-    m.userSettings = value
+    if m != nil {
+        m.userSettings = value
+    }
 }

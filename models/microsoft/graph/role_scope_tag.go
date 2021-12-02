@@ -146,17 +146,25 @@ func (m *RoleScopeTag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAssignments sets the assignments property value. The list of assignments for this Role Scope Tag.
 func (m *RoleScopeTag) SetAssignments(value []RoleScopeTagAutoAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetDescription sets the description property value. Description of the Role Scope Tag.
 func (m *RoleScopeTag) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display or friendly name of the Role Scope Tag.
 func (m *RoleScopeTag) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsBuiltIn sets the isBuiltIn property value. Description of the Role Scope Tag. This property is read-only.
 func (m *RoleScopeTag) SetIsBuiltIn(value *bool)() {
-    m.isBuiltIn = value
+    if m != nil {
+        m.isBuiltIn = value
+    }
 }

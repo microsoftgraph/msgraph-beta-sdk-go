@@ -59,5 +59,7 @@ func (m *ManagementConditionExpressionString) Serialize(writer i04eb5309aeaafadd
 }
 // SetValue sets the value property value. The management condition statement expression string value.
 func (m *ManagementConditionExpressionString) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

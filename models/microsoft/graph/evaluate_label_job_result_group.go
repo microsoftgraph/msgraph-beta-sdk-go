@@ -96,13 +96,19 @@ func (m *EvaluateLabelJobResultGroup) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateLabelJobResultGroup) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAutomatic sets the automatic property value. 
 func (m *EvaluateLabelJobResultGroup) SetAutomatic(value *EvaluateLabelJobResult)() {
-    m.automatic = value
+    if m != nil {
+        m.automatic = value
+    }
 }
 // SetRecommended sets the recommended property value. 
 func (m *EvaluateLabelJobResultGroup) SetRecommended(value *EvaluateLabelJobResult)() {
-    m.recommended = value
+    if m != nil {
+        m.recommended = value
+    }
 }

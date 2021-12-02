@@ -43,7 +43,7 @@ type CloudPcUserSettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // CloudPcUserSettingRequestBuilderPatchOptions options for Patch
 type CloudPcUserSettingRequestBuilderPatchOptions struct {

@@ -96,13 +96,19 @@ func (m *AccessPackageAnswer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageAnswer) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAnsweredQuestion sets the answeredQuestion property value. The question the answer is for. Required and Read-only.
 func (m *AccessPackageAnswer) SetAnsweredQuestion(value *AccessPackageQuestion)() {
-    m.answeredQuestion = value
+    if m != nil {
+        m.answeredQuestion = value
+    }
 }
 // SetDisplayValue sets the displayValue property value. The display value of the answer. Required.
 func (m *AccessPackageAnswer) SetDisplayValue(value *string)() {
-    m.displayValue = value
+    if m != nil {
+        m.displayValue = value
+    }
 }

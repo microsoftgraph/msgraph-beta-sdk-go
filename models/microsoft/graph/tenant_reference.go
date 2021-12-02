@@ -59,5 +59,7 @@ func (m *TenantReference) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetTenantId sets the tenantId property value. 
 func (m *TenantReference) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }

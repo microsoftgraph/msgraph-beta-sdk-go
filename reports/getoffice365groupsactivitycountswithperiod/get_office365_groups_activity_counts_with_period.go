@@ -216,29 +216,43 @@ func (m *GetOffice365GroupsActivityCountsWithPeriod) Serialize(writer i04eb5309a
 }
 // SetExchangeEmailsReceived sets the exchangeEmailsReceived property value. The number of emails received by Group mailboxes.
 func (m *GetOffice365GroupsActivityCountsWithPeriod) SetExchangeEmailsReceived(value *int64)() {
-    m.exchangeEmailsReceived = value
+    if m != nil {
+        m.exchangeEmailsReceived = value
+    }
 }
 // SetReportDate sets the reportDate property value. The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group
 func (m *GetOffice365GroupsActivityCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. The number of days the report covers.
 func (m *GetOffice365GroupsActivityCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *GetOffice365GroupsActivityCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetYammerMessagesLiked sets the yammerMessagesLiked property value. The number of messages liked in Yammer groups.
 func (m *GetOffice365GroupsActivityCountsWithPeriod) SetYammerMessagesLiked(value *int64)() {
-    m.yammerMessagesLiked = value
+    if m != nil {
+        m.yammerMessagesLiked = value
+    }
 }
 // SetYammerMessagesPosted sets the yammerMessagesPosted property value. The number of messages posted to Yammer groups.
 func (m *GetOffice365GroupsActivityCountsWithPeriod) SetYammerMessagesPosted(value *int64)() {
-    m.yammerMessagesPosted = value
+    if m != nil {
+        m.yammerMessagesPosted = value
+    }
 }
 // SetYammerMessagesRead sets the yammerMessagesRead property value. The number of messages read in Yammer groups.
 func (m *GetOffice365GroupsActivityCountsWithPeriod) SetYammerMessagesRead(value *int64)() {
-    m.yammerMessagesRead = value
+    if m != nil {
+        m.yammerMessagesRead = value
+    }
 }

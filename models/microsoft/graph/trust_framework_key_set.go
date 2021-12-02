@@ -68,5 +68,7 @@ func (m *TrustFrameworkKeySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetKeys sets the keys property value. A collection of the keys.
 func (m *TrustFrameworkKeySet) SetKeys(value []TrustFrameworkKey)() {
-    m.keys = value
+    if m != nil {
+        m.keys = value
+    }
 }

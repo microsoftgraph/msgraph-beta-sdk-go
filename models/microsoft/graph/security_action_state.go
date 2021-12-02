@@ -151,21 +151,31 @@ func (m *SecurityActionState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityActionState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppId sets the appId property value. The Application ID of the calling application that submitted an update (PATCH) to the action. The appId should be extracted from the auth token and not entered manually by the calling application.
 func (m *SecurityActionState) SetAppId(value *string)() {
-    m.appId = value
+    if m != nil {
+        m.appId = value
+    }
 }
 // SetStatus sets the status property value. Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.
 func (m *SecurityActionState) SetStatus(value *OperationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetUpdatedDateTime sets the updatedDateTime property value. Timestamp when the actionState was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *SecurityActionState) SetUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.updatedDateTime = value
+    if m != nil {
+        m.updatedDateTime = value
+    }
 }
 // SetUser sets the user property value. The user principal name of the signed-in user that submitted an update (PATCH) to the action. The user should be extracted from the auth token and not entered manually by the calling application.
 func (m *SecurityActionState) SetUser(value *string)() {
-    m.user = value
+    if m != nil {
+        m.user = value
+    }
 }

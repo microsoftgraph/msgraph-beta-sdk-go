@@ -234,25 +234,37 @@ func (m *PrivilegedAccess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetDisplayName sets the displayName property value. The display name of the provider managed by PIM.
 func (m *PrivilegedAccess) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetResources sets the resources property value. A collection of resources for the provider.
 func (m *PrivilegedAccess) SetResources(value []GovernanceResource)() {
-    m.resources = value
+    if m != nil {
+        m.resources = value
+    }
 }
 // SetRoleAssignmentRequests sets the roleAssignmentRequests property value. A collection of role assignment requests for the provider.
 func (m *PrivilegedAccess) SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequest)() {
-    m.roleAssignmentRequests = value
+    if m != nil {
+        m.roleAssignmentRequests = value
+    }
 }
 // SetRoleAssignments sets the roleAssignments property value. A collection of role assignments for the provider.
 func (m *PrivilegedAccess) SetRoleAssignments(value []GovernanceRoleAssignment)() {
-    m.roleAssignments = value
+    if m != nil {
+        m.roleAssignments = value
+    }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. A collection of role defintions for the provider.
 func (m *PrivilegedAccess) SetRoleDefinitions(value []GovernanceRoleDefinition)() {
-    m.roleDefinitions = value
+    if m != nil {
+        m.roleDefinitions = value
+    }
 }
 // SetRoleSettings sets the roleSettings property value. A collection of role settings for the provider.
 func (m *PrivilegedAccess) SetRoleSettings(value []GovernanceRoleSetting)() {
-    m.roleSettings = value
+    if m != nil {
+        m.roleSettings = value
+    }
 }

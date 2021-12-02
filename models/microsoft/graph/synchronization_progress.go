@@ -149,21 +149,31 @@ func (m *SynchronizationProgress) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationProgress) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCompletedUnits sets the completedUnits property value. The numerator of a progress ratio; the number of units of changes already processed.
 func (m *SynchronizationProgress) SetCompletedUnits(value *int64)() {
-    m.completedUnits = value
+    if m != nil {
+        m.completedUnits = value
+    }
 }
 // SetProgressObservationDateTime sets the progressObservationDateTime property value. The time of a progress observation as an offset in minutes from UTC.
 func (m *SynchronizationProgress) SetProgressObservationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.progressObservationDateTime = value
+    if m != nil {
+        m.progressObservationDateTime = value
+    }
 }
 // SetTotalUnits sets the totalUnits property value. The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
 func (m *SynchronizationProgress) SetTotalUnits(value *int64)() {
-    m.totalUnits = value
+    if m != nil {
+        m.totalUnits = value
+    }
 }
 // SetUnits sets the units property value. An optional description of the units.
 func (m *SynchronizationProgress) SetUnits(value *string)() {
-    m.units = value
+    if m != nil {
+        m.units = value
+    }
 }

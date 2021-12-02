@@ -147,17 +147,25 @@ func (m *MeetingAttendanceReport) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAttendanceRecords sets the attendanceRecords property value. List of attendance records of an attendance report. Read-only.
 func (m *MeetingAttendanceReport) SetAttendanceRecords(value []AttendanceRecord)() {
-    m.attendanceRecords = value
+    if m != nil {
+        m.attendanceRecords = value
+    }
 }
 // SetMeetingEndDateTime sets the meetingEndDateTime property value. UTC time when the meeting ended. Read-only.
 func (m *MeetingAttendanceReport) SetMeetingEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.meetingEndDateTime = value
+    if m != nil {
+        m.meetingEndDateTime = value
+    }
 }
 // SetMeetingStartDateTime sets the meetingStartDateTime property value. UTC time when the meeting started. Read-only.
 func (m *MeetingAttendanceReport) SetMeetingStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.meetingStartDateTime = value
+    if m != nil {
+        m.meetingStartDateTime = value
+    }
 }
 // SetTotalParticipantCount sets the totalParticipantCount property value. Total number of participants. Read-only.
 func (m *MeetingAttendanceReport) SetTotalParticipantCount(value *int32)() {
-    m.totalParticipantCount = value
+    if m != nil {
+        m.totalParticipantCount = value
+    }
 }

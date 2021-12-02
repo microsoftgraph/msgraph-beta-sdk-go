@@ -197,25 +197,37 @@ func (m *PersonInterest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetCategories sets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
 func (m *PersonInterest) SetCategories(value []string)() {
-    m.categories = value
+    if m != nil {
+        m.categories = value
+    }
 }
 // SetCollaborationTags sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *PersonInterest) SetCollaborationTags(value []string)() {
-    m.collaborationTags = value
+    if m != nil {
+        m.collaborationTags = value
+    }
 }
 // SetDescription sets the description property value. Contains a description of the interest.
 func (m *PersonInterest) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Contains a friendly name for the interest.
 func (m *PersonInterest) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. 
 func (m *PersonInterest) SetThumbnailUrl(value *string)() {
-    m.thumbnailUrl = value
+    if m != nil {
+        m.thumbnailUrl = value
+    }
 }
 // SetWebUrl sets the webUrl property value. Contains a link to a web page or resource about the interest.
 func (m *PersonInterest) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

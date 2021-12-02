@@ -103,9 +103,13 @@ func (m *UserExperienceAnalyticsCategory) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetInsights sets the insights property value. The insights for the user experience analytics category.
 func (m *UserExperienceAnalyticsCategory) SetInsights(value []UserExperienceAnalyticsInsight)() {
-    m.insights = value
+    if m != nil {
+        m.insights = value
+    }
 }
 // SetMetricValues sets the metricValues property value. The metric values for the user experience analytics category.
 func (m *UserExperienceAnalyticsCategory) SetMetricValues(value []UserExperienceAnalyticsMetric)() {
-    m.metricValues = value
+    if m != nil {
+        m.metricValues = value
+    }
 }

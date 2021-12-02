@@ -59,5 +59,7 @@ func (m *WindowsQualityUpdateProfileAssignment) Serialize(writer i04eb5309aeaafa
 }
 // SetTarget sets the target property value. The assignment target that the quality update profile is assigned to.
 func (m *WindowsQualityUpdateProfileAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

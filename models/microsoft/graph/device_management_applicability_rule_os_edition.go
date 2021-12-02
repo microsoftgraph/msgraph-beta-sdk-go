@@ -128,17 +128,25 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) Serialize(writer i04eb5309a
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleOsEdition) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetName sets the name property value. Name for object.
 func (m *DeviceManagementApplicabilityRuleOsEdition) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetOsEditionTypes sets the osEditionTypes property value. Applicability rule OS edition type.
 func (m *DeviceManagementApplicabilityRuleOsEdition) SetOsEditionTypes(value []Windows10EditionType)() {
-    m.osEditionTypes = value
+    if m != nil {
+        m.osEditionTypes = value
+    }
 }
 // SetRuleType sets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
 func (m *DeviceManagementApplicabilityRuleOsEdition) SetRuleType(value *DeviceManagementApplicabilityRuleType)() {
-    m.ruleType = value
+    if m != nil {
+        m.ruleType = value
+    }
 }

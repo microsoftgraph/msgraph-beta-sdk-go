@@ -148,21 +148,31 @@ func (m *TopicModelingSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TopicModelingSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDynamicallyAdjustTopicCount sets the dynamicallyAdjustTopicCount property value. To learn more, see Adjust maximum number of themes dynamically.
 func (m *TopicModelingSettings) SetDynamicallyAdjustTopicCount(value *bool)() {
-    m.dynamicallyAdjustTopicCount = value
+    if m != nil {
+        m.dynamicallyAdjustTopicCount = value
+    }
 }
 // SetIgnoreNumbers sets the ignoreNumbers property value. To learn more, see Include numbers in themes.
 func (m *TopicModelingSettings) SetIgnoreNumbers(value *bool)() {
-    m.ignoreNumbers = value
+    if m != nil {
+        m.ignoreNumbers = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether themes is enabled for the case.
 func (m *TopicModelingSettings) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetTopicCount sets the topicCount property value. To learn more, see Maximum number of themes.
 func (m *TopicModelingSettings) SetTopicCount(value *int32)() {
-    m.topicCount = value
+    if m != nil {
+        m.topicCount = value
+    }
 }

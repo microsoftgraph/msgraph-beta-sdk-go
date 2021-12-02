@@ -241,33 +241,49 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) Serialize(write
 }
 // SetDeviceCount sets the deviceCount property value. User experience analytics device startup process summarized count.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetDeviceCount(value *int64)() {
-    m.deviceCount = value
+    if m != nil {
+        m.deviceCount = value
+    }
 }
 // SetMedianImpactInMs sets the medianImpactInMs property value. User experience analytics device startup process median impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs(value *int32)() {
-    m.medianImpactInMs = value
+    if m != nil {
+        m.medianImpactInMs = value
+    }
 }
 // SetMedianImpactInMs2 sets the medianImpactInMs2 property value. User experience analytics device startup process median impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetMedianImpactInMs2(value *int64)() {
-    m.medianImpactInMs2 = value
+    if m != nil {
+        m.medianImpactInMs2 = value
+    }
 }
 // SetProcessName sets the processName property value. User experience analytics device startup process name.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetProcessName(value *string)() {
-    m.processName = value
+    if m != nil {
+        m.processName = value
+    }
 }
 // SetProductName sets the productName property value. The user experience analytics device startup process product name.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetProductName(value *string)() {
-    m.productName = value
+    if m != nil {
+        m.productName = value
+    }
 }
 // SetPublisher sets the publisher property value. The User experience analytics device startup process publisher.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetPublisher(value *string)() {
-    m.publisher = value
+    if m != nil {
+        m.publisher = value
+    }
 }
 // SetTotalImpactInMs sets the totalImpactInMs property value. User experience analytics device startup process total impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactInMs(value *int32)() {
-    m.totalImpactInMs = value
+    if m != nil {
+        m.totalImpactInMs = value
+    }
 }
 // SetTotalImpactInMs2 sets the totalImpactInMs2 property value. User experience analytics device startup process total impact in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) SetTotalImpactInMs2(value *int64)() {
-    m.totalImpactInMs2 = value
+    if m != nil {
+        m.totalImpactInMs2 = value
+    }
 }

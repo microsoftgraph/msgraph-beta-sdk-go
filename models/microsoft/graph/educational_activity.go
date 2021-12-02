@@ -163,21 +163,31 @@ func (m *EducationalActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetCompletionMonthYear sets the completionMonthYear property value. The month and year the user graduated or completed the activity.
 func (m *EducationalActivity) SetCompletionMonthYear(value *string)() {
-    m.completionMonthYear = value
+    if m != nil {
+        m.completionMonthYear = value
+    }
 }
 // SetEndMonthYear sets the endMonthYear property value. The month and year the user completed the educational activity referenced.
 func (m *EducationalActivity) SetEndMonthYear(value *string)() {
-    m.endMonthYear = value
+    if m != nil {
+        m.endMonthYear = value
+    }
 }
 // SetInstitution sets the institution property value. 
 func (m *EducationalActivity) SetInstitution(value *InstitutionData)() {
-    m.institution = value
+    if m != nil {
+        m.institution = value
+    }
 }
 // SetProgram sets the program property value. 
 func (m *EducationalActivity) SetProgram(value *EducationalActivityDetail)() {
-    m.program = value
+    if m != nil {
+        m.program = value
+    }
 }
 // SetStartMonthYear sets the startMonthYear property value. The month and year the user commenced the activity referenced.
 func (m *EducationalActivity) SetStartMonthYear(value *string)() {
-    m.startMonthYear = value
+    if m != nil {
+        m.startMonthYear = value
+    }
 }

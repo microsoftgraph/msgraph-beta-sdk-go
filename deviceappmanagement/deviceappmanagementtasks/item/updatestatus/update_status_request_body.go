@@ -99,13 +99,19 @@ func (m *UpdateStatusRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateStatusRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNote sets the note property value. 
 func (m *UpdateStatusRequestBody) SetNote(value *string)() {
-    m.note = value
+    if m != nil {
+        m.note = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *UpdateStatusRequestBody) SetStatus(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagementTaskStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

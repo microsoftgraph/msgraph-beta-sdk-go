@@ -111,13 +111,19 @@ func (m *PersonAnnotation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetDetail sets the detail property value. Contains the detail of the note itself.
 func (m *PersonAnnotation) SetDetail(value *ItemBody)() {
-    m.detail = value
+    if m != nil {
+        m.detail = value
+    }
 }
 // SetDisplayName sets the displayName property value. Contains a friendly name for the note.
 func (m *PersonAnnotation) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. 
 func (m *PersonAnnotation) SetThumbnailUrl(value *string)() {
-    m.thumbnailUrl = value
+    if m != nil {
+        m.thumbnailUrl = value
+    }
 }

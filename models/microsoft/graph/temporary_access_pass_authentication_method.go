@@ -216,29 +216,43 @@ func (m *TemporaryAccessPassAuthenticationMethod) Serialize(writer i04eb5309aeaa
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the temporaryAccessPass was created.
 func (m *TemporaryAccessPassAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetIsUsable sets the isUsable property value. The state of the authentication method that indicates whether it's currently usable by the user.
 func (m *TemporaryAccessPassAuthenticationMethod) SetIsUsable(value *bool)() {
-    m.isUsable = value
+    if m != nil {
+        m.isUsable = value
+    }
 }
 // SetIsUsableOnce sets the isUsableOnce property value. Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.
 func (m *TemporaryAccessPassAuthenticationMethod) SetIsUsableOnce(value *bool)() {
-    m.isUsableOnce = value
+    if m != nil {
+        m.isUsableOnce = value
+    }
 }
 // SetLifetimeInMinutes sets the lifetimeInMinutes property value. The lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days).
 func (m *TemporaryAccessPassAuthenticationMethod) SetLifetimeInMinutes(value *int32)() {
-    m.lifetimeInMinutes = value
+    if m != nil {
+        m.lifetimeInMinutes = value
+    }
 }
 // SetMethodUsabilityReason sets the methodUsabilityReason property value. Details about usability state (isUsable). Reasons can include: enabledByPolicy, disabledByPolicy, expired, notYetValid, oneTimeUsed.
 func (m *TemporaryAccessPassAuthenticationMethod) SetMethodUsabilityReason(value *string)() {
-    m.methodUsabilityReason = value
+    if m != nil {
+        m.methodUsabilityReason = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. The date and time when the temporaryAccessPass becomes available to use.
 func (m *TemporaryAccessPassAuthenticationMethod) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
 // SetTemporaryAccessPass sets the temporaryAccessPass property value. The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
 func (m *TemporaryAccessPassAuthenticationMethod) SetTemporaryAccessPass(value *string)() {
-    m.temporaryAccessPass = value
+    if m != nil {
+        m.temporaryAccessPass = value
+    }
 }

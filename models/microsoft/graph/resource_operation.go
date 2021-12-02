@@ -163,21 +163,31 @@ func (m *ResourceOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetActionName sets the actionName property value. Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
 func (m *ResourceOperation) SetActionName(value *string)() {
-    m.actionName = value
+    if m != nil {
+        m.actionName = value
+    }
 }
 // SetDescription sets the description property value. Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
 func (m *ResourceOperation) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetEnabledForScopeValidation sets the enabledForScopeValidation property value. Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.
 func (m *ResourceOperation) SetEnabledForScopeValidation(value *bool)() {
-    m.enabledForScopeValidation = value
+    if m != nil {
+        m.enabledForScopeValidation = value
+    }
 }
 // SetResource sets the resource property value. Resource category to which this Operation belongs. This property is read-only.
 func (m *ResourceOperation) SetResource(value *string)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }
 // SetResourceName sets the resourceName property value. Name of the Resource this operation is performed on.
 func (m *ResourceOperation) SetResourceName(value *string)() {
-    m.resourceName = value
+    if m != nil {
+        m.resourceName = value
+    }
 }

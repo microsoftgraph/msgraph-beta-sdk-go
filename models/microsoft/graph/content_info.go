@@ -161,21 +161,31 @@ func (m *ContentInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFormat sets the format property value. Possible values are: default, email.
 func (m *ContentInfo) SetFormat(value *ContentFormat)() {
-    m.format = value
+    if m != nil {
+        m.format = value
+    }
 }
 // SetIdentifier sets the identifier property value. Identifier used for Azure Information Protection Analytics.
 func (m *ContentInfo) SetIdentifier(value *string)() {
-    m.identifier = value
+    if m != nil {
+        m.identifier = value
+    }
 }
 // SetMetadata sets the metadata property value. Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
 func (m *ContentInfo) SetMetadata(value []KeyValuePair)() {
-    m.metadata = value
+    if m != nil {
+        m.metadata = value
+    }
 }
 // SetState sets the state property value. Possible values are: rest, motion, use.
 func (m *ContentInfo) SetState(value *ContentState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

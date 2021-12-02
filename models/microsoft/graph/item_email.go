@@ -113,13 +113,19 @@ func (m *ItemEmail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAddress sets the address property value. The email address itself.
 func (m *ItemEmail) SetAddress(value *string)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name or label a user has associated with a particular email address.
 func (m *ItemEmail) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. The type of email address. Possible values are: unknown, work, personal, main, other.
 func (m *ItemEmail) SetType_escaped(value *EmailType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

@@ -346,49 +346,73 @@ func (m *CompanyInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAddress sets the address property value. 
 func (m *CompanyInformation) SetAddress(value *PostalAddressType)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetCurrencyCode sets the currencyCode property value. 
 func (m *CompanyInformation) SetCurrencyCode(value *string)() {
-    m.currencyCode = value
+    if m != nil {
+        m.currencyCode = value
+    }
 }
 // SetCurrentFiscalYearStartDate sets the currentFiscalYearStartDate property value. 
 func (m *CompanyInformation) SetCurrentFiscalYearStartDate(value *string)() {
-    m.currentFiscalYearStartDate = value
+    if m != nil {
+        m.currentFiscalYearStartDate = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *CompanyInformation) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEmail sets the email property value. 
 func (m *CompanyInformation) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetFaxNumber sets the faxNumber property value. 
 func (m *CompanyInformation) SetFaxNumber(value *string)() {
-    m.faxNumber = value
+    if m != nil {
+        m.faxNumber = value
+    }
 }
 // SetIndustry sets the industry property value. 
 func (m *CompanyInformation) SetIndustry(value *string)() {
-    m.industry = value
+    if m != nil {
+        m.industry = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *CompanyInformation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. 
 func (m *CompanyInformation) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    if m != nil {
+        m.phoneNumber = value
+    }
 }
 // SetPicture sets the picture property value. 
 func (m *CompanyInformation) SetPicture(value []byte)() {
-    m.picture = value
+    if m != nil {
+        m.picture = value
+    }
 }
 // SetTaxRegistrationNumber sets the taxRegistrationNumber property value. 
 func (m *CompanyInformation) SetTaxRegistrationNumber(value *string)() {
-    m.taxRegistrationNumber = value
+    if m != nil {
+        m.taxRegistrationNumber = value
+    }
 }
 // SetWebsite sets the website property value. 
 func (m *CompanyInformation) SetWebsite(value *string)() {
-    m.website = value
+    if m != nil {
+        m.website = value
+    }
 }

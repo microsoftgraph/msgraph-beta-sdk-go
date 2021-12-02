@@ -122,17 +122,25 @@ func (m *TeamworkOnlineMeetingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkOnlineMeetingInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCalendarEventId sets the calendarEventId property value. The identifier of the calendar event associated with the meeting.
 func (m *TeamworkOnlineMeetingInfo) SetCalendarEventId(value *string)() {
-    m.calendarEventId = value
+    if m != nil {
+        m.calendarEventId = value
+    }
 }
 // SetJoinWebUrl sets the joinWebUrl property value. The URL which can be clicked on to join or uniquely identify the meeting.
 func (m *TeamworkOnlineMeetingInfo) SetJoinWebUrl(value *string)() {
-    m.joinWebUrl = value
+    if m != nil {
+        m.joinWebUrl = value
+    }
 }
 // SetOrganizer sets the organizer property value. The organizer of the meeting.
 func (m *TeamworkOnlineMeetingInfo) SetOrganizer(value *TeamworkUserIdentity)() {
-    m.organizer = value
+    if m != nil {
+        m.organizer = value
+    }
 }

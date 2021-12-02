@@ -111,13 +111,19 @@ func (m *ItemAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetDetail sets the detail property value. 
 func (m *ItemAddress) SetDetail(value *PhysicalAddress)() {
-    m.detail = value
+    if m != nil {
+        m.detail = value
+    }
 }
 // SetDisplayName sets the displayName property value. Friendly name the user has assigned to this address.
 func (m *ItemAddress) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetGeoCoordinates sets the geoCoordinates property value. The geocoordinates of the address.
 func (m *ItemAddress) SetGeoCoordinates(value *GeoCoordinates)() {
-    m.geoCoordinates = value
+    if m != nil {
+        m.geoCoordinates = value
+    }
 }

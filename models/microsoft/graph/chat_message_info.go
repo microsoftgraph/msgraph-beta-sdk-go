@@ -192,25 +192,37 @@ func (m *ChatMessageInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetBody sets the body property value. Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
 func (m *ChatMessageInfo) SetBody(value *ItemBody)() {
-    m.body = value
+    if m != nil {
+        m.body = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date time object representing the time at which message was created.
 func (m *ChatMessageInfo) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetEventDetail sets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
 func (m *ChatMessageInfo) SetEventDetail(value *EventMessageDetail)() {
-    m.eventDetail = value
+    if m != nil {
+        m.eventDetail = value
+    }
 }
 // SetFrom sets the from property value. Information about the sender of the message.
 func (m *ChatMessageInfo) SetFrom(value *ChatMessageFromIdentitySet)() {
-    m.from = value
+    if m != nil {
+        m.from = value
+    }
 }
 // SetIsDeleted sets the isDeleted property value. If set to true, the original message has been deleted.
 func (m *ChatMessageInfo) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    if m != nil {
+        m.isDeleted = value
+    }
 }
 // SetMessageType sets the messageType property value. The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.
 func (m *ChatMessageInfo) SetMessageType(value *ChatMessageType)() {
-    m.messageType = value
+    if m != nil {
+        m.messageType = value
+    }
 }

@@ -201,29 +201,43 @@ func (m *PriceMatRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PriceMatRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBasis sets the basis property value. 
 func (m *PriceMatRequestBody) SetBasis(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.basis = value
+    if m != nil {
+        m.basis = value
+    }
 }
 // SetIssue sets the issue property value. 
 func (m *PriceMatRequestBody) SetIssue(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.issue = value
+    if m != nil {
+        m.issue = value
+    }
 }
 // SetMaturity sets the maturity property value. 
 func (m *PriceMatRequestBody) SetMaturity(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.maturity = value
+    if m != nil {
+        m.maturity = value
+    }
 }
 // SetRate sets the rate property value. 
 func (m *PriceMatRequestBody) SetRate(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.rate = value
+    if m != nil {
+        m.rate = value
+    }
 }
 // SetSettlement sets the settlement property value. 
 func (m *PriceMatRequestBody) SetSettlement(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.settlement = value
+    if m != nil {
+        m.settlement = value
+    }
 }
 // SetYld sets the yld property value. 
 func (m *PriceMatRequestBody) SetYld(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.yld = value
+    if m != nil {
+        m.yld = value
+    }
 }

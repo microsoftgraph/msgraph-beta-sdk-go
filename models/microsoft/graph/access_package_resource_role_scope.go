@@ -190,25 +190,37 @@ func (m *AccessPackageResourceRoleScope) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAccessPackageResourceRole sets the accessPackageResourceRole property value. Read-only. Nullable.
 func (m *AccessPackageResourceRoleScope) SetAccessPackageResourceRole(value *AccessPackageResourceRole)() {
-    m.accessPackageResourceRole = value
+    if m != nil {
+        m.accessPackageResourceRole = value
+    }
 }
 // SetAccessPackageResourceScope sets the accessPackageResourceScope property value. Read-only. Nullable.
 func (m *AccessPackageResourceRoleScope) SetAccessPackageResourceScope(value *AccessPackageResourceScope)() {
-    m.accessPackageResourceScope = value
+    if m != nil {
+        m.accessPackageResourceScope = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. Read-only.
 func (m *AccessPackageResourceRoleScope) SetCreatedBy(value *string)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageResourceRoleScope) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetModifiedBy sets the modifiedBy property value. Read-only.
 func (m *AccessPackageResourceRoleScope) SetModifiedBy(value *string)() {
-    m.modifiedBy = value
+    if m != nil {
+        m.modifiedBy = value
+    }
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageResourceRoleScope) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.modifiedDateTime = value
+    if m != nil {
+        m.modifiedDateTime = value
+    }
 }

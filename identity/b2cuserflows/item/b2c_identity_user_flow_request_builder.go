@@ -46,7 +46,7 @@ type B2cIdentityUserFlowRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // B2cIdentityUserFlowRequestBuilderPatchOptions options for Patch
 type B2cIdentityUserFlowRequestBuilderPatchOptions struct {

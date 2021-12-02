@@ -138,17 +138,25 @@ func (m *UnifiedRoleEligibilityScheduleInstance) Serialize(writer i04eb5309aeaaf
 }
 // SetEndDateTime sets the endDateTime property value. Time that the roleEligibilityScheduleInstance will expire.
 func (m *UnifiedRoleEligibilityScheduleInstance) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetMemberType sets the memberType property value. Membership type of the assignment. It can either be Inherited, Direct, or Group.
 func (m *UnifiedRoleEligibilityScheduleInstance) SetMemberType(value *string)() {
-    m.memberType = value
+    if m != nil {
+        m.memberType = value
+    }
 }
 // SetRoleEligibilityScheduleId sets the roleEligibilityScheduleId property value. Identifier of the parent roleEligibilitySchedule for this instance.
 func (m *UnifiedRoleEligibilityScheduleInstance) SetRoleEligibilityScheduleId(value *string)() {
-    m.roleEligibilityScheduleId = value
+    if m != nil {
+        m.roleEligibilityScheduleId = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. Time that the roleEligibilityScheduleInstance will start.
 func (m *UnifiedRoleEligibilityScheduleInstance) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }

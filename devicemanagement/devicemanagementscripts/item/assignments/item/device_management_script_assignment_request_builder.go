@@ -40,7 +40,7 @@ type DeviceManagementScriptAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceManagementScriptAssignmentRequestBuilderPatchOptions options for Patch
 type DeviceManagementScriptAssignmentRequestBuilderPatchOptions struct {

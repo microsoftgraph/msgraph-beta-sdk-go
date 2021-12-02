@@ -68,5 +68,7 @@ func (m *DeviceManagementTemplateSettingCategory) Serialize(writer i04eb5309aeaa
 }
 // SetRecommendedSettings sets the recommendedSettings property value. The settings this category contains
 func (m *DeviceManagementTemplateSettingCategory) SetRecommendedSettings(value []DeviceManagementSettingInstance)() {
-    m.recommendedSettings = value
+    if m != nil {
+        m.recommendedSettings = value
+    }
 }

@@ -131,17 +131,25 @@ func (m *GovernanceRoleAssignmentRequestStatus) Serialize(writer i04eb5309aeaafa
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceRoleAssignmentRequestStatus) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *GovernanceRoleAssignmentRequestStatus) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetStatusDetails sets the statusDetails property value. 
 func (m *GovernanceRoleAssignmentRequestStatus) SetStatusDetails(value []KeyValue)() {
-    m.statusDetails = value
+    if m != nil {
+        m.statusDetails = value
+    }
 }
 // SetSubStatus sets the subStatus property value. 
 func (m *GovernanceRoleAssignmentRequestStatus) SetSubStatus(value *string)() {
-    m.subStatus = value
+    if m != nil {
+        m.subStatus = value
+    }
 }

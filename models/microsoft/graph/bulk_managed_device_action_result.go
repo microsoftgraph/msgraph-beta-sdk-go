@@ -164,21 +164,31 @@ func (m *BulkManagedDeviceActionResult) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkManagedDeviceActionResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFailedDeviceIds sets the failedDeviceIds property value. Failed devices
 func (m *BulkManagedDeviceActionResult) SetFailedDeviceIds(value []string)() {
-    m.failedDeviceIds = value
+    if m != nil {
+        m.failedDeviceIds = value
+    }
 }
 // SetNotFoundDeviceIds sets the notFoundDeviceIds property value. Not found devices
 func (m *BulkManagedDeviceActionResult) SetNotFoundDeviceIds(value []string)() {
-    m.notFoundDeviceIds = value
+    if m != nil {
+        m.notFoundDeviceIds = value
+    }
 }
 // SetNotSupportedDeviceIds sets the notSupportedDeviceIds property value. Not supported devices
 func (m *BulkManagedDeviceActionResult) SetNotSupportedDeviceIds(value []string)() {
-    m.notSupportedDeviceIds = value
+    if m != nil {
+        m.notSupportedDeviceIds = value
+    }
 }
 // SetSuccessfulDeviceIds sets the successfulDeviceIds property value. Successful devices
 func (m *BulkManagedDeviceActionResult) SetSuccessfulDeviceIds(value []string)() {
-    m.successfulDeviceIds = value
+    if m != nil {
+        m.successfulDeviceIds = value
+    }
 }

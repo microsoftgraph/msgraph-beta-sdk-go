@@ -111,13 +111,19 @@ func (m *UnifiedRbacResourceScope) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetDisplayName sets the displayName property value. 
 func (m *UnifiedRbacResourceScope) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetScope sets the scope property value. 
 func (m *UnifiedRbacResourceScope) SetScope(value *string)() {
-    m.scope = value
+    if m != nil {
+        m.scope = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. 
 func (m *UnifiedRbacResourceScope) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

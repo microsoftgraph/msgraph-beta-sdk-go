@@ -70,9 +70,13 @@ func (m *RevokeAllLicensesRequestBody) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RevokeAllLicensesRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNotifyManagedDevices sets the notifyManagedDevices property value. 
 func (m *RevokeAllLicensesRequestBody) SetNotifyManagedDevices(value *bool)() {
-    m.notifyManagedDevices = value
+    if m != nil {
+        m.notifyManagedDevices = value
+    }
 }

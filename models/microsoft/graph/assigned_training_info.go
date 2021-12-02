@@ -122,17 +122,25 @@ func (m *AssignedTrainingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedTrainingInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedUserCount sets the assignedUserCount property value. Number of users who were assigned the training in an attack simulation and training campaign.
 func (m *AssignedTrainingInfo) SetAssignedUserCount(value *int32)() {
-    m.assignedUserCount = value
+    if m != nil {
+        m.assignedUserCount = value
+    }
 }
 // SetCompletedUserCount sets the completedUserCount property value. Number of users who completed the training in an attack simulation and training campaign.
 func (m *AssignedTrainingInfo) SetCompletedUserCount(value *int32)() {
-    m.completedUserCount = value
+    if m != nil {
+        m.completedUserCount = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the training in an attack simulation and training campaign.
 func (m *AssignedTrainingInfo) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

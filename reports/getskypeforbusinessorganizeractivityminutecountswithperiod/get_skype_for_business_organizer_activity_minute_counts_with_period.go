@@ -190,25 +190,37 @@ func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) Serialize(w
 }
 // SetAudioVideo sets the audioVideo property value. 
 func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) SetAudioVideo(value *int64)() {
-    m.audioVideo = value
+    if m != nil {
+        m.audioVideo = value
+    }
 }
 // SetDialInMicrosoft sets the dialInMicrosoft property value. 
 func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) SetDialInMicrosoft(value *int64)() {
-    m.dialInMicrosoft = value
+    if m != nil {
+        m.dialInMicrosoft = value
+    }
 }
 // SetDialOutMicrosoft sets the dialOutMicrosoft property value. 
 func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) SetDialOutMicrosoft(value *int64)() {
-    m.dialOutMicrosoft = value
+    if m != nil {
+        m.dialOutMicrosoft = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }

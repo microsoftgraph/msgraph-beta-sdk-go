@@ -94,9 +94,13 @@ func (m *DeviceManagementConfigurationSetting) Serialize(writer i04eb5309aeaafad
 }
 // SetSettingDefinitions sets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
 func (m *DeviceManagementConfigurationSetting) SetSettingDefinitions(value []DeviceManagementConfigurationSettingDefinition)() {
-    m.settingDefinitions = value
+    if m != nil {
+        m.settingDefinitions = value
+    }
 }
 // SetSettingInstance sets the settingInstance property value. Setting instance within policy
 func (m *DeviceManagementConfigurationSetting) SetSettingInstance(value *DeviceManagementConfigurationSettingInstance)() {
-    m.settingInstance = value
+    if m != nil {
+        m.settingInstance = value
+    }
 }

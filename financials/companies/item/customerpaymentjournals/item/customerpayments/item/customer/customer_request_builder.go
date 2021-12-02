@@ -45,7 +45,7 @@ type CustomerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // CustomerRequestBuilderPatchOptions options for Patch
 type CustomerRequestBuilderPatchOptions struct {

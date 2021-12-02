@@ -322,45 +322,67 @@ func (m *PrivilegedApproval) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetApprovalDuration sets the approvalDuration property value. 
 func (m *PrivilegedApproval) SetApprovalDuration(value *string)() {
-    m.approvalDuration = value
+    if m != nil {
+        m.approvalDuration = value
+    }
 }
 // SetApprovalState sets the approvalState property value. Possible values are: pending, approved, denied, aborted, canceled.
 func (m *PrivilegedApproval) SetApprovalState(value *ApprovalState)() {
-    m.approvalState = value
+    if m != nil {
+        m.approvalState = value
+    }
 }
 // SetApprovalType sets the approvalType property value. 
 func (m *PrivilegedApproval) SetApprovalType(value *string)() {
-    m.approvalType = value
+    if m != nil {
+        m.approvalType = value
+    }
 }
 // SetApproverReason sets the approverReason property value. 
 func (m *PrivilegedApproval) SetApproverReason(value *string)() {
-    m.approverReason = value
+    if m != nil {
+        m.approverReason = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PrivilegedApproval) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetRequest sets the request property value. Read-only. The role assignment request for this approval object
 func (m *PrivilegedApproval) SetRequest(value *PrivilegedRoleAssignmentRequest)() {
-    m.request = value
+    if m != nil {
+        m.request = value
+    }
 }
 // SetRequestorReason sets the requestorReason property value. 
 func (m *PrivilegedApproval) SetRequestorReason(value *string)() {
-    m.requestorReason = value
+    if m != nil {
+        m.requestorReason = value
+    }
 }
 // SetRoleId sets the roleId property value. 
 func (m *PrivilegedApproval) SetRoleId(value *string)() {
-    m.roleId = value
+    if m != nil {
+        m.roleId = value
+    }
 }
 // SetRoleInfo sets the roleInfo property value. Read-only. Nullable.
 func (m *PrivilegedApproval) SetRoleInfo(value *PrivilegedRole)() {
-    m.roleInfo = value
+    if m != nil {
+        m.roleInfo = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PrivilegedApproval) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
 // SetUserId sets the userId property value. 
 func (m *PrivilegedApproval) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

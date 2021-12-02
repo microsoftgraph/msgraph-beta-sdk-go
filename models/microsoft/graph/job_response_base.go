@@ -216,29 +216,43 @@ func (m *JobResponseBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetCreationDateTime sets the creationDateTime property value. 
 func (m *JobResponseBase) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.creationDateTime = value
+    if m != nil {
+        m.creationDateTime = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. 
 func (m *JobResponseBase) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetError sets the error property value. 
 func (m *JobResponseBase) SetError(value *ClassificationError)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. 
 func (m *JobResponseBase) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *JobResponseBase) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTenantId sets the tenantId property value. 
 func (m *JobResponseBase) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. 
 func (m *JobResponseBase) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

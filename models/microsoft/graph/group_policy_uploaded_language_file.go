@@ -175,25 +175,37 @@ func (m *GroupPolicyUploadedLanguageFile) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GroupPolicyUploadedLanguageFile) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContent sets the content property value. The contents of the uploaded ADML file.
 func (m *GroupPolicyUploadedLanguageFile) SetContent(value []byte)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }
 // SetFileName sets the fileName property value. The file name of the uploaded ADML file.
 func (m *GroupPolicyUploadedLanguageFile) SetFileName(value *string)() {
-    m.fileName = value
+    if m != nil {
+        m.fileName = value
+    }
 }
 // SetId sets the id property value. Key of the entity.
 func (m *GroupPolicyUploadedLanguageFile) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetLanguageCode sets the languageCode property value. The language code of the uploaded ADML file.
 func (m *GroupPolicyUploadedLanguageFile) SetLanguageCode(value *string)() {
-    m.languageCode = value
+    if m != nil {
+        m.languageCode = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyUploadedLanguageFile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }

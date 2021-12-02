@@ -96,13 +96,19 @@ func (m *EncryptBufferRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EncryptBufferRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBuffer sets the buffer property value. 
 func (m *EncryptBufferRequestBody) SetBuffer(value []byte)() {
-    m.buffer = value
+    if m != nil {
+        m.buffer = value
+    }
 }
 // SetLabelId sets the labelId property value. 
 func (m *EncryptBufferRequestBody) SetLabelId(value *string)() {
-    m.labelId = value
+    if m != nil {
+        m.labelId = value
+    }
 }

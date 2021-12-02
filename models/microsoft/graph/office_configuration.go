@@ -140,17 +140,25 @@ func (m *OfficeConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OfficeConfiguration) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClientConfigurations sets the clientConfigurations property value. List of office Client configuration.
 func (m *OfficeConfiguration) SetClientConfigurations(value []OfficeClientConfiguration)() {
-    m.clientConfigurations = value
+    if m != nil {
+        m.clientConfigurations = value
+    }
 }
 // SetTenantCheckinStatuses sets the tenantCheckinStatuses property value. List of office Client check-in status.
 func (m *OfficeConfiguration) SetTenantCheckinStatuses(value []OfficeClientCheckinStatus)() {
-    m.tenantCheckinStatuses = value
+    if m != nil {
+        m.tenantCheckinStatuses = value
+    }
 }
 // SetTenantUserCheckinSummary sets the tenantUserCheckinSummary property value. Entity that describes tenant check-in statues
 func (m *OfficeConfiguration) SetTenantUserCheckinSummary(value *OfficeUserCheckinSummary)() {
-    m.tenantUserCheckinSummary = value
+    if m != nil {
+        m.tenantUserCheckinSummary = value
+    }
 }

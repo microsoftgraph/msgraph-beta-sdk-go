@@ -90,11 +90,15 @@ func (m *DiscoverResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DiscoverResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDirectoryDefinition sets the directoryDefinition property value. Union type representation for type directoryDefinition
 func (m *DiscoverResponse) SetDirectoryDefinition(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectoryDefinition)() {
-    m.directoryDefinition = value
+    if m != nil {
+        m.directoryDefinition = value
+    }
 }
 // NewDiscoverRequestBuilderInternal instantiates a new DiscoverRequestBuilder and sets the default values.
 func NewDiscoverRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DiscoverRequestBuilder) {

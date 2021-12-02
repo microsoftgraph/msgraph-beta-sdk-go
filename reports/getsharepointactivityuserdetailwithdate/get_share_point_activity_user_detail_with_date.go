@@ -350,49 +350,73 @@ func (m *GetSharePointActivityUserDetailWithDate) Serialize(writer i04eb5309aeaa
 }
 // SetAssignedProducts sets the assignedProducts property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetAssignedProducts(value []string)() {
-    m.assignedProducts = value
+    if m != nil {
+        m.assignedProducts = value
+    }
 }
 // SetDeletedDate sets the deletedDate property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetDeletedDate(value *string)() {
-    m.deletedDate = value
+    if m != nil {
+        m.deletedDate = value
+    }
 }
 // SetIsDeleted sets the isDeleted property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    if m != nil {
+        m.isDeleted = value
+    }
 }
 // SetLastActivityDate sets the lastActivityDate property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetLastActivityDate(value *string)() {
-    m.lastActivityDate = value
+    if m != nil {
+        m.lastActivityDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetSharedExternallyFileCount sets the sharedExternallyFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetSharedExternallyFileCount(value *int64)() {
-    m.sharedExternallyFileCount = value
+    if m != nil {
+        m.sharedExternallyFileCount = value
+    }
 }
 // SetSharedInternallyFileCount sets the sharedInternallyFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetSharedInternallyFileCount(value *int64)() {
-    m.sharedInternallyFileCount = value
+    if m != nil {
+        m.sharedInternallyFileCount = value
+    }
 }
 // SetSyncedFileCount sets the syncedFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetSyncedFileCount(value *int64)() {
-    m.syncedFileCount = value
+    if m != nil {
+        m.syncedFileCount = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetViewedOrEditedFileCount sets the viewedOrEditedFileCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetViewedOrEditedFileCount(value *int64)() {
-    m.viewedOrEditedFileCount = value
+    if m != nil {
+        m.viewedOrEditedFileCount = value
+    }
 }
 // SetVisitedPageCount sets the visitedPageCount property value. 
 func (m *GetSharePointActivityUserDetailWithDate) SetVisitedPageCount(value *int64)() {
-    m.visitedPageCount = value
+    if m != nil {
+        m.visitedPageCount = value
+    }
 }

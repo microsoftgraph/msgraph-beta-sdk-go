@@ -124,17 +124,25 @@ func (m *PlannerPlanContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerPlanContainer) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContainerId sets the containerId property value. The identifier of the resource that contains the plan.
 func (m *PlannerPlanContainer) SetContainerId(value *string)() {
-    m.containerId = value
+    if m != nil {
+        m.containerId = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
 func (m *PlannerPlanContainer) SetType_escaped(value *PlannerContainerType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetUrl sets the url property value. The full canonical URL of the container.
 func (m *PlannerPlanContainer) SetUrl(value *string)() {
-    m.url = value
+    if m != nil {
+        m.url = value
+    }
 }

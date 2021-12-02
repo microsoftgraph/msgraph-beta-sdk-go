@@ -124,17 +124,25 @@ func (m *MeetingCapability) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingCapability) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowAnonymousUsersToDialOut sets the allowAnonymousUsersToDialOut property value. Indicates whether anonymous users dialout is allowed in a meeting.
 func (m *MeetingCapability) SetAllowAnonymousUsersToDialOut(value *bool)() {
-    m.allowAnonymousUsersToDialOut = value
+    if m != nil {
+        m.allowAnonymousUsersToDialOut = value
+    }
 }
 // SetAllowAnonymousUsersToStartMeeting sets the allowAnonymousUsersToStartMeeting property value. Indicates whether anonymous users are allowed to start a meeting.
 func (m *MeetingCapability) SetAllowAnonymousUsersToStartMeeting(value *bool)() {
-    m.allowAnonymousUsersToStartMeeting = value
+    if m != nil {
+        m.allowAnonymousUsersToStartMeeting = value
+    }
 }
 // SetAutoAdmittedUsers sets the autoAdmittedUsers property value. Possible values are: everyoneInCompany, everyone.
 func (m *MeetingCapability) SetAutoAdmittedUsers(value *AutoAdmittedUsersType)() {
-    m.autoAdmittedUsers = value
+    if m != nil {
+        m.autoAdmittedUsers = value
+    }
 }

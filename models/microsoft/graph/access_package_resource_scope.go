@@ -241,33 +241,49 @@ func (m *AccessPackageResourceScope) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAccessPackageResource sets the accessPackageResource property value. Read-only. Nullable.
 func (m *AccessPackageResourceScope) SetAccessPackageResource(value *AccessPackageResource)() {
-    m.accessPackageResource = value
+    if m != nil {
+        m.accessPackageResource = value
+    }
 }
 // SetDescription sets the description property value. The description of the scope.
 func (m *AccessPackageResourceScope) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the scope.
 func (m *AccessPackageResourceScope) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsRootScope sets the isRootScope property value. True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
 func (m *AccessPackageResourceScope) SetIsRootScope(value *bool)() {
-    m.isRootScope = value
+    if m != nil {
+        m.isRootScope = value
+    }
 }
 // SetOriginId sets the originId property value. The unique identifier for the scope in the resource as defined in the origin system.
 func (m *AccessPackageResourceScope) SetOriginId(value *string)() {
-    m.originId = value
+    if m != nil {
+        m.originId = value
+    }
 }
 // SetOriginSystem sets the originSystem property value. The origin system for the scope.
 func (m *AccessPackageResourceScope) SetOriginSystem(value *string)() {
-    m.originSystem = value
+    if m != nil {
+        m.originSystem = value
+    }
 }
 // SetRoleOriginId sets the roleOriginId property value. The origin system for the role, if different.
 func (m *AccessPackageResourceScope) SetRoleOriginId(value *string)() {
-    m.roleOriginId = value
+    if m != nil {
+        m.roleOriginId = value
+    }
 }
 // SetUrl sets the url property value. A resource locator for the scope.
 func (m *AccessPackageResourceScope) SetUrl(value *string)() {
-    m.url = value
+    if m != nil {
+        m.url = value
+    }
 }

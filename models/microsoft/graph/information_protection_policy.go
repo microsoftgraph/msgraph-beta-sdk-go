@@ -68,5 +68,7 @@ func (m *InformationProtectionPolicy) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetLabels sets the labels property value. 
 func (m *InformationProtectionPolicy) SetLabels(value []InformationProtectionLabel)() {
-    m.labels = value
+    if m != nil {
+        m.labels = value
+    }
 }

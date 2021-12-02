@@ -103,13 +103,19 @@ func (m *GetMailTipsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetMailTipsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEmailAddresses sets the EmailAddresses property value. 
 func (m *GetMailTipsRequestBody) SetEmailAddresses(value []string)() {
-    m.emailAddresses = value
+    if m != nil {
+        m.emailAddresses = value
+    }
 }
 // SetMailTipsOptions sets the MailTipsOptions property value. 
 func (m *GetMailTipsRequestBody) SetMailTipsOptions(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MailTipsType)() {
-    m.mailTipsOptions = value
+    if m != nil {
+        m.mailTipsOptions = value
+    }
 }

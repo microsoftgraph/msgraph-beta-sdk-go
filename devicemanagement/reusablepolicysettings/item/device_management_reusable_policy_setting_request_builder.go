@@ -43,7 +43,7 @@ type DeviceManagementReusablePolicySettingRequestBuilderGetQueryParameters struc
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceManagementReusablePolicySettingRequestBuilderPatchOptions options for Patch
 type DeviceManagementReusablePolicySettingRequestBuilderPatchOptions struct {

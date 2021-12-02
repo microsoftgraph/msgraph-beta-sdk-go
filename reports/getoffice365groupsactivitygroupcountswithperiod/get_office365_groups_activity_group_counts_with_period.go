@@ -164,21 +164,31 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) Serialize(writer i04eb
 }
 // SetActive sets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
 func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) SetActive(value *int64)() {
-    m.active = value
+    if m != nil {
+        m.active = value
+    }
 }
 // SetReportDate sets the reportDate property value. The date on which a number of groups were active.
 func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. The number of days the report covers.
 func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetTotal sets the total property value. The total number of groups.
 func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) SetTotal(value *int64)() {
-    m.total = value
+    if m != nil {
+        m.total = value
+    }
 }

@@ -164,21 +164,31 @@ func (m *GetYammerGroupsActivityGroupCountsWithPeriod) Serialize(writer i04eb530
 }
 // SetActive sets the active property value. 
 func (m *GetYammerGroupsActivityGroupCountsWithPeriod) SetActive(value *int64)() {
-    m.active = value
+    if m != nil {
+        m.active = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetYammerGroupsActivityGroupCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetYammerGroupsActivityGroupCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetYammerGroupsActivityGroupCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetTotal sets the total property value. 
 func (m *GetYammerGroupsActivityGroupCountsWithPeriod) SetTotal(value *int64)() {
-    m.total = value
+    if m != nil {
+        m.total = value
+    }
 }

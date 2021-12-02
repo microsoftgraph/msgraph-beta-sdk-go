@@ -208,29 +208,43 @@ func (m *ApplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExcludeGroups sets the excludeGroups property value. 
 func (m *ApplyRequestBody) SetExcludeGroups(value []string)() {
-    m.excludeGroups = value
+    if m != nil {
+        m.excludeGroups = value
+    }
 }
 // SetIncludeAllUsers sets the includeAllUsers property value. 
 func (m *ApplyRequestBody) SetIncludeAllUsers(value *bool)() {
-    m.includeAllUsers = value
+    if m != nil {
+        m.includeAllUsers = value
+    }
 }
 // SetIncludeGroups sets the includeGroups property value. 
 func (m *ApplyRequestBody) SetIncludeGroups(value []string)() {
-    m.includeGroups = value
+    if m != nil {
+        m.includeGroups = value
+    }
 }
 // SetManagementTemplateId sets the managementTemplateId property value. 
 func (m *ApplyRequestBody) SetManagementTemplateId(value *string)() {
-    m.managementTemplateId = value
+    if m != nil {
+        m.managementTemplateId = value
+    }
 }
 // SetTenantGroupId sets the tenantGroupId property value. 
 func (m *ApplyRequestBody) SetTenantGroupId(value *string)() {
-    m.tenantGroupId = value
+    if m != nil {
+        m.tenantGroupId = value
+    }
 }
 // SetTenantId sets the tenantId property value. 
 func (m *ApplyRequestBody) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }

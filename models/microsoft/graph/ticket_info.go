@@ -96,13 +96,19 @@ func (m *TicketInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TicketInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTicketNumber sets the ticketNumber property value. Ticket number meta data
 func (m *TicketInfo) SetTicketNumber(value *string)() {
-    m.ticketNumber = value
+    if m != nil {
+        m.ticketNumber = value
+    }
 }
 // SetTicketSystem sets the ticketSystem property value. Ticket system meta data
 func (m *TicketInfo) SetTicketSystem(value *string)() {
-    m.ticketSystem = value
+    if m != nil {
+        m.ticketSystem = value
+    }
 }

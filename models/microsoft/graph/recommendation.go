@@ -448,61 +448,91 @@ func (m *Recommendation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetActionSteps sets the actionSteps property value. 
 func (m *Recommendation) SetActionSteps(value []ActionStep)() {
-    m.actionSteps = value
+    if m != nil {
+        m.actionSteps = value
+    }
 }
 // SetBenefits sets the benefits property value. 
 func (m *Recommendation) SetBenefits(value *string)() {
-    m.benefits = value
+    if m != nil {
+        m.benefits = value
+    }
 }
 // SetCategory sets the category property value. 
 func (m *Recommendation) SetCategory(value *RecommendationCategory)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. 
 func (m *Recommendation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *Recommendation) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetImpactedResources sets the impactedResources property value. 
 func (m *Recommendation) SetImpactedResources(value []RecommendationResource)() {
-    m.impactedResources = value
+    if m != nil {
+        m.impactedResources = value
+    }
 }
 // SetImpactStartDateTime sets the impactStartDateTime property value. 
 func (m *Recommendation) SetImpactStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.impactStartDateTime = value
+    if m != nil {
+        m.impactStartDateTime = value
+    }
 }
 // SetImpactType sets the impactType property value. 
 func (m *Recommendation) SetImpactType(value *string)() {
-    m.impactType = value
+    if m != nil {
+        m.impactType = value
+    }
 }
 // SetInsights sets the insights property value. 
 func (m *Recommendation) SetInsights(value *string)() {
-    m.insights = value
+    if m != nil {
+        m.insights = value
+    }
 }
 // SetLastCheckedDateTime sets the lastCheckedDateTime property value. 
 func (m *Recommendation) SetLastCheckedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastCheckedDateTime = value
+    if m != nil {
+        m.lastCheckedDateTime = value
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. 
 func (m *Recommendation) SetLastModifiedBy(value *string)() {
-    m.lastModifiedBy = value
+    if m != nil {
+        m.lastModifiedBy = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *Recommendation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPostponeUntilDateTime sets the postponeUntilDateTime property value. 
 func (m *Recommendation) SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.postponeUntilDateTime = value
+    if m != nil {
+        m.postponeUntilDateTime = value
+    }
 }
 // SetPriority sets the priority property value. 
 func (m *Recommendation) SetPriority(value *RecommendationPriority)() {
-    m.priority = value
+    if m != nil {
+        m.priority = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *Recommendation) SetStatus(value *RecommendationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

@@ -125,17 +125,25 @@ func (m *MembershipRuleProcessingStatus) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MembershipRuleProcessingStatus) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetErrorMessage sets the errorMessage property value. Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
 func (m *MembershipRuleProcessingStatus) SetErrorMessage(value *string)() {
-    m.errorMessage = value
+    if m != nil {
+        m.errorMessage = value
+    }
 }
 // SetLastMembershipUpdated sets the lastMembershipUpdated property value. Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
 func (m *MembershipRuleProcessingStatus) SetLastMembershipUpdated(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastMembershipUpdated = value
+    if m != nil {
+        m.lastMembershipUpdated = value
+    }
 }
 // SetStatus sets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.   Required. Read-only.
 func (m *MembershipRuleProcessingStatus) SetStatus(value *MembershipRuleProcessingStatusDetails)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

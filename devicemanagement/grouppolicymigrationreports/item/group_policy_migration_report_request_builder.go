@@ -44,7 +44,7 @@ type GroupPolicyMigrationReportRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // GroupPolicyMigrationReportRequestBuilderPatchOptions options for Patch
 type GroupPolicyMigrationReportRequestBuilderPatchOptions struct {

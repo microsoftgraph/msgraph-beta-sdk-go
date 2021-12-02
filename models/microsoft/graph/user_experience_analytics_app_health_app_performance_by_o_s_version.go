@@ -267,37 +267,55 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) Serialize(wr
 }
 // SetActiveDeviceCount sets the activeDeviceCount property value. The number of devices where the app has been active. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) SetActiveDeviceCount(value *int32)() {
-    m.activeDeviceCount = value
+    if m != nil {
+        m.activeDeviceCount = value
+    }
 }
 // SetAppCrashCount sets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) SetAppCrashCount(value *int32)() {
-    m.appCrashCount = value
+    if m != nil {
+        m.appCrashCount = value
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. The friendly name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    if m != nil {
+        m.appDisplayName = value
+    }
 }
 // SetAppName sets the appName property value. The name of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) SetAppName(value *string)() {
-    m.appName = value
+    if m != nil {
+        m.appName = value
+    }
 }
 // SetAppPublisher sets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) SetAppPublisher(value *string)() {
-    m.appPublisher = value
+    if m != nil {
+        m.appPublisher = value
+    }
 }
 // SetAppUsageDuration sets the appUsageDuration property value. The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) SetAppUsageDuration(value *int32)() {
-    m.appUsageDuration = value
+    if m != nil {
+        m.appUsageDuration = value
+    }
 }
 // SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) SetMeanTimeToFailureInMinutes(value *int32)() {
-    m.meanTimeToFailureInMinutes = value
+    if m != nil {
+        m.meanTimeToFailureInMinutes = value
+    }
 }
 // SetOsBuildNumber sets the osBuildNumber property value. The os build number of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) SetOsBuildNumber(value *string)() {
-    m.osBuildNumber = value
+    if m != nil {
+        m.osBuildNumber = value
+    }
 }
 // SetOsVersion sets the osVersion property value. The os version of the application.
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion) SetOsVersion(value *string)() {
-    m.osVersion = value
+    if m != nil {
+        m.osVersion = value
+    }
 }

@@ -96,13 +96,19 @@ func (m *UpdateWindow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateWindow) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetUpdateWindowEndTime sets the updateWindowEndTime property value. End of a time window during which agents can receive updates
 func (m *UpdateWindow) SetUpdateWindowEndTime(value *string)() {
-    m.updateWindowEndTime = value
+    if m != nil {
+        m.updateWindowEndTime = value
+    }
 }
 // SetUpdateWindowStartTime sets the updateWindowStartTime property value. Start of a time window during which agents can receive updates
 func (m *UpdateWindow) SetUpdateWindowStartTime(value *string)() {
-    m.updateWindowStartTime = value
+    if m != nil {
+        m.updateWindowStartTime = value
+    }
 }

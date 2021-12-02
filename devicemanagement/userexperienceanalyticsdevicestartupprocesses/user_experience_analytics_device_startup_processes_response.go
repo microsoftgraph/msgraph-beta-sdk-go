@@ -106,13 +106,19 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessesResponse) Serialize(writer
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsDeviceStartupProcessesResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNextLink sets the nextLink property value. 
 func (m *UserExperienceAnalyticsDeviceStartupProcessesResponse) SetNextLink(value *string)() {
-    m.nextLink = value
+    if m != nil {
+        m.nextLink = value
+    }
 }
 // SetValue sets the value property value. 
 func (m *UserExperienceAnalyticsDeviceStartupProcessesResponse) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserExperienceAnalyticsDeviceStartupProcess)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

@@ -150,21 +150,31 @@ func (m *DeviceManagementApplicabilityRuleOsVersion) Serialize(writer i04eb5309a
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMaxOSVersion sets the maxOSVersion property value. Max OS version for Applicability Rule.
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetMaxOSVersion(value *string)() {
-    m.maxOSVersion = value
+    if m != nil {
+        m.maxOSVersion = value
+    }
 }
 // SetMinOSVersion sets the minOSVersion property value. Min OS version for Applicability Rule.
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetMinOSVersion(value *string)() {
-    m.minOSVersion = value
+    if m != nil {
+        m.minOSVersion = value
+    }
 }
 // SetName sets the name property value. Name for object.
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetRuleType sets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetRuleType(value *DeviceManagementApplicabilityRuleType)() {
-    m.ruleType = value
+    if m != nil {
+        m.ruleType = value
+    }
 }

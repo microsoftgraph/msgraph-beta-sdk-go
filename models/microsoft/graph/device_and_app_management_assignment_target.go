@@ -98,13 +98,19 @@ func (m *DeviceAndAppManagementAssignmentTarget) Serialize(writer i04eb5309aeaaf
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceAndAppManagementAssignmentTarget) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceAndAppManagementAssignmentFilterId sets the deviceAndAppManagementAssignmentFilterId property value. The Id of the filter for the target assignment.
 func (m *DeviceAndAppManagementAssignmentTarget) SetDeviceAndAppManagementAssignmentFilterId(value *string)() {
-    m.deviceAndAppManagementAssignmentFilterId = value
+    if m != nil {
+        m.deviceAndAppManagementAssignmentFilterId = value
+    }
 }
 // SetDeviceAndAppManagementAssignmentFilterType sets the deviceAndAppManagementAssignmentFilterType property value. The type of filter of the target assignment i.e. Exclude or Include. Possible values are: none, include, exclude.
 func (m *DeviceAndAppManagementAssignmentTarget) SetDeviceAndAppManagementAssignmentFilterType(value *DeviceAndAppManagementAssignmentFilterType)() {
-    m.deviceAndAppManagementAssignmentFilterType = value
+    if m != nil {
+        m.deviceAndAppManagementAssignmentFilterType = value
+    }
 }

@@ -190,25 +190,37 @@ func (m *GetSkypeForBusinessActivityCountsWithPeriod) Serialize(writer i04eb5309
 }
 // SetOrganized sets the organized property value. 
 func (m *GetSkypeForBusinessActivityCountsWithPeriod) SetOrganized(value *int64)() {
-    m.organized = value
+    if m != nil {
+        m.organized = value
+    }
 }
 // SetParticipated sets the participated property value. 
 func (m *GetSkypeForBusinessActivityCountsWithPeriod) SetParticipated(value *int64)() {
-    m.participated = value
+    if m != nil {
+        m.participated = value
+    }
 }
 // SetPeerToPeer sets the peerToPeer property value. 
 func (m *GetSkypeForBusinessActivityCountsWithPeriod) SetPeerToPeer(value *int64)() {
-    m.peerToPeer = value
+    if m != nil {
+        m.peerToPeer = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetSkypeForBusinessActivityCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessActivityCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessActivityCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }

@@ -97,13 +97,19 @@ func (m *MobileAppTroubleshootingHistoryItem) Serialize(writer i04eb5309aeaafadd
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppTroubleshootingHistoryItem) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOccurrenceDateTime sets the occurrenceDateTime property value. Time when the history item occurred.
 func (m *MobileAppTroubleshootingHistoryItem) SetOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.occurrenceDateTime = value
+    if m != nil {
+        m.occurrenceDateTime = value
+    }
 }
 // SetTroubleshootingErrorDetails sets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
 func (m *MobileAppTroubleshootingHistoryItem) SetTroubleshootingErrorDetails(value *DeviceManagementTroubleshootingErrorDetails)() {
-    m.troubleshootingErrorDetails = value
+    if m != nil {
+        m.troubleshootingErrorDetails = value
+    }
 }

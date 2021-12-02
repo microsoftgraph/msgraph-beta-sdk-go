@@ -148,21 +148,31 @@ func (m *GenerateKeyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GenerateKeyRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExp sets the exp property value. 
 func (m *GenerateKeyRequestBody) SetExp(value *int64)() {
-    m.exp = value
+    if m != nil {
+        m.exp = value
+    }
 }
 // SetKty sets the kty property value. 
 func (m *GenerateKeyRequestBody) SetKty(value *string)() {
-    m.kty = value
+    if m != nil {
+        m.kty = value
+    }
 }
 // SetNbf sets the nbf property value. 
 func (m *GenerateKeyRequestBody) SetNbf(value *int64)() {
-    m.nbf = value
+    if m != nil {
+        m.nbf = value
+    }
 }
 // SetUse sets the use property value. 
 func (m *GenerateKeyRequestBody) SetUse(value *string)() {
-    m.use = value
+    if m != nil {
+        m.use = value
+    }
 }

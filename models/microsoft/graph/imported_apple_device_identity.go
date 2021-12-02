@@ -326,45 +326,67 @@ func (m *ImportedAppleDeviceIdentity) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetCreatedDateTime sets the createdDateTime property value. Created Date Time of the device
 func (m *ImportedAppleDeviceIdentity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. The description of the device
 func (m *ImportedAppleDeviceIdentity) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDiscoverySource sets the discoverySource property value. Apple device discovery source. Possible values are: unknown, adminImport, deviceEnrollmentProgram.
 func (m *ImportedAppleDeviceIdentity) SetDiscoverySource(value *DiscoverySource)() {
-    m.discoverySource = value
+    if m != nil {
+        m.discoverySource = value
+    }
 }
 // SetEnrollmentState sets the enrollmentState property value. The state of the device in Intune. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
 func (m *ImportedAppleDeviceIdentity) SetEnrollmentState(value *EnrollmentState)() {
-    m.enrollmentState = value
+    if m != nil {
+        m.enrollmentState = value
+    }
 }
 // SetIsDeleted sets the isDeleted property value. Indicates if the device is deleted from Apple Business Manager
 func (m *ImportedAppleDeviceIdentity) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    if m != nil {
+        m.isDeleted = value
+    }
 }
 // SetIsSupervised sets the isSupervised property value. Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
 func (m *ImportedAppleDeviceIdentity) SetIsSupervised(value *bool)() {
-    m.isSupervised = value
+    if m != nil {
+        m.isSupervised = value
+    }
 }
 // SetLastContactedDateTime sets the lastContactedDateTime property value. Last Contacted Date Time of the device
 func (m *ImportedAppleDeviceIdentity) SetLastContactedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastContactedDateTime = value
+    if m != nil {
+        m.lastContactedDateTime = value
+    }
 }
 // SetPlatform sets the platform property value. The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
 func (m *ImportedAppleDeviceIdentity) SetPlatform(value *Platform)() {
-    m.platform = value
+    if m != nil {
+        m.platform = value
+    }
 }
 // SetRequestedEnrollmentProfileAssignmentDateTime sets the requestedEnrollmentProfileAssignmentDateTime property value. The time enrollment profile was assigned to the device
 func (m *ImportedAppleDeviceIdentity) SetRequestedEnrollmentProfileAssignmentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.requestedEnrollmentProfileAssignmentDateTime = value
+    if m != nil {
+        m.requestedEnrollmentProfileAssignmentDateTime = value
+    }
 }
 // SetRequestedEnrollmentProfileId sets the requestedEnrollmentProfileId property value. Enrollment profile Id admin intends to apply to the device during next enrollment
 func (m *ImportedAppleDeviceIdentity) SetRequestedEnrollmentProfileId(value *string)() {
-    m.requestedEnrollmentProfileId = value
+    if m != nil {
+        m.requestedEnrollmentProfileId = value
+    }
 }
 // SetSerialNumber sets the serialNumber property value. Device serial number
 func (m *ImportedAppleDeviceIdentity) SetSerialNumber(value *string)() {
-    m.serialNumber = value
+    if m != nil {
+        m.serialNumber = value
+    }
 }

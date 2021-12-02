@@ -242,33 +242,49 @@ func (m *Mention) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetApplication sets the application property value. The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
 func (m *Mention) SetApplication(value *string)() {
-    m.application = value
+    if m != nil {
+        m.application = value
+    }
 }
 // SetClientReference sets the clientReference property value. A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
 func (m *Mention) SetClientReference(value *string)() {
-    m.clientReference = value
+    if m != nil {
+        m.clientReference = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. The email information of the user who made the mention.
 func (m *Mention) SetCreatedBy(value *EmailAddress)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time that the mention is created on the client.
 func (m *Mention) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDeepLink sets the deepLink property value. A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.
 func (m *Mention) SetDeepLink(value *string)() {
-    m.deepLink = value
+    if m != nil {
+        m.deepLink = value
+    }
 }
 // SetMentioned sets the mentioned property value. 
 func (m *Mention) SetMentioned(value *EmailAddress)() {
-    m.mentioned = value
+    if m != nil {
+        m.mentioned = value
+    }
 }
 // SetMentionText sets the mentionText property value. Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
 func (m *Mention) SetMentionText(value *string)() {
-    m.mentionText = value
+    if m != nil {
+        m.mentionText = value
+    }
 }
 // SetServerCreatedDateTime sets the serverCreatedDateTime property value. The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
 func (m *Mention) SetServerCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.serverCreatedDateTime = value
+    if m != nil {
+        m.serverCreatedDateTime = value
+    }
 }

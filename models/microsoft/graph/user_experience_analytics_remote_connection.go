@@ -371,53 +371,79 @@ func (m *UserExperienceAnalyticsRemoteConnection) Serialize(writer i04eb5309aeaa
 }
 // SetCloudPcFailurePercentage sets the cloudPcFailurePercentage property value. The sign in failure percentage of Cloud PC Device. Valid values 0 to 100
 func (m *UserExperienceAnalyticsRemoteConnection) SetCloudPcFailurePercentage(value *float64)() {
-    m.cloudPcFailurePercentage = value
+    if m != nil {
+        m.cloudPcFailurePercentage = value
+    }
 }
 // SetCloudPcRoundTripTime sets the cloudPcRoundTripTime property value. The round tip time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) SetCloudPcRoundTripTime(value *float64)() {
-    m.cloudPcRoundTripTime = value
+    if m != nil {
+        m.cloudPcRoundTripTime = value
+    }
 }
 // SetCloudPcSignInTime sets the cloudPcSignInTime property value. The sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) SetCloudPcSignInTime(value *float64)() {
-    m.cloudPcSignInTime = value
+    if m != nil {
+        m.cloudPcSignInTime = value
+    }
 }
 // SetCoreBootTime sets the coreBootTime property value. The core boot time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) SetCoreBootTime(value *float64)() {
-    m.coreBootTime = value
+    if m != nil {
+        m.coreBootTime = value
+    }
 }
 // SetCoreSignInTime sets the coreSignInTime property value. The core sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) SetCoreSignInTime(value *float64)() {
-    m.coreSignInTime = value
+    if m != nil {
+        m.coreSignInTime = value
+    }
 }
 // SetDeviceCount sets the deviceCount property value. The count of remote connection. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsRemoteConnection) SetDeviceCount(value *int32)() {
-    m.deviceCount = value
+    if m != nil {
+        m.deviceCount = value
+    }
 }
 // SetDeviceId sets the deviceId property value. The id of the device.
 func (m *UserExperienceAnalyticsRemoteConnection) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetDeviceName sets the deviceName property value. The name of the device.
 func (m *UserExperienceAnalyticsRemoteConnection) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. The user experience analytics manufacturer.
 func (m *UserExperienceAnalyticsRemoteConnection) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetModel sets the model property value. The user experience analytics device model.
 func (m *UserExperienceAnalyticsRemoteConnection) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }
 // SetRemoteSignInTime sets the remoteSignInTime property value. The remote sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) SetRemoteSignInTime(value *float64)() {
-    m.remoteSignInTime = value
+    if m != nil {
+        m.remoteSignInTime = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user experience analytics userPrincipalName.
 func (m *UserExperienceAnalyticsRemoteConnection) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetVirtualNetwork sets the virtualNetwork property value. The user experience analytics virtual network.
 func (m *UserExperienceAnalyticsRemoteConnection) SetVirtualNetwork(value *string)() {
-    m.virtualNetwork = value
+    if m != nil {
+        m.virtualNetwork = value
+    }
 }

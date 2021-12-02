@@ -138,13 +138,19 @@ func (m *DeviceManagementReports) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetCachedReportConfigurations sets the cachedReportConfigurations property value. Entity representing the configuration of a cached report
 func (m *DeviceManagementReports) SetCachedReportConfigurations(value []DeviceManagementCachedReportConfiguration)() {
-    m.cachedReportConfigurations = value
+    if m != nil {
+        m.cachedReportConfigurations = value
+    }
 }
 // SetExportJobs sets the exportJobs property value. Entity representing a job to export a report
 func (m *DeviceManagementReports) SetExportJobs(value []DeviceManagementExportJob)() {
-    m.exportJobs = value
+    if m != nil {
+        m.exportJobs = value
+    }
 }
 // SetReportSchedules sets the reportSchedules property value. Entity representing a schedule for which reports are delivered
 func (m *DeviceManagementReports) SetReportSchedules(value []DeviceManagementReportSchedule)() {
-    m.reportSchedules = value
+    if m != nil {
+        m.reportSchedules = value
+    }
 }

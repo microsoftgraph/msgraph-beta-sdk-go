@@ -68,5 +68,7 @@ func (m *Ediscoveryroot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetCases sets the cases property value. 
 func (m *Ediscoveryroot) SetCases(value []Case_escaped)() {
-    m.cases = value
+    if m != nil {
+        m.cases = value
+    }
 }

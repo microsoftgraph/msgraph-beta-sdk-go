@@ -315,45 +315,67 @@ func (m *MatchingLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchingLabel) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicationMode sets the applicationMode property value. 
 func (m *MatchingLabel) SetApplicationMode(value *ApplicationMode)() {
-    m.applicationMode = value
+    if m != nil {
+        m.applicationMode = value
+    }
 }
 // SetDescription sets the description property value. 
 func (m *MatchingLabel) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *MatchingLabel) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetId sets the id property value. 
 func (m *MatchingLabel) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetIsEndpointProtectionEnabled sets the isEndpointProtectionEnabled property value. 
 func (m *MatchingLabel) SetIsEndpointProtectionEnabled(value *bool)() {
-    m.isEndpointProtectionEnabled = value
+    if m != nil {
+        m.isEndpointProtectionEnabled = value
+    }
 }
 // SetLabelActions sets the labelActions property value. 
 func (m *MatchingLabel) SetLabelActions(value []LabelActionBase)() {
-    m.labelActions = value
+    if m != nil {
+        m.labelActions = value
+    }
 }
 // SetName sets the name property value. 
 func (m *MatchingLabel) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetPolicyTip sets the policyTip property value. 
 func (m *MatchingLabel) SetPolicyTip(value *string)() {
-    m.policyTip = value
+    if m != nil {
+        m.policyTip = value
+    }
 }
 // SetPriority sets the priority property value. 
 func (m *MatchingLabel) SetPriority(value *int32)() {
-    m.priority = value
+    if m != nil {
+        m.priority = value
+    }
 }
 // SetToolTip sets the toolTip property value. 
 func (m *MatchingLabel) SetToolTip(value *string)() {
-    m.toolTip = value
+    if m != nil {
+        m.toolTip = value
+    }
 }

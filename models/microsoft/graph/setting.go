@@ -177,25 +177,37 @@ func (m *Setting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Setting) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the setting. Required. Read-only.
 func (m *Setting) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetJsonValue sets the jsonValue property value. The value for the setting serialized as string of JSON. Required. Read-only.
 func (m *Setting) SetJsonValue(value *string)() {
-    m.jsonValue = value
+    if m != nil {
+        m.jsonValue = value
+    }
 }
 // SetOverwriteAllowed sets the overwriteAllowed property value. A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
 func (m *Setting) SetOverwriteAllowed(value *bool)() {
-    m.overwriteAllowed = value
+    if m != nil {
+        m.overwriteAllowed = value
+    }
 }
 // SetSettingId sets the settingId property value. 
 func (m *Setting) SetSettingId(value *string)() {
-    m.settingId = value
+    if m != nil {
+        m.settingId = value
+    }
 }
 // SetValueType sets the valueType property value. The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
 func (m *Setting) SetValueType(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType)() {
-    m.valueType = value
+    if m != nil {
+        m.valueType = value
+    }
 }

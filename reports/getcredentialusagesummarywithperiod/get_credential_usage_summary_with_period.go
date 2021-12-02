@@ -142,17 +142,25 @@ func (m *GetCredentialUsageSummaryWithPeriod) Serialize(writer i04eb5309aeaafadd
 }
 // SetAuthMethod sets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
 func (m *GetCredentialUsageSummaryWithPeriod) SetAuthMethod(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UsageAuthMethod)() {
-    m.authMethod = value
+    if m != nil {
+        m.authMethod = value
+    }
 }
 // SetFailureActivityCount sets the failureActivityCount property value. Provides the count of failed resets or registration data.
 func (m *GetCredentialUsageSummaryWithPeriod) SetFailureActivityCount(value *int64)() {
-    m.failureActivityCount = value
+    if m != nil {
+        m.failureActivityCount = value
+    }
 }
 // SetFeature sets the feature property value. Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.
 func (m *GetCredentialUsageSummaryWithPeriod) SetFeature(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FeatureType)() {
-    m.feature = value
+    if m != nil {
+        m.feature = value
+    }
 }
 // SetSuccessfulActivityCount sets the successfulActivityCount property value. Provides the count of successful registrations or resets.
 func (m *GetCredentialUsageSummaryWithPeriod) SetSuccessfulActivityCount(value *int64)() {
-    m.successfulActivityCount = value
+    if m != nil {
+        m.successfulActivityCount = value
+    }
 }

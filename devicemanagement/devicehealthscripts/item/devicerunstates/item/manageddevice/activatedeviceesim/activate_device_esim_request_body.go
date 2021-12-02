@@ -70,9 +70,13 @@ func (m *ActivateDeviceEsimRequestBody) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActivateDeviceEsimRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCarrierUrl sets the carrierUrl property value. 
 func (m *ActivateDeviceEsimRequestBody) SetCarrierUrl(value *string)() {
-    m.carrierUrl = value
+    if m != nil {
+        m.carrierUrl = value
+    }
 }

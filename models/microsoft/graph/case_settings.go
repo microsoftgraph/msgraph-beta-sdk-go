@@ -111,13 +111,19 @@ func (m *CaseSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetOcr sets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
 func (m *CaseSettings) SetOcr(value *OcrSettings)() {
-    m.ocr = value
+    if m != nil {
+        m.ocr = value
+    }
 }
 // SetRedundancyDetection sets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
 func (m *CaseSettings) SetRedundancyDetection(value *RedundancyDetectionSettings)() {
-    m.redundancyDetection = value
+    if m != nil {
+        m.redundancyDetection = value
+    }
 }
 // SetTopicModeling sets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
 func (m *CaseSettings) SetTopicModeling(value *TopicModelingSettings)() {
-    m.topicModeling = value
+    if m != nil {
+        m.topicModeling = value
+    }
 }

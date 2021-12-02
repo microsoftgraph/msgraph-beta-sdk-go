@@ -122,17 +122,25 @@ func (m *DeviceKey) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceKey) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceId sets the deviceId property value. 
 func (m *DeviceKey) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetKeyMaterial sets the keyMaterial property value. 
 func (m *DeviceKey) SetKeyMaterial(value []byte)() {
-    m.keyMaterial = value
+    if m != nil {
+        m.keyMaterial = value
+    }
 }
 // SetKeyType sets the keyType property value. 
 func (m *DeviceKey) SetKeyType(value *string)() {
-    m.keyType = value
+    if m != nil {
+        m.keyType = value
+    }
 }

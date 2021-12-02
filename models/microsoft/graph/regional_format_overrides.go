@@ -226,33 +226,49 @@ func (m *RegionalFormatOverrides) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RegionalFormatOverrides) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCalendar sets the calendar property value. The calendar to use, e.g., Gregorian Calendar.Returned by default.
 func (m *RegionalFormatOverrides) SetCalendar(value *string)() {
-    m.calendar = value
+    if m != nil {
+        m.calendar = value
+    }
 }
 // SetFirstDayOfWeek sets the firstDayOfWeek property value. The first day of the week to use, e.g., Sunday.Returned by default.
 func (m *RegionalFormatOverrides) SetFirstDayOfWeek(value *string)() {
-    m.firstDayOfWeek = value
+    if m != nil {
+        m.firstDayOfWeek = value
+    }
 }
 // SetLongDateFormat sets the longDateFormat property value. The long date time format to be used for displaying dates.Returned by default.
 func (m *RegionalFormatOverrides) SetLongDateFormat(value *string)() {
-    m.longDateFormat = value
+    if m != nil {
+        m.longDateFormat = value
+    }
 }
 // SetLongTimeFormat sets the longTimeFormat property value. The long time format to be used for displaying time.Returned by default.
 func (m *RegionalFormatOverrides) SetLongTimeFormat(value *string)() {
-    m.longTimeFormat = value
+    if m != nil {
+        m.longTimeFormat = value
+    }
 }
 // SetShortDateFormat sets the shortDateFormat property value. The short date time format to be used for displaying dates.Returned by default.
 func (m *RegionalFormatOverrides) SetShortDateFormat(value *string)() {
-    m.shortDateFormat = value
+    if m != nil {
+        m.shortDateFormat = value
+    }
 }
 // SetShortTimeFormat sets the shortTimeFormat property value. The short time format to be used for displaying time.Returned by default.
 func (m *RegionalFormatOverrides) SetShortTimeFormat(value *string)() {
-    m.shortTimeFormat = value
+    if m != nil {
+        m.shortTimeFormat = value
+    }
 }
 // SetTimeZone sets the timeZone property value. The timezone to be used for displaying time.Returned by default.
 func (m *RegionalFormatOverrides) SetTimeZone(value *string)() {
-    m.timeZone = value
+    if m != nil {
+        m.timeZone = value
+    }
 }

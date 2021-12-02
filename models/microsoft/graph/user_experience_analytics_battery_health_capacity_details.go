@@ -137,17 +137,25 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) Serialize(writer i
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetActiveDevices(value *int32)() {
-    m.activeDevices = value
+    if m != nil {
+        m.activeDevices = value
+    }
 }
 // SetBatteryCapacityFair sets the batteryCapacityFair property value. Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetBatteryCapacityFair(value *int32)() {
-    m.batteryCapacityFair = value
+    if m != nil {
+        m.batteryCapacityFair = value
+    }
 }
 // SetBatteryCapacityGood sets the batteryCapacityGood property value. Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetBatteryCapacityGood(value *int32)() {
-    m.batteryCapacityGood = value
+    if m != nil {
+        m.batteryCapacityGood = value
+    }
 }
 // SetBatteryCapacityPoor sets the batteryCapacityPoor property value. Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetBatteryCapacityPoor(value *int32)() {
-    m.batteryCapacityPoor = value
+    if m != nil {
+        m.batteryCapacityPoor = value
+    }
 }

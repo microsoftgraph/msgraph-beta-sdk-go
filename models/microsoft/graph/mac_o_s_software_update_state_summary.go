@@ -194,25 +194,37 @@ func (m *MacOSSoftwareUpdateStateSummary) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetDisplayName sets the displayName property value. Human readable name of the software update
 func (m *MacOSSoftwareUpdateStateSummary) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Last date time the report for this device and product key was updated.
 func (m *MacOSSoftwareUpdateStateSummary) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdatedDateTime = value
+    if m != nil {
+        m.lastUpdatedDateTime = value
+    }
 }
 // SetProductKey sets the productKey property value. Product key of the software update.
 func (m *MacOSSoftwareUpdateStateSummary) SetProductKey(value *string)() {
-    m.productKey = value
+    if m != nil {
+        m.productKey = value
+    }
 }
 // SetState sets the state property value. State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
 func (m *MacOSSoftwareUpdateStateSummary) SetState(value *MacOSSoftwareUpdateState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetUpdateCategory sets the updateCategory property value. Software update category. Possible values are: critical, configurationDataFile, firmware, other.
 func (m *MacOSSoftwareUpdateStateSummary) SetUpdateCategory(value *MacOSSoftwareUpdateCategory)() {
-    m.updateCategory = value
+    if m != nil {
+        m.updateCategory = value
+    }
 }
 // SetUpdateVersion sets the updateVersion property value. Version of the software update
 func (m *MacOSSoftwareUpdateStateSummary) SetUpdateVersion(value *string)() {
-    m.updateVersion = value
+    if m != nil {
+        m.updateVersion = value
+    }
 }

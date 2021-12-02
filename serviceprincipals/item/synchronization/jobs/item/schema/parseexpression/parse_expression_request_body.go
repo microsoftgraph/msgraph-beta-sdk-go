@@ -123,17 +123,25 @@ func (m *ParseExpressionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParseExpressionRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExpression sets the expression property value. 
 func (m *ParseExpressionRequestBody) SetExpression(value *string)() {
-    m.expression = value
+    if m != nil {
+        m.expression = value
+    }
 }
 // SetTargetAttributeDefinition sets the targetAttributeDefinition property value. 
 func (m *ParseExpressionRequestBody) SetTargetAttributeDefinition(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AttributeDefinition)() {
-    m.targetAttributeDefinition = value
+    if m != nil {
+        m.targetAttributeDefinition = value
+    }
 }
 // SetTestInputObject sets the testInputObject property value. 
 func (m *ParseExpressionRequestBody) SetTestInputObject(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExpressionInputObject)() {
-    m.testInputObject = value
+    if m != nil {
+        m.testInputObject = value
+    }
 }

@@ -216,29 +216,43 @@ func (m *GetOffice365ActivationCounts) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAndroid sets the android property value. The activation count on an Android device.
 func (m *GetOffice365ActivationCounts) SetAndroid(value *int64)() {
-    m.android = value
+    if m != nil {
+        m.android = value
+    }
 }
 // SetIos sets the ios property value. The activation count on iOS.
 func (m *GetOffice365ActivationCounts) SetIos(value *int64)() {
-    m.ios = value
+    if m != nil {
+        m.ios = value
+    }
 }
 // SetMac sets the mac property value. The activation count on Mac OS.
 func (m *GetOffice365ActivationCounts) SetMac(value *int64)() {
-    m.mac = value
+    if m != nil {
+        m.mac = value
+    }
 }
 // SetProductType sets the productType property value. The product type, such as 'Microsoft 365 ProPlus' or 'Project Client'.
 func (m *GetOffice365ActivationCounts) SetProductType(value *string)() {
-    m.productType = value
+    if m != nil {
+        m.productType = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *GetOffice365ActivationCounts) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetWindows sets the windows property value. The activation count on Windows. This number includes every activation on any Windows computer.
 func (m *GetOffice365ActivationCounts) SetWindows(value *int64)() {
-    m.windows = value
+    if m != nil {
+        m.windows = value
+    }
 }
 // SetWindows10Mobile sets the windows10Mobile property value. The activation count on Windows 10 mobile.
 func (m *GetOffice365ActivationCounts) SetWindows10Mobile(value *int64)() {
-    m.windows10Mobile = value
+    if m != nil {
+        m.windows10Mobile = value
+    }
 }

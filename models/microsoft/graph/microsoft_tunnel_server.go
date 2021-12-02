@@ -166,21 +166,31 @@ func (m *MicrosoftTunnelServer) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAgentImageDigest sets the agentImageDigest property value. The digest of the current agent image running on this server
 func (m *MicrosoftTunnelServer) SetAgentImageDigest(value *string)() {
-    m.agentImageDigest = value
+    if m != nil {
+        m.agentImageDigest = value
+    }
 }
 // SetDisplayName sets the displayName property value. The MicrosoftTunnelServer's display name
 func (m *MicrosoftTunnelServer) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastCheckinDateTime sets the lastCheckinDateTime property value. When the MicrosoftTunnelServer last checked in
 func (m *MicrosoftTunnelServer) SetLastCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastCheckinDateTime = value
+    if m != nil {
+        m.lastCheckinDateTime = value
+    }
 }
 // SetServerImageDigest sets the serverImageDigest property value. The digest of the current server image running on this server
 func (m *MicrosoftTunnelServer) SetServerImageDigest(value *string)() {
-    m.serverImageDigest = value
+    if m != nil {
+        m.serverImageDigest = value
+    }
 }
 // SetTunnelServerHealthStatus sets the tunnelServerHealthStatus property value. The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
 func (m *MicrosoftTunnelServer) SetTunnelServerHealthStatus(value *MicrosoftTunnelServerHealthStatus)() {
-    m.tunnelServerHealthStatus = value
+    if m != nil {
+        m.tunnelServerHealthStatus = value
+    }
 }

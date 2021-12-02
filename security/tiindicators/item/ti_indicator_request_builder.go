@@ -40,7 +40,7 @@ type TiIndicatorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TiIndicatorRequestBuilderPatchOptions options for Patch
 type TiIndicatorRequestBuilderPatchOptions struct {

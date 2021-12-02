@@ -72,9 +72,13 @@ func (m *ContinuousAccessEvaluationSessionControl) Serialize(writer i04eb5309aea
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContinuousAccessEvaluationSessionControl) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMode sets the mode property value. Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue.
 func (m *ContinuousAccessEvaluationSessionControl) SetMode(value *ContinuousAccessEvaluationMode)() {
-    m.mode = value
+    if m != nil {
+        m.mode = value
+    }
 }

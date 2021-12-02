@@ -98,13 +98,19 @@ func (m *CurrentLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CurrentLabel) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicationMode sets the applicationMode property value. 
 func (m *CurrentLabel) SetApplicationMode(value *ApplicationMode)() {
-    m.applicationMode = value
+    if m != nil {
+        m.applicationMode = value
+    }
 }
 // SetId sets the id property value. 
 func (m *CurrentLabel) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }

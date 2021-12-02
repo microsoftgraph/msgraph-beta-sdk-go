@@ -74,9 +74,13 @@ func (m *BulkReprovisionCloudPcRequestBody) Serialize(writer i04eb5309aeaafadd28
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkReprovisionCloudPcRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetManagedDeviceIds sets the managedDeviceIds property value. 
 func (m *BulkReprovisionCloudPcRequestBody) SetManagedDeviceIds(value []string)() {
-    m.managedDeviceIds = value
+    if m != nil {
+        m.managedDeviceIds = value
+    }
 }

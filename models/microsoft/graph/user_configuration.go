@@ -59,5 +59,7 @@ func (m *UserConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetBinaryData sets the binaryData property value. 
 func (m *UserConfiguration) SetBinaryData(value []byte)() {
-    m.binaryData = value
+    if m != nil {
+        m.binaryData = value
+    }
 }

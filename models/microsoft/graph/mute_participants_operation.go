@@ -63,5 +63,7 @@ func (m *MuteParticipantsOperation) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetParticipants sets the participants property value. 
 func (m *MuteParticipantsOperation) SetParticipants(value []string)() {
-    m.participants = value
+    if m != nil {
+        m.participants = value
+    }
 }

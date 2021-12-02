@@ -103,9 +103,13 @@ func (m *DeploymentAudience) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetExclusions sets the exclusions property value. Specifies the assets to exclude from the audience.
 func (m *DeploymentAudience) SetExclusions(value []UpdatableAsset)() {
-    m.exclusions = value
+    if m != nil {
+        m.exclusions = value
+    }
 }
 // SetMembers sets the members property value. Specifies the assets to include in the audience.
 func (m *DeploymentAudience) SetMembers(value []UpdatableAsset)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }

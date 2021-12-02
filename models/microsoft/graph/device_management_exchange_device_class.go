@@ -98,13 +98,19 @@ func (m *DeviceManagementExchangeDeviceClass) Serialize(writer i04eb5309aeaafadd
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementExchangeDeviceClass) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetName sets the name property value. Name of the device class which will be impacted by this rule.
 func (m *DeviceManagementExchangeDeviceClass) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Type of device which is impacted by this rule e.g. Model, Family. Possible values are: family, model.
 func (m *DeviceManagementExchangeDeviceClass) SetType_escaped(value *DeviceManagementExchangeAccessRuleType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

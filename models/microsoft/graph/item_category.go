@@ -112,13 +112,19 @@ func (m *ItemCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetCode sets the code property value. 
 func (m *ItemCategory) SetCode(value *string)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *ItemCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *ItemCategory) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }

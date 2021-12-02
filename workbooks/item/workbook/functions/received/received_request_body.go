@@ -175,25 +175,37 @@ func (m *ReceivedRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReceivedRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBasis sets the basis property value. 
 func (m *ReceivedRequestBody) SetBasis(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.basis = value
+    if m != nil {
+        m.basis = value
+    }
 }
 // SetDiscount sets the discount property value. 
 func (m *ReceivedRequestBody) SetDiscount(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.discount = value
+    if m != nil {
+        m.discount = value
+    }
 }
 // SetInvestment sets the investment property value. 
 func (m *ReceivedRequestBody) SetInvestment(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.investment = value
+    if m != nil {
+        m.investment = value
+    }
 }
 // SetMaturity sets the maturity property value. 
 func (m *ReceivedRequestBody) SetMaturity(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.maturity = value
+    if m != nil {
+        m.maturity = value
+    }
 }
 // SetSettlement sets the settlement property value. 
 func (m *ReceivedRequestBody) SetSettlement(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.settlement = value
+    if m != nil {
+        m.settlement = value
+    }
 }

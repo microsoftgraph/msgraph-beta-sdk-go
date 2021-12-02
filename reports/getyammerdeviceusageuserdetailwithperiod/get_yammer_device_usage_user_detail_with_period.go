@@ -372,53 +372,79 @@ func (m *GetYammerDeviceUsageUserDetailWithPeriod) Serialize(writer i04eb5309aea
 }
 // SetDisplayName sets the displayName property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastActivityDate sets the lastActivityDate property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetLastActivityDate(value *string)() {
-    m.lastActivityDate = value
+    if m != nil {
+        m.lastActivityDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetStateChangeDate sets the stateChangeDate property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetStateChangeDate(value *string)() {
-    m.stateChangeDate = value
+    if m != nil {
+        m.stateChangeDate = value
+    }
 }
 // SetUsedAndroidPhone sets the usedAndroidPhone property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsedAndroidPhone(value *bool)() {
-    m.usedAndroidPhone = value
+    if m != nil {
+        m.usedAndroidPhone = value
+    }
 }
 // SetUsediPad sets the usediPad property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsediPad(value *bool)() {
-    m.usediPad = value
+    if m != nil {
+        m.usediPad = value
+    }
 }
 // SetUsediPhone sets the usediPhone property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsediPhone(value *bool)() {
-    m.usediPhone = value
+    if m != nil {
+        m.usediPhone = value
+    }
 }
 // SetUsedOthers sets the usedOthers property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsedOthers(value *bool)() {
-    m.usedOthers = value
+    if m != nil {
+        m.usedOthers = value
+    }
 }
 // SetUsedWeb sets the usedWeb property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsedWeb(value *bool)() {
-    m.usedWeb = value
+    if m != nil {
+        m.usedWeb = value
+    }
 }
 // SetUsedWindowsPhone sets the usedWindowsPhone property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUsedWindowsPhone(value *bool)() {
-    m.usedWindowsPhone = value
+    if m != nil {
+        m.usedWindowsPhone = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetUserState sets the userState property value. 
 func (m *GetYammerDeviceUsageUserDetailWithPeriod) SetUserState(value *string)() {
-    m.userState = value
+    if m != nil {
+        m.userState = value
+    }
 }

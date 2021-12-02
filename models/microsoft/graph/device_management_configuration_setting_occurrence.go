@@ -96,13 +96,19 @@ func (m *DeviceManagementConfigurationSettingOccurrence) Serialize(writer i04eb5
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingOccurrence) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMaxDeviceOccurrence sets the maxDeviceOccurrence property value. Maximum times setting can be set on device.
 func (m *DeviceManagementConfigurationSettingOccurrence) SetMaxDeviceOccurrence(value *int32)() {
-    m.maxDeviceOccurrence = value
+    if m != nil {
+        m.maxDeviceOccurrence = value
+    }
 }
 // SetMinDeviceOccurrence sets the minDeviceOccurrence property value. Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
 func (m *DeviceManagementConfigurationSettingOccurrence) SetMinDeviceOccurrence(value *int32)() {
-    m.minDeviceOccurrence = value
+    if m != nil {
+        m.minDeviceOccurrence = value
+    }
 }

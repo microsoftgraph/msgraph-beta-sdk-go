@@ -190,25 +190,37 @@ func (m *CloudPCConnectivityIssue) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetDeviceId sets the deviceId property value. The Intune DeviceId of the device the connection is associated with.
 func (m *CloudPCConnectivityIssue) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetErrorCode sets the errorCode property value. The error code of the connectivity issue.
 func (m *CloudPCConnectivityIssue) SetErrorCode(value *string)() {
-    m.errorCode = value
+    if m != nil {
+        m.errorCode = value
+    }
 }
 // SetErrorDateTime sets the errorDateTime property value. The time that the connection initiated. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.
 func (m *CloudPCConnectivityIssue) SetErrorDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.errorDateTime = value
+    if m != nil {
+        m.errorDateTime = value
+    }
 }
 // SetErrorDescription sets the errorDescription property value. The detailed description of what went wrong.
 func (m *CloudPCConnectivityIssue) SetErrorDescription(value *string)() {
-    m.errorDescription = value
+    if m != nil {
+        m.errorDescription = value
+    }
 }
 // SetRecommendedAction sets the recommendedAction property value. The recommended action to fix the corresponding error.
 func (m *CloudPCConnectivityIssue) SetRecommendedAction(value *string)() {
-    m.recommendedAction = value
+    if m != nil {
+        m.recommendedAction = value
+    }
 }
 // SetUserId sets the userId property value. The unique id of user who initialize the connection.
 func (m *CloudPCConnectivityIssue) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

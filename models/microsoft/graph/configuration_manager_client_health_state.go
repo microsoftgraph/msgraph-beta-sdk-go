@@ -125,17 +125,25 @@ func (m *ConfigurationManagerClientHealthState) Serialize(writer i04eb5309aeaafa
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientHealthState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetErrorCode sets the errorCode property value. Error code for failed state.
 func (m *ConfigurationManagerClientHealthState) SetErrorCode(value *int32)() {
-    m.errorCode = value
+    if m != nil {
+        m.errorCode = value
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Datetime for last sync with configuration manager management point.
 func (m *ConfigurationManagerClientHealthState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    if m != nil {
+        m.lastSyncDateTime = value
+    }
 }
 // SetState sets the state property value. Current configuration manager client state. Possible values are: unknown, installed, healthy, installFailed, updateFailed, communicationError.
 func (m *ConfigurationManagerClientHealthState) SetState(value *ConfigurationManagerClientState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

@@ -218,29 +218,43 @@ func (m *DeviceComplianceScriptDeviceState) Serialize(writer i04eb5309aeaafadd28
 }
 // SetDetectionState sets the detectionState property value. Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
 func (m *DeviceComplianceScriptDeviceState) SetDetectionState(value *RunState)() {
-    m.detectionState = value
+    if m != nil {
+        m.detectionState = value
+    }
 }
 // SetExpectedStateUpdateDateTime sets the expectedStateUpdateDateTime property value. The next timestamp of when the device compliance script is expected to execute
 func (m *DeviceComplianceScriptDeviceState) SetExpectedStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expectedStateUpdateDateTime = value
+    if m != nil {
+        m.expectedStateUpdateDateTime = value
+    }
 }
 // SetLastStateUpdateDateTime sets the lastStateUpdateDateTime property value. The last timestamp of when the device compliance script executed
 func (m *DeviceComplianceScriptDeviceState) SetLastStateUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastStateUpdateDateTime = value
+    if m != nil {
+        m.lastStateUpdateDateTime = value
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. The last time that Intune Managment Extension synced with Intune
 func (m *DeviceComplianceScriptDeviceState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    if m != nil {
+        m.lastSyncDateTime = value
+    }
 }
 // SetManagedDevice sets the managedDevice property value. The managed device on which the device compliance script executed
 func (m *DeviceComplianceScriptDeviceState) SetManagedDevice(value *ManagedDevice)() {
-    m.managedDevice = value
+    if m != nil {
+        m.managedDevice = value
+    }
 }
 // SetScriptError sets the scriptError property value. Error from the detection script
 func (m *DeviceComplianceScriptDeviceState) SetScriptError(value *string)() {
-    m.scriptError = value
+    if m != nil {
+        m.scriptError = value
+    }
 }
 // SetScriptOutput sets the scriptOutput property value. Output of the detection script
 func (m *DeviceComplianceScriptDeviceState) SetScriptOutput(value *string)() {
-    m.scriptOutput = value
+    if m != nil {
+        m.scriptOutput = value
+    }
 }

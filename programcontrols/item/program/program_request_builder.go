@@ -40,7 +40,7 @@ type ProgramRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ProgramRequestBuilderPatchOptions options for Patch
 type ProgramRequestBuilderPatchOptions struct {

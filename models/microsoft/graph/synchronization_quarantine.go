@@ -203,29 +203,43 @@ func (m *SynchronizationQuarantine) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationQuarantine) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCurrentBegan sets the currentBegan property value. Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationQuarantine) SetCurrentBegan(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.currentBegan = value
+    if m != nil {
+        m.currentBegan = value
+    }
 }
 // SetError sets the error property value. Describes the error(s) that occurred when putting the synchronization job into quarantine.
 func (m *SynchronizationQuarantine) SetError(value *SynchronizationError)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetNextAttempt sets the nextAttempt property value. Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationQuarantine) SetNextAttempt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.nextAttempt = value
+    if m != nil {
+        m.nextAttempt = value
+    }
 }
 // SetReason sets the reason property value. A code that signifies why the quarantine was imposed. Possible values are: EncounteredBaseEscrowThreshold, EncounteredTotalEscrowThreshold, EncounteredEscrowProportionThreshold, EncounteredQuarantineException, QuarantinedOnDemand, TooManyDeletes, Unknown.
 func (m *SynchronizationQuarantine) SetReason(value *QuarantineReason)() {
-    m.reason = value
+    if m != nil {
+        m.reason = value
+    }
 }
 // SetSeriesBegan sets the seriesBegan property value. Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationQuarantine) SetSeriesBegan(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.seriesBegan = value
+    if m != nil {
+        m.seriesBegan = value
+    }
 }
 // SetSeriesCount sets the seriesCount property value. Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).
 func (m *SynchronizationQuarantine) SetSeriesCount(value *int64)() {
-    m.seriesCount = value
+    if m != nil {
+        m.seriesCount = value
+    }
 }

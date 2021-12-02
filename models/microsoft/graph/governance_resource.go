@@ -356,45 +356,67 @@ func (m *GovernanceResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetDisplayName sets the displayName property value. The display name of the resource.
 func (m *GovernanceResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExternalId sets the externalId property value. The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
 func (m *GovernanceResource) SetExternalId(value *string)() {
-    m.externalId = value
+    if m != nil {
+        m.externalId = value
+    }
 }
 // SetParent sets the parent property value. Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
 func (m *GovernanceResource) SetParent(value *GovernanceResource)() {
-    m.parent = value
+    if m != nil {
+        m.parent = value
+    }
 }
 // SetRegisteredDateTime sets the registeredDateTime property value. Represents the date time when the resource is registered in PIM.
 func (m *GovernanceResource) SetRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.registeredDateTime = value
+    if m != nil {
+        m.registeredDateTime = value
+    }
 }
 // SetRegisteredRoot sets the registeredRoot property value. The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
 func (m *GovernanceResource) SetRegisteredRoot(value *string)() {
-    m.registeredRoot = value
+    if m != nil {
+        m.registeredRoot = value
+    }
 }
 // SetRoleAssignmentRequests sets the roleAssignmentRequests property value. The collection of role assignment requests for the resource.
 func (m *GovernanceResource) SetRoleAssignmentRequests(value []GovernanceRoleAssignmentRequest)() {
-    m.roleAssignmentRequests = value
+    if m != nil {
+        m.roleAssignmentRequests = value
+    }
 }
 // SetRoleAssignments sets the roleAssignments property value. The collection of role assignments for the resource.
 func (m *GovernanceResource) SetRoleAssignments(value []GovernanceRoleAssignment)() {
-    m.roleAssignments = value
+    if m != nil {
+        m.roleAssignments = value
+    }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. The collection of role defintions for the resource.
 func (m *GovernanceResource) SetRoleDefinitions(value []GovernanceRoleDefinition)() {
-    m.roleDefinitions = value
+    if m != nil {
+        m.roleDefinitions = value
+    }
 }
 // SetRoleSettings sets the roleSettings property value. The collection of role settings for the resource.
 func (m *GovernanceResource) SetRoleSettings(value []GovernanceRoleSetting)() {
-    m.roleSettings = value
+    if m != nil {
+        m.roleSettings = value
+    }
 }
 // SetStatus sets the status property value. The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
 func (m *GovernanceResource) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
 func (m *GovernanceResource) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

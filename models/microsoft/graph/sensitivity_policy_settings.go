@@ -139,17 +139,25 @@ func (m *SensitivityPolicySettings) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetApplicableTo sets the applicableTo property value. 
 func (m *SensitivityPolicySettings) SetApplicableTo(value *SensitivityLabelTarget)() {
-    m.applicableTo = value
+    if m != nil {
+        m.applicableTo = value
+    }
 }
 // SetDowngradeSensitivityRequiresJustification sets the downgradeSensitivityRequiresJustification property value. 
 func (m *SensitivityPolicySettings) SetDowngradeSensitivityRequiresJustification(value *bool)() {
-    m.downgradeSensitivityRequiresJustification = value
+    if m != nil {
+        m.downgradeSensitivityRequiresJustification = value
+    }
 }
 // SetHelpWebUrl sets the helpWebUrl property value. 
 func (m *SensitivityPolicySettings) SetHelpWebUrl(value *string)() {
-    m.helpWebUrl = value
+    if m != nil {
+        m.helpWebUrl = value
+    }
 }
 // SetIsMandatory sets the isMandatory property value. 
 func (m *SensitivityPolicySettings) SetIsMandatory(value *bool)() {
-    m.isMandatory = value
+    if m != nil {
+        m.isMandatory = value
+    }
 }

@@ -138,17 +138,25 @@ func (m *UserExperienceAnalyticsMetricHistory) Serialize(writer i04eb5309aeaafad
 }
 // SetDeviceId sets the deviceId property value. The user experience analytics device id.
 func (m *UserExperienceAnalyticsMetricHistory) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetMetricDateTime sets the metricDateTime property value. The user experience analytics metric date time.
 func (m *UserExperienceAnalyticsMetricHistory) SetMetricDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.metricDateTime = value
+    if m != nil {
+        m.metricDateTime = value
+    }
 }
 // SetMetricType sets the metricType property value. The user experience analytics metric type.
 func (m *UserExperienceAnalyticsMetricHistory) SetMetricType(value *string)() {
-    m.metricType = value
+    if m != nil {
+        m.metricType = value
+    }
 }
 // SetUserExperienceAnalyticsMetric sets the userExperienceAnalyticsMetric property value. User experience analytics metric.
 func (m *UserExperienceAnalyticsMetricHistory) SetUserExperienceAnalyticsMetric(value *UserExperienceAnalyticsMetric)() {
-    m.userExperienceAnalyticsMetric = value
+    if m != nil {
+        m.userExperienceAnalyticsMetric = value
+    }
 }

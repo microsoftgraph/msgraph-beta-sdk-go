@@ -175,21 +175,31 @@ func (m *ManagementTemplateStepDeployment) Serialize(writer i04eb5309aeaafadd283
 }
 // SetError sets the error property value. 
 func (m *ManagementTemplateStepDeployment) SetError(value *GraphAPIErrorDetails)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetSettings sets the settings property value. 
 func (m *ManagementTemplateStepDeployment) SetSettings(value []Setting)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *ManagementTemplateStepDeployment) SetStatus(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementTemplateDeploymentStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTemplateStepVersion sets the templateStepVersion property value. 
 func (m *ManagementTemplateStepDeployment) SetTemplateStepVersion(value *ManagementTemplateStepVersion)() {
-    m.templateStepVersion = value
+    if m != nil {
+        m.templateStepVersion = value
+    }
 }
 // SetTenantId sets the tenantId property value. 
 func (m *ManagementTemplateStepDeployment) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }

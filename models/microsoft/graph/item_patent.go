@@ -215,29 +215,43 @@ func (m *ItemPatent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetDescription sets the description property value. Descpription of the patent or filing.
 func (m *ItemPatent) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Title of the patent or filing.
 func (m *ItemPatent) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsPending sets the isPending property value. Indicates the patent is pending.
 func (m *ItemPatent) SetIsPending(value *bool)() {
-    m.isPending = value
+    if m != nil {
+        m.isPending = value
+    }
 }
 // SetIssuedDate sets the issuedDate property value. The date that the patent was granted.
 func (m *ItemPatent) SetIssuedDate(value *string)() {
-    m.issuedDate = value
+    if m != nil {
+        m.issuedDate = value
+    }
 }
 // SetIssuingAuthority sets the issuingAuthority property value. Authority which granted the patent.
 func (m *ItemPatent) SetIssuingAuthority(value *string)() {
-    m.issuingAuthority = value
+    if m != nil {
+        m.issuingAuthority = value
+    }
 }
 // SetNumber sets the number property value. The patent number.
 func (m *ItemPatent) SetNumber(value *string)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetWebUrl sets the webUrl property value. URL referencing the patent or filing.
 func (m *ItemPatent) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

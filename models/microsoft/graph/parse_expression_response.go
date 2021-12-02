@@ -178,25 +178,37 @@ func (m *ParseExpressionResponse) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParseExpressionResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetError sets the error property value. Error details, if expression evaluation resulted in an error.
 func (m *ParseExpressionResponse) SetError(value *PublicError)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetEvaluationResult sets the evaluationResult property value. A collection of values produced by the evaluation of the expression.
 func (m *ParseExpressionResponse) SetEvaluationResult(value []string)() {
-    m.evaluationResult = value
+    if m != nil {
+        m.evaluationResult = value
+    }
 }
 // SetEvaluationSucceeded sets the evaluationSucceeded property value. true if the evaluation was successful.
 func (m *ParseExpressionResponse) SetEvaluationSucceeded(value *bool)() {
-    m.evaluationSucceeded = value
+    if m != nil {
+        m.evaluationSucceeded = value
+    }
 }
 // SetParsedExpression sets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.
 func (m *ParseExpressionResponse) SetParsedExpression(value *AttributeMappingSource)() {
-    m.parsedExpression = value
+    if m != nil {
+        m.parsedExpression = value
+    }
 }
 // SetParsingSucceeded sets the parsingSucceeded property value. true if the expression was parsed successfully.
 func (m *ParseExpressionResponse) SetParsingSucceeded(value *bool)() {
-    m.parsingSucceeded = value
+    if m != nil {
+        m.parsingSucceeded = value
+    }
 }

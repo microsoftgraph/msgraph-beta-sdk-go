@@ -79,9 +79,13 @@ func (m *ShareAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ShareAction) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRecipients sets the recipients property value. The identities the item was shared with in this action.
 func (m *ShareAction) SetRecipients(value []IdentitySet)() {
-    m.recipients = value
+    if m != nil {
+        m.recipients = value
+    }
 }

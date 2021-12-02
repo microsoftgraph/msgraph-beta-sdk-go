@@ -97,13 +97,19 @@ func (m *ModRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ModRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDivisor sets the divisor property value. 
 func (m *ModRequestBody) SetDivisor(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.divisor = value
+    if m != nil {
+        m.divisor = value
+    }
 }
 // SetNumber sets the number property value. 
 func (m *ModRequestBody) SetNumber(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }

@@ -40,7 +40,7 @@ type ImportedDeviceIdentityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ImportedDeviceIdentityRequestBuilderPatchOptions options for Patch
 type ImportedDeviceIdentityRequestBuilderPatchOptions struct {

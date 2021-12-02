@@ -130,17 +130,25 @@ func (m *AnswerKeyword) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerKeyword) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetKeywords sets the keywords property value. 
 func (m *AnswerKeyword) SetKeywords(value []string)() {
-    m.keywords = value
+    if m != nil {
+        m.keywords = value
+    }
 }
 // SetMatchSimilarKeywords sets the matchSimilarKeywords property value. 
 func (m *AnswerKeyword) SetMatchSimilarKeywords(value *bool)() {
-    m.matchSimilarKeywords = value
+    if m != nil {
+        m.matchSimilarKeywords = value
+    }
 }
 // SetReservedKeywords sets the reservedKeywords property value. 
 func (m *AnswerKeyword) SetReservedKeywords(value []string)() {
-    m.reservedKeywords = value
+    if m != nil {
+        m.reservedKeywords = value
+    }
 }

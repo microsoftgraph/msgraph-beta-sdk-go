@@ -59,5 +59,7 @@ func (m *Windows) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetUpdates sets the updates property value. Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 func (m *Windows) SetUpdates(value *Updates)() {
-    m.updates = value
+    if m != nil {
+        m.updates = value
+    }
 }

@@ -129,17 +129,25 @@ func (m *UnenrollAssetsByIdRequestBody) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnenrollAssetsByIdRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIds sets the ids property value. 
 func (m *UnenrollAssetsByIdRequestBody) SetIds(value []string)() {
-    m.ids = value
+    if m != nil {
+        m.ids = value
+    }
 }
 // SetMemberEntityType sets the memberEntityType property value. 
 func (m *UnenrollAssetsByIdRequestBody) SetMemberEntityType(value *string)() {
-    m.memberEntityType = value
+    if m != nil {
+        m.memberEntityType = value
+    }
 }
 // SetUpdateCategory sets the updateCategory property value. 
 func (m *UnenrollAssetsByIdRequestBody) SetUpdateCategory(value *ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdateCategory)() {
-    m.updateCategory = value
+    if m != nil {
+        m.updateCategory = value
+    }
 }

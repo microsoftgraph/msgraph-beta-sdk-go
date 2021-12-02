@@ -172,21 +172,31 @@ func (m *SynchronizationJob) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetSchedule sets the schedule property value. Schedule used to run the job. Read-only.
 func (m *SynchronizationJob) SetSchedule(value *SynchronizationSchedule)() {
-    m.schedule = value
+    if m != nil {
+        m.schedule = value
+    }
 }
 // SetSchema sets the schema property value. The synchronization schema configured for the job.
 func (m *SynchronizationJob) SetSchema(value *SynchronizationSchema)() {
-    m.schema = value
+    if m != nil {
+        m.schema = value
+    }
 }
 // SetStatus sets the status property value. Status of the job, which includes when the job was last run, current job state, and errors.
 func (m *SynchronizationJob) SetStatus(value *SynchronizationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetSynchronizationJobSettings sets the synchronizationJobSettings property value. Settings associated with the job. Some settings are inherited from the template.
 func (m *SynchronizationJob) SetSynchronizationJobSettings(value []KeyValuePair)() {
-    m.synchronizationJobSettings = value
+    if m != nil {
+        m.synchronizationJobSettings = value
+    }
 }
 // SetTemplateId sets the templateId property value. Identifier of the synchronization template this job is based on.
 func (m *SynchronizationJob) SetTemplateId(value *string)() {
-    m.templateId = value
+    if m != nil {
+        m.templateId = value
+    }
 }

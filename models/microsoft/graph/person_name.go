@@ -319,45 +319,67 @@ func (m *PersonName) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetDisplayName sets the displayName property value. Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
 func (m *PersonName) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetFirst sets the first property value. First name of the user.
 func (m *PersonName) SetFirst(value *string)() {
-    m.first = value
+    if m != nil {
+        m.first = value
+    }
 }
 // SetInitials sets the initials property value. Initials of the user.
 func (m *PersonName) SetInitials(value *string)() {
-    m.initials = value
+    if m != nil {
+        m.initials = value
+    }
 }
 // SetLanguageTag sets the languageTag property value. Contains the name for the language (en-US, no-NB, en-AU) following IETF BCP47 format.
 func (m *PersonName) SetLanguageTag(value *string)() {
-    m.languageTag = value
+    if m != nil {
+        m.languageTag = value
+    }
 }
 // SetLast sets the last property value. Last name of the user.
 func (m *PersonName) SetLast(value *string)() {
-    m.last = value
+    if m != nil {
+        m.last = value
+    }
 }
 // SetMaiden sets the maiden property value. Maiden name of the user.
 func (m *PersonName) SetMaiden(value *string)() {
-    m.maiden = value
+    if m != nil {
+        m.maiden = value
+    }
 }
 // SetMiddle sets the middle property value. Middle name of the user.
 func (m *PersonName) SetMiddle(value *string)() {
-    m.middle = value
+    if m != nil {
+        m.middle = value
+    }
 }
 // SetNickname sets the nickname property value. Nickname of the user.
 func (m *PersonName) SetNickname(value *string)() {
-    m.nickname = value
+    if m != nil {
+        m.nickname = value
+    }
 }
 // SetPronunciation sets the pronunciation property value. Guidance on how to pronounce the users name.
 func (m *PersonName) SetPronunciation(value *PersonNamePronounciation)() {
-    m.pronunciation = value
+    if m != nil {
+        m.pronunciation = value
+    }
 }
 // SetSuffix sets the suffix property value. Designators used after the users name (eg: PhD.)
 func (m *PersonName) SetSuffix(value *string)() {
-    m.suffix = value
+    if m != nil {
+        m.suffix = value
+    }
 }
 // SetTitle sets the title property value. Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)
 func (m *PersonName) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }

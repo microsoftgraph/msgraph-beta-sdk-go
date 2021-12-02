@@ -362,49 +362,73 @@ func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i04eb5309
 }
 // SetAllowUnmanagedSettings sets the allowUnmanagedSettings property value. Allow unmanaged setting templates
 func (m *DeviceManagementConfigurationPolicyTemplate) SetAllowUnmanagedSettings(value *bool)() {
-    m.allowUnmanagedSettings = value
+    if m != nil {
+        m.allowUnmanagedSettings = value
+    }
 }
 // SetBaseId sets the baseId property value. Template base identifier
 func (m *DeviceManagementConfigurationPolicyTemplate) SetBaseId(value *string)() {
-    m.baseId = value
+    if m != nil {
+        m.baseId = value
+    }
 }
 // SetDescription sets the description property value. Template description
 func (m *DeviceManagementConfigurationPolicyTemplate) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Template display name
 func (m *DeviceManagementConfigurationPolicyTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetDisplayVersion sets the displayVersion property value. Description of template version
 func (m *DeviceManagementConfigurationPolicyTemplate) SetDisplayVersion(value *string)() {
-    m.displayVersion = value
+    if m != nil {
+        m.displayVersion = value
+    }
 }
 // SetLifecycleState sets the lifecycleState property value. Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetLifecycleState(value *DeviceManagementTemplateLifecycleState)() {
-    m.lifecycleState = value
+    if m != nil {
+        m.lifecycleState = value
+    }
 }
 // SetPlatforms sets the platforms property value. Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
-    m.platforms = value
+    if m != nil {
+        m.platforms = value
+    }
 }
 // SetSettingTemplateCount sets the settingTemplateCount property value. Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetSettingTemplateCount(value *int32)() {
-    m.settingTemplateCount = value
+    if m != nil {
+        m.settingTemplateCount = value
+    }
 }
 // SetSettingTemplates sets the settingTemplates property value. Setting templates
 func (m *DeviceManagementConfigurationPolicyTemplate) SetSettingTemplates(value []DeviceManagementConfigurationSettingTemplate)() {
-    m.settingTemplates = value
+    if m != nil {
+        m.settingTemplates = value
+    }
 }
 // SetTechnologies sets the technologies property value. Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
-    m.technologies = value
+    if m != nil {
+        m.technologies = value
+    }
 }
 // SetTemplateFamily sets the templateFamily property value. TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetTemplateFamily(value *DeviceManagementConfigurationTemplateFamily)() {
-    m.templateFamily = value
+    if m != nil {
+        m.templateFamily = value
+    }
 }
 // SetVersion sets the version property value. Template version. Valid values 1 to 2147483647. This property is read-only.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetVersion(value *int32)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

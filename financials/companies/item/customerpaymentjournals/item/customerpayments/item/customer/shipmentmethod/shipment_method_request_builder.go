@@ -40,7 +40,7 @@ type ShipmentMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ShipmentMethodRequestBuilderPatchOptions options for Patch
 type ShipmentMethodRequestBuilderPatchOptions struct {

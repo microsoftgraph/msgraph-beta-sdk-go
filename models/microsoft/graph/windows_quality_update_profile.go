@@ -281,37 +281,55 @@ func (m *WindowsQualityUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAssignments sets the assignments property value. The list of group assignments of the profile.
 func (m *WindowsQualityUpdateProfile) SetAssignments(value []WindowsQualityUpdateProfileAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date time that the profile was created.
 func (m *WindowsQualityUpdateProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDeployableContentDisplayName sets the deployableContentDisplayName property value. Friendly display name of the quality update profile deployable content
 func (m *WindowsQualityUpdateProfile) SetDeployableContentDisplayName(value *string)() {
-    m.deployableContentDisplayName = value
+    if m != nil {
+        m.deployableContentDisplayName = value
+    }
 }
 // SetDescription sets the description property value. The description of the profile which is specified by the user.
 func (m *WindowsQualityUpdateProfile) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the profile.
 func (m *WindowsQualityUpdateProfile) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExpeditedUpdateSettings sets the expeditedUpdateSettings property value. Expedited update settings.
 func (m *WindowsQualityUpdateProfile) SetExpeditedUpdateSettings(value *ExpeditedWindowsQualityUpdateSettings)() {
-    m.expeditedUpdateSettings = value
+    if m != nil {
+        m.expeditedUpdateSettings = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date time that the profile was last modified.
 func (m *WindowsQualityUpdateProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetReleaseDateDisplayName sets the releaseDateDisplayName property value. Friendly release date to display for a Quality Update release
 func (m *WindowsQualityUpdateProfile) SetReleaseDateDisplayName(value *string)() {
-    m.releaseDateDisplayName = value
+    if m != nil {
+        m.releaseDateDisplayName = value
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Quality Update entity.
 func (m *WindowsQualityUpdateProfile) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    if m != nil {
+        m.roleScopeTagIds = value
+    }
 }

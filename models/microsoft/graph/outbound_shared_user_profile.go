@@ -94,9 +94,13 @@ func (m *OutboundSharedUserProfile) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetTenants sets the tenants property value. 
 func (m *OutboundSharedUserProfile) SetTenants(value []TenantReference)() {
-    m.tenants = value
+    if m != nil {
+        m.tenants = value
+    }
 }
 // SetUserId sets the userId property value. 
 func (m *OutboundSharedUserProfile) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

@@ -79,9 +79,13 @@ func (m *DlpPoliciesJobResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DlpPoliciesJobResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMatchingRules sets the matchingRules property value. 
 func (m *DlpPoliciesJobResult) SetMatchingRules(value []MatchingDlpRule)() {
-    m.matchingRules = value
+    if m != nil {
+        m.matchingRules = value
+    }
 }

@@ -259,33 +259,49 @@ func (m *OfficeClientConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the policy.
 func (m *OfficeClientConfiguration) SetAssignments(value []OfficeClientConfigurationAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetCheckinStatuses sets the checkinStatuses property value. List of office Client check-in status.
 func (m *OfficeClientConfiguration) SetCheckinStatuses(value []OfficeClientCheckinStatus)() {
-    m.checkinStatuses = value
+    if m != nil {
+        m.checkinStatuses = value
+    }
 }
 // SetDescription sets the description property value. Not yet documented
 func (m *OfficeClientConfiguration) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Admin provided description of the office client configuration policy.
 func (m *OfficeClientConfiguration) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetPolicyPayload sets the policyPayload property value. Policy settings JSON string in binary format, these values cannot be changed by the user.
 func (m *OfficeClientConfiguration) SetPolicyPayload(value []byte)() {
-    m.policyPayload = value
+    if m != nil {
+        m.policyPayload = value
+    }
 }
 // SetPriority sets the priority property value. Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
 func (m *OfficeClientConfiguration) SetPriority(value *int32)() {
-    m.priority = value
+    if m != nil {
+        m.priority = value
+    }
 }
 // SetUserCheckinSummary sets the userCheckinSummary property value. User check-in summary for the policy.
 func (m *OfficeClientConfiguration) SetUserCheckinSummary(value *OfficeUserCheckinSummary)() {
-    m.userCheckinSummary = value
+    if m != nil {
+        m.userCheckinSummary = value
+    }
 }
 // SetUserPreferencePayload sets the userPreferencePayload property value. Preference settings JSON string in binary format, these values can be overridden by the user.
 func (m *OfficeClientConfiguration) SetUserPreferencePayload(value []byte)() {
-    m.userPreferencePayload = value
+    if m != nil {
+        m.userPreferencePayload = value
+    }
 }

@@ -123,17 +123,25 @@ func (m *TimeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetHour sets the hour property value. 
 func (m *TimeRequestBody) SetHour(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.hour = value
+    if m != nil {
+        m.hour = value
+    }
 }
 // SetMinute sets the minute property value. 
 func (m *TimeRequestBody) SetMinute(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.minute = value
+    if m != nil {
+        m.minute = value
+    }
 }
 // SetSecond sets the second property value. 
 func (m *TimeRequestBody) SetSecond(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
-    m.second = value
+    if m != nil {
+        m.second = value
+    }
 }

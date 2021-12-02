@@ -97,13 +97,19 @@ func (m *StartHoldMusicRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StartHoldMusicRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClientContext sets the clientContext property value. 
 func (m *StartHoldMusicRequestBody) SetClientContext(value *string)() {
-    m.clientContext = value
+    if m != nil {
+        m.clientContext = value
+    }
 }
 // SetCustomPrompt sets the customPrompt property value. 
 func (m *StartHoldMusicRequestBody) SetCustomPrompt(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt)() {
-    m.customPrompt = value
+    if m != nil {
+        m.customPrompt = value
+    }
 }

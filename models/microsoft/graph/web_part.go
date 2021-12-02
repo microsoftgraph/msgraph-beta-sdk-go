@@ -96,13 +96,19 @@ func (m *WebPart) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WebPart) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetData sets the data property value. The required properties for the webPart (varies by webPart)
 func (m *WebPart) SetData(value *SitePageData)() {
-    m.data = value
+    if m != nil {
+        m.data = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. A unique identifier specifying the webPart type. Read-only.
 func (m *WebPart) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

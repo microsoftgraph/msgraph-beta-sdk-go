@@ -40,7 +40,7 @@ type DeviceManagementAutopilotPolicyStatusDetailRequestBuilderGetQueryParameters
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceManagementAutopilotPolicyStatusDetailRequestBuilderPatchOptions options for Patch
 type DeviceManagementAutopilotPolicyStatusDetailRequestBuilderPatchOptions struct {

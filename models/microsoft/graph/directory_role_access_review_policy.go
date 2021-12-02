@@ -59,5 +59,7 @@ func (m *DirectoryRoleAccessReviewPolicy) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetSettings sets the settings property value. 
 func (m *DirectoryRoleAccessReviewPolicy) SetSettings(value *AccessReviewScheduleSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }

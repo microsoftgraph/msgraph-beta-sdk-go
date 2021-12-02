@@ -531,73 +531,109 @@ func (m *IosManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAllowedIosDeviceModels sets the allowedIosDeviceModels property value. Semicolon seperated list of device models allowed, as a string, for the managed app to work.
 func (m *IosManagedAppProtection) SetAllowedIosDeviceModels(value *string)() {
-    m.allowedIosDeviceModels = value
+    if m != nil {
+        m.allowedIosDeviceModels = value
+    }
 }
 // SetAppActionIfIosDeviceModelNotAllowed sets the appActionIfIosDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. Possible values are: block, wipe, warn.
 func (m *IosManagedAppProtection) SetAppActionIfIosDeviceModelNotAllowed(value *ManagedAppRemediationAction)() {
-    m.appActionIfIosDeviceModelNotAllowed = value
+    if m != nil {
+        m.appActionIfIosDeviceModelNotAllowed = value
+    }
 }
 // SetAppDataEncryptionType sets the appDataEncryptionType property value. Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
 func (m *IosManagedAppProtection) SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)() {
-    m.appDataEncryptionType = value
+    if m != nil {
+        m.appDataEncryptionType = value
+    }
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
 func (m *IosManagedAppProtection) SetApps(value []ManagedMobileApp)() {
-    m.apps = value
+    if m != nil {
+        m.apps = value
+    }
 }
 // SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *IosManagedAppProtection) SetCustomBrowserProtocol(value *string)() {
-    m.customBrowserProtocol = value
+    if m != nil {
+        m.customBrowserProtocol = value
+    }
 }
 // SetCustomDialerAppProtocol sets the customDialerAppProtocol property value. Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
 func (m *IosManagedAppProtection) SetCustomDialerAppProtocol(value *string)() {
-    m.customDialerAppProtocol = value
+    if m != nil {
+        m.customDialerAppProtocol = value
+    }
 }
 // SetDeployedAppCount sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *IosManagedAppProtection) SetDeployedAppCount(value *int32)() {
-    m.deployedAppCount = value
+    if m != nil {
+        m.deployedAppCount = value
+    }
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *IosManagedAppProtection) SetDeploymentSummary(value *ManagedAppPolicyDeploymentSummary)() {
-    m.deploymentSummary = value
+    if m != nil {
+        m.deploymentSummary = value
+    }
 }
 // SetDisableProtectionOfManagedOutboundOpenInData sets the disableProtectionOfManagedOutboundOpenInData property value. Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps.
 func (m *IosManagedAppProtection) SetDisableProtectionOfManagedOutboundOpenInData(value *bool)() {
-    m.disableProtectionOfManagedOutboundOpenInData = value
+    if m != nil {
+        m.disableProtectionOfManagedOutboundOpenInData = value
+    }
 }
 // SetExemptedAppProtocols sets the exemptedAppProtocols property value. Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
 func (m *IosManagedAppProtection) SetExemptedAppProtocols(value []KeyValuePair)() {
-    m.exemptedAppProtocols = value
+    if m != nil {
+        m.exemptedAppProtocols = value
+    }
 }
 // SetExemptedUniversalLinks sets the exemptedUniversalLinks property value. A list of custom urls that are allowed to invocate an unmanaged app
 func (m *IosManagedAppProtection) SetExemptedUniversalLinks(value []string)() {
-    m.exemptedUniversalLinks = value
+    if m != nil {
+        m.exemptedUniversalLinks = value
+    }
 }
 // SetFaceIdBlocked sets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
 func (m *IosManagedAppProtection) SetFaceIdBlocked(value *bool)() {
-    m.faceIdBlocked = value
+    if m != nil {
+        m.faceIdBlocked = value
+    }
 }
 // SetFilterOpenInToOnlyManagedApps sets the filterOpenInToOnlyManagedApps property value. Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
 func (m *IosManagedAppProtection) SetFilterOpenInToOnlyManagedApps(value *bool)() {
-    m.filterOpenInToOnlyManagedApps = value
+    if m != nil {
+        m.filterOpenInToOnlyManagedApps = value
+    }
 }
 // SetManagedUniversalLinks sets the managedUniversalLinks property value. A list of custom urls that are allowed to invocate a managed app
 func (m *IosManagedAppProtection) SetManagedUniversalLinks(value []string)() {
-    m.managedUniversalLinks = value
+    if m != nil {
+        m.managedUniversalLinks = value
+    }
 }
 // SetMinimumRequiredSdkVersion sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *IosManagedAppProtection) SetMinimumRequiredSdkVersion(value *string)() {
-    m.minimumRequiredSdkVersion = value
+    if m != nil {
+        m.minimumRequiredSdkVersion = value
+    }
 }
 // SetMinimumWipeSdkVersion sets the minimumWipeSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *IosManagedAppProtection) SetMinimumWipeSdkVersion(value *string)() {
-    m.minimumWipeSdkVersion = value
+    if m != nil {
+        m.minimumWipeSdkVersion = value
+    }
 }
 // SetProtectInboundDataFromUnknownSources sets the protectInboundDataFromUnknownSources property value. Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
 func (m *IosManagedAppProtection) SetProtectInboundDataFromUnknownSources(value *bool)() {
-    m.protectInboundDataFromUnknownSources = value
+    if m != nil {
+        m.protectInboundDataFromUnknownSources = value
+    }
 }
 // SetThirdPartyKeyboardsBlocked sets the thirdPartyKeyboardsBlocked property value. Defines if third party keyboards are allowed while accessing a managed app
 func (m *IosManagedAppProtection) SetThirdPartyKeyboardsBlocked(value *bool)() {
-    m.thirdPartyKeyboardsBlocked = value
+    if m != nil {
+        m.thirdPartyKeyboardsBlocked = value
+    }
 }

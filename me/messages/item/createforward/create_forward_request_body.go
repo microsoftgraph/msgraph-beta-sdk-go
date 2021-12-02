@@ -132,17 +132,25 @@ func (m *CreateForwardRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateForwardRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetComment sets the Comment property value. 
 func (m *CreateForwardRequestBody) SetComment(value *string)() {
-    m.comment = value
+    if m != nil {
+        m.comment = value
+    }
 }
 // SetMessage sets the Message property value. 
 func (m *CreateForwardRequestBody) SetMessage(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Message)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }
 // SetToRecipients sets the ToRecipients property value. 
 func (m *CreateForwardRequestBody) SetToRecipients(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient)() {
-    m.toRecipients = value
+    if m != nil {
+        m.toRecipients = value
+    }
 }

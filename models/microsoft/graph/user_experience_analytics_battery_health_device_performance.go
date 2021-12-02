@@ -241,33 +241,49 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) Serialize(writer
 }
 // SetBatteryAgeInDays sets the batteryAgeInDays property value. Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetBatteryAgeInDays(value *int32)() {
-    m.batteryAgeInDays = value
+    if m != nil {
+        m.batteryAgeInDays = value
+    }
 }
 // SetDeviceBatteryHealthScore sets the deviceBatteryHealthScore property value. A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceBatteryHealthScore(value *int32)() {
-    m.deviceBatteryHealthScore = value
+    if m != nil {
+        m.deviceBatteryHealthScore = value
+    }
 }
 // SetDeviceId sets the deviceId property value. The unique identifier of the device, Intune DeviceID.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetDeviceName sets the deviceName property value. Device friendly name.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetEstimatedRuntimeInMinutes sets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetEstimatedRuntimeInMinutes(value *int32)() {
-    m.estimatedRuntimeInMinutes = value
+    if m != nil {
+        m.estimatedRuntimeInMinutes = value
+    }
 }
 // SetHealthStatus sets the healthStatus property value. The overall battery health status of the device.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetHealthStatus(value *string)() {
-    m.healthStatus = value
+    if m != nil {
+        m.healthStatus = value
+    }
 }
 // SetMaxCapacityPercentage sets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetMaxCapacityPercentage(value *int32)() {
-    m.maxCapacityPercentage = value
+    if m != nil {
+        m.maxCapacityPercentage = value
+    }
 }
 // SetModel sets the model property value. The model name of the device.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }

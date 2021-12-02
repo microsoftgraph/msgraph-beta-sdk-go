@@ -115,13 +115,19 @@ func (m *ApplyTagsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyTagsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTagsToAdd sets the tagsToAdd property value. 
 func (m *ApplyTagsRequestBody) SetTagsToAdd(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tag)() {
-    m.tagsToAdd = value
+    if m != nil {
+        m.tagsToAdd = value
+    }
 }
 // SetTagsToRemove sets the tagsToRemove property value. 
 func (m *ApplyTagsRequestBody) SetTagsToRemove(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Tag)() {
-    m.tagsToRemove = value
+    if m != nil {
+        m.tagsToRemove = value
+    }
 }

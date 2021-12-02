@@ -44,7 +44,7 @@ type ManagementTemplateStepVersionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ManagementTemplateStepVersionRequestBuilderPatchOptions options for Patch
 type ManagementTemplateStepVersionRequestBuilderPatchOptions struct {

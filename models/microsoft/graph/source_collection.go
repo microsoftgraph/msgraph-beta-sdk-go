@@ -402,53 +402,79 @@ func (m *SourceCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalSources sets the additionalSources property value. Adds an additional source to the sourceCollection.
 func (m *SourceCollection) SetAdditionalSources(value []DataSource)() {
-    m.additionalSources = value
+    if m != nil {
+        m.additionalSources = value
+    }
 }
 // SetAddToReviewSetOperation sets the addToReviewSetOperation property value. Adds the results of the sourceCollection to the specified reviewSet.
 func (m *SourceCollection) SetAddToReviewSetOperation(value *AddToReviewSetOperation)() {
-    m.addToReviewSetOperation = value
+    if m != nil {
+        m.addToReviewSetOperation = value
+    }
 }
 // SetContentQuery sets the contentQuery property value. The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
 func (m *SourceCollection) SetContentQuery(value *string)() {
-    m.contentQuery = value
+    if m != nil {
+        m.contentQuery = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. The user who created the sourceCollection.
 func (m *SourceCollection) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the sourceCollection was created.
 func (m *SourceCollection) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetCustodianSources sets the custodianSources property value. Custodian sources that are included in the sourceCollection.
 func (m *SourceCollection) SetCustodianSources(value []DataSource)() {
-    m.custodianSources = value
+    if m != nil {
+        m.custodianSources = value
+    }
 }
 // SetDataSourceScopes sets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
 func (m *SourceCollection) SetDataSourceScopes(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceScopes)() {
-    m.dataSourceScopes = value
+    if m != nil {
+        m.dataSourceScopes = value
+    }
 }
 // SetDescription sets the description property value. The description of the sourceCollection.
 func (m *SourceCollection) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the sourceCollection.
 func (m *SourceCollection) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastEstimateStatisticsOperation sets the lastEstimateStatisticsOperation property value. The last estimate operation associated with the sourceCollection.
 func (m *SourceCollection) SetLastEstimateStatisticsOperation(value *EstimateStatisticsOperation)() {
-    m.lastEstimateStatisticsOperation = value
+    if m != nil {
+        m.lastEstimateStatisticsOperation = value
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The last user who modified the sourceCollection.
 func (m *SourceCollection) SetLastModifiedBy(value *IdentitySet)() {
-    m.lastModifiedBy = value
+    if m != nil {
+        m.lastModifiedBy = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The last date and time the sourceCollection was modified.
 func (m *SourceCollection) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetNoncustodialSources sets the noncustodialSources property value. noncustodialDataSource sources that are included in the sourceCollection
 func (m *SourceCollection) SetNoncustodialSources(value []NoncustodialDataSource)() {
-    m.noncustodialSources = value
+    if m != nil {
+        m.noncustodialSources = value
+    }
 }

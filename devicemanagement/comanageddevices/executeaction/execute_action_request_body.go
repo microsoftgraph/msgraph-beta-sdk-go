@@ -337,49 +337,73 @@ func (m *ExecuteActionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetActionName sets the actionName property value. 
 func (m *ExecuteActionRequestBody) SetActionName(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagedDeviceRemoteAction)() {
-    m.actionName = value
+    if m != nil {
+        m.actionName = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCarrierUrl sets the carrierUrl property value. 
 func (m *ExecuteActionRequestBody) SetCarrierUrl(value *string)() {
-    m.carrierUrl = value
+    if m != nil {
+        m.carrierUrl = value
+    }
 }
 // SetDeprovisionReason sets the deprovisionReason property value. 
 func (m *ExecuteActionRequestBody) SetDeprovisionReason(value *string)() {
-    m.deprovisionReason = value
+    if m != nil {
+        m.deprovisionReason = value
+    }
 }
 // SetDeviceIds sets the deviceIds property value. 
 func (m *ExecuteActionRequestBody) SetDeviceIds(value []string)() {
-    m.deviceIds = value
+    if m != nil {
+        m.deviceIds = value
+    }
 }
 // SetDeviceName sets the deviceName property value. 
 func (m *ExecuteActionRequestBody) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetKeepEnrollmentData sets the keepEnrollmentData property value. 
 func (m *ExecuteActionRequestBody) SetKeepEnrollmentData(value *bool)() {
-    m.keepEnrollmentData = value
+    if m != nil {
+        m.keepEnrollmentData = value
+    }
 }
 // SetKeepUserData sets the keepUserData property value. 
 func (m *ExecuteActionRequestBody) SetKeepUserData(value *bool)() {
-    m.keepUserData = value
+    if m != nil {
+        m.keepUserData = value
+    }
 }
 // SetNotificationBody sets the notificationBody property value. 
 func (m *ExecuteActionRequestBody) SetNotificationBody(value *string)() {
-    m.notificationBody = value
+    if m != nil {
+        m.notificationBody = value
+    }
 }
 // SetNotificationTitle sets the notificationTitle property value. 
 func (m *ExecuteActionRequestBody) SetNotificationTitle(value *string)() {
-    m.notificationTitle = value
+    if m != nil {
+        m.notificationTitle = value
+    }
 }
 // SetOrganizationalUnitPath sets the organizationalUnitPath property value. 
 func (m *ExecuteActionRequestBody) SetOrganizationalUnitPath(value *string)() {
-    m.organizationalUnitPath = value
+    if m != nil {
+        m.organizationalUnitPath = value
+    }
 }
 // SetPersistEsimDataPlan sets the persistEsimDataPlan property value. 
 func (m *ExecuteActionRequestBody) SetPersistEsimDataPlan(value *bool)() {
-    m.persistEsimDataPlan = value
+    if m != nil {
+        m.persistEsimDataPlan = value
+    }
 }

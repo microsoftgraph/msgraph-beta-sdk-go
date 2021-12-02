@@ -175,25 +175,37 @@ func (m *UserTrainingContentEventInfo) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserTrainingContentEventInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBrowser sets the browser property value. Browser of the user from where the training event was generated.
 func (m *UserTrainingContentEventInfo) SetBrowser(value *string)() {
-    m.browser = value
+    if m != nil {
+        m.browser = value
+    }
 }
 // SetContentDateTime sets the contentDateTime property value. Date and time of the training content playback by the user.
 func (m *UserTrainingContentEventInfo) SetContentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.contentDateTime = value
+    if m != nil {
+        m.contentDateTime = value
+    }
 }
 // SetIpAddress sets the ipAddress property value. IP address of the user for the training event.
 func (m *UserTrainingContentEventInfo) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    if m != nil {
+        m.ipAddress = value
+    }
 }
 // SetOsPlatformDeviceDetails sets the osPlatformDeviceDetails property value. The operating system, platform, and device details of the user for the training event.
 func (m *UserTrainingContentEventInfo) SetOsPlatformDeviceDetails(value *string)() {
-    m.osPlatformDeviceDetails = value
+    if m != nil {
+        m.osPlatformDeviceDetails = value
+    }
 }
 // SetPotentialScoreImpact sets the potentialScoreImpact property value. Potential improvement in security posture of the tenant after completion of the training by the user.
 func (m *UserTrainingContentEventInfo) SetPotentialScoreImpact(value *float64)() {
-    m.potentialScoreImpact = value
+    if m != nil {
+        m.potentialScoreImpact = value
+    }
 }

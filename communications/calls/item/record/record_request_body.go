@@ -292,41 +292,61 @@ func (m *RecordRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBargeInAllowed sets the bargeInAllowed property value. 
 func (m *RecordRequestBody) SetBargeInAllowed(value *bool)() {
-    m.bargeInAllowed = value
+    if m != nil {
+        m.bargeInAllowed = value
+    }
 }
 // SetClientContext sets the clientContext property value. 
 func (m *RecordRequestBody) SetClientContext(value *string)() {
-    m.clientContext = value
+    if m != nil {
+        m.clientContext = value
+    }
 }
 // SetInitialSilenceTimeoutInSeconds sets the initialSilenceTimeoutInSeconds property value. 
 func (m *RecordRequestBody) SetInitialSilenceTimeoutInSeconds(value *int32)() {
-    m.initialSilenceTimeoutInSeconds = value
+    if m != nil {
+        m.initialSilenceTimeoutInSeconds = value
+    }
 }
 // SetMaxRecordDurationInSeconds sets the maxRecordDurationInSeconds property value. 
 func (m *RecordRequestBody) SetMaxRecordDurationInSeconds(value *int32)() {
-    m.maxRecordDurationInSeconds = value
+    if m != nil {
+        m.maxRecordDurationInSeconds = value
+    }
 }
 // SetMaxSilenceTimeoutInSeconds sets the maxSilenceTimeoutInSeconds property value. 
 func (m *RecordRequestBody) SetMaxSilenceTimeoutInSeconds(value *int32)() {
-    m.maxSilenceTimeoutInSeconds = value
+    if m != nil {
+        m.maxSilenceTimeoutInSeconds = value
+    }
 }
 // SetPlayBeep sets the playBeep property value. 
 func (m *RecordRequestBody) SetPlayBeep(value *bool)() {
-    m.playBeep = value
+    if m != nil {
+        m.playBeep = value
+    }
 }
 // SetPrompts sets the prompts property value. 
 func (m *RecordRequestBody) SetPrompts(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Prompt)() {
-    m.prompts = value
+    if m != nil {
+        m.prompts = value
+    }
 }
 // SetStopTones sets the stopTones property value. 
 func (m *RecordRequestBody) SetStopTones(value []string)() {
-    m.stopTones = value
+    if m != nil {
+        m.stopTones = value
+    }
 }
 // SetStreamWhileRecording sets the streamWhileRecording property value. 
 func (m *RecordRequestBody) SetStreamWhileRecording(value *bool)() {
-    m.streamWhileRecording = value
+    if m != nil {
+        m.streamWhileRecording = value
+    }
 }

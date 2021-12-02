@@ -85,9 +85,13 @@ func (m *InsightsSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetDisabledForGroup sets the disabledForGroup property value. 
 func (m *InsightsSettings) SetDisabledForGroup(value *string)() {
-    m.disabledForGroup = value
+    if m != nil {
+        m.disabledForGroup = value
+    }
 }
 // SetIsEnabledInOrganization sets the isEnabledInOrganization property value. 
 func (m *InsightsSettings) SetIsEnabledInOrganization(value *bool)() {
-    m.isEnabledInOrganization = value
+    if m != nil {
+        m.isEnabledInOrganization = value
+    }
 }

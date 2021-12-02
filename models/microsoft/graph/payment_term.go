@@ -216,29 +216,43 @@ func (m *PaymentTerm) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetCalculateDiscountOnCreditMemos sets the calculateDiscountOnCreditMemos property value. 
 func (m *PaymentTerm) SetCalculateDiscountOnCreditMemos(value *bool)() {
-    m.calculateDiscountOnCreditMemos = value
+    if m != nil {
+        m.calculateDiscountOnCreditMemos = value
+    }
 }
 // SetCode sets the code property value. 
 func (m *PaymentTerm) SetCode(value *string)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetDiscountDateCalculation sets the discountDateCalculation property value. 
 func (m *PaymentTerm) SetDiscountDateCalculation(value *string)() {
-    m.discountDateCalculation = value
+    if m != nil {
+        m.discountDateCalculation = value
+    }
 }
 // SetDiscountPercent sets the discountPercent property value. 
 func (m *PaymentTerm) SetDiscountPercent(value *float64)() {
-    m.discountPercent = value
+    if m != nil {
+        m.discountPercent = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *PaymentTerm) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetDueDateCalculation sets the dueDateCalculation property value. 
 func (m *PaymentTerm) SetDueDateCalculation(value *string)() {
-    m.dueDateCalculation = value
+    if m != nil {
+        m.dueDateCalculation = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *PaymentTerm) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }

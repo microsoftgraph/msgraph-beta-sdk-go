@@ -96,13 +96,19 @@ func (m *DeviceManagementTroubleshootingErrorResource) Serialize(writer i04eb530
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorResource) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLink sets the link property value. The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
 func (m *DeviceManagementTroubleshootingErrorResource) SetLink(value *string)() {
-    m.link = value
+    if m != nil {
+        m.link = value
+    }
 }
 // SetText sets the text property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorResource) SetText(value *string)() {
-    m.text = value
+    if m != nil {
+        m.text = value
+    }
 }

@@ -149,17 +149,25 @@ func (m *ServicePrincipalCreationConditionSet) Serialize(writer i04eb5309aeaafad
 }
 // SetApplicationIds sets the applicationIds property value. 
 func (m *ServicePrincipalCreationConditionSet) SetApplicationIds(value []string)() {
-    m.applicationIds = value
+    if m != nil {
+        m.applicationIds = value
+    }
 }
 // SetApplicationPublisherIds sets the applicationPublisherIds property value. 
 func (m *ServicePrincipalCreationConditionSet) SetApplicationPublisherIds(value []string)() {
-    m.applicationPublisherIds = value
+    if m != nil {
+        m.applicationPublisherIds = value
+    }
 }
 // SetApplicationsFromVerifiedPublisherOnly sets the applicationsFromVerifiedPublisherOnly property value. 
 func (m *ServicePrincipalCreationConditionSet) SetApplicationsFromVerifiedPublisherOnly(value *bool)() {
-    m.applicationsFromVerifiedPublisherOnly = value
+    if m != nil {
+        m.applicationsFromVerifiedPublisherOnly = value
+    }
 }
 // SetApplicationTenantIds sets the applicationTenantIds property value. 
 func (m *ServicePrincipalCreationConditionSet) SetApplicationTenantIds(value []string)() {
-    m.applicationTenantIds = value
+    if m != nil {
+        m.applicationTenantIds = value
+    }
 }

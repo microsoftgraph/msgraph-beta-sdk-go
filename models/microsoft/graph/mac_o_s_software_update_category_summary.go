@@ -279,37 +279,55 @@ func (m *MacOSSoftwareUpdateCategorySummary) Serialize(writer i04eb5309aeaafadd2
 }
 // SetDeviceId sets the deviceId property value. The device ID.
 func (m *MacOSSoftwareUpdateCategorySummary) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the report
 func (m *MacOSSoftwareUpdateCategorySummary) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetFailedUpdateCount sets the failedUpdateCount property value. Number of failed updates on the device
 func (m *MacOSSoftwareUpdateCategorySummary) SetFailedUpdateCount(value *int32)() {
-    m.failedUpdateCount = value
+    if m != nil {
+        m.failedUpdateCount = value
+    }
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Last date time the report for this device was updated.
 func (m *MacOSSoftwareUpdateCategorySummary) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdatedDateTime = value
+    if m != nil {
+        m.lastUpdatedDateTime = value
+    }
 }
 // SetSuccessfulUpdateCount sets the successfulUpdateCount property value. Number of successful updates on the device
 func (m *MacOSSoftwareUpdateCategorySummary) SetSuccessfulUpdateCount(value *int32)() {
-    m.successfulUpdateCount = value
+    if m != nil {
+        m.successfulUpdateCount = value
+    }
 }
 // SetTotalUpdateCount sets the totalUpdateCount property value. Number of total updates on the device
 func (m *MacOSSoftwareUpdateCategorySummary) SetTotalUpdateCount(value *int32)() {
-    m.totalUpdateCount = value
+    if m != nil {
+        m.totalUpdateCount = value
+    }
 }
 // SetUpdateCategory sets the updateCategory property value. Software update type. Possible values are: critical, configurationDataFile, firmware, other.
 func (m *MacOSSoftwareUpdateCategorySummary) SetUpdateCategory(value *MacOSSoftwareUpdateCategory)() {
-    m.updateCategory = value
+    if m != nil {
+        m.updateCategory = value
+    }
 }
 // SetUpdateStateSummaries sets the updateStateSummaries property value. Summary of the update states.
 func (m *MacOSSoftwareUpdateCategorySummary) SetUpdateStateSummaries(value []MacOSSoftwareUpdateStateSummary)() {
-    m.updateStateSummaries = value
+    if m != nil {
+        m.updateStateSummaries = value
+    }
 }
 // SetUserId sets the userId property value. The user ID.
 func (m *MacOSSoftwareUpdateCategorySummary) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

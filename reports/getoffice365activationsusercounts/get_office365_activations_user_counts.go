@@ -164,21 +164,31 @@ func (m *GetOffice365ActivationsUserCounts) Serialize(writer i04eb5309aeaafadd28
 }
 // SetActivated sets the activated property value. The number of users who have activated the product.
 func (m *GetOffice365ActivationsUserCounts) SetActivated(value *int64)() {
-    m.activated = value
+    if m != nil {
+        m.activated = value
+    }
 }
 // SetAssigned sets the assigned property value. The number of users have been assigned for the product license.
 func (m *GetOffice365ActivationsUserCounts) SetAssigned(value *int64)() {
-    m.assigned = value
+    if m != nil {
+        m.assigned = value
+    }
 }
 // SetProductType sets the productType property value. The product type such as 'Microsoft 365 ProPlus' or 'Project Client'.
 func (m *GetOffice365ActivationsUserCounts) SetProductType(value *string)() {
-    m.productType = value
+    if m != nil {
+        m.productType = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *GetOffice365ActivationsUserCounts) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetSharedComputerActivation sets the sharedComputerActivation property value. The number of users who have used the product on a shared computer.
 func (m *GetOffice365ActivationsUserCounts) SetSharedComputerActivation(value *int64)() {
-    m.sharedComputerActivation = value
+    if m != nil {
+        m.sharedComputerActivation = value
+    }
 }

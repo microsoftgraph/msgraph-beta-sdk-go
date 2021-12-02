@@ -38,7 +38,7 @@ type GroupRequestBuilderGetOptions struct {
 // GroupRequestBuilderGetQueryParameters read-only. Nullable.
 type GroupRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // GroupRequestBuilderPatchOptions options for Patch
 type GroupRequestBuilderPatchOptions struct {

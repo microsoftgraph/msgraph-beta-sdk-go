@@ -244,33 +244,49 @@ func (m *ItemFacet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAllowedAudiences sets the allowedAudiences property value. The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
 func (m *ItemFacet) SetAllowedAudiences(value *AllowedAudiences)() {
-    m.allowedAudiences = value
+    if m != nil {
+        m.allowedAudiences = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. 
 func (m *ItemFacet) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Provides the dateTimeOffset for when the entity was created.
 func (m *ItemFacet) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetInference sets the inference property value. Contains inference detail if the entity is inferred by the creating or modifying application.
 func (m *ItemFacet) SetInference(value *InferenceData)() {
-    m.inference = value
+    if m != nil {
+        m.inference = value
+    }
 }
 // SetIsSearchable sets the isSearchable property value. 
 func (m *ItemFacet) SetIsSearchable(value *bool)() {
-    m.isSearchable = value
+    if m != nil {
+        m.isSearchable = value
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. 
 func (m *ItemFacet) SetLastModifiedBy(value *IdentitySet)() {
-    m.lastModifiedBy = value
+    if m != nil {
+        m.lastModifiedBy = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Provides the dateTimeOffset for when the entity was created.
 func (m *ItemFacet) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetSource sets the source property value. Where the values within an entity originated if synced from another service.
 func (m *ItemFacet) SetSource(value *PersonDataSources)() {
-    m.source = value
+    if m != nil {
+        m.source = value
+    }
 }

@@ -107,13 +107,19 @@ func (m *BookingWorkHours) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BookingWorkHours) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDay sets the day property value. The day of the week represented by this instance. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
 func (m *BookingWorkHours) SetDay(value *DayOfWeek)() {
-    m.day = value
+    if m != nil {
+        m.day = value
+    }
 }
 // SetTimeSlots sets the timeSlots property value. A list of start/end times during a day.
 func (m *BookingWorkHours) SetTimeSlots(value []BookingWorkTimeSlot)() {
-    m.timeSlots = value
+    if m != nil {
+        m.timeSlots = value
+    }
 }

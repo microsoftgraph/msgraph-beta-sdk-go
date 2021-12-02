@@ -47,7 +47,7 @@ type UserExperienceAnalyticsBaselineRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UserExperienceAnalyticsBaselineRequestBuilderPatchOptions options for Patch
 type UserExperienceAnalyticsBaselineRequestBuilderPatchOptions struct {

@@ -112,13 +112,19 @@ func (m *AccessReviewReviewer) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date when the reviewer was added for the access review.
 func (m *AccessReviewReviewer) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of reviewer.
 func (m *AccessReviewReviewer) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name of the user.
 func (m *AccessReviewReviewer) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

@@ -243,33 +243,49 @@ func (m *UserExperienceAnalyticsDeviceScores) Serialize(writer i04eb5309aeaafadd
 }
 // SetAppReliabilityScore sets the appReliabilityScore property value. The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDeviceScores) SetAppReliabilityScore(value *float64)() {
-    m.appReliabilityScore = value
+    if m != nil {
+        m.appReliabilityScore = value
+    }
 }
 // SetDeviceName sets the deviceName property value. The user experience analytics device name.
 func (m *UserExperienceAnalyticsDeviceScores) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetEndpointAnalyticsScore sets the endpointAnalyticsScore property value. The user experience analytics device score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDeviceScores) SetEndpointAnalyticsScore(value *float64)() {
-    m.endpointAnalyticsScore = value
+    if m != nil {
+        m.endpointAnalyticsScore = value
+    }
 }
 // SetHealthStatus sets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
 func (m *UserExperienceAnalyticsDeviceScores) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
-    m.healthStatus = value
+    if m != nil {
+        m.healthStatus = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. The user experience analytics device manufacturer.
 func (m *UserExperienceAnalyticsDeviceScores) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetModel sets the model property value. The user experience analytics device model.
 func (m *UserExperienceAnalyticsDeviceScores) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }
 // SetStartupPerformanceScore sets the startupPerformanceScore property value. The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDeviceScores) SetStartupPerformanceScore(value *float64)() {
-    m.startupPerformanceScore = value
+    if m != nil {
+        m.startupPerformanceScore = value
+    }
 }
 // SetWorkFromAnywhereScore sets the workFromAnywhereScore property value. The user experience analytics device work From anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDeviceScores) SetWorkFromAnywhereScore(value *float64)() {
-    m.workFromAnywhereScore = value
+    if m != nil {
+        m.workFromAnywhereScore = value
+    }
 }

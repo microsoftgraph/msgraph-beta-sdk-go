@@ -227,29 +227,43 @@ func (m *MeetingRegistrant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetCustomQuestionAnswers sets the customQuestionAnswers property value. The registrant's answer to custom questions.
 func (m *MeetingRegistrant) SetCustomQuestionAnswers(value []CustomQuestionAnswer)() {
-    m.customQuestionAnswers = value
+    if m != nil {
+        m.customQuestionAnswers = value
+    }
 }
 // SetEmail sets the email property value. The email address of the registrant.
 func (m *MeetingRegistrant) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetFirstName sets the firstName property value. The first name of the registrant.
 func (m *MeetingRegistrant) SetFirstName(value *string)() {
-    m.firstName = value
+    if m != nil {
+        m.firstName = value
+    }
 }
 // SetJoinWebUrl sets the joinWebUrl property value. A unique web URL for the registrant to join the meeting. Read-only.
 func (m *MeetingRegistrant) SetJoinWebUrl(value *string)() {
-    m.joinWebUrl = value
+    if m != nil {
+        m.joinWebUrl = value
+    }
 }
 // SetLastName sets the lastName property value. The last name of the registrant.
 func (m *MeetingRegistrant) SetLastName(value *string)() {
-    m.lastName = value
+    if m != nil {
+        m.lastName = value
+    }
 }
 // SetRegistrationDateTime sets the registrationDateTime property value. Time in UTC when the registrant registers for the meeting. Read-only.
 func (m *MeetingRegistrant) SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.registrationDateTime = value
+    if m != nil {
+        m.registrationDateTime = value
+    }
 }
 // SetStatus sets the status property value. The registration status of the registrant. Read-only.
 func (m *MeetingRegistrant) SetStatus(value *MeetingRegistrantStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

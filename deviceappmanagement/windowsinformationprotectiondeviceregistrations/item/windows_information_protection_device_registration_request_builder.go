@@ -41,7 +41,7 @@ type WindowsInformationProtectionDeviceRegistrationRequestBuilderGetQueryParamet
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WindowsInformationProtectionDeviceRegistrationRequestBuilderPatchOptions options for Patch
 type WindowsInformationProtectionDeviceRegistrationRequestBuilderPatchOptions struct {

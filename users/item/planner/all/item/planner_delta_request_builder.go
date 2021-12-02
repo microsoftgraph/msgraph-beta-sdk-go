@@ -40,7 +40,7 @@ type PlannerDeltaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PlannerDeltaRequestBuilderPatchOptions options for Patch
 type PlannerDeltaRequestBuilderPatchOptions struct {

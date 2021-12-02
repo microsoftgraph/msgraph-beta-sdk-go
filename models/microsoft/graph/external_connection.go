@@ -323,41 +323,61 @@ func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetConfiguration sets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) SetConfiguration(value *Configuration)() {
-    m.configuration = value
+    if m != nil {
+        m.configuration = value
+    }
 }
 // SetConnectorId sets the connectorId property value. The Teams App ID. Optional.
 func (m *ExternalConnection) SetConnectorId(value *string)() {
-    m.connectorId = value
+    if m != nil {
+        m.connectorId = value
+    }
 }
 // SetDescription sets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetGroups sets the groups property value. Read-only. Nullable.
 func (m *ExternalConnection) SetGroups(value []ExternalGroup)() {
-    m.groups = value
+    if m != nil {
+        m.groups = value
+    }
 }
 // SetItems sets the items property value. Read-only. Nullable.
 func (m *ExternalConnection) SetItems(value []ExternalItem)() {
-    m.items = value
+    if m != nil {
+        m.items = value
+    }
 }
 // SetName sets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
 func (m *ExternalConnection) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetOperations sets the operations property value. Read-only. Nullable.
 func (m *ExternalConnection) SetOperations(value []ConnectionOperation)() {
-    m.operations = value
+    if m != nil {
+        m.operations = value
+    }
 }
 // SetSchema sets the schema property value. Read-only. Nullable.
 func (m *ExternalConnection) SetSchema(value *Schema)() {
-    m.schema = value
+    if m != nil {
+        m.schema = value
+    }
 }
 // SetSearchSettings sets the searchSettings property value. The settings configuring the search experience for content in this connection, such as the display templates for search results.
 func (m *ExternalConnection) SetSearchSettings(value *SearchSettings)() {
-    m.searchSettings = value
+    if m != nil {
+        m.searchSettings = value
+    }
 }
 // SetState sets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 func (m *ExternalConnection) SetState(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

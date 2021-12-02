@@ -40,7 +40,7 @@ type OnPremisesAgentGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OnPremisesAgentGroupRequestBuilderPatchOptions options for Patch
 type OnPremisesAgentGroupRequestBuilderPatchOptions struct {

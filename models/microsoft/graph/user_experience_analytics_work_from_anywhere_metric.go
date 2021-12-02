@@ -68,5 +68,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) Serialize(writer i04eb53
 }
 // SetMetricDevices sets the metricDevices property value. The work from anywhere metric devices.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) SetMetricDevices(value []UserExperienceAnalyticsWorkFromAnywhereDevice)() {
-    m.metricDevices = value
+    if m != nil {
+        m.metricDevices = value
+    }
 }

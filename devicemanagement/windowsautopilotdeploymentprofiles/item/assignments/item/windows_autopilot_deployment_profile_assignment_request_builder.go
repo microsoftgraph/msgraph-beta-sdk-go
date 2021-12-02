@@ -40,7 +40,7 @@ type WindowsAutopilotDeploymentProfileAssignmentRequestBuilderGetQueryParameters
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WindowsAutopilotDeploymentProfileAssignmentRequestBuilderPatchOptions options for Patch
 type WindowsAutopilotDeploymentProfileAssignmentRequestBuilderPatchOptions struct {

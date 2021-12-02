@@ -40,7 +40,7 @@ type AdvancedThreatProtectionOnboardingDeviceSettingStateRequestBuilderGetQueryP
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AdvancedThreatProtectionOnboardingDeviceSettingStateRequestBuilderPatchOptions options for Patch
 type AdvancedThreatProtectionOnboardingDeviceSettingStateRequestBuilderPatchOptions struct {

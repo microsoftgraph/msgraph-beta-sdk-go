@@ -276,37 +276,55 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) Serialize(writer i04eb5
 }
 // SetAdvancedThreatProtectionOnboardingDeviceSettingStates sets the advancedThreatProtectionOnboardingDeviceSettingStates property value. Not yet documented
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetAdvancedThreatProtectionOnboardingDeviceSettingStates(value []AdvancedThreatProtectionOnboardingDeviceSettingState)() {
-    m.advancedThreatProtectionOnboardingDeviceSettingStates = value
+    if m != nil {
+        m.advancedThreatProtectionOnboardingDeviceSettingStates = value
+    }
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Number of compliant devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetCompliantDeviceCount(value *int32)() {
-    m.compliantDeviceCount = value
+    if m != nil {
+        m.compliantDeviceCount = value
+    }
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. Number of conflict devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetConflictDeviceCount(value *int32)() {
-    m.conflictDeviceCount = value
+    if m != nil {
+        m.conflictDeviceCount = value
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Number of error devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    if m != nil {
+        m.errorDeviceCount = value
+    }
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetNonCompliantDeviceCount(value *int32)() {
-    m.nonCompliantDeviceCount = value
+    if m != nil {
+        m.nonCompliantDeviceCount = value
+    }
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetNotApplicableDeviceCount(value *int32)() {
-    m.notApplicableDeviceCount = value
+    if m != nil {
+        m.notApplicableDeviceCount = value
+    }
 }
 // SetNotAssignedDeviceCount sets the notAssignedDeviceCount property value. Number of not assigned devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetNotAssignedDeviceCount(value *int32)() {
-    m.notAssignedDeviceCount = value
+    if m != nil {
+        m.notAssignedDeviceCount = value
+    }
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Number of remediated devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetRemediatedDeviceCount(value *int32)() {
-    m.remediatedDeviceCount = value
+    if m != nil {
+        m.remediatedDeviceCount = value
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Number of unknown devices
 func (m *AdvancedThreatProtectionOnboardingStateSummary) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    if m != nil {
+        m.unknownDeviceCount = value
+    }
 }

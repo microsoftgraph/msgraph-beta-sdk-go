@@ -138,13 +138,19 @@ func (m *UserExperienceAnalyticsRegressionSummary) Serialize(writer i04eb5309aea
 }
 // SetManufacturerRegression sets the manufacturerRegression property value. The metric values for the user experience analytics Manufacturer regression.
 func (m *UserExperienceAnalyticsRegressionSummary) SetManufacturerRegression(value []UserExperienceAnalyticsMetric)() {
-    m.manufacturerRegression = value
+    if m != nil {
+        m.manufacturerRegression = value
+    }
 }
 // SetModelRegression sets the modelRegression property value. The metric values for the user experience analytics model regression.
 func (m *UserExperienceAnalyticsRegressionSummary) SetModelRegression(value []UserExperienceAnalyticsMetric)() {
-    m.modelRegression = value
+    if m != nil {
+        m.modelRegression = value
+    }
 }
 // SetOperatingSystemRegression sets the operatingSystemRegression property value. The metric values for the user experience analytics operating system regression.
 func (m *UserExperienceAnalyticsRegressionSummary) SetOperatingSystemRegression(value []UserExperienceAnalyticsMetric)() {
-    m.operatingSystemRegression = value
+    if m != nil {
+        m.operatingSystemRegression = value
+    }
 }

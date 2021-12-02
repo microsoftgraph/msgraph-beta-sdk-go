@@ -378,53 +378,79 @@ func (m *MobileAppInstallStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetApp sets the app property value. The navigation link to the mobile app.
 func (m *MobileAppInstallStatus) SetApp(value *MobileApp)() {
-    m.app = value
+    if m != nil {
+        m.app = value
+    }
 }
 // SetDeviceId sets the deviceId property value. Device ID
 func (m *MobileAppInstallStatus) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetDeviceName sets the deviceName property value. Device name
 func (m *MobileAppInstallStatus) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetDisplayVersion sets the displayVersion property value. Human readable version of the application
 func (m *MobileAppInstallStatus) SetDisplayVersion(value *string)() {
-    m.displayVersion = value
+    if m != nil {
+        m.displayVersion = value
+    }
 }
 // SetErrorCode sets the errorCode property value. The error code for install or uninstall failures.
 func (m *MobileAppInstallStatus) SetErrorCode(value *int32)() {
-    m.errorCode = value
+    if m != nil {
+        m.errorCode = value
+    }
 }
 // SetInstallState sets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
 func (m *MobileAppInstallStatus) SetInstallState(value *ResultantAppState)() {
-    m.installState = value
+    if m != nil {
+        m.installState = value
+    }
 }
 // SetInstallStateDetail sets the installStateDetail property value. The install state detail of the app. Possible values are: noAdditionalDetails, dependencyFailedToInstall, dependencyWithRequirementsNotMet, dependencyPendingReboot, dependencyWithAutoInstallDisabled, supersededAppUninstallFailed, supersededAppUninstallPendingReboot, removingSupersededApps, iosAppStoreUpdateFailedToInstall, vppAppHasUpdateAvailable, userRejectedUpdate, uninstallPendingReboot, supersedingAppsDetected, supersededAppsDetected, seeInstallErrorCode, autoInstallDisabled, managedAppNoLongerPresent, userRejectedInstall, userIsNotLoggedIntoAppStore, untargetedSupersedingAppsDetected, appRemovedBySupersedence, seeUninstallErrorCode, pendingReboot, installingDependencies, contentDownloaded, supersedingAppsNotApplicable, powerShellScriptRequirementNotMet, registryRequirementNotMet, fileSystemRequirementNotMet, platformNotApplicable, minimumCpuSpeedNotMet, minimumLogicalProcessorCountNotMet, minimumPhysicalMemoryNotMet, minimumOsVersionNotMet, minimumDiskSpaceNotMet, processorArchitectureNotApplicable.
 func (m *MobileAppInstallStatus) SetInstallStateDetail(value *ResultantAppStateDetail)() {
-    m.installStateDetail = value
+    if m != nil {
+        m.installStateDetail = value
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last sync date time
 func (m *MobileAppInstallStatus) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    if m != nil {
+        m.lastSyncDateTime = value
+    }
 }
 // SetMobileAppInstallStatusValue sets the mobileAppInstallStatusValue property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
 func (m *MobileAppInstallStatus) SetMobileAppInstallStatusValue(value *ResultantAppState)() {
-    m.mobileAppInstallStatusValue = value
+    if m != nil {
+        m.mobileAppInstallStatusValue = value
+    }
 }
 // SetOsDescription sets the osDescription property value. OS Description
 func (m *MobileAppInstallStatus) SetOsDescription(value *string)() {
-    m.osDescription = value
+    if m != nil {
+        m.osDescription = value
+    }
 }
 // SetOsVersion sets the osVersion property value. OS Version
 func (m *MobileAppInstallStatus) SetOsVersion(value *string)() {
-    m.osVersion = value
+    if m != nil {
+        m.osVersion = value
+    }
 }
 // SetUserName sets the userName property value. Device User Name
 func (m *MobileAppInstallStatus) SetUserName(value *string)() {
-    m.userName = value
+    if m != nil {
+        m.userName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name
 func (m *MobileAppInstallStatus) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

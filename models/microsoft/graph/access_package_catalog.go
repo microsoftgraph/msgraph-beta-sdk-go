@@ -408,53 +408,79 @@ func (m *AccessPackageCatalog) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAccessPackageResourceRoles sets the accessPackageResourceRoles property value. 
 func (m *AccessPackageCatalog) SetAccessPackageResourceRoles(value []AccessPackageResourceRole)() {
-    m.accessPackageResourceRoles = value
+    if m != nil {
+        m.accessPackageResourceRoles = value
+    }
 }
 // SetAccessPackageResources sets the accessPackageResources property value. Read-only. Nullable.
 func (m *AccessPackageCatalog) SetAccessPackageResources(value []AccessPackageResource)() {
-    m.accessPackageResources = value
+    if m != nil {
+        m.accessPackageResources = value
+    }
 }
 // SetAccessPackageResourceScopes sets the accessPackageResourceScopes property value. 
 func (m *AccessPackageCatalog) SetAccessPackageResourceScopes(value []AccessPackageResourceScope)() {
-    m.accessPackageResourceScopes = value
+    if m != nil {
+        m.accessPackageResourceScopes = value
+    }
 }
 // SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackage)() {
-    m.accessPackages = value
+    if m != nil {
+        m.accessPackages = value
+    }
 }
 // SetCatalogStatus sets the catalogStatus property value. Has the value Published if the access packages are available for management.
 func (m *AccessPackageCatalog) SetCatalogStatus(value *string)() {
-    m.catalogStatus = value
+    if m != nil {
+        m.catalogStatus = value
+    }
 }
 // SetCatalogType sets the catalogType property value. One of UserManaged or ServiceDefault.
 func (m *AccessPackageCatalog) SetCatalogType(value *string)() {
-    m.catalogType = value
+    if m != nil {
+        m.catalogType = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. UPN of the user who created this resource. Read-only.
 func (m *AccessPackageCatalog) SetCreatedBy(value *string)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. The description of the access package catalog.
 func (m *AccessPackageCatalog) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the access package catalog.
 func (m *AccessPackageCatalog) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsExternallyVisible sets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
 func (m *AccessPackageCatalog) SetIsExternallyVisible(value *bool)() {
-    m.isExternallyVisible = value
+    if m != nil {
+        m.isExternallyVisible = value
+    }
 }
 // SetModifiedBy sets the modifiedBy property value. The UPN of the user who last modified this resource. Read-only.
 func (m *AccessPackageCatalog) SetModifiedBy(value *string)() {
-    m.modifiedBy = value
+    if m != nil {
+        m.modifiedBy = value
+    }
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.modifiedDateTime = value
+    if m != nil {
+        m.modifiedDateTime = value
+    }
 }

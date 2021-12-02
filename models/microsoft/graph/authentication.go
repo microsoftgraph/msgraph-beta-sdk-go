@@ -418,45 +418,67 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetEmailMethods sets the emailMethods property value. 
 func (m *Authentication) SetEmailMethods(value []EmailAuthenticationMethod)() {
-    m.emailMethods = value
+    if m != nil {
+        m.emailMethods = value
+    }
 }
 // SetFido2Methods sets the fido2Methods property value. 
 func (m *Authentication) SetFido2Methods(value []Fido2AuthenticationMethod)() {
-    m.fido2Methods = value
+    if m != nil {
+        m.fido2Methods = value
+    }
 }
 // SetMethods sets the methods property value. 
 func (m *Authentication) SetMethods(value []AuthenticationMethod)() {
-    m.methods = value
+    if m != nil {
+        m.methods = value
+    }
 }
 // SetMicrosoftAuthenticatorMethods sets the microsoftAuthenticatorMethods property value. 
 func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethod)() {
-    m.microsoftAuthenticatorMethods = value
+    if m != nil {
+        m.microsoftAuthenticatorMethods = value
+    }
 }
 // SetOperations sets the operations property value. 
 func (m *Authentication) SetOperations(value []LongRunningOperation)() {
-    m.operations = value
+    if m != nil {
+        m.operations = value
+    }
 }
 // SetPasswordlessMicrosoftAuthenticatorMethods sets the passwordlessMicrosoftAuthenticatorMethods property value. 
 func (m *Authentication) SetPasswordlessMicrosoftAuthenticatorMethods(value []PasswordlessMicrosoftAuthenticatorAuthenticationMethod)() {
-    m.passwordlessMicrosoftAuthenticatorMethods = value
+    if m != nil {
+        m.passwordlessMicrosoftAuthenticatorMethods = value
+    }
 }
 // SetPasswordMethods sets the passwordMethods property value. 
 func (m *Authentication) SetPasswordMethods(value []PasswordAuthenticationMethod)() {
-    m.passwordMethods = value
+    if m != nil {
+        m.passwordMethods = value
+    }
 }
 // SetPhoneMethods sets the phoneMethods property value. 
 func (m *Authentication) SetPhoneMethods(value []PhoneAuthenticationMethod)() {
-    m.phoneMethods = value
+    if m != nil {
+        m.phoneMethods = value
+    }
 }
 // SetSoftwareOathMethods sets the softwareOathMethods property value. 
 func (m *Authentication) SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethod)() {
-    m.softwareOathMethods = value
+    if m != nil {
+        m.softwareOathMethods = value
+    }
 }
 // SetTemporaryAccessPassMethods sets the temporaryAccessPassMethods property value. 
 func (m *Authentication) SetTemporaryAccessPassMethods(value []TemporaryAccessPassAuthenticationMethod)() {
-    m.temporaryAccessPassMethods = value
+    if m != nil {
+        m.temporaryAccessPassMethods = value
+    }
 }
 // SetWindowsHelloForBusinessMethods sets the windowsHelloForBusinessMethods property value. 
 func (m *Authentication) SetWindowsHelloForBusinessMethods(value []WindowsHelloForBusinessAuthenticationMethod)() {
-    m.windowsHelloForBusinessMethods = value
+    if m != nil {
+        m.windowsHelloForBusinessMethods = value
+    }
 }

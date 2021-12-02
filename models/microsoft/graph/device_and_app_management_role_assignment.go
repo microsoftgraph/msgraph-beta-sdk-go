@@ -98,9 +98,13 @@ func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i04eb5309aeaafad
 }
 // SetMembers sets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
 func (m *DeviceAndAppManagementRoleAssignment) SetMembers(value []string)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }
 // SetRoleScopeTags sets the roleScopeTags property value. The set of Role Scope Tags defined on the Role Assignment.
 func (m *DeviceAndAppManagementRoleAssignment) SetRoleScopeTags(value []RoleScopeTag)() {
-    m.roleScopeTags = value
+    if m != nil {
+        m.roleScopeTags = value
+    }
 }

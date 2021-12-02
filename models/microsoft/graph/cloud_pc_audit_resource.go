@@ -157,21 +157,31 @@ func (m *CloudPcAuditResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcAuditResource) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The resource entity display name.
 func (m *CloudPcAuditResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetModifiedProperties sets the modifiedProperties property value. A list of modified properties.
 func (m *CloudPcAuditResource) SetModifiedProperties(value []CloudPcAuditProperty)() {
-    m.modifiedProperties = value
+    if m != nil {
+        m.modifiedProperties = value
+    }
 }
 // SetResourceId sets the resourceId property value. The ID of the audit resource.
 func (m *CloudPcAuditResource) SetResourceId(value *string)() {
-    m.resourceId = value
+    if m != nil {
+        m.resourceId = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. The type of the audit resource.
 func (m *CloudPcAuditResource) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

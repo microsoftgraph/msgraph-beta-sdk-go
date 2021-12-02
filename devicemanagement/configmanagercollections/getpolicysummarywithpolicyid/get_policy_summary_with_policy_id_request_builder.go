@@ -90,11 +90,15 @@ func (m *GetPolicySummaryWithPolicyIdResponse) Serialize(writer i04eb5309aeaafad
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetPolicySummaryWithPolicyIdResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConfigManagerPolicySummary sets the configManagerPolicySummary property value. Union type representation for type configManagerPolicySummary
 func (m *GetPolicySummaryWithPolicyIdResponse) SetConfigManagerPolicySummary(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConfigManagerPolicySummary)() {
-    m.configManagerPolicySummary = value
+    if m != nil {
+        m.configManagerPolicySummary = value
+    }
 }
 // NewGetPolicySummaryWithPolicyIdRequestBuilderInternal instantiates a new GetPolicySummaryWithPolicyIdRequestBuilder and sets the default values.
 func NewGetPolicySummaryWithPolicyIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, policyId *string)(*GetPolicySummaryWithPolicyIdRequestBuilder) {

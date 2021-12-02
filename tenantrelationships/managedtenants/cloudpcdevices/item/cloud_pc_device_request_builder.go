@@ -40,7 +40,7 @@ type CloudPcDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // CloudPcDeviceRequestBuilderPatchOptions options for Patch
 type CloudPcDeviceRequestBuilderPatchOptions struct {

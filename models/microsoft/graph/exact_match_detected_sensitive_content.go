@@ -68,5 +68,7 @@ func (m *ExactMatchDetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd2
 }
 // SetMatches sets the matches property value. 
 func (m *ExactMatchDetectedSensitiveContent) SetMatches(value []SensitiveContentLocation)() {
-    m.matches = value
+    if m != nil {
+        m.matches = value
+    }
 }

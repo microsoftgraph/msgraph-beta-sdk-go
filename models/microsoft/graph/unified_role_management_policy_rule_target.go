@@ -221,29 +221,43 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) Serialize(writer i04eb5309aeaafa
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCaller sets the caller property value. The caller for the policy rule target. Allowed values are: None, Admin, EndUser.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetCaller(value *string)() {
-    m.caller = value
+    if m != nil {
+        m.caller = value
+    }
 }
 // SetEnforcedSettings sets the enforcedSettings property value. The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetEnforcedSettings(value []string)() {
-    m.enforcedSettings = value
+    if m != nil {
+        m.enforcedSettings = value
+    }
 }
 // SetInheritableSettings sets the inheritableSettings property value. The list of settings which can be inherited by child scopes. Use All for all settings.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetInheritableSettings(value []string)() {
-    m.inheritableSettings = value
+    if m != nil {
+        m.inheritableSettings = value
+    }
 }
 // SetLevel sets the level property value. The level for the policy rule target. Allowed values are: Eligibility, Assignment.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetLevel(value *string)() {
-    m.level = value
+    if m != nil {
+        m.level = value
+    }
 }
 // SetOperations sets the operations property value. The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetOperations(value []string)() {
-    m.operations = value
+    if m != nil {
+        m.operations = value
+    }
 }
 // SetTargetObjects sets the targetObjects property value. 
 func (m *UnifiedRoleManagementPolicyRuleTarget) SetTargetObjects(value []DirectoryObject)() {
-    m.targetObjects = value
+    if m != nil {
+        m.targetObjects = value
+    }
 }

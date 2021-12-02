@@ -222,29 +222,43 @@ func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i04eb5309aeaaf
 }
 // SetCreatedDateTime sets the createdDateTime property value. Creation time of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. Description of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. DisplayName of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified time of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPlatform sets the platform property value. Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
 func (m *DeviceAndAppManagementAssignmentFilter) SetPlatform(value *DevicePlatformType)() {
-    m.platform = value
+    if m != nil {
+        m.platform = value
+    }
 }
 // SetRoleScopeTags sets the roleScopeTags property value. RoleScopeTags of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetRoleScopeTags(value []string)() {
-    m.roleScopeTags = value
+    if m != nil {
+        m.roleScopeTags = value
+    }
 }
 // SetRule sets the rule property value. Rule definition of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetRule(value *string)() {
-    m.rule = value
+    if m != nil {
+        m.rule = value
+    }
 }

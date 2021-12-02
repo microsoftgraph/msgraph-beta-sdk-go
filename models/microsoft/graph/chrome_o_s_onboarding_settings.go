@@ -140,17 +140,25 @@ func (m *ChromeOSOnboardingSettings) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetLastDirectorySyncDateTime sets the lastDirectorySyncDateTime property value. The ChromebookTenant's LastDirectorySyncDateTime
 func (m *ChromeOSOnboardingSettings) SetLastDirectorySyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastDirectorySyncDateTime = value
+    if m != nil {
+        m.lastDirectorySyncDateTime = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The ChromebookTenant's LastModifiedDateTime
 func (m *ChromeOSOnboardingSettings) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetOnboardingStatus sets the onboardingStatus property value. The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed.
 func (m *ChromeOSOnboardingSettings) SetOnboardingStatus(value *OnboardingStatus)() {
-    m.onboardingStatus = value
+    if m != nil {
+        m.onboardingStatus = value
+    }
 }
 // SetOwnerUserPrincipalName sets the ownerUserPrincipalName property value. The ChromebookTenant's OwnerUserPrincipalName
 func (m *ChromeOSOnboardingSettings) SetOwnerUserPrincipalName(value *string)() {
-    m.ownerUserPrincipalName = value
+    if m != nil {
+        m.ownerUserPrincipalName = value
+    }
 }

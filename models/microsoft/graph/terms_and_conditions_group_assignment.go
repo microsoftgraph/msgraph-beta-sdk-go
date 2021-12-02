@@ -85,9 +85,13 @@ func (m *TermsAndConditionsGroupAssignment) Serialize(writer i04eb5309aeaafadd28
 }
 // SetTargetGroupId sets the targetGroupId property value. Unique identifier of a group that the T&C policy is assigned to.
 func (m *TermsAndConditionsGroupAssignment) SetTargetGroupId(value *string)() {
-    m.targetGroupId = value
+    if m != nil {
+        m.targetGroupId = value
+    }
 }
 // SetTermsAndConditions sets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsGroupAssignment) SetTermsAndConditions(value *TermsAndConditions)() {
-    m.termsAndConditions = value
+    if m != nil {
+        m.termsAndConditions = value
+    }
 }

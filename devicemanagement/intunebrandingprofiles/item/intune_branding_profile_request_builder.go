@@ -43,7 +43,7 @@ type IntuneBrandingProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // IntuneBrandingProfileRequestBuilderPatchOptions options for Patch
 type IntuneBrandingProfileRequestBuilderPatchOptions struct {

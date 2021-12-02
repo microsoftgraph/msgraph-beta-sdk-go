@@ -42,7 +42,7 @@ type MacOSSoftwareUpdateAccountSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MacOSSoftwareUpdateAccountSummaryRequestBuilderPatchOptions options for Patch
 type MacOSSoftwareUpdateAccountSummaryRequestBuilderPatchOptions struct {

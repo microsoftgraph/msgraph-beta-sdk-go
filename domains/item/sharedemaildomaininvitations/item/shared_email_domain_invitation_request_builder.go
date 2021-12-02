@@ -40,7 +40,7 @@ type SharedEmailDomainInvitationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // SharedEmailDomainInvitationRequestBuilderPatchOptions options for Patch
 type SharedEmailDomainInvitationRequestBuilderPatchOptions struct {

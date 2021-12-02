@@ -96,13 +96,19 @@ func (m *PropertyToEvaluate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PropertyToEvaluate) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPropertyName sets the propertyName property value. Provides the property name.
 func (m *PropertyToEvaluate) SetPropertyName(value *string)() {
-    m.propertyName = value
+    if m != nil {
+        m.propertyName = value
+    }
 }
 // SetPropertyValue sets the propertyValue property value. Provides the property value.
 func (m *PropertyToEvaluate) SetPropertyValue(value *string)() {
-    m.propertyValue = value
+    if m != nil {
+        m.propertyValue = value
+    }
 }

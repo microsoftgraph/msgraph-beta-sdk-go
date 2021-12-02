@@ -174,25 +174,37 @@ func (m *PersonNamePronounciation) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PersonNamePronounciation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *PersonNamePronounciation) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetFirst sets the first property value. 
 func (m *PersonNamePronounciation) SetFirst(value *string)() {
-    m.first = value
+    if m != nil {
+        m.first = value
+    }
 }
 // SetLast sets the last property value. 
 func (m *PersonNamePronounciation) SetLast(value *string)() {
-    m.last = value
+    if m != nil {
+        m.last = value
+    }
 }
 // SetMaiden sets the maiden property value. 
 func (m *PersonNamePronounciation) SetMaiden(value *string)() {
-    m.maiden = value
+    if m != nil {
+        m.maiden = value
+    }
 }
 // SetMiddle sets the middle property value. 
 func (m *PersonNamePronounciation) SetMiddle(value *string)() {
-    m.middle = value
+    if m != nil {
+        m.middle = value
+    }
 }

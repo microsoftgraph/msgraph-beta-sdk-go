@@ -125,17 +125,25 @@ func (m *InformationProtectionContentLabel) Serialize(writer i04eb5309aeaafadd28
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationProtectionContentLabel) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignmentMethod sets the assignmentMethod property value. Possible values are: standard, privileged, auto.
 func (m *InformationProtectionContentLabel) SetAssignmentMethod(value *AssignmentMethod)() {
-    m.assignmentMethod = value
+    if m != nil {
+        m.assignmentMethod = value
+    }
 }
 // SetCreationDateTime sets the creationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *InformationProtectionContentLabel) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.creationDateTime = value
+    if m != nil {
+        m.creationDateTime = value
+    }
 }
 // SetLabel sets the label property value. Details on the label that is currently applied to the file.
 func (m *InformationProtectionContentLabel) SetLabel(value *LabelDetails)() {
-    m.label = value
+    if m != nil {
+        m.label = value
+    }
 }

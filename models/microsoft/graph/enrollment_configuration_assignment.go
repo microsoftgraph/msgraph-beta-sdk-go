@@ -113,13 +113,19 @@ func (m *EnrollmentConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28
 }
 // SetSource sets the source property value. Type of resource used for deployment to a group, direct or policySet. Possible values are: direct, policySets.
 func (m *EnrollmentConfigurationAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
-    m.source = value
+    if m != nil {
+        m.source = value
+    }
 }
 // SetSourceId sets the sourceId property value. Identifier for resource used for deployment to a group
 func (m *EnrollmentConfigurationAssignment) SetSourceId(value *string)() {
-    m.sourceId = value
+    if m != nil {
+        m.sourceId = value
+    }
 }
 // SetTarget sets the target property value. Represents an assignment to managed devices in the tenant
 func (m *EnrollmentConfigurationAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

@@ -59,5 +59,7 @@ func (m *EvaluateLabelJobResponse) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetResult sets the result property value. 
 func (m *EvaluateLabelJobResponse) SetResult(value *EvaluateLabelJobResultGroup)() {
-    m.result = value
+    if m != nil {
+        m.result = value
+    }
 }

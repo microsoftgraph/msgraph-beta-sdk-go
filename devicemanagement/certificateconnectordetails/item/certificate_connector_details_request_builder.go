@@ -42,7 +42,7 @@ type CertificateConnectorDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // CertificateConnectorDetailsRequestBuilderPatchOptions options for Patch
 type CertificateConnectorDetailsRequestBuilderPatchOptions struct {

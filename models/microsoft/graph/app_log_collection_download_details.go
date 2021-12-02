@@ -124,17 +124,25 @@ func (m *AppLogCollectionDownloadDetails) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppLogCollectionDownloadDetails) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppLogDecryptionAlgorithm sets the appLogDecryptionAlgorithm property value. DecryptionAlgorithm for Content. Possible values are: aes256.
 func (m *AppLogCollectionDownloadDetails) SetAppLogDecryptionAlgorithm(value *AppLogDecryptionAlgorithm)() {
-    m.appLogDecryptionAlgorithm = value
+    if m != nil {
+        m.appLogDecryptionAlgorithm = value
+    }
 }
 // SetDecryptionKey sets the decryptionKey property value. DecryptionKey as string
 func (m *AppLogCollectionDownloadDetails) SetDecryptionKey(value *string)() {
-    m.decryptionKey = value
+    if m != nil {
+        m.decryptionKey = value
+    }
 }
 // SetDownloadUrl sets the downloadUrl property value. Download SAS Url for completed AppLogUploadRequest
 func (m *AppLogCollectionDownloadDetails) SetDownloadUrl(value *string)() {
-    m.downloadUrl = value
+    if m != nil {
+        m.downloadUrl = value
+    }
 }

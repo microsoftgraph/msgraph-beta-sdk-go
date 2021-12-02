@@ -190,25 +190,37 @@ func (m *DataSharingConsent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetGrantDateTime sets the grantDateTime property value. The time consent was granted for this account
 func (m *DataSharingConsent) SetGrantDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.grantDateTime = value
+    if m != nil {
+        m.grantDateTime = value
+    }
 }
 // SetGranted sets the granted property value. The granted state for the data sharing consent
 func (m *DataSharingConsent) SetGranted(value *bool)() {
-    m.granted = value
+    if m != nil {
+        m.granted = value
+    }
 }
 // SetGrantedByUpn sets the grantedByUpn property value. The Upn of the user that granted consent for this account
 func (m *DataSharingConsent) SetGrantedByUpn(value *string)() {
-    m.grantedByUpn = value
+    if m != nil {
+        m.grantedByUpn = value
+    }
 }
 // SetGrantedByUserId sets the grantedByUserId property value. The UserId of the user that granted consent for this account
 func (m *DataSharingConsent) SetGrantedByUserId(value *string)() {
-    m.grantedByUserId = value
+    if m != nil {
+        m.grantedByUserId = value
+    }
 }
 // SetServiceDisplayName sets the serviceDisplayName property value. The display name of the service work flow
 func (m *DataSharingConsent) SetServiceDisplayName(value *string)() {
-    m.serviceDisplayName = value
+    if m != nil {
+        m.serviceDisplayName = value
+    }
 }
 // SetTermsUrl sets the termsUrl property value. The TermsUrl for the data sharing consent
 func (m *DataSharingConsent) SetTermsUrl(value *string)() {
-    m.termsUrl = value
+    if m != nil {
+        m.termsUrl = value
+    }
 }

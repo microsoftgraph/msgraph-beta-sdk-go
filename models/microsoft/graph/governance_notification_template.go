@@ -174,25 +174,37 @@ func (m *GovernanceNotificationTemplate) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceNotificationTemplate) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCulture sets the culture property value. 
 func (m *GovernanceNotificationTemplate) SetCulture(value *string)() {
-    m.culture = value
+    if m != nil {
+        m.culture = value
+    }
 }
 // SetId sets the id property value. 
 func (m *GovernanceNotificationTemplate) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetSource sets the source property value. 
 func (m *GovernanceNotificationTemplate) SetSource(value *string)() {
-    m.source = value
+    if m != nil {
+        m.source = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. 
 func (m *GovernanceNotificationTemplate) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetVersion sets the version property value. 
 func (m *GovernanceNotificationTemplate) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

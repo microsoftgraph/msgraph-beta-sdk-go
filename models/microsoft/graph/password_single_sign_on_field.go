@@ -148,21 +148,31 @@ func (m *PasswordSingleSignOnField) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordSingleSignOnField) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCustomizedLabel sets the customizedLabel property value. Title/label override for customization.
 func (m *PasswordSingleSignOnField) SetCustomizedLabel(value *string)() {
-    m.customizedLabel = value
+    if m != nil {
+        m.customizedLabel = value
+    }
 }
 // SetDefaultLabel sets the defaultLabel property value. Label that would be used if no customizedLabel is provided. Read only.
 func (m *PasswordSingleSignOnField) SetDefaultLabel(value *string)() {
-    m.defaultLabel = value
+    if m != nil {
+        m.defaultLabel = value
+    }
 }
 // SetFieldId sets the fieldId property value. Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
 func (m *PasswordSingleSignOnField) SetFieldId(value *string)() {
-    m.fieldId = value
+    if m != nil {
+        m.fieldId = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Type of the credential. The values can be text, password.
 func (m *PasswordSingleSignOnField) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

@@ -148,21 +148,31 @@ func (m *DeviceHealthScriptParameter) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthScriptParameter) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplyDefaultValueWhenNotAssigned sets the applyDefaultValueWhenNotAssigned property value. Whether Apply DefaultValue When Not Assigned
 func (m *DeviceHealthScriptParameter) SetApplyDefaultValueWhenNotAssigned(value *bool)() {
-    m.applyDefaultValueWhenNotAssigned = value
+    if m != nil {
+        m.applyDefaultValueWhenNotAssigned = value
+    }
 }
 // SetDescription sets the description property value. The description of the param
 func (m *DeviceHealthScriptParameter) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetIsRequired sets the isRequired property value. Whether the param is required
 func (m *DeviceHealthScriptParameter) SetIsRequired(value *bool)() {
-    m.isRequired = value
+    if m != nil {
+        m.isRequired = value
+    }
 }
 // SetName sets the name property value. The name of the param
 func (m *DeviceHealthScriptParameter) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

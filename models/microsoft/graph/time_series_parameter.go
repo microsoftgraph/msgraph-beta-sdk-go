@@ -123,17 +123,25 @@ func (m *TimeSeriesParameter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeSeriesParameter) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. End time of the series being requested. Optional; if not specified, current time is used.
 func (m *TimeSeriesParameter) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetMetricName sets the metricName property value. The name of the metric for which a time series is requested.
 func (m *TimeSeriesParameter) SetMetricName(value *string)() {
-    m.metricName = value
+    if m != nil {
+        m.metricName = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. Start time of the series being requested.
 func (m *TimeSeriesParameter) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }

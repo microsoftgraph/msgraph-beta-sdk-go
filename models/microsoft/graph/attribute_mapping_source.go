@@ -159,21 +159,31 @@ func (m *AttributeMappingSource) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeMappingSource) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExpression sets the expression property value. 
 func (m *AttributeMappingSource) SetExpression(value *string)() {
-    m.expression = value
+    if m != nil {
+        m.expression = value
+    }
 }
 // SetName sets the name property value. 
 func (m *AttributeMappingSource) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetParameters sets the parameters property value. 
 func (m *AttributeMappingSource) SetParameters(value []StringKeyAttributeMappingSourceValuePair)() {
-    m.parameters = value
+    if m != nil {
+        m.parameters = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. 
 func (m *AttributeMappingSource) SetType_escaped(value *AttributeMappingSourceType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

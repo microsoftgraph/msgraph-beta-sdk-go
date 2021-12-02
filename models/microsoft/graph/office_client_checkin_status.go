@@ -283,41 +283,61 @@ func (m *OfficeClientCheckinStatus) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OfficeClientCheckinStatus) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppliedPolicies sets the appliedPolicies property value. List of policies delivered to the device as last checkin.
 func (m *OfficeClientCheckinStatus) SetAppliedPolicies(value []string)() {
-    m.appliedPolicies = value
+    if m != nil {
+        m.appliedPolicies = value
+    }
 }
 // SetCheckinDateTime sets the checkinDateTime property value. Last device check-in time in UTC.
 func (m *OfficeClientCheckinStatus) SetCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.checkinDateTime = value
+    if m != nil {
+        m.checkinDateTime = value
+    }
 }
 // SetDeviceName sets the deviceName property value. Device name trying to check-in.
 func (m *OfficeClientCheckinStatus) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetDevicePlatform sets the devicePlatform property value. Device platform trying to check-in.
 func (m *OfficeClientCheckinStatus) SetDevicePlatform(value *string)() {
-    m.devicePlatform = value
+    if m != nil {
+        m.devicePlatform = value
+    }
 }
 // SetDevicePlatformVersion sets the devicePlatformVersion property value. Device platform version trying to check-in.
 func (m *OfficeClientCheckinStatus) SetDevicePlatformVersion(value *string)() {
-    m.devicePlatformVersion = value
+    if m != nil {
+        m.devicePlatformVersion = value
+    }
 }
 // SetErrorMessage sets the errorMessage property value. Error message if any associated for the last checkin.
 func (m *OfficeClientCheckinStatus) SetErrorMessage(value *string)() {
-    m.errorMessage = value
+    if m != nil {
+        m.errorMessage = value
+    }
 }
 // SetUserId sets the userId property value. User identifier using the device.
 func (m *OfficeClientCheckinStatus) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name using the device.
 func (m *OfficeClientCheckinStatus) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetWasSuccessful sets the wasSuccessful property value. If the last checkin was successful.
 func (m *OfficeClientCheckinStatus) SetWasSuccessful(value *bool)() {
-    m.wasSuccessful = value
+    if m != nil {
+        m.wasSuccessful = value
+    }
 }

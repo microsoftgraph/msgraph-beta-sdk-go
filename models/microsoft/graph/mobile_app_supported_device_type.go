@@ -124,17 +124,25 @@ func (m *MobileAppSupportedDeviceType) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppSupportedDeviceType) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMaximumOperatingSystemVersion sets the maximumOperatingSystemVersion property value. Maximum OS version
 func (m *MobileAppSupportedDeviceType) SetMaximumOperatingSystemVersion(value *string)() {
-    m.maximumOperatingSystemVersion = value
+    if m != nil {
+        m.maximumOperatingSystemVersion = value
+    }
 }
 // SetMinimumOperatingSystemVersion sets the minimumOperatingSystemVersion property value. Minimum OS version
 func (m *MobileAppSupportedDeviceType) SetMinimumOperatingSystemVersion(value *string)() {
-    m.minimumOperatingSystemVersion = value
+    if m != nil {
+        m.minimumOperatingSystemVersion = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
 func (m *MobileAppSupportedDeviceType) SetType_escaped(value *DeviceType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

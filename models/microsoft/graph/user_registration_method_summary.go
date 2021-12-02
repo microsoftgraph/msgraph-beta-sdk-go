@@ -161,21 +161,31 @@ func (m *UserRegistrationMethodSummary) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserRegistrationMethodSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTotalUserCount sets the totalUserCount property value. Total number of users in the tenant.
 func (m *UserRegistrationMethodSummary) SetTotalUserCount(value *int64)() {
-    m.totalUserCount = value
+    if m != nil {
+        m.totalUserCount = value
+    }
 }
 // SetUserRegistrationMethodCounts sets the userRegistrationMethodCounts property value. Number of users registered for each authentication method.
 func (m *UserRegistrationMethodSummary) SetUserRegistrationMethodCounts(value []UserRegistrationMethodCount)() {
-    m.userRegistrationMethodCounts = value
+    if m != nil {
+        m.userRegistrationMethodCounts = value
+    }
 }
 // SetUserRoles sets the userRoles property value. User role type. Possible values are: all, privilegedAdmin, admin, user.
 func (m *UserRegistrationMethodSummary) SetUserRoles(value *IncludedUserRoles)() {
-    m.userRoles = value
+    if m != nil {
+        m.userRoles = value
+    }
 }
 // SetUserTypes sets the userTypes property value. User type. Possible values are: all, member, guest.
 func (m *UserRegistrationMethodSummary) SetUserTypes(value *IncludedUserTypes)() {
-    m.userTypes = value
+    if m != nil {
+        m.userTypes = value
+    }
 }

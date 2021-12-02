@@ -40,7 +40,7 @@ type AndroidForWorkAppConfigurationSchemaRequestBuilderGetQueryParameters struct
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AndroidForWorkAppConfigurationSchemaRequestBuilderPatchOptions options for Patch
 type AndroidForWorkAppConfigurationSchemaRequestBuilderPatchOptions struct {

@@ -45,7 +45,7 @@ type PrivilegedRoleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PrivilegedRoleRequestBuilderPatchOptions options for Patch
 type PrivilegedRoleRequestBuilderPatchOptions struct {

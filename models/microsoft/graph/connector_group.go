@@ -211,25 +211,37 @@ func (m *ConnectorGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetApplications sets the applications property value. Read-only. Nullable.
 func (m *ConnectorGroup) SetApplications(value []Application)() {
-    m.applications = value
+    if m != nil {
+        m.applications = value
+    }
 }
 // SetConnectorGroupType sets the connectorGroupType property value. Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
 func (m *ConnectorGroup) SetConnectorGroupType(value *ConnectorGroupType)() {
-    m.connectorGroupType = value
+    if m != nil {
+        m.connectorGroupType = value
+    }
 }
 // SetIsDefault sets the isDefault property value. Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
 func (m *ConnectorGroup) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetMembers sets the members property value. Read-only. Nullable.
 func (m *ConnectorGroup) SetMembers(value []Connector)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }
 // SetName sets the name property value. The name associated with the connectorGroup.
 func (m *ConnectorGroup) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetRegion sets the region property value. The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
 func (m *ConnectorGroup) SetRegion(value *ConnectorGroupRegion)() {
-    m.region = value
+    if m != nil {
+        m.region = value
+    }
 }

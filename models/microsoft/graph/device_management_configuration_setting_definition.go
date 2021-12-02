@@ -526,73 +526,109 @@ func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i04eb5
 }
 // SetAccessTypes sets the accessTypes property value. Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.
 func (m *DeviceManagementConfigurationSettingDefinition) SetAccessTypes(value *DeviceManagementConfigurationSettingAccessTypes)() {
-    m.accessTypes = value
+    if m != nil {
+        m.accessTypes = value
+    }
 }
 // SetApplicability sets the applicability property value. Details which device setting is applicable on
 func (m *DeviceManagementConfigurationSettingDefinition) SetApplicability(value *DeviceManagementConfigurationSettingApplicability)() {
-    m.applicability = value
+    if m != nil {
+        m.applicability = value
+    }
 }
 // SetBaseUri sets the baseUri property value. Base CSP Path
 func (m *DeviceManagementConfigurationSettingDefinition) SetBaseUri(value *string)() {
-    m.baseUri = value
+    if m != nil {
+        m.baseUri = value
+    }
 }
 // SetCategoryId sets the categoryId property value. Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
 func (m *DeviceManagementConfigurationSettingDefinition) SetCategoryId(value *string)() {
-    m.categoryId = value
+    if m != nil {
+        m.categoryId = value
+    }
 }
 // SetDescription sets the description property value. Description of the item
 func (m *DeviceManagementConfigurationSettingDefinition) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the item
 func (m *DeviceManagementConfigurationSettingDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetHelpText sets the helpText property value. Help text of the item
 func (m *DeviceManagementConfigurationSettingDefinition) SetHelpText(value *string)() {
-    m.helpText = value
+    if m != nil {
+        m.helpText = value
+    }
 }
 // SetInfoUrls sets the infoUrls property value. List of links more info for the setting can be found at
 func (m *DeviceManagementConfigurationSettingDefinition) SetInfoUrls(value []string)() {
-    m.infoUrls = value
+    if m != nil {
+        m.infoUrls = value
+    }
 }
 // SetKeywords sets the keywords property value. Tokens which to search settings on
 func (m *DeviceManagementConfigurationSettingDefinition) SetKeywords(value []string)() {
-    m.keywords = value
+    if m != nil {
+        m.keywords = value
+    }
 }
 // SetName sets the name property value. Name of the item
 func (m *DeviceManagementConfigurationSettingDefinition) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetOccurrence sets the occurrence property value. Indicates whether the setting is required or not
 func (m *DeviceManagementConfigurationSettingDefinition) SetOccurrence(value *DeviceManagementConfigurationSettingOccurrence)() {
-    m.occurrence = value
+    if m != nil {
+        m.occurrence = value
+    }
 }
 // SetOffsetUri sets the offsetUri property value. Offset CSP Path from Base
 func (m *DeviceManagementConfigurationSettingDefinition) SetOffsetUri(value *string)() {
-    m.offsetUri = value
+    if m != nil {
+        m.offsetUri = value
+    }
 }
 // SetReferredSettingInformationList sets the referredSettingInformationList property value. List of referred setting information.
 func (m *DeviceManagementConfigurationSettingDefinition) SetReferredSettingInformationList(value []DeviceManagementConfigurationReferredSettingInformation)() {
-    m.referredSettingInformationList = value
+    if m != nil {
+        m.referredSettingInformationList = value
+    }
 }
 // SetRootDefinitionId sets the rootDefinitionId property value. Root setting definition if the setting is a child setting.
 func (m *DeviceManagementConfigurationSettingDefinition) SetRootDefinitionId(value *string)() {
-    m.rootDefinitionId = value
+    if m != nil {
+        m.rootDefinitionId = value
+    }
 }
 // SetSettingUsage sets the settingUsage property value. Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
 func (m *DeviceManagementConfigurationSettingDefinition) SetSettingUsage(value *DeviceManagementConfigurationSettingUsage)() {
-    m.settingUsage = value
+    if m != nil {
+        m.settingUsage = value
+    }
 }
 // SetUxBehavior sets the uxBehavior property value. Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.
 func (m *DeviceManagementConfigurationSettingDefinition) SetUxBehavior(value *DeviceManagementConfigurationControlType)() {
-    m.uxBehavior = value
+    if m != nil {
+        m.uxBehavior = value
+    }
 }
 // SetVersion sets the version property value. Item Version
 func (m *DeviceManagementConfigurationSettingDefinition) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }
 // SetVisibility sets the visibility property value. Setting visibility scope to UX. Possible values are: none, settingsCatalog, template.
 func (m *DeviceManagementConfigurationSettingDefinition) SetVisibility(value *DeviceManagementConfigurationSettingVisibility)() {
-    m.visibility = value
+    if m != nil {
+        m.visibility = value
+    }
 }

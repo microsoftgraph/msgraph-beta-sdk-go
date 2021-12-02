@@ -113,13 +113,19 @@ func (m *TargetedManagedAppPolicyAssignment) Serialize(writer i04eb5309aeaafadd2
 }
 // SetSource sets the source property value. Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
 func (m *TargetedManagedAppPolicyAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
-    m.source = value
+    if m != nil {
+        m.source = value
+    }
 }
 // SetSourceId sets the sourceId property value. Identifier for resource used for deployment to a group
 func (m *TargetedManagedAppPolicyAssignment) SetSourceId(value *string)() {
-    m.sourceId = value
+    if m != nil {
+        m.sourceId = value
+    }
 }
 // SetTarget sets the target property value. Identifier for deployment to a group or app
 func (m *TargetedManagedAppPolicyAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

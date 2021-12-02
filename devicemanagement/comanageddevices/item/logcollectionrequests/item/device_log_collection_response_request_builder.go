@@ -41,7 +41,7 @@ type DeviceLogCollectionResponseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceLogCollectionResponseRequestBuilderPatchOptions options for Patch
 type DeviceLogCollectionResponseRequestBuilderPatchOptions struct {

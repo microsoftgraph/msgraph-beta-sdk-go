@@ -174,25 +174,37 @@ func (m *DetectedSensitiveContentBase) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DetectedSensitiveContentBase) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConfidence sets the confidence property value. 
 func (m *DetectedSensitiveContentBase) SetConfidence(value *int32)() {
-    m.confidence = value
+    if m != nil {
+        m.confidence = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *DetectedSensitiveContentBase) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetId sets the id property value. 
 func (m *DetectedSensitiveContentBase) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetRecommendedConfidence sets the recommendedConfidence property value. 
 func (m *DetectedSensitiveContentBase) SetRecommendedConfidence(value *int32)() {
-    m.recommendedConfidence = value
+    if m != nil {
+        m.recommendedConfidence = value
+    }
 }
 // SetUniqueCount sets the uniqueCount property value. 
 func (m *DetectedSensitiveContentBase) SetUniqueCount(value *int32)() {
-    m.uniqueCount = value
+    if m != nil {
+        m.uniqueCount = value
+    }
 }

@@ -68,5 +68,7 @@ func (m *AttributeMappingFunctionSchema) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetParameters sets the parameters property value. Collection of function parameters.
 func (m *AttributeMappingFunctionSchema) SetParameters(value []AttributeMappingParameterSchema)() {
-    m.parameters = value
+    if m != nil {
+        m.parameters = value
+    }
 }

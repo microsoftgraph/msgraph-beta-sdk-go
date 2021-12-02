@@ -195,25 +195,37 @@ func (m *TenantSetupInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetDefaultRolesSettings sets the defaultRolesSettings property value. 
 func (m *TenantSetupInfo) SetDefaultRolesSettings(value *PrivilegedRoleSettings)() {
-    m.defaultRolesSettings = value
+    if m != nil {
+        m.defaultRolesSettings = value
+    }
 }
 // SetFirstTimeSetup sets the firstTimeSetup property value. 
 func (m *TenantSetupInfo) SetFirstTimeSetup(value *bool)() {
-    m.firstTimeSetup = value
+    if m != nil {
+        m.firstTimeSetup = value
+    }
 }
 // SetRelevantRolesSettings sets the relevantRolesSettings property value. 
 func (m *TenantSetupInfo) SetRelevantRolesSettings(value []string)() {
-    m.relevantRolesSettings = value
+    if m != nil {
+        m.relevantRolesSettings = value
+    }
 }
 // SetSetupStatus sets the setupStatus property value. 
 func (m *TenantSetupInfo) SetSetupStatus(value *SetupStatus)() {
-    m.setupStatus = value
+    if m != nil {
+        m.setupStatus = value
+    }
 }
 // SetSkipSetup sets the skipSetup property value. 
 func (m *TenantSetupInfo) SetSkipSetup(value *bool)() {
-    m.skipSetup = value
+    if m != nil {
+        m.skipSetup = value
+    }
 }
 // SetUserRolesActions sets the userRolesActions property value. 
 func (m *TenantSetupInfo) SetUserRolesActions(value *string)() {
-    m.userRolesActions = value
+    if m != nil {
+        m.userRolesActions = value
+    }
 }

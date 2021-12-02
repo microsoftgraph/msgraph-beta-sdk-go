@@ -141,17 +141,25 @@ func (m *DeviceManagementDerivedCredentialSettings) Serialize(writer i04eb5309ae
 }
 // SetDisplayName sets the displayName property value. The display name for the profile.
 func (m *DeviceManagementDerivedCredentialSettings) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetHelpUrl sets the helpUrl property value. The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
 func (m *DeviceManagementDerivedCredentialSettings) SetHelpUrl(value *string)() {
-    m.helpUrl = value
+    if m != nil {
+        m.helpUrl = value
+    }
 }
 // SetIssuer sets the issuer property value. The derived credential provider to use.
 func (m *DeviceManagementDerivedCredentialSettings) SetIssuer(value *DeviceManagementDerivedCredentialIssuer)() {
-    m.issuer = value
+    if m != nil {
+        m.issuer = value
+    }
 }
 // SetNotificationType sets the notificationType property value. The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
 func (m *DeviceManagementDerivedCredentialSettings) SetNotificationType(value *DeviceManagementDerivedCredentialNotificationType)() {
-    m.notificationType = value
+    if m != nil {
+        m.notificationType = value
+    }
 }

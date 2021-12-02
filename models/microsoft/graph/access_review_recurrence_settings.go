@@ -148,21 +148,31 @@ func (m *AccessReviewRecurrenceSettings) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewRecurrenceSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDurationInDays sets the durationInDays property value. The duration in days for recurrence.
 func (m *AccessReviewRecurrenceSettings) SetDurationInDays(value *int32)() {
-    m.durationInDays = value
+    if m != nil {
+        m.durationInDays = value
+    }
 }
 // SetRecurrenceCount sets the recurrenceCount property value. The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.
 func (m *AccessReviewRecurrenceSettings) SetRecurrenceCount(value *int32)() {
-    m.recurrenceCount = value
+    if m != nil {
+        m.recurrenceCount = value
+    }
 }
 // SetRecurrenceEndType sets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.
 func (m *AccessReviewRecurrenceSettings) SetRecurrenceEndType(value *string)() {
-    m.recurrenceEndType = value
+    if m != nil {
+        m.recurrenceEndType = value
+    }
 }
 // SetRecurrenceType sets the recurrenceType property value. The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.
 func (m *AccessReviewRecurrenceSettings) SetRecurrenceType(value *string)() {
-    m.recurrenceType = value
+    if m != nil {
+        m.recurrenceType = value
+    }
 }

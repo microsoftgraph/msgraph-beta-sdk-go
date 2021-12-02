@@ -59,5 +59,7 @@ func (m *SiteSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetSite sets the site property value. 
 func (m *SiteSource) SetSite(value *Site)() {
-    m.site = value
+    if m != nil {
+        m.site = value
+    }
 }

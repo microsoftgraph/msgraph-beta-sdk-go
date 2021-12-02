@@ -131,17 +131,25 @@ func (m *SearchAlteration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchAlteration) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlteredHighlightedQueryString sets the alteredHighlightedQueryString property value. Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)
 func (m *SearchAlteration) SetAlteredHighlightedQueryString(value *string)() {
-    m.alteredHighlightedQueryString = value
+    if m != nil {
+        m.alteredHighlightedQueryString = value
+    }
 }
 // SetAlteredQueryString sets the alteredQueryString property value. Defines the altered query string with spelling correction.
 func (m *SearchAlteration) SetAlteredQueryString(value *string)() {
-    m.alteredQueryString = value
+    if m != nil {
+        m.alteredQueryString = value
+    }
 }
 // SetAlteredQueryTokens sets the alteredQueryTokens property value. Represents changed segments with respect to original query.
 func (m *SearchAlteration) SetAlteredQueryTokens(value []AlteredQueryToken)() {
-    m.alteredQueryTokens = value
+    if m != nil {
+        m.alteredQueryTokens = value
+    }
 }

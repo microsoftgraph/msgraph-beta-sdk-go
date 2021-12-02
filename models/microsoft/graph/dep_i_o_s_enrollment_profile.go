@@ -772,113 +772,169 @@ func (m *DepIOSEnrollmentProfile) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAppearanceScreenDisabled sets the appearanceScreenDisabled property value. Indicates if Apperance screen is disabled
 func (m *DepIOSEnrollmentProfile) SetAppearanceScreenDisabled(value *bool)() {
-    m.appearanceScreenDisabled = value
+    if m != nil {
+        m.appearanceScreenDisabled = value
+    }
 }
 // SetAwaitDeviceConfiguredConfirmation sets the awaitDeviceConfiguredConfirmation property value. Indicates if the device will need to wait for configured confirmation
 func (m *DepIOSEnrollmentProfile) SetAwaitDeviceConfiguredConfirmation(value *bool)() {
-    m.awaitDeviceConfiguredConfirmation = value
+    if m != nil {
+        m.awaitDeviceConfiguredConfirmation = value
+    }
 }
 // SetCarrierActivationUrl sets the carrierActivationUrl property value. Carrier URL for activating device eSIM.
 func (m *DepIOSEnrollmentProfile) SetCarrierActivationUrl(value *string)() {
-    m.carrierActivationUrl = value
+    if m != nil {
+        m.carrierActivationUrl = value
+    }
 }
 // SetCompanyPortalVppTokenId sets the companyPortalVppTokenId property value. If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. 'enableAuthenticationViaCompanyPortal' must be set in order for this property to be set.
 func (m *DepIOSEnrollmentProfile) SetCompanyPortalVppTokenId(value *string)() {
-    m.companyPortalVppTokenId = value
+    if m != nil {
+        m.companyPortalVppTokenId = value
+    }
 }
 // SetDeviceToDeviceMigrationDisabled sets the deviceToDeviceMigrationDisabled property value. Indicates if Device To Device Migration is disabled
 func (m *DepIOSEnrollmentProfile) SetDeviceToDeviceMigrationDisabled(value *bool)() {
-    m.deviceToDeviceMigrationDisabled = value
+    if m != nil {
+        m.deviceToDeviceMigrationDisabled = value
+    }
 }
 // SetEnableSharedIPad sets the enableSharedIPad property value. This indicates whether the device is to be enrolled in a mode which enables multi user scenarios. Only applicable in shared iPads.
 func (m *DepIOSEnrollmentProfile) SetEnableSharedIPad(value *bool)() {
-    m.enableSharedIPad = value
+    if m != nil {
+        m.enableSharedIPad = value
+    }
 }
 // SetEnableSingleAppEnrollmentMode sets the enableSingleAppEnrollmentMode property value. Tells the device to enable single app mode and apply app-lock during enrollment. Default is false. 'enableAuthenticationViaCompanyPortal' and 'companyPortalVppTokenId' must be set for this property to be set.
 func (m *DepIOSEnrollmentProfile) SetEnableSingleAppEnrollmentMode(value *bool)() {
-    m.enableSingleAppEnrollmentMode = value
+    if m != nil {
+        m.enableSingleAppEnrollmentMode = value
+    }
 }
 // SetExpressLanguageScreenDisabled sets the expressLanguageScreenDisabled property value. Indicates if Express Language screen is disabled
 func (m *DepIOSEnrollmentProfile) SetExpressLanguageScreenDisabled(value *bool)() {
-    m.expressLanguageScreenDisabled = value
+    if m != nil {
+        m.expressLanguageScreenDisabled = value
+    }
 }
 // SetForceTemporarySession sets the forceTemporarySession property value. Indicates if temporary sessions is enabled
 func (m *DepIOSEnrollmentProfile) SetForceTemporarySession(value *bool)() {
-    m.forceTemporarySession = value
+    if m != nil {
+        m.forceTemporarySession = value
+    }
 }
 // SetHomeButtonScreenDisabled sets the homeButtonScreenDisabled property value. Indicates if home button sensitivity screen is disabled
 func (m *DepIOSEnrollmentProfile) SetHomeButtonScreenDisabled(value *bool)() {
-    m.homeButtonScreenDisabled = value
+    if m != nil {
+        m.homeButtonScreenDisabled = value
+    }
 }
 // SetIMessageAndFaceTimeScreenDisabled sets the iMessageAndFaceTimeScreenDisabled property value. Indicates if iMessage and FaceTime screen is disabled
 func (m *DepIOSEnrollmentProfile) SetIMessageAndFaceTimeScreenDisabled(value *bool)() {
-    m.iMessageAndFaceTimeScreenDisabled = value
+    if m != nil {
+        m.iMessageAndFaceTimeScreenDisabled = value
+    }
 }
 // SetITunesPairingMode sets the iTunesPairingMode property value. Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
 func (m *DepIOSEnrollmentProfile) SetITunesPairingMode(value *ITunesPairingMode)() {
-    m.iTunesPairingMode = value
+    if m != nil {
+        m.iTunesPairingMode = value
+    }
 }
 // SetManagementCertificates sets the managementCertificates property value. Management certificates for Apple Configurator
 func (m *DepIOSEnrollmentProfile) SetManagementCertificates(value []ManagementCertificateWithThumbprint)() {
-    m.managementCertificates = value
+    if m != nil {
+        m.managementCertificates = value
+    }
 }
 // SetOnBoardingScreenDisabled sets the onBoardingScreenDisabled property value. Indicates if onboarding setup screen is disabled
 func (m *DepIOSEnrollmentProfile) SetOnBoardingScreenDisabled(value *bool)() {
-    m.onBoardingScreenDisabled = value
+    if m != nil {
+        m.onBoardingScreenDisabled = value
+    }
 }
 // SetPassCodeDisabled sets the passCodeDisabled property value. Indicates if Passcode setup pane is disabled
 func (m *DepIOSEnrollmentProfile) SetPassCodeDisabled(value *bool)() {
-    m.passCodeDisabled = value
+    if m != nil {
+        m.passCodeDisabled = value
+    }
 }
 // SetPasscodeLockGracePeriodInSeconds sets the passcodeLockGracePeriodInSeconds property value. Indicates timeout before locked screen requires the user to enter the device passocde to unlock it
 func (m *DepIOSEnrollmentProfile) SetPasscodeLockGracePeriodInSeconds(value *int32)() {
-    m.passcodeLockGracePeriodInSeconds = value
+    if m != nil {
+        m.passcodeLockGracePeriodInSeconds = value
+    }
 }
 // SetPreferredLanguageScreenDisabled sets the preferredLanguageScreenDisabled property value. Indicates if Preferred language screen is disabled
 func (m *DepIOSEnrollmentProfile) SetPreferredLanguageScreenDisabled(value *bool)() {
-    m.preferredLanguageScreenDisabled = value
+    if m != nil {
+        m.preferredLanguageScreenDisabled = value
+    }
 }
 // SetRestoreCompletedScreenDisabled sets the restoreCompletedScreenDisabled property value. Indicates if Weclome screen is disabled
 func (m *DepIOSEnrollmentProfile) SetRestoreCompletedScreenDisabled(value *bool)() {
-    m.restoreCompletedScreenDisabled = value
+    if m != nil {
+        m.restoreCompletedScreenDisabled = value
+    }
 }
 // SetRestoreFromAndroidDisabled sets the restoreFromAndroidDisabled property value. Indicates if Restore from Android is disabled
 func (m *DepIOSEnrollmentProfile) SetRestoreFromAndroidDisabled(value *bool)() {
-    m.restoreFromAndroidDisabled = value
+    if m != nil {
+        m.restoreFromAndroidDisabled = value
+    }
 }
 // SetSharedIPadMaximumUserCount sets the sharedIPadMaximumUserCount property value. This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
 func (m *DepIOSEnrollmentProfile) SetSharedIPadMaximumUserCount(value *int32)() {
-    m.sharedIPadMaximumUserCount = value
+    if m != nil {
+        m.sharedIPadMaximumUserCount = value
+    }
 }
 // SetSimSetupScreenDisabled sets the simSetupScreenDisabled property value. Indicates if the SIMSetup screen is disabled
 func (m *DepIOSEnrollmentProfile) SetSimSetupScreenDisabled(value *bool)() {
-    m.simSetupScreenDisabled = value
+    if m != nil {
+        m.simSetupScreenDisabled = value
+    }
 }
 // SetSoftwareUpdateScreenDisabled sets the softwareUpdateScreenDisabled property value. Indicates if the mandatory sofware update screen is disabled
 func (m *DepIOSEnrollmentProfile) SetSoftwareUpdateScreenDisabled(value *bool)() {
-    m.softwareUpdateScreenDisabled = value
+    if m != nil {
+        m.softwareUpdateScreenDisabled = value
+    }
 }
 // SetTemporarySessionTimeoutInSeconds sets the temporarySessionTimeoutInSeconds property value. Indicates timeout of temporary session
 func (m *DepIOSEnrollmentProfile) SetTemporarySessionTimeoutInSeconds(value *int32)() {
-    m.temporarySessionTimeoutInSeconds = value
+    if m != nil {
+        m.temporarySessionTimeoutInSeconds = value
+    }
 }
 // SetUpdateCompleteScreenDisabled sets the updateCompleteScreenDisabled property value. Indicates if Weclome screen is disabled
 func (m *DepIOSEnrollmentProfile) SetUpdateCompleteScreenDisabled(value *bool)() {
-    m.updateCompleteScreenDisabled = value
+    if m != nil {
+        m.updateCompleteScreenDisabled = value
+    }
 }
 // SetUserSessionTimeoutInSeconds sets the userSessionTimeoutInSeconds property value. Indicates timeout of temporary session
 func (m *DepIOSEnrollmentProfile) SetUserSessionTimeoutInSeconds(value *int32)() {
-    m.userSessionTimeoutInSeconds = value
+    if m != nil {
+        m.userSessionTimeoutInSeconds = value
+    }
 }
 // SetWatchMigrationScreenDisabled sets the watchMigrationScreenDisabled property value. Indicates if the watch migration screen is disabled
 func (m *DepIOSEnrollmentProfile) SetWatchMigrationScreenDisabled(value *bool)() {
-    m.watchMigrationScreenDisabled = value
+    if m != nil {
+        m.watchMigrationScreenDisabled = value
+    }
 }
 // SetWelcomeScreenDisabled sets the welcomeScreenDisabled property value. Indicates if Weclome screen is disabled
 func (m *DepIOSEnrollmentProfile) SetWelcomeScreenDisabled(value *bool)() {
-    m.welcomeScreenDisabled = value
+    if m != nil {
+        m.welcomeScreenDisabled = value
+    }
 }
 // SetZoomDisabled sets the zoomDisabled property value. Indicates if zoom setup pane is disabled
 func (m *DepIOSEnrollmentProfile) SetZoomDisabled(value *bool)() {
-    m.zoomDisabled = value
+    if m != nil {
+        m.zoomDisabled = value
+    }
 }

@@ -70,9 +70,13 @@ func (m *EvaluateDynamicMembershipRequestBody) Serialize(writer i04eb5309aeaafad
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateDynamicMembershipRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMemberId sets the memberId property value. 
 func (m *EvaluateDynamicMembershipRequestBody) SetMemberId(value *string)() {
-    m.memberId = value
+    if m != nil {
+        m.memberId = value
+    }
 }

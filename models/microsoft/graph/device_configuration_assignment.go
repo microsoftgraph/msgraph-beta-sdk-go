@@ -141,17 +141,25 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetIntent sets the intent property value. The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
 func (m *DeviceConfigurationAssignment) SetIntent(value *DeviceConfigAssignmentIntent)() {
-    m.intent = value
+    if m != nil {
+        m.intent = value
+    }
 }
 // SetSource sets the source property value. The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
 func (m *DeviceConfigurationAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
-    m.source = value
+    if m != nil {
+        m.source = value
+    }
 }
 // SetSourceId sets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
 func (m *DeviceConfigurationAssignment) SetSourceId(value *string)() {
-    m.sourceId = value
+    if m != nil {
+        m.sourceId = value
+    }
 }
 // SetTarget sets the target property value. The assignment target for the device configuration.
 func (m *DeviceConfigurationAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

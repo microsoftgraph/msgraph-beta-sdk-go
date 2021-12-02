@@ -242,33 +242,49 @@ func (m *DeviceLogCollectionResponse) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetErrorCode sets the errorCode property value. The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
 func (m *DeviceLogCollectionResponse) SetErrorCode(value *int64)() {
-    m.errorCode = value
+    if m != nil {
+        m.errorCode = value
+    }
 }
 // SetExpirationDateTimeUTC sets the expirationDateTimeUTC property value. The DateTime of the expiration of the logs
 func (m *DeviceLogCollectionResponse) SetExpirationDateTimeUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTimeUTC = value
+    if m != nil {
+        m.expirationDateTimeUTC = value
+    }
 }
 // SetInitiatedByUserPrincipalName sets the initiatedByUserPrincipalName property value. The UPN for who initiated the request
 func (m *DeviceLogCollectionResponse) SetInitiatedByUserPrincipalName(value *string)() {
-    m.initiatedByUserPrincipalName = value
+    if m != nil {
+        m.initiatedByUserPrincipalName = value
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The device Id
 func (m *DeviceLogCollectionResponse) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    if m != nil {
+        m.managedDeviceId = value
+    }
 }
 // SetReceivedDateTimeUTC sets the receivedDateTimeUTC property value. The DateTime the request was received
 func (m *DeviceLogCollectionResponse) SetReceivedDateTimeUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.receivedDateTimeUTC = value
+    if m != nil {
+        m.receivedDateTimeUTC = value
+    }
 }
 // SetRequestedDateTimeUTC sets the requestedDateTimeUTC property value. The DateTime of the request
 func (m *DeviceLogCollectionResponse) SetRequestedDateTimeUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.requestedDateTimeUTC = value
+    if m != nil {
+        m.requestedDateTimeUTC = value
+    }
 }
 // SetSize sets the size property value. The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *DeviceLogCollectionResponse) SetSize(value *float64)() {
-    m.size = value
+    if m != nil {
+        m.size = value
+    }
 }
 // SetStatus sets the status property value. The status of the log collection request
 func (m *DeviceLogCollectionResponse) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

@@ -242,33 +242,49 @@ func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriod) Serialize(writer i0
 }
 // SetAndroidPhone sets the androidPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriod) SetAndroidPhone(value *int32)() {
-    m.androidPhone = value
+    if m != nil {
+        m.androidPhone = value
+    }
 }
 // SetIPad sets the iPad property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriod) SetIPad(value *int32)() {
-    m.iPad = value
+    if m != nil {
+        m.iPad = value
+    }
 }
 // SetIPhone sets the iPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriod) SetIPhone(value *int32)() {
-    m.iPhone = value
+    if m != nil {
+        m.iPhone = value
+    }
 }
 // SetReportDate sets the reportDate property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriod) SetReportDate(value *string)() {
-    m.reportDate = value
+    if m != nil {
+        m.reportDate = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriod) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriod) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetWindows sets the windows property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriod) SetWindows(value *int32)() {
-    m.windows = value
+    if m != nil {
+        m.windows = value
+    }
 }
 // SetWindowsPhone sets the windowsPhone property value. 
 func (m *GetSkypeForBusinessDeviceUsageUserCountsWithPeriod) SetWindowsPhone(value *int32)() {
-    m.windowsPhone = value
+    if m != nil {
+        m.windowsPhone = value
+    }
 }

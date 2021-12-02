@@ -96,13 +96,19 @@ func (m *RenameAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RenameAction) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNewName sets the newName property value. The new name of the item.
 func (m *RenameAction) SetNewName(value *string)() {
-    m.newName = value
+    if m != nil {
+        m.newName = value
+    }
 }
 // SetOldName sets the oldName property value. The previous name of the item.
 func (m *RenameAction) SetOldName(value *string)() {
-    m.oldName = value
+    if m != nil {
+        m.oldName = value
+    }
 }

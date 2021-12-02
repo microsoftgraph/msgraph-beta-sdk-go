@@ -123,17 +123,25 @@ func (m *TranslateExchangeIds) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslateExchangeIds) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetErrorDetails sets the errorDetails property value. An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
 func (m *TranslateExchangeIds) SetErrorDetails(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.GenericError)() {
-    m.errorDetails = value
+    if m != nil {
+        m.errorDetails = value
+    }
 }
 // SetSourceId sets the sourceId property value. The identifier that was converted. This value is the original, un-converted identifier.
 func (m *TranslateExchangeIds) SetSourceId(value *string)() {
-    m.sourceId = value
+    if m != nil {
+        m.sourceId = value
+    }
 }
 // SetTargetId sets the targetId property value. The converted identifier. This value is not present if the conversion failed.
 func (m *TranslateExchangeIds) SetTargetId(value *string)() {
-    m.targetId = value
+    if m != nil {
+        m.targetId = value
+    }
 }

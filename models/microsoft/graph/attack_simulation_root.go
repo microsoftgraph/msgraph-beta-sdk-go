@@ -68,5 +68,7 @@ func (m *AttackSimulationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetSimulations sets the simulations property value. Represent attack simulation and training campaign of a tenant.
 func (m *AttackSimulationRoot) SetSimulations(value []Simulation)() {
-    m.simulations = value
+    if m != nil {
+        m.simulations = value
+    }
 }

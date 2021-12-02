@@ -229,29 +229,43 @@ func (m *DeviceManagementResourceAccessProfileBase) Serialize(writer i04eb5309ae
 }
 // SetAssignments sets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceManagementResourceAccessProfileBase) SetAssignments(value []DeviceManagementResourceAccessProfileAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetCreationDateTime sets the creationDateTime property value. DateTime profile was created
 func (m *DeviceManagementResourceAccessProfileBase) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.creationDateTime = value
+    if m != nil {
+        m.creationDateTime = value
+    }
 }
 // SetDescription sets the description property value. Profile description
 func (m *DeviceManagementResourceAccessProfileBase) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Profile display name
 func (m *DeviceManagementResourceAccessProfileBase) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime profile was last modified
 func (m *DeviceManagementResourceAccessProfileBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. Scope Tags
 func (m *DeviceManagementResourceAccessProfileBase) SetRoleScopeTagIds(value []string)() {
-    m.roleScopeTagIds = value
+    if m != nil {
+        m.roleScopeTagIds = value
+    }
 }
 // SetVersion sets the version property value. Version of the profile
 func (m *DeviceManagementResourceAccessProfileBase) SetVersion(value *int32)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

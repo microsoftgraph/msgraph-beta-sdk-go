@@ -320,45 +320,67 @@ func (m *GetOneDriveUsageAccountDetailWithDate) Serialize(writer i04eb5309aeaafa
 }
 // SetActiveFileCount sets the activeFileCount property value. 
 func (m *GetOneDriveUsageAccountDetailWithDate) SetActiveFileCount(value *int64)() {
-    m.activeFileCount = value
+    if m != nil {
+        m.activeFileCount = value
+    }
 }
 // SetFileCount sets the fileCount property value. 
 func (m *GetOneDriveUsageAccountDetailWithDate) SetFileCount(value *int64)() {
-    m.fileCount = value
+    if m != nil {
+        m.fileCount = value
+    }
 }
 // SetIsDeleted sets the isDeleted property value. 
 func (m *GetOneDriveUsageAccountDetailWithDate) SetIsDeleted(value *bool)() {
-    m.isDeleted = value
+    if m != nil {
+        m.isDeleted = value
+    }
 }
 // SetLastActivityDate sets the lastActivityDate property value. 
 func (m *GetOneDriveUsageAccountDetailWithDate) SetLastActivityDate(value *string)() {
-    m.lastActivityDate = value
+    if m != nil {
+        m.lastActivityDate = value
+    }
 }
 // SetOwnerDisplayName sets the ownerDisplayName property value. 
 func (m *GetOneDriveUsageAccountDetailWithDate) SetOwnerDisplayName(value *string)() {
-    m.ownerDisplayName = value
+    if m != nil {
+        m.ownerDisplayName = value
+    }
 }
 // SetOwnerPrincipalName sets the ownerPrincipalName property value. 
 func (m *GetOneDriveUsageAccountDetailWithDate) SetOwnerPrincipalName(value *string)() {
-    m.ownerPrincipalName = value
+    if m != nil {
+        m.ownerPrincipalName = value
+    }
 }
 // SetReportPeriod sets the reportPeriod property value. 
 func (m *GetOneDriveUsageAccountDetailWithDate) SetReportPeriod(value *string)() {
-    m.reportPeriod = value
+    if m != nil {
+        m.reportPeriod = value
+    }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. 
 func (m *GetOneDriveUsageAccountDetailWithDate) SetReportRefreshDate(value *string)() {
-    m.reportRefreshDate = value
+    if m != nil {
+        m.reportRefreshDate = value
+    }
 }
 // SetSiteUrl sets the siteUrl property value. 
 func (m *GetOneDriveUsageAccountDetailWithDate) SetSiteUrl(value *string)() {
-    m.siteUrl = value
+    if m != nil {
+        m.siteUrl = value
+    }
 }
 // SetStorageAllocatedInBytes sets the storageAllocatedInBytes property value. 
 func (m *GetOneDriveUsageAccountDetailWithDate) SetStorageAllocatedInBytes(value *int64)() {
-    m.storageAllocatedInBytes = value
+    if m != nil {
+        m.storageAllocatedInBytes = value
+    }
 }
 // SetStorageUsedInBytes sets the storageUsedInBytes property value. 
 func (m *GetOneDriveUsageAccountDetailWithDate) SetStorageUsedInBytes(value *int64)() {
-    m.storageUsedInBytes = value
+    if m != nil {
+        m.storageUsedInBytes = value
+    }
 }

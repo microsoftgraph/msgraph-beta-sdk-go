@@ -70,9 +70,13 @@ func (m *MeetingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowConversationWithoutHost sets the allowConversationWithoutHost property value. 
 func (m *MeetingInfo) SetAllowConversationWithoutHost(value *bool)() {
-    m.allowConversationWithoutHost = value
+    if m != nil {
+        m.allowConversationWithoutHost = value
+    }
 }

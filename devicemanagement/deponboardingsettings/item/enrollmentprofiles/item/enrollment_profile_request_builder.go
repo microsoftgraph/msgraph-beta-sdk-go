@@ -43,7 +43,7 @@ type EnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // EnrollmentProfileRequestBuilderPatchOptions options for Patch
 type EnrollmentProfileRequestBuilderPatchOptions struct {

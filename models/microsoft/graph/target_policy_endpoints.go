@@ -74,9 +74,13 @@ func (m *TargetPolicyEndpoints) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TargetPolicyEndpoints) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPlatformTypes sets the platformTypes property value. Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
 func (m *TargetPolicyEndpoints) SetPlatformTypes(value []string)() {
-    m.platformTypes = value
+    if m != nil {
+        m.platformTypes = value
+    }
 }

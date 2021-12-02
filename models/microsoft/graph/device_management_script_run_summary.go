@@ -137,17 +137,25 @@ func (m *DeviceManagementScriptRunSummary) Serialize(writer i04eb5309aeaafadd283
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Error device count.
 func (m *DeviceManagementScriptRunSummary) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    if m != nil {
+        m.errorDeviceCount = value
+    }
 }
 // SetErrorUserCount sets the errorUserCount property value. Error user count.
 func (m *DeviceManagementScriptRunSummary) SetErrorUserCount(value *int32)() {
-    m.errorUserCount = value
+    if m != nil {
+        m.errorUserCount = value
+    }
 }
 // SetSuccessDeviceCount sets the successDeviceCount property value. Success device count.
 func (m *DeviceManagementScriptRunSummary) SetSuccessDeviceCount(value *int32)() {
-    m.successDeviceCount = value
+    if m != nil {
+        m.successDeviceCount = value
+    }
 }
 // SetSuccessUserCount sets the successUserCount property value. Success user count.
 func (m *DeviceManagementScriptRunSummary) SetSuccessUserCount(value *int32)() {
-    m.successUserCount = value
+    if m != nil {
+        m.successUserCount = value
+    }
 }

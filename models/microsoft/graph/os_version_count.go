@@ -123,17 +123,25 @@ func (m *OsVersionCount) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OsVersionCount) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceCount sets the deviceCount property value. Count of devices with malware for the OS version
 func (m *OsVersionCount) SetDeviceCount(value *int32)() {
-    m.deviceCount = value
+    if m != nil {
+        m.deviceCount = value
+    }
 }
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. The Timestamp of the last update for the device count in UTC
 func (m *OsVersionCount) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdateDateTime = value
+    if m != nil {
+        m.lastUpdateDateTime = value
+    }
 }
 // SetOsVersion sets the osVersion property value. OS version
 func (m *OsVersionCount) SetOsVersion(value *string)() {
-    m.osVersion = value
+    if m != nil {
+        m.osVersion = value
+    }
 }

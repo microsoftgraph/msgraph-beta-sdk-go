@@ -148,17 +148,25 @@ func (m *WindowsManagementApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAvailableVersion sets the availableVersion property value. Windows management app available version.
 func (m *WindowsManagementApp) SetAvailableVersion(value *string)() {
-    m.availableVersion = value
+    if m != nil {
+        m.availableVersion = value
+    }
 }
 // SetHealthStates sets the healthStates property value. The list of health states for installed Windows management app.
 func (m *WindowsManagementApp) SetHealthStates(value []WindowsManagementAppHealthState)() {
-    m.healthStates = value
+    if m != nil {
+        m.healthStates = value
+    }
 }
 // SetManagedInstaller sets the managedInstaller property value. Managed Installer Status. Possible values are: disabled, enabled.
 func (m *WindowsManagementApp) SetManagedInstaller(value *ManagedInstallerStatus)() {
-    m.managedInstaller = value
+    if m != nil {
+        m.managedInstaller = value
+    }
 }
 // SetManagedInstallerConfiguredDateTime sets the managedInstallerConfiguredDateTime property value. Managed Installer Configured Date Time
 func (m *WindowsManagementApp) SetManagedInstallerConfiguredDateTime(value *string)() {
-    m.managedInstallerConfiguredDateTime = value
+    if m != nil {
+        m.managedInstallerConfiguredDateTime = value
+    }
 }

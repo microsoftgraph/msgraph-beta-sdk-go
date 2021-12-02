@@ -114,13 +114,19 @@ func (m *WindowsAutopilotSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetLastManualSyncTriggerDateTime sets the lastManualSyncTriggerDateTime property value. Last data sync date time with DDS service.
 func (m *WindowsAutopilotSettings) SetLastManualSyncTriggerDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastManualSyncTriggerDateTime = value
+    if m != nil {
+        m.lastManualSyncTriggerDateTime = value
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last data sync date time with DDS service.
 func (m *WindowsAutopilotSettings) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    if m != nil {
+        m.lastSyncDateTime = value
+    }
 }
 // SetSyncStatus sets the syncStatus property value. Indicates the status of sync with Device data sync (DDS) service. Possible values are: unknown, inProgress, completed, failed.
 func (m *WindowsAutopilotSettings) SetSyncStatus(value *WindowsAutopilotSyncStatus)() {
-    m.syncStatus = value
+    if m != nil {
+        m.syncStatus = value
+    }
 }

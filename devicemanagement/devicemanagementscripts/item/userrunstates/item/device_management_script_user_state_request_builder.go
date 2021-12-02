@@ -42,7 +42,7 @@ type DeviceManagementScriptUserStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceManagementScriptUserStateRequestBuilderPatchOptions options for Patch
 type DeviceManagementScriptUserStateRequestBuilderPatchOptions struct {

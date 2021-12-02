@@ -242,29 +242,43 @@ func (m *OutlookTaskFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetChangeKey sets the changeKey property value. The version of the task folder.
 func (m *OutlookTaskFolder) SetChangeKey(value *string)() {
-    m.changeKey = value
+    if m != nil {
+        m.changeKey = value
+    }
 }
 // SetIsDefaultFolder sets the isDefaultFolder property value. True if the folder is the default task folder.
 func (m *OutlookTaskFolder) SetIsDefaultFolder(value *bool)() {
-    m.isDefaultFolder = value
+    if m != nil {
+        m.isDefaultFolder = value
+    }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
 func (m *OutlookTaskFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
-    m.multiValueExtendedProperties = value
+    if m != nil {
+        m.multiValueExtendedProperties = value
+    }
 }
 // SetName sets the name property value. The name of the task folder.
 func (m *OutlookTaskFolder) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetParentGroupKey sets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
 func (m *OutlookTaskFolder) SetParentGroupKey(value *string)() {
-    m.parentGroupKey = value
+    if m != nil {
+        m.parentGroupKey = value
+    }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
 func (m *OutlookTaskFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
-    m.singleValueExtendedProperties = value
+    if m != nil {
+        m.singleValueExtendedProperties = value
+    }
 }
 // SetTasks sets the tasks property value. The tasks in this task folder. Read-only. Nullable.
 func (m *OutlookTaskFolder) SetTasks(value []OutlookTask)() {
-    m.tasks = value
+    if m != nil {
+        m.tasks = value
+    }
 }

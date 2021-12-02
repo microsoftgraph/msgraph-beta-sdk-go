@@ -100,13 +100,19 @@ func (m *AdminConsent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AdminConsent) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetShareAPNSData sets the shareAPNSData property value. The admin consent state of sharing user and device data to Apple. Possible values are: notConfigured, granted, notGranted.
 func (m *AdminConsent) SetShareAPNSData(value *AdminConsentState)() {
-    m.shareAPNSData = value
+    if m != nil {
+        m.shareAPNSData = value
+    }
 }
 // SetShareUserExperienceAnalyticsData sets the shareUserExperienceAnalyticsData property value. Gets or sets the admin consent for sharing User experience analytics data. Possible values are: notConfigured, granted, notGranted.
 func (m *AdminConsent) SetShareUserExperienceAnalyticsData(value *AdminConsentState)() {
-    m.shareUserExperienceAnalyticsData = value
+    if m != nil {
+        m.shareUserExperienceAnalyticsData = value
+    }
 }

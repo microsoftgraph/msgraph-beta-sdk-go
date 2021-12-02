@@ -105,13 +105,19 @@ func (m *ExpressionInputObject) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpressionInputObject) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefinition sets the definition property value. Definition of the test object.
 func (m *ExpressionInputObject) SetDefinition(value *ObjectDefinition)() {
-    m.definition = value
+    if m != nil {
+        m.definition = value
+    }
 }
 // SetProperties sets the properties property value. Property values of the test object.
 func (m *ExpressionInputObject) SetProperties(value []StringKeyObjectValuePair)() {
-    m.properties = value
+    if m != nil {
+        m.properties = value
+    }
 }

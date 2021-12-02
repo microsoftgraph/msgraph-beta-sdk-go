@@ -71,9 +71,13 @@ func (m *DeviceHealth) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealth) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLastConnectionTime sets the lastConnectionTime property value. The last time the device was connected.
 func (m *DeviceHealth) SetLastConnectionTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastConnectionTime = value
+    if m != nil {
+        m.lastConnectionTime = value
+    }
 }

@@ -44,7 +44,7 @@ type OutlookTaskFolderRequestBuilderGetOptions struct {
 // OutlookTaskFolderRequestBuilderGetQueryParameters get taskFolders from users
 type OutlookTaskFolderRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OutlookTaskFolderRequestBuilderPatchOptions options for Patch
 type OutlookTaskFolderRequestBuilderPatchOptions struct {

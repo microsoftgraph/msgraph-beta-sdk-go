@@ -377,53 +377,79 @@ func (m *SynchronizationStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationStatus) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCode sets the code property value. High-level status code of the synchronization job. Possible values are: NotConfigured, NotRun, Active, Paused, Quarantine.
 func (m *SynchronizationStatus) SetCode(value *SynchronizationStatusCode)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetCountSuccessiveCompleteFailures sets the countSuccessiveCompleteFailures property value. Number of consecutive times this job failed.
 func (m *SynchronizationStatus) SetCountSuccessiveCompleteFailures(value *int64)() {
-    m.countSuccessiveCompleteFailures = value
+    if m != nil {
+        m.countSuccessiveCompleteFailures = value
+    }
 }
 // SetEscrowsPruned sets the escrowsPruned property value. true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.
 func (m *SynchronizationStatus) SetEscrowsPruned(value *bool)() {
-    m.escrowsPruned = value
+    if m != nil {
+        m.escrowsPruned = value
+    }
 }
 // SetLastExecution sets the lastExecution property value. Details of the last execution of the job.
 func (m *SynchronizationStatus) SetLastExecution(value *SynchronizationTaskExecution)() {
-    m.lastExecution = value
+    if m != nil {
+        m.lastExecution = value
+    }
 }
 // SetLastSuccessfulExecution sets the lastSuccessfulExecution property value. Details of the last execution of this job, which didn't have any errors.
 func (m *SynchronizationStatus) SetLastSuccessfulExecution(value *SynchronizationTaskExecution)() {
-    m.lastSuccessfulExecution = value
+    if m != nil {
+        m.lastSuccessfulExecution = value
+    }
 }
 // SetLastSuccessfulExecutionWithExports sets the lastSuccessfulExecutionWithExports property value. Details of the last execution of the job, which exported objects into the target directory.
 func (m *SynchronizationStatus) SetLastSuccessfulExecutionWithExports(value *SynchronizationTaskExecution)() {
-    m.lastSuccessfulExecutionWithExports = value
+    if m != nil {
+        m.lastSuccessfulExecutionWithExports = value
+    }
 }
 // SetProgress sets the progress property value. Details of the progress of a job toward completion.
 func (m *SynchronizationStatus) SetProgress(value []SynchronizationProgress)() {
-    m.progress = value
+    if m != nil {
+        m.progress = value
+    }
 }
 // SetQuarantine sets the quarantine property value. If job is in quarantine, quarantine details.
 func (m *SynchronizationStatus) SetQuarantine(value *SynchronizationQuarantine)() {
-    m.quarantine = value
+    if m != nil {
+        m.quarantine = value
+    }
 }
 // SetSteadyStateFirstAchievedTime sets the steadyStateFirstAchievedTime property value. The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationStatus) SetSteadyStateFirstAchievedTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.steadyStateFirstAchievedTime = value
+    if m != nil {
+        m.steadyStateFirstAchievedTime = value
+    }
 }
 // SetSteadyStateLastAchievedTime sets the steadyStateLastAchievedTime property value. The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationStatus) SetSteadyStateLastAchievedTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.steadyStateLastAchievedTime = value
+    if m != nil {
+        m.steadyStateLastAchievedTime = value
+    }
 }
 // SetSynchronizedEntryCountByType sets the synchronizedEntryCountByType property value. Count of synchronized objects, listed by object type.
 func (m *SynchronizationStatus) SetSynchronizedEntryCountByType(value []StringKeyLongValuePair)() {
-    m.synchronizedEntryCountByType = value
+    if m != nil {
+        m.synchronizedEntryCountByType = value
+    }
 }
 // SetTroubleshootingUrl sets the troubleshootingUrl property value. In the event of an error, the URL with the troubleshooting steps for the issue.
 func (m *SynchronizationStatus) SetTroubleshootingUrl(value *string)() {
-    m.troubleshootingUrl = value
+    if m != nil {
+        m.troubleshootingUrl = value
+    }
 }

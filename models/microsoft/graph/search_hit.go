@@ -304,45 +304,67 @@ func (m *SearchHit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // Set_id sets the _id property value. 
 func (m *SearchHit) Set_id(value *string)() {
-    m._id = value
+    if m != nil {
+        m._id = value
+    }
 }
 // Set_score sets the _score property value. 
 func (m *SearchHit) Set_score(value *int32)() {
-    m._score = value
+    if m != nil {
+        m._score = value
+    }
 }
 // Set_source sets the _source property value. 
 func (m *SearchHit) Set_source(value *Entity)() {
-    m._source = value
+    if m != nil {
+        m._source = value
+    }
 }
 // Set_summary sets the _summary property value. 
 func (m *SearchHit) Set_summary(value *string)() {
-    m._summary = value
+    if m != nil {
+        m._summary = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchHit) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentSource sets the contentSource property value. The name of the content source which the externalItem is part of .
 func (m *SearchHit) SetContentSource(value *string)() {
-    m.contentSource = value
+    if m != nil {
+        m.contentSource = value
+    }
 }
 // SetHitId sets the hitId property value. The internal identifier for the item.
 func (m *SearchHit) SetHitId(value *string)() {
-    m.hitId = value
+    if m != nil {
+        m.hitId = value
+    }
 }
 // SetRank sets the rank property value. The rank or the order of the result.
 func (m *SearchHit) SetRank(value *int32)() {
-    m.rank = value
+    if m != nil {
+        m.rank = value
+    }
 }
 // SetResource sets the resource property value. 
 func (m *SearchHit) SetResource(value *Entity)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }
 // SetResultTemplateId sets the resultTemplateId property value. ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.
 func (m *SearchHit) SetResultTemplateId(value *string)() {
-    m.resultTemplateId = value
+    if m != nil {
+        m.resultTemplateId = value
+    }
 }
 // SetSummary sets the summary property value. A summary of the result, if a summary is available.
 func (m *SearchHit) SetSummary(value *string)() {
-    m.summary = value
+    if m != nil {
+        m.summary = value
+    }
 }

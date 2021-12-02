@@ -105,13 +105,19 @@ func (m *SimulationEventsContent) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationEventsContent) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCompromisedRate sets the compromisedRate property value. Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.
 func (m *SimulationEventsContent) SetCompromisedRate(value *float64)() {
-    m.compromisedRate = value
+    if m != nil {
+        m.compromisedRate = value
+    }
 }
 // SetEvents sets the events property value. List of simulation events in an attack simulation and training campaign.
 func (m *SimulationEventsContent) SetEvents(value []SimulationEvent)() {
-    m.events = value
+    if m != nil {
+        m.events = value
+    }
 }

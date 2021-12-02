@@ -105,13 +105,19 @@ func (m *PasswordValidationInformation) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordValidationInformation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsValid sets the isValid property value. Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
 func (m *PasswordValidationInformation) SetIsValid(value *bool)() {
-    m.isValid = value
+    if m != nil {
+        m.isValid = value
+    }
 }
 // SetValidationResults sets the validationResults property value. The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
 func (m *PasswordValidationInformation) SetValidationResults(value []ValidationResult)() {
-    m.validationResults = value
+    if m != nil {
+        m.validationResults = value
+    }
 }

@@ -131,17 +131,25 @@ func (m *ManagementIntentInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementIntentInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetManagementIntentDisplayName sets the managementIntentDisplayName property value. The display name for the management intent. Optional. Read-only.
 func (m *ManagementIntentInfo) SetManagementIntentDisplayName(value *string)() {
-    m.managementIntentDisplayName = value
+    if m != nil {
+        m.managementIntentDisplayName = value
+    }
 }
 // SetManagementIntentId sets the managementIntentId property value. The identifier for the management intent. Required. Read-only.
 func (m *ManagementIntentInfo) SetManagementIntentId(value *string)() {
-    m.managementIntentId = value
+    if m != nil {
+        m.managementIntentId = value
+    }
 }
 // SetManagementTemplates sets the managementTemplates property value. The collection of management template information associated with the management intent. Optional. Read-only.
 func (m *ManagementIntentInfo) SetManagementTemplates(value []ManagementTemplateDetailedInfo)() {
-    m.managementTemplates = value
+    if m != nil {
+        m.managementTemplates = value
+    }
 }

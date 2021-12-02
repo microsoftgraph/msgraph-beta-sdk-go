@@ -1181,161 +1181,241 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetApi sets the api property value. Specifies settings for an application that implements a web API.
 func (m *Application) SetApi(value *ApiApplication)() {
-    m.api = value
+    if m != nil {
+        m.api = value
+    }
 }
 // SetAppId sets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
 func (m *Application) SetAppId(value *string)() {
-    m.appId = value
+    if m != nil {
+        m.appId = value
+    }
 }
 // SetAppManagementPolicies sets the appManagementPolicies property value. The appManagementPolicy applied to this application.
 func (m *Application) SetAppManagementPolicies(value []AppManagementPolicy)() {
-    m.appManagementPolicies = value
+    if m != nil {
+        m.appManagementPolicies = value
+    }
 }
 // SetAppRoles sets the appRoles property value. The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
 func (m *Application) SetAppRoles(value []AppRole)() {
-    m.appRoles = value
+    if m != nil {
+        m.appRoles = value
+    }
 }
 // SetConnectorGroup sets the connectorGroup property value. The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
 func (m *Application) SetConnectorGroup(value *ConnectorGroup)() {
-    m.connectorGroup = value
+    if m != nil {
+        m.connectorGroup = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
 func (m *Application) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. Read-only.
 func (m *Application) SetCreatedOnBehalfOf(value *DirectoryObject)() {
-    m.createdOnBehalfOf = value
+    if m != nil {
+        m.createdOnBehalfOf = value
+    }
 }
 // SetDefaultRedirectUri sets the defaultRedirectUri property value. The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Azure AD sends the token to this redirect URI. Azure AD also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
 func (m *Application) SetDefaultRedirectUri(value *string)() {
-    m.defaultRedirectUri = value
+    if m != nil {
+        m.defaultRedirectUri = value
+    }
 }
 // SetDescription sets the description property value. An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisabledByMicrosoftStatus sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
 func (m *Application) SetDisabledByMicrosoftStatus(value *string)() {
-    m.disabledByMicrosoftStatus = value
+    if m != nil {
+        m.disabledByMicrosoftStatus = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Application) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExtensionProperties sets the extensionProperties property value. Read-only. Nullable.
 func (m *Application) SetExtensionProperties(value []ExtensionProperty)() {
-    m.extensionProperties = value
+    if m != nil {
+        m.extensionProperties = value
+    }
 }
 // SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
 func (m *Application) SetFederatedIdentityCredentials(value []FederatedIdentityCredential)() {
-    m.federatedIdentityCredentials = value
+    if m != nil {
+        m.federatedIdentityCredentials = value
+    }
 }
 // SetGroupMembershipClaims sets the groupMembershipClaims property value. Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
 func (m *Application) SetGroupMembershipClaims(value *string)() {
-    m.groupMembershipClaims = value
+    if m != nil {
+        m.groupMembershipClaims = value
+    }
 }
 // SetHomeRealmDiscoveryPolicies sets the homeRealmDiscoveryPolicies property value. 
 func (m *Application) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicy)() {
-    m.homeRealmDiscoveryPolicies = value
+    if m != nil {
+        m.homeRealmDiscoveryPolicies = value
+    }
 }
 // SetIdentifierUris sets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
 func (m *Application) SetIdentifierUris(value []string)() {
-    m.identifierUris = value
+    if m != nil {
+        m.identifierUris = value
+    }
 }
 // SetInfo sets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *Application) SetInfo(value *InformationalUrl)() {
-    m.info = value
+    if m != nil {
+        m.info = value
+    }
 }
 // SetIsDeviceOnlyAuthSupported sets the isDeviceOnlyAuthSupported property value. Specifies whether this application supports device authentication without a user. The default is false.
 func (m *Application) SetIsDeviceOnlyAuthSupported(value *bool)() {
-    m.isDeviceOnlyAuthSupported = value
+    if m != nil {
+        m.isDeviceOnlyAuthSupported = value
+    }
 }
 // SetIsFallbackPublicClient sets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
 func (m *Application) SetIsFallbackPublicClient(value *bool)() {
-    m.isFallbackPublicClient = value
+    if m != nil {
+        m.isFallbackPublicClient = value
+    }
 }
 // SetKeyCredentials sets the keyCredentials property value. The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) SetKeyCredentials(value []KeyCredential)() {
-    m.keyCredentials = value
+    if m != nil {
+        m.keyCredentials = value
+    }
 }
 // SetLogo sets the logo property value. The main logo for the application. Not nullable.
 func (m *Application) SetLogo(value []byte)() {
-    m.logo = value
+    if m != nil {
+        m.logo = value
+    }
 }
 // SetNotes sets the notes property value. Notes relevant for the management of the application.
 func (m *Application) SetNotes(value *string)() {
-    m.notes = value
+    if m != nil {
+        m.notes = value
+    }
 }
 // SetOnPremisesPublishing sets the onPremisesPublishing property value. Represents the set of properties required for configuring Application Proxy for this application. Configuring these properties allows you to publish your on-premises application for secure remote access.
 func (m *Application) SetOnPremisesPublishing(value *OnPremisesPublishing)() {
-    m.onPremisesPublishing = value
+    if m != nil {
+        m.onPremisesPublishing = value
+    }
 }
 // SetOptionalClaims sets the optionalClaims property value. Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
 func (m *Application) SetOptionalClaims(value *OptionalClaims)() {
-    m.optionalClaims = value
+    if m != nil {
+        m.optionalClaims = value
+    }
 }
 // SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
 func (m *Application) SetOwners(value []DirectoryObject)() {
-    m.owners = value
+    if m != nil {
+        m.owners = value
+    }
 }
 // SetParentalControlSettings sets the parentalControlSettings property value. Specifies parental control settings for an application.
 func (m *Application) SetParentalControlSettings(value *ParentalControlSettings)() {
-    m.parentalControlSettings = value
+    if m != nil {
+        m.parentalControlSettings = value
+    }
 }
 // SetPasswordCredentials sets the passwordCredentials property value. The collection of password credentials associated with the application. Not nullable.
 func (m *Application) SetPasswordCredentials(value []PasswordCredential)() {
-    m.passwordCredentials = value
+    if m != nil {
+        m.passwordCredentials = value
+    }
 }
 // SetPublicClient sets the publicClient property value. Specifies settings for installed clients such as desktop or mobile devices.
 func (m *Application) SetPublicClient(value *PublicClientApplication)() {
-    m.publicClient = value
+    if m != nil {
+        m.publicClient = value
+    }
 }
 // SetPublisherDomain sets the publisherDomain property value. The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
 func (m *Application) SetPublisherDomain(value *string)() {
-    m.publisherDomain = value
+    if m != nil {
+        m.publisherDomain = value
+    }
 }
 // SetRequiredResourceAccess sets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Application) SetRequiredResourceAccess(value []RequiredResourceAccess)() {
-    m.requiredResourceAccess = value
+    if m != nil {
+        m.requiredResourceAccess = value
+    }
 }
 // SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
 func (m *Application) SetSignInAudience(value *string)() {
-    m.signInAudience = value
+    if m != nil {
+        m.signInAudience = value
+    }
 }
 // SetSpa sets the spa property value. Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
 func (m *Application) SetSpa(value *SpaApplication)() {
-    m.spa = value
+    if m != nil {
+        m.spa = value
+    }
 }
 // SetSynchronization sets the synchronization property value. 
 func (m *Application) SetSynchronization(value *Synchronization)() {
-    m.synchronization = value
+    if m != nil {
+        m.synchronization = value
+    }
 }
 // SetTags sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
 func (m *Application) SetTags(value []string)() {
-    m.tags = value
+    if m != nil {
+        m.tags = value
+    }
 }
 // SetTokenEncryptionKeyId sets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
 func (m *Application) SetTokenEncryptionKeyId(value *string)() {
-    m.tokenEncryptionKeyId = value
+    if m != nil {
+        m.tokenEncryptionKeyId = value
+    }
 }
 // SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. 
 func (m *Application) SetTokenIssuancePolicies(value []TokenIssuancePolicy)() {
-    m.tokenIssuancePolicies = value
+    if m != nil {
+        m.tokenIssuancePolicies = value
+    }
 }
 // SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. The tokenLifetimePolicies assigned to this application. Supports $expand.
 func (m *Application) SetTokenLifetimePolicies(value []TokenLifetimePolicy)() {
-    m.tokenLifetimePolicies = value
+    if m != nil {
+        m.tokenLifetimePolicies = value
+    }
 }
 // SetUniqueName sets the uniqueName property value. The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.
 func (m *Application) SetUniqueName(value *string)() {
-    m.uniqueName = value
+    if m != nil {
+        m.uniqueName = value
+    }
 }
 // SetVerifiedPublisher sets the verifiedPublisher property value. Specifies the verified publisher of the application.
 func (m *Application) SetVerifiedPublisher(value *VerifiedPublisher)() {
-    m.verifiedPublisher = value
+    if m != nil {
+        m.verifiedPublisher = value
+    }
 }
 // SetWeb sets the web property value. Specifies settings for a web application.
 func (m *Application) SetWeb(value *WebApplication)() {
-    m.web = value
+    if m != nil {
+        m.web = value
+    }
 }

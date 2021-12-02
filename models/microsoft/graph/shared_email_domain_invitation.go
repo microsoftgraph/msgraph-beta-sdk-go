@@ -112,13 +112,19 @@ func (m *SharedEmailDomainInvitation) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetExpiryTime sets the expiryTime property value. 
 func (m *SharedEmailDomainInvitation) SetExpiryTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expiryTime = value
+    if m != nil {
+        m.expiryTime = value
+    }
 }
 // SetInvitationDomain sets the invitationDomain property value. 
 func (m *SharedEmailDomainInvitation) SetInvitationDomain(value *string)() {
-    m.invitationDomain = value
+    if m != nil {
+        m.invitationDomain = value
+    }
 }
 // SetInvitationStatus sets the invitationStatus property value. 
 func (m *SharedEmailDomainInvitation) SetInvitationStatus(value *string)() {
-    m.invitationStatus = value
+    if m != nil {
+        m.invitationStatus = value
+    }
 }

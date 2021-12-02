@@ -164,21 +164,31 @@ func (m *DeviceComplianceScriptRunSummary) Serialize(writer i04eb5309aeaafadd283
 }
 // SetDetectionScriptErrorDeviceCount sets the detectionScriptErrorDeviceCount property value. Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) SetDetectionScriptErrorDeviceCount(value *int32)() {
-    m.detectionScriptErrorDeviceCount = value
+    if m != nil {
+        m.detectionScriptErrorDeviceCount = value
+    }
 }
 // SetDetectionScriptPendingDeviceCount sets the detectionScriptPendingDeviceCount property value. Number of devices which have not yet run the latest version of the device compliance script. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) SetDetectionScriptPendingDeviceCount(value *int32)() {
-    m.detectionScriptPendingDeviceCount = value
+    if m != nil {
+        m.detectionScriptPendingDeviceCount = value
+    }
 }
 // SetIssueDetectedDeviceCount sets the issueDetectedDeviceCount property value. Number of devices for which the detection script found an issue. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) SetIssueDetectedDeviceCount(value *int32)() {
-    m.issueDetectedDeviceCount = value
+    if m != nil {
+        m.issueDetectedDeviceCount = value
+    }
 }
 // SetLastScriptRunDateTime sets the lastScriptRunDateTime property value. Last run time for the script across all devices
 func (m *DeviceComplianceScriptRunSummary) SetLastScriptRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastScriptRunDateTime = value
+    if m != nil {
+        m.lastScriptRunDateTime = value
+    }
 }
 // SetNoIssueDetectedDeviceCount sets the noIssueDetectedDeviceCount property value. Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647
 func (m *DeviceComplianceScriptRunSummary) SetNoIssueDetectedDeviceCount(value *int32)() {
-    m.noIssueDetectedDeviceCount = value
+    if m != nil {
+        m.noIssueDetectedDeviceCount = value
+    }
 }

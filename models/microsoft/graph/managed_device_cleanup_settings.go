@@ -70,9 +70,13 @@ func (m *ManagedDeviceCleanupSettings) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceCleanupSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceInactivityBeforeRetirementInDays sets the deviceInactivityBeforeRetirementInDays property value. Number of days when the device has not contacted Intune.
 func (m *ManagedDeviceCleanupSettings) SetDeviceInactivityBeforeRetirementInDays(value *string)() {
-    m.deviceInactivityBeforeRetirementInDays = value
+    if m != nil {
+        m.deviceInactivityBeforeRetirementInDays = value
+    }
 }
