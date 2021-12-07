@@ -47,7 +47,7 @@ func (m *ExecuteActionRequestBody) GetActionName()(*i535684e11b5500196ecb4b5c663
         return m.actionName
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -341,7 +341,7 @@ func (m *ExecuteActionRequestBody) SetActionName(value *i535684e11b5500196ecb4b5
         m.actionName = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

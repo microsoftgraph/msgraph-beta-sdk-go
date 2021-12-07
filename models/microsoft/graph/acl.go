@@ -33,7 +33,7 @@ func (m *Acl) GetAccessType()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e8
         return m.accessType
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Acl) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -159,7 +159,7 @@ func (m *Acl) SetAccessType(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1
         m.accessType = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Acl) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

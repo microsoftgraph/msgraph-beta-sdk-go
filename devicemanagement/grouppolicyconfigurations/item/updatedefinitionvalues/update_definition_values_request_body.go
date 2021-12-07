@@ -31,7 +31,7 @@ func (m *UpdateDefinitionValuesRequestBody) GetAdded()([]i535684e11b5500196ecb4b
         return m.added
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateDefinitionValuesRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -149,7 +149,7 @@ func (m *UpdateDefinitionValuesRequestBody) SetAdded(value []i535684e11b5500196e
         m.added = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateDefinitionValuesRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

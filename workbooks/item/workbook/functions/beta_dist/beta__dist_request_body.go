@@ -29,7 +29,7 @@ func NewBeta_DistRequestBody()(*Beta_DistRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetA gets the A property value. 
+// GetA gets the a property value. 
 func (m *Beta_DistRequestBody) GetA()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *Beta_DistRequestBody) GetA()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f7
         return m.a
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Beta_DistRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *Beta_DistRequestBody) GetAlpha()(*i535684e11b5500196ecb4b5c6634e0651fe2
         return m.alpha
     }
 }
-// GetB gets the B property value. 
+// GetB gets the b property value. 
 func (m *Beta_DistRequestBody) GetB()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json) {
     if m == nil {
         return nil
@@ -199,13 +199,13 @@ func (m *Beta_DistRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// SetA sets the A property value. 
+// SetA sets the a property value. 
 func (m *Beta_DistRequestBody) SetA(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     if m != nil {
         m.a = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Beta_DistRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -217,7 +217,7 @@ func (m *Beta_DistRequestBody) SetAlpha(value *i535684e11b5500196ecb4b5c6634e065
         m.alpha = value
     }
 }
-// SetB sets the B property value. 
+// SetB sets the b property value. 
 func (m *Beta_DistRequestBody) SetB(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Json)() {
     if m != nil {
         m.b = value

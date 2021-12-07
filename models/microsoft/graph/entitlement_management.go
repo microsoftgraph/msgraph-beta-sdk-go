@@ -27,11 +27,11 @@ type EntitlementManagement struct {
     accessPackageResourceRoleScopes []AccessPackageResourceRoleScope;
     // 
     accessPackageResources []AccessPackageResource;
-    // 
+    // Access packages.
     accessPackages []AccessPackage;
-    // 
+    // Connected organizations.
     connectedOrganizations []ConnectedOrganization;
-    // 
+    // Entitlement management settings.
     settings *EntitlementManagementSettings;
 }
 // NewEntitlementManagement instantiates a new entitlementManagement and sets the default values.
@@ -121,7 +121,7 @@ func (m *EntitlementManagement) GetAccessPackageResources()([]AccessPackageResou
         return m.accessPackageResources
     }
 }
-// GetAccessPackages gets the accessPackages property value. 
+// GetAccessPackages gets the accessPackages property value. Access packages.
 func (m *EntitlementManagement) GetAccessPackages()([]AccessPackage) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *EntitlementManagement) GetAccessPackages()([]AccessPackage) {
         return m.accessPackages
     }
 }
-// GetConnectedOrganizations gets the connectedOrganizations property value. 
+// GetConnectedOrganizations gets the connectedOrganizations property value. Connected organizations.
 func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganization) {
     if m == nil {
         return nil
@@ -137,7 +137,7 @@ func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizat
         return m.connectedOrganizations
     }
 }
-// GetSettings gets the settings property value. 
+// GetSettings gets the settings property value. Entitlement management settings.
 func (m *EntitlementManagement) GetSettings()(*EntitlementManagementSettings) {
     if m == nil {
         return nil
@@ -537,19 +537,19 @@ func (m *EntitlementManagement) SetAccessPackageResources(value []AccessPackageR
         m.accessPackageResources = value
     }
 }
-// SetAccessPackages sets the accessPackages property value. 
+// SetAccessPackages sets the accessPackages property value. Access packages.
 func (m *EntitlementManagement) SetAccessPackages(value []AccessPackage)() {
     if m != nil {
         m.accessPackages = value
     }
 }
-// SetConnectedOrganizations sets the connectedOrganizations property value. 
+// SetConnectedOrganizations sets the connectedOrganizations property value. Connected organizations.
 func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrganization)() {
     if m != nil {
         m.connectedOrganizations = value
     }
 }
-// SetSettings sets the settings property value. 
+// SetSettings sets the settings property value. Entitlement management settings.
 func (m *EntitlementManagement) SetSettings(value *EntitlementManagementSettings)() {
     if m != nil {
         m.settings = value

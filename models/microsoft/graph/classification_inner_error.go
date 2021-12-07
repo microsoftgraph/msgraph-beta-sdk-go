@@ -33,7 +33,7 @@ func (m *ClassificationInnerError) GetActivityId()(*string) {
         return m.activityId
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassificationInnerError) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -153,7 +153,7 @@ func (m *ClassificationInnerError) SetActivityId(value *string)() {
         m.activityId = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassificationInnerError) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

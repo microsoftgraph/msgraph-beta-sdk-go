@@ -21,7 +21,7 @@ func NewManagedDeviceMobileAppConfigurationStatesResponse()(*ManagedDeviceMobile
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceMobileAppConfigurationStatesResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *ManagedDeviceMobileAppConfigurationStatesResponse) GetAdditionalData()(
         return m.additionalData
     }
 }
-// GetNextLink gets the nextLink property value. 
+// GetNextLink gets the @odata.nextLink property value. 
 func (m *ManagedDeviceMobileAppConfigurationStatesResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
@@ -104,13 +104,13 @@ func (m *ManagedDeviceMobileAppConfigurationStatesResponse) Serialize(writer i04
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceMobileAppConfigurationStatesResponse) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetNextLink sets the nextLink property value. 
+// SetNextLink sets the @odata.nextLink property value. 
 func (m *ManagedDeviceMobileAppConfigurationStatesResponse) SetNextLink(value *string)() {
     if m != nil {
         m.nextLink = value

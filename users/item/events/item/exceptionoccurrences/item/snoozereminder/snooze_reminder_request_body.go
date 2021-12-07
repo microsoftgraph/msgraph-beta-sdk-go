@@ -19,7 +19,7 @@ func NewSnoozeReminderRequestBody()(*SnoozeReminderRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SnoozeReminderRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *SnoozeReminderRequestBody) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// GetNewReminderTime gets the NewReminderTime property value. 
+// GetNewReminderTime gets the newReminderTime property value. 
 func (m *SnoozeReminderRequestBody) GetNewReminderTime()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -69,13 +69,13 @@ func (m *SnoozeReminderRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SnoozeReminderRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetNewReminderTime sets the NewReminderTime property value. 
+// SetNewReminderTime sets the newReminderTime property value. 
 func (m *SnoozeReminderRequestBody) SetNewReminderTime(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DateTimeTimeZone)() {
     if m != nil {
         m.newReminderTime = value

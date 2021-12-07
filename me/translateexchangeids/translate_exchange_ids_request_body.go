@@ -23,7 +23,7 @@ func NewTranslateExchangeIdsRequestBody()(*TranslateExchangeIdsRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslateExchangeIdsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *TranslateExchangeIdsRequestBody) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// GetInputIds gets the InputIds property value. 
+// GetInputIds gets the inputIds property value. 
 func (m *TranslateExchangeIdsRequestBody) GetInputIds()([]string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *TranslateExchangeIdsRequestBody) GetInputIds()([]string) {
         return m.inputIds
     }
 }
-// GetSourceIdType gets the SourceIdType property value. 
+// GetSourceIdType gets the sourceIdType property value. 
 func (m *TranslateExchangeIdsRequestBody) GetSourceIdType()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *TranslateExchangeIdsRequestBody) GetSourceIdType()(*i535684e11b5500196e
         return m.sourceIdType
     }
 }
-// GetTargetIdType gets the TargetIdType property value. 
+// GetTargetIdType gets the targetIdType property value. 
 func (m *TranslateExchangeIdsRequestBody) GetTargetIdType()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat) {
     if m == nil {
         return nil
@@ -129,25 +129,25 @@ func (m *TranslateExchangeIdsRequestBody) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslateExchangeIdsRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetInputIds sets the InputIds property value. 
+// SetInputIds sets the inputIds property value. 
 func (m *TranslateExchangeIdsRequestBody) SetInputIds(value []string)() {
     if m != nil {
         m.inputIds = value
     }
 }
-// SetSourceIdType sets the SourceIdType property value. 
+// SetSourceIdType sets the sourceIdType property value. 
 func (m *TranslateExchangeIdsRequestBody) SetSourceIdType(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat)() {
     if m != nil {
         m.sourceIdType = value
     }
 }
-// SetTargetIdType sets the TargetIdType property value. 
+// SetTargetIdType sets the targetIdType property value. 
 func (m *TranslateExchangeIdsRequestBody) SetTargetIdType(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExchangeIdFormat)() {
     if m != nil {
         m.targetIdType = value

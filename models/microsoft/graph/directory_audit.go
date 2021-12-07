@@ -30,7 +30,7 @@ type DirectoryAudit struct {
     resultReason *string;
     // Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
     targetResources []TargetResource;
-    // 
+    // Type of user agent used by a user in the activity.
     userAgent *string;
 }
 // NewDirectoryAudit instantiates a new directoryAudit and sets the default values.
@@ -128,7 +128,7 @@ func (m *DirectoryAudit) GetTargetResources()([]TargetResource) {
         return m.targetResources
     }
 }
-// GetUserAgent gets the userAgent property value. 
+// GetUserAgent gets the userAgent property value. Type of user agent used by a user in the activity.
 func (m *DirectoryAudit) GetUserAgent()(*string) {
     if m == nil {
         return nil
@@ -430,7 +430,7 @@ func (m *DirectoryAudit) SetTargetResources(value []TargetResource)() {
         m.targetResources = value
     }
 }
-// SetUserAgent sets the userAgent property value. 
+// SetUserAgent sets the userAgent property value. Type of user agent used by a user in the activity.
 func (m *DirectoryAudit) SetUserAgent(value *string)() {
     if m != nil {
         m.userAgent = value

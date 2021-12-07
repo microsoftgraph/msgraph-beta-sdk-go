@@ -266,7 +266,7 @@ func (m *PurchaseInvoice) GetTotalTaxAmount()(*float64) {
         return m.totalTaxAmount
     }
 }
-// GetVendor_escaped gets the vendor_escaped property value. 
+// GetVendor_escaped gets the vendor property value. 
 func (m *PurchaseInvoice) GetVendor_escaped()(*Vendor_escaped) {
     if m == nil {
         return nil
@@ -553,13 +553,13 @@ func (m *PurchaseInvoice) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewVendor_escaped() })
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendor_escaped(val.(*Vendor_escaped))
+            m.SetVendor(val.(*Vendor_escaped))
         }
         return nil
     }
@@ -764,7 +764,7 @@ func (m *PurchaseInvoice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err = writer.WriteObjectValue("vendor_escaped", m.GetVendor_escaped())
+        err = writer.WriteObjectValue("vendor", m.GetVendor())
         if err != nil {
             return err
         }
@@ -939,7 +939,7 @@ func (m *PurchaseInvoice) SetTotalTaxAmount(value *float64)() {
         m.totalTaxAmount = value
     }
 }
-// SetVendor_escaped sets the vendor_escaped property value. 
+// SetVendor_escaped sets the vendor property value. 
 func (m *PurchaseInvoice) SetVendor_escaped(value *Vendor_escaped)() {
     if m != nil {
         m.vendor_escaped = value
