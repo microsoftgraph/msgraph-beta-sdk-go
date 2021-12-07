@@ -37,8 +37,8 @@ func (m *ItemEmail) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of email address. Possible values are: unknown, work, personal, main, other.
-func (m *ItemEmail) GetType_escaped()(*EmailType) {
+// GetType gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other.
+func (m *ItemEmail) GetType()(*EmailType) {
     if m == nil {
         return nil
     } else {
@@ -68,14 +68,14 @@ func (m *ItemEmail) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseEmailType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(EmailType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -102,9 +102,9 @@ func (m *ItemEmail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -123,8 +123,8 @@ func (m *ItemEmail) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The type of email address. Possible values are: unknown, work, personal, main, other.
-func (m *ItemEmail) SetType_escaped(value *EmailType)() {
+// SetType sets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other.
+func (m *ItemEmail) SetType(value *EmailType)() {
     if m != nil {
         m.type_escaped = value
     }

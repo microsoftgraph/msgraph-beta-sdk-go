@@ -55,7 +55,7 @@ func (m *LogonUser) GetAccountType()(*UserAccountSecurityType) {
         return m.accountType
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LogonUser) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -249,7 +249,7 @@ func (m *LogonUser) SetAccountType(value *UserAccountSecurityType)() {
         m.accountType = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LogonUser) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

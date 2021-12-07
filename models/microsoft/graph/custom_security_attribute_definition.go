@@ -89,8 +89,8 @@ func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
         return m.status
     }
 }
-// GetType_escaped gets the type_escaped property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-func (m *CustomSecurityAttributeDefinition) GetType_escaped()(*string) {
+// GetType gets the type property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
+func (m *CustomSecurityAttributeDefinition) GetType()(*string) {
     if m == nil {
         return nil
     } else {
@@ -182,13 +182,13 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -261,7 +261,7 @@ func (m *CustomSecurityAttributeDefinition) Serialize(writer i04eb5309aeaafadd28
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -316,8 +316,8 @@ func (m *CustomSecurityAttributeDefinition) SetStatus(value *string)() {
         m.status = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-func (m *CustomSecurityAttributeDefinition) SetType_escaped(value *string)() {
+// SetType sets the type property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
+func (m *CustomSecurityAttributeDefinition) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
     }

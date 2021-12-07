@@ -443,8 +443,8 @@ func (m *Delta) GetTransactionId()(*string) {
         return m.transactionId
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *Delta) GetType_escaped()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EventType) {
+// GetType gets the type property value. 
+func (m *Delta) GetType()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EventType) {
     if m == nil {
         return nil
     } else {
@@ -930,14 +930,14 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ParseEventType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EventType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -1268,9 +1268,9 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -1541,8 +1541,8 @@ func (m *Delta) SetTransactionId(value *string)() {
         m.transactionId = value
     }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *Delta) SetType_escaped(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EventType)() {
+// SetType sets the type property value. 
+func (m *Delta) SetType(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EventType)() {
     if m != nil {
         m.type_escaped = value
     }

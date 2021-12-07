@@ -33,7 +33,7 @@ func (m *AnswerRequestBody) GetAcceptedModalities()([]i535684e11b5500196ecb4b5c6
         return m.acceptedModalities
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -157,7 +157,7 @@ func (m *AnswerRequestBody) SetAcceptedModalities(value []i535684e11b5500196ecb4
         m.acceptedModalities = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

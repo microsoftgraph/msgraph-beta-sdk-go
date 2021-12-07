@@ -37,8 +37,8 @@ func (m *ItemPhone) GetNumber()(*string) {
         return m.number
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of phone number within the object. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-func (m *ItemPhone) GetType_escaped()(*PhoneType) {
+// GetType gets the type property value. The type of phone number within the object. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+func (m *ItemPhone) GetType()(*PhoneType) {
     if m == nil {
         return nil
     } else {
@@ -68,14 +68,14 @@ func (m *ItemPhone) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParsePhoneType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(PhoneType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -102,9 +102,9 @@ func (m *ItemPhone) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -123,8 +123,8 @@ func (m *ItemPhone) SetNumber(value *string)() {
         m.number = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The type of phone number within the object. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-func (m *ItemPhone) SetType_escaped(value *PhoneType)() {
+// SetType sets the type property value. The type of phone number within the object. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+func (m *ItemPhone) SetType(value *PhoneType)() {
     if m != nil {
         m.type_escaped = value
     }

@@ -80,8 +80,8 @@ func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
         return m.reportName
     }
 }
-// GetSelect_escaped gets the select_escaped property value. Columns selected from the report
-func (m *DeviceManagementCachedReportConfiguration) GetSelect_escaped()([]string) {
+// GetSelect gets the select property value. Columns selected from the report
+func (m *DeviceManagementCachedReportConfiguration) GetSelect()([]string) {
     if m == nil {
         return nil
     } else {
@@ -163,7 +163,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetSelect_escaped(res)
+            m.SetSelect(res)
         }
         return nil
     }
@@ -236,7 +236,7 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i04eb5309ae
         }
     }
     {
-        err = writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
+        err = writer.WriteCollectionOfStringValues("select", m.GetSelect())
         if err != nil {
             return err
         }
@@ -286,8 +286,8 @@ func (m *DeviceManagementCachedReportConfiguration) SetReportName(value *string)
         m.reportName = value
     }
 }
-// SetSelect_escaped sets the select_escaped property value. Columns selected from the report
-func (m *DeviceManagementCachedReportConfiguration) SetSelect_escaped(value []string)() {
+// SetSelect sets the select property value. Columns selected from the report
+func (m *DeviceManagementCachedReportConfiguration) SetSelect(value []string)() {
     if m != nil {
         m.select_escaped = value
     }

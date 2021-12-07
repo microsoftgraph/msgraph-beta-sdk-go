@@ -47,8 +47,8 @@ func (m *GovernanceSubject) GetPrincipalName()(*string) {
         return m.principalName
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
-func (m *GovernanceSubject) GetType_escaped()(*string) {
+// GetType gets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
+func (m *GovernanceSubject) GetType()(*string) {
     if m == nil {
         return nil
     } else {
@@ -88,13 +88,13 @@ func (m *GovernanceSubject) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -128,7 +128,7 @@ func (m *GovernanceSubject) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -153,8 +153,8 @@ func (m *GovernanceSubject) SetPrincipalName(value *string)() {
         m.principalName = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
-func (m *GovernanceSubject) SetType_escaped(value *string)() {
+// SetType sets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
+func (m *GovernanceSubject) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
     }

@@ -30,9 +30,9 @@ type AccessPackageAssignmentRequest struct {
     requestState *string;
     // More information on the request processing status. Read-only.
     requestStatus *string;
-    // One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+    // The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
     requestType *string;
-    // The range of dates that access is to be assigned to the requestor. Read-only.
+    // The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
     schedule *RequestSchedule;
 }
 // NewAccessPackageAssignmentRequest instantiates a new accessPackageAssignmentRequest and sets the default values.
@@ -130,7 +130,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestStatus()(*string) {
         return m.requestStatus
     }
 }
-// GetRequestType gets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+// GetRequestType gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
 func (m *AccessPackageAssignmentRequest) GetRequestType()(*string) {
     if m == nil {
         return nil
@@ -138,7 +138,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestType()(*string) {
         return m.requestType
     }
 }
-// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. Read-only.
+// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
 func (m *AccessPackageAssignmentRequest) GetSchedule()(*RequestSchedule) {
     if m == nil {
         return nil
@@ -445,13 +445,13 @@ func (m *AccessPackageAssignmentRequest) SetRequestStatus(value *string)() {
         m.requestStatus = value
     }
 }
-// SetRequestType sets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+// SetRequestType sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
 func (m *AccessPackageAssignmentRequest) SetRequestType(value *string)() {
     if m != nil {
         m.requestType = value
     }
 }
-// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. Read-only.
+// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
 func (m *AccessPackageAssignmentRequest) SetSchedule(value *RequestSchedule)() {
     if m != nil {
         m.schedule = value

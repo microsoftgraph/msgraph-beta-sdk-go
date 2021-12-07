@@ -118,8 +118,8 @@ func (m *GovernanceResource) GetStatus()(*string) {
         return m.status
     }
 }
-// GetType_escaped gets the type_escaped property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
-func (m *GovernanceResource) GetType_escaped()(*string) {
+// GetType gets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
+func (m *GovernanceResource) GetType()(*string) {
     if m == nil {
         return nil
     } else {
@@ -245,13 +245,13 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -347,7 +347,7 @@ func (m *GovernanceResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -414,8 +414,8 @@ func (m *GovernanceResource) SetStatus(value *string)() {
         m.status = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
-func (m *GovernanceResource) SetType_escaped(value *string)() {
+// SetType sets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
+func (m *GovernanceResource) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
     }

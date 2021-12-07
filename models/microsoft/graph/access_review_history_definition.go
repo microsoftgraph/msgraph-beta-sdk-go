@@ -24,7 +24,7 @@ type AccessReviewHistoryDefinition struct {
     reviewHistoryPeriodEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Timestamp, reviews starting on or before this date will be included in the fetched history data. Required.
     reviewHistoryPeriodStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. See accessreviewqueryscope. Required.
+    // Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
     scopes []AccessReviewScope;
     // Represents the status of the review history data collection. Possible values are: done, inprogress, error, requested.
     status *AccessReviewHistoryStatus;
@@ -100,7 +100,7 @@ func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodStartDateTime()(*i
         return m.reviewHistoryPeriodStartDateTime
     }
 }
-// GetScopes gets the scopes property value. Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. See accessreviewqueryscope. Required.
+// GetScopes gets the scopes property value. Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
 func (m *AccessReviewHistoryDefinition) GetScopes()([]AccessReviewScope) {
     if m == nil {
         return nil
@@ -355,7 +355,7 @@ func (m *AccessReviewHistoryDefinition) SetReviewHistoryPeriodStartDateTime(valu
         m.reviewHistoryPeriodStartDateTime = value
     }
 }
-// SetScopes sets the scopes property value. Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. See accessreviewqueryscope. Required.
+// SetScopes sets the scopes property value. Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
 func (m *AccessReviewHistoryDefinition) SetScopes(value []AccessReviewScope)() {
     if m != nil {
         m.scopes = value

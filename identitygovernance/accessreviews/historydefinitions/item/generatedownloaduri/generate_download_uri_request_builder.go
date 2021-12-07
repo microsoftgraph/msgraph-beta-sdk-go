@@ -46,7 +46,7 @@ func (m *GenerateDownloadUriResponse) GetAccessReviewHistoryDefinition()(*i53568
         return m.accessReviewHistoryDefinition
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GenerateDownloadUriResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *GenerateDownloadUriResponse) SetAccessReviewHistoryDefinition(value *i5
         m.accessReviewHistoryDefinition = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GenerateDownloadUriResponse) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

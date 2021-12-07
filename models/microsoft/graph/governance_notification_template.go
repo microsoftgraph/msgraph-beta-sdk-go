@@ -26,7 +26,7 @@ func NewGovernanceNotificationTemplate()(*GovernanceNotificationTemplate) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceNotificationTemplate) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -58,8 +58,8 @@ func (m *GovernanceNotificationTemplate) GetSource()(*string) {
         return m.source
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *GovernanceNotificationTemplate) GetType_escaped()(*string) {
+// GetType gets the type property value. 
+func (m *GovernanceNotificationTemplate) GetType()(*string) {
     if m == nil {
         return nil
     } else {
@@ -107,13 +107,13 @@ func (m *GovernanceNotificationTemplate) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -153,7 +153,7 @@ func (m *GovernanceNotificationTemplate) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -172,7 +172,7 @@ func (m *GovernanceNotificationTemplate) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceNotificationTemplate) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -196,8 +196,8 @@ func (m *GovernanceNotificationTemplate) SetSource(value *string)() {
         m.source = value
     }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *GovernanceNotificationTemplate) SetType_escaped(value *string)() {
+// SetType sets the type property value. 
+func (m *GovernanceNotificationTemplate) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
     }

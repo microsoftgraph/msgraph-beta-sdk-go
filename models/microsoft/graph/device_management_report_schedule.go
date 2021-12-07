@@ -104,8 +104,8 @@ func (m *DeviceManagementReportSchedule) GetReportScheduleName()(*string) {
         return m.reportScheduleName
     }
 }
-// GetSelect_escaped gets the select_escaped property value. Columns selected from the report
-func (m *DeviceManagementReportSchedule) GetSelect_escaped()([]string) {
+// GetSelect gets the select property value. Columns selected from the report
+func (m *DeviceManagementReportSchedule) GetSelect()([]string) {
     if m == nil {
         return nil
     } else {
@@ -229,7 +229,7 @@ func (m *DeviceManagementReportSchedule) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *DeviceManagementReportSchedule) GetFieldDeserializers()(map[string]func
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetSelect_escaped(res)
+            m.SetSelect(res)
         }
         return nil
     }
@@ -335,7 +335,7 @@ func (m *DeviceManagementReportSchedule) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     {
-        err = writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
+        err = writer.WriteCollectionOfStringValues("select", m.GetSelect())
         if err != nil {
             return err
         }
@@ -408,8 +408,8 @@ func (m *DeviceManagementReportSchedule) SetReportScheduleName(value *string)() 
         m.reportScheduleName = value
     }
 }
-// SetSelect_escaped sets the select_escaped property value. Columns selected from the report
-func (m *DeviceManagementReportSchedule) SetSelect_escaped(value []string)() {
+// SetSelect sets the select property value. Columns selected from the report
+func (m *DeviceManagementReportSchedule) SetSelect(value []string)() {
     if m != nil {
         m.select_escaped = value
     }

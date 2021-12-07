@@ -97,8 +97,8 @@ func (m *Command) GetStatus()(*string) {
         return m.status
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *Command) GetType_escaped()(*string) {
+// GetType gets the type property value. 
+func (m *Command) GetType()(*string) {
     if m == nil {
         return nil
     } else {
@@ -188,13 +188,13 @@ func (m *Command) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -258,7 +258,7 @@ func (m *Command) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -313,8 +313,8 @@ func (m *Command) SetStatus(value *string)() {
         m.status = value
     }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *Command) SetType_escaped(value *string)() {
+// SetType sets the type property value. 
+func (m *Command) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
     }

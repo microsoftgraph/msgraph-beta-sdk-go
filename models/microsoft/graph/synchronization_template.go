@@ -37,8 +37,8 @@ func (m *SynchronizationTemplate) GetApplicationId()(*string) {
         return m.applicationId
     }
 }
-// GetDefault_escaped gets the default_escaped property value. true if this template is recommended to be the default for the application.
-func (m *SynchronizationTemplate) GetDefault_escaped()(*bool) {
+// GetDefault gets the default property value. true if this template is recommended to be the default for the application.
+func (m *SynchronizationTemplate) GetDefault()(*bool) {
     if m == nil {
         return nil
     } else {
@@ -98,13 +98,13 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["default_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["default"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefault_escaped(val)
+            m.SetDefault(val)
         }
         return nil
     }
@@ -180,7 +180,7 @@ func (m *SynchronizationTemplate) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     {
-        err = writer.WriteBoolValue("default_escaped", m.GetDefault_escaped())
+        err = writer.WriteBoolValue("default", m.GetDefault())
         if err != nil {
             return err
         }
@@ -228,8 +228,8 @@ func (m *SynchronizationTemplate) SetApplicationId(value *string)() {
         m.applicationId = value
     }
 }
-// SetDefault_escaped sets the default_escaped property value. true if this template is recommended to be the default for the application.
-func (m *SynchronizationTemplate) SetDefault_escaped(value *bool)() {
+// SetDefault sets the default property value. true if this template is recommended to be the default for the application.
+func (m *SynchronizationTemplate) SetDefault(value *bool)() {
     if m != nil {
         m.default_escaped = value
     }

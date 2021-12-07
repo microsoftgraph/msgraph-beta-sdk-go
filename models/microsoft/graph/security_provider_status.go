@@ -26,7 +26,7 @@ func NewSecurityProviderStatus()(*SecurityProviderStatus) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityProviderStatus) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -66,8 +66,8 @@ func (m *SecurityProviderStatus) GetRegion()(*string) {
         return m.region
     }
 }
-// GetVendor_escaped gets the vendor_escaped property value. 
-func (m *SecurityProviderStatus) GetVendor_escaped()(*string) {
+// GetVendor gets the vendor property value. 
+func (m *SecurityProviderStatus) GetVendor()(*string) {
     if m == nil {
         return nil
     } else {
@@ -117,13 +117,13 @@ func (m *SecurityProviderStatus) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendor_escaped(val)
+            m.SetVendor(val)
         }
         return nil
     }
@@ -159,7 +159,7 @@ func (m *SecurityProviderStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        err := writer.WriteStringValue("vendor_escaped", m.GetVendor_escaped())
+        err := writer.WriteStringValue("vendor", m.GetVendor())
         if err != nil {
             return err
         }
@@ -172,7 +172,7 @@ func (m *SecurityProviderStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityProviderStatus) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -202,8 +202,8 @@ func (m *SecurityProviderStatus) SetRegion(value *string)() {
         m.region = value
     }
 }
-// SetVendor_escaped sets the vendor_escaped property value. 
-func (m *SecurityProviderStatus) SetVendor_escaped(value *string)() {
+// SetVendor sets the vendor property value. 
+func (m *SecurityProviderStatus) SetVendor(value *string)() {
     if m != nil {
         m.vendor_escaped = value
     }

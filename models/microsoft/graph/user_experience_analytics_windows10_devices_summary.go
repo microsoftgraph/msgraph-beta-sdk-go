@@ -18,7 +18,7 @@ func NewUserExperienceAnalyticsWindows10DevicesSummary()(*UserExperienceAnalytic
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *UserExperienceAnalyticsWindows10DevicesSummary) Serialize(writer i04eb5
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsWindows10DevicesSummary) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
