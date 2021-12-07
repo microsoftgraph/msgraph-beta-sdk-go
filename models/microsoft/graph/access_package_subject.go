@@ -19,7 +19,7 @@ type AccessPackageSubject struct {
     email *string;
     // The object identifier of the subject. null if the subject is not yet a user in the tenant.
     objectId *string;
-    // 
+    // A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
     onPremisesSecurityIdentifier *string;
     // The principal name, if known, of the subject.
     principalName *string;
@@ -81,7 +81,7 @@ func (m *AccessPackageSubject) GetObjectId()(*string) {
         return m.objectId
     }
 }
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. 
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
 func (m *AccessPackageSubject) GetOnPremisesSecurityIdentifier()(*string) {
     if m == nil {
         return nil
@@ -301,7 +301,7 @@ func (m *AccessPackageSubject) SetObjectId(value *string)() {
         m.objectId = value
     }
 }
-// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. 
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
 func (m *AccessPackageSubject) SetOnPremisesSecurityIdentifier(value *string)() {
     if m != nil {
         m.onPremisesSecurityIdentifier = value
