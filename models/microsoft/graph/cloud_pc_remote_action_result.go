@@ -47,7 +47,7 @@ func (m *CloudPcRemoteActionResult) GetActionState()(*ActionState) {
         return m.actionState
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcRemoteActionResult) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -239,7 +239,7 @@ func (m *CloudPcRemoteActionResult) SetActionState(value *ActionState)() {
         m.actionState = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcRemoteActionResult) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

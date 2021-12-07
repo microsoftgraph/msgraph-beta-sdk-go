@@ -18,7 +18,7 @@ type AccessPackageCatalog struct {
     accessPackages []AccessPackage;
     // Has the value Published if the access packages are available for management.
     catalogStatus *string;
-    // One of UserManaged or ServiceDefault.
+    // Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
     catalogType *string;
     // UPN of the user who created this resource. Read-only.
     createdBy *string;
@@ -82,7 +82,7 @@ func (m *AccessPackageCatalog) GetCatalogStatus()(*string) {
         return m.catalogStatus
     }
 }
-// GetCatalogType gets the catalogType property value. One of UserManaged or ServiceDefault.
+// GetCatalogType gets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
 func (m *AccessPackageCatalog) GetCatalogType()(*string) {
     if m == nil {
         return nil
@@ -436,7 +436,7 @@ func (m *AccessPackageCatalog) SetCatalogStatus(value *string)() {
         m.catalogStatus = value
     }
 }
-// SetCatalogType sets the catalogType property value. One of UserManaged or ServiceDefault.
+// SetCatalogType sets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
 func (m *AccessPackageCatalog) SetCatalogType(value *string)() {
     if m != nil {
         m.catalogType = value

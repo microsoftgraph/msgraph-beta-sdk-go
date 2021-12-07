@@ -36,7 +36,7 @@ type Simulation struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
     launchDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Mode of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: real, preview, unknownFutureValue.
+    // 
     mode *SimulationMode;
     // Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
     payloadDeliveryPlatform *PayloadDeliveryPlatform;
@@ -172,7 +172,7 @@ func (m *Simulation) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.launchDateTime
     }
 }
-// GetMode gets the mode property value. Mode of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: real, preview, unknownFutureValue.
+// GetMode gets the mode property value. 
 func (m *Simulation) GetMode()(*SimulationMode) {
     if m == nil {
         return nil
@@ -704,7 +704,7 @@ func (m *Simulation) SetLaunchDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
         m.launchDateTime = value
     }
 }
-// SetMode sets the mode property value. Mode of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: real, preview, unknownFutureValue.
+// SetMode sets the mode property value. 
 func (m *Simulation) SetMode(value *SimulationMode)() {
     if m != nil {
         m.mode = value

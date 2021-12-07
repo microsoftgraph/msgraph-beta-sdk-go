@@ -22,7 +22,7 @@ func NewIpCategory()(*IpCategory) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IpCategory) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,8 +46,8 @@ func (m *IpCategory) GetName()(*string) {
         return m.name
     }
 }
-// GetVendor_escaped gets the vendor_escaped property value. 
-func (m *IpCategory) GetVendor_escaped()(*string) {
+// GetVendor gets the vendor property value. 
+func (m *IpCategory) GetVendor()(*string) {
     if m == nil {
         return nil
     } else {
@@ -77,13 +77,13 @@ func (m *IpCategory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         }
         return nil
     }
-    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendor_escaped(val)
+            m.SetVendor(val)
         }
         return nil
     }
@@ -107,7 +107,7 @@ func (m *IpCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err := writer.WriteStringValue("vendor_escaped", m.GetVendor_escaped())
+        err := writer.WriteStringValue("vendor", m.GetVendor())
         if err != nil {
             return err
         }
@@ -120,7 +120,7 @@ func (m *IpCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IpCategory) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -138,8 +138,8 @@ func (m *IpCategory) SetName(value *string)() {
         m.name = value
     }
 }
-// SetVendor_escaped sets the vendor_escaped property value. 
-func (m *IpCategory) SetVendor_escaped(value *string)() {
+// SetVendor sets the vendor property value. 
+func (m *IpCategory) SetVendor(value *string)() {
     if m != nil {
         m.vendor_escaped = value
     }

@@ -213,8 +213,8 @@ func (m *DriveItem) GetMedia()(*Media) {
         return m.media
     }
 }
-// GetPackage_escaped gets the package_escaped property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *DriveItem) GetPackage_escaped()(*Package_escaped) {
+// GetPackage gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
+func (m *DriveItem) GetPackage()(*Package_escaped) {
     if m == nil {
         return nil
     } else {
@@ -536,13 +536,13 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         }
         return nil
     }
-    res["package_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["package"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPackage_escaped() })
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPackage_escaped(val.(*Package_escaped))
+            m.SetPackage(val.(*Package_escaped))
         }
         return nil
     }
@@ -860,7 +860,7 @@ func (m *DriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     {
-        err = writer.WriteObjectValue("package_escaped", m.GetPackage_escaped())
+        err = writer.WriteObjectValue("package", m.GetPackage())
         if err != nil {
             return err
         }
@@ -1091,8 +1091,8 @@ func (m *DriveItem) SetMedia(value *Media)() {
         m.media = value
     }
 }
-// SetPackage_escaped sets the package_escaped property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *DriveItem) SetPackage_escaped(value *Package_escaped)() {
+// SetPackage sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
+func (m *DriveItem) SetPackage(value *Package_escaped)() {
     if m != nil {
         m.package_escaped = value
     }

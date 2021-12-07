@@ -28,7 +28,7 @@ func (m *RolePermission) GetActions()([]string) {
         return m.actions
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RolePermission) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -113,7 +113,7 @@ func (m *RolePermission) SetActions(value []string)() {
         m.actions = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RolePermission) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

@@ -19,7 +19,7 @@ type AccessPackageSubject struct {
     email *string;
     // The object identifier of the subject. null if the subject is not yet a user in the tenant.
     objectId *string;
-    // 
+    // A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
     onPremisesSecurityIdentifier *string;
     // The principal name, if known, of the subject.
     principalName *string;
@@ -81,7 +81,7 @@ func (m *AccessPackageSubject) GetObjectId()(*string) {
         return m.objectId
     }
 }
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. 
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
 func (m *AccessPackageSubject) GetOnPremisesSecurityIdentifier()(*string) {
     if m == nil {
         return nil
@@ -97,8 +97,8 @@ func (m *AccessPackageSubject) GetPrincipalName()(*string) {
         return m.principalName
     }
 }
-// GetType_escaped gets the type_escaped property value. The resource type of the subject.
-func (m *AccessPackageSubject) GetType_escaped()(*string) {
+// GetType gets the type property value. The resource type of the subject.
+func (m *AccessPackageSubject) GetType()(*string) {
     if m == nil {
         return nil
     } else {
@@ -188,13 +188,13 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -258,7 +258,7 @@ func (m *AccessPackageSubject) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -301,7 +301,7 @@ func (m *AccessPackageSubject) SetObjectId(value *string)() {
         m.objectId = value
     }
 }
-// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. 
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
 func (m *AccessPackageSubject) SetOnPremisesSecurityIdentifier(value *string)() {
     if m != nil {
         m.onPremisesSecurityIdentifier = value
@@ -313,8 +313,8 @@ func (m *AccessPackageSubject) SetPrincipalName(value *string)() {
         m.principalName = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The resource type of the subject.
-func (m *AccessPackageSubject) SetType_escaped(value *string)() {
+// SetType sets the type property value. The resource type of the subject.
+func (m *AccessPackageSubject) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
     }

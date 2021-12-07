@@ -28,7 +28,7 @@ func (m *DeviceManagementExchangeAccessRule) GetAccessLevel()(*DeviceManagementE
         return m.accessLevel
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementExchangeAccessRule) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *DeviceManagementExchangeAccessRule) SetAccessLevel(value *DeviceManagem
         m.accessLevel = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementExchangeAccessRule) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

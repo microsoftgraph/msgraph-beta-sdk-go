@@ -30,7 +30,7 @@ func NewPhysicalAddress()(*PhysicalAddress) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PhysicalAddress) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -86,8 +86,8 @@ func (m *PhysicalAddress) GetStreet()(*string) {
         return m.street
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of address. Possible values are: unknown, home, business, other.
-func (m *PhysicalAddress) GetType_escaped()(*PhysicalAddressType) {
+// GetType gets the type property value. The type of address. Possible values are: unknown, home, business, other.
+func (m *PhysicalAddress) GetType()(*PhysicalAddressType) {
     if m == nil {
         return nil
     } else {
@@ -157,14 +157,14 @@ func (m *PhysicalAddress) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParsePhysicalAddressType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(PhysicalAddressType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -211,9 +211,9 @@ func (m *PhysicalAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -226,7 +226,7 @@ func (m *PhysicalAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PhysicalAddress) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -268,8 +268,8 @@ func (m *PhysicalAddress) SetStreet(value *string)() {
         m.street = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The type of address. Possible values are: unknown, home, business, other.
-func (m *PhysicalAddress) SetType_escaped(value *PhysicalAddressType)() {
+// SetType sets the type property value. The type of address. Possible values are: unknown, home, business, other.
+func (m *PhysicalAddress) SetType(value *PhysicalAddressType)() {
     if m != nil {
         m.type_escaped = value
     }

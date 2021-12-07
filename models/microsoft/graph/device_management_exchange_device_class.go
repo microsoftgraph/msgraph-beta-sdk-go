@@ -20,7 +20,7 @@ func NewDeviceManagementExchangeDeviceClass()(*DeviceManagementExchangeDeviceCla
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementExchangeDeviceClass) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,8 +36,8 @@ func (m *DeviceManagementExchangeDeviceClass) GetName()(*string) {
         return m.name
     }
 }
-// GetType_escaped gets the type_escaped property value. Type of device which is impacted by this rule e.g. Model, Family. Possible values are: family, model.
-func (m *DeviceManagementExchangeDeviceClass) GetType_escaped()(*DeviceManagementExchangeAccessRuleType) {
+// GetType gets the type property value. Type of device which is impacted by this rule e.g. Model, Family. Possible values are: family, model.
+func (m *DeviceManagementExchangeDeviceClass) GetType()(*DeviceManagementExchangeAccessRuleType) {
     if m == nil {
         return nil
     } else {
@@ -57,14 +57,14 @@ func (m *DeviceManagementExchangeDeviceClass) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementExchangeAccessRuleType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(DeviceManagementExchangeAccessRuleType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -81,9 +81,9 @@ func (m *DeviceManagementExchangeDeviceClass) Serialize(writer i04eb5309aeaafadd
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -96,7 +96,7 @@ func (m *DeviceManagementExchangeDeviceClass) Serialize(writer i04eb5309aeaafadd
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementExchangeDeviceClass) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -108,8 +108,8 @@ func (m *DeviceManagementExchangeDeviceClass) SetName(value *string)() {
         m.name = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Type of device which is impacted by this rule e.g. Model, Family. Possible values are: family, model.
-func (m *DeviceManagementExchangeDeviceClass) SetType_escaped(value *DeviceManagementExchangeAccessRuleType)() {
+// SetType sets the type property value. Type of device which is impacted by this rule e.g. Model, Family. Possible values are: family, model.
+func (m *DeviceManagementExchangeDeviceClass) SetType(value *DeviceManagementExchangeAccessRuleType)() {
     if m != nil {
         m.type_escaped = value
     }

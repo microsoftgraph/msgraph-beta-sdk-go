@@ -138,8 +138,8 @@ func (m *GovernanceRoleAssignmentRequest) GetSubjectId()(*string) {
         return m.subjectId
     }
 }
-// GetType_escaped gets the type_escaped property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
-func (m *GovernanceRoleAssignmentRequest) GetType_escaped()(*string) {
+// GetType gets the type property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
+func (m *GovernanceRoleAssignmentRequest) GetType()(*string) {
     if m == nil {
         return nil
     } else {
@@ -269,13 +269,13 @@ func (m *GovernanceRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -363,7 +363,7 @@ func (m *GovernanceRoleAssignmentRequest) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -442,8 +442,8 @@ func (m *GovernanceRoleAssignmentRequest) SetSubjectId(value *string)() {
         m.subjectId = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
-func (m *GovernanceRoleAssignmentRequest) SetType_escaped(value *string)() {
+// SetType sets the type property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
+func (m *GovernanceRoleAssignmentRequest) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
     }

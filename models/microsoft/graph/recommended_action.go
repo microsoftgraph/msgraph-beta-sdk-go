@@ -30,7 +30,7 @@ func (m *RecommendedAction) GetActionWebUrl()(*string) {
         return m.actionWebUrl
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecommendedAction) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -126,7 +126,7 @@ func (m *RecommendedAction) SetActionWebUrl(value *string)() {
         m.actionWebUrl = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecommendedAction) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

@@ -17,8 +17,8 @@ func NewProgramResource()(*ProgramResource) {
     }
     return m
 }
-// GetType_escaped gets the type_escaped property value. Type of the resource, indicating whether it is a group or an app.
-func (m *ProgramResource) GetType_escaped()(*string) {
+// GetType gets the type property value. Type of the resource, indicating whether it is a group or an app.
+func (m *ProgramResource) GetType()(*string) {
     if m == nil {
         return nil
     } else {
@@ -28,13 +28,13 @@ func (m *ProgramResource) GetType_escaped()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProgramResource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -50,15 +50,15 @@ func (m *ProgramResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         return err
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
     }
     return nil
 }
-// SetType_escaped sets the type_escaped property value. Type of the resource, indicating whether it is a group or an app.
-func (m *ProgramResource) SetType_escaped(value *string)() {
+// SetType sets the type property value. Type of the resource, indicating whether it is a group or an app.
+func (m *ProgramResource) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
     }

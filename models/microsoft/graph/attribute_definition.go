@@ -40,7 +40,7 @@ func NewAttributeDefinition()(*AttributeDefinition) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeDefinition) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -136,8 +136,8 @@ func (m *AttributeDefinition) GetRequired()(*bool) {
         return m.required
     }
 }
-// GetType_escaped gets the type_escaped property value. Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.
-func (m *AttributeDefinition) GetType_escaped()(*AttributeType) {
+// GetType gets the type property value. Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.
+func (m *AttributeDefinition) GetType()(*AttributeType) {
     if m == nil {
         return nil
     } else {
@@ -270,14 +270,14 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttributeType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(AttributeType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -370,9 +370,9 @@ func (m *AttributeDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -385,7 +385,7 @@ func (m *AttributeDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeDefinition) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -457,8 +457,8 @@ func (m *AttributeDefinition) SetRequired(value *bool)() {
         m.required = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.
-func (m *AttributeDefinition) SetType_escaped(value *AttributeType)() {
+// SetType sets the type property value. Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.
+func (m *AttributeDefinition) SetType(value *AttributeType)() {
     if m != nil {
         m.type_escaped = value
     }

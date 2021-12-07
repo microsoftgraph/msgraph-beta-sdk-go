@@ -38,7 +38,7 @@ func NewCloudPcAuditActor()(*CloudPcAuditActor) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcAuditActor) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -94,8 +94,8 @@ func (m *CloudPcAuditActor) GetServicePrincipalName()(*string) {
         return m.servicePrincipalName
     }
 }
-// GetType_escaped gets the type_escaped property value. The actor type. Possible values include ItPro, Application, Partner and Unknown.
-func (m *CloudPcAuditActor) GetType_escaped()(*CloudPcAuditActorType) {
+// GetType gets the type property value. The actor type. Possible values include ItPro, Application, Partner and Unknown.
+func (m *CloudPcAuditActor) GetType()(*CloudPcAuditActorType) {
     if m == nil {
         return nil
     } else {
@@ -197,14 +197,14 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcAuditActorType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(CloudPcAuditActorType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -299,9 +299,9 @@ func (m *CloudPcAuditActor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -343,7 +343,7 @@ func (m *CloudPcAuditActor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcAuditActor) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -385,8 +385,8 @@ func (m *CloudPcAuditActor) SetServicePrincipalName(value *string)() {
         m.servicePrincipalName = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The actor type. Possible values include ItPro, Application, Partner and Unknown.
-func (m *CloudPcAuditActor) SetType_escaped(value *CloudPcAuditActorType)() {
+// SetType sets the type property value. The actor type. Possible values include ItPro, Application, Partner and Unknown.
+func (m *CloudPcAuditActor) SetType(value *CloudPcAuditActorType)() {
     if m != nil {
         m.type_escaped = value
     }

@@ -51,8 +51,8 @@ func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
         return m.storageInGB
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-func (m *CloudPcServicePlan) GetType_escaped()(*CloudPcServicePlanType) {
+// GetType gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+func (m *CloudPcServicePlan) GetType()(*CloudPcServicePlanType) {
     if m == nil {
         return nil
     } else {
@@ -108,14 +108,14 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcServicePlanType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(CloudPcServicePlanType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -168,9 +168,9 @@ func (m *CloudPcServicePlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -207,8 +207,8 @@ func (m *CloudPcServicePlan) SetStorageInGB(value *int32)() {
         m.storageInGB = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-func (m *CloudPcServicePlan) SetType_escaped(value *CloudPcServicePlanType)() {
+// SetType sets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+func (m *CloudPcServicePlan) SetType(value *CloudPcServicePlanType)() {
     if m != nil {
         m.type_escaped = value
     }

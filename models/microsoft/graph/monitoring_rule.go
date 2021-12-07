@@ -31,7 +31,7 @@ func (m *MonitoringRule) GetAction()(*ifded49a845bbaa9057da6e2cf565863ac34eb797e
         return m.action
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MonitoringRule) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -131,7 +131,7 @@ func (m *MonitoringRule) SetAction(value *ifded49a845bbaa9057da6e2cf565863ac34eb
         m.action = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MonitoringRule) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

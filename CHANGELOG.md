@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.4.2] - 2021-12-07
+
+### Changed
+
+- Fixes an issue where escaped properties serialization would fail https://github.com/microsoftgraph/msgraph-sdk-go/issues/46
+
 ## [0.4.1] - 2021-12-01
 
 ### Changed
