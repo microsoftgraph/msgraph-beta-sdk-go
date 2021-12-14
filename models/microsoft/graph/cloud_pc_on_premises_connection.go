@@ -7,11 +7,11 @@ import (
 // CloudPcOnPremisesConnection 
 type CloudPcOnPremisesConnection struct {
     Entity
-    // The fully qualified domain name (FQDN) of the Active Directory domain you want to join.
+    // The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
     adDomainName *string;
     // The password associated with adDomainUsername.
     adDomainPassword *string;
-    // The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com.
+    // The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
     adDomainUsername *string;
     // The display name for the on-premises connection.
     displayName *string;
@@ -31,7 +31,7 @@ type CloudPcOnPremisesConnection struct {
     subscriptionId *string;
     // The name of the target Azure subscription. Read-only.
     subscriptionName *string;
-    // 
+    // Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
     type_escaped *CloudPcOnPremisesConnectionType;
     // The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
     virtualNetworkId *string;
@@ -43,7 +43,7 @@ func NewCloudPcOnPremisesConnection()(*CloudPcOnPremisesConnection) {
     }
     return m
 }
-// GetAdDomainName gets the adDomainName property value. The fully qualified domain name (FQDN) of the Active Directory domain you want to join.
+// GetAdDomainName gets the adDomainName property value. The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
 func (m *CloudPcOnPremisesConnection) GetAdDomainName()(*string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *CloudPcOnPremisesConnection) GetAdDomainPassword()(*string) {
         return m.adDomainPassword
     }
 }
-// GetAdDomainUsername gets the adDomainUsername property value. The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com.
+// GetAdDomainUsername gets the adDomainUsername property value. The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
 func (m *CloudPcOnPremisesConnection) GetAdDomainUsername()(*string) {
     if m == nil {
         return nil
@@ -139,7 +139,7 @@ func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
         return m.subscriptionName
     }
 }
-// GetType gets the type property value. 
+// GetType gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) GetType()(*CloudPcOnPremisesConnectionType) {
     if m == nil {
         return nil
@@ -399,7 +399,7 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// SetAdDomainName sets the adDomainName property value. The fully qualified domain name (FQDN) of the Active Directory domain you want to join.
+// SetAdDomainName sets the adDomainName property value. The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
 func (m *CloudPcOnPremisesConnection) SetAdDomainName(value *string)() {
     if m != nil {
         m.adDomainName = value
@@ -411,7 +411,7 @@ func (m *CloudPcOnPremisesConnection) SetAdDomainPassword(value *string)() {
         m.adDomainPassword = value
     }
 }
-// SetAdDomainUsername sets the adDomainUsername property value. The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com.
+// SetAdDomainUsername sets the adDomainUsername property value. The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
 func (m *CloudPcOnPremisesConnection) SetAdDomainUsername(value *string)() {
     if m != nil {
         m.adDomainUsername = value
@@ -471,7 +471,7 @@ func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
         m.subscriptionName = value
     }
 }
-// SetType sets the type property value. 
+// SetType sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) SetType(value *CloudPcOnPremisesConnectionType)() {
     if m != nil {
         m.type_escaped = value

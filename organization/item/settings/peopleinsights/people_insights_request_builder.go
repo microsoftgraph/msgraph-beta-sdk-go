@@ -35,7 +35,7 @@ type PeopleInsightsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PeopleInsightsRequestBuilderGetQueryParameters get peopleInsights from organization
+// PeopleInsightsRequestBuilderGetQueryParameters contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 type PeopleInsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewPeopleInsightsRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams["request-raw-url"] = rawUrl
     return NewPeopleInsightsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property peopleInsights for organization
+// CreateDeleteRequestInformation contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *PeopleInsightsRequestBuilder) CreateDeleteRequestInformation(options *PeopleInsightsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *PeopleInsightsRequestBuilder) CreateDeleteRequestInformation(options *P
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get peopleInsights from organization
+// CreateGetRequestInformation contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *PeopleInsightsRequestBuilder) CreateGetRequestInformation(options *PeopleInsightsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *PeopleInsightsRequestBuilder) CreateGetRequestInformation(options *Peop
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property peopleInsights in organization
+// CreatePatchRequestInformation contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *PeopleInsightsRequestBuilder) CreatePatchRequestInformation(options *PeopleInsightsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *PeopleInsightsRequestBuilder) CreatePatchRequestInformation(options *Pe
     }
     return requestInfo, nil
 }
-// Delete delete navigation property peopleInsights for organization
+// Delete contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *PeopleInsightsRequestBuilder) Delete(options *PeopleInsightsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *PeopleInsightsRequestBuilder) Delete(options *PeopleInsightsRequestBuil
     }
     return nil
 }
-// Get get peopleInsights from organization
+// Get contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *PeopleInsightsRequestBuilder) Get(options *PeopleInsightsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InsightsSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *PeopleInsightsRequestBuilder) Get(options *PeopleInsightsRequestBuilder
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InsightsSettings), nil
 }
-// Patch update the navigation property peopleInsights in organization
+// Patch contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *PeopleInsightsRequestBuilder) Patch(options *PeopleInsightsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

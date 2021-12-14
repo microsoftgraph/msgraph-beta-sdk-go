@@ -24,7 +24,7 @@ type Application struct {
     createdOnBehalfOf *DirectoryObject;
     // The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Azure AD sends the token to this redirect URI. Azure AD also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
     defaultRedirectUri *string;
-    // An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+    // Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string;
     // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
     disabledByMicrosoftStatus *string;
@@ -160,7 +160,7 @@ func (m *Application) GetDefaultRedirectUri()(*string) {
         return m.defaultRedirectUri
     }
 }
-// GetDescription gets the description property value. An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// GetDescription gets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -1227,7 +1227,7 @@ func (m *Application) SetDefaultRedirectUri(value *string)() {
         m.defaultRedirectUri = value
     }
 }
-// SetDescription sets the description property value. An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// SetDescription sets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) SetDescription(value *string)() {
     if m != nil {
         m.description = value
