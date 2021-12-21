@@ -10,6 +10,8 @@ type MobileThreatDefenseConnector struct {
     Entity
     // For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune
     allowPartnerToCollectIOSApplicationMetadata *bool;
+    // For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about personally installed applications from Intune
+    allowPartnerToCollectIOSPersonalApplicationMetadata *bool;
     // For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
     androidDeviceBlockedOnMissingPartnerData *bool;
     // For Android, set whether data from the data sync partner should be used during compliance evaluations
@@ -54,6 +56,14 @@ func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSApplicationMet
         return nil
     } else {
         return m.allowPartnerToCollectIOSApplicationMetadata
+    }
+}
+// GetAllowPartnerToCollectIOSPersonalApplicationMetadata gets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about personally installed applications from Intune
+func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSPersonalApplicationMetadata()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.allowPartnerToCollectIOSPersonalApplicationMetadata
     }
 }
 // GetAndroidDeviceBlockedOnMissingPartnerData gets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
@@ -186,6 +196,16 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetAllowPartnerToCollectIOSApplicationMetadata(val)
+        }
+        return nil
+    }
+    res["allowPartnerToCollectIOSPersonalApplicationMetadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowPartnerToCollectIOSPersonalApplicationMetadata(val)
         }
         return nil
     }
@@ -358,6 +378,12 @@ func (m *MobileThreatDefenseConnector) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     {
+        err = writer.WriteBoolValue("allowPartnerToCollectIOSPersonalApplicationMetadata", m.GetAllowPartnerToCollectIOSPersonalApplicationMetadata())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("androidDeviceBlockedOnMissingPartnerData", m.GetAndroidDeviceBlockedOnMissingPartnerData())
         if err != nil {
             return err
@@ -454,6 +480,12 @@ func (m *MobileThreatDefenseConnector) Serialize(writer i04eb5309aeaafadd28374d7
 func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIOSApplicationMetadata(value *bool)() {
     if m != nil {
         m.allowPartnerToCollectIOSApplicationMetadata = value
+    }
+}
+// SetAllowPartnerToCollectIOSPersonalApplicationMetadata sets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about personally installed applications from Intune
+func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIOSPersonalApplicationMetadata(value *bool)() {
+    if m != nil {
+        m.allowPartnerToCollectIOSPersonalApplicationMetadata = value
     }
 }
 // SetAndroidDeviceBlockedOnMissingPartnerData sets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant

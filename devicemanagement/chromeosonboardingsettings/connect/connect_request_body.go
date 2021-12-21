@@ -9,9 +9,9 @@ type ConnectRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    ownerUserPrincipalName *string;
+    ownerAccessToken *string;
     // 
-    serviceAccountCredentials *string;
+    ownerUserPrincipalName *string;
 }
 // NewConnectRequestBody instantiates a new connectRequestBody and sets the default values.
 func NewConnectRequestBody()(*ConnectRequestBody) {
@@ -28,6 +28,14 @@ func (m *ConnectRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetOwnerAccessToken gets the ownerAccessToken property value. 
+func (m *ConnectRequestBody) GetOwnerAccessToken()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ownerAccessToken
+    }
+}
 // GetOwnerUserPrincipalName gets the ownerUserPrincipalName property value. 
 func (m *ConnectRequestBody) GetOwnerUserPrincipalName()(*string) {
     if m == nil {
@@ -36,17 +44,19 @@ func (m *ConnectRequestBody) GetOwnerUserPrincipalName()(*string) {
         return m.ownerUserPrincipalName
     }
 }
-// GetServiceAccountCredentials gets the serviceAccountCredentials property value. 
-func (m *ConnectRequestBody) GetServiceAccountCredentials()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceAccountCredentials
-    }
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConnectRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["ownerAccessToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOwnerAccessToken(val)
+        }
+        return nil
+    }
     res["ownerUserPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -54,16 +64,6 @@ func (m *ConnectRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         }
         if val != nil {
             m.SetOwnerUserPrincipalName(val)
-        }
-        return nil
-    }
-    res["serviceAccountCredentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetServiceAccountCredentials(val)
         }
         return nil
     }
@@ -75,13 +75,13 @@ func (m *ConnectRequestBody) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ConnectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("ownerUserPrincipalName", m.GetOwnerUserPrincipalName())
+        err := writer.WriteStringValue("ownerAccessToken", m.GetOwnerAccessToken())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("serviceAccountCredentials", m.GetServiceAccountCredentials())
+        err := writer.WriteStringValue("ownerUserPrincipalName", m.GetOwnerUserPrincipalName())
         if err != nil {
             return err
         }
@@ -100,15 +100,15 @@ func (m *ConnectRequestBody) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
+// SetOwnerAccessToken sets the ownerAccessToken property value. 
+func (m *ConnectRequestBody) SetOwnerAccessToken(value *string)() {
+    if m != nil {
+        m.ownerAccessToken = value
+    }
+}
 // SetOwnerUserPrincipalName sets the ownerUserPrincipalName property value. 
 func (m *ConnectRequestBody) SetOwnerUserPrincipalName(value *string)() {
     if m != nil {
         m.ownerUserPrincipalName = value
-    }
-}
-// SetServiceAccountCredentials sets the serviceAccountCredentials property value. 
-func (m *ConnectRequestBody) SetServiceAccountCredentials(value *string)() {
-    if m != nil {
-        m.serviceAccountCredentials = value
     }
 }

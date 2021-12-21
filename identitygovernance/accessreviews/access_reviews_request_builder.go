@@ -3,12 +3,14 @@ package accessreviews
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i2f94f891975326a8c09e91ce90a7ad48982e34c989e146e72a088021172831be "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/decisions"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i65800ed62fdf64d2a6b90ada174f2addc07989dabfa5cf284d4e84f60fc2943e "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/policy"
     ia26090068384411e4f1397570769f217531481e6b5d7843821ed1ba88d0bf3f0 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/historydefinitions"
     icdcfab65b3cad0ae0ef323407563924f12617f5594e6a9fb131fba25fa3c0e64 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/definitions"
     i560e03bc7fd4ff380362907aa5dfe4f5629fc0c3ceb16dcb98159089dfc550b7 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/historydefinitions/item"
     i6da4aa0125ca0757188f525aa6935aefda281d0627445ec063c253a0bd2fccb2 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/definitions/item"
+    if6ba574ccfc242ae9fab37ee4d8c66c1f6e0d711919acd230700df4d4f0faea7 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/decisions/item"
 )
 
 // AccessReviewsRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews
@@ -131,6 +133,20 @@ func (m *AccessReviewsRequestBuilder) CreatePatchRequestInformation(options *Acc
         }
     }
     return requestInfo, nil
+}
+func (m *AccessReviewsRequestBuilder) Decisions()(*i2f94f891975326a8c09e91ce90a7ad48982e34c989e146e72a088021172831be.DecisionsRequestBuilder) {
+    return i2f94f891975326a8c09e91ce90a7ad48982e34c989e146e72a088021172831be.NewDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DecisionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.decisions.item collection
+func (m *AccessReviewsRequestBuilder) DecisionsById(id string)(*if6ba574ccfc242ae9fab37ee4d8c66c1f6e0d711919acd230700df4d4f0faea7.AccessReviewInstanceDecisionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["accessReviewInstanceDecisionItem_id"] = id
+    }
+    return if6ba574ccfc242ae9fab37ee4d8c66c1f6e0d711919acd230700df4d4f0faea7.NewAccessReviewInstanceDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *AccessReviewsRequestBuilder) Definitions()(*icdcfab65b3cad0ae0ef323407563924f12617f5594e6a9fb131fba25fa3c0e64.DefinitionsRequestBuilder) {
     return icdcfab65b3cad0ae0ef323407563924f12617f5594e6a9fb131fba25fa3c0e64.NewDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

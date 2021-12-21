@@ -39,7 +39,7 @@ type GroupPolicySettingMapping struct {
     settingName *string;
     // The scope of the setting. Possible values are: unknown, device, user.
     settingScope *GroupPolicySettingScope;
-    // The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings.
+    // The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings, appLockerRuleCollection, dataSourcesSettings, devicesSettings, driveMapSettings, environmentVariables, filesSettings, folderOptions, folders, iniFiles, internetOptions, localUsersAndGroups, networkOptions, networkShares, ntServices, powerOptions, printers, regionalOptionsSettings, registrySettings, scheduledTasks, shortcutSettings, startMenuSettings.
     settingType *GroupPolicySettingType;
     // The value of this group policy setting.
     settingValue *string;
@@ -183,7 +183,7 @@ func (m *GroupPolicySettingMapping) GetSettingScope()(*GroupPolicySettingScope) 
         return m.settingScope
     }
 }
-// GetSettingType gets the settingType property value. The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings.
+// GetSettingType gets the settingType property value. The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings, appLockerRuleCollection, dataSourcesSettings, devicesSettings, driveMapSettings, environmentVariables, filesSettings, folderOptions, folders, iniFiles, internetOptions, localUsersAndGroups, networkOptions, networkShares, ntServices, powerOptions, printers, regionalOptionsSettings, registrySettings, scheduledTasks, shortcutSettings, startMenuSettings.
 func (m *GroupPolicySettingMapping) GetSettingType()(*GroupPolicySettingType) {
     if m == nil {
         return nil
@@ -661,7 +661,7 @@ func (m *GroupPolicySettingMapping) SetSettingScope(value *GroupPolicySettingSco
         m.settingScope = value
     }
 }
-// SetSettingType sets the settingType property value. The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings.
+// SetSettingType sets the settingType property value. The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings, appLockerRuleCollection, dataSourcesSettings, devicesSettings, driveMapSettings, environmentVariables, filesSettings, folderOptions, folders, iniFiles, internetOptions, localUsersAndGroups, networkOptions, networkShares, ntServices, powerOptions, printers, regionalOptionsSettings, registrySettings, scheduledTasks, shortcutSettings, startMenuSettings.
 func (m *GroupPolicySettingMapping) SetSettingType(value *GroupPolicySettingType)() {
     if m != nil {
         m.settingType = value

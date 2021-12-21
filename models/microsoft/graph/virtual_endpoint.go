@@ -17,6 +17,8 @@ type VirtualEndpoint struct {
     galleryImages []CloudPcGalleryImage;
     // A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
     onPremisesConnections []CloudPcOnPremisesConnection;
+    // 
+    organizationSettings *CloudPcOrganizationSettings;
     // Cloud PC provisioning policy.
     provisioningPolicies []CloudPcProvisioningPolicy;
     // Cloud PC service plans.
@@ -71,6 +73,14 @@ func (m *VirtualEndpoint) GetOnPremisesConnections()([]CloudPcOnPremisesConnecti
         return nil
     } else {
         return m.onPremisesConnections
+    }
+}
+// GetOrganizationSettings gets the organizationSettings property value. 
+func (m *VirtualEndpoint) GetOrganizationSettings()(*CloudPcOrganizationSettings) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizationSettings
     }
 }
 // GetProvisioningPolicies gets the provisioningPolicies property value. Cloud PC provisioning policy.
@@ -175,6 +185,16 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
                 res[i] = *(v.(*CloudPcOnPremisesConnection))
             }
             m.SetOnPremisesConnections(res)
+        }
+        return nil
+    }
+    res["organizationSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcOrganizationSettings() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOrganizationSettings(val.(*CloudPcOrganizationSettings))
         }
         return nil
     }
@@ -301,6 +321,12 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
+        err = writer.WriteObjectValue("organizationSettings", m.GetOrganizationSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProvisioningPolicies()))
         for i, v := range m.GetProvisioningPolicies() {
             temp := v
@@ -374,6 +400,12 @@ func (m *VirtualEndpoint) SetGalleryImages(value []CloudPcGalleryImage)() {
 func (m *VirtualEndpoint) SetOnPremisesConnections(value []CloudPcOnPremisesConnection)() {
     if m != nil {
         m.onPremisesConnections = value
+    }
+}
+// SetOrganizationSettings sets the organizationSettings property value. 
+func (m *VirtualEndpoint) SetOrganizationSettings(value *CloudPcOrganizationSettings)() {
+    if m != nil {
+        m.organizationSettings = value
     }
 }
 // SetProvisioningPolicies sets the provisioningPolicies property value. Cloud PC provisioning policy.

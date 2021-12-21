@@ -137,6 +137,7 @@ import (
     id32196fc55917b457bbd1871bdc6d139c27ae935705e050ba07ad3cbe488fddc "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configurationcategories"
     id3e0876e40cd48ccf5e9a480b8e8697ba244031b08e7cdbb1deab6a8c19e09b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthosversionperformance"
     id6a0a568a8b5391c0978e1306dd4c8009bb845bd12cae55656dc3ef30d881a4b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/settingdefinitions"
+    id87b40246ff4ff7be4a52bd06ed0b3f322d8e61c796597f72fb2aced05d602f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/hardwareconfigurations"
     id96351ec964b6d521cfadf892721f0936c7bbafe8e49f74eed57714356f61059 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotsettings"
     ida02017e81fab8cb7fdbc26dd41903047556371b16523bbb0a9c0eaa338cee0d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanagementeligibledevices"
     ida6e5d5d42f79af26c60ef013b6ed96c70c6a6bc2f945a534cef50bd3a19e691 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceenrollmentconfigurations"
@@ -159,6 +160,7 @@ import (
     ieecc9464554ab62dc03bd18e0632d6ca6bab183f34e272de77883f92cba059ec "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/ndesconnectors"
     ief5a78b77c4318683c9519cdb963b9938f0f6fe88c93a0644b54a84a29db4709 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/androidforworksettings"
     iefe3cca68aed1d1ec30796fdd2d77f7d0b8bde4259781e012141d0373e31d616 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/exchangeconnectors"
+    if2e5c934688289d4405d81d96a90f9c4e004ab21595e93684c7b3272712657f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/hardwarepasswordinfo"
     if3725d86243c74aefb922ce3d9a0524f440a1a4a7747d2ca7eb3303e88cb032d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/getrolescopetagsbyidswithids"
     if5272bcac44fcff2621a3e47727572ede92654ccd7e61f5b25dd0d9d4006ed3d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsmalwareinformation"
     if5846307d7d49aff39a1b63a1e8c86d98714534c39b3fb728c1926d50fb78704 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurationsallmanageddevicecertificatestates"
@@ -246,6 +248,7 @@ import (
     ia0852800b0fb3f6f37f8bc0b3fdf0580fb1c740f41fb98716ac863309674ae78 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/grouppolicydefinitionfiles/item"
     ia0faa57714111dca934e9fb5cb1eb0eefb49912efe5d080c1de048d44cfef081 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsdriverupdateprofiles/item"
     ia9ccf093ea8278fac25e51450e7d500826599c72ee56d7375264a7d6960e0e66 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdevicestartupprocesses/item"
+    iaf86f1b4bfc96682961623cdca565162b5bd5dbdee812af9504ee6d115f9febd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/hardwareconfigurations/item"
     ib050cd86e0741e99e937a8678c13a85350f5fec6c1269c9670b260d7a23da5c1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsqualityupdateprofiles/item"
     ib6f585dc104c01583057b54d76b1fb0c1eafc958e07969fbf56c880f993d8ccb "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceenrollmentconfigurations/item"
     ib84454323961957bca882a92bc1df9bfe130cfbf80c192479ef8f5d2e2518e82 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdeviceswithoutcloudidentity/item"
@@ -1195,6 +1198,34 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyUploadedDefinitionFilesById(
         urlTplParams["groupPolicyUploadedDefinitionFile_id"] = id
     }
     return i0688f8f1b8b0e207ef4f894254d945a8088df78859fd09b3901a0852b9ada6bb.NewGroupPolicyUploadedDefinitionFileRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *DeviceManagementRequestBuilder) HardwareConfigurations()(*id87b40246ff4ff7be4a52bd06ed0b3f322d8e61c796597f72fb2aced05d602f2.HardwareConfigurationsRequestBuilder) {
+    return id87b40246ff4ff7be4a52bd06ed0b3f322d8e61c796597f72fb2aced05d602f2.NewHardwareConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// HardwareConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.hardwareConfigurations.item collection
+func (m *DeviceManagementRequestBuilder) HardwareConfigurationsById(id string)(*iaf86f1b4bfc96682961623cdca565162b5bd5dbdee812af9504ee6d115f9febd.HardwareConfigurationRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["hardwareConfiguration_id"] = id
+    }
+    return iaf86f1b4bfc96682961623cdca565162b5bd5dbdee812af9504ee6d115f9febd.NewHardwareConfigurationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *DeviceManagementRequestBuilder) HardwarePasswordInfo()(*if2e5c934688289d4405d81d96a90f9c4e004ab21595e93684c7b3272712657f4.HardwarePasswordInfoRequestBuilder) {
+    return if2e5c934688289d4405d81d96a90f9c4e004ab21595e93684c7b3272712657f4.NewHardwarePasswordInfoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// HardwarePasswordInfoById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.hardwarePasswordInfo.item collection
+func (m *DeviceManagementRequestBuilder) HardwarePasswordInfoById(id string)(*if2e5c934688289d4405d81d96a90f9c4e004ab21595e93684c7b3272712657f4.HardwarePasswordInfoRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["hardwarePasswordInfo_id"] = id
+    }
+    return if2e5c934688289d4405d81d96a90f9c4e004ab21595e93684c7b3272712657f4.NewHardwarePasswordInfoRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceManagementRequestBuilder) ImportedDeviceIdentities()(*i73ae9a38fc9c78be1d48a5912b96fba6b7ce2fc8eff8cd048aff1526f431ee86.ImportedDeviceIdentitiesRequestBuilder) {
     return i73ae9a38fc9c78be1d48a5912b96fba6b7ce2fc8eff8cd048aff1526f431ee86.NewImportedDeviceIdentitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

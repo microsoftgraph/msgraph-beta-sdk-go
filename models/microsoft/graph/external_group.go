@@ -12,7 +12,7 @@ type ExternalGroup struct {
     // The friendly name of the external group. Optional.
     displayName *string;
     // A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
-    members []ExternalGroupMember;
+    members []Identity;
 }
 // NewExternalGroup instantiates a new externalGroup and sets the default values.
 func NewExternalGroup()(*ExternalGroup) {
@@ -38,7 +38,7 @@ func (m *ExternalGroup) GetDisplayName()(*string) {
     }
 }
 // GetMembers gets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
-func (m *ExternalGroup) GetMembers()([]ExternalGroupMember) {
+func (m *ExternalGroup) GetMembers()([]Identity) {
     if m == nil {
         return nil
     } else {
@@ -69,14 +69,14 @@ func (m *ExternalGroup) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExternalGroupMember() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentity() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ExternalGroupMember, len(val))
+            res := make([]Identity, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ExternalGroupMember))
+                res[i] = *(v.(*Identity))
             }
             m.SetMembers(res)
         }
@@ -131,7 +131,7 @@ func (m *ExternalGroup) SetDisplayName(value *string)() {
     }
 }
 // SetMembers sets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
-func (m *ExternalGroup) SetMembers(value []ExternalGroupMember)() {
+func (m *ExternalGroup) SetMembers(value []Identity)() {
     if m != nil {
         m.members = value
     }

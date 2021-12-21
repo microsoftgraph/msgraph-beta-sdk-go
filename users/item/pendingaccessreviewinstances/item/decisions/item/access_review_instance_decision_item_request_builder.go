@@ -4,6 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i407e7c942fbe85193ce2e1d35ec7cff1697fbd67c46b78f4c45991c2c13508c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item/decisions/item/instance"
     i98df9c7f840c9c5c0b12fd428f2fbe2ea965b169f7e863ca7e3667e7cd6f7b1f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item/decisions/item/insights"
     i8ab4f8a4023a5ba0dded9e9af14a7e133a9d36389a5fd6c5d70237f49afb7541 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item/decisions/item/insights/item"
 )
@@ -166,6 +167,9 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) InsightsById(id string)
         urlTplParams["governanceInsight_id"] = id
     }
     return i8ab4f8a4023a5ba0dded9e9af14a7e133a9d36389a5fd6c5d70237f49afb7541.NewGovernanceInsightRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *AccessReviewInstanceDecisionItemRequestBuilder) Instance()(*i407e7c942fbe85193ce2e1d35ec7cff1697fbd67c46b78f4c45991c2c13508c0.InstanceRequestBuilder) {
+    return i407e7c942fbe85193ce2e1d35ec7cff1697fbd67c46b78f4c45991c2c13508c0.NewInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Patch(options *AccessReviewInstanceDecisionItemRequestBuilderPatchOptions)(error) {

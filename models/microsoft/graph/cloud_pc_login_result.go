@@ -9,7 +9,7 @@ import (
 type CloudPcLoginResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'. Read-only.
     time *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
 // NewCloudPcLoginResult instantiates a new cloudPcLoginResult and sets the default values.
@@ -27,7 +27,7 @@ func (m *CloudPcLoginResult) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetTime gets the time property value. 
+// GetTime gets the time property value. The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'. Read-only.
 func (m *CloudPcLoginResult) GetTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *CloudPcLoginResult) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetTime sets the time property value. 
+// SetTime sets the time property value. The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'. Read-only.
 func (m *CloudPcLoginResult) SetTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.time = value

@@ -24,7 +24,7 @@ type TenantStatusInformation struct {
     onboardedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
     onboardingStatus *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingStatus;
-    // 
+    // Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
     tenantOnboardingEligibilityReason *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason;
     // The collection of workload statues for the managed tenant. Optional. Read-only.
     workloadStatuses []WorkloadStatus;
@@ -100,7 +100,7 @@ func (m *TenantStatusInformation) GetOnboardingStatus()(*i5c2592132064055aae4244
         return m.onboardingStatus
     }
 }
-// GetTenantOnboardingEligibilityReason gets the tenantOnboardingEligibilityReason property value. 
+// GetTenantOnboardingEligibilityReason gets the tenantOnboardingEligibilityReason property value. Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) GetTenantOnboardingEligibilityReason()(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason) {
     if m == nil {
         return nil
@@ -341,7 +341,7 @@ func (m *TenantStatusInformation) SetOnboardingStatus(value *i5c2592132064055aae
         m.onboardingStatus = value
     }
 }
-// SetTenantOnboardingEligibilityReason sets the tenantOnboardingEligibilityReason property value. 
+// SetTenantOnboardingEligibilityReason sets the tenantOnboardingEligibilityReason property value. Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) SetTenantOnboardingEligibilityReason(value *i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason)() {
     if m != nil {
         m.tenantOnboardingEligibilityReason = value

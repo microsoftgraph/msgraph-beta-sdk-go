@@ -11,10 +11,12 @@ const (
     INPROGRESS_ONBOARDINGSTATUS
     ONBOARDED_ONBOARDINGSTATUS
     FAILED_ONBOARDINGSTATUS
+    OFFBOARDING_ONBOARDINGSTATUS
+    UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS
 )
 
 func (i OnboardingStatus) String() string {
-    return []string{"UNKNOWN", "INPROGRESS", "ONBOARDED", "FAILED"}[i]
+    return []string{"UNKNOWN", "INPROGRESS", "ONBOARDED", "FAILED", "OFFBOARDING", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseOnboardingStatus(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -26,6 +28,10 @@ func ParseOnboardingStatus(v string) (interface{}, error) {
             return ONBOARDED_ONBOARDINGSTATUS, nil
         case "FAILED":
             return FAILED_ONBOARDINGSTATUS, nil
+        case "OFFBOARDING":
+            return OFFBOARDING_ONBOARDINGSTATUS, nil
+        case "UNKNOWNFUTUREVALUE":
+            return UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS, nil
     }
     return 0, errors.New("Unknown OnboardingStatus value: " + v)
 }

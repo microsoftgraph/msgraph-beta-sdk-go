@@ -11,10 +11,12 @@ const (
     INPROGRESS_CHROMEOSONBOARDINGSTATUS
     ONBOARDED_CHROMEOSONBOARDINGSTATUS
     FAILED_CHROMEOSONBOARDINGSTATUS
+    OFFBOARDING_CHROMEOSONBOARDINGSTATUS
+    UNKNOWNFUTUREVALUE_CHROMEOSONBOARDINGSTATUS
 )
 
 func (i ChromeOSOnboardingStatus) String() string {
-    return []string{"UNKNOWN", "INPROGRESS", "ONBOARDED", "FAILED"}[i]
+    return []string{"UNKNOWN", "INPROGRESS", "ONBOARDED", "FAILED", "OFFBOARDING", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseChromeOSOnboardingStatus(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -26,6 +28,10 @@ func ParseChromeOSOnboardingStatus(v string) (interface{}, error) {
             return ONBOARDED_CHROMEOSONBOARDINGSTATUS, nil
         case "FAILED":
             return FAILED_CHROMEOSONBOARDINGSTATUS, nil
+        case "OFFBOARDING":
+            return OFFBOARDING_CHROMEOSONBOARDINGSTATUS, nil
+        case "UNKNOWNFUTUREVALUE":
+            return UNKNOWNFUTUREVALUE_CHROMEOSONBOARDINGSTATUS, nil
     }
     return 0, errors.New("Unknown ChromeOSOnboardingStatus value: " + v)
 }

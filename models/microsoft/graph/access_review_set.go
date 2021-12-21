@@ -8,6 +8,8 @@ import (
 type AccessReviewSet struct {
     Entity
     // 
+    decisions []AccessReviewInstanceDecisionItem;
+    // 
     definitions []AccessReviewScheduleDefinition;
     // 
     historyDefinitions []AccessReviewHistoryDefinition;
@@ -20,6 +22,14 @@ func NewAccessReviewSet()(*AccessReviewSet) {
         Entity: *NewEntity(),
     }
     return m
+}
+// GetDecisions gets the decisions property value. 
+func (m *AccessReviewSet) GetDecisions()([]AccessReviewInstanceDecisionItem) {
+    if m == nil {
+        return nil
+    } else {
+        return m.decisions
+    }
 }
 // GetDefinitions gets the definitions property value. 
 func (m *AccessReviewSet) GetDefinitions()([]AccessReviewScheduleDefinition) {
@@ -48,6 +58,20 @@ func (m *AccessReviewSet) GetPolicy()(*AccessReviewPolicy) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["decisions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewInstanceDecisionItem() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessReviewInstanceDecisionItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewInstanceDecisionItem))
+            }
+            m.SetDecisions(res)
+        }
+        return nil
+    }
     res["definitions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewScheduleDefinition() })
         if err != nil {
@@ -98,6 +122,17 @@ func (m *AccessReviewSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         return err
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDecisions()))
+        for i, v := range m.GetDecisions() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("decisions", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDefinitions()))
         for i, v := range m.GetDefinitions() {
             temp := v
@@ -126,6 +161,12 @@ func (m *AccessReviewSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     return nil
+}
+// SetDecisions sets the decisions property value. 
+func (m *AccessReviewSet) SetDecisions(value []AccessReviewInstanceDecisionItem)() {
+    if m != nil {
+        m.decisions = value
+    }
 }
 // SetDefinitions sets the definitions property value. 
 func (m *AccessReviewSet) SetDefinitions(value []AccessReviewScheduleDefinition)() {

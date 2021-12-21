@@ -4,6 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ieb032a617179e578a1cb7b0a970de4c13f637ffcdf6aa0bf7ace1202832d7fdf "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/assignments/delta"
 )
 
 // AssignmentsRequestBuilder builds and executes requests for operations under \education\me\assignments
@@ -112,6 +113,10 @@ func (m *AssignmentsRequestBuilder) CreatePostRequestInformation(options *Assign
         }
     }
     return requestInfo, nil
+}
+// Delta builds and executes requests for operations under \education\me\assignments\microsoft.graph.delta()
+func (m *AssignmentsRequestBuilder) Delta()(*ieb032a617179e578a1cb7b0a970de4c13f637ffcdf6aa0bf7ace1202832d7fdf.DeltaRequestBuilder) {
+    return ieb032a617179e578a1cb7b0a970de4c13f637ffcdf6aa0bf7ace1202832d7fdf.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get list of assignments for the user. Nullable.
 func (m *AssignmentsRequestBuilder) Get(options *AssignmentsRequestBuilderGetOptions)(*AssignmentsResponse, error) {

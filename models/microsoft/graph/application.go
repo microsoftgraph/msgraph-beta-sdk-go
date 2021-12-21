@@ -16,6 +16,8 @@ type Application struct {
     appManagementPolicies []AppManagementPolicy;
     // The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
     appRoles []AppRole;
+    // Specifies the certification status of the application.
+    certification *Certification;
     // The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
     connectorGroup *ConnectorGroup;
     // The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
@@ -24,7 +26,7 @@ type Application struct {
     createdOnBehalfOf *DirectoryObject;
     // The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Azure AD sends the token to this redirect URI. Azure AD also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
     defaultRedirectUri *string;
-    // An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+    // Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string;
     // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
     disabledByMicrosoftStatus *string;
@@ -128,6 +130,14 @@ func (m *Application) GetAppRoles()([]AppRole) {
         return m.appRoles
     }
 }
+// GetCertification gets the certification property value. Specifies the certification status of the application.
+func (m *Application) GetCertification()(*Certification) {
+    if m == nil {
+        return nil
+    } else {
+        return m.certification
+    }
+}
 // GetConnectorGroup gets the connectorGroup property value. The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
 func (m *Application) GetConnectorGroup()(*ConnectorGroup) {
     if m == nil {
@@ -160,7 +170,7 @@ func (m *Application) GetDefaultRedirectUri()(*string) {
         return m.defaultRedirectUri
     }
 }
-// GetDescription gets the description property value. An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// GetDescription gets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -464,6 +474,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
                 res[i] = *(v.(*AppRole))
             }
             m.SetAppRoles(res)
+        }
+        return nil
+    }
+    res["certification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCertification() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCertification(val.(*Certification))
         }
         return nil
     }
@@ -917,6 +937,12 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
+        err = writer.WriteObjectValue("certification", m.GetCertification())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("connectorGroup", m.GetConnectorGroup())
         if err != nil {
             return err
@@ -1203,6 +1229,12 @@ func (m *Application) SetAppRoles(value []AppRole)() {
         m.appRoles = value
     }
 }
+// SetCertification sets the certification property value. Specifies the certification status of the application.
+func (m *Application) SetCertification(value *Certification)() {
+    if m != nil {
+        m.certification = value
+    }
+}
 // SetConnectorGroup sets the connectorGroup property value. The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
 func (m *Application) SetConnectorGroup(value *ConnectorGroup)() {
     if m != nil {
@@ -1227,7 +1259,7 @@ func (m *Application) SetDefaultRedirectUri(value *string)() {
         m.defaultRedirectUri = value
     }
 }
-// SetDescription sets the description property value. An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// SetDescription sets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) SetDescription(value *string)() {
     if m != nil {
         m.description = value

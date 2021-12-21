@@ -140,6 +140,10 @@ type DeviceManagement struct {
     groupPolicyObjectFiles []GroupPolicyObjectFile;
     // The available group policy uploaded definition files for this account.
     groupPolicyUploadedDefinitionFiles []GroupPolicyUploadedDefinitionFile;
+    // The hardware configurations for this account.
+    hardwareConfigurations []HardwareConfiguration;
+    // The hardware password info for this account.
+    hardwarePasswordInfo []HardwarePasswordInfo;
     // The imported device identities.
     importedDeviceIdentities []ImportedDeviceIdentity;
     // Collection of imported Windows autopilot devices.
@@ -872,6 +876,22 @@ func (m *DeviceManagement) GetGroupPolicyUploadedDefinitionFiles()([]GroupPolicy
         return nil
     } else {
         return m.groupPolicyUploadedDefinitionFiles
+    }
+}
+// GetHardwareConfigurations gets the hardwareConfigurations property value. The hardware configurations for this account.
+func (m *DeviceManagement) GetHardwareConfigurations()([]HardwareConfiguration) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hardwareConfigurations
+    }
+}
+// GetHardwarePasswordInfo gets the hardwarePasswordInfo property value. The hardware password info for this account.
+func (m *DeviceManagement) GetHardwarePasswordInfo()([]HardwarePasswordInfo) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hardwarePasswordInfo
     }
 }
 // GetImportedDeviceIdentities gets the importedDeviceIdentities property value. The imported device identities.
@@ -2538,6 +2558,34 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
                 res[i] = *(v.(*GroupPolicyUploadedDefinitionFile))
             }
             m.SetGroupPolicyUploadedDefinitionFiles(res)
+        }
+        return nil
+    }
+    res["hardwareConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewHardwareConfiguration() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HardwareConfiguration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*HardwareConfiguration))
+            }
+            m.SetHardwareConfigurations(res)
+        }
+        return nil
+    }
+    res["hardwarePasswordInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewHardwarePasswordInfo() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HardwarePasswordInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*HardwarePasswordInfo))
+            }
+            m.SetHardwarePasswordInfo(res)
         }
         return nil
     }
@@ -4506,6 +4554,28 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHardwareConfigurations()))
+        for i, v := range m.GetHardwareConfigurations() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("hardwareConfigurations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHardwarePasswordInfo()))
+        for i, v := range m.GetHardwarePasswordInfo() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("hardwarePasswordInfo", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetImportedDeviceIdentities()))
         for i, v := range m.GetImportedDeviceIdentities() {
             temp := v
@@ -5872,6 +5942,18 @@ func (m *DeviceManagement) SetGroupPolicyObjectFiles(value []GroupPolicyObjectFi
 func (m *DeviceManagement) SetGroupPolicyUploadedDefinitionFiles(value []GroupPolicyUploadedDefinitionFile)() {
     if m != nil {
         m.groupPolicyUploadedDefinitionFiles = value
+    }
+}
+// SetHardwareConfigurations sets the hardwareConfigurations property value. The hardware configurations for this account.
+func (m *DeviceManagement) SetHardwareConfigurations(value []HardwareConfiguration)() {
+    if m != nil {
+        m.hardwareConfigurations = value
+    }
+}
+// SetHardwarePasswordInfo sets the hardwarePasswordInfo property value. The hardware password info for this account.
+func (m *DeviceManagement) SetHardwarePasswordInfo(value []HardwarePasswordInfo)() {
+    if m != nil {
+        m.hardwarePasswordInfo = value
     }
 }
 // SetImportedDeviceIdentities sets the importedDeviceIdentities property value. The imported device identities.

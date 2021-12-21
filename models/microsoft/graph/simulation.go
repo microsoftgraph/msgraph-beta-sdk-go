@@ -36,8 +36,6 @@ type Simulation struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
     launchDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
-    mode *SimulationMode;
     // Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
     payloadDeliveryPlatform *PayloadDeliveryPlatform;
     // Source of phishing payload in the attack simulation and training campaign. Possible values are: unknown, global, tenant, unknownFutureValue.
@@ -170,14 +168,6 @@ func (m *Simulation) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return nil
     } else {
         return m.launchDateTime
-    }
-}
-// GetMode gets the mode property value. 
-func (m *Simulation) GetMode()(*SimulationMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mode
     }
 }
 // GetPayloadDeliveryPlatform gets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
@@ -381,17 +371,6 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         }
         return nil
     }
-    res["mode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            cast := val.(SimulationMode)
-            m.SetMode(&cast)
-        }
-        return nil
-    }
     res["payloadDeliveryPlatform"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParsePayloadDeliveryPlatform)
         if err != nil {
@@ -564,13 +543,6 @@ func (m *Simulation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    if m.GetMode() != nil {
-        cast := m.GetMode().String()
-        err = writer.WriteStringValue("mode", &cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetPayloadDeliveryPlatform() != nil {
         cast := m.GetPayloadDeliveryPlatform().String()
         err = writer.WriteStringValue("payloadDeliveryPlatform", &cast)
@@ -702,12 +674,6 @@ func (m *Simulation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
 func (m *Simulation) SetLaunchDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.launchDateTime = value
-    }
-}
-// SetMode sets the mode property value. 
-func (m *Simulation) SetMode(value *SimulationMode)() {
-    if m != nil {
-        m.mode = value
     }
 }
 // SetPayloadDeliveryPlatform sets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.

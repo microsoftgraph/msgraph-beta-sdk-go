@@ -21,7 +21,7 @@ type CloudPcProvisioningPolicy struct {
     imageId *string;
     // The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
     imageType *CloudPcProvisioningPolicyImageType;
-    // 
+    // The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.
     microsoftManagedDesktop *MicrosoftManagedDesktop;
     // The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
     onPremisesConnectionId *string;
@@ -89,7 +89,7 @@ func (m *CloudPcProvisioningPolicy) GetImageType()(*CloudPcProvisioningPolicyIma
         return m.imageType
     }
 }
-// GetMicrosoftManagedDesktop gets the microsoftManagedDesktop property value. 
+// GetMicrosoftManagedDesktop gets the microsoftManagedDesktop property value. The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.
 func (m *CloudPcProvisioningPolicy) GetMicrosoftManagedDesktop()(*MicrosoftManagedDesktop) {
     if m == nil {
         return nil
@@ -318,7 +318,7 @@ func (m *CloudPcProvisioningPolicy) SetImageType(value *CloudPcProvisioningPolic
         m.imageType = value
     }
 }
-// SetMicrosoftManagedDesktop sets the microsoftManagedDesktop property value. 
+// SetMicrosoftManagedDesktop sets the microsoftManagedDesktop property value. The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.
 func (m *CloudPcProvisioningPolicy) SetMicrosoftManagedDesktop(value *MicrosoftManagedDesktop)() {
     if m != nil {
         m.microsoftManagedDesktop = value
