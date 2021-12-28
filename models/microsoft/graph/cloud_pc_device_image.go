@@ -24,7 +24,7 @@ type CloudPcDeviceImage struct {
     sourceImageResourceId *string;
     // The status of the image on Cloud PC. Possible values are: pending, ready, failed.
     status *CloudPcDeviceImageStatus;
-    // The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, and sourceImageInvalid.
+    // The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
     statusDetails *CloudPcDeviceImageStatusDetails;
     // The image version. For example: 0.0.1, 1.5.13.
     version *string;
@@ -100,7 +100,7 @@ func (m *CloudPcDeviceImage) GetStatus()(*CloudPcDeviceImageStatus) {
         return m.status
     }
 }
-// GetStatusDetails gets the statusDetails property value. The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, and sourceImageInvalid.
+// GetStatusDetails gets the statusDetails property value. The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
 func (m *CloudPcDeviceImage) GetStatusDetails()(*CloudPcDeviceImageStatusDetails) {
     if m == nil {
         return nil
@@ -346,7 +346,7 @@ func (m *CloudPcDeviceImage) SetStatus(value *CloudPcDeviceImageStatus)() {
         m.status = value
     }
 }
-// SetStatusDetails sets the statusDetails property value. The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, and sourceImageInvalid.
+// SetStatusDetails sets the statusDetails property value. The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
 func (m *CloudPcDeviceImage) SetStatusDetails(value *CloudPcDeviceImageStatusDetails)() {
     if m != nil {
         m.statusDetails = value

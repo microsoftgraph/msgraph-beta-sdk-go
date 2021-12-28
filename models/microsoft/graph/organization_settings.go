@@ -7,9 +7,9 @@ import (
 // OrganizationSettings 
 type OrganizationSettings struct {
     Entity
-    // Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.
+    // Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
     itemInsights *InsightsSettings;
-    // 
+    // Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
     peopleInsights *InsightsSettings;
     // Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
     profileCardProperties []ProfileCardProperty;
@@ -21,7 +21,7 @@ func NewOrganizationSettings()(*OrganizationSettings) {
     }
     return m
 }
-// GetItemInsights gets the itemInsights property value. Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.
+// GetItemInsights gets the itemInsights property value. Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
 func (m *OrganizationSettings) GetItemInsights()(*InsightsSettings) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *OrganizationSettings) GetItemInsights()(*InsightsSettings) {
         return m.itemInsights
     }
 }
-// GetPeopleInsights gets the peopleInsights property value. 
+// GetPeopleInsights gets the peopleInsights property value. Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *OrganizationSettings) GetPeopleInsights()(*InsightsSettings) {
     if m == nil {
         return nil
@@ -118,13 +118,13 @@ func (m *OrganizationSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// SetItemInsights sets the itemInsights property value. Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.
+// SetItemInsights sets the itemInsights property value. Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
 func (m *OrganizationSettings) SetItemInsights(value *InsightsSettings)() {
     if m != nil {
         m.itemInsights = value
     }
 }
-// SetPeopleInsights sets the peopleInsights property value. 
+// SetPeopleInsights sets the peopleInsights property value. Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
 func (m *OrganizationSettings) SetPeopleInsights(value *InsightsSettings)() {
     if m != nil {
         m.peopleInsights = value

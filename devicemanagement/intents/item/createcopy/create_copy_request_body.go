@@ -9,6 +9,8 @@ type CreateCopyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
+    description *string;
+    // 
     displayName *string;
 }
 // NewCreateCopyRequestBody instantiates a new createCopyRequestBody and sets the default values.
@@ -26,6 +28,14 @@ func (m *CreateCopyRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetDescription gets the description property value. 
+func (m *CreateCopyRequestBody) GetDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.description
+    }
+}
 // GetDisplayName gets the displayName property value. 
 func (m *CreateCopyRequestBody) GetDisplayName()(*string) {
     if m == nil {
@@ -37,6 +47,16 @@ func (m *CreateCopyRequestBody) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CreateCopyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDescription(val)
+        }
+        return nil
+    }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -55,6 +75,12 @@ func (m *CreateCopyRequestBody) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *CreateCopyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
+        err := writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -72,6 +98,12 @@ func (m *CreateCopyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 func (m *CreateCopyRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetDescription sets the description property value. 
+func (m *CreateCopyRequestBody) SetDescription(value *string)() {
+    if m != nil {
+        m.description = value
     }
 }
 // SetDisplayName sets the displayName property value. 

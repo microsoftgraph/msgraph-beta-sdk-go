@@ -7,9 +7,9 @@ import (
 // InsightsSettings 
 type InsightsSettings struct {
     Entity
-    // 
+    // The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
     disabledForGroup *string;
-    // 
+    // true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
     isEnabledInOrganization *bool;
 }
 // NewInsightsSettings instantiates a new insightsSettings and sets the default values.
@@ -19,7 +19,7 @@ func NewInsightsSettings()(*InsightsSettings) {
     }
     return m
 }
-// GetDisabledForGroup gets the disabledForGroup property value. 
+// GetDisabledForGroup gets the disabledForGroup property value. The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
 func (m *InsightsSettings) GetDisabledForGroup()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *InsightsSettings) GetDisabledForGroup()(*string) {
         return m.disabledForGroup
     }
 }
-// GetIsEnabledInOrganization gets the isEnabledInOrganization property value. 
+// GetIsEnabledInOrganization gets the isEnabledInOrganization property value. true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
 func (m *InsightsSettings) GetIsEnabledInOrganization()(*bool) {
     if m == nil {
         return nil
@@ -83,13 +83,13 @@ func (m *InsightsSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// SetDisabledForGroup sets the disabledForGroup property value. 
+// SetDisabledForGroup sets the disabledForGroup property value. The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
 func (m *InsightsSettings) SetDisabledForGroup(value *string)() {
     if m != nil {
         m.disabledForGroup = value
     }
 }
-// SetIsEnabledInOrganization sets the isEnabledInOrganization property value. 
+// SetIsEnabledInOrganization sets the isEnabledInOrganization property value. true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
 func (m *InsightsSettings) SetIsEnabledInOrganization(value *bool)() {
     if m != nil {
         m.isEnabledInOrganization = value

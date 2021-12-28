@@ -52,7 +52,6 @@ import (
     idc692bbd177fe7be2a1d1da6b8436f4433611cc7abff49f069c1a2e0e027e466 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getunhealthyfirewallsummaryreport"
     idf207024cf64a316ff9c7fa94616461d390fe5977d0687432c3309d78ba029ac "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getpolicynoncompliancesummaryreport"
     ie6deaed0072be9659d87a74fe95df383a715951d0aea4be5ba203ca890b3c041 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getactivemalwaresummaryreport"
-    iea8e9eceb6829c23694025f220d78170445e17ec05d7949319503a9dfef6f2dc "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/reportschedules"
     ieab9e3b30d90701370eeeb662f2e677617ef77e81a7f0a2a9d2c1d94fab9b995 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getwindowsupdatealertsperpolicyperdevicereport"
     if4b9775de84c27e94434be0280aaa9a055f85419e5b5857a66bb9b9eed3280f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getunhealthyfirewallreport"
     if7d41ece7783a25f185dc8071dfbd2363227c4fb6d8e08d2a9412f206c7279a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/exportjobs"
@@ -60,7 +59,6 @@ import (
     if876c79e09c00c1578bab3da9f4fcb0cc6d4ae3f9b2e792a2412130b488fcdc0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getuserinstallstatusreport"
     if8e67aebead4149dc709bc45370408435c48c5beafd2a598a3552c78692904c1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationsettingnoncompliancereport"
     i2bf9ce7fb7bd0fa9fc75119c61d3de5e2e31a446f3ebba40eaf7f289544d9943 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/cachedreportconfigurations/item"
-    id6b331ae2f0cb2af60ba8b44c9282d7a2ff2e031c38004db15739c1402e76714 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/reportschedules/item"
     if607fcbf4c23ed3b14db77b88b46a29896a853e746acfffd003d215b0fb83a02 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/exportjobs/item"
 )
 
@@ -404,18 +402,4 @@ func (m *ReportsRequestBuilder) Patch(options *ReportsRequestBuilderPatchOptions
         return err
     }
     return nil
-}
-func (m *ReportsRequestBuilder) ReportSchedules()(*iea8e9eceb6829c23694025f220d78170445e17ec05d7949319503a9dfef6f2dc.ReportSchedulesRequestBuilder) {
-    return iea8e9eceb6829c23694025f220d78170445e17ec05d7949319503a9dfef6f2dc.NewReportSchedulesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ReportSchedulesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.reports.reportSchedules.item collection
-func (m *ReportsRequestBuilder) ReportSchedulesById(id string)(*id6b331ae2f0cb2af60ba8b44c9282d7a2ff2e031c38004db15739c1402e76714.DeviceManagementReportScheduleRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["deviceManagementReportSchedule_id"] = id
-    }
-    return id6b331ae2f0cb2af60ba8b44c9282d7a2ff2e031c38004db15739c1402e76714.NewDeviceManagementReportScheduleRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

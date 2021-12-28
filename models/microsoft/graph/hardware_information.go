@@ -62,10 +62,16 @@ type HardwareInformation struct {
     subnetAddress *string;
     // Subscriber carrier of the device
     subscriberCarrier *string;
+    // BIOS version as reported by SMBIOS
+    systemManagementBIOSVersion *string;
     // Total storage space of the device.
     totalStorageSpace *int64;
+    // The identifying information that uniquely names the TPM manufacturer
+    tpmManufacturer *string;
     // String that specifies the specification version.
     tpmSpecificationVersion *string;
+    // The version of the TPM, as specified by the manufacturer
+    tpmVersion *string;
     // WiFi MAC address of the device
     wifiMac *string;
 }
@@ -300,6 +306,14 @@ func (m *HardwareInformation) GetSubscriberCarrier()(*string) {
         return m.subscriberCarrier
     }
 }
+// GetSystemManagementBIOSVersion gets the systemManagementBIOSVersion property value. BIOS version as reported by SMBIOS
+func (m *HardwareInformation) GetSystemManagementBIOSVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.systemManagementBIOSVersion
+    }
+}
 // GetTotalStorageSpace gets the totalStorageSpace property value. Total storage space of the device.
 func (m *HardwareInformation) GetTotalStorageSpace()(*int64) {
     if m == nil {
@@ -308,12 +322,28 @@ func (m *HardwareInformation) GetTotalStorageSpace()(*int64) {
         return m.totalStorageSpace
     }
 }
+// GetTpmManufacturer gets the tpmManufacturer property value. The identifying information that uniquely names the TPM manufacturer
+func (m *HardwareInformation) GetTpmManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tpmManufacturer
+    }
+}
 // GetTpmSpecificationVersion gets the tpmSpecificationVersion property value. String that specifies the specification version.
 func (m *HardwareInformation) GetTpmSpecificationVersion()(*string) {
     if m == nil {
         return nil
     } else {
         return m.tpmSpecificationVersion
+    }
+}
+// GetTpmVersion gets the tpmVersion property value. The version of the TPM, as specified by the manufacturer
+func (m *HardwareInformation) GetTpmVersion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tpmVersion
     }
 }
 // GetWifiMac gets the wifiMac property value. WiFi MAC address of the device
@@ -604,6 +634,16 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
+    res["systemManagementBIOSVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSystemManagementBIOSVersion(val)
+        }
+        return nil
+    }
     res["totalStorageSpace"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -614,6 +654,16 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
+    res["tpmManufacturer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTpmManufacturer(val)
+        }
+        return nil
+    }
     res["tpmSpecificationVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -621,6 +671,16 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
         }
         if val != nil {
             m.SetTpmSpecificationVersion(val)
+        }
+        return nil
+    }
+    res["tpmVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTpmVersion(val)
         }
         return nil
     }
@@ -812,13 +872,31 @@ func (m *HardwareInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
+        err := writer.WriteStringValue("systemManagementBIOSVersion", m.GetSystemManagementBIOSVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt64Value("totalStorageSpace", m.GetTotalStorageSpace())
         if err != nil {
             return err
         }
     }
     {
+        err := writer.WriteStringValue("tpmManufacturer", m.GetTpmManufacturer())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("tpmSpecificationVersion", m.GetTpmSpecificationVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("tpmVersion", m.GetTpmVersion())
         if err != nil {
             return err
         }
@@ -1005,16 +1083,34 @@ func (m *HardwareInformation) SetSubscriberCarrier(value *string)() {
         m.subscriberCarrier = value
     }
 }
+// SetSystemManagementBIOSVersion sets the systemManagementBIOSVersion property value. BIOS version as reported by SMBIOS
+func (m *HardwareInformation) SetSystemManagementBIOSVersion(value *string)() {
+    if m != nil {
+        m.systemManagementBIOSVersion = value
+    }
+}
 // SetTotalStorageSpace sets the totalStorageSpace property value. Total storage space of the device.
 func (m *HardwareInformation) SetTotalStorageSpace(value *int64)() {
     if m != nil {
         m.totalStorageSpace = value
     }
 }
+// SetTpmManufacturer sets the tpmManufacturer property value. The identifying information that uniquely names the TPM manufacturer
+func (m *HardwareInformation) SetTpmManufacturer(value *string)() {
+    if m != nil {
+        m.tpmManufacturer = value
+    }
+}
 // SetTpmSpecificationVersion sets the tpmSpecificationVersion property value. String that specifies the specification version.
 func (m *HardwareInformation) SetTpmSpecificationVersion(value *string)() {
     if m != nil {
         m.tpmSpecificationVersion = value
+    }
+}
+// SetTpmVersion sets the tpmVersion property value. The version of the TPM, as specified by the manufacturer
+func (m *HardwareInformation) SetTpmVersion(value *string)() {
+    if m != nil {
+        m.tpmVersion = value
     }
 }
 // SetWifiMac sets the wifiMac property value. WiFi MAC address of the device

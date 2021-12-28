@@ -87,6 +87,7 @@ import (
     icfe0fa0def53eb8ead53a9c7e14cfa7b99aa67d289bbd5786ae5577155574961 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/reminderviewwithstartdatetimewithenddatetime"
     id9569f521a060e524166adc08c72508f54ed83854d63694ef777241e7b5c7d54 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/wipemanagedappregistrationbydevicetag"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    idd48ab55f5d1da1d01a7519debf68afdf64ff43e4e90500cda63eeb76402e355 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/tasks"
     ie92980fd5edaafba8f00572025a84bd9779e54cea477e030692babbc26d2d460 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances"
     iedfcf53badc587bde8ee6b1219608face4b6f46e0c89c51a0078a7a22748abef "github.com/microsoftgraph/msgraph-beta-sdk-go/me/findmeetingtimes"
     if0ad722a34fdbb042c20f761755bd2d4f9dddac3c4c1392721a1ccd0148b3751 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/drive"
@@ -832,6 +833,9 @@ func (m *MeRequestBuilder) SendMail()(*ib4c685509c6fd2907ec160446f20f296a4dbe123
 }
 func (m *MeRequestBuilder) Settings()(*iaa6383ba91d1d220deef98e9ce97a49a107e15b05eb6b2b3ce3c9d6c48e4f326.SettingsRequestBuilder) {
     return iaa6383ba91d1d220deef98e9ce97a49a107e15b05eb6b2b3ce3c9d6c48e4f326.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *MeRequestBuilder) Tasks()(*idd48ab55f5d1da1d01a7519debf68afdf64ff43e4e90500cda63eeb76402e355.TasksRequestBuilder) {
+    return idd48ab55f5d1da1d01a7519debf68afdf64ff43e4e90500cda63eeb76402e355.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *MeRequestBuilder) Teamwork()(*i7b613e1f229abaea577330e8430e25c30f3890e517f541d6c2fa0bc338c85ebe.TeamworkRequestBuilder) {
     return i7b613e1f229abaea577330e8430e25c30f3890e517f541d6c2fa0bc338c85ebe.NewTeamworkRequestBuilderInternal(m.pathParameters, m.requestAdapter);

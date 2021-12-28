@@ -13,6 +13,8 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     deviceManufacturer *string;
     // The model name of the device.
     deviceModel *string;
+    // The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+    healthStatus *UserExperienceAnalyticsHealthState;
     // The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
     meanTimeToFailureInMinutes *int32;
     // The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -49,6 +51,14 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetDeviceModel(
         return nil
     } else {
         return m.deviceModel
+    }
+}
+// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.healthStatus
     }
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
@@ -105,6 +115,17 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         }
         if val != nil {
             m.SetDeviceModel(val)
+        }
+        return nil
+    }
+    res["healthStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserExperienceAnalyticsHealthState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            cast := val.(UserExperienceAnalyticsHealthState)
+            m.SetHealthStatus(&cast)
         }
         return nil
     }
@@ -167,6 +188,13 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) Serialize(write
             return err
         }
     }
+    if m.GetHealthStatus() != nil {
+        cast := m.GetHealthStatus().String()
+        err = writer.WriteStringValue("healthStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteInt32Value("meanTimeToFailureInMinutes", m.GetMeanTimeToFailureInMinutes())
         if err != nil {
@@ -203,6 +231,12 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetDeviceManufa
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetDeviceModel(value *string)() {
     if m != nil {
         m.deviceModel = value
+    }
+}
+// SetHealthStatus sets the healthStatus property value. The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
+    if m != nil {
+        m.healthStatus = value
     }
 }
 // SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647

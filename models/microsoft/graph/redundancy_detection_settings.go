@@ -10,11 +10,11 @@ type RedundancyDetectionSettings struct {
     additionalData map[string]interface{};
     // Indicates whether email threading and near duplicate detection are enabled.
     isEnabled *bool;
-    // See Minimum/maximum number of words to learn more.
+    // Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
     maxWords *int32;
-    // See Minimum/maximum number of words to learn more.
+    // Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
     minWords *int32;
-    // See Document and email similarity threshold to learn more.
+    // Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
     similarityThreshold *int32;
 }
 // NewRedundancyDetectionSettings instantiates a new redundancyDetectionSettings and sets the default values.
@@ -40,7 +40,7 @@ func (m *RedundancyDetectionSettings) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// GetMaxWords gets the maxWords property value. See Minimum/maximum number of words to learn more.
+// GetMaxWords gets the maxWords property value. Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) GetMaxWords()(*int32) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *RedundancyDetectionSettings) GetMaxWords()(*int32) {
         return m.maxWords
     }
 }
-// GetMinWords gets the minWords property value. See Minimum/maximum number of words to learn more.
+// GetMinWords gets the minWords property value. Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) GetMinWords()(*int32) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *RedundancyDetectionSettings) GetMinWords()(*int32) {
         return m.minWords
     }
 }
-// GetSimilarityThreshold gets the similarityThreshold property value. See Document and email similarity threshold to learn more.
+// GetSimilarityThreshold gets the similarityThreshold property value. Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
 func (m *RedundancyDetectionSettings) GetSimilarityThreshold()(*int32) {
     if m == nil {
         return nil
@@ -158,19 +158,19 @@ func (m *RedundancyDetectionSettings) SetIsEnabled(value *bool)() {
         m.isEnabled = value
     }
 }
-// SetMaxWords sets the maxWords property value. See Minimum/maximum number of words to learn more.
+// SetMaxWords sets the maxWords property value. Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) SetMaxWords(value *int32)() {
     if m != nil {
         m.maxWords = value
     }
 }
-// SetMinWords sets the minWords property value. See Minimum/maximum number of words to learn more.
+// SetMinWords sets the minWords property value. Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) SetMinWords(value *int32)() {
     if m != nil {
         m.minWords = value
     }
 }
-// SetSimilarityThreshold sets the similarityThreshold property value. See Document and email similarity threshold to learn more.
+// SetSimilarityThreshold sets the similarityThreshold property value. Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
 func (m *RedundancyDetectionSettings) SetSimilarityThreshold(value *int32)() {
     if m != nil {
         m.similarityThreshold = value

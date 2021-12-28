@@ -8,9 +8,9 @@ import (
 type MicrosoftManagedDesktop struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
     profile *string;
-    // 
+    // Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
     type_escaped *MicrosoftManagedDesktopType;
 }
 // NewMicrosoftManagedDesktop instantiates a new microsoftManagedDesktop and sets the default values.
@@ -28,7 +28,7 @@ func (m *MicrosoftManagedDesktop) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetProfile gets the profile property value. 
+// GetProfile gets the profile property value. The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
 func (m *MicrosoftManagedDesktop) GetProfile()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *MicrosoftManagedDesktop) GetProfile()(*string) {
         return m.profile
     }
 }
-// GetType gets the type property value. 
+// GetType gets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
 func (m *MicrosoftManagedDesktop) GetType()(*MicrosoftManagedDesktopType) {
     if m == nil {
         return nil
@@ -102,13 +102,13 @@ func (m *MicrosoftManagedDesktop) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetProfile sets the profile property value. 
+// SetProfile sets the profile property value. The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
 func (m *MicrosoftManagedDesktop) SetProfile(value *string)() {
     if m != nil {
         m.profile = value
     }
 }
-// SetType sets the type property value. 
+// SetType sets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
 func (m *MicrosoftManagedDesktop) SetType(value *MicrosoftManagedDesktopType)() {
     if m != nil {
         m.type_escaped = value

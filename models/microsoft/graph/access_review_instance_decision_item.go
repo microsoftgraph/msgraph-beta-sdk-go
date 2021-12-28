@@ -20,6 +20,8 @@ type AccessReviewInstanceDecisionItem struct {
     decision *string;
     // 
     insights []GovernanceInsight;
+    // There is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
+    instance *AccessReviewInstance;
     // Justification left by the reviewer when they made the decision.
     justification *string;
     // Every decision item in an access review represents a principal's access to a resource. This property represents details of the principal. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is 'Bob' and the resource is 'Sales'. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.
@@ -92,6 +94,14 @@ func (m *AccessReviewInstanceDecisionItem) GetInsights()([]GovernanceInsight) {
         return nil
     } else {
         return m.insights
+    }
+}
+// GetInstance gets the instance property value. There is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
+func (m *AccessReviewInstanceDecisionItem) GetInstance()(*AccessReviewInstance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.instance
     }
 }
 // GetJustification gets the justification property value. Justification left by the reviewer when they made the decision.
@@ -230,6 +240,16 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
                 res[i] = *(v.(*GovernanceInsight))
             }
             m.SetInsights(res)
+        }
+        return nil
+    }
+    res["instance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewInstance() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInstance(val.(*AccessReviewInstance))
         }
         return nil
     }
@@ -376,6 +396,12 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i04eb5309aeaafadd283
         }
     }
     {
+        err = writer.WriteObjectValue("instance", m.GetInstance())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("justification", m.GetJustification())
         if err != nil {
             return err
@@ -465,6 +491,12 @@ func (m *AccessReviewInstanceDecisionItem) SetDecision(value *string)() {
 func (m *AccessReviewInstanceDecisionItem) SetInsights(value []GovernanceInsight)() {
     if m != nil {
         m.insights = value
+    }
+}
+// SetInstance sets the instance property value. There is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
+func (m *AccessReviewInstanceDecisionItem) SetInstance(value *AccessReviewInstance)() {
+    if m != nil {
+        m.instance = value
     }
 }
 // SetJustification sets the justification property value. Justification left by the reviewer when they made the decision.

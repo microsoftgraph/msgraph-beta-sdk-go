@@ -12,7 +12,7 @@ type ChromeOSOnboardingSettings struct {
     lastDirectorySyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The ChromebookTenant's LastModifiedDateTime
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed.
+    // The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.
     onboardingStatus *OnboardingStatus;
     // The ChromebookTenant's OwnerUserPrincipalName
     ownerUserPrincipalName *string;
@@ -40,7 +40,7 @@ func (m *ChromeOSOnboardingSettings) GetLastModifiedDateTime()(*i336074805fc8539
         return m.lastModifiedDateTime
     }
 }
-// GetOnboardingStatus gets the onboardingStatus property value. The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed.
+// GetOnboardingStatus gets the onboardingStatus property value. The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.
 func (m *ChromeOSOnboardingSettings) GetOnboardingStatus()(*OnboardingStatus) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *ChromeOSOnboardingSettings) SetLastModifiedDateTime(value *i336074805fc
         m.lastModifiedDateTime = value
     }
 }
-// SetOnboardingStatus sets the onboardingStatus property value. The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed.
+// SetOnboardingStatus sets the onboardingStatus property value. The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.
 func (m *ChromeOSOnboardingSettings) SetOnboardingStatus(value *OnboardingStatus)() {
     if m != nil {
         m.onboardingStatus = value

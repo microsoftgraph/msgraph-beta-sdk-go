@@ -37,7 +37,7 @@ type WindowsProtectionStateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// WindowsProtectionStateRequestBuilderGetQueryParameters the device protection status.
+// WindowsProtectionStateRequestBuilderGetQueryParameters the device protection status. This property is read-only.
 type WindowsProtectionStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -74,7 +74,7 @@ func NewWindowsProtectionStateRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsProtectionStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the device protection status.
+// CreateDeleteRequestInformation the device protection status. This property is read-only.
 func (m *WindowsProtectionStateRequestBuilder) CreateDeleteRequestInformation(options *WindowsProtectionStateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *WindowsProtectionStateRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the device protection status.
+// CreateGetRequestInformation the device protection status. This property is read-only.
 func (m *WindowsProtectionStateRequestBuilder) CreateGetRequestInformation(options *WindowsProtectionStateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *WindowsProtectionStateRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the device protection status.
+// CreatePatchRequestInformation the device protection status. This property is read-only.
 func (m *WindowsProtectionStateRequestBuilder) CreatePatchRequestInformation(options *WindowsProtectionStateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,7 +129,7 @@ func (m *WindowsProtectionStateRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Delete the device protection status.
+// Delete the device protection status. This property is read-only.
 func (m *WindowsProtectionStateRequestBuilder) Delete(options *WindowsProtectionStateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,7 +155,7 @@ func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareStateById(id strin
     }
     return i7c28f247d1352ac8e9e8461bd9fb2ffbf0472cfcabfbfd3171c743b4b6ce4e64.NewWindowsDeviceMalwareStateRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get the device protection status.
+// Get the device protection status. This property is read-only.
 func (m *WindowsProtectionStateRequestBuilder) Get(options *WindowsProtectionStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsProtectionState, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,7 +167,7 @@ func (m *WindowsProtectionStateRequestBuilder) Get(options *WindowsProtectionSta
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsProtectionState), nil
 }
-// Patch the device protection status.
+// Patch the device protection status. This property is read-only.
 func (m *WindowsProtectionStateRequestBuilder) Patch(options *WindowsProtectionStateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

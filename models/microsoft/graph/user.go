@@ -34,7 +34,7 @@ type User struct {
     authentication *Authentication;
     // The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
     birthday *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq and not).
+    // The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
     businessPhones []string;
     // The user's primary calendar. Read-only.
     calendar *Calendar;
@@ -180,7 +180,7 @@ type User struct {
     onPremisesDistinguishedName *string;
     // Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
     onPremisesDomainName *string;
-    // Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select. Supports $filter (eq, not, ge, le, in, and eq on null values).
+    // Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. These extension attributes are also known as Exchange custom attributes 1-15.
     onPremisesExtensionAttributes *OnPremisesExtensionAttributes;
     // This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..
     onPremisesImmutableId *string;
@@ -262,6 +262,8 @@ type User struct {
     streetAddress *string;
     // The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     surname *string;
+    // 
+    tasks *Tasks;
     // A container for Microsoft Teams features available for the user. Read-only. Nullable.
     teamwork *UserTeamwork;
     // Represents the To Do services available to a user.
@@ -392,7 +394,7 @@ func (m *User) GetBirthday()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec7
         return m.birthday
     }
 }
-// GetBusinessPhones gets the businessPhones property value. The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq and not).
+// GetBusinessPhones gets the businessPhones property value. The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
 func (m *User) GetBusinessPhones()([]string) {
     if m == nil {
         return nil
@@ -976,7 +978,7 @@ func (m *User) GetOnPremisesDomainName()(*string) {
         return m.onPremisesDomainName
     }
 }
-// GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select. Supports $filter (eq, not, ge, le, in, and eq on null values).
+// GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. These extension attributes are also known as Exchange custom attributes 1-15.
 func (m *User) GetOnPremisesExtensionAttributes()(*OnPremisesExtensionAttributes) {
     if m == nil {
         return nil
@@ -1302,6 +1304,14 @@ func (m *User) GetSurname()(*string) {
         return nil
     } else {
         return m.surname
+    }
+}
+// GetTasks gets the tasks property value. 
+func (m *User) GetTasks()(*Tasks) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tasks
     }
 }
 // GetTeamwork gets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
@@ -2877,6 +2887,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         return nil
     }
+    res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTasks() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTasks(val.(*Tasks))
+        }
+        return nil
+    }
     res["teamwork"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserTeamwork() })
         if err != nil {
@@ -3992,6 +4012,12 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     {
+        err = writer.WriteObjectValue("tasks", m.GetTasks())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("teamwork", m.GetTeamwork())
         if err != nil {
             return err
@@ -4145,7 +4171,7 @@ func (m *User) SetBirthday(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391
         m.birthday = value
     }
 }
-// SetBusinessPhones sets the businessPhones property value. The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq and not).
+// SetBusinessPhones sets the businessPhones property value. The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
 func (m *User) SetBusinessPhones(value []string)() {
     if m != nil {
         m.businessPhones = value
@@ -4583,7 +4609,7 @@ func (m *User) SetOnPremisesDomainName(value *string)() {
         m.onPremisesDomainName = value
     }
 }
-// SetOnPremisesExtensionAttributes sets the onPremisesExtensionAttributes property value. Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select. Supports $filter (eq, not, ge, le, in, and eq on null values).
+// SetOnPremisesExtensionAttributes sets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. These extension attributes are also known as Exchange custom attributes 1-15.
 func (m *User) SetOnPremisesExtensionAttributes(value *OnPremisesExtensionAttributes)() {
     if m != nil {
         m.onPremisesExtensionAttributes = value
@@ -4827,6 +4853,12 @@ func (m *User) SetStreetAddress(value *string)() {
 func (m *User) SetSurname(value *string)() {
     if m != nil {
         m.surname = value
+    }
+}
+// SetTasks sets the tasks property value. 
+func (m *User) SetTasks(value *Tasks)() {
+    if m != nil {
+        m.tasks = value
     }
 }
 // SetTeamwork sets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
