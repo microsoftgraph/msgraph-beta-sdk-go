@@ -15,6 +15,8 @@ type PlayLostModeSoundRequestBuilder struct {
 }
 // PlayLostModeSoundRequestBuilderPostOptions options for Post
 type PlayLostModeSoundRequestBuilderPostOptions struct {
+    // 
+    Body *PlayLostModeSoundRequestBody;
     // Request headers
     H map[string]string;
     // Request options
@@ -41,12 +43,13 @@ func NewPlayLostModeSoundRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams["request-raw-url"] = rawUrl
     return NewPlayLostModeSoundRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation remote lock
+// CreatePostRequestInformation play lost mode sound
 func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformation(options *PlayLostModeSoundRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.POST
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H
     }
@@ -58,7 +61,7 @@ func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Post remote lock
+// Post play lost mode sound
 func (m *PlayLostModeSoundRequestBuilder) Post(options *PlayLostModeSoundRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

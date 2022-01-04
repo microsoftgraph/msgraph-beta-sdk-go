@@ -7,7 +7,7 @@ import (
 // DeviceConfigurationAssignment 
 type DeviceConfigurationAssignment struct {
     Entity
-    // The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
+    // The admin intent to apply or remove the profile. Possible values are: apply, remove.
     intent *DeviceConfigAssignmentIntent;
     // The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
     source *DeviceAndAppManagementAssignmentSource;
@@ -23,7 +23,7 @@ func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {
     }
     return m
 }
-// GetIntent gets the intent property value. The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
+// GetIntent gets the intent property value. The admin intent to apply or remove the profile. Possible values are: apply, remove.
 func (m *DeviceConfigurationAssignment) GetIntent()(*DeviceConfigAssignmentIntent) {
     if m == nil {
         return nil
@@ -139,7 +139,7 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// SetIntent sets the intent property value. The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
+// SetIntent sets the intent property value. The admin intent to apply or remove the profile. Possible values are: apply, remove.
 func (m *DeviceConfigurationAssignment) SetIntent(value *DeviceConfigAssignmentIntent)() {
     if m != nil {
         m.intent = value

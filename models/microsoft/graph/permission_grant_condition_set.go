@@ -7,7 +7,7 @@ import (
 // PermissionGrantConditionSet 
 type PermissionGrantConditionSet struct {
     Entity
-    // 
+    // Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
     certifiedClientApplicationsOnly *bool;
     // A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
     clientApplicationIds []string;
@@ -33,7 +33,7 @@ func NewPermissionGrantConditionSet()(*PermissionGrantConditionSet) {
     }
     return m
 }
-// GetCertifiedClientApplicationsOnly gets the certifiedClientApplicationsOnly property value. 
+// GetCertifiedClientApplicationsOnly gets the certifiedClientApplicationsOnly property value. Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
 func (m *PermissionGrantConditionSet) GetCertifiedClientApplicationsOnly()(*bool) {
     if m == nil {
         return nil
@@ -283,7 +283,7 @@ func (m *PermissionGrantConditionSet) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// SetCertifiedClientApplicationsOnly sets the certifiedClientApplicationsOnly property value. 
+// SetCertifiedClientApplicationsOnly sets the certifiedClientApplicationsOnly property value. Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
 func (m *PermissionGrantConditionSet) SetCertifiedClientApplicationsOnly(value *bool)() {
     if m != nil {
         m.certifiedClientApplicationsOnly = value

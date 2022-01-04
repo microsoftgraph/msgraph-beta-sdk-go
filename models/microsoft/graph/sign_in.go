@@ -28,7 +28,7 @@ type SignIn struct {
     authenticationRequirementPolicies []AuthenticationRequirementPolicy;
     // 
     autonomousSystemNumber *int32;
-    // Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP. Supports $filter (eq operator only).
+    // Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange Active Sync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
     clientAppUsed *string;
     // Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).
     conditionalAccessStatus *ConditionalAccessStatus;
@@ -204,7 +204,7 @@ func (m *SignIn) GetAutonomousSystemNumber()(*int32) {
         return m.autonomousSystemNumber
     }
 }
-// GetClientAppUsed gets the clientAppUsed property value. Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP. Supports $filter (eq operator only).
+// GetClientAppUsed gets the clientAppUsed property value. Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange Active Sync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
 func (m *SignIn) GetClientAppUsed()(*string) {
     if m == nil {
         return nil
@@ -1575,7 +1575,7 @@ func (m *SignIn) SetAutonomousSystemNumber(value *int32)() {
         m.autonomousSystemNumber = value
     }
 }
-// SetClientAppUsed sets the clientAppUsed property value. Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP. Supports $filter (eq operator only).
+// SetClientAppUsed sets the clientAppUsed property value. Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange Active Sync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
 func (m *SignIn) SetClientAppUsed(value *string)() {
     if m != nil {
         m.clientAppUsed = value

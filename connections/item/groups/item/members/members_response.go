@@ -12,7 +12,7 @@ type MembersResponse struct {
     // 
     nextLink *string;
     // 
-    value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExternalGroupMember;
+    value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Identity;
 }
 // NewMembersResponse instantiates a new membersResponse and sets the default values.
 func NewMembersResponse()(*MembersResponse) {
@@ -38,7 +38,7 @@ func (m *MembersResponse) GetNextLink()(*string) {
     }
 }
 // GetValue gets the value property value. 
-func (m *MembersResponse) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExternalGroupMember) {
+func (m *MembersResponse) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Identity) {
     if m == nil {
         return nil
     } else {
@@ -59,14 +59,14 @@ func (m *MembersResponse) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewExternalGroupMember() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewIdentity() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExternalGroupMember, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Identity, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExternalGroupMember))
+                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Identity))
             }
             m.SetValue(res)
         }
@@ -117,7 +117,7 @@ func (m *MembersResponse) SetNextLink(value *string)() {
     }
 }
 // SetValue sets the value property value. 
-func (m *MembersResponse) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ExternalGroupMember)() {
+func (m *MembersResponse) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Identity)() {
     if m != nil {
         m.value = value
     }

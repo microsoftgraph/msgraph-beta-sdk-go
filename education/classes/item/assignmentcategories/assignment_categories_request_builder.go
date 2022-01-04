@@ -4,6 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i1c6c9d864a42e056527be944bb84769eeb04493572a388ecb16f6f2efab7a722 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/classes/item/assignmentcategories/delta"
 )
 
 // AssignmentCategoriesRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignmentCategories
@@ -112,6 +113,10 @@ func (m *AssignmentCategoriesRequestBuilder) CreatePostRequestInformation(option
         }
     }
     return requestInfo, nil
+}
+// Delta builds and executes requests for operations under \education\classes\{educationClass-id}\assignmentCategories\microsoft.graph.delta()
+func (m *AssignmentCategoriesRequestBuilder) Delta()(*i1c6c9d864a42e056527be944bb84769eeb04493572a388ecb16f6f2efab7a722.DeltaRequestBuilder) {
+    return i1c6c9d864a42e056527be944bb84769eeb04493572a388ecb16f6f2efab7a722.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get assignmentCategories from education
 func (m *AssignmentCategoriesRequestBuilder) Get(options *AssignmentCategoriesRequestBuilderGetOptions)(*AssignmentCategoriesResponse, error) {

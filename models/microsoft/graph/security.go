@@ -9,6 +9,8 @@ type Security struct {
     Entity
     // Read-only. Nullable.
     alerts []Alert;
+    // 
+    alerts_v2 []Alert_v2;
     // Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
     attackSimulation *AttackSimulationRoot;
     // 
@@ -51,6 +53,14 @@ func (m *Security) GetAlerts()([]Alert) {
         return nil
     } else {
         return m.alerts
+    }
+}
+// GetAlerts_v2 gets the alerts_v2 property value. 
+func (m *Security) GetAlerts_v2()([]Alert_v2) {
+    if m == nil {
+        return nil
+    } else {
+        return m.alerts_v2
     }
 }
 // GetAttackSimulation gets the attackSimulation property value. Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
@@ -179,6 +189,20 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
                 res[i] = *(v.(*Alert))
             }
             m.SetAlerts(res)
+        }
+        return nil
+    }
+    res["alerts_v2"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAlert_v2() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Alert_v2, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Alert_v2))
+            }
+            m.SetAlerts_v2(res)
         }
         return nil
     }
@@ -397,6 +421,17 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAlerts_v2()))
+        for i, v := range m.GetAlerts_v2() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("alerts_v2", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("attackSimulation", m.GetAttackSimulation())
         if err != nil {
             return err
@@ -551,6 +586,12 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 func (m *Security) SetAlerts(value []Alert)() {
     if m != nil {
         m.alerts = value
+    }
+}
+// SetAlerts_v2 sets the alerts_v2 property value. 
+func (m *Security) SetAlerts_v2(value []Alert_v2)() {
+    if m != nil {
+        m.alerts_v2 = value
     }
 }
 // SetAttackSimulation sets the attackSimulation property value. Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.

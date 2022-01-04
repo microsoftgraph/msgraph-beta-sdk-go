@@ -182,7 +182,7 @@ type ManagedDevice struct {
     wiFiMacAddress *string;
     // Count of active malware for this windows device. This property is read-only.
     windowsActiveMalwareCount *int32;
-    // The device protection status.
+    // The device protection status. This property is read-only.
     windowsProtectionState *WindowsProtectionState;
     // Count of remediated malware for this windows device. This property is read-only.
     windowsRemediatedMalwareCount *int32;
@@ -890,7 +890,7 @@ func (m *ManagedDevice) GetWindowsActiveMalwareCount()(*int32) {
         return m.windowsActiveMalwareCount
     }
 }
-// GetWindowsProtectionState gets the windowsProtectionState property value. The device protection status.
+// GetWindowsProtectionState gets the windowsProtectionState property value. The device protection status. This property is read-only.
 func (m *ManagedDevice) GetWindowsProtectionState()(*WindowsProtectionState) {
     if m == nil {
         return nil
@@ -3012,7 +3012,7 @@ func (m *ManagedDevice) SetWindowsActiveMalwareCount(value *int32)() {
         m.windowsActiveMalwareCount = value
     }
 }
-// SetWindowsProtectionState sets the windowsProtectionState property value. The device protection status.
+// SetWindowsProtectionState sets the windowsProtectionState property value. The device protection status. This property is read-only.
 func (m *ManagedDevice) SetWindowsProtectionState(value *WindowsProtectionState)() {
     if m != nil {
         m.windowsProtectionState = value

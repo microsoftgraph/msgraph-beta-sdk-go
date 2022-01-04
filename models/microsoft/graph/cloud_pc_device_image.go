@@ -10,7 +10,7 @@ type CloudPcDeviceImage struct {
     Entity
     // The image's display name.
     displayName *string;
-    // 
+    // The date the image became unavailable.
     expirationDate *string;
     // The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -18,13 +18,13 @@ type CloudPcDeviceImage struct {
     operatingSystem *string;
     // The image's OS build version. For example: 1909.
     osBuildNumber *string;
-    // 
+    // The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
     osStatus *CloudPcDeviceImageOsStatus;
     // The ID of the source image resource on Azure. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'.
     sourceImageResourceId *string;
     // The status of the image on Cloud PC. Possible values are: pending, ready, failed.
     status *CloudPcDeviceImageStatus;
-    // The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, and sourceImageInvalid.
+    // The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
     statusDetails *CloudPcDeviceImageStatusDetails;
     // The image version. For example: 0.0.1, 1.5.13.
     version *string;
@@ -44,7 +44,7 @@ func (m *CloudPcDeviceImage) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetExpirationDate gets the expirationDate property value. 
+// GetExpirationDate gets the expirationDate property value. The date the image became unavailable.
 func (m *CloudPcDeviceImage) GetExpirationDate()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *CloudPcDeviceImage) GetOsBuildNumber()(*string) {
         return m.osBuildNumber
     }
 }
-// GetOsStatus gets the osStatus property value. 
+// GetOsStatus gets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
 func (m *CloudPcDeviceImage) GetOsStatus()(*CloudPcDeviceImageOsStatus) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *CloudPcDeviceImage) GetStatus()(*CloudPcDeviceImageStatus) {
         return m.status
     }
 }
-// GetStatusDetails gets the statusDetails property value. The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, and sourceImageInvalid.
+// GetStatusDetails gets the statusDetails property value. The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
 func (m *CloudPcDeviceImage) GetStatusDetails()(*CloudPcDeviceImageStatusDetails) {
     if m == nil {
         return nil
@@ -304,7 +304,7 @@ func (m *CloudPcDeviceImage) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetExpirationDate sets the expirationDate property value. 
+// SetExpirationDate sets the expirationDate property value. The date the image became unavailable.
 func (m *CloudPcDeviceImage) SetExpirationDate(value *string)() {
     if m != nil {
         m.expirationDate = value
@@ -328,7 +328,7 @@ func (m *CloudPcDeviceImage) SetOsBuildNumber(value *string)() {
         m.osBuildNumber = value
     }
 }
-// SetOsStatus sets the osStatus property value. 
+// SetOsStatus sets the osStatus property value. The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
 func (m *CloudPcDeviceImage) SetOsStatus(value *CloudPcDeviceImageOsStatus)() {
     if m != nil {
         m.osStatus = value
@@ -346,7 +346,7 @@ func (m *CloudPcDeviceImage) SetStatus(value *CloudPcDeviceImageStatus)() {
         m.status = value
     }
 }
-// SetStatusDetails sets the statusDetails property value. The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, and sourceImageInvalid.
+// SetStatusDetails sets the statusDetails property value. The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
 func (m *CloudPcDeviceImage) SetStatusDetails(value *CloudPcDeviceImageStatusDetails)() {
     if m != nil {
         m.statusDetails = value

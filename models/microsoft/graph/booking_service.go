@@ -7,15 +7,17 @@ import (
 // BookingService 
 type BookingService struct {
     BookingNamedEntity
-    // 
+    // Additional information that is sent to the customer when an appointment is confirmed.
     additionalInformation *string;
+    // Contains the set of custom questions associated with a particular service.
+    customQuestions []BookingQuestionAssignment;
     // The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
     defaultDuration *string;
     // The default physical location for the service.
     defaultLocation *Location;
     // The default monetary price for the service.
     defaultPrice *float64;
-    // The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet.
+    // The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
     defaultPriceType *BookingPriceType;
     // The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
     defaultReminders []BookingReminder;
@@ -25,6 +27,8 @@ type BookingService struct {
     isHiddenFromCustomers *bool;
     // True indicates that the appointments for the service will be held online. Default value is false.
     isLocationOnline *bool;
+    // The maximum number of customers allowed in a service.
+    maximumAttendeesCount *int32;
     // Additional information about this service.
     notes *string;
     // The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
@@ -47,12 +51,20 @@ func NewBookingService()(*BookingService) {
     }
     return m
 }
-// GetAdditionalInformation gets the additionalInformation property value. 
+// GetAdditionalInformation gets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
 func (m *BookingService) GetAdditionalInformation()(*string) {
     if m == nil {
         return nil
     } else {
         return m.additionalInformation
+    }
+}
+// GetCustomQuestions gets the customQuestions property value. Contains the set of custom questions associated with a particular service.
+func (m *BookingService) GetCustomQuestions()([]BookingQuestionAssignment) {
+    if m == nil {
+        return nil
+    } else {
+        return m.customQuestions
     }
 }
 // GetDefaultDuration gets the defaultDuration property value. The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
@@ -79,7 +91,7 @@ func (m *BookingService) GetDefaultPrice()(*float64) {
         return m.defaultPrice
     }
 }
-// GetDefaultPriceType gets the defaultPriceType property value. The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet.
+// GetDefaultPriceType gets the defaultPriceType property value. The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
 func (m *BookingService) GetDefaultPriceType()(*BookingPriceType) {
     if m == nil {
         return nil
@@ -117,6 +129,14 @@ func (m *BookingService) GetIsLocationOnline()(*bool) {
         return nil
     } else {
         return m.isLocationOnline
+    }
+}
+// GetMaximumAttendeesCount gets the maximumAttendeesCount property value. The maximum number of customers allowed in a service.
+func (m *BookingService) GetMaximumAttendeesCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.maximumAttendeesCount
     }
 }
 // GetNotes gets the notes property value. Additional information about this service.
@@ -185,6 +205,20 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         }
         if val != nil {
             m.SetAdditionalInformation(val)
+        }
+        return nil
+    }
+    res["customQuestions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingQuestionAssignment() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]BookingQuestionAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BookingQuestionAssignment))
+            }
+            m.SetCustomQuestions(res)
         }
         return nil
     }
@@ -270,6 +304,16 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         }
         if val != nil {
             m.SetIsLocationOnline(val)
+        }
+        return nil
+    }
+    res["maximumAttendeesCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMaximumAttendeesCount(val)
         }
         return nil
     }
@@ -365,6 +409,17 @@ func (m *BookingService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomQuestions()))
+        for i, v := range m.GetCustomQuestions() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("customQuestions", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("defaultDuration", m.GetDefaultDuration())
         if err != nil {
             return err
@@ -419,6 +474,12 @@ func (m *BookingService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
+        err = writer.WriteInt32Value("maximumAttendeesCount", m.GetMaximumAttendeesCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("notes", m.GetNotes())
         if err != nil {
             return err
@@ -462,10 +523,16 @@ func (m *BookingService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// SetAdditionalInformation sets the additionalInformation property value. 
+// SetAdditionalInformation sets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
 func (m *BookingService) SetAdditionalInformation(value *string)() {
     if m != nil {
         m.additionalInformation = value
+    }
+}
+// SetCustomQuestions sets the customQuestions property value. Contains the set of custom questions associated with a particular service.
+func (m *BookingService) SetCustomQuestions(value []BookingQuestionAssignment)() {
+    if m != nil {
+        m.customQuestions = value
     }
 }
 // SetDefaultDuration sets the defaultDuration property value. The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
@@ -486,7 +553,7 @@ func (m *BookingService) SetDefaultPrice(value *float64)() {
         m.defaultPrice = value
     }
 }
-// SetDefaultPriceType sets the defaultPriceType property value. The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet.
+// SetDefaultPriceType sets the defaultPriceType property value. The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
 func (m *BookingService) SetDefaultPriceType(value *BookingPriceType)() {
     if m != nil {
         m.defaultPriceType = value
@@ -514,6 +581,12 @@ func (m *BookingService) SetIsHiddenFromCustomers(value *bool)() {
 func (m *BookingService) SetIsLocationOnline(value *bool)() {
     if m != nil {
         m.isLocationOnline = value
+    }
+}
+// SetMaximumAttendeesCount sets the maximumAttendeesCount property value. The maximum number of customers allowed in a service.
+func (m *BookingService) SetMaximumAttendeesCount(value *int32)() {
+    if m != nil {
+        m.maximumAttendeesCount = value
     }
 }
 // SetNotes sets the notes property value. Additional information about this service.

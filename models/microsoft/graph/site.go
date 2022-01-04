@@ -29,6 +29,8 @@ type Site struct {
     lists []List;
     // Calls the OneNote service for notebook related operations.
     onenote *Onenote;
+    // 
+    operations []RichLongRunningOperation;
     // The collection of pages in the SitePages list in this site.
     pages []SitePage;
     // The permissions associated with the site. Nullable.
@@ -137,6 +139,14 @@ func (m *Site) GetOnenote()(*Onenote) {
         return nil
     } else {
         return m.onenote
+    }
+}
+// GetOperations gets the operations property value. 
+func (m *Site) GetOperations()([]RichLongRunningOperation) {
+    if m == nil {
+        return nil
+    } else {
+        return m.operations
     }
 }
 // GetPages gets the pages property value. The collection of pages in the SitePages list in this site.
@@ -332,6 +342,20 @@ func (m *Site) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         return nil
     }
+    res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRichLongRunningOperation() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RichLongRunningOperation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RichLongRunningOperation))
+            }
+            m.SetOperations(res)
+        }
+        return nil
+    }
     res["pages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSitePage() })
         if err != nil {
@@ -522,6 +546,17 @@ func (m *Site) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
+        for i, v := range m.GetOperations() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("operations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPages()))
         for i, v := range m.GetPages() {
             temp := v
@@ -644,6 +679,12 @@ func (m *Site) SetLists(value []List)() {
 func (m *Site) SetOnenote(value *Onenote)() {
     if m != nil {
         m.onenote = value
+    }
+}
+// SetOperations sets the operations property value. 
+func (m *Site) SetOperations(value []RichLongRunningOperation)() {
+    if m != nil {
+        m.operations = value
     }
 }
 // SetPages sets the pages property value. The collection of pages in the SitePages list in this site.

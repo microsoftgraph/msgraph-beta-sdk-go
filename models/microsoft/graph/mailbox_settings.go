@@ -22,6 +22,8 @@ type MailboxSettings struct {
     timeFormat *string;
     // The default time zone for the user's mailbox.
     timeZone *string;
+    // The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.
+    userPurpose *UserPurpose;
     // 
     userPurposeV2 *MailboxRecipientType;
     // The days of the week and hours in a specific time zone that the user works.
@@ -96,6 +98,14 @@ func (m *MailboxSettings) GetTimeZone()(*string) {
         return nil
     } else {
         return m.timeZone
+    }
+}
+// GetUserPurpose gets the userPurpose property value. The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.
+func (m *MailboxSettings) GetUserPurpose()(*UserPurpose) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userPurpose
     }
 }
 // GetUserPurposeV2 gets the userPurposeV2 property value. 
@@ -188,6 +198,17 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
+    res["userPurpose"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserPurpose)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            cast := val.(UserPurpose)
+            m.SetUserPurpose(&cast)
+        }
+        return nil
+    }
     res["userPurposeV2"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseMailboxRecipientType)
         if err != nil {
@@ -259,6 +280,13 @@ func (m *MailboxSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
+    if m.GetUserPurpose() != nil {
+        cast := m.GetUserPurpose().String()
+        err := writer.WriteStringValue("userPurpose", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserPurposeV2() != nil {
         cast := m.GetUserPurposeV2().String()
         err := writer.WriteStringValue("userPurposeV2", &cast)
@@ -326,6 +354,12 @@ func (m *MailboxSettings) SetTimeFormat(value *string)() {
 func (m *MailboxSettings) SetTimeZone(value *string)() {
     if m != nil {
         m.timeZone = value
+    }
+}
+// SetUserPurpose sets the userPurpose property value. The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.
+func (m *MailboxSettings) SetUserPurpose(value *UserPurpose)() {
+    if m != nil {
+        m.userPurpose = value
     }
 }
 // SetUserPurposeV2 sets the userPurposeV2 property value. 

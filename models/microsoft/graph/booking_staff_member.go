@@ -11,7 +11,7 @@ type BookingStaffMember struct {
     availabilityIsAffectedByPersonalCalendar *bool;
     // Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
     colorIndex *int32;
-    // The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, scheduler, and member. Required.
+    // The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.
     role *BookingStaffRole;
     // The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
     timeZone *string;
@@ -43,7 +43,7 @@ func (m *BookingStaffMember) GetColorIndex()(*int32) {
         return m.colorIndex
     }
 }
-// GetRole gets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, scheduler, and member. Required.
+// GetRole gets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.
 func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
     if m == nil {
         return nil
@@ -210,7 +210,7 @@ func (m *BookingStaffMember) SetColorIndex(value *int32)() {
         m.colorIndex = value
     }
 }
-// SetRole sets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, scheduler, and member. Required.
+// SetRole sets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.
 func (m *BookingStaffMember) SetRole(value *BookingStaffRole)() {
     if m != nil {
         m.role = value

@@ -12,6 +12,7 @@ import (
     i81db0892066e847c456de63f4c19382f89016247d0403ce885a78520fdcd01b2 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/usersecurityprofiles"
     i8ae7bba33296af81c9eae761d1a04dfc084176f7cefbeb91b73b5b37bbb03740 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/providertenantsettings"
     ib0ce1c8104cd7a5487ab293f5f33f3c3b896da30437f31a1bb830fffeca99765 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securityactions"
+    ic9ba9daf256a77044250cba0d8c29ae1ae3e69cd91e81b4a7aba1988ececf405 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/alerts_v2"
     icabca6351261bc62cf0a59e4be2a3d081990a9a025d76f7a2849d5c1be3089b7 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/runhuntingquery"
     id43f72338affca62b04ede5a8930eef2eacb7985a0d9ba5d084163b59793c1b0 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securescores"
     id8c8c6e6d2248957fbc7631aef94353af5a458e67dcc26feaa6a1450a99a895c "github.com/microsoftgraph/msgraph-beta-sdk-go/security/ipsecurityprofiles"
@@ -20,6 +21,7 @@ import (
     i02e0bbeb2df2eda7dbc98813d493b8564c05050583278d44a701c5e5b6ef886a "github.com/microsoftgraph/msgraph-beta-sdk-go/security/hostsecurityprofiles/item"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i0905673ef4d7fa54e4d3f55e349406fd6862ddc6c802fb42ff1e5afa87694e6e "github.com/microsoftgraph/msgraph-beta-sdk-go/security/domainsecurityprofiles/item"
+    i18f494f2b6028fa48209e2ed1901867809ed07f584269e2fa79310996bdc0c55 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/alerts_v2/item"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i5a3d2f037bd277d4a881c48a1993939f3df188957e325d6ae0bdf67636fcf03b "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securescorecontrolprofiles/item"
     i5c9089aa1bb65758fcfbff1d8a7aa9b5deeb5741c421c67322898649fd582848 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/tiindicators/item"
@@ -74,6 +76,20 @@ type SecurityRequestBuilderPatchOptions struct {
 }
 func (m *SecurityRequestBuilder) Alerts()(*i30697897f04d53b804bcad1f0153ad552b622f468be9ca14198e001717fcbdd9.AlertsRequestBuilder) {
     return i30697897f04d53b804bcad1f0153ad552b622f468be9ca14198e001717fcbdd9.NewAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *SecurityRequestBuilder) Alerts_v2()(*ic9ba9daf256a77044250cba0d8c29ae1ae3e69cd91e81b4a7aba1988ececf405.Alerts_v2RequestBuilder) {
+    return ic9ba9daf256a77044250cba0d8c29ae1ae3e69cd91e81b4a7aba1988ececf405.NewAlerts_v2RequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Alerts_v2ById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.alerts_v2.item collection
+func (m *SecurityRequestBuilder) Alerts_v2ById(id string)(*i18f494f2b6028fa48209e2ed1901867809ed07f584269e2fa79310996bdc0c55.Alert_v2RequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["alert_v2_id"] = id
+    }
+    return i18f494f2b6028fa48209e2ed1901867809ed07f584269e2fa79310996bdc0c55.NewAlert_v2RequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AlertsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.alerts.item collection
 func (m *SecurityRequestBuilder) AlertsById(id string)(*icf7abdec996315842957a23a296d4a13dfa457345ce67dfb1fcf777acecb7ef7.AlertRequestBuilder) {

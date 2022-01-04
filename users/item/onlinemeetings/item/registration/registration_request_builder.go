@@ -4,10 +4,8 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
-    i8fffe15359b63d385c4d09428627fd086207d8559033c154283ebae61be2989b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item/registration/registrants"
     ic80f4dba15f8a2e6471c424c8052facd225497424b2ebc8ec26c277612211cf3 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item/registration/customquestions"
     i2ad1071fdb0ce5c7f13d818f7600904c2cfb682f002cf4a3d1323a2d717ccb6e "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item/registration/customquestions/item"
-    i34835e4f604126539f2c916992cff760482a1c7bf03f1d5d4928a2099ac5183d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item/registration/registrants/item"
 )
 
 // RegistrationRequestBuilder builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\registration
@@ -180,18 +178,4 @@ func (m *RegistrationRequestBuilder) Patch(options *RegistrationRequestBuilderPa
         return err
     }
     return nil
-}
-func (m *RegistrationRequestBuilder) Registrants()(*i8fffe15359b63d385c4d09428627fd086207d8559033c154283ebae61be2989b.RegistrantsRequestBuilder) {
-    return i8fffe15359b63d385c4d09428627fd086207d8559033c154283ebae61be2989b.NewRegistrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RegistrantsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.onlineMeetings.item.registration.registrants.item collection
-func (m *RegistrationRequestBuilder) RegistrantsById(id string)(*i34835e4f604126539f2c916992cff760482a1c7bf03f1d5d4928a2099ac5183d.MeetingRegistrantRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["meetingRegistrant_id"] = id
-    }
-    return i34835e4f604126539f2c916992cff760482a1c7bf03f1d5d4928a2099ac5183d.NewMeetingRegistrantRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

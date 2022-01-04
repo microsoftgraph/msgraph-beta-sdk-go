@@ -11,8 +11,6 @@ type DeviceManagementReports struct {
     cachedReportConfigurations []DeviceManagementCachedReportConfiguration;
     // Entity representing a job to export a report
     exportJobs []DeviceManagementExportJob;
-    // Entity representing a schedule for which reports are delivered
-    reportSchedules []DeviceManagementReportSchedule;
 }
 // NewDeviceManagementReports instantiates a new deviceManagementReports and sets the default values.
 func NewDeviceManagementReports()(*DeviceManagementReports) {
@@ -35,14 +33,6 @@ func (m *DeviceManagementReports) GetExportJobs()([]DeviceManagementExportJob) {
         return nil
     } else {
         return m.exportJobs
-    }
-}
-// GetReportSchedules gets the reportSchedules property value. Entity representing a schedule for which reports are delivered
-func (m *DeviceManagementReports) GetReportSchedules()([]DeviceManagementReportSchedule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportSchedules
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -73,20 +63,6 @@ func (m *DeviceManagementReports) GetFieldDeserializers()(map[string]func(interf
                 res[i] = *(v.(*DeviceManagementExportJob))
             }
             m.SetExportJobs(res)
-        }
-        return nil
-    }
-    res["reportSchedules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementReportSchedule() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementReportSchedule, len(val))
-            for i, v := range val {
-                res[i] = *(v.(*DeviceManagementReportSchedule))
-            }
-            m.SetReportSchedules(res)
         }
         return nil
     }
@@ -123,17 +99,6 @@ func (m *DeviceManagementReports) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
-        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReportSchedules()))
-        for i, v := range m.GetReportSchedules() {
-            temp := v
-            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
-        }
-        err = writer.WriteCollectionOfObjectValues("reportSchedules", cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetCachedReportConfigurations sets the cachedReportConfigurations property value. Entity representing the configuration of a cached report
@@ -146,11 +111,5 @@ func (m *DeviceManagementReports) SetCachedReportConfigurations(value []DeviceMa
 func (m *DeviceManagementReports) SetExportJobs(value []DeviceManagementExportJob)() {
     if m != nil {
         m.exportJobs = value
-    }
-}
-// SetReportSchedules sets the reportSchedules property value. Entity representing a schedule for which reports are delivered
-func (m *DeviceManagementReports) SetReportSchedules(value []DeviceManagementReportSchedule)() {
-    if m != nil {
-        m.reportSchedules = value
     }
 }

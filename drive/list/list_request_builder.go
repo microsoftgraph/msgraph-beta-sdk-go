@@ -9,7 +9,9 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     id28cbea101cb9521a14cf9640c45800a00477bd62395913072f4e81bf1074012 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/drive"
     idf9a3059d40c90c42068fa8bf9ac9fd67dedf1182980c80d7a384967f9dff8d5 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items"
+    ie43f83ef262031fdb1eb8da2814c4165f5f945383e15adf8746e6a96f3432e23 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/operations"
     if9ff29afb76bbf1ffef5a126d0ba635e14dcd31de06309e9c7c1a69ad2600738 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/columns"
+    i327c97fc6449280089d733ba8dee83d9d74247819100cf6629d3355abfea1166 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/operations/item"
     i37771808e5dcfef82cc1e8bc33ad871d583b797abbb1222c5dc6198791d77af2 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/subscriptions/item"
     i58ec931c55ab0d0111918ef65feb8b5a53f2f824a19e864696540521faf828f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/item"
     i654b96f70860efab65ce04591400b15de588e186e6e7217fc1ca04b9de80627c "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/columns/item"
@@ -220,6 +222,20 @@ func (m *ListRequestBuilder) ItemsById(id string)(*i58ec931c55ab0d0111918ef65feb
         urlTplParams["listItem_id"] = id
     }
     return i58ec931c55ab0d0111918ef65feb8b5a53f2f824a19e864696540521faf828f4.NewListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *ListRequestBuilder) Operations()(*ie43f83ef262031fdb1eb8da2814c4165f5f945383e15adf8746e6a96f3432e23.OperationsRequestBuilder) {
+    return ie43f83ef262031fdb1eb8da2814c4165f5f945383e15adf8746e6a96f3432e23.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drive.list.operations.item collection
+func (m *ListRequestBuilder) OperationsById(id string)(*i327c97fc6449280089d733ba8dee83d9d74247819100cf6629d3355abfea1166.RichLongRunningOperationRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["richLongRunningOperation_id"] = id
+    }
+    return i327c97fc6449280089d733ba8dee83d9d74247819100cf6629d3355abfea1166.NewRichLongRunningOperationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch for drives in SharePoint, the underlying document library list. Read-only. Nullable.
 func (m *ListRequestBuilder) Patch(options *ListRequestBuilderPatchOptions)(error) {

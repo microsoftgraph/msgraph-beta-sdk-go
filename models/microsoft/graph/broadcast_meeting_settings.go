@@ -10,6 +10,8 @@ type BroadcastMeetingSettings struct {
     additionalData map[string]interface{};
     // Defines who can join the Teams live event. Possible values are listed in the following table.
     allowedAudience *BroadcastMeetingAudience;
+    // Caption settings of a Teams live event.
+    captions *BroadcastMeetingCaptionSettings;
     // Indicates whether attendee report is enabled for this Teams live event. Default value is false.
     isAttendeeReportEnabled *bool;
     // Indicates whether Q&A is enabled for this Teams live event. Default value is false.
@@ -40,6 +42,14 @@ func (m *BroadcastMeetingSettings) GetAllowedAudience()(*BroadcastMeetingAudienc
         return nil
     } else {
         return m.allowedAudience
+    }
+}
+// GetCaptions gets the captions property value. Caption settings of a Teams live event.
+func (m *BroadcastMeetingSettings) GetCaptions()(*BroadcastMeetingCaptionSettings) {
+    if m == nil {
+        return nil
+    } else {
+        return m.captions
     }
 }
 // GetIsAttendeeReportEnabled gets the isAttendeeReportEnabled property value. Indicates whether attendee report is enabled for this Teams live event. Default value is false.
@@ -85,6 +95,16 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         if val != nil {
             cast := val.(BroadcastMeetingAudience)
             m.SetAllowedAudience(&cast)
+        }
+        return nil
+    }
+    res["captions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBroadcastMeetingCaptionSettings() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCaptions(val.(*BroadcastMeetingCaptionSettings))
         }
         return nil
     }
@@ -143,6 +163,12 @@ func (m *BroadcastMeetingSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
         }
     }
     {
+        err := writer.WriteObjectValue("captions", m.GetCaptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("isAttendeeReportEnabled", m.GetIsAttendeeReportEnabled())
         if err != nil {
             return err
@@ -184,6 +210,12 @@ func (m *BroadcastMeetingSettings) SetAdditionalData(value map[string]interface{
 func (m *BroadcastMeetingSettings) SetAllowedAudience(value *BroadcastMeetingAudience)() {
     if m != nil {
         m.allowedAudience = value
+    }
+}
+// SetCaptions sets the captions property value. Caption settings of a Teams live event.
+func (m *BroadcastMeetingSettings) SetCaptions(value *BroadcastMeetingCaptionSettings)() {
+    if m != nil {
+        m.captions = value
     }
 }
 // SetIsAttendeeReportEnabled sets the isAttendeeReportEnabled property value. Indicates whether attendee report is enabled for this Teams live event. Default value is false.

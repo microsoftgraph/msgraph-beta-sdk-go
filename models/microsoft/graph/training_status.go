@@ -12,12 +12,11 @@ const (
     INPROGRESS_TRAININGSTATUS
     COMPLETED_TRAININGSTATUS
     OVERDUE_TRAININGSTATUS
-    NOTCOMPLETED_TRAININGSTATUS
     UNKNOWNFUTUREVALUE_TRAININGSTATUS
 )
 
 func (i TrainingStatus) String() string {
-    return []string{"UNKNOWN", "ASSIGNED", "INPROGRESS", "COMPLETED", "OVERDUE", "NOTCOMPLETED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"UNKNOWN", "ASSIGNED", "INPROGRESS", "COMPLETED", "OVERDUE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTrainingStatus(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -31,8 +30,6 @@ func ParseTrainingStatus(v string) (interface{}, error) {
             return COMPLETED_TRAININGSTATUS, nil
         case "OVERDUE":
             return OVERDUE_TRAININGSTATUS, nil
-        case "NOTCOMPLETED":
-            return NOTCOMPLETED_TRAININGSTATUS, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_TRAININGSTATUS, nil
     }

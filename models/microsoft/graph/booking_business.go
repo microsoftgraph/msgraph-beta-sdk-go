@@ -7,7 +7,7 @@ import (
 // BookingBusiness 
 type BookingBusiness struct {
     BookingNamedEntity
-    // The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
+    // The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
     address *PhysicalAddress;
     // All the appointments of this business. Read-only. Nullable.
     appointments []BookingAppointment;
@@ -19,6 +19,8 @@ type BookingBusiness struct {
     calendarView []BookingAppointment;
     // All the customers of this business. Read-only. Nullable.
     customers []BookingCustomer;
+    // All the custom questions of this business. Read-only. Nullable.
+    customQuestions []BookingCustomQuestion;
     // The code for the currency that the business operates in on Microsoft Bookings.
     defaultCurrencyIso *string;
     // The email address for the business.
@@ -45,7 +47,7 @@ func NewBookingBusiness()(*BookingBusiness) {
     }
     return m
 }
-// GetAddress gets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
+// GetAddress gets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
 func (m *BookingBusiness) GetAddress()(*PhysicalAddress) {
     if m == nil {
         return nil
@@ -91,6 +93,14 @@ func (m *BookingBusiness) GetCustomers()([]BookingCustomer) {
         return nil
     } else {
         return m.customers
+    }
+}
+// GetCustomQuestions gets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
+func (m *BookingBusiness) GetCustomQuestions()([]BookingCustomQuestion) {
+    if m == nil {
+        return nil
+    } else {
+        return m.customQuestions
     }
 }
 // GetDefaultCurrencyIso gets the defaultCurrencyIso property value. The code for the currency that the business operates in on Microsoft Bookings.
@@ -241,6 +251,20 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(interface{}, i
                 res[i] = *(v.(*BookingCustomer))
             }
             m.SetCustomers(res)
+        }
+        return nil
+    }
+    res["customQuestions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBookingCustomQuestion() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]BookingCustomQuestion, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BookingCustomQuestion))
+            }
+            m.SetCustomQuestions(res)
         }
         return nil
     }
@@ -410,6 +434,17 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomQuestions()))
+        for i, v := range m.GetCustomQuestions() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("customQuestions", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("defaultCurrencyIso", m.GetDefaultCurrencyIso())
         if err != nil {
             return err
@@ -475,7 +510,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// SetAddress sets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
+// SetAddress sets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
 func (m *BookingBusiness) SetAddress(value *PhysicalAddress)() {
     if m != nil {
         m.address = value
@@ -509,6 +544,12 @@ func (m *BookingBusiness) SetCalendarView(value []BookingAppointment)() {
 func (m *BookingBusiness) SetCustomers(value []BookingCustomer)() {
     if m != nil {
         m.customers = value
+    }
+}
+// SetCustomQuestions sets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
+func (m *BookingBusiness) SetCustomQuestions(value []BookingCustomQuestion)() {
+    if m != nil {
+        m.customQuestions = value
     }
 }
 // SetDefaultCurrencyIso sets the defaultCurrencyIso property value. The code for the currency that the business operates in on Microsoft Bookings.

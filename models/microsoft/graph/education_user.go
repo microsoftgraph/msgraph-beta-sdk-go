@@ -14,7 +14,7 @@ type EducationUser struct {
     assignedLicenses []AssignedLicense;
     // The plans that are assigned to the user. Read-only. Not nullable.
     assignedPlans []AssignedPlan;
-    // List of assignments for the user. Nullable.
+    // Assignments belonging to the user.
     assignments []EducationAssignment;
     // The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.
     businessPhones []string;
@@ -116,7 +116,7 @@ func (m *EducationUser) GetAssignedPlans()([]AssignedPlan) {
         return m.assignedPlans
     }
 }
-// GetAssignments gets the assignments property value. List of assignments for the user. Nullable.
+// GetAssignments gets the assignments property value. Assignments belonging to the user.
 func (m *EducationUser) GetAssignments()([]EducationAssignment) {
     if m == nil {
         return nil
@@ -1127,7 +1127,7 @@ func (m *EducationUser) SetAssignedPlans(value []AssignedPlan)() {
         m.assignedPlans = value
     }
 }
-// SetAssignments sets the assignments property value. List of assignments for the user. Nullable.
+// SetAssignments sets the assignments property value. Assignments belonging to the user.
 func (m *EducationUser) SetAssignments(value []EducationAssignment)() {
     if m != nil {
         m.assignments = value

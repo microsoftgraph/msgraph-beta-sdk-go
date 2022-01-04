@@ -4,6 +4,8 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i413f62dd2f2ebacd7242aedc6a53c82e3718824c8d15456458047a8317dfce5f "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/contenttypes/getcompatiblehubcontenttypes"
+    i7f2b82241bbe164f39513022630b0fa4058d3f79e5d0a9110131e5ef7e818e89 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/contenttypes/addcopyfromcontenttypehub"
     if000416cdd7ecee49667f2388ff7a7ad2d2f78c854cc0c1c96776ab10e6399a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/contenttypes/addcopy"
 )
 
@@ -59,6 +61,9 @@ type ContentTypesRequestBuilderPostOptions struct {
 }
 func (m *ContentTypesRequestBuilder) AddCopy()(*if000416cdd7ecee49667f2388ff7a7ad2d2f78c854cc0c1c96776ab10e6399a6.AddCopyRequestBuilder) {
     return if000416cdd7ecee49667f2388ff7a7ad2d2f78c854cc0c1c96776ab10e6399a6.NewAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ContentTypesRequestBuilder) AddCopyFromContentTypeHub()(*i7f2b82241bbe164f39513022630b0fa4058d3f79e5d0a9110131e5ef7e818e89.AddCopyFromContentTypeHubRequestBuilder) {
+    return i7f2b82241bbe164f39513022630b0fa4058d3f79e5d0a9110131e5ef7e818e89.NewAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewContentTypesRequestBuilderInternal instantiates a new ContentTypesRequestBuilder and sets the default values.
 func NewContentTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContentTypesRequestBuilder) {
@@ -128,6 +133,10 @@ func (m *ContentTypesRequestBuilder) Get(options *ContentTypesRequestBuilderGetO
         return nil, err
     }
     return res.(*ContentTypesResponse), nil
+}
+// GetCompatibleHubContentTypes builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\contentTypes\microsoft.graph.getCompatibleHubContentTypes()
+func (m *ContentTypesRequestBuilder) GetCompatibleHubContentTypes()(*i413f62dd2f2ebacd7242aedc6a53c82e3718824c8d15456458047a8317dfce5f.GetCompatibleHubContentTypesRequestBuilder) {
+    return i413f62dd2f2ebacd7242aedc6a53c82e3718824c8d15456458047a8317dfce5f.NewGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post the collection of content types present in this list.
 func (m *ContentTypesRequestBuilder) Post(options *ContentTypesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentType, error) {
