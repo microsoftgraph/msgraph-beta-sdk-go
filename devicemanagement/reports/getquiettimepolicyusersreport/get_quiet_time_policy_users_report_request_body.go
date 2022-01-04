@@ -25,6 +25,8 @@ type GetQuietTimePolicyUsersReportRequestBody struct {
     // 
     skip *int32;
     // 
+    skipToken *string;
+    // 
     top *int32;
 }
 // NewGetQuietTimePolicyUsersReportRequestBody instantiates a new getQuietTimePolicyUsersReportRequestBody and sets the default values.
@@ -104,6 +106,14 @@ func (m *GetQuietTimePolicyUsersReportRequestBody) GetSkip()(*int32) {
         return nil
     } else {
         return m.skip
+    }
+}
+// GetSkipToken gets the skipToken property value. 
+func (m *GetQuietTimePolicyUsersReportRequestBody) GetSkipToken()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.skipToken
     }
 }
 // GetTop gets the top property value. 
@@ -209,6 +219,16 @@ func (m *GetQuietTimePolicyUsersReportRequestBody) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["skipToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSkipToken(val)
+        }
+        return nil
+    }
     res["top"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -270,6 +290,12 @@ func (m *GetQuietTimePolicyUsersReportRequestBody) Serialize(writer i04eb5309aea
     }
     {
         err := writer.WriteInt32Value("skip", m.GetSkip())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("skipToken", m.GetSkipToken())
         if err != nil {
             return err
         }
@@ -340,6 +366,12 @@ func (m *GetQuietTimePolicyUsersReportRequestBody) SetSessionId(value *string)()
 func (m *GetQuietTimePolicyUsersReportRequestBody) SetSkip(value *int32)() {
     if m != nil {
         m.skip = value
+    }
+}
+// SetSkipToken sets the skipToken property value. 
+func (m *GetQuietTimePolicyUsersReportRequestBody) SetSkipToken(value *string)() {
+    if m != nil {
+        m.skipToken = value
     }
 }
 // SetTop sets the top property value. 

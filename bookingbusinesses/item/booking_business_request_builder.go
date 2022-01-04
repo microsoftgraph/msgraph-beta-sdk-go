@@ -5,6 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i0a7cdda26cb222932b3d70abaab89b217f2509a29415fc8ea0dc313dc6cb47a5 "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/customers"
     i131bc9ff8c2fc67a2f7430a039bbbd0a92b1ff652e2e5f0a116686e51dc82b17 "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/staffmembers"
+    i282b5f21d91d31c3e5c81bcea750a4bf77b691c6d3b1b55d9359d4c1665f8f46 "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/customquestions"
     i4d80f01302d2f12cfc7856faaf46602d45a2e40cc7854a1ede6303697bc2d4a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/services"
     i4e2baa0d10e2585111c8f7d52c8fcfc31b186c9cf6904f0475b65f6b86432585 "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/calendarview"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
@@ -14,6 +15,7 @@ import (
     i0fae5949907818b2ae894763546198c15bc34196d1bbc68fff8d5e35bf9e62bf "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/appointments/item"
     i79400fbdb20c4e1b3bc4a91d12f5b6146511a68e789f1456369fc0bfe4434560 "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/staffmembers/item"
     i8dfad3dfd772d23aa0ae1b04ac3fa7b45824e6084187c192928925f7bcb86a70 "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/services/item"
+    i9cec441a87d2feb52d21615818f6b762a3fd05b35a9b73951208540f5eb80c77 "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/customquestions/item"
     ia4fe11073e9da7c50ece70bf500822d1a07d9f1965f083164f821c9bca857112 "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/customers/item"
     ieb67a4e973c38f9a77d4f81d39f0b7685c2e72c00379ef53269c356ae983bd0d "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses/item/calendarview/item"
 )
@@ -180,6 +182,20 @@ func (m *BookingBusinessRequestBuilder) CustomersById(id string)(*ia4fe11073e9da
         urlTplParams["bookingCustomer_id"] = id
     }
     return ia4fe11073e9da7c50ece70bf500822d1a07d9f1965f083164f821c9bca857112.NewBookingCustomerRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *BookingBusinessRequestBuilder) CustomQuestions()(*i282b5f21d91d31c3e5c81bcea750a4bf77b691c6d3b1b55d9359d4c1665f8f46.CustomQuestionsRequestBuilder) {
+    return i282b5f21d91d31c3e5c81bcea750a4bf77b691c6d3b1b55d9359d4c1665f8f46.NewCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CustomQuestionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.bookingBusinesses.item.customQuestions.item collection
+func (m *BookingBusinessRequestBuilder) CustomQuestionsById(id string)(*i9cec441a87d2feb52d21615818f6b762a3fd05b35a9b73951208540f5eb80c77.BookingCustomQuestionRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["bookingCustomQuestion_id"] = id
+    }
+    return i9cec441a87d2feb52d21615818f6b762a3fd05b35a9b73951208540f5eb80c77.NewBookingCustomQuestionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete represents a Microsot Bookings Business.
 func (m *BookingBusinessRequestBuilder) Delete(options *BookingBusinessRequestBuilderDeleteOptions)(error) {

@@ -14,8 +14,6 @@ type UserExperienceAnalyticsMetricHistory struct {
     metricDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The user experience analytics metric type.
     metricType *string;
-    // User experience analytics metric.
-    userExperienceAnalyticsMetric *UserExperienceAnalyticsMetric;
 }
 // NewUserExperienceAnalyticsMetricHistory instantiates a new userExperienceAnalyticsMetricHistory and sets the default values.
 func NewUserExperienceAnalyticsMetricHistory()(*UserExperienceAnalyticsMetricHistory) {
@@ -46,14 +44,6 @@ func (m *UserExperienceAnalyticsMetricHistory) GetMetricType()(*string) {
         return nil
     } else {
         return m.metricType
-    }
-}
-// GetUserExperienceAnalyticsMetric gets the userExperienceAnalyticsMetric property value. User experience analytics metric.
-func (m *UserExperienceAnalyticsMetricHistory) GetUserExperienceAnalyticsMetric()(*UserExperienceAnalyticsMetric) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userExperienceAnalyticsMetric
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -89,16 +79,6 @@ func (m *UserExperienceAnalyticsMetricHistory) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["userExperienceAnalyticsMetric"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsMetric() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserExperienceAnalyticsMetric(val.(*UserExperienceAnalyticsMetric))
-        }
-        return nil
-    }
     return res
 }
 func (m *UserExperienceAnalyticsMetricHistory) IsNil()(bool) {
@@ -128,12 +108,6 @@ func (m *UserExperienceAnalyticsMetricHistory) Serialize(writer i04eb5309aeaafad
             return err
         }
     }
-    {
-        err = writer.WriteObjectValue("userExperienceAnalyticsMetric", m.GetUserExperienceAnalyticsMetric())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetDeviceId sets the deviceId property value. The user experience analytics device id.
@@ -152,11 +126,5 @@ func (m *UserExperienceAnalyticsMetricHistory) SetMetricDateTime(value *i3360748
 func (m *UserExperienceAnalyticsMetricHistory) SetMetricType(value *string)() {
     if m != nil {
         m.metricType = value
-    }
-}
-// SetUserExperienceAnalyticsMetric sets the userExperienceAnalyticsMetric property value. User experience analytics metric.
-func (m *UserExperienceAnalyticsMetricHistory) SetUserExperienceAnalyticsMetric(value *UserExperienceAnalyticsMetric)() {
-    if m != nil {
-        m.userExperienceAnalyticsMetric = value
     }
 }

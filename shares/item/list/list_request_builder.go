@@ -9,7 +9,9 @@ import (
     ib3ee4819f4c735d8a63e343645326309cf0357281fcf420c964b4b39d6bdf9bb "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/drive"
     ic1183cba85b0a8992427e9c7d45ad198b411eb949fdcf8bf5fa204e3fc691a5f "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/columns"
     icf939f29457e323541cf147d31bf6cecf5cb130c9d7c8639ec566b8175d1d5b1 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/contenttypes"
+    iec4aa5d59e58579afdbecfba73d6bd2372d1b99f1d8b3ee465c20b9750d2cabd "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/operations"
     if45c6d4c98602b6c309b1994f425724fef00fd5a63d747a5169844dea93fc758 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/activities"
+    i55bc9c6f863d9539e65f9d6af8a6bfd60d606e59691d0de7981bc7a5fd1dad6c "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/operations/item"
     ib48ab6e9d0b3b2e8132b00fed04b5ed61b4e70dfa330c315456e7b72365c013e "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/items/item"
     icc49cea450b5f3038e85b1a338cc21ce61681050bc96578d052ebb2a0cf235e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/contenttypes/item"
     id1a6f05592077125e392d30d3adb9e65e495d86f48fac21a92c5eb15df1e7d4a "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/list/activities/item"
@@ -220,6 +222,20 @@ func (m *ListRequestBuilder) ItemsById(id string)(*ib48ab6e9d0b3b2e8132b00fed04b
         urlTplParams["listItem_id"] = id
     }
     return ib48ab6e9d0b3b2e8132b00fed04b5ed61b4e70dfa330c315456e7b72365c013e.NewListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *ListRequestBuilder) Operations()(*iec4aa5d59e58579afdbecfba73d6bd2372d1b99f1d8b3ee465c20b9750d2cabd.OperationsRequestBuilder) {
+    return iec4aa5d59e58579afdbecfba73d6bd2372d1b99f1d8b3ee465c20b9750d2cabd.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.shares.item.list.operations.item collection
+func (m *ListRequestBuilder) OperationsById(id string)(*i55bc9c6f863d9539e65f9d6af8a6bfd60d606e59691d0de7981bc7a5fd1dad6c.RichLongRunningOperationRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["richLongRunningOperation_id"] = id
+    }
+    return i55bc9c6f863d9539e65f9d6af8a6bfd60d606e59691d0de7981bc7a5fd1dad6c.NewRichLongRunningOperationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch used to access the underlying list
 func (m *ListRequestBuilder) Patch(options *ListRequestBuilderPatchOptions)(error) {

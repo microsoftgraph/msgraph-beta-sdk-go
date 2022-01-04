@@ -36,7 +36,7 @@ type Chat struct {
     topic *string;
     // Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
     viewpoint *ChatViewpoint;
-    // A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.
+    // The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
     webUrl *string;
 }
 // NewChat instantiates a new chat and sets the default values.
@@ -158,7 +158,7 @@ func (m *Chat) GetViewpoint()(*ChatViewpoint) {
         return m.viewpoint
     }
 }
-// GetWebUrl gets the webUrl property value. A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.
+// GetWebUrl gets the webUrl property value. The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
 func (m *Chat) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -562,7 +562,7 @@ func (m *Chat) SetViewpoint(value *ChatViewpoint)() {
         m.viewpoint = value
     }
 }
-// SetWebUrl sets the webUrl property value. A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.
+// SetWebUrl sets the webUrl property value. The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
 func (m *Chat) SetWebUrl(value *string)() {
     if m != nil {
         m.webUrl = value

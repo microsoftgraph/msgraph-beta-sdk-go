@@ -7,18 +7,15 @@ import (
 type RemoteAssistanceState int
 
 const (
-    NOTCONFIGURED_REMOTEASSISTANCESTATE RemoteAssistanceState = iota
-    DISABLED_REMOTEASSISTANCESTATE
+    DISABLED_REMOTEASSISTANCESTATE RemoteAssistanceState = iota
     ENABLED_REMOTEASSISTANCESTATE
 )
 
 func (i RemoteAssistanceState) String() string {
-    return []string{"NOTCONFIGURED", "DISABLED", "ENABLED"}[i]
+    return []string{"DISABLED", "ENABLED"}[i]
 }
 func ParseRemoteAssistanceState(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
-        case "NOTCONFIGURED":
-            return NOTCONFIGURED_REMOTEASSISTANCESTATE, nil
         case "DISABLED":
             return DISABLED_REMOTEASSISTANCESTATE, nil
         case "ENABLED":

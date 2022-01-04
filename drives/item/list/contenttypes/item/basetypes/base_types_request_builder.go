@@ -5,6 +5,8 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i2902651c3bd6366958f3764b6177a24fe04ba5d32595c02c4aae8c0aac87e82c "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/contenttypes/item/basetypes/ref"
     i42462c7bfc418a1df15dc35cdf6deca2e311436a9206ca181ee56bbd94fa6ac4 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/contenttypes/item/basetypes/addcopy"
+    i94092ec39f60c080c646aa53176869d6ca585a42ad3331f7eb14711c9701d973 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/contenttypes/item/basetypes/getcompatiblehubcontenttypes"
+    i9e28af25b3d66be13a9842b471ff9e170a7453faeab20631252c224e21e9c745 "github.com/microsoftgraph/msgraph-beta-sdk-go/drives/item/list/contenttypes/item/basetypes/addcopyfromcontenttypehub"
 )
 
 // BaseTypesRequestBuilder builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\{contentType-id}\baseTypes
@@ -48,6 +50,9 @@ type BaseTypesRequestBuilderGetQueryParameters struct {
 }
 func (m *BaseTypesRequestBuilder) AddCopy()(*i42462c7bfc418a1df15dc35cdf6deca2e311436a9206ca181ee56bbd94fa6ac4.AddCopyRequestBuilder) {
     return i42462c7bfc418a1df15dc35cdf6deca2e311436a9206ca181ee56bbd94fa6ac4.NewAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *BaseTypesRequestBuilder) AddCopyFromContentTypeHub()(*i9e28af25b3d66be13a9842b471ff9e170a7453faeab20631252c224e21e9c745.AddCopyFromContentTypeHubRequestBuilder) {
+    return i9e28af25b3d66be13a9842b471ff9e170a7453faeab20631252c224e21e9c745.NewAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewBaseTypesRequestBuilderInternal instantiates a new BaseTypesRequestBuilder and sets the default values.
 func NewBaseTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BaseTypesRequestBuilder) {
@@ -99,6 +104,10 @@ func (m *BaseTypesRequestBuilder) Get(options *BaseTypesRequestBuilderGetOptions
         return nil, err
     }
     return res.(*BaseTypesResponse), nil
+}
+// GetCompatibleHubContentTypes builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\{contentType-id}\baseTypes\microsoft.graph.getCompatibleHubContentTypes()
+func (m *BaseTypesRequestBuilder) GetCompatibleHubContentTypes()(*i94092ec39f60c080c646aa53176869d6ca585a42ad3331f7eb14711c9701d973.GetCompatibleHubContentTypesRequestBuilder) {
+    return i94092ec39f60c080c646aa53176869d6ca585a42ad3331f7eb14711c9701d973.NewGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *BaseTypesRequestBuilder) Ref()(*i2902651c3bd6366958f3764b6177a24fe04ba5d32595c02c4aae8c0aac87e82c.RefRequestBuilder) {
     return i2902651c3bd6366958f3764b6177a24fe04ba5d32595c02c4aae8c0aac87e82c.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);

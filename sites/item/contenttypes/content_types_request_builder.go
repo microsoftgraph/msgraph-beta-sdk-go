@@ -4,7 +4,9 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i18b5532bacec8e0314abbbb7cfdf30166e188f4f2cf337f38aba0fe7cc0f5675 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/contenttypes/addcopyfromcontenttypehub"
     i1ad1af7f4a1d065d2cac49acc49b48004cd1871f10359fbeddbbf754469dc97d "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/contenttypes/addcopy"
+    i865eadbd753511bd7ea64409eac7502cc5d57d8ec89e3c48a5dcaffb7ed19190 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/contenttypes/getcompatiblehubcontenttypes"
 )
 
 // ContentTypesRequestBuilder builds and executes requests for operations under \sites\{site-id}\contentTypes
@@ -59,6 +61,9 @@ type ContentTypesRequestBuilderPostOptions struct {
 }
 func (m *ContentTypesRequestBuilder) AddCopy()(*i1ad1af7f4a1d065d2cac49acc49b48004cd1871f10359fbeddbbf754469dc97d.AddCopyRequestBuilder) {
     return i1ad1af7f4a1d065d2cac49acc49b48004cd1871f10359fbeddbbf754469dc97d.NewAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ContentTypesRequestBuilder) AddCopyFromContentTypeHub()(*i18b5532bacec8e0314abbbb7cfdf30166e188f4f2cf337f38aba0fe7cc0f5675.AddCopyFromContentTypeHubRequestBuilder) {
+    return i18b5532bacec8e0314abbbb7cfdf30166e188f4f2cf337f38aba0fe7cc0f5675.NewAddCopyFromContentTypeHubRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewContentTypesRequestBuilderInternal instantiates a new ContentTypesRequestBuilder and sets the default values.
 func NewContentTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContentTypesRequestBuilder) {
@@ -128,6 +133,10 @@ func (m *ContentTypesRequestBuilder) Get(options *ContentTypesRequestBuilderGetO
         return nil, err
     }
     return res.(*ContentTypesResponse), nil
+}
+// GetCompatibleHubContentTypes builds and executes requests for operations under \sites\{site-id}\contentTypes\microsoft.graph.getCompatibleHubContentTypes()
+func (m *ContentTypesRequestBuilder) GetCompatibleHubContentTypes()(*i865eadbd753511bd7ea64409eac7502cc5d57d8ec89e3c48a5dcaffb7ed19190.GetCompatibleHubContentTypesRequestBuilder) {
+    return i865eadbd753511bd7ea64409eac7502cc5d57d8ec89e3c48a5dcaffb7ed19190.NewGetCompatibleHubContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post the collection of content types defined for this site.
 func (m *ContentTypesRequestBuilder) Post(options *ContentTypesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ContentType, error) {

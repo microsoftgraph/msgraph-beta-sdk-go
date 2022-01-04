@@ -5,9 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i8b1acecefd40015cacb48332acab4704015613d200d1caf5b420053071c45191 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/registration/customquestions"
-    ib1592b32561109ce162d2a5ad1c92f7d66a6ffaaf0db68b434da84f1d2b5aff5 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/registration/registrants"
     ib42277fe4ce873d430664e5be2d00e9af9e96d89e8f7d228c9a3066373657e75 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/registration/customquestions/item"
-    ica7dccd05eaa145534bc59f96f938b370c66950ed7615a8ba14f5e53bfd0469f "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/onlinemeetings/item/registration/registrants/item"
 )
 
 // RegistrationRequestBuilder builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}\registration
@@ -180,18 +178,4 @@ func (m *RegistrationRequestBuilder) Patch(options *RegistrationRequestBuilderPa
         return err
     }
     return nil
-}
-func (m *RegistrationRequestBuilder) Registrants()(*ib1592b32561109ce162d2a5ad1c92f7d66a6ffaaf0db68b434da84f1d2b5aff5.RegistrantsRequestBuilder) {
-    return ib1592b32561109ce162d2a5ad1c92f7d66a6ffaaf0db68b434da84f1d2b5aff5.NewRegistrantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// RegistrantsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.onlineMeetings.item.registration.registrants.item collection
-func (m *RegistrationRequestBuilder) RegistrantsById(id string)(*ica7dccd05eaa145534bc59f96f938b370c66950ed7615a8ba14f5e53bfd0469f.MeetingRegistrantRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["meetingRegistrant_id"] = id
-    }
-    return ica7dccd05eaa145534bc59f96f938b370c66950ed7615a8ba14f5e53bfd0469f.NewMeetingRegistrantRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

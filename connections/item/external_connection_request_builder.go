@@ -6,6 +6,7 @@ import (
     i16aec0d979679a78de026ea357af647676e9bd2f7c8534da4da2643e5d6f81b1 "github.com/microsoftgraph/msgraph-beta-sdk-go/connections/item/operations"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     ia229bb0ea4c647efe1ef7f3f3d49c1c41e13acf3b845ba20fa1cc1c6f2730bdd "github.com/microsoftgraph/msgraph-beta-sdk-go/connections/item/schema"
+    ia8a9fb046e54d24538d7c6d25cc69813af40692eee89a9d2eb29dc5570b69c1d "github.com/microsoftgraph/msgraph-beta-sdk-go/connections/item/quota"
     ic4ecba2a36e9429147361e0927b616e9b14c0047f0c81f4d383857826bf622b0 "github.com/microsoftgraph/msgraph-beta-sdk-go/connections/item/groups"
     ieb276fe54a3917eca6ba7222449ff2e6a5642f1c6bebeaabc0427903311a92df "github.com/microsoftgraph/msgraph-beta-sdk-go/connections/item/items"
     i20ab49c75285e4cd8a2b4e4645b09f58717fe4efdaf039c7973589d395d6d3a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/connections/item/groups/item"
@@ -211,6 +212,9 @@ func (m *ExternalConnectionRequestBuilder) Patch(options *ExternalConnectionRequ
         return err
     }
     return nil
+}
+func (m *ExternalConnectionRequestBuilder) Quota()(*ia8a9fb046e54d24538d7c6d25cc69813af40692eee89a9d2eb29dc5570b69c1d.QuotaRequestBuilder) {
+    return ia8a9fb046e54d24538d7c6d25cc69813af40692eee89a9d2eb29dc5570b69c1d.NewQuotaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ExternalConnectionRequestBuilder) Schema()(*ia229bb0ea4c647efe1ef7f3f3d49c1c41e13acf3b845ba20fa1cc1c6f2730bdd.SchemaRequestBuilder) {
     return ia229bb0ea4c647efe1ef7f3f3d49c1c41e13acf3b845ba20fa1cc1c6f2730bdd.NewSchemaRequestBuilderInternal(m.pathParameters, m.requestAdapter);

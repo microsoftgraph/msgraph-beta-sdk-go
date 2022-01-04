@@ -4,6 +4,8 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i03f81bc977f9d90efbd1427f3444ba111baf8b4fe1f097fb2522abf9ca22efc4 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/inboundshareduserprofiles/item/exportpersonaldata"
+    i2a5ab3f902913f407fab17927469dfb7cf3909152c8e32eaa79d54021bc94cb3 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/inboundshareduserprofiles/item/removepersonaldata"
 )
 
 // InboundSharedUserProfileRequestBuilder builds and executes requests for operations under \directory\inboundSharedUserProfiles\{inboundSharedUserProfile-userId}
@@ -139,6 +141,9 @@ func (m *InboundSharedUserProfileRequestBuilder) Delete(options *InboundSharedUs
     }
     return nil
 }
+func (m *InboundSharedUserProfileRequestBuilder) ExportPersonalData()(*i03f81bc977f9d90efbd1427f3444ba111baf8b4fe1f097fb2522abf9ca22efc4.ExportPersonalDataRequestBuilder) {
+    return i03f81bc977f9d90efbd1427f3444ba111baf8b4fe1f097fb2522abf9ca22efc4.NewExportPersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get get inboundSharedUserProfiles from directory
 func (m *InboundSharedUserProfileRequestBuilder) Get(options *InboundSharedUserProfileRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InboundSharedUserProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
@@ -162,4 +167,7 @@ func (m *InboundSharedUserProfileRequestBuilder) Patch(options *InboundSharedUse
         return err
     }
     return nil
+}
+func (m *InboundSharedUserProfileRequestBuilder) RemovePersonalData()(*i2a5ab3f902913f407fab17927469dfb7cf3909152c8e32eaa79d54021bc94cb3.RemovePersonalDataRequestBuilder) {
+    return i2a5ab3f902913f407fab17927469dfb7cf3909152c8e32eaa79d54021bc94cb3.NewRemovePersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -11,6 +11,7 @@ import (
     i41d40ece57596aff17bbd4e071da917e9696de96733cdb577567079fdc4fd02b "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/columns"
     i46cbb195f6e4660d7b45749753a475a645bf6784bfc9f9adc1d79eccfc9a7b40 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/getactivitiesbyintervalwithstartdatetimewithenddatetimewithinterval"
     i470ba8ba4f5c4ab0e450363d2c299e7fcf642547542575d37e8ab1b0a273d750 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/pages"
+    i513536400845064c1293d5ecd0000bf384a646a6457e9128f86c1d6d415af282 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/operations"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i751a7aab9250bdc979b3359c5e5d3056a650dbc575f271e01cb91720c05b3c48 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/onenote"
     i7991f174b586f44e549c3d8dce6877288c6b0fbc7ba8f49a6e6e98bd4137217d "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/items"
@@ -27,6 +28,7 @@ import (
     i7c78829e5ecb7ce49dec3e15a0823e233af9edec6a7211cb55cf0d8ee73c2a68 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/drives/item"
     ic0a30c9fcd69c709d292863ba51b88fe2799046dcce950f9d1bc1a372381eb06 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/lists/item"
     icf0323a037a02f8c72110955832cfede83bf2251b506c77f844efff04e3320d5 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/items/item"
+    ied00bf4ac26d58488e9ee1a357d4bbdf2553de648d04880076d6295dcc23e36f "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/operations/item"
     if030207cd960e3ca95a11c646417c461af3fa2b3617d9b9b2af40510bf1e4eb9 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites/item/permissions/item"
 )
 
@@ -268,6 +270,20 @@ func (m *SiteRequestBuilder) ListsById(id string)(*ic0a30c9fcd69c709d292863ba51b
 }
 func (m *SiteRequestBuilder) Onenote()(*i751a7aab9250bdc979b3359c5e5d3056a650dbc575f271e01cb91720c05b3c48.OnenoteRequestBuilder) {
     return i751a7aab9250bdc979b3359c5e5d3056a650dbc575f271e01cb91720c05b3c48.NewOnenoteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *SiteRequestBuilder) Operations()(*i513536400845064c1293d5ecd0000bf384a646a6457e9128f86c1d6d415af282.OperationsRequestBuilder) {
+    return i513536400845064c1293d5ecd0000bf384a646a6457e9128f86c1d6d415af282.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OperationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.sites.item.operations.item collection
+func (m *SiteRequestBuilder) OperationsById(id string)(*ied00bf4ac26d58488e9ee1a357d4bbdf2553de648d04880076d6295dcc23e36f.RichLongRunningOperationRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["richLongRunningOperation_id"] = id
+    }
+    return ied00bf4ac26d58488e9ee1a357d4bbdf2553de648d04880076d6295dcc23e36f.NewRichLongRunningOperationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *SiteRequestBuilder) Pages()(*i470ba8ba4f5c4ab0e450363d2c299e7fcf642547542575d37e8ab1b0a273d750.PagesRequestBuilder) {
     return i470ba8ba4f5c4ab0e450363d2c299e7fcf642547542575d37e8ab1b0a273d750.NewPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

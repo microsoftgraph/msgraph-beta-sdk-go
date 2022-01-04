@@ -16,12 +16,16 @@ type ExternalConnection struct {
     description *string;
     // Read-only. Nullable.
     groups []ExternalGroup;
+    // 
+    ingestedItemsCount *int64;
     // Read-only. Nullable.
     items []ExternalItem;
     // The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
     name *string;
     // Read-only. Nullable.
     operations []ConnectionOperation;
+    // 
+    quota *ConnectionQuota;
     // Read-only. Nullable.
     schema *Schema;
     // The settings configuring the search experience for content in this connection, such as the display templates for search results.
@@ -68,6 +72,14 @@ func (m *ExternalConnection) GetGroups()([]ExternalGroup) {
         return m.groups
     }
 }
+// GetIngestedItemsCount gets the ingestedItemsCount property value. 
+func (m *ExternalConnection) GetIngestedItemsCount()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ingestedItemsCount
+    }
+}
 // GetItems gets the items property value. Read-only. Nullable.
 func (m *ExternalConnection) GetItems()([]ExternalItem) {
     if m == nil {
@@ -90,6 +102,14 @@ func (m *ExternalConnection) GetOperations()([]ConnectionOperation) {
         return nil
     } else {
         return m.operations
+    }
+}
+// GetQuota gets the quota property value. 
+func (m *ExternalConnection) GetQuota()(*ConnectionQuota) {
+    if m == nil {
+        return nil
+    } else {
+        return m.quota
     }
 }
 // GetSchema gets the schema property value. Read-only. Nullable.
@@ -163,6 +183,16 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
+    res["ingestedItemsCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIngestedItemsCount(val)
+        }
+        return nil
+    }
     res["items"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExternalItem() })
         if err != nil {
@@ -198,6 +228,16 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
                 res[i] = *(v.(*ConnectionOperation))
             }
             m.SetOperations(res)
+        }
+        return nil
+    }
+    res["quota"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewConnectionQuota() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQuota(val.(*ConnectionQuota))
         }
         return nil
     }
@@ -273,6 +313,12 @@ func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
+        err = writer.WriteInt64Value("ingestedItemsCount", m.GetIngestedItemsCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
             temp := v
@@ -296,6 +342,12 @@ func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("quota", m.GetQuota())
         if err != nil {
             return err
         }
@@ -345,6 +397,12 @@ func (m *ExternalConnection) SetGroups(value []ExternalGroup)() {
         m.groups = value
     }
 }
+// SetIngestedItemsCount sets the ingestedItemsCount property value. 
+func (m *ExternalConnection) SetIngestedItemsCount(value *int64)() {
+    if m != nil {
+        m.ingestedItemsCount = value
+    }
+}
 // SetItems sets the items property value. Read-only. Nullable.
 func (m *ExternalConnection) SetItems(value []ExternalItem)() {
     if m != nil {
@@ -361,6 +419,12 @@ func (m *ExternalConnection) SetName(value *string)() {
 func (m *ExternalConnection) SetOperations(value []ConnectionOperation)() {
     if m != nil {
         m.operations = value
+    }
+}
+// SetQuota sets the quota property value. 
+func (m *ExternalConnection) SetQuota(value *ConnectionQuota)() {
+    if m != nil {
+        m.quota = value
     }
 }
 // SetSchema sets the schema property value. Read-only. Nullable.

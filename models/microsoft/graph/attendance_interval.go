@@ -11,9 +11,9 @@ type AttendanceInterval struct {
     additionalData map[string]interface{};
     // Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
     durationInSeconds *int32;
-    // Time attendee joined in UTC.
+    // The time the attendee joined in UTC.
     joinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Time attendee left in UTC.
+    // The time the attendee left in UTC.
     leaveDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
 // NewAttendanceInterval instantiates a new attendanceInterval and sets the default values.
@@ -39,7 +39,7 @@ func (m *AttendanceInterval) GetDurationInSeconds()(*int32) {
         return m.durationInSeconds
     }
 }
-// GetJoinDateTime gets the joinDateTime property value. Time attendee joined in UTC.
+// GetJoinDateTime gets the joinDateTime property value. The time the attendee joined in UTC.
 func (m *AttendanceInterval) GetJoinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *AttendanceInterval) GetJoinDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.joinDateTime
     }
 }
-// GetLeaveDateTime gets the leaveDateTime property value. Time attendee left in UTC.
+// GetLeaveDateTime gets the leaveDateTime property value. The time the attendee left in UTC.
 func (m *AttendanceInterval) GetLeaveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -133,13 +133,13 @@ func (m *AttendanceInterval) SetDurationInSeconds(value *int32)() {
         m.durationInSeconds = value
     }
 }
-// SetJoinDateTime sets the joinDateTime property value. Time attendee joined in UTC.
+// SetJoinDateTime sets the joinDateTime property value. The time the attendee joined in UTC.
 func (m *AttendanceInterval) SetJoinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.joinDateTime = value
     }
 }
-// SetLeaveDateTime sets the leaveDateTime property value. Time attendee left in UTC.
+// SetLeaveDateTime sets the leaveDateTime property value. The time the attendee left in UTC.
 func (m *AttendanceInterval) SetLeaveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.leaveDateTime = value

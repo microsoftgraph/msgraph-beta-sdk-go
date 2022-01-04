@@ -4,6 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ieb032a617179e578a1cb7b0a970de4c13f637ffcdf6aa0bf7ace1202832d7fdf "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/assignments/delta"
 )
 
 // AssignmentsRequestBuilder builds and executes requests for operations under \education\me\assignments
@@ -26,7 +27,7 @@ type AssignmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AssignmentsRequestBuilderGetQueryParameters list of assignments for the user. Nullable.
+// AssignmentsRequestBuilderGetQueryParameters assignments belonging to the user.
 type AssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +76,7 @@ func NewAssignmentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation list of assignments for the user. Nullable.
+// CreateGetRequestInformation assignments belonging to the user.
 func (m *AssignmentsRequestBuilder) CreateGetRequestInformation(options *AssignmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +96,7 @@ func (m *AssignmentsRequestBuilder) CreateGetRequestInformation(options *Assignm
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation list of assignments for the user. Nullable.
+// CreatePostRequestInformation assignments belonging to the user.
 func (m *AssignmentsRequestBuilder) CreatePostRequestInformation(options *AssignmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +114,11 @@ func (m *AssignmentsRequestBuilder) CreatePostRequestInformation(options *Assign
     }
     return requestInfo, nil
 }
-// Get list of assignments for the user. Nullable.
+// Delta builds and executes requests for operations under \education\me\assignments\microsoft.graph.delta()
+func (m *AssignmentsRequestBuilder) Delta()(*ieb032a617179e578a1cb7b0a970de4c13f637ffcdf6aa0bf7ace1202832d7fdf.DeltaRequestBuilder) {
+    return ieb032a617179e578a1cb7b0a970de4c13f637ffcdf6aa0bf7ace1202832d7fdf.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Get assignments belonging to the user.
 func (m *AssignmentsRequestBuilder) Get(options *AssignmentsRequestBuilderGetOptions)(*AssignmentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +130,7 @@ func (m *AssignmentsRequestBuilder) Get(options *AssignmentsRequestBuilderGetOpt
     }
     return res.(*AssignmentsResponse), nil
 }
-// Post list of assignments for the user. Nullable.
+// Post assignments belonging to the user.
 func (m *AssignmentsRequestBuilder) Post(options *AssignmentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.EducationAssignment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

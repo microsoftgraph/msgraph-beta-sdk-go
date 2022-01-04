@@ -7,13 +7,13 @@ import (
 // AttendanceRecord 
 type AttendanceRecord struct {
     Entity
-    // List of time periods between joining and leaving.
+    // List of time periods between joining and leaving a meeting.
     attendanceIntervals []AttendanceInterval;
-    // Email address.
+    // Email address of the user associated with this atttendance record.
     emailAddress *string;
-    // Identifier, such as display name.
+    // Identity of the user associated with this atttendance record.
     identity *Identity;
-    // Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.
+    // Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
     role *string;
     // Total duration of the attendances in seconds.
     totalAttendanceInSeconds *int32;
@@ -25,7 +25,7 @@ func NewAttendanceRecord()(*AttendanceRecord) {
     }
     return m
 }
-// GetAttendanceIntervals gets the attendanceIntervals property value. List of time periods between joining and leaving.
+// GetAttendanceIntervals gets the attendanceIntervals property value. List of time periods between joining and leaving a meeting.
 func (m *AttendanceRecord) GetAttendanceIntervals()([]AttendanceInterval) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *AttendanceRecord) GetAttendanceIntervals()([]AttendanceInterval) {
         return m.attendanceIntervals
     }
 }
-// GetEmailAddress gets the emailAddress property value. Email address.
+// GetEmailAddress gets the emailAddress property value. Email address of the user associated with this atttendance record.
 func (m *AttendanceRecord) GetEmailAddress()(*string) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *AttendanceRecord) GetEmailAddress()(*string) {
         return m.emailAddress
     }
 }
-// GetIdentity gets the identity property value. Identifier, such as display name.
+// GetIdentity gets the identity property value. Identity of the user associated with this atttendance record.
 func (m *AttendanceRecord) GetIdentity()(*Identity) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *AttendanceRecord) GetIdentity()(*Identity) {
         return m.identity
     }
 }
-// GetRole gets the role property value. Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.
+// GetRole gets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
 func (m *AttendanceRecord) GetRole()(*string) {
     if m == nil {
         return nil
@@ -170,25 +170,25 @@ func (m *AttendanceRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// SetAttendanceIntervals sets the attendanceIntervals property value. List of time periods between joining and leaving.
+// SetAttendanceIntervals sets the attendanceIntervals property value. List of time periods between joining and leaving a meeting.
 func (m *AttendanceRecord) SetAttendanceIntervals(value []AttendanceInterval)() {
     if m != nil {
         m.attendanceIntervals = value
     }
 }
-// SetEmailAddress sets the emailAddress property value. Email address.
+// SetEmailAddress sets the emailAddress property value. Email address of the user associated with this atttendance record.
 func (m *AttendanceRecord) SetEmailAddress(value *string)() {
     if m != nil {
         m.emailAddress = value
     }
 }
-// SetIdentity sets the identity property value. Identifier, such as display name.
+// SetIdentity sets the identity property value. Identity of the user associated with this atttendance record.
 func (m *AttendanceRecord) SetIdentity(value *Identity)() {
     if m != nil {
         m.identity = value
     }
 }
-// SetRole sets the role property value. Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.
+// SetRole sets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
 func (m *AttendanceRecord) SetRole(value *string)() {
     if m != nil {
         m.role = value

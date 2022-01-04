@@ -17,6 +17,8 @@ type CreateLinkRequestBody struct {
     // 
     recipients []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipient;
     // 
+    retainInheritedPermissions *bool;
+    // 
     scope *string;
     // 
     type_escaped *string;
@@ -58,6 +60,14 @@ func (m *CreateLinkRequestBody) GetRecipients()([]i535684e11b5500196ecb4b5c6634e
         return nil
     } else {
         return m.recipients
+    }
+}
+// GetRetainInheritedPermissions gets the retainInheritedPermissions property value. 
+func (m *CreateLinkRequestBody) GetRetainInheritedPermissions()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.retainInheritedPermissions
     }
 }
 // GetScope gets the scope property value. 
@@ -113,6 +123,16 @@ func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
+    res["retainInheritedPermissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRetainInheritedPermissions(val)
+        }
+        return nil
+    }
     res["scope"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -164,6 +184,12 @@ func (m *CreateLinkRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     {
+        err := writer.WriteBoolValue("retainInheritedPermissions", m.GetRetainInheritedPermissions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("scope", m.GetScope())
         if err != nil {
             return err
@@ -205,6 +231,12 @@ func (m *CreateLinkRequestBody) SetPassword(value *string)() {
 func (m *CreateLinkRequestBody) SetRecipients(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveRecipient)() {
     if m != nil {
         m.recipients = value
+    }
+}
+// SetRetainInheritedPermissions sets the retainInheritedPermissions property value. 
+func (m *CreateLinkRequestBody) SetRetainInheritedPermissions(value *bool)() {
+    if m != nil {
+        m.retainInheritedPermissions = value
     }
 }
 // SetScope sets the scope property value. 

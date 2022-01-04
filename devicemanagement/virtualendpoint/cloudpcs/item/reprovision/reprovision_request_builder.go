@@ -15,6 +15,8 @@ type ReprovisionRequestBuilder struct {
 }
 // ReprovisionRequestBuilderPostOptions options for Post
 type ReprovisionRequestBuilderPostOptions struct {
+    // 
+    Body *ReprovisionRequestBody;
     // Request headers
     H map[string]string;
     // Request options
@@ -47,6 +49,7 @@ func (m *ReprovisionRequestBuilder) CreatePostRequestInformation(options *Reprov
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.POST
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H
     }

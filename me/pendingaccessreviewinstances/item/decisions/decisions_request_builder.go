@@ -4,6 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ia4867452dc1ec74f95fff9974a509acc9cf7fb609ecf4566bf05edec14a48e3f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/decisions/recordalldecisions"
     idbfb68777157a13d3d2c7b891ca03384140be127993d1e11bc0f121e60b1c91b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/decisions/filterbycurrentuserwithon"
 )
 
@@ -141,4 +142,7 @@ func (m *DecisionsRequestBuilder) Post(options *DecisionsRequestBuilderPostOptio
         return nil, err
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItem), nil
+}
+func (m *DecisionsRequestBuilder) RecordAllDecisions()(*ia4867452dc1ec74f95fff9974a509acc9cf7fb609ecf4566bf05edec14a48e3f.RecordAllDecisionsRequestBuilder) {
+    return ia4867452dc1ec74f95fff9974a509acc9cf7fb609ecf4566bf05edec14a48e3f.NewRecordAllDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

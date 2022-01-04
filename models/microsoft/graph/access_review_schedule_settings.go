@@ -28,7 +28,7 @@ type AccessReviewScheduleSettings struct {
     recommendationLookBackDuration *string;
     // Indicates whether decision recommendations are enabled or disabled.
     recommendationsEnabled *bool;
-    // Detailed settings for recurrence using the standard Outlook recurrence object. Only weekly and absoluteMonthly on recurrencePattern are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+    // Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
     recurrence *PatternedRecurrence;
     // Indicates whether reminders are enabled or disabled. Default value is false.
     reminderNotificationsEnabled *bool;
@@ -128,7 +128,7 @@ func (m *AccessReviewScheduleSettings) GetRecommendationsEnabled()(*bool) {
         return m.recommendationsEnabled
     }
 }
-// GetRecurrence gets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object. Only weekly and absoluteMonthly on recurrencePattern are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+// GetRecurrence gets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
 func (m *AccessReviewScheduleSettings) GetRecurrence()(*PatternedRecurrence) {
     if m == nil {
         return nil
@@ -438,7 +438,7 @@ func (m *AccessReviewScheduleSettings) SetRecommendationsEnabled(value *bool)() 
         m.recommendationsEnabled = value
     }
 }
-// SetRecurrence sets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object. Only weekly and absoluteMonthly on recurrencePattern are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+// SetRecurrence sets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
 func (m *AccessReviewScheduleSettings) SetRecurrence(value *PatternedRecurrence)() {
     if m != nil {
         m.recurrence = value
