@@ -7,11 +7,11 @@ import (
 // ReportRoot 
 type ReportRoot struct {
     Entity
-    // 
+    // Represents a detailed summary of an application sign-in.
     applicationSignInDetailedSummary []ApplicationSignInDetailedSummary;
-    // 
+    // Container for navigation properties for Azure AD authentication methods resources.
     authenticationMethods *AuthenticationMethodsRoot;
-    // 
+    // Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
     credentialUserRegistrationDetails []CredentialUserRegistrationDetails;
     // 
     dailyPrintUsageByPrinter []PrintUsageByPrinter;
@@ -29,7 +29,7 @@ type ReportRoot struct {
     monthlyPrintUsageSummariesByPrinter []PrintUsageByPrinter;
     // 
     monthlyPrintUsageSummariesByUser []PrintUsageByUser;
-    // 
+    // Represents the self-service password reset (SSPR) usage for a given tenant.
     userCredentialUsageDetails []UserCredentialUsageDetails;
 }
 // NewReportRoot instantiates a new reportRoot and sets the default values.
@@ -39,7 +39,7 @@ func NewReportRoot()(*ReportRoot) {
     }
     return m
 }
-// GetApplicationSignInDetailedSummary gets the applicationSignInDetailedSummary property value. 
+// GetApplicationSignInDetailedSummary gets the applicationSignInDetailedSummary property value. Represents a detailed summary of an application sign-in.
 func (m *ReportRoot) GetApplicationSignInDetailedSummary()([]ApplicationSignInDetailedSummary) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *ReportRoot) GetApplicationSignInDetailedSummary()([]ApplicationSignInDe
         return m.applicationSignInDetailedSummary
     }
 }
-// GetAuthenticationMethods gets the authenticationMethods property value. 
+// GetAuthenticationMethods gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
 func (m *ReportRoot) GetAuthenticationMethods()(*AuthenticationMethodsRoot) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *ReportRoot) GetAuthenticationMethods()(*AuthenticationMethodsRoot) {
         return m.authenticationMethods
     }
 }
-// GetCredentialUserRegistrationDetails gets the credentialUserRegistrationDetails property value. 
+// GetCredentialUserRegistrationDetails gets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetails) {
     if m == nil {
         return nil
@@ -127,7 +127,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUser) {
         return m.monthlyPrintUsageSummariesByUser
     }
 }
-// GetUserCredentialUsageDetails gets the userCredentialUsageDetails property value. 
+// GetUserCredentialUsageDetails gets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *ReportRoot) GetUserCredentialUsageDetails()([]UserCredentialUsageDetails) {
     if m == nil {
         return nil
@@ -442,19 +442,19 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
-// SetApplicationSignInDetailedSummary sets the applicationSignInDetailedSummary property value. 
+// SetApplicationSignInDetailedSummary sets the applicationSignInDetailedSummary property value. Represents a detailed summary of an application sign-in.
 func (m *ReportRoot) SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummary)() {
     if m != nil {
         m.applicationSignInDetailedSummary = value
     }
 }
-// SetAuthenticationMethods sets the authenticationMethods property value. 
+// SetAuthenticationMethods sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
 func (m *ReportRoot) SetAuthenticationMethods(value *AuthenticationMethodsRoot)() {
     if m != nil {
         m.authenticationMethods = value
     }
 }
-// SetCredentialUserRegistrationDetails sets the credentialUserRegistrationDetails property value. 
+// SetCredentialUserRegistrationDetails sets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *ReportRoot) SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetails)() {
     if m != nil {
         m.credentialUserRegistrationDetails = value
@@ -508,7 +508,7 @@ func (m *ReportRoot) SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUse
         m.monthlyPrintUsageSummariesByUser = value
     }
 }
-// SetUserCredentialUsageDetails sets the userCredentialUsageDetails property value. 
+// SetUserCredentialUsageDetails sets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *ReportRoot) SetUserCredentialUsageDetails(value []UserCredentialUsageDetails)() {
     if m != nil {
         m.userCredentialUsageDetails = value

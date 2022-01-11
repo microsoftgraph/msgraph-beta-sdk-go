@@ -26,7 +26,7 @@ type AgreementAcceptancesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AgreementAcceptancesRequestBuilderGetQueryParameters get agreementAcceptances from identityGovernance
+// AgreementAcceptancesRequestBuilderGetQueryParameters represents the current status of a user's response to a company's customizable terms of use agreement.
 type AgreementAcceptancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAgreementAcceptancesRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementAcceptancesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get agreementAcceptances from identityGovernance
+// CreateGetRequestInformation represents the current status of a user's response to a company's customizable terms of use agreement.
 func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformation(options *AgreementAcceptancesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to agreementAcceptances for identityGovernance
+// CreatePostRequestInformation represents the current status of a user's response to a company's customizable terms of use agreement.
 func (m *AgreementAcceptancesRequestBuilder) CreatePostRequestInformation(options *AgreementAcceptancesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AgreementAcceptancesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get get agreementAcceptances from identityGovernance
+// Get represents the current status of a user's response to a company's customizable terms of use agreement.
 func (m *AgreementAcceptancesRequestBuilder) Get(options *AgreementAcceptancesRequestBuilderGetOptions)(*AgreementAcceptancesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AgreementAcceptancesRequestBuilder) Get(options *AgreementAcceptancesRe
     }
     return res.(*AgreementAcceptancesResponse), nil
 }
-// Post create new navigation property to agreementAcceptances for identityGovernance
+// Post represents the current status of a user's response to a company's customizable terms of use agreement.
 func (m *AgreementAcceptancesRequestBuilder) Post(options *AgreementAcceptancesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgreementAcceptance, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

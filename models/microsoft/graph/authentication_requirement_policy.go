@@ -8,9 +8,9 @@ import (
 type AuthenticationRequirementPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Provides additional detail on the feature identified in requirementProvider.
     detail *string;
-    // 
+    // Identifies what Azure AD feature requires MFA in this policy. Possible values are: user, request, servicePrincipal, v1ConditionalAccess, multiConditionalAccess, tenantSessionRiskPolicy, accountCompromisePolicies, v1ConditionalAccessDependency, v1ConditionalAccessPolicyIdRequested, mfaRegistrationRequiredByIdentityProtectionPolicy, baselineProtection, mfaRegistrationRequiredByBaselineProtection, mfaRegistrationRequiredByMultiConditionalAccess, enforcedForCspAdmins, securityDefaults, mfaRegistrationRequiredBySecurityDefaults, proofUpCodeRequest, crossTenantOutboundRule, gpsLocationCondition, riskBasedPolicy, unknownFutureValue.
     requirementProvider *RequirementProvider;
 }
 // NewAuthenticationRequirementPolicy instantiates a new authenticationRequirementPolicy and sets the default values.
@@ -28,7 +28,7 @@ func (m *AuthenticationRequirementPolicy) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// GetDetail gets the detail property value. 
+// GetDetail gets the detail property value. Provides additional detail on the feature identified in requirementProvider.
 func (m *AuthenticationRequirementPolicy) GetDetail()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *AuthenticationRequirementPolicy) GetDetail()(*string) {
         return m.detail
     }
 }
-// GetRequirementProvider gets the requirementProvider property value. 
+// GetRequirementProvider gets the requirementProvider property value. Identifies what Azure AD feature requires MFA in this policy. Possible values are: user, request, servicePrincipal, v1ConditionalAccess, multiConditionalAccess, tenantSessionRiskPolicy, accountCompromisePolicies, v1ConditionalAccessDependency, v1ConditionalAccessPolicyIdRequested, mfaRegistrationRequiredByIdentityProtectionPolicy, baselineProtection, mfaRegistrationRequiredByBaselineProtection, mfaRegistrationRequiredByMultiConditionalAccess, enforcedForCspAdmins, securityDefaults, mfaRegistrationRequiredBySecurityDefaults, proofUpCodeRequest, crossTenantOutboundRule, gpsLocationCondition, riskBasedPolicy, unknownFutureValue.
 func (m *AuthenticationRequirementPolicy) GetRequirementProvider()(*RequirementProvider) {
     if m == nil {
         return nil
@@ -102,13 +102,13 @@ func (m *AuthenticationRequirementPolicy) SetAdditionalData(value map[string]int
         m.additionalData = value
     }
 }
-// SetDetail sets the detail property value. 
+// SetDetail sets the detail property value. Provides additional detail on the feature identified in requirementProvider.
 func (m *AuthenticationRequirementPolicy) SetDetail(value *string)() {
     if m != nil {
         m.detail = value
     }
 }
-// SetRequirementProvider sets the requirementProvider property value. 
+// SetRequirementProvider sets the requirementProvider property value. Identifies what Azure AD feature requires MFA in this policy. Possible values are: user, request, servicePrincipal, v1ConditionalAccess, multiConditionalAccess, tenantSessionRiskPolicy, accountCompromisePolicies, v1ConditionalAccessDependency, v1ConditionalAccessPolicyIdRequested, mfaRegistrationRequiredByIdentityProtectionPolicy, baselineProtection, mfaRegistrationRequiredByBaselineProtection, mfaRegistrationRequiredByMultiConditionalAccess, enforcedForCspAdmins, securityDefaults, mfaRegistrationRequiredBySecurityDefaults, proofUpCodeRequest, crossTenantOutboundRule, gpsLocationCondition, riskBasedPolicy, unknownFutureValue.
 func (m *AuthenticationRequirementPolicy) SetRequirementProvider(value *RequirementProvider)() {
     if m != nil {
         m.requirementProvider = value

@@ -4,6 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i2f6759eb43160927cfed3076f3c9b2b37a6596e931ce8eb059e0345501883f56 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/tasks/lists/item/tasks/item/parentlist/ref"
 )
 
 // ParentListRequestBuilder builds and executes requests for operations under \me\tasks\lists\{baseTaskList-id}\tasks\{baseTask-id}\parentList
@@ -14,15 +15,6 @@ type ParentListRequestBuilder struct {
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
-}
-// ParentListRequestBuilderDeleteOptions options for Delete
-type ParentListRequestBuilderDeleteOptions struct {
-    // Request headers
-    H map[string]string;
-    // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // ParentListRequestBuilderGetOptions options for Get
 type ParentListRequestBuilderGetOptions struct {
@@ -42,17 +34,6 @@ type ParentListRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string;
 }
-// ParentListRequestBuilderPatchOptions options for Patch
-type ParentListRequestBuilderPatchOptions struct {
-    // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTaskList;
-    // Request headers
-    H map[string]string;
-    // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
-}
 // NewParentListRequestBuilderInternal instantiates a new ParentListRequestBuilder and sets the default values.
 func NewParentListRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentListRequestBuilder) {
     m := &ParentListRequestBuilder{
@@ -71,23 +52,6 @@ func NewParentListRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewParentListRequestBuilderInternal(urlParams, requestAdapter)
-}
-// CreateDeleteRequestInformation the list which contains the task.
-func (m *ParentListRequestBuilder) CreateDeleteRequestInformation(options *ParentListRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
-    }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
-        if err != nil {
-            return nil, err
-        }
-    }
-    return requestInfo, nil
 }
 // CreateGetRequestInformation the list which contains the task.
 func (m *ParentListRequestBuilder) CreateGetRequestInformation(options *ParentListRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -109,36 +73,6 @@ func (m *ParentListRequestBuilder) CreateGetRequestInformation(options *ParentLi
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the list which contains the task.
-func (m *ParentListRequestBuilder) CreatePatchRequestInformation(options *ParentListRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
-    }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
-        if err != nil {
-            return nil, err
-        }
-    }
-    return requestInfo, nil
-}
-// Delete the list which contains the task.
-func (m *ParentListRequestBuilder) Delete(options *ParentListRequestBuilderDeleteOptions)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformation(options);
-    if err != nil {
-        return err
-    }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
-    if err != nil {
-        return err
-    }
-    return nil
-}
 // Get the list which contains the task.
 func (m *ParentListRequestBuilder) Get(options *ParentListRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTaskList, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
@@ -151,15 +85,6 @@ func (m *ParentListRequestBuilder) Get(options *ParentListRequestBuilderGetOptio
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.BaseTaskList), nil
 }
-// Patch the list which contains the task.
-func (m *ParentListRequestBuilder) Patch(options *ParentListRequestBuilderPatchOptions)(error) {
-    requestInfo, err := m.CreatePatchRequestInformation(options);
-    if err != nil {
-        return err
-    }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *ParentListRequestBuilder) Ref()(*i2f6759eb43160927cfed3076f3c9b2b37a6596e931ce8eb059e0345501883f56.RefRequestBuilder) {
+    return i2f6759eb43160927cfed3076f3c9b2b37a6596e931ce8eb059e0345501883f56.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

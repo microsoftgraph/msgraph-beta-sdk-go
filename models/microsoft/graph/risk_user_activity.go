@@ -10,7 +10,7 @@ type RiskUserActivity struct {
     additionalData map[string]interface{};
     // Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
     detail *RiskDetail;
-    // List of risk event types. Deprecated. Use riskEventType instead.
+    // 
     eventTypes []RiskEventType;
     // The type of risk event detected.
     riskEventTypes []string;
@@ -38,7 +38,7 @@ func (m *RiskUserActivity) GetDetail()(*RiskDetail) {
         return m.detail
     }
 }
-// GetEventTypes gets the eventTypes property value. List of risk event types. Deprecated. Use riskEventType instead.
+// GetEventTypes gets the eventTypes property value. 
 func (m *RiskUserActivity) GetEventTypes()([]RiskEventType) {
     if m == nil {
         return nil
@@ -142,7 +142,7 @@ func (m *RiskUserActivity) SetDetail(value *RiskDetail)() {
         m.detail = value
     }
 }
-// SetEventTypes sets the eventTypes property value. List of risk event types. Deprecated. Use riskEventType instead.
+// SetEventTypes sets the eventTypes property value. 
 func (m *RiskUserActivity) SetEventTypes(value []RiskEventType)() {
     if m != nil {
         m.eventTypes = value

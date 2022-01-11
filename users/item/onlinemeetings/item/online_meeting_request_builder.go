@@ -10,6 +10,8 @@ import (
     i65f8bf11ce791f596018398cdae14739b988a503719adcddd6149b76aa9ef7d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item/registration"
     i9fc238c5ea33c18d198b038ba9dc7600eb465be6a6ced5636f851fc096f6ea0d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item/attendancereports"
     ib5acddc80470812379ebb7f25e1a1c93a66d52604909cbf6927d11243ea3ef5c "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item/attendeereport"
+    icf583adcd59e19830c8af5831581c585b5766ed3946caf529210ba90683d1302 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item/transcripts"
+    i356981b13cfe47488df4a2131001c798a9c4321d65bc3c08bb0452bd915fe104 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item/transcripts/item"
     i68329a1aa4c24d705e4cfdf254617301403e4cbff40bf8b7898a6b4a418033c7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onlinemeetings/item/attendancereports/item"
 )
 
@@ -198,4 +200,18 @@ func (m *OnlineMeetingRequestBuilder) Recording()(*i325245ad62086769abb85404615f
 }
 func (m *OnlineMeetingRequestBuilder) Registration()(*i65f8bf11ce791f596018398cdae14739b988a503719adcddd6149b76aa9ef7d7.RegistrationRequestBuilder) {
     return i65f8bf11ce791f596018398cdae14739b988a503719adcddd6149b76aa9ef7d7.NewRegistrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *OnlineMeetingRequestBuilder) Transcripts()(*icf583adcd59e19830c8af5831581c585b5766ed3946caf529210ba90683d1302.TranscriptsRequestBuilder) {
+    return icf583adcd59e19830c8af5831581c585b5766ed3946caf529210ba90683d1302.NewTranscriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TranscriptsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.onlineMeetings.item.transcripts.item collection
+func (m *OnlineMeetingRequestBuilder) TranscriptsById(id string)(*i356981b13cfe47488df4a2131001c798a9c4321d65bc3c08bb0452bd915fe104.CallTranscriptRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["callTranscript_id"] = id
+    }
+    return i356981b13cfe47488df4a2131001c798a9c4321d65bc3c08bb0452bd915fe104.NewCallTranscriptRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

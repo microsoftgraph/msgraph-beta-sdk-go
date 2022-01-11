@@ -18,7 +18,7 @@ type AccessPackageResource struct {
     addedBy *string;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     addedOn *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // Contains attribute information for the resource.
     attributes []AccessPackageResourceAttribute;
     // A description for the resource.
     description *string;
@@ -82,7 +82,7 @@ func (m *AccessPackageResource) GetAddedOn()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.addedOn
     }
 }
-// GetAttributes gets the attributes property value. 
+// GetAttributes gets the attributes property value. Contains attribute information for the resource.
 func (m *AccessPackageResource) GetAttributes()([]AccessPackageResourceAttribute) {
     if m == nil {
         return nil
@@ -427,7 +427,7 @@ func (m *AccessPackageResource) SetAddedOn(value *i336074805fc853987abe6f7fe3ad9
         m.addedOn = value
     }
 }
-// SetAttributes sets the attributes property value. 
+// SetAttributes sets the attributes property value. Contains attribute information for the resource.
 func (m *AccessPackageResource) SetAttributes(value []AccessPackageResourceAttribute)() {
     if m != nil {
         m.attributes = value

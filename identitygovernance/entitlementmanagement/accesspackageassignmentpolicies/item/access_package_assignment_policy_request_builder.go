@@ -37,7 +37,7 @@ type AccessPackageAssignmentPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageAssignmentPolicyRequestBuilderGetQueryParameters get accessPackageAssignmentPolicies from identityGovernance
+// AccessPackageAssignmentPolicyRequestBuilderGetQueryParameters represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
 type AccessPackageAssignmentPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -80,7 +80,7 @@ func NewAccessPackageAssignmentPolicyRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property accessPackageAssignmentPolicies for identityGovernance
+// CreateDeleteRequestInformation represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
 func (m *AccessPackageAssignmentPolicyRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageAssignmentPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,7 +97,7 @@ func (m *AccessPackageAssignmentPolicyRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get accessPackageAssignmentPolicies from identityGovernance
+// CreateGetRequestInformation represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
 func (m *AccessPackageAssignmentPolicyRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,7 +117,7 @@ func (m *AccessPackageAssignmentPolicyRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property accessPackageAssignmentPolicies in identityGovernance
+// CreatePatchRequestInformation represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
 func (m *AccessPackageAssignmentPolicyRequestBuilder) CreatePatchRequestInformation(options *AccessPackageAssignmentPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,7 +135,7 @@ func (m *AccessPackageAssignmentPolicyRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// Delete delete navigation property accessPackageAssignmentPolicies for identityGovernance
+// Delete represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
 func (m *AccessPackageAssignmentPolicyRequestBuilder) Delete(options *AccessPackageAssignmentPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -147,7 +147,7 @@ func (m *AccessPackageAssignmentPolicyRequestBuilder) Delete(options *AccessPack
     }
     return nil
 }
-// Get get accessPackageAssignmentPolicies from identityGovernance
+// Get represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
 func (m *AccessPackageAssignmentPolicyRequestBuilder) Get(options *AccessPackageAssignmentPolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -159,7 +159,7 @@ func (m *AccessPackageAssignmentPolicyRequestBuilder) Get(options *AccessPackage
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentPolicy), nil
 }
-// Patch update the navigation property accessPackageAssignmentPolicies in identityGovernance
+// Patch represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
 func (m *AccessPackageAssignmentPolicyRequestBuilder) Patch(options *AccessPackageAssignmentPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

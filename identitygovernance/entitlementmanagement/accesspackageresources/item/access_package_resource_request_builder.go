@@ -40,7 +40,7 @@ type AccessPackageResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageResourceRequestBuilderGetQueryParameters get accessPackageResources from identityGovernance
+// AccessPackageResourceRequestBuilderGetQueryParameters a reference to a resource associated with an access package catalog.
 type AccessPackageResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -108,7 +108,7 @@ func NewAccessPackageResourceRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property accessPackageResources for identityGovernance
+// CreateDeleteRequestInformation a reference to a resource associated with an access package catalog.
 func (m *AccessPackageResourceRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageResourceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,7 +125,7 @@ func (m *AccessPackageResourceRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get accessPackageResources from identityGovernance
+// CreateGetRequestInformation a reference to a resource associated with an access package catalog.
 func (m *AccessPackageResourceRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,7 +145,7 @@ func (m *AccessPackageResourceRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property accessPackageResources in identityGovernance
+// CreatePatchRequestInformation a reference to a resource associated with an access package catalog.
 func (m *AccessPackageResourceRequestBuilder) CreatePatchRequestInformation(options *AccessPackageResourceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -163,7 +163,7 @@ func (m *AccessPackageResourceRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delete delete navigation property accessPackageResources for identityGovernance
+// Delete a reference to a resource associated with an access package catalog.
 func (m *AccessPackageResourceRequestBuilder) Delete(options *AccessPackageResourceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -175,7 +175,7 @@ func (m *AccessPackageResourceRequestBuilder) Delete(options *AccessPackageResou
     }
     return nil
 }
-// Get get accessPackageResources from identityGovernance
+// Get a reference to a resource associated with an access package catalog.
 func (m *AccessPackageResourceRequestBuilder) Get(options *AccessPackageResourceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResource, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -187,7 +187,7 @@ func (m *AccessPackageResourceRequestBuilder) Get(options *AccessPackageResource
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResource), nil
 }
-// Patch update the navigation property accessPackageResources in identityGovernance
+// Patch a reference to a resource associated with an access package catalog.
 func (m *AccessPackageResourceRequestBuilder) Patch(options *AccessPackageResourceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

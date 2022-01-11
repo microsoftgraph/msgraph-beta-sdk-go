@@ -9,29 +9,29 @@ type EntitlementManagement struct {
     Entity
     // 
     accessPackageAssignmentApprovals []Approval;
-    // 
+    // Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
     accessPackageAssignmentPolicies []AccessPackageAssignmentPolicy;
-    // 
+    // Represents access package assignment requests created by or on behalf of a user.
     accessPackageAssignmentRequests []AccessPackageAssignmentRequest;
-    // 
+    // Represents the resource-specific role which a subject has been assigned through an access package assignment.
     accessPackageAssignmentResourceRoles []AccessPackageAssignmentResourceRole;
-    // 
+    // Represents the grant of an access package to a subject (user or group).
     accessPackageAssignments []AccessPackageAssignment;
-    // 
+    // Represents a group of access packages.
     accessPackageCatalogs []AccessPackageCatalog;
-    // 
+    // A reference to the geolocation environment in which a resource is located.
     accessPackageResourceEnvironments []AccessPackageResourceEnvironment;
-    // 
+    // Represents a request to add or remove a resource to or from a catalog respectively.
     accessPackageResourceRequests []AccessPackageResourceRequest;
-    // 
+    // A reference to both a scope within a resource, and a role in that resource for that scope.
     accessPackageResourceRoleScopes []AccessPackageResourceRoleScope;
-    // 
+    // A reference to a resource associated with an access package catalog.
     accessPackageResources []AccessPackageResource;
-    // Access packages.
+    // Represents access package objects.
     accessPackages []AccessPackage;
-    // Connected organizations.
+    // Represents references to a directory or domain of another organization whose users can request access.
     connectedOrganizations []ConnectedOrganization;
-    // Entitlement management settings.
+    // Represents the settings that control the behavior of Azure AD entitlement management.
     settings *EntitlementManagementSettings;
 }
 // NewEntitlementManagement instantiates a new entitlementManagement and sets the default values.
@@ -49,7 +49,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approval
         return m.accessPackageAssignmentApprovals
     }
 }
-// GetAccessPackageAssignmentPolicies gets the accessPackageAssignmentPolicies property value. 
+// GetAccessPackageAssignmentPolicies gets the accessPackageAssignmentPolicies property value. Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
 func (m *EntitlementManagement) GetAccessPackageAssignmentPolicies()([]AccessPackageAssignmentPolicy) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentPolicies()([]AccessPac
         return m.accessPackageAssignmentPolicies
     }
 }
-// GetAccessPackageAssignmentRequests gets the accessPackageAssignmentRequests property value. 
+// GetAccessPackageAssignmentRequests gets the accessPackageAssignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
 func (m *EntitlementManagement) GetAccessPackageAssignmentRequests()([]AccessPackageAssignmentRequest) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentRequests()([]AccessPac
         return m.accessPackageAssignmentRequests
     }
 }
-// GetAccessPackageAssignmentResourceRoles gets the accessPackageAssignmentResourceRoles property value. 
+// GetAccessPackageAssignmentResourceRoles gets the accessPackageAssignmentResourceRoles property value. Represents the resource-specific role which a subject has been assigned through an access package assignment.
 func (m *EntitlementManagement) GetAccessPackageAssignmentResourceRoles()([]AccessPackageAssignmentResourceRole) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentResourceRoles()([]Acce
         return m.accessPackageAssignmentResourceRoles
     }
 }
-// GetAccessPackageAssignments gets the accessPackageAssignments property value. 
+// GetAccessPackageAssignments gets the accessPackageAssignments property value. Represents the grant of an access package to a subject (user or group).
 func (m *EntitlementManagement) GetAccessPackageAssignments()([]AccessPackageAssignment) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignments()([]AccessPackageAss
         return m.accessPackageAssignments
     }
 }
-// GetAccessPackageCatalogs gets the accessPackageCatalogs property value. 
+// GetAccessPackageCatalogs gets the accessPackageCatalogs property value. Represents a group of access packages.
 func (m *EntitlementManagement) GetAccessPackageCatalogs()([]AccessPackageCatalog) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *EntitlementManagement) GetAccessPackageCatalogs()([]AccessPackageCatalo
         return m.accessPackageCatalogs
     }
 }
-// GetAccessPackageResourceEnvironments gets the accessPackageResourceEnvironments property value. 
+// GetAccessPackageResourceEnvironments gets the accessPackageResourceEnvironments property value. A reference to the geolocation environment in which a resource is located.
 func (m *EntitlementManagement) GetAccessPackageResourceEnvironments()([]AccessPackageResourceEnvironment) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *EntitlementManagement) GetAccessPackageResourceEnvironments()([]AccessP
         return m.accessPackageResourceEnvironments
     }
 }
-// GetAccessPackageResourceRequests gets the accessPackageResourceRequests property value. 
+// GetAccessPackageResourceRequests gets the accessPackageResourceRequests property value. Represents a request to add or remove a resource to or from a catalog respectively.
 func (m *EntitlementManagement) GetAccessPackageResourceRequests()([]AccessPackageResourceRequest) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *EntitlementManagement) GetAccessPackageResourceRequests()([]AccessPacka
         return m.accessPackageResourceRequests
     }
 }
-// GetAccessPackageResourceRoleScopes gets the accessPackageResourceRoleScopes property value. 
+// GetAccessPackageResourceRoleScopes gets the accessPackageResourceRoleScopes property value. A reference to both a scope within a resource, and a role in that resource for that scope.
 func (m *EntitlementManagement) GetAccessPackageResourceRoleScopes()([]AccessPackageResourceRoleScope) {
     if m == nil {
         return nil
@@ -113,7 +113,7 @@ func (m *EntitlementManagement) GetAccessPackageResourceRoleScopes()([]AccessPac
         return m.accessPackageResourceRoleScopes
     }
 }
-// GetAccessPackageResources gets the accessPackageResources property value. 
+// GetAccessPackageResources gets the accessPackageResources property value. A reference to a resource associated with an access package catalog.
 func (m *EntitlementManagement) GetAccessPackageResources()([]AccessPackageResource) {
     if m == nil {
         return nil
@@ -121,7 +121,7 @@ func (m *EntitlementManagement) GetAccessPackageResources()([]AccessPackageResou
         return m.accessPackageResources
     }
 }
-// GetAccessPackages gets the accessPackages property value. Access packages.
+// GetAccessPackages gets the accessPackages property value. Represents access package objects.
 func (m *EntitlementManagement) GetAccessPackages()([]AccessPackage) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *EntitlementManagement) GetAccessPackages()([]AccessPackage) {
         return m.accessPackages
     }
 }
-// GetConnectedOrganizations gets the connectedOrganizations property value. Connected organizations.
+// GetConnectedOrganizations gets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
 func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganization) {
     if m == nil {
         return nil
@@ -137,7 +137,7 @@ func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizat
         return m.connectedOrganizations
     }
 }
-// GetSettings gets the settings property value. Entitlement management settings.
+// GetSettings gets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
 func (m *EntitlementManagement) GetSettings()(*EntitlementManagementSettings) {
     if m == nil {
         return nil
@@ -483,73 +483,73 @@ func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Appr
         m.accessPackageAssignmentApprovals = value
     }
 }
-// SetAccessPackageAssignmentPolicies sets the accessPackageAssignmentPolicies property value. 
+// SetAccessPackageAssignmentPolicies sets the accessPackageAssignmentPolicies property value. Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
 func (m *EntitlementManagement) SetAccessPackageAssignmentPolicies(value []AccessPackageAssignmentPolicy)() {
     if m != nil {
         m.accessPackageAssignmentPolicies = value
     }
 }
-// SetAccessPackageAssignmentRequests sets the accessPackageAssignmentRequests property value. 
+// SetAccessPackageAssignmentRequests sets the accessPackageAssignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
 func (m *EntitlementManagement) SetAccessPackageAssignmentRequests(value []AccessPackageAssignmentRequest)() {
     if m != nil {
         m.accessPackageAssignmentRequests = value
     }
 }
-// SetAccessPackageAssignmentResourceRoles sets the accessPackageAssignmentResourceRoles property value. 
+// SetAccessPackageAssignmentResourceRoles sets the accessPackageAssignmentResourceRoles property value. Represents the resource-specific role which a subject has been assigned through an access package assignment.
 func (m *EntitlementManagement) SetAccessPackageAssignmentResourceRoles(value []AccessPackageAssignmentResourceRole)() {
     if m != nil {
         m.accessPackageAssignmentResourceRoles = value
     }
 }
-// SetAccessPackageAssignments sets the accessPackageAssignments property value. 
+// SetAccessPackageAssignments sets the accessPackageAssignments property value. Represents the grant of an access package to a subject (user or group).
 func (m *EntitlementManagement) SetAccessPackageAssignments(value []AccessPackageAssignment)() {
     if m != nil {
         m.accessPackageAssignments = value
     }
 }
-// SetAccessPackageCatalogs sets the accessPackageCatalogs property value. 
+// SetAccessPackageCatalogs sets the accessPackageCatalogs property value. Represents a group of access packages.
 func (m *EntitlementManagement) SetAccessPackageCatalogs(value []AccessPackageCatalog)() {
     if m != nil {
         m.accessPackageCatalogs = value
     }
 }
-// SetAccessPackageResourceEnvironments sets the accessPackageResourceEnvironments property value. 
+// SetAccessPackageResourceEnvironments sets the accessPackageResourceEnvironments property value. A reference to the geolocation environment in which a resource is located.
 func (m *EntitlementManagement) SetAccessPackageResourceEnvironments(value []AccessPackageResourceEnvironment)() {
     if m != nil {
         m.accessPackageResourceEnvironments = value
     }
 }
-// SetAccessPackageResourceRequests sets the accessPackageResourceRequests property value. 
+// SetAccessPackageResourceRequests sets the accessPackageResourceRequests property value. Represents a request to add or remove a resource to or from a catalog respectively.
 func (m *EntitlementManagement) SetAccessPackageResourceRequests(value []AccessPackageResourceRequest)() {
     if m != nil {
         m.accessPackageResourceRequests = value
     }
 }
-// SetAccessPackageResourceRoleScopes sets the accessPackageResourceRoleScopes property value. 
+// SetAccessPackageResourceRoleScopes sets the accessPackageResourceRoleScopes property value. A reference to both a scope within a resource, and a role in that resource for that scope.
 func (m *EntitlementManagement) SetAccessPackageResourceRoleScopes(value []AccessPackageResourceRoleScope)() {
     if m != nil {
         m.accessPackageResourceRoleScopes = value
     }
 }
-// SetAccessPackageResources sets the accessPackageResources property value. 
+// SetAccessPackageResources sets the accessPackageResources property value. A reference to a resource associated with an access package catalog.
 func (m *EntitlementManagement) SetAccessPackageResources(value []AccessPackageResource)() {
     if m != nil {
         m.accessPackageResources = value
     }
 }
-// SetAccessPackages sets the accessPackages property value. Access packages.
+// SetAccessPackages sets the accessPackages property value. Represents access package objects.
 func (m *EntitlementManagement) SetAccessPackages(value []AccessPackage)() {
     if m != nil {
         m.accessPackages = value
     }
 }
-// SetConnectedOrganizations sets the connectedOrganizations property value. Connected organizations.
+// SetConnectedOrganizations sets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
 func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrganization)() {
     if m != nil {
         m.connectedOrganizations = value
     }
 }
-// SetSettings sets the settings property value. Entitlement management settings.
+// SetSettings sets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
 func (m *EntitlementManagement) SetSettings(value *EntitlementManagementSettings)() {
     if m != nil {
         m.settings = value

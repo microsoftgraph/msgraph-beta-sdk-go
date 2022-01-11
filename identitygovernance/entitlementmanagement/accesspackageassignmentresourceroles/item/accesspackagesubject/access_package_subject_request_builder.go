@@ -36,7 +36,7 @@ type AccessPackageSubjectRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageSubjectRequestBuilderGetQueryParameters read-only. Nullable.
+// AccessPackageSubjectRequestBuilderGetQueryParameters read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
 type AccessPackageSubjectRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -76,7 +76,7 @@ func NewAccessPackageSubjectRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageSubjectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation read-only. Nullable.
+// CreateDeleteRequestInformation read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
 func (m *AccessPackageSubjectRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageSubjectRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,7 +93,7 @@ func (m *AccessPackageSubjectRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
 func (m *AccessPackageSubjectRequestBuilder) CreateGetRequestInformation(options *AccessPackageSubjectRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AccessPackageSubjectRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only. Nullable.
+// CreatePatchRequestInformation read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
 func (m *AccessPackageSubjectRequestBuilder) CreatePatchRequestInformation(options *AccessPackageSubjectRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *AccessPackageSubjectRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete read-only. Nullable.
+// Delete read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
 func (m *AccessPackageSubjectRequestBuilder) Delete(options *AccessPackageSubjectRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *AccessPackageSubjectRequestBuilder) Delete(options *AccessPackageSubjec
     }
     return nil
 }
-// Get read-only. Nullable.
+// Get read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
 func (m *AccessPackageSubjectRequestBuilder) Get(options *AccessPackageSubjectRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageSubject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -155,7 +155,7 @@ func (m *AccessPackageSubjectRequestBuilder) Get(options *AccessPackageSubjectRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageSubject), nil
 }
-// Patch read-only. Nullable.
+// Patch read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
 func (m *AccessPackageSubjectRequestBuilder) Patch(options *AccessPackageSubjectRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

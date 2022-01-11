@@ -26,7 +26,7 @@ type ApplicationSignInDetailedSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters get applicationSignInDetailedSummary from reports
+// ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters represents a detailed summary of an application sign-in.
 type ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewApplicationSignInDetailedSummaryRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationSignInDetailedSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get applicationSignInDetailedSummary from reports
+// CreateGetRequestInformation represents a detailed summary of an application sign-in.
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreateGetRequestInformation(options *ApplicationSignInDetailedSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to applicationSignInDetailedSummary for reports
+// CreatePostRequestInformation represents a detailed summary of an application sign-in.
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreatePostRequestInformation(options *ApplicationSignInDetailedSummaryRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// Get get applicationSignInDetailedSummary from reports
+// Get represents a detailed summary of an application sign-in.
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) Get(options *ApplicationSignInDetailedSummaryRequestBuilderGetOptions)(*ApplicationSignInDetailedSummaryResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) Get(options *Applicatio
     }
     return res.(*ApplicationSignInDetailedSummaryResponse), nil
 }
-// Post create new navigation property to applicationSignInDetailedSummary for reports
+// Post represents a detailed summary of an application sign-in.
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) Post(options *ApplicationSignInDetailedSummaryRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ApplicationSignInDetailedSummary, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

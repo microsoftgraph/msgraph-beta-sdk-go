@@ -8,7 +8,7 @@ import (
 // AccessPackage 
 type AccessPackage struct {
     Entity
-    // Read-only. Nullable.
+    // Read-only. Nullable. Supports $expand.
     accessPackageAssignmentPolicies []AccessPackageAssignmentPolicy;
     // Read-only. Nullable.
     accessPackageCatalog *AccessPackageCatalog;
@@ -16,15 +16,15 @@ type AccessPackage struct {
     accessPackageResourceRoleScopes []AccessPackageResourceRoleScope;
     // The access packages that are incompatible with this package. Read-only.
     accessPackagesIncompatibleWith []AccessPackage;
-    // ID of the access package catalog referencing this access package. Read-only.
+    // Identifier of the access package catalog referencing this access package. Read-only.
     catalogId *string;
-    // UPN of the user or identity of the subject who created this resource. Read-only.
+    // The userPrincipalName of the user or identity of the subject who created this resource. Read-only.
     createdBy *string;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The description of the access package.
     description *string;
-    // The display name of the access package.
+    // The display name of the access package. Supports $filter (eq, contains).
     displayName *string;
     // The  access packages whose assigned users are ineligible to be assigned this access package.
     incompatibleAccessPackages []AccessPackage;
@@ -34,7 +34,7 @@ type AccessPackage struct {
     isHidden *bool;
     // Indicates whether role scopes are visible.
     isRoleScopesVisible *bool;
-    // The UPN of the user who last modified this resource. Read-only.
+    // The userPrincipalName of the user who last modified this resource. Read-only.
     modifiedBy *string;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -46,7 +46,7 @@ func NewAccessPackage()(*AccessPackage) {
     }
     return m
 }
-// GetAccessPackageAssignmentPolicies gets the accessPackageAssignmentPolicies property value. Read-only. Nullable.
+// GetAccessPackageAssignmentPolicies gets the accessPackageAssignmentPolicies property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackage) GetAccessPackageAssignmentPolicies()([]AccessPackageAssignmentPolicy) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *AccessPackage) GetAccessPackagesIncompatibleWith()([]AccessPackage) {
         return m.accessPackagesIncompatibleWith
     }
 }
-// GetCatalogId gets the catalogId property value. ID of the access package catalog referencing this access package. Read-only.
+// GetCatalogId gets the catalogId property value. Identifier of the access package catalog referencing this access package. Read-only.
 func (m *AccessPackage) GetCatalogId()(*string) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *AccessPackage) GetCatalogId()(*string) {
         return m.catalogId
     }
 }
-// GetCreatedBy gets the createdBy property value. UPN of the user or identity of the subject who created this resource. Read-only.
+// GetCreatedBy gets the createdBy property value. The userPrincipalName of the user or identity of the subject who created this resource. Read-only.
 func (m *AccessPackage) GetCreatedBy()(*string) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *AccessPackage) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name of the access package.
+// GetDisplayName gets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
 func (m *AccessPackage) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *AccessPackage) GetIsRoleScopesVisible()(*bool) {
         return m.isRoleScopesVisible
     }
 }
-// GetModifiedBy gets the modifiedBy property value. The UPN of the user who last modified this resource. Read-only.
+// GetModifiedBy gets the modifiedBy property value. The userPrincipalName of the user who last modified this resource. Read-only.
 func (m *AccessPackage) GetModifiedBy()(*string) {
     if m == nil {
         return nil
@@ -467,7 +467,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// SetAccessPackageAssignmentPolicies sets the accessPackageAssignmentPolicies property value. Read-only. Nullable.
+// SetAccessPackageAssignmentPolicies sets the accessPackageAssignmentPolicies property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackage) SetAccessPackageAssignmentPolicies(value []AccessPackageAssignmentPolicy)() {
     if m != nil {
         m.accessPackageAssignmentPolicies = value
@@ -491,13 +491,13 @@ func (m *AccessPackage) SetAccessPackagesIncompatibleWith(value []AccessPackage)
         m.accessPackagesIncompatibleWith = value
     }
 }
-// SetCatalogId sets the catalogId property value. ID of the access package catalog referencing this access package. Read-only.
+// SetCatalogId sets the catalogId property value. Identifier of the access package catalog referencing this access package. Read-only.
 func (m *AccessPackage) SetCatalogId(value *string)() {
     if m != nil {
         m.catalogId = value
     }
 }
-// SetCreatedBy sets the createdBy property value. UPN of the user or identity of the subject who created this resource. Read-only.
+// SetCreatedBy sets the createdBy property value. The userPrincipalName of the user or identity of the subject who created this resource. Read-only.
 func (m *AccessPackage) SetCreatedBy(value *string)() {
     if m != nil {
         m.createdBy = value
@@ -515,7 +515,7 @@ func (m *AccessPackage) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the access package.
+// SetDisplayName sets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
 func (m *AccessPackage) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
@@ -545,7 +545,7 @@ func (m *AccessPackage) SetIsRoleScopesVisible(value *bool)() {
         m.isRoleScopesVisible = value
     }
 }
-// SetModifiedBy sets the modifiedBy property value. The UPN of the user who last modified this resource. Read-only.
+// SetModifiedBy sets the modifiedBy property value. The userPrincipalName of the user who last modified this resource. Read-only.
 func (m *AccessPackage) SetModifiedBy(value *string)() {
     if m != nil {
         m.modifiedBy = value

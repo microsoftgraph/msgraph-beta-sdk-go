@@ -35,7 +35,7 @@ type UserCredentialUsageDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// UserCredentialUsageDetailsRequestBuilderGetQueryParameters get userCredentialUsageDetails from reports
+// UserCredentialUsageDetailsRequestBuilderGetQueryParameters represents the self-service password reset (SSPR) usage for a given tenant.
 type UserCredentialUsageDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewUserCredentialUsageDetailsRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewUserCredentialUsageDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property userCredentialUsageDetails for reports
+// CreateDeleteRequestInformation represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *UserCredentialUsageDetailsRequestBuilder) CreateDeleteRequestInformation(options *UserCredentialUsageDetailsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) CreateDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get userCredentialUsageDetails from reports
+// CreateGetRequestInformation represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *UserCredentialUsageDetailsRequestBuilder) CreateGetRequestInformation(options *UserCredentialUsageDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property userCredentialUsageDetails in reports
+// CreatePatchRequestInformation represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *UserCredentialUsageDetailsRequestBuilder) CreatePatchRequestInformation(options *UserCredentialUsageDetailsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// Delete delete navigation property userCredentialUsageDetails for reports
+// Delete represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *UserCredentialUsageDetailsRequestBuilder) Delete(options *UserCredentialUsageDetailsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) Delete(options *UserCredentia
     }
     return nil
 }
-// Get get userCredentialUsageDetails from reports
+// Get represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *UserCredentialUsageDetailsRequestBuilder) Get(options *UserCredentialUsageDetailsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserCredentialUsageDetails, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) Get(options *UserCredentialUs
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserCredentialUsageDetails), nil
 }
-// Patch update the navigation property userCredentialUsageDetails in reports
+// Patch represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *UserCredentialUsageDetailsRequestBuilder) Patch(options *UserCredentialUsageDetailsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

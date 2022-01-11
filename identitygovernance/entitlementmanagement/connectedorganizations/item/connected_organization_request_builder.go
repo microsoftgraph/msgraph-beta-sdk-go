@@ -39,7 +39,7 @@ type ConnectedOrganizationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ConnectedOrganizationRequestBuilderGetQueryParameters connected organizations.
+// ConnectedOrganizationRequestBuilderGetQueryParameters represents references to a directory or domain of another organization whose users can request access.
 type ConnectedOrganizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -76,7 +76,7 @@ func NewConnectedOrganizationRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams["request-raw-url"] = rawUrl
     return NewConnectedOrganizationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation connected organizations.
+// CreateDeleteRequestInformation represents references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationRequestBuilder) CreateDeleteRequestInformation(options *ConnectedOrganizationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,7 +93,7 @@ func (m *ConnectedOrganizationRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation connected organizations.
+// CreateGetRequestInformation represents references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationRequestBuilder) CreateGetRequestInformation(options *ConnectedOrganizationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ConnectedOrganizationRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation connected organizations.
+// CreatePatchRequestInformation represents references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationRequestBuilder) CreatePatchRequestInformation(options *ConnectedOrganizationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *ConnectedOrganizationRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delete connected organizations.
+// Delete represents references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationRequestBuilder) Delete(options *ConnectedOrganizationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,7 +157,7 @@ func (m *ConnectedOrganizationRequestBuilder) ExternalSponsorsById(id string)(*i
     }
     return i0dc4c794f51a132efa630bcc7fe954fbd3f2af62e62f7c1557759f789dc562fc.NewDirectoryObjectRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get connected organizations.
+// Get represents references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationRequestBuilder) Get(options *ConnectedOrganizationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ConnectedOrganization, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -183,7 +183,7 @@ func (m *ConnectedOrganizationRequestBuilder) InternalSponsorsById(id string)(*i
     }
     return iff3bb963dff2078fab9881a67d7525c7d4a7f645e97c901f5515f1e0a89e28b6.NewDirectoryObjectRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch connected organizations.
+// Patch represents references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationRequestBuilder) Patch(options *ConnectedOrganizationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -10,7 +10,7 @@ type AccessPackageAssignmentRequest struct {
     Entity
     // The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
     accessPackage *AccessPackage;
-    // For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+    // For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
     accessPackageAssignment *AccessPackageAssignment;
     // Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
     answers []AccessPackageAnswer;
@@ -50,7 +50,7 @@ func (m *AccessPackageAssignmentRequest) GetAccessPackage()(*AccessPackage) {
         return m.accessPackage
     }
 }
-// GetAccessPackageAssignment gets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+// GetAccessPackageAssignment gets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
 func (m *AccessPackageAssignmentRequest) GetAccessPackageAssignment()(*AccessPackageAssignment) {
     if m == nil {
         return nil
@@ -385,7 +385,7 @@ func (m *AccessPackageAssignmentRequest) SetAccessPackage(value *AccessPackage)(
         m.accessPackage = value
     }
 }
-// SetAccessPackageAssignment sets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+// SetAccessPackageAssignment sets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetAccessPackageAssignment(value *AccessPackageAssignment)() {
     if m != nil {
         m.accessPackageAssignment = value

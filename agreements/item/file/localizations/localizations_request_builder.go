@@ -26,7 +26,7 @@ type LocalizationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// LocalizationsRequestBuilderGetQueryParameters get localizations from agreements
+// LocalizationsRequestBuilderGetQueryParameters the localized version of the terms of use agreement files attached to the agreement.
 type LocalizationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewLocalizationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams["request-raw-url"] = rawUrl
     return NewLocalizationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get localizations from agreements
+// CreateGetRequestInformation the localized version of the terms of use agreement files attached to the agreement.
 func (m *LocalizationsRequestBuilder) CreateGetRequestInformation(options *LocalizationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *LocalizationsRequestBuilder) CreateGetRequestInformation(options *Local
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to localizations for agreements
+// CreatePostRequestInformation the localized version of the terms of use agreement files attached to the agreement.
 func (m *LocalizationsRequestBuilder) CreatePostRequestInformation(options *LocalizationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *LocalizationsRequestBuilder) CreatePostRequestInformation(options *Loca
     }
     return requestInfo, nil
 }
-// Get get localizations from agreements
+// Get the localized version of the terms of use agreement files attached to the agreement.
 func (m *LocalizationsRequestBuilder) Get(options *LocalizationsRequestBuilderGetOptions)(*LocalizationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *LocalizationsRequestBuilder) Get(options *LocalizationsRequestBuilderGe
     }
     return res.(*LocalizationsResponse), nil
 }
-// Post create new navigation property to localizations for agreements
+// Post the localized version of the terms of use agreement files attached to the agreement.
 func (m *LocalizationsRequestBuilder) Post(options *LocalizationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AgreementFileLocalization, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

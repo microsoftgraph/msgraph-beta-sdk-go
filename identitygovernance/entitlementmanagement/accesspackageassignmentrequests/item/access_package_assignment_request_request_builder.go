@@ -40,7 +40,7 @@ type AccessPackageAssignmentRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageAssignmentRequestRequestBuilderGetQueryParameters get accessPackageAssignmentRequests from identityGovernance
+// AccessPackageAssignmentRequestRequestBuilderGetQueryParameters represents access package assignment requests created by or on behalf of a user.
 type AccessPackageAssignmentRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -86,7 +86,7 @@ func NewAccessPackageAssignmentRequestRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property accessPackageAssignmentRequests for identityGovernance
+// CreateDeleteRequestInformation represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageAssignmentRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,7 +103,7 @@ func (m *AccessPackageAssignmentRequestRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get accessPackageAssignmentRequests from identityGovernance
+// CreateGetRequestInformation represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *AccessPackageAssignmentRequestRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property accessPackageAssignmentRequests in identityGovernance
+// CreatePatchRequestInformation represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) CreatePatchRequestInformation(options *AccessPackageAssignmentRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,7 +141,7 @@ func (m *AccessPackageAssignmentRequestRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// Delete delete navigation property accessPackageAssignmentRequests for identityGovernance
+// Delete represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) Delete(options *AccessPackageAssignmentRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,7 +153,7 @@ func (m *AccessPackageAssignmentRequestRequestBuilder) Delete(options *AccessPac
     }
     return nil
 }
-// Get get accessPackageAssignmentRequests from identityGovernance
+// Get represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) Get(options *AccessPackageAssignmentRequestRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -165,7 +165,7 @@ func (m *AccessPackageAssignmentRequestRequestBuilder) Get(options *AccessPackag
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentRequest), nil
 }
-// Patch update the navigation property accessPackageAssignmentRequests in identityGovernance
+// Patch represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) Patch(options *AccessPackageAssignmentRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

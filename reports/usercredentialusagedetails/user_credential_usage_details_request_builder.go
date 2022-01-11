@@ -26,7 +26,7 @@ type UserCredentialUsageDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// UserCredentialUsageDetailsRequestBuilderGetQueryParameters get userCredentialUsageDetails from reports
+// UserCredentialUsageDetailsRequestBuilderGetQueryParameters represents the self-service password reset (SSPR) usage for a given tenant.
 type UserCredentialUsageDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewUserCredentialUsageDetailsRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewUserCredentialUsageDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get userCredentialUsageDetails from reports
+// CreateGetRequestInformation represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *UserCredentialUsageDetailsRequestBuilder) CreateGetRequestInformation(options *UserCredentialUsageDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to userCredentialUsageDetails for reports
+// CreatePostRequestInformation represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *UserCredentialUsageDetailsRequestBuilder) CreatePostRequestInformation(options *UserCredentialUsageDetailsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Get get userCredentialUsageDetails from reports
+// Get represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *UserCredentialUsageDetailsRequestBuilder) Get(options *UserCredentialUsageDetailsRequestBuilderGetOptions)(*UserCredentialUsageDetailsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) Get(options *UserCredentialUs
     }
     return res.(*UserCredentialUsageDetailsResponse), nil
 }
-// Post create new navigation property to userCredentialUsageDetails for reports
+// Post represents the self-service password reset (SSPR) usage for a given tenant.
 func (m *UserCredentialUsageDetailsRequestBuilder) Post(options *UserCredentialUsageDetailsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UserCredentialUsageDetails, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

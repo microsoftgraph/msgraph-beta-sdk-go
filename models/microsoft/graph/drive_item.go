@@ -11,7 +11,7 @@ type DriveItem struct {
     activities []ItemActivityOLD;
     // Analytics about the view activities that took place on this item.
     analytics *ItemAnalytics;
-    // Audio metadata, if the item is an audio file. Read-only.
+    // Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
     audio *Audio;
     // 
     bundle *Bundle;
@@ -101,7 +101,7 @@ func (m *DriveItem) GetAnalytics()(*ItemAnalytics) {
         return m.analytics
     }
 }
-// GetAudio gets the audio property value. Audio metadata, if the item is an audio file. Read-only.
+// GetAudio gets the audio property value. Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
 func (m *DriveItem) GetAudio()(*Audio) {
     if m == nil {
         return nil
@@ -1007,7 +1007,7 @@ func (m *DriveItem) SetAnalytics(value *ItemAnalytics)() {
         m.analytics = value
     }
 }
-// SetAudio sets the audio property value. Audio metadata, if the item is an audio file. Read-only.
+// SetAudio sets the audio property value. Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
 func (m *DriveItem) SetAudio(value *Audio)() {
     if m != nil {
         m.audio = value

@@ -35,7 +35,7 @@ type CredentialUserRegistrationDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters get credentialUserRegistrationDetails from reports
+// CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 type CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewCredentialUserRegistrationDetailsRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewCredentialUserRegistrationDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property credentialUserRegistrationDetails for reports
+// CreateDeleteRequestInformation details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateDeleteRequestInformation(options *CredentialUserRegistrationDetailsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get credentialUserRegistrationDetails from reports
+// CreateGetRequestInformation details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateGetRequestInformation(options *CredentialUserRegistrationDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property credentialUserRegistrationDetails in reports
+// CreatePatchRequestInformation details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *CredentialUserRegistrationDetailsRequestBuilder) CreatePatchRequestInformation(options *CredentialUserRegistrationDetailsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// Delete delete navigation property credentialUserRegistrationDetails for reports
+// Delete details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Delete(options *CredentialUserRegistrationDetailsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) Delete(options *Creden
     }
     return nil
 }
-// Get get credentialUserRegistrationDetails from reports
+// Get details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Get(options *CredentialUserRegistrationDetailsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CredentialUserRegistrationDetails, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) Get(options *Credentia
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CredentialUserRegistrationDetails), nil
 }
-// Patch update the navigation property credentialUserRegistrationDetails in reports
+// Patch details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Patch(options *CredentialUserRegistrationDetailsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

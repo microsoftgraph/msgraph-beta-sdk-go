@@ -27,7 +27,7 @@ type AccessPackageAssignmentResourceRolesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageAssignmentResourceRolesRequestBuilderGetQueryParameters get accessPackageAssignmentResourceRoles from identityGovernance
+// AccessPackageAssignmentResourceRolesRequestBuilderGetQueryParameters represents the resource-specific role which a subject has been assigned through an access package assignment.
 type AccessPackageAssignmentResourceRolesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -76,7 +76,7 @@ func NewAccessPackageAssignmentResourceRolesRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentResourceRolesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get accessPackageAssignmentResourceRoles from identityGovernance
+// CreateGetRequestInformation represents the resource-specific role which a subject has been assigned through an access package assignment.
 func (m *AccessPackageAssignmentResourceRolesRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentResourceRolesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,7 +96,7 @@ func (m *AccessPackageAssignmentResourceRolesRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
+// CreatePostRequestInformation represents the resource-specific role which a subject has been assigned through an access package assignment.
 func (m *AccessPackageAssignmentResourceRolesRequestBuilder) CreatePostRequestInformation(options *AccessPackageAssignmentResourceRolesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *AccessPackageAssignmentResourceRolesRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// Get get accessPackageAssignmentResourceRoles from identityGovernance
+// Get represents the resource-specific role which a subject has been assigned through an access package assignment.
 func (m *AccessPackageAssignmentResourceRolesRequestBuilder) Get(options *AccessPackageAssignmentResourceRolesRequestBuilderGetOptions)(*AccessPackageAssignmentResourceRolesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -130,7 +130,7 @@ func (m *AccessPackageAssignmentResourceRolesRequestBuilder) Get(options *Access
 func (m *AccessPackageAssignmentResourceRolesRequestBuilder) My()(*i78d76154e8ca6fc2c3239ac28e3efe1fd431b96e5635fd2ab3f7c94be622334f.MyRequestBuilder) {
     return i78d76154e8ca6fc2c3239ac28e3efe1fd431b96e5635fd2ab3f7c94be622334f.NewMyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
+// Post represents the resource-specific role which a subject has been assigned through an access package assignment.
 func (m *AccessPackageAssignmentResourceRolesRequestBuilder) Post(options *AccessPackageAssignmentResourceRolesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentResourceRole, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
