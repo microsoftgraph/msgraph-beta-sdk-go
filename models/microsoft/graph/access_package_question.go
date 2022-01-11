@@ -10,7 +10,7 @@ type AccessPackageQuestion struct {
     additionalData map[string]interface{};
     // ID of the question.
     id *string;
-    // 
+    // Specifies whether the requestor is allowed to edit answers to questions.
     isAnswerEditable *bool;
     // Whether the requestor is required to supply an answer or not.
     isRequired *bool;
@@ -42,7 +42,7 @@ func (m *AccessPackageQuestion) GetId()(*string) {
         return m.id
     }
 }
-// GetIsAnswerEditable gets the isAnswerEditable property value. 
+// GetIsAnswerEditable gets the isAnswerEditable property value. Specifies whether the requestor is allowed to edit answers to questions.
 func (m *AccessPackageQuestion) GetIsAnswerEditable()(*bool) {
     if m == nil {
         return nil
@@ -184,7 +184,7 @@ func (m *AccessPackageQuestion) SetId(value *string)() {
         m.id = value
     }
 }
-// SetIsAnswerEditable sets the isAnswerEditable property value. 
+// SetIsAnswerEditable sets the isAnswerEditable property value. Specifies whether the requestor is allowed to edit answers to questions.
 func (m *AccessPackageQuestion) SetIsAnswerEditable(value *bool)() {
     if m != nil {
         m.isAnswerEditable = value

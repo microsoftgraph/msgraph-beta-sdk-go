@@ -8,17 +8,17 @@ import (
 type AccessPackageResourceAttribute struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Information about how to set the attribute.
     attributeDestination *AccessPackageResourceAttributeDestination;
-    // 
+    // The name of the attribute in the end system.
     attributeName *string;
-    // 
+    // Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled.
     attributeSource *AccessPackageResourceAttributeSource;
-    // 
+    // Unique identifier for the attribute.
     id *string;
-    // 
+    // Specifies whether or not an existing attribute value can be edited by the requester.
     isEditable *bool;
-    // 
+    // Specifies whether the attribute will remain in the end system after an assignment ends.
     isPersistedOnAssignmentRemoval *bool;
 }
 // NewAccessPackageResourceAttribute instantiates a new accessPackageResourceAttribute and sets the default values.
@@ -36,7 +36,7 @@ func (m *AccessPackageResourceAttribute) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetAttributeDestination gets the attributeDestination property value. 
+// GetAttributeDestination gets the attributeDestination property value. Information about how to set the attribute.
 func (m *AccessPackageResourceAttribute) GetAttributeDestination()(*AccessPackageResourceAttributeDestination) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *AccessPackageResourceAttribute) GetAttributeDestination()(*AccessPackag
         return m.attributeDestination
     }
 }
-// GetAttributeName gets the attributeName property value. 
+// GetAttributeName gets the attributeName property value. The name of the attribute in the end system.
 func (m *AccessPackageResourceAttribute) GetAttributeName()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *AccessPackageResourceAttribute) GetAttributeName()(*string) {
         return m.attributeName
     }
 }
-// GetAttributeSource gets the attributeSource property value. 
+// GetAttributeSource gets the attributeSource property value. Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled.
 func (m *AccessPackageResourceAttribute) GetAttributeSource()(*AccessPackageResourceAttributeSource) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *AccessPackageResourceAttribute) GetAttributeSource()(*AccessPackageReso
         return m.attributeSource
     }
 }
-// GetId gets the id property value. 
+// GetId gets the id property value. Unique identifier for the attribute.
 func (m *AccessPackageResourceAttribute) GetId()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *AccessPackageResourceAttribute) GetId()(*string) {
         return m.id
     }
 }
-// GetIsEditable gets the isEditable property value. 
+// GetIsEditable gets the isEditable property value. Specifies whether or not an existing attribute value can be edited by the requester.
 func (m *AccessPackageResourceAttribute) GetIsEditable()(*bool) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *AccessPackageResourceAttribute) GetIsEditable()(*bool) {
         return m.isEditable
     }
 }
-// GetIsPersistedOnAssignmentRemoval gets the isPersistedOnAssignmentRemoval property value. 
+// GetIsPersistedOnAssignmentRemoval gets the isPersistedOnAssignmentRemoval property value. Specifies whether the attribute will remain in the end system after an assignment ends.
 func (m *AccessPackageResourceAttribute) GetIsPersistedOnAssignmentRemoval()(*bool) {
     if m == nil {
         return nil
@@ -204,37 +204,37 @@ func (m *AccessPackageResourceAttribute) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetAttributeDestination sets the attributeDestination property value. 
+// SetAttributeDestination sets the attributeDestination property value. Information about how to set the attribute.
 func (m *AccessPackageResourceAttribute) SetAttributeDestination(value *AccessPackageResourceAttributeDestination)() {
     if m != nil {
         m.attributeDestination = value
     }
 }
-// SetAttributeName sets the attributeName property value. 
+// SetAttributeName sets the attributeName property value. The name of the attribute in the end system.
 func (m *AccessPackageResourceAttribute) SetAttributeName(value *string)() {
     if m != nil {
         m.attributeName = value
     }
 }
-// SetAttributeSource sets the attributeSource property value. 
+// SetAttributeSource sets the attributeSource property value. Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled.
 func (m *AccessPackageResourceAttribute) SetAttributeSource(value *AccessPackageResourceAttributeSource)() {
     if m != nil {
         m.attributeSource = value
     }
 }
-// SetId sets the id property value. 
+// SetId sets the id property value. Unique identifier for the attribute.
 func (m *AccessPackageResourceAttribute) SetId(value *string)() {
     if m != nil {
         m.id = value
     }
 }
-// SetIsEditable sets the isEditable property value. 
+// SetIsEditable sets the isEditable property value. Specifies whether or not an existing attribute value can be edited by the requester.
 func (m *AccessPackageResourceAttribute) SetIsEditable(value *bool)() {
     if m != nil {
         m.isEditable = value
     }
 }
-// SetIsPersistedOnAssignmentRemoval sets the isPersistedOnAssignmentRemoval property value. 
+// SetIsPersistedOnAssignmentRemoval sets the isPersistedOnAssignmentRemoval property value. Specifies whether the attribute will remain in the end system after an assignment ends.
 func (m *AccessPackageResourceAttribute) SetIsPersistedOnAssignmentRemoval(value *bool)() {
     if m != nil {
         m.isPersistedOnAssignmentRemoval = value

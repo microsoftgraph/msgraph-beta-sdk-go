@@ -8,9 +8,9 @@ import (
 type AuthenticationStrength struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Identifier of the authentication strength.
     authenticationStrengthId *string;
-    // 
+    // The name of the authentication strength.
     displayName *string;
 }
 // NewAuthenticationStrength instantiates a new authenticationStrength and sets the default values.
@@ -28,7 +28,7 @@ func (m *AuthenticationStrength) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAuthenticationStrengthId gets the authenticationStrengthId property value. 
+// GetAuthenticationStrengthId gets the authenticationStrengthId property value. Identifier of the authentication strength.
 func (m *AuthenticationStrength) GetAuthenticationStrengthId()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *AuthenticationStrength) GetAuthenticationStrengthId()(*string) {
         return m.authenticationStrengthId
     }
 }
-// GetDisplayName gets the displayName property value. 
+// GetDisplayName gets the displayName property value. The name of the authentication strength.
 func (m *AuthenticationStrength) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -100,13 +100,13 @@ func (m *AuthenticationStrength) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetAuthenticationStrengthId sets the authenticationStrengthId property value. 
+// SetAuthenticationStrengthId sets the authenticationStrengthId property value. Identifier of the authentication strength.
 func (m *AuthenticationStrength) SetAuthenticationStrengthId(value *string)() {
     if m != nil {
         m.authenticationStrengthId = value
     }
 }
-// SetDisplayName sets the displayName property value. 
+// SetDisplayName sets the displayName property value. The name of the authentication strength.
 func (m *AuthenticationStrength) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value

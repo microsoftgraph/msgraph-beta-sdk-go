@@ -8,7 +8,7 @@ import (
 // AccessPackageResourceRoleScope 
 type AccessPackageResourceRoleScope struct {
     Entity
-    // Read-only. Nullable.
+    // Read-only. Nullable. Supports $expand.
     accessPackageResourceRole *AccessPackageResourceRole;
     // Read-only. Nullable.
     accessPackageResourceScope *AccessPackageResourceScope;
@@ -28,7 +28,7 @@ func NewAccessPackageResourceRoleScope()(*AccessPackageResourceRoleScope) {
     }
     return m
 }
-// GetAccessPackageResourceRole gets the accessPackageResourceRole property value. Read-only. Nullable.
+// GetAccessPackageResourceRole gets the accessPackageResourceRole property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRoleScope) GetAccessPackageResourceRole()(*AccessPackageResourceRole) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *AccessPackageResourceRoleScope) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// SetAccessPackageResourceRole sets the accessPackageResourceRole property value. Read-only. Nullable.
+// SetAccessPackageResourceRole sets the accessPackageResourceRole property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRoleScope) SetAccessPackageResourceRole(value *AccessPackageResourceRole)() {
     if m != nil {
         m.accessPackageResourceRole = value

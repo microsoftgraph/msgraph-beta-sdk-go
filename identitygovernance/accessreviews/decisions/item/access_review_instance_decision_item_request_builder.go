@@ -38,7 +38,7 @@ type AccessReviewInstanceDecisionItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessReviewInstanceDecisionItemRequestBuilderGetQueryParameters get decisions from identityGovernance
+// AccessReviewInstanceDecisionItemRequestBuilderGetQueryParameters represents an Azure AD access review decision on an instance of a review.
 type AccessReviewInstanceDecisionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -75,7 +75,7 @@ func NewAccessReviewInstanceDecisionItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewInstanceDecisionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property decisions for identityGovernance
+// CreateDeleteRequestInformation represents an Azure AD access review decision on an instance of a review.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewInstanceDecisionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,7 +92,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get decisions from identityGovernance
+// CreateGetRequestInformation represents an Azure AD access review decision on an instance of a review.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateGetRequestInformation(options *AccessReviewInstanceDecisionItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,7 +112,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property decisions in identityGovernance
+// CreatePatchRequestInformation represents an Azure AD access review decision on an instance of a review.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreatePatchRequestInformation(options *AccessReviewInstanceDecisionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,7 +130,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// Delete delete navigation property decisions for identityGovernance
+// Delete represents an Azure AD access review decision on an instance of a review.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Delete(options *AccessReviewInstanceDecisionItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -142,7 +142,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) Delete(options *AccessR
     }
     return nil
 }
-// Get get decisions from identityGovernance
+// Get represents an Azure AD access review decision on an instance of a review.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Get(options *AccessReviewInstanceDecisionItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,7 +171,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) InsightsById(id string)
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Instance()(*iddea72a6175d6a8760b3b83779c577dd07e208061d31e642b9ea29b0f52bf344.InstanceRequestBuilder) {
     return iddea72a6175d6a8760b3b83779c577dd07e208061d31e642b9ea29b0f52bf344.NewInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch update the navigation property decisions in identityGovernance
+// Patch represents an Azure AD access review decision on an instance of a review.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Patch(options *AccessReviewInstanceDecisionItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

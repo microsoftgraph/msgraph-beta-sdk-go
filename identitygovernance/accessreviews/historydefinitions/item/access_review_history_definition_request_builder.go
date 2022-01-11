@@ -36,7 +36,7 @@ type AccessReviewHistoryDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessReviewHistoryDefinitionRequestBuilderGetQueryParameters get historyDefinitions from identityGovernance
+// AccessReviewHistoryDefinitionRequestBuilderGetQueryParameters represents a collection of access review history data and the scopes used to collect that data.
 type AccessReviewHistoryDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -73,7 +73,7 @@ func NewAccessReviewHistoryDefinitionRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewHistoryDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property historyDefinitions for identityGovernance
+// CreateDeleteRequestInformation represents a collection of access review history data and the scopes used to collect that data.
 func (m *AccessReviewHistoryDefinitionRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewHistoryDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -90,7 +90,7 @@ func (m *AccessReviewHistoryDefinitionRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get historyDefinitions from identityGovernance
+// CreateGetRequestInformation represents a collection of access review history data and the scopes used to collect that data.
 func (m *AccessReviewHistoryDefinitionRequestBuilder) CreateGetRequestInformation(options *AccessReviewHistoryDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,7 +110,7 @@ func (m *AccessReviewHistoryDefinitionRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property historyDefinitions in identityGovernance
+// CreatePatchRequestInformation represents a collection of access review history data and the scopes used to collect that data.
 func (m *AccessReviewHistoryDefinitionRequestBuilder) CreatePatchRequestInformation(options *AccessReviewHistoryDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,7 +128,7 @@ func (m *AccessReviewHistoryDefinitionRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// Delete delete navigation property historyDefinitions for identityGovernance
+// Delete represents a collection of access review history data and the scopes used to collect that data.
 func (m *AccessReviewHistoryDefinitionRequestBuilder) Delete(options *AccessReviewHistoryDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *AccessReviewHistoryDefinitionRequestBuilder) Delete(options *AccessRevi
 func (m *AccessReviewHistoryDefinitionRequestBuilder) GenerateDownloadUri()(*i42db7be89d115e19102580972cef749a80c405041b59920e6b1971555974a213.GenerateDownloadUriRequestBuilder) {
     return i42db7be89d115e19102580972cef749a80c405041b59920e6b1971555974a213.NewGenerateDownloadUriRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get historyDefinitions from identityGovernance
+// Get represents a collection of access review history data and the scopes used to collect that data.
 func (m *AccessReviewHistoryDefinitionRequestBuilder) Get(options *AccessReviewHistoryDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -155,7 +155,7 @@ func (m *AccessReviewHistoryDefinitionRequestBuilder) Get(options *AccessReviewH
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryDefinition), nil
 }
-// Patch update the navigation property historyDefinitions in identityGovernance
+// Patch represents a collection of access review history data and the scopes used to collect that data.
 func (m *AccessReviewHistoryDefinitionRequestBuilder) Patch(options *AccessReviewHistoryDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

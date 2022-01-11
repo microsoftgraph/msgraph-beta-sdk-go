@@ -28,7 +28,7 @@ type DecisionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// DecisionsRequestBuilderGetQueryParameters get decisions from identityGovernance
+// DecisionsRequestBuilderGetQueryParameters represents an Azure AD access review decision on an instance of a review.
 type DecisionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -77,7 +77,7 @@ func NewDecisionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get decisions from identityGovernance
+// CreateGetRequestInformation represents an Azure AD access review decision on an instance of a review.
 func (m *DecisionsRequestBuilder) CreateGetRequestInformation(options *DecisionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,7 +97,7 @@ func (m *DecisionsRequestBuilder) CreateGetRequestInformation(options *Decisions
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to decisions for identityGovernance
+// CreatePostRequestInformation represents an Azure AD access review decision on an instance of a review.
 func (m *DecisionsRequestBuilder) CreatePostRequestInformation(options *DecisionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,7 +119,7 @@ func (m *DecisionsRequestBuilder) CreatePostRequestInformation(options *Decision
 func (m *DecisionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ied92c7618bf8d6b919a8e224f74a3f5d94aec1a6c98e8376b83633f24427c9ca.FilterByCurrentUserWithOnRequestBuilder) {
     return ied92c7618bf8d6b919a8e224f74a3f5d94aec1a6c98e8376b83633f24427c9ca.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get get decisions from identityGovernance
+// Get represents an Azure AD access review decision on an instance of a review.
 func (m *DecisionsRequestBuilder) Get(options *DecisionsRequestBuilderGetOptions)(*DecisionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -131,7 +131,7 @@ func (m *DecisionsRequestBuilder) Get(options *DecisionsRequestBuilderGetOptions
     }
     return res.(*DecisionsResponse), nil
 }
-// Post create new navigation property to decisions for identityGovernance
+// Post represents an Azure AD access review decision on an instance of a review.
 func (m *DecisionsRequestBuilder) Post(options *DecisionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItem, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

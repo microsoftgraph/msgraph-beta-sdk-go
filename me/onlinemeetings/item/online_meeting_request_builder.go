@@ -8,8 +8,10 @@ import (
     i47c2284118cc15348aa203315c0a4637fa39b84c65e76ecdc39fc175c32c90b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onlinemeetings/item/meetingattendancereport"
     i520e7c5dd1b2e99f3cf76ee8e21c2e881be13a393c94622086fa442c45f27e8f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onlinemeetings/item/attendancereports"
     i60f747f04da18ee740c2d7cec8aa333e174de51a71c041da85eebd852e1da259 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onlinemeetings/item/registration"
+    i637e5f11ab6a0348359da991cd3af4494645f065cc80ca54794bd4a94e21eab5 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onlinemeetings/item/transcripts"
     i9751454805a6089ded23da943214fdbe9028e1de749d44a87219eee6d363460e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onlinemeetings/item/alternativerecording"
     i98d7ddf881a02ae894ac70424b059f80f8d245996309997a347c38739b78710b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onlinemeetings/item/attendeereport"
+    ib6386ca31a5eed83c6e42da470d03db28a79e495504bfb7719dca5c299d78f4f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onlinemeetings/item/transcripts/item"
     id7c487e4aca56b8a93bfe6b7467589181f3783dae6bf5fc07a9339b86fdc342e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onlinemeetings/item/attendancereports/item"
 )
 
@@ -198,4 +200,18 @@ func (m *OnlineMeetingRequestBuilder) Recording()(*i2a0e0d48f1a133f80557e834fceb
 }
 func (m *OnlineMeetingRequestBuilder) Registration()(*i60f747f04da18ee740c2d7cec8aa333e174de51a71c041da85eebd852e1da259.RegistrationRequestBuilder) {
     return i60f747f04da18ee740c2d7cec8aa333e174de51a71c041da85eebd852e1da259.NewRegistrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *OnlineMeetingRequestBuilder) Transcripts()(*i637e5f11ab6a0348359da991cd3af4494645f065cc80ca54794bd4a94e21eab5.TranscriptsRequestBuilder) {
+    return i637e5f11ab6a0348359da991cd3af4494645f065cc80ca54794bd4a94e21eab5.NewTranscriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TranscriptsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.onlineMeetings.item.transcripts.item collection
+func (m *OnlineMeetingRequestBuilder) TranscriptsById(id string)(*ib6386ca31a5eed83c6e42da470d03db28a79e495504bfb7719dca5c299d78f4f.CallTranscriptRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["callTranscript_id"] = id
+    }
+    return ib6386ca31a5eed83c6e42da470d03db28a79e495504bfb7719dca5c299d78f4f.NewCallTranscriptRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

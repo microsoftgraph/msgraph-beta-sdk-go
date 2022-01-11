@@ -26,7 +26,7 @@ type AccessPackageResourcesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageResourcesRequestBuilderGetQueryParameters get accessPackageResources from identityGovernance
+// AccessPackageResourcesRequestBuilderGetQueryParameters a reference to a resource associated with an access package catalog.
 type AccessPackageResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAccessPackageResourcesRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get accessPackageResources from identityGovernance
+// CreateGetRequestInformation a reference to a resource associated with an access package catalog.
 func (m *AccessPackageResourcesRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AccessPackageResourcesRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to accessPackageResources for identityGovernance
+// CreatePostRequestInformation a reference to a resource associated with an access package catalog.
 func (m *AccessPackageResourcesRequestBuilder) CreatePostRequestInformation(options *AccessPackageResourcesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AccessPackageResourcesRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get get accessPackageResources from identityGovernance
+// Get a reference to a resource associated with an access package catalog.
 func (m *AccessPackageResourcesRequestBuilder) Get(options *AccessPackageResourcesRequestBuilderGetOptions)(*AccessPackageResourcesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AccessPackageResourcesRequestBuilder) Get(options *AccessPackageResourc
     }
     return res.(*AccessPackageResourcesResponse), nil
 }
-// Post create new navigation property to accessPackageResources for identityGovernance
+// Post a reference to a resource associated with an access package catalog.
 func (m *AccessPackageResourcesRequestBuilder) Post(options *AccessPackageResourcesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResource, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

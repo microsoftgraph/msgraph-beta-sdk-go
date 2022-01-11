@@ -36,7 +36,7 @@ type RiskDetection struct {
     riskLevel *RiskLevel;
     // The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
     riskState *RiskState;
-    // List of risk event types.Note: This property is deprecated. Use riskEventType instead.
+    // 
     riskType *RiskEventType;
     // Source of the risk detection. For example, activeDirectory.
     source *string;
@@ -168,7 +168,7 @@ func (m *RiskDetection) GetRiskState()(*RiskState) {
         return m.riskState
     }
 }
-// GetRiskType gets the riskType property value. List of risk event types.Note: This property is deprecated. Use riskEventType instead.
+// GetRiskType gets the riskType property value. 
 func (m *RiskDetection) GetRiskType()(*RiskEventType) {
     if m == nil {
         return nil
@@ -650,7 +650,7 @@ func (m *RiskDetection) SetRiskState(value *RiskState)() {
         m.riskState = value
     }
 }
-// SetRiskType sets the riskType property value. List of risk event types.Note: This property is deprecated. Use riskEventType instead.
+// SetRiskType sets the riskType property value. 
 func (m *RiskDetection) SetRiskType(value *RiskEventType)() {
     if m != nil {
         m.riskType = value

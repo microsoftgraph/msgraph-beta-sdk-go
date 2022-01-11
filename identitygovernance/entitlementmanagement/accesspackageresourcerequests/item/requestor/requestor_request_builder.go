@@ -36,7 +36,7 @@ type RequestorRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// RequestorRequestBuilderGetQueryParameters read-only. Nullable.
+// RequestorRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type RequestorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -76,7 +76,7 @@ func NewRequestorRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewRequestorRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation read-only. Nullable.
+// CreateDeleteRequestInformation read-only. Nullable. Supports $expand.
 func (m *RequestorRequestBuilder) CreateDeleteRequestInformation(options *RequestorRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,7 +93,7 @@ func (m *RequestorRequestBuilder) CreateDeleteRequestInformation(options *Reques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation read-only. Nullable. Supports $expand.
 func (m *RequestorRequestBuilder) CreateGetRequestInformation(options *RequestorRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *RequestorRequestBuilder) CreateGetRequestInformation(options *Requestor
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only. Nullable.
+// CreatePatchRequestInformation read-only. Nullable. Supports $expand.
 func (m *RequestorRequestBuilder) CreatePatchRequestInformation(options *RequestorRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *RequestorRequestBuilder) CreatePatchRequestInformation(options *Request
     }
     return requestInfo, nil
 }
-// Delete read-only. Nullable.
+// Delete read-only. Nullable. Supports $expand.
 func (m *RequestorRequestBuilder) Delete(options *RequestorRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *RequestorRequestBuilder) Delete(options *RequestorRequestBuilderDeleteO
     }
     return nil
 }
-// Get read-only. Nullable.
+// Get read-only. Nullable. Supports $expand.
 func (m *RequestorRequestBuilder) Get(options *RequestorRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageSubject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -155,7 +155,7 @@ func (m *RequestorRequestBuilder) Get(options *RequestorRequestBuilderGetOptions
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageSubject), nil
 }
-// Patch read-only. Nullable.
+// Patch read-only. Nullable. Supports $expand.
 func (m *RequestorRequestBuilder) Patch(options *RequestorRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

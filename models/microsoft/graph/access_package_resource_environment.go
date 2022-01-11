@@ -16,7 +16,7 @@ type AccessPackageResourceEnvironment struct {
     createdBy *string;
     // The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The description of this accessPackageResourceEnvironment object.
+    // The description of this object.
     description *string;
     // The display name of this object.
     displayName *string;
@@ -28,7 +28,7 @@ type AccessPackageResourceEnvironment struct {
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The unique identifier of this environment in the origin system.
     originId *string;
-    // The type of the resource in the origin system such as SharePointOnline. Supports $filter.
+    // The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
     originSystem *string;
 }
 // NewAccessPackageResourceEnvironment instantiates a new accessPackageResourceEnvironment and sets the default values.
@@ -70,7 +70,7 @@ func (m *AccessPackageResourceEnvironment) GetCreatedDateTime()(*i336074805fc853
         return m.createdDateTime
     }
 }
-// GetDescription gets the description property value. The description of this accessPackageResourceEnvironment object.
+// GetDescription gets the description property value. The description of this object.
 func (m *AccessPackageResourceEnvironment) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -118,7 +118,7 @@ func (m *AccessPackageResourceEnvironment) GetOriginId()(*string) {
         return m.originId
     }
 }
-// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system such as SharePointOnline. Supports $filter.
+// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
 func (m *AccessPackageResourceEnvironment) GetOriginSystem()(*string) {
     if m == nil {
         return nil
@@ -351,7 +351,7 @@ func (m *AccessPackageResourceEnvironment) SetCreatedDateTime(value *i336074805f
         m.createdDateTime = value
     }
 }
-// SetDescription sets the description property value. The description of this accessPackageResourceEnvironment object.
+// SetDescription sets the description property value. The description of this object.
 func (m *AccessPackageResourceEnvironment) SetDescription(value *string)() {
     if m != nil {
         m.description = value
@@ -387,7 +387,7 @@ func (m *AccessPackageResourceEnvironment) SetOriginId(value *string)() {
         m.originId = value
     }
 }
-// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system such as SharePointOnline. Supports $filter.
+// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
 func (m *AccessPackageResourceEnvironment) SetOriginSystem(value *string)() {
     if m != nil {
         m.originSystem = value

@@ -20,7 +20,7 @@ type AccessPackageResourceRequest struct {
     isValidationOnly *bool;
     // The requestor's justification for adding or removing the resource.
     justification *string;
-    // Read-only. Nullable.
+    // Read-only. Nullable. Supports $expand.
     requestor *AccessPackageSubject;
     // The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
     requestState *string;
@@ -84,7 +84,7 @@ func (m *AccessPackageResourceRequest) GetJustification()(*string) {
         return m.justification
     }
 }
-// GetRequestor gets the requestor property value. Read-only. Nullable.
+// GetRequestor gets the requestor property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRequest) GetRequestor()(*AccessPackageSubject) {
     if m == nil {
         return nil
@@ -328,7 +328,7 @@ func (m *AccessPackageResourceRequest) SetJustification(value *string)() {
         m.justification = value
     }
 }
-// SetRequestor sets the requestor property value. Read-only. Nullable.
+// SetRequestor sets the requestor property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRequest) SetRequestor(value *AccessPackageSubject)() {
     if m != nil {
         m.requestor = value

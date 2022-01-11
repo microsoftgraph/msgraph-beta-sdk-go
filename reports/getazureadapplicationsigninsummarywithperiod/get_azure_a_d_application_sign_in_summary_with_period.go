@@ -8,7 +8,7 @@ import (
 // GetAzureADApplicationSignInSummaryWithPeriod 
 type GetAzureADApplicationSignInSummaryWithPeriod struct {
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Entity
-    // Name of the application that the user signed in to.
+    // Name of the application that the user signed into.
     appDisplayName *string;
     // Count of failed sign-ins made by the application.
     failedSignInCount *int64;
@@ -24,7 +24,7 @@ func NewGetAzureADApplicationSignInSummaryWithPeriod()(*GetAzureADApplicationSig
     }
     return m
 }
-// GetAppDisplayName gets the appDisplayName property value. Name of the application that the user signed in to.
+// GetAppDisplayName gets the appDisplayName property value. Name of the application that the user signed into.
 func (m *GetAzureADApplicationSignInSummaryWithPeriod) GetAppDisplayName()(*string) {
     if m == nil {
         return nil
@@ -136,7 +136,7 @@ func (m *GetAzureADApplicationSignInSummaryWithPeriod) Serialize(writer i04eb530
     }
     return nil
 }
-// SetAppDisplayName sets the appDisplayName property value. Name of the application that the user signed in to.
+// SetAppDisplayName sets the appDisplayName property value. Name of the application that the user signed into.
 func (m *GetAzureADApplicationSignInSummaryWithPeriod) SetAppDisplayName(value *string)() {
     if m != nil {
         m.appDisplayName = value

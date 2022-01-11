@@ -14,20 +14,24 @@ type SignIn struct {
     appId *string;
     // A list of conditional access policies that are triggered by the corresponding sign-in activity.
     appliedConditionalAccessPolicies []AppliedConditionalAccessPolicy;
+    // 
+    authenticationContextClassReferences []AuthenticationContext;
     // The result of the authentication attempt and additional details on the authentication method.
     authenticationDetails []AuthenticationDetail;
     // The authentication methods used. Possible values: SMS, Authenticator App, App Verification code, Password, FIDO, PTA, or PHS.
     authenticationMethodsUsed []string;
     // Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.
     authenticationProcessingDetails []KeyValue;
-    // 
+    // Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue. For authentications that use protocols other than the possible values listed, the protocol type is listed as none.
     authenticationProtocol *ProtocolType;
     // This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed. Supports $filter (eq and startsWith operators only).
     authenticationRequirement *string;
-    // 
+    // Sources of authentication requirement, such as conditional access, per-user MFA, identity protection, and security defaults.
     authenticationRequirementPolicies []AuthenticationRequirementPolicy;
-    // 
+    // The Autonomous System Number (ASN) of the network used by the actor.
     autonomousSystemNumber *int32;
+    // 
+    azureResourceId *string;
     // Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange Active Sync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
     clientAppUsed *string;
     // Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).
@@ -36,25 +40,27 @@ type SignIn struct {
     correlationId *string;
     // Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
     crossTenantAccessType *SignInAccessType;
     // Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.
     deviceDetail *DeviceDetail;
     // 
+    federatedCredentialId *string;
+    // During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
     flaggedForReview *bool;
-    // 
+    // The tenant identifier of the user initiating the sign in. Not applicable in Managed Identity or service principal sign ins.
     homeTenantId *string;
-    // 
+    // For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
     homeTenantName *string;
-    // 
+    // Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed.
     incomingTokenType *IncomingTokenType;
     // IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
     ipAddress *string;
-    // 
+    // The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.
     ipAddressFromResourceProvider *string;
     // Indicates if a sign-in is interactive or not.
     isInteractive *bool;
-    // 
+    // Shows whether the sign in event was subject to an Azure AD tenant restriction policy.
     isTenantRestricted *bool;
     // Provides the city, state, and country code where the sign-in originated. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
     location *SignInLocation;
@@ -64,7 +70,7 @@ type SignIn struct {
     networkLocationDetails []NetworkLocationDetail;
     // The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).
     originalRequestId *string;
-    // 
+    // Contains information about the Azure AD Private Link policy that is associated with the sign in event.
     privateLinkDetails *PrivateLinkDetails;
     // The request processing time in milliseconds in AD STS.
     processingTimeInMilliseconds *int32;
@@ -73,6 +79,8 @@ type SignIn struct {
     // ID of the resource that the user signed into. Supports $filter (eq operator only).
     resourceId *string;
     // 
+    resourceServicePrincipalId *string;
+    // The tenant identifier of the resource referenced in the sign in.
     resourceTenantId *string;
     // Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
     riskDetail *RiskDetail;
@@ -84,27 +92,29 @@ type SignIn struct {
     riskLevelDuringSignIn *RiskLevel;
     // Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq operator only).
     riskState *RiskState;
-    // 
+    // The unique identifier of the key credential used by the service principal to authenticate.
     servicePrincipalCredentialKeyId *string;
-    // 
+    // The certificate thumbprint of the certificate used by the service principal to authenticate.
     servicePrincipalCredentialThumbprint *string;
     // The application identifier used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
     servicePrincipalId *string;
     // The application name used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
     servicePrincipalName *string;
     // 
+    sessionLifetimePolicies []SessionLifetimePolicy;
+    // Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq operator only).
     signInEventTypes []string;
-    // 
+    // The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.
     signInIdentifier *string;
-    // 
+    // The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
     signInIdentifierType *SignInIdentifierType;
     // Sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
     status *SignInStatus;
     // The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).
     tokenIssuerName *string;
-    // The type of identity provider. Possible values: AzureAD, ADFederationServices, or UnknownFutureValue.
+    // The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: AzureADBackupAuth.
     tokenIssuerType *TokenIssuerType;
-    // 
+    // A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
     uniqueTokenIdentifier *string;
     // The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).
     userAgent *string;
@@ -114,7 +124,7 @@ type SignIn struct {
     userId *string;
     // User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
     userPrincipalName *string;
-    // 
+    // Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
     userType *SignInUserType;
 }
 // NewSignIn instantiates a new signIn and sets the default values.
@@ -148,6 +158,14 @@ func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAcces
         return m.appliedConditionalAccessPolicies
     }
 }
+// GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. 
+func (m *SignIn) GetAuthenticationContextClassReferences()([]AuthenticationContext) {
+    if m == nil {
+        return nil
+    } else {
+        return m.authenticationContextClassReferences
+    }
+}
 // GetAuthenticationDetails gets the authenticationDetails property value. The result of the authentication attempt and additional details on the authentication method.
 func (m *SignIn) GetAuthenticationDetails()([]AuthenticationDetail) {
     if m == nil {
@@ -172,7 +190,7 @@ func (m *SignIn) GetAuthenticationProcessingDetails()([]KeyValue) {
         return m.authenticationProcessingDetails
     }
 }
-// GetAuthenticationProtocol gets the authenticationProtocol property value. 
+// GetAuthenticationProtocol gets the authenticationProtocol property value. Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue. For authentications that use protocols other than the possible values listed, the protocol type is listed as none.
 func (m *SignIn) GetAuthenticationProtocol()(*ProtocolType) {
     if m == nil {
         return nil
@@ -188,7 +206,7 @@ func (m *SignIn) GetAuthenticationRequirement()(*string) {
         return m.authenticationRequirement
     }
 }
-// GetAuthenticationRequirementPolicies gets the authenticationRequirementPolicies property value. 
+// GetAuthenticationRequirementPolicies gets the authenticationRequirementPolicies property value. Sources of authentication requirement, such as conditional access, per-user MFA, identity protection, and security defaults.
 func (m *SignIn) GetAuthenticationRequirementPolicies()([]AuthenticationRequirementPolicy) {
     if m == nil {
         return nil
@@ -196,12 +214,20 @@ func (m *SignIn) GetAuthenticationRequirementPolicies()([]AuthenticationRequirem
         return m.authenticationRequirementPolicies
     }
 }
-// GetAutonomousSystemNumber gets the autonomousSystemNumber property value. 
+// GetAutonomousSystemNumber gets the autonomousSystemNumber property value. The Autonomous System Number (ASN) of the network used by the actor.
 func (m *SignIn) GetAutonomousSystemNumber()(*int32) {
     if m == nil {
         return nil
     } else {
         return m.autonomousSystemNumber
+    }
+}
+// GetAzureResourceId gets the azureResourceId property value. 
+func (m *SignIn) GetAzureResourceId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.azureResourceId
     }
 }
 // GetClientAppUsed gets the clientAppUsed property value. Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange Active Sync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
@@ -236,7 +262,7 @@ func (m *SignIn) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
         return m.createdDateTime
     }
 }
-// GetCrossTenantAccessType gets the crossTenantAccessType property value. 
+// GetCrossTenantAccessType gets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
 func (m *SignIn) GetCrossTenantAccessType()(*SignInAccessType) {
     if m == nil {
         return nil
@@ -252,7 +278,15 @@ func (m *SignIn) GetDeviceDetail()(*DeviceDetail) {
         return m.deviceDetail
     }
 }
-// GetFlaggedForReview gets the flaggedForReview property value. 
+// GetFederatedCredentialId gets the federatedCredentialId property value. 
+func (m *SignIn) GetFederatedCredentialId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.federatedCredentialId
+    }
+}
+// GetFlaggedForReview gets the flaggedForReview property value. During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
 func (m *SignIn) GetFlaggedForReview()(*bool) {
     if m == nil {
         return nil
@@ -260,7 +294,7 @@ func (m *SignIn) GetFlaggedForReview()(*bool) {
         return m.flaggedForReview
     }
 }
-// GetHomeTenantId gets the homeTenantId property value. 
+// GetHomeTenantId gets the homeTenantId property value. The tenant identifier of the user initiating the sign in. Not applicable in Managed Identity or service principal sign ins.
 func (m *SignIn) GetHomeTenantId()(*string) {
     if m == nil {
         return nil
@@ -268,7 +302,7 @@ func (m *SignIn) GetHomeTenantId()(*string) {
         return m.homeTenantId
     }
 }
-// GetHomeTenantName gets the homeTenantName property value. 
+// GetHomeTenantName gets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
 func (m *SignIn) GetHomeTenantName()(*string) {
     if m == nil {
         return nil
@@ -276,7 +310,7 @@ func (m *SignIn) GetHomeTenantName()(*string) {
         return m.homeTenantName
     }
 }
-// GetIncomingTokenType gets the incomingTokenType property value. 
+// GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed.
 func (m *SignIn) GetIncomingTokenType()(*IncomingTokenType) {
     if m == nil {
         return nil
@@ -292,7 +326,7 @@ func (m *SignIn) GetIpAddress()(*string) {
         return m.ipAddress
     }
 }
-// GetIpAddressFromResourceProvider gets the ipAddressFromResourceProvider property value. 
+// GetIpAddressFromResourceProvider gets the ipAddressFromResourceProvider property value. The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.
 func (m *SignIn) GetIpAddressFromResourceProvider()(*string) {
     if m == nil {
         return nil
@@ -308,7 +342,7 @@ func (m *SignIn) GetIsInteractive()(*bool) {
         return m.isInteractive
     }
 }
-// GetIsTenantRestricted gets the isTenantRestricted property value. 
+// GetIsTenantRestricted gets the isTenantRestricted property value. Shows whether the sign in event was subject to an Azure AD tenant restriction policy.
 func (m *SignIn) GetIsTenantRestricted()(*bool) {
     if m == nil {
         return nil
@@ -348,7 +382,7 @@ func (m *SignIn) GetOriginalRequestId()(*string) {
         return m.originalRequestId
     }
 }
-// GetPrivateLinkDetails gets the privateLinkDetails property value. 
+// GetPrivateLinkDetails gets the privateLinkDetails property value. Contains information about the Azure AD Private Link policy that is associated with the sign in event.
 func (m *SignIn) GetPrivateLinkDetails()(*PrivateLinkDetails) {
     if m == nil {
         return nil
@@ -380,7 +414,15 @@ func (m *SignIn) GetResourceId()(*string) {
         return m.resourceId
     }
 }
-// GetResourceTenantId gets the resourceTenantId property value. 
+// GetResourceServicePrincipalId gets the resourceServicePrincipalId property value. 
+func (m *SignIn) GetResourceServicePrincipalId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceServicePrincipalId
+    }
+}
+// GetResourceTenantId gets the resourceTenantId property value. The tenant identifier of the resource referenced in the sign in.
 func (m *SignIn) GetResourceTenantId()(*string) {
     if m == nil {
         return nil
@@ -428,7 +470,7 @@ func (m *SignIn) GetRiskState()(*RiskState) {
         return m.riskState
     }
 }
-// GetServicePrincipalCredentialKeyId gets the servicePrincipalCredentialKeyId property value. 
+// GetServicePrincipalCredentialKeyId gets the servicePrincipalCredentialKeyId property value. The unique identifier of the key credential used by the service principal to authenticate.
 func (m *SignIn) GetServicePrincipalCredentialKeyId()(*string) {
     if m == nil {
         return nil
@@ -436,7 +478,7 @@ func (m *SignIn) GetServicePrincipalCredentialKeyId()(*string) {
         return m.servicePrincipalCredentialKeyId
     }
 }
-// GetServicePrincipalCredentialThumbprint gets the servicePrincipalCredentialThumbprint property value. 
+// GetServicePrincipalCredentialThumbprint gets the servicePrincipalCredentialThumbprint property value. The certificate thumbprint of the certificate used by the service principal to authenticate.
 func (m *SignIn) GetServicePrincipalCredentialThumbprint()(*string) {
     if m == nil {
         return nil
@@ -460,7 +502,15 @@ func (m *SignIn) GetServicePrincipalName()(*string) {
         return m.servicePrincipalName
     }
 }
-// GetSignInEventTypes gets the signInEventTypes property value. 
+// GetSessionLifetimePolicies gets the sessionLifetimePolicies property value. 
+func (m *SignIn) GetSessionLifetimePolicies()([]SessionLifetimePolicy) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sessionLifetimePolicies
+    }
+}
+// GetSignInEventTypes gets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) GetSignInEventTypes()([]string) {
     if m == nil {
         return nil
@@ -468,7 +518,7 @@ func (m *SignIn) GetSignInEventTypes()([]string) {
         return m.signInEventTypes
     }
 }
-// GetSignInIdentifier gets the signInIdentifier property value. 
+// GetSignInIdentifier gets the signInIdentifier property value. The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.
 func (m *SignIn) GetSignInIdentifier()(*string) {
     if m == nil {
         return nil
@@ -476,7 +526,7 @@ func (m *SignIn) GetSignInIdentifier()(*string) {
         return m.signInIdentifier
     }
 }
-// GetSignInIdentifierType gets the signInIdentifierType property value. 
+// GetSignInIdentifierType gets the signInIdentifierType property value. The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
 func (m *SignIn) GetSignInIdentifierType()(*SignInIdentifierType) {
     if m == nil {
         return nil
@@ -500,7 +550,7 @@ func (m *SignIn) GetTokenIssuerName()(*string) {
         return m.tokenIssuerName
     }
 }
-// GetTokenIssuerType gets the tokenIssuerType property value. The type of identity provider. Possible values: AzureAD, ADFederationServices, or UnknownFutureValue.
+// GetTokenIssuerType gets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: AzureADBackupAuth.
 func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
     if m == nil {
         return nil
@@ -508,7 +558,7 @@ func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
         return m.tokenIssuerType
     }
 }
-// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. 
+// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
 func (m *SignIn) GetUniqueTokenIdentifier()(*string) {
     if m == nil {
         return nil
@@ -548,7 +598,7 @@ func (m *SignIn) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
-// GetUserType gets the userType property value. 
+// GetUserType gets the userType property value. Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
 func (m *SignIn) GetUserType()(*SignInUserType) {
     if m == nil {
         return nil
@@ -590,6 +640,20 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
                 res[i] = *(v.(*AppliedConditionalAccessPolicy))
             }
             m.SetAppliedConditionalAccessPolicies(res)
+        }
+        return nil
+    }
+    res["authenticationContextClassReferences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuthenticationContext() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AuthenticationContext, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AuthenticationContext))
+            }
+            m.SetAuthenticationContextClassReferences(res)
         }
         return nil
     }
@@ -680,6 +744,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         }
         return nil
     }
+    res["azureResourceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAzureResourceId(val)
+        }
+        return nil
+    }
     res["clientAppUsed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -739,6 +813,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         }
         if val != nil {
             m.SetDeviceDetail(val.(*DeviceDetail))
+        }
+        return nil
+    }
+    res["federatedCredentialId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFederatedCredentialId(val)
         }
         return nil
     }
@@ -907,6 +991,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         }
         return nil
     }
+    res["resourceServicePrincipalId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResourceServicePrincipalId(val)
+        }
+        return nil
+    }
     res["resourceTenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -1012,6 +1106,20 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         }
         if val != nil {
             m.SetServicePrincipalName(val)
+        }
+        return nil
+    }
+    res["sessionLifetimePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSessionLifetimePolicy() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SessionLifetimePolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SessionLifetimePolicy))
+            }
+            m.SetSessionLifetimePolicies(res)
         }
         return nil
     }
@@ -1177,6 +1285,17 @@ func (m *SignIn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAuthenticationContextClassReferences()))
+        for i, v := range m.GetAuthenticationContextClassReferences() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("authenticationContextClassReferences", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAuthenticationDetails()))
         for i, v := range m.GetAuthenticationDetails() {
             temp := v
@@ -1235,6 +1354,12 @@ func (m *SignIn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
         }
     }
     {
+        err = writer.WriteStringValue("azureResourceId", m.GetAzureResourceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("clientAppUsed", m.GetClientAppUsed())
         if err != nil {
             return err
@@ -1268,6 +1393,12 @@ func (m *SignIn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     }
     {
         err = writer.WriteObjectValue("deviceDetail", m.GetDeviceDetail())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("federatedCredentialId", m.GetFederatedCredentialId())
         if err != nil {
             return err
         }
@@ -1375,6 +1506,12 @@ func (m *SignIn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
         }
     }
     {
+        err = writer.WriteStringValue("resourceServicePrincipalId", m.GetResourceServicePrincipalId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("resourceTenantId", m.GetResourceTenantId())
         if err != nil {
             return err
@@ -1434,6 +1571,17 @@ func (m *SignIn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     }
     {
         err = writer.WriteStringValue("servicePrincipalName", m.GetServicePrincipalName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSessionLifetimePolicies()))
+        for i, v := range m.GetSessionLifetimePolicies() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("sessionLifetimePolicies", cast)
         if err != nil {
             return err
         }
@@ -1533,6 +1681,12 @@ func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalA
         m.appliedConditionalAccessPolicies = value
     }
 }
+// SetAuthenticationContextClassReferences sets the authenticationContextClassReferences property value. 
+func (m *SignIn) SetAuthenticationContextClassReferences(value []AuthenticationContext)() {
+    if m != nil {
+        m.authenticationContextClassReferences = value
+    }
+}
 // SetAuthenticationDetails sets the authenticationDetails property value. The result of the authentication attempt and additional details on the authentication method.
 func (m *SignIn) SetAuthenticationDetails(value []AuthenticationDetail)() {
     if m != nil {
@@ -1551,7 +1705,7 @@ func (m *SignIn) SetAuthenticationProcessingDetails(value []KeyValue)() {
         m.authenticationProcessingDetails = value
     }
 }
-// SetAuthenticationProtocol sets the authenticationProtocol property value. 
+// SetAuthenticationProtocol sets the authenticationProtocol property value. Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue. For authentications that use protocols other than the possible values listed, the protocol type is listed as none.
 func (m *SignIn) SetAuthenticationProtocol(value *ProtocolType)() {
     if m != nil {
         m.authenticationProtocol = value
@@ -1563,16 +1717,22 @@ func (m *SignIn) SetAuthenticationRequirement(value *string)() {
         m.authenticationRequirement = value
     }
 }
-// SetAuthenticationRequirementPolicies sets the authenticationRequirementPolicies property value. 
+// SetAuthenticationRequirementPolicies sets the authenticationRequirementPolicies property value. Sources of authentication requirement, such as conditional access, per-user MFA, identity protection, and security defaults.
 func (m *SignIn) SetAuthenticationRequirementPolicies(value []AuthenticationRequirementPolicy)() {
     if m != nil {
         m.authenticationRequirementPolicies = value
     }
 }
-// SetAutonomousSystemNumber sets the autonomousSystemNumber property value. 
+// SetAutonomousSystemNumber sets the autonomousSystemNumber property value. The Autonomous System Number (ASN) of the network used by the actor.
 func (m *SignIn) SetAutonomousSystemNumber(value *int32)() {
     if m != nil {
         m.autonomousSystemNumber = value
+    }
+}
+// SetAzureResourceId sets the azureResourceId property value. 
+func (m *SignIn) SetAzureResourceId(value *string)() {
+    if m != nil {
+        m.azureResourceId = value
     }
 }
 // SetClientAppUsed sets the clientAppUsed property value. Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange Active Sync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
@@ -1599,7 +1759,7 @@ func (m *SignIn) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3
         m.createdDateTime = value
     }
 }
-// SetCrossTenantAccessType sets the crossTenantAccessType property value. 
+// SetCrossTenantAccessType sets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
 func (m *SignIn) SetCrossTenantAccessType(value *SignInAccessType)() {
     if m != nil {
         m.crossTenantAccessType = value
@@ -1611,25 +1771,31 @@ func (m *SignIn) SetDeviceDetail(value *DeviceDetail)() {
         m.deviceDetail = value
     }
 }
-// SetFlaggedForReview sets the flaggedForReview property value. 
+// SetFederatedCredentialId sets the federatedCredentialId property value. 
+func (m *SignIn) SetFederatedCredentialId(value *string)() {
+    if m != nil {
+        m.federatedCredentialId = value
+    }
+}
+// SetFlaggedForReview sets the flaggedForReview property value. During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
 func (m *SignIn) SetFlaggedForReview(value *bool)() {
     if m != nil {
         m.flaggedForReview = value
     }
 }
-// SetHomeTenantId sets the homeTenantId property value. 
+// SetHomeTenantId sets the homeTenantId property value. The tenant identifier of the user initiating the sign in. Not applicable in Managed Identity or service principal sign ins.
 func (m *SignIn) SetHomeTenantId(value *string)() {
     if m != nil {
         m.homeTenantId = value
     }
 }
-// SetHomeTenantName sets the homeTenantName property value. 
+// SetHomeTenantName sets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
 func (m *SignIn) SetHomeTenantName(value *string)() {
     if m != nil {
         m.homeTenantName = value
     }
 }
-// SetIncomingTokenType sets the incomingTokenType property value. 
+// SetIncomingTokenType sets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed.
 func (m *SignIn) SetIncomingTokenType(value *IncomingTokenType)() {
     if m != nil {
         m.incomingTokenType = value
@@ -1641,7 +1807,7 @@ func (m *SignIn) SetIpAddress(value *string)() {
         m.ipAddress = value
     }
 }
-// SetIpAddressFromResourceProvider sets the ipAddressFromResourceProvider property value. 
+// SetIpAddressFromResourceProvider sets the ipAddressFromResourceProvider property value. The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.
 func (m *SignIn) SetIpAddressFromResourceProvider(value *string)() {
     if m != nil {
         m.ipAddressFromResourceProvider = value
@@ -1653,7 +1819,7 @@ func (m *SignIn) SetIsInteractive(value *bool)() {
         m.isInteractive = value
     }
 }
-// SetIsTenantRestricted sets the isTenantRestricted property value. 
+// SetIsTenantRestricted sets the isTenantRestricted property value. Shows whether the sign in event was subject to an Azure AD tenant restriction policy.
 func (m *SignIn) SetIsTenantRestricted(value *bool)() {
     if m != nil {
         m.isTenantRestricted = value
@@ -1683,7 +1849,7 @@ func (m *SignIn) SetOriginalRequestId(value *string)() {
         m.originalRequestId = value
     }
 }
-// SetPrivateLinkDetails sets the privateLinkDetails property value. 
+// SetPrivateLinkDetails sets the privateLinkDetails property value. Contains information about the Azure AD Private Link policy that is associated with the sign in event.
 func (m *SignIn) SetPrivateLinkDetails(value *PrivateLinkDetails)() {
     if m != nil {
         m.privateLinkDetails = value
@@ -1707,7 +1873,13 @@ func (m *SignIn) SetResourceId(value *string)() {
         m.resourceId = value
     }
 }
-// SetResourceTenantId sets the resourceTenantId property value. 
+// SetResourceServicePrincipalId sets the resourceServicePrincipalId property value. 
+func (m *SignIn) SetResourceServicePrincipalId(value *string)() {
+    if m != nil {
+        m.resourceServicePrincipalId = value
+    }
+}
+// SetResourceTenantId sets the resourceTenantId property value. The tenant identifier of the resource referenced in the sign in.
 func (m *SignIn) SetResourceTenantId(value *string)() {
     if m != nil {
         m.resourceTenantId = value
@@ -1743,13 +1915,13 @@ func (m *SignIn) SetRiskState(value *RiskState)() {
         m.riskState = value
     }
 }
-// SetServicePrincipalCredentialKeyId sets the servicePrincipalCredentialKeyId property value. 
+// SetServicePrincipalCredentialKeyId sets the servicePrincipalCredentialKeyId property value. The unique identifier of the key credential used by the service principal to authenticate.
 func (m *SignIn) SetServicePrincipalCredentialKeyId(value *string)() {
     if m != nil {
         m.servicePrincipalCredentialKeyId = value
     }
 }
-// SetServicePrincipalCredentialThumbprint sets the servicePrincipalCredentialThumbprint property value. 
+// SetServicePrincipalCredentialThumbprint sets the servicePrincipalCredentialThumbprint property value. The certificate thumbprint of the certificate used by the service principal to authenticate.
 func (m *SignIn) SetServicePrincipalCredentialThumbprint(value *string)() {
     if m != nil {
         m.servicePrincipalCredentialThumbprint = value
@@ -1767,19 +1939,25 @@ func (m *SignIn) SetServicePrincipalName(value *string)() {
         m.servicePrincipalName = value
     }
 }
-// SetSignInEventTypes sets the signInEventTypes property value. 
+// SetSessionLifetimePolicies sets the sessionLifetimePolicies property value. 
+func (m *SignIn) SetSessionLifetimePolicies(value []SessionLifetimePolicy)() {
+    if m != nil {
+        m.sessionLifetimePolicies = value
+    }
+}
+// SetSignInEventTypes sets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq operator only).
 func (m *SignIn) SetSignInEventTypes(value []string)() {
     if m != nil {
         m.signInEventTypes = value
     }
 }
-// SetSignInIdentifier sets the signInIdentifier property value. 
+// SetSignInIdentifier sets the signInIdentifier property value. The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.
 func (m *SignIn) SetSignInIdentifier(value *string)() {
     if m != nil {
         m.signInIdentifier = value
     }
 }
-// SetSignInIdentifierType sets the signInIdentifierType property value. 
+// SetSignInIdentifierType sets the signInIdentifierType property value. The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
 func (m *SignIn) SetSignInIdentifierType(value *SignInIdentifierType)() {
     if m != nil {
         m.signInIdentifierType = value
@@ -1797,13 +1975,13 @@ func (m *SignIn) SetTokenIssuerName(value *string)() {
         m.tokenIssuerName = value
     }
 }
-// SetTokenIssuerType sets the tokenIssuerType property value. The type of identity provider. Possible values: AzureAD, ADFederationServices, or UnknownFutureValue.
+// SetTokenIssuerType sets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: AzureADBackupAuth.
 func (m *SignIn) SetTokenIssuerType(value *TokenIssuerType)() {
     if m != nil {
         m.tokenIssuerType = value
     }
 }
-// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. 
+// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
 func (m *SignIn) SetUniqueTokenIdentifier(value *string)() {
     if m != nil {
         m.uniqueTokenIdentifier = value
@@ -1833,7 +2011,7 @@ func (m *SignIn) SetUserPrincipalName(value *string)() {
         m.userPrincipalName = value
     }
 }
-// SetUserType sets the userType property value. 
+// SetUserType sets the userType property value. Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
 func (m *SignIn) SetUserType(value *SignInUserType)() {
     if m != nil {
         m.userType = value

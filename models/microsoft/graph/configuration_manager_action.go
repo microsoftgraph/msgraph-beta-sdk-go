@@ -6,7 +6,7 @@ import (
 
 // ConfigurationManagerAction 
 type ConfigurationManagerAction struct {
-    // The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation.
+    // The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.
     action *ConfigurationManagerActionType;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,7 +18,7 @@ func NewConfigurationManagerAction()(*ConfigurationManagerAction) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAction gets the action property value. The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation.
+// GetAction gets the action property value. The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.
 func (m *ConfigurationManagerAction) GetAction()(*ConfigurationManagerActionType) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *ConfigurationManagerAction) Serialize(writer i04eb5309aeaafadd28374d79c
     }
     return nil
 }
-// SetAction sets the action property value. The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation.
+// SetAction sets the action property value. The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.
 func (m *ConfigurationManagerAction) SetAction(value *ConfigurationManagerActionType)() {
     if m != nil {
         m.action = value

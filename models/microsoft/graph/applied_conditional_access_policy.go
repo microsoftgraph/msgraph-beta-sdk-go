@@ -8,11 +8,11 @@ import (
 type AppliedConditionalAccessPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The custom authentication strength enforced in a Conditional Access policy.
     authenticationStrength *AuthenticationStrength;
-    // Refers to the conditional access policy conditions that are not satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
+    // Refers to the conditional access policy conditions that are not satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
     conditionsNotSatisfied *ConditionalAccessConditions;
-    // Refers to the conditional access policy conditions that are satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
+    // Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
     conditionsSatisfied *ConditionalAccessConditions;
     // Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
     displayName *string;
@@ -20,11 +20,11 @@ type AppliedConditionalAccessPolicy struct {
     enforcedGrantControls []string;
     // Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
     enforcedSessionControls []string;
-    // 
+    // List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{'devicePlatform' : 'DevicePlatform'}] means the policy didn’t apply, because the DevicePlatform condition was a match.
     excludeRulesSatisfied []ConditionalAccessRuleSatisfied;
     // An identifier of the conditional access policy.
     id *string;
-    // 
+    // List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ 'application' : 'AllApps'}, {'users': 'Group'}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.
     includeRulesSatisfied []ConditionalAccessRuleSatisfied;
     // Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
     result *AppliedConditionalAccessPolicyResult;
@@ -44,7 +44,7 @@ func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetAuthenticationStrength gets the authenticationStrength property value. 
+// GetAuthenticationStrength gets the authenticationStrength property value. The custom authentication strength enforced in a Conditional Access policy.
 func (m *AppliedConditionalAccessPolicy) GetAuthenticationStrength()(*AuthenticationStrength) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *AppliedConditionalAccessPolicy) GetAuthenticationStrength()(*Authentica
         return m.authenticationStrength
     }
 }
-// GetConditionsNotSatisfied gets the conditionsNotSatisfied property value. Refers to the conditional access policy conditions that are not satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
+// GetConditionsNotSatisfied gets the conditionsNotSatisfied property value. Refers to the conditional access policy conditions that are not satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
 func (m *AppliedConditionalAccessPolicy) GetConditionsNotSatisfied()(*ConditionalAccessConditions) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *AppliedConditionalAccessPolicy) GetConditionsNotSatisfied()(*Conditiona
         return m.conditionsNotSatisfied
     }
 }
-// GetConditionsSatisfied gets the conditionsSatisfied property value. Refers to the conditional access policy conditions that are satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
+// GetConditionsSatisfied gets the conditionsSatisfied property value. Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
 func (m *AppliedConditionalAccessPolicy) GetConditionsSatisfied()(*ConditionalAccessConditions) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *AppliedConditionalAccessPolicy) GetEnforcedSessionControls()([]string) 
         return m.enforcedSessionControls
     }
 }
-// GetExcludeRulesSatisfied gets the excludeRulesSatisfied property value. 
+// GetExcludeRulesSatisfied gets the excludeRulesSatisfied property value. List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{'devicePlatform' : 'DevicePlatform'}] means the policy didn’t apply, because the DevicePlatform condition was a match.
 func (m *AppliedConditionalAccessPolicy) GetExcludeRulesSatisfied()([]ConditionalAccessRuleSatisfied) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *AppliedConditionalAccessPolicy) GetId()(*string) {
         return m.id
     }
 }
-// GetIncludeRulesSatisfied gets the includeRulesSatisfied property value. 
+// GetIncludeRulesSatisfied gets the includeRulesSatisfied property value. List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ 'application' : 'AllApps'}, {'users': 'Group'}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.
 func (m *AppliedConditionalAccessPolicy) GetIncludeRulesSatisfied()([]ConditionalAccessRuleSatisfied) {
     if m == nil {
         return nil
@@ -340,19 +340,19 @@ func (m *AppliedConditionalAccessPolicy) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetAuthenticationStrength sets the authenticationStrength property value. 
+// SetAuthenticationStrength sets the authenticationStrength property value. The custom authentication strength enforced in a Conditional Access policy.
 func (m *AppliedConditionalAccessPolicy) SetAuthenticationStrength(value *AuthenticationStrength)() {
     if m != nil {
         m.authenticationStrength = value
     }
 }
-// SetConditionsNotSatisfied sets the conditionsNotSatisfied property value. Refers to the conditional access policy conditions that are not satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
+// SetConditionsNotSatisfied sets the conditionsNotSatisfied property value. Refers to the conditional access policy conditions that are not satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
 func (m *AppliedConditionalAccessPolicy) SetConditionsNotSatisfied(value *ConditionalAccessConditions)() {
     if m != nil {
         m.conditionsNotSatisfied = value
     }
 }
-// SetConditionsSatisfied sets the conditionsSatisfied property value. Refers to the conditional access policy conditions that are satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
+// SetConditionsSatisfied sets the conditionsSatisfied property value. Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
 func (m *AppliedConditionalAccessPolicy) SetConditionsSatisfied(value *ConditionalAccessConditions)() {
     if m != nil {
         m.conditionsSatisfied = value
@@ -376,7 +376,7 @@ func (m *AppliedConditionalAccessPolicy) SetEnforcedSessionControls(value []stri
         m.enforcedSessionControls = value
     }
 }
-// SetExcludeRulesSatisfied sets the excludeRulesSatisfied property value. 
+// SetExcludeRulesSatisfied sets the excludeRulesSatisfied property value. List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{'devicePlatform' : 'DevicePlatform'}] means the policy didn’t apply, because the DevicePlatform condition was a match.
 func (m *AppliedConditionalAccessPolicy) SetExcludeRulesSatisfied(value []ConditionalAccessRuleSatisfied)() {
     if m != nil {
         m.excludeRulesSatisfied = value
@@ -388,7 +388,7 @@ func (m *AppliedConditionalAccessPolicy) SetId(value *string)() {
         m.id = value
     }
 }
-// SetIncludeRulesSatisfied sets the includeRulesSatisfied property value. 
+// SetIncludeRulesSatisfied sets the includeRulesSatisfied property value. List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ 'application' : 'AllApps'}, {'users': 'Group'}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.
 func (m *AppliedConditionalAccessPolicy) SetIncludeRulesSatisfied(value []ConditionalAccessRuleSatisfied)() {
     if m != nil {
         m.includeRulesSatisfied = value
