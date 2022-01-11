@@ -36,7 +36,7 @@ type TargetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// TargetRequestBuilderGetQueryParameters the subject of the access package assignment. Read-only. Nullable.
+// TargetRequestBuilderGetQueryParameters the subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
 type TargetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -76,7 +76,7 @@ func NewTargetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams["request-raw-url"] = rawUrl
     return NewTargetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the subject of the access package assignment. Read-only. Nullable.
+// CreateDeleteRequestInformation the subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
 func (m *TargetRequestBuilder) CreateDeleteRequestInformation(options *TargetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,7 +93,7 @@ func (m *TargetRequestBuilder) CreateDeleteRequestInformation(options *TargetReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the subject of the access package assignment. Read-only. Nullable.
+// CreateGetRequestInformation the subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
 func (m *TargetRequestBuilder) CreateGetRequestInformation(options *TargetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *TargetRequestBuilder) CreateGetRequestInformation(options *TargetReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the subject of the access package assignment. Read-only. Nullable.
+// CreatePatchRequestInformation the subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
 func (m *TargetRequestBuilder) CreatePatchRequestInformation(options *TargetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *TargetRequestBuilder) CreatePatchRequestInformation(options *TargetRequ
     }
     return requestInfo, nil
 }
-// Delete the subject of the access package assignment. Read-only. Nullable.
+// Delete the subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
 func (m *TargetRequestBuilder) Delete(options *TargetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *TargetRequestBuilder) Delete(options *TargetRequestBuilderDeleteOptions
     }
     return nil
 }
-// Get the subject of the access package assignment. Read-only. Nullable.
+// Get the subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
 func (m *TargetRequestBuilder) Get(options *TargetRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageSubject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -155,7 +155,7 @@ func (m *TargetRequestBuilder) Get(options *TargetRequestBuilderGetOptions)(*i53
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageSubject), nil
 }
-// Patch the subject of the access package assignment. Read-only. Nullable.
+// Patch the subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
 func (m *TargetRequestBuilder) Patch(options *TargetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

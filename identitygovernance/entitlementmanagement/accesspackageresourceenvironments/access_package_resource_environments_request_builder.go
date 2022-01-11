@@ -26,7 +26,7 @@ type AccessPackageResourceEnvironmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageResourceEnvironmentsRequestBuilderGetQueryParameters get accessPackageResourceEnvironments from identityGovernance
+// AccessPackageResourceEnvironmentsRequestBuilderGetQueryParameters a reference to the geolocation environment in which a resource is located.
 type AccessPackageResourceEnvironmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAccessPackageResourceEnvironmentsRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceEnvironmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get accessPackageResourceEnvironments from identityGovernance
+// CreateGetRequestInformation a reference to the geolocation environment in which a resource is located.
 func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourceEnvironmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to accessPackageResourceEnvironments for identityGovernance
+// CreatePostRequestInformation a reference to the geolocation environment in which a resource is located.
 func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreatePostRequestInformation(options *AccessPackageResourceEnvironmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// Get get accessPackageResourceEnvironments from identityGovernance
+// Get a reference to the geolocation environment in which a resource is located.
 func (m *AccessPackageResourceEnvironmentsRequestBuilder) Get(options *AccessPackageResourceEnvironmentsRequestBuilderGetOptions)(*AccessPackageResourceEnvironmentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AccessPackageResourceEnvironmentsRequestBuilder) Get(options *AccessPac
     }
     return res.(*AccessPackageResourceEnvironmentsResponse), nil
 }
-// Post create new navigation property to accessPackageResourceEnvironments for identityGovernance
+// Post a reference to the geolocation environment in which a resource is located.
 func (m *AccessPackageResourceEnvironmentsRequestBuilder) Post(options *AccessPackageResourceEnvironmentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceEnvironment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

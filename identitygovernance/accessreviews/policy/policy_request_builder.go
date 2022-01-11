@@ -35,7 +35,7 @@ type PolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PolicyRequestBuilderGetQueryParameters get policy from identityGovernance
+// PolicyRequestBuilderGetQueryParameters resource that enables administrators to manage directory-level access review policies in their tenant.
 type PolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams["request-raw-url"] = rawUrl
     return NewPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property policy for identityGovernance
+// CreateDeleteRequestInformation resource that enables administrators to manage directory-level access review policies in their tenant.
 func (m *PolicyRequestBuilder) CreateDeleteRequestInformation(options *PolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *PolicyRequestBuilder) CreateDeleteRequestInformation(options *PolicyReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get policy from identityGovernance
+// CreateGetRequestInformation resource that enables administrators to manage directory-level access review policies in their tenant.
 func (m *PolicyRequestBuilder) CreateGetRequestInformation(options *PolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *PolicyRequestBuilder) CreateGetRequestInformation(options *PolicyReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property policy in identityGovernance
+// CreatePatchRequestInformation resource that enables administrators to manage directory-level access review policies in their tenant.
 func (m *PolicyRequestBuilder) CreatePatchRequestInformation(options *PolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *PolicyRequestBuilder) CreatePatchRequestInformation(options *PolicyRequ
     }
     return requestInfo, nil
 }
-// Delete delete navigation property policy for identityGovernance
+// Delete resource that enables administrators to manage directory-level access review policies in their tenant.
 func (m *PolicyRequestBuilder) Delete(options *PolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *PolicyRequestBuilder) Delete(options *PolicyRequestBuilderDeleteOptions
     }
     return nil
 }
-// Get get policy from identityGovernance
+// Get resource that enables administrators to manage directory-level access review policies in their tenant.
 func (m *PolicyRequestBuilder) Get(options *PolicyRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *PolicyRequestBuilder) Get(options *PolicyRequestBuilderGetOptions)(*i53
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewPolicy), nil
 }
-// Patch update the navigation property policy in identityGovernance
+// Patch resource that enables administrators to manage directory-level access review policies in their tenant.
 func (m *PolicyRequestBuilder) Patch(options *PolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

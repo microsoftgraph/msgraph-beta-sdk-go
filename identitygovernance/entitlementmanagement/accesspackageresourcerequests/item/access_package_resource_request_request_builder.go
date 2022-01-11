@@ -37,7 +37,7 @@ type AccessPackageResourceRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageResourceRequestRequestBuilderGetQueryParameters get accessPackageResourceRequests from identityGovernance
+// AccessPackageResourceRequestRequestBuilderGetQueryParameters represents a request to add or remove a resource to or from a catalog respectively.
 type AccessPackageResourceRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -77,7 +77,7 @@ func NewAccessPackageResourceRequestRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property accessPackageResourceRequests for identityGovernance
+// CreateDeleteRequestInformation represents a request to add or remove a resource to or from a catalog respectively.
 func (m *AccessPackageResourceRequestRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageResourceRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -94,7 +94,7 @@ func (m *AccessPackageResourceRequestRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get accessPackageResourceRequests from identityGovernance
+// CreateGetRequestInformation represents a request to add or remove a resource to or from a catalog respectively.
 func (m *AccessPackageResourceRequestRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourceRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *AccessPackageResourceRequestRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property accessPackageResourceRequests in identityGovernance
+// CreatePatchRequestInformation represents a request to add or remove a resource to or from a catalog respectively.
 func (m *AccessPackageResourceRequestRequestBuilder) CreatePatchRequestInformation(options *AccessPackageResourceRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,7 +132,7 @@ func (m *AccessPackageResourceRequestRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// Delete delete navigation property accessPackageResourceRequests for identityGovernance
+// Delete represents a request to add or remove a resource to or from a catalog respectively.
 func (m *AccessPackageResourceRequestRequestBuilder) Delete(options *AccessPackageResourceRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -144,7 +144,7 @@ func (m *AccessPackageResourceRequestRequestBuilder) Delete(options *AccessPacka
     }
     return nil
 }
-// Get get accessPackageResourceRequests from identityGovernance
+// Get represents a request to add or remove a resource to or from a catalog respectively.
 func (m *AccessPackageResourceRequestRequestBuilder) Get(options *AccessPackageResourceRequestRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -156,7 +156,7 @@ func (m *AccessPackageResourceRequestRequestBuilder) Get(options *AccessPackageR
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRequest), nil
 }
-// Patch update the navigation property accessPackageResourceRequests in identityGovernance
+// Patch represents a request to add or remove a resource to or from a catalog respectively.
 func (m *AccessPackageResourceRequestRequestBuilder) Patch(options *AccessPackageResourceRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

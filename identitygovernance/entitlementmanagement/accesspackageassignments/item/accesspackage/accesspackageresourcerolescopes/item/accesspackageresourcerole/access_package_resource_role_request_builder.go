@@ -36,7 +36,7 @@ type AccessPackageResourceRoleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageResourceRoleRequestBuilderGetQueryParameters read-only. Nullable.
+// AccessPackageResourceRoleRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type AccessPackageResourceRoleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -76,7 +76,7 @@ func NewAccessPackageResourceRoleRequestBuilder(rawUrl string, requestAdapter id
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceRoleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation read-only. Nullable.
+// CreateDeleteRequestInformation read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRoleRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageResourceRoleRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,7 +93,7 @@ func (m *AccessPackageResourceRoleRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRoleRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourceRoleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AccessPackageResourceRoleRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only. Nullable.
+// CreatePatchRequestInformation read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRoleRequestBuilder) CreatePatchRequestInformation(options *AccessPackageResourceRoleRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *AccessPackageResourceRoleRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Delete read-only. Nullable.
+// Delete read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRoleRequestBuilder) Delete(options *AccessPackageResourceRoleRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *AccessPackageResourceRoleRequestBuilder) Delete(options *AccessPackageR
     }
     return nil
 }
-// Get read-only. Nullable.
+// Get read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRoleRequestBuilder) Get(options *AccessPackageResourceRoleRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRole, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -155,7 +155,7 @@ func (m *AccessPackageResourceRoleRequestBuilder) Get(options *AccessPackageReso
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRole), nil
 }
-// Patch read-only. Nullable.
+// Patch read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRoleRequestBuilder) Patch(options *AccessPackageResourceRoleRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

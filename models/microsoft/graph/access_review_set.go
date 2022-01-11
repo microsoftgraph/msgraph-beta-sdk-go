@@ -7,13 +7,13 @@ import (
 // AccessReviewSet 
 type AccessReviewSet struct {
     Entity
-    // 
+    // Represents an Azure AD access review decision on an instance of a review.
     decisions []AccessReviewInstanceDecisionItem;
-    // 
+    // Represents the template and scheduling for an access review.
     definitions []AccessReviewScheduleDefinition;
-    // 
+    // Represents a collection of access review history data and the scopes used to collect that data.
     historyDefinitions []AccessReviewHistoryDefinition;
-    // 
+    // Resource that enables administrators to manage directory-level access review policies in their tenant.
     policy *AccessReviewPolicy;
 }
 // NewAccessReviewSet instantiates a new accessReviewSet and sets the default values.
@@ -23,7 +23,7 @@ func NewAccessReviewSet()(*AccessReviewSet) {
     }
     return m
 }
-// GetDecisions gets the decisions property value. 
+// GetDecisions gets the decisions property value. Represents an Azure AD access review decision on an instance of a review.
 func (m *AccessReviewSet) GetDecisions()([]AccessReviewInstanceDecisionItem) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *AccessReviewSet) GetDecisions()([]AccessReviewInstanceDecisionItem) {
         return m.decisions
     }
 }
-// GetDefinitions gets the definitions property value. 
+// GetDefinitions gets the definitions property value. Represents the template and scheduling for an access review.
 func (m *AccessReviewSet) GetDefinitions()([]AccessReviewScheduleDefinition) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *AccessReviewSet) GetDefinitions()([]AccessReviewScheduleDefinition) {
         return m.definitions
     }
 }
-// GetHistoryDefinitions gets the historyDefinitions property value. 
+// GetHistoryDefinitions gets the historyDefinitions property value. Represents a collection of access review history data and the scopes used to collect that data.
 func (m *AccessReviewSet) GetHistoryDefinitions()([]AccessReviewHistoryDefinition) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *AccessReviewSet) GetHistoryDefinitions()([]AccessReviewHistoryDefinitio
         return m.historyDefinitions
     }
 }
-// GetPolicy gets the policy property value. 
+// GetPolicy gets the policy property value. Resource that enables administrators to manage directory-level access review policies in their tenant.
 func (m *AccessReviewSet) GetPolicy()(*AccessReviewPolicy) {
     if m == nil {
         return nil
@@ -162,25 +162,25 @@ func (m *AccessReviewSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// SetDecisions sets the decisions property value. 
+// SetDecisions sets the decisions property value. Represents an Azure AD access review decision on an instance of a review.
 func (m *AccessReviewSet) SetDecisions(value []AccessReviewInstanceDecisionItem)() {
     if m != nil {
         m.decisions = value
     }
 }
-// SetDefinitions sets the definitions property value. 
+// SetDefinitions sets the definitions property value. Represents the template and scheduling for an access review.
 func (m *AccessReviewSet) SetDefinitions(value []AccessReviewScheduleDefinition)() {
     if m != nil {
         m.definitions = value
     }
 }
-// SetHistoryDefinitions sets the historyDefinitions property value. 
+// SetHistoryDefinitions sets the historyDefinitions property value. Represents a collection of access review history data and the scopes used to collect that data.
 func (m *AccessReviewSet) SetHistoryDefinitions(value []AccessReviewHistoryDefinition)() {
     if m != nil {
         m.historyDefinitions = value
     }
 }
-// SetPolicy sets the policy property value. 
+// SetPolicy sets the policy property value. Resource that enables administrators to manage directory-level access review policies in their tenant.
 func (m *AccessReviewSet) SetPolicy(value *AccessReviewPolicy)() {
     if m != nil {
         m.policy = value

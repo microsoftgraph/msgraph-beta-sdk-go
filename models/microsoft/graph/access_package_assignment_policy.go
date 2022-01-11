@@ -8,11 +8,11 @@ import (
 // AccessPackageAssignmentPolicy 
 type AccessPackageAssignmentPolicy struct {
     Entity
-    // The access package with this policy. Read-only. Nullable.
+    // The access package with this policy. Read-only. Nullable. Supports $expand.
     accessPackage *AccessPackage;
     // 
     accessPackageCatalog *AccessPackageCatalog;
-    // ID of the access package.
+    // Identifier of the access package.
     accessPackageId *string;
     // Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
     accessReviewSettings *AssignmentReviewSettings;
@@ -24,7 +24,7 @@ type AccessPackageAssignmentPolicy struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The description of the policy.
     description *string;
-    // The display name of the policy.
+    // The display name of the policy. Supports $filter (eq).
     displayName *string;
     // The number of days in which assignments from this policy last until they are expired.
     durationInDays *int32;
@@ -48,7 +48,7 @@ func NewAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {
     }
     return m
 }
-// GetAccessPackage gets the accessPackage property value. The access package with this policy. Read-only. Nullable.
+// GetAccessPackage gets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(*AccessPackage) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *AccessPackageAssignmentPolicy) GetAccessPackageCatalog()(*AccessPackage
         return m.accessPackageCatalog
     }
 }
-// GetAccessPackageId gets the accessPackageId property value. ID of the access package.
+// GetAccessPackageId gets the accessPackageId property value. Identifier of the access package.
 func (m *AccessPackageAssignmentPolicy) GetAccessPackageId()(*string) {
     if m == nil {
         return nil
@@ -112,7 +112,7 @@ func (m *AccessPackageAssignmentPolicy) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name of the policy.
+// GetDisplayName gets the displayName property value. The display name of the policy. Supports $filter (eq).
 func (m *AccessPackageAssignmentPolicy) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -457,7 +457,7 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// SetAccessPackage sets the accessPackage property value. The access package with this policy. Read-only. Nullable.
+// SetAccessPackage sets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value *AccessPackage)() {
     if m != nil {
         m.accessPackage = value
@@ -469,7 +469,7 @@ func (m *AccessPackageAssignmentPolicy) SetAccessPackageCatalog(value *AccessPac
         m.accessPackageCatalog = value
     }
 }
-// SetAccessPackageId sets the accessPackageId property value. ID of the access package.
+// SetAccessPackageId sets the accessPackageId property value. Identifier of the access package.
 func (m *AccessPackageAssignmentPolicy) SetAccessPackageId(value *string)() {
     if m != nil {
         m.accessPackageId = value
@@ -505,7 +505,7 @@ func (m *AccessPackageAssignmentPolicy) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the policy.
+// SetDisplayName sets the displayName property value. The display name of the policy. Supports $filter (eq).
 func (m *AccessPackageAssignmentPolicy) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value

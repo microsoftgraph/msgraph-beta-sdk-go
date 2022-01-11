@@ -26,7 +26,7 @@ type AccessPackageAssignmentPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageAssignmentPoliciesRequestBuilderGetQueryParameters read-only. Nullable.
+// AccessPackageAssignmentPoliciesRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type AccessPackageAssignmentPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAccessPackageAssignmentPoliciesRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPoliciesRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AccessPackageAssignmentPoliciesRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only. Nullable.
+// CreatePostRequestInformation read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPoliciesRequestBuilder) CreatePostRequestInformation(options *AccessPackageAssignmentPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AccessPackageAssignmentPoliciesRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPoliciesRequestBuilder) Get(options *AccessPackageAssignmentPoliciesRequestBuilderGetOptions)(*AccessPackageAssignmentPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AccessPackageAssignmentPoliciesRequestBuilder) Get(options *AccessPacka
     }
     return res.(*AccessPackageAssignmentPoliciesResponse), nil
 }
-// Post read-only. Nullable.
+// Post read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPoliciesRequestBuilder) Post(options *AccessPackageAssignmentPoliciesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageAssignmentPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

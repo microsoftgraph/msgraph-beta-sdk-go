@@ -13,7 +13,7 @@ type AccessPackageAssignmentResourceRole struct {
     accessPackageResourceRole *AccessPackageResourceRole;
     // Read-only. Nullable.
     accessPackageResourceScope *AccessPackageResourceScope;
-    // Read-only. Nullable.
+    // Read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
     accessPackageSubject *AccessPackageSubject;
     // A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.
     originId *string;
@@ -53,7 +53,7 @@ func (m *AccessPackageAssignmentResourceRole) GetAccessPackageResourceScope()(*A
         return m.accessPackageResourceScope
     }
 }
-// GetAccessPackageSubject gets the accessPackageSubject property value. Read-only. Nullable.
+// GetAccessPackageSubject gets the accessPackageSubject property value. Read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
 func (m *AccessPackageAssignmentResourceRole) GetAccessPackageSubject()(*AccessPackageSubject) {
     if m == nil {
         return nil
@@ -240,7 +240,7 @@ func (m *AccessPackageAssignmentResourceRole) SetAccessPackageResourceScope(valu
         m.accessPackageResourceScope = value
     }
 }
-// SetAccessPackageSubject sets the accessPackageSubject property value. Read-only. Nullable.
+// SetAccessPackageSubject sets the accessPackageSubject property value. Read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
 func (m *AccessPackageAssignmentResourceRole) SetAccessPackageSubject(value *AccessPackageSubject)() {
     if m != nil {
         m.accessPackageSubject = value

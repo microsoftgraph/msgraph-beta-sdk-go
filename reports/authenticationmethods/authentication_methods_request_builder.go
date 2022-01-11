@@ -39,7 +39,7 @@ type AuthenticationMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AuthenticationMethodsRequestBuilderGetQueryParameters get authenticationMethods from reports
+// AuthenticationMethodsRequestBuilderGetQueryParameters container for navigation properties for Azure AD authentication methods resources.
 type AuthenticationMethodsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -76,7 +76,7 @@ func NewAuthenticationMethodsRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property authenticationMethods for reports
+// CreateDeleteRequestInformation container for navigation properties for Azure AD authentication methods resources.
 func (m *AuthenticationMethodsRequestBuilder) CreateDeleteRequestInformation(options *AuthenticationMethodsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,7 +93,7 @@ func (m *AuthenticationMethodsRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get authenticationMethods from reports
+// CreateGetRequestInformation container for navigation properties for Azure AD authentication methods resources.
 func (m *AuthenticationMethodsRequestBuilder) CreateGetRequestInformation(options *AuthenticationMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AuthenticationMethodsRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property authenticationMethods in reports
+// CreatePatchRequestInformation container for navigation properties for Azure AD authentication methods resources.
 func (m *AuthenticationMethodsRequestBuilder) CreatePatchRequestInformation(options *AuthenticationMethodsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *AuthenticationMethodsRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delete delete navigation property authenticationMethods for reports
+// Delete container for navigation properties for Azure AD authentication methods resources.
 func (m *AuthenticationMethodsRequestBuilder) Delete(options *AuthenticationMethodsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *AuthenticationMethodsRequestBuilder) Delete(options *AuthenticationMeth
     }
     return nil
 }
-// Get get authenticationMethods from reports
+// Get container for navigation properties for Azure AD authentication methods resources.
 func (m *AuthenticationMethodsRequestBuilder) Get(options *AuthenticationMethodsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationMethodsRoot, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -155,7 +155,7 @@ func (m *AuthenticationMethodsRequestBuilder) Get(options *AuthenticationMethods
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationMethodsRoot), nil
 }
-// Patch update the navigation property authenticationMethods in reports
+// Patch container for navigation properties for Azure AD authentication methods resources.
 func (m *AuthenticationMethodsRequestBuilder) Patch(options *AuthenticationMethodsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
