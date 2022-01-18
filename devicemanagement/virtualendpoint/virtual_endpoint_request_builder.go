@@ -14,11 +14,13 @@ import (
     ic615011cfc05f9e79dc505191df45c19871dc563dfe317f14f5eb7e21000fc23 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/onpremisesconnections"
     id4ffcadce3c6a0158b09f7c80fb182d7adea4c0b1e976947864d2f4a6310302e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/organizationsettings"
     idd9e805dd9b76881e3c848aa7cbb09327538706813b2808dfeb729d75afef079 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/supportedregions"
+    ie9548ed1e88afc5117c59a732917ab8c23f48e727476fa485002e01d90898ce5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/snapshots"
     if4100d044fd5ea8af7d00890548b33d7f96329a5a6d63f806c3f7705cafc3c7b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/provisioningpolicies"
     i41c3478ec8e1cf11d4aa0d810af05da1184e70e2f0c4b1acd5144a495b556b79 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/serviceplans/item"
     i471da8905b96f5687f46d1c5dc0de1420e0c35b35374f400b7618e2937b4bf34 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/onpremisesconnections/item"
     i57a7497f8ee90067ee6f4aa2a9b6074c547470907dd198f9de96f123682ddda0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/auditevents/item"
     i6c86691f21aa3210591c58f278b27fee3b5fb3a866b020940f913e3f9a20a060 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/provisioningpolicies/item"
+    i6cd22011575c099f23c4a4c1302ad841306148c11914cbf14eb33d52739607c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/snapshots/item"
     i91bd1ab7316bb059e22edb6c7fdf042441efd0af722f5ea856fc4be260402497 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/supportedregions/item"
     i940a1af81d34e1d5a5cfef93acb216fcbeba9c4d02700ce3000fd8f0588fd162 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/usersettings/item"
     ia3bcb5abfa0df15f63e2a6fa1f06bcbd43b05fc488a36754660b8c694246fe0b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/deviceimages/item"
@@ -287,6 +289,20 @@ func (m *VirtualEndpointRequestBuilder) ServicePlansById(id string)(*i41c3478ec8
         urlTplParams["cloudPcServicePlan_id"] = id
     }
     return i41c3478ec8e1cf11d4aa0d810af05da1184e70e2f0c4b1acd5144a495b556b79.NewCloudPcServicePlanRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *VirtualEndpointRequestBuilder) Snapshots()(*ie9548ed1e88afc5117c59a732917ab8c23f48e727476fa485002e01d90898ce5.SnapshotsRequestBuilder) {
+    return ie9548ed1e88afc5117c59a732917ab8c23f48e727476fa485002e01d90898ce5.NewSnapshotsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SnapshotsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.snapshots.item collection
+func (m *VirtualEndpointRequestBuilder) SnapshotsById(id string)(*i6cd22011575c099f23c4a4c1302ad841306148c11914cbf14eb33d52739607c2.CloudPcSnapshotRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["cloudPcSnapshot_id"] = id
+    }
+    return i6cd22011575c099f23c4a4c1302ad841306148c11914cbf14eb33d52739607c2.NewCloudPcSnapshotRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *VirtualEndpointRequestBuilder) SupportedRegions()(*idd9e805dd9b76881e3c848aa7cbb09327538706813b2808dfeb729d75afef079.SupportedRegionsRequestBuilder) {
     return idd9e805dd9b76881e3c848aa7cbb09327538706813b2808dfeb729d75afef079.NewSupportedRegionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

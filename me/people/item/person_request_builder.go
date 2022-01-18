@@ -35,7 +35,7 @@ type PersonRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PersonRequestBuilderGetQueryParameters people that are relevant to the user. Read-only. Nullable.
+// PersonRequestBuilderGetQueryParameters read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
 type PersonRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string;
@@ -70,7 +70,7 @@ func NewPersonRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams["request-raw-url"] = rawUrl
     return NewPersonRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation people that are relevant to the user. Read-only. Nullable.
+// CreateDeleteRequestInformation read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
 func (m *PersonRequestBuilder) CreateDeleteRequestInformation(options *PersonRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -87,7 +87,7 @@ func (m *PersonRequestBuilder) CreateDeleteRequestInformation(options *PersonReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation people that are relevant to the user. Read-only. Nullable.
+// CreateGetRequestInformation read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
 func (m *PersonRequestBuilder) CreateGetRequestInformation(options *PersonRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,7 +107,7 @@ func (m *PersonRequestBuilder) CreateGetRequestInformation(options *PersonReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation people that are relevant to the user. Read-only. Nullable.
+// CreatePatchRequestInformation read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
 func (m *PersonRequestBuilder) CreatePatchRequestInformation(options *PersonRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,7 +125,7 @@ func (m *PersonRequestBuilder) CreatePatchRequestInformation(options *PersonRequ
     }
     return requestInfo, nil
 }
-// Delete people that are relevant to the user. Read-only. Nullable.
+// Delete read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
 func (m *PersonRequestBuilder) Delete(options *PersonRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *PersonRequestBuilder) Delete(options *PersonRequestBuilderDeleteOptions
     }
     return nil
 }
-// Get people that are relevant to the user. Read-only. Nullable.
+// Get read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
 func (m *PersonRequestBuilder) Get(options *PersonRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Person, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -149,7 +149,7 @@ func (m *PersonRequestBuilder) Get(options *PersonRequestBuilderGetOptions)(*i53
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Person), nil
 }
-// Patch people that are relevant to the user. Read-only. Nullable.
+// Patch read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
 func (m *PersonRequestBuilder) Patch(options *PersonRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

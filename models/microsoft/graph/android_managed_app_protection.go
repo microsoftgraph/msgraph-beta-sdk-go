@@ -31,9 +31,9 @@ type AndroidManagedAppProtection struct {
     blockAfterCompanyPortalUpdateDeferralInDays *int32;
     // Whether the app should connect to the configured VPN on launch.
     connectToVpnOnLaunch *bool;
-    // Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+    // Friendly name of the preferred custom browser to open weblink on Android.
     customBrowserDisplayName *string;
-    // Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+    // Unique identifier of a custom browser to open weblink on Android.
     customBrowserPackageId *string;
     // Friendly name of a custom dialer app to click-to-open a phone number on Android.
     customDialerAppDisplayName *string;
@@ -181,7 +181,7 @@ func (m *AndroidManagedAppProtection) GetConnectToVpnOnLaunch()(*bool) {
         return m.connectToVpnOnLaunch
     }
 }
-// GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+// GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
         return m.customBrowserDisplayName
     }
 }
-// GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+// GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) GetCustomBrowserPackageId()(*string) {
     if m == nil {
         return nil
@@ -1060,13 +1060,13 @@ func (m *AndroidManagedAppProtection) SetConnectToVpnOnLaunch(value *bool)() {
         m.connectToVpnOnLaunch = value
     }
 }
-// SetCustomBrowserDisplayName sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+// SetCustomBrowserDisplayName sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) SetCustomBrowserDisplayName(value *string)() {
     if m != nil {
         m.customBrowserDisplayName = value
     }
 }
-// SetCustomBrowserPackageId sets the customBrowserPackageId property value. Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+// SetCustomBrowserPackageId sets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
 func (m *AndroidManagedAppProtection) SetCustomBrowserPackageId(value *string)() {
     if m != nil {
         m.customBrowserPackageId = value

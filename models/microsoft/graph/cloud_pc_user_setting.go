@@ -18,6 +18,8 @@ type CloudPcUserSetting struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.
     localAdminEnabled *bool;
+    // 
+    restorePointSetting *CloudPcRestorePointSetting;
     // Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
     selfServiceEnabled *bool;
 }
@@ -66,6 +68,14 @@ func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
         return nil
     } else {
         return m.localAdminEnabled
+    }
+}
+// GetRestorePointSetting gets the restorePointSetting property value. 
+func (m *CloudPcUserSetting) GetRestorePointSetting()(*CloudPcRestorePointSetting) {
+    if m == nil {
+        return nil
+    } else {
+        return m.restorePointSetting
     }
 }
 // GetSelfServiceEnabled gets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
@@ -133,6 +143,16 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
+    res["restorePointSetting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcRestorePointSetting() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRestorePointSetting(val.(*CloudPcRestorePointSetting))
+        }
+        return nil
+    }
     res["selfServiceEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -190,6 +210,12 @@ func (m *CloudPcUserSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
+        err = writer.WriteObjectValue("restorePointSetting", m.GetRestorePointSetting())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("selfServiceEnabled", m.GetSelfServiceEnabled())
         if err != nil {
             return err
@@ -225,6 +251,12 @@ func (m *CloudPcUserSetting) SetLastModifiedDateTime(value *i336074805fc853987ab
 func (m *CloudPcUserSetting) SetLocalAdminEnabled(value *bool)() {
     if m != nil {
         m.localAdminEnabled = value
+    }
+}
+// SetRestorePointSetting sets the restorePointSetting property value. 
+func (m *CloudPcUserSetting) SetRestorePointSetting(value *CloudPcRestorePointSetting)() {
+    if m != nil {
+        m.restorePointSetting = value
     }
 }
 // SetSelfServiceEnabled sets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.

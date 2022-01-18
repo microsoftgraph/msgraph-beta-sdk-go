@@ -22,7 +22,7 @@ type Contact struct {
     displayName *string;
     // The contact's email addresses.
     emailAddresses []TypedEmailAddress;
-    // The collection of open extensions defined for the contact. Read-only. Nullable.
+    // The collection of open extensions defined for the contact. Nullable.
     extensions []Extension;
     // The name the contact is filed under.
     fileAs *string;
@@ -146,7 +146,7 @@ func (m *Contact) GetEmailAddresses()([]TypedEmailAddress) {
         return m.emailAddresses
     }
 }
-// GetExtensions gets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
+// GetExtensions gets the extensions property value. The collection of open extensions defined for the contact. Nullable.
 func (m *Contact) GetExtensions()([]Extension) {
     if m == nil {
         return nil
@@ -1107,7 +1107,7 @@ func (m *Contact) SetEmailAddresses(value []TypedEmailAddress)() {
         m.emailAddresses = value
     }
 }
-// SetExtensions sets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
+// SetExtensions sets the extensions property value. The collection of open extensions defined for the contact. Nullable.
 func (m *Contact) SetExtensions(value []Extension)() {
     if m != nil {
         m.extensions = value

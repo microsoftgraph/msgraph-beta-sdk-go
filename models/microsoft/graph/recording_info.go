@@ -10,7 +10,7 @@ type RecordingInfo struct {
     additionalData map[string]interface{};
     // The participant who initiated the recording.
     initiatedBy *ParticipantInfo;
-    // The identities of the recording initiator.
+    // The identities of recording initiator.
     initiator *IdentitySet;
     // Possible values are: unknown, notRecording, recording, or failed.
     recordingStatus *RecordingStatus;
@@ -38,7 +38,7 @@ func (m *RecordingInfo) GetInitiatedBy()(*ParticipantInfo) {
         return m.initiatedBy
     }
 }
-// GetInitiator gets the initiator property value. The identities of the recording initiator.
+// GetInitiator gets the initiator property value. The identities of recording initiator.
 func (m *RecordingInfo) GetInitiator()(*IdentitySet) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *RecordingInfo) SetInitiatedBy(value *ParticipantInfo)() {
         m.initiatedBy = value
     }
 }
-// SetInitiator sets the initiator property value. The identities of the recording initiator.
+// SetInitiator sets the initiator property value. The identities of recording initiator.
 func (m *RecordingInfo) SetInitiator(value *IdentitySet)() {
     if m != nil {
         m.initiator = value

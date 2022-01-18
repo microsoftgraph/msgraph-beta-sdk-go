@@ -1,9 +1,11 @@
 package teamwork
 
 import (
+    i3fce2babf7b4f0d1cb31c054814424b76c87dc90eadacea48f98134cc0ffe6e7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/devices"
     ib9c577680442ee756cdbf50e3c2f2d61fc1877ecb12e13bf9ec9802c878f1b45 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/workforceintegrations"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i17ffe63fafac127289aa66b154f468d1a6a27dee2b4568c67bf179cbf15811a8 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/devices/item"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i75138276537be7f359112029ca90eee1631bb436b9f9db869b58bf15fd0cd092 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/workforceintegrations/item"
 )
@@ -102,6 +104,20 @@ func (m *TeamworkRequestBuilder) CreatePatchRequestInformation(options *Teamwork
         }
     }
     return requestInfo, nil
+}
+func (m *TeamworkRequestBuilder) Devices()(*i3fce2babf7b4f0d1cb31c054814424b76c87dc90eadacea48f98134cc0ffe6e7.DevicesRequestBuilder) {
+    return i3fce2babf7b4f0d1cb31c054814424b76c87dc90eadacea48f98134cc0ffe6e7.NewDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DevicesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.devices.item collection
+func (m *TeamworkRequestBuilder) DevicesById(id string)(*i17ffe63fafac127289aa66b154f468d1a6a27dee2b4568c67bf179cbf15811a8.TeamworkDeviceRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["teamworkDevice_id"] = id
+    }
+    return i17ffe63fafac127289aa66b154f468d1a6a27dee2b4568c67bf179cbf15811a8.NewTeamworkDeviceRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get teamwork
 func (m *TeamworkRequestBuilder) Get(options *TeamworkRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Teamwork, error) {

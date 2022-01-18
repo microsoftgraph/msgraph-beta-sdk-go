@@ -9,7 +9,7 @@ type EntitlementManagementSettings struct {
     Entity
     // If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.
     daysUntilExternalUserDeletedAfterBlocked *int32;
-    // Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
+    // One of None, BlockSignIn, or BlockSignInAndDelete.
     externalUserLifecycleAction *string;
 }
 // NewEntitlementManagementSettings instantiates a new entitlementManagementSettings and sets the default values.
@@ -27,7 +27,7 @@ func (m *EntitlementManagementSettings) GetDaysUntilExternalUserDeletedAfterBloc
         return m.daysUntilExternalUserDeletedAfterBlocked
     }
 }
-// GetExternalUserLifecycleAction gets the externalUserLifecycleAction property value. Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
+// GetExternalUserLifecycleAction gets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
 func (m *EntitlementManagementSettings) GetExternalUserLifecycleAction()(*string) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *EntitlementManagementSettings) SetDaysUntilExternalUserDeletedAfterBloc
         m.daysUntilExternalUserDeletedAfterBlocked = value
     }
 }
-// SetExternalUserLifecycleAction sets the externalUserLifecycleAction property value. Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
+// SetExternalUserLifecycleAction sets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
 func (m *EntitlementManagementSettings) SetExternalUserLifecycleAction(value *string)() {
     if m != nil {
         m.externalUserLifecycleAction = value

@@ -24,6 +24,8 @@ type SearchRequest struct {
     from *int32;
     // 
     query *SearchQuery;
+    // 
+    queryAlterationOptions *SearchAlterationOptions;
     // Provides the search result templates options for rendering connectors search results.
     resultTemplateOptions *ResultTemplateOption;
     // The size of the page to be retrieved. Optional.
@@ -32,6 +34,8 @@ type SearchRequest struct {
     sortProperties []SortProperty;
     // 
     stored_fields []string;
+    // 
+    trimDuplicates *bool;
 }
 // NewSearchRequest instantiates a new searchRequest and sets the default values.
 func NewSearchRequest()(*SearchRequest) {
@@ -112,6 +116,14 @@ func (m *SearchRequest) GetQuery()(*SearchQuery) {
         return m.query
     }
 }
+// GetQueryAlterationOptions gets the queryAlterationOptions property value. 
+func (m *SearchRequest) GetQueryAlterationOptions()(*SearchAlterationOptions) {
+    if m == nil {
+        return nil
+    } else {
+        return m.queryAlterationOptions
+    }
+}
 // GetResultTemplateOptions gets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
 func (m *SearchRequest) GetResultTemplateOptions()(*ResultTemplateOption) {
     if m == nil {
@@ -142,6 +154,14 @@ func (m *SearchRequest) GetStored_fields()([]string) {
         return nil
     } else {
         return m.stored_fields
+    }
+}
+// GetTrimDuplicates gets the trimDuplicates property value. 
+func (m *SearchRequest) GetTrimDuplicates()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.trimDuplicates
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -247,6 +267,16 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         return nil
     }
+    res["queryAlterationOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSearchAlterationOptions() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQueryAlterationOptions(val.(*SearchAlterationOptions))
+        }
+        return nil
+    }
     res["resultTemplateOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResultTemplateOption() })
         if err != nil {
@@ -292,6 +322,16 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
                 res[i] = *(v.(*string))
             }
             m.SetStored_fields(res)
+        }
+        return nil
+    }
+    res["trimDuplicates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTrimDuplicates(val)
         }
         return nil
     }
@@ -356,6 +396,12 @@ func (m *SearchRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
+        err := writer.WriteObjectValue("queryAlterationOptions", m.GetQueryAlterationOptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("resultTemplateOptions", m.GetResultTemplateOptions())
         if err != nil {
             return err
@@ -380,6 +426,12 @@ func (m *SearchRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     {
         err := writer.WriteCollectionOfStringValues("stored_fields", m.GetStored_fields())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("trimDuplicates", m.GetTrimDuplicates())
         if err != nil {
             return err
         }
@@ -446,6 +498,12 @@ func (m *SearchRequest) SetQuery(value *SearchQuery)() {
         m.query = value
     }
 }
+// SetQueryAlterationOptions sets the queryAlterationOptions property value. 
+func (m *SearchRequest) SetQueryAlterationOptions(value *SearchAlterationOptions)() {
+    if m != nil {
+        m.queryAlterationOptions = value
+    }
+}
 // SetResultTemplateOptions sets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
 func (m *SearchRequest) SetResultTemplateOptions(value *ResultTemplateOption)() {
     if m != nil {
@@ -468,5 +526,11 @@ func (m *SearchRequest) SetSortProperties(value []SortProperty)() {
 func (m *SearchRequest) SetStored_fields(value []string)() {
     if m != nil {
         m.stored_fields = value
+    }
+}
+// SetTrimDuplicates sets the trimDuplicates property value. 
+func (m *SearchRequest) SetTrimDuplicates(value *bool)() {
+    if m != nil {
+        m.trimDuplicates = value
     }
 }

@@ -27,7 +27,7 @@ type SourceColumnRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// SourceColumnRequestBuilderGetQueryParameters the source column for the content type column.
+// SourceColumnRequestBuilderGetQueryParameters the source column for content type column.
 type SourceColumnRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -53,7 +53,7 @@ func NewSourceColumnRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams["request-raw-url"] = rawUrl
     return NewSourceColumnRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the source column for the content type column.
+// CreateGetRequestInformation the source column for content type column.
 func (m *SourceColumnRequestBuilder) CreateGetRequestInformation(options *SourceColumnRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -73,7 +73,7 @@ func (m *SourceColumnRequestBuilder) CreateGetRequestInformation(options *Source
     }
     return requestInfo, nil
 }
-// Get the source column for the content type column.
+// Get the source column for content type column.
 func (m *SourceColumnRequestBuilder) Get(options *SourceColumnRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ColumnDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

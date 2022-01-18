@@ -9,7 +9,7 @@ import (
 type ExternalItemContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The type of content in the value property. Possible values are: text, html, unknownFutureValue.
+    // The type of content in the value property. Possible values are text and html. Required.
     type_escaped *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalItemContentType;
     // The content for the externalItem. Required.
     value *string;
@@ -29,7 +29,7 @@ func (m *ExternalItemContent) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetType gets the type property value. The type of content in the value property. Possible values are: text, html, unknownFutureValue.
+// GetType gets the type property value. The type of content in the value property. Possible values are text and html. Required.
 func (m *ExternalItemContent) GetType()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalItemContentType) {
     if m == nil {
         return nil
@@ -103,7 +103,7 @@ func (m *ExternalItemContent) SetAdditionalData(value map[string]interface{})() 
         m.additionalData = value
     }
 }
-// SetType sets the type property value. The type of content in the value property. Possible values are: text, html, unknownFutureValue.
+// SetType sets the type property value. The type of content in the value property. Possible values are text and html. Required.
 func (m *ExternalItemContent) SetType(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalItemContentType)() {
     if m != nil {
         m.type_escaped = value

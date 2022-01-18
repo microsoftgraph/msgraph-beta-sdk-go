@@ -23,6 +23,8 @@ type VirtualEndpoint struct {
     provisioningPolicies []CloudPcProvisioningPolicy;
     // Cloud PC service plans.
     servicePlans []CloudPcServicePlan;
+    // 
+    snapshots []CloudPcSnapshot;
     // Cloud PC supported regions.
     supportedRegions []CloudPcSupportedRegion;
     // Cloud PC user settings.
@@ -97,6 +99,14 @@ func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlan) {
         return nil
     } else {
         return m.servicePlans
+    }
+}
+// GetSnapshots gets the snapshots property value. 
+func (m *VirtualEndpoint) GetSnapshots()([]CloudPcSnapshot) {
+    if m == nil {
+        return nil
+    } else {
+        return m.snapshots
     }
 }
 // GetSupportedRegions gets the supportedRegions property value. Cloud PC supported regions.
@@ -226,6 +236,20 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
+    res["snapshots"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcSnapshot() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcSnapshot, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CloudPcSnapshot))
+            }
+            m.SetSnapshots(res)
+        }
+        return nil
+    }
     res["supportedRegions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCloudPcSupportedRegion() })
         if err != nil {
@@ -349,6 +373,17 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSnapshots()))
+        for i, v := range m.GetSnapshots() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("snapshots", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSupportedRegions()))
         for i, v := range m.GetSupportedRegions() {
             temp := v
@@ -418,6 +453,12 @@ func (m *VirtualEndpoint) SetProvisioningPolicies(value []CloudPcProvisioningPol
 func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlan)() {
     if m != nil {
         m.servicePlans = value
+    }
+}
+// SetSnapshots sets the snapshots property value. 
+func (m *VirtualEndpoint) SetSnapshots(value []CloudPcSnapshot)() {
+    if m != nil {
+        m.snapshots = value
     }
 }
 // SetSupportedRegions sets the supportedRegions property value. Cloud PC supported regions.

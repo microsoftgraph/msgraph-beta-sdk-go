@@ -55,7 +55,7 @@ type EventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// EventRequestBuilderGetQueryParameters the group's calendar events.
+// EventRequestBuilderGetQueryParameters the group's events.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string;
@@ -113,7 +113,7 @@ func NewEventRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams["request-raw-url"] = rawUrl
     return NewEventRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the group's calendar events.
+// CreateDeleteRequestInformation the group's events.
 func (m *EventRequestBuilder) CreateDeleteRequestInformation(options *EventRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,7 +130,7 @@ func (m *EventRequestBuilder) CreateDeleteRequestInformation(options *EventReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the group's calendar events.
+// CreateGetRequestInformation the group's events.
 func (m *EventRequestBuilder) CreateGetRequestInformation(options *EventRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,7 +150,7 @@ func (m *EventRequestBuilder) CreateGetRequestInformation(options *EventRequestB
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the group's calendar events.
+// CreatePatchRequestInformation the group's events.
 func (m *EventRequestBuilder) CreatePatchRequestInformation(options *EventRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -171,7 +171,7 @@ func (m *EventRequestBuilder) CreatePatchRequestInformation(options *EventReques
 func (m *EventRequestBuilder) Decline()(*i79a7405307cbbdb21bedf1701ef943fd18c4517f47986e866d5dd325fbd2c118.DeclineRequestBuilder) {
     return i79a7405307cbbdb21bedf1701ef943fd18c4517f47986e866d5dd325fbd2c118.NewDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete the group's calendar events.
+// Delete the group's events.
 func (m *EventRequestBuilder) Delete(options *EventRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -217,7 +217,7 @@ func (m *EventRequestBuilder) ExtensionsById(id string)(*i51135f6535d37302d8527c
 func (m *EventRequestBuilder) Forward()(*if96aa91366f276971bcdb05b3ac53fb867427708b271afba983647fc1f3609cd.ForwardRequestBuilder) {
     return if96aa91366f276971bcdb05b3ac53fb867427708b271afba983647fc1f3609cd.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the group's calendar events.
+// Get the group's events.
 func (m *EventRequestBuilder) Get(options *EventRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -257,7 +257,7 @@ func (m *EventRequestBuilder) MultiValueExtendedPropertiesById(id string)(*iaf6e
     }
     return iaf6ee02f9752677d650b6f2d4444fe3664c88db77ed2d14f02597638d09e85d1.NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch the group's calendar events.
+// Patch the group's events.
 func (m *EventRequestBuilder) Patch(options *EventRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

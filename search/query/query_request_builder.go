@@ -3,7 +3,6 @@ package query
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
 // QueryRequestBuilder builds and executes requests for operations under \search\microsoft.graph.query
@@ -18,7 +17,7 @@ type QueryRequestBuilder struct {
 // QueryRequestBuilderPostOptions options for Post
 type QueryRequestBuilderPostOptions struct {
     // 
-    Body *SearchResponseRequestBody;
+    Body *QueryRequestBody;
     // Request headers
     H map[string]string;
     // Request options
@@ -64,14 +63,18 @@ func (m *QueryRequestBuilder) CreatePostRequestInformation(options *QueryRequest
     return requestInfo, nil
 }
 // Post invoke action query
-func (m *QueryRequestBuilder) Post(options *QueryRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchResponse, error) {
+func (m *QueryRequestBuilder) Post(options *QueryRequestBuilderPostOptions)([]Query, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSearchResponse() }, nil)
+    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewQuery() }, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchResponse), nil
+    val := make([]Query, len(res))
+    for i, v := range res {
+        val[i] = *(v.(*Query))
+    }
+    return val, nil
 }

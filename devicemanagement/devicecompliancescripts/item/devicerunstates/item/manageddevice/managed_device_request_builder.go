@@ -38,6 +38,7 @@ import (
     icd91bf72fc830bf2bbd4a7783ed4e20bce8e10e4b0f0366e45480d0e09bd7989 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancescripts/item/devicerunstates/item/manageddevice/triggerconfigurationmanageraction"
     id1354c41e29427e9af76db11e4fff4ec1b0c32d3b59a19c8d4fb7df2e2e193c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancescripts/item/devicerunstates/item/manageddevice/wipe"
     id6b285f5f2f97a9c55b3070ac89867a1fd35745e31fa9421209fd106705cc4f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancescripts/item/devicerunstates/item/manageddevice/deleteuserfromsharedappledevice"
+    idcb846ccdb407c5a6cbdef2a9094c7176c66dd50d7e81c437f89b67cbde92c6a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancescripts/item/devicerunstates/item/manageddevice/restorecloudpc"
     ie013cb25fe9a97afa50587c6d722b4d7b68d4b381d40d708e73847f73ff3331f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancescripts/item/devicerunstates/item/manageddevice/syncdevice"
     ie090b0eac09482df7655ee2c8f36932e1593b3392bfe422286fa1ed326df0351 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancescripts/item/devicerunstates/item/manageddevice/rebootnow"
     ie64c5288b12324e49e685657d510aeea4a23a4ad54a52a43390f378e2d842c5a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancescripts/item/devicerunstates/item/manageddevice/shutdown"
@@ -199,6 +200,9 @@ func (m *ManagedDeviceRequestBuilder) ResetPasscode()(*i0c84353e36e032ce5d48899e
 }
 func (m *ManagedDeviceRequestBuilder) ResizeCloudPc()(*i9456791ee08080dcb0c3406c6ea5eb20b26b0153527631363f6da779f75f0c6c.ResizeCloudPcRequestBuilder) {
     return i9456791ee08080dcb0c3406c6ea5eb20b26b0153527631363f6da779f75f0c6c.NewResizeCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ManagedDeviceRequestBuilder) RestoreCloudPc()(*idcb846ccdb407c5a6cbdef2a9094c7176c66dd50d7e81c437f89b67cbde92c6a.RestoreCloudPcRequestBuilder) {
+    return idcb846ccdb407c5a6cbdef2a9094c7176c66dd50d7e81c437f89b67cbde92c6a.NewRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ManagedDeviceRequestBuilder) Retire()(*iaa5b597ab54441b62cd593950545a3ea8dff1416237b75fa3de19f31c50e1941.RetireRequestBuilder) {
     return iaa5b597ab54441b62cd593950545a3ea8dff1416237b75fa3de19f31c50e1941.NewRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);

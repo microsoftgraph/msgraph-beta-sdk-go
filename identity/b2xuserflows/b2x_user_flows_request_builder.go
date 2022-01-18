@@ -26,7 +26,7 @@ type B2xUserFlowsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// B2xUserFlowsRequestBuilderGetQueryParameters represents entry point for B2X/self-service sign-up identity userflows.
+// B2xUserFlowsRequestBuilderGetQueryParameters represents entry point for B2X and self-service sign-up identity userflows.
 type B2xUserFlowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewB2xUserFlowsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams["request-raw-url"] = rawUrl
     return NewB2xUserFlowsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation represents entry point for B2X/self-service sign-up identity userflows.
+// CreateGetRequestInformation represents entry point for B2X and self-service sign-up identity userflows.
 func (m *B2xUserFlowsRequestBuilder) CreateGetRequestInformation(options *B2xUserFlowsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *B2xUserFlowsRequestBuilder) CreateGetRequestInformation(options *B2xUse
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation represents entry point for B2X/self-service sign-up identity userflows.
+// CreatePostRequestInformation represents entry point for B2X and self-service sign-up identity userflows.
 func (m *B2xUserFlowsRequestBuilder) CreatePostRequestInformation(options *B2xUserFlowsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *B2xUserFlowsRequestBuilder) CreatePostRequestInformation(options *B2xUs
     }
     return requestInfo, nil
 }
-// Get represents entry point for B2X/self-service sign-up identity userflows.
+// Get represents entry point for B2X and self-service sign-up identity userflows.
 func (m *B2xUserFlowsRequestBuilder) Get(options *B2xUserFlowsRequestBuilderGetOptions)(*B2xUserFlowsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *B2xUserFlowsRequestBuilder) Get(options *B2xUserFlowsRequestBuilderGetO
     }
     return res.(*B2xUserFlowsResponse), nil
 }
-// Post represents entry point for B2X/self-service sign-up identity userflows.
+// Post represents entry point for B2X and self-service sign-up identity userflows.
 func (m *B2xUserFlowsRequestBuilder) Post(options *B2xUserFlowsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.B2xIdentityUserFlow, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

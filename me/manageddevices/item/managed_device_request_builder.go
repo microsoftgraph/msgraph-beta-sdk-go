@@ -17,6 +17,7 @@ import (
     i16de495ce65b087460ba21136c9b72e3b2ff9a664a0756760685c434e52936ab "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/bypassactivationlock"
     i1f766465498501463348486d49874ef974c6aa6e056820a5caf1c3a5e2690c21 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/logcollectionrequests"
     i2895d06145d6f77d60b53e7a17c29b5b08ec73440e1edd1592e6b4e58dfd3bcc "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/rebootnow"
+    i2a07ab69055107ffdc042942f8b812f851c28433435fb264c6d61d6e456d4a76 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/restorecloudpc"
     i36fc8a6a1f1f21ea4c3b8e036968cd4b9f64fe509db56f6ee2a10b53e5e23daa "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/remotelock"
     i3776f24495e66930f2a43cb3ea8f98452ba8e71357481f30e1f01270eaebd89f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/createdevicelogcollectionrequest"
     i3801d66be73ebd80eac8d4afbb42c4a4b730ab7f2f26c6e5cd4dba5aa9d5482d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/setdevicename"
@@ -365,6 +366,9 @@ func (m *ManagedDeviceRequestBuilder) ResetPasscode()(*i76321fab1e28309a28c2fd69
 }
 func (m *ManagedDeviceRequestBuilder) ResizeCloudPc()(*i0e96e9d7fcd789b68a4e2dc1614a66232476f904c43a89f7562d22f94f9f34f5.ResizeCloudPcRequestBuilder) {
     return i0e96e9d7fcd789b68a4e2dc1614a66232476f904c43a89f7562d22f94f9f34f5.NewResizeCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ManagedDeviceRequestBuilder) RestoreCloudPc()(*i2a07ab69055107ffdc042942f8b812f851c28433435fb264c6d61d6e456d4a76.RestoreCloudPcRequestBuilder) {
+    return i2a07ab69055107ffdc042942f8b812f851c28433435fb264c6d61d6e456d4a76.NewRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ManagedDeviceRequestBuilder) Retire()(*i167c255245cd6e8951c54a9c2135998064837b89b7d4d0e0f1c42f2c557b5b8e.RetireRequestBuilder) {
     return i167c255245cd6e8951c54a9c2135998064837b89b7d4d0e0f1c42f2c557b5b8e.NewRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);

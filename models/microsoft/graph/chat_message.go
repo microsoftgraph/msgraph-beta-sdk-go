@@ -22,7 +22,7 @@ type ChatMessage struct {
     deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only. Version number of the chat message.
     etag *string;
-    // Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
+    // Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
     eventDetail *EventMessageDetail;
     // Details of the sender of the chat message. Can only be set during migration.
     from *ChatMessageFromIdentitySet;
@@ -36,10 +36,12 @@ type ChatMessage struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Locale of the chat message set by the client. Always set to en-us.
     locale *string;
-    // List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
+    // List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
     mentions []ChatMessageMention;
     // The type of chat message. The possible values are: message, chatEvent, typing, unknownFutureValue, systemEventMessage. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: systemEventMessage.
     messageType *ChatMessageType;
+    // User attribution of the message when bot sends a message on behalf of a user.
+    onBehalfOf *ChatMessageFromIdentitySet;
     // Defines the properties of a policy violation set by a data loss prevention (DLP) application.
     policyViolation *ChatMessagePolicyViolation;
     // Reactions for this chat message (for example, Like).
@@ -118,7 +120,7 @@ func (m *ChatMessage) GetEtag()(*string) {
         return m.etag
     }
 }
-// GetEventDetail gets the eventDetail property value. Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
+// GetEventDetail gets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
 func (m *ChatMessage) GetEventDetail()(*EventMessageDetail) {
     if m == nil {
         return nil
@@ -174,7 +176,7 @@ func (m *ChatMessage) GetLocale()(*string) {
         return m.locale
     }
 }
-// GetMentions gets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
+// GetMentions gets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
 func (m *ChatMessage) GetMentions()([]ChatMessageMention) {
     if m == nil {
         return nil
@@ -188,6 +190,14 @@ func (m *ChatMessage) GetMessageType()(*ChatMessageType) {
         return nil
     } else {
         return m.messageType
+    }
+}
+// GetOnBehalfOf gets the onBehalfOf property value. User attribution of the message when bot sends a message on behalf of a user.
+func (m *ChatMessage) GetOnBehalfOf()(*ChatMessageFromIdentitySet) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onBehalfOf
     }
 }
 // GetPolicyViolation gets the policyViolation property value. Defines the properties of a policy violation set by a data loss prevention (DLP) application.
@@ -423,6 +433,16 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         }
         return nil
     }
+    res["onBehalfOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChatMessageFromIdentitySet() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnBehalfOf(val.(*ChatMessageFromIdentitySet))
+        }
+        return nil
+    }
     res["policyViolation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChatMessagePolicyViolation() })
         if err != nil {
@@ -626,6 +646,12 @@ func (m *ChatMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
+        err = writer.WriteObjectValue("onBehalfOf", m.GetOnBehalfOf())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("policyViolation", m.GetPolicyViolation())
         if err != nil {
             return err
@@ -721,7 +747,7 @@ func (m *ChatMessage) SetEtag(value *string)() {
         m.etag = value
     }
 }
-// SetEventDetail sets the eventDetail property value. Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
+// SetEventDetail sets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
 func (m *ChatMessage) SetEventDetail(value *EventMessageDetail)() {
     if m != nil {
         m.eventDetail = value
@@ -763,7 +789,7 @@ func (m *ChatMessage) SetLocale(value *string)() {
         m.locale = value
     }
 }
-// SetMentions sets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
+// SetMentions sets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
 func (m *ChatMessage) SetMentions(value []ChatMessageMention)() {
     if m != nil {
         m.mentions = value
@@ -773,6 +799,12 @@ func (m *ChatMessage) SetMentions(value []ChatMessageMention)() {
 func (m *ChatMessage) SetMessageType(value *ChatMessageType)() {
     if m != nil {
         m.messageType = value
+    }
+}
+// SetOnBehalfOf sets the onBehalfOf property value. User attribution of the message when bot sends a message on behalf of a user.
+func (m *ChatMessage) SetOnBehalfOf(value *ChatMessageFromIdentitySet)() {
+    if m != nil {
+        m.onBehalfOf = value
     }
 }
 // SetPolicyViolation sets the policyViolation property value. Defines the properties of a policy violation set by a data loss prevention (DLP) application.
