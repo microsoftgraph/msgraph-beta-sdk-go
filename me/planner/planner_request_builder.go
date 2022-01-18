@@ -44,7 +44,7 @@ type PlannerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PlannerRequestBuilderGetQueryParameters entry-point to the Planner resource that might exist for a user. Read-only.
+// PlannerRequestBuilderGetQueryParameters selective Planner services available to the user. Read-only. Nullable.
 type PlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -95,7 +95,7 @@ func NewPlannerRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation entry-point to the Planner resource that might exist for a user. Read-only.
+// CreateDeleteRequestInformation selective Planner services available to the user. Read-only. Nullable.
 func (m *PlannerRequestBuilder) CreateDeleteRequestInformation(options *PlannerRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,7 +112,7 @@ func (m *PlannerRequestBuilder) CreateDeleteRequestInformation(options *PlannerR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation entry-point to the Planner resource that might exist for a user. Read-only.
+// CreateGetRequestInformation selective Planner services available to the user. Read-only. Nullable.
 func (m *PlannerRequestBuilder) CreateGetRequestInformation(options *PlannerRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,7 +132,7 @@ func (m *PlannerRequestBuilder) CreateGetRequestInformation(options *PlannerRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation entry-point to the Planner resource that might exist for a user. Read-only.
+// CreatePatchRequestInformation selective Planner services available to the user. Read-only. Nullable.
 func (m *PlannerRequestBuilder) CreatePatchRequestInformation(options *PlannerRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,7 +150,7 @@ func (m *PlannerRequestBuilder) CreatePatchRequestInformation(options *PlannerRe
     }
     return requestInfo, nil
 }
-// Delete entry-point to the Planner resource that might exist for a user. Read-only.
+// Delete selective Planner services available to the user. Read-only. Nullable.
 func (m *PlannerRequestBuilder) Delete(options *PlannerRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -165,7 +165,7 @@ func (m *PlannerRequestBuilder) Delete(options *PlannerRequestBuilderDeleteOptio
 func (m *PlannerRequestBuilder) FavoritePlans()(*if951d99d6353794a9a240c80019dac3c903ab51eb2b16b3ffd092788641abe57.FavoritePlansRequestBuilder) {
     return if951d99d6353794a9a240c80019dac3c903ab51eb2b16b3ffd092788641abe57.NewFavoritePlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get entry-point to the Planner resource that might exist for a user. Read-only.
+// Get selective Planner services available to the user. Read-only. Nullable.
 func (m *PlannerRequestBuilder) Get(options *PlannerRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerUser, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -177,7 +177,7 @@ func (m *PlannerRequestBuilder) Get(options *PlannerRequestBuilderGetOptions)(*i
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.PlannerUser), nil
 }
-// Patch entry-point to the Planner resource that might exist for a user. Read-only.
+// Patch selective Planner services available to the user. Read-only. Nullable.
 func (m *PlannerRequestBuilder) Patch(options *PlannerRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

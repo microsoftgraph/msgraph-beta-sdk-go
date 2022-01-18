@@ -5,40 +5,30 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// SearchResponseRequestBody 
-type SearchResponseRequestBody struct {
+// QueryRequestBody 
+type QueryRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    queryAlterationOptions *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchAlterationOptions;
-    // 
     requests []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchRequest;
 }
-// NewSearchResponseRequestBody instantiates a new SearchResponseRequestBody and sets the default values.
-func NewSearchResponseRequestBody()(*SearchResponseRequestBody) {
-    m := &SearchResponseRequestBody{
+// NewQueryRequestBody instantiates a new queryRequestBody and sets the default values.
+func NewQueryRequestBody()(*QueryRequestBody) {
+    m := &QueryRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchResponseRequestBody) GetAdditionalData()(map[string]interface{}) {
+func (m *QueryRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
     } else {
         return m.additionalData
     }
 }
-// GetQueryAlterationOptions gets the queryAlterationOptions property value. 
-func (m *SearchResponseRequestBody) GetQueryAlterationOptions()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchAlterationOptions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryAlterationOptions
-    }
-}
 // GetRequests gets the requests property value. 
-func (m *SearchResponseRequestBody) GetRequests()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchRequest) {
+func (m *QueryRequestBody) GetRequests()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchRequest) {
     if m == nil {
         return nil
     } else {
@@ -46,18 +36,8 @@ func (m *SearchResponseRequestBody) GetRequests()([]i535684e11b5500196ecb4b5c663
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SearchResponseRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
+func (m *QueryRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["queryAlterationOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSearchAlterationOptions() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQueryAlterationOptions(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchAlterationOptions))
-        }
-        return nil
-    }
     res["requests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSearchRequest() })
         if err != nil {
@@ -74,17 +54,11 @@ func (m *SearchResponseRequestBody) GetFieldDeserializers()(map[string]func(inte
     }
     return res
 }
-func (m *SearchResponseRequestBody) IsNil()(bool) {
+func (m *QueryRequestBody) IsNil()(bool) {
     return m == nil
 }
 // Serialize serializes information the current object
-func (m *SearchResponseRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
-        err := writer.WriteObjectValue("queryAlterationOptions", m.GetQueryAlterationOptions())
-        if err != nil {
-            return err
-        }
-    }
+func (m *QueryRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRequests()))
         for i, v := range m.GetRequests() {
@@ -105,19 +79,13 @@ func (m *SearchResponseRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
     return nil
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *SearchResponseRequestBody) SetAdditionalData(value map[string]interface{})() {
+func (m *QueryRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetQueryAlterationOptions sets the queryAlterationOptions property value. 
-func (m *SearchResponseRequestBody) SetQueryAlterationOptions(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchAlterationOptions)() {
-    if m != nil {
-        m.queryAlterationOptions = value
-    }
-}
 // SetRequests sets the requests property value. 
-func (m *SearchResponseRequestBody) SetRequests(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchRequest)() {
+func (m *QueryRequestBody) SetRequests(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchRequest)() {
     if m != nil {
         m.requests = value
     }

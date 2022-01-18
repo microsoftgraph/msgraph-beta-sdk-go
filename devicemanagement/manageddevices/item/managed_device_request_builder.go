@@ -22,6 +22,7 @@ import (
     i4fa46045cdcf8f3536238ca61013da101771dfeaaa9fed96aaf28f151ec66162 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/devicecompliancepolicystates"
     i511c6c2c2693c3294886a17581fa0e4993806d6e442616fc5613bb17d2f9a3e1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/rebootnow"
     i54aaa976711b04a9d75b5a6b447501e988e9c492e4339da93ee652eda4f23f04 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/wipe"
+    i5533b65c5e7ef6c9cf517e9d69b5af07f1cec79c9dc96399fcbe89d0ec21a145 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/restorecloudpc"
     i61cf99cf0bb474cf95f287f10d9cc99a9b9474bfc2c89d61e472f941642ebc12 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/enablelostmode"
     i63c852e0e601ed6586a514ddd8fcecf4281a23511e01d39fc62af91ac0292701 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/disablelostmode"
     i658174871e5ed8a97ec6404a2a51d6533ca0556946eb0312fbdea2092b5a0356 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/item/shutdown"
@@ -365,6 +366,9 @@ func (m *ManagedDeviceRequestBuilder) ResetPasscode()(*i9479492bd537ee0da9d7cbaf
 }
 func (m *ManagedDeviceRequestBuilder) ResizeCloudPc()(*i964b81837112ab4b6bfd1cf6220e1e8cb634c0c56d1238300c9c00340217450d.ResizeCloudPcRequestBuilder) {
     return i964b81837112ab4b6bfd1cf6220e1e8cb634c0c56d1238300c9c00340217450d.NewResizeCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ManagedDeviceRequestBuilder) RestoreCloudPc()(*i5533b65c5e7ef6c9cf517e9d69b5af07f1cec79c9dc96399fcbe89d0ec21a145.RestoreCloudPcRequestBuilder) {
+    return i5533b65c5e7ef6c9cf517e9d69b5af07f1cec79c9dc96399fcbe89d0ec21a145.NewRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ManagedDeviceRequestBuilder) Retire()(*if75bb98073f1131ee02501bf098984c52a24d708147db3112ea968e2fc7b2c03.RetireRequestBuilder) {
     return if75bb98073f1131ee02501bf098984c52a24d708147db3112ea968e2fc7b2c03.NewRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);

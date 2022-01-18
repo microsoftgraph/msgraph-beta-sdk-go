@@ -8,6 +8,8 @@ import (
 type Teamwork struct {
     Entity
     // 
+    devices []TeamworkDevice;
+    // 
     workforceIntegrations []WorkforceIntegration;
 }
 // NewTeamwork instantiates a new teamwork and sets the default values.
@@ -16,6 +18,14 @@ func NewTeamwork()(*Teamwork) {
         Entity: *NewEntity(),
     }
     return m
+}
+// GetDevices gets the devices property value. 
+func (m *Teamwork) GetDevices()([]TeamworkDevice) {
+    if m == nil {
+        return nil
+    } else {
+        return m.devices
+    }
 }
 // GetWorkforceIntegrations gets the workforceIntegrations property value. 
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegration) {
@@ -28,6 +38,20 @@ func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegration) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Teamwork) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["devices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkDevice() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamworkDevice, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TeamworkDevice))
+            }
+            m.SetDevices(res)
+        }
+        return nil
+    }
     res["workforceIntegrations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkforceIntegration() })
         if err != nil {
@@ -54,6 +78,17 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         return err
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDevices()))
+        for i, v := range m.GetDevices() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("devices", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWorkforceIntegrations()))
         for i, v := range m.GetWorkforceIntegrations() {
             temp := v
@@ -65,6 +100,12 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     return nil
+}
+// SetDevices sets the devices property value. 
+func (m *Teamwork) SetDevices(value []TeamworkDevice)() {
+    if m != nil {
+        m.devices = value
+    }
 }
 // SetWorkforceIntegrations sets the workforceIntegrations property value. 
 func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegration)() {

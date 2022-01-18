@@ -23,7 +23,7 @@ type Site struct {
     drives []Drive;
     // The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
     externalColumns []ColumnDefinition;
-    // Used to address any item contained in this site. This collection can't be enumerated.
+    // Used to address any item contained in this site. This collection cannot be enumerated.
     items []BaseItem;
     // The collection of lists under this site.
     lists []List;
@@ -37,13 +37,15 @@ type Site struct {
     permissions []Permission;
     // If present, indicates that this is the root site in the site collection. Read-only.
     root *Root;
+    // 
+    settings *SiteSettings;
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
     sharepointIds *SharepointIds;
     // Provides details about the site's site collection. Available only on the root site. Read-only.
     siteCollection *SiteCollection;
     // The collection of the sub-sites under this site.
     sites []Site;
-    // The default termStore under this site.
+    // The termStore under this site.
     termStore *Store;
 }
 // NewSite instantiates a new site and sets the default values.
@@ -117,7 +119,7 @@ func (m *Site) GetExternalColumns()([]ColumnDefinition) {
         return m.externalColumns
     }
 }
-// GetItems gets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
+// GetItems gets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) GetItems()([]BaseItem) {
     if m == nil {
         return nil
@@ -173,6 +175,14 @@ func (m *Site) GetRoot()(*Root) {
         return m.root
     }
 }
+// GetSettings gets the settings property value. 
+func (m *Site) GetSettings()(*SiteSettings) {
+    if m == nil {
+        return nil
+    } else {
+        return m.settings
+    }
+}
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *Site) GetSharepointIds()(*SharepointIds) {
     if m == nil {
@@ -197,7 +207,7 @@ func (m *Site) GetSites()([]Site) {
         return m.sites
     }
 }
-// GetTermStore gets the termStore property value. The default termStore under this site.
+// GetTermStore gets the termStore property value. The termStore under this site.
 func (m *Site) GetTermStore()(*Store) {
     if m == nil {
         return nil
@@ -394,6 +404,16 @@ func (m *Site) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         return nil
     }
+    res["settings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSiteSettings() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(*SiteSettings))
+        }
+        return nil
+    }
     res["sharepointIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSharepointIds() })
         if err != nil {
@@ -585,6 +605,12 @@ func (m *Site) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     {
+        err = writer.WriteObjectValue("settings", m.GetSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("sharepointIds", m.GetSharepointIds())
         if err != nil {
             return err
@@ -663,7 +689,7 @@ func (m *Site) SetExternalColumns(value []ColumnDefinition)() {
         m.externalColumns = value
     }
 }
-// SetItems sets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
+// SetItems sets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) SetItems(value []BaseItem)() {
     if m != nil {
         m.items = value
@@ -705,6 +731,12 @@ func (m *Site) SetRoot(value *Root)() {
         m.root = value
     }
 }
+// SetSettings sets the settings property value. 
+func (m *Site) SetSettings(value *SiteSettings)() {
+    if m != nil {
+        m.settings = value
+    }
+}
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *Site) SetSharepointIds(value *SharepointIds)() {
     if m != nil {
@@ -723,7 +755,7 @@ func (m *Site) SetSites(value []Site)() {
         m.sites = value
     }
 }
-// SetTermStore sets the termStore property value. The default termStore under this site.
+// SetTermStore sets the termStore property value. The termStore under this site.
 func (m *Site) SetTermStore(value *Store)() {
     if m != nil {
         m.termStore = value

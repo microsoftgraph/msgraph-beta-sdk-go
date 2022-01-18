@@ -20,7 +20,7 @@ type ParticipantInfo struct {
     participantId *string;
     // The client platform ID of the participant. Read-only.
     platformId *string;
-    // The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+    // The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
     region *string;
 }
 // NewParticipantInfo instantiates a new participantInfo and sets the default values.
@@ -86,7 +86,7 @@ func (m *ParticipantInfo) GetPlatformId()(*string) {
         return m.platformId
     }
 }
-// GetRegion gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+// GetRegion gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
 func (m *ParticipantInfo) GetRegion()(*string) {
     if m == nil {
         return nil
@@ -268,7 +268,7 @@ func (m *ParticipantInfo) SetPlatformId(value *string)() {
         m.platformId = value
     }
 }
-// SetRegion sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+// SetRegion sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
 func (m *ParticipantInfo) SetRegion(value *string)() {
     if m != nil {
         m.region = value

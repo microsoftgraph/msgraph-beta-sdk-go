@@ -7,7 +7,7 @@ import (
 // Security 
 type Security struct {
     Entity
-    // Read-only. Nullable.
+    // Notifications for suspicious or potential security issues in a customer’s tenant.
     alerts []Alert;
     // 
     alerts_v2 []Alert_v2;
@@ -47,7 +47,7 @@ func NewSecurity()(*Security) {
     }
     return m
 }
-// GetAlerts gets the alerts property value. Read-only. Nullable.
+// GetAlerts gets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *Security) GetAlerts()([]Alert) {
     if m == nil {
         return nil
@@ -582,7 +582,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// SetAlerts sets the alerts property value. Read-only. Nullable.
+// SetAlerts sets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *Security) SetAlerts(value []Alert)() {
     if m != nil {
         m.alerts = value

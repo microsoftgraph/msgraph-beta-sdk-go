@@ -8,9 +8,9 @@ import (
 type FindRoomLists struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The email address of the person or entity.
+    // The email address of an entity instance.
     address *string;
-    // The display name of the person or entity.
+    // The display name of an entity instance.
     name *string;
 }
 // NewFindRoomLists instantiates a new findRoomLists and sets the default values.
@@ -28,7 +28,7 @@ func (m *FindRoomLists) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAddress gets the address property value. The email address of the person or entity.
+// GetAddress gets the address property value. The email address of an entity instance.
 func (m *FindRoomLists) GetAddress()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *FindRoomLists) GetAddress()(*string) {
         return m.address
     }
 }
-// GetName gets the name property value. The display name of the person or entity.
+// GetName gets the name property value. The display name of an entity instance.
 func (m *FindRoomLists) GetName()(*string) {
     if m == nil {
         return nil
@@ -100,13 +100,13 @@ func (m *FindRoomLists) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAddress sets the address property value. The email address of the person or entity.
+// SetAddress sets the address property value. The email address of an entity instance.
 func (m *FindRoomLists) SetAddress(value *string)() {
     if m != nil {
         m.address = value
     }
 }
-// SetName sets the name property value. The display name of the person or entity.
+// SetName sets the name property value. The display name of an entity instance.
 func (m *FindRoomLists) SetName(value *string)() {
     if m != nil {
         m.name = value

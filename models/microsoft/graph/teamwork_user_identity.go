@@ -7,7 +7,7 @@ import (
 // TeamworkUserIdentity 
 type TeamworkUserIdentity struct {
     Identity
-    // Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
+    // Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, and phoneUser.
     userIdentityType *TeamworkUserIdentityType;
 }
 // NewTeamworkUserIdentity instantiates a new teamworkUserIdentity and sets the default values.
@@ -17,7 +17,7 @@ func NewTeamworkUserIdentity()(*TeamworkUserIdentity) {
     }
     return m
 }
-// GetUserIdentityType gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
+// GetUserIdentityType gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, and phoneUser.
 func (m *TeamworkUserIdentity) GetUserIdentityType()(*TeamworkUserIdentityType) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *TeamworkUserIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// SetUserIdentityType sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, and unknownFutureValue.
+// SetUserIdentityType sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, and phoneUser.
 func (m *TeamworkUserIdentity) SetUserIdentityType(value *TeamworkUserIdentityType)() {
     if m != nil {
         m.userIdentityType = value

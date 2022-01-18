@@ -28,7 +28,7 @@ type AccessPackagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackagesRequestBuilderGetQueryParameters the access packages in this catalog. Read-only. Nullable.
+// AccessPackagesRequestBuilderGetQueryParameters the access packages in this catalog. Read-only. Nullable. Supports $expand.
 type AccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -77,7 +77,7 @@ func NewAccessPackagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the access packages in this catalog. Read-only. Nullable.
+// CreateGetRequestInformation the access packages in this catalog. Read-only. Nullable. Supports $expand.
 func (m *AccessPackagesRequestBuilder) CreateGetRequestInformation(options *AccessPackagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,7 +97,7 @@ func (m *AccessPackagesRequestBuilder) CreateGetRequestInformation(options *Acce
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the access packages in this catalog. Read-only. Nullable.
+// CreatePostRequestInformation the access packages in this catalog. Read-only. Nullable. Supports $expand.
 func (m *AccessPackagesRequestBuilder) CreatePostRequestInformation(options *AccessPackagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,7 +119,7 @@ func (m *AccessPackagesRequestBuilder) CreatePostRequestInformation(options *Acc
 func (m *AccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i3e65d7745186529b1316e071decb2a0ce59554fd549628c8e6feb574244dbb14.FilterByCurrentUserWithOnRequestBuilder) {
     return i3e65d7745186529b1316e071decb2a0ce59554fd549628c8e6feb574244dbb14.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get the access packages in this catalog. Read-only. Nullable.
+// Get the access packages in this catalog. Read-only. Nullable. Supports $expand.
 func (m *AccessPackagesRequestBuilder) Get(options *AccessPackagesRequestBuilderGetOptions)(*AccessPackagesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -131,7 +131,7 @@ func (m *AccessPackagesRequestBuilder) Get(options *AccessPackagesRequestBuilder
     }
     return res.(*AccessPackagesResponse), nil
 }
-// Post the access packages in this catalog. Read-only. Nullable.
+// Post the access packages in this catalog. Read-only. Nullable. Supports $expand.
 func (m *AccessPackagesRequestBuilder) Post(options *AccessPackagesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackage, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

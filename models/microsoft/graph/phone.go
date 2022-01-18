@@ -10,7 +10,7 @@ type Phone struct {
     additionalData map[string]interface{};
     // The phone number.
     number *string;
-    // The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+    // The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
     type_escaped *PhoneType;
 }
 // NewPhone instantiates a new phone and sets the default values.
@@ -36,7 +36,7 @@ func (m *Phone) GetNumber()(*string) {
         return m.number
     }
 }
-// GetType gets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+// GetType gets the type property value. The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) GetType()(*PhoneType) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *Phone) SetNumber(value *string)() {
         m.number = value
     }
 }
-// SetType sets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+// SetType sets the type property value. The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) SetType(value *PhoneType)() {
     if m != nil {
         m.type_escaped = value

@@ -10,7 +10,7 @@ type ConnectionOperation struct {
     Entity
     // If status is failed, provides more information about the error that caused the failure.
     error *PublicError;
-    // Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
+    // Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
     status *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionOperationStatus;
 }
 // NewConnectionOperation instantiates a new connectionOperation and sets the default values.
@@ -28,7 +28,7 @@ func (m *ConnectionOperation) GetError()(*PublicError) {
         return m.error
     }
 }
-// GetStatus gets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
+// GetStatus gets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
 func (m *ConnectionOperation) GetStatus()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionOperationStatus) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *ConnectionOperation) SetError(value *PublicError)() {
         m.error = value
     }
 }
-// SetStatus sets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
+// SetStatus sets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
 func (m *ConnectionOperation) SetStatus(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionOperationStatus)() {
     if m != nil {
         m.status = value

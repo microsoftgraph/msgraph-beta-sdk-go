@@ -14,6 +14,7 @@ import (
     i274fa57cac64761436e6b96aa0a35ef9ef6bac8d924e432b83868a7b27e98c4d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/cleanwindowsdevice"
     i2a36033ee9d2b5fd75a9ff828a2a4949c7937585f41afbe202af5de47127dd1b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/manageddevicemobileappconfigurationstates"
     i2a373154cbcecc73fa6269b089925214127c4b5c2d032275d9319e9099e011ba "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/getfilevaultkey"
+    i2df51e7699d7e946c4c71f22c064f86f0b807928512258930f58dcfdb5db3cc6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/restorecloudpc"
     i310834334f4240786fcd6b5675b3ee8fbeb94f1c4b1b200e7e0b47c655de6a72 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/deviceconfigurationstates"
     i3190268115ebe3af8fbbb7f7b8f73864d5604f943cdd020b77129dffe05358c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/rebootnow"
     i31eb74f02efdd35067936e3939c2d3f35c2731c77e2ba3e2916be25ef567d1db "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/rotatebitlockerkeys"
@@ -365,6 +366,9 @@ func (m *ManagedDeviceRequestBuilder) ResetPasscode()(*i9da99e12e59b05474451fa26
 }
 func (m *ManagedDeviceRequestBuilder) ResizeCloudPc()(*i6273d621d2071ff7812d4ccc27138d3c37af406b8289aba4d972bb96c54c8c65.ResizeCloudPcRequestBuilder) {
     return i6273d621d2071ff7812d4ccc27138d3c37af406b8289aba4d972bb96c54c8c65.NewResizeCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ManagedDeviceRequestBuilder) RestoreCloudPc()(*i2df51e7699d7e946c4c71f22c064f86f0b807928512258930f58dcfdb5db3cc6.RestoreCloudPcRequestBuilder) {
+    return i2df51e7699d7e946c4c71f22c064f86f0b807928512258930f58dcfdb5db3cc6.NewRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ManagedDeviceRequestBuilder) Retire()(*ic814e3839bc6f855c24fd1a5a83ccb31ddd05002e9bd4af67e2782c60291bd1d.RetireRequestBuilder) {
     return ic814e3839bc6f855c24fd1a5a83ccb31ddd05002e9bd4af67e2782c60291bd1d.NewRetireRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -12,6 +12,8 @@ type SearchQuery struct {
     query_string *SearchQueryString;
     // The search query containing the search terms. Required.
     queryString *string;
+    // 
+    queryTemplate *string;
 }
 // NewSearchQuery instantiates a new searchQuery and sets the default values.
 func NewSearchQuery()(*SearchQuery) {
@@ -44,6 +46,14 @@ func (m *SearchQuery) GetQueryString()(*string) {
         return m.queryString
     }
 }
+// GetQueryTemplate gets the queryTemplate property value. 
+func (m *SearchQuery) GetQueryTemplate()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.queryTemplate
+    }
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchQuery) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -67,6 +77,16 @@ func (m *SearchQuery) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         }
         return nil
     }
+    res["queryTemplate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQueryTemplate(val)
+        }
+        return nil
+    }
     return res
 }
 func (m *SearchQuery) IsNil()(bool) {
@@ -82,6 +102,12 @@ func (m *SearchQuery) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     {
         err := writer.WriteStringValue("queryString", m.GetQueryString())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("queryTemplate", m.GetQueryTemplate())
         if err != nil {
             return err
         }
@@ -110,5 +136,11 @@ func (m *SearchQuery) SetQuery_string(value *SearchQueryString)() {
 func (m *SearchQuery) SetQueryString(value *string)() {
     if m != nil {
         m.queryString = value
+    }
+}
+// SetQueryTemplate sets the queryTemplate property value. 
+func (m *SearchQuery) SetQueryTemplate(value *string)() {
+    if m != nil {
+        m.queryTemplate = value
     }
 }

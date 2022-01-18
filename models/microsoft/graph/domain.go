@@ -13,6 +13,8 @@ type Domain struct {
     availabilityStatus *string;
     // Read-only, Nullable
     domainNameReferences []DirectoryObject;
+    // 
+    federationConfiguration []InternalDomainFederation;
     // The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
     isAdminManaged *bool;
     // true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
@@ -33,7 +35,7 @@ type Domain struct {
     sharedEmailDomainInvitations []SharedEmailDomainInvitation;
     // Status of asynchronous operations scheduled for the domain.
     state *DomainState;
-    // The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
+    // The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
     supportedServices []string;
     // DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
     verificationDnsRecords []DomainDnsRecord;
@@ -67,6 +69,14 @@ func (m *Domain) GetDomainNameReferences()([]DirectoryObject) {
         return nil
     } else {
         return m.domainNameReferences
+    }
+}
+// GetFederationConfiguration gets the federationConfiguration property value. 
+func (m *Domain) GetFederationConfiguration()([]InternalDomainFederation) {
+    if m == nil {
+        return nil
+    } else {
+        return m.federationConfiguration
     }
 }
 // GetIsAdminManaged gets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
@@ -149,7 +159,7 @@ func (m *Domain) GetState()(*DomainState) {
         return m.state
     }
 }
-// GetSupportedServices gets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
+// GetSupportedServices gets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
 func (m *Domain) GetSupportedServices()([]string) {
     if m == nil {
         return nil
@@ -199,6 +209,20 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
                 res[i] = *(v.(*DirectoryObject))
             }
             m.SetDomainNameReferences(res)
+        }
+        return nil
+    }
+    res["federationConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewInternalDomainFederation() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]InternalDomainFederation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*InternalDomainFederation))
+            }
+            m.SetFederationConfiguration(res)
         }
         return nil
     }
@@ -373,6 +397,17 @@ func (m *Domain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFederationConfiguration()))
+        for i, v := range m.GetFederationConfiguration() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("federationConfiguration", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isAdminManaged", m.GetIsAdminManaged())
         if err != nil {
             return err
@@ -479,6 +514,12 @@ func (m *Domain) SetDomainNameReferences(value []DirectoryObject)() {
         m.domainNameReferences = value
     }
 }
+// SetFederationConfiguration sets the federationConfiguration property value. 
+func (m *Domain) SetFederationConfiguration(value []InternalDomainFederation)() {
+    if m != nil {
+        m.federationConfiguration = value
+    }
+}
 // SetIsAdminManaged sets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
 func (m *Domain) SetIsAdminManaged(value *bool)() {
     if m != nil {
@@ -539,7 +580,7 @@ func (m *Domain) SetState(value *DomainState)() {
         m.state = value
     }
 }
-// SetSupportedServices sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
+// SetSupportedServices sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
 func (m *Domain) SetSupportedServices(value []string)() {
     if m != nil {
         m.supportedServices = value

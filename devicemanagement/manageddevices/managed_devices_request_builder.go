@@ -5,6 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i06835d5500346b7bc8d008091fe2b42358e5cd0e649c006b5492948c0d336599 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/movedevicestoou"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i5f8ca051de0bcbbe5b881cdaf7d6d9a13cc6fca814cdda55f7a1fc121c17598e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/bulkrestorecloudpc"
     i9f3c0ec10d79caf7b25f90c50c18ffe886ea494018312ae756500b4daa0b1e5a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/bulkreprovisioncloudpc"
     ib1edad87ec29538295d4b5f56002379bc4d111c6ca85e79b9e3b58f1a12313aa "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddevices/executeaction"
 )
@@ -61,6 +62,9 @@ type ManagedDevicesRequestBuilderPostOptions struct {
 }
 func (m *ManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i9f3c0ec10d79caf7b25f90c50c18ffe886ea494018312ae756500b4daa0b1e5a.BulkReprovisionCloudPcRequestBuilder) {
     return i9f3c0ec10d79caf7b25f90c50c18ffe886ea494018312ae756500b4daa0b1e5a.NewBulkReprovisionCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ManagedDevicesRequestBuilder) BulkRestoreCloudPc()(*i5f8ca051de0bcbbe5b881cdaf7d6d9a13cc6fca814cdda55f7a1fc121c17598e.BulkRestoreCloudPcRequestBuilder) {
+    return i5f8ca051de0bcbbe5b881cdaf7d6d9a13cc6fca814cdda55f7a1fc121c17598e.NewBulkRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewManagedDevicesRequestBuilderInternal instantiates a new ManagedDevicesRequestBuilder and sets the default values.
 func NewManagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDevicesRequestBuilder) {
