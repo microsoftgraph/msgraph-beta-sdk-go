@@ -2,6 +2,7 @@ package getsharepointsiteusagedetailwithdate
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
 // GetSharePointSiteUsageDetailWithDateRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getSharePointSiteUsageDetail(date={date})
@@ -23,7 +24,7 @@ type GetSharePointSiteUsageDetailWithDateRequestBuilderGetOptions struct {
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewGetSharePointSiteUsageDetailWithDateRequestBuilderInternal instantiates a new GetSharePointSiteUsageDetailWithDateRequestBuilder and sets the default values.
-func NewGetSharePointSiteUsageDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *string)(*GetSharePointSiteUsageDetailWithDateRequestBuilder) {
+func NewGetSharePointSiteUsageDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*GetSharePointSiteUsageDetailWithDateRequestBuilder) {
     m := &GetSharePointSiteUsageDetailWithDateRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getSharePointSiteUsageDetail(date={date})";
@@ -32,7 +33,7 @@ func NewGetSharePointSiteUsageDetailWithDateRequestBuilderInternal(pathParameter
         urlTplParams[idx] = item
     }
     if date != nil {
-        urlTplParams["date"] = *date
+        urlTplParams["date"] = (*date).String()
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

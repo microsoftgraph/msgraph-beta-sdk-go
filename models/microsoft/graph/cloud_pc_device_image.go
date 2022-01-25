@@ -11,7 +11,7 @@ type CloudPcDeviceImage struct {
     // The image's display name.
     displayName *string;
     // The date the image became unavailable.
-    expirationDate *string;
+    expirationDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The image's operating system. For example: Windows 10 Enterprise.
@@ -45,7 +45,7 @@ func (m *CloudPcDeviceImage) GetDisplayName()(*string) {
     }
 }
 // GetExpirationDate gets the expirationDate property value. The date the image became unavailable.
-func (m *CloudPcDeviceImage) GetExpirationDate()(*string) {
+func (m *CloudPcDeviceImage) GetExpirationDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -130,7 +130,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["expirationDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -240,7 +240,7 @@ func (m *CloudPcDeviceImage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err = writer.WriteStringValue("expirationDate", m.GetExpirationDate())
+        err = writer.WriteDateOnlyValue("expirationDate", m.GetExpirationDate())
         if err != nil {
             return err
         }
@@ -305,7 +305,7 @@ func (m *CloudPcDeviceImage) SetDisplayName(value *string)() {
     }
 }
 // SetExpirationDate sets the expirationDate property value. The date the image became unavailable.
-func (m *CloudPcDeviceImage) SetExpirationDate(value *string)() {
+func (m *CloudPcDeviceImage) SetExpirationDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.expirationDate = value
     }

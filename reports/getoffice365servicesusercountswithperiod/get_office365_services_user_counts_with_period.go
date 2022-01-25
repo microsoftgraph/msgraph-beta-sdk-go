@@ -23,7 +23,7 @@ type GetOffice365ServicesUserCountsWithPeriod struct {
     // The number of days the report covers.
     reportPeriod *string;
     // The latest date of the content.
-    reportRefreshDate *string;
+    reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of active users on SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
     sharePointActive *int64;
     // The number of inactive users on SharePoint.
@@ -105,7 +105,7 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetReportPeriod()(*string) {
     }
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365ServicesUserCountsWithPeriod) GetReportRefreshDate()(*string) {
+func (m *GetOffice365ServicesUserCountsWithPeriod) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -250,7 +250,7 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) GetFieldDeserializers()(map[s
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -393,7 +393,7 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) Serialize(writer i04eb5309aea
         }
     }
     {
-        err = writer.WriteStringValue("reportRefreshDate", m.GetReportRefreshDate())
+        err = writer.WriteDateOnlyValue("reportRefreshDate", m.GetReportRefreshDate())
         if err != nil {
             return err
         }
@@ -491,7 +491,7 @@ func (m *GetOffice365ServicesUserCountsWithPeriod) SetReportPeriod(value *string
     }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365ServicesUserCountsWithPeriod) SetReportRefreshDate(value *string)() {
+func (m *GetOffice365ServicesUserCountsWithPeriod) SetReportRefreshDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportRefreshDate = value
     }

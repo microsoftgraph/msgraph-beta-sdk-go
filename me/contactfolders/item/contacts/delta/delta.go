@@ -76,7 +76,7 @@ type Delta struct {
     // 
     websites []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Website;
     // 
-    weddingAnniversary *string;
+    weddingAnniversary *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     yomiCompanyName *string;
     // 
@@ -356,7 +356,7 @@ func (m *Delta) GetWebsites()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0f
     }
 }
 // GetWeddingAnniversary gets the weddingAnniversary property value. 
-func (m *Delta) GetWeddingAnniversary()(*string) {
+func (m *Delta) GetWeddingAnniversary()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -757,7 +757,7 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["weddingAnniversary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -1041,7 +1041,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     {
-        err = writer.WriteStringValue("weddingAnniversary", m.GetWeddingAnniversary())
+        err = writer.WriteDateOnlyValue("weddingAnniversary", m.GetWeddingAnniversary())
         if err != nil {
             return err
         }
@@ -1265,7 +1265,7 @@ func (m *Delta) SetWebsites(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6
     }
 }
 // SetWeddingAnniversary sets the weddingAnniversary property value. 
-func (m *Delta) SetWeddingAnniversary(value *string)() {
+func (m *Delta) SetWeddingAnniversary(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.weddingAnniversary = value
     }

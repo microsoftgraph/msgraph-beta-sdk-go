@@ -9,11 +9,11 @@ import (
 type DeviceManagementAutopilotEvent struct {
     Entity
     // Time spent in user ESP.
-    accountSetupDuration *string;
+    accountSetupDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Deployment status for the enrollment status page account setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
     accountSetupStatus *WindowsAutopilotDeploymentState;
     // Autopilot deployment duration including enrollment.
-    deploymentDuration *string;
+    deploymentDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Deployment end time.
     deploymentEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Deployment start time.
@@ -21,17 +21,17 @@ type DeviceManagementAutopilotEvent struct {
     // Deployment state like Success, Failure, InProgress, SuccessWithTimeout. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
     deploymentState *WindowsAutopilotDeploymentState;
     // Total deployment duration from enrollment to Desktop screen.
-    deploymentTotalDuration *string;
+    deploymentTotalDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Device id associated with the object
     deviceId *string;
     // Time spent in device enrollment.
-    devicePreparationDuration *string;
+    devicePreparationDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Device registration date.
     deviceRegisteredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Device serial number.
     deviceSerialNumber *string;
     // Time spent in device ESP.
-    deviceSetupDuration *string;
+    deviceSetupDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Deployment status for the enrollment status page device setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
     deviceSetupStatus *WindowsAutopilotDeploymentState;
     // Enrollment failure details.
@@ -71,7 +71,7 @@ func NewDeviceManagementAutopilotEvent()(*DeviceManagementAutopilotEvent) {
     return m
 }
 // GetAccountSetupDuration gets the accountSetupDuration property value. Time spent in user ESP.
-func (m *DeviceManagementAutopilotEvent) GetAccountSetupDuration()(*string) {
+func (m *DeviceManagementAutopilotEvent) GetAccountSetupDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -87,7 +87,7 @@ func (m *DeviceManagementAutopilotEvent) GetAccountSetupStatus()(*WindowsAutopil
     }
 }
 // GetDeploymentDuration gets the deploymentDuration property value. Autopilot deployment duration including enrollment.
-func (m *DeviceManagementAutopilotEvent) GetDeploymentDuration()(*string) {
+func (m *DeviceManagementAutopilotEvent) GetDeploymentDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -119,7 +119,7 @@ func (m *DeviceManagementAutopilotEvent) GetDeploymentState()(*WindowsAutopilotD
     }
 }
 // GetDeploymentTotalDuration gets the deploymentTotalDuration property value. Total deployment duration from enrollment to Desktop screen.
-func (m *DeviceManagementAutopilotEvent) GetDeploymentTotalDuration()(*string) {
+func (m *DeviceManagementAutopilotEvent) GetDeploymentTotalDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -135,7 +135,7 @@ func (m *DeviceManagementAutopilotEvent) GetDeviceId()(*string) {
     }
 }
 // GetDevicePreparationDuration gets the devicePreparationDuration property value. Time spent in device enrollment.
-func (m *DeviceManagementAutopilotEvent) GetDevicePreparationDuration()(*string) {
+func (m *DeviceManagementAutopilotEvent) GetDevicePreparationDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -159,7 +159,7 @@ func (m *DeviceManagementAutopilotEvent) GetDeviceSerialNumber()(*string) {
     }
 }
 // GetDeviceSetupDuration gets the deviceSetupDuration property value. Time spent in device ESP.
-func (m *DeviceManagementAutopilotEvent) GetDeviceSetupDuration()(*string) {
+func (m *DeviceManagementAutopilotEvent) GetDeviceSetupDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -290,7 +290,7 @@ func (m *DeviceManagementAutopilotEvent) GetWindowsAutopilotDeploymentProfileDis
 func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accountSetupDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -311,7 +311,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["deploymentDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -352,7 +352,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["deploymentTotalDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -372,7 +372,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["devicePreparationDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -402,7 +402,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["deviceSetupDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -580,7 +580,7 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i04eb5309aeaafadd28374
         return err
     }
     {
-        err = writer.WriteStringValue("accountSetupDuration", m.GetAccountSetupDuration())
+        err = writer.WriteISODurationValue("accountSetupDuration", m.GetAccountSetupDuration())
         if err != nil {
             return err
         }
@@ -593,7 +593,7 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     {
-        err = writer.WriteStringValue("deploymentDuration", m.GetDeploymentDuration())
+        err = writer.WriteISODurationValue("deploymentDuration", m.GetDeploymentDuration())
         if err != nil {
             return err
         }
@@ -618,7 +618,7 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     {
-        err = writer.WriteStringValue("deploymentTotalDuration", m.GetDeploymentTotalDuration())
+        err = writer.WriteISODurationValue("deploymentTotalDuration", m.GetDeploymentTotalDuration())
         if err != nil {
             return err
         }
@@ -630,7 +630,7 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     {
-        err = writer.WriteStringValue("devicePreparationDuration", m.GetDevicePreparationDuration())
+        err = writer.WriteISODurationValue("devicePreparationDuration", m.GetDevicePreparationDuration())
         if err != nil {
             return err
         }
@@ -648,7 +648,7 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     {
-        err = writer.WriteStringValue("deviceSetupDuration", m.GetDeviceSetupDuration())
+        err = writer.WriteISODurationValue("deviceSetupDuration", m.GetDeviceSetupDuration())
         if err != nil {
             return err
         }
@@ -754,7 +754,7 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i04eb5309aeaafadd28374
     return nil
 }
 // SetAccountSetupDuration sets the accountSetupDuration property value. Time spent in user ESP.
-func (m *DeviceManagementAutopilotEvent) SetAccountSetupDuration(value *string)() {
+func (m *DeviceManagementAutopilotEvent) SetAccountSetupDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.accountSetupDuration = value
     }
@@ -766,7 +766,7 @@ func (m *DeviceManagementAutopilotEvent) SetAccountSetupStatus(value *WindowsAut
     }
 }
 // SetDeploymentDuration sets the deploymentDuration property value. Autopilot deployment duration including enrollment.
-func (m *DeviceManagementAutopilotEvent) SetDeploymentDuration(value *string)() {
+func (m *DeviceManagementAutopilotEvent) SetDeploymentDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.deploymentDuration = value
     }
@@ -790,7 +790,7 @@ func (m *DeviceManagementAutopilotEvent) SetDeploymentState(value *WindowsAutopi
     }
 }
 // SetDeploymentTotalDuration sets the deploymentTotalDuration property value. Total deployment duration from enrollment to Desktop screen.
-func (m *DeviceManagementAutopilotEvent) SetDeploymentTotalDuration(value *string)() {
+func (m *DeviceManagementAutopilotEvent) SetDeploymentTotalDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.deploymentTotalDuration = value
     }
@@ -802,7 +802,7 @@ func (m *DeviceManagementAutopilotEvent) SetDeviceId(value *string)() {
     }
 }
 // SetDevicePreparationDuration sets the devicePreparationDuration property value. Time spent in device enrollment.
-func (m *DeviceManagementAutopilotEvent) SetDevicePreparationDuration(value *string)() {
+func (m *DeviceManagementAutopilotEvent) SetDevicePreparationDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.devicePreparationDuration = value
     }
@@ -820,7 +820,7 @@ func (m *DeviceManagementAutopilotEvent) SetDeviceSerialNumber(value *string)() 
     }
 }
 // SetDeviceSetupDuration sets the deviceSetupDuration property value. Time spent in device ESP.
-func (m *DeviceManagementAutopilotEvent) SetDeviceSetupDuration(value *string)() {
+func (m *DeviceManagementAutopilotEvent) SetDeviceSetupDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.deviceSetupDuration = value
     }

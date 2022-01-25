@@ -17,7 +17,7 @@ type VirtualEndpoint struct {
     galleryImages []CloudPcGalleryImage;
     // A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
     onPremisesConnections []CloudPcOnPremisesConnection;
-    // 
+    // The Cloud PC organization settings for a tenant.
     organizationSettings *CloudPcOrganizationSettings;
     // Cloud PC provisioning policy.
     provisioningPolicies []CloudPcProvisioningPolicy;
@@ -77,7 +77,7 @@ func (m *VirtualEndpoint) GetOnPremisesConnections()([]CloudPcOnPremisesConnecti
         return m.onPremisesConnections
     }
 }
-// GetOrganizationSettings gets the organizationSettings property value. 
+// GetOrganizationSettings gets the organizationSettings property value. The Cloud PC organization settings for a tenant.
 func (m *VirtualEndpoint) GetOrganizationSettings()(*CloudPcOrganizationSettings) {
     if m == nil {
         return nil
@@ -437,7 +437,7 @@ func (m *VirtualEndpoint) SetOnPremisesConnections(value []CloudPcOnPremisesConn
         m.onPremisesConnections = value
     }
 }
-// SetOrganizationSettings sets the organizationSettings property value. 
+// SetOrganizationSettings sets the organizationSettings property value. The Cloud PC organization settings for a tenant.
 func (m *VirtualEndpoint) SetOrganizationSettings(value *CloudPcOrganizationSettings)() {
     if m != nil {
         m.organizationSettings = value

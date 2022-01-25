@@ -10,7 +10,7 @@ type KeyCredentialConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    maxLifetime *string;
+    maxLifetime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
     restrictForAppsCreatedAfterDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
@@ -32,7 +32,7 @@ func (m *KeyCredentialConfiguration) GetAdditionalData()(map[string]interface{})
     }
 }
 // GetMaxLifetime gets the maxLifetime property value. 
-func (m *KeyCredentialConfiguration) GetMaxLifetime()(*string) {
+func (m *KeyCredentialConfiguration) GetMaxLifetime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -59,7 +59,7 @@ func (m *KeyCredentialConfiguration) GetRestrictionType()(*AppKeyCredentialRestr
 func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["maxLifetime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -97,7 +97,7 @@ func (m *KeyCredentialConfiguration) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *KeyCredentialConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("maxLifetime", m.GetMaxLifetime())
+        err := writer.WriteISODurationValue("maxLifetime", m.GetMaxLifetime())
         if err != nil {
             return err
         }
@@ -130,7 +130,7 @@ func (m *KeyCredentialConfiguration) SetAdditionalData(value map[string]interfac
     }
 }
 // SetMaxLifetime sets the maxLifetime property value. 
-func (m *KeyCredentialConfiguration) SetMaxLifetime(value *string)() {
+func (m *KeyCredentialConfiguration) SetMaxLifetime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.maxLifetime = value
     }

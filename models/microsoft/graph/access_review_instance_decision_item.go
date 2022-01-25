@@ -18,7 +18,7 @@ type AccessReviewInstanceDecisionItem struct {
     applyResult *string;
     // Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow. Supports $select, $orderby, and $filter (eq only).
     decision *string;
-    // 
+    // Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
     insights []GovernanceInsight;
     // There is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
     instance *AccessReviewInstance;
@@ -88,7 +88,7 @@ func (m *AccessReviewInstanceDecisionItem) GetDecision()(*string) {
         return m.decision
     }
 }
-// GetInsights gets the insights property value. 
+// GetInsights gets the insights property value. Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
 func (m *AccessReviewInstanceDecisionItem) GetInsights()([]GovernanceInsight) {
     if m == nil {
         return nil
@@ -487,7 +487,7 @@ func (m *AccessReviewInstanceDecisionItem) SetDecision(value *string)() {
         m.decision = value
     }
 }
-// SetInsights sets the insights property value. 
+// SetInsights sets the insights property value. Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
 func (m *AccessReviewInstanceDecisionItem) SetInsights(value []GovernanceInsight)() {
     if m != nil {
         m.insights = value

@@ -390,7 +390,7 @@ func (m *ReportsRequestBuilder) GetEmailActivityUserCountsWithPeriod(period *str
     return i7217ecce10bb1170c5d1635128247d30624546692ebc20935f655e3ce4b68c47.NewGetEmailActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetEmailActivityUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getEmailActivityUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetEmailActivityUserDetailWithDate(date *string)(*ic8f641d2b8a763b7b6f48c7c85bdce9e87996fdd746bbaa9d7af7769245c71bd.GetEmailActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetEmailActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ic8f641d2b8a763b7b6f48c7c85bdce9e87996fdd746bbaa9d7af7769245c71bd.GetEmailActivityUserDetailWithDateRequestBuilder) {
     return ic8f641d2b8a763b7b6f48c7c85bdce9e87996fdd746bbaa9d7af7769245c71bd.NewGetEmailActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetEmailActivityUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getEmailActivityUserDetail(period='{period}')
@@ -406,7 +406,7 @@ func (m *ReportsRequestBuilder) GetEmailAppUsageUserCountsWithPeriod(period *str
     return id16f9ce1d99f7d1c50c8c3911b7b3317fd937252ea9673d1e38cedfec41b08e8.NewGetEmailAppUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetEmailAppUsageUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getEmailAppUsageUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetEmailAppUsageUserDetailWithDate(date *string)(*i4a720b5f345e91b0bf967bf525d76d5febe85151037aa8327de70f7fd0aea25a.GetEmailAppUsageUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetEmailAppUsageUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i4a720b5f345e91b0bf967bf525d76d5febe85151037aa8327de70f7fd0aea25a.GetEmailAppUsageUserDetailWithDateRequestBuilder) {
     return i4a720b5f345e91b0bf967bf525d76d5febe85151037aa8327de70f7fd0aea25a.NewGetEmailAppUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetEmailAppUsageUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getEmailAppUsageUserDetail(period='{period}')
@@ -430,7 +430,7 @@ func (m *ReportsRequestBuilder) GetM365AppUserCountsWithPeriod(period *string)(*
     return i02b366b70fc1ec373b8983375e316d896baf6faad4edf2a4121986b8230d5a84.NewGetM365AppUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetM365AppUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getM365AppUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetM365AppUserDetailWithDate(date *string)(*i95b1164d20aad2d39c57c4b38fd44a5d2f2d05bf631cb13a075f37b71a7ac5b4.GetM365AppUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetM365AppUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i95b1164d20aad2d39c57c4b38fd44a5d2f2d05bf631cb13a075f37b71a7ac5b4.GetM365AppUserDetailWithDateRequestBuilder) {
     return i95b1164d20aad2d39c57c4b38fd44a5d2f2d05bf631cb13a075f37b71a7ac5b4.NewGetM365AppUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetM365AppUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getM365AppUserDetail(period='{period}')
@@ -470,7 +470,7 @@ func (m *ReportsRequestBuilder) GetOffice365ActiveUserCountsWithPeriod(period *s
     return if08b0f6462c0374cc04d6591fd00c6f903d80cb1aa4bcf0269bf16987dcf17a2.NewGetOffice365ActiveUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetOffice365ActiveUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActiveUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetOffice365ActiveUserDetailWithDate(date *string)(*if261b2578ae42789e9c954041da7ecdc03603a05edf6ba0be09893dbe05b3142.GetOffice365ActiveUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetOffice365ActiveUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*if261b2578ae42789e9c954041da7ecdc03603a05edf6ba0be09893dbe05b3142.GetOffice365ActiveUserDetailWithDateRequestBuilder) {
     return if261b2578ae42789e9c954041da7ecdc03603a05edf6ba0be09893dbe05b3142.NewGetOffice365ActiveUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetOffice365ActiveUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActiveUserDetail(period='{period}')
@@ -482,7 +482,7 @@ func (m *ReportsRequestBuilder) GetOffice365GroupsActivityCountsWithPeriod(perio
     return if587a78dac698fac07fde7dbafd659ec926b72e5abce7d5081eac704ddb5fc12.NewGetOffice365GroupsActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetOffice365GroupsActivityDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getOffice365GroupsActivityDetail(date={date})
-func (m *ReportsRequestBuilder) GetOffice365GroupsActivityDetailWithDate(date *string)(*i5542a4e920cc301f9fd5b6d010166452a3ec1b96b595f0b1f8869da5b984d4ff.GetOffice365GroupsActivityDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetOffice365GroupsActivityDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i5542a4e920cc301f9fd5b6d010166452a3ec1b96b595f0b1f8869da5b984d4ff.GetOffice365GroupsActivityDetailWithDateRequestBuilder) {
     return i5542a4e920cc301f9fd5b6d010166452a3ec1b96b595f0b1f8869da5b984d4ff.NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetOffice365GroupsActivityDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getOffice365GroupsActivityDetail(period='{period}')
@@ -514,7 +514,7 @@ func (m *ReportsRequestBuilder) GetOneDriveActivityUserCountsWithPeriod(period *
     return ic3f682e7cc9725074cc23ecc64d8d813b5f6c39a93bcdd47f5b04e1e36e31a8c.NewGetOneDriveActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetOneDriveActivityUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getOneDriveActivityUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetOneDriveActivityUserDetailWithDate(date *string)(*ic5da14e3ff43c5e6fd44a093a284bd0d470c3a9d4b65d5e2bce503b45cd374fd.GetOneDriveActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetOneDriveActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ic5da14e3ff43c5e6fd44a093a284bd0d470c3a9d4b65d5e2bce503b45cd374fd.GetOneDriveActivityUserDetailWithDateRequestBuilder) {
     return ic5da14e3ff43c5e6fd44a093a284bd0d470c3a9d4b65d5e2bce503b45cd374fd.NewGetOneDriveActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetOneDriveActivityUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getOneDriveActivityUserDetail(period='{period}')
@@ -526,7 +526,7 @@ func (m *ReportsRequestBuilder) GetOneDriveUsageAccountCountsWithPeriod(period *
     return i7ad76340f4a0f8d49588345643b23f3a29ec1fd2161c87b7866114a35eda410a.NewGetOneDriveUsageAccountCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetOneDriveUsageAccountDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getOneDriveUsageAccountDetail(date={date})
-func (m *ReportsRequestBuilder) GetOneDriveUsageAccountDetailWithDate(date *string)(*i48a44087adc49827c59b599bc3e9c1ea8e284030a4416856821ea71b09310ed5.GetOneDriveUsageAccountDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetOneDriveUsageAccountDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i48a44087adc49827c59b599bc3e9c1ea8e284030a4416856821ea71b09310ed5.GetOneDriveUsageAccountDetailWithDateRequestBuilder) {
     return i48a44087adc49827c59b599bc3e9c1ea8e284030a4416856821ea71b09310ed5.NewGetOneDriveUsageAccountDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetOneDriveUsageAccountDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getOneDriveUsageAccountDetail(period='{period}')
@@ -562,7 +562,7 @@ func (m *ReportsRequestBuilder) GetSharePointActivityUserCountsWithPeriod(period
     return i826cac8af5755c1771dcf21902dcbe7a8c861f3d2cc2659b97318fa6ca801927.NewGetSharePointActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetSharePointActivityUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getSharePointActivityUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetSharePointActivityUserDetailWithDate(date *string)(*ide13a00269d183accb3fb129eacee077596bbbd9e1af9886a8fa5b82f24f9512.GetSharePointActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetSharePointActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ide13a00269d183accb3fb129eacee077596bbbd9e1af9886a8fa5b82f24f9512.GetSharePointActivityUserDetailWithDateRequestBuilder) {
     return ide13a00269d183accb3fb129eacee077596bbbd9e1af9886a8fa5b82f24f9512.NewGetSharePointActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetSharePointActivityUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getSharePointActivityUserDetail(period='{period}')
@@ -570,7 +570,7 @@ func (m *ReportsRequestBuilder) GetSharePointActivityUserDetailWithPeriod(period
     return id0a1a6564efba17eb292c6d47fa074ac2b98c19c12c1a1495d8b7813b7b74420.NewGetSharePointActivityUserDetailWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetSharePointSiteUsageDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getSharePointSiteUsageDetail(date={date})
-func (m *ReportsRequestBuilder) GetSharePointSiteUsageDetailWithDate(date *string)(*ia905ae63e07e238ab152ce311e0525628c071873fd34232733350f04752d8678.GetSharePointSiteUsageDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetSharePointSiteUsageDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ia905ae63e07e238ab152ce311e0525628c071873fd34232733350f04752d8678.GetSharePointSiteUsageDetailWithDateRequestBuilder) {
     return ia905ae63e07e238ab152ce311e0525628c071873fd34232733350f04752d8678.NewGetSharePointSiteUsageDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetSharePointSiteUsageDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getSharePointSiteUsageDetail(period='{period}')
@@ -602,7 +602,7 @@ func (m *ReportsRequestBuilder) GetSkypeForBusinessActivityUserCountsWithPeriod(
     return i35fab8ead83b7a35b3fc3dff29cb309b459f147de1727e7671b1e3ea1085f7a2.NewGetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetSkypeForBusinessActivityUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessActivityUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetSkypeForBusinessActivityUserDetailWithDate(date *string)(*ic2bba236674645b7dd61f3f93d935e166db2806a283ce92ca066bb178547b2b8.GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetSkypeForBusinessActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ic2bba236674645b7dd61f3f93d935e166db2806a283ce92ca066bb178547b2b8.GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) {
     return ic2bba236674645b7dd61f3f93d935e166db2806a283ce92ca066bb178547b2b8.NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetSkypeForBusinessActivityUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessActivityUserDetail(period='{period}')
@@ -618,7 +618,7 @@ func (m *ReportsRequestBuilder) GetSkypeForBusinessDeviceUsageUserCountsWithPeri
     return if220cda8a33cfb0dc18bc5f4b4ed4f3787a1bb1f4392a8c67322dae2cf9910ce.NewGetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetSkypeForBusinessDeviceUsageUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetSkypeForBusinessDeviceUsageUserDetailWithDate(date *string)(*i7026ee7cc69ab0c0a76cfd363e6e41a9e764f78dfc9fc6b226788e43010b3585.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetSkypeForBusinessDeviceUsageUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i7026ee7cc69ab0c0a76cfd363e6e41a9e764f78dfc9fc6b226788e43010b3585.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder) {
     return i7026ee7cc69ab0c0a76cfd363e6e41a9e764f78dfc9fc6b226788e43010b3585.NewGetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetSkypeForBusinessDeviceUsageUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(period='{period}')
@@ -678,7 +678,7 @@ func (m *ReportsRequestBuilder) GetTeamsDeviceUsageUserCountsWithPeriod(period *
     return i98b74c2f146a48ff844d3021737827fcc82215b40e873605b5b930c294e36b6b.NewGetTeamsDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetTeamsDeviceUsageUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getTeamsDeviceUsageUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetTeamsDeviceUsageUserDetailWithDate(date *string)(*id78f0043579ad6440a94b391bf422870702c33dd35a5f50c4bb1e102ee06b3a3.GetTeamsDeviceUsageUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetTeamsDeviceUsageUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*id78f0043579ad6440a94b391bf422870702c33dd35a5f50c4bb1e102ee06b3a3.GetTeamsDeviceUsageUserDetailWithDateRequestBuilder) {
     return id78f0043579ad6440a94b391bf422870702c33dd35a5f50c4bb1e102ee06b3a3.NewGetTeamsDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetTeamsDeviceUsageUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getTeamsDeviceUsageUserDetail(period='{period}')
@@ -710,7 +710,7 @@ func (m *ReportsRequestBuilder) GetTeamsUserActivityUserCountsWithPeriod(period 
     return i1c97679a2593f53f0d56c8ca04b6129e80fb9633559094ab0a4b44e77ab52bba.NewGetTeamsUserActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetTeamsUserActivityUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetTeamsUserActivityUserDetailWithDate(date *string)(*iedafbd1ed73588865f6b43d238dd6c81c00b86c2c48d2ba9ecb1e727bf24afe8.GetTeamsUserActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetTeamsUserActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*iedafbd1ed73588865f6b43d238dd6c81c00b86c2c48d2ba9ecb1e727bf24afe8.GetTeamsUserActivityUserDetailWithDateRequestBuilder) {
     return iedafbd1ed73588865f6b43d238dd6c81c00b86c2c48d2ba9ecb1e727bf24afe8.NewGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetTeamsUserActivityUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityUserDetail(period='{period}')
@@ -734,7 +734,7 @@ func (m *ReportsRequestBuilder) GetYammerActivityUserCountsWithPeriod(period *st
     return i23ae3dadc25e31a369068a3ac3cd7ff57c8b4823dcea9650bd4b312d6f57e7e4.NewGetYammerActivityUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetYammerActivityUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getYammerActivityUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetYammerActivityUserDetailWithDate(date *string)(*ica598676eb8a952415f863c021b34052e8169be21d16ff5ea2e1e76d21584e0b.GetYammerActivityUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetYammerActivityUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ica598676eb8a952415f863c021b34052e8169be21d16ff5ea2e1e76d21584e0b.GetYammerActivityUserDetailWithDateRequestBuilder) {
     return ica598676eb8a952415f863c021b34052e8169be21d16ff5ea2e1e76d21584e0b.NewGetYammerActivityUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetYammerActivityUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getYammerActivityUserDetail(period='{period}')
@@ -750,7 +750,7 @@ func (m *ReportsRequestBuilder) GetYammerDeviceUsageUserCountsWithPeriod(period 
     return i943fdce89c1d1ccca5b0f3b2db4cfc85447eafff319d6137111ed073b10c023e.NewGetYammerDeviceUsageUserCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetYammerDeviceUsageUserDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getYammerDeviceUsageUserDetail(date={date})
-func (m *ReportsRequestBuilder) GetYammerDeviceUsageUserDetailWithDate(date *string)(*i1b46d4e69ba1b93deaf785955d5b648a3c2c33ff773c7f59b4f4318c1b70fd45.GetYammerDeviceUsageUserDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetYammerDeviceUsageUserDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*i1b46d4e69ba1b93deaf785955d5b648a3c2c33ff773c7f59b4f4318c1b70fd45.GetYammerDeviceUsageUserDetailWithDateRequestBuilder) {
     return i1b46d4e69ba1b93deaf785955d5b648a3c2c33ff773c7f59b4f4318c1b70fd45.NewGetYammerDeviceUsageUserDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetYammerDeviceUsageUserDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getYammerDeviceUsageUserDetail(period='{period}')
@@ -762,7 +762,7 @@ func (m *ReportsRequestBuilder) GetYammerGroupsActivityCountsWithPeriod(period *
     return i85af9b00ffe076a423eb5fd31460ced62f5ace48b1303f5ddde47a395bc696aa.NewGetYammerGroupsActivityCountsWithPeriodRequestBuilderInternal(m.pathParameters, m.requestAdapter, period);
 }
 // GetYammerGroupsActivityDetailWithDate builds and executes requests for operations under \reports\microsoft.graph.getYammerGroupsActivityDetail(date={date})
-func (m *ReportsRequestBuilder) GetYammerGroupsActivityDetailWithDate(date *string)(*ibaf7d6c4cd3e8f19279c8ea66be35293ecddff285916af2302dad085654fb7a4.GetYammerGroupsActivityDetailWithDateRequestBuilder) {
+func (m *ReportsRequestBuilder) GetYammerGroupsActivityDetailWithDate(date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*ibaf7d6c4cd3e8f19279c8ea66be35293ecddff285916af2302dad085654fb7a4.GetYammerGroupsActivityDetailWithDateRequestBuilder) {
     return ibaf7d6c4cd3e8f19279c8ea66be35293ecddff285916af2302dad085654fb7a4.NewGetYammerGroupsActivityDetailWithDateRequestBuilderInternal(m.pathParameters, m.requestAdapter, date);
 }
 // GetYammerGroupsActivityDetailWithPeriod builds and executes requests for operations under \reports\microsoft.graph.getYammerGroupsActivityDetail(period='{period}')

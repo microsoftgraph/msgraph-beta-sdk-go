@@ -29,7 +29,7 @@ type Site struct {
     lists []List;
     // Calls the OneNote service for notebook related operations.
     onenote *Onenote;
-    // 
+    // The collection of long running operations for the site.
     operations []RichLongRunningOperation;
     // The collection of pages in the SitePages list in this site.
     pages []SitePage;
@@ -143,7 +143,7 @@ func (m *Site) GetOnenote()(*Onenote) {
         return m.onenote
     }
 }
-// GetOperations gets the operations property value. 
+// GetOperations gets the operations property value. The collection of long running operations for the site.
 func (m *Site) GetOperations()([]RichLongRunningOperation) {
     if m == nil {
         return nil
@@ -707,7 +707,7 @@ func (m *Site) SetOnenote(value *Onenote)() {
         m.onenote = value
     }
 }
-// SetOperations sets the operations property value. 
+// SetOperations sets the operations property value. The collection of long running operations for the site.
 func (m *Site) SetOperations(value []RichLongRunningOperation)() {
     if m != nil {
         m.operations = value

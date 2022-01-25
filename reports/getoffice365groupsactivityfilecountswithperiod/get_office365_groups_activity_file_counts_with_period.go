@@ -11,11 +11,11 @@ type GetOffice365GroupsActivityFileCountsWithPeriod struct {
     // The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
     active *int64;
     // The date on which a number of files were active in the group's SharePoint site.
-    reportDate *string;
+    reportDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of days the report covers.
     reportPeriod *string;
     // The latest date of the content.
-    reportRefreshDate *string;
+    reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The total number of files in the group's SharePoint document library.
     total *int64;
 }
@@ -35,7 +35,7 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriod) GetActive()(*int64) {
     }
 }
 // GetReportDate gets the reportDate property value. The date on which a number of files were active in the group's SharePoint site.
-func (m *GetOffice365GroupsActivityFileCountsWithPeriod) GetReportDate()(*string) {
+func (m *GetOffice365GroupsActivityFileCountsWithPeriod) GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -51,7 +51,7 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriod) GetReportPeriod()(*stri
     }
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365GroupsActivityFileCountsWithPeriod) GetReportRefreshDate()(*string) {
+func (m *GetOffice365GroupsActivityFileCountsWithPeriod) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriod) GetFieldDeserializers()
         return nil
     }
     res["reportDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -100,7 +100,7 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriod) GetFieldDeserializers()
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -137,7 +137,7 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriod) Serialize(writer i04eb5
         }
     }
     {
-        err = writer.WriteStringValue("reportDate", m.GetReportDate())
+        err = writer.WriteDateOnlyValue("reportDate", m.GetReportDate())
         if err != nil {
             return err
         }
@@ -149,7 +149,7 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriod) Serialize(writer i04eb5
         }
     }
     {
-        err = writer.WriteStringValue("reportRefreshDate", m.GetReportRefreshDate())
+        err = writer.WriteDateOnlyValue("reportRefreshDate", m.GetReportRefreshDate())
         if err != nil {
             return err
         }
@@ -169,7 +169,7 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriod) SetActive(value *int64)
     }
 }
 // SetReportDate sets the reportDate property value. The date on which a number of files were active in the group's SharePoint site.
-func (m *GetOffice365GroupsActivityFileCountsWithPeriod) SetReportDate(value *string)() {
+func (m *GetOffice365GroupsActivityFileCountsWithPeriod) SetReportDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportDate = value
     }
@@ -181,7 +181,7 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriod) SetReportPeriod(value *
     }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365GroupsActivityFileCountsWithPeriod) SetReportRefreshDate(value *string)() {
+func (m *GetOffice365GroupsActivityFileCountsWithPeriod) SetReportRefreshDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportRefreshDate = value
     }

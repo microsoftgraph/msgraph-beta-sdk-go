@@ -11,13 +11,13 @@ type Employee struct {
     // 
     address *PostalAddressType;
     // 
-    birthDate *string;
+    birthDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     displayName *string;
     // 
     email *string;
     // 
-    employmentDate *string;
+    employmentDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     givenName *string;
     // 
@@ -43,7 +43,7 @@ type Employee struct {
     // 
     surname *string;
     // 
-    terminationDate *string;
+    terminationDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
 }
 // NewEmployee instantiates a new employee and sets the default values.
 func NewEmployee()(*Employee) {
@@ -61,7 +61,7 @@ func (m *Employee) GetAddress()(*PostalAddressType) {
     }
 }
 // GetBirthDate gets the birthDate property value. 
-func (m *Employee) GetBirthDate()(*string) {
+func (m *Employee) GetBirthDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -85,7 +85,7 @@ func (m *Employee) GetEmail()(*string) {
     }
 }
 // GetEmploymentDate gets the employmentDate property value. 
-func (m *Employee) GetEmploymentDate()(*string) {
+func (m *Employee) GetEmploymentDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -189,7 +189,7 @@ func (m *Employee) GetSurname()(*string) {
     }
 }
 // GetTerminationDate gets the terminationDate property value. 
-func (m *Employee) GetTerminationDate()(*string) {
+func (m *Employee) GetTerminationDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -210,7 +210,7 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["birthDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -240,7 +240,7 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["employmentDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -374,7 +374,7 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["terminationDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -401,7 +401,7 @@ func (m *Employee) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     {
-        err = writer.WriteStringValue("birthDate", m.GetBirthDate())
+        err = writer.WriteDateOnlyValue("birthDate", m.GetBirthDate())
         if err != nil {
             return err
         }
@@ -419,7 +419,7 @@ func (m *Employee) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     {
-        err = writer.WriteStringValue("employmentDate", m.GetEmploymentDate())
+        err = writer.WriteDateOnlyValue("employmentDate", m.GetEmploymentDate())
         if err != nil {
             return err
         }
@@ -502,7 +502,7 @@ func (m *Employee) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     {
-        err = writer.WriteStringValue("terminationDate", m.GetTerminationDate())
+        err = writer.WriteDateOnlyValue("terminationDate", m.GetTerminationDate())
         if err != nil {
             return err
         }
@@ -516,7 +516,7 @@ func (m *Employee) SetAddress(value *PostalAddressType)() {
     }
 }
 // SetBirthDate sets the birthDate property value. 
-func (m *Employee) SetBirthDate(value *string)() {
+func (m *Employee) SetBirthDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.birthDate = value
     }
@@ -534,7 +534,7 @@ func (m *Employee) SetEmail(value *string)() {
     }
 }
 // SetEmploymentDate sets the employmentDate property value. 
-func (m *Employee) SetEmploymentDate(value *string)() {
+func (m *Employee) SetEmploymentDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.employmentDate = value
     }
@@ -612,7 +612,7 @@ func (m *Employee) SetSurname(value *string)() {
     }
 }
 // SetTerminationDate sets the terminationDate property value. 
-func (m *Employee) SetTerminationDate(value *string)() {
+func (m *Employee) SetTerminationDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.terminationDate = value
     }

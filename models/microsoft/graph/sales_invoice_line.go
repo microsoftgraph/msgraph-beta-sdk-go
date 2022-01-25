@@ -44,7 +44,7 @@ type SalesInvoiceLine struct {
     // 
     sequence *int32;
     // 
-    shipmentDate *string;
+    shipmentDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     taxCode *string;
     // 
@@ -208,7 +208,7 @@ func (m *SalesInvoiceLine) GetSequence()(*int32) {
     }
 }
 // GetShipmentDate gets the shipmentDate property value. 
-func (m *SalesInvoiceLine) GetShipmentDate()(*string) {
+func (m *SalesInvoiceLine) GetShipmentDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -439,7 +439,7 @@ func (m *SalesInvoiceLine) GetFieldDeserializers()(map[string]func(interface{}, 
         return nil
     }
     res["shipmentDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -618,7 +618,7 @@ func (m *SalesInvoiceLine) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
-        err = writer.WriteStringValue("shipmentDate", m.GetShipmentDate())
+        err = writer.WriteDateOnlyValue("shipmentDate", m.GetShipmentDate())
         if err != nil {
             return err
         }
@@ -764,7 +764,7 @@ func (m *SalesInvoiceLine) SetSequence(value *int32)() {
     }
 }
 // SetShipmentDate sets the shipmentDate property value. 
-func (m *SalesInvoiceLine) SetShipmentDate(value *string)() {
+func (m *SalesInvoiceLine) SetShipmentDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.shipmentDate = value
     }

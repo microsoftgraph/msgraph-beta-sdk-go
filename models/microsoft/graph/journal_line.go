@@ -31,7 +31,7 @@ type JournalLine struct {
     // 
     lineNumber *int32;
     // 
-    postingDate *string;
+    postingDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
 }
 // NewJournalLine instantiates a new journalLine and sets the default values.
 func NewJournalLine()(*JournalLine) {
@@ -129,7 +129,7 @@ func (m *JournalLine) GetLineNumber()(*int32) {
     }
 }
 // GetPostingDate gets the postingDate property value. 
-func (m *JournalLine) GetPostingDate()(*string) {
+func (m *JournalLine) GetPostingDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -250,7 +250,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["postingDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -337,7 +337,7 @@ func (m *JournalLine) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err = writer.WriteStringValue("postingDate", m.GetPostingDate())
+        err = writer.WriteDateOnlyValue("postingDate", m.GetPostingDate())
         if err != nil {
             return err
         }
@@ -411,7 +411,7 @@ func (m *JournalLine) SetLineNumber(value *int32)() {
     }
 }
 // SetPostingDate sets the postingDate property value. 
-func (m *JournalLine) SetPostingDate(value *string)() {
+func (m *JournalLine) SetPostingDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.postingDate = value
     }

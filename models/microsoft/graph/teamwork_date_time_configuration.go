@@ -11,9 +11,9 @@ type TeamworkDateTimeConfiguration struct {
     // 
     dateFormat *string;
     // 
-    officeHoursEndTime *string;
+    officeHoursEndTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // 
-    officeHoursStartTime *string;
+    officeHoursStartTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // 
     timeFormat *string;
     // 
@@ -43,7 +43,7 @@ func (m *TeamworkDateTimeConfiguration) GetDateFormat()(*string) {
     }
 }
 // GetOfficeHoursEndTime gets the officeHoursEndTime property value. 
-func (m *TeamworkDateTimeConfiguration) GetOfficeHoursEndTime()(*string) {
+func (m *TeamworkDateTimeConfiguration) GetOfficeHoursEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -51,7 +51,7 @@ func (m *TeamworkDateTimeConfiguration) GetOfficeHoursEndTime()(*string) {
     }
 }
 // GetOfficeHoursStartTime gets the officeHoursStartTime property value. 
-func (m *TeamworkDateTimeConfiguration) GetOfficeHoursStartTime()(*string) {
+func (m *TeamworkDateTimeConfiguration) GetOfficeHoursStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -88,7 +88,7 @@ func (m *TeamworkDateTimeConfiguration) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["officeHoursEndTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -98,7 +98,7 @@ func (m *TeamworkDateTimeConfiguration) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["officeHoursStartTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -141,13 +141,13 @@ func (m *TeamworkDateTimeConfiguration) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     {
-        err := writer.WriteStringValue("officeHoursEndTime", m.GetOfficeHoursEndTime())
+        err := writer.WriteTimeOnlyValue("officeHoursEndTime", m.GetOfficeHoursEndTime())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("officeHoursStartTime", m.GetOfficeHoursStartTime())
+        err := writer.WriteTimeOnlyValue("officeHoursStartTime", m.GetOfficeHoursStartTime())
         if err != nil {
             return err
         }
@@ -185,13 +185,13 @@ func (m *TeamworkDateTimeConfiguration) SetDateFormat(value *string)() {
     }
 }
 // SetOfficeHoursEndTime sets the officeHoursEndTime property value. 
-func (m *TeamworkDateTimeConfiguration) SetOfficeHoursEndTime(value *string)() {
+func (m *TeamworkDateTimeConfiguration) SetOfficeHoursEndTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.officeHoursEndTime = value
     }
 }
 // SetOfficeHoursStartTime sets the officeHoursStartTime property value. 
-func (m *TeamworkDateTimeConfiguration) SetOfficeHoursStartTime(value *string)() {
+func (m *TeamworkDateTimeConfiguration) SetOfficeHoursStartTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.officeHoursStartTime = value
     }

@@ -18,11 +18,11 @@ type GovernanceRoleAssignmentRequest struct {
     requestedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only. The resource that the request aims to.
     resource *GovernanceResource;
-    // Required. The id of the resource which the role assignment request is associated with.
+    // Required. The unique identifier of the Azure resource that is associated with the role assignment request. Azure resources can include subscriptions, resource groups, virtual machines, and SQL databases.
     resourceId *string;
     // Read-only. The role definition that the request aims to.
     roleDefinition *GovernanceRoleDefinition;
-    // Required. The id of the role definition which the role assignment request is associated with.
+    // Required. The identifier of the Azure role definition that the role assignment request is associated with.
     roleDefinitionId *string;
     // The schedule object of the role assignment request.
     schedule *GovernanceSchedule;
@@ -30,7 +30,7 @@ type GovernanceRoleAssignmentRequest struct {
     status *GovernanceRoleAssignmentRequestStatus;
     // Read-only. The user/group principal.
     subject *GovernanceSubject;
-    // Required. The id of the subject which the role assignment request is associated with.
+    // Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.
     subjectId *string;
     // Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
     type_escaped *string;
@@ -82,7 +82,7 @@ func (m *GovernanceRoleAssignmentRequest) GetResource()(*GovernanceResource) {
         return m.resource
     }
 }
-// GetResourceId gets the resourceId property value. Required. The id of the resource which the role assignment request is associated with.
+// GetResourceId gets the resourceId property value. Required. The unique identifier of the Azure resource that is associated with the role assignment request. Azure resources can include subscriptions, resource groups, virtual machines, and SQL databases.
 func (m *GovernanceRoleAssignmentRequest) GetResourceId()(*string) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *GovernanceRoleAssignmentRequest) GetRoleDefinition()(*GovernanceRoleDef
         return m.roleDefinition
     }
 }
-// GetRoleDefinitionId gets the roleDefinitionId property value. Required. The id of the role definition which the role assignment request is associated with.
+// GetRoleDefinitionId gets the roleDefinitionId property value. Required. The identifier of the Azure role definition that the role assignment request is associated with.
 func (m *GovernanceRoleAssignmentRequest) GetRoleDefinitionId()(*string) {
     if m == nil {
         return nil
@@ -130,7 +130,7 @@ func (m *GovernanceRoleAssignmentRequest) GetSubject()(*GovernanceSubject) {
         return m.subject
     }
 }
-// GetSubjectId gets the subjectId property value. Required. The id of the subject which the role assignment request is associated with.
+// GetSubjectId gets the subjectId property value. Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.
 func (m *GovernanceRoleAssignmentRequest) GetSubjectId()(*string) {
     if m == nil {
         return nil
@@ -400,7 +400,7 @@ func (m *GovernanceRoleAssignmentRequest) SetResource(value *GovernanceResource)
         m.resource = value
     }
 }
-// SetResourceId sets the resourceId property value. Required. The id of the resource which the role assignment request is associated with.
+// SetResourceId sets the resourceId property value. Required. The unique identifier of the Azure resource that is associated with the role assignment request. Azure resources can include subscriptions, resource groups, virtual machines, and SQL databases.
 func (m *GovernanceRoleAssignmentRequest) SetResourceId(value *string)() {
     if m != nil {
         m.resourceId = value
@@ -412,7 +412,7 @@ func (m *GovernanceRoleAssignmentRequest) SetRoleDefinition(value *GovernanceRol
         m.roleDefinition = value
     }
 }
-// SetRoleDefinitionId sets the roleDefinitionId property value. Required. The id of the role definition which the role assignment request is associated with.
+// SetRoleDefinitionId sets the roleDefinitionId property value. Required. The identifier of the Azure role definition that the role assignment request is associated with.
 func (m *GovernanceRoleAssignmentRequest) SetRoleDefinitionId(value *string)() {
     if m != nil {
         m.roleDefinitionId = value
@@ -436,7 +436,7 @@ func (m *GovernanceRoleAssignmentRequest) SetSubject(value *GovernanceSubject)()
         m.subject = value
     }
 }
-// SetSubjectId sets the subjectId property value. Required. The id of the subject which the role assignment request is associated with.
+// SetSubjectId sets the subjectId property value. Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.
 func (m *GovernanceRoleAssignmentRequest) SetSubjectId(value *string)() {
     if m != nil {
         m.subjectId = value

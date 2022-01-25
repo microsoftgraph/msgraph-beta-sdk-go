@@ -8,9 +8,9 @@ import (
 type SessionLifetimePolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The human-readable details of the conditional access session management policy applied to the sign-in.
     detail *string;
-    // 
+    // If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.
     expirationRequirement *ExpirationRequirement;
 }
 // NewSessionLifetimePolicy instantiates a new sessionLifetimePolicy and sets the default values.
@@ -28,7 +28,7 @@ func (m *SessionLifetimePolicy) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDetail gets the detail property value. 
+// GetDetail gets the detail property value. The human-readable details of the conditional access session management policy applied to the sign-in.
 func (m *SessionLifetimePolicy) GetDetail()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *SessionLifetimePolicy) GetDetail()(*string) {
         return m.detail
     }
 }
-// GetExpirationRequirement gets the expirationRequirement property value. 
+// GetExpirationRequirement gets the expirationRequirement property value. If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.
 func (m *SessionLifetimePolicy) GetExpirationRequirement()(*ExpirationRequirement) {
     if m == nil {
         return nil
@@ -102,13 +102,13 @@ func (m *SessionLifetimePolicy) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetDetail sets the detail property value. 
+// SetDetail sets the detail property value. The human-readable details of the conditional access session management policy applied to the sign-in.
 func (m *SessionLifetimePolicy) SetDetail(value *string)() {
     if m != nil {
         m.detail = value
     }
 }
-// SetExpirationRequirement sets the expirationRequirement property value. 
+// SetExpirationRequirement sets the expirationRequirement property value. If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.
 func (m *SessionLifetimePolicy) SetExpirationRequirement(value *ExpirationRequirement)() {
     if m != nil {
         m.expirationRequirement = value

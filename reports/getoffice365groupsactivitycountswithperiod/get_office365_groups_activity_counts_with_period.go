@@ -11,11 +11,11 @@ type GetOffice365GroupsActivityCountsWithPeriod struct {
     // The number of emails received by Group mailboxes.
     exchangeEmailsReceived *int64;
     // The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group
-    reportDate *string;
+    reportDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of days the report covers.
     reportPeriod *string;
     // The latest date of the content.
-    reportRefreshDate *string;
+    reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of messages liked in Yammer groups.
     yammerMessagesLiked *int64;
     // The number of messages posted to Yammer groups.
@@ -39,7 +39,7 @@ func (m *GetOffice365GroupsActivityCountsWithPeriod) GetExchangeEmailsReceived()
     }
 }
 // GetReportDate gets the reportDate property value. The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group
-func (m *GetOffice365GroupsActivityCountsWithPeriod) GetReportDate()(*string) {
+func (m *GetOffice365GroupsActivityCountsWithPeriod) GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -55,7 +55,7 @@ func (m *GetOffice365GroupsActivityCountsWithPeriod) GetReportPeriod()(*string) 
     }
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365GroupsActivityCountsWithPeriod) GetReportRefreshDate()(*string) {
+func (m *GetOffice365GroupsActivityCountsWithPeriod) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -100,7 +100,7 @@ func (m *GetOffice365GroupsActivityCountsWithPeriod) GetFieldDeserializers()(map
         return nil
     }
     res["reportDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -120,7 +120,7 @@ func (m *GetOffice365GroupsActivityCountsWithPeriod) GetFieldDeserializers()(map
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -177,7 +177,7 @@ func (m *GetOffice365GroupsActivityCountsWithPeriod) Serialize(writer i04eb5309a
         }
     }
     {
-        err = writer.WriteStringValue("reportDate", m.GetReportDate())
+        err = writer.WriteDateOnlyValue("reportDate", m.GetReportDate())
         if err != nil {
             return err
         }
@@ -189,7 +189,7 @@ func (m *GetOffice365GroupsActivityCountsWithPeriod) Serialize(writer i04eb5309a
         }
     }
     {
-        err = writer.WriteStringValue("reportRefreshDate", m.GetReportRefreshDate())
+        err = writer.WriteDateOnlyValue("reportRefreshDate", m.GetReportRefreshDate())
         if err != nil {
             return err
         }
@@ -221,7 +221,7 @@ func (m *GetOffice365GroupsActivityCountsWithPeriod) SetExchangeEmailsReceived(v
     }
 }
 // SetReportDate sets the reportDate property value. The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group
-func (m *GetOffice365GroupsActivityCountsWithPeriod) SetReportDate(value *string)() {
+func (m *GetOffice365GroupsActivityCountsWithPeriod) SetReportDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportDate = value
     }
@@ -233,7 +233,7 @@ func (m *GetOffice365GroupsActivityCountsWithPeriod) SetReportPeriod(value *stri
     }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365GroupsActivityCountsWithPeriod) SetReportRefreshDate(value *string)() {
+func (m *GetOffice365GroupsActivityCountsWithPeriod) SetReportRefreshDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportRefreshDate = value
     }

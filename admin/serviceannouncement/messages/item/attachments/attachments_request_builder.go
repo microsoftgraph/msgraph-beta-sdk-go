@@ -26,7 +26,7 @@ type AttachmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AttachmentsRequestBuilderGetQueryParameters get attachments from admin
+// AttachmentsRequestBuilderGetQueryParameters a collection of serviceAnnouncementAttachments.
 type AttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAttachmentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams["request-raw-url"] = rawUrl
     return NewAttachmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get attachments from admin
+// CreateGetRequestInformation a collection of serviceAnnouncementAttachments.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformation(options *AttachmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AttachmentsRequestBuilder) CreateGetRequestInformation(options *Attachm
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to attachments for admin
+// CreatePostRequestInformation a collection of serviceAnnouncementAttachments.
 func (m *AttachmentsRequestBuilder) CreatePostRequestInformation(options *AttachmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AttachmentsRequestBuilder) CreatePostRequestInformation(options *Attach
     }
     return requestInfo, nil
 }
-// Get get attachments from admin
+// Get a collection of serviceAnnouncementAttachments.
 func (m *AttachmentsRequestBuilder) Get(options *AttachmentsRequestBuilderGetOptions)(*AttachmentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AttachmentsRequestBuilder) Get(options *AttachmentsRequestBuilderGetOpt
     }
     return res.(*AttachmentsResponse), nil
 }
-// Post create new navigation property to attachments for admin
+// Post a collection of serviceAnnouncementAttachments.
 func (m *AttachmentsRequestBuilder) Post(options *AttachmentsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ServiceAnnouncementAttachment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

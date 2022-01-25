@@ -9,9 +9,9 @@ type BookingWorkTimeSlot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The time of the day when work stops. For example, 17:00:00.0000000.
-    end *string;
+    end *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // The time of the day when work starts. For example, 08:00:00.0000000.
-    start *string;
+    start *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
 }
 // NewBookingWorkTimeSlot instantiates a new bookingWorkTimeSlot and sets the default values.
 func NewBookingWorkTimeSlot()(*BookingWorkTimeSlot) {
@@ -29,7 +29,7 @@ func (m *BookingWorkTimeSlot) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetEnd gets the end property value. The time of the day when work stops. For example, 17:00:00.0000000.
-func (m *BookingWorkTimeSlot) GetEnd()(*string) {
+func (m *BookingWorkTimeSlot) GetEnd()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -37,7 +37,7 @@ func (m *BookingWorkTimeSlot) GetEnd()(*string) {
     }
 }
 // GetStart gets the start property value. The time of the day when work starts. For example, 08:00:00.0000000.
-func (m *BookingWorkTimeSlot) GetStart()(*string) {
+func (m *BookingWorkTimeSlot) GetStart()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -48,7 +48,7 @@ func (m *BookingWorkTimeSlot) GetStart()(*string) {
 func (m *BookingWorkTimeSlot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["end"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -58,7 +58,7 @@ func (m *BookingWorkTimeSlot) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["start"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -75,13 +75,13 @@ func (m *BookingWorkTimeSlot) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *BookingWorkTimeSlot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("end", m.GetEnd())
+        err := writer.WriteTimeOnlyValue("end", m.GetEnd())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("start", m.GetStart())
+        err := writer.WriteTimeOnlyValue("start", m.GetStart())
         if err != nil {
             return err
         }
@@ -101,13 +101,13 @@ func (m *BookingWorkTimeSlot) SetAdditionalData(value map[string]interface{})() 
     }
 }
 // SetEnd sets the end property value. The time of the day when work stops. For example, 17:00:00.0000000.
-func (m *BookingWorkTimeSlot) SetEnd(value *string)() {
+func (m *BookingWorkTimeSlot) SetEnd(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.end = value
     }
 }
 // SetStart sets the start property value. The time of the day when work starts. For example, 08:00:00.0000000.
-func (m *BookingWorkTimeSlot) SetStart(value *string)() {
+func (m *BookingWorkTimeSlot) SetStart(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.start = value
     }

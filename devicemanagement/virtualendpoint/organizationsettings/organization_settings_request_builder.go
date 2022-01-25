@@ -35,7 +35,7 @@ type OrganizationSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// OrganizationSettingsRequestBuilderGetQueryParameters get organizationSettings from deviceManagement
+// OrganizationSettingsRequestBuilderGetQueryParameters the Cloud PC organization settings for a tenant.
 type OrganizationSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewOrganizationSettingsRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams["request-raw-url"] = rawUrl
     return NewOrganizationSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property organizationSettings for deviceManagement
+// CreateDeleteRequestInformation the Cloud PC organization settings for a tenant.
 func (m *OrganizationSettingsRequestBuilder) CreateDeleteRequestInformation(options *OrganizationSettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *OrganizationSettingsRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get organizationSettings from deviceManagement
+// CreateGetRequestInformation the Cloud PC organization settings for a tenant.
 func (m *OrganizationSettingsRequestBuilder) CreateGetRequestInformation(options *OrganizationSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *OrganizationSettingsRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property organizationSettings in deviceManagement
+// CreatePatchRequestInformation the Cloud PC organization settings for a tenant.
 func (m *OrganizationSettingsRequestBuilder) CreatePatchRequestInformation(options *OrganizationSettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *OrganizationSettingsRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete delete navigation property organizationSettings for deviceManagement
+// Delete the Cloud PC organization settings for a tenant.
 func (m *OrganizationSettingsRequestBuilder) Delete(options *OrganizationSettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *OrganizationSettingsRequestBuilder) Delete(options *OrganizationSetting
     }
     return nil
 }
-// Get get organizationSettings from deviceManagement
+// Get the Cloud PC organization settings for a tenant.
 func (m *OrganizationSettingsRequestBuilder) Get(options *OrganizationSettingsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcOrganizationSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *OrganizationSettingsRequestBuilder) Get(options *OrganizationSettingsRe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcOrganizationSettings), nil
 }
-// Patch update the navigation property organizationSettings in deviceManagement
+// Patch the Cloud PC organization settings for a tenant.
 func (m *OrganizationSettingsRequestBuilder) Patch(options *OrganizationSettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

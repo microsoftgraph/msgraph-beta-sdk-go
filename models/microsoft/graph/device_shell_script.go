@@ -21,7 +21,7 @@ type DeviceShellScript struct {
     // Name of the device management script.
     displayName *string;
     // The interval for script to run. If not defined the script will run once
-    executionFrequency *string;
+    executionFrequency *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Script file name.
     fileName *string;
     // The list of group assignments for the device management script.
@@ -97,7 +97,7 @@ func (m *DeviceShellScript) GetDisplayName()(*string) {
     }
 }
 // GetExecutionFrequency gets the executionFrequency property value. The interval for script to run. If not defined the script will run once
-func (m *DeviceShellScript) GetExecutionFrequency()(*string) {
+func (m *DeviceShellScript) GetExecutionFrequency()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -248,7 +248,7 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["executionFrequency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -418,7 +418,7 @@ func (m *DeviceShellScript) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     {
-        err = writer.WriteStringValue("executionFrequency", m.GetExecutionFrequency())
+        err = writer.WriteISODurationValue("executionFrequency", m.GetExecutionFrequency())
         if err != nil {
             return err
         }
@@ -527,7 +527,7 @@ func (m *DeviceShellScript) SetDisplayName(value *string)() {
     }
 }
 // SetExecutionFrequency sets the executionFrequency property value. The interval for script to run. If not defined the script will run once
-func (m *DeviceShellScript) SetExecutionFrequency(value *string)() {
+func (m *DeviceShellScript) SetExecutionFrequency(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.executionFrequency = value
     }

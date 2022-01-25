@@ -14,7 +14,7 @@ type SignIn struct {
     appId *string;
     // A list of conditional access policies that are triggered by the corresponding sign-in activity.
     appliedConditionalAccessPolicies []AppliedConditionalAccessPolicy;
-    // 
+    // Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
     authenticationContextClassReferences []AuthenticationContext;
     // The result of the authentication attempt and additional details on the authentication method.
     authenticationDetails []AuthenticationDetail;
@@ -30,7 +30,7 @@ type SignIn struct {
     authenticationRequirementPolicies []AuthenticationRequirementPolicy;
     // The Autonomous System Number (ASN) of the network used by the actor.
     autonomousSystemNumber *int32;
-    // 
+    // Contains a fully qualified Azure Resource Manager ID of an Azure resource accessed during the sign-in.
     azureResourceId *string;
     // The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
     clientAppUsed *string;
@@ -44,7 +44,7 @@ type SignIn struct {
     crossTenantAccessType *SignInAccessType;
     // The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSystem properties.
     deviceDetail *DeviceDetail;
-    // 
+    // Contains the identifier of an application's federated identity credential, if a federated identity credential was used to sign in.
     federatedCredentialId *string;
     // During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
     flaggedForReview *bool;
@@ -78,7 +78,7 @@ type SignIn struct {
     resourceDisplayName *string;
     // The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
     resourceId *string;
-    // 
+    // The identifier of the service principal representing the target resource in the sign-in event.
     resourceServicePrincipalId *string;
     // The tenant identifier of the resource referenced in the sign in.
     resourceTenantId *string;
@@ -100,7 +100,7 @@ type SignIn struct {
     servicePrincipalId *string;
     // The application name used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
     servicePrincipalName *string;
-    // 
+    // Any conditional access session management policies that were applied during the sign-in event.
     sessionLifetimePolicies []SessionLifetimePolicy;
     // Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq operator only).
     signInEventTypes []string;
@@ -112,7 +112,7 @@ type SignIn struct {
     status *SignInStatus;
     // The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).
     tokenIssuerName *string;
-    // The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: AzureADBackupAuth.
+    // The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
     tokenIssuerType *TokenIssuerType;
     // A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
     uniqueTokenIdentifier *string;
@@ -158,7 +158,7 @@ func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAcces
         return m.appliedConditionalAccessPolicies
     }
 }
-// GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. 
+// GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
 func (m *SignIn) GetAuthenticationContextClassReferences()([]AuthenticationContext) {
     if m == nil {
         return nil
@@ -222,7 +222,7 @@ func (m *SignIn) GetAutonomousSystemNumber()(*int32) {
         return m.autonomousSystemNumber
     }
 }
-// GetAzureResourceId gets the azureResourceId property value. 
+// GetAzureResourceId gets the azureResourceId property value. Contains a fully qualified Azure Resource Manager ID of an Azure resource accessed during the sign-in.
 func (m *SignIn) GetAzureResourceId()(*string) {
     if m == nil {
         return nil
@@ -278,7 +278,7 @@ func (m *SignIn) GetDeviceDetail()(*DeviceDetail) {
         return m.deviceDetail
     }
 }
-// GetFederatedCredentialId gets the federatedCredentialId property value. 
+// GetFederatedCredentialId gets the federatedCredentialId property value. Contains the identifier of an application's federated identity credential, if a federated identity credential was used to sign in.
 func (m *SignIn) GetFederatedCredentialId()(*string) {
     if m == nil {
         return nil
@@ -414,7 +414,7 @@ func (m *SignIn) GetResourceId()(*string) {
         return m.resourceId
     }
 }
-// GetResourceServicePrincipalId gets the resourceServicePrincipalId property value. 
+// GetResourceServicePrincipalId gets the resourceServicePrincipalId property value. The identifier of the service principal representing the target resource in the sign-in event.
 func (m *SignIn) GetResourceServicePrincipalId()(*string) {
     if m == nil {
         return nil
@@ -502,7 +502,7 @@ func (m *SignIn) GetServicePrincipalName()(*string) {
         return m.servicePrincipalName
     }
 }
-// GetSessionLifetimePolicies gets the sessionLifetimePolicies property value. 
+// GetSessionLifetimePolicies gets the sessionLifetimePolicies property value. Any conditional access session management policies that were applied during the sign-in event.
 func (m *SignIn) GetSessionLifetimePolicies()([]SessionLifetimePolicy) {
     if m == nil {
         return nil
@@ -550,7 +550,7 @@ func (m *SignIn) GetTokenIssuerName()(*string) {
         return m.tokenIssuerName
     }
 }
-// GetTokenIssuerType gets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: AzureADBackupAuth.
+// GetTokenIssuerType gets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
 func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
     if m == nil {
         return nil
@@ -1681,7 +1681,7 @@ func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalA
         m.appliedConditionalAccessPolicies = value
     }
 }
-// SetAuthenticationContextClassReferences sets the authenticationContextClassReferences property value. 
+// SetAuthenticationContextClassReferences sets the authenticationContextClassReferences property value. Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
 func (m *SignIn) SetAuthenticationContextClassReferences(value []AuthenticationContext)() {
     if m != nil {
         m.authenticationContextClassReferences = value
@@ -1729,7 +1729,7 @@ func (m *SignIn) SetAutonomousSystemNumber(value *int32)() {
         m.autonomousSystemNumber = value
     }
 }
-// SetAzureResourceId sets the azureResourceId property value. 
+// SetAzureResourceId sets the azureResourceId property value. Contains a fully qualified Azure Resource Manager ID of an Azure resource accessed during the sign-in.
 func (m *SignIn) SetAzureResourceId(value *string)() {
     if m != nil {
         m.azureResourceId = value
@@ -1771,7 +1771,7 @@ func (m *SignIn) SetDeviceDetail(value *DeviceDetail)() {
         m.deviceDetail = value
     }
 }
-// SetFederatedCredentialId sets the federatedCredentialId property value. 
+// SetFederatedCredentialId sets the federatedCredentialId property value. Contains the identifier of an application's federated identity credential, if a federated identity credential was used to sign in.
 func (m *SignIn) SetFederatedCredentialId(value *string)() {
     if m != nil {
         m.federatedCredentialId = value
@@ -1873,7 +1873,7 @@ func (m *SignIn) SetResourceId(value *string)() {
         m.resourceId = value
     }
 }
-// SetResourceServicePrincipalId sets the resourceServicePrincipalId property value. 
+// SetResourceServicePrincipalId sets the resourceServicePrincipalId property value. The identifier of the service principal representing the target resource in the sign-in event.
 func (m *SignIn) SetResourceServicePrincipalId(value *string)() {
     if m != nil {
         m.resourceServicePrincipalId = value
@@ -1939,7 +1939,7 @@ func (m *SignIn) SetServicePrincipalName(value *string)() {
         m.servicePrincipalName = value
     }
 }
-// SetSessionLifetimePolicies sets the sessionLifetimePolicies property value. 
+// SetSessionLifetimePolicies sets the sessionLifetimePolicies property value. Any conditional access session management policies that were applied during the sign-in event.
 func (m *SignIn) SetSessionLifetimePolicies(value []SessionLifetimePolicy)() {
     if m != nil {
         m.sessionLifetimePolicies = value
@@ -1975,7 +1975,7 @@ func (m *SignIn) SetTokenIssuerName(value *string)() {
         m.tokenIssuerName = value
     }
 }
-// SetTokenIssuerType sets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: AzureADBackupAuth.
+// SetTokenIssuerType sets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
 func (m *SignIn) SetTokenIssuerType(value *TokenIssuerType)() {
     if m != nil {
         m.tokenIssuerType = value

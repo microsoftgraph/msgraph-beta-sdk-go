@@ -40,7 +40,7 @@ type ManagedAppProtection struct {
     // Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
     fingerprintBlocked *bool;
     // A grace period before blocking app access during off clock hours.
-    gracePeriodToBlockAppsDuringOffClockHours *string;
+    gracePeriodToBlockAppsDuringOffClockHours *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
     managedBrowser *ManagedBrowserType;
     // Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
@@ -76,19 +76,19 @@ type ManagedAppProtection struct {
     // Indicates whether organizational credentials are required for app use.
     organizationalCredentialsRequired *bool;
     // TimePeriod before the all-level pin must be reset if PinRequired is set to True.
-    periodBeforePinReset *string;
+    periodBeforePinReset *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The period after which access is checked when the device is not connected to the internet.
-    periodOfflineBeforeAccessCheck *string;
+    periodOfflineBeforeAccessCheck *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
-    periodOfflineBeforeWipeIsEnforced *string;
+    periodOfflineBeforeWipeIsEnforced *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The period after which access is checked when the device is connected to the internet.
-    periodOnlineBeforeAccessCheck *string;
+    periodOnlineBeforeAccessCheck *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
     pinCharacterSet *ManagedAppPinCharacterSet;
     // Indicates whether an app-level pin is required.
     pinRequired *bool;
     // Timeout in minutes for an app pin instead of non biometrics passcode
-    pinRequiredInsteadOfBiometricTimeout *string;
+    pinRequiredInsteadOfBiometricTimeout *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Requires a pin to be unique from the number specified in this property.
     previousPinBlockCount *int32;
     // Indicates whether printing is allowed from managed apps.
@@ -234,7 +234,7 @@ func (m *ManagedAppProtection) GetFingerprintBlocked()(*bool) {
     }
 }
 // GetGracePeriodToBlockAppsDuringOffClockHours gets the gracePeriodToBlockAppsDuringOffClockHours property value. A grace period before blocking app access during off clock hours.
-func (m *ManagedAppProtection) GetGracePeriodToBlockAppsDuringOffClockHours()(*string) {
+func (m *ManagedAppProtection) GetGracePeriodToBlockAppsDuringOffClockHours()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -378,7 +378,7 @@ func (m *ManagedAppProtection) GetOrganizationalCredentialsRequired()(*bool) {
     }
 }
 // GetPeriodBeforePinReset gets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
-func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*string) {
+func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -386,7 +386,7 @@ func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*string) {
     }
 }
 // GetPeriodOfflineBeforeAccessCheck gets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
-func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*string) {
+func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -394,7 +394,7 @@ func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*string) {
     }
 }
 // GetPeriodOfflineBeforeWipeIsEnforced gets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
-func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*string) {
+func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -402,7 +402,7 @@ func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*string) {
     }
 }
 // GetPeriodOnlineBeforeAccessCheck gets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
-func (m *ManagedAppProtection) GetPeriodOnlineBeforeAccessCheck()(*string) {
+func (m *ManagedAppProtection) GetPeriodOnlineBeforeAccessCheck()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -426,7 +426,7 @@ func (m *ManagedAppProtection) GetPinRequired()(*bool) {
     }
 }
 // GetPinRequiredInsteadOfBiometricTimeout gets the pinRequiredInsteadOfBiometricTimeout property value. Timeout in minutes for an app pin instead of non biometrics passcode
-func (m *ManagedAppProtection) GetPinRequiredInsteadOfBiometricTimeout()(*string) {
+func (m *ManagedAppProtection) GetPinRequiredInsteadOfBiometricTimeout()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -644,7 +644,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["gracePeriodToBlockAppsDuringOffClockHours"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -828,7 +828,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["periodBeforePinReset"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -838,7 +838,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["periodOfflineBeforeAccessCheck"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -848,7 +848,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["periodOfflineBeforeWipeIsEnforced"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -858,7 +858,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["periodOnlineBeforeAccessCheck"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -889,7 +889,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["pinRequiredInsteadOfBiometricTimeout"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -1053,7 +1053,7 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     {
-        err = writer.WriteStringValue("gracePeriodToBlockAppsDuringOffClockHours", m.GetGracePeriodToBlockAppsDuringOffClockHours())
+        err = writer.WriteISODurationValue("gracePeriodToBlockAppsDuringOffClockHours", m.GetGracePeriodToBlockAppsDuringOffClockHours())
         if err != nil {
             return err
         }
@@ -1165,25 +1165,25 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     {
-        err = writer.WriteStringValue("periodBeforePinReset", m.GetPeriodBeforePinReset())
+        err = writer.WriteISODurationValue("periodBeforePinReset", m.GetPeriodBeforePinReset())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("periodOfflineBeforeAccessCheck", m.GetPeriodOfflineBeforeAccessCheck())
+        err = writer.WriteISODurationValue("periodOfflineBeforeAccessCheck", m.GetPeriodOfflineBeforeAccessCheck())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("periodOfflineBeforeWipeIsEnforced", m.GetPeriodOfflineBeforeWipeIsEnforced())
+        err = writer.WriteISODurationValue("periodOfflineBeforeWipeIsEnforced", m.GetPeriodOfflineBeforeWipeIsEnforced())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("periodOnlineBeforeAccessCheck", m.GetPeriodOnlineBeforeAccessCheck())
+        err = writer.WriteISODurationValue("periodOnlineBeforeAccessCheck", m.GetPeriodOnlineBeforeAccessCheck())
         if err != nil {
             return err
         }
@@ -1202,7 +1202,7 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     {
-        err = writer.WriteStringValue("pinRequiredInsteadOfBiometricTimeout", m.GetPinRequiredInsteadOfBiometricTimeout())
+        err = writer.WriteISODurationValue("pinRequiredInsteadOfBiometricTimeout", m.GetPinRequiredInsteadOfBiometricTimeout())
         if err != nil {
             return err
         }
@@ -1330,7 +1330,7 @@ func (m *ManagedAppProtection) SetFingerprintBlocked(value *bool)() {
     }
 }
 // SetGracePeriodToBlockAppsDuringOffClockHours sets the gracePeriodToBlockAppsDuringOffClockHours property value. A grace period before blocking app access during off clock hours.
-func (m *ManagedAppProtection) SetGracePeriodToBlockAppsDuringOffClockHours(value *string)() {
+func (m *ManagedAppProtection) SetGracePeriodToBlockAppsDuringOffClockHours(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.gracePeriodToBlockAppsDuringOffClockHours = value
     }
@@ -1438,25 +1438,25 @@ func (m *ManagedAppProtection) SetOrganizationalCredentialsRequired(value *bool)
     }
 }
 // SetPeriodBeforePinReset sets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
-func (m *ManagedAppProtection) SetPeriodBeforePinReset(value *string)() {
+func (m *ManagedAppProtection) SetPeriodBeforePinReset(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.periodBeforePinReset = value
     }
 }
 // SetPeriodOfflineBeforeAccessCheck sets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
-func (m *ManagedAppProtection) SetPeriodOfflineBeforeAccessCheck(value *string)() {
+func (m *ManagedAppProtection) SetPeriodOfflineBeforeAccessCheck(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.periodOfflineBeforeAccessCheck = value
     }
 }
 // SetPeriodOfflineBeforeWipeIsEnforced sets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
-func (m *ManagedAppProtection) SetPeriodOfflineBeforeWipeIsEnforced(value *string)() {
+func (m *ManagedAppProtection) SetPeriodOfflineBeforeWipeIsEnforced(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.periodOfflineBeforeWipeIsEnforced = value
     }
 }
 // SetPeriodOnlineBeforeAccessCheck sets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
-func (m *ManagedAppProtection) SetPeriodOnlineBeforeAccessCheck(value *string)() {
+func (m *ManagedAppProtection) SetPeriodOnlineBeforeAccessCheck(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.periodOnlineBeforeAccessCheck = value
     }
@@ -1474,7 +1474,7 @@ func (m *ManagedAppProtection) SetPinRequired(value *bool)() {
     }
 }
 // SetPinRequiredInsteadOfBiometricTimeout sets the pinRequiredInsteadOfBiometricTimeout property value. Timeout in minutes for an app pin instead of non biometrics passcode
-func (m *ManagedAppProtection) SetPinRequiredInsteadOfBiometricTimeout(value *string)() {
+func (m *ManagedAppProtection) SetPinRequiredInsteadOfBiometricTimeout(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.pinRequiredInsteadOfBiometricTimeout = value
     }

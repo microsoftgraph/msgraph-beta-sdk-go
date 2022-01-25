@@ -35,7 +35,7 @@ type RichLongRunningOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// RichLongRunningOperationRequestBuilderGetQueryParameters get operations from sites
+// RichLongRunningOperationRequestBuilderGetQueryParameters the collection of long running operations for the site.
 type RichLongRunningOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewRichLongRunningOperationRequestBuilder(rawUrl string, requestAdapter ida
     urlParams["request-raw-url"] = rawUrl
     return NewRichLongRunningOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property operations for sites
+// CreateDeleteRequestInformation the collection of long running operations for the site.
 func (m *RichLongRunningOperationRequestBuilder) CreateDeleteRequestInformation(options *RichLongRunningOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *RichLongRunningOperationRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get operations from sites
+// CreateGetRequestInformation the collection of long running operations for the site.
 func (m *RichLongRunningOperationRequestBuilder) CreateGetRequestInformation(options *RichLongRunningOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *RichLongRunningOperationRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property operations in sites
+// CreatePatchRequestInformation the collection of long running operations for the site.
 func (m *RichLongRunningOperationRequestBuilder) CreatePatchRequestInformation(options *RichLongRunningOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *RichLongRunningOperationRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// Delete delete navigation property operations for sites
+// Delete the collection of long running operations for the site.
 func (m *RichLongRunningOperationRequestBuilder) Delete(options *RichLongRunningOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *RichLongRunningOperationRequestBuilder) Delete(options *RichLongRunning
     }
     return nil
 }
-// Get get operations from sites
+// Get the collection of long running operations for the site.
 func (m *RichLongRunningOperationRequestBuilder) Get(options *RichLongRunningOperationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RichLongRunningOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *RichLongRunningOperationRequestBuilder) Get(options *RichLongRunningOpe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RichLongRunningOperation), nil
 }
-// Patch update the navigation property operations in sites
+// Patch the collection of long running operations for the site.
 func (m *RichLongRunningOperationRequestBuilder) Patch(options *RichLongRunningOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

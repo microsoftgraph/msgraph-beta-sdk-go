@@ -8,7 +8,7 @@ import (
 // GovernanceInsight 
 type GovernanceInsight struct {
     Entity
-    // 
+    // Indicates when the insight was created.
     insightCreatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
 // NewGovernanceInsight instantiates a new governanceInsight and sets the default values.
@@ -18,7 +18,7 @@ func NewGovernanceInsight()(*GovernanceInsight) {
     }
     return m
 }
-// GetInsightCreatedDateTime gets the insightCreatedDateTime property value. 
+// GetInsightCreatedDateTime gets the insightCreatedDateTime property value. Indicates when the insight was created.
 func (m *GovernanceInsight) GetInsightCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *GovernanceInsight) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// SetInsightCreatedDateTime sets the insightCreatedDateTime property value. 
+// SetInsightCreatedDateTime sets the insightCreatedDateTime property value. Indicates when the insight was created.
 func (m *GovernanceInsight) SetInsightCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.insightCreatedDateTime = value

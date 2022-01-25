@@ -20,10 +20,14 @@ type AccessReviewHistoryDefinition struct {
     downloadUri *string;
     // Timestamp when all of the available data for this definition was collected. This will be set after this definition's status is set to done.
     fulfilledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
+    instances []AccessReviewHistoryInstance;
     // Timestamp, reviews starting on or after this date will be included in the fetched history data. Required.
     reviewHistoryPeriodEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Timestamp, reviews starting on or before this date will be included in the fetched history data. Required.
     reviewHistoryPeriodStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
+    scheduleSettings *AccessReviewHistoryScheduleSettings;
     // Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
     scopes []AccessReviewScope;
     // Represents the status of the review history data collection. Possible values are: done, inprogress, error, requested.
@@ -84,6 +88,14 @@ func (m *AccessReviewHistoryDefinition) GetFulfilledDateTime()(*i336074805fc8539
         return m.fulfilledDateTime
     }
 }
+// GetInstances gets the instances property value. 
+func (m *AccessReviewHistoryDefinition) GetInstances()([]AccessReviewHistoryInstance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.instances
+    }
+}
 // GetReviewHistoryPeriodEndDateTime gets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews starting on or after this date will be included in the fetched history data. Required.
 func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -98,6 +110,14 @@ func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodStartDateTime()(*i
         return nil
     } else {
         return m.reviewHistoryPeriodStartDateTime
+    }
+}
+// GetScheduleSettings gets the scheduleSettings property value. 
+func (m *AccessReviewHistoryDefinition) GetScheduleSettings()(*AccessReviewHistoryScheduleSettings) {
+    if m == nil {
+        return nil
+    } else {
+        return m.scheduleSettings
     }
 }
 // GetScopes gets the scopes property value. Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
@@ -183,6 +203,20 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["instances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewHistoryInstance() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessReviewHistoryInstance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewHistoryInstance))
+            }
+            m.SetInstances(res)
+        }
+        return nil
+    }
     res["reviewHistoryPeriodEndDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -200,6 +234,16 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetReviewHistoryPeriodStartDateTime(val)
+        }
+        return nil
+    }
+    res["scheduleSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewHistoryScheduleSettings() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetScheduleSettings(val.(*AccessReviewHistoryScheduleSettings))
         }
         return nil
     }
@@ -276,6 +320,17 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInstances()))
+        for i, v := range m.GetInstances() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("instances", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("reviewHistoryPeriodEndDateTime", m.GetReviewHistoryPeriodEndDateTime())
         if err != nil {
             return err
@@ -283,6 +338,12 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i04eb5309aeaafadd28374d
     }
     {
         err = writer.WriteTimeValue("reviewHistoryPeriodStartDateTime", m.GetReviewHistoryPeriodStartDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("scheduleSettings", m.GetScheduleSettings())
         if err != nil {
             return err
         }
@@ -343,6 +404,12 @@ func (m *AccessReviewHistoryDefinition) SetFulfilledDateTime(value *i336074805fc
         m.fulfilledDateTime = value
     }
 }
+// SetInstances sets the instances property value. 
+func (m *AccessReviewHistoryDefinition) SetInstances(value []AccessReviewHistoryInstance)() {
+    if m != nil {
+        m.instances = value
+    }
+}
 // SetReviewHistoryPeriodEndDateTime sets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews starting on or after this date will be included in the fetched history data. Required.
 func (m *AccessReviewHistoryDefinition) SetReviewHistoryPeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
@@ -353,6 +420,12 @@ func (m *AccessReviewHistoryDefinition) SetReviewHistoryPeriodEndDateTime(value 
 func (m *AccessReviewHistoryDefinition) SetReviewHistoryPeriodStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.reviewHistoryPeriodStartDateTime = value
+    }
+}
+// SetScheduleSettings sets the scheduleSettings property value. 
+func (m *AccessReviewHistoryDefinition) SetScheduleSettings(value *AccessReviewHistoryScheduleSettings)() {
+    if m != nil {
+        m.scheduleSettings = value
     }
 }
 // SetScopes sets the scopes property value. Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.

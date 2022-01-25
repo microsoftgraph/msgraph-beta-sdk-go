@@ -14,7 +14,7 @@ type EducationSynchronizationProfile struct {
     // All errors associated with this synchronization profile.
     errors []EducationSynchronizationError;
     // The date the profile should be considered expired and cease syncing. When null. the profile will never expire. (optional)
-    expirationDate *string;
+    expirationDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.
     handleSpecialCharacterConstraint *bool;
     // 
@@ -58,7 +58,7 @@ func (m *EducationSynchronizationProfile) GetErrors()([]EducationSynchronization
     }
 }
 // GetExpirationDate gets the expirationDate property value. The date the profile should be considered expired and cease syncing. When null. the profile will never expire. (optional)
-func (m *EducationSynchronizationProfile) GetExpirationDate()(*string) {
+func (m *EducationSynchronizationProfile) GetExpirationDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -143,7 +143,7 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["expirationDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -242,7 +242,7 @@ func (m *EducationSynchronizationProfile) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     {
-        err = writer.WriteStringValue("expirationDate", m.GetExpirationDate())
+        err = writer.WriteDateOnlyValue("expirationDate", m.GetExpirationDate())
         if err != nil {
             return err
         }
@@ -304,7 +304,7 @@ func (m *EducationSynchronizationProfile) SetErrors(value []EducationSynchroniza
     }
 }
 // SetExpirationDate sets the expirationDate property value. The date the profile should be considered expired and cease syncing. When null. the profile will never expire. (optional)
-func (m *EducationSynchronizationProfile) SetExpirationDate(value *string)() {
+func (m *EducationSynchronizationProfile) SetExpirationDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.expirationDate = value
     }

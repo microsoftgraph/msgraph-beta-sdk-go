@@ -9,7 +9,7 @@ import (
 type SalesQuote struct {
     Entity
     // 
-    acceptedDate *string;
+    acceptedDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     billingPostalAddress *PostalAddressType;
     // 
@@ -35,9 +35,9 @@ type SalesQuote struct {
     // 
     discountAmount *float64;
     // 
-    documentDate *string;
+    documentDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
-    dueDate *string;
+    dueDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     email *string;
     // 
@@ -79,7 +79,7 @@ type SalesQuote struct {
     // 
     totalTaxAmount *float64;
     // 
-    validUntilDate *string;
+    validUntilDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
 }
 // NewSalesQuote instantiates a new salesQuote and sets the default values.
 func NewSalesQuote()(*SalesQuote) {
@@ -89,7 +89,7 @@ func NewSalesQuote()(*SalesQuote) {
     return m
 }
 // GetAcceptedDate gets the acceptedDate property value. 
-func (m *SalesQuote) GetAcceptedDate()(*string) {
+func (m *SalesQuote) GetAcceptedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -193,7 +193,7 @@ func (m *SalesQuote) GetDiscountAmount()(*float64) {
     }
 }
 // GetDocumentDate gets the documentDate property value. 
-func (m *SalesQuote) GetDocumentDate()(*string) {
+func (m *SalesQuote) GetDocumentDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -201,7 +201,7 @@ func (m *SalesQuote) GetDocumentDate()(*string) {
     }
 }
 // GetDueDate gets the dueDate property value. 
-func (m *SalesQuote) GetDueDate()(*string) {
+func (m *SalesQuote) GetDueDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -369,7 +369,7 @@ func (m *SalesQuote) GetTotalTaxAmount()(*float64) {
     }
 }
 // GetValidUntilDate gets the validUntilDate property value. 
-func (m *SalesQuote) GetValidUntilDate()(*string) {
+func (m *SalesQuote) GetValidUntilDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -380,7 +380,7 @@ func (m *SalesQuote) GetValidUntilDate()(*string) {
 func (m *SalesQuote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["acceptedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -510,7 +510,7 @@ func (m *SalesQuote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["documentDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -520,7 +520,7 @@ func (m *SalesQuote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["dueDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -734,7 +734,7 @@ func (m *SalesQuote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["validUntilDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -755,7 +755,7 @@ func (m *SalesQuote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         return err
     }
     {
-        err = writer.WriteStringValue("acceptedDate", m.GetAcceptedDate())
+        err = writer.WriteDateOnlyValue("acceptedDate", m.GetAcceptedDate())
         if err != nil {
             return err
         }
@@ -833,13 +833,13 @@ func (m *SalesQuote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err = writer.WriteStringValue("documentDate", m.GetDocumentDate())
+        err = writer.WriteDateOnlyValue("documentDate", m.GetDocumentDate())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("dueDate", m.GetDueDate())
+        err = writer.WriteDateOnlyValue("dueDate", m.GetDueDate())
         if err != nil {
             return err
         }
@@ -970,7 +970,7 @@ func (m *SalesQuote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err = writer.WriteStringValue("validUntilDate", m.GetValidUntilDate())
+        err = writer.WriteDateOnlyValue("validUntilDate", m.GetValidUntilDate())
         if err != nil {
             return err
         }
@@ -978,7 +978,7 @@ func (m *SalesQuote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     return nil
 }
 // SetAcceptedDate sets the acceptedDate property value. 
-func (m *SalesQuote) SetAcceptedDate(value *string)() {
+func (m *SalesQuote) SetAcceptedDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.acceptedDate = value
     }
@@ -1056,13 +1056,13 @@ func (m *SalesQuote) SetDiscountAmount(value *float64)() {
     }
 }
 // SetDocumentDate sets the documentDate property value. 
-func (m *SalesQuote) SetDocumentDate(value *string)() {
+func (m *SalesQuote) SetDocumentDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.documentDate = value
     }
 }
 // SetDueDate sets the dueDate property value. 
-func (m *SalesQuote) SetDueDate(value *string)() {
+func (m *SalesQuote) SetDueDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.dueDate = value
     }
@@ -1188,7 +1188,7 @@ func (m *SalesQuote) SetTotalTaxAmount(value *float64)() {
     }
 }
 // SetValidUntilDate sets the validUntilDate property value. 
-func (m *SalesQuote) SetValidUntilDate(value *string)() {
+func (m *SalesQuote) SetValidUntilDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.validUntilDate = value
     }

@@ -14,15 +14,15 @@ type PersonCertification struct {
     // Title of the certification.
     displayName *string;
     // The date that the certification expires.
-    endDate *string;
+    endDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The date that the certification was issued.
-    issuedDate *string;
+    issuedDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // Authority which granted the certification.
     issuingAuthority *string;
     // Company which granted the certification.
     issuingCompany *string;
     // The date that the certification became valid.
-    startDate *string;
+    startDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // URL referencing a thumbnail of the certification.
     thumbnailUrl *string;
     // URL referencing the certification.
@@ -60,7 +60,7 @@ func (m *PersonCertification) GetDisplayName()(*string) {
     }
 }
 // GetEndDate gets the endDate property value. The date that the certification expires.
-func (m *PersonCertification) GetEndDate()(*string) {
+func (m *PersonCertification) GetEndDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -68,7 +68,7 @@ func (m *PersonCertification) GetEndDate()(*string) {
     }
 }
 // GetIssuedDate gets the issuedDate property value. The date that the certification was issued.
-func (m *PersonCertification) GetIssuedDate()(*string) {
+func (m *PersonCertification) GetIssuedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -92,7 +92,7 @@ func (m *PersonCertification) GetIssuingCompany()(*string) {
     }
 }
 // GetStartDate gets the startDate property value. The date that the certification became valid.
-func (m *PersonCertification) GetStartDate()(*string) {
+func (m *PersonCertification) GetStartDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -149,7 +149,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["endDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -159,7 +159,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["issuedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -189,7 +189,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["startDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -248,13 +248,13 @@ func (m *PersonCertification) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err = writer.WriteStringValue("endDate", m.GetEndDate())
+        err = writer.WriteDateOnlyValue("endDate", m.GetEndDate())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("issuedDate", m.GetIssuedDate())
+        err = writer.WriteDateOnlyValue("issuedDate", m.GetIssuedDate())
         if err != nil {
             return err
         }
@@ -272,7 +272,7 @@ func (m *PersonCertification) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err = writer.WriteStringValue("startDate", m.GetStartDate())
+        err = writer.WriteDateOnlyValue("startDate", m.GetStartDate())
         if err != nil {
             return err
         }
@@ -310,13 +310,13 @@ func (m *PersonCertification) SetDisplayName(value *string)() {
     }
 }
 // SetEndDate sets the endDate property value. The date that the certification expires.
-func (m *PersonCertification) SetEndDate(value *string)() {
+func (m *PersonCertification) SetEndDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.endDate = value
     }
 }
 // SetIssuedDate sets the issuedDate property value. The date that the certification was issued.
-func (m *PersonCertification) SetIssuedDate(value *string)() {
+func (m *PersonCertification) SetIssuedDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.issuedDate = value
     }
@@ -334,7 +334,7 @@ func (m *PersonCertification) SetIssuingCompany(value *string)() {
     }
 }
 // SetStartDate sets the startDate property value. The date that the certification became valid.
-func (m *PersonCertification) SetStartDate(value *string)() {
+func (m *PersonCertification) SetStartDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.startDate = value
     }

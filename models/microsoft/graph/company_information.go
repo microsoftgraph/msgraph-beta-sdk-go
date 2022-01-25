@@ -13,7 +13,7 @@ type CompanyInformation struct {
     // 
     currencyCode *string;
     // 
-    currentFiscalYearStartDate *string;
+    currentFiscalYearStartDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     displayName *string;
     // 
@@ -57,7 +57,7 @@ func (m *CompanyInformation) GetCurrencyCode()(*string) {
     }
 }
 // GetCurrentFiscalYearStartDate gets the currentFiscalYearStartDate property value. 
-func (m *CompanyInformation) GetCurrentFiscalYearStartDate()(*string) {
+func (m *CompanyInformation) GetCurrentFiscalYearStartDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -160,7 +160,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["currentFiscalYearStartDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -283,7 +283,7 @@ func (m *CompanyInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err = writer.WriteStringValue("currentFiscalYearStartDate", m.GetCurrentFiscalYearStartDate())
+        err = writer.WriteDateOnlyValue("currentFiscalYearStartDate", m.GetCurrentFiscalYearStartDate())
         if err != nil {
             return err
         }
@@ -357,7 +357,7 @@ func (m *CompanyInformation) SetCurrencyCode(value *string)() {
     }
 }
 // SetCurrentFiscalYearStartDate sets the currentFiscalYearStartDate property value. 
-func (m *CompanyInformation) SetCurrentFiscalYearStartDate(value *string)() {
+func (m *CompanyInformation) SetCurrentFiscalYearStartDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.currentFiscalYearStartDate = value
     }

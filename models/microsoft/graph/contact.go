@@ -75,7 +75,7 @@ type Contact struct {
     // 
     websites []Website;
     // 
-    weddingAnniversary *string;
+    weddingAnniversary *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     yomiCompanyName *string;
     // 
@@ -355,7 +355,7 @@ func (m *Contact) GetWebsites()([]Website) {
     }
 }
 // GetWeddingAnniversary gets the weddingAnniversary property value. 
-func (m *Contact) GetWeddingAnniversary()(*string) {
+func (m *Contact) GetWeddingAnniversary()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -756,7 +756,7 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["weddingAnniversary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -1040,7 +1040,7 @@ func (m *Contact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     {
-        err = writer.WriteStringValue("weddingAnniversary", m.GetWeddingAnniversary())
+        err = writer.WriteDateOnlyValue("weddingAnniversary", m.GetWeddingAnniversary())
         if err != nil {
             return err
         }
@@ -1264,7 +1264,7 @@ func (m *Contact) SetWebsites(value []Website)() {
     }
 }
 // SetWeddingAnniversary sets the weddingAnniversary property value. 
-func (m *Contact) SetWeddingAnniversary(value *string)() {
+func (m *Contact) SetWeddingAnniversary(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.weddingAnniversary = value
     }

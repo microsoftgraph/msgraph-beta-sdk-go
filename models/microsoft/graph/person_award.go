@@ -12,7 +12,7 @@ type PersonAward struct {
     // Name of the award or honor.
     displayName *string;
     // The date that the award or honor was granted.
-    issuedDate *string;
+    issuedDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // Authority which granted the award or honor.
     issuingAuthority *string;
     // URL referencing a thumbnail of the award or honor.
@@ -44,7 +44,7 @@ func (m *PersonAward) GetDisplayName()(*string) {
     }
 }
 // GetIssuedDate gets the issuedDate property value. The date that the award or honor was granted.
-func (m *PersonAward) GetIssuedDate()(*string) {
+func (m *PersonAward) GetIssuedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -99,7 +99,7 @@ func (m *PersonAward) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["issuedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -162,7 +162,7 @@ func (m *PersonAward) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err = writer.WriteStringValue("issuedDate", m.GetIssuedDate())
+        err = writer.WriteDateOnlyValue("issuedDate", m.GetIssuedDate())
         if err != nil {
             return err
         }
@@ -200,7 +200,7 @@ func (m *PersonAward) SetDisplayName(value *string)() {
     }
 }
 // SetIssuedDate sets the issuedDate property value. The date that the award or honor was granted.
-func (m *PersonAward) SetIssuedDate(value *string)() {
+func (m *PersonAward) SetIssuedDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.issuedDate = value
     }
