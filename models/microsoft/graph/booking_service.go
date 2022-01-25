@@ -12,7 +12,7 @@ type BookingService struct {
     // Contains the set of custom questions associated with a particular service.
     customQuestions []BookingQuestionAssignment;
     // The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
-    defaultDuration *string;
+    defaultDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The default physical location for the service.
     defaultLocation *Location;
     // The default monetary price for the service.
@@ -32,9 +32,9 @@ type BookingService struct {
     // Additional information about this service.
     notes *string;
     // The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
-    postBuffer *string;
+    postBuffer *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The time to buffer before an appointment for this service can start.
-    preBuffer *string;
+    preBuffer *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The set of policies that determine how appointments for this type of service should be created and managed.
     schedulingPolicy *BookingSchedulingPolicy;
     // True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
@@ -68,7 +68,7 @@ func (m *BookingService) GetCustomQuestions()([]BookingQuestionAssignment) {
     }
 }
 // GetDefaultDuration gets the defaultDuration property value. The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
-func (m *BookingService) GetDefaultDuration()(*string) {
+func (m *BookingService) GetDefaultDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -148,7 +148,7 @@ func (m *BookingService) GetNotes()(*string) {
     }
 }
 // GetPostBuffer gets the postBuffer property value. The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
-func (m *BookingService) GetPostBuffer()(*string) {
+func (m *BookingService) GetPostBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -156,7 +156,7 @@ func (m *BookingService) GetPostBuffer()(*string) {
     }
 }
 // GetPreBuffer gets the preBuffer property value. The time to buffer before an appointment for this service can start.
-func (m *BookingService) GetPreBuffer()(*string) {
+func (m *BookingService) GetPreBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -223,7 +223,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["defaultDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -328,7 +328,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["postBuffer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -338,7 +338,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["preBuffer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -420,7 +420,7 @@ func (m *BookingService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
-        err = writer.WriteStringValue("defaultDuration", m.GetDefaultDuration())
+        err = writer.WriteISODurationValue("defaultDuration", m.GetDefaultDuration())
         if err != nil {
             return err
         }
@@ -486,13 +486,13 @@ func (m *BookingService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
-        err = writer.WriteStringValue("postBuffer", m.GetPostBuffer())
+        err = writer.WriteISODurationValue("postBuffer", m.GetPostBuffer())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("preBuffer", m.GetPreBuffer())
+        err = writer.WriteISODurationValue("preBuffer", m.GetPreBuffer())
         if err != nil {
             return err
         }
@@ -536,7 +536,7 @@ func (m *BookingService) SetCustomQuestions(value []BookingQuestionAssignment)()
     }
 }
 // SetDefaultDuration sets the defaultDuration property value. The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
-func (m *BookingService) SetDefaultDuration(value *string)() {
+func (m *BookingService) SetDefaultDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.defaultDuration = value
     }
@@ -596,13 +596,13 @@ func (m *BookingService) SetNotes(value *string)() {
     }
 }
 // SetPostBuffer sets the postBuffer property value. The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
-func (m *BookingService) SetPostBuffer(value *string)() {
+func (m *BookingService) SetPostBuffer(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.postBuffer = value
     }
 }
 // SetPreBuffer sets the preBuffer property value. The time to buffer before an appointment for this service can start.
-func (m *BookingService) SetPreBuffer(value *string)() {
+func (m *BookingService) SetPreBuffer(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.preBuffer = value
     }

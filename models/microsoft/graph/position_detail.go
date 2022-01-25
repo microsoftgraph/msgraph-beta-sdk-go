@@ -13,13 +13,13 @@ type PositionDetail struct {
     // Description of the position in question.
     description *string;
     // When the position ended.
-    endMonthYear *string;
+    endMonthYear *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The title held when in that position.
     jobTitle *string;
     // The role the position entailed.
     role *string;
     // The start month and year of the position.
-    startMonthYear *string;
+    startMonthYear *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // Short summary of the position.
     summary *string;
 }
@@ -55,7 +55,7 @@ func (m *PositionDetail) GetDescription()(*string) {
     }
 }
 // GetEndMonthYear gets the endMonthYear property value. When the position ended.
-func (m *PositionDetail) GetEndMonthYear()(*string) {
+func (m *PositionDetail) GetEndMonthYear()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -79,7 +79,7 @@ func (m *PositionDetail) GetRole()(*string) {
     }
 }
 // GetStartMonthYear gets the startMonthYear property value. The start month and year of the position.
-func (m *PositionDetail) GetStartMonthYear()(*string) {
+func (m *PositionDetail) GetStartMonthYear()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -118,7 +118,7 @@ func (m *PositionDetail) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["endMonthYear"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -148,7 +148,7 @@ func (m *PositionDetail) GetFieldDeserializers()(map[string]func(interface{}, i0
         return nil
     }
     res["startMonthYear"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -187,7 +187,7 @@ func (m *PositionDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
-        err := writer.WriteStringValue("endMonthYear", m.GetEndMonthYear())
+        err := writer.WriteDateOnlyValue("endMonthYear", m.GetEndMonthYear())
         if err != nil {
             return err
         }
@@ -205,7 +205,7 @@ func (m *PositionDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
-        err := writer.WriteStringValue("startMonthYear", m.GetStartMonthYear())
+        err := writer.WriteDateOnlyValue("startMonthYear", m.GetStartMonthYear())
         if err != nil {
             return err
         }
@@ -243,7 +243,7 @@ func (m *PositionDetail) SetDescription(value *string)() {
     }
 }
 // SetEndMonthYear sets the endMonthYear property value. When the position ended.
-func (m *PositionDetail) SetEndMonthYear(value *string)() {
+func (m *PositionDetail) SetEndMonthYear(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.endMonthYear = value
     }
@@ -261,7 +261,7 @@ func (m *PositionDetail) SetRole(value *string)() {
     }
 }
 // SetStartMonthYear sets the startMonthYear property value. The start month and year of the position.
-func (m *PositionDetail) SetStartMonthYear(value *string)() {
+func (m *PositionDetail) SetStartMonthYear(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.startMonthYear = value
     }

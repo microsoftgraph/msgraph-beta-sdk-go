@@ -10,7 +10,7 @@ type PasswordCredentialConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
-    maxLifetime *string;
+    maxLifetime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
     restrictForAppsCreatedAfterDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
@@ -32,7 +32,7 @@ func (m *PasswordCredentialConfiguration) GetAdditionalData()(map[string]interfa
     }
 }
 // GetMaxLifetime gets the maxLifetime property value. 
-func (m *PasswordCredentialConfiguration) GetMaxLifetime()(*string) {
+func (m *PasswordCredentialConfiguration) GetMaxLifetime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -59,7 +59,7 @@ func (m *PasswordCredentialConfiguration) GetRestrictionType()(*AppCredentialRes
 func (m *PasswordCredentialConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["maxLifetime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -97,7 +97,7 @@ func (m *PasswordCredentialConfiguration) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *PasswordCredentialConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("maxLifetime", m.GetMaxLifetime())
+        err := writer.WriteISODurationValue("maxLifetime", m.GetMaxLifetime())
         if err != nil {
             return err
         }
@@ -130,7 +130,7 @@ func (m *PasswordCredentialConfiguration) SetAdditionalData(value map[string]int
     }
 }
 // SetMaxLifetime sets the maxLifetime property value. 
-func (m *PasswordCredentialConfiguration) SetMaxLifetime(value *string)() {
+func (m *PasswordCredentialConfiguration) SetMaxLifetime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.maxLifetime = value
     }

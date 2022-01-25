@@ -10,11 +10,11 @@ type ActivityStatistics struct {
     // The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
     activity *AnalyticsActivityType;
     // Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
-    duration *string;
+    duration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-03' that follows the YYYY-MM-DD format.
-    endDate *string;
+    endDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-04' that follows the YYYY-MM-DD format.
-    startDate *string;
+    startDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be 'Pacific Standard Time.'
     timeZoneUsed *string;
 }
@@ -34,7 +34,7 @@ func (m *ActivityStatistics) GetActivity()(*AnalyticsActivityType) {
     }
 }
 // GetDuration gets the duration property value. Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
-func (m *ActivityStatistics) GetDuration()(*string) {
+func (m *ActivityStatistics) GetDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -42,7 +42,7 @@ func (m *ActivityStatistics) GetDuration()(*string) {
     }
 }
 // GetEndDate gets the endDate property value. Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-03' that follows the YYYY-MM-DD format.
-func (m *ActivityStatistics) GetEndDate()(*string) {
+func (m *ActivityStatistics) GetEndDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -50,7 +50,7 @@ func (m *ActivityStatistics) GetEndDate()(*string) {
     }
 }
 // GetStartDate gets the startDate property value. Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-04' that follows the YYYY-MM-DD format.
-func (m *ActivityStatistics) GetStartDate()(*string) {
+func (m *ActivityStatistics) GetStartDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["duration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -90,7 +90,7 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["endDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -100,7 +100,7 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["startDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -138,19 +138,19 @@ func (m *ActivityStatistics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err = writer.WriteStringValue("duration", m.GetDuration())
+        err = writer.WriteISODurationValue("duration", m.GetDuration())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("endDate", m.GetEndDate())
+        err = writer.WriteDateOnlyValue("endDate", m.GetEndDate())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("startDate", m.GetStartDate())
+        err = writer.WriteDateOnlyValue("startDate", m.GetStartDate())
         if err != nil {
             return err
         }
@@ -170,19 +170,19 @@ func (m *ActivityStatistics) SetActivity(value *AnalyticsActivityType)() {
     }
 }
 // SetDuration sets the duration property value. Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
-func (m *ActivityStatistics) SetDuration(value *string)() {
+func (m *ActivityStatistics) SetDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.duration = value
     }
 }
 // SetEndDate sets the endDate property value. Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-03' that follows the YYYY-MM-DD format.
-func (m *ActivityStatistics) SetEndDate(value *string)() {
+func (m *ActivityStatistics) SetEndDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.endDate = value
     }
 }
 // SetStartDate sets the startDate property value. Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-04' that follows the YYYY-MM-DD format.
-func (m *ActivityStatistics) SetStartDate(value *string)() {
+func (m *ActivityStatistics) SetStartDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.startDate = value
     }

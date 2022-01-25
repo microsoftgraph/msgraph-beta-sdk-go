@@ -10,9 +10,9 @@ type CloudPcGalleryImage struct {
     // The official display name of the gallery image. Read-only.
     displayName *string;
     // The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
-    endDate *string;
+    endDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The date when the image is no longer available. Read-only.
-    expirationDate *string;
+    expirationDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
     offer *string;
     // The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.
@@ -28,7 +28,7 @@ type CloudPcGalleryImage struct {
     // The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.
     skuDisplayName *string;
     // The date when the image becomes available. Read-only.
-    startDate *string;
+    startDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. Read-only.
     status *CloudPcGalleryImageStatus;
 }
@@ -48,7 +48,7 @@ func (m *CloudPcGalleryImage) GetDisplayName()(*string) {
     }
 }
 // GetEndDate gets the endDate property value. The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
-func (m *CloudPcGalleryImage) GetEndDate()(*string) {
+func (m *CloudPcGalleryImage) GetEndDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -56,7 +56,7 @@ func (m *CloudPcGalleryImage) GetEndDate()(*string) {
     }
 }
 // GetExpirationDate gets the expirationDate property value. The date when the image is no longer available. Read-only.
-func (m *CloudPcGalleryImage) GetExpirationDate()(*string) {
+func (m *CloudPcGalleryImage) GetExpirationDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -120,7 +120,7 @@ func (m *CloudPcGalleryImage) GetSkuDisplayName()(*string) {
     }
 }
 // GetStartDate gets the startDate property value. The date when the image becomes available. Read-only.
-func (m *CloudPcGalleryImage) GetStartDate()(*string) {
+func (m *CloudPcGalleryImage) GetStartDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -149,7 +149,7 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["endDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -159,7 +159,7 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["expirationDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -239,7 +239,7 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["startDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -277,13 +277,13 @@ func (m *CloudPcGalleryImage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err = writer.WriteStringValue("endDate", m.GetEndDate())
+        err = writer.WriteDateOnlyValue("endDate", m.GetEndDate())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("expirationDate", m.GetExpirationDate())
+        err = writer.WriteDateOnlyValue("expirationDate", m.GetExpirationDate())
         if err != nil {
             return err
         }
@@ -331,7 +331,7 @@ func (m *CloudPcGalleryImage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err = writer.WriteStringValue("startDate", m.GetStartDate())
+        err = writer.WriteDateOnlyValue("startDate", m.GetStartDate())
         if err != nil {
             return err
         }
@@ -352,13 +352,13 @@ func (m *CloudPcGalleryImage) SetDisplayName(value *string)() {
     }
 }
 // SetEndDate sets the endDate property value. The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
-func (m *CloudPcGalleryImage) SetEndDate(value *string)() {
+func (m *CloudPcGalleryImage) SetEndDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.endDate = value
     }
 }
 // SetExpirationDate sets the expirationDate property value. The date when the image is no longer available. Read-only.
-func (m *CloudPcGalleryImage) SetExpirationDate(value *string)() {
+func (m *CloudPcGalleryImage) SetExpirationDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.expirationDate = value
     }
@@ -406,7 +406,7 @@ func (m *CloudPcGalleryImage) SetSkuDisplayName(value *string)() {
     }
 }
 // SetStartDate sets the startDate property value. The date when the image becomes available. Read-only.
-func (m *CloudPcGalleryImage) SetStartDate(value *string)() {
+func (m *CloudPcGalleryImage) SetStartDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.startDate = value
     }

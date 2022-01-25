@@ -11,13 +11,13 @@ type TeamworkDisplayScreenConfiguration struct {
     // 
     backlightBrightness *int32;
     // 
-    backlightTimeout *string;
+    backlightTimeout *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // 
     isHighContrastEnabled *bool;
     // 
     isScreensaverEnabled *bool;
     // 
-    screensaverTimeout *string;
+    screensaverTimeout *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
 }
 // NewTeamworkDisplayScreenConfiguration instantiates a new teamworkDisplayScreenConfiguration and sets the default values.
 func NewTeamworkDisplayScreenConfiguration()(*TeamworkDisplayScreenConfiguration) {
@@ -43,7 +43,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetBacklightBrightness()(*int32) {
     }
 }
 // GetBacklightTimeout gets the backlightTimeout property value. 
-func (m *TeamworkDisplayScreenConfiguration) GetBacklightTimeout()(*string) {
+func (m *TeamworkDisplayScreenConfiguration) GetBacklightTimeout()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -67,7 +67,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetIsScreensaverEnabled()(*bool) {
     }
 }
 // GetScreensaverTimeout gets the screensaverTimeout property value. 
-func (m *TeamworkDisplayScreenConfiguration) GetScreensaverTimeout()(*string) {
+func (m *TeamworkDisplayScreenConfiguration) GetScreensaverTimeout()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -88,7 +88,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]
         return nil
     }
     res["backlightTimeout"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -118,7 +118,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]
         return nil
     }
     res["screensaverTimeout"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -141,7 +141,7 @@ func (m *TeamworkDisplayScreenConfiguration) Serialize(writer i04eb5309aeaafadd2
         }
     }
     {
-        err := writer.WriteStringValue("backlightTimeout", m.GetBacklightTimeout())
+        err := writer.WriteISODurationValue("backlightTimeout", m.GetBacklightTimeout())
         if err != nil {
             return err
         }
@@ -159,7 +159,7 @@ func (m *TeamworkDisplayScreenConfiguration) Serialize(writer i04eb5309aeaafadd2
         }
     }
     {
-        err := writer.WriteStringValue("screensaverTimeout", m.GetScreensaverTimeout())
+        err := writer.WriteISODurationValue("screensaverTimeout", m.GetScreensaverTimeout())
         if err != nil {
             return err
         }
@@ -185,7 +185,7 @@ func (m *TeamworkDisplayScreenConfiguration) SetBacklightBrightness(value *int32
     }
 }
 // SetBacklightTimeout sets the backlightTimeout property value. 
-func (m *TeamworkDisplayScreenConfiguration) SetBacklightTimeout(value *string)() {
+func (m *TeamworkDisplayScreenConfiguration) SetBacklightTimeout(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.backlightTimeout = value
     }
@@ -203,7 +203,7 @@ func (m *TeamworkDisplayScreenConfiguration) SetIsScreensaverEnabled(value *bool
     }
 }
 // SetScreensaverTimeout sets the screensaverTimeout property value. 
-func (m *TeamworkDisplayScreenConfiguration) SetScreensaverTimeout(value *string)() {
+func (m *TeamworkDisplayScreenConfiguration) SetScreensaverTimeout(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.screensaverTimeout = value
     }

@@ -7,9 +7,9 @@ import (
 // CloudPcOrganizationSettings 
 type CloudPcOrganizationSettings struct {
     Entity
-    // 
+    // The account type of the user on provisioned Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
     osVersion *CloudPcOperatingSystem;
-    // 
+    // The version of the operating system (OS) to provision on Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
     userAccountType *CloudPcUserAccountType;
 }
 // NewCloudPcOrganizationSettings instantiates a new cloudPcOrganizationSettings and sets the default values.
@@ -19,7 +19,7 @@ func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
     }
     return m
 }
-// GetOsVersion gets the osVersion property value. 
+// GetOsVersion gets the osVersion property value. The account type of the user on provisioned Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) GetOsVersion()(*CloudPcOperatingSystem) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *CloudPcOrganizationSettings) GetOsVersion()(*CloudPcOperatingSystem) {
         return m.osVersion
     }
 }
-// GetUserAccountType gets the userAccountType property value. 
+// GetUserAccountType gets the userAccountType property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) GetUserAccountType()(*CloudPcUserAccountType) {
     if m == nil {
         return nil
@@ -87,13 +87,13 @@ func (m *CloudPcOrganizationSettings) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// SetOsVersion sets the osVersion property value. 
+// SetOsVersion sets the osVersion property value. The account type of the user on provisioned Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) SetOsVersion(value *CloudPcOperatingSystem)() {
     if m != nil {
         m.osVersion = value
     }
 }
-// SetUserAccountType sets the userAccountType property value. 
+// SetUserAccountType sets the userAccountType property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) SetUserAccountType(value *CloudPcUserAccountType)() {
     if m != nil {
         m.userAccountType = value

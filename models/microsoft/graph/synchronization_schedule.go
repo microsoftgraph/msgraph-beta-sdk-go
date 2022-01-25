@@ -12,7 +12,7 @@ type SynchronizationSchedule struct {
     // Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     expiration *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The interval between synchronization iterations.
-    interval *string;
+    interval *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Possible values are: Active, Disabled.
     state *SynchronizationScheduleState;
 }
@@ -40,7 +40,7 @@ func (m *SynchronizationSchedule) GetExpiration()(*i336074805fc853987abe6f7fe3ad
     }
 }
 // GetInterval gets the interval property value. The interval between synchronization iterations.
-func (m *SynchronizationSchedule) GetInterval()(*string) {
+func (m *SynchronizationSchedule) GetInterval()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -69,7 +69,7 @@ func (m *SynchronizationSchedule) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["interval"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -103,7 +103,7 @@ func (m *SynchronizationSchedule) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     {
-        err := writer.WriteStringValue("interval", m.GetInterval())
+        err := writer.WriteISODurationValue("interval", m.GetInterval())
         if err != nil {
             return err
         }
@@ -136,7 +136,7 @@ func (m *SynchronizationSchedule) SetExpiration(value *i336074805fc853987abe6f7f
     }
 }
 // SetInterval sets the interval property value. The interval between synchronization iterations.
-func (m *SynchronizationSchedule) SetInterval(value *string)() {
+func (m *SynchronizationSchedule) SetInterval(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.interval = value
     }

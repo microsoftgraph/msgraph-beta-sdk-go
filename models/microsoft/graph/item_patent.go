@@ -14,7 +14,7 @@ type ItemPatent struct {
     // Indicates the patent is pending.
     isPending *bool;
     // The date that the patent was granted.
-    issuedDate *string;
+    issuedDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // Authority which granted the patent.
     issuingAuthority *string;
     // The patent number.
@@ -54,7 +54,7 @@ func (m *ItemPatent) GetIsPending()(*bool) {
     }
 }
 // GetIssuedDate gets the issuedDate property value. The date that the patent was granted.
-func (m *ItemPatent) GetIssuedDate()(*string) {
+func (m *ItemPatent) GetIssuedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -119,7 +119,7 @@ func (m *ItemPatent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["issuedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -188,7 +188,7 @@ func (m *ItemPatent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err = writer.WriteStringValue("issuedDate", m.GetIssuedDate())
+        err = writer.WriteDateOnlyValue("issuedDate", m.GetIssuedDate())
         if err != nil {
             return err
         }
@@ -232,7 +232,7 @@ func (m *ItemPatent) SetIsPending(value *bool)() {
     }
 }
 // SetIssuedDate sets the issuedDate property value. The date that the patent was granted.
-func (m *ItemPatent) SetIssuedDate(value *string)() {
+func (m *ItemPatent) SetIssuedDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.issuedDate = value
     }

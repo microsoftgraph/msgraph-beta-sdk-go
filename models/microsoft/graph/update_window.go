@@ -9,9 +9,9 @@ type UpdateWindow struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // End of a time window during which agents can receive updates
-    updateWindowEndTime *string;
+    updateWindowEndTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // Start of a time window during which agents can receive updates
-    updateWindowStartTime *string;
+    updateWindowStartTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
 }
 // NewUpdateWindow instantiates a new updateWindow and sets the default values.
 func NewUpdateWindow()(*UpdateWindow) {
@@ -29,7 +29,7 @@ func (m *UpdateWindow) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetUpdateWindowEndTime gets the updateWindowEndTime property value. End of a time window during which agents can receive updates
-func (m *UpdateWindow) GetUpdateWindowEndTime()(*string) {
+func (m *UpdateWindow) GetUpdateWindowEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -37,7 +37,7 @@ func (m *UpdateWindow) GetUpdateWindowEndTime()(*string) {
     }
 }
 // GetUpdateWindowStartTime gets the updateWindowStartTime property value. Start of a time window during which agents can receive updates
-func (m *UpdateWindow) GetUpdateWindowStartTime()(*string) {
+func (m *UpdateWindow) GetUpdateWindowStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -48,7 +48,7 @@ func (m *UpdateWindow) GetUpdateWindowStartTime()(*string) {
 func (m *UpdateWindow) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["updateWindowEndTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -58,7 +58,7 @@ func (m *UpdateWindow) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["updateWindowStartTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -75,13 +75,13 @@ func (m *UpdateWindow) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *UpdateWindow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("updateWindowEndTime", m.GetUpdateWindowEndTime())
+        err := writer.WriteTimeOnlyValue("updateWindowEndTime", m.GetUpdateWindowEndTime())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("updateWindowStartTime", m.GetUpdateWindowStartTime())
+        err := writer.WriteTimeOnlyValue("updateWindowStartTime", m.GetUpdateWindowStartTime())
         if err != nil {
             return err
         }
@@ -101,13 +101,13 @@ func (m *UpdateWindow) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetUpdateWindowEndTime sets the updateWindowEndTime property value. End of a time window during which agents can receive updates
-func (m *UpdateWindow) SetUpdateWindowEndTime(value *string)() {
+func (m *UpdateWindow) SetUpdateWindowEndTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.updateWindowEndTime = value
     }
 }
 // SetUpdateWindowStartTime sets the updateWindowStartTime property value. Start of a time window during which agents can receive updates
-func (m *UpdateWindow) SetUpdateWindowStartTime(value *string)() {
+func (m *UpdateWindow) SetUpdateWindowStartTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.updateWindowStartTime = value
     }

@@ -37,13 +37,13 @@ type SalesInvoice struct {
     // 
     discountAppliedBeforeTax *bool;
     // 
-    dueDate *string;
+    dueDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     email *string;
     // 
     externalDocumentNumber *string;
     // 
-    invoiceDate *string;
+    invoiceDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
@@ -205,7 +205,7 @@ func (m *SalesInvoice) GetDiscountAppliedBeforeTax()(*bool) {
     }
 }
 // GetDueDate gets the dueDate property value. 
-func (m *SalesInvoice) GetDueDate()(*string) {
+func (m *SalesInvoice) GetDueDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -229,7 +229,7 @@ func (m *SalesInvoice) GetExternalDocumentNumber()(*string) {
     }
 }
 // GetInvoiceDate gets the invoiceDate property value. 
-func (m *SalesInvoice) GetInvoiceDate()(*string) {
+func (m *SalesInvoice) GetInvoiceDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -540,7 +540,7 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["dueDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -570,7 +570,7 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["invoiceDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -879,7 +879,7 @@ func (m *SalesInvoice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     {
-        err = writer.WriteStringValue("dueDate", m.GetDueDate())
+        err = writer.WriteDateOnlyValue("dueDate", m.GetDueDate())
         if err != nil {
             return err
         }
@@ -897,7 +897,7 @@ func (m *SalesInvoice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     {
-        err = writer.WriteStringValue("invoiceDate", m.GetInvoiceDate())
+        err = writer.WriteDateOnlyValue("invoiceDate", m.GetInvoiceDate())
         if err != nil {
             return err
         }
@@ -1114,7 +1114,7 @@ func (m *SalesInvoice) SetDiscountAppliedBeforeTax(value *bool)() {
     }
 }
 // SetDueDate sets the dueDate property value. 
-func (m *SalesInvoice) SetDueDate(value *string)() {
+func (m *SalesInvoice) SetDueDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.dueDate = value
     }
@@ -1132,7 +1132,7 @@ func (m *SalesInvoice) SetExternalDocumentNumber(value *string)() {
     }
 }
 // SetInvoiceDate sets the invoiceDate property value. 
-func (m *SalesInvoice) SetInvoiceDate(value *string)() {
+func (m *SalesInvoice) SetInvoiceDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.invoiceDate = value
     }

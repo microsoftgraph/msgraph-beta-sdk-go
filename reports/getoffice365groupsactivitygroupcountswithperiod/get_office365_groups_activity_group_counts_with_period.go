@@ -11,11 +11,11 @@ type GetOffice365GroupsActivityGroupCountsWithPeriod struct {
     // The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
     active *int64;
     // The date on which a number of groups were active.
-    reportDate *string;
+    reportDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of days the report covers.
     reportPeriod *string;
     // The latest date of the content.
-    reportRefreshDate *string;
+    reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The total number of groups.
     total *int64;
 }
@@ -35,7 +35,7 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) GetActive()(*int64) {
     }
 }
 // GetReportDate gets the reportDate property value. The date on which a number of groups were active.
-func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) GetReportDate()(*string) {
+func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -51,7 +51,7 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) GetReportPeriod()(*str
     }
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) GetReportRefreshDate()(*string) {
+func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) GetFieldDeserializers(
         return nil
     }
     res["reportDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -100,7 +100,7 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) GetFieldDeserializers(
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -137,7 +137,7 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) Serialize(writer i04eb
         }
     }
     {
-        err = writer.WriteStringValue("reportDate", m.GetReportDate())
+        err = writer.WriteDateOnlyValue("reportDate", m.GetReportDate())
         if err != nil {
             return err
         }
@@ -149,7 +149,7 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) Serialize(writer i04eb
         }
     }
     {
-        err = writer.WriteStringValue("reportRefreshDate", m.GetReportRefreshDate())
+        err = writer.WriteDateOnlyValue("reportRefreshDate", m.GetReportRefreshDate())
         if err != nil {
             return err
         }
@@ -169,7 +169,7 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) SetActive(value *int64
     }
 }
 // SetReportDate sets the reportDate property value. The date on which a number of groups were active.
-func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) SetReportDate(value *string)() {
+func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) SetReportDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportDate = value
     }
@@ -181,7 +181,7 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) SetReportPeriod(value 
     }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) SetReportRefreshDate(value *string)() {
+func (m *GetOffice365GroupsActivityGroupCountsWithPeriod) SetReportRefreshDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportRefreshDate = value
     }

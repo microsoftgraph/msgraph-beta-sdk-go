@@ -13,7 +13,7 @@ type SetUserPreferredPresenceRequestBody struct {
     // 
     availability *string;
     // 
-    expirationDuration *string;
+    expirationDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
 }
 // NewSetUserPreferredPresenceRequestBody instantiates a new setUserPreferredPresenceRequestBody and sets the default values.
 func NewSetUserPreferredPresenceRequestBody()(*SetUserPreferredPresenceRequestBody) {
@@ -47,7 +47,7 @@ func (m *SetUserPreferredPresenceRequestBody) GetAvailability()(*string) {
     }
 }
 // GetExpirationDuration gets the expirationDuration property value. 
-func (m *SetUserPreferredPresenceRequestBody) GetExpirationDuration()(*string) {
+func (m *SetUserPreferredPresenceRequestBody) GetExpirationDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -78,7 +78,7 @@ func (m *SetUserPreferredPresenceRequestBody) GetFieldDeserializers()(map[string
         return nil
     }
     res["expirationDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -107,7 +107,7 @@ func (m *SetUserPreferredPresenceRequestBody) Serialize(writer i04eb5309aeaafadd
         }
     }
     {
-        err := writer.WriteStringValue("expirationDuration", m.GetExpirationDuration())
+        err := writer.WriteISODurationValue("expirationDuration", m.GetExpirationDuration())
         if err != nil {
             return err
         }
@@ -139,7 +139,7 @@ func (m *SetUserPreferredPresenceRequestBody) SetAvailability(value *string)() {
     }
 }
 // SetExpirationDuration sets the expirationDuration property value. 
-func (m *SetUserPreferredPresenceRequestBody) SetExpirationDuration(value *string)() {
+func (m *SetUserPreferredPresenceRequestBody) SetExpirationDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.expirationDuration = value
     }

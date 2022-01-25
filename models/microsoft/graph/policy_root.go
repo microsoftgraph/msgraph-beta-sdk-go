@@ -32,6 +32,8 @@ type PolicyRoot struct {
     defaultAppManagementPolicy *TenantAppManagementPolicy;
     // 
     directoryRoleAccessReviewPolicy *DirectoryRoleAccessReviewPolicy;
+    // 
+    externalIdentitiesPolicy *ExternalIdentitiesPolicy;
     // The feature rollout policy associated with a directory object.
     featureRolloutPolicies []FeatureRolloutPolicy;
     // The policy to control Azure AD authentication behavior for federated users.
@@ -164,6 +166,14 @@ func (m *PolicyRoot) GetDirectoryRoleAccessReviewPolicy()(*DirectoryRoleAccessRe
         return nil
     } else {
         return m.directoryRoleAccessReviewPolicy
+    }
+}
+// GetExternalIdentitiesPolicy gets the externalIdentitiesPolicy property value. 
+func (m *PolicyRoot) GetExternalIdentitiesPolicy()(*ExternalIdentitiesPolicy) {
+    if m == nil {
+        return nil
+    } else {
+        return m.externalIdentitiesPolicy
     }
 }
 // GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
@@ -394,6 +404,16 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         }
         if val != nil {
             m.SetDirectoryRoleAccessReviewPolicy(val.(*DirectoryRoleAccessReviewPolicy))
+        }
+        return nil
+    }
+    res["externalIdentitiesPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewExternalIdentitiesPolicy() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExternalIdentitiesPolicy(val.(*ExternalIdentitiesPolicy))
         }
         return nil
     }
@@ -652,6 +672,12 @@ func (m *PolicyRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
+        err := writer.WriteObjectValue("externalIdentitiesPolicy", m.GetExternalIdentitiesPolicy())
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFeatureRolloutPolicies()))
         for i, v := range m.GetFeatureRolloutPolicies() {
             temp := v
@@ -851,6 +877,12 @@ func (m *PolicyRoot) SetDefaultAppManagementPolicy(value *TenantAppManagementPol
 func (m *PolicyRoot) SetDirectoryRoleAccessReviewPolicy(value *DirectoryRoleAccessReviewPolicy)() {
     if m != nil {
         m.directoryRoleAccessReviewPolicy = value
+    }
+}
+// SetExternalIdentitiesPolicy sets the externalIdentitiesPolicy property value. 
+func (m *PolicyRoot) SetExternalIdentitiesPolicy(value *ExternalIdentitiesPolicy)() {
+    if m != nil {
+        m.externalIdentitiesPolicy = value
     }
 }
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.

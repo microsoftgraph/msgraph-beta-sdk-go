@@ -25,7 +25,7 @@ type GetM365AppUserDetailWithDateRequestBuilderGetOptions struct {
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewGetM365AppUserDetailWithDateRequestBuilderInternal instantiates a new GetM365AppUserDetailWithDateRequestBuilder and sets the default values.
-func NewGetM365AppUserDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *string)(*GetM365AppUserDetailWithDateRequestBuilder) {
+func NewGetM365AppUserDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*GetM365AppUserDetailWithDateRequestBuilder) {
     m := &GetM365AppUserDetailWithDateRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getM365AppUserDetail(date={date})";
@@ -34,7 +34,7 @@ func NewGetM365AppUserDetailWithDateRequestBuilderInternal(pathParameters map[st
         urlTplParams[idx] = item
     }
     if date != nil {
-        urlTplParams["date"] = *date
+        urlTplParams["date"] = (*date).String()
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

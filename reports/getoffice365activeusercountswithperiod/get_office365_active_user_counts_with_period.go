@@ -15,11 +15,11 @@ type GetOffice365ActiveUserCountsWithPeriod struct {
     // The number of active users in OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
     oneDrive *int64;
     // The date on which a number of users were active.
-    reportDate *string;
+    reportDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of days the report covers.
     reportPeriod *string;
     // The latest date of the content.
-    reportRefreshDate *string;
+    reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of active users in SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
     sharePoint *int64;
     // The number of active users in Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
@@ -61,7 +61,7 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetOneDrive()(*int64) {
     }
 }
 // GetReportDate gets the reportDate property value. The date on which a number of users were active.
-func (m *GetOffice365ActiveUserCountsWithPeriod) GetReportDate()(*string) {
+func (m *GetOffice365ActiveUserCountsWithPeriod) GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -77,7 +77,7 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetReportPeriod()(*string) {
     }
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365ActiveUserCountsWithPeriod) GetReportRefreshDate()(*string) {
+func (m *GetOffice365ActiveUserCountsWithPeriod) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -150,7 +150,7 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         return nil
     }
     res["reportDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -170,7 +170,7 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) GetFieldDeserializers()(map[str
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -249,7 +249,7 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) Serialize(writer i04eb5309aeaaf
         }
     }
     {
-        err = writer.WriteStringValue("reportDate", m.GetReportDate())
+        err = writer.WriteDateOnlyValue("reportDate", m.GetReportDate())
         if err != nil {
             return err
         }
@@ -261,7 +261,7 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) Serialize(writer i04eb5309aeaaf
         }
     }
     {
-        err = writer.WriteStringValue("reportRefreshDate", m.GetReportRefreshDate())
+        err = writer.WriteDateOnlyValue("reportRefreshDate", m.GetReportRefreshDate())
         if err != nil {
             return err
         }
@@ -311,7 +311,7 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) SetOneDrive(value *int64)() {
     }
 }
 // SetReportDate sets the reportDate property value. The date on which a number of users were active.
-func (m *GetOffice365ActiveUserCountsWithPeriod) SetReportDate(value *string)() {
+func (m *GetOffice365ActiveUserCountsWithPeriod) SetReportDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportDate = value
     }
@@ -323,7 +323,7 @@ func (m *GetOffice365ActiveUserCountsWithPeriod) SetReportPeriod(value *string)(
     }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365ActiveUserCountsWithPeriod) SetReportRefreshDate(value *string)() {
+func (m *GetOffice365ActiveUserCountsWithPeriod) SetReportRefreshDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportRefreshDate = value
     }

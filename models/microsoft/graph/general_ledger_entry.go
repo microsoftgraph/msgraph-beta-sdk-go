@@ -27,7 +27,7 @@ type GeneralLedgerEntry struct {
     // 
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    postingDate *string;
+    postingDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
 }
 // NewGeneralLedgerEntry instantiates a new generalLedgerEntry and sets the default values.
 func NewGeneralLedgerEntry()(*GeneralLedgerEntry) {
@@ -109,7 +109,7 @@ func (m *GeneralLedgerEntry) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     }
 }
 // GetPostingDate gets the postingDate property value. 
-func (m *GeneralLedgerEntry) GetPostingDate()(*string) {
+func (m *GeneralLedgerEntry) GetPostingDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -210,7 +210,7 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["postingDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -285,7 +285,7 @@ func (m *GeneralLedgerEntry) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err = writer.WriteStringValue("postingDate", m.GetPostingDate())
+        err = writer.WriteDateOnlyValue("postingDate", m.GetPostingDate())
         if err != nil {
             return err
         }
@@ -347,7 +347,7 @@ func (m *GeneralLedgerEntry) SetLastModifiedDateTime(value *i336074805fc853987ab
     }
 }
 // SetPostingDate sets the postingDate property value. 
-func (m *GeneralLedgerEntry) SetPostingDate(value *string)() {
+func (m *GeneralLedgerEntry) SetPostingDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.postingDate = value
     }

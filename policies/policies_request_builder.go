@@ -18,6 +18,7 @@ import (
     ia589aeb346820886345aeb5931d4c55613a827996ee7bc74d7b23ee8114c4fb2 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/conditionalaccesspolicies"
     ia66b26489abda0f16a4552e41f842faa0920a32a210488eb7684d2c0a3ac678e "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/defaultappmanagementpolicy"
     ia91d9fa5e7c39ffd42d68d1e1b891366a26470bb743dc20e271a38370621a692 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/mobiledevicemanagementpolicies"
+    iabb1075117ee91d4cff52c295dea39fce30d32c8e7045b3aba6ab87f3e634321 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/externalidentitiespolicy"
     ib06edf2243c232ea0ac4674c243fe1a2abb0ee0eed56c1a59ce081927673770e "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/activitybasedtimeoutpolicies"
     ib78e441cfc724e7ca2b7aa878fef387840fdd51d15409c2c4abf683297e6d1a0 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/tokenlifetimepolicies"
     icb9925789218a9f15cfe348750b0959961d5079e5d10f9ce6723285bcf81edfe "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/appmanagementpolicies"
@@ -228,6 +229,9 @@ func (m *PoliciesRequestBuilder) DefaultAppManagementPolicy()(*ia66b26489abda0f1
 }
 func (m *PoliciesRequestBuilder) DirectoryRoleAccessReviewPolicy()(*i9b0ad1e2bc66101ab80e51c56c0530b8d739993816ab39caf1d4ce646d70b5f6.DirectoryRoleAccessReviewPolicyRequestBuilder) {
     return i9b0ad1e2bc66101ab80e51c56c0530b8d739993816ab39caf1d4ce646d70b5f6.NewDirectoryRoleAccessReviewPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *PoliciesRequestBuilder) ExternalIdentitiesPolicy()(*iabb1075117ee91d4cff52c295dea39fce30d32c8e7045b3aba6ab87f3e634321.ExternalIdentitiesPolicyRequestBuilder) {
+    return iabb1075117ee91d4cff52c295dea39fce30d32c8e7045b3aba6ab87f3e634321.NewExternalIdentitiesPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *PoliciesRequestBuilder) FeatureRolloutPolicies()(*i089acabe34d65ca8bb4a87f0ec051d51355817922b4d3ae2c686f574d377a384.FeatureRolloutPoliciesRequestBuilder) {
     return i089acabe34d65ca8bb4a87f0ec051d51355817922b4d3ae2c686f574d377a384.NewFeatureRolloutPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -25,7 +25,7 @@ type GetOffice365GroupsActivityDetailWithPeriod struct {
     // Whether this user has been deleted or soft deleted.
     isDeleted *bool;
     // The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
-    lastActivityDate *string;
+    lastActivityDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The group member count.
     memberCount *int64;
     // The group owner principal name.
@@ -33,7 +33,7 @@ type GetOffice365GroupsActivityDetailWithPeriod struct {
     // The number of days the report covers.
     reportPeriod *string;
     // The latest date of the content.
-    reportRefreshDate *string;
+    reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of active files in SharePoint Group site.
     sharePointActiveFileCount *int64;
     // The storage used by SharePoint Group site.
@@ -119,7 +119,7 @@ func (m *GetOffice365GroupsActivityDetailWithPeriod) GetIsDeleted()(*bool) {
     }
 }
 // GetLastActivityDate gets the lastActivityDate property value. The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
-func (m *GetOffice365GroupsActivityDetailWithPeriod) GetLastActivityDate()(*string) {
+func (m *GetOffice365GroupsActivityDetailWithPeriod) GetLastActivityDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -151,7 +151,7 @@ func (m *GetOffice365GroupsActivityDetailWithPeriod) GetReportPeriod()(*string) 
     }
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365GroupsActivityDetailWithPeriod) GetReportRefreshDate()(*string) {
+func (m *GetOffice365GroupsActivityDetailWithPeriod) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -290,7 +290,7 @@ func (m *GetOffice365GroupsActivityDetailWithPeriod) GetFieldDeserializers()(map
         return nil
     }
     res["lastActivityDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -330,7 +330,7 @@ func (m *GetOffice365GroupsActivityDetailWithPeriod) GetFieldDeserializers()(map
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -459,7 +459,7 @@ func (m *GetOffice365GroupsActivityDetailWithPeriod) Serialize(writer i04eb5309a
         }
     }
     {
-        err = writer.WriteStringValue("lastActivityDate", m.GetLastActivityDate())
+        err = writer.WriteDateOnlyValue("lastActivityDate", m.GetLastActivityDate())
         if err != nil {
             return err
         }
@@ -483,7 +483,7 @@ func (m *GetOffice365GroupsActivityDetailWithPeriod) Serialize(writer i04eb5309a
         }
     }
     {
-        err = writer.WriteStringValue("reportRefreshDate", m.GetReportRefreshDate())
+        err = writer.WriteDateOnlyValue("reportRefreshDate", m.GetReportRefreshDate())
         if err != nil {
             return err
         }
@@ -575,7 +575,7 @@ func (m *GetOffice365GroupsActivityDetailWithPeriod) SetIsDeleted(value *bool)()
     }
 }
 // SetLastActivityDate sets the lastActivityDate property value. The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
-func (m *GetOffice365GroupsActivityDetailWithPeriod) SetLastActivityDate(value *string)() {
+func (m *GetOffice365GroupsActivityDetailWithPeriod) SetLastActivityDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.lastActivityDate = value
     }
@@ -599,7 +599,7 @@ func (m *GetOffice365GroupsActivityDetailWithPeriod) SetReportPeriod(value *stri
     }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365GroupsActivityDetailWithPeriod) SetReportRefreshDate(value *string)() {
+func (m *GetOffice365GroupsActivityDetailWithPeriod) SetReportRefreshDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportRefreshDate = value
     }

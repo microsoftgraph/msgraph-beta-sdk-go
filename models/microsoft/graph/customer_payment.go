@@ -37,7 +37,7 @@ type CustomerPayment struct {
     // 
     lineNumber *int32;
     // 
-    postingDate *string;
+    postingDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
 }
 // NewCustomerPayment instantiates a new customerPayment and sets the default values.
 func NewCustomerPayment()(*CustomerPayment) {
@@ -159,7 +159,7 @@ func (m *CustomerPayment) GetLineNumber()(*int32) {
     }
 }
 // GetPostingDate gets the postingDate property value. 
-func (m *CustomerPayment) GetPostingDate()(*string) {
+func (m *CustomerPayment) GetPostingDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -310,7 +310,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["postingDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -415,7 +415,7 @@ func (m *CustomerPayment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err = writer.WriteStringValue("postingDate", m.GetPostingDate())
+        err = writer.WriteDateOnlyValue("postingDate", m.GetPostingDate())
         if err != nil {
             return err
         }
@@ -507,7 +507,7 @@ func (m *CustomerPayment) SetLineNumber(value *int32)() {
     }
 }
 // SetPostingDate sets the postingDate property value. 
-func (m *CustomerPayment) SetPostingDate(value *string)() {
+func (m *CustomerPayment) SetPostingDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.postingDate = value
     }

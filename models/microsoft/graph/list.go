@@ -21,7 +21,7 @@ type List struct {
     items []ListItem;
     // Provides additional details about the list.
     list *ListInfo;
-    // 
+    // The collection of long running operations for the list.
     operations []RichLongRunningOperation;
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
     sharepointIds *SharepointIds;
@@ -93,7 +93,7 @@ func (m *List) GetList()(*ListInfo) {
         return m.list
     }
 }
-// GetOperations gets the operations property value. 
+// GetOperations gets the operations property value. The collection of long running operations for the list.
 func (m *List) GetOperations()([]RichLongRunningOperation) {
     if m == nil {
         return nil
@@ -413,7 +413,7 @@ func (m *List) SetList(value *ListInfo)() {
         m.list = value
     }
 }
-// SetOperations sets the operations property value. 
+// SetOperations sets the operations property value. The collection of long running operations for the list.
 func (m *List) SetOperations(value []RichLongRunningOperation)() {
     if m != nil {
         m.operations = value

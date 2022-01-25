@@ -12,7 +12,7 @@ type ItemPublication struct {
     // Title of the publication.
     displayName *string;
     // The date that the publication was published.
-    publishedDate *string;
+    publishedDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // Publication or publisher for the publication.
     publisher *string;
     // URL referencing a thumbnail of the publication.
@@ -44,7 +44,7 @@ func (m *ItemPublication) GetDisplayName()(*string) {
     }
 }
 // GetPublishedDate gets the publishedDate property value. The date that the publication was published.
-func (m *ItemPublication) GetPublishedDate()(*string) {
+func (m *ItemPublication) GetPublishedDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -99,7 +99,7 @@ func (m *ItemPublication) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["publishedDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -162,7 +162,7 @@ func (m *ItemPublication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err = writer.WriteStringValue("publishedDate", m.GetPublishedDate())
+        err = writer.WriteDateOnlyValue("publishedDate", m.GetPublishedDate())
         if err != nil {
             return err
         }
@@ -200,7 +200,7 @@ func (m *ItemPublication) SetDisplayName(value *string)() {
     }
 }
 // SetPublishedDate sets the publishedDate property value. The date that the publication was published.
-func (m *ItemPublication) SetPublishedDate(value *string)() {
+func (m *ItemPublication) SetPublishedDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.publishedDate = value
     }

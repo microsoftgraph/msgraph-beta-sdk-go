@@ -45,7 +45,7 @@ type SalesOrder struct {
     // 
     number *string;
     // 
-    orderDate *string;
+    orderDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     partialShipping *bool;
     // 
@@ -57,7 +57,7 @@ type SalesOrder struct {
     // 
     pricesIncludeTax *bool;
     // 
-    requestedDeliveryDate *string;
+    requestedDeliveryDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     salesOrderLines []SalesOrderLine;
     // 
@@ -231,7 +231,7 @@ func (m *SalesOrder) GetNumber()(*string) {
     }
 }
 // GetOrderDate gets the orderDate property value. 
-func (m *SalesOrder) GetOrderDate()(*string) {
+func (m *SalesOrder) GetOrderDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -279,7 +279,7 @@ func (m *SalesOrder) GetPricesIncludeTax()(*bool) {
     }
 }
 // GetRequestedDeliveryDate gets the requestedDeliveryDate property value. 
-func (m *SalesOrder) GetRequestedDeliveryDate()(*string) {
+func (m *SalesOrder) GetRequestedDeliveryDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -550,7 +550,7 @@ func (m *SalesOrder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["orderDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -610,7 +610,7 @@ func (m *SalesOrder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["requestedDeliveryDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -843,7 +843,7 @@ func (m *SalesOrder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err = writer.WriteStringValue("orderDate", m.GetOrderDate())
+        err = writer.WriteDateOnlyValue("orderDate", m.GetOrderDate())
         if err != nil {
             return err
         }
@@ -879,7 +879,7 @@ func (m *SalesOrder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err = writer.WriteStringValue("requestedDeliveryDate", m.GetRequestedDeliveryDate())
+        err = writer.WriteDateOnlyValue("requestedDeliveryDate", m.GetRequestedDeliveryDate())
         if err != nil {
             return err
         }
@@ -1060,7 +1060,7 @@ func (m *SalesOrder) SetNumber(value *string)() {
     }
 }
 // SetOrderDate sets the orderDate property value. 
-func (m *SalesOrder) SetOrderDate(value *string)() {
+func (m *SalesOrder) SetOrderDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.orderDate = value
     }
@@ -1096,7 +1096,7 @@ func (m *SalesOrder) SetPricesIncludeTax(value *bool)() {
     }
 }
 // SetRequestedDeliveryDate sets the requestedDeliveryDate property value. 
-func (m *SalesOrder) SetRequestedDeliveryDate(value *string)() {
+func (m *SalesOrder) SetRequestedDeliveryDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.requestedDeliveryDate = value
     }

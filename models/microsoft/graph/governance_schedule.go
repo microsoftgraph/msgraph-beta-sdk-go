@@ -10,7 +10,7 @@ type GovernanceSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The duration of a role assignment. It is in format of a TimeSpan.
-    duration *string;
+    duration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -34,7 +34,7 @@ func (m *GovernanceSchedule) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDuration gets the duration property value. The duration of a role assignment. It is in format of a TimeSpan.
-func (m *GovernanceSchedule) GetDuration()(*string) {
+func (m *GovernanceSchedule) GetDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -69,7 +69,7 @@ func (m *GovernanceSchedule) GetType()(*string) {
 func (m *GovernanceSchedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["duration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -116,7 +116,7 @@ func (m *GovernanceSchedule) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *GovernanceSchedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("duration", m.GetDuration())
+        err := writer.WriteISODurationValue("duration", m.GetDuration())
         if err != nil {
             return err
         }
@@ -154,7 +154,7 @@ func (m *GovernanceSchedule) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDuration sets the duration property value. The duration of a role assignment. It is in format of a TimeSpan.
-func (m *GovernanceSchedule) SetDuration(value *string)() {
+func (m *GovernanceSchedule) SetDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.duration = value
     }

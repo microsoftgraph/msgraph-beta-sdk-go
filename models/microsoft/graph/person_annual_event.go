@@ -8,7 +8,7 @@ import (
 type PersonAnnualEvent struct {
     ItemFacet
     // 
-    date *string;
+    date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     displayName *string;
     // 
@@ -22,7 +22,7 @@ func NewPersonAnnualEvent()(*PersonAnnualEvent) {
     return m
 }
 // GetDate gets the date property value. 
-func (m *PersonAnnualEvent) GetDate()(*string) {
+func (m *PersonAnnualEvent) GetDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -49,7 +49,7 @@ func (m *PersonAnnualEvent) GetType()(*PersonAnnualEventType) {
 func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["date"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -91,7 +91,7 @@ func (m *PersonAnnualEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         return err
     }
     {
-        err = writer.WriteStringValue("date", m.GetDate())
+        err = writer.WriteDateOnlyValue("date", m.GetDate())
         if err != nil {
             return err
         }
@@ -112,7 +112,7 @@ func (m *PersonAnnualEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     return nil
 }
 // SetDate sets the date property value. 
-func (m *PersonAnnualEvent) SetDate(value *string)() {
+func (m *PersonAnnualEvent) SetDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.date = value
     }

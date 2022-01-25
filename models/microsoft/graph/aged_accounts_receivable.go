@@ -8,7 +8,7 @@ import (
 type AgedAccountsReceivable struct {
     Entity
     // 
-    agedAsOfDate *string;
+    agedAsOfDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     balanceDue *float64;
     // 
@@ -36,7 +36,7 @@ func NewAgedAccountsReceivable()(*AgedAccountsReceivable) {
     return m
 }
 // GetAgedAsOfDate gets the agedAsOfDate property value. 
-func (m *AgedAccountsReceivable) GetAgedAsOfDate()(*string) {
+func (m *AgedAccountsReceivable) GetAgedAsOfDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -119,7 +119,7 @@ func (m *AgedAccountsReceivable) GetPeriodLengthFilter()(*string) {
 func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agedAsOfDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -230,7 +230,7 @@ func (m *AgedAccountsReceivable) Serialize(writer i04eb5309aeaafadd28374d79c8471
         return err
     }
     {
-        err = writer.WriteStringValue("agedAsOfDate", m.GetAgedAsOfDate())
+        err = writer.WriteDateOnlyValue("agedAsOfDate", m.GetAgedAsOfDate())
         if err != nil {
             return err
         }
@@ -292,7 +292,7 @@ func (m *AgedAccountsReceivable) Serialize(writer i04eb5309aeaafadd28374d79c8471
     return nil
 }
 // SetAgedAsOfDate sets the agedAsOfDate property value. 
-func (m *AgedAccountsReceivable) SetAgedAsOfDate(value *string)() {
+func (m *AgedAccountsReceivable) SetAgedAsOfDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.agedAsOfDate = value
     }

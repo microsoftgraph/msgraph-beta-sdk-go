@@ -26,7 +26,7 @@ type PurchaseInvoiceLine struct {
     // 
     documentId *string;
     // 
-    expectedReceiptDate *string;
+    expectedReceiptDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     invoiceDiscountAllocation *float64;
     // 
@@ -134,7 +134,7 @@ func (m *PurchaseInvoiceLine) GetDocumentId()(*string) {
     }
 }
 // GetExpectedReceiptDate gets the expectedReceiptDate property value. 
-func (m *PurchaseInvoiceLine) GetExpectedReceiptDate()(*string) {
+func (m *PurchaseInvoiceLine) GetExpectedReceiptDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -339,7 +339,7 @@ func (m *PurchaseInvoiceLine) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["expectedReceiptDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -544,7 +544,7 @@ func (m *PurchaseInvoiceLine) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err = writer.WriteStringValue("expectedReceiptDate", m.GetExpectedReceiptDate())
+        err = writer.WriteDateOnlyValue("expectedReceiptDate", m.GetExpectedReceiptDate())
         if err != nil {
             return err
         }
@@ -684,7 +684,7 @@ func (m *PurchaseInvoiceLine) SetDocumentId(value *string)() {
     }
 }
 // SetExpectedReceiptDate sets the expectedReceiptDate property value. 
-func (m *PurchaseInvoiceLine) SetExpectedReceiptDate(value *string)() {
+func (m *PurchaseInvoiceLine) SetExpectedReceiptDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.expectedReceiptDate = value
     }

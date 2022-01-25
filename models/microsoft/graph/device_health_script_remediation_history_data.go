@@ -9,7 +9,7 @@ type DeviceHealthScriptRemediationHistoryData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The date on which devices were remediated by the device health script.
-    date *string;
+    date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of devices that were found to have no issue by the device health script.
     noIssueDeviceCount *int32;
     // The number of devices remediated by the device health script.
@@ -31,7 +31,7 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetAdditionalData()(map[strin
     }
 }
 // GetDate gets the date property value. The date on which devices were remediated by the device health script.
-func (m *DeviceHealthScriptRemediationHistoryData) GetDate()(*string) {
+func (m *DeviceHealthScriptRemediationHistoryData) GetDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -58,7 +58,7 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetRemediatedDeviceCount()(*i
 func (m *DeviceHealthScriptRemediationHistoryData) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["date"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -95,7 +95,7 @@ func (m *DeviceHealthScriptRemediationHistoryData) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptRemediationHistoryData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("date", m.GetDate())
+        err := writer.WriteDateOnlyValue("date", m.GetDate())
         if err != nil {
             return err
         }
@@ -127,7 +127,7 @@ func (m *DeviceHealthScriptRemediationHistoryData) SetAdditionalData(value map[s
     }
 }
 // SetDate sets the date property value. The date on which devices were remediated by the device health script.
-func (m *DeviceHealthScriptRemediationHistoryData) SetDate(value *string)() {
+func (m *DeviceHealthScriptRemediationHistoryData) SetDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.date = value
     }

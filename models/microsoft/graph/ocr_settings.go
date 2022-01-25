@@ -13,7 +13,7 @@ type OcrSettings struct {
     // Maximum image size that will be processed in KB).
     maxImageSize *int32;
     // The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
-    timeout *string;
+    timeout *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
 }
 // NewOcrSettings instantiates a new ocrSettings and sets the default values.
 func NewOcrSettings()(*OcrSettings) {
@@ -47,7 +47,7 @@ func (m *OcrSettings) GetMaxImageSize()(*int32) {
     }
 }
 // GetTimeout gets the timeout property value. The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
-func (m *OcrSettings) GetTimeout()(*string) {
+func (m *OcrSettings) GetTimeout()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -78,7 +78,7 @@ func (m *OcrSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         return nil
     }
     res["timeout"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -107,7 +107,7 @@ func (m *OcrSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err := writer.WriteStringValue("timeout", m.GetTimeout())
+        err := writer.WriteISODurationValue("timeout", m.GetTimeout())
         if err != nil {
             return err
         }
@@ -139,7 +139,7 @@ func (m *OcrSettings) SetMaxImageSize(value *int32)() {
     }
 }
 // SetTimeout sets the timeout property value. The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
-func (m *OcrSettings) SetTimeout(value *string)() {
+func (m *OcrSettings) SetTimeout(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.timeout = value
     }

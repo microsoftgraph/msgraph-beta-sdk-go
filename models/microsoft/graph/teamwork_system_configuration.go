@@ -13,7 +13,7 @@ type TeamworkSystemConfiguration struct {
     // 
     defaultPassword *string;
     // 
-    deviceLockTimeout *string;
+    deviceLockTimeout *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // 
     isDeviceLockEnabled *bool;
     // 
@@ -65,7 +65,7 @@ func (m *TeamworkSystemConfiguration) GetDefaultPassword()(*string) {
     }
 }
 // GetDeviceLockTimeout gets the deviceLockTimeout property value. 
-func (m *TeamworkSystemConfiguration) GetDeviceLockTimeout()(*string) {
+func (m *TeamworkSystemConfiguration) GetDeviceLockTimeout()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -168,7 +168,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["deviceLockTimeout"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -287,7 +287,7 @@ func (m *TeamworkSystemConfiguration) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     {
-        err := writer.WriteStringValue("deviceLockTimeout", m.GetDeviceLockTimeout())
+        err := writer.WriteISODurationValue("deviceLockTimeout", m.GetDeviceLockTimeout())
         if err != nil {
             return err
         }
@@ -373,7 +373,7 @@ func (m *TeamworkSystemConfiguration) SetDefaultPassword(value *string)() {
     }
 }
 // SetDeviceLockTimeout sets the deviceLockTimeout property value. 
-func (m *TeamworkSystemConfiguration) SetDeviceLockTimeout(value *string)() {
+func (m *TeamworkSystemConfiguration) SetDeviceLockTimeout(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.deviceLockTimeout = value
     }

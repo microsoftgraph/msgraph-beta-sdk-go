@@ -26,9 +26,9 @@ type MicrosoftTunnelSite struct {
     // True if an upgrade is available
     upgradeAvailable *bool;
     // The site's upgrade window end time of day
-    upgradeWindowEndTime *string;
+    upgradeWindowEndTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // The site's upgrade window start time of day
-    upgradeWindowStartTime *string;
+    upgradeWindowStartTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // The site's timezone represented as a minute offset from UTC
     upgradeWindowUtcOffsetInMinutes *int32;
 }
@@ -112,7 +112,7 @@ func (m *MicrosoftTunnelSite) GetUpgradeAvailable()(*bool) {
     }
 }
 // GetUpgradeWindowEndTime gets the upgradeWindowEndTime property value. The site's upgrade window end time of day
-func (m *MicrosoftTunnelSite) GetUpgradeWindowEndTime()(*string) {
+func (m *MicrosoftTunnelSite) GetUpgradeWindowEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -120,7 +120,7 @@ func (m *MicrosoftTunnelSite) GetUpgradeWindowEndTime()(*string) {
     }
 }
 // GetUpgradeWindowStartTime gets the upgradeWindowStartTime property value. The site's upgrade window start time of day
-func (m *MicrosoftTunnelSite) GetUpgradeWindowStartTime()(*string) {
+func (m *MicrosoftTunnelSite) GetUpgradeWindowStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -237,7 +237,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["upgradeWindowEndTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -247,7 +247,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["upgradeWindowStartTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -337,13 +337,13 @@ func (m *MicrosoftTunnelSite) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err = writer.WriteStringValue("upgradeWindowEndTime", m.GetUpgradeWindowEndTime())
+        err = writer.WriteTimeOnlyValue("upgradeWindowEndTime", m.GetUpgradeWindowEndTime())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("upgradeWindowStartTime", m.GetUpgradeWindowStartTime())
+        err = writer.WriteTimeOnlyValue("upgradeWindowStartTime", m.GetUpgradeWindowStartTime())
         if err != nil {
             return err
         }
@@ -411,13 +411,13 @@ func (m *MicrosoftTunnelSite) SetUpgradeAvailable(value *bool)() {
     }
 }
 // SetUpgradeWindowEndTime sets the upgradeWindowEndTime property value. The site's upgrade window end time of day
-func (m *MicrosoftTunnelSite) SetUpgradeWindowEndTime(value *string)() {
+func (m *MicrosoftTunnelSite) SetUpgradeWindowEndTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.upgradeWindowEndTime = value
     }
 }
 // SetUpgradeWindowStartTime sets the upgradeWindowStartTime property value. The site's upgrade window start time of day
-func (m *MicrosoftTunnelSite) SetUpgradeWindowStartTime(value *string)() {
+func (m *MicrosoftTunnelSite) SetUpgradeWindowStartTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.upgradeWindowStartTime = value
     }

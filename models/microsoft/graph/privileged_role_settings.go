@@ -12,17 +12,17 @@ type PrivilegedRoleSettings struct {
     // List of Approval ids, if approval is required for activation.
     approverIds []string;
     // The duration when the role is activated.
-    elevationDuration *string;
+    elevationDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // true if mfaOnElevation is configurable. false if mfaOnElevation is not configurable.
     isMfaOnElevationConfigurable *bool;
     // Internal used only.
     lastGlobalAdmin *bool;
     // Maximal duration for the activated role.
-    maxElavationDuration *string;
+    maxElavationDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // true if MFA is required to activate the role. false if MFA is not required to activate the role.
     mfaOnElevation *bool;
     // Minimal duration for the activated role.
-    minElevationDuration *string;
+    minElevationDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // true if send notification to the end user when the role is activated. false if do not send notification when the role is activated.
     notificationToUserOnElevation *bool;
     // true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
@@ -52,7 +52,7 @@ func (m *PrivilegedRoleSettings) GetApproverIds()([]string) {
     }
 }
 // GetElevationDuration gets the elevationDuration property value. The duration when the role is activated.
-func (m *PrivilegedRoleSettings) GetElevationDuration()(*string) {
+func (m *PrivilegedRoleSettings) GetElevationDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -76,7 +76,7 @@ func (m *PrivilegedRoleSettings) GetLastGlobalAdmin()(*bool) {
     }
 }
 // GetMaxElavationDuration gets the maxElavationDuration property value. Maximal duration for the activated role.
-func (m *PrivilegedRoleSettings) GetMaxElavationDuration()(*string) {
+func (m *PrivilegedRoleSettings) GetMaxElavationDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -92,7 +92,7 @@ func (m *PrivilegedRoleSettings) GetMfaOnElevation()(*bool) {
     }
 }
 // GetMinElevationDuration gets the minElevationDuration property value. Minimal duration for the activated role.
-func (m *PrivilegedRoleSettings) GetMinElevationDuration()(*string) {
+func (m *PrivilegedRoleSettings) GetMinElevationDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -143,7 +143,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["elevationDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -173,7 +173,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["maxElavationDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -193,7 +193,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["minElevationDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -246,7 +246,7 @@ func (m *PrivilegedRoleSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        err = writer.WriteStringValue("elevationDuration", m.GetElevationDuration())
+        err = writer.WriteISODurationValue("elevationDuration", m.GetElevationDuration())
         if err != nil {
             return err
         }
@@ -264,7 +264,7 @@ func (m *PrivilegedRoleSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        err = writer.WriteStringValue("maxElavationDuration", m.GetMaxElavationDuration())
+        err = writer.WriteISODurationValue("maxElavationDuration", m.GetMaxElavationDuration())
         if err != nil {
             return err
         }
@@ -276,7 +276,7 @@ func (m *PrivilegedRoleSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        err = writer.WriteStringValue("minElevationDuration", m.GetMinElevationDuration())
+        err = writer.WriteISODurationValue("minElevationDuration", m.GetMinElevationDuration())
         if err != nil {
             return err
         }
@@ -308,7 +308,7 @@ func (m *PrivilegedRoleSettings) SetApproverIds(value []string)() {
     }
 }
 // SetElevationDuration sets the elevationDuration property value. The duration when the role is activated.
-func (m *PrivilegedRoleSettings) SetElevationDuration(value *string)() {
+func (m *PrivilegedRoleSettings) SetElevationDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.elevationDuration = value
     }
@@ -326,7 +326,7 @@ func (m *PrivilegedRoleSettings) SetLastGlobalAdmin(value *bool)() {
     }
 }
 // SetMaxElavationDuration sets the maxElavationDuration property value. Maximal duration for the activated role.
-func (m *PrivilegedRoleSettings) SetMaxElavationDuration(value *string)() {
+func (m *PrivilegedRoleSettings) SetMaxElavationDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.maxElavationDuration = value
     }
@@ -338,7 +338,7 @@ func (m *PrivilegedRoleSettings) SetMfaOnElevation(value *bool)() {
     }
 }
 // SetMinElevationDuration sets the minElevationDuration property value. Minimal duration for the activated role.
-func (m *PrivilegedRoleSettings) SetMinElevationDuration(value *string)() {
+func (m *PrivilegedRoleSettings) SetMinElevationDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.minElevationDuration = value
     }

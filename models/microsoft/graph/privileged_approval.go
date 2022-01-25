@@ -9,7 +9,7 @@ import (
 type PrivilegedApproval struct {
     Entity
     // 
-    approvalDuration *string;
+    approvalDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Possible values are: pending, approved, denied, aborted, canceled.
     approvalState *ApprovalState;
     // 
@@ -39,7 +39,7 @@ func NewPrivilegedApproval()(*PrivilegedApproval) {
     return m
 }
 // GetApprovalDuration gets the approvalDuration property value. 
-func (m *PrivilegedApproval) GetApprovalDuration()(*string) {
+func (m *PrivilegedApproval) GetApprovalDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -130,7 +130,7 @@ func (m *PrivilegedApproval) GetUserId()(*string) {
 func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["approvalDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -252,7 +252,7 @@ func (m *PrivilegedApproval) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         return err
     }
     {
-        err = writer.WriteStringValue("approvalDuration", m.GetApprovalDuration())
+        err = writer.WriteISODurationValue("approvalDuration", m.GetApprovalDuration())
         if err != nil {
             return err
         }
@@ -321,7 +321,7 @@ func (m *PrivilegedApproval) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     return nil
 }
 // SetApprovalDuration sets the approvalDuration property value. 
-func (m *PrivilegedApproval) SetApprovalDuration(value *string)() {
+func (m *PrivilegedApproval) SetApprovalDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.approvalDuration = value
     }

@@ -17,7 +17,7 @@ type SalesCreditMemo struct {
     // 
     billToName *string;
     // 
-    creditMemoDate *string;
+    creditMemoDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     currency *Currency;
     // 
@@ -37,7 +37,7 @@ type SalesCreditMemo struct {
     // 
     discountAppliedBeforeTax *bool;
     // 
-    dueDate *string;
+    dueDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     email *string;
     // 
@@ -113,7 +113,7 @@ func (m *SalesCreditMemo) GetBillToName()(*string) {
     }
 }
 // GetCreditMemoDate gets the creditMemoDate property value. 
-func (m *SalesCreditMemo) GetCreditMemoDate()(*string) {
+func (m *SalesCreditMemo) GetCreditMemoDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -193,7 +193,7 @@ func (m *SalesCreditMemo) GetDiscountAppliedBeforeTax()(*bool) {
     }
 }
 // GetDueDate gets the dueDate property value. 
-func (m *SalesCreditMemo) GetDueDate()(*string) {
+func (m *SalesCreditMemo) GetDueDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -380,7 +380,7 @@ func (m *SalesCreditMemo) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["creditMemoDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -480,7 +480,7 @@ func (m *SalesCreditMemo) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["dueDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -699,7 +699,7 @@ func (m *SalesCreditMemo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err = writer.WriteStringValue("creditMemoDate", m.GetCreditMemoDate())
+        err = writer.WriteDateOnlyValue("creditMemoDate", m.GetCreditMemoDate())
         if err != nil {
             return err
         }
@@ -759,7 +759,7 @@ func (m *SalesCreditMemo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err = writer.WriteStringValue("dueDate", m.GetDueDate())
+        err = writer.WriteDateOnlyValue("dueDate", m.GetDueDate())
         if err != nil {
             return err
         }
@@ -898,7 +898,7 @@ func (m *SalesCreditMemo) SetBillToName(value *string)() {
     }
 }
 // SetCreditMemoDate sets the creditMemoDate property value. 
-func (m *SalesCreditMemo) SetCreditMemoDate(value *string)() {
+func (m *SalesCreditMemo) SetCreditMemoDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.creditMemoDate = value
     }
@@ -958,7 +958,7 @@ func (m *SalesCreditMemo) SetDiscountAppliedBeforeTax(value *bool)() {
     }
 }
 // SetDueDate sets the dueDate property value. 
-func (m *SalesCreditMemo) SetDueDate(value *string)() {
+func (m *SalesCreditMemo) SetDueDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.dueDate = value
     }

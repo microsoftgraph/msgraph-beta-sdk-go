@@ -7,13 +7,13 @@ import (
 // RichLongRunningOperation 
 type RichLongRunningOperation struct {
     LongRunningOperation
-    // 
+    // Error due to which the operation failed.
     error *PublicError;
-    // 
+    // A value between 0 and 100 that indicates the progress of the operation.
     percentageComplete *int32;
-    // 
+    // A unique identifier for the result.
     resourceId *string;
-    // 
+    // Type of the operation.
     type_escaped *string;
 }
 // NewRichLongRunningOperation instantiates a new richLongRunningOperation and sets the default values.
@@ -23,7 +23,7 @@ func NewRichLongRunningOperation()(*RichLongRunningOperation) {
     }
     return m
 }
-// GetError gets the error property value. 
+// GetError gets the error property value. Error due to which the operation failed.
 func (m *RichLongRunningOperation) GetError()(*PublicError) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *RichLongRunningOperation) GetError()(*PublicError) {
         return m.error
     }
 }
-// GetPercentageComplete gets the percentageComplete property value. 
+// GetPercentageComplete gets the percentageComplete property value. A value between 0 and 100 that indicates the progress of the operation.
 func (m *RichLongRunningOperation) GetPercentageComplete()(*int32) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *RichLongRunningOperation) GetPercentageComplete()(*int32) {
         return m.percentageComplete
     }
 }
-// GetResourceId gets the resourceId property value. 
+// GetResourceId gets the resourceId property value. A unique identifier for the result.
 func (m *RichLongRunningOperation) GetResourceId()(*string) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *RichLongRunningOperation) GetResourceId()(*string) {
         return m.resourceId
     }
 }
-// GetType gets the type property value. 
+// GetType gets the type property value. Type of the operation.
 func (m *RichLongRunningOperation) GetType()(*string) {
     if m == nil {
         return nil
@@ -135,25 +135,25 @@ func (m *RichLongRunningOperation) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// SetError sets the error property value. 
+// SetError sets the error property value. Error due to which the operation failed.
 func (m *RichLongRunningOperation) SetError(value *PublicError)() {
     if m != nil {
         m.error = value
     }
 }
-// SetPercentageComplete sets the percentageComplete property value. 
+// SetPercentageComplete sets the percentageComplete property value. A value between 0 and 100 that indicates the progress of the operation.
 func (m *RichLongRunningOperation) SetPercentageComplete(value *int32)() {
     if m != nil {
         m.percentageComplete = value
     }
 }
-// SetResourceId sets the resourceId property value. 
+// SetResourceId sets the resourceId property value. A unique identifier for the result.
 func (m *RichLongRunningOperation) SetResourceId(value *string)() {
     if m != nil {
         m.resourceId = value
     }
 }
-// SetType sets the type property value. 
+// SetType sets the type property value. Type of the operation.
 func (m *RichLongRunningOperation) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

@@ -11,11 +11,11 @@ type GetOffice365GroupsActivityStorageWithPeriod struct {
     // The storage used in group mailbox.
     mailboxStorageUsedInBytes *int64;
     // The snapshot date for Exchange and SharePoint used storage.
-    reportDate *string;
+    reportDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The number of days the report covers.
     reportPeriod *string;
     // The latest date of the content.
-    reportRefreshDate *string;
+    reportRefreshDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The storage used in SharePoint document library.
     siteStorageUsedInBytes *int64;
 }
@@ -35,7 +35,7 @@ func (m *GetOffice365GroupsActivityStorageWithPeriod) GetMailboxStorageUsedInByt
     }
 }
 // GetReportDate gets the reportDate property value. The snapshot date for Exchange and SharePoint used storage.
-func (m *GetOffice365GroupsActivityStorageWithPeriod) GetReportDate()(*string) {
+func (m *GetOffice365GroupsActivityStorageWithPeriod) GetReportDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -51,7 +51,7 @@ func (m *GetOffice365GroupsActivityStorageWithPeriod) GetReportPeriod()(*string)
     }
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365GroupsActivityStorageWithPeriod) GetReportRefreshDate()(*string) {
+func (m *GetOffice365GroupsActivityStorageWithPeriod) GetReportRefreshDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *GetOffice365GroupsActivityStorageWithPeriod) GetFieldDeserializers()(ma
         return nil
     }
     res["reportDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -100,7 +100,7 @@ func (m *GetOffice365GroupsActivityStorageWithPeriod) GetFieldDeserializers()(ma
         return nil
     }
     res["reportRefreshDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -137,7 +137,7 @@ func (m *GetOffice365GroupsActivityStorageWithPeriod) Serialize(writer i04eb5309
         }
     }
     {
-        err = writer.WriteStringValue("reportDate", m.GetReportDate())
+        err = writer.WriteDateOnlyValue("reportDate", m.GetReportDate())
         if err != nil {
             return err
         }
@@ -149,7 +149,7 @@ func (m *GetOffice365GroupsActivityStorageWithPeriod) Serialize(writer i04eb5309
         }
     }
     {
-        err = writer.WriteStringValue("reportRefreshDate", m.GetReportRefreshDate())
+        err = writer.WriteDateOnlyValue("reportRefreshDate", m.GetReportRefreshDate())
         if err != nil {
             return err
         }
@@ -169,7 +169,7 @@ func (m *GetOffice365GroupsActivityStorageWithPeriod) SetMailboxStorageUsedInByt
     }
 }
 // SetReportDate sets the reportDate property value. The snapshot date for Exchange and SharePoint used storage.
-func (m *GetOffice365GroupsActivityStorageWithPeriod) SetReportDate(value *string)() {
+func (m *GetOffice365GroupsActivityStorageWithPeriod) SetReportDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportDate = value
     }
@@ -181,7 +181,7 @@ func (m *GetOffice365GroupsActivityStorageWithPeriod) SetReportPeriod(value *str
     }
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
-func (m *GetOffice365GroupsActivityStorageWithPeriod) SetReportRefreshDate(value *string)() {
+func (m *GetOffice365GroupsActivityStorageWithPeriod) SetReportRefreshDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.reportRefreshDate = value
     }

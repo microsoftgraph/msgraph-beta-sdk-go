@@ -8,9 +8,9 @@ import (
 type AuthenticationContext struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Describes how the conditional access authentication context was triggered. A value of previouslySatisfied means the auth context was because the user already satisfied the requirements for that authentication context in some previous authentication event. A value of required means the user had to meet the authentication context requirement as part of the sign-in flow. The possible values are: required, previouslySatisfied, notApplicable, unknownFutureValue.
     detail *AuthenticationContextDetail;
-    // 
+    // The identifier of a authentication context in your tenant.
     id *string;
 }
 // NewAuthenticationContext instantiates a new authenticationContext and sets the default values.
@@ -28,7 +28,7 @@ func (m *AuthenticationContext) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDetail gets the detail property value. 
+// GetDetail gets the detail property value. Describes how the conditional access authentication context was triggered. A value of previouslySatisfied means the auth context was because the user already satisfied the requirements for that authentication context in some previous authentication event. A value of required means the user had to meet the authentication context requirement as part of the sign-in flow. The possible values are: required, previouslySatisfied, notApplicable, unknownFutureValue.
 func (m *AuthenticationContext) GetDetail()(*AuthenticationContextDetail) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *AuthenticationContext) GetDetail()(*AuthenticationContextDetail) {
         return m.detail
     }
 }
-// GetId gets the id property value. 
+// GetId gets the id property value. The identifier of a authentication context in your tenant.
 func (m *AuthenticationContext) GetId()(*string) {
     if m == nil {
         return nil
@@ -102,13 +102,13 @@ func (m *AuthenticationContext) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetDetail sets the detail property value. 
+// SetDetail sets the detail property value. Describes how the conditional access authentication context was triggered. A value of previouslySatisfied means the auth context was because the user already satisfied the requirements for that authentication context in some previous authentication event. A value of required means the user had to meet the authentication context requirement as part of the sign-in flow. The possible values are: required, previouslySatisfied, notApplicable, unknownFutureValue.
 func (m *AuthenticationContext) SetDetail(value *AuthenticationContextDetail)() {
     if m != nil {
         m.detail = value
     }
 }
-// SetId sets the id property value. 
+// SetId sets the id property value. The identifier of a authentication context in your tenant.
 func (m *AuthenticationContext) SetId(value *string)() {
     if m != nil {
         m.id = value

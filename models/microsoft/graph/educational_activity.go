@@ -8,15 +8,15 @@ import (
 type EducationalActivity struct {
     ItemFacet
     // The month and year the user graduated or completed the activity.
-    completionMonthYear *string;
+    completionMonthYear *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // The month and year the user completed the educational activity referenced.
-    endMonthYear *string;
+    endMonthYear *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // 
     institution *InstitutionData;
     // 
     program *EducationalActivityDetail;
     // The month and year the user commenced the activity referenced.
-    startMonthYear *string;
+    startMonthYear *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
 }
 // NewEducationalActivity instantiates a new educationalActivity and sets the default values.
 func NewEducationalActivity()(*EducationalActivity) {
@@ -26,7 +26,7 @@ func NewEducationalActivity()(*EducationalActivity) {
     return m
 }
 // GetCompletionMonthYear gets the completionMonthYear property value. The month and year the user graduated or completed the activity.
-func (m *EducationalActivity) GetCompletionMonthYear()(*string) {
+func (m *EducationalActivity) GetCompletionMonthYear()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -34,7 +34,7 @@ func (m *EducationalActivity) GetCompletionMonthYear()(*string) {
     }
 }
 // GetEndMonthYear gets the endMonthYear property value. The month and year the user completed the educational activity referenced.
-func (m *EducationalActivity) GetEndMonthYear()(*string) {
+func (m *EducationalActivity) GetEndMonthYear()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -58,7 +58,7 @@ func (m *EducationalActivity) GetProgram()(*EducationalActivityDetail) {
     }
 }
 // GetStartMonthYear gets the startMonthYear property value. The month and year the user commenced the activity referenced.
-func (m *EducationalActivity) GetStartMonthYear()(*string) {
+func (m *EducationalActivity) GetStartMonthYear()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -69,7 +69,7 @@ func (m *EducationalActivity) GetStartMonthYear()(*string) {
 func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["completionMonthYear"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -79,7 +79,7 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["endMonthYear"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -109,7 +109,7 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["startMonthYear"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -130,13 +130,13 @@ func (m *EducationalActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         return err
     }
     {
-        err = writer.WriteStringValue("completionMonthYear", m.GetCompletionMonthYear())
+        err = writer.WriteDateOnlyValue("completionMonthYear", m.GetCompletionMonthYear())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("endMonthYear", m.GetEndMonthYear())
+        err = writer.WriteDateOnlyValue("endMonthYear", m.GetEndMonthYear())
         if err != nil {
             return err
         }
@@ -154,7 +154,7 @@ func (m *EducationalActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err = writer.WriteStringValue("startMonthYear", m.GetStartMonthYear())
+        err = writer.WriteDateOnlyValue("startMonthYear", m.GetStartMonthYear())
         if err != nil {
             return err
         }
@@ -162,13 +162,13 @@ func (m *EducationalActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     return nil
 }
 // SetCompletionMonthYear sets the completionMonthYear property value. The month and year the user graduated or completed the activity.
-func (m *EducationalActivity) SetCompletionMonthYear(value *string)() {
+func (m *EducationalActivity) SetCompletionMonthYear(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.completionMonthYear = value
     }
 }
 // SetEndMonthYear sets the endMonthYear property value. The month and year the user completed the educational activity referenced.
-func (m *EducationalActivity) SetEndMonthYear(value *string)() {
+func (m *EducationalActivity) SetEndMonthYear(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.endMonthYear = value
     }
@@ -186,7 +186,7 @@ func (m *EducationalActivity) SetProgram(value *EducationalActivityDetail)() {
     }
 }
 // SetStartMonthYear sets the startMonthYear property value. The month and year the user commenced the activity referenced.
-func (m *EducationalActivity) SetStartMonthYear(value *string)() {
+func (m *EducationalActivity) SetStartMonthYear(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.startMonthYear = value
     }
