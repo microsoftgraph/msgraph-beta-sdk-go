@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.9.0] - 2022-02-01
+
+### Changed
+
+- Weekly generation
+- Fixes a bug with collection properties serialization.
+
 ## [0.8.0] - 2022-01-25
 
 ### Changed
