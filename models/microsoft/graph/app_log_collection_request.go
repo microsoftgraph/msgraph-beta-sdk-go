@@ -121,7 +121,7 @@ func (m *AppLogCollectionRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetCustomLogFolders() != nil {
         err = writer.WriteCollectionOfStringValues("customLogFolders", m.GetCustomLogFolders())
         if err != nil {
             return err

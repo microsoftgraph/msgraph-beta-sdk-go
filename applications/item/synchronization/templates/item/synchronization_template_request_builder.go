@@ -36,7 +36,7 @@ type SynchronizationTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// SynchronizationTemplateRequestBuilderGetQueryParameters get templates from applications
+// SynchronizationTemplateRequestBuilderGetQueryParameters pre-configured synchronization settings for a particular application.
 type SynchronizationTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -73,7 +73,7 @@ func NewSynchronizationTemplateRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property templates for applications
+// CreateDeleteRequestInformation pre-configured synchronization settings for a particular application.
 func (m *SynchronizationTemplateRequestBuilder) CreateDeleteRequestInformation(options *SynchronizationTemplateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -90,7 +90,7 @@ func (m *SynchronizationTemplateRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get templates from applications
+// CreateGetRequestInformation pre-configured synchronization settings for a particular application.
 func (m *SynchronizationTemplateRequestBuilder) CreateGetRequestInformation(options *SynchronizationTemplateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,7 +110,7 @@ func (m *SynchronizationTemplateRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property templates in applications
+// CreatePatchRequestInformation pre-configured synchronization settings for a particular application.
 func (m *SynchronizationTemplateRequestBuilder) CreatePatchRequestInformation(options *SynchronizationTemplateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,7 +128,7 @@ func (m *SynchronizationTemplateRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// Delete delete navigation property templates for applications
+// Delete pre-configured synchronization settings for a particular application.
 func (m *SynchronizationTemplateRequestBuilder) Delete(options *SynchronizationTemplateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -140,7 +140,7 @@ func (m *SynchronizationTemplateRequestBuilder) Delete(options *SynchronizationT
     }
     return nil
 }
-// Get get templates from applications
+// Get pre-configured synchronization settings for a particular application.
 func (m *SynchronizationTemplateRequestBuilder) Get(options *SynchronizationTemplateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationTemplate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -152,7 +152,7 @@ func (m *SynchronizationTemplateRequestBuilder) Get(options *SynchronizationTemp
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationTemplate), nil
 }
-// Patch update the navigation property templates in applications
+// Patch pre-configured synchronization settings for a particular application.
 func (m *SynchronizationTemplateRequestBuilder) Patch(options *SynchronizationTemplateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

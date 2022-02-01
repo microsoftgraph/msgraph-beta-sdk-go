@@ -150,7 +150,7 @@ func (m *EducationRoot) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *EducationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetClasses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetClasses()))
         for i, v := range m.GetClasses() {
             temp := v
@@ -167,7 +167,7 @@ func (m *EducationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetSchools() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSchools()))
         for i, v := range m.GetSchools() {
             temp := v
@@ -178,7 +178,7 @@ func (m *EducationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetSynchronizationProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSynchronizationProfiles()))
         for i, v := range m.GetSynchronizationProfiles() {
             temp := v
@@ -189,7 +189,7 @@ func (m *EducationRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetUsers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUsers()))
         for i, v := range m.GetUsers() {
             temp := v

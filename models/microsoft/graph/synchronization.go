@@ -7,11 +7,11 @@ import (
 // Synchronization 
 type Synchronization struct {
     Entity
-    // 
+    // Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
     jobs []SynchronizationJob;
-    // 
+    // Represents a collection of credentials to access provisioned cloud applications.
     secrets []SynchronizationSecretKeyStringValuePair;
-    // 
+    // Pre-configured synchronization settings for a particular application.
     templates []SynchronizationTemplate;
 }
 // NewSynchronization instantiates a new synchronization and sets the default values.
@@ -21,7 +21,7 @@ func NewSynchronization()(*Synchronization) {
     }
     return m
 }
-// GetJobs gets the jobs property value. 
+// GetJobs gets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *Synchronization) GetJobs()([]SynchronizationJob) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *Synchronization) GetJobs()([]SynchronizationJob) {
         return m.jobs
     }
 }
-// GetSecrets gets the secrets property value. 
+// GetSecrets gets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePair) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePair
         return m.secrets
     }
 }
-// GetTemplates gets the templates property value. 
+// GetTemplates gets the templates property value. Pre-configured synchronization settings for a particular application.
 func (m *Synchronization) GetTemplates()([]SynchronizationTemplate) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *Synchronization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if err != nil {
         return err
     }
-    {
+    if m.GetJobs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetJobs()))
         for i, v := range m.GetJobs() {
             temp := v
@@ -112,7 +112,7 @@ func (m *Synchronization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetSecrets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSecrets()))
         for i, v := range m.GetSecrets() {
             temp := v
@@ -123,7 +123,7 @@ func (m *Synchronization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTemplates()))
         for i, v := range m.GetTemplates() {
             temp := v
@@ -136,19 +136,19 @@ func (m *Synchronization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// SetJobs sets the jobs property value. 
+// SetJobs sets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *Synchronization) SetJobs(value []SynchronizationJob)() {
     if m != nil {
         m.jobs = value
     }
 }
-// SetSecrets sets the secrets property value. 
+// SetSecrets sets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) SetSecrets(value []SynchronizationSecretKeyStringValuePair)() {
     if m != nil {
         m.secrets = value
     }
 }
-// SetTemplates sets the templates property value. 
+// SetTemplates sets the templates property value. Pre-configured synchronization settings for a particular application.
 func (m *Synchronization) SetTemplates(value []SynchronizationTemplate)() {
     if m != nil {
         m.templates = value

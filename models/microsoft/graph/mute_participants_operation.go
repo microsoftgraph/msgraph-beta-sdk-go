@@ -53,7 +53,7 @@ func (m *MuteParticipantsOperation) Serialize(writer i04eb5309aeaafadd28374d79c8
     if err != nil {
         return err
     }
-    {
+    if m.GetParticipants() != nil {
         err = writer.WriteCollectionOfStringValues("participants", m.GetParticipants())
         if err != nil {
             return err

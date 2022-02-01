@@ -82,13 +82,13 @@ func (m *ManagedDeviceModelsAndManufacturers) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceModelsAndManufacturers) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetDeviceManufacturers() != nil {
         err := writer.WriteCollectionOfStringValues("deviceManufacturers", m.GetDeviceManufacturers())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetDeviceModels() != nil {
         err := writer.WriteCollectionOfStringValues("deviceModels", m.GetDeviceModels())
         if err != nil {
             return err

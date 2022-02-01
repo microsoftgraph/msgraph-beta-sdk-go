@@ -82,7 +82,7 @@ func (m *AppManagementConfiguration) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *AppManagementConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetKeyCredentials() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetKeyCredentials()))
         for i, v := range m.GetKeyCredentials() {
             temp := v
@@ -93,7 +93,7 @@ func (m *AppManagementConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c
             return err
         }
     }
-    {
+    if m.GetPasswordCredentials() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPasswordCredentials()))
         for i, v := range m.GetPasswordCredentials() {
             temp := v

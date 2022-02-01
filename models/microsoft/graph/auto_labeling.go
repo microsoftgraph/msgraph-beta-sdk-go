@@ -84,7 +84,7 @@ func (m *AutoLabeling) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetSensitiveTypeIds() != nil {
         err := writer.WriteCollectionOfStringValues("sensitiveTypeIds", m.GetSensitiveTypeIds())
         if err != nil {
             return err

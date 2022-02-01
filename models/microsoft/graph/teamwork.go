@@ -7,9 +7,9 @@ import (
 // Teamwork 
 type Teamwork struct {
     Entity
-    // 
+    // The Teams devices provisioned for the tenant.
     devices []TeamworkDevice;
-    // 
+    // A workforce integration with shifts.
     workforceIntegrations []WorkforceIntegration;
 }
 // NewTeamwork instantiates a new teamwork and sets the default values.
@@ -19,7 +19,7 @@ func NewTeamwork()(*Teamwork) {
     }
     return m
 }
-// GetDevices gets the devices property value. 
+// GetDevices gets the devices property value. The Teams devices provisioned for the tenant.
 func (m *Teamwork) GetDevices()([]TeamworkDevice) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *Teamwork) GetDevices()([]TeamworkDevice) {
         return m.devices
     }
 }
-// GetWorkforceIntegrations gets the workforceIntegrations property value. 
+// GetWorkforceIntegrations gets the workforceIntegrations property value. A workforce integration with shifts.
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegration) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if err != nil {
         return err
     }
-    {
+    if m.GetDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDevices()))
         for i, v := range m.GetDevices() {
             temp := v
@@ -88,7 +88,7 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetWorkforceIntegrations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWorkforceIntegrations()))
         for i, v := range m.GetWorkforceIntegrations() {
             temp := v
@@ -101,13 +101,13 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// SetDevices sets the devices property value. 
+// SetDevices sets the devices property value. The Teams devices provisioned for the tenant.
 func (m *Teamwork) SetDevices(value []TeamworkDevice)() {
     if m != nil {
         m.devices = value
     }
 }
-// SetWorkforceIntegrations sets the workforceIntegrations property value. 
+// SetWorkforceIntegrations sets the workforceIntegrations property value. A workforce integration with shifts.
 func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegration)() {
     if m != nil {
         m.workforceIntegrations = value

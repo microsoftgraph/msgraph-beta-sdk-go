@@ -230,7 +230,7 @@ func (m *UnifiedRoleManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    {
+    if m.GetEffectiveRules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEffectiveRules()))
         for i, v := range m.GetEffectiveRules() {
             temp := v
@@ -259,7 +259,7 @@ func (m *UnifiedRoleManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    {
+    if m.GetRules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRules()))
         for i, v := range m.GetRules() {
             temp := v

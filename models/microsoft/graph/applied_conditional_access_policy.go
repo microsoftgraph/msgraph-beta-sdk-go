@@ -279,19 +279,19 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374
             return err
         }
     }
-    {
+    if m.GetEnforcedGrantControls() != nil {
         err := writer.WriteCollectionOfStringValues("enforcedGrantControls", m.GetEnforcedGrantControls())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetEnforcedSessionControls() != nil {
         err := writer.WriteCollectionOfStringValues("enforcedSessionControls", m.GetEnforcedSessionControls())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetExcludeRulesSatisfied() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExcludeRulesSatisfied()))
         for i, v := range m.GetExcludeRulesSatisfied() {
             temp := v
@@ -308,7 +308,7 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374
             return err
         }
     }
-    {
+    if m.GetIncludeRulesSatisfied() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncludeRulesSatisfied()))
         for i, v := range m.GetIncludeRulesSatisfied() {
             temp := v

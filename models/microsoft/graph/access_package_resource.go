@@ -308,7 +308,7 @@ func (m *AccessPackageResource) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackageResourceRoles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageResourceRoles()))
         for i, v := range m.GetAccessPackageResourceRoles() {
             temp := v
@@ -319,7 +319,7 @@ func (m *AccessPackageResource) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackageResourceScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageResourceScopes()))
         for i, v := range m.GetAccessPackageResourceScopes() {
             temp := v
@@ -342,7 +342,7 @@ func (m *AccessPackageResource) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAttributes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttributes()))
         for i, v := range m.GetAttributes() {
             temp := v

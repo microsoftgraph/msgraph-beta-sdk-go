@@ -101,7 +101,7 @@ func (m *UserExperienceAnalyticsRegressionSummary) Serialize(writer i04eb5309aea
     if err != nil {
         return err
     }
-    {
+    if m.GetManufacturerRegression() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManufacturerRegression()))
         for i, v := range m.GetManufacturerRegression() {
             temp := v
@@ -112,7 +112,7 @@ func (m *UserExperienceAnalyticsRegressionSummary) Serialize(writer i04eb5309aea
             return err
         }
     }
-    {
+    if m.GetModelRegression() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetModelRegression()))
         for i, v := range m.GetModelRegression() {
             temp := v
@@ -123,7 +123,7 @@ func (m *UserExperienceAnalyticsRegressionSummary) Serialize(writer i04eb5309aea
             return err
         }
     }
-    {
+    if m.GetOperatingSystemRegression() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperatingSystemRegression()))
         for i, v := range m.GetOperatingSystemRegression() {
             temp := v

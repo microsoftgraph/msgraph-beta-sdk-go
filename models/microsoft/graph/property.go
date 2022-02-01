@@ -204,7 +204,7 @@ func (m *Property) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *Property) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetAliases() != nil {
         err := writer.WriteCollectionOfStringValues("aliases", m.GetAliases())
         if err != nil {
             return err
@@ -234,7 +234,7 @@ func (m *Property) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetLabels() != nil {
         err := writer.WriteCollectionOfStringValues("labels", i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.SerializeLabel(m.GetLabels()))
         if err != nil {
             return err

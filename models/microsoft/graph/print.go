@@ -242,7 +242,7 @@ func (m *Print) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetConnectors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConnectors()))
         for i, v := range m.GetConnectors() {
             temp := v
@@ -253,7 +253,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
             temp := v
@@ -264,7 +264,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetPrinters() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPrinters()))
         for i, v := range m.GetPrinters() {
             temp := v
@@ -275,7 +275,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetPrinterShares() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPrinterShares()))
         for i, v := range m.GetPrinterShares() {
             temp := v
@@ -292,7 +292,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetServices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetServices()))
         for i, v := range m.GetServices() {
             temp := v
@@ -309,7 +309,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetShares() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetShares()))
         for i, v := range m.GetShares() {
             temp := v
@@ -320,7 +320,7 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetTaskDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTaskDefinitions()))
         for i, v := range m.GetTaskDefinitions() {
             temp := v

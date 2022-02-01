@@ -101,7 +101,7 @@ func (m *RbacApplicationMultiple) Serialize(writer i04eb5309aeaafadd28374d79c847
     if err != nil {
         return err
     }
-    {
+    if m.GetResourceNamespaces() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResourceNamespaces()))
         for i, v := range m.GetResourceNamespaces() {
             temp := v
@@ -112,7 +112,7 @@ func (m *RbacApplicationMultiple) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetRoleAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
             temp := v
@@ -123,7 +123,7 @@ func (m *RbacApplicationMultiple) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetRoleDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleDefinitions()))
         for i, v := range m.GetRoleDefinitions() {
             temp := v

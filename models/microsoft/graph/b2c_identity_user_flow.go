@@ -197,7 +197,7 @@ func (m *B2cIdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetIdentityProviders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIdentityProviders()))
         for i, v := range m.GetIdentityProviders() {
             temp := v
@@ -214,7 +214,7 @@ func (m *B2cIdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetLanguages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLanguages()))
         for i, v := range m.GetLanguages() {
             temp := v
@@ -225,7 +225,7 @@ func (m *B2cIdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetUserAttributeAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserAttributeAssignments()))
         for i, v := range m.GetUserAttributeAssignments() {
             temp := v
@@ -236,7 +236,7 @@ func (m *B2cIdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetUserFlowIdentityProviders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserFlowIdentityProviders()))
         for i, v := range m.GetUserFlowIdentityProviders() {
             temp := v

@@ -82,7 +82,7 @@ func (m *TrustFramework) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *TrustFramework) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetKeySets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetKeySets()))
         for i, v := range m.GetKeySets() {
             temp := v
@@ -93,7 +93,7 @@ func (m *TrustFramework) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPolicies()))
         for i, v := range m.GetPolicies() {
             temp := v

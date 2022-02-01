@@ -215,7 +215,7 @@ func (m *PolicySetItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetGuidedDeploymentTags() != nil {
         err = writer.WriteCollectionOfStringValues("guidedDeploymentTags", m.GetGuidedDeploymentTags())
         if err != nil {
             return err

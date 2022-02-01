@@ -338,7 +338,7 @@ func (m *DeviceManagementIntent) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if err != nil {
         return err
     }
-    {
+    if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
             temp := v
@@ -349,7 +349,7 @@ func (m *DeviceManagementIntent) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    {
+    if m.GetCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCategories()))
         for i, v := range m.GetCategories() {
             temp := v
@@ -366,7 +366,7 @@ func (m *DeviceManagementIntent) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    {
+    if m.GetDeviceSettingStateSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceSettingStateSummaries()))
         for i, v := range m.GetDeviceSettingStateSummaries() {
             temp := v
@@ -377,7 +377,7 @@ func (m *DeviceManagementIntent) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    {
+    if m.GetDeviceStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceStates()))
         for i, v := range m.GetDeviceStates() {
             temp := v
@@ -412,13 +412,13 @@ func (m *DeviceManagementIntent) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    {
+    if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSettings()))
         for i, v := range m.GetSettings() {
             temp := v
@@ -435,7 +435,7 @@ func (m *DeviceManagementIntent) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    {
+    if m.GetUserStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserStates()))
         for i, v := range m.GetUserStates() {
             temp := v

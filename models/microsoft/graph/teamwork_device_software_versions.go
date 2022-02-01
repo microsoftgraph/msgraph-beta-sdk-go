@@ -8,15 +8,15 @@ import (
 type TeamworkDeviceSoftwareVersions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The software version for the admin agent running on the device.
     adminAgentSoftwareVersion *string;
-    // 
+    // The software version for the firmware running on the device.
     firmwareSoftwareVersion *string;
-    // 
+    // The software version for the operating system on the device.
     operatingSystemSoftwareVersion *string;
-    // 
+    // The software version for the partner agent running on the device.
     partnerAgentSoftwareVersion *string;
-    // 
+    // The software version for the Teams client running on the device.
     teamsClientSoftwareVersion *string;
 }
 // NewTeamworkDeviceSoftwareVersions instantiates a new teamworkDeviceSoftwareVersions and sets the default values.
@@ -34,7 +34,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetAdminAgentSoftwareVersion gets the adminAgentSoftwareVersion property value. 
+// GetAdminAgentSoftwareVersion gets the adminAgentSoftwareVersion property value. The software version for the admin agent running on the device.
 func (m *TeamworkDeviceSoftwareVersions) GetAdminAgentSoftwareVersion()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetAdminAgentSoftwareVersion()(*string)
         return m.adminAgentSoftwareVersion
     }
 }
-// GetFirmwareSoftwareVersion gets the firmwareSoftwareVersion property value. 
+// GetFirmwareSoftwareVersion gets the firmwareSoftwareVersion property value. The software version for the firmware running on the device.
 func (m *TeamworkDeviceSoftwareVersions) GetFirmwareSoftwareVersion()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetFirmwareSoftwareVersion()(*string) {
         return m.firmwareSoftwareVersion
     }
 }
-// GetOperatingSystemSoftwareVersion gets the operatingSystemSoftwareVersion property value. 
+// GetOperatingSystemSoftwareVersion gets the operatingSystemSoftwareVersion property value. The software version for the operating system on the device.
 func (m *TeamworkDeviceSoftwareVersions) GetOperatingSystemSoftwareVersion()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetOperatingSystemSoftwareVersion()(*st
         return m.operatingSystemSoftwareVersion
     }
 }
-// GetPartnerAgentSoftwareVersion gets the partnerAgentSoftwareVersion property value. 
+// GetPartnerAgentSoftwareVersion gets the partnerAgentSoftwareVersion property value. The software version for the partner agent running on the device.
 func (m *TeamworkDeviceSoftwareVersions) GetPartnerAgentSoftwareVersion()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetPartnerAgentSoftwareVersion()(*strin
         return m.partnerAgentSoftwareVersion
     }
 }
-// GetTeamsClientSoftwareVersion gets the teamsClientSoftwareVersion property value. 
+// GetTeamsClientSoftwareVersion gets the teamsClientSoftwareVersion property value. The software version for the Teams client running on the device.
 func (m *TeamworkDeviceSoftwareVersions) GetTeamsClientSoftwareVersion()(*string) {
     if m == nil {
         return nil
@@ -178,31 +178,31 @@ func (m *TeamworkDeviceSoftwareVersions) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetAdminAgentSoftwareVersion sets the adminAgentSoftwareVersion property value. 
+// SetAdminAgentSoftwareVersion sets the adminAgentSoftwareVersion property value. The software version for the admin agent running on the device.
 func (m *TeamworkDeviceSoftwareVersions) SetAdminAgentSoftwareVersion(value *string)() {
     if m != nil {
         m.adminAgentSoftwareVersion = value
     }
 }
-// SetFirmwareSoftwareVersion sets the firmwareSoftwareVersion property value. 
+// SetFirmwareSoftwareVersion sets the firmwareSoftwareVersion property value. The software version for the firmware running on the device.
 func (m *TeamworkDeviceSoftwareVersions) SetFirmwareSoftwareVersion(value *string)() {
     if m != nil {
         m.firmwareSoftwareVersion = value
     }
 }
-// SetOperatingSystemSoftwareVersion sets the operatingSystemSoftwareVersion property value. 
+// SetOperatingSystemSoftwareVersion sets the operatingSystemSoftwareVersion property value. The software version for the operating system on the device.
 func (m *TeamworkDeviceSoftwareVersions) SetOperatingSystemSoftwareVersion(value *string)() {
     if m != nil {
         m.operatingSystemSoftwareVersion = value
     }
 }
-// SetPartnerAgentSoftwareVersion sets the partnerAgentSoftwareVersion property value. 
+// SetPartnerAgentSoftwareVersion sets the partnerAgentSoftwareVersion property value. The software version for the partner agent running on the device.
 func (m *TeamworkDeviceSoftwareVersions) SetPartnerAgentSoftwareVersion(value *string)() {
     if m != nil {
         m.partnerAgentSoftwareVersion = value
     }
 }
-// SetTeamsClientSoftwareVersion sets the teamsClientSoftwareVersion property value. 
+// SetTeamsClientSoftwareVersion sets the teamsClientSoftwareVersion property value. The software version for the Teams client running on the device.
 func (m *TeamworkDeviceSoftwareVersions) SetTeamsClientSoftwareVersion(value *string)() {
     if m != nil {
         m.teamsClientSoftwareVersion = value

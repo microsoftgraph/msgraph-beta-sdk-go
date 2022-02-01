@@ -942,7 +942,7 @@ func (m *PrinterCapabilities) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *PrinterCapabilities) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetBottomMargins() != nil {
         err := writer.WriteCollectionOfInt32Values("bottomMargins", m.GetBottomMargins())
         if err != nil {
             return err
@@ -954,13 +954,13 @@ func (m *PrinterCapabilities) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetColorModes() != nil {
         err := writer.WriteCollectionOfStringValues("colorModes", SerializePrintColorMode(m.GetColorModes()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetContentTypes() != nil {
         err := writer.WriteCollectionOfStringValues("contentTypes", m.GetContentTypes())
         if err != nil {
             return err
@@ -972,37 +972,37 @@ func (m *PrinterCapabilities) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetDpis() != nil {
         err := writer.WriteCollectionOfInt32Values("dpis", m.GetDpis())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetDuplexModes() != nil {
         err := writer.WriteCollectionOfStringValues("duplexModes", SerializePrintDuplexMode(m.GetDuplexModes()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetFeedDirections() != nil {
         err := writer.WriteCollectionOfStringValues("feedDirections", SerializePrinterFeedDirection(m.GetFeedDirections()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetFeedOrientations() != nil {
         err := writer.WriteCollectionOfStringValues("feedOrientations", SerializePrinterFeedOrientation(m.GetFeedOrientations()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetFinishings() != nil {
         err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetInputBins() != nil {
         err := writer.WriteCollectionOfStringValues("inputBins", m.GetInputBins())
         if err != nil {
             return err
@@ -1020,73 +1020,73 @@ func (m *PrinterCapabilities) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetLeftMargins() != nil {
         err := writer.WriteCollectionOfInt32Values("leftMargins", m.GetLeftMargins())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetMediaColors() != nil {
         err := writer.WriteCollectionOfStringValues("mediaColors", m.GetMediaColors())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetMediaSizes() != nil {
         err := writer.WriteCollectionOfStringValues("mediaSizes", m.GetMediaSizes())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetMediaTypes() != nil {
         err := writer.WriteCollectionOfStringValues("mediaTypes", m.GetMediaTypes())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetMultipageLayouts() != nil {
         err := writer.WriteCollectionOfStringValues("multipageLayouts", SerializePrintMultipageLayout(m.GetMultipageLayouts()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetOrientations() != nil {
         err := writer.WriteCollectionOfStringValues("orientations", SerializePrintOrientation(m.GetOrientations()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetOutputBins() != nil {
         err := writer.WriteCollectionOfStringValues("outputBins", m.GetOutputBins())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetPagesPerSheet() != nil {
         err := writer.WriteCollectionOfInt32Values("pagesPerSheet", m.GetPagesPerSheet())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetQualities() != nil {
         err := writer.WriteCollectionOfStringValues("qualities", SerializePrintQuality(m.GetQualities()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetRightMargins() != nil {
         err := writer.WriteCollectionOfInt32Values("rightMargins", m.GetRightMargins())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetScalings() != nil {
         err := writer.WriteCollectionOfStringValues("scalings", SerializePrintScaling(m.GetScalings()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSupportedColorConfigurations() != nil {
         err := writer.WriteCollectionOfStringValues("supportedColorConfigurations", SerializePrintColorConfiguration(m.GetSupportedColorConfigurations()))
         if err != nil {
             return err
@@ -1098,49 +1098,49 @@ func (m *PrinterCapabilities) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetSupportedDocumentMimeTypes() != nil {
         err := writer.WriteCollectionOfStringValues("supportedDocumentMimeTypes", m.GetSupportedDocumentMimeTypes())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSupportedDuplexConfigurations() != nil {
         err := writer.WriteCollectionOfStringValues("supportedDuplexConfigurations", SerializePrintDuplexConfiguration(m.GetSupportedDuplexConfigurations()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSupportedFinishings() != nil {
         err := writer.WriteCollectionOfStringValues("supportedFinishings", SerializePrintFinishing(m.GetSupportedFinishings()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSupportedMediaColors() != nil {
         err := writer.WriteCollectionOfStringValues("supportedMediaColors", m.GetSupportedMediaColors())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSupportedMediaSizes() != nil {
         err := writer.WriteCollectionOfStringValues("supportedMediaSizes", m.GetSupportedMediaSizes())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSupportedMediaTypes() != nil {
         err := writer.WriteCollectionOfStringValues("supportedMediaTypes", SerializePrintMediaType(m.GetSupportedMediaTypes()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSupportedOrientations() != nil {
         err := writer.WriteCollectionOfStringValues("supportedOrientations", SerializePrintOrientation(m.GetSupportedOrientations()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSupportedOutputBins() != nil {
         err := writer.WriteCollectionOfStringValues("supportedOutputBins", m.GetSupportedOutputBins())
         if err != nil {
             return err
@@ -1152,13 +1152,13 @@ func (m *PrinterCapabilities) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetSupportedPresentationDirections() != nil {
         err := writer.WriteCollectionOfStringValues("supportedPresentationDirections", SerializePrintPresentationDirection(m.GetSupportedPresentationDirections()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSupportedPrintQualities() != nil {
         err := writer.WriteCollectionOfStringValues("supportedPrintQualities", SerializePrintQuality(m.GetSupportedPrintQualities()))
         if err != nil {
             return err
@@ -1170,7 +1170,7 @@ func (m *PrinterCapabilities) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetTopMargins() != nil {
         err := writer.WriteCollectionOfInt32Values("topMargins", m.GetTopMargins())
         if err != nil {
             return err

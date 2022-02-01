@@ -409,7 +409,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if err != nil {
         return err
     }
-    {
+    if m.GetAlerts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAlerts()))
         for i, v := range m.GetAlerts() {
             temp := v
@@ -420,7 +420,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetAlerts_v2() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAlerts_v2()))
         for i, v := range m.GetAlerts_v2() {
             temp := v
@@ -437,7 +437,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetCloudAppSecurityProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCloudAppSecurityProfiles()))
         for i, v := range m.GetCloudAppSecurityProfiles() {
             temp := v
@@ -448,7 +448,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetDomainSecurityProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDomainSecurityProfiles()))
         for i, v := range m.GetDomainSecurityProfiles() {
             temp := v
@@ -459,7 +459,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetFileSecurityProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFileSecurityProfiles()))
         for i, v := range m.GetFileSecurityProfiles() {
             temp := v
@@ -470,7 +470,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetHostSecurityProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHostSecurityProfiles()))
         for i, v := range m.GetHostSecurityProfiles() {
             temp := v
@@ -481,7 +481,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetIncidents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncidents()))
         for i, v := range m.GetIncidents() {
             temp := v
@@ -492,7 +492,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetIpSecurityProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIpSecurityProfiles()))
         for i, v := range m.GetIpSecurityProfiles() {
             temp := v
@@ -503,7 +503,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetProviderStatus() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProviderStatus()))
         for i, v := range m.GetProviderStatus() {
             temp := v
@@ -514,7 +514,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetProviderTenantSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProviderTenantSettings()))
         for i, v := range m.GetProviderTenantSettings() {
             temp := v
@@ -525,7 +525,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetSecureScoreControlProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSecureScoreControlProfiles()))
         for i, v := range m.GetSecureScoreControlProfiles() {
             temp := v
@@ -536,7 +536,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetSecureScores() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSecureScores()))
         for i, v := range m.GetSecureScores() {
             temp := v
@@ -547,7 +547,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetSecurityActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSecurityActions()))
         for i, v := range m.GetSecurityActions() {
             temp := v
@@ -558,7 +558,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetTiIndicators() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTiIndicators()))
         for i, v := range m.GetTiIndicators() {
             temp := v
@@ -569,7 +569,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetUserSecurityProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserSecurityProfiles()))
         for i, v := range m.GetUserSecurityProfiles() {
             temp := v

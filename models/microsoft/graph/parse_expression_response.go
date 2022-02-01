@@ -144,7 +144,7 @@ func (m *ParseExpressionResponse) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetEvaluationResult() != nil {
         err := writer.WriteCollectionOfStringValues("evaluationResult", m.GetEvaluationResult())
         if err != nil {
             return err

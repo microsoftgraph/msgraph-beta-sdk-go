@@ -12,7 +12,7 @@ type DeviceManagementConfigurationSettingApplicability struct {
     description *string;
     // Device Mode that setting can be applied on. Possible values are: none, kiosk.
     deviceMode *DeviceManagementConfigurationDeviceMode;
-    // Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+    // Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
     platform *DeviceManagementConfigurationPlatforms;
     // Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
     technologies *DeviceManagementConfigurationTechnologies;
@@ -48,7 +48,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetDeviceMode()(*Dev
         return m.deviceMode
     }
 }
-// GetPlatform gets the platform property value. Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+// GetPlatform gets the platform property value. Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
 func (m *DeviceManagementConfigurationSettingApplicability) GetPlatform()(*DeviceManagementConfigurationPlatforms) {
     if m == nil {
         return nil
@@ -170,7 +170,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) SetDeviceMode(value 
         m.deviceMode = value
     }
 }
-// SetPlatform sets the platform property value. Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+// SetPlatform sets the platform property value. Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
 func (m *DeviceManagementConfigurationSettingApplicability) SetPlatform(value *DeviceManagementConfigurationPlatforms)() {
     if m != nil {
         m.platform = value

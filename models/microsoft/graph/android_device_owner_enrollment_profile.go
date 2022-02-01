@@ -485,7 +485,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) Serialize(writer i04eb5309aeaafadd
             return err
         }
     }
-    {
+    if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
             return err

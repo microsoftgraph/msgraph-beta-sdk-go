@@ -103,7 +103,7 @@ func (m *BaseTaskList) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
             temp := v
@@ -114,7 +114,7 @@ func (m *BaseTaskList) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetTasks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
             temp := v

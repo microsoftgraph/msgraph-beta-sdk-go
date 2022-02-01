@@ -77,13 +77,13 @@ func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i04eb5309aeaafad
     if err != nil {
         return err
     }
-    {
+    if m.GetMembers() != nil {
         err = writer.WriteCollectionOfStringValues("members", m.GetMembers())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetRoleScopeTags() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleScopeTags()))
         for i, v := range m.GetRoleScopeTags() {
             temp := v

@@ -8,15 +8,15 @@ import (
 // TeamworkDeviceActivity 
 type TeamworkDeviceActivity struct {
     Entity
-    // 
+    // The active peripheral devices attached to the device.
     activePeripherals *TeamworkActivePeripherals;
-    // 
+    // Identity of the user who created the device activity document.
     createdBy *IdentitySet;
-    // 
+    // The UTC date and time when the device activity document was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // Identity of the user who last modified the device activity details.
     lastModifiedBy *IdentitySet;
-    // 
+    // The UTC date and time when the device activity detail was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
 // NewTeamworkDeviceActivity instantiates a new teamworkDeviceActivity and sets the default values.
@@ -26,7 +26,7 @@ func NewTeamworkDeviceActivity()(*TeamworkDeviceActivity) {
     }
     return m
 }
-// GetActivePeripherals gets the activePeripherals property value. 
+// GetActivePeripherals gets the activePeripherals property value. The active peripheral devices attached to the device.
 func (m *TeamworkDeviceActivity) GetActivePeripherals()(*TeamworkActivePeripherals) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *TeamworkDeviceActivity) GetActivePeripherals()(*TeamworkActivePeriphera
         return m.activePeripherals
     }
 }
-// GetCreatedBy gets the createdBy property value. 
+// GetCreatedBy gets the createdBy property value. Identity of the user who created the device activity document.
 func (m *TeamworkDeviceActivity) GetCreatedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *TeamworkDeviceActivity) GetCreatedBy()(*IdentitySet) {
         return m.createdBy
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. 
+// GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device activity document was created.
 func (m *TeamworkDeviceActivity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *TeamworkDeviceActivity) GetCreatedDateTime()(*i336074805fc853987abe6f7f
         return m.createdDateTime
     }
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. 
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the device activity details.
 func (m *TeamworkDeviceActivity) GetLastModifiedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *TeamworkDeviceActivity) GetLastModifiedBy()(*IdentitySet) {
         return m.lastModifiedBy
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The UTC date and time when the device activity detail was last modified.
 func (m *TeamworkDeviceActivity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -162,31 +162,31 @@ func (m *TeamworkDeviceActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// SetActivePeripherals sets the activePeripherals property value. 
+// SetActivePeripherals sets the activePeripherals property value. The active peripheral devices attached to the device.
 func (m *TeamworkDeviceActivity) SetActivePeripherals(value *TeamworkActivePeripherals)() {
     if m != nil {
         m.activePeripherals = value
     }
 }
-// SetCreatedBy sets the createdBy property value. 
+// SetCreatedBy sets the createdBy property value. Identity of the user who created the device activity document.
 func (m *TeamworkDeviceActivity) SetCreatedBy(value *IdentitySet)() {
     if m != nil {
         m.createdBy = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. 
+// SetCreatedDateTime sets the createdDateTime property value. The UTC date and time when the device activity document was created.
 func (m *TeamworkDeviceActivity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. 
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who last modified the device activity details.
 func (m *TeamworkDeviceActivity) SetLastModifiedBy(value *IdentitySet)() {
     if m != nil {
         m.lastModifiedBy = value
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The UTC date and time when the device activity detail was last modified.
 func (m *TeamworkDeviceActivity) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value

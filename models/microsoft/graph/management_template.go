@@ -226,7 +226,7 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             return err
         }
     }
-    {
+    if m.GetManagementTemplateCollections() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateCollections()))
         for i, v := range m.GetManagementTemplateCollections() {
             temp := v
@@ -237,7 +237,7 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             return err
         }
     }
-    {
+    if m.GetManagementTemplateSteps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateSteps()))
         for i, v := range m.GetManagementTemplateSteps() {
             temp := v
@@ -248,7 +248,7 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             return err
         }
     }
-    {
+    if m.GetParameters() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetParameters()))
         for i, v := range m.GetParameters() {
             temp := v
@@ -265,7 +265,7 @@ func (m *ManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             return err
         }
     }
-    {
+    if m.GetWorkloadActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWorkloadActions()))
         for i, v := range m.GetWorkloadActions() {
             temp := v

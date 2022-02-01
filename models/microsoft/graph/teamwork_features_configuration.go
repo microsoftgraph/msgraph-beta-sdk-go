@@ -8,15 +8,15 @@ import (
 type TeamworkFeaturesConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Email address to send logs and feedback.
     emailToSendLogsAndFeedback *string;
-    // 
+    // True if auto screen shared is enabled.
     isAutoScreenShareEnabled *bool;
-    // 
+    // True if Bluetooth beaconing is enabled.
     isBluetoothBeaconingEnabled *bool;
-    // 
+    // True if hiding meeting names is enabled.
     isHideMeetingNamesEnabled *bool;
-    // 
+    // True if sending logs and feedback is enabled.
     isSendLogsAndFeedbackEnabled *bool;
 }
 // NewTeamworkFeaturesConfiguration instantiates a new teamworkFeaturesConfiguration and sets the default values.
@@ -34,7 +34,7 @@ func (m *TeamworkFeaturesConfiguration) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// GetEmailToSendLogsAndFeedback gets the emailToSendLogsAndFeedback property value. 
+// GetEmailToSendLogsAndFeedback gets the emailToSendLogsAndFeedback property value. Email address to send logs and feedback.
 func (m *TeamworkFeaturesConfiguration) GetEmailToSendLogsAndFeedback()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *TeamworkFeaturesConfiguration) GetEmailToSendLogsAndFeedback()(*string)
         return m.emailToSendLogsAndFeedback
     }
 }
-// GetIsAutoScreenShareEnabled gets the isAutoScreenShareEnabled property value. 
+// GetIsAutoScreenShareEnabled gets the isAutoScreenShareEnabled property value. True if auto screen shared is enabled.
 func (m *TeamworkFeaturesConfiguration) GetIsAutoScreenShareEnabled()(*bool) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *TeamworkFeaturesConfiguration) GetIsAutoScreenShareEnabled()(*bool) {
         return m.isAutoScreenShareEnabled
     }
 }
-// GetIsBluetoothBeaconingEnabled gets the isBluetoothBeaconingEnabled property value. 
+// GetIsBluetoothBeaconingEnabled gets the isBluetoothBeaconingEnabled property value. True if Bluetooth beaconing is enabled.
 func (m *TeamworkFeaturesConfiguration) GetIsBluetoothBeaconingEnabled()(*bool) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *TeamworkFeaturesConfiguration) GetIsBluetoothBeaconingEnabled()(*bool) 
         return m.isBluetoothBeaconingEnabled
     }
 }
-// GetIsHideMeetingNamesEnabled gets the isHideMeetingNamesEnabled property value. 
+// GetIsHideMeetingNamesEnabled gets the isHideMeetingNamesEnabled property value. True if hiding meeting names is enabled.
 func (m *TeamworkFeaturesConfiguration) GetIsHideMeetingNamesEnabled()(*bool) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *TeamworkFeaturesConfiguration) GetIsHideMeetingNamesEnabled()(*bool) {
         return m.isHideMeetingNamesEnabled
     }
 }
-// GetIsSendLogsAndFeedbackEnabled gets the isSendLogsAndFeedbackEnabled property value. 
+// GetIsSendLogsAndFeedbackEnabled gets the isSendLogsAndFeedbackEnabled property value. True if sending logs and feedback is enabled.
 func (m *TeamworkFeaturesConfiguration) GetIsSendLogsAndFeedbackEnabled()(*bool) {
     if m == nil {
         return nil
@@ -178,31 +178,31 @@ func (m *TeamworkFeaturesConfiguration) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetEmailToSendLogsAndFeedback sets the emailToSendLogsAndFeedback property value. 
+// SetEmailToSendLogsAndFeedback sets the emailToSendLogsAndFeedback property value. Email address to send logs and feedback.
 func (m *TeamworkFeaturesConfiguration) SetEmailToSendLogsAndFeedback(value *string)() {
     if m != nil {
         m.emailToSendLogsAndFeedback = value
     }
 }
-// SetIsAutoScreenShareEnabled sets the isAutoScreenShareEnabled property value. 
+// SetIsAutoScreenShareEnabled sets the isAutoScreenShareEnabled property value. True if auto screen shared is enabled.
 func (m *TeamworkFeaturesConfiguration) SetIsAutoScreenShareEnabled(value *bool)() {
     if m != nil {
         m.isAutoScreenShareEnabled = value
     }
 }
-// SetIsBluetoothBeaconingEnabled sets the isBluetoothBeaconingEnabled property value. 
+// SetIsBluetoothBeaconingEnabled sets the isBluetoothBeaconingEnabled property value. True if Bluetooth beaconing is enabled.
 func (m *TeamworkFeaturesConfiguration) SetIsBluetoothBeaconingEnabled(value *bool)() {
     if m != nil {
         m.isBluetoothBeaconingEnabled = value
     }
 }
-// SetIsHideMeetingNamesEnabled sets the isHideMeetingNamesEnabled property value. 
+// SetIsHideMeetingNamesEnabled sets the isHideMeetingNamesEnabled property value. True if hiding meeting names is enabled.
 func (m *TeamworkFeaturesConfiguration) SetIsHideMeetingNamesEnabled(value *bool)() {
     if m != nil {
         m.isHideMeetingNamesEnabled = value
     }
 }
-// SetIsSendLogsAndFeedbackEnabled sets the isSendLogsAndFeedbackEnabled property value. 
+// SetIsSendLogsAndFeedbackEnabled sets the isSendLogsAndFeedbackEnabled property value. True if sending logs and feedback is enabled.
 func (m *TeamworkFeaturesConfiguration) SetIsSendLogsAndFeedbackEnabled(value *bool)() {
     if m != nil {
         m.isSendLogsAndFeedbackEnabled = value

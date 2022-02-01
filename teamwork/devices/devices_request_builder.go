@@ -26,7 +26,7 @@ type DevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// DevicesRequestBuilderGetQueryParameters get devices from teamwork
+// DevicesRequestBuilderGetQueryParameters the Teams devices provisioned for the tenant.
 type DevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get devices from teamwork
+// CreateGetRequestInformation the Teams devices provisioned for the tenant.
 func (m *DevicesRequestBuilder) CreateGetRequestInformation(options *DevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *DevicesRequestBuilder) CreateGetRequestInformation(options *DevicesRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to devices for teamwork
+// CreatePostRequestInformation the Teams devices provisioned for the tenant.
 func (m *DevicesRequestBuilder) CreatePostRequestInformation(options *DevicesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *DevicesRequestBuilder) CreatePostRequestInformation(options *DevicesReq
     }
     return requestInfo, nil
 }
-// Get get devices from teamwork
+// Get the Teams devices provisioned for the tenant.
 func (m *DevicesRequestBuilder) Get(options *DevicesRequestBuilderGetOptions)(*DevicesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *DevicesRequestBuilder) Get(options *DevicesRequestBuilderGetOptions)(*D
     }
     return res.(*DevicesResponse), nil
 }
-// Post create new navigation property to devices for teamwork
+// Post the Teams devices provisioned for the tenant.
 func (m *DevicesRequestBuilder) Post(options *DevicesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkDevice, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

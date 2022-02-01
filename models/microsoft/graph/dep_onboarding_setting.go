@@ -387,7 +387,7 @@ func (m *DepOnboardingSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetEnrollmentProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEnrollmentProfiles()))
         for i, v := range m.GetEnrollmentProfiles() {
             temp := v
@@ -398,7 +398,7 @@ func (m *DepOnboardingSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetImportedAppleDeviceIdentities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetImportedAppleDeviceIdentities()))
         for i, v := range m.GetImportedAppleDeviceIdentities() {
             temp := v
@@ -433,7 +433,7 @@ func (m *DepOnboardingSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
             return err

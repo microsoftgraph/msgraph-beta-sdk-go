@@ -442,7 +442,7 @@ func (m *TrustFrameworkKey) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetX5c() != nil {
         err := writer.WriteCollectionOfStringValues("x5c", m.GetX5c())
         if err != nil {
             return err

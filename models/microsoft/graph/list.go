@@ -273,7 +273,7 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if err != nil {
         return err
     }
-    {
+    if m.GetActivities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
             temp := v
@@ -284,7 +284,7 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetColumns() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetColumns()))
         for i, v := range m.GetColumns() {
             temp := v
@@ -295,7 +295,7 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetContentTypes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContentTypes()))
         for i, v := range m.GetContentTypes() {
             temp := v
@@ -318,7 +318,7 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
             temp := v
@@ -335,7 +335,7 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
             temp := v
@@ -352,7 +352,7 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetSubscriptions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSubscriptions()))
         for i, v := range m.GetSubscriptions() {
             temp := v

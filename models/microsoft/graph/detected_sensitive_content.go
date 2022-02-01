@@ -140,7 +140,7 @@ func (m *DetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd28374d79c84
     if err != nil {
         return err
     }
-    {
+    if m.GetClassificationAttributes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetClassificationAttributes()))
         for i, v := range m.GetClassificationAttributes() {
             temp := v
@@ -158,7 +158,7 @@ func (m *DetectedSensitiveContent) Serialize(writer i04eb5309aeaafadd28374d79c84
             return err
         }
     }
-    {
+    if m.GetMatches() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMatches()))
         for i, v := range m.GetMatches() {
             temp := v

@@ -14,7 +14,7 @@ type MicrosoftTunnelConfiguration struct {
     defaultDomainSuffix *string;
     // The MicrosoftTunnelConfiguration's description
     description *string;
-    // When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
+    // When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
     disableUDPConnections *bool;
     // The MicrosoftTunnelConfiguration's display name
     displayName *string;
@@ -66,7 +66,7 @@ func (m *MicrosoftTunnelConfiguration) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisableUDPConnections gets the disableUDPConnections property value. When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
+// GetDisableUDPConnections gets the disableUDPConnections property value. When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
 func (m *MicrosoftTunnelConfiguration) GetDisableUDPConnections()(*bool) {
     if m == nil {
         return nil
@@ -314,7 +314,7 @@ func (m *MicrosoftTunnelConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
     if err != nil {
         return err
     }
-    {
+    if m.GetAdvancedSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdvancedSettings()))
         for i, v := range m.GetAdvancedSettings() {
             temp := v
@@ -349,7 +349,7 @@ func (m *MicrosoftTunnelConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetDnsServers() != nil {
         err = writer.WriteCollectionOfStringValues("dnsServers", m.GetDnsServers())
         if err != nil {
             return err
@@ -373,25 +373,25 @@ func (m *MicrosoftTunnelConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetRoutesExclude() != nil {
         err = writer.WriteCollectionOfStringValues("routesExclude", m.GetRoutesExclude())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetRoutesInclude() != nil {
         err = writer.WriteCollectionOfStringValues("routesInclude", m.GetRoutesInclude())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSplitDNS() != nil {
         err = writer.WriteCollectionOfStringValues("splitDNS", m.GetSplitDNS())
         if err != nil {
             return err
@@ -417,7 +417,7 @@ func (m *MicrosoftTunnelConfiguration) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisableUDPConnections sets the disableUDPConnections property value. When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
+// SetDisableUDPConnections sets the disableUDPConnections property value. When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
 func (m *MicrosoftTunnelConfiguration) SetDisableUDPConnections(value *bool)() {
     if m != nil {
         m.disableUDPConnections = value

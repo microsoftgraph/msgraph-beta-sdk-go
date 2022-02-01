@@ -454,7 +454,7 @@ func (m *HostSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetLogonUsers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLogonUsers()))
         for i, v := range m.GetLogonUsers() {
             temp := v
@@ -471,7 +471,7 @@ func (m *HostSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetNetworkInterfaces() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNetworkInterfaces()))
         for i, v := range m.GetNetworkInterfaces() {
             temp := v
@@ -500,7 +500,7 @@ func (m *HostSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetRelatedHostIds() != nil {
         err = writer.WriteCollectionOfStringValues("relatedHostIds", m.GetRelatedHostIds())
         if err != nil {
             return err
@@ -512,7 +512,7 @@ func (m *HostSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
             return err

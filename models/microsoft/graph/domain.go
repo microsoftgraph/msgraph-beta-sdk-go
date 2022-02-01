@@ -385,7 +385,7 @@ func (m *Domain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetDomainNameReferences() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDomainNameReferences()))
         for i, v := range m.GetDomainNameReferences() {
             temp := v
@@ -396,7 +396,7 @@ func (m *Domain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetFederationConfiguration() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFederationConfiguration()))
         for i, v := range m.GetFederationConfiguration() {
             temp := v
@@ -449,7 +449,7 @@ func (m *Domain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetServiceConfigurationRecords() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetServiceConfigurationRecords()))
         for i, v := range m.GetServiceConfigurationRecords() {
             temp := v
@@ -460,7 +460,7 @@ func (m *Domain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetSharedEmailDomainInvitations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSharedEmailDomainInvitations()))
         for i, v := range m.GetSharedEmailDomainInvitations() {
             temp := v
@@ -477,13 +477,13 @@ func (m *Domain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetSupportedServices() != nil {
         err = writer.WriteCollectionOfStringValues("supportedServices", m.GetSupportedServices())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetVerificationDnsRecords() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVerificationDnsRecords()))
         for i, v := range m.GetVerificationDnsRecords() {
             temp := v

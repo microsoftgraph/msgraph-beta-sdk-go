@@ -7,6 +7,8 @@ import (
 // UserSettings 
 type UserSettings struct {
     Entity
+    // 
+    contactMergeSuggestions *ContactMergeSuggestions;
     // Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
     contributionToContentDiscoveryAsOrganizationDisabled *bool;
     // When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
@@ -24,6 +26,14 @@ func NewUserSettings()(*UserSettings) {
         Entity: *NewEntity(),
     }
     return m
+}
+// GetContactMergeSuggestions gets the contactMergeSuggestions property value. 
+func (m *UserSettings) GetContactMergeSuggestions()(*ContactMergeSuggestions) {
+    if m == nil {
+        return nil
+    } else {
+        return m.contactMergeSuggestions
+    }
 }
 // GetContributionToContentDiscoveryAsOrganizationDisabled gets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
 func (m *UserSettings) GetContributionToContentDiscoveryAsOrganizationDisabled()(*bool) {
@@ -68,6 +78,16 @@ func (m *UserSettings) GetShiftPreferences()(*ShiftPreferences) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["contactMergeSuggestions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewContactMergeSuggestions() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContactMergeSuggestions(val.(*ContactMergeSuggestions))
+        }
+        return nil
+    }
     res["contributionToContentDiscoveryAsOrganizationDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -130,6 +150,12 @@ func (m *UserSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         return err
     }
     {
+        err = writer.WriteObjectValue("contactMergeSuggestions", m.GetContactMergeSuggestions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("contributionToContentDiscoveryAsOrganizationDisabled", m.GetContributionToContentDiscoveryAsOrganizationDisabled())
         if err != nil {
             return err
@@ -160,6 +186,12 @@ func (m *UserSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     return nil
+}
+// SetContactMergeSuggestions sets the contactMergeSuggestions property value. 
+func (m *UserSettings) SetContactMergeSuggestions(value *ContactMergeSuggestions)() {
+    if m != nil {
+        m.contactMergeSuggestions = value
+    }
 }
 // SetContributionToContentDiscoveryAsOrganizationDisabled sets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
 func (m *UserSettings) SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)() {

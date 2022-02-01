@@ -4,6 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    ia7efd0402d1b0ec1c1e1556939330495b010bf73c843650cde0ba68d98498dff "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/historydefinitions/item/instances/item/generatedownloaduri"
 )
 
 // AccessReviewHistoryInstanceRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\historyDefinitions\{accessReviewHistoryDefinition-id}\instances\{accessReviewHistoryInstance-id}
@@ -35,7 +36,7 @@ type AccessReviewHistoryInstanceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessReviewHistoryInstanceRequestBuilderGetQueryParameters get instances from identityGovernance
+// AccessReviewHistoryInstanceRequestBuilderGetQueryParameters if the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
 type AccessReviewHistoryInstanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +73,7 @@ func NewAccessReviewHistoryInstanceRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewHistoryInstanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property instances for identityGovernance
+// CreateDeleteRequestInformation if the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
 func (m *AccessReviewHistoryInstanceRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewHistoryInstanceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +90,7 @@ func (m *AccessReviewHistoryInstanceRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get instances from identityGovernance
+// CreateGetRequestInformation if the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
 func (m *AccessReviewHistoryInstanceRequestBuilder) CreateGetRequestInformation(options *AccessReviewHistoryInstanceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +110,7 @@ func (m *AccessReviewHistoryInstanceRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property instances in identityGovernance
+// CreatePatchRequestInformation if the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
 func (m *AccessReviewHistoryInstanceRequestBuilder) CreatePatchRequestInformation(options *AccessReviewHistoryInstanceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +128,7 @@ func (m *AccessReviewHistoryInstanceRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// Delete delete navigation property instances for identityGovernance
+// Delete if the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
 func (m *AccessReviewHistoryInstanceRequestBuilder) Delete(options *AccessReviewHistoryInstanceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +140,10 @@ func (m *AccessReviewHistoryInstanceRequestBuilder) Delete(options *AccessReview
     }
     return nil
 }
-// Get get instances from identityGovernance
+func (m *AccessReviewHistoryInstanceRequestBuilder) GenerateDownloadUri()(*ia7efd0402d1b0ec1c1e1556939330495b010bf73c843650cde0ba68d98498dff.GenerateDownloadUriRequestBuilder) {
+    return ia7efd0402d1b0ec1c1e1556939330495b010bf73c843650cde0ba68d98498dff.NewGenerateDownloadUriRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Get if the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
 func (m *AccessReviewHistoryInstanceRequestBuilder) Get(options *AccessReviewHistoryInstanceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryInstance, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +155,7 @@ func (m *AccessReviewHistoryInstanceRequestBuilder) Get(options *AccessReviewHis
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryInstance), nil
 }
-// Patch update the navigation property instances in identityGovernance
+// Patch if the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
 func (m *AccessReviewHistoryInstanceRequestBuilder) Patch(options *AccessReviewHistoryInstanceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

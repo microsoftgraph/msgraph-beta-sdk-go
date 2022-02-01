@@ -349,7 +349,7 @@ func (m *GroupPolicyMigrationReport) Serialize(writer i04eb5309aeaafadd28374d79c
             return err
         }
     }
-    {
+    if m.GetGroupPolicySettingMappings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupPolicySettingMappings()))
         for i, v := range m.GetGroupPolicySettingMappings() {
             temp := v
@@ -403,7 +403,7 @@ func (m *GroupPolicyMigrationReport) Serialize(writer i04eb5309aeaafadd28374d79c
             return err
         }
     }
-    {
+    if m.GetUnsupportedGroupPolicyExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUnsupportedGroupPolicyExtensions()))
         for i, v := range m.GetUnsupportedGroupPolicyExtensions() {
             temp := v

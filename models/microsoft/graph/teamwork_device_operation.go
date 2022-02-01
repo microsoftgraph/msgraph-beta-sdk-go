@@ -8,23 +8,23 @@ import (
 // TeamworkDeviceOperation 
 type TeamworkDeviceOperation struct {
     Entity
-    // 
+    // Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
     completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // Identity of the user who created the device operation.
     createdBy *IdentitySet;
-    // 
+    // The UTC date and time when the device operation was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // Error details are available only in case of a failed status.
     error *OperationError;
-    // 
+    // Identity of the user who last modified the device operation.
     lastActionBy *IdentitySet;
-    // 
+    // The UTC date and time when the device operation was last modified.
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // Type of async operation on a device. The possible values are: deviceRestart, configUpdate, deviceDiagnostics, softwareUpdate, deviceManagementAgentConfigUpdate, remoteLogin, remoteLogout, unknownFutureValue.
     operationType *TeamworkDeviceOperationType;
-    // 
+    // Time at which the operation was started.
     startedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.
     status *string;
 }
 // NewTeamworkDeviceOperation instantiates a new teamworkDeviceOperation and sets the default values.
@@ -34,7 +34,7 @@ func NewTeamworkDeviceOperation()(*TeamworkDeviceOperation) {
     }
     return m
 }
-// GetCompletedDateTime gets the completedDateTime property value. 
+// GetCompletedDateTime gets the completedDateTime property value. Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
 func (m *TeamworkDeviceOperation) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *TeamworkDeviceOperation) GetCompletedDateTime()(*i336074805fc853987abe6
         return m.completedDateTime
     }
 }
-// GetCreatedBy gets the createdBy property value. 
+// GetCreatedBy gets the createdBy property value. Identity of the user who created the device operation.
 func (m *TeamworkDeviceOperation) GetCreatedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *TeamworkDeviceOperation) GetCreatedBy()(*IdentitySet) {
         return m.createdBy
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. 
+// GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device operation was created.
 func (m *TeamworkDeviceOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *TeamworkDeviceOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7
         return m.createdDateTime
     }
 }
-// GetError gets the error property value. 
+// GetError gets the error property value. Error details are available only in case of a failed status.
 func (m *TeamworkDeviceOperation) GetError()(*OperationError) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *TeamworkDeviceOperation) GetError()(*OperationError) {
         return m.error
     }
 }
-// GetLastActionBy gets the lastActionBy property value. 
+// GetLastActionBy gets the lastActionBy property value. Identity of the user who last modified the device operation.
 func (m *TeamworkDeviceOperation) GetLastActionBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *TeamworkDeviceOperation) GetLastActionBy()(*IdentitySet) {
         return m.lastActionBy
     }
 }
-// GetLastActionDateTime gets the lastActionDateTime property value. 
+// GetLastActionDateTime gets the lastActionDateTime property value. The UTC date and time when the device operation was last modified.
 func (m *TeamworkDeviceOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *TeamworkDeviceOperation) GetLastActionDateTime()(*i336074805fc853987abe
         return m.lastActionDateTime
     }
 }
-// GetOperationType gets the operationType property value. 
+// GetOperationType gets the operationType property value. Type of async operation on a device. The possible values are: deviceRestart, configUpdate, deviceDiagnostics, softwareUpdate, deviceManagementAgentConfigUpdate, remoteLogin, remoteLogout, unknownFutureValue.
 func (m *TeamworkDeviceOperation) GetOperationType()(*TeamworkDeviceOperationType) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *TeamworkDeviceOperation) GetOperationType()(*TeamworkDeviceOperationTyp
         return m.operationType
     }
 }
-// GetStartedDateTime gets the startedDateTime property value. 
+// GetStartedDateTime gets the startedDateTime property value. Time at which the operation was started.
 func (m *TeamworkDeviceOperation) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *TeamworkDeviceOperation) GetStartedDateTime()(*i336074805fc853987abe6f7
         return m.startedDateTime
     }
 }
-// GetStatus gets the status property value. 
+// GetStatus gets the status property value. The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.
 func (m *TeamworkDeviceOperation) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -268,55 +268,55 @@ func (m *TeamworkDeviceOperation) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// SetCompletedDateTime sets the completedDateTime property value. 
+// SetCompletedDateTime sets the completedDateTime property value. Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
 func (m *TeamworkDeviceOperation) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.completedDateTime = value
     }
 }
-// SetCreatedBy sets the createdBy property value. 
+// SetCreatedBy sets the createdBy property value. Identity of the user who created the device operation.
 func (m *TeamworkDeviceOperation) SetCreatedBy(value *IdentitySet)() {
     if m != nil {
         m.createdBy = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. 
+// SetCreatedDateTime sets the createdDateTime property value. The UTC date and time when the device operation was created.
 func (m *TeamworkDeviceOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
     }
 }
-// SetError sets the error property value. 
+// SetError sets the error property value. Error details are available only in case of a failed status.
 func (m *TeamworkDeviceOperation) SetError(value *OperationError)() {
     if m != nil {
         m.error = value
     }
 }
-// SetLastActionBy sets the lastActionBy property value. 
+// SetLastActionBy sets the lastActionBy property value. Identity of the user who last modified the device operation.
 func (m *TeamworkDeviceOperation) SetLastActionBy(value *IdentitySet)() {
     if m != nil {
         m.lastActionBy = value
     }
 }
-// SetLastActionDateTime sets the lastActionDateTime property value. 
+// SetLastActionDateTime sets the lastActionDateTime property value. The UTC date and time when the device operation was last modified.
 func (m *TeamworkDeviceOperation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastActionDateTime = value
     }
 }
-// SetOperationType sets the operationType property value. 
+// SetOperationType sets the operationType property value. Type of async operation on a device. The possible values are: deviceRestart, configUpdate, deviceDiagnostics, softwareUpdate, deviceManagementAgentConfigUpdate, remoteLogin, remoteLogout, unknownFutureValue.
 func (m *TeamworkDeviceOperation) SetOperationType(value *TeamworkDeviceOperationType)() {
     if m != nil {
         m.operationType = value
     }
 }
-// SetStartedDateTime sets the startedDateTime property value. 
+// SetStartedDateTime sets the startedDateTime property value. Time at which the operation was started.
 func (m *TeamworkDeviceOperation) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.startedDateTime = value
     }
 }
-// SetStatus sets the status property value. 
+// SetStatus sets the status property value. The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.
 func (m *TeamworkDeviceOperation) SetStatus(value *string)() {
     if m != nil {
         m.status = value

@@ -514,7 +514,7 @@ func (m *GetOffice365ActiveUserDetailWithDate) Serialize(writer i04eb5309aeaafad
     if err != nil {
         return err
     }
-    {
+    if m.GetAssignedProducts() != nil {
         err = writer.WriteCollectionOfStringValues("assignedProducts", m.GetAssignedProducts())
         if err != nil {
             return err

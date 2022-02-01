@@ -35,7 +35,7 @@ type ConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ConfigurationRequestBuilderGetQueryParameters get configuration from teamwork
+// ConfigurationRequestBuilderGetQueryParameters the configuration properties of the device.
 type ConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewConfigurationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams["request-raw-url"] = rawUrl
     return NewConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property configuration for teamwork
+// CreateDeleteRequestInformation the configuration properties of the device.
 func (m *ConfigurationRequestBuilder) CreateDeleteRequestInformation(options *ConfigurationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *ConfigurationRequestBuilder) CreateDeleteRequestInformation(options *Co
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get configuration from teamwork
+// CreateGetRequestInformation the configuration properties of the device.
 func (m *ConfigurationRequestBuilder) CreateGetRequestInformation(options *ConfigurationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *ConfigurationRequestBuilder) CreateGetRequestInformation(options *Confi
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property configuration in teamwork
+// CreatePatchRequestInformation the configuration properties of the device.
 func (m *ConfigurationRequestBuilder) CreatePatchRequestInformation(options *ConfigurationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *ConfigurationRequestBuilder) CreatePatchRequestInformation(options *Con
     }
     return requestInfo, nil
 }
-// Delete delete navigation property configuration for teamwork
+// Delete the configuration properties of the device.
 func (m *ConfigurationRequestBuilder) Delete(options *ConfigurationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *ConfigurationRequestBuilder) Delete(options *ConfigurationRequestBuilde
     }
     return nil
 }
-// Get get configuration from teamwork
+// Get the configuration properties of the device.
 func (m *ConfigurationRequestBuilder) Get(options *ConfigurationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkDeviceConfiguration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *ConfigurationRequestBuilder) Get(options *ConfigurationRequestBuilderGe
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkDeviceConfiguration), nil
 }
-// Patch update the navigation property configuration in teamwork
+// Patch the configuration properties of the device.
 func (m *ConfigurationRequestBuilder) Patch(options *ConfigurationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

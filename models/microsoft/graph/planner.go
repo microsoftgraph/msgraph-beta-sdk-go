@@ -125,7 +125,7 @@ func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if err != nil {
         return err
     }
-    {
+    if m.GetBuckets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBuckets()))
         for i, v := range m.GetBuckets() {
             temp := v
@@ -136,7 +136,7 @@ func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPlans()))
         for i, v := range m.GetPlans() {
             temp := v
@@ -147,7 +147,7 @@ func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetRosters() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRosters()))
         for i, v := range m.GetRosters() {
             temp := v
@@ -158,7 +158,7 @@ func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetTasks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
             temp := v

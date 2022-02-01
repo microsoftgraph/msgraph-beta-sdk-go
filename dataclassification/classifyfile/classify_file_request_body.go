@@ -84,7 +84,7 @@ func (m *ClassifyFileRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetSensitiveTypeIds() != nil {
         err := writer.WriteCollectionOfStringValues("sensitiveTypeIds", m.GetSensitiveTypeIds())
         if err != nil {
             return err

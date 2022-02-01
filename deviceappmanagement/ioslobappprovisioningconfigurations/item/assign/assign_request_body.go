@@ -83,7 +83,7 @@ func (m *AssignRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *AssignRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetAppProvisioningConfigurationGroupAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppProvisioningConfigurationGroupAssignments()))
         for i, v := range m.GetAppProvisioningConfigurationGroupAssignments() {
             temp := v
@@ -94,7 +94,7 @@ func (m *AssignRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetIOSLobAppProvisioningConfigAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIOSLobAppProvisioningConfigAssignments()))
         for i, v := range m.GetIOSLobAppProvisioningConfigAssignments() {
             temp := v

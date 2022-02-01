@@ -151,7 +151,7 @@ func (m *SynchronizationJob) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             return err
         }
     }
-    {
+    if m.GetSynchronizationJobSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSynchronizationJobSettings()))
         for i, v := range m.GetSynchronizationJobSettings() {
             temp := v

@@ -110,7 +110,7 @@ func (m *BroadcastMeetingCaptionSettings) Serialize(writer i04eb5309aeaafadd2837
             return err
         }
     }
-    {
+    if m.GetTranslationLanguages() != nil {
         err := writer.WriteCollectionOfStringValues("translationLanguages", m.GetTranslationLanguages())
         if err != nil {
             return err

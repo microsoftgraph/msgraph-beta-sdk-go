@@ -337,7 +337,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if err != nil {
         return err
     }
-    {
+    if m.GetAccessPackageAssignmentApprovals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignmentApprovals()))
         for i, v := range m.GetAccessPackageAssignmentApprovals() {
             temp := v
@@ -348,7 +348,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackageAssignmentPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignmentPolicies()))
         for i, v := range m.GetAccessPackageAssignmentPolicies() {
             temp := v
@@ -359,7 +359,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackageAssignmentRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignmentRequests()))
         for i, v := range m.GetAccessPackageAssignmentRequests() {
             temp := v
@@ -370,7 +370,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackageAssignmentResourceRoles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignmentResourceRoles()))
         for i, v := range m.GetAccessPackageAssignmentResourceRoles() {
             temp := v
@@ -381,7 +381,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackageAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignments()))
         for i, v := range m.GetAccessPackageAssignments() {
             temp := v
@@ -392,7 +392,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackageCatalogs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageCatalogs()))
         for i, v := range m.GetAccessPackageCatalogs() {
             temp := v
@@ -403,7 +403,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackageResourceEnvironments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageResourceEnvironments()))
         for i, v := range m.GetAccessPackageResourceEnvironments() {
             temp := v
@@ -414,7 +414,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackageResourceRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageResourceRequests()))
         for i, v := range m.GetAccessPackageResourceRequests() {
             temp := v
@@ -425,7 +425,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackageResourceRoleScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageResourceRoleScopes()))
         for i, v := range m.GetAccessPackageResourceRoleScopes() {
             temp := v
@@ -436,7 +436,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackageResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageResources()))
         for i, v := range m.GetAccessPackageResources() {
             temp := v
@@ -447,7 +447,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackages()))
         for i, v := range m.GetAccessPackages() {
             temp := v
@@ -458,7 +458,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetConnectedOrganizations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConnectedOrganizations()))
         for i, v := range m.GetConnectedOrganizations() {
             temp := v

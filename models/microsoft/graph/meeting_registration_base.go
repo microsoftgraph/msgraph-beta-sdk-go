@@ -81,7 +81,7 @@ func (m *MeetingRegistrationBase) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetRegistrants() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRegistrants()))
         for i, v := range m.GetRegistrants() {
             temp := v

@@ -8,15 +8,15 @@ import (
 type TeamworkDisplayScreenConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.
     backlightBrightness *int32;
-    // 
+    // Timeout for backlight (30-3600 secs). Not applicable for Teams Rooms devices.
     backlightTimeout *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
-    // 
+    // True if high contrast mode is enabled. Not applicable for Teams Rooms devices.
     isHighContrastEnabled *bool;
-    // 
+    // True if screensaver is enabled. Not applicable for Teams Rooms devices.
     isScreensaverEnabled *bool;
-    // 
+    // Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
     screensaverTimeout *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
 }
 // NewTeamworkDisplayScreenConfiguration instantiates a new teamworkDisplayScreenConfiguration and sets the default values.
@@ -34,7 +34,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetAdditionalData()(map[string]inte
         return m.additionalData
     }
 }
-// GetBacklightBrightness gets the backlightBrightness property value. 
+// GetBacklightBrightness gets the backlightBrightness property value. The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) GetBacklightBrightness()(*int32) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetBacklightBrightness()(*int32) {
         return m.backlightBrightness
     }
 }
-// GetBacklightTimeout gets the backlightTimeout property value. 
+// GetBacklightTimeout gets the backlightTimeout property value. Timeout for backlight (30-3600 secs). Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) GetBacklightTimeout()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetBacklightTimeout()(*i04eb5309aea
         return m.backlightTimeout
     }
 }
-// GetIsHighContrastEnabled gets the isHighContrastEnabled property value. 
+// GetIsHighContrastEnabled gets the isHighContrastEnabled property value. True if high contrast mode is enabled. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) GetIsHighContrastEnabled()(*bool) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetIsHighContrastEnabled()(*bool) {
         return m.isHighContrastEnabled
     }
 }
-// GetIsScreensaverEnabled gets the isScreensaverEnabled property value. 
+// GetIsScreensaverEnabled gets the isScreensaverEnabled property value. True if screensaver is enabled. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) GetIsScreensaverEnabled()(*bool) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetIsScreensaverEnabled()(*bool) {
         return m.isScreensaverEnabled
     }
 }
-// GetScreensaverTimeout gets the screensaverTimeout property value. 
+// GetScreensaverTimeout gets the screensaverTimeout property value. Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) GetScreensaverTimeout()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
@@ -178,31 +178,31 @@ func (m *TeamworkDisplayScreenConfiguration) SetAdditionalData(value map[string]
         m.additionalData = value
     }
 }
-// SetBacklightBrightness sets the backlightBrightness property value. 
+// SetBacklightBrightness sets the backlightBrightness property value. The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) SetBacklightBrightness(value *int32)() {
     if m != nil {
         m.backlightBrightness = value
     }
 }
-// SetBacklightTimeout sets the backlightTimeout property value. 
+// SetBacklightTimeout sets the backlightTimeout property value. Timeout for backlight (30-3600 secs). Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) SetBacklightTimeout(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.backlightTimeout = value
     }
 }
-// SetIsHighContrastEnabled sets the isHighContrastEnabled property value. 
+// SetIsHighContrastEnabled sets the isHighContrastEnabled property value. True if high contrast mode is enabled. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) SetIsHighContrastEnabled(value *bool)() {
     if m != nil {
         m.isHighContrastEnabled = value
     }
 }
-// SetIsScreensaverEnabled sets the isScreensaverEnabled property value. 
+// SetIsScreensaverEnabled sets the isScreensaverEnabled property value. True if screensaver is enabled. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) SetIsScreensaverEnabled(value *bool)() {
     if m != nil {
         m.isScreensaverEnabled = value
     }
 }
-// SetScreensaverTimeout sets the screensaverTimeout property value. 
+// SetScreensaverTimeout sets the screensaverTimeout property value. Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) SetScreensaverTimeout(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.screensaverTimeout = value

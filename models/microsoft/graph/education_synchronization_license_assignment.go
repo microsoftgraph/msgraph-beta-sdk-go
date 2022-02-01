@@ -86,7 +86,7 @@ func (m *EducationSynchronizationLicenseAssignment) Serialize(writer i04eb5309ae
             return err
         }
     }
-    {
+    if m.GetSkuIds() != nil {
         err := writer.WriteCollectionOfStringValues("skuIds", m.GetSkuIds())
         if err != nil {
             return err

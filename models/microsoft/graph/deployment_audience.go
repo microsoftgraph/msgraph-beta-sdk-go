@@ -77,7 +77,7 @@ func (m *DeploymentAudience) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if err != nil {
         return err
     }
-    {
+    if m.GetExclusions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExclusions()))
         for i, v := range m.GetExclusions() {
             temp := v
@@ -88,7 +88,7 @@ func (m *DeploymentAudience) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             return err
         }
     }
-    {
+    if m.GetMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
             temp := v

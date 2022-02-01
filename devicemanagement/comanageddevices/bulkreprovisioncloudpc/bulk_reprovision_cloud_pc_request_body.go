@@ -58,7 +58,7 @@ func (m *BulkReprovisionCloudPcRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *BulkReprovisionCloudPcRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetManagedDeviceIds() != nil {
         err := writer.WriteCollectionOfStringValues("managedDeviceIds", m.GetManagedDeviceIds())
         if err != nil {
             return err

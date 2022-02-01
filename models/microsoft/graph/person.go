@@ -473,7 +473,7 @@ func (m *Person) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetEmailAddresses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEmailAddresses()))
         for i, v := range m.GetEmailAddresses() {
             temp := v
@@ -520,7 +520,7 @@ func (m *Person) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetPhones() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPhones()))
         for i, v := range m.GetPhones() {
             temp := v
@@ -531,7 +531,7 @@ func (m *Person) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetPostalAddresses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPostalAddresses()))
         for i, v := range m.GetPostalAddresses() {
             temp := v
@@ -548,7 +548,7 @@ func (m *Person) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSources()))
         for i, v := range m.GetSources() {
             temp := v
@@ -577,7 +577,7 @@ func (m *Person) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetWebsites() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWebsites()))
         for i, v := range m.GetWebsites() {
             temp := v

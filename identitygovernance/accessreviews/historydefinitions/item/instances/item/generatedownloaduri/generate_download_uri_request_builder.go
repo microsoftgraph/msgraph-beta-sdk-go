@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// GenerateDownloadUriRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\historyDefinitions\{accessReviewHistoryDefinition-id}\microsoft.graph.generateDownloadUri
+// GenerateDownloadUriRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\historyDefinitions\{accessReviewHistoryDefinition-id}\instances\{accessReviewHistoryInstance-id}\microsoft.graph.generateDownloadUri
 type GenerateDownloadUriRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -24,10 +24,10 @@ type GenerateDownloadUriRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// GenerateDownloadUriResponse union type wrapper for classes accessReviewHistoryDefinition
+// GenerateDownloadUriResponse union type wrapper for classes accessReviewHistoryInstance
 type GenerateDownloadUriResponse struct {
-    // Union type representation for type accessReviewHistoryDefinition
-    accessReviewHistoryDefinition *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryDefinition;
+    // Union type representation for type accessReviewHistoryInstance
+    accessReviewHistoryInstance *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryInstance;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
 }
@@ -38,12 +38,12 @@ func NewGenerateDownloadUriResponse()(*GenerateDownloadUriResponse) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAccessReviewHistoryDefinition gets the accessReviewHistoryDefinition property value. Union type representation for type accessReviewHistoryDefinition
-func (m *GenerateDownloadUriResponse) GetAccessReviewHistoryDefinition()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryDefinition) {
+// GetAccessReviewHistoryInstance gets the accessReviewHistoryInstance property value. Union type representation for type accessReviewHistoryInstance
+func (m *GenerateDownloadUriResponse) GetAccessReviewHistoryInstance()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryInstance) {
     if m == nil {
         return nil
     } else {
-        return m.accessReviewHistoryDefinition
+        return m.accessReviewHistoryInstance
     }
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -57,13 +57,13 @@ func (m *GenerateDownloadUriResponse) GetAdditionalData()(map[string]interface{}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GenerateDownloadUriResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["accessReviewHistoryDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessReviewHistoryDefinition() })
+    res["accessReviewHistoryInstance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessReviewHistoryInstance() })
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessReviewHistoryDefinition(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryDefinition))
+            m.SetAccessReviewHistoryInstance(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryInstance))
         }
         return nil
     }
@@ -75,7 +75,7 @@ func (m *GenerateDownloadUriResponse) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *GenerateDownloadUriResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteObjectValue("accessReviewHistoryDefinition", m.GetAccessReviewHistoryDefinition())
+        err := writer.WriteObjectValue("accessReviewHistoryInstance", m.GetAccessReviewHistoryInstance())
         if err != nil {
             return err
         }
@@ -88,10 +88,10 @@ func (m *GenerateDownloadUriResponse) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// SetAccessReviewHistoryDefinition sets the accessReviewHistoryDefinition property value. Union type representation for type accessReviewHistoryDefinition
-func (m *GenerateDownloadUriResponse) SetAccessReviewHistoryDefinition(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryDefinition)() {
+// SetAccessReviewHistoryInstance sets the accessReviewHistoryInstance property value. Union type representation for type accessReviewHistoryInstance
+func (m *GenerateDownloadUriResponse) SetAccessReviewHistoryInstance(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryInstance)() {
     if m != nil {
-        m.accessReviewHistoryDefinition = value
+        m.accessReviewHistoryInstance = value
     }
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -104,7 +104,7 @@ func (m *GenerateDownloadUriResponse) SetAdditionalData(value map[string]interfa
 func NewGenerateDownloadUriRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GenerateDownloadUriRequestBuilder) {
     m := &GenerateDownloadUriRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews/historyDefinitions/{accessReviewHistoryDefinition_id}/microsoft.graph.generateDownloadUri";
+    m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews/historyDefinitions/{accessReviewHistoryDefinition_id}/instances/{accessReviewHistoryInstance_id}/microsoft.graph.generateDownloadUri";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

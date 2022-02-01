@@ -8,17 +8,17 @@ import (
 type TeamworkSoftwareUpdateHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The software update available for the admin agent.
     adminAgentSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
-    // 
+    // The software update available for the company portal.
     companyPortalSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
-    // 
+    // The software update available for the firmware.
     firmwareSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
-    // 
+    // The software update available for the operating system.
     operatingSystemSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
-    // 
+    // The software update available for the partner agent.
     partnerAgentSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
-    // 
+    // The software update available for the Teams client.
     teamsClientSoftwareUpdateStatus *TeamworkSoftwareUpdateStatus;
 }
 // NewTeamworkSoftwareUpdateHealth instantiates a new teamworkSoftwareUpdateHealth and sets the default values.
@@ -36,7 +36,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// GetAdminAgentSoftwareUpdateStatus gets the adminAgentSoftwareUpdateStatus property value. 
+// GetAdminAgentSoftwareUpdateStatus gets the adminAgentSoftwareUpdateStatus property value. The software update available for the admin agent.
 func (m *TeamworkSoftwareUpdateHealth) GetAdminAgentSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetAdminAgentSoftwareUpdateStatus()(*Team
         return m.adminAgentSoftwareUpdateStatus
     }
 }
-// GetCompanyPortalSoftwareUpdateStatus gets the companyPortalSoftwareUpdateStatus property value. 
+// GetCompanyPortalSoftwareUpdateStatus gets the companyPortalSoftwareUpdateStatus property value. The software update available for the company portal.
 func (m *TeamworkSoftwareUpdateHealth) GetCompanyPortalSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetCompanyPortalSoftwareUpdateStatus()(*T
         return m.companyPortalSoftwareUpdateStatus
     }
 }
-// GetFirmwareSoftwareUpdateStatus gets the firmwareSoftwareUpdateStatus property value. 
+// GetFirmwareSoftwareUpdateStatus gets the firmwareSoftwareUpdateStatus property value. The software update available for the firmware.
 func (m *TeamworkSoftwareUpdateHealth) GetFirmwareSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetFirmwareSoftwareUpdateStatus()(*Teamwo
         return m.firmwareSoftwareUpdateStatus
     }
 }
-// GetOperatingSystemSoftwareUpdateStatus gets the operatingSystemSoftwareUpdateStatus property value. 
+// GetOperatingSystemSoftwareUpdateStatus gets the operatingSystemSoftwareUpdateStatus property value. The software update available for the operating system.
 func (m *TeamworkSoftwareUpdateHealth) GetOperatingSystemSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetOperatingSystemSoftwareUpdateStatus()(
         return m.operatingSystemSoftwareUpdateStatus
     }
 }
-// GetPartnerAgentSoftwareUpdateStatus gets the partnerAgentSoftwareUpdateStatus property value. 
+// GetPartnerAgentSoftwareUpdateStatus gets the partnerAgentSoftwareUpdateStatus property value. The software update available for the partner agent.
 func (m *TeamworkSoftwareUpdateHealth) GetPartnerAgentSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetPartnerAgentSoftwareUpdateStatus()(*Te
         return m.partnerAgentSoftwareUpdateStatus
     }
 }
-// GetTeamsClientSoftwareUpdateStatus gets the teamsClientSoftwareUpdateStatus property value. 
+// GetTeamsClientSoftwareUpdateStatus gets the teamsClientSoftwareUpdateStatus property value. The software update available for the Teams client.
 func (m *TeamworkSoftwareUpdateHealth) GetTeamsClientSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
     if m == nil {
         return nil
@@ -204,37 +204,37 @@ func (m *TeamworkSoftwareUpdateHealth) SetAdditionalData(value map[string]interf
         m.additionalData = value
     }
 }
-// SetAdminAgentSoftwareUpdateStatus sets the adminAgentSoftwareUpdateStatus property value. 
+// SetAdminAgentSoftwareUpdateStatus sets the adminAgentSoftwareUpdateStatus property value. The software update available for the admin agent.
 func (m *TeamworkSoftwareUpdateHealth) SetAdminAgentSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
     if m != nil {
         m.adminAgentSoftwareUpdateStatus = value
     }
 }
-// SetCompanyPortalSoftwareUpdateStatus sets the companyPortalSoftwareUpdateStatus property value. 
+// SetCompanyPortalSoftwareUpdateStatus sets the companyPortalSoftwareUpdateStatus property value. The software update available for the company portal.
 func (m *TeamworkSoftwareUpdateHealth) SetCompanyPortalSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
     if m != nil {
         m.companyPortalSoftwareUpdateStatus = value
     }
 }
-// SetFirmwareSoftwareUpdateStatus sets the firmwareSoftwareUpdateStatus property value. 
+// SetFirmwareSoftwareUpdateStatus sets the firmwareSoftwareUpdateStatus property value. The software update available for the firmware.
 func (m *TeamworkSoftwareUpdateHealth) SetFirmwareSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
     if m != nil {
         m.firmwareSoftwareUpdateStatus = value
     }
 }
-// SetOperatingSystemSoftwareUpdateStatus sets the operatingSystemSoftwareUpdateStatus property value. 
+// SetOperatingSystemSoftwareUpdateStatus sets the operatingSystemSoftwareUpdateStatus property value. The software update available for the operating system.
 func (m *TeamworkSoftwareUpdateHealth) SetOperatingSystemSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
     if m != nil {
         m.operatingSystemSoftwareUpdateStatus = value
     }
 }
-// SetPartnerAgentSoftwareUpdateStatus sets the partnerAgentSoftwareUpdateStatus property value. 
+// SetPartnerAgentSoftwareUpdateStatus sets the partnerAgentSoftwareUpdateStatus property value. The software update available for the partner agent.
 func (m *TeamworkSoftwareUpdateHealth) SetPartnerAgentSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
     if m != nil {
         m.partnerAgentSoftwareUpdateStatus = value
     }
 }
-// SetTeamsClientSoftwareUpdateStatus sets the teamsClientSoftwareUpdateStatus property value. 
+// SetTeamsClientSoftwareUpdateStatus sets the teamsClientSoftwareUpdateStatus property value. The software update available for the Teams client.
 func (m *TeamworkSoftwareUpdateHealth) SetTeamsClientSoftwareUpdateStatus(value *TeamworkSoftwareUpdateStatus)() {
     if m != nil {
         m.teamsClientSoftwareUpdateStatus = value

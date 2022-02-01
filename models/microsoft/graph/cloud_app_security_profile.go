@@ -460,7 +460,7 @@ func (m *CloudAppSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
             return err

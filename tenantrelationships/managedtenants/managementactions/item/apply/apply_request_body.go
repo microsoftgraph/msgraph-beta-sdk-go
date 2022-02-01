@@ -162,7 +162,7 @@ func (m *ApplyRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *ApplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetExcludeGroups() != nil {
         err := writer.WriteCollectionOfStringValues("excludeGroups", m.GetExcludeGroups())
         if err != nil {
             return err
@@ -174,7 +174,7 @@ func (m *ApplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetIncludeGroups() != nil {
         err := writer.WriteCollectionOfStringValues("includeGroups", m.GetIncludeGroups())
         if err != nil {
             return err

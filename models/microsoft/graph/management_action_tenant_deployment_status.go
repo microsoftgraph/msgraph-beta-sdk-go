@@ -93,7 +93,7 @@ func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i04eb5309aeaaf
     if err != nil {
         return err
     }
-    {
+    if m.GetStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetStatuses()))
         for i, v := range m.GetStatuses() {
             temp := v

@@ -10,7 +10,7 @@ type ConditionalAccessConditionSet struct {
     additionalData map[string]interface{};
     // Applications and user actions included in and excluded from the policy. Required.
     applications *ConditionalAccessApplications;
-    // 
+    // Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
     clientApplications *ConditionalAccessClientApplications;
     // Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
     clientAppTypes []ConditionalAccessClientApp;
@@ -26,7 +26,7 @@ type ConditionalAccessConditionSet struct {
     signInRiskLevels []RiskLevel;
     // User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     userRiskLevels []RiskLevel;
-    // Users, groups, and roles included in and excluded from the policy. Required.
+    // Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
     users *ConditionalAccessUsers;
 }
 // NewConditionalAccessConditionSet instantiates a new conditionalAccessConditionSet and sets the default values.
@@ -52,7 +52,7 @@ func (m *ConditionalAccessConditionSet) GetApplications()(*ConditionalAccessAppl
         return m.applications
     }
 }
-// GetClientApplications gets the clientApplications property value. 
+// GetClientApplications gets the clientApplications property value. Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) GetClientApplications()(*ConditionalAccessClientApplications) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *ConditionalAccessConditionSet) GetUserRiskLevels()([]RiskLevel) {
         return m.userRiskLevels
     }
 }
-// GetUsers gets the users property value. Users, groups, and roles included in and excluded from the policy. Required.
+// GetUsers gets the users property value. Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) GetUsers()(*ConditionalAccessUsers) {
     if m == nil {
         return nil
@@ -258,7 +258,7 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i04eb5309aeaafadd28374d
             return err
         }
     }
-    {
+    if m.GetClientAppTypes() != nil {
         err := writer.WriteCollectionOfStringValues("clientAppTypes", SerializeConditionalAccessClientApp(m.GetClientAppTypes()))
         if err != nil {
             return err
@@ -288,13 +288,13 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i04eb5309aeaafadd28374d
             return err
         }
     }
-    {
+    if m.GetSignInRiskLevels() != nil {
         err := writer.WriteCollectionOfStringValues("signInRiskLevels", SerializeRiskLevel(m.GetSignInRiskLevels()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetUserRiskLevels() != nil {
         err := writer.WriteCollectionOfStringValues("userRiskLevels", SerializeRiskLevel(m.GetUserRiskLevels()))
         if err != nil {
             return err
@@ -326,7 +326,7 @@ func (m *ConditionalAccessConditionSet) SetApplications(value *ConditionalAccess
         m.applications = value
     }
 }
-// SetClientApplications sets the clientApplications property value. 
+// SetClientApplications sets the clientApplications property value. Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) SetClientApplications(value *ConditionalAccessClientApplications)() {
     if m != nil {
         m.clientApplications = value
@@ -374,7 +374,7 @@ func (m *ConditionalAccessConditionSet) SetUserRiskLevels(value []RiskLevel)() {
         m.userRiskLevels = value
     }
 }
-// SetUsers sets the users property value. Users, groups, and roles included in and excluded from the policy. Required.
+// SetUsers sets the users property value. Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
 func (m *ConditionalAccessConditionSet) SetUsers(value *ConditionalAccessUsers)() {
     if m != nil {
         m.users = value

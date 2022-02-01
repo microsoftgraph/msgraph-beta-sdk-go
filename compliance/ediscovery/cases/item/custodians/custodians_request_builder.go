@@ -4,6 +4,8 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    icfdf97924ba8a4d9281a6f2a511eb73eea3b32f69a4073b62814f9b2bb76a3ba "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/custodians/removehold"
+    ie8b1f413e0c4033bfb87bd144e4d8bb61544e286c96c654a2c31da85aa24d2a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/custodians/applyhold"
 )
 
 // CustodiansRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians
@@ -55,6 +57,9 @@ type CustodiansRequestBuilderPostOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *CustodiansRequestBuilder) ApplyHold()(*ie8b1f413e0c4033bfb87bd144e4d8bb61544e286c96c654a2c31da85aa24d2a6.ApplyHoldRequestBuilder) {
+    return ie8b1f413e0c4033bfb87bd144e4d8bb61544e286c96c654a2c31da85aa24d2a6.NewApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewCustodiansRequestBuilderInternal instantiates a new CustodiansRequestBuilder and sets the default values.
 func NewCustodiansRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CustodiansRequestBuilder) {
@@ -136,4 +141,7 @@ func (m *CustodiansRequestBuilder) Post(options *CustodiansRequestBuilderPostOpt
         return nil, err
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Custodian), nil
+}
+func (m *CustodiansRequestBuilder) RemoveHold()(*icfdf97924ba8a4d9281a6f2a511eb73eea3b32f69a4073b62814f9b2bb76a3ba.RemoveHoldRequestBuilder) {
+    return icfdf97924ba8a4d9281a6f2a511eb73eea3b32f69a4073b62814f9b2bb76a3ba.NewRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

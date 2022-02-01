@@ -131,7 +131,7 @@ func (m *UpdateRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *UpdateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetAddedPolicySetItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAddedPolicySetItems()))
         for i, v := range m.GetAddedPolicySetItems() {
             temp := v
@@ -142,7 +142,7 @@ func (m *UpdateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
             temp := v
@@ -153,13 +153,13 @@ func (m *UpdateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetDeletedPolicySetItems() != nil {
         err := writer.WriteCollectionOfStringValues("deletedPolicySetItems", m.GetDeletedPolicySetItems())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetUpdatedPolicySetItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUpdatedPolicySetItems()))
         for i, v := range m.GetUpdatedPolicySetItems() {
             temp := v

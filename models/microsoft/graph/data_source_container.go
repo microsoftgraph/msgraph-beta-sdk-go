@@ -14,6 +14,8 @@ type DataSourceContainer struct {
     // Display name of the dataSourceContainer entity.
     displayName *string;
     // 
+    holdStatus *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus;
+    // 
     lastIndexOperation *CaseIndexOperation;
     // Last modified date and time of the dataSourceContainer.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -43,6 +45,14 @@ func (m *DataSourceContainer) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
+    }
+}
+// GetHoldStatus gets the holdStatus property value. 
+func (m *DataSourceContainer) GetHoldStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.holdStatus
     }
 }
 // GetLastIndexOperation gets the lastIndexOperation property value. 
@@ -97,6 +107,17 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["holdStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ParseDataSourceHoldStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus)
+            m.SetHoldStatus(&cast)
         }
         return nil
     }
@@ -164,6 +185,13 @@ func (m *DataSourceContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
+    if m.GetHoldStatus() != nil {
+        cast := m.GetHoldStatus().String()
+        err = writer.WriteStringValue("holdStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("lastIndexOperation", m.GetLastIndexOperation())
         if err != nil {
@@ -201,6 +229,12 @@ func (m *DataSourceContainer) SetCreatedDateTime(value *i336074805fc853987abe6f7
 func (m *DataSourceContainer) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetHoldStatus sets the holdStatus property value. 
+func (m *DataSourceContainer) SetHoldStatus(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus)() {
+    if m != nil {
+        m.holdStatus = value
     }
 }
 // SetLastIndexOperation sets the lastIndexOperation property value. 

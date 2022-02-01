@@ -914,7 +914,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetAppManagementPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppManagementPolicies()))
         for i, v := range m.GetAppManagementPolicies() {
             temp := v
@@ -925,7 +925,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetAppRoles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppRoles()))
         for i, v := range m.GetAppRoles() {
             temp := v
@@ -984,7 +984,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetExtensionProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensionProperties()))
         for i, v := range m.GetExtensionProperties() {
             temp := v
@@ -995,7 +995,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetFederatedIdentityCredentials() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFederatedIdentityCredentials()))
         for i, v := range m.GetFederatedIdentityCredentials() {
             temp := v
@@ -1012,7 +1012,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetHomeRealmDiscoveryPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHomeRealmDiscoveryPolicies()))
         for i, v := range m.GetHomeRealmDiscoveryPolicies() {
             temp := v
@@ -1023,7 +1023,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetIdentifierUris() != nil {
         err = writer.WriteCollectionOfStringValues("identifierUris", m.GetIdentifierUris())
         if err != nil {
             return err
@@ -1047,7 +1047,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetKeyCredentials() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetKeyCredentials()))
         for i, v := range m.GetKeyCredentials() {
             temp := v
@@ -1082,7 +1082,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetOwners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOwners()))
         for i, v := range m.GetOwners() {
             temp := v
@@ -1099,7 +1099,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetPasswordCredentials() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPasswordCredentials()))
         for i, v := range m.GetPasswordCredentials() {
             temp := v
@@ -1122,7 +1122,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetRequiredResourceAccess() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRequiredResourceAccess()))
         for i, v := range m.GetRequiredResourceAccess() {
             temp := v
@@ -1151,7 +1151,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
             return err
@@ -1163,7 +1163,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetTokenIssuancePolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTokenIssuancePolicies()))
         for i, v := range m.GetTokenIssuancePolicies() {
             temp := v
@@ -1174,7 +1174,7 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetTokenLifetimePolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTokenLifetimePolicies()))
         for i, v := range m.GetTokenLifetimePolicies() {
             temp := v

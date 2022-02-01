@@ -8,17 +8,17 @@ import (
 type TeamworkPeripheralsHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The health details about the communication speaker.
     communicationSpeakerHealth *TeamworkPeripheralHealth;
-    // 
+    // The health details about the content camera.
     contentCameraHealth *TeamworkPeripheralHealth;
-    // 
+    // The health details about displays.
     displayHealthCollection []TeamworkPeripheralHealth;
-    // 
+    // The health details about the microphone.
     microphoneHealth *TeamworkPeripheralHealth;
-    // 
+    // The health details about the room camera.
     roomCameraHealth *TeamworkPeripheralHealth;
-    // 
+    // The health details about the speaker.
     speakerHealth *TeamworkPeripheralHealth;
 }
 // NewTeamworkPeripheralsHealth instantiates a new teamworkPeripheralsHealth and sets the default values.
@@ -36,7 +36,7 @@ func (m *TeamworkPeripheralsHealth) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// GetCommunicationSpeakerHealth gets the communicationSpeakerHealth property value. 
+// GetCommunicationSpeakerHealth gets the communicationSpeakerHealth property value. The health details about the communication speaker.
 func (m *TeamworkPeripheralsHealth) GetCommunicationSpeakerHealth()(*TeamworkPeripheralHealth) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *TeamworkPeripheralsHealth) GetCommunicationSpeakerHealth()(*TeamworkPer
         return m.communicationSpeakerHealth
     }
 }
-// GetContentCameraHealth gets the contentCameraHealth property value. 
+// GetContentCameraHealth gets the contentCameraHealth property value. The health details about the content camera.
 func (m *TeamworkPeripheralsHealth) GetContentCameraHealth()(*TeamworkPeripheralHealth) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *TeamworkPeripheralsHealth) GetContentCameraHealth()(*TeamworkPeripheral
         return m.contentCameraHealth
     }
 }
-// GetDisplayHealthCollection gets the displayHealthCollection property value. 
+// GetDisplayHealthCollection gets the displayHealthCollection property value. The health details about displays.
 func (m *TeamworkPeripheralsHealth) GetDisplayHealthCollection()([]TeamworkPeripheralHealth) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *TeamworkPeripheralsHealth) GetDisplayHealthCollection()([]TeamworkPerip
         return m.displayHealthCollection
     }
 }
-// GetMicrophoneHealth gets the microphoneHealth property value. 
+// GetMicrophoneHealth gets the microphoneHealth property value. The health details about the microphone.
 func (m *TeamworkPeripheralsHealth) GetMicrophoneHealth()(*TeamworkPeripheralHealth) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *TeamworkPeripheralsHealth) GetMicrophoneHealth()(*TeamworkPeripheralHea
         return m.microphoneHealth
     }
 }
-// GetRoomCameraHealth gets the roomCameraHealth property value. 
+// GetRoomCameraHealth gets the roomCameraHealth property value. The health details about the room camera.
 func (m *TeamworkPeripheralsHealth) GetRoomCameraHealth()(*TeamworkPeripheralHealth) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *TeamworkPeripheralsHealth) GetRoomCameraHealth()(*TeamworkPeripheralHea
         return m.roomCameraHealth
     }
 }
-// GetSpeakerHealth gets the speakerHealth property value. 
+// GetSpeakerHealth gets the speakerHealth property value. The health details about the speaker.
 func (m *TeamworkPeripheralsHealth) GetSpeakerHealth()(*TeamworkPeripheralHealth) {
     if m == nil {
         return nil
@@ -170,7 +170,7 @@ func (m *TeamworkPeripheralsHealth) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetDisplayHealthCollection() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDisplayHealthCollection()))
         for i, v := range m.GetDisplayHealthCollection() {
             temp := v
@@ -213,37 +213,37 @@ func (m *TeamworkPeripheralsHealth) SetAdditionalData(value map[string]interface
         m.additionalData = value
     }
 }
-// SetCommunicationSpeakerHealth sets the communicationSpeakerHealth property value. 
+// SetCommunicationSpeakerHealth sets the communicationSpeakerHealth property value. The health details about the communication speaker.
 func (m *TeamworkPeripheralsHealth) SetCommunicationSpeakerHealth(value *TeamworkPeripheralHealth)() {
     if m != nil {
         m.communicationSpeakerHealth = value
     }
 }
-// SetContentCameraHealth sets the contentCameraHealth property value. 
+// SetContentCameraHealth sets the contentCameraHealth property value. The health details about the content camera.
 func (m *TeamworkPeripheralsHealth) SetContentCameraHealth(value *TeamworkPeripheralHealth)() {
     if m != nil {
         m.contentCameraHealth = value
     }
 }
-// SetDisplayHealthCollection sets the displayHealthCollection property value. 
+// SetDisplayHealthCollection sets the displayHealthCollection property value. The health details about displays.
 func (m *TeamworkPeripheralsHealth) SetDisplayHealthCollection(value []TeamworkPeripheralHealth)() {
     if m != nil {
         m.displayHealthCollection = value
     }
 }
-// SetMicrophoneHealth sets the microphoneHealth property value. 
+// SetMicrophoneHealth sets the microphoneHealth property value. The health details about the microphone.
 func (m *TeamworkPeripheralsHealth) SetMicrophoneHealth(value *TeamworkPeripheralHealth)() {
     if m != nil {
         m.microphoneHealth = value
     }
 }
-// SetRoomCameraHealth sets the roomCameraHealth property value. 
+// SetRoomCameraHealth sets the roomCameraHealth property value. The health details about the room camera.
 func (m *TeamworkPeripheralsHealth) SetRoomCameraHealth(value *TeamworkPeripheralHealth)() {
     if m != nil {
         m.roomCameraHealth = value
     }
 }
-// SetSpeakerHealth sets the speakerHealth property value. 
+// SetSpeakerHealth sets the speakerHealth property value. The health details about the speaker.
 func (m *TeamworkPeripheralsHealth) SetSpeakerHealth(value *TeamworkPeripheralHealth)() {
     if m != nil {
         m.speakerHealth = value

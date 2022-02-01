@@ -206,7 +206,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i04eb5309aeaaf
             return err
         }
     }
-    {
+    if m.GetRoleScopeTags() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTags", m.GetRoleScopeTags())
         if err != nil {
             return err

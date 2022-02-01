@@ -105,7 +105,7 @@ func (m *DeviceCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
             return err

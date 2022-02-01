@@ -12,7 +12,7 @@ type TeamworkHardwareConfiguration struct {
     compute *TeamworkPeripheral;
     // 
     hdmiIngest *TeamworkPeripheral;
-    // 
+    // The CPU model on the device.
     processorModel *string;
 }
 // NewTeamworkHardwareConfiguration instantiates a new teamworkHardwareConfiguration and sets the default values.
@@ -46,7 +46,7 @@ func (m *TeamworkHardwareConfiguration) GetHdmiIngest()(*TeamworkPeripheral) {
         return m.hdmiIngest
     }
 }
-// GetProcessorModel gets the processorModel property value. 
+// GetProcessorModel gets the processorModel property value. The CPU model on the device.
 func (m *TeamworkHardwareConfiguration) GetProcessorModel()(*string) {
     if m == nil {
         return nil
@@ -138,7 +138,7 @@ func (m *TeamworkHardwareConfiguration) SetHdmiIngest(value *TeamworkPeripheral)
         m.hdmiIngest = value
     }
 }
-// SetProcessorModel sets the processorModel property value. 
+// SetProcessorModel sets the processorModel property value. The CPU model on the device.
 func (m *TeamworkHardwareConfiguration) SetProcessorModel(value *string)() {
     if m != nil {
         m.processorModel = value

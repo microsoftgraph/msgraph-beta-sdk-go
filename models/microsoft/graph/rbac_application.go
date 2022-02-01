@@ -269,7 +269,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if err != nil {
         return err
     }
-    {
+    if m.GetResourceNamespaces() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResourceNamespaces()))
         for i, v := range m.GetResourceNamespaces() {
             temp := v
@@ -280,7 +280,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetRoleAssignmentApprovals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignmentApprovals()))
         for i, v := range m.GetRoleAssignmentApprovals() {
             temp := v
@@ -291,7 +291,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetRoleAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
             temp := v
@@ -302,7 +302,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetRoleAssignmentScheduleInstances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignmentScheduleInstances()))
         for i, v := range m.GetRoleAssignmentScheduleInstances() {
             temp := v
@@ -313,7 +313,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetRoleAssignmentScheduleRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignmentScheduleRequests()))
         for i, v := range m.GetRoleAssignmentScheduleRequests() {
             temp := v
@@ -324,7 +324,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetRoleAssignmentSchedules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignmentSchedules()))
         for i, v := range m.GetRoleAssignmentSchedules() {
             temp := v
@@ -335,7 +335,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetRoleDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleDefinitions()))
         for i, v := range m.GetRoleDefinitions() {
             temp := v
@@ -346,7 +346,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetRoleEligibilityScheduleInstances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleEligibilityScheduleInstances()))
         for i, v := range m.GetRoleEligibilityScheduleInstances() {
             temp := v
@@ -357,7 +357,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetRoleEligibilityScheduleRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleEligibilityScheduleRequests()))
         for i, v := range m.GetRoleEligibilityScheduleRequests() {
             temp := v
@@ -368,7 +368,7 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetRoleEligibilitySchedules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleEligibilitySchedules()))
         for i, v := range m.GetRoleEligibilitySchedules() {
             temp := v

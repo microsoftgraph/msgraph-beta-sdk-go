@@ -97,7 +97,7 @@ func (m *DeviceConfigurationConflictSummary) Serialize(writer i04eb5309aeaafadd2
     if err != nil {
         return err
     }
-    {
+    if m.GetConflictingDeviceConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConflictingDeviceConfigurations()))
         for i, v := range m.GetConflictingDeviceConfigurations() {
             temp := v
@@ -108,7 +108,7 @@ func (m *DeviceConfigurationConflictSummary) Serialize(writer i04eb5309aeaafadd2
             return err
         }
     }
-    {
+    if m.GetContributingSettings() != nil {
         err = writer.WriteCollectionOfStringValues("contributingSettings", m.GetContributingSettings())
         if err != nil {
             return err

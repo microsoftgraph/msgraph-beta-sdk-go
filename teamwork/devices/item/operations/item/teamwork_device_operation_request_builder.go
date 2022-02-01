@@ -35,7 +35,7 @@ type TeamworkDeviceOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// TeamworkDeviceOperationRequestBuilderGetQueryParameters get operations from teamwork
+// TeamworkDeviceOperationRequestBuilderGetQueryParameters the async operations on the device.
 type TeamworkDeviceOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewTeamworkDeviceOperationRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams["request-raw-url"] = rawUrl
     return NewTeamworkDeviceOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property operations for teamwork
+// CreateDeleteRequestInformation the async operations on the device.
 func (m *TeamworkDeviceOperationRequestBuilder) CreateDeleteRequestInformation(options *TeamworkDeviceOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *TeamworkDeviceOperationRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get operations from teamwork
+// CreateGetRequestInformation the async operations on the device.
 func (m *TeamworkDeviceOperationRequestBuilder) CreateGetRequestInformation(options *TeamworkDeviceOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *TeamworkDeviceOperationRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property operations in teamwork
+// CreatePatchRequestInformation the async operations on the device.
 func (m *TeamworkDeviceOperationRequestBuilder) CreatePatchRequestInformation(options *TeamworkDeviceOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *TeamworkDeviceOperationRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// Delete delete navigation property operations for teamwork
+// Delete the async operations on the device.
 func (m *TeamworkDeviceOperationRequestBuilder) Delete(options *TeamworkDeviceOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *TeamworkDeviceOperationRequestBuilder) Delete(options *TeamworkDeviceOp
     }
     return nil
 }
-// Get get operations from teamwork
+// Get the async operations on the device.
 func (m *TeamworkDeviceOperationRequestBuilder) Get(options *TeamworkDeviceOperationRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkDeviceOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *TeamworkDeviceOperationRequestBuilder) Get(options *TeamworkDeviceOpera
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkDeviceOperation), nil
 }
-// Patch update the navigation property operations in teamwork
+// Patch the async operations on the device.
 func (m *TeamworkDeviceOperationRequestBuilder) Patch(options *TeamworkDeviceOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

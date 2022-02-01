@@ -105,7 +105,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) Serialize(writer i04eb5309a
             return err
         }
     }
-    {
+    if m.GetOsEditionTypes() != nil {
         err := writer.WriteCollectionOfStringValues("osEditionTypes", SerializeWindows10EditionType(m.GetOsEditionTypes()))
         if err != nil {
             return err

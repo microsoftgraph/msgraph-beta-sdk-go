@@ -101,7 +101,7 @@ func (m *SearchEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if err != nil {
         return err
     }
-    {
+    if m.GetAcronyms() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAcronyms()))
         for i, v := range m.GetAcronyms() {
             temp := v
@@ -112,7 +112,7 @@ func (m *SearchEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetBookmarks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBookmarks()))
         for i, v := range m.GetBookmarks() {
             temp := v
@@ -123,7 +123,7 @@ func (m *SearchEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetQnas() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetQnas()))
         for i, v := range m.GetQnas() {
             temp := v

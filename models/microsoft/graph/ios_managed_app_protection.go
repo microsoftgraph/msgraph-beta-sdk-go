@@ -427,7 +427,7 @@ func (m *IosManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApps()))
         for i, v := range m.GetApps() {
             temp := v
@@ -468,7 +468,7 @@ func (m *IosManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetExemptedAppProtocols() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExemptedAppProtocols()))
         for i, v := range m.GetExemptedAppProtocols() {
             temp := v
@@ -479,7 +479,7 @@ func (m *IosManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetExemptedUniversalLinks() != nil {
         err = writer.WriteCollectionOfStringValues("exemptedUniversalLinks", m.GetExemptedUniversalLinks())
         if err != nil {
             return err
@@ -497,7 +497,7 @@ func (m *IosManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetManagedUniversalLinks() != nil {
         err = writer.WriteCollectionOfStringValues("managedUniversalLinks", m.GetManagedUniversalLinks())
         if err != nil {
             return err

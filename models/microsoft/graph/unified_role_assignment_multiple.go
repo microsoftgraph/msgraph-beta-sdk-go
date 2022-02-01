@@ -273,13 +273,13 @@ func (m *UnifiedRoleAssignmentMultiple) Serialize(writer i04eb5309aeaafadd28374d
     if err != nil {
         return err
     }
-    {
+    if m.GetAppScopeIds() != nil {
         err = writer.WriteCollectionOfStringValues("appScopeIds", m.GetAppScopeIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetAppScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppScopes()))
         for i, v := range m.GetAppScopes() {
             temp := v
@@ -302,13 +302,13 @@ func (m *UnifiedRoleAssignmentMultiple) Serialize(writer i04eb5309aeaafadd28374d
             return err
         }
     }
-    {
+    if m.GetDirectoryScopeIds() != nil {
         err = writer.WriteCollectionOfStringValues("directoryScopeIds", m.GetDirectoryScopeIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetDirectoryScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDirectoryScopes()))
         for i, v := range m.GetDirectoryScopes() {
             temp := v
@@ -325,13 +325,13 @@ func (m *UnifiedRoleAssignmentMultiple) Serialize(writer i04eb5309aeaafadd28374d
             return err
         }
     }
-    {
+    if m.GetPrincipalIds() != nil {
         err = writer.WriteCollectionOfStringValues("principalIds", m.GetPrincipalIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetPrincipals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPrincipals()))
         for i, v := range m.GetPrincipals() {
             temp := v

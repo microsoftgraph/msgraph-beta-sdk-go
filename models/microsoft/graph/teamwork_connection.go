@@ -9,9 +9,9 @@ import (
 type TeamworkConnection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.
     connectionStatus *TeamworkConnectionStatus;
-    // 
+    // Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
 // NewTeamworkConnection instantiates a new teamworkConnection and sets the default values.
@@ -29,7 +29,7 @@ func (m *TeamworkConnection) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetConnectionStatus gets the connectionStatus property value. 
+// GetConnectionStatus gets the connectionStatus property value. Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.
 func (m *TeamworkConnection) GetConnectionStatus()(*TeamworkConnectionStatus) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *TeamworkConnection) GetConnectionStatus()(*TeamworkConnectionStatus) {
         return m.connectionStatus
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
 func (m *TeamworkConnection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *TeamworkConnection) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetConnectionStatus sets the connectionStatus property value. 
+// SetConnectionStatus sets the connectionStatus property value. Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.
 func (m *TeamworkConnection) SetConnectionStatus(value *TeamworkConnectionStatus)() {
     if m != nil {
         m.connectionStatus = value
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
 func (m *TeamworkConnection) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value

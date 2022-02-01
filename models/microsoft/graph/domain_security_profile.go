@@ -322,7 +322,7 @@ func (m *DomainSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if err != nil {
         return err
     }
-    {
+    if m.GetActivityGroupNames() != nil {
         err = writer.WriteCollectionOfStringValues("activityGroupNames", m.GetActivityGroupNames())
         if err != nil {
             return err
@@ -352,7 +352,7 @@ func (m *DomainSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetDomainCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDomainCategories()))
         for i, v := range m.GetDomainCategories() {
             temp := v
@@ -399,7 +399,7 @@ func (m *DomainSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
             return err

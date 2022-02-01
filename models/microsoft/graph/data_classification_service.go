@@ -245,7 +245,7 @@ func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8
     if err != nil {
         return err
     }
-    {
+    if m.GetClassifyFileJobs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetClassifyFileJobs()))
         for i, v := range m.GetClassifyFileJobs() {
             temp := v
@@ -256,7 +256,7 @@ func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetClassifyTextJobs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetClassifyTextJobs()))
         for i, v := range m.GetClassifyTextJobs() {
             temp := v
@@ -267,7 +267,7 @@ func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetEvaluateDlpPoliciesJobs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEvaluateDlpPoliciesJobs()))
         for i, v := range m.GetEvaluateDlpPoliciesJobs() {
             temp := v
@@ -278,7 +278,7 @@ func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetEvaluateLabelJobs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEvaluateLabelJobs()))
         for i, v := range m.GetEvaluateLabelJobs() {
             temp := v
@@ -289,7 +289,7 @@ func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetExactMatchDataStores() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExactMatchDataStores()))
         for i, v := range m.GetExactMatchDataStores() {
             temp := v
@@ -300,7 +300,7 @@ func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetExactMatchUploadAgents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExactMatchUploadAgents()))
         for i, v := range m.GetExactMatchUploadAgents() {
             temp := v
@@ -311,7 +311,7 @@ func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetJobs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetJobs()))
         for i, v := range m.GetJobs() {
             temp := v
@@ -322,7 +322,7 @@ func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetSensitiveTypes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSensitiveTypes()))
         for i, v := range m.GetSensitiveTypes() {
             temp := v
@@ -333,7 +333,7 @@ func (m *DataClassificationService) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetSensitivityLabels() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSensitivityLabels()))
         for i, v := range m.GetSensitivityLabels() {
             temp := v

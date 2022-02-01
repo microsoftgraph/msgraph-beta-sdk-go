@@ -249,7 +249,7 @@ func (m *UserRegistrationDetails) Serialize(writer i04eb5309aeaafadd28374d79c847
             return err
         }
     }
-    {
+    if m.GetMethodsRegistered() != nil {
         err = writer.WriteCollectionOfStringValues("methodsRegistered", m.GetMethodsRegistered())
         if err != nil {
             return err

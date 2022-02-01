@@ -82,7 +82,7 @@ func (m *App) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *App) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetCalls() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalls()))
         for i, v := range m.GetCalls() {
             temp := v
@@ -93,7 +93,7 @@ func (m *App) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
             return err
         }
     }
-    {
+    if m.GetOnlineMeetings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOnlineMeetings()))
         for i, v := range m.GetOnlineMeetings() {
             temp := v

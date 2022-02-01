@@ -272,7 +272,7 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) Serialize(writer i04eb5309aea
             return err
         }
     }
-    {
+    if m.GetMigrationValidationDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMigrationValidationDetails()))
         for i, v := range m.GetMigrationValidationDetails() {
             temp := v
@@ -295,7 +295,7 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) Serialize(writer i04eb5309aea
             return err
         }
     }
-    {
+    if m.GetReplyUrls() != nil {
         err = writer.WriteCollectionOfStringValues("replyUrls", m.GetReplyUrls())
         if err != nil {
             return err

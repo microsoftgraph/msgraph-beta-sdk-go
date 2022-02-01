@@ -442,7 +442,7 @@ func (m *OrgContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if err != nil {
         return err
     }
-    {
+    if m.GetAddresses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAddresses()))
         for i, v := range m.GetAddresses() {
             temp := v
@@ -465,7 +465,7 @@ func (m *OrgContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetDirectReports() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDirectReports()))
         for i, v := range m.GetDirectReports() {
             temp := v
@@ -512,7 +512,7 @@ func (m *OrgContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMemberOf()))
         for i, v := range m.GetMemberOf() {
             temp := v
@@ -529,7 +529,7 @@ func (m *OrgContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetOnPremisesProvisioningErrors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOnPremisesProvisioningErrors()))
         for i, v := range m.GetOnPremisesProvisioningErrors() {
             temp := v
@@ -546,7 +546,7 @@ func (m *OrgContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetPhones() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPhones()))
         for i, v := range m.GetPhones() {
             temp := v
@@ -557,7 +557,7 @@ func (m *OrgContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetProxyAddresses() != nil {
         err = writer.WriteCollectionOfStringValues("proxyAddresses", m.GetProxyAddresses())
         if err != nil {
             return err
@@ -569,7 +569,7 @@ func (m *OrgContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetTransitiveMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTransitiveMemberOf()))
         for i, v := range m.GetTransitiveMemberOf() {
             temp := v
@@ -580,7 +580,7 @@ func (m *OrgContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetTransitiveReports() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTransitiveReports()))
         for i, v := range m.GetTransitiveReports() {
             temp := v

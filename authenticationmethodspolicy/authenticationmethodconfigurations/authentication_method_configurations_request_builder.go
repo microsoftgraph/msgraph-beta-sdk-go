@@ -26,7 +26,7 @@ type AuthenticationMethodConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AuthenticationMethodConfigurationsRequestBuilderGetQueryParameters represents the settings for each authentication method.
+// AuthenticationMethodConfigurationsRequestBuilderGetQueryParameters represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 type AuthenticationMethodConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAuthenticationMethodConfigurationsRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationMethodConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation represents the settings for each authentication method.
+// CreateGetRequestInformation represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 func (m *AuthenticationMethodConfigurationsRequestBuilder) CreateGetRequestInformation(options *AuthenticationMethodConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation represents the settings for each authentication method.
+// CreatePostRequestInformation represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 func (m *AuthenticationMethodConfigurationsRequestBuilder) CreatePostRequestInformation(options *AuthenticationMethodConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) CreatePostRequestInfo
     }
     return requestInfo, nil
 }
-// Get represents the settings for each authentication method.
+// Get represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 func (m *AuthenticationMethodConfigurationsRequestBuilder) Get(options *AuthenticationMethodConfigurationsRequestBuilderGetOptions)(*AuthenticationMethodConfigurationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) Get(options *Authenti
     }
     return res.(*AuthenticationMethodConfigurationsResponse), nil
 }
-// Post represents the settings for each authentication method.
+// Post represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 func (m *AuthenticationMethodConfigurationsRequestBuilder) Post(options *AuthenticationMethodConfigurationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuthenticationMethodConfiguration, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

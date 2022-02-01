@@ -8,9 +8,9 @@ import (
 type TeamworkAccountConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The account used to sync the calendar.
     onPremisesCalendarSyncConfiguration *TeamworkOnPremisesCalendarSyncConfiguration;
-    // 
+    // The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.
     supportedClient *TeamworkSupportedClient;
 }
 // NewTeamworkAccountConfiguration instantiates a new teamworkAccountConfiguration and sets the default values.
@@ -28,7 +28,7 @@ func (m *TeamworkAccountConfiguration) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// GetOnPremisesCalendarSyncConfiguration gets the onPremisesCalendarSyncConfiguration property value. 
+// GetOnPremisesCalendarSyncConfiguration gets the onPremisesCalendarSyncConfiguration property value. The account used to sync the calendar.
 func (m *TeamworkAccountConfiguration) GetOnPremisesCalendarSyncConfiguration()(*TeamworkOnPremisesCalendarSyncConfiguration) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *TeamworkAccountConfiguration) GetOnPremisesCalendarSyncConfiguration()(
         return m.onPremisesCalendarSyncConfiguration
     }
 }
-// GetSupportedClient gets the supportedClient property value. 
+// GetSupportedClient gets the supportedClient property value. The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.
 func (m *TeamworkAccountConfiguration) GetSupportedClient()(*TeamworkSupportedClient) {
     if m == nil {
         return nil
@@ -102,13 +102,13 @@ func (m *TeamworkAccountConfiguration) SetAdditionalData(value map[string]interf
         m.additionalData = value
     }
 }
-// SetOnPremisesCalendarSyncConfiguration sets the onPremisesCalendarSyncConfiguration property value. 
+// SetOnPremisesCalendarSyncConfiguration sets the onPremisesCalendarSyncConfiguration property value. The account used to sync the calendar.
 func (m *TeamworkAccountConfiguration) SetOnPremisesCalendarSyncConfiguration(value *TeamworkOnPremisesCalendarSyncConfiguration)() {
     if m != nil {
         m.onPremisesCalendarSyncConfiguration = value
     }
 }
-// SetSupportedClient sets the supportedClient property value. 
+// SetSupportedClient sets the supportedClient property value. The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.
 func (m *TeamworkAccountConfiguration) SetSupportedClient(value *TeamworkSupportedClient)() {
     if m != nil {
         m.supportedClient = value

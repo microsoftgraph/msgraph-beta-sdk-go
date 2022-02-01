@@ -289,7 +289,7 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if err != nil {
         return err
     }
-    {
+    if m.GetAuditEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAuditEvents()))
         for i, v := range m.GetAuditEvents() {
             temp := v
@@ -300,7 +300,7 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetCloudPCs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCloudPCs()))
         for i, v := range m.GetCloudPCs() {
             temp := v
@@ -311,7 +311,7 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetDeviceImages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceImages()))
         for i, v := range m.GetDeviceImages() {
             temp := v
@@ -322,7 +322,7 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetGalleryImages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGalleryImages()))
         for i, v := range m.GetGalleryImages() {
             temp := v
@@ -333,7 +333,7 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetOnPremisesConnections() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOnPremisesConnections()))
         for i, v := range m.GetOnPremisesConnections() {
             temp := v
@@ -350,7 +350,7 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetProvisioningPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProvisioningPolicies()))
         for i, v := range m.GetProvisioningPolicies() {
             temp := v
@@ -361,7 +361,7 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetServicePlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetServicePlans()))
         for i, v := range m.GetServicePlans() {
             temp := v
@@ -372,7 +372,7 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetSnapshots() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSnapshots()))
         for i, v := range m.GetSnapshots() {
             temp := v
@@ -383,7 +383,7 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetSupportedRegions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSupportedRegions()))
         for i, v := range m.GetSupportedRegions() {
             temp := v
@@ -394,7 +394,7 @@ func (m *VirtualEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetUserSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserSettings()))
         for i, v := range m.GetUserSettings() {
             temp := v

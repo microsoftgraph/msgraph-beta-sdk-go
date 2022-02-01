@@ -109,7 +109,7 @@ func (m *FilterOperatorSchema) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetSupportedAttributeTypes() != nil {
         err = writer.WriteCollectionOfStringValues("supportedAttributeTypes", SerializeAttributeType(m.GetSupportedAttributeTypes()))
         if err != nil {
             return err

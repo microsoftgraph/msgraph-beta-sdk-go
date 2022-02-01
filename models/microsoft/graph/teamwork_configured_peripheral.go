@@ -8,7 +8,7 @@ import (
 type TeamworkConfiguredPeripheral struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // True if the current peripheral is optional. If set to false, this property is also used as part of the calculation of the health state for the device.
     isOptional *bool;
     // 
     peripheral *TeamworkPeripheral;
@@ -28,7 +28,7 @@ func (m *TeamworkConfiguredPeripheral) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// GetIsOptional gets the isOptional property value. 
+// GetIsOptional gets the isOptional property value. True if the current peripheral is optional. If set to false, this property is also used as part of the calculation of the health state for the device.
 func (m *TeamworkConfiguredPeripheral) GetIsOptional()(*bool) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *TeamworkConfiguredPeripheral) SetAdditionalData(value map[string]interf
         m.additionalData = value
     }
 }
-// SetIsOptional sets the isOptional property value. 
+// SetIsOptional sets the isOptional property value. True if the current peripheral is optional. If set to false, this property is also used as part of the calculation of the health state for the device.
 func (m *TeamworkConfiguredPeripheral) SetIsOptional(value *bool)() {
     if m != nil {
         m.isOptional = value

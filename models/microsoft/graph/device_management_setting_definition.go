@@ -262,7 +262,7 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i04eb5309aeaafadd28
     if err != nil {
         return err
     }
-    {
+    if m.GetConstraints() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConstraints()))
         for i, v := range m.GetConstraints() {
             temp := v
@@ -273,7 +273,7 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i04eb5309aeaafadd28
             return err
         }
     }
-    {
+    if m.GetDependencies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDependencies()))
         for i, v := range m.GetDependencies() {
             temp := v
@@ -320,7 +320,7 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i04eb5309aeaafadd28
             return err
         }
     }
-    {
+    if m.GetKeywords() != nil {
         err = writer.WriteCollectionOfStringValues("keywords", m.GetKeywords())
         if err != nil {
             return err

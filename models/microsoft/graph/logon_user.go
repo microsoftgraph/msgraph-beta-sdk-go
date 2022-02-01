@@ -217,7 +217,7 @@ func (m *LogonUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetLogonTypes() != nil {
         err := writer.WriteCollectionOfStringValues("logonTypes", SerializeLogonType(m.GetLogonTypes()))
         if err != nil {
             return err

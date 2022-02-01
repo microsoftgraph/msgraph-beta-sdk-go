@@ -282,7 +282,7 @@ func (m *AccessReviewScheduleSettings) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *AccessReviewScheduleSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetApplyActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetApplyActions()))
         for i, v := range m.GetApplyActions() {
             temp := v
@@ -329,7 +329,7 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetRecommendationInsightSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecommendationInsightSettings()))
         for i, v := range m.GetRecommendationInsightSettings() {
             temp := v

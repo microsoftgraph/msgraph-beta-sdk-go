@@ -153,7 +153,7 @@ func (m *TenantGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetManagementActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementActions()))
         for i, v := range m.GetManagementActions() {
             temp := v
@@ -164,7 +164,7 @@ func (m *TenantGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetManagementIntents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementIntents()))
         for i, v := range m.GetManagementIntents() {
             temp := v
@@ -175,7 +175,7 @@ func (m *TenantGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetTenantIds() != nil {
         err = writer.WriteCollectionOfStringValues("tenantIds", m.GetTenantIds())
         if err != nil {
             return err

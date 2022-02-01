@@ -8,11 +8,11 @@ import (
 type TeamworkSoftwareUpdateStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The available software version to update.
     availableVersion *string;
-    // 
+    // The current software version.
     currentVersion *string;
-    // 
+    // The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
     softwareFreshness *TeamworkSoftwareFreshness;
 }
 // NewTeamworkSoftwareUpdateStatus instantiates a new teamworkSoftwareUpdateStatus and sets the default values.
@@ -30,7 +30,7 @@ func (m *TeamworkSoftwareUpdateStatus) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// GetAvailableVersion gets the availableVersion property value. 
+// GetAvailableVersion gets the availableVersion property value. The available software version to update.
 func (m *TeamworkSoftwareUpdateStatus) GetAvailableVersion()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *TeamworkSoftwareUpdateStatus) GetAvailableVersion()(*string) {
         return m.availableVersion
     }
 }
-// GetCurrentVersion gets the currentVersion property value. 
+// GetCurrentVersion gets the currentVersion property value. The current software version.
 func (m *TeamworkSoftwareUpdateStatus) GetCurrentVersion()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *TeamworkSoftwareUpdateStatus) GetCurrentVersion()(*string) {
         return m.currentVersion
     }
 }
-// GetSoftwareFreshness gets the softwareFreshness property value. 
+// GetSoftwareFreshness gets the softwareFreshness property value. The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
 func (m *TeamworkSoftwareUpdateStatus) GetSoftwareFreshness()(*TeamworkSoftwareFreshness) {
     if m == nil {
         return nil
@@ -128,19 +128,19 @@ func (m *TeamworkSoftwareUpdateStatus) SetAdditionalData(value map[string]interf
         m.additionalData = value
     }
 }
-// SetAvailableVersion sets the availableVersion property value. 
+// SetAvailableVersion sets the availableVersion property value. The available software version to update.
 func (m *TeamworkSoftwareUpdateStatus) SetAvailableVersion(value *string)() {
     if m != nil {
         m.availableVersion = value
     }
 }
-// SetCurrentVersion sets the currentVersion property value. 
+// SetCurrentVersion sets the currentVersion property value. The current software version.
 func (m *TeamworkSoftwareUpdateStatus) SetCurrentVersion(value *string)() {
     if m != nil {
         m.currentVersion = value
     }
 }
-// SetSoftwareFreshness sets the softwareFreshness property value. 
+// SetSoftwareFreshness sets the softwareFreshness property value. The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
 func (m *TeamworkSoftwareUpdateStatus) SetSoftwareFreshness(value *TeamworkSoftwareFreshness)() {
     if m != nil {
         m.softwareFreshness = value

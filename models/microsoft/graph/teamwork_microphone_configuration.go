@@ -10,7 +10,7 @@ type TeamworkMicrophoneConfiguration struct {
     additionalData map[string]interface{};
     // 
     defaultMicrophone *TeamworkPeripheral;
-    // 
+    // True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
     isMicrophoneOptional *bool;
     // 
     microphones []TeamworkPeripheral;
@@ -38,7 +38,7 @@ func (m *TeamworkMicrophoneConfiguration) GetDefaultMicrophone()(*TeamworkPeriph
         return m.defaultMicrophone
     }
 }
-// GetIsMicrophoneOptional gets the isMicrophoneOptional property value. 
+// GetIsMicrophoneOptional gets the isMicrophoneOptional property value. True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
 func (m *TeamworkMicrophoneConfiguration) GetIsMicrophoneOptional()(*bool) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *TeamworkMicrophoneConfiguration) Serialize(writer i04eb5309aeaafadd2837
             return err
         }
     }
-    {
+    if m.GetMicrophones() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMicrophones()))
         for i, v := range m.GetMicrophones() {
             temp := v
@@ -141,7 +141,7 @@ func (m *TeamworkMicrophoneConfiguration) SetDefaultMicrophone(value *TeamworkPe
         m.defaultMicrophone = value
     }
 }
-// SetIsMicrophoneOptional sets the isMicrophoneOptional property value. 
+// SetIsMicrophoneOptional sets the isMicrophoneOptional property value. True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
 func (m *TeamworkMicrophoneConfiguration) SetIsMicrophoneOptional(value *bool)() {
     if m != nil {
         m.isMicrophoneOptional = value

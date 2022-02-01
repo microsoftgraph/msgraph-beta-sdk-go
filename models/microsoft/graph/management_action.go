@@ -186,7 +186,7 @@ func (m *ManagementAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetWorkloadActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWorkloadActions()))
         for i, v := range m.GetWorkloadActions() {
             temp := v

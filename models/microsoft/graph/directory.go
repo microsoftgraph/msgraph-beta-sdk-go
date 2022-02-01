@@ -293,7 +293,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if err != nil {
         return err
     }
-    {
+    if m.GetAdministrativeUnits() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdministrativeUnits()))
         for i, v := range m.GetAdministrativeUnits() {
             temp := v
@@ -304,7 +304,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetAttributeSets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttributeSets()))
         for i, v := range m.GetAttributeSets() {
             temp := v
@@ -315,7 +315,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetCustomSecurityAttributeDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomSecurityAttributeDefinitions()))
         for i, v := range m.GetCustomSecurityAttributeDefinitions() {
             temp := v
@@ -326,7 +326,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetDeletedItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeletedItems()))
         for i, v := range m.GetDeletedItems() {
             temp := v
@@ -337,7 +337,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetFeatureRolloutPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFeatureRolloutPolicies()))
         for i, v := range m.GetFeatureRolloutPolicies() {
             temp := v
@@ -348,7 +348,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetFederationConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFederationConfigurations()))
         for i, v := range m.GetFederationConfigurations() {
             temp := v
@@ -359,7 +359,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetImpactedResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetImpactedResources()))
         for i, v := range m.GetImpactedResources() {
             temp := v
@@ -370,7 +370,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetInboundSharedUserProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInboundSharedUserProfiles()))
         for i, v := range m.GetInboundSharedUserProfiles() {
             temp := v
@@ -381,7 +381,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetOutboundSharedUserProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOutboundSharedUserProfiles()))
         for i, v := range m.GetOutboundSharedUserProfiles() {
             temp := v
@@ -392,7 +392,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetRecommendations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecommendations()))
         for i, v := range m.GetRecommendations() {
             temp := v
@@ -403,7 +403,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetSharedEmailDomains() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSharedEmailDomains()))
         for i, v := range m.GetSharedEmailDomains() {
             temp := v

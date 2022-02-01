@@ -133,7 +133,7 @@ func (m *PersonWebsite) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if err != nil {
         return err
     }
-    {
+    if m.GetCategories() != nil {
         err = writer.WriteCollectionOfStringValues("categories", m.GetCategories())
         if err != nil {
             return err

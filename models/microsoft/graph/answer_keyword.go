@@ -102,7 +102,7 @@ func (m *AnswerKeyword) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *AnswerKeyword) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetKeywords() != nil {
         err := writer.WriteCollectionOfStringValues("keywords", m.GetKeywords())
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *AnswerKeyword) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetReservedKeywords() != nil {
         err := writer.WriteCollectionOfStringValues("reservedKeywords", m.GetReservedKeywords())
         if err != nil {
             return err

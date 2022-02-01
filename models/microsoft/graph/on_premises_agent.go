@@ -138,7 +138,7 @@ func (m *OnPremisesAgent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     if err != nil {
         return err
     }
-    {
+    if m.GetAgentGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAgentGroups()))
         for i, v := range m.GetAgentGroups() {
             temp := v
@@ -168,7 +168,7 @@ func (m *OnPremisesAgent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetSupportedPublishingTypes() != nil {
         err = writer.WriteCollectionOfStringValues("supportedPublishingTypes", SerializeOnPremisesPublishingType(m.GetSupportedPublishingTypes()))
         if err != nil {
             return err

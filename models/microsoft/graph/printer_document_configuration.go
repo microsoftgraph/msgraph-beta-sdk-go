@@ -496,7 +496,7 @@ func (m *PrinterDocumentConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetFinishings() != nil {
         err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
         if err != nil {
             return err
@@ -552,7 +552,7 @@ func (m *PrinterDocumentConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetPageRanges() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPageRanges()))
         for i, v := range m.GetPageRanges() {
             temp := v

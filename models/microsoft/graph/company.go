@@ -949,7 +949,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if err != nil {
         return err
     }
-    {
+    if m.GetAccounts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccounts()))
         for i, v := range m.GetAccounts() {
             temp := v
@@ -960,7 +960,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetAgedAccountsPayable() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAgedAccountsPayable()))
         for i, v := range m.GetAgedAccountsPayable() {
             temp := v
@@ -971,7 +971,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetAgedAccountsReceivable() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAgedAccountsReceivable()))
         for i, v := range m.GetAgedAccountsReceivable() {
             temp := v
@@ -988,7 +988,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetCompanyInformation() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCompanyInformation()))
         for i, v := range m.GetCompanyInformation() {
             temp := v
@@ -999,7 +999,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetCountriesRegions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCountriesRegions()))
         for i, v := range m.GetCountriesRegions() {
             temp := v
@@ -1010,7 +1010,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetCurrencies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCurrencies()))
         for i, v := range m.GetCurrencies() {
             temp := v
@@ -1021,7 +1021,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetCustomerPaymentJournals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomerPaymentJournals()))
         for i, v := range m.GetCustomerPaymentJournals() {
             temp := v
@@ -1032,7 +1032,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetCustomerPayments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomerPayments()))
         for i, v := range m.GetCustomerPayments() {
             temp := v
@@ -1043,7 +1043,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetCustomers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomers()))
         for i, v := range m.GetCustomers() {
             temp := v
@@ -1054,7 +1054,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetDimensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDimensions()))
         for i, v := range m.GetDimensions() {
             temp := v
@@ -1065,7 +1065,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetDimensionValues() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDimensionValues()))
         for i, v := range m.GetDimensionValues() {
             temp := v
@@ -1082,7 +1082,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetEmployees() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEmployees()))
         for i, v := range m.GetEmployees() {
             temp := v
@@ -1093,7 +1093,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetGeneralLedgerEntries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGeneralLedgerEntries()))
         for i, v := range m.GetGeneralLedgerEntries() {
             temp := v
@@ -1104,7 +1104,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetItemCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetItemCategories()))
         for i, v := range m.GetItemCategories() {
             temp := v
@@ -1115,7 +1115,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
             temp := v
@@ -1126,7 +1126,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetJournalLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetJournalLines()))
         for i, v := range m.GetJournalLines() {
             temp := v
@@ -1137,7 +1137,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetJournals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetJournals()))
         for i, v := range m.GetJournals() {
             temp := v
@@ -1154,7 +1154,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetPaymentMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPaymentMethods()))
         for i, v := range m.GetPaymentMethods() {
             temp := v
@@ -1165,7 +1165,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetPaymentTerms() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPaymentTerms()))
         for i, v := range m.GetPaymentTerms() {
             temp := v
@@ -1176,7 +1176,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetPicture() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPicture()))
         for i, v := range m.GetPicture() {
             temp := v
@@ -1187,7 +1187,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetPurchaseInvoiceLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPurchaseInvoiceLines()))
         for i, v := range m.GetPurchaseInvoiceLines() {
             temp := v
@@ -1198,7 +1198,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetPurchaseInvoices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPurchaseInvoices()))
         for i, v := range m.GetPurchaseInvoices() {
             temp := v
@@ -1209,7 +1209,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetSalesCreditMemoLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesCreditMemoLines()))
         for i, v := range m.GetSalesCreditMemoLines() {
             temp := v
@@ -1220,7 +1220,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetSalesCreditMemos() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesCreditMemos()))
         for i, v := range m.GetSalesCreditMemos() {
             temp := v
@@ -1231,7 +1231,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetSalesInvoiceLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesInvoiceLines()))
         for i, v := range m.GetSalesInvoiceLines() {
             temp := v
@@ -1242,7 +1242,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetSalesInvoices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesInvoices()))
         for i, v := range m.GetSalesInvoices() {
             temp := v
@@ -1253,7 +1253,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetSalesOrderLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesOrderLines()))
         for i, v := range m.GetSalesOrderLines() {
             temp := v
@@ -1264,7 +1264,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetSalesOrders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesOrders()))
         for i, v := range m.GetSalesOrders() {
             temp := v
@@ -1275,7 +1275,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetSalesQuoteLines() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesQuoteLines()))
         for i, v := range m.GetSalesQuoteLines() {
             temp := v
@@ -1286,7 +1286,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetSalesQuotes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSalesQuotes()))
         for i, v := range m.GetSalesQuotes() {
             temp := v
@@ -1297,7 +1297,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetShipmentMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetShipmentMethods()))
         for i, v := range m.GetShipmentMethods() {
             temp := v
@@ -1314,7 +1314,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetTaxAreas() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTaxAreas()))
         for i, v := range m.GetTaxAreas() {
             temp := v
@@ -1325,7 +1325,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetTaxGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTaxGroups()))
         for i, v := range m.GetTaxGroups() {
             temp := v
@@ -1336,7 +1336,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetUnitsOfMeasure() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUnitsOfMeasure()))
         for i, v := range m.GetUnitsOfMeasure() {
             temp := v
@@ -1347,7 +1347,7 @@ func (m *Company) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetVendors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVendors()))
         for i, v := range m.GetVendors() {
             temp := v
