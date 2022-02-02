@@ -106,7 +106,7 @@ func (m *DeviceComplianceScriptValidationResult) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceScriptValidationResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetRuleErrors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRuleErrors()))
         for i, v := range m.GetRuleErrors() {
             temp := v
@@ -117,7 +117,7 @@ func (m *DeviceComplianceScriptValidationResult) Serialize(writer i04eb5309aeaaf
             return err
         }
     }
-    {
+    if m.GetRules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRules()))
         for i, v := range m.GetRules() {
             temp := v
@@ -128,7 +128,7 @@ func (m *DeviceComplianceScriptValidationResult) Serialize(writer i04eb5309aeaaf
             return err
         }
     }
-    {
+    if m.GetScriptErrors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetScriptErrors()))
         for i, v := range m.GetScriptErrors() {
             temp := v

@@ -10,7 +10,7 @@ type TeamworkCameraConfiguration struct {
     additionalData map[string]interface{};
     // 
     cameras []TeamworkPeripheral;
-    // 
+    // The configuration for the content camera.
     contentCameraConfiguration *TeamworkContentCameraConfiguration;
     // 
     defaultContentCamera *TeamworkPeripheral;
@@ -38,7 +38,7 @@ func (m *TeamworkCameraConfiguration) GetCameras()([]TeamworkPeripheral) {
         return m.cameras
     }
 }
-// GetContentCameraConfiguration gets the contentCameraConfiguration property value. 
+// GetContentCameraConfiguration gets the contentCameraConfiguration property value. The configuration for the content camera.
 func (m *TeamworkCameraConfiguration) GetContentCameraConfiguration()(*TeamworkContentCameraConfiguration) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *TeamworkCameraConfiguration) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *TeamworkCameraConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetCameras() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCameras()))
         for i, v := range m.GetCameras() {
             temp := v
@@ -141,7 +141,7 @@ func (m *TeamworkCameraConfiguration) SetCameras(value []TeamworkPeripheral)() {
         m.cameras = value
     }
 }
-// SetContentCameraConfiguration sets the contentCameraConfiguration property value. 
+// SetContentCameraConfiguration sets the contentCameraConfiguration property value. The configuration for the content camera.
 func (m *TeamworkCameraConfiguration) SetContentCameraConfiguration(value *TeamworkContentCameraConfiguration)() {
     if m != nil {
         m.contentCameraConfiguration = value

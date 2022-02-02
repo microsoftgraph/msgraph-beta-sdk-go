@@ -149,7 +149,7 @@ func (m *AuditLogRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if err != nil {
         return err
     }
-    {
+    if m.GetDirectoryAudits() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDirectoryAudits()))
         for i, v := range m.GetDirectoryAudits() {
             temp := v
@@ -160,7 +160,7 @@ func (m *AuditLogRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetDirectoryProvisioning() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDirectoryProvisioning()))
         for i, v := range m.GetDirectoryProvisioning() {
             temp := v
@@ -171,7 +171,7 @@ func (m *AuditLogRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetProvisioning() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProvisioning()))
         for i, v := range m.GetProvisioning() {
             temp := v
@@ -182,7 +182,7 @@ func (m *AuditLogRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetRestrictedSignIns() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRestrictedSignIns()))
         for i, v := range m.GetRestrictedSignIns() {
             temp := v
@@ -193,7 +193,7 @@ func (m *AuditLogRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetSignIns() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSignIns()))
         for i, v := range m.GetSignIns() {
             temp := v

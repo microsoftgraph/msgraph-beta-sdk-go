@@ -232,13 +232,13 @@ func (m *EducationalActivityDetail) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetActivities() != nil {
         err := writer.WriteCollectionOfStringValues("activities", m.GetActivities())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetAwards() != nil {
         err := writer.WriteCollectionOfStringValues("awards", m.GetAwards())
         if err != nil {
             return err
@@ -256,7 +256,7 @@ func (m *EducationalActivityDetail) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetFieldsOfStudy() != nil {
         err := writer.WriteCollectionOfStringValues("fieldsOfStudy", m.GetFieldsOfStudy())
         if err != nil {
             return err

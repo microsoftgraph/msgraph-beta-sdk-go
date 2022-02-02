@@ -58,7 +58,7 @@ func (m *DeleteTiIndicatorsByExternalIdRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *DeleteTiIndicatorsByExternalIdRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetValue() != nil {
         err := writer.WriteCollectionOfStringValues("value", m.GetValue())
         if err != nil {
             return err

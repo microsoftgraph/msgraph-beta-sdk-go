@@ -121,13 +121,13 @@ func (m *ServicePrincipalCreationConditionSet) Serialize(writer i04eb5309aeaafad
     if err != nil {
         return err
     }
-    {
+    if m.GetApplicationIds() != nil {
         err = writer.WriteCollectionOfStringValues("applicationIds", m.GetApplicationIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetApplicationPublisherIds() != nil {
         err = writer.WriteCollectionOfStringValues("applicationPublisherIds", m.GetApplicationPublisherIds())
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *ServicePrincipalCreationConditionSet) Serialize(writer i04eb5309aeaafad
             return err
         }
     }
-    {
+    if m.GetApplicationTenantIds() != nil {
         err = writer.WriteCollectionOfStringValues("applicationTenantIds", m.GetApplicationTenantIds())
         if err != nil {
             return err

@@ -446,7 +446,7 @@ func (m *GroupPolicySettingMapping) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetChildIdList() != nil {
         err = writer.WriteCollectionOfStringValues("childIdList", m.GetChildIdList())
         if err != nil {
             return err
@@ -458,7 +458,7 @@ func (m *GroupPolicySettingMapping) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetIntuneSettingUriList() != nil {
         err = writer.WriteCollectionOfStringValues("intuneSettingUriList", m.GetIntuneSettingUriList())
         if err != nil {
             return err

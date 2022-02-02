@@ -8,9 +8,9 @@ import (
 type TeamworkHardwareHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The system health details for a teamworkDevice.
     computeHealth *TeamworkPeripheralHealth;
-    // 
+    // The health details about the HDMI ingest of a device.
     hdmiIngestHealth *TeamworkPeripheralHealth;
 }
 // NewTeamworkHardwareHealth instantiates a new teamworkHardwareHealth and sets the default values.
@@ -28,7 +28,7 @@ func (m *TeamworkHardwareHealth) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetComputeHealth gets the computeHealth property value. 
+// GetComputeHealth gets the computeHealth property value. The system health details for a teamworkDevice.
 func (m *TeamworkHardwareHealth) GetComputeHealth()(*TeamworkPeripheralHealth) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *TeamworkHardwareHealth) GetComputeHealth()(*TeamworkPeripheralHealth) {
         return m.computeHealth
     }
 }
-// GetHdmiIngestHealth gets the hdmiIngestHealth property value. 
+// GetHdmiIngestHealth gets the hdmiIngestHealth property value. The health details about the HDMI ingest of a device.
 func (m *TeamworkHardwareHealth) GetHdmiIngestHealth()(*TeamworkPeripheralHealth) {
     if m == nil {
         return nil
@@ -100,13 +100,13 @@ func (m *TeamworkHardwareHealth) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetComputeHealth sets the computeHealth property value. 
+// SetComputeHealth sets the computeHealth property value. The system health details for a teamworkDevice.
 func (m *TeamworkHardwareHealth) SetComputeHealth(value *TeamworkPeripheralHealth)() {
     if m != nil {
         m.computeHealth = value
     }
 }
-// SetHdmiIngestHealth sets the hdmiIngestHealth property value. 
+// SetHdmiIngestHealth sets the hdmiIngestHealth property value. The health details about the HDMI ingest of a device.
 func (m *TeamworkHardwareHealth) SetHdmiIngestHealth(value *TeamworkPeripheralHealth)() {
     if m != nil {
         m.hdmiIngestHealth = value

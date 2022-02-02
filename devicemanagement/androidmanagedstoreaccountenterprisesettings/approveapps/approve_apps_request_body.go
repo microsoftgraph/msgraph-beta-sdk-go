@@ -84,7 +84,7 @@ func (m *ApproveAppsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    {
+    if m.GetPackageIds() != nil {
         err := writer.WriteCollectionOfStringValues("packageIds", m.GetPackageIds())
         if err != nil {
             return err

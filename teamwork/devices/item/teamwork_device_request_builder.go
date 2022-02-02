@@ -43,7 +43,7 @@ type TeamworkDeviceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// TeamworkDeviceRequestBuilderGetQueryParameters get devices from teamwork
+// TeamworkDeviceRequestBuilderGetQueryParameters the Teams devices provisioned for the tenant.
 type TeamworkDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -86,7 +86,7 @@ func NewTeamworkDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams["request-raw-url"] = rawUrl
     return NewTeamworkDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property devices for teamwork
+// CreateDeleteRequestInformation the Teams devices provisioned for the tenant.
 func (m *TeamworkDeviceRequestBuilder) CreateDeleteRequestInformation(options *TeamworkDeviceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,7 +103,7 @@ func (m *TeamworkDeviceRequestBuilder) CreateDeleteRequestInformation(options *T
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get devices from teamwork
+// CreateGetRequestInformation the Teams devices provisioned for the tenant.
 func (m *TeamworkDeviceRequestBuilder) CreateGetRequestInformation(options *TeamworkDeviceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *TeamworkDeviceRequestBuilder) CreateGetRequestInformation(options *Team
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property devices in teamwork
+// CreatePatchRequestInformation the Teams devices provisioned for the tenant.
 func (m *TeamworkDeviceRequestBuilder) CreatePatchRequestInformation(options *TeamworkDeviceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,7 +141,7 @@ func (m *TeamworkDeviceRequestBuilder) CreatePatchRequestInformation(options *Te
     }
     return requestInfo, nil
 }
-// Delete delete navigation property devices for teamwork
+// Delete the Teams devices provisioned for the tenant.
 func (m *TeamworkDeviceRequestBuilder) Delete(options *TeamworkDeviceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,7 +153,7 @@ func (m *TeamworkDeviceRequestBuilder) Delete(options *TeamworkDeviceRequestBuil
     }
     return nil
 }
-// Get get devices from teamwork
+// Get the Teams devices provisioned for the tenant.
 func (m *TeamworkDeviceRequestBuilder) Get(options *TeamworkDeviceRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkDevice, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -182,7 +182,7 @@ func (m *TeamworkDeviceRequestBuilder) OperationsById(id string)(*i9322b599ad80a
     }
     return i9322b599ad80a79ed0450750e6a1607ac4158d6981a51a70253206f7041ccd6d.NewTeamworkDeviceOperationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update the navigation property devices in teamwork
+// Patch the Teams devices provisioned for the tenant.
 func (m *TeamworkDeviceRequestBuilder) Patch(options *TeamworkDeviceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -178,7 +178,7 @@ func (m *CartToClassAssociation) Serialize(writer i04eb5309aeaafadd28374d79c8471
     if err != nil {
         return err
     }
-    {
+    if m.GetClassroomIds() != nil {
         err = writer.WriteCollectionOfStringValues("classroomIds", m.GetClassroomIds())
         if err != nil {
             return err
@@ -196,7 +196,7 @@ func (m *CartToClassAssociation) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    {
+    if m.GetDeviceCartIds() != nil {
         err = writer.WriteCollectionOfStringValues("deviceCartIds", m.GetDeviceCartIds())
         if err != nil {
             return err

@@ -26,7 +26,7 @@ type OperationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// OperationsRequestBuilderGetQueryParameters get operations from teamwork
+// OperationsRequestBuilderGetQueryParameters the async operations on the device.
 type OperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewOperationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams["request-raw-url"] = rawUrl
     return NewOperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get operations from teamwork
+// CreateGetRequestInformation the async operations on the device.
 func (m *OperationsRequestBuilder) CreateGetRequestInformation(options *OperationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *OperationsRequestBuilder) CreateGetRequestInformation(options *Operatio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to operations for teamwork
+// CreatePostRequestInformation the async operations on the device.
 func (m *OperationsRequestBuilder) CreatePostRequestInformation(options *OperationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *OperationsRequestBuilder) CreatePostRequestInformation(options *Operati
     }
     return requestInfo, nil
 }
-// Get get operations from teamwork
+// Get the async operations on the device.
 func (m *OperationsRequestBuilder) Get(options *OperationsRequestBuilderGetOptions)(*OperationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *OperationsRequestBuilder) Get(options *OperationsRequestBuilderGetOptio
     }
     return res.(*OperationsResponse), nil
 }
-// Post create new navigation property to operations for teamwork
+// Post the async operations on the device.
 func (m *OperationsRequestBuilder) Post(options *OperationsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkDeviceOperation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

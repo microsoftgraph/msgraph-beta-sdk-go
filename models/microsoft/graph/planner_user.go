@@ -213,7 +213,7 @@ func (m *PlannerUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if err != nil {
         return err
     }
-    {
+    if m.GetAll() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAll()))
         for i, v := range m.GetAll() {
             temp := v
@@ -230,7 +230,7 @@ func (m *PlannerUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetFavoritePlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFavoritePlans()))
         for i, v := range m.GetFavoritePlans() {
             temp := v
@@ -241,7 +241,7 @@ func (m *PlannerUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPlans()))
         for i, v := range m.GetPlans() {
             temp := v
@@ -258,7 +258,7 @@ func (m *PlannerUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetRecentPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRecentPlans()))
         for i, v := range m.GetRecentPlans() {
             temp := v
@@ -269,7 +269,7 @@ func (m *PlannerUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetRosterPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRosterPlans()))
         for i, v := range m.GetRosterPlans() {
             temp := v
@@ -280,7 +280,7 @@ func (m *PlannerUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetTasks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
             temp := v

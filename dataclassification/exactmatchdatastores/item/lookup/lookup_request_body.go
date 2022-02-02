@@ -108,13 +108,13 @@ func (m *LookupRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetResultColumnNames() != nil {
         err := writer.WriteCollectionOfStringValues("resultColumnNames", m.GetResultColumnNames())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetValues() != nil {
         err := writer.WriteCollectionOfStringValues("values", m.GetValues())
         if err != nil {
             return err

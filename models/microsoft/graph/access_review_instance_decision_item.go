@@ -28,6 +28,8 @@ type AccessReviewInstanceDecisionItem struct {
     principal *Identity;
     // Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.
     principalLink *string;
+    // 
+    principalResourceMembership *DecisionItemPrincipalResourceMembership;
     // A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
     recommendation *string;
     // Every decision item in an access review represents a principal's access to a resource. This property represents details of the resource. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is Bob and the resource is 'Sales'. Resources can be of multiple types. See accessReviewInstanceDecisionItemResource. Read-only.
@@ -126,6 +128,14 @@ func (m *AccessReviewInstanceDecisionItem) GetPrincipalLink()(*string) {
         return nil
     } else {
         return m.principalLink
+    }
+}
+// GetPrincipalResourceMembership gets the principalResourceMembership property value. 
+func (m *AccessReviewInstanceDecisionItem) GetPrincipalResourceMembership()(*DecisionItemPrincipalResourceMembership) {
+    if m == nil {
+        return nil
+    } else {
+        return m.principalResourceMembership
     }
 }
 // GetRecommendation gets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
@@ -283,6 +293,16 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["principalResourceMembership"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDecisionItemPrincipalResourceMembership() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrincipalResourceMembership(val.(*DecisionItemPrincipalResourceMembership))
+        }
+        return nil
+    }
     res["recommendation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -384,7 +404,7 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i04eb5309aeaafadd283
             return err
         }
     }
-    {
+    if m.GetInsights() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInsights()))
         for i, v := range m.GetInsights() {
             temp := v
@@ -415,6 +435,12 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i04eb5309aeaafadd283
     }
     {
         err = writer.WriteStringValue("principalLink", m.GetPrincipalLink())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("principalResourceMembership", m.GetPrincipalResourceMembership())
         if err != nil {
             return err
         }
@@ -515,6 +541,12 @@ func (m *AccessReviewInstanceDecisionItem) SetPrincipal(value *Identity)() {
 func (m *AccessReviewInstanceDecisionItem) SetPrincipalLink(value *string)() {
     if m != nil {
         m.principalLink = value
+    }
+}
+// SetPrincipalResourceMembership sets the principalResourceMembership property value. 
+func (m *AccessReviewInstanceDecisionItem) SetPrincipalResourceMembership(value *DecisionItemPrincipalResourceMembership)() {
+    if m != nil {
+        m.principalResourceMembership = value
     }
 }
 // SetRecommendation sets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.

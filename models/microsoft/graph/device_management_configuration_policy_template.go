@@ -19,7 +19,7 @@ type DeviceManagementConfigurationPolicyTemplate struct {
     displayVersion *string;
     // Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.
     lifecycleState *DeviceManagementTemplateLifecycleState;
-    // Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+    // Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
     platforms *DeviceManagementConfigurationPlatforms;
     // Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
     settingTemplateCount *int32;
@@ -87,7 +87,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetLifecycleState()(*Devic
         return m.lifecycleState
     }
 }
-// GetPlatforms gets the platforms property value. Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+// GetPlatforms gets the platforms property value. Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
 func (m *DeviceManagementConfigurationPolicyTemplate) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
     if m == nil {
         return nil
@@ -327,7 +327,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i04eb5309
             return err
         }
     }
-    {
+    if m.GetSettingTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSettingTemplates()))
         for i, v := range m.GetSettingTemplates() {
             temp := v
@@ -396,7 +396,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) SetLifecycleState(value *D
         m.lifecycleState = value
     }
 }
-// SetPlatforms sets the platforms property value. Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+// SetPlatforms sets the platforms property value. Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
     if m != nil {
         m.platforms = value

@@ -58,7 +58,7 @@ func (m *HasPayloadLinksRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *HasPayloadLinksRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetPayloadIds() != nil {
         err := writer.WriteCollectionOfStringValues("payloadIds", m.GetPayloadIds())
         if err != nil {
             return err

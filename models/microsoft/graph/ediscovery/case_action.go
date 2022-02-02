@@ -13,11 +13,12 @@ const (
     INDEX_CASEACTION
     ESTIMATESTATISTICS_CASEACTION
     ADDTOREVIEWSET_CASEACTION
+    HOLDUPDATE_CASEACTION
     UNKNOWNFUTUREVALUE_CASEACTION
 )
 
 func (i CaseAction) String() string {
-    return []string{"CONTENTEXPORT", "APPLYTAGS", "CONVERTTOPDF", "INDEX", "ESTIMATESTATISTICS", "ADDTOREVIEWSET", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"CONTENTEXPORT", "APPLYTAGS", "CONVERTTOPDF", "INDEX", "ESTIMATESTATISTICS", "ADDTOREVIEWSET", "HOLDUPDATE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCaseAction(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -33,6 +34,8 @@ func ParseCaseAction(v string) (interface{}, error) {
             return ESTIMATESTATISTICS_CASEACTION, nil
         case "ADDTOREVIEWSET":
             return ADDTOREVIEWSET_CASEACTION, nil
+        case "HOLDUPDATE":
+            return HOLDUPDATE_CASEACTION, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_CASEACTION, nil
     }

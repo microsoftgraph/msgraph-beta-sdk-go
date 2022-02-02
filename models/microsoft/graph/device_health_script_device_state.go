@@ -276,7 +276,7 @@ func (m *DeviceHealthScriptDeviceState) Serialize(writer i04eb5309aeaafadd28374d
     if err != nil {
         return err
     }
-    {
+    if m.GetAssignmentFilterIds() != nil {
         err = writer.WriteCollectionOfStringValues("assignmentFilterIds", m.GetAssignmentFilterIds())
         if err != nil {
             return err

@@ -268,7 +268,7 @@ func (m *AndroidForWorkSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    {
+    if m.GetTargetGroupIds() != nil {
         err = writer.WriteCollectionOfStringValues("targetGroupIds", m.GetTargetGroupIds())
         if err != nil {
             return err

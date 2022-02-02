@@ -102,7 +102,7 @@ func (m *OfficeConfiguration) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *OfficeConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetClientConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetClientConfigurations()))
         for i, v := range m.GetClientConfigurations() {
             temp := v
@@ -113,7 +113,7 @@ func (m *OfficeConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetTenantCheckinStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTenantCheckinStatuses()))
         for i, v := range m.GetTenantCheckinStatuses() {
             temp := v

@@ -156,25 +156,25 @@ func (m *ConditionalAccessDevices) Serialize(writer i04eb5309aeaafadd28374d79c84
             return err
         }
     }
-    {
+    if m.GetExcludeDevices() != nil {
         err := writer.WriteCollectionOfStringValues("excludeDevices", m.GetExcludeDevices())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetExcludeDeviceStates() != nil {
         err := writer.WriteCollectionOfStringValues("excludeDeviceStates", m.GetExcludeDeviceStates())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetIncludeDevices() != nil {
         err := writer.WriteCollectionOfStringValues("includeDevices", m.GetIncludeDevices())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetIncludeDeviceStates() != nil {
         err := writer.WriteCollectionOfStringValues("includeDeviceStates", m.GetIncludeDeviceStates())
         if err != nil {
             return err

@@ -173,7 +173,7 @@ func (m *AccessPackageAssignmentResourceRole) Serialize(writer i04eb5309aeaafadd
     if err != nil {
         return err
     }
-    {
+    if m.GetAccessPackageAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignments()))
         for i, v := range m.GetAccessPackageAssignments() {
             temp := v

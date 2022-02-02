@@ -350,7 +350,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if err != nil {
         return err
     }
-    {
+    if m.GetAccessPackageAssignmentPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignmentPolicies()))
         for i, v := range m.GetAccessPackageAssignmentPolicies() {
             temp := v
@@ -367,7 +367,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetAccessPackageResourceRoleScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageResourceRoleScopes()))
         for i, v := range m.GetAccessPackageResourceRoleScopes() {
             temp := v
@@ -378,7 +378,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetAccessPackagesIncompatibleWith() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackagesIncompatibleWith()))
         for i, v := range m.GetAccessPackagesIncompatibleWith() {
             temp := v
@@ -419,7 +419,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetIncompatibleAccessPackages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncompatibleAccessPackages()))
         for i, v := range m.GetIncompatibleAccessPackages() {
             temp := v
@@ -430,7 +430,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetIncompatibleGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIncompatibleGroups()))
         for i, v := range m.GetIncompatibleGroups() {
             temp := v

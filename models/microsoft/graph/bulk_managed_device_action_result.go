@@ -130,25 +130,25 @@ func (m *BulkManagedDeviceActionResult) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *BulkManagedDeviceActionResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetFailedDeviceIds() != nil {
         err := writer.WriteCollectionOfStringValues("failedDeviceIds", m.GetFailedDeviceIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetNotFoundDeviceIds() != nil {
         err := writer.WriteCollectionOfStringValues("notFoundDeviceIds", m.GetNotFoundDeviceIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetNotSupportedDeviceIds() != nil {
         err := writer.WriteCollectionOfStringValues("notSupportedDeviceIds", m.GetNotSupportedDeviceIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSuccessfulDeviceIds() != nil {
         err := writer.WriteCollectionOfStringValues("successfulDeviceIds", m.GetSuccessfulDeviceIds())
         if err != nil {
             return err

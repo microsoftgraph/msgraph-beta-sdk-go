@@ -158,7 +158,7 @@ type ManagedDevice struct {
     serialNumber *string;
     // Device sku family
     skuFamily *string;
-    // Device sku number, see also: GetProductInfo. Valid values 0 to 2147483647. This property is read-only.
+    // Device sku number, see also: GetProductInfo function. Valid values 0 to 2147483647. This property is read-only.
     skuNumber *int32;
     // Specification version. This property is read-only.
     specificationVersion *string;
@@ -794,7 +794,7 @@ func (m *ManagedDevice) GetSkuFamily()(*string) {
         return m.skuFamily
     }
 }
-// GetSkuNumber gets the skuNumber property value. Device sku number, see also: GetProductInfo. Valid values 0 to 2147483647. This property is read-only.
+// GetSkuNumber gets the skuNumber property value. Device sku number, see also: GetProductInfo function. Valid values 0 to 2147483647. This property is read-only.
 func (m *ManagedDevice) GetSkuNumber()(*int32) {
     if m == nil {
         return nil
@@ -1896,7 +1896,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetAssignmentFilterEvaluationStatusDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignmentFilterEvaluationStatusDetails()))
         for i, v := range m.GetAssignmentFilterEvaluationStatusDetails() {
             temp := v
@@ -1938,7 +1938,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetChromeOSDeviceInfo() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChromeOSDeviceInfo()))
         for i, v := range m.GetChromeOSDeviceInfo() {
             temp := v
@@ -1949,7 +1949,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetCloudPcRemoteActionResults() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCloudPcRemoteActionResults()))
         for i, v := range m.GetCloudPcRemoteActionResults() {
             temp := v
@@ -1991,7 +1991,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetDetectedApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDetectedApps()))
         for i, v := range m.GetDetectedApps() {
             temp := v
@@ -2002,7 +2002,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetDeviceActionResults() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceActionResults()))
         for i, v := range m.GetDeviceActionResults() {
             temp := v
@@ -2025,7 +2025,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetDeviceCompliancePolicyStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceCompliancePolicyStates()))
         for i, v := range m.GetDeviceCompliancePolicyStates() {
             temp := v
@@ -2036,7 +2036,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetDeviceConfigurationStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceConfigurationStates()))
         for i, v := range m.GetDeviceConfigurationStates() {
             temp := v
@@ -2197,7 +2197,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetLogCollectionRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLogCollectionRequests()))
         for i, v := range m.GetLogCollectionRequests() {
             temp := v
@@ -2215,7 +2215,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetManagedDeviceMobileAppConfigurationStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagedDeviceMobileAppConfigurationStates()))
         for i, v := range m.GetManagedDeviceMobileAppConfigurationStates() {
             temp := v
@@ -2365,13 +2365,13 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSecurityBaselineStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSecurityBaselineStates()))
         for i, v := range m.GetSecurityBaselineStates() {
             temp := v
@@ -2442,7 +2442,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetUsers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUsers()))
         for i, v := range m.GetUsers() {
             temp := v
@@ -2453,7 +2453,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetUsersLoggedOn() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUsersLoggedOn()))
         for i, v := range m.GetUsersLoggedOn() {
             temp := v
@@ -2940,7 +2940,7 @@ func (m *ManagedDevice) SetSkuFamily(value *string)() {
         m.skuFamily = value
     }
 }
-// SetSkuNumber sets the skuNumber property value. Device sku number, see also: GetProductInfo. Valid values 0 to 2147483647. This property is read-only.
+// SetSkuNumber sets the skuNumber property value. Device sku number, see also: GetProductInfo function. Valid values 0 to 2147483647. This property is read-only.
 func (m *ManagedDevice) SetSkuNumber(value *int32)() {
     if m != nil {
         m.skuNumber = value

@@ -82,13 +82,13 @@ func (m *DeviceAndAppManagementAssignedRoleDetails) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *DeviceAndAppManagementAssignedRoleDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetRoleAssignmentIds() != nil {
         err := writer.WriteCollectionOfStringValues("roleAssignmentIds", m.GetRoleAssignmentIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetRoleDefinitionIds() != nil {
         err := writer.WriteCollectionOfStringValues("roleDefinitionIds", m.GetRoleDefinitionIds())
         if err != nil {
             return err

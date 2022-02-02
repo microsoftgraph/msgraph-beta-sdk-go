@@ -106,7 +106,7 @@ func (m *Filter) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *Filter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetCategoryFilterGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCategoryFilterGroups()))
         for i, v := range m.GetCategoryFilterGroups() {
             temp := v
@@ -117,7 +117,7 @@ func (m *Filter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroups()))
         for i, v := range m.GetGroups() {
             temp := v
@@ -128,7 +128,7 @@ func (m *Filter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetInputFilterGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInputFilterGroups()))
         for i, v := range m.GetInputFilterGroups() {
             temp := v

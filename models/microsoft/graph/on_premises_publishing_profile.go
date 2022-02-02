@@ -189,7 +189,7 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i04eb5309aeaafadd28374d79
     if err != nil {
         return err
     }
-    {
+    if m.GetAgentGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAgentGroups()))
         for i, v := range m.GetAgentGroups() {
             temp := v
@@ -200,7 +200,7 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    {
+    if m.GetAgents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAgents()))
         for i, v := range m.GetAgents() {
             temp := v
@@ -211,7 +211,7 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    {
+    if m.GetConnectorGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConnectorGroups()))
         for i, v := range m.GetConnectorGroups() {
             temp := v
@@ -222,7 +222,7 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    {
+    if m.GetConnectors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConnectors()))
         for i, v := range m.GetConnectors() {
             temp := v
@@ -245,7 +245,7 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    {
+    if m.GetPublishedResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPublishedResources()))
         for i, v := range m.GetPublishedResources() {
             temp := v

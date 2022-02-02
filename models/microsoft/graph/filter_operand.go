@@ -58,7 +58,7 @@ func (m *FilterOperand) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *FilterOperand) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetValues() != nil {
         err := writer.WriteCollectionOfStringValues("values", m.GetValues())
         if err != nil {
             return err

@@ -12,9 +12,9 @@ type TeamworkSpeakerConfiguration struct {
     defaultCommunicationSpeaker *TeamworkPeripheral;
     // 
     defaultSpeaker *TeamworkPeripheral;
-    // 
+    // True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
     isCommunicationSpeakerOptional *bool;
-    // 
+    // True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
     isSpeakerOptional *bool;
     // 
     speakers []TeamworkPeripheral;
@@ -50,7 +50,7 @@ func (m *TeamworkSpeakerConfiguration) GetDefaultSpeaker()(*TeamworkPeripheral) 
         return m.defaultSpeaker
     }
 }
-// GetIsCommunicationSpeakerOptional gets the isCommunicationSpeakerOptional property value. 
+// GetIsCommunicationSpeakerOptional gets the isCommunicationSpeakerOptional property value. True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) GetIsCommunicationSpeakerOptional()(*bool) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *TeamworkSpeakerConfiguration) GetIsCommunicationSpeakerOptional()(*bool
         return m.isCommunicationSpeakerOptional
     }
 }
-// GetIsSpeakerOptional gets the isSpeakerOptional property value. 
+// GetIsSpeakerOptional gets the isSpeakerOptional property value. True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) GetIsSpeakerOptional()(*bool) {
     if m == nil {
         return nil
@@ -162,7 +162,7 @@ func (m *TeamworkSpeakerConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetSpeakers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSpeakers()))
         for i, v := range m.GetSpeakers() {
             temp := v
@@ -199,13 +199,13 @@ func (m *TeamworkSpeakerConfiguration) SetDefaultSpeaker(value *TeamworkPeripher
         m.defaultSpeaker = value
     }
 }
-// SetIsCommunicationSpeakerOptional sets the isCommunicationSpeakerOptional property value. 
+// SetIsCommunicationSpeakerOptional sets the isCommunicationSpeakerOptional property value. True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) SetIsCommunicationSpeakerOptional(value *bool)() {
     if m != nil {
         m.isCommunicationSpeakerOptional = value
     }
 }
-// SetIsSpeakerOptional sets the isSpeakerOptional property value. 
+// SetIsSpeakerOptional sets the isSpeakerOptional property value. True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) SetIsSpeakerOptional(value *bool)() {
     if m != nil {
         m.isSpeakerOptional = value

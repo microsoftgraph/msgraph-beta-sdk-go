@@ -279,7 +279,7 @@ func (m *ExecuteActionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
             return err
         }
     }
-    {
+    if m.GetDeviceIds() != nil {
         err := writer.WriteCollectionOfStringValues("deviceIds", m.GetDeviceIds())
         if err != nil {
             return err

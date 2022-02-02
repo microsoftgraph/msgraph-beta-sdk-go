@@ -58,7 +58,7 @@ func (m *TargetPolicyEndpoints) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *TargetPolicyEndpoints) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetPlatformTypes() != nil {
         err := writer.WriteCollectionOfStringValues("platformTypes", m.GetPlatformTypes())
         if err != nil {
             return err

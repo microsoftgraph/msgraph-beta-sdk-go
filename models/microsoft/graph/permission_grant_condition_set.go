@@ -232,13 +232,13 @@ func (m *PermissionGrantConditionSet) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    {
+    if m.GetClientApplicationIds() != nil {
         err = writer.WriteCollectionOfStringValues("clientApplicationIds", m.GetClientApplicationIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetClientApplicationPublisherIds() != nil {
         err = writer.WriteCollectionOfStringValues("clientApplicationPublisherIds", m.GetClientApplicationPublisherIds())
         if err != nil {
             return err
@@ -250,7 +250,7 @@ func (m *PermissionGrantConditionSet) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    {
+    if m.GetClientApplicationTenantIds() != nil {
         err = writer.WriteCollectionOfStringValues("clientApplicationTenantIds", m.GetClientApplicationTenantIds())
         if err != nil {
             return err
@@ -262,7 +262,7 @@ func (m *PermissionGrantConditionSet) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    {
+    if m.GetPermissions() != nil {
         err = writer.WriteCollectionOfStringValues("permissions", m.GetPermissions())
         if err != nil {
             return err

@@ -138,7 +138,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i04eb5309aea
     if err != nil {
         return err
     }
-    {
+    if m.GetAccessRules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessRules()))
         for i, v := range m.GetAccessRules() {
             temp := v
@@ -162,7 +162,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i04eb5309aea
             return err
         }
     }
-    {
+    if m.GetKnownDeviceClasses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetKnownDeviceClasses()))
         for i, v := range m.GetKnownDeviceClasses() {
             temp := v

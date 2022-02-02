@@ -150,13 +150,13 @@ func (m *UpdateAudienceByIdRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *UpdateAudienceByIdRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetAddExclusions() != nil {
         err := writer.WriteCollectionOfStringValues("addExclusions", m.GetAddExclusions())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetAddMembers() != nil {
         err := writer.WriteCollectionOfStringValues("addMembers", m.GetAddMembers())
         if err != nil {
             return err
@@ -168,13 +168,13 @@ func (m *UpdateAudienceByIdRequestBody) Serialize(writer i04eb5309aeaafadd28374d
             return err
         }
     }
-    {
+    if m.GetRemoveExclusions() != nil {
         err := writer.WriteCollectionOfStringValues("removeExclusions", m.GetRemoveExclusions())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetRemoveMembers() != nil {
         err := writer.WriteCollectionOfStringValues("removeMembers", m.GetRemoveMembers())
         if err != nil {
             return err

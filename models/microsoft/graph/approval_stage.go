@@ -168,7 +168,7 @@ func (m *ApprovalStage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetEscalationApprovers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEscalationApprovers()))
         for i, v := range m.GetEscalationApprovers() {
             temp := v
@@ -197,7 +197,7 @@ func (m *ApprovalStage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetPrimaryApprovers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPrimaryApprovers()))
         for i, v := range m.GetPrimaryApprovers() {
             temp := v

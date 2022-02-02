@@ -198,7 +198,7 @@ func (m *MeetingRegistration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if err != nil {
         return err
     }
-    {
+    if m.GetCustomQuestions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomQuestions()))
         for i, v := range m.GetCustomQuestions() {
             temp := v
@@ -233,7 +233,7 @@ func (m *MeetingRegistration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetSpeakers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSpeakers()))
         for i, v := range m.GetSpeakers() {
             temp := v

@@ -12,8 +12,8 @@ type Simulation struct {
     attackTechnique *SimulationAttackTechnique;
     // Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
     attackType *SimulationAttackType;
-    // Flag representing if artifacts were cleaned up in the attack simulation and training campaign.
-    cleanupArtifacts *bool;
+    // 
+    automationId *string;
     // Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
     completionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Identity of the user who created the attack simulation and training campaign.
@@ -24,10 +24,6 @@ type Simulation struct {
     description *string;
     // Display name of the attack simulation and training campaign. Supports $filter and $orderby.
     displayName *string;
-    // Flag representing whether to enable or disable timezone-aware delivery of phishing payload in the attack simulation and training campaign.
-    enableRegionTimezoneDelivery *bool;
-    // Flag representing inclusion of all the users of a tenant in the attack simulation and training campaign.
-    includeAllAccountTargets *bool;
     // Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
     isAutomated *bool;
     // Identity of the user who most recently modified the attack simulation and training campaign.
@@ -38,18 +34,10 @@ type Simulation struct {
     launchDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
     payloadDeliveryPlatform *PayloadDeliveryPlatform;
-    // Source of phishing payload in the attack simulation and training campaign. Possible values are: unknown, global, tenant, unknownFutureValue.
-    payloadSource *PayloadSource;
     // Report of the attack simulation and training campaign.
     report *SimulationReport;
     // Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, inProgress, scheduled, completed, partiallyCompleted, failed, cancelled, excluded, deleted, included, unknownFutureValue.
     status *SimulationStatus;
-    // Preference of the tenant admin to assign training to users in the attack simulation and training campaign. Possible values are: unknown, auto, manual, unknownFutureValue.
-    trainingAssignmentPreference *TrainingAssignmentPreference;
-    // Preference of the tenant admin for the source of training content to assign to users in the attack simulation and training campaign. Possible values are: unknown, microsoft, custom, noTraining, unknownFutureValue.
-    trainingContentPreference *TrainingContentPreference;
-    // Date and time before which the trainings need to be completed by users in the attack simulation and training campaign.
-    trainingDueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
 // NewSimulation instantiates a new simulation and sets the default values.
 func NewSimulation()(*Simulation) {
@@ -74,12 +62,12 @@ func (m *Simulation) GetAttackType()(*SimulationAttackType) {
         return m.attackType
     }
 }
-// GetCleanupArtifacts gets the cleanupArtifacts property value. Flag representing if artifacts were cleaned up in the attack simulation and training campaign.
-func (m *Simulation) GetCleanupArtifacts()(*bool) {
+// GetAutomationId gets the automationId property value. 
+func (m *Simulation) GetAutomationId()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.cleanupArtifacts
+        return m.automationId
     }
 }
 // GetCompletionDateTime gets the completionDateTime property value. Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
@@ -122,22 +110,6 @@ func (m *Simulation) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEnableRegionTimezoneDelivery gets the enableRegionTimezoneDelivery property value. Flag representing whether to enable or disable timezone-aware delivery of phishing payload in the attack simulation and training campaign.
-func (m *Simulation) GetEnableRegionTimezoneDelivery()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableRegionTimezoneDelivery
-    }
-}
-// GetIncludeAllAccountTargets gets the includeAllAccountTargets property value. Flag representing inclusion of all the users of a tenant in the attack simulation and training campaign.
-func (m *Simulation) GetIncludeAllAccountTargets()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeAllAccountTargets
-    }
-}
 // GetIsAutomated gets the isAutomated property value. Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
 func (m *Simulation) GetIsAutomated()(*bool) {
     if m == nil {
@@ -178,14 +150,6 @@ func (m *Simulation) GetPayloadDeliveryPlatform()(*PayloadDeliveryPlatform) {
         return m.payloadDeliveryPlatform
     }
 }
-// GetPayloadSource gets the payloadSource property value. Source of phishing payload in the attack simulation and training campaign. Possible values are: unknown, global, tenant, unknownFutureValue.
-func (m *Simulation) GetPayloadSource()(*PayloadSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadSource
-    }
-}
 // GetReport gets the report property value. Report of the attack simulation and training campaign.
 func (m *Simulation) GetReport()(*SimulationReport) {
     if m == nil {
@@ -200,30 +164,6 @@ func (m *Simulation) GetStatus()(*SimulationStatus) {
         return nil
     } else {
         return m.status
-    }
-}
-// GetTrainingAssignmentPreference gets the trainingAssignmentPreference property value. Preference of the tenant admin to assign training to users in the attack simulation and training campaign. Possible values are: unknown, auto, manual, unknownFutureValue.
-func (m *Simulation) GetTrainingAssignmentPreference()(*TrainingAssignmentPreference) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trainingAssignmentPreference
-    }
-}
-// GetTrainingContentPreference gets the trainingContentPreference property value. Preference of the tenant admin for the source of training content to assign to users in the attack simulation and training campaign. Possible values are: unknown, microsoft, custom, noTraining, unknownFutureValue.
-func (m *Simulation) GetTrainingContentPreference()(*TrainingContentPreference) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trainingContentPreference
-    }
-}
-// GetTrainingDueDateTime gets the trainingDueDateTime property value. Date and time before which the trainings need to be completed by users in the attack simulation and training campaign.
-func (m *Simulation) GetTrainingDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trainingDueDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -251,13 +191,13 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         }
         return nil
     }
-    res["cleanupArtifacts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
+    res["automationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCleanupArtifacts(val)
+            m.SetAutomationId(val)
         }
         return nil
     }
@@ -308,26 +248,6 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         }
         if val != nil {
             m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["enableRegionTimezoneDelivery"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnableRegionTimezoneDelivery(val)
-        }
-        return nil
-    }
-    res["includeAllAccountTargets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIncludeAllAccountTargets(val)
         }
         return nil
     }
@@ -382,17 +302,6 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         }
         return nil
     }
-    res["payloadSource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePayloadSource)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            cast := val.(PayloadSource)
-            m.SetPayloadSource(&cast)
-        }
-        return nil
-    }
     res["report"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSimulationReport() })
         if err != nil {
@@ -411,38 +320,6 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if val != nil {
             cast := val.(SimulationStatus)
             m.SetStatus(&cast)
-        }
-        return nil
-    }
-    res["trainingAssignmentPreference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTrainingAssignmentPreference)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            cast := val.(TrainingAssignmentPreference)
-            m.SetTrainingAssignmentPreference(&cast)
-        }
-        return nil
-    }
-    res["trainingContentPreference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTrainingContentPreference)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            cast := val.(TrainingContentPreference)
-            m.SetTrainingContentPreference(&cast)
-        }
-        return nil
-    }
-    res["trainingDueDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTrainingDueDateTime(val)
         }
         return nil
     }
@@ -472,7 +349,7 @@ func (m *Simulation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err = writer.WriteBoolValue("cleanupArtifacts", m.GetCleanupArtifacts())
+        err = writer.WriteStringValue("automationId", m.GetAutomationId())
         if err != nil {
             return err
         }
@@ -508,18 +385,6 @@ func (m *Simulation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err = writer.WriteBoolValue("enableRegionTimezoneDelivery", m.GetEnableRegionTimezoneDelivery())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("includeAllAccountTargets", m.GetIncludeAllAccountTargets())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("isAutomated", m.GetIsAutomated())
         if err != nil {
             return err
@@ -550,13 +415,6 @@ func (m *Simulation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    if m.GetPayloadSource() != nil {
-        cast := m.GetPayloadSource().String()
-        err = writer.WriteStringValue("payloadSource", &cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteObjectValue("report", m.GetReport())
         if err != nil {
@@ -566,26 +424,6 @@ func (m *Simulation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     if m.GetStatus() != nil {
         cast := m.GetStatus().String()
         err = writer.WriteStringValue("status", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTrainingAssignmentPreference() != nil {
-        cast := m.GetTrainingAssignmentPreference().String()
-        err = writer.WriteStringValue("trainingAssignmentPreference", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTrainingContentPreference() != nil {
-        cast := m.GetTrainingContentPreference().String()
-        err = writer.WriteStringValue("trainingContentPreference", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("trainingDueDateTime", m.GetTrainingDueDateTime())
         if err != nil {
             return err
         }
@@ -604,10 +442,10 @@ func (m *Simulation) SetAttackType(value *SimulationAttackType)() {
         m.attackType = value
     }
 }
-// SetCleanupArtifacts sets the cleanupArtifacts property value. Flag representing if artifacts were cleaned up in the attack simulation and training campaign.
-func (m *Simulation) SetCleanupArtifacts(value *bool)() {
+// SetAutomationId sets the automationId property value. 
+func (m *Simulation) SetAutomationId(value *string)() {
     if m != nil {
-        m.cleanupArtifacts = value
+        m.automationId = value
     }
 }
 // SetCompletionDateTime sets the completionDateTime property value. Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
@@ -640,18 +478,6 @@ func (m *Simulation) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetEnableRegionTimezoneDelivery sets the enableRegionTimezoneDelivery property value. Flag representing whether to enable or disable timezone-aware delivery of phishing payload in the attack simulation and training campaign.
-func (m *Simulation) SetEnableRegionTimezoneDelivery(value *bool)() {
-    if m != nil {
-        m.enableRegionTimezoneDelivery = value
-    }
-}
-// SetIncludeAllAccountTargets sets the includeAllAccountTargets property value. Flag representing inclusion of all the users of a tenant in the attack simulation and training campaign.
-func (m *Simulation) SetIncludeAllAccountTargets(value *bool)() {
-    if m != nil {
-        m.includeAllAccountTargets = value
-    }
-}
 // SetIsAutomated sets the isAutomated property value. Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
 func (m *Simulation) SetIsAutomated(value *bool)() {
     if m != nil {
@@ -682,12 +508,6 @@ func (m *Simulation) SetPayloadDeliveryPlatform(value *PayloadDeliveryPlatform)(
         m.payloadDeliveryPlatform = value
     }
 }
-// SetPayloadSource sets the payloadSource property value. Source of phishing payload in the attack simulation and training campaign. Possible values are: unknown, global, tenant, unknownFutureValue.
-func (m *Simulation) SetPayloadSource(value *PayloadSource)() {
-    if m != nil {
-        m.payloadSource = value
-    }
-}
 // SetReport sets the report property value. Report of the attack simulation and training campaign.
 func (m *Simulation) SetReport(value *SimulationReport)() {
     if m != nil {
@@ -698,23 +518,5 @@ func (m *Simulation) SetReport(value *SimulationReport)() {
 func (m *Simulation) SetStatus(value *SimulationStatus)() {
     if m != nil {
         m.status = value
-    }
-}
-// SetTrainingAssignmentPreference sets the trainingAssignmentPreference property value. Preference of the tenant admin to assign training to users in the attack simulation and training campaign. Possible values are: unknown, auto, manual, unknownFutureValue.
-func (m *Simulation) SetTrainingAssignmentPreference(value *TrainingAssignmentPreference)() {
-    if m != nil {
-        m.trainingAssignmentPreference = value
-    }
-}
-// SetTrainingContentPreference sets the trainingContentPreference property value. Preference of the tenant admin for the source of training content to assign to users in the attack simulation and training campaign. Possible values are: unknown, microsoft, custom, noTraining, unknownFutureValue.
-func (m *Simulation) SetTrainingContentPreference(value *TrainingContentPreference)() {
-    if m != nil {
-        m.trainingContentPreference = value
-    }
-}
-// SetTrainingDueDateTime sets the trainingDueDateTime property value. Date and time before which the trainings need to be completed by users in the attack simulation and training campaign.
-func (m *Simulation) SetTrainingDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.trainingDueDateTime = value
     }
 }

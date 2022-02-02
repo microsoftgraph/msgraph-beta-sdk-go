@@ -121,7 +121,7 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i04eb5309aeaafadd28374d79c84
     if err != nil {
         return err
     }
-    {
+    if m.GetBusinessFlows() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBusinessFlows()))
         for i, v := range m.GetBusinessFlows() {
             temp := v
@@ -132,7 +132,7 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i04eb5309aeaafadd28374d79c84
             return err
         }
     }
-    {
+    if m.GetBusinessFlowsWithRequestsAwaitingMyDecision() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBusinessFlowsWithRequestsAwaitingMyDecision()))
         for i, v := range m.GetBusinessFlowsWithRequestsAwaitingMyDecision() {
             temp := v
@@ -149,7 +149,7 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i04eb5309aeaafadd28374d79c84
             return err
         }
     }
-    {
+    if m.GetPolicyTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPolicyTemplates()))
         for i, v := range m.GetPolicyTemplates() {
             temp := v

@@ -8,11 +8,11 @@ import (
 type TeamworkContentCameraConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // True if the content camera is inverted.
     isContentCameraInverted *bool;
-    // 
+    // True if the content camera is optional.
     isContentCameraOptional *bool;
-    // 
+    // True if the content enhancement is enabled.
     isContentEnhancementEnabled *bool;
 }
 // NewTeamworkContentCameraConfiguration instantiates a new teamworkContentCameraConfiguration and sets the default values.
@@ -30,7 +30,7 @@ func (m *TeamworkContentCameraConfiguration) GetAdditionalData()(map[string]inte
         return m.additionalData
     }
 }
-// GetIsContentCameraInverted gets the isContentCameraInverted property value. 
+// GetIsContentCameraInverted gets the isContentCameraInverted property value. True if the content camera is inverted.
 func (m *TeamworkContentCameraConfiguration) GetIsContentCameraInverted()(*bool) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *TeamworkContentCameraConfiguration) GetIsContentCameraInverted()(*bool)
         return m.isContentCameraInverted
     }
 }
-// GetIsContentCameraOptional gets the isContentCameraOptional property value. 
+// GetIsContentCameraOptional gets the isContentCameraOptional property value. True if the content camera is optional.
 func (m *TeamworkContentCameraConfiguration) GetIsContentCameraOptional()(*bool) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *TeamworkContentCameraConfiguration) GetIsContentCameraOptional()(*bool)
         return m.isContentCameraOptional
     }
 }
-// GetIsContentEnhancementEnabled gets the isContentEnhancementEnabled property value. 
+// GetIsContentEnhancementEnabled gets the isContentEnhancementEnabled property value. True if the content enhancement is enabled.
 func (m *TeamworkContentCameraConfiguration) GetIsContentEnhancementEnabled()(*bool) {
     if m == nil {
         return nil
@@ -126,19 +126,19 @@ func (m *TeamworkContentCameraConfiguration) SetAdditionalData(value map[string]
         m.additionalData = value
     }
 }
-// SetIsContentCameraInverted sets the isContentCameraInverted property value. 
+// SetIsContentCameraInverted sets the isContentCameraInverted property value. True if the content camera is inverted.
 func (m *TeamworkContentCameraConfiguration) SetIsContentCameraInverted(value *bool)() {
     if m != nil {
         m.isContentCameraInverted = value
     }
 }
-// SetIsContentCameraOptional sets the isContentCameraOptional property value. 
+// SetIsContentCameraOptional sets the isContentCameraOptional property value. True if the content camera is optional.
 func (m *TeamworkContentCameraConfiguration) SetIsContentCameraOptional(value *bool)() {
     if m != nil {
         m.isContentCameraOptional = value
     }
 }
-// SetIsContentEnhancementEnabled sets the isContentEnhancementEnabled property value. 
+// SetIsContentEnhancementEnabled sets the isContentEnhancementEnabled property value. True if the content enhancement is enabled.
 func (m *TeamworkContentCameraConfiguration) SetIsContentEnhancementEnabled(value *bool)() {
     if m != nil {
         m.isContentEnhancementEnabled = value

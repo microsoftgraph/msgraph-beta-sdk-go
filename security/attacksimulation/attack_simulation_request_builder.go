@@ -5,7 +5,9 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i91ea136d6db7c9ecbe5c19aaf6f9924fa0ccbcf63930c3fadff4429c1bbff683 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation/simulations"
+    ie8a063a943fef4e082163058dd2e72338195ff1de79a742eb6b73521689f5884 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation/simulationautomations"
     i50ec8564a3573ab218480a77da34dfd3ec06dcd6cc87f5f81ab4cc9acfcfd9d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation/simulations/item"
+    ieb8d3f2d145f8b20bedef89bf1b341cbd6abe71dc63c7e852454de2baf05bb5a "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation/simulationautomations/item"
 )
 
 // AttackSimulationRequestBuilder builds and executes requests for operations under \security\attackSimulation
@@ -164,6 +166,20 @@ func (m *AttackSimulationRequestBuilder) Patch(options *AttackSimulationRequestB
         return err
     }
     return nil
+}
+func (m *AttackSimulationRequestBuilder) SimulationAutomations()(*ie8a063a943fef4e082163058dd2e72338195ff1de79a742eb6b73521689f5884.SimulationAutomationsRequestBuilder) {
+    return ie8a063a943fef4e082163058dd2e72338195ff1de79a742eb6b73521689f5884.NewSimulationAutomationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SimulationAutomationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.attackSimulation.simulationAutomations.item collection
+func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*ieb8d3f2d145f8b20bedef89bf1b341cbd6abe71dc63c7e852454de2baf05bb5a.SimulationAutomationRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["simulationAutomation_id"] = id
+    }
+    return ieb8d3f2d145f8b20bedef89bf1b341cbd6abe71dc63c7e852454de2baf05bb5a.NewSimulationAutomationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *AttackSimulationRequestBuilder) Simulations()(*i91ea136d6db7c9ecbe5c19aaf6f9924fa0ccbcf63930c3fadff4429c1bbff683.SimulationsRequestBuilder) {
     return i91ea136d6db7c9ecbe5c19aaf6f9924fa0ccbcf63930c3fadff4429c1bbff683.NewSimulationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -9,6 +9,8 @@ type ManagedTenant struct {
     Entity
     // Aggregate view of device compliance policies across managed tenants.
     aggregatedPolicyCompliances []AggregatedPolicyCompliance;
+    // 
+    auditEvents []AuditEvent;
     // The collection of cloud PC connections across managed tenants.
     cloudPcConnections []CloudPcConnection;
     // The collection of cloud PC devices across managed tenants.
@@ -67,6 +69,14 @@ func (m *ManagedTenant) GetAggregatedPolicyCompliances()([]AggregatedPolicyCompl
         return nil
     } else {
         return m.aggregatedPolicyCompliances
+    }
+}
+// GetAuditEvents gets the auditEvents property value. 
+func (m *ManagedTenant) GetAuditEvents()([]AuditEvent) {
+    if m == nil {
+        return nil
+    } else {
+        return m.auditEvents
     }
 }
 // GetCloudPcConnections gets the cloudPcConnections property value. The collection of cloud PC connections across managed tenants.
@@ -259,6 +269,20 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i04
                 res[i] = *(v.(*AggregatedPolicyCompliance))
             }
             m.SetAggregatedPolicyCompliances(res)
+        }
+        return nil
+    }
+    res["auditEvents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAuditEvent() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AuditEvent, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AuditEvent))
+            }
+            m.SetAuditEvents(res)
         }
         return nil
     }
@@ -581,7 +605,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     if err != nil {
         return err
     }
-    {
+    if m.GetAggregatedPolicyCompliances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAggregatedPolicyCompliances()))
         for i, v := range m.GetAggregatedPolicyCompliances() {
             temp := v
@@ -592,7 +616,18 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetAuditEvents() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAuditEvents()))
+        for i, v := range m.GetAuditEvents() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("auditEvents", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetCloudPcConnections() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCloudPcConnections()))
         for i, v := range m.GetCloudPcConnections() {
             temp := v
@@ -603,7 +638,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetCloudPcDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCloudPcDevices()))
         for i, v := range m.GetCloudPcDevices() {
             temp := v
@@ -614,7 +649,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetCloudPcsOverview() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCloudPcsOverview()))
         for i, v := range m.GetCloudPcsOverview() {
             temp := v
@@ -625,7 +660,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetConditionalAccessPolicyCoverages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConditionalAccessPolicyCoverages()))
         for i, v := range m.GetConditionalAccessPolicyCoverages() {
             temp := v
@@ -636,7 +671,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetCredentialUserRegistrationsSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCredentialUserRegistrationsSummaries()))
         for i, v := range m.GetCredentialUserRegistrationsSummaries() {
             temp := v
@@ -647,7 +682,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetDeviceCompliancePolicySettingStateSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceCompliancePolicySettingStateSummaries()))
         for i, v := range m.GetDeviceCompliancePolicySettingStateSummaries() {
             temp := v
@@ -658,7 +693,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetManagedDeviceCompliances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagedDeviceCompliances()))
         for i, v := range m.GetManagedDeviceCompliances() {
             temp := v
@@ -669,7 +704,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetManagedDeviceComplianceTrends() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagedDeviceComplianceTrends()))
         for i, v := range m.GetManagedDeviceComplianceTrends() {
             temp := v
@@ -680,7 +715,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetManagementActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementActions()))
         for i, v := range m.GetManagementActions() {
             temp := v
@@ -691,7 +726,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetManagementActionTenantDeploymentStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementActionTenantDeploymentStatuses()))
         for i, v := range m.GetManagementActionTenantDeploymentStatuses() {
             temp := v
@@ -702,7 +737,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetManagementIntents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementIntents()))
         for i, v := range m.GetManagementIntents() {
             temp := v
@@ -713,7 +748,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetManagementTemplateCollections() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateCollections()))
         for i, v := range m.GetManagementTemplateCollections() {
             temp := v
@@ -724,7 +759,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetManagementTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplates()))
         for i, v := range m.GetManagementTemplates() {
             temp := v
@@ -735,7 +770,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetManagementTemplateSteps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateSteps()))
         for i, v := range m.GetManagementTemplateSteps() {
             temp := v
@@ -746,7 +781,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetManagementTemplateStepVersions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagementTemplateStepVersions()))
         for i, v := range m.GetManagementTemplateStepVersions() {
             temp := v
@@ -757,7 +792,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetTenantGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTenantGroups()))
         for i, v := range m.GetTenantGroups() {
             temp := v
@@ -768,7 +803,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetTenants() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTenants()))
         for i, v := range m.GetTenants() {
             temp := v
@@ -779,7 +814,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetTenantsCustomizedInformation() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTenantsCustomizedInformation()))
         for i, v := range m.GetTenantsCustomizedInformation() {
             temp := v
@@ -790,7 +825,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetTenantsDetailedInformation() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTenantsDetailedInformation()))
         for i, v := range m.GetTenantsDetailedInformation() {
             temp := v
@@ -801,7 +836,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetTenantTags() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTenantTags()))
         for i, v := range m.GetTenantTags() {
             temp := v
@@ -812,7 +847,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetWindowsDeviceMalwareStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWindowsDeviceMalwareStates()))
         for i, v := range m.GetWindowsDeviceMalwareStates() {
             temp := v
@@ -823,7 +858,7 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetWindowsProtectionStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWindowsProtectionStates()))
         for i, v := range m.GetWindowsProtectionStates() {
             temp := v
@@ -840,6 +875,12 @@ func (m *ManagedTenant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 func (m *ManagedTenant) SetAggregatedPolicyCompliances(value []AggregatedPolicyCompliance)() {
     if m != nil {
         m.aggregatedPolicyCompliances = value
+    }
+}
+// SetAuditEvents sets the auditEvents property value. 
+func (m *ManagedTenant) SetAuditEvents(value []AuditEvent)() {
+    if m != nil {
+        m.auditEvents = value
     }
 }
 // SetCloudPcConnections sets the cloudPcConnections property value. The collection of cloud PC connections across managed tenants.

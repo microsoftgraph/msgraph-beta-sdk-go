@@ -310,7 +310,7 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i04eb5309aeaafadd2
     if err != nil {
         return err
     }
-    {
+    if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
             temp := v
@@ -333,7 +333,7 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i04eb5309aeaafadd2
             return err
         }
     }
-    {
+    if m.GetDeviceStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceStatuses()))
         for i, v := range m.GetDeviceStatuses() {
             temp := v
@@ -356,7 +356,7 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i04eb5309aeaafadd2
             return err
         }
     }
-    {
+    if m.GetGroupAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupAssignments()))
         for i, v := range m.GetGroupAssignments() {
             temp := v
@@ -385,13 +385,13 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i04eb5309aeaafadd2
             return err
         }
     }
-    {
+    if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetUserStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserStatuses()))
         for i, v := range m.GetUserStatuses() {
             temp := v

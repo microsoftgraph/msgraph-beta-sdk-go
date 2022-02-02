@@ -59,7 +59,7 @@ func (m *UpdateLanguageFilesRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *UpdateLanguageFilesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetGroupPolicyUploadedLanguageFiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupPolicyUploadedLanguageFiles()))
         for i, v := range m.GetGroupPolicyUploadedLanguageFiles() {
             temp := v

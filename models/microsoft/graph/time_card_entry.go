@@ -98,7 +98,7 @@ func (m *TimeCardEntry) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *TimeCardEntry) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetBreaks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBreaks()))
         for i, v := range m.GetBreaks() {
             temp := v

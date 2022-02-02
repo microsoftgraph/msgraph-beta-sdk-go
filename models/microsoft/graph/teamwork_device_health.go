@@ -10,21 +10,21 @@ type TeamworkDeviceHealth struct {
     Entity
     // 
     connection *TeamworkConnection;
-    // 
+    // Identity of the user who created the device health document.
     createdBy *IdentitySet;
-    // 
+    // The UTC date and time when the device health document was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // Health details about the device hardware.
     hardwareHealth *TeamworkHardwareHealth;
-    // 
+    // Identity of the user who last modified the device health details.
     lastModifiedBy *IdentitySet;
-    // 
+    // The UTC date and time when the device health detail was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // The login status of Microsoft Teams, Skype for Business, and Exchange.
     loginStatus *TeamworkLoginStatus;
-    // 
+    // Health details about all peripherals (for example, speaker and microphone) attached to a device.
     peripheralsHealth *TeamworkPeripheralsHealth;
-    // 
+    // Software updates available for the device.
     softwareUpdateHealth *TeamworkSoftwareUpdateHealth;
 }
 // NewTeamworkDeviceHealth instantiates a new teamworkDeviceHealth and sets the default values.
@@ -42,7 +42,7 @@ func (m *TeamworkDeviceHealth) GetConnection()(*TeamworkConnection) {
         return m.connection
     }
 }
-// GetCreatedBy gets the createdBy property value. 
+// GetCreatedBy gets the createdBy property value. Identity of the user who created the device health document.
 func (m *TeamworkDeviceHealth) GetCreatedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *TeamworkDeviceHealth) GetCreatedBy()(*IdentitySet) {
         return m.createdBy
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. 
+// GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device health document was created.
 func (m *TeamworkDeviceHealth) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *TeamworkDeviceHealth) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
         return m.createdDateTime
     }
 }
-// GetHardwareHealth gets the hardwareHealth property value. 
+// GetHardwareHealth gets the hardwareHealth property value. Health details about the device hardware.
 func (m *TeamworkDeviceHealth) GetHardwareHealth()(*TeamworkHardwareHealth) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *TeamworkDeviceHealth) GetHardwareHealth()(*TeamworkHardwareHealth) {
         return m.hardwareHealth
     }
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. 
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the device health details.
 func (m *TeamworkDeviceHealth) GetLastModifiedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *TeamworkDeviceHealth) GetLastModifiedBy()(*IdentitySet) {
         return m.lastModifiedBy
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The UTC date and time when the device health detail was last modified.
 func (m *TeamworkDeviceHealth) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *TeamworkDeviceHealth) GetLastModifiedDateTime()(*i336074805fc853987abe6
         return m.lastModifiedDateTime
     }
 }
-// GetLoginStatus gets the loginStatus property value. 
+// GetLoginStatus gets the loginStatus property value. The login status of Microsoft Teams, Skype for Business, and Exchange.
 func (m *TeamworkDeviceHealth) GetLoginStatus()(*TeamworkLoginStatus) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *TeamworkDeviceHealth) GetLoginStatus()(*TeamworkLoginStatus) {
         return m.loginStatus
     }
 }
-// GetPeripheralsHealth gets the peripheralsHealth property value. 
+// GetPeripheralsHealth gets the peripheralsHealth property value. Health details about all peripherals (for example, speaker and microphone) attached to a device.
 func (m *TeamworkDeviceHealth) GetPeripheralsHealth()(*TeamworkPeripheralsHealth) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *TeamworkDeviceHealth) GetPeripheralsHealth()(*TeamworkPeripheralsHealth
         return m.peripheralsHealth
     }
 }
-// GetSoftwareUpdateHealth gets the softwareUpdateHealth property value. 
+// GetSoftwareUpdateHealth gets the softwareUpdateHealth property value. Software updates available for the device.
 func (m *TeamworkDeviceHealth) GetSoftwareUpdateHealth()(*TeamworkSoftwareUpdateHealth) {
     if m == nil {
         return nil
@@ -272,49 +272,49 @@ func (m *TeamworkDeviceHealth) SetConnection(value *TeamworkConnection)() {
         m.connection = value
     }
 }
-// SetCreatedBy sets the createdBy property value. 
+// SetCreatedBy sets the createdBy property value. Identity of the user who created the device health document.
 func (m *TeamworkDeviceHealth) SetCreatedBy(value *IdentitySet)() {
     if m != nil {
         m.createdBy = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. 
+// SetCreatedDateTime sets the createdDateTime property value. The UTC date and time when the device health document was created.
 func (m *TeamworkDeviceHealth) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
     }
 }
-// SetHardwareHealth sets the hardwareHealth property value. 
+// SetHardwareHealth sets the hardwareHealth property value. Health details about the device hardware.
 func (m *TeamworkDeviceHealth) SetHardwareHealth(value *TeamworkHardwareHealth)() {
     if m != nil {
         m.hardwareHealth = value
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. 
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who last modified the device health details.
 func (m *TeamworkDeviceHealth) SetLastModifiedBy(value *IdentitySet)() {
     if m != nil {
         m.lastModifiedBy = value
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The UTC date and time when the device health detail was last modified.
 func (m *TeamworkDeviceHealth) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
     }
 }
-// SetLoginStatus sets the loginStatus property value. 
+// SetLoginStatus sets the loginStatus property value. The login status of Microsoft Teams, Skype for Business, and Exchange.
 func (m *TeamworkDeviceHealth) SetLoginStatus(value *TeamworkLoginStatus)() {
     if m != nil {
         m.loginStatus = value
     }
 }
-// SetPeripheralsHealth sets the peripheralsHealth property value. 
+// SetPeripheralsHealth sets the peripheralsHealth property value. Health details about all peripherals (for example, speaker and microphone) attached to a device.
 func (m *TeamworkDeviceHealth) SetPeripheralsHealth(value *TeamworkPeripheralsHealth)() {
     if m != nil {
         m.peripheralsHealth = value
     }
 }
-// SetSoftwareUpdateHealth sets the softwareUpdateHealth property value. 
+// SetSoftwareUpdateHealth sets the softwareUpdateHealth property value. Software updates available for the device.
 func (m *TeamworkDeviceHealth) SetSoftwareUpdateHealth(value *TeamworkSoftwareUpdateHealth)() {
     if m != nil {
         m.softwareUpdateHealth = value

@@ -13,6 +13,8 @@ type ListItem struct {
     analytics *ItemAnalytics;
     // The content type of this list item
     contentType *ContentTypeInfo;
+    // 
+    deleted *Deleted;
     // For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
     driveItem *DriveItem;
     // The values of the columns set on this list item.
@@ -51,6 +53,14 @@ func (m *ListItem) GetContentType()(*ContentTypeInfo) {
         return nil
     } else {
         return m.contentType
+    }
+}
+// GetDeleted gets the deleted property value. 
+func (m *ListItem) GetDeleted()(*Deleted) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deleted
     }
 }
 // GetDriveItem gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
@@ -122,6 +132,16 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         }
         return nil
     }
+    res["deleted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeleted() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeleted(val.(*Deleted))
+        }
+        return nil
+    }
     res["driveItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDriveItem() })
         if err != nil {
@@ -177,7 +197,7 @@ func (m *ListItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if err != nil {
         return err
     }
-    {
+    if m.GetActivities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
             temp := v
@@ -201,6 +221,12 @@ func (m *ListItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     {
+        err = writer.WriteObjectValue("deleted", m.GetDeleted())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("driveItem", m.GetDriveItem())
         if err != nil {
             return err
@@ -218,7 +244,7 @@ func (m *ListItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetVersions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVersions()))
         for i, v := range m.GetVersions() {
             temp := v
@@ -247,6 +273,12 @@ func (m *ListItem) SetAnalytics(value *ItemAnalytics)() {
 func (m *ListItem) SetContentType(value *ContentTypeInfo)() {
     if m != nil {
         m.contentType = value
+    }
+}
+// SetDeleted sets the deleted property value. 
+func (m *ListItem) SetDeleted(value *Deleted)() {
+    if m != nil {
+        m.deleted = value
     }
 }
 // SetDriveItem sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]

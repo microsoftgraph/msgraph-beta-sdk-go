@@ -169,7 +169,7 @@ func (m *ContinuousAccessEvaluationPolicy) Serialize(writer i04eb5309aeaafadd283
             return err
         }
     }
-    {
+    if m.GetGroups() != nil {
         err = writer.WriteCollectionOfStringValues("groups", m.GetGroups())
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *ContinuousAccessEvaluationPolicy) Serialize(writer i04eb5309aeaafadd283
             return err
         }
     }
-    {
+    if m.GetUsers() != nil {
         err = writer.WriteCollectionOfStringValues("users", m.GetUsers())
         if err != nil {
             return err

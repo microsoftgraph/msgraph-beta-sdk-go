@@ -173,7 +173,7 @@ func (m *CredentialUserRegistrationDetails) Serialize(writer i04eb5309aeaafadd28
     if err != nil {
         return err
     }
-    {
+    if m.GetAuthMethods() != nil {
         err = writer.WriteCollectionOfStringValues("authMethods", SerializeRegistrationAuthMethod(m.GetAuthMethods()))
         if err != nil {
             return err

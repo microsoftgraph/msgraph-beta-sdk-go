@@ -142,7 +142,7 @@ func (m *AssignmentFilterStatusDetails) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterStatusDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetDeviceProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceProperties()))
         for i, v := range m.GetDeviceProperties() {
             temp := v
@@ -153,7 +153,7 @@ func (m *AssignmentFilterStatusDetails) Serialize(writer i04eb5309aeaafadd28374d
             return err
         }
     }
-    {
+    if m.GetEvalutionSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEvalutionSummaries()))
         for i, v := range m.GetEvalutionSummaries() {
             temp := v

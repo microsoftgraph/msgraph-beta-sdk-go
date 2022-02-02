@@ -12,7 +12,7 @@ type GroupPolicyUploadedDefinitionFile struct {
     content []byte;
     // The default language of the uploaded ADMX file.
     defaultLanguageCode *string;
-    // The file name of the uploaded ADML file.
+    // The file name of the ADMX file without the path. For example: edge.admx Inherited from groupPolicyDefinitionFile
     fileName *string;
     // The list of operations on the uploaded ADMX file.
     groupPolicyOperations []GroupPolicyOperation;
@@ -46,7 +46,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetDefaultLanguageCode()(*string) {
         return m.defaultLanguageCode
     }
 }
-// GetFileName gets the fileName property value. The file name of the uploaded ADML file.
+// GetFileName gets the fileName property value. The file name of the ADMX file without the path. For example: edge.admx Inherited from groupPolicyDefinitionFile
 func (m *GroupPolicyUploadedDefinitionFile) GetFileName()(*string) {
     if m == nil {
         return nil
@@ -197,7 +197,7 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i04eb5309aeaafadd28
             return err
         }
     }
-    {
+    if m.GetGroupPolicyOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupPolicyOperations()))
         for i, v := range m.GetGroupPolicyOperations() {
             temp := v
@@ -208,7 +208,7 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i04eb5309aeaafadd28
             return err
         }
     }
-    {
+    if m.GetGroupPolicyUploadedLanguageFiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupPolicyUploadedLanguageFiles()))
         for i, v := range m.GetGroupPolicyUploadedLanguageFiles() {
             temp := v
@@ -246,7 +246,7 @@ func (m *GroupPolicyUploadedDefinitionFile) SetDefaultLanguageCode(value *string
         m.defaultLanguageCode = value
     }
 }
-// SetFileName sets the fileName property value. The file name of the uploaded ADML file.
+// SetFileName sets the fileName property value. The file name of the ADMX file without the path. For example: edge.admx Inherited from groupPolicyDefinitionFile
 func (m *GroupPolicyUploadedDefinitionFile) SetFileName(value *string)() {
     if m != nil {
         m.fileName = value

@@ -21,7 +21,7 @@ type DeviceManagementConfigurationCategory struct {
     name *string;
     // Parent id of the category.
     parentCategoryId *string;
-    // Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+    // Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
     platforms *DeviceManagementConfigurationPlatforms;
     // Root id of the category.
     rootCategoryId *string;
@@ -93,7 +93,7 @@ func (m *DeviceManagementConfigurationCategory) GetParentCategoryId()(*string) {
         return m.parentCategoryId
     }
 }
-// GetPlatforms gets the platforms property value. Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+// GetPlatforms gets the platforms property value. Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
 func (m *DeviceManagementConfigurationCategory) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
     if m == nil {
         return nil
@@ -262,7 +262,7 @@ func (m *DeviceManagementConfigurationCategory) Serialize(writer i04eb5309aeaafa
             return err
         }
     }
-    {
+    if m.GetChildCategoryIds() != nil {
         err = writer.WriteCollectionOfStringValues("childCategoryIds", m.GetChildCategoryIds())
         if err != nil {
             return err
@@ -369,7 +369,7 @@ func (m *DeviceManagementConfigurationCategory) SetParentCategoryId(value *strin
         m.parentCategoryId = value
     }
 }
-// SetPlatforms sets the platforms property value. Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+// SetPlatforms sets the platforms property value. Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
 func (m *DeviceManagementConfigurationCategory) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
     if m != nil {
         m.platforms = value

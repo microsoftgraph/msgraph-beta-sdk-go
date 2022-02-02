@@ -93,7 +93,7 @@ func (m *PlannerRosterMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if err != nil {
         return err
     }
-    {
+    if m.GetRoles() != nil {
         err = writer.WriteCollectionOfStringValues("roles", m.GetRoles())
         if err != nil {
             return err

@@ -259,7 +259,7 @@ func (m *UserSimulationDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetSimulationEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSimulationEvents()))
         for i, v := range m.GetSimulationEvents() {
             temp := v
@@ -276,7 +276,7 @@ func (m *UserSimulationDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetTrainingEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTrainingEvents()))
         for i, v := range m.GetTrainingEvents() {
             temp := v

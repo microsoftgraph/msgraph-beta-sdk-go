@@ -583,7 +583,7 @@ func (m *IntuneBrand) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *IntuneBrand) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetCompanyPortalBlockedActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCompanyPortalBlockedActions()))
         for i, v := range m.GetCompanyPortalBlockedActions() {
             temp := v
@@ -703,7 +703,7 @@ func (m *IntuneBrand) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetRoleScopeTagIds() != nil {
         err := writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
             return err

@@ -338,7 +338,7 @@ func (m *LegalHold) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetErrors() != nil {
         err = writer.WriteCollectionOfStringValues("errors", m.GetErrors())
         if err != nil {
             return err
@@ -362,7 +362,7 @@ func (m *LegalHold) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetSiteSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSiteSources()))
         for i, v := range m.GetSiteSources() {
             temp := v
@@ -380,7 +380,7 @@ func (m *LegalHold) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetUnifiedGroupSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUnifiedGroupSources()))
         for i, v := range m.GetUnifiedGroupSources() {
             temp := v
@@ -391,7 +391,7 @@ func (m *LegalHold) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetUserSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserSources()))
         for i, v := range m.GetUserSources() {
             temp := v

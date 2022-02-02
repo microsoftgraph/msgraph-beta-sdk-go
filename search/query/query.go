@@ -13,7 +13,7 @@ type Query struct {
     hitsContainers []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SearchHitsContainer;
     // Provides details of query alteration response for spelling correction.
     queryAlterationResponse *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AlterationResponse;
-    // 
+    // A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
     resultTemplates *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResultTemplateDictionary;
     // Contains the search terms sent in the initial search query.
     searchTerms []string;
@@ -49,7 +49,7 @@ func (m *Query) GetQueryAlterationResponse()(*i535684e11b5500196ecb4b5c6634e0651
         return m.queryAlterationResponse
     }
 }
-// GetResultTemplates gets the resultTemplates property value. 
+// GetResultTemplates gets the resultTemplates property value. A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
 func (m *Query) GetResultTemplates()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResultTemplateDictionary) {
     if m == nil {
         return nil
@@ -123,7 +123,7 @@ func (m *Query) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *Query) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetHitsContainers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHitsContainers()))
         for i, v := range m.GetHitsContainers() {
             temp := v
@@ -146,7 +146,7 @@ func (m *Query) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetSearchTerms() != nil {
         err := writer.WriteCollectionOfStringValues("searchTerms", m.GetSearchTerms())
         if err != nil {
             return err
@@ -178,7 +178,7 @@ func (m *Query) SetQueryAlterationResponse(value *i535684e11b5500196ecb4b5c6634e
         m.queryAlterationResponse = value
     }
 }
-// SetResultTemplates sets the resultTemplates property value. 
+// SetResultTemplates sets the resultTemplates property value. A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
 func (m *Query) SetResultTemplates(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ResultTemplateDictionary)() {
     if m != nil {
         m.resultTemplates = value

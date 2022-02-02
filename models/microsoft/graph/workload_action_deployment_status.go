@@ -223,7 +223,7 @@ func (m *WorkloadActionDeploymentStatus) Serialize(writer i04eb5309aeaafadd28374
             return err
         }
     }
-    {
+    if m.GetExcludeGroups() != nil {
         err := writer.WriteCollectionOfStringValues("excludeGroups", m.GetExcludeGroups())
         if err != nil {
             return err
@@ -235,7 +235,7 @@ func (m *WorkloadActionDeploymentStatus) Serialize(writer i04eb5309aeaafadd28374
             return err
         }
     }
-    {
+    if m.GetIncludeGroups() != nil {
         err := writer.WriteCollectionOfStringValues("includeGroups", m.GetIncludeGroups())
         if err != nil {
             return err

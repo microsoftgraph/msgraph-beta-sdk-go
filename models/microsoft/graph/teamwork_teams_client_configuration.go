@@ -6,11 +6,11 @@ import (
 
 // TeamworkTeamsClientConfiguration 
 type TeamworkTeamsClientConfiguration struct {
-    // 
+    // The configuration of the Microsoft Teams client user account for a device.
     accountConfiguration *TeamworkAccountConfiguration;
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The configuration of Microsoft Teams client features for a device.
     featuresConfiguration *TeamworkFeaturesConfiguration;
 }
 // NewTeamworkTeamsClientConfiguration instantiates a new teamworkTeamsClientConfiguration and sets the default values.
@@ -20,7 +20,7 @@ func NewTeamworkTeamsClientConfiguration()(*TeamworkTeamsClientConfiguration) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAccountConfiguration gets the accountConfiguration property value. 
+// GetAccountConfiguration gets the accountConfiguration property value. The configuration of the Microsoft Teams client user account for a device.
 func (m *TeamworkTeamsClientConfiguration) GetAccountConfiguration()(*TeamworkAccountConfiguration) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *TeamworkTeamsClientConfiguration) GetAdditionalData()(map[string]interf
         return m.additionalData
     }
 }
-// GetFeaturesConfiguration gets the featuresConfiguration property value. 
+// GetFeaturesConfiguration gets the featuresConfiguration property value. The configuration of Microsoft Teams client features for a device.
 func (m *TeamworkTeamsClientConfiguration) GetFeaturesConfiguration()(*TeamworkFeaturesConfiguration) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *TeamworkTeamsClientConfiguration) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
-// SetAccountConfiguration sets the accountConfiguration property value. 
+// SetAccountConfiguration sets the accountConfiguration property value. The configuration of the Microsoft Teams client user account for a device.
 func (m *TeamworkTeamsClientConfiguration) SetAccountConfiguration(value *TeamworkAccountConfiguration)() {
     if m != nil {
         m.accountConfiguration = value
@@ -106,7 +106,7 @@ func (m *TeamworkTeamsClientConfiguration) SetAdditionalData(value map[string]in
         m.additionalData = value
     }
 }
-// SetFeaturesConfiguration sets the featuresConfiguration property value. 
+// SetFeaturesConfiguration sets the featuresConfiguration property value. The configuration of Microsoft Teams client features for a device.
 func (m *TeamworkTeamsClientConfiguration) SetFeaturesConfiguration(value *TeamworkFeaturesConfiguration)() {
     if m != nil {
         m.featuresConfiguration = value

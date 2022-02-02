@@ -4,6 +4,8 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i4d0e8c02712821b066f1c75440d98068be310f77be2aa9acba5d93dee2a8a39c "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/delta"
+    i5271f54a6f3b7719175a4923c62f7e585e8833fe0eeb68b47a0e9e0fdd833e09 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/deltawithtoken"
 )
 
 // ItemsRequestBuilder builds and executes requests for operations under \drive\list\items
@@ -112,6 +114,14 @@ func (m *ItemsRequestBuilder) CreatePostRequestInformation(options *ItemsRequest
         }
     }
     return requestInfo, nil
+}
+// Delta builds and executes requests for operations under \drive\list\items\microsoft.graph.delta()
+func (m *ItemsRequestBuilder) Delta()(*i4d0e8c02712821b066f1c75440d98068be310f77be2aa9acba5d93dee2a8a39c.DeltaRequestBuilder) {
+    return i4d0e8c02712821b066f1c75440d98068be310f77be2aa9acba5d93dee2a8a39c.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DeltaWithToken builds and executes requests for operations under \drive\list\items\microsoft.graph.delta(token='{token}')
+func (m *ItemsRequestBuilder) DeltaWithToken(token *string)(*i5271f54a6f3b7719175a4923c62f7e585e8833fe0eeb68b47a0e9e0fdd833e09.DeltaWithTokenRequestBuilder) {
+    return i5271f54a6f3b7719175a4923c62f7e585e8833fe0eeb68b47a0e9e0fdd833e09.NewDeltaWithTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, token);
 }
 // Get all items contained in the list.
 func (m *ItemsRequestBuilder) Get(options *ItemsRequestBuilderGetOptions)(*ItemsResponse, error) {

@@ -134,7 +134,7 @@ func (m *PropertyRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetValues() != nil {
         err := writer.WriteCollectionOfStringValues("values", m.GetValues())
         if err != nil {
             return err

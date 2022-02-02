@@ -125,7 +125,7 @@ func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if err != nil {
         return err
     }
-    {
+    if m.GetMasterCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMasterCategories()))
         for i, v := range m.GetMasterCategories() {
             temp := v
@@ -136,7 +136,7 @@ func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetTaskFolders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTaskFolders()))
         for i, v := range m.GetTaskFolders() {
             temp := v
@@ -147,7 +147,7 @@ func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetTaskGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTaskGroups()))
         for i, v := range m.GetTaskGroups() {
             temp := v
@@ -158,7 +158,7 @@ func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetTasks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTasks()))
         for i, v := range m.GetTasks() {
             temp := v

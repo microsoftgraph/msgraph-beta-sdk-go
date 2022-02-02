@@ -293,7 +293,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if err != nil {
         return err
     }
-    {
+    if m.GetEmailMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEmailMethods()))
         for i, v := range m.GetEmailMethods() {
             temp := v
@@ -304,7 +304,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetFido2Methods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFido2Methods()))
         for i, v := range m.GetFido2Methods() {
             temp := v
@@ -315,7 +315,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMethods()))
         for i, v := range m.GetMethods() {
             temp := v
@@ -326,7 +326,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetMicrosoftAuthenticatorMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMicrosoftAuthenticatorMethods()))
         for i, v := range m.GetMicrosoftAuthenticatorMethods() {
             temp := v
@@ -337,7 +337,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
             temp := v
@@ -348,7 +348,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetPasswordlessMicrosoftAuthenticatorMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPasswordlessMicrosoftAuthenticatorMethods()))
         for i, v := range m.GetPasswordlessMicrosoftAuthenticatorMethods() {
             temp := v
@@ -359,7 +359,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetPasswordMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPasswordMethods()))
         for i, v := range m.GetPasswordMethods() {
             temp := v
@@ -370,7 +370,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetPhoneMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPhoneMethods()))
         for i, v := range m.GetPhoneMethods() {
             temp := v
@@ -381,7 +381,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetSoftwareOathMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSoftwareOathMethods()))
         for i, v := range m.GetSoftwareOathMethods() {
             temp := v
@@ -392,7 +392,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetTemporaryAccessPassMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTemporaryAccessPassMethods()))
         for i, v := range m.GetTemporaryAccessPassMethods() {
             temp := v
@@ -403,7 +403,7 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetWindowsHelloForBusinessMethods() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWindowsHelloForBusinessMethods()))
         for i, v := range m.GetWindowsHelloForBusinessMethods() {
             temp := v

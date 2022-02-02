@@ -17,7 +17,7 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     deviceName *string;
     // The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
     estimatedRuntimeInMinutes *int32;
-    // The overall battery health status of the device.
+    // The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
     healthStatus *string;
     // Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
     maxCapacityPercentage *int32;
@@ -71,7 +71,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetEstimatedRunt
         return m.estimatedRuntimeInMinutes
     }
 }
-// GetHealthStatus gets the healthStatus property value. The overall battery health status of the device.
+// GetHealthStatus gets the healthStatus property value. The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetHealthStatus()(*string) {
     if m == nil {
         return nil
@@ -269,7 +269,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetEstimatedRunt
         m.estimatedRuntimeInMinutes = value
     }
 }
-// SetHealthStatus sets the healthStatus property value. The overall battery health status of the device.
+// SetHealthStatus sets the healthStatus property value. The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetHealthStatus(value *string)() {
     if m != nil {
         m.healthStatus = value

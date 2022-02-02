@@ -161,13 +161,13 @@ func (m *WindowsAssignedAccessProfile) Serialize(writer i04eb5309aeaafadd28374d7
     if err != nil {
         return err
     }
-    {
+    if m.GetAppUserModelIds() != nil {
         err = writer.WriteCollectionOfStringValues("appUserModelIds", m.GetAppUserModelIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetDesktopAppPaths() != nil {
         err = writer.WriteCollectionOfStringValues("desktopAppPaths", m.GetDesktopAppPaths())
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *WindowsAssignedAccessProfile) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetUserAccounts() != nil {
         err = writer.WriteCollectionOfStringValues("userAccounts", m.GetUserAccounts())
         if err != nil {
             return err

@@ -82,13 +82,13 @@ func (m *GovernanceNotificationPolicy) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *GovernanceNotificationPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetEnabledTemplateTypes() != nil {
         err := writer.WriteCollectionOfStringValues("enabledTemplateTypes", m.GetEnabledTemplateTypes())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetNotificationTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNotificationTemplates()))
         for i, v := range m.GetNotificationTemplates() {
             temp := v

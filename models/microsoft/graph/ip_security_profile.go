@@ -306,7 +306,7 @@ func (m *IpSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if err != nil {
         return err
     }
-    {
+    if m.GetActivityGroupNames() != nil {
         err = writer.WriteCollectionOfStringValues("activityGroupNames", m.GetActivityGroupNames())
         if err != nil {
             return err
@@ -348,7 +348,7 @@ func (m *IpSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetIpCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIpCategories()))
         for i, v := range m.GetIpCategories() {
             temp := v
@@ -359,7 +359,7 @@ func (m *IpSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetIpReferenceData() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIpReferenceData()))
         for i, v := range m.GetIpReferenceData() {
             temp := v
@@ -382,7 +382,7 @@ func (m *IpSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
             return err

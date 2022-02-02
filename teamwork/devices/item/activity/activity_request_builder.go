@@ -35,7 +35,7 @@ type ActivityRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ActivityRequestBuilderGetQueryParameters get activity from teamwork
+// ActivityRequestBuilderGetQueryParameters the activity properties that change based on the device usage.
 type ActivityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewActivityRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewActivityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property activity for teamwork
+// CreateDeleteRequestInformation the activity properties that change based on the device usage.
 func (m *ActivityRequestBuilder) CreateDeleteRequestInformation(options *ActivityRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *ActivityRequestBuilder) CreateDeleteRequestInformation(options *Activit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get activity from teamwork
+// CreateGetRequestInformation the activity properties that change based on the device usage.
 func (m *ActivityRequestBuilder) CreateGetRequestInformation(options *ActivityRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *ActivityRequestBuilder) CreateGetRequestInformation(options *ActivityRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property activity in teamwork
+// CreatePatchRequestInformation the activity properties that change based on the device usage.
 func (m *ActivityRequestBuilder) CreatePatchRequestInformation(options *ActivityRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *ActivityRequestBuilder) CreatePatchRequestInformation(options *Activity
     }
     return requestInfo, nil
 }
-// Delete delete navigation property activity for teamwork
+// Delete the activity properties that change based on the device usage.
 func (m *ActivityRequestBuilder) Delete(options *ActivityRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *ActivityRequestBuilder) Delete(options *ActivityRequestBuilderDeleteOpt
     }
     return nil
 }
-// Get get activity from teamwork
+// Get the activity properties that change based on the device usage.
 func (m *ActivityRequestBuilder) Get(options *ActivityRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkDeviceActivity, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *ActivityRequestBuilder) Get(options *ActivityRequestBuilderGetOptions)(
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamworkDeviceActivity), nil
 }
-// Patch update the navigation property activity in teamwork
+// Patch the activity properties that change based on the device usage.
 func (m *ActivityRequestBuilder) Patch(options *ActivityRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

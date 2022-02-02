@@ -304,7 +304,7 @@ func (m *SourceCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     if err != nil {
         return err
     }
-    {
+    if m.GetAdditionalSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdditionalSources()))
         for i, v := range m.GetAdditionalSources() {
             temp := v
@@ -339,7 +339,7 @@ func (m *SourceCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetCustodianSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustodianSources()))
         for i, v := range m.GetCustodianSources() {
             temp := v
@@ -387,7 +387,7 @@ func (m *SourceCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetNoncustodialSources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNoncustodialSources()))
         for i, v := range m.GetNoncustodialSources() {
             temp := v

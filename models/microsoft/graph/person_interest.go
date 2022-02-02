@@ -157,13 +157,13 @@ func (m *PersonInterest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     if err != nil {
         return err
     }
-    {
+    if m.GetCategories() != nil {
         err = writer.WriteCollectionOfStringValues("categories", m.GetCategories())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetCollaborationTags() != nil {
         err = writer.WriteCollectionOfStringValues("collaborationTags", m.GetCollaborationTags())
         if err != nil {
             return err

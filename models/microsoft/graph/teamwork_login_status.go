@@ -8,11 +8,11 @@ import (
 type TeamworkLoginStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Information about the Exchange connection.
     exchangeConnection *TeamworkConnection;
-    // 
+    // Information about the Skype for Business connection.
     skypeConnection *TeamworkConnection;
-    // 
+    // Information about the Teams connection.
     teamsConnection *TeamworkConnection;
 }
 // NewTeamworkLoginStatus instantiates a new teamworkLoginStatus and sets the default values.
@@ -30,7 +30,7 @@ func (m *TeamworkLoginStatus) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetExchangeConnection gets the exchangeConnection property value. 
+// GetExchangeConnection gets the exchangeConnection property value. Information about the Exchange connection.
 func (m *TeamworkLoginStatus) GetExchangeConnection()(*TeamworkConnection) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *TeamworkLoginStatus) GetExchangeConnection()(*TeamworkConnection) {
         return m.exchangeConnection
     }
 }
-// GetSkypeConnection gets the skypeConnection property value. 
+// GetSkypeConnection gets the skypeConnection property value. Information about the Skype for Business connection.
 func (m *TeamworkLoginStatus) GetSkypeConnection()(*TeamworkConnection) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *TeamworkLoginStatus) GetSkypeConnection()(*TeamworkConnection) {
         return m.skypeConnection
     }
 }
-// GetTeamsConnection gets the teamsConnection property value. 
+// GetTeamsConnection gets the teamsConnection property value. Information about the Teams connection.
 func (m *TeamworkLoginStatus) GetTeamsConnection()(*TeamworkConnection) {
     if m == nil {
         return nil
@@ -126,19 +126,19 @@ func (m *TeamworkLoginStatus) SetAdditionalData(value map[string]interface{})() 
         m.additionalData = value
     }
 }
-// SetExchangeConnection sets the exchangeConnection property value. 
+// SetExchangeConnection sets the exchangeConnection property value. Information about the Exchange connection.
 func (m *TeamworkLoginStatus) SetExchangeConnection(value *TeamworkConnection)() {
     if m != nil {
         m.exchangeConnection = value
     }
 }
-// SetSkypeConnection sets the skypeConnection property value. 
+// SetSkypeConnection sets the skypeConnection property value. Information about the Skype for Business connection.
 func (m *TeamworkLoginStatus) SetSkypeConnection(value *TeamworkConnection)() {
     if m != nil {
         m.skypeConnection = value
     }
 }
-// SetTeamsConnection sets the teamsConnection property value. 
+// SetTeamsConnection sets the teamsConnection property value. Information about the Teams connection.
 func (m *TeamworkLoginStatus) SetTeamsConnection(value *TeamworkConnection)() {
     if m != nil {
         m.teamsConnection = value

@@ -3,7 +3,9 @@ package noncustodialsources
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i127ed970f4cf70dae4e3a9bc9ae48112e65996c5d47c39e609c0b55f44fc2ecb "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/noncustodialsources/removehold"
     i2b53e8d32167b7b8d9dbd842472314407904e34f8d9feeb85454bc41d81e5372 "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/noncustodialsources/ref"
+    ia78d53705d4e84211433969df7a4fd05268f2735ae29bd62c0e068728055ed5f "github.com/microsoftgraph/msgraph-beta-sdk-go/compliance/ediscovery/cases/item/sourcecollections/item/noncustodialsources/applyhold"
 )
 
 // NoncustodialSourcesRequestBuilder builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\noncustodialSources
@@ -44,6 +46,9 @@ type NoncustodialSourcesRequestBuilderGetQueryParameters struct {
     Skip *int32;
     // Show only the first n items
     Top *int32;
+}
+func (m *NoncustodialSourcesRequestBuilder) ApplyHold()(*ia78d53705d4e84211433969df7a4fd05268f2735ae29bd62c0e068728055ed5f.ApplyHoldRequestBuilder) {
+    return ia78d53705d4e84211433969df7a4fd05268f2735ae29bd62c0e068728055ed5f.NewApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewNoncustodialSourcesRequestBuilderInternal instantiates a new NoncustodialSourcesRequestBuilder and sets the default values.
 func NewNoncustodialSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NoncustodialSourcesRequestBuilder) {
@@ -98,4 +103,7 @@ func (m *NoncustodialSourcesRequestBuilder) Get(options *NoncustodialSourcesRequ
 }
 func (m *NoncustodialSourcesRequestBuilder) Ref()(*i2b53e8d32167b7b8d9dbd842472314407904e34f8d9feeb85454bc41d81e5372.RefRequestBuilder) {
     return i2b53e8d32167b7b8d9dbd842472314407904e34f8d9feeb85454bc41d81e5372.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *NoncustodialSourcesRequestBuilder) RemoveHold()(*i127ed970f4cf70dae4e3a9bc9ae48112e65996c5d47c39e609c0b55f44fc2ecb.RemoveHoldRequestBuilder) {
+    return i127ed970f4cf70dae4e3a9bc9ae48112e65996c5d47c39e609c0b55f44fc2ecb.NewRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

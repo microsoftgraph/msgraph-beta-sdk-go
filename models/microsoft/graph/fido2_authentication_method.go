@@ -181,7 +181,7 @@ func (m *Fido2AuthenticationMethod) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetAttestationCertificates() != nil {
         err = writer.WriteCollectionOfStringValues("attestationCertificates", m.GetAttestationCertificates())
         if err != nil {
             return err

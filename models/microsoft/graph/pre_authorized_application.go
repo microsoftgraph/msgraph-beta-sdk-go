@@ -84,7 +84,7 @@ func (m *PreAuthorizedApplication) Serialize(writer i04eb5309aeaafadd28374d79c84
             return err
         }
     }
-    {
+    if m.GetPermissionIds() != nil {
         err := writer.WriteCollectionOfStringValues("permissionIds", m.GetPermissionIds())
         if err != nil {
             return err

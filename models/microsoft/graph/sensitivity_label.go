@@ -317,7 +317,7 @@ func (m *SensitivityLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetAssignedPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignedPolicies()))
         for i, v := range m.GetAssignedPolicies() {
             temp := v
@@ -358,7 +358,7 @@ func (m *SensitivityLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetLabelActions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLabelActions()))
         for i, v := range m.GetLabelActions() {
             temp := v
@@ -381,7 +381,7 @@ func (m *SensitivityLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetSublabels() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSublabels()))
         for i, v := range m.GetSublabels() {
             temp := v

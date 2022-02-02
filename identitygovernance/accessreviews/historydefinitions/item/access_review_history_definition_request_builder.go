@@ -5,7 +5,6 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i050b4af622bb8ddd2c81fe0ae9becfb70e566ad32e6db4fc5f8fc5fbe66d38a2 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/historydefinitions/item/instances"
-    i42db7be89d115e19102580972cef749a80c405041b59920e6b1971555974a213 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/historydefinitions/item/generatedownloaduri"
     i8910ece6652691a45270ec62ed5f47ca518c0bc5d957467024798a7369422029 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/accessreviews/historydefinitions/item/instances/item"
 )
 
@@ -141,9 +140,6 @@ func (m *AccessReviewHistoryDefinitionRequestBuilder) Delete(options *AccessRevi
         return err
     }
     return nil
-}
-func (m *AccessReviewHistoryDefinitionRequestBuilder) GenerateDownloadUri()(*i42db7be89d115e19102580972cef749a80c405041b59920e6b1971555974a213.GenerateDownloadUriRequestBuilder) {
-    return i42db7be89d115e19102580972cef749a80c405041b59920e6b1971555974a213.NewGenerateDownloadUriRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get represents a collection of access review history data and the scopes used to collect that data.
 func (m *AccessReviewHistoryDefinitionRequestBuilder) Get(options *AccessReviewHistoryDefinitionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewHistoryDefinition, error) {

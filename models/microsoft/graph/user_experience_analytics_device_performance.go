@@ -23,7 +23,7 @@ type UserExperienceAnalyticsDevicePerformance struct {
     deviceCount *int64;
     // The user experience analytics device name.
     deviceName *string;
-    // The user experience analytics device disk type. Possible values are: unkown, hdd, ssd.
+    // The user experience analytics device disk type. Possible values are: hdd, ssd, unknown.
     diskType *DiskType;
     // The user experience analytics device group policy boot time in milliseconds.
     groupPolicyBootTimeInMs *int32;
@@ -119,7 +119,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetDeviceName()(*string) {
         return m.deviceName
     }
 }
-// GetDiskType gets the diskType property value. The user experience analytics device disk type. Possible values are: unkown, hdd, ssd.
+// GetDiskType gets the diskType property value. The user experience analytics device disk type. Possible values are: hdd, ssd, unknown.
 func (m *UserExperienceAnalyticsDevicePerformance) GetDiskType()(*DiskType) {
     if m == nil {
         return nil
@@ -603,7 +603,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) SetDeviceName(value *string)(
         m.deviceName = value
     }
 }
-// SetDiskType sets the diskType property value. The user experience analytics device disk type. Possible values are: unkown, hdd, ssd.
+// SetDiskType sets the diskType property value. The user experience analytics device disk type. Possible values are: hdd, ssd, unknown.
 func (m *UserExperienceAnalyticsDevicePerformance) SetDiskType(value *DiskType)() {
     if m != nil {
         m.diskType = value

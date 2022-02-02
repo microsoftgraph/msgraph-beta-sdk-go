@@ -273,7 +273,7 @@ func (m *AuthorizationPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetDefaultUserRoleOverrides() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDefaultUserRoleOverrides()))
         for i, v := range m.GetDefaultUserRoleOverrides() {
             temp := v
@@ -290,7 +290,7 @@ func (m *AuthorizationPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetEnabledPreviewFeatures() != nil {
         err = writer.WriteCollectionOfStringValues("enabledPreviewFeatures", m.GetEnabledPreviewFeatures())
         if err != nil {
             return err
@@ -302,7 +302,7 @@ func (m *AuthorizationPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetPermissionGrantPolicyIdsAssignedToDefaultUserRole() != nil {
         err = writer.WriteCollectionOfStringValues("permissionGrantPolicyIdsAssignedToDefaultUserRole", m.GetPermissionGrantPolicyIdsAssignedToDefaultUserRole())
         if err != nil {
             return err

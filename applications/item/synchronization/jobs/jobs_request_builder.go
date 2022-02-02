@@ -27,7 +27,7 @@ type JobsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// JobsRequestBuilderGetQueryParameters get jobs from applications
+// JobsRequestBuilderGetQueryParameters performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 type JobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -76,7 +76,7 @@ func NewJobsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
     urlParams["request-raw-url"] = rawUrl
     return NewJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get jobs from applications
+// CreateGetRequestInformation performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *JobsRequestBuilder) CreateGetRequestInformation(options *JobsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,7 +96,7 @@ func (m *JobsRequestBuilder) CreateGetRequestInformation(options *JobsRequestBui
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to jobs for applications
+// CreatePostRequestInformation performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *JobsRequestBuilder) CreatePostRequestInformation(options *JobsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *JobsRequestBuilder) CreatePostRequestInformation(options *JobsRequestBu
     }
     return requestInfo, nil
 }
-// Get get jobs from applications
+// Get performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *JobsRequestBuilder) Get(options *JobsRequestBuilderGetOptions)(*JobsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -126,7 +126,7 @@ func (m *JobsRequestBuilder) Get(options *JobsRequestBuilderGetOptions)(*JobsRes
     }
     return res.(*JobsResponse), nil
 }
-// Post create new navigation property to jobs for applications
+// Post performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *JobsRequestBuilder) Post(options *JobsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJob, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

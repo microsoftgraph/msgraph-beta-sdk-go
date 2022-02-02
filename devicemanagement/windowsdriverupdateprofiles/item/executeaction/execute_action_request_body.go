@@ -114,7 +114,7 @@ func (m *ExecuteActionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
             return err
         }
     }
-    {
+    if m.GetDriverIds() != nil {
         err := writer.WriteCollectionOfStringValues("driverIds", m.GetDriverIds())
         if err != nil {
             return err

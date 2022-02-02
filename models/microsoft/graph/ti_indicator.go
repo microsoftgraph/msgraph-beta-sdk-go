@@ -1217,7 +1217,7 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetActivityGroupNames() != nil {
         err = writer.WriteCollectionOfStringValues("activityGroupNames", m.GetActivityGroupNames())
         if err != nil {
             return err
@@ -1399,7 +1399,7 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetKillChain() != nil {
         err = writer.WriteCollectionOfStringValues("killChain", m.GetKillChain())
         if err != nil {
             return err
@@ -1417,7 +1417,7 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetMalwareFamilyNames() != nil {
         err = writer.WriteCollectionOfStringValues("malwareFamilyNames", m.GetMalwareFamilyNames())
         if err != nil {
             return err
@@ -1525,7 +1525,7 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
             return err

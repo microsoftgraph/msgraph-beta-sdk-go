@@ -8,9 +8,9 @@ import (
 type ConditionalAccessClientApplications struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Service principal IDs excluded from the policy scope.
     excludeServicePrincipals []string;
-    // 
+    // Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
     includeServicePrincipals []string;
 }
 // NewConditionalAccessClientApplications instantiates a new conditionalAccessClientApplications and sets the default values.
@@ -28,7 +28,7 @@ func (m *ConditionalAccessClientApplications) GetAdditionalData()(map[string]int
         return m.additionalData
     }
 }
-// GetExcludeServicePrincipals gets the excludeServicePrincipals property value. 
+// GetExcludeServicePrincipals gets the excludeServicePrincipals property value. Service principal IDs excluded from the policy scope.
 func (m *ConditionalAccessClientApplications) GetExcludeServicePrincipals()([]string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ConditionalAccessClientApplications) GetExcludeServicePrincipals()([]st
         return m.excludeServicePrincipals
     }
 }
-// GetIncludeServicePrincipals gets the includeServicePrincipals property value. 
+// GetIncludeServicePrincipals gets the includeServicePrincipals property value. Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
 func (m *ConditionalAccessClientApplications) GetIncludeServicePrincipals()([]string) {
     if m == nil {
         return nil
@@ -82,13 +82,13 @@ func (m *ConditionalAccessClientApplications) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessClientApplications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetExcludeServicePrincipals() != nil {
         err := writer.WriteCollectionOfStringValues("excludeServicePrincipals", m.GetExcludeServicePrincipals())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetIncludeServicePrincipals() != nil {
         err := writer.WriteCollectionOfStringValues("includeServicePrincipals", m.GetIncludeServicePrincipals())
         if err != nil {
             return err
@@ -108,13 +108,13 @@ func (m *ConditionalAccessClientApplications) SetAdditionalData(value map[string
         m.additionalData = value
     }
 }
-// SetExcludeServicePrincipals sets the excludeServicePrincipals property value. 
+// SetExcludeServicePrincipals sets the excludeServicePrincipals property value. Service principal IDs excluded from the policy scope.
 func (m *ConditionalAccessClientApplications) SetExcludeServicePrincipals(value []string)() {
     if m != nil {
         m.excludeServicePrincipals = value
     }
 }
-// SetIncludeServicePrincipals sets the includeServicePrincipals property value. 
+// SetIncludeServicePrincipals sets the includeServicePrincipals property value. Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
 func (m *ConditionalAccessClientApplications) SetIncludeServicePrincipals(value []string)() {
     if m != nil {
         m.includeServicePrincipals = value

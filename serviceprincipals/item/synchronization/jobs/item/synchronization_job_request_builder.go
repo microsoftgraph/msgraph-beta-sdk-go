@@ -42,7 +42,7 @@ type SynchronizationJobRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// SynchronizationJobRequestBuilderGetQueryParameters get jobs from servicePrincipals
+// SynchronizationJobRequestBuilderGetQueryParameters performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 type SynchronizationJobRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -79,7 +79,7 @@ func NewSynchronizationJobRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationJobRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property jobs for servicePrincipals
+// CreateDeleteRequestInformation performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *SynchronizationJobRequestBuilder) CreateDeleteRequestInformation(options *SynchronizationJobRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,7 +96,7 @@ func (m *SynchronizationJobRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get jobs from servicePrincipals
+// CreateGetRequestInformation performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *SynchronizationJobRequestBuilder) CreateGetRequestInformation(options *SynchronizationJobRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,7 +116,7 @@ func (m *SynchronizationJobRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property jobs in servicePrincipals
+// CreatePatchRequestInformation performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *SynchronizationJobRequestBuilder) CreatePatchRequestInformation(options *SynchronizationJobRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,7 +134,7 @@ func (m *SynchronizationJobRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete delete navigation property jobs for servicePrincipals
+// Delete performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *SynchronizationJobRequestBuilder) Delete(options *SynchronizationJobRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -146,7 +146,7 @@ func (m *SynchronizationJobRequestBuilder) Delete(options *SynchronizationJobReq
     }
     return nil
 }
-// Get get jobs from servicePrincipals
+// Get performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *SynchronizationJobRequestBuilder) Get(options *SynchronizationJobRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJob, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -158,7 +158,7 @@ func (m *SynchronizationJobRequestBuilder) Get(options *SynchronizationJobReques
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SynchronizationJob), nil
 }
-// Patch update the navigation property jobs in servicePrincipals
+// Patch performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *SynchronizationJobRequestBuilder) Patch(options *SynchronizationJobRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

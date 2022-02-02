@@ -240,7 +240,7 @@ func (m *Qna) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
             return err
         }
     }
-    {
+    if m.GetGroupIds() != nil {
         err = writer.WriteCollectionOfStringValues("groupIds", m.GetGroupIds())
         if err != nil {
             return err
@@ -258,13 +258,13 @@ func (m *Qna) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
             return err
         }
     }
-    {
+    if m.GetLanguageTags() != nil {
         err = writer.WriteCollectionOfStringValues("languageTags", m.GetLanguageTags())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetPlatforms() != nil {
         err = writer.WriteCollectionOfStringValues("platforms", SerializeDevicePlatformType(m.GetPlatforms()))
         if err != nil {
             return err
@@ -277,7 +277,7 @@ func (m *Qna) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
             return err
         }
     }
-    {
+    if m.GetTargetedVariations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTargetedVariations()))
         for i, v := range m.GetTargetedVariations() {
             temp := v

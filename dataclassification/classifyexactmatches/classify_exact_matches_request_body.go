@@ -123,7 +123,7 @@ func (m *ClassifyExactMatchesRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *ClassifyExactMatchesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetContentClassifications() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContentClassifications()))
         for i, v := range m.GetContentClassifications() {
             temp := v
@@ -134,7 +134,7 @@ func (m *ClassifyExactMatchesRequestBody) Serialize(writer i04eb5309aeaafadd2837
             return err
         }
     }
-    {
+    if m.GetSensitiveTypeIds() != nil {
         err := writer.WriteCollectionOfStringValues("sensitiveTypeIds", m.GetSensitiveTypeIds())
         if err != nil {
             return err

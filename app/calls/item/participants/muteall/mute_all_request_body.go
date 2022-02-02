@@ -84,7 +84,7 @@ func (m *MuteAllRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             return err
         }
     }
-    {
+    if m.GetParticipants() != nil {
         err := writer.WriteCollectionOfStringValues("participants", m.GetParticipants())
         if err != nil {
             return err

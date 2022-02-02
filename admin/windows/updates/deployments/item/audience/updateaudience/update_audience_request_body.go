@@ -131,7 +131,7 @@ func (m *UpdateAudienceRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *UpdateAudienceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetAddExclusions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAddExclusions()))
         for i, v := range m.GetAddExclusions() {
             temp := v
@@ -142,7 +142,7 @@ func (m *UpdateAudienceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetAddMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAddMembers()))
         for i, v := range m.GetAddMembers() {
             temp := v
@@ -153,7 +153,7 @@ func (m *UpdateAudienceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetRemoveExclusions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRemoveExclusions()))
         for i, v := range m.GetRemoveExclusions() {
             temp := v
@@ -164,7 +164,7 @@ func (m *UpdateAudienceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetRemoveMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRemoveMembers()))
         for i, v := range m.GetRemoveMembers() {
             temp := v

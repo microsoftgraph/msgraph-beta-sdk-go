@@ -219,7 +219,7 @@ func (m *GroupPolicyDefinitionFile) Serialize(writer i04eb5309aeaafadd28374d79c8
     if err != nil {
         return err
     }
-    {
+    if m.GetDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDefinitions()))
         for i, v := range m.GetDefinitions() {
             temp := v
@@ -242,7 +242,7 @@ func (m *GroupPolicyDefinitionFile) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetLanguageCodes() != nil {
         err = writer.WriteCollectionOfStringValues("languageCodes", m.GetLanguageCodes())
         if err != nil {
             return err

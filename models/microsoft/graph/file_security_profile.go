@@ -378,7 +378,7 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if err != nil {
         return err
     }
-    {
+    if m.GetActivityGroupNames() != nil {
         err = writer.WriteCollectionOfStringValues("activityGroupNames", m.GetActivityGroupNames())
         if err != nil {
             return err
@@ -402,7 +402,7 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetExtensions() != nil {
         err = writer.WriteCollectionOfStringValues("extensions", m.GetExtensions())
         if err != nil {
             return err
@@ -420,7 +420,7 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetHashes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHashes()))
         for i, v := range m.GetHashes() {
             temp := v
@@ -437,7 +437,7 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetMalwareStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMalwareStates()))
         for i, v := range m.GetMalwareStates() {
             temp := v
@@ -448,7 +448,7 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetNames() != nil {
         err = writer.WriteCollectionOfStringValues("names", m.GetNames())
         if err != nil {
             return err
@@ -466,7 +466,7 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
             return err
@@ -478,7 +478,7 @@ func (m *FileSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetVulnerabilityStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVulnerabilityStates()))
         for i, v := range m.GetVulnerabilityStates() {
             temp := v

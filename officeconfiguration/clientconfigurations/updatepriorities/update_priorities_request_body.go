@@ -82,13 +82,13 @@ func (m *UpdatePrioritiesRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *UpdatePrioritiesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetOfficeConfigurationPolicyIds() != nil {
         err := writer.WriteCollectionOfStringValues("officeConfigurationPolicyIds", m.GetOfficeConfigurationPolicyIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetOfficeConfigurationPriorities() != nil {
         err := writer.WriteCollectionOfInt32Values("officeConfigurationPriorities", m.GetOfficeConfigurationPriorities())
         if err != nil {
             return err

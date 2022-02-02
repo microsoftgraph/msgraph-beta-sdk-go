@@ -166,7 +166,7 @@ func (m *TenantSetupInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetRelevantRolesSettings() != nil {
         err = writer.WriteCollectionOfStringValues("relevantRolesSettings", m.GetRelevantRolesSettings())
         if err != nil {
             return err

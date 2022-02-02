@@ -753,7 +753,7 @@ func (m *DriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if err != nil {
         return err
     }
-    {
+    if m.GetActivities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
             temp := v
@@ -782,7 +782,7 @@ func (m *DriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetChildren() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChildren()))
         for i, v := range m.GetChildren() {
             temp := v
@@ -871,7 +871,7 @@ func (m *DriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetPermissions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPermissions()))
         for i, v := range m.GetPermissions() {
             temp := v
@@ -942,7 +942,7 @@ func (m *DriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetSubscriptions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSubscriptions()))
         for i, v := range m.GetSubscriptions() {
             temp := v
@@ -953,7 +953,7 @@ func (m *DriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetThumbnails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetThumbnails()))
         for i, v := range m.GetThumbnails() {
             temp := v
@@ -964,7 +964,7 @@ func (m *DriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetVersions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVersions()))
         for i, v := range m.GetVersions() {
             temp := v

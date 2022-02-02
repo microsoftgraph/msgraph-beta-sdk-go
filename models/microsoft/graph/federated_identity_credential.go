@@ -133,7 +133,7 @@ func (m *FederatedIdentityCredential) Serialize(writer i04eb5309aeaafadd28374d79
     if err != nil {
         return err
     }
-    {
+    if m.GetAudiences() != nil {
         err = writer.WriteCollectionOfStringValues("audiences", m.GetAudiences())
         if err != nil {
             return err

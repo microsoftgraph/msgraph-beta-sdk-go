@@ -8,9 +8,9 @@ import (
 type TeamworkPeripheralHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The connected state and time since the peripheral device was connected.
     connection *TeamworkConnection;
-    // 
+    // True if the peripheral is optional. Used for health computation.
     isOptional *bool;
     // 
     peripheral *TeamworkPeripheral;
@@ -30,7 +30,7 @@ func (m *TeamworkPeripheralHealth) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetConnection gets the connection property value. 
+// GetConnection gets the connection property value. The connected state and time since the peripheral device was connected.
 func (m *TeamworkPeripheralHealth) GetConnection()(*TeamworkConnection) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *TeamworkPeripheralHealth) GetConnection()(*TeamworkConnection) {
         return m.connection
     }
 }
-// GetIsOptional gets the isOptional property value. 
+// GetIsOptional gets the isOptional property value. True if the peripheral is optional. Used for health computation.
 func (m *TeamworkPeripheralHealth) GetIsOptional()(*bool) {
     if m == nil {
         return nil
@@ -126,13 +126,13 @@ func (m *TeamworkPeripheralHealth) SetAdditionalData(value map[string]interface{
         m.additionalData = value
     }
 }
-// SetConnection sets the connection property value. 
+// SetConnection sets the connection property value. The connected state and time since the peripheral device was connected.
 func (m *TeamworkPeripheralHealth) SetConnection(value *TeamworkConnection)() {
     if m != nil {
         m.connection = value
     }
 }
-// SetIsOptional sets the isOptional property value. 
+// SetIsOptional sets the isOptional property value. True if the peripheral is optional. Used for health computation.
 func (m *TeamworkPeripheralHealth) SetIsOptional(value *bool)() {
     if m != nil {
         m.isOptional = value

@@ -205,7 +205,7 @@ func (m *ProjectParticipation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if err != nil {
         return err
     }
-    {
+    if m.GetCategories() != nil {
         err = writer.WriteCollectionOfStringValues("categories", m.GetCategories())
         if err != nil {
             return err
@@ -217,13 +217,13 @@ func (m *ProjectParticipation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetCollaborationTags() != nil {
         err = writer.WriteCollectionOfStringValues("collaborationTags", m.GetCollaborationTags())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetColleagues() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetColleagues()))
         for i, v := range m.GetColleagues() {
             temp := v
@@ -246,7 +246,7 @@ func (m *ProjectParticipation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetSponsors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSponsors()))
         for i, v := range m.GetSponsors() {
             temp := v

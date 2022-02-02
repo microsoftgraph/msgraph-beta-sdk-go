@@ -22,7 +22,7 @@ type DeviceManagementCompliancePolicy struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Policy name
     name *string;
-    // Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+    // Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
     platforms *DeviceManagementConfigurationPlatforms;
     // List of Scope Tags for this Entity instance.
     roleScopeTagIds []string;
@@ -98,7 +98,7 @@ func (m *DeviceManagementCompliancePolicy) GetName()(*string) {
         return m.name
     }
 }
-// GetPlatforms gets the platforms property value. Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+// GetPlatforms gets the platforms property value. Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
 func (m *DeviceManagementCompliancePolicy) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
     if m == nil {
         return nil
@@ -308,7 +308,7 @@ func (m *DeviceManagementCompliancePolicy) Serialize(writer i04eb5309aeaafadd283
     if err != nil {
         return err
     }
-    {
+    if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
             temp := v
@@ -362,13 +362,13 @@ func (m *DeviceManagementCompliancePolicy) Serialize(writer i04eb5309aeaafadd283
             return err
         }
     }
-    {
+    if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetScheduledActionsForRule() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetScheduledActionsForRule()))
         for i, v := range m.GetScheduledActionsForRule() {
             temp := v
@@ -385,7 +385,7 @@ func (m *DeviceManagementCompliancePolicy) Serialize(writer i04eb5309aeaafadd283
             return err
         }
     }
-    {
+    if m.GetSettings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSettings()))
         for i, v := range m.GetSettings() {
             temp := v
@@ -447,7 +447,7 @@ func (m *DeviceManagementCompliancePolicy) SetName(value *string)() {
         m.name = value
     }
 }
-// SetPlatforms sets the platforms property value. Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+// SetPlatforms sets the platforms property value. Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
 func (m *DeviceManagementCompliancePolicy) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
     if m != nil {
         m.platforms = value

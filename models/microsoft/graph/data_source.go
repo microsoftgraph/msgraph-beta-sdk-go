@@ -3,6 +3,7 @@ package graph
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/ediscovery"
 )
 
 // DataSource 
@@ -14,6 +15,8 @@ type DataSource struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The display name of the dataSource. This will be the name of the SharePoint site.
     displayName *string;
+    // 
+    holdStatus *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus;
 }
 // NewDataSource instantiates a new dataSource and sets the default values.
 func NewDataSource()(*DataSource) {
@@ -44,6 +47,14 @@ func (m *DataSource) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
+    }
+}
+// GetHoldStatus gets the holdStatus property value. 
+func (m *DataSource) GetHoldStatus()(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.holdStatus
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -79,6 +90,17 @@ func (m *DataSource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         }
         return nil
     }
+    res["holdStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ParseDataSourceHoldStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus)
+            m.SetHoldStatus(&cast)
+        }
+        return nil
+    }
     return res
 }
 func (m *DataSource) IsNil()(bool) {
@@ -108,6 +130,13 @@ func (m *DataSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
+    if m.GetHoldStatus() != nil {
+        cast := m.GetHoldStatus().String()
+        err = writer.WriteStringValue("holdStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedBy sets the createdBy property value. The user who created the dataSource.
@@ -126,5 +155,11 @@ func (m *DataSource) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6
 func (m *DataSource) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetHoldStatus sets the holdStatus property value. 
+func (m *DataSource) SetHoldStatus(value *i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus)() {
+    if m != nil {
+        m.holdStatus = value
     }
 }

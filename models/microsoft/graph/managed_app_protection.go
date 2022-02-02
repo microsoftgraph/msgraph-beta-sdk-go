@@ -949,13 +949,13 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if err != nil {
         return err
     }
-    {
+    if m.GetAllowedDataIngestionLocations() != nil {
         err = writer.WriteCollectionOfStringValues("allowedDataIngestionLocations", SerializeManagedAppDataIngestionLocation(m.GetAllowedDataIngestionLocations()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetAllowedDataStorageLocations() != nil {
         err = writer.WriteCollectionOfStringValues("allowedDataStorageLocations", SerializeManagedAppDataStorageLocation(m.GetAllowedDataStorageLocations()))
         if err != nil {
             return err

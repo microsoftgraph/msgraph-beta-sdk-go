@@ -8,23 +8,23 @@ import (
 type TeamworkNetworkConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The default gateway is the path used to pass information when the destination is unknown to the device.
     defaultGateway *string;
-    // 
+    // The network domain of the device, for example, contoso.com.
     domainName *string;
-    // 
+    // The device name on a network.
     hostName *string;
-    // 
+    // The IP address is a numerical label that uniquely identifies every device connected to the internet.
     ipAddress *string;
-    // 
+    // True if DHCP is enabled.
     isDhcpEnabled *bool;
-    // 
+    // True if the PC port is enabled.
     isPCPortEnabled *bool;
-    // 
+    // A primary DNS is the first point of contact for a device that translates the hostname into an IP address.
     primaryDns *string;
-    // 
+    // A secondary DNS is used when the primary DNS is not available.
     secondaryDns *string;
-    // 
+    // A subnet mask is a number that distinguishes the network address and the host address within an IP address.
     subnetMask *string;
 }
 // NewTeamworkNetworkConfiguration instantiates a new teamworkNetworkConfiguration and sets the default values.
@@ -42,7 +42,7 @@ func (m *TeamworkNetworkConfiguration) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// GetDefaultGateway gets the defaultGateway property value. 
+// GetDefaultGateway gets the defaultGateway property value. The default gateway is the path used to pass information when the destination is unknown to the device.
 func (m *TeamworkNetworkConfiguration) GetDefaultGateway()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *TeamworkNetworkConfiguration) GetDefaultGateway()(*string) {
         return m.defaultGateway
     }
 }
-// GetDomainName gets the domainName property value. 
+// GetDomainName gets the domainName property value. The network domain of the device, for example, contoso.com.
 func (m *TeamworkNetworkConfiguration) GetDomainName()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *TeamworkNetworkConfiguration) GetDomainName()(*string) {
         return m.domainName
     }
 }
-// GetHostName gets the hostName property value. 
+// GetHostName gets the hostName property value. The device name on a network.
 func (m *TeamworkNetworkConfiguration) GetHostName()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *TeamworkNetworkConfiguration) GetHostName()(*string) {
         return m.hostName
     }
 }
-// GetIpAddress gets the ipAddress property value. 
+// GetIpAddress gets the ipAddress property value. The IP address is a numerical label that uniquely identifies every device connected to the internet.
 func (m *TeamworkNetworkConfiguration) GetIpAddress()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *TeamworkNetworkConfiguration) GetIpAddress()(*string) {
         return m.ipAddress
     }
 }
-// GetIsDhcpEnabled gets the isDhcpEnabled property value. 
+// GetIsDhcpEnabled gets the isDhcpEnabled property value. True if DHCP is enabled.
 func (m *TeamworkNetworkConfiguration) GetIsDhcpEnabled()(*bool) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *TeamworkNetworkConfiguration) GetIsDhcpEnabled()(*bool) {
         return m.isDhcpEnabled
     }
 }
-// GetIsPCPortEnabled gets the isPCPortEnabled property value. 
+// GetIsPCPortEnabled gets the isPCPortEnabled property value. True if the PC port is enabled.
 func (m *TeamworkNetworkConfiguration) GetIsPCPortEnabled()(*bool) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *TeamworkNetworkConfiguration) GetIsPCPortEnabled()(*bool) {
         return m.isPCPortEnabled
     }
 }
-// GetPrimaryDns gets the primaryDns property value. 
+// GetPrimaryDns gets the primaryDns property value. A primary DNS is the first point of contact for a device that translates the hostname into an IP address.
 func (m *TeamworkNetworkConfiguration) GetPrimaryDns()(*string) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *TeamworkNetworkConfiguration) GetPrimaryDns()(*string) {
         return m.primaryDns
     }
 }
-// GetSecondaryDns gets the secondaryDns property value. 
+// GetSecondaryDns gets the secondaryDns property value. A secondary DNS is used when the primary DNS is not available.
 func (m *TeamworkNetworkConfiguration) GetSecondaryDns()(*string) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *TeamworkNetworkConfiguration) GetSecondaryDns()(*string) {
         return m.secondaryDns
     }
 }
-// GetSubnetMask gets the subnetMask property value. 
+// GetSubnetMask gets the subnetMask property value. A subnet mask is a number that distinguishes the network address and the host address within an IP address.
 func (m *TeamworkNetworkConfiguration) GetSubnetMask()(*string) {
     if m == nil {
         return nil
@@ -282,55 +282,55 @@ func (m *TeamworkNetworkConfiguration) SetAdditionalData(value map[string]interf
         m.additionalData = value
     }
 }
-// SetDefaultGateway sets the defaultGateway property value. 
+// SetDefaultGateway sets the defaultGateway property value. The default gateway is the path used to pass information when the destination is unknown to the device.
 func (m *TeamworkNetworkConfiguration) SetDefaultGateway(value *string)() {
     if m != nil {
         m.defaultGateway = value
     }
 }
-// SetDomainName sets the domainName property value. 
+// SetDomainName sets the domainName property value. The network domain of the device, for example, contoso.com.
 func (m *TeamworkNetworkConfiguration) SetDomainName(value *string)() {
     if m != nil {
         m.domainName = value
     }
 }
-// SetHostName sets the hostName property value. 
+// SetHostName sets the hostName property value. The device name on a network.
 func (m *TeamworkNetworkConfiguration) SetHostName(value *string)() {
     if m != nil {
         m.hostName = value
     }
 }
-// SetIpAddress sets the ipAddress property value. 
+// SetIpAddress sets the ipAddress property value. The IP address is a numerical label that uniquely identifies every device connected to the internet.
 func (m *TeamworkNetworkConfiguration) SetIpAddress(value *string)() {
     if m != nil {
         m.ipAddress = value
     }
 }
-// SetIsDhcpEnabled sets the isDhcpEnabled property value. 
+// SetIsDhcpEnabled sets the isDhcpEnabled property value. True if DHCP is enabled.
 func (m *TeamworkNetworkConfiguration) SetIsDhcpEnabled(value *bool)() {
     if m != nil {
         m.isDhcpEnabled = value
     }
 }
-// SetIsPCPortEnabled sets the isPCPortEnabled property value. 
+// SetIsPCPortEnabled sets the isPCPortEnabled property value. True if the PC port is enabled.
 func (m *TeamworkNetworkConfiguration) SetIsPCPortEnabled(value *bool)() {
     if m != nil {
         m.isPCPortEnabled = value
     }
 }
-// SetPrimaryDns sets the primaryDns property value. 
+// SetPrimaryDns sets the primaryDns property value. A primary DNS is the first point of contact for a device that translates the hostname into an IP address.
 func (m *TeamworkNetworkConfiguration) SetPrimaryDns(value *string)() {
     if m != nil {
         m.primaryDns = value
     }
 }
-// SetSecondaryDns sets the secondaryDns property value. 
+// SetSecondaryDns sets the secondaryDns property value. A secondary DNS is used when the primary DNS is not available.
 func (m *TeamworkNetworkConfiguration) SetSecondaryDns(value *string)() {
     if m != nil {
         m.secondaryDns = value
     }
 }
-// SetSubnetMask sets the subnetMask property value. 
+// SetSubnetMask sets the subnetMask property value. A subnet mask is a number that distinguishes the network address and the host address within an IP address.
 func (m *TeamworkNetworkConfiguration) SetSubnetMask(value *string)() {
     if m != nil {
         m.subnetMask = value
