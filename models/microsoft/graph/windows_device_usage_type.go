@@ -15,13 +15,16 @@ func (i WindowsDeviceUsageType) String() string {
     return []string{"SINGLEUSER", "SHARED"}[i]
 }
 func ParseWindowsDeviceUsageType(v string) (interface{}, error) {
+    result := SINGLEUSER_WINDOWSDEVICEUSAGETYPE
     switch strings.ToUpper(v) {
         case "SINGLEUSER":
-            return SINGLEUSER_WINDOWSDEVICEUSAGETYPE, nil
+            result = SINGLEUSER_WINDOWSDEVICEUSAGETYPE
         case "SHARED":
-            return SHARED_WINDOWSDEVICEUSAGETYPE, nil
+            result = SHARED_WINDOWSDEVICEUSAGETYPE
+        default:
+            return 0, errors.New("Unknown WindowsDeviceUsageType value: " + v)
     }
-    return 0, errors.New("Unknown WindowsDeviceUsageType value: " + v)
+    return &result, nil
 }
 func SerializeWindowsDeviceUsageType(values []WindowsDeviceUsageType) []string {
     result := make([]string, len(values))

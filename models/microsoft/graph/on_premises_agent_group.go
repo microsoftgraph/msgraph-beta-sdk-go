@@ -122,8 +122,7 @@ func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(OnPremisesPublishingType)
-            m.SetPublishingType(&cast)
+            m.SetPublishingType(val.(*OnPremisesPublishingType))
         }
         return nil
     }
@@ -173,7 +172,7 @@ func (m *OnPremisesAgentGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetPublishingType() != nil {
-        cast := m.GetPublishingType().String()
+        cast := (*m.GetPublishingType()).String()
         err = writer.WriteStringValue("publishingType", &cast)
         if err != nil {
             return err

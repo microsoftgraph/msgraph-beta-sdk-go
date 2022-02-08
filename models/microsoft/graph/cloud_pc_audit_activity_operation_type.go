@@ -17,17 +17,20 @@ func (i CloudPcAuditActivityOperationType) String() string {
     return []string{"CREATE", "DELETE", "PATCH", "OTHER"}[i]
 }
 func ParseCloudPcAuditActivityOperationType(v string) (interface{}, error) {
+    result := CREATE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
     switch strings.ToUpper(v) {
         case "CREATE":
-            return CREATE_CLOUDPCAUDITACTIVITYOPERATIONTYPE, nil
+            result = CREATE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
         case "DELETE":
-            return DELETE_CLOUDPCAUDITACTIVITYOPERATIONTYPE, nil
+            result = DELETE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
         case "PATCH":
-            return PATCH_CLOUDPCAUDITACTIVITYOPERATIONTYPE, nil
+            result = PATCH_CLOUDPCAUDITACTIVITYOPERATIONTYPE
         case "OTHER":
-            return OTHER_CLOUDPCAUDITACTIVITYOPERATIONTYPE, nil
+            result = OTHER_CLOUDPCAUDITACTIVITYOPERATIONTYPE
+        default:
+            return 0, errors.New("Unknown CloudPcAuditActivityOperationType value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcAuditActivityOperationType value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcAuditActivityOperationType(values []CloudPcAuditActivityOperationType) []string {
     result := make([]string, len(values))

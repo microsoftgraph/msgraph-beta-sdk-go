@@ -93,8 +93,7 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(TrainingStatus)
-            m.SetLatestTrainingStatus(&cast)
+            m.SetLatestTrainingStatus(val.(*TrainingStatus))
         }
         return nil
     }
@@ -142,7 +141,7 @@ func (m *UserTrainingEventInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetLatestTrainingStatus() != nil {
-        cast := m.GetLatestTrainingStatus().String()
+        cast := (*m.GetLatestTrainingStatus()).String()
         err := writer.WriteStringValue("latestTrainingStatus", &cast)
         if err != nil {
             return err

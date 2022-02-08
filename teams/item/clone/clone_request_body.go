@@ -134,8 +134,7 @@ func (m *CloneRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ClonableTeamParts)
-            m.SetPartsToClone(&cast)
+            m.SetPartsToClone(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ClonableTeamParts))
         }
         return nil
     }
@@ -145,8 +144,7 @@ func (m *CloneRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamVisibilityType)
-            m.SetVisibility(&cast)
+            m.SetVisibility(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TeamVisibilityType))
         }
         return nil
     }
@@ -182,14 +180,14 @@ func (m *CloneRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetPartsToClone() != nil {
-        cast := m.GetPartsToClone().String()
+        cast := (*m.GetPartsToClone()).String()
         err := writer.WriteStringValue("partsToClone", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetVisibility() != nil {
-        cast := m.GetVisibility().String()
+        cast := (*m.GetVisibility()).String()
         err := writer.WriteStringValue("visibility", &cast)
         if err != nil {
             return err

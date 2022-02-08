@@ -16,15 +16,18 @@ func (i AssignmentMethod) String() string {
     return []string{"STANDARD", "PRIVILEGED", "AUTO"}[i]
 }
 func ParseAssignmentMethod(v string) (interface{}, error) {
+    result := STANDARD_ASSIGNMENTMETHOD
     switch strings.ToUpper(v) {
         case "STANDARD":
-            return STANDARD_ASSIGNMENTMETHOD, nil
+            result = STANDARD_ASSIGNMENTMETHOD
         case "PRIVILEGED":
-            return PRIVILEGED_ASSIGNMENTMETHOD, nil
+            result = PRIVILEGED_ASSIGNMENTMETHOD
         case "AUTO":
-            return AUTO_ASSIGNMENTMETHOD, nil
+            result = AUTO_ASSIGNMENTMETHOD
+        default:
+            return 0, errors.New("Unknown AssignmentMethod value: " + v)
     }
-    return 0, errors.New("Unknown AssignmentMethod value: " + v)
+    return &result, nil
 }
 func SerializeAssignmentMethod(values []AssignmentMethod) []string {
     result := make([]string, len(values))

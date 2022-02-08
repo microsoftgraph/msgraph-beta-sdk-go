@@ -63,8 +63,7 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(CompanyPortalAction)
-            m.SetAction(&cast)
+            m.SetAction(val.(*CompanyPortalAction))
         }
         return nil
     }
@@ -74,8 +73,7 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(OwnerType)
-            m.SetOwnerType(&cast)
+            m.SetOwnerType(val.(*OwnerType))
         }
         return nil
     }
@@ -85,8 +83,7 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(DevicePlatformType)
-            m.SetPlatform(&cast)
+            m.SetPlatform(val.(*DevicePlatformType))
         }
         return nil
     }
@@ -98,21 +95,21 @@ func (m *CompanyPortalBlockedAction) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *CompanyPortalBlockedAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAction() != nil {
-        cast := m.GetAction().String()
+        cast := (*m.GetAction()).String()
         err := writer.WriteStringValue("action", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetOwnerType() != nil {
-        cast := m.GetOwnerType().String()
+        cast := (*m.GetOwnerType()).String()
         err := writer.WriteStringValue("ownerType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetPlatform() != nil {
-        cast := m.GetPlatform().String()
+        cast := (*m.GetPlatform()).String()
         err := writer.WriteStringValue("platform", &cast)
         if err != nil {
             return err

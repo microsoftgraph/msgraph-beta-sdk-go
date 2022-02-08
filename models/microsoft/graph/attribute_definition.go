@@ -231,8 +231,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(Mutability)
-            m.SetMutability(&cast)
+            m.SetMutability(val.(*Mutability))
         }
         return nil
     }
@@ -276,8 +275,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(AttributeType)
-            m.SetType(&cast)
+            m.SetType(val.(*AttributeType))
         }
         return nil
     }
@@ -341,7 +339,7 @@ func (m *AttributeDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetMutability() != nil {
-        cast := m.GetMutability().String()
+        cast := (*m.GetMutability()).String()
         err := writer.WriteStringValue("mutability", &cast)
         if err != nil {
             return err
@@ -371,7 +369,7 @@ func (m *AttributeDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

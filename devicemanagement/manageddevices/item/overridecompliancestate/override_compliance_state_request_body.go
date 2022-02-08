@@ -54,8 +54,7 @@ func (m *OverrideComplianceStateRequestBody) GetFieldDeserializers()(map[string]
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdministratorConfiguredDeviceComplianceState)
-            m.SetComplianceState(&cast)
+            m.SetComplianceState(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AdministratorConfiguredDeviceComplianceState))
         }
         return nil
     }
@@ -77,7 +76,7 @@ func (m *OverrideComplianceStateRequestBody) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *OverrideComplianceStateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetComplianceState() != nil {
-        cast := m.GetComplianceState().String()
+        cast := (*m.GetComplianceState()).String()
         err := writer.WriteStringValue("complianceState", &cast)
         if err != nil {
             return err

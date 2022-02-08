@@ -20,23 +20,26 @@ func (i ConfigurationManagerActionType) String() string {
     return []string{"REFRESHMACHINEPOLICY", "REFRESHUSERPOLICY", "WAKEUPCLIENT", "APPEVALUATION", "QUICKSCAN", "FULLSCAN", "WINDOWSDEFENDERUPDATESIGNATURES"}[i]
 }
 func ParseConfigurationManagerActionType(v string) (interface{}, error) {
+    result := REFRESHMACHINEPOLICY_CONFIGURATIONMANAGERACTIONTYPE
     switch strings.ToUpper(v) {
         case "REFRESHMACHINEPOLICY":
-            return REFRESHMACHINEPOLICY_CONFIGURATIONMANAGERACTIONTYPE, nil
+            result = REFRESHMACHINEPOLICY_CONFIGURATIONMANAGERACTIONTYPE
         case "REFRESHUSERPOLICY":
-            return REFRESHUSERPOLICY_CONFIGURATIONMANAGERACTIONTYPE, nil
+            result = REFRESHUSERPOLICY_CONFIGURATIONMANAGERACTIONTYPE
         case "WAKEUPCLIENT":
-            return WAKEUPCLIENT_CONFIGURATIONMANAGERACTIONTYPE, nil
+            result = WAKEUPCLIENT_CONFIGURATIONMANAGERACTIONTYPE
         case "APPEVALUATION":
-            return APPEVALUATION_CONFIGURATIONMANAGERACTIONTYPE, nil
+            result = APPEVALUATION_CONFIGURATIONMANAGERACTIONTYPE
         case "QUICKSCAN":
-            return QUICKSCAN_CONFIGURATIONMANAGERACTIONTYPE, nil
+            result = QUICKSCAN_CONFIGURATIONMANAGERACTIONTYPE
         case "FULLSCAN":
-            return FULLSCAN_CONFIGURATIONMANAGERACTIONTYPE, nil
+            result = FULLSCAN_CONFIGURATIONMANAGERACTIONTYPE
         case "WINDOWSDEFENDERUPDATESIGNATURES":
-            return WINDOWSDEFENDERUPDATESIGNATURES_CONFIGURATIONMANAGERACTIONTYPE, nil
+            result = WINDOWSDEFENDERUPDATESIGNATURES_CONFIGURATIONMANAGERACTIONTYPE
+        default:
+            return 0, errors.New("Unknown ConfigurationManagerActionType value: " + v)
     }
-    return 0, errors.New("Unknown ConfigurationManagerActionType value: " + v)
+    return &result, nil
 }
 func SerializeConfigurationManagerActionType(values []ConfigurationManagerActionType) []string {
     result := make([]string, len(values))

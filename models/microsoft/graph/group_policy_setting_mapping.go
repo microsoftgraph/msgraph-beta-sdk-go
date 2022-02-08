@@ -312,8 +312,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(MdmSupportedState)
-            m.SetMdmSupportedState(&cast)
+            m.SetMdmSupportedState(val.(*MdmSupportedState))
         }
         return nil
     }
@@ -383,8 +382,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(GroupPolicySettingScope)
-            m.SetSettingScope(&cast)
+            m.SetSettingScope(val.(*GroupPolicySettingScope))
         }
         return nil
     }
@@ -394,8 +392,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(GroupPolicySettingType)
-            m.SetSettingType(&cast)
+            m.SetSettingType(val.(*GroupPolicySettingType))
         }
         return nil
     }
@@ -489,7 +486,7 @@ func (m *GroupPolicySettingMapping) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     if m.GetMdmSupportedState() != nil {
-        cast := m.GetMdmSupportedState().String()
+        cast := (*m.GetMdmSupportedState()).String()
         err = writer.WriteStringValue("mdmSupportedState", &cast)
         if err != nil {
             return err
@@ -532,14 +529,14 @@ func (m *GroupPolicySettingMapping) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     if m.GetSettingScope() != nil {
-        cast := m.GetSettingScope().String()
+        cast := (*m.GetSettingScope()).String()
         err = writer.WriteStringValue("settingScope", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetSettingType() != nil {
-        cast := m.GetSettingType().String()
+        cast := (*m.GetSettingType()).String()
         err = writer.WriteStringValue("settingType", &cast)
         if err != nil {
             return err

@@ -19,21 +19,24 @@ func (i DeviceManagementAutopilotPolicyComplianceStatus) String() string {
     return []string{"UNKNOWN", "COMPLIANT", "INSTALLED", "NOTCOMPLIANT", "NOTINSTALLED", "ERROR"}[i]
 }
 func ParseDeviceManagementAutopilotPolicyComplianceStatus(v string) (interface{}, error) {
+    result := UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS, nil
+            result = UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
         case "COMPLIANT":
-            return COMPLIANT_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS, nil
+            result = COMPLIANT_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
         case "INSTALLED":
-            return INSTALLED_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS, nil
+            result = INSTALLED_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
         case "NOTCOMPLIANT":
-            return NOTCOMPLIANT_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS, nil
+            result = NOTCOMPLIANT_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
         case "NOTINSTALLED":
-            return NOTINSTALLED_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS, nil
+            result = NOTINSTALLED_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
         case "ERROR":
-            return ERROR_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS, nil
+            result = ERROR_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
+        default:
+            return 0, errors.New("Unknown DeviceManagementAutopilotPolicyComplianceStatus value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementAutopilotPolicyComplianceStatus value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementAutopilotPolicyComplianceStatus(values []DeviceManagementAutopilotPolicyComplianceStatus) []string {
     result := make([]string, len(values))

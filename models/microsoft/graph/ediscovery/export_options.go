@@ -19,21 +19,24 @@ func (i ExportOptions) String() string {
     return []string{"ORIGINALFILES", "TEXT", "PDFREPLACEMENT", "FILEINFO", "TAGS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseExportOptions(v string) (interface{}, error) {
+    result := ORIGINALFILES_EXPORTOPTIONS
     switch strings.ToUpper(v) {
         case "ORIGINALFILES":
-            return ORIGINALFILES_EXPORTOPTIONS, nil
+            result = ORIGINALFILES_EXPORTOPTIONS
         case "TEXT":
-            return TEXT_EXPORTOPTIONS, nil
+            result = TEXT_EXPORTOPTIONS
         case "PDFREPLACEMENT":
-            return PDFREPLACEMENT_EXPORTOPTIONS, nil
+            result = PDFREPLACEMENT_EXPORTOPTIONS
         case "FILEINFO":
-            return FILEINFO_EXPORTOPTIONS, nil
+            result = FILEINFO_EXPORTOPTIONS
         case "TAGS":
-            return TAGS_EXPORTOPTIONS, nil
+            result = TAGS_EXPORTOPTIONS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EXPORTOPTIONS, nil
+            result = UNKNOWNFUTUREVALUE_EXPORTOPTIONS
+        default:
+            return 0, errors.New("Unknown ExportOptions value: " + v)
     }
-    return 0, errors.New("Unknown ExportOptions value: " + v)
+    return &result, nil
 }
 func SerializeExportOptions(values []ExportOptions) []string {
     result := make([]string, len(values))

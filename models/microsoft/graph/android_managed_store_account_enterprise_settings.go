@@ -155,8 +155,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
             return err
         }
         if val != nil {
-            cast := val.(AndroidManagedStoreAccountBindStatus)
-            m.SetBindStatus(&cast)
+            m.SetBindStatus(val.(*AndroidManagedStoreAccountBindStatus))
         }
         return nil
     }
@@ -190,8 +189,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
             return err
         }
         if val != nil {
-            cast := val.(AndroidManagedStoreAccountEnrollmentTarget)
-            m.SetEnrollmentTarget(&cast)
+            m.SetEnrollmentTarget(val.(*AndroidManagedStoreAccountEnrollmentTarget))
         }
         return nil
     }
@@ -211,8 +209,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
             return err
         }
         if val != nil {
-            cast := val.(AndroidManagedStoreAccountAppSyncStatus)
-            m.SetLastAppSyncStatus(&cast)
+            m.SetLastAppSyncStatus(val.(*AndroidManagedStoreAccountAppSyncStatus))
         }
         return nil
     }
@@ -292,7 +289,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) Serialize(writer i04eb530
         }
     }
     if m.GetBindStatus() != nil {
-        cast := m.GetBindStatus().String()
+        cast := (*m.GetBindStatus()).String()
         err = writer.WriteStringValue("bindStatus", &cast)
         if err != nil {
             return err
@@ -316,7 +313,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) Serialize(writer i04eb530
         }
     }
     if m.GetEnrollmentTarget() != nil {
-        cast := m.GetEnrollmentTarget().String()
+        cast := (*m.GetEnrollmentTarget()).String()
         err = writer.WriteStringValue("enrollmentTarget", &cast)
         if err != nil {
             return err
@@ -329,7 +326,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) Serialize(writer i04eb530
         }
     }
     if m.GetLastAppSyncStatus() != nil {
-        cast := m.GetLastAppSyncStatus().String()
+        cast := (*m.GetLastAppSyncStatus()).String()
         err = writer.WriteStringValue("lastAppSyncStatus", &cast)
         if err != nil {
             return err

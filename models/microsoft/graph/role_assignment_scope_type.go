@@ -17,17 +17,20 @@ func (i RoleAssignmentScopeType) String() string {
     return []string{"RESOURCESCOPE", "ALLDEVICES", "ALLLICENSEDUSERS", "ALLDEVICESANDLICENSEDUSERS"}[i]
 }
 func ParseRoleAssignmentScopeType(v string) (interface{}, error) {
+    result := RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE
     switch strings.ToUpper(v) {
         case "RESOURCESCOPE":
-            return RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE, nil
+            result = RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE
         case "ALLDEVICES":
-            return ALLDEVICES_ROLEASSIGNMENTSCOPETYPE, nil
+            result = ALLDEVICES_ROLEASSIGNMENTSCOPETYPE
         case "ALLLICENSEDUSERS":
-            return ALLLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE, nil
+            result = ALLLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
         case "ALLDEVICESANDLICENSEDUSERS":
-            return ALLDEVICESANDLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE, nil
+            result = ALLDEVICESANDLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
+        default:
+            return 0, errors.New("Unknown RoleAssignmentScopeType value: " + v)
     }
-    return 0, errors.New("Unknown RoleAssignmentScopeType value: " + v)
+    return &result, nil
 }
 func SerializeRoleAssignmentScopeType(values []RoleAssignmentScopeType) []string {
     result := make([]string, len(values))

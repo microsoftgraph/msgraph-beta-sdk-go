@@ -145,8 +145,7 @@ func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(EmbeddedSIMDeviceStateValue)
-            m.SetState(&cast)
+            m.SetState(val.(*EmbeddedSIMDeviceStateValue))
         }
         return nil
     }
@@ -216,7 +215,7 @@ func (m *EmbeddedSIMDeviceState) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

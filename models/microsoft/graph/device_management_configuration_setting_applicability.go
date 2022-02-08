@@ -83,8 +83,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationDeviceMode)
-            m.SetDeviceMode(&cast)
+            m.SetDeviceMode(val.(*DeviceManagementConfigurationDeviceMode))
         }
         return nil
     }
@@ -94,8 +93,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationPlatforms)
-            m.SetPlatform(&cast)
+            m.SetPlatform(val.(*DeviceManagementConfigurationPlatforms))
         }
         return nil
     }
@@ -105,8 +103,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationTechnologies)
-            m.SetTechnologies(&cast)
+            m.SetTechnologies(val.(*DeviceManagementConfigurationTechnologies))
         }
         return nil
     }
@@ -124,21 +121,21 @@ func (m *DeviceManagementConfigurationSettingApplicability) Serialize(writer i04
         }
     }
     if m.GetDeviceMode() != nil {
-        cast := m.GetDeviceMode().String()
+        cast := (*m.GetDeviceMode()).String()
         err := writer.WriteStringValue("deviceMode", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetPlatform() != nil {
-        cast := m.GetPlatform().String()
+        cast := (*m.GetPlatform()).String()
         err := writer.WriteStringValue("platform", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetTechnologies() != nil {
-        cast := m.GetTechnologies().String()
+        cast := (*m.GetTechnologies()).String()
         err := writer.WriteStringValue("technologies", &cast)
         if err != nil {
             return err

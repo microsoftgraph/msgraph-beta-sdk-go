@@ -17,17 +17,20 @@ func (i ClassificationMethod) String() string {
     return []string{"PATTERNMATCH", "EXACTDATAMATCH", "FINGERPRINT", "MACHINELEARNING"}[i]
 }
 func ParseClassificationMethod(v string) (interface{}, error) {
+    result := PATTERNMATCH_CLASSIFICATIONMETHOD
     switch strings.ToUpper(v) {
         case "PATTERNMATCH":
-            return PATTERNMATCH_CLASSIFICATIONMETHOD, nil
+            result = PATTERNMATCH_CLASSIFICATIONMETHOD
         case "EXACTDATAMATCH":
-            return EXACTDATAMATCH_CLASSIFICATIONMETHOD, nil
+            result = EXACTDATAMATCH_CLASSIFICATIONMETHOD
         case "FINGERPRINT":
-            return FINGERPRINT_CLASSIFICATIONMETHOD, nil
+            result = FINGERPRINT_CLASSIFICATIONMETHOD
         case "MACHINELEARNING":
-            return MACHINELEARNING_CLASSIFICATIONMETHOD, nil
+            result = MACHINELEARNING_CLASSIFICATIONMETHOD
+        default:
+            return 0, errors.New("Unknown ClassificationMethod value: " + v)
     }
-    return 0, errors.New("Unknown ClassificationMethod value: " + v)
+    return &result, nil
 }
 func SerializeClassificationMethod(values []ClassificationMethod) []string {
     result := make([]string, len(values))

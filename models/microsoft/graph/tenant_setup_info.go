@@ -118,8 +118,7 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(SetupStatus)
-            m.SetSetupStatus(&cast)
+            m.SetSetupStatus(val.(*SetupStatus))
         }
         return nil
     }
@@ -173,7 +172,7 @@ func (m *TenantSetupInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetSetupStatus() != nil {
-        cast := m.GetSetupStatus().String()
+        cast := (*m.GetSetupStatus()).String()
         err = writer.WriteStringValue("setupStatus", &cast)
         if err != nil {
             return err

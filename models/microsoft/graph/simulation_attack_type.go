@@ -18,19 +18,22 @@ func (i SimulationAttackType) String() string {
     return []string{"UNKNOWN", "SOCIAL", "CLOUD", "ENDPOINT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSimulationAttackType(v string) (interface{}, error) {
+    result := UNKNOWN_SIMULATIONATTACKTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_SIMULATIONATTACKTYPE, nil
+            result = UNKNOWN_SIMULATIONATTACKTYPE
         case "SOCIAL":
-            return SOCIAL_SIMULATIONATTACKTYPE, nil
+            result = SOCIAL_SIMULATIONATTACKTYPE
         case "CLOUD":
-            return CLOUD_SIMULATIONATTACKTYPE, nil
+            result = CLOUD_SIMULATIONATTACKTYPE
         case "ENDPOINT":
-            return ENDPOINT_SIMULATIONATTACKTYPE, nil
+            result = ENDPOINT_SIMULATIONATTACKTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SIMULATIONATTACKTYPE, nil
+            result = UNKNOWNFUTUREVALUE_SIMULATIONATTACKTYPE
+        default:
+            return 0, errors.New("Unknown SimulationAttackType value: " + v)
     }
-    return 0, errors.New("Unknown SimulationAttackType value: " + v)
+    return &result, nil
 }
 func SerializeSimulationAttackType(values []SimulationAttackType) []string {
     result := make([]string, len(values))

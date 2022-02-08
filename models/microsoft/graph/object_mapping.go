@@ -137,8 +137,7 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(ObjectFlowTypes)
-            m.SetFlowTypes(&cast)
+            m.SetFlowTypes(val.(*ObjectFlowTypes))
         }
         return nil
     }
@@ -221,7 +220,7 @@ func (m *ObjectMapping) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetFlowTypes() != nil {
-        cast := m.GetFlowTypes().String()
+        cast := (*m.GetFlowTypes()).String()
         err := writer.WriteStringValue("flowTypes", &cast)
         if err != nil {
             return err

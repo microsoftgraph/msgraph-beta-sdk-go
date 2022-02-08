@@ -17,17 +17,20 @@ func (i RestoreTimeRange) String() string {
     return []string{"BEFORE", "AFTER", "BEFOREORAFTER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRestoreTimeRange(v string) (interface{}, error) {
+    result := BEFORE_RESTORETIMERANGE
     switch strings.ToUpper(v) {
         case "BEFORE":
-            return BEFORE_RESTORETIMERANGE, nil
+            result = BEFORE_RESTORETIMERANGE
         case "AFTER":
-            return AFTER_RESTORETIMERANGE, nil
+            result = AFTER_RESTORETIMERANGE
         case "BEFOREORAFTER":
-            return BEFOREORAFTER_RESTORETIMERANGE, nil
+            result = BEFOREORAFTER_RESTORETIMERANGE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_RESTORETIMERANGE, nil
+            result = UNKNOWNFUTUREVALUE_RESTORETIMERANGE
+        default:
+            return 0, errors.New("Unknown RestoreTimeRange value: " + v)
     }
-    return 0, errors.New("Unknown RestoreTimeRange value: " + v)
+    return &result, nil
 }
 func SerializeRestoreTimeRange(values []RestoreTimeRange) []string {
     result := make([]string, len(values))

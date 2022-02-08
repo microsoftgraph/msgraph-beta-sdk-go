@@ -15,13 +15,16 @@ func (i MobileAppRelationshipType) String() string {
     return []string{"CHILD", "PARENT"}[i]
 }
 func ParseMobileAppRelationshipType(v string) (interface{}, error) {
+    result := CHILD_MOBILEAPPRELATIONSHIPTYPE
     switch strings.ToUpper(v) {
         case "CHILD":
-            return CHILD_MOBILEAPPRELATIONSHIPTYPE, nil
+            result = CHILD_MOBILEAPPRELATIONSHIPTYPE
         case "PARENT":
-            return PARENT_MOBILEAPPRELATIONSHIPTYPE, nil
+            result = PARENT_MOBILEAPPRELATIONSHIPTYPE
+        default:
+            return 0, errors.New("Unknown MobileAppRelationshipType value: " + v)
     }
-    return 0, errors.New("Unknown MobileAppRelationshipType value: " + v)
+    return &result, nil
 }
 func SerializeMobileAppRelationshipType(values []MobileAppRelationshipType) []string {
     result := make([]string, len(values))

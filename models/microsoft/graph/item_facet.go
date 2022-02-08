@@ -105,8 +105,7 @@ func (m *ItemFacet) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
             return err
         }
         if val != nil {
-            cast := val.(AllowedAudiences)
-            m.SetAllowedAudiences(&cast)
+            m.SetAllowedAudiences(val.(*AllowedAudiences))
         }
         return nil
     }
@@ -192,7 +191,7 @@ func (m *ItemFacet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         return err
     }
     if m.GetAllowedAudiences() != nil {
-        cast := m.GetAllowedAudiences().String()
+        cast := (*m.GetAllowedAudiences()).String()
         err = writer.WriteStringValue("allowedAudiences", &cast)
         if err != nil {
             return err

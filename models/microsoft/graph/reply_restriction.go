@@ -16,15 +16,18 @@ func (i ReplyRestriction) String() string {
     return []string{"EVERYONE", "AUTHORANDMODERATORS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseReplyRestriction(v string) (interface{}, error) {
+    result := EVERYONE_REPLYRESTRICTION
     switch strings.ToUpper(v) {
         case "EVERYONE":
-            return EVERYONE_REPLYRESTRICTION, nil
+            result = EVERYONE_REPLYRESTRICTION
         case "AUTHORANDMODERATORS":
-            return AUTHORANDMODERATORS_REPLYRESTRICTION, nil
+            result = AUTHORANDMODERATORS_REPLYRESTRICTION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_REPLYRESTRICTION, nil
+            result = UNKNOWNFUTUREVALUE_REPLYRESTRICTION
+        default:
+            return 0, errors.New("Unknown ReplyRestriction value: " + v)
     }
-    return 0, errors.New("Unknown ReplyRestriction value: " + v)
+    return &result, nil
 }
 func SerializeReplyRestriction(values []ReplyRestriction) []string {
     result := make([]string, len(values))

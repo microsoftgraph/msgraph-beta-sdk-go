@@ -18,19 +18,22 @@ func (i MembershipRuleProcessingStatusDetails) String() string {
     return []string{"NOTSTARTED", "RUNNING", "FAILED", "SUCCEEDED", "UNSUPPORTEDFUTUREVALUE"}[i]
 }
 func ParseMembershipRuleProcessingStatusDetails(v string) (interface{}, error) {
+    result := NOTSTARTED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
     switch strings.ToUpper(v) {
         case "NOTSTARTED":
-            return NOTSTARTED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS, nil
+            result = NOTSTARTED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
         case "RUNNING":
-            return RUNNING_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS, nil
+            result = RUNNING_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
         case "FAILED":
-            return FAILED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS, nil
+            result = FAILED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
         case "SUCCEEDED":
-            return SUCCEEDED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS, nil
+            result = SUCCEEDED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
         case "UNSUPPORTEDFUTUREVALUE":
-            return UNSUPPORTEDFUTUREVALUE_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS, nil
+            result = UNSUPPORTEDFUTUREVALUE_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
+        default:
+            return 0, errors.New("Unknown MembershipRuleProcessingStatusDetails value: " + v)
     }
-    return 0, errors.New("Unknown MembershipRuleProcessingStatusDetails value: " + v)
+    return &result, nil
 }
 func SerializeMembershipRuleProcessingStatusDetails(values []MembershipRuleProcessingStatusDetails) []string {
     result := make([]string, len(values))

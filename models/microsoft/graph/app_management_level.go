@@ -17,17 +17,20 @@ func (i AppManagementLevel) String() string {
     return []string{"UNSPECIFIED", "UNMANAGED", "MDM", "ANDROIDENTERPRISE"}[i]
 }
 func ParseAppManagementLevel(v string) (interface{}, error) {
+    result := UNSPECIFIED_APPMANAGEMENTLEVEL
     switch strings.ToUpper(v) {
         case "UNSPECIFIED":
-            return UNSPECIFIED_APPMANAGEMENTLEVEL, nil
+            result = UNSPECIFIED_APPMANAGEMENTLEVEL
         case "UNMANAGED":
-            return UNMANAGED_APPMANAGEMENTLEVEL, nil
+            result = UNMANAGED_APPMANAGEMENTLEVEL
         case "MDM":
-            return MDM_APPMANAGEMENTLEVEL, nil
+            result = MDM_APPMANAGEMENTLEVEL
         case "ANDROIDENTERPRISE":
-            return ANDROIDENTERPRISE_APPMANAGEMENTLEVEL, nil
+            result = ANDROIDENTERPRISE_APPMANAGEMENTLEVEL
+        default:
+            return 0, errors.New("Unknown AppManagementLevel value: " + v)
     }
-    return 0, errors.New("Unknown AppManagementLevel value: " + v)
+    return &result, nil
 }
 func SerializeAppManagementLevel(values []AppManagementLevel) []string {
     result := make([]string, len(values))

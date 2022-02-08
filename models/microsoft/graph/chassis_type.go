@@ -22,27 +22,30 @@ func (i ChassisType) String() string {
     return []string{"UNKNOWN", "DESKTOP", "LAPTOP", "WORKSWORKSTATION", "ENTERPRISESERVER", "PHONE", "TABLET", "MOBILEOTHER", "MOBILEUNKNOWN"}[i]
 }
 func ParseChassisType(v string) (interface{}, error) {
+    result := UNKNOWN_CHASSISTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_CHASSISTYPE, nil
+            result = UNKNOWN_CHASSISTYPE
         case "DESKTOP":
-            return DESKTOP_CHASSISTYPE, nil
+            result = DESKTOP_CHASSISTYPE
         case "LAPTOP":
-            return LAPTOP_CHASSISTYPE, nil
+            result = LAPTOP_CHASSISTYPE
         case "WORKSWORKSTATION":
-            return WORKSWORKSTATION_CHASSISTYPE, nil
+            result = WORKSWORKSTATION_CHASSISTYPE
         case "ENTERPRISESERVER":
-            return ENTERPRISESERVER_CHASSISTYPE, nil
+            result = ENTERPRISESERVER_CHASSISTYPE
         case "PHONE":
-            return PHONE_CHASSISTYPE, nil
+            result = PHONE_CHASSISTYPE
         case "TABLET":
-            return TABLET_CHASSISTYPE, nil
+            result = TABLET_CHASSISTYPE
         case "MOBILEOTHER":
-            return MOBILEOTHER_CHASSISTYPE, nil
+            result = MOBILEOTHER_CHASSISTYPE
         case "MOBILEUNKNOWN":
-            return MOBILEUNKNOWN_CHASSISTYPE, nil
+            result = MOBILEUNKNOWN_CHASSISTYPE
+        default:
+            return 0, errors.New("Unknown ChassisType value: " + v)
     }
-    return 0, errors.New("Unknown ChassisType value: " + v)
+    return &result, nil
 }
 func SerializeChassisType(values []ChassisType) []string {
     result := make([]string, len(values))

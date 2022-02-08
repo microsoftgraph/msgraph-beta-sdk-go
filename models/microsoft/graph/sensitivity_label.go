@@ -154,8 +154,7 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(SensitivityLabelTarget)
-            m.SetApplicableTo(&cast)
+            m.SetApplicableTo(val.(*SensitivityLabelTarget))
         }
         return nil
     }
@@ -165,8 +164,7 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(ApplicationMode)
-            m.SetApplicationMode(&cast)
+            m.SetApplicationMode(val.(*ApplicationMode))
         }
         return nil
     }
@@ -304,14 +302,14 @@ func (m *SensitivityLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         return err
     }
     if m.GetApplicableTo() != nil {
-        cast := m.GetApplicableTo().String()
+        cast := (*m.GetApplicableTo()).String()
         err = writer.WriteStringValue("applicableTo", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetApplicationMode() != nil {
-        cast := m.GetApplicationMode().String()
+        cast := (*m.GetApplicationMode()).String()
         err = writer.WriteStringValue("applicationMode", &cast)
         if err != nil {
             return err

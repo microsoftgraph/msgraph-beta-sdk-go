@@ -21,25 +21,28 @@ func (i TeamworkUserIdentityType) String() string {
     return []string{"AADUSER", "ONPREMISEAADUSER", "ANONYMOUSGUEST", "FEDERATEDUSER", "PERSONALMICROSOFTACCOUNTUSER", "SKYPEUSER", "PHONEUSER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamworkUserIdentityType(v string) (interface{}, error) {
+    result := AADUSER_TEAMWORKUSERIDENTITYTYPE
     switch strings.ToUpper(v) {
         case "AADUSER":
-            return AADUSER_TEAMWORKUSERIDENTITYTYPE, nil
+            result = AADUSER_TEAMWORKUSERIDENTITYTYPE
         case "ONPREMISEAADUSER":
-            return ONPREMISEAADUSER_TEAMWORKUSERIDENTITYTYPE, nil
+            result = ONPREMISEAADUSER_TEAMWORKUSERIDENTITYTYPE
         case "ANONYMOUSGUEST":
-            return ANONYMOUSGUEST_TEAMWORKUSERIDENTITYTYPE, nil
+            result = ANONYMOUSGUEST_TEAMWORKUSERIDENTITYTYPE
         case "FEDERATEDUSER":
-            return FEDERATEDUSER_TEAMWORKUSERIDENTITYTYPE, nil
+            result = FEDERATEDUSER_TEAMWORKUSERIDENTITYTYPE
         case "PERSONALMICROSOFTACCOUNTUSER":
-            return PERSONALMICROSOFTACCOUNTUSER_TEAMWORKUSERIDENTITYTYPE, nil
+            result = PERSONALMICROSOFTACCOUNTUSER_TEAMWORKUSERIDENTITYTYPE
         case "SKYPEUSER":
-            return SKYPEUSER_TEAMWORKUSERIDENTITYTYPE, nil
+            result = SKYPEUSER_TEAMWORKUSERIDENTITYTYPE
         case "PHONEUSER":
-            return PHONEUSER_TEAMWORKUSERIDENTITYTYPE, nil
+            result = PHONEUSER_TEAMWORKUSERIDENTITYTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMWORKUSERIDENTITYTYPE, nil
+            result = UNKNOWNFUTUREVALUE_TEAMWORKUSERIDENTITYTYPE
+        default:
+            return 0, errors.New("Unknown TeamworkUserIdentityType value: " + v)
     }
-    return 0, errors.New("Unknown TeamworkUserIdentityType value: " + v)
+    return &result, nil
 }
 func SerializeTeamworkUserIdentityType(values []TeamworkUserIdentityType) []string {
     result := make([]string, len(values))

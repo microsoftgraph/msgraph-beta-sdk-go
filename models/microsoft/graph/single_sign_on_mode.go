@@ -19,21 +19,24 @@ func (i SingleSignOnMode) String() string {
     return []string{"NONE", "ONPREMISESKERBEROS", "SAML", "PINGHEADERBASED", "AADHEADERBASED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSingleSignOnMode(v string) (interface{}, error) {
+    result := NONE_SINGLESIGNONMODE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_SINGLESIGNONMODE, nil
+            result = NONE_SINGLESIGNONMODE
         case "ONPREMISESKERBEROS":
-            return ONPREMISESKERBEROS_SINGLESIGNONMODE, nil
+            result = ONPREMISESKERBEROS_SINGLESIGNONMODE
         case "SAML":
-            return SAML_SINGLESIGNONMODE, nil
+            result = SAML_SINGLESIGNONMODE
         case "PINGHEADERBASED":
-            return PINGHEADERBASED_SINGLESIGNONMODE, nil
+            result = PINGHEADERBASED_SINGLESIGNONMODE
         case "AADHEADERBASED":
-            return AADHEADERBASED_SINGLESIGNONMODE, nil
+            result = AADHEADERBASED_SINGLESIGNONMODE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SINGLESIGNONMODE, nil
+            result = UNKNOWNFUTUREVALUE_SINGLESIGNONMODE
+        default:
+            return 0, errors.New("Unknown SingleSignOnMode value: " + v)
     }
-    return 0, errors.New("Unknown SingleSignOnMode value: " + v)
+    return &result, nil
 }
 func SerializeSingleSignOnMode(values []SingleSignOnMode) []string {
     result := make([]string, len(values))

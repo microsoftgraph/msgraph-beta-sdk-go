@@ -53,8 +53,7 @@ func (m *AppleOwnerTypeEnrollmentType) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(AppleUserInitiatedEnrollmentType)
-            m.SetEnrollmentType(&cast)
+            m.SetEnrollmentType(val.(*AppleUserInitiatedEnrollmentType))
         }
         return nil
     }
@@ -64,8 +63,7 @@ func (m *AppleOwnerTypeEnrollmentType) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(ManagedDeviceOwnerType)
-            m.SetOwnerType(&cast)
+            m.SetOwnerType(val.(*ManagedDeviceOwnerType))
         }
         return nil
     }
@@ -77,14 +75,14 @@ func (m *AppleOwnerTypeEnrollmentType) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *AppleOwnerTypeEnrollmentType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetEnrollmentType() != nil {
-        cast := m.GetEnrollmentType().String()
+        cast := (*m.GetEnrollmentType()).String()
         err := writer.WriteStringValue("enrollmentType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetOwnerType() != nil {
-        cast := m.GetOwnerType().String()
+        cast := (*m.GetOwnerType()).String()
         err := writer.WriteStringValue("ownerType", &cast)
         if err != nil {
             return err

@@ -22,27 +22,30 @@ func (i SimulationStatus) String() string {
     return []string{"UNKNOWN", "DRAFT", "RUNNING", "SCHEDULED", "SUCCEEDED", "FAILED", "CANCELLED", "EXCLUDED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSimulationStatus(v string) (interface{}, error) {
+    result := UNKNOWN_SIMULATIONSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_SIMULATIONSTATUS, nil
+            result = UNKNOWN_SIMULATIONSTATUS
         case "DRAFT":
-            return DRAFT_SIMULATIONSTATUS, nil
+            result = DRAFT_SIMULATIONSTATUS
         case "RUNNING":
-            return RUNNING_SIMULATIONSTATUS, nil
+            result = RUNNING_SIMULATIONSTATUS
         case "SCHEDULED":
-            return SCHEDULED_SIMULATIONSTATUS, nil
+            result = SCHEDULED_SIMULATIONSTATUS
         case "SUCCEEDED":
-            return SUCCEEDED_SIMULATIONSTATUS, nil
+            result = SUCCEEDED_SIMULATIONSTATUS
         case "FAILED":
-            return FAILED_SIMULATIONSTATUS, nil
+            result = FAILED_SIMULATIONSTATUS
         case "CANCELLED":
-            return CANCELLED_SIMULATIONSTATUS, nil
+            result = CANCELLED_SIMULATIONSTATUS
         case "EXCLUDED":
-            return EXCLUDED_SIMULATIONSTATUS, nil
+            result = EXCLUDED_SIMULATIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SIMULATIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_SIMULATIONSTATUS
+        default:
+            return 0, errors.New("Unknown SimulationStatus value: " + v)
     }
-    return 0, errors.New("Unknown SimulationStatus value: " + v)
+    return &result, nil
 }
 func SerializeSimulationStatus(values []SimulationStatus) []string {
     result := make([]string, len(values))

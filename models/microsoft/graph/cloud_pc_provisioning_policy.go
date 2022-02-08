@@ -178,8 +178,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(CloudPcProvisioningPolicyImageType)
-            m.SetImageType(&cast)
+            m.SetImageType(val.(*CloudPcProvisioningPolicyImageType))
         }
         return nil
     }
@@ -256,7 +255,7 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     if m.GetImageType() != nil {
-        cast := m.GetImageType().String()
+        cast := (*m.GetImageType()).String()
         err = writer.WriteStringValue("imageType", &cast)
         if err != nil {
             return err

@@ -53,8 +53,7 @@ func (m *SynchronizationSecretKeyStringValuePair) GetFieldDeserializers()(map[st
             return err
         }
         if val != nil {
-            cast := val.(SynchronizationSecret)
-            m.SetKey(&cast)
+            m.SetKey(val.(*SynchronizationSecret))
         }
         return nil
     }
@@ -76,7 +75,7 @@ func (m *SynchronizationSecretKeyStringValuePair) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *SynchronizationSecretKeyStringValuePair) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetKey() != nil {
-        cast := m.GetKey().String()
+        cast := (*m.GetKey()).String()
         err := writer.WriteStringValue("key", &cast)
         if err != nil {
             return err

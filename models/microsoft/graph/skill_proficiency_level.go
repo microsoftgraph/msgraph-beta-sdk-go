@@ -19,21 +19,24 @@ func (i SkillProficiencyLevel) String() string {
     return []string{"ELEMENTARY", "LIMITEDWORKING", "GENERALPROFESSIONAL", "ADVANCEDPROFESSIONAL", "EXPERT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSkillProficiencyLevel(v string) (interface{}, error) {
+    result := ELEMENTARY_SKILLPROFICIENCYLEVEL
     switch strings.ToUpper(v) {
         case "ELEMENTARY":
-            return ELEMENTARY_SKILLPROFICIENCYLEVEL, nil
+            result = ELEMENTARY_SKILLPROFICIENCYLEVEL
         case "LIMITEDWORKING":
-            return LIMITEDWORKING_SKILLPROFICIENCYLEVEL, nil
+            result = LIMITEDWORKING_SKILLPROFICIENCYLEVEL
         case "GENERALPROFESSIONAL":
-            return GENERALPROFESSIONAL_SKILLPROFICIENCYLEVEL, nil
+            result = GENERALPROFESSIONAL_SKILLPROFICIENCYLEVEL
         case "ADVANCEDPROFESSIONAL":
-            return ADVANCEDPROFESSIONAL_SKILLPROFICIENCYLEVEL, nil
+            result = ADVANCEDPROFESSIONAL_SKILLPROFICIENCYLEVEL
         case "EXPERT":
-            return EXPERT_SKILLPROFICIENCYLEVEL, nil
+            result = EXPERT_SKILLPROFICIENCYLEVEL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SKILLPROFICIENCYLEVEL, nil
+            result = UNKNOWNFUTUREVALUE_SKILLPROFICIENCYLEVEL
+        default:
+            return 0, errors.New("Unknown SkillProficiencyLevel value: " + v)
     }
-    return 0, errors.New("Unknown SkillProficiencyLevel value: " + v)
+    return &result, nil
 }
 func SerializeSkillProficiencyLevel(values []SkillProficiencyLevel) []string {
     result := make([]string, len(values))

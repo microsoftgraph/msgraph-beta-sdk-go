@@ -68,8 +68,7 @@ func (m *GetMailTipsRequestBody) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MailTipsType)
-            m.SetMailTipsOptions(&cast)
+            m.SetMailTipsOptions(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MailTipsType))
         }
         return nil
     }
@@ -87,7 +86,7 @@ func (m *GetMailTipsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetMailTipsOptions() != nil {
-        cast := m.GetMailTipsOptions().String()
+        cast := (*m.GetMailTipsOptions()).String()
         err := writer.WriteStringValue("mailTipsOptions", &cast)
         if err != nil {
             return err

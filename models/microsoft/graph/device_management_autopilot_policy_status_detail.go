@@ -85,8 +85,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementAutopilotPolicyComplianceStatus)
-            m.SetComplianceStatus(&cast)
+            m.SetComplianceStatus(val.(*DeviceManagementAutopilotPolicyComplianceStatus))
         }
         return nil
     }
@@ -126,8 +125,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementAutopilotPolicyType)
-            m.SetPolicyType(&cast)
+            m.SetPolicyType(val.(*DeviceManagementAutopilotPolicyType))
         }
         return nil
     }
@@ -153,7 +151,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) Serialize(writer i04eb5309
         return err
     }
     if m.GetComplianceStatus() != nil {
-        cast := m.GetComplianceStatus().String()
+        cast := (*m.GetComplianceStatus()).String()
         err = writer.WriteStringValue("complianceStatus", &cast)
         if err != nil {
             return err
@@ -178,7 +176,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) Serialize(writer i04eb5309
         }
     }
     if m.GetPolicyType() != nil {
-        cast := m.GetPolicyType().String()
+        cast := (*m.GetPolicyType()).String()
         err = writer.WriteStringValue("policyType", &cast)
         if err != nil {
             return err

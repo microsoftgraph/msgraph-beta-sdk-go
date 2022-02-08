@@ -19,21 +19,24 @@ func (i EducationSynchronizationProfileState) String() string {
     return []string{"DELETING", "DELETIONFAILED", "PROVISIONINGFAILED", "PROVISIONED", "PROVISIONING", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseEducationSynchronizationProfileState(v string) (interface{}, error) {
+    result := DELETING_EDUCATIONSYNCHRONIZATIONPROFILESTATE
     switch strings.ToUpper(v) {
         case "DELETING":
-            return DELETING_EDUCATIONSYNCHRONIZATIONPROFILESTATE, nil
+            result = DELETING_EDUCATIONSYNCHRONIZATIONPROFILESTATE
         case "DELETIONFAILED":
-            return DELETIONFAILED_EDUCATIONSYNCHRONIZATIONPROFILESTATE, nil
+            result = DELETIONFAILED_EDUCATIONSYNCHRONIZATIONPROFILESTATE
         case "PROVISIONINGFAILED":
-            return PROVISIONINGFAILED_EDUCATIONSYNCHRONIZATIONPROFILESTATE, nil
+            result = PROVISIONINGFAILED_EDUCATIONSYNCHRONIZATIONPROFILESTATE
         case "PROVISIONED":
-            return PROVISIONED_EDUCATIONSYNCHRONIZATIONPROFILESTATE, nil
+            result = PROVISIONED_EDUCATIONSYNCHRONIZATIONPROFILESTATE
         case "PROVISIONING":
-            return PROVISIONING_EDUCATIONSYNCHRONIZATIONPROFILESTATE, nil
+            result = PROVISIONING_EDUCATIONSYNCHRONIZATIONPROFILESTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EDUCATIONSYNCHRONIZATIONPROFILESTATE, nil
+            result = UNKNOWNFUTUREVALUE_EDUCATIONSYNCHRONIZATIONPROFILESTATE
+        default:
+            return 0, errors.New("Unknown EducationSynchronizationProfileState value: " + v)
     }
-    return 0, errors.New("Unknown EducationSynchronizationProfileState value: " + v)
+    return &result, nil
 }
 func SerializeEducationSynchronizationProfileState(values []EducationSynchronizationProfileState) []string {
     result := make([]string, len(values))

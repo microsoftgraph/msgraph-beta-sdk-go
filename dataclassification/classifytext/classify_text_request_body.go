@@ -94,8 +94,7 @@ func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MlClassificationMatchTolerance)
-            m.SetMatchTolerancesToInclude(&cast)
+            m.SetMatchTolerancesToInclude(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MlClassificationMatchTolerance))
         }
         return nil
     }
@@ -105,8 +104,7 @@ func (m *ClassifyTextRequestBody) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveTypeScope)
-            m.SetScopesToRun(&cast)
+            m.SetScopesToRun(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.SensitiveTypeScope))
         }
         return nil
     }
@@ -148,14 +146,14 @@ func (m *ClassifyTextRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetMatchTolerancesToInclude() != nil {
-        cast := m.GetMatchTolerancesToInclude().String()
+        cast := (*m.GetMatchTolerancesToInclude()).String()
         err := writer.WriteStringValue("matchTolerancesToInclude", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetScopesToRun() != nil {
-        cast := m.GetScopesToRun().String()
+        cast := (*m.GetScopesToRun()).String()
         err := writer.WriteStringValue("scopesToRun", &cast)
         if err != nil {
             return err

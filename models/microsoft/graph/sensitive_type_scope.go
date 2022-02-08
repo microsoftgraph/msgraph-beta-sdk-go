@@ -15,13 +15,16 @@ func (i SensitiveTypeScope) String() string {
     return []string{"FULLDOCUMENT", "PARTIALDOCUMENT"}[i]
 }
 func ParseSensitiveTypeScope(v string) (interface{}, error) {
+    result := FULLDOCUMENT_SENSITIVETYPESCOPE
     switch strings.ToUpper(v) {
         case "FULLDOCUMENT":
-            return FULLDOCUMENT_SENSITIVETYPESCOPE, nil
+            result = FULLDOCUMENT_SENSITIVETYPESCOPE
         case "PARTIALDOCUMENT":
-            return PARTIALDOCUMENT_SENSITIVETYPESCOPE, nil
+            result = PARTIALDOCUMENT_SENSITIVETYPESCOPE
+        default:
+            return 0, errors.New("Unknown SensitiveTypeScope value: " + v)
     }
-    return 0, errors.New("Unknown SensitiveTypeScope value: " + v)
+    return &result, nil
 }
 func SerializeSensitiveTypeScope(values []SensitiveTypeScope) []string {
     result := make([]string, len(values))

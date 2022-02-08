@@ -44,8 +44,7 @@ func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(MeetingAudience)
-            m.SetAllowedRegistrant(&cast)
+            m.SetAllowedRegistrant(val.(*MeetingAudience))
         }
         return nil
     }
@@ -75,7 +74,7 @@ func (m *MeetingRegistrationBase) Serialize(writer i04eb5309aeaafadd28374d79c847
         return err
     }
     if m.GetAllowedRegistrant() != nil {
-        cast := m.GetAllowedRegistrant().String()
+        cast := (*m.GetAllowedRegistrant()).String()
         err = writer.WriteStringValue("allowedRegistrant", &cast)
         if err != nil {
             return err

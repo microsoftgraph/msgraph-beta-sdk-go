@@ -16,15 +16,18 @@ func (i PlannerContainerType) String() string {
     return []string{"GROUP", "UNKNOWNFUTUREVALUE", "ROSTER"}[i]
 }
 func ParsePlannerContainerType(v string) (interface{}, error) {
+    result := GROUP_PLANNERCONTAINERTYPE
     switch strings.ToUpper(v) {
         case "GROUP":
-            return GROUP_PLANNERCONTAINERTYPE, nil
+            result = GROUP_PLANNERCONTAINERTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PLANNERCONTAINERTYPE, nil
+            result = UNKNOWNFUTUREVALUE_PLANNERCONTAINERTYPE
         case "ROSTER":
-            return ROSTER_PLANNERCONTAINERTYPE, nil
+            result = ROSTER_PLANNERCONTAINERTYPE
+        default:
+            return 0, errors.New("Unknown PlannerContainerType value: " + v)
     }
-    return 0, errors.New("Unknown PlannerContainerType value: " + v)
+    return &result, nil
 }
 func SerializePlannerContainerType(values []PlannerContainerType) []string {
     result := make([]string, len(values))

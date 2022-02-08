@@ -177,8 +177,7 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(RuleMode)
-            m.SetRuleMode(&cast)
+            m.SetRuleMode(val.(*RuleMode))
         }
         return nil
     }
@@ -241,7 +240,7 @@ func (m *MatchingDlpRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetRuleMode() != nil {
-        cast := m.GetRuleMode().String()
+        cast := (*m.GetRuleMode()).String()
         err := writer.WriteStringValue("ruleMode", &cast)
         if err != nil {
             return err

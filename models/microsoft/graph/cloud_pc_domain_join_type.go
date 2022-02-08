@@ -16,15 +16,18 @@ func (i CloudPcDomainJoinType) String() string {
     return []string{"AZUREADJOIN", "HYBRIDAZUREADJOIN", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCloudPcDomainJoinType(v string) (interface{}, error) {
+    result := AZUREADJOIN_CLOUDPCDOMAINJOINTYPE
     switch strings.ToUpper(v) {
         case "AZUREADJOIN":
-            return AZUREADJOIN_CLOUDPCDOMAINJOINTYPE, nil
+            result = AZUREADJOIN_CLOUDPCDOMAINJOINTYPE
         case "HYBRIDAZUREADJOIN":
-            return HYBRIDAZUREADJOIN_CLOUDPCDOMAINJOINTYPE, nil
+            result = HYBRIDAZUREADJOIN_CLOUDPCDOMAINJOINTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CLOUDPCDOMAINJOINTYPE, nil
+            result = UNKNOWNFUTUREVALUE_CLOUDPCDOMAINJOINTYPE
+        default:
+            return 0, errors.New("Unknown CloudPcDomainJoinType value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcDomainJoinType value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcDomainJoinType(values []CloudPcDomainJoinType) []string {
     result := make([]string, len(values))

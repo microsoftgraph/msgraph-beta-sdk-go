@@ -84,8 +84,7 @@ func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(MembershipRuleProcessingStatusDetails)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*MembershipRuleProcessingStatusDetails))
         }
         return nil
     }
@@ -109,7 +108,7 @@ func (m *MembershipRuleProcessingStatus) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err := writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

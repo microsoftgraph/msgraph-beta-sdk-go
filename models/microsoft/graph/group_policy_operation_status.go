@@ -17,17 +17,20 @@ func (i GroupPolicyOperationStatus) String() string {
     return []string{"UNKNOWN", "INPROGRESS", "SUCCESS", "FAILED"}[i]
 }
 func ParseGroupPolicyOperationStatus(v string) (interface{}, error) {
+    result := UNKNOWN_GROUPPOLICYOPERATIONSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_GROUPPOLICYOPERATIONSTATUS, nil
+            result = UNKNOWN_GROUPPOLICYOPERATIONSTATUS
         case "INPROGRESS":
-            return INPROGRESS_GROUPPOLICYOPERATIONSTATUS, nil
+            result = INPROGRESS_GROUPPOLICYOPERATIONSTATUS
         case "SUCCESS":
-            return SUCCESS_GROUPPOLICYOPERATIONSTATUS, nil
+            result = SUCCESS_GROUPPOLICYOPERATIONSTATUS
         case "FAILED":
-            return FAILED_GROUPPOLICYOPERATIONSTATUS, nil
+            result = FAILED_GROUPPOLICYOPERATIONSTATUS
+        default:
+            return 0, errors.New("Unknown GroupPolicyOperationStatus value: " + v)
     }
-    return 0, errors.New("Unknown GroupPolicyOperationStatus value: " + v)
+    return &result, nil
 }
 func SerializeGroupPolicyOperationStatus(values []GroupPolicyOperationStatus) []string {
     result := make([]string, len(values))

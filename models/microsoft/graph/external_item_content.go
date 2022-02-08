@@ -9,7 +9,7 @@ import (
 type ExternalItemContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The type of content in the value property. Possible values are text and html. Required.
+    // The type of content in the value property. Possible values are: text, html, unknownFutureValue.
     type_escaped *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalItemContentType;
     // The content for the externalItem. Required.
     value *string;
@@ -29,7 +29,7 @@ func (m *ExternalItemContent) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetType gets the type property value. The type of content in the value property. Possible values are text and html. Required.
+// GetType gets the type property value. The type of content in the value property. Possible values are: text, html, unknownFutureValue.
 func (m *ExternalItemContent) GetType()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalItemContentType) {
     if m == nil {
         return nil
@@ -54,8 +54,7 @@ func (m *ExternalItemContent) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalItemContentType)
-            m.SetType(&cast)
+            m.SetType(val.(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalItemContentType))
         }
         return nil
     }
@@ -77,7 +76,7 @@ func (m *ExternalItemContent) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ExternalItemContent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -103,7 +102,7 @@ func (m *ExternalItemContent) SetAdditionalData(value map[string]interface{})() 
         m.additionalData = value
     }
 }
-// SetType sets the type property value. The type of content in the value property. Possible values are text and html. Required.
+// SetType sets the type property value. The type of content in the value property. Possible values are: text, html, unknownFutureValue.
 func (m *ExternalItemContent) SetType(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ExternalItemContentType)() {
     if m != nil {
         m.type_escaped = value

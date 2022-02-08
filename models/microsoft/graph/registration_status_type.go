@@ -18,19 +18,22 @@ func (i RegistrationStatusType) String() string {
     return []string{"REGISTERED", "ENABLED", "CAPABLE", "MFAREGISTERED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRegistrationStatusType(v string) (interface{}, error) {
+    result := REGISTERED_REGISTRATIONSTATUSTYPE
     switch strings.ToUpper(v) {
         case "REGISTERED":
-            return REGISTERED_REGISTRATIONSTATUSTYPE, nil
+            result = REGISTERED_REGISTRATIONSTATUSTYPE
         case "ENABLED":
-            return ENABLED_REGISTRATIONSTATUSTYPE, nil
+            result = ENABLED_REGISTRATIONSTATUSTYPE
         case "CAPABLE":
-            return CAPABLE_REGISTRATIONSTATUSTYPE, nil
+            result = CAPABLE_REGISTRATIONSTATUSTYPE
         case "MFAREGISTERED":
-            return MFAREGISTERED_REGISTRATIONSTATUSTYPE, nil
+            result = MFAREGISTERED_REGISTRATIONSTATUSTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_REGISTRATIONSTATUSTYPE, nil
+            result = UNKNOWNFUTUREVALUE_REGISTRATIONSTATUSTYPE
+        default:
+            return 0, errors.New("Unknown RegistrationStatusType value: " + v)
     }
-    return 0, errors.New("Unknown RegistrationStatusType value: " + v)
+    return &result, nil
 }
 func SerializeRegistrationStatusType(values []RegistrationStatusType) []string {
     result := make([]string, len(values))

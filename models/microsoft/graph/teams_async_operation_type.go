@@ -22,27 +22,30 @@ func (i TeamsAsyncOperationType) String() string {
     return []string{"INVALID", "CLONETEAM", "ARCHIVETEAM", "UNARCHIVETEAM", "CREATETEAM", "UNKNOWNFUTUREVALUE", "TEAMIFYGROUP", "CREATECHANNEL", "CREATECHAT"}[i]
 }
 func ParseTeamsAsyncOperationType(v string) (interface{}, error) {
+    result := INVALID_TEAMSASYNCOPERATIONTYPE
     switch strings.ToUpper(v) {
         case "INVALID":
-            return INVALID_TEAMSASYNCOPERATIONTYPE, nil
+            result = INVALID_TEAMSASYNCOPERATIONTYPE
         case "CLONETEAM":
-            return CLONETEAM_TEAMSASYNCOPERATIONTYPE, nil
+            result = CLONETEAM_TEAMSASYNCOPERATIONTYPE
         case "ARCHIVETEAM":
-            return ARCHIVETEAM_TEAMSASYNCOPERATIONTYPE, nil
+            result = ARCHIVETEAM_TEAMSASYNCOPERATIONTYPE
         case "UNARCHIVETEAM":
-            return UNARCHIVETEAM_TEAMSASYNCOPERATIONTYPE, nil
+            result = UNARCHIVETEAM_TEAMSASYNCOPERATIONTYPE
         case "CREATETEAM":
-            return CREATETEAM_TEAMSASYNCOPERATIONTYPE, nil
+            result = CREATETEAM_TEAMSASYNCOPERATIONTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMSASYNCOPERATIONTYPE, nil
+            result = UNKNOWNFUTUREVALUE_TEAMSASYNCOPERATIONTYPE
         case "TEAMIFYGROUP":
-            return TEAMIFYGROUP_TEAMSASYNCOPERATIONTYPE, nil
+            result = TEAMIFYGROUP_TEAMSASYNCOPERATIONTYPE
         case "CREATECHANNEL":
-            return CREATECHANNEL_TEAMSASYNCOPERATIONTYPE, nil
+            result = CREATECHANNEL_TEAMSASYNCOPERATIONTYPE
         case "CREATECHAT":
-            return CREATECHAT_TEAMSASYNCOPERATIONTYPE, nil
+            result = CREATECHAT_TEAMSASYNCOPERATIONTYPE
+        default:
+            return 0, errors.New("Unknown TeamsAsyncOperationType value: " + v)
     }
-    return 0, errors.New("Unknown TeamsAsyncOperationType value: " + v)
+    return &result, nil
 }
 func SerializeTeamsAsyncOperationType(values []TeamsAsyncOperationType) []string {
     result := make([]string, len(values))

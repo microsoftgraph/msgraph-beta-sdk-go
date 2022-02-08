@@ -54,8 +54,7 @@ func (m *RemoteAssistanceSettings) GetFieldDeserializers()(map[string]func(inter
             return err
         }
         if val != nil {
-            cast := val.(RemoteAssistanceState)
-            m.SetRemoteAssistanceState(&cast)
+            m.SetRemoteAssistanceState(val.(*RemoteAssistanceState))
         }
         return nil
     }
@@ -77,7 +76,7 @@ func (m *RemoteAssistanceSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
         }
     }
     if m.GetRemoteAssistanceState() != nil {
-        cast := m.GetRemoteAssistanceState().String()
+        cast := (*m.GetRemoteAssistanceState()).String()
         err = writer.WriteStringValue("remoteAssistanceState", &cast)
         if err != nil {
             return err

@@ -17,17 +17,20 @@ func (i BookingStaffRole) String() string {
     return []string{"GUEST", "ADMINISTRATOR", "VIEWER", "EXTERNALGUEST"}[i]
 }
 func ParseBookingStaffRole(v string) (interface{}, error) {
+    result := GUEST_BOOKINGSTAFFROLE
     switch strings.ToUpper(v) {
         case "GUEST":
-            return GUEST_BOOKINGSTAFFROLE, nil
+            result = GUEST_BOOKINGSTAFFROLE
         case "ADMINISTRATOR":
-            return ADMINISTRATOR_BOOKINGSTAFFROLE, nil
+            result = ADMINISTRATOR_BOOKINGSTAFFROLE
         case "VIEWER":
-            return VIEWER_BOOKINGSTAFFROLE, nil
+            result = VIEWER_BOOKINGSTAFFROLE
         case "EXTERNALGUEST":
-            return EXTERNALGUEST_BOOKINGSTAFFROLE, nil
+            result = EXTERNALGUEST_BOOKINGSTAFFROLE
+        default:
+            return 0, errors.New("Unknown BookingStaffRole value: " + v)
     }
-    return 0, errors.New("Unknown BookingStaffRole value: " + v)
+    return &result, nil
 }
 func SerializeBookingStaffRole(values []BookingStaffRole) []string {
     result := make([]string, len(values))

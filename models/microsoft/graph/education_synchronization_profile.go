@@ -202,8 +202,7 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(EducationSynchronizationProfileState)
-            m.SetState(&cast)
+            m.SetState(val.(*EducationSynchronizationProfileState))
         }
         return nil
     }
@@ -277,7 +276,7 @@ func (m *EducationSynchronizationProfile) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

@@ -19,21 +19,24 @@ func (i Modality) String() string {
     return []string{"UNKNOWN", "AUDIO", "VIDEO", "VIDEOBASEDSCREENSHARING", "DATA", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseModality(v string) (interface{}, error) {
+    result := UNKNOWN_MODALITY
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_MODALITY, nil
+            result = UNKNOWN_MODALITY
         case "AUDIO":
-            return AUDIO_MODALITY, nil
+            result = AUDIO_MODALITY
         case "VIDEO":
-            return VIDEO_MODALITY, nil
+            result = VIDEO_MODALITY
         case "VIDEOBASEDSCREENSHARING":
-            return VIDEOBASEDSCREENSHARING_MODALITY, nil
+            result = VIDEOBASEDSCREENSHARING_MODALITY
         case "DATA":
-            return DATA_MODALITY, nil
+            result = DATA_MODALITY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MODALITY, nil
+            result = UNKNOWNFUTUREVALUE_MODALITY
+        default:
+            return 0, errors.New("Unknown Modality value: " + v)
     }
-    return 0, errors.New("Unknown Modality value: " + v)
+    return &result, nil
 }
 func SerializeModality(values []Modality) []string {
     result := make([]string, len(values))

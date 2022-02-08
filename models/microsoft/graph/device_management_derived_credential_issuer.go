@@ -17,17 +17,20 @@ func (i DeviceManagementDerivedCredentialIssuer) String() string {
     return []string{"INTERCEDE", "ENTRUSTDATACARD", "PUREBRED", "XTEC"}[i]
 }
 func ParseDeviceManagementDerivedCredentialIssuer(v string) (interface{}, error) {
+    result := INTERCEDE_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
     switch strings.ToUpper(v) {
         case "INTERCEDE":
-            return INTERCEDE_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER, nil
+            result = INTERCEDE_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
         case "ENTRUSTDATACARD":
-            return ENTRUSTDATACARD_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER, nil
+            result = ENTRUSTDATACARD_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
         case "PUREBRED":
-            return PUREBRED_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER, nil
+            result = PUREBRED_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
         case "XTEC":
-            return XTEC_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER, nil
+            result = XTEC_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
+        default:
+            return 0, errors.New("Unknown DeviceManagementDerivedCredentialIssuer value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementDerivedCredentialIssuer value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementDerivedCredentialIssuer(values []DeviceManagementDerivedCredentialIssuer) []string {
     result := make([]string, len(values))

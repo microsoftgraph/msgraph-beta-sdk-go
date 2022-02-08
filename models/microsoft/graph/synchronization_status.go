@@ -154,8 +154,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(SynchronizationStatusCode)
-            m.SetCode(&cast)
+            m.SetCode(val.(*SynchronizationStatusCode))
         }
         return nil
     }
@@ -285,7 +284,7 @@ func (m *SynchronizationStatus) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *SynchronizationStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetCode() != nil {
-        cast := m.GetCode().String()
+        cast := (*m.GetCode()).String()
         err := writer.WriteStringValue("code", &cast)
         if err != nil {
             return err

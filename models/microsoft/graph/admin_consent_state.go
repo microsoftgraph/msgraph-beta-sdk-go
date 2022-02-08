@@ -16,15 +16,18 @@ func (i AdminConsentState) String() string {
     return []string{"NOTCONFIGURED", "GRANTED", "NOTGRANTED"}[i]
 }
 func ParseAdminConsentState(v string) (interface{}, error) {
+    result := NOTCONFIGURED_ADMINCONSENTSTATE
     switch strings.ToUpper(v) {
         case "NOTCONFIGURED":
-            return NOTCONFIGURED_ADMINCONSENTSTATE, nil
+            result = NOTCONFIGURED_ADMINCONSENTSTATE
         case "GRANTED":
-            return GRANTED_ADMINCONSENTSTATE, nil
+            result = GRANTED_ADMINCONSENTSTATE
         case "NOTGRANTED":
-            return NOTGRANTED_ADMINCONSENTSTATE, nil
+            result = NOTGRANTED_ADMINCONSENTSTATE
+        default:
+            return 0, errors.New("Unknown AdminConsentState value: " + v)
     }
-    return 0, errors.New("Unknown AdminConsentState value: " + v)
+    return &result, nil
 }
 func SerializeAdminConsentState(values []AdminConsentState) []string {
     result := make([]string, len(values))

@@ -16,15 +16,18 @@ func (i GroupPolicySettingScope) String() string {
     return []string{"UNKNOWN", "DEVICE", "USER"}[i]
 }
 func ParseGroupPolicySettingScope(v string) (interface{}, error) {
+    result := UNKNOWN_GROUPPOLICYSETTINGSCOPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_GROUPPOLICYSETTINGSCOPE, nil
+            result = UNKNOWN_GROUPPOLICYSETTINGSCOPE
         case "DEVICE":
-            return DEVICE_GROUPPOLICYSETTINGSCOPE, nil
+            result = DEVICE_GROUPPOLICYSETTINGSCOPE
         case "USER":
-            return USER_GROUPPOLICYSETTINGSCOPE, nil
+            result = USER_GROUPPOLICYSETTINGSCOPE
+        default:
+            return 0, errors.New("Unknown GroupPolicySettingScope value: " + v)
     }
-    return 0, errors.New("Unknown GroupPolicySettingScope value: " + v)
+    return &result, nil
 }
 func SerializeGroupPolicySettingScope(values []GroupPolicySettingScope) []string {
     result := make([]string, len(values))

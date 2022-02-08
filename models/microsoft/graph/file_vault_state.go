@@ -17,17 +17,20 @@ func (i FileVaultState) String() string {
     return []string{"SUCCESS", "DRIVEENCRYPTEDBYUSER", "USERDEFERREDENCRYPTION", "ESCROWNOTENABLED"}[i]
 }
 func ParseFileVaultState(v string) (interface{}, error) {
+    result := SUCCESS_FILEVAULTSTATE
     switch strings.ToUpper(v) {
         case "SUCCESS":
-            return SUCCESS_FILEVAULTSTATE, nil
+            result = SUCCESS_FILEVAULTSTATE
         case "DRIVEENCRYPTEDBYUSER":
-            return DRIVEENCRYPTEDBYUSER_FILEVAULTSTATE, nil
+            result = DRIVEENCRYPTEDBYUSER_FILEVAULTSTATE
         case "USERDEFERREDENCRYPTION":
-            return USERDEFERREDENCRYPTION_FILEVAULTSTATE, nil
+            result = USERDEFERREDENCRYPTION_FILEVAULTSTATE
         case "ESCROWNOTENABLED":
-            return ESCROWNOTENABLED_FILEVAULTSTATE, nil
+            result = ESCROWNOTENABLED_FILEVAULTSTATE
+        default:
+            return 0, errors.New("Unknown FileVaultState value: " + v)
     }
-    return 0, errors.New("Unknown FileVaultState value: " + v)
+    return &result, nil
 }
 func SerializeFileVaultState(values []FileVaultState) []string {
     result := make([]string, len(values))

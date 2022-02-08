@@ -146,7 +146,7 @@ type DeviceManagement struct {
     importedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentity;
     // The device management intents
     intents []DeviceManagementIntent;
-    // Intune Account ID for given tenant
+    // Intune Account Id for given tenant
     intuneAccountId *string;
     // intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
     intuneBrand *IntuneBrand;
@@ -190,6 +190,8 @@ type DeviceManagement struct {
     ndesConnectors []NdesConnector;
     // The Notification Message Templates.
     notificationMessageTemplates []NotificationMessageTemplate;
+    // List of OEM Warranty Statuses
+    oemWarrantyInformationOnboarding []OemWarrantyInformationOnboarding;
     // The list of device remote action audits with the tenant.
     remoteActionAudits []RemoteActionAudit;
     // The remote assist partners.
@@ -312,6 +314,8 @@ type DeviceManagement struct {
     userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric;
     // User experience analytics work from anywhere metrics.
     userExperienceAnalyticsWorkFromAnywhereMetrics []UserExperienceAnalyticsWorkFromAnywhereMetric;
+    // The user experience analytics work from anywhere model performance
+    userExperienceAnalyticsWorkFromAnywhereModelPerformance []UserExperienceAnalyticsWorkFromAnywhereModelPerformance;
     // Collection of PFX certificates associated with a user.
     userPfxCertificates []UserPFXCertificate;
     // 
@@ -898,7 +902,7 @@ func (m *DeviceManagement) GetIntents()([]DeviceManagementIntent) {
         return m.intents
     }
 }
-// GetIntuneAccountId gets the intuneAccountId property value. Intune Account ID for given tenant
+// GetIntuneAccountId gets the intuneAccountId property value. Intune Account Id for given tenant
 func (m *DeviceManagement) GetIntuneAccountId()(*string) {
     if m == nil {
         return nil
@@ -1072,6 +1076,14 @@ func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessa
         return nil
     } else {
         return m.notificationMessageTemplates
+    }
+}
+// GetOemWarrantyInformationOnboarding gets the oemWarrantyInformationOnboarding property value. List of OEM Warranty Statuses
+func (m *DeviceManagement) GetOemWarrantyInformationOnboarding()([]OemWarrantyInformationOnboarding) {
+    if m == nil {
+        return nil
+    } else {
+        return m.oemWarrantyInformationOnboarding
     }
 }
 // GetRemoteActionAudits gets the remoteActionAudits property value. The list of device remote action audits with the tenant.
@@ -1560,6 +1572,14 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsWorkFromAnywhereMetrics()([
         return nil
     } else {
         return m.userExperienceAnalyticsWorkFromAnywhereMetrics
+    }
+}
+// GetUserExperienceAnalyticsWorkFromAnywhereModelPerformance gets the userExperienceAnalyticsWorkFromAnywhereModelPerformance property value. The user experience analytics work from anywhere model performance
+func (m *DeviceManagement) GetUserExperienceAnalyticsWorkFromAnywhereModelPerformance()([]UserExperienceAnalyticsWorkFromAnywhereModelPerformance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsWorkFromAnywhereModelPerformance
     }
 }
 // GetUserPfxCertificates gets the userPfxCertificates property value. Collection of PFX certificates associated with a user.
@@ -2863,6 +2883,20 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
+    res["oemWarrantyInformationOnboarding"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewOemWarrantyInformationOnboarding() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OemWarrantyInformationOnboarding, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OemWarrantyInformationOnboarding))
+            }
+            m.SetOemWarrantyInformationOnboarding(res)
+        }
+        return nil
+    }
     res["remoteActionAudits"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRemoteActionAudit() })
         if err != nil {
@@ -3049,8 +3083,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementSubscriptions)
-            m.SetSubscriptions(&cast)
+            m.SetSubscriptions(val.(*DeviceManagementSubscriptions))
         }
         return nil
     }
@@ -3060,8 +3093,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementSubscriptionState)
-            m.SetSubscriptionState(&cast)
+            m.SetSubscriptionState(val.(*DeviceManagementSubscriptionState))
         }
         return nil
     }
@@ -3660,6 +3692,20 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
                 res[i] = *(v.(*UserExperienceAnalyticsWorkFromAnywhereMetric))
             }
             m.SetUserExperienceAnalyticsWorkFromAnywhereMetrics(res)
+        }
+        return nil
+    }
+    res["userExperienceAnalyticsWorkFromAnywhereModelPerformance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserExperienceAnalyticsWorkFromAnywhereModelPerformance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserExperienceAnalyticsWorkFromAnywhereModelPerformance))
+            }
+            m.SetUserExperienceAnalyticsWorkFromAnywhereModelPerformance(res)
         }
         return nil
     }
@@ -4745,6 +4791,17 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
+    if m.GetOemWarrantyInformationOnboarding() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOemWarrantyInformationOnboarding()))
+        for i, v := range m.GetOemWarrantyInformationOnboarding() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("oemWarrantyInformationOnboarding", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRemoteActionAudits() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRemoteActionAudits()))
         for i, v := range m.GetRemoteActionAudits() {
@@ -4880,14 +4937,14 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetSubscriptions() != nil {
-        cast := m.GetSubscriptions().String()
+        cast := (*m.GetSubscriptions()).String()
         err = writer.WriteStringValue("subscriptions", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetSubscriptionState() != nil {
-        cast := m.GetSubscriptionState().String()
+        cast := (*m.GetSubscriptionState()).String()
         err = writer.WriteStringValue("subscriptionState", &cast)
         if err != nil {
             return err
@@ -5344,6 +5401,17 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
         }
         err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsWorkFromAnywhereMetrics", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUserExperienceAnalyticsWorkFromAnywhereModelPerformance() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserExperienceAnalyticsWorkFromAnywhereModelPerformance()))
+        for i, v := range m.GetUserExperienceAnalyticsWorkFromAnywhereModelPerformance() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsWorkFromAnywhereModelPerformance", cast)
         if err != nil {
             return err
         }
@@ -5892,7 +5960,7 @@ func (m *DeviceManagement) SetIntents(value []DeviceManagementIntent)() {
         m.intents = value
     }
 }
-// SetIntuneAccountId sets the intuneAccountId property value. Intune Account ID for given tenant
+// SetIntuneAccountId sets the intuneAccountId property value. Intune Account Id for given tenant
 func (m *DeviceManagement) SetIntuneAccountId(value *string)() {
     if m != nil {
         m.intuneAccountId = value
@@ -6022,6 +6090,12 @@ func (m *DeviceManagement) SetNdesConnectors(value []NdesConnector)() {
 func (m *DeviceManagement) SetNotificationMessageTemplates(value []NotificationMessageTemplate)() {
     if m != nil {
         m.notificationMessageTemplates = value
+    }
+}
+// SetOemWarrantyInformationOnboarding sets the oemWarrantyInformationOnboarding property value. List of OEM Warranty Statuses
+func (m *DeviceManagement) SetOemWarrantyInformationOnboarding(value []OemWarrantyInformationOnboarding)() {
+    if m != nil {
+        m.oemWarrantyInformationOnboarding = value
     }
 }
 // SetRemoteActionAudits sets the remoteActionAudits property value. The list of device remote action audits with the tenant.
@@ -6388,6 +6462,12 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsWorkFromAnywhereHardwareRea
 func (m *DeviceManagement) SetUserExperienceAnalyticsWorkFromAnywhereMetrics(value []UserExperienceAnalyticsWorkFromAnywhereMetric)() {
     if m != nil {
         m.userExperienceAnalyticsWorkFromAnywhereMetrics = value
+    }
+}
+// SetUserExperienceAnalyticsWorkFromAnywhereModelPerformance sets the userExperienceAnalyticsWorkFromAnywhereModelPerformance property value. The user experience analytics work from anywhere model performance
+func (m *DeviceManagement) SetUserExperienceAnalyticsWorkFromAnywhereModelPerformance(value []UserExperienceAnalyticsWorkFromAnywhereModelPerformance)() {
+    if m != nil {
+        m.userExperienceAnalyticsWorkFromAnywhereModelPerformance = value
     }
 }
 // SetUserPfxCertificates sets the userPfxCertificates property value. Collection of PFX certificates associated with a user.

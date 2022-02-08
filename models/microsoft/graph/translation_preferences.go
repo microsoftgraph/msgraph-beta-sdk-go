@@ -77,8 +77,7 @@ func (m *TranslationPreferences) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(TranslationBehavior)
-            m.SetTranslationBehavior(&cast)
+            m.SetTranslationBehavior(val.(*TranslationBehavior))
         }
         return nil
     }
@@ -115,7 +114,7 @@ func (m *TranslationPreferences) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetTranslationBehavior() != nil {
-        cast := m.GetTranslationBehavior().String()
+        cast := (*m.GetTranslationBehavior()).String()
         err := writer.WriteStringValue("translationBehavior", &cast)
         if err != nil {
             return err

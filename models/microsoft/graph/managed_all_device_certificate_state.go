@@ -195,8 +195,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
             return err
         }
         if val != nil {
-            cast := val.(CertificateRevocationStatus)
-            m.SetCertificateRevokeStatus(&cast)
+            m.SetCertificateRevokeStatus(val.(*CertificateRevocationStatus))
         }
         return nil
     }
@@ -302,7 +301,7 @@ func (m *ManagedAllDeviceCertificateState) Serialize(writer i04eb5309aeaafadd283
         }
     }
     if m.GetCertificateRevokeStatus() != nil {
-        cast := m.GetCertificateRevokeStatus().String()
+        cast := (*m.GetCertificateRevokeStatus()).String()
         err = writer.WriteStringValue("certificateRevokeStatus", &cast)
         if err != nil {
             return err

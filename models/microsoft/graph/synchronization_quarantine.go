@@ -124,8 +124,7 @@ func (m *SynchronizationQuarantine) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(QuarantineReason)
-            m.SetReason(&cast)
+            m.SetReason(val.(*QuarantineReason))
         }
         return nil
     }
@@ -175,7 +174,7 @@ func (m *SynchronizationQuarantine) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     if m.GetReason() != nil {
-        cast := m.GetReason().String()
+        cast := (*m.GetReason()).String()
         err := writer.WriteStringValue("reason", &cast)
         if err != nil {
             return err

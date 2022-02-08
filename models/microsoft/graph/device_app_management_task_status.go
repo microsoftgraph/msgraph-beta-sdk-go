@@ -18,19 +18,22 @@ func (i DeviceAppManagementTaskStatus) String() string {
     return []string{"UNKNOWN", "PENDING", "ACTIVE", "COMPLETED", "REJECTED"}[i]
 }
 func ParseDeviceAppManagementTaskStatus(v string) (interface{}, error) {
+    result := UNKNOWN_DEVICEAPPMANAGEMENTTASKSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_DEVICEAPPMANAGEMENTTASKSTATUS, nil
+            result = UNKNOWN_DEVICEAPPMANAGEMENTTASKSTATUS
         case "PENDING":
-            return PENDING_DEVICEAPPMANAGEMENTTASKSTATUS, nil
+            result = PENDING_DEVICEAPPMANAGEMENTTASKSTATUS
         case "ACTIVE":
-            return ACTIVE_DEVICEAPPMANAGEMENTTASKSTATUS, nil
+            result = ACTIVE_DEVICEAPPMANAGEMENTTASKSTATUS
         case "COMPLETED":
-            return COMPLETED_DEVICEAPPMANAGEMENTTASKSTATUS, nil
+            result = COMPLETED_DEVICEAPPMANAGEMENTTASKSTATUS
         case "REJECTED":
-            return REJECTED_DEVICEAPPMANAGEMENTTASKSTATUS, nil
+            result = REJECTED_DEVICEAPPMANAGEMENTTASKSTATUS
+        default:
+            return 0, errors.New("Unknown DeviceAppManagementTaskStatus value: " + v)
     }
-    return 0, errors.New("Unknown DeviceAppManagementTaskStatus value: " + v)
+    return &result, nil
 }
 func SerializeDeviceAppManagementTaskStatus(values []DeviceAppManagementTaskStatus) []string {
     result := make([]string, len(values))

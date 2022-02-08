@@ -83,8 +83,7 @@ func (m *TeamworkSoftwareUpdateStatus) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(TeamworkSoftwareFreshness)
-            m.SetSoftwareFreshness(&cast)
+            m.SetSoftwareFreshness(val.(*TeamworkSoftwareFreshness))
         }
         return nil
     }
@@ -108,7 +107,7 @@ func (m *TeamworkSoftwareUpdateStatus) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     if m.GetSoftwareFreshness() != nil {
-        cast := m.GetSoftwareFreshness().String()
+        cast := (*m.GetSoftwareFreshness()).String()
         err := writer.WriteStringValue("softwareFreshness", &cast)
         if err != nil {
             return err

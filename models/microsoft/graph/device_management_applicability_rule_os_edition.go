@@ -87,8 +87,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementApplicabilityRuleType)
-            m.SetRuleType(&cast)
+            m.SetRuleType(val.(*DeviceManagementApplicabilityRuleType))
         }
         return nil
     }
@@ -112,7 +111,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) Serialize(writer i04eb5309a
         }
     }
     if m.GetRuleType() != nil {
-        cast := m.GetRuleType().String()
+        cast := (*m.GetRuleType()).String()
         err := writer.WriteStringValue("ruleType", &cast)
         if err != nil {
             return err

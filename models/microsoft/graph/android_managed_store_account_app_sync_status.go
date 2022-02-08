@@ -19,21 +19,24 @@ func (i AndroidManagedStoreAccountAppSyncStatus) String() string {
     return []string{"SUCCESS", "CREDENTIALSNOTVALID", "ANDROIDFORWORKAPIERROR", "MANAGEMENTSERVICEERROR", "UNKNOWNERROR", "NONE"}[i]
 }
 func ParseAndroidManagedStoreAccountAppSyncStatus(v string) (interface{}, error) {
+    result := SUCCESS_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
     switch strings.ToUpper(v) {
         case "SUCCESS":
-            return SUCCESS_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS, nil
+            result = SUCCESS_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
         case "CREDENTIALSNOTVALID":
-            return CREDENTIALSNOTVALID_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS, nil
+            result = CREDENTIALSNOTVALID_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
         case "ANDROIDFORWORKAPIERROR":
-            return ANDROIDFORWORKAPIERROR_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS, nil
+            result = ANDROIDFORWORKAPIERROR_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
         case "MANAGEMENTSERVICEERROR":
-            return MANAGEMENTSERVICEERROR_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS, nil
+            result = MANAGEMENTSERVICEERROR_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
         case "UNKNOWNERROR":
-            return UNKNOWNERROR_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS, nil
+            result = UNKNOWNERROR_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
         case "NONE":
-            return NONE_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS, nil
+            result = NONE_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
+        default:
+            return 0, errors.New("Unknown AndroidManagedStoreAccountAppSyncStatus value: " + v)
     }
-    return 0, errors.New("Unknown AndroidManagedStoreAccountAppSyncStatus value: " + v)
+    return &result, nil
 }
 func SerializeAndroidManagedStoreAccountAppSyncStatus(values []AndroidManagedStoreAccountAppSyncStatus) []string {
     result := make([]string, len(values))

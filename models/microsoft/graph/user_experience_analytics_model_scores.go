@@ -21,6 +21,8 @@ type UserExperienceAnalyticsModelScores struct {
     modelDeviceCount *int64;
     // The user experience analytics model startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     startupPerformanceScore *float64;
+    // The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    workFromAnywhereScore *float64;
 }
 // NewUserExperienceAnalyticsModelScores instantiates a new userExperienceAnalyticsModelScores and sets the default values.
 func NewUserExperienceAnalyticsModelScores()(*UserExperienceAnalyticsModelScores) {
@@ -85,6 +87,14 @@ func (m *UserExperienceAnalyticsModelScores) GetStartupPerformanceScore()(*float
         return m.startupPerformanceScore
     }
 }
+// GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsModelScores) GetWorkFromAnywhereScore()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.workFromAnywhereScore
+    }
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -114,8 +124,7 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
             return err
         }
         if val != nil {
-            cast := val.(UserExperienceAnalyticsHealthState)
-            m.SetHealthStatus(&cast)
+            m.SetHealthStatus(val.(*UserExperienceAnalyticsHealthState))
         }
         return nil
     }
@@ -159,6 +168,16 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["workFromAnywhereScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetFloat64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkFromAnywhereScore(val)
+        }
+        return nil
+    }
     return res
 }
 func (m *UserExperienceAnalyticsModelScores) IsNil()(bool) {
@@ -183,7 +202,7 @@ func (m *UserExperienceAnalyticsModelScores) Serialize(writer i04eb5309aeaafadd2
         }
     }
     if m.GetHealthStatus() != nil {
-        cast := m.GetHealthStatus().String()
+        cast := (*m.GetHealthStatus()).String()
         err = writer.WriteStringValue("healthStatus", &cast)
         if err != nil {
             return err
@@ -209,6 +228,12 @@ func (m *UserExperienceAnalyticsModelScores) Serialize(writer i04eb5309aeaafadd2
     }
     {
         err = writer.WriteFloat64Value("startupPerformanceScore", m.GetStartupPerformanceScore())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteFloat64Value("workFromAnywhereScore", m.GetWorkFromAnywhereScore())
         if err != nil {
             return err
         }
@@ -255,5 +280,11 @@ func (m *UserExperienceAnalyticsModelScores) SetModelDeviceCount(value *int64)()
 func (m *UserExperienceAnalyticsModelScores) SetStartupPerformanceScore(value *float64)() {
     if m != nil {
         m.startupPerformanceScore = value
+    }
+}
+// SetWorkFromAnywhereScore sets the workFromAnywhereScore property value. The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsModelScores) SetWorkFromAnywhereScore(value *float64)() {
+    if m != nil {
+        m.workFromAnywhereScore = value
     }
 }

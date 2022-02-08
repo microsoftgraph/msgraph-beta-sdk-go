@@ -125,8 +125,7 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(EnrollmentState)
-            m.SetEnrollmentState(&cast)
+            m.SetEnrollmentState(val.(*EnrollmentState))
         }
         return nil
     }
@@ -146,8 +145,7 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(ImportedDeviceIdentityType)
-            m.SetImportedDeviceIdentityType(&cast)
+            m.SetImportedDeviceIdentityType(val.(*ImportedDeviceIdentityType))
         }
         return nil
     }
@@ -177,8 +175,7 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(Platform)
-            m.SetPlatform(&cast)
+            m.SetPlatform(val.(*Platform))
         }
         return nil
     }
@@ -206,7 +203,7 @@ func (m *ImportedDeviceIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetEnrollmentState() != nil {
-        cast := m.GetEnrollmentState().String()
+        cast := (*m.GetEnrollmentState()).String()
         err = writer.WriteStringValue("enrollmentState", &cast)
         if err != nil {
             return err
@@ -219,7 +216,7 @@ func (m *ImportedDeviceIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetImportedDeviceIdentityType() != nil {
-        cast := m.GetImportedDeviceIdentityType().String()
+        cast := (*m.GetImportedDeviceIdentityType()).String()
         err = writer.WriteStringValue("importedDeviceIdentityType", &cast)
         if err != nil {
             return err
@@ -238,7 +235,7 @@ func (m *ImportedDeviceIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetPlatform() != nil {
-        cast := m.GetPlatform().String()
+        cast := (*m.GetPlatform()).String()
         err = writer.WriteStringValue("platform", &cast)
         if err != nil {
             return err

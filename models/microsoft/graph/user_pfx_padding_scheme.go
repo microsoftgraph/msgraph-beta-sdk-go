@@ -19,21 +19,24 @@ func (i UserPfxPaddingScheme) String() string {
     return []string{"NONE", "PKCS1", "OAEPSHA1", "OAEPSHA256", "OAEPSHA384", "OAEPSHA512"}[i]
 }
 func ParseUserPfxPaddingScheme(v string) (interface{}, error) {
+    result := NONE_USERPFXPADDINGSCHEME
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_USERPFXPADDINGSCHEME, nil
+            result = NONE_USERPFXPADDINGSCHEME
         case "PKCS1":
-            return PKCS1_USERPFXPADDINGSCHEME, nil
+            result = PKCS1_USERPFXPADDINGSCHEME
         case "OAEPSHA1":
-            return OAEPSHA1_USERPFXPADDINGSCHEME, nil
+            result = OAEPSHA1_USERPFXPADDINGSCHEME
         case "OAEPSHA256":
-            return OAEPSHA256_USERPFXPADDINGSCHEME, nil
+            result = OAEPSHA256_USERPFXPADDINGSCHEME
         case "OAEPSHA384":
-            return OAEPSHA384_USERPFXPADDINGSCHEME, nil
+            result = OAEPSHA384_USERPFXPADDINGSCHEME
         case "OAEPSHA512":
-            return OAEPSHA512_USERPFXPADDINGSCHEME, nil
+            result = OAEPSHA512_USERPFXPADDINGSCHEME
+        default:
+            return 0, errors.New("Unknown UserPfxPaddingScheme value: " + v)
     }
-    return 0, errors.New("Unknown UserPfxPaddingScheme value: " + v)
+    return &result, nil
 }
 func SerializeUserPfxPaddingScheme(values []UserPfxPaddingScheme) []string {
     result := make([]string, len(values))

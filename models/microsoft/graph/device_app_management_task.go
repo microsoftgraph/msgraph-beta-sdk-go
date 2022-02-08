@@ -135,8 +135,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(DeviceAppManagementTaskCategory)
-            m.SetCategory(&cast)
+            m.SetCategory(val.(*DeviceAppManagementTaskCategory))
         }
         return nil
     }
@@ -206,8 +205,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(DeviceAppManagementTaskPriority)
-            m.SetPriority(&cast)
+            m.SetPriority(val.(*DeviceAppManagementTaskPriority))
         }
         return nil
     }
@@ -217,8 +215,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(DeviceAppManagementTaskStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*DeviceAppManagementTaskStatus))
         }
         return nil
     }
@@ -240,7 +237,7 @@ func (m *DeviceAppManagementTask) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetCategory() != nil {
-        cast := m.GetCategory().String()
+        cast := (*m.GetCategory()).String()
         err = writer.WriteStringValue("category", &cast)
         if err != nil {
             return err
@@ -283,14 +280,14 @@ func (m *DeviceAppManagementTask) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetPriority() != nil {
-        cast := m.GetPriority().String()
+        cast := (*m.GetPriority()).String()
         err = writer.WriteStringValue("priority", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

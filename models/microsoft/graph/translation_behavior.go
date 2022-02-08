@@ -16,15 +16,18 @@ func (i TranslationBehavior) String() string {
     return []string{"ASK", "YES", "NO"}[i]
 }
 func ParseTranslationBehavior(v string) (interface{}, error) {
+    result := ASK_TRANSLATIONBEHAVIOR
     switch strings.ToUpper(v) {
         case "ASK":
-            return ASK_TRANSLATIONBEHAVIOR, nil
+            result = ASK_TRANSLATIONBEHAVIOR
         case "YES":
-            return YES_TRANSLATIONBEHAVIOR, nil
+            result = YES_TRANSLATIONBEHAVIOR
         case "NO":
-            return NO_TRANSLATIONBEHAVIOR, nil
+            result = NO_TRANSLATIONBEHAVIOR
+        default:
+            return 0, errors.New("Unknown TranslationBehavior value: " + v)
     }
-    return 0, errors.New("Unknown TranslationBehavior value: " + v)
+    return &result, nil
 }
 func SerializeTranslationBehavior(values []TranslationBehavior) []string {
     result := make([]string, len(values))

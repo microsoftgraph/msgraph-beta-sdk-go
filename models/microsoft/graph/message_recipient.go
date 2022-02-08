@@ -54,8 +54,7 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(MessageStatus)
-            m.SetDeliveryStatus(&cast)
+            m.SetDeliveryStatus(val.(*MessageStatus))
         }
         return nil
     }
@@ -95,7 +94,7 @@ func (m *MessageRecipient) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         return err
     }
     if m.GetDeliveryStatus() != nil {
-        cast := m.GetDeliveryStatus().String()
+        cast := (*m.GetDeliveryStatus()).String()
         err = writer.WriteStringValue("deliveryStatus", &cast)
         if err != nil {
             return err

@@ -15,13 +15,16 @@ func (i RoleSummaryStatus) String() string {
     return []string{"OK", "BAD"}[i]
 }
 func ParseRoleSummaryStatus(v string) (interface{}, error) {
+    result := OK_ROLESUMMARYSTATUS
     switch strings.ToUpper(v) {
         case "OK":
-            return OK_ROLESUMMARYSTATUS, nil
+            result = OK_ROLESUMMARYSTATUS
         case "BAD":
-            return BAD_ROLESUMMARYSTATUS, nil
+            result = BAD_ROLESUMMARYSTATUS
+        default:
+            return 0, errors.New("Unknown RoleSummaryStatus value: " + v)
     }
-    return 0, errors.New("Unknown RoleSummaryStatus value: " + v)
+    return &result, nil
 }
 func SerializeRoleSummaryStatus(values []RoleSummaryStatus) []string {
     result := make([]string, len(values))

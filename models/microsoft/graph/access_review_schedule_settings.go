@@ -12,7 +12,9 @@ type AccessReviewScheduleSettings struct {
     applyActions []AccessReviewApplyAction;
     // Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
     autoApplyDecisionsEnabled *bool;
-    // Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
+    // 
+    decisionHistoriesForReviewersEnabled *bool;
+    // Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
     defaultDecision *string;
     // Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
     defaultDecisionEnabled *bool;
@@ -28,7 +30,7 @@ type AccessReviewScheduleSettings struct {
     recommendationLookBackDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Indicates whether decision recommendations are enabled or disabled.
     recommendationsEnabled *bool;
-    // Detailed settings for recurrence using the standard Outlook recurrence object. Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+    // Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
     recurrence *PatternedRecurrence;
     // Indicates whether reminders are enabled or disabled. Default value is false.
     reminderNotificationsEnabled *bool;
@@ -64,7 +66,15 @@ func (m *AccessReviewScheduleSettings) GetAutoApplyDecisionsEnabled()(*bool) {
         return m.autoApplyDecisionsEnabled
     }
 }
-// GetDefaultDecision gets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
+// GetDecisionHistoriesForReviewersEnabled gets the decisionHistoriesForReviewersEnabled property value. 
+func (m *AccessReviewScheduleSettings) GetDecisionHistoriesForReviewersEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.decisionHistoriesForReviewersEnabled
+    }
+}
+// GetDefaultDecision gets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
 func (m *AccessReviewScheduleSettings) GetDefaultDecision()(*string) {
     if m == nil {
         return nil
@@ -128,7 +138,7 @@ func (m *AccessReviewScheduleSettings) GetRecommendationsEnabled()(*bool) {
         return m.recommendationsEnabled
     }
 }
-// GetRecurrence gets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object. Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+// GetRecurrence gets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
 func (m *AccessReviewScheduleSettings) GetRecurrence()(*PatternedRecurrence) {
     if m == nil {
         return nil
@@ -168,6 +178,16 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetAutoApplyDecisionsEnabled(val)
+        }
+        return nil
+    }
+    res["decisionHistoriesForReviewersEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDecisionHistoriesForReviewersEnabled(val)
         }
         return nil
     }
@@ -300,6 +320,12 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     {
+        err := writer.WriteBoolValue("decisionHistoriesForReviewersEnabled", m.GetDecisionHistoriesForReviewersEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("defaultDecision", m.GetDefaultDecision())
         if err != nil {
             return err
@@ -390,7 +416,13 @@ func (m *AccessReviewScheduleSettings) SetAutoApplyDecisionsEnabled(value *bool)
         m.autoApplyDecisionsEnabled = value
     }
 }
-// SetDefaultDecision sets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
+// SetDecisionHistoriesForReviewersEnabled sets the decisionHistoriesForReviewersEnabled property value. 
+func (m *AccessReviewScheduleSettings) SetDecisionHistoriesForReviewersEnabled(value *bool)() {
+    if m != nil {
+        m.decisionHistoriesForReviewersEnabled = value
+    }
+}
+// SetDefaultDecision sets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
 func (m *AccessReviewScheduleSettings) SetDefaultDecision(value *string)() {
     if m != nil {
         m.defaultDecision = value
@@ -438,7 +470,7 @@ func (m *AccessReviewScheduleSettings) SetRecommendationsEnabled(value *bool)() 
         m.recommendationsEnabled = value
     }
 }
-// SetRecurrence sets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object. Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+// SetRecurrence sets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
 func (m *AccessReviewScheduleSettings) SetRecurrence(value *PatternedRecurrence)() {
     if m != nil {
         m.recurrence = value

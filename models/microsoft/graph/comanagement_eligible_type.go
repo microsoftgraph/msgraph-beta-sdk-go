@@ -18,19 +18,22 @@ func (i ComanagementEligibleType) String() string {
     return []string{"COMANAGED", "ELIGIBLE", "ELIGIBLEBUTNOTAZUREADJOINED", "NEEDSOSUPDATE", "INELIGIBLE"}[i]
 }
 func ParseComanagementEligibleType(v string) (interface{}, error) {
+    result := COMANAGED_COMANAGEMENTELIGIBLETYPE
     switch strings.ToUpper(v) {
         case "COMANAGED":
-            return COMANAGED_COMANAGEMENTELIGIBLETYPE, nil
+            result = COMANAGED_COMANAGEMENTELIGIBLETYPE
         case "ELIGIBLE":
-            return ELIGIBLE_COMANAGEMENTELIGIBLETYPE, nil
+            result = ELIGIBLE_COMANAGEMENTELIGIBLETYPE
         case "ELIGIBLEBUTNOTAZUREADJOINED":
-            return ELIGIBLEBUTNOTAZUREADJOINED_COMANAGEMENTELIGIBLETYPE, nil
+            result = ELIGIBLEBUTNOTAZUREADJOINED_COMANAGEMENTELIGIBLETYPE
         case "NEEDSOSUPDATE":
-            return NEEDSOSUPDATE_COMANAGEMENTELIGIBLETYPE, nil
+            result = NEEDSOSUPDATE_COMANAGEMENTELIGIBLETYPE
         case "INELIGIBLE":
-            return INELIGIBLE_COMANAGEMENTELIGIBLETYPE, nil
+            result = INELIGIBLE_COMANAGEMENTELIGIBLETYPE
+        default:
+            return 0, errors.New("Unknown ComanagementEligibleType value: " + v)
     }
-    return 0, errors.New("Unknown ComanagementEligibleType value: " + v)
+    return &result, nil
 }
 func SerializeComanagementEligibleType(values []ComanagementEligibleType) []string {
     result := make([]string, len(values))

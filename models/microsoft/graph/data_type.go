@@ -28,39 +28,42 @@ func (i DataType) String() string {
     return []string{"NONE", "BOOLEAN", "INT64", "DOUBLE", "STRING", "DATETIME", "VERSION", "BASE64", "XML", "BOOLEANARRAY", "INT64ARRAY", "DOUBLEARRAY", "STRINGARRAY", "DATETIMEARRAY", "VERSIONARRAY"}[i]
 }
 func ParseDataType(v string) (interface{}, error) {
+    result := NONE_DATATYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DATATYPE, nil
+            result = NONE_DATATYPE
         case "BOOLEAN":
-            return BOOLEAN_DATATYPE, nil
+            result = BOOLEAN_DATATYPE
         case "INT64":
-            return INT64_DATATYPE, nil
+            result = INT64_DATATYPE
         case "DOUBLE":
-            return DOUBLE_DATATYPE, nil
+            result = DOUBLE_DATATYPE
         case "STRING":
-            return STRING_DATATYPE, nil
+            result = STRING_DATATYPE
         case "DATETIME":
-            return DATETIME_DATATYPE, nil
+            result = DATETIME_DATATYPE
         case "VERSION":
-            return VERSION_DATATYPE, nil
+            result = VERSION_DATATYPE
         case "BASE64":
-            return BASE64_DATATYPE, nil
+            result = BASE64_DATATYPE
         case "XML":
-            return XML_DATATYPE, nil
+            result = XML_DATATYPE
         case "BOOLEANARRAY":
-            return BOOLEANARRAY_DATATYPE, nil
+            result = BOOLEANARRAY_DATATYPE
         case "INT64ARRAY":
-            return INT64ARRAY_DATATYPE, nil
+            result = INT64ARRAY_DATATYPE
         case "DOUBLEARRAY":
-            return DOUBLEARRAY_DATATYPE, nil
+            result = DOUBLEARRAY_DATATYPE
         case "STRINGARRAY":
-            return STRINGARRAY_DATATYPE, nil
+            result = STRINGARRAY_DATATYPE
         case "DATETIMEARRAY":
-            return DATETIMEARRAY_DATATYPE, nil
+            result = DATETIMEARRAY_DATATYPE
         case "VERSIONARRAY":
-            return VERSIONARRAY_DATATYPE, nil
+            result = VERSIONARRAY_DATATYPE
+        default:
+            return 0, errors.New("Unknown DataType value: " + v)
     }
-    return 0, errors.New("Unknown DataType value: " + v)
+    return &result, nil
 }
 func SerializeDataType(values []DataType) []string {
     result := make([]string, len(values))

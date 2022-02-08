@@ -239,8 +239,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(GroupPolicyMigrationReadiness)
-            m.SetMigrationReadiness(&cast)
+            m.SetMigrationReadiness(val.(*GroupPolicyMigrationReadiness))
         }
         return nil
     }
@@ -367,7 +366,7 @@ func (m *GroupPolicyMigrationReport) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetMigrationReadiness() != nil {
-        cast := m.GetMigrationReadiness().String()
+        cast := (*m.GetMigrationReadiness()).String()
         err = writer.WriteStringValue("migrationReadiness", &cast)
         if err != nil {
             return err

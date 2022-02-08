@@ -17,17 +17,20 @@ func (i WindowsAutopilotSyncStatus) String() string {
     return []string{"UNKNOWN", "INPROGRESS", "COMPLETED", "FAILED"}[i]
 }
 func ParseWindowsAutopilotSyncStatus(v string) (interface{}, error) {
+    result := UNKNOWN_WINDOWSAUTOPILOTSYNCSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_WINDOWSAUTOPILOTSYNCSTATUS, nil
+            result = UNKNOWN_WINDOWSAUTOPILOTSYNCSTATUS
         case "INPROGRESS":
-            return INPROGRESS_WINDOWSAUTOPILOTSYNCSTATUS, nil
+            result = INPROGRESS_WINDOWSAUTOPILOTSYNCSTATUS
         case "COMPLETED":
-            return COMPLETED_WINDOWSAUTOPILOTSYNCSTATUS, nil
+            result = COMPLETED_WINDOWSAUTOPILOTSYNCSTATUS
         case "FAILED":
-            return FAILED_WINDOWSAUTOPILOTSYNCSTATUS, nil
+            result = FAILED_WINDOWSAUTOPILOTSYNCSTATUS
+        default:
+            return 0, errors.New("Unknown WindowsAutopilotSyncStatus value: " + v)
     }
-    return 0, errors.New("Unknown WindowsAutopilotSyncStatus value: " + v)
+    return &result, nil
 }
 func SerializeWindowsAutopilotSyncStatus(values []WindowsAutopilotSyncStatus) []string {
     result := make([]string, len(values))

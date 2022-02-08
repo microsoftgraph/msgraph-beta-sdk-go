@@ -17,17 +17,20 @@ func (i GroupAccessType) String() string {
     return []string{"NONE", "PRIVATE", "SECRET", "PUBLIC"}[i]
 }
 func ParseGroupAccessType(v string) (interface{}, error) {
+    result := NONE_GROUPACCESSTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_GROUPACCESSTYPE, nil
+            result = NONE_GROUPACCESSTYPE
         case "PRIVATE":
-            return PRIVATE_GROUPACCESSTYPE, nil
+            result = PRIVATE_GROUPACCESSTYPE
         case "SECRET":
-            return SECRET_GROUPACCESSTYPE, nil
+            result = SECRET_GROUPACCESSTYPE
         case "PUBLIC":
-            return PUBLIC_GROUPACCESSTYPE, nil
+            result = PUBLIC_GROUPACCESSTYPE
+        default:
+            return 0, errors.New("Unknown GroupAccessType value: " + v)
     }
-    return 0, errors.New("Unknown GroupAccessType value: " + v)
+    return &result, nil
 }
 func SerializeGroupAccessType(values []GroupAccessType) []string {
     result := make([]string, len(values))

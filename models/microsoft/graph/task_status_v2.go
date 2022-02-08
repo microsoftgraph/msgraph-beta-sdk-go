@@ -17,17 +17,20 @@ func (i TaskStatus_v2) String() string {
     return []string{"NOTSTARTED", "INPROGRESS", "COMPLETED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTaskStatus_v2(v string) (interface{}, error) {
+    result := NOTSTARTED_TASKSTATUS_V2
     switch strings.ToUpper(v) {
         case "NOTSTARTED":
-            return NOTSTARTED_TASKSTATUS_V2, nil
+            result = NOTSTARTED_TASKSTATUS_V2
         case "INPROGRESS":
-            return INPROGRESS_TASKSTATUS_V2, nil
+            result = INPROGRESS_TASKSTATUS_V2
         case "COMPLETED":
-            return COMPLETED_TASKSTATUS_V2, nil
+            result = COMPLETED_TASKSTATUS_V2
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TASKSTATUS_V2, nil
+            result = UNKNOWNFUTUREVALUE_TASKSTATUS_V2
+        default:
+            return 0, errors.New("Unknown TaskStatus_v2 value: " + v)
     }
-    return 0, errors.New("Unknown TaskStatus_v2 value: " + v)
+    return &result, nil
 }
 func SerializeTaskStatus_v2(values []TaskStatus_v2) []string {
     result := make([]string, len(values))

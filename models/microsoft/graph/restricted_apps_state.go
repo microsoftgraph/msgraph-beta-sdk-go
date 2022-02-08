@@ -15,13 +15,16 @@ func (i RestrictedAppsState) String() string {
     return []string{"PROHIBITEDAPPS", "NOTAPPROVEDAPPS"}[i]
 }
 func ParseRestrictedAppsState(v string) (interface{}, error) {
+    result := PROHIBITEDAPPS_RESTRICTEDAPPSSTATE
     switch strings.ToUpper(v) {
         case "PROHIBITEDAPPS":
-            return PROHIBITEDAPPS_RESTRICTEDAPPSSTATE, nil
+            result = PROHIBITEDAPPS_RESTRICTEDAPPSSTATE
         case "NOTAPPROVEDAPPS":
-            return NOTAPPROVEDAPPS_RESTRICTEDAPPSSTATE, nil
+            result = NOTAPPROVEDAPPS_RESTRICTEDAPPSSTATE
+        default:
+            return 0, errors.New("Unknown RestrictedAppsState value: " + v)
     }
-    return 0, errors.New("Unknown RestrictedAppsState value: " + v)
+    return &result, nil
 }
 func SerializeRestrictedAppsState(values []RestrictedAppsState) []string {
     result := make([]string, len(values))

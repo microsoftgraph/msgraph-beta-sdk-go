@@ -124,8 +124,7 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportOptions)
-            m.SetExportOptions(&cast)
+            m.SetExportOptions(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportOptions))
         }
         return nil
     }
@@ -135,8 +134,7 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportFileStructure)
-            m.SetExportStructure(&cast)
+            m.SetExportStructure(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ExportFileStructure))
         }
         return nil
     }
@@ -176,14 +174,14 @@ func (m *ExportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetExportOptions() != nil {
-        cast := m.GetExportOptions().String()
+        cast := (*m.GetExportOptions()).String()
         err := writer.WriteStringValue("exportOptions", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetExportStructure() != nil {
-        cast := m.GetExportStructure().String()
+        cast := (*m.GetExportStructure()).String()
         err := writer.WriteStringValue("exportStructure", &cast)
         if err != nil {
             return err

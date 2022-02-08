@@ -15,13 +15,16 @@ func (i ScheduledRetireState) String() string {
     return []string{"CANCELRETIRE", "COMFIRMRETIRE"}[i]
 }
 func ParseScheduledRetireState(v string) (interface{}, error) {
+    result := CANCELRETIRE_SCHEDULEDRETIRESTATE
     switch strings.ToUpper(v) {
         case "CANCELRETIRE":
-            return CANCELRETIRE_SCHEDULEDRETIRESTATE, nil
+            result = CANCELRETIRE_SCHEDULEDRETIRESTATE
         case "COMFIRMRETIRE":
-            return COMFIRMRETIRE_SCHEDULEDRETIRESTATE, nil
+            result = COMFIRMRETIRE_SCHEDULEDRETIRESTATE
+        default:
+            return 0, errors.New("Unknown ScheduledRetireState value: " + v)
     }
-    return 0, errors.New("Unknown ScheduledRetireState value: " + v)
+    return &result, nil
 }
 func SerializeScheduledRetireState(values []ScheduledRetireState) []string {
     result := make([]string, len(values))

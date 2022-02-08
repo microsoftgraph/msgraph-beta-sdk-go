@@ -17,17 +17,20 @@ func (i CloudPcAuditActorType) String() string {
     return []string{"ITPRO", "APPLICATION", "PARTNER", "UNKNOWN"}[i]
 }
 func ParseCloudPcAuditActorType(v string) (interface{}, error) {
+    result := ITPRO_CLOUDPCAUDITACTORTYPE
     switch strings.ToUpper(v) {
         case "ITPRO":
-            return ITPRO_CLOUDPCAUDITACTORTYPE, nil
+            result = ITPRO_CLOUDPCAUDITACTORTYPE
         case "APPLICATION":
-            return APPLICATION_CLOUDPCAUDITACTORTYPE, nil
+            result = APPLICATION_CLOUDPCAUDITACTORTYPE
         case "PARTNER":
-            return PARTNER_CLOUDPCAUDITACTORTYPE, nil
+            result = PARTNER_CLOUDPCAUDITACTORTYPE
         case "UNKNOWN":
-            return UNKNOWN_CLOUDPCAUDITACTORTYPE, nil
+            result = UNKNOWN_CLOUDPCAUDITACTORTYPE
+        default:
+            return 0, errors.New("Unknown CloudPcAuditActorType value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcAuditActorType value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcAuditActorType(values []CloudPcAuditActorType) []string {
     result := make([]string, len(values))

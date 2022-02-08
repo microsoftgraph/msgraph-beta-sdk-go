@@ -115,8 +115,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(RemoteAction)
-            m.SetAction(&cast)
+            m.SetAction(val.(*RemoteAction))
         }
         return nil
     }
@@ -126,8 +125,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(ActionState)
-            m.SetActionState(&cast)
+            m.SetActionState(val.(*ActionState))
         }
         return nil
     }
@@ -213,14 +211,14 @@ func (m *RemoteActionAudit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         return err
     }
     if m.GetAction() != nil {
-        cast := m.GetAction().String()
+        cast := (*m.GetAction()).String()
         err = writer.WriteStringValue("action", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetActionState() != nil {
-        cast := m.GetActionState().String()
+        cast := (*m.GetActionState()).String()
         err = writer.WriteStringValue("actionState", &cast)
         if err != nil {
             return err

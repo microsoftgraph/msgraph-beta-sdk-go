@@ -63,8 +63,7 @@ func (m *KerberosSignOnSettings) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(KerberosSignOnMappingAttributeType)
-            m.SetKerberosSignOnMappingAttributeType(&cast)
+            m.SetKerberosSignOnMappingAttributeType(val.(*KerberosSignOnMappingAttributeType))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *KerberosSignOnSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetKerberosSignOnMappingAttributeType() != nil {
-        cast := m.GetKerberosSignOnMappingAttributeType().String()
+        cast := (*m.GetKerberosSignOnMappingAttributeType()).String()
         err := writer.WriteStringValue("kerberosSignOnMappingAttributeType", &cast)
         if err != nil {
             return err

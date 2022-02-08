@@ -15,13 +15,16 @@ func (i DriverUpdateProfileApprovalType) String() string {
     return []string{"MANUAL", "AUTOMATIC"}[i]
 }
 func ParseDriverUpdateProfileApprovalType(v string) (interface{}, error) {
+    result := MANUAL_DRIVERUPDATEPROFILEAPPROVALTYPE
     switch strings.ToUpper(v) {
         case "MANUAL":
-            return MANUAL_DRIVERUPDATEPROFILEAPPROVALTYPE, nil
+            result = MANUAL_DRIVERUPDATEPROFILEAPPROVALTYPE
         case "AUTOMATIC":
-            return AUTOMATIC_DRIVERUPDATEPROFILEAPPROVALTYPE, nil
+            result = AUTOMATIC_DRIVERUPDATEPROFILEAPPROVALTYPE
+        default:
+            return 0, errors.New("Unknown DriverUpdateProfileApprovalType value: " + v)
     }
-    return 0, errors.New("Unknown DriverUpdateProfileApprovalType value: " + v)
+    return &result, nil
 }
 func SerializeDriverUpdateProfileApprovalType(values []DriverUpdateProfileApprovalType) []string {
     result := make([]string, len(values))

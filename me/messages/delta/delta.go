@@ -15,7 +15,7 @@ type Delta struct {
     bccRecipients []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient;
     // The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
     body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ItemBody;
-    // The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+    // The first 255 characters of the message body. It is in text format.
     bodyPreview *string;
     // The Cc: recipients for the message.
     ccRecipients []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Recipient;
@@ -109,7 +109,7 @@ func (m *Delta) GetBody()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097
         return m.body
     }
 }
-// GetBodyPreview gets the bodyPreview property value. The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+// GetBodyPreview gets the bodyPreview property value. The first 255 characters of the message body. It is in text format.
 func (m *Delta) GetBodyPreview()(*string) {
     if m == nil {
         return nil
@@ -492,8 +492,7 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Importance)
-            m.SetImportance(&cast)
+            m.SetImportance(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Importance))
         }
         return nil
     }
@@ -503,8 +502,7 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InferenceClassificationType)
-            m.SetInferenceClassification(&cast)
+            m.SetInferenceClassification(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.InferenceClassificationType))
         }
         return nil
     }
@@ -844,14 +842,14 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     if m.GetImportance() != nil {
-        cast := m.GetImportance().String()
+        cast := (*m.GetImportance()).String()
         err = writer.WriteStringValue("importance", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetInferenceClassification() != nil {
-        cast := m.GetInferenceClassification().String()
+        cast := (*m.GetInferenceClassification()).String()
         err = writer.WriteStringValue("inferenceClassification", &cast)
         if err != nil {
             return err
@@ -1033,7 +1031,7 @@ func (m *Delta) SetBody(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fb
         m.body = value
     }
 }
-// SetBodyPreview sets the bodyPreview property value. The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+// SetBodyPreview sets the bodyPreview property value. The first 255 characters of the message body. It is in text format.
 func (m *Delta) SetBodyPreview(value *string)() {
     if m != nil {
         m.bodyPreview = value

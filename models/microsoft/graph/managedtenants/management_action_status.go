@@ -23,29 +23,32 @@ func (i ManagementActionStatus) String() string {
     return []string{"TOADDRESS", "COMPLETED", "ERROR", "TIMEOUT", "INPROGRESS", "PLANNED", "RESOLVEDBY3RDPARTY", "RESOLVEDTHROUGHALTERNATEMITIGATION", "RISKACCEPTED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseManagementActionStatus(v string) (interface{}, error) {
+    result := TOADDRESS_MANAGEMENTACTIONSTATUS
     switch strings.ToUpper(v) {
         case "TOADDRESS":
-            return TOADDRESS_MANAGEMENTACTIONSTATUS, nil
+            result = TOADDRESS_MANAGEMENTACTIONSTATUS
         case "COMPLETED":
-            return COMPLETED_MANAGEMENTACTIONSTATUS, nil
+            result = COMPLETED_MANAGEMENTACTIONSTATUS
         case "ERROR":
-            return ERROR_MANAGEMENTACTIONSTATUS, nil
+            result = ERROR_MANAGEMENTACTIONSTATUS
         case "TIMEOUT":
-            return TIMEOUT_MANAGEMENTACTIONSTATUS, nil
+            result = TIMEOUT_MANAGEMENTACTIONSTATUS
         case "INPROGRESS":
-            return INPROGRESS_MANAGEMENTACTIONSTATUS, nil
+            result = INPROGRESS_MANAGEMENTACTIONSTATUS
         case "PLANNED":
-            return PLANNED_MANAGEMENTACTIONSTATUS, nil
+            result = PLANNED_MANAGEMENTACTIONSTATUS
         case "RESOLVEDBY3RDPARTY":
-            return RESOLVEDBY3RDPARTY_MANAGEMENTACTIONSTATUS, nil
+            result = RESOLVEDBY3RDPARTY_MANAGEMENTACTIONSTATUS
         case "RESOLVEDTHROUGHALTERNATEMITIGATION":
-            return RESOLVEDTHROUGHALTERNATEMITIGATION_MANAGEMENTACTIONSTATUS, nil
+            result = RESOLVEDTHROUGHALTERNATEMITIGATION_MANAGEMENTACTIONSTATUS
         case "RISKACCEPTED":
-            return RISKACCEPTED_MANAGEMENTACTIONSTATUS, nil
+            result = RISKACCEPTED_MANAGEMENTACTIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MANAGEMENTACTIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_MANAGEMENTACTIONSTATUS
+        default:
+            return 0, errors.New("Unknown ManagementActionStatus value: " + v)
     }
-    return 0, errors.New("Unknown ManagementActionStatus value: " + v)
+    return &result, nil
 }
 func SerializeManagementActionStatus(values []ManagementActionStatus) []string {
     result := make([]string, len(values))

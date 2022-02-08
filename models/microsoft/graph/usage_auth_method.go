@@ -24,31 +24,34 @@ func (i UsageAuthMethod) String() string {
     return []string{"EMAIL", "MOBILESMS", "MOBILECALL", "OFFICEPHONE", "SECURITYQUESTION", "APPNOTIFICATION", "APPCODE", "ALTERNATEMOBILECALL", "FIDO", "APPPASSWORD", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseUsageAuthMethod(v string) (interface{}, error) {
+    result := EMAIL_USAGEAUTHMETHOD
     switch strings.ToUpper(v) {
         case "EMAIL":
-            return EMAIL_USAGEAUTHMETHOD, nil
+            result = EMAIL_USAGEAUTHMETHOD
         case "MOBILESMS":
-            return MOBILESMS_USAGEAUTHMETHOD, nil
+            result = MOBILESMS_USAGEAUTHMETHOD
         case "MOBILECALL":
-            return MOBILECALL_USAGEAUTHMETHOD, nil
+            result = MOBILECALL_USAGEAUTHMETHOD
         case "OFFICEPHONE":
-            return OFFICEPHONE_USAGEAUTHMETHOD, nil
+            result = OFFICEPHONE_USAGEAUTHMETHOD
         case "SECURITYQUESTION":
-            return SECURITYQUESTION_USAGEAUTHMETHOD, nil
+            result = SECURITYQUESTION_USAGEAUTHMETHOD
         case "APPNOTIFICATION":
-            return APPNOTIFICATION_USAGEAUTHMETHOD, nil
+            result = APPNOTIFICATION_USAGEAUTHMETHOD
         case "APPCODE":
-            return APPCODE_USAGEAUTHMETHOD, nil
+            result = APPCODE_USAGEAUTHMETHOD
         case "ALTERNATEMOBILECALL":
-            return ALTERNATEMOBILECALL_USAGEAUTHMETHOD, nil
+            result = ALTERNATEMOBILECALL_USAGEAUTHMETHOD
         case "FIDO":
-            return FIDO_USAGEAUTHMETHOD, nil
+            result = FIDO_USAGEAUTHMETHOD
         case "APPPASSWORD":
-            return APPPASSWORD_USAGEAUTHMETHOD, nil
+            result = APPPASSWORD_USAGEAUTHMETHOD
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_USAGEAUTHMETHOD, nil
+            result = UNKNOWNFUTUREVALUE_USAGEAUTHMETHOD
+        default:
+            return 0, errors.New("Unknown UsageAuthMethod value: " + v)
     }
-    return 0, errors.New("Unknown UsageAuthMethod value: " + v)
+    return &result, nil
 }
 func SerializeUsageAuthMethod(values []UsageAuthMethod) []string {
     result := make([]string, len(values))

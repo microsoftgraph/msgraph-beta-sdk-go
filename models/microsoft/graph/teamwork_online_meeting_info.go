@@ -10,7 +10,7 @@ type TeamworkOnlineMeetingInfo struct {
     additionalData map[string]interface{};
     // The identifier of the calendar event associated with the meeting.
     calendarEventId *string;
-    // The URL which can be clicked on to join or uniquely identify the meeting.
+    // The URL that users click to join or uniquely identify the meeting.
     joinWebUrl *string;
     // The organizer of the meeting.
     organizer *TeamworkUserIdentity;
@@ -38,7 +38,7 @@ func (m *TeamworkOnlineMeetingInfo) GetCalendarEventId()(*string) {
         return m.calendarEventId
     }
 }
-// GetJoinWebUrl gets the joinWebUrl property value. The URL which can be clicked on to join or uniquely identify the meeting.
+// GetJoinWebUrl gets the joinWebUrl property value. The URL that users click to join or uniquely identify the meeting.
 func (m *TeamworkOnlineMeetingInfo) GetJoinWebUrl()(*string) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *TeamworkOnlineMeetingInfo) SetCalendarEventId(value *string)() {
         m.calendarEventId = value
     }
 }
-// SetJoinWebUrl sets the joinWebUrl property value. The URL which can be clicked on to join or uniquely identify the meeting.
+// SetJoinWebUrl sets the joinWebUrl property value. The URL that users click to join or uniquely identify the meeting.
 func (m *TeamworkOnlineMeetingInfo) SetJoinWebUrl(value *string)() {
     if m != nil {
         m.joinWebUrl = value

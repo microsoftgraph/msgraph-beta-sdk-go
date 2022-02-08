@@ -15,13 +15,16 @@ func (i WindowsUserType) String() string {
     return []string{"ADMINISTRATOR", "STANDARD"}[i]
 }
 func ParseWindowsUserType(v string) (interface{}, error) {
+    result := ADMINISTRATOR_WINDOWSUSERTYPE
     switch strings.ToUpper(v) {
         case "ADMINISTRATOR":
-            return ADMINISTRATOR_WINDOWSUSERTYPE, nil
+            result = ADMINISTRATOR_WINDOWSUSERTYPE
         case "STANDARD":
-            return STANDARD_WINDOWSUSERTYPE, nil
+            result = STANDARD_WINDOWSUSERTYPE
+        default:
+            return 0, errors.New("Unknown WindowsUserType value: " + v)
     }
-    return 0, errors.New("Unknown WindowsUserType value: " + v)
+    return &result, nil
 }
 func SerializeWindowsUserType(values []WindowsUserType) []string {
     result := make([]string, len(values))

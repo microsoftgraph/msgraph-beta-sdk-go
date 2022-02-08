@@ -114,8 +114,7 @@ func (m *ManagedDeviceMobileAppConfigurationState) GetFieldDeserializers()(map[s
             return err
         }
         if val != nil {
-            cast := val.(PolicyPlatformType)
-            m.SetPlatformType(&cast)
+            m.SetPlatformType(val.(*PolicyPlatformType))
         }
         return nil
     }
@@ -149,8 +148,7 @@ func (m *ManagedDeviceMobileAppConfigurationState) GetFieldDeserializers()(map[s
             return err
         }
         if val != nil {
-            cast := val.(ComplianceStatus)
-            m.SetState(&cast)
+            m.SetState(val.(*ComplianceStatus))
         }
         return nil
     }
@@ -202,7 +200,7 @@ func (m *ManagedDeviceMobileAppConfigurationState) Serialize(writer i04eb5309aea
         }
     }
     if m.GetPlatformType() != nil {
-        cast := m.GetPlatformType().String()
+        cast := (*m.GetPlatformType()).String()
         err = writer.WriteStringValue("platformType", &cast)
         if err != nil {
             return err
@@ -226,7 +224,7 @@ func (m *ManagedDeviceMobileAppConfigurationState) Serialize(writer i04eb5309aea
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

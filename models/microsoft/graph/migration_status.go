@@ -17,17 +17,20 @@ func (i MigrationStatus) String() string {
     return []string{"READY", "NEEDSREVIEW", "ADDITIONALSTEPSREQUIRED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseMigrationStatus(v string) (interface{}, error) {
+    result := READY_MIGRATIONSTATUS
     switch strings.ToUpper(v) {
         case "READY":
-            return READY_MIGRATIONSTATUS, nil
+            result = READY_MIGRATIONSTATUS
         case "NEEDSREVIEW":
-            return NEEDSREVIEW_MIGRATIONSTATUS, nil
+            result = NEEDSREVIEW_MIGRATIONSTATUS
         case "ADDITIONALSTEPSREQUIRED":
-            return ADDITIONALSTEPSREQUIRED_MIGRATIONSTATUS, nil
+            result = ADDITIONALSTEPSREQUIRED_MIGRATIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MIGRATIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_MIGRATIONSTATUS
+        default:
+            return 0, errors.New("Unknown MigrationStatus value: " + v)
     }
-    return 0, errors.New("Unknown MigrationStatus value: " + v)
+    return &result, nil
 }
 func SerializeMigrationStatus(values []MigrationStatus) []string {
     result := make([]string, len(values))

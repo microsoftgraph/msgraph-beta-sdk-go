@@ -18,19 +18,22 @@ func (i PayloadDeliveryPlatform) String() string {
     return []string{"UNKNOWN", "SMS", "EMAIL", "TEAMS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePayloadDeliveryPlatform(v string) (interface{}, error) {
+    result := UNKNOWN_PAYLOADDELIVERYPLATFORM
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_PAYLOADDELIVERYPLATFORM, nil
+            result = UNKNOWN_PAYLOADDELIVERYPLATFORM
         case "SMS":
-            return SMS_PAYLOADDELIVERYPLATFORM, nil
+            result = SMS_PAYLOADDELIVERYPLATFORM
         case "EMAIL":
-            return EMAIL_PAYLOADDELIVERYPLATFORM, nil
+            result = EMAIL_PAYLOADDELIVERYPLATFORM
         case "TEAMS":
-            return TEAMS_PAYLOADDELIVERYPLATFORM, nil
+            result = TEAMS_PAYLOADDELIVERYPLATFORM
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PAYLOADDELIVERYPLATFORM, nil
+            result = UNKNOWNFUTUREVALUE_PAYLOADDELIVERYPLATFORM
+        default:
+            return 0, errors.New("Unknown PayloadDeliveryPlatform value: " + v)
     }
-    return 0, errors.New("Unknown PayloadDeliveryPlatform value: " + v)
+    return &result, nil
 }
 func SerializePayloadDeliveryPlatform(values []PayloadDeliveryPlatform) []string {
     result := make([]string, len(values))

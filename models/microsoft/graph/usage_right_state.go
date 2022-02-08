@@ -18,19 +18,22 @@ func (i UsageRightState) String() string {
     return []string{"ACTIVE", "INACTIVE", "WARNING", "SUSPENDED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseUsageRightState(v string) (interface{}, error) {
+    result := ACTIVE_USAGERIGHTSTATE
     switch strings.ToUpper(v) {
         case "ACTIVE":
-            return ACTIVE_USAGERIGHTSTATE, nil
+            result = ACTIVE_USAGERIGHTSTATE
         case "INACTIVE":
-            return INACTIVE_USAGERIGHTSTATE, nil
+            result = INACTIVE_USAGERIGHTSTATE
         case "WARNING":
-            return WARNING_USAGERIGHTSTATE, nil
+            result = WARNING_USAGERIGHTSTATE
         case "SUSPENDED":
-            return SUSPENDED_USAGERIGHTSTATE, nil
+            result = SUSPENDED_USAGERIGHTSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_USAGERIGHTSTATE, nil
+            result = UNKNOWNFUTUREVALUE_USAGERIGHTSTATE
+        default:
+            return 0, errors.New("Unknown UsageRightState value: " + v)
     }
-    return 0, errors.New("Unknown UsageRightState value: " + v)
+    return &result, nil
 }
 func SerializeUsageRightState(values []UsageRightState) []string {
     result := make([]string, len(values))

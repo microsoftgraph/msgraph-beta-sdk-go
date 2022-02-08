@@ -63,8 +63,7 @@ func (m *DeviceLogCollectionRequest) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(DeviceLogCollectionTemplateType)
-            m.SetTemplateType(&cast)
+            m.SetTemplateType(val.(*DeviceLogCollectionTemplateType))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *DeviceLogCollectionRequest) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetTemplateType() != nil {
-        cast := m.GetTemplateType().String()
+        cast := (*m.GetTemplateType()).String()
         err := writer.WriteStringValue("templateType", &cast)
         if err != nil {
             return err

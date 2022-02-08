@@ -16,15 +16,18 @@ func (i NdesConnectorState) String() string {
     return []string{"NONE", "ACTIVE", "INACTIVE"}[i]
 }
 func ParseNdesConnectorState(v string) (interface{}, error) {
+    result := NONE_NDESCONNECTORSTATE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_NDESCONNECTORSTATE, nil
+            result = NONE_NDESCONNECTORSTATE
         case "ACTIVE":
-            return ACTIVE_NDESCONNECTORSTATE, nil
+            result = ACTIVE_NDESCONNECTORSTATE
         case "INACTIVE":
-            return INACTIVE_NDESCONNECTORSTATE, nil
+            result = INACTIVE_NDESCONNECTORSTATE
+        default:
+            return 0, errors.New("Unknown NdesConnectorState value: " + v)
     }
-    return 0, errors.New("Unknown NdesConnectorState value: " + v)
+    return &result, nil
 }
 func SerializeNdesConnectorState(values []NdesConnectorState) []string {
     result := make([]string, len(values))

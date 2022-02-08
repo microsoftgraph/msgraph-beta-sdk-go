@@ -114,8 +114,7 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(CloudPcServicePlanType)
-            m.SetType(&cast)
+            m.SetType(val.(*CloudPcServicePlanType))
         }
         return nil
     }
@@ -169,7 +168,7 @@ func (m *CloudPcServicePlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

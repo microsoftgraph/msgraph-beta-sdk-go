@@ -75,8 +75,7 @@ func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(GroupPolicyOperationStatus)
-            m.SetOperationStatus(&cast)
+            m.SetOperationStatus(val.(*GroupPolicyOperationStatus))
         }
         return nil
     }
@@ -86,8 +85,7 @@ func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(GroupPolicyOperationType)
-            m.SetOperationType(&cast)
+            m.SetOperationType(val.(*GroupPolicyOperationType))
         }
         return nil
     }
@@ -119,14 +117,14 @@ func (m *GroupPolicyOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetOperationStatus() != nil {
-        cast := m.GetOperationStatus().String()
+        cast := (*m.GetOperationStatus()).String()
         err = writer.WriteStringValue("operationStatus", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetOperationType() != nil {
-        cast := m.GetOperationType().String()
+        cast := (*m.GetOperationType()).String()
         err = writer.WriteStringValue("operationType", &cast)
         if err != nil {
             return err

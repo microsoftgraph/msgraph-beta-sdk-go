@@ -63,8 +63,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetFieldDeserializers()(ma
             return err
         }
         if val != nil {
-            cast := val.(Windows10DeviceModeType)
-            m.SetDeviceMode(&cast)
+            m.SetDeviceMode(val.(*Windows10DeviceModeType))
         }
         return nil
     }
@@ -84,8 +83,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetFieldDeserializers()(ma
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementApplicabilityRuleType)
-            m.SetRuleType(&cast)
+            m.SetRuleType(val.(*DeviceManagementApplicabilityRuleType))
         }
         return nil
     }
@@ -97,7 +95,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *DeviceManagementApplicabilityRuleDeviceMode) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDeviceMode() != nil {
-        cast := m.GetDeviceMode().String()
+        cast := (*m.GetDeviceMode()).String()
         err := writer.WriteStringValue("deviceMode", &cast)
         if err != nil {
             return err
@@ -110,7 +108,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) Serialize(writer i04eb5309
         }
     }
     if m.GetRuleType() != nil {
-        cast := m.GetRuleType().String()
+        cast := (*m.GetRuleType()).String()
         err := writer.WriteStringValue("ruleType", &cast)
         if err != nil {
             return err

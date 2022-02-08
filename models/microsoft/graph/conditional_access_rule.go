@@ -36,55 +36,58 @@ func (i ConditionalAccessRule) String() string {
     return []string{"ALLAPPS", "FIRSTPARTYAPPS", "OFFICE365", "APPID", "ACR", "APPFILTER", "ALLUSERS", "GUEST", "GROUPID", "ROLEID", "USERID", "ALLDEVICEPLATFORMS", "DEVICEPLATFORM", "ALLLOCATIONS", "INSIDECORPNET", "ALLTRUSTEDLOCATIONS", "LOCATIONID", "ALLDEVICES", "DEVICEFILTER", "DEVICESTATE", "UNKNOWNFUTUREVALUE", "DEVICEFILTERINCLUDERULENOTMATCHED", "ALLDEVICESTATES"}[i]
 }
 func ParseConditionalAccessRule(v string) (interface{}, error) {
+    result := ALLAPPS_CONDITIONALACCESSRULE
     switch strings.ToUpper(v) {
         case "ALLAPPS":
-            return ALLAPPS_CONDITIONALACCESSRULE, nil
+            result = ALLAPPS_CONDITIONALACCESSRULE
         case "FIRSTPARTYAPPS":
-            return FIRSTPARTYAPPS_CONDITIONALACCESSRULE, nil
+            result = FIRSTPARTYAPPS_CONDITIONALACCESSRULE
         case "OFFICE365":
-            return OFFICE365_CONDITIONALACCESSRULE, nil
+            result = OFFICE365_CONDITIONALACCESSRULE
         case "APPID":
-            return APPID_CONDITIONALACCESSRULE, nil
+            result = APPID_CONDITIONALACCESSRULE
         case "ACR":
-            return ACR_CONDITIONALACCESSRULE, nil
+            result = ACR_CONDITIONALACCESSRULE
         case "APPFILTER":
-            return APPFILTER_CONDITIONALACCESSRULE, nil
+            result = APPFILTER_CONDITIONALACCESSRULE
         case "ALLUSERS":
-            return ALLUSERS_CONDITIONALACCESSRULE, nil
+            result = ALLUSERS_CONDITIONALACCESSRULE
         case "GUEST":
-            return GUEST_CONDITIONALACCESSRULE, nil
+            result = GUEST_CONDITIONALACCESSRULE
         case "GROUPID":
-            return GROUPID_CONDITIONALACCESSRULE, nil
+            result = GROUPID_CONDITIONALACCESSRULE
         case "ROLEID":
-            return ROLEID_CONDITIONALACCESSRULE, nil
+            result = ROLEID_CONDITIONALACCESSRULE
         case "USERID":
-            return USERID_CONDITIONALACCESSRULE, nil
+            result = USERID_CONDITIONALACCESSRULE
         case "ALLDEVICEPLATFORMS":
-            return ALLDEVICEPLATFORMS_CONDITIONALACCESSRULE, nil
+            result = ALLDEVICEPLATFORMS_CONDITIONALACCESSRULE
         case "DEVICEPLATFORM":
-            return DEVICEPLATFORM_CONDITIONALACCESSRULE, nil
+            result = DEVICEPLATFORM_CONDITIONALACCESSRULE
         case "ALLLOCATIONS":
-            return ALLLOCATIONS_CONDITIONALACCESSRULE, nil
+            result = ALLLOCATIONS_CONDITIONALACCESSRULE
         case "INSIDECORPNET":
-            return INSIDECORPNET_CONDITIONALACCESSRULE, nil
+            result = INSIDECORPNET_CONDITIONALACCESSRULE
         case "ALLTRUSTEDLOCATIONS":
-            return ALLTRUSTEDLOCATIONS_CONDITIONALACCESSRULE, nil
+            result = ALLTRUSTEDLOCATIONS_CONDITIONALACCESSRULE
         case "LOCATIONID":
-            return LOCATIONID_CONDITIONALACCESSRULE, nil
+            result = LOCATIONID_CONDITIONALACCESSRULE
         case "ALLDEVICES":
-            return ALLDEVICES_CONDITIONALACCESSRULE, nil
+            result = ALLDEVICES_CONDITIONALACCESSRULE
         case "DEVICEFILTER":
-            return DEVICEFILTER_CONDITIONALACCESSRULE, nil
+            result = DEVICEFILTER_CONDITIONALACCESSRULE
         case "DEVICESTATE":
-            return DEVICESTATE_CONDITIONALACCESSRULE, nil
+            result = DEVICESTATE_CONDITIONALACCESSRULE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONDITIONALACCESSRULE, nil
+            result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSRULE
         case "DEVICEFILTERINCLUDERULENOTMATCHED":
-            return DEVICEFILTERINCLUDERULENOTMATCHED_CONDITIONALACCESSRULE, nil
+            result = DEVICEFILTERINCLUDERULENOTMATCHED_CONDITIONALACCESSRULE
         case "ALLDEVICESTATES":
-            return ALLDEVICESTATES_CONDITIONALACCESSRULE, nil
+            result = ALLDEVICESTATES_CONDITIONALACCESSRULE
+        default:
+            return 0, errors.New("Unknown ConditionalAccessRule value: " + v)
     }
-    return 0, errors.New("Unknown ConditionalAccessRule value: " + v)
+    return &result, nil
 }
 func SerializeConditionalAccessRule(values []ConditionalAccessRule) []string {
     result := make([]string, len(values))

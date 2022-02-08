@@ -18,19 +18,22 @@ func (i AccessLevel) String() string {
     return []string{"EVERYONE", "INVITED", "LOCKED", "SAMEENTERPRISE", "SAMEENTERPRISEANDFEDERATED"}[i]
 }
 func ParseAccessLevel(v string) (interface{}, error) {
+    result := EVERYONE_ACCESSLEVEL
     switch strings.ToUpper(v) {
         case "EVERYONE":
-            return EVERYONE_ACCESSLEVEL, nil
+            result = EVERYONE_ACCESSLEVEL
         case "INVITED":
-            return INVITED_ACCESSLEVEL, nil
+            result = INVITED_ACCESSLEVEL
         case "LOCKED":
-            return LOCKED_ACCESSLEVEL, nil
+            result = LOCKED_ACCESSLEVEL
         case "SAMEENTERPRISE":
-            return SAMEENTERPRISE_ACCESSLEVEL, nil
+            result = SAMEENTERPRISE_ACCESSLEVEL
         case "SAMEENTERPRISEANDFEDERATED":
-            return SAMEENTERPRISEANDFEDERATED_ACCESSLEVEL, nil
+            result = SAMEENTERPRISEANDFEDERATED_ACCESSLEVEL
+        default:
+            return 0, errors.New("Unknown AccessLevel value: " + v)
     }
-    return 0, errors.New("Unknown AccessLevel value: " + v)
+    return &result, nil
 }
 func SerializeAccessLevel(values []AccessLevel) []string {
     result := make([]string, len(values))

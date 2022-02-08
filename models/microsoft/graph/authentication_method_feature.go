@@ -18,19 +18,22 @@ func (i AuthenticationMethodFeature) String() string {
     return []string{"SSPRREGISTERED", "SSPRENABLED", "SSPRCAPABLE", "PASSWORDLESSCAPABLE", "MFACAPABLE"}[i]
 }
 func ParseAuthenticationMethodFeature(v string) (interface{}, error) {
+    result := SSPRREGISTERED_AUTHENTICATIONMETHODFEATURE
     switch strings.ToUpper(v) {
         case "SSPRREGISTERED":
-            return SSPRREGISTERED_AUTHENTICATIONMETHODFEATURE, nil
+            result = SSPRREGISTERED_AUTHENTICATIONMETHODFEATURE
         case "SSPRENABLED":
-            return SSPRENABLED_AUTHENTICATIONMETHODFEATURE, nil
+            result = SSPRENABLED_AUTHENTICATIONMETHODFEATURE
         case "SSPRCAPABLE":
-            return SSPRCAPABLE_AUTHENTICATIONMETHODFEATURE, nil
+            result = SSPRCAPABLE_AUTHENTICATIONMETHODFEATURE
         case "PASSWORDLESSCAPABLE":
-            return PASSWORDLESSCAPABLE_AUTHENTICATIONMETHODFEATURE, nil
+            result = PASSWORDLESSCAPABLE_AUTHENTICATIONMETHODFEATURE
         case "MFACAPABLE":
-            return MFACAPABLE_AUTHENTICATIONMETHODFEATURE, nil
+            result = MFACAPABLE_AUTHENTICATIONMETHODFEATURE
+        default:
+            return 0, errors.New("Unknown AuthenticationMethodFeature value: " + v)
     }
-    return 0, errors.New("Unknown AuthenticationMethodFeature value: " + v)
+    return &result, nil
 }
 func SerializeAuthenticationMethodFeature(values []AuthenticationMethodFeature) []string {
     result := make([]string, len(values))

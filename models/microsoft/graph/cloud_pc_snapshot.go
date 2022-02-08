@@ -95,8 +95,7 @@ func (m *CloudPcSnapshot) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(CloudPcSnapshotStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*CloudPcSnapshotStatus))
         }
         return nil
     }
@@ -130,7 +129,7 @@ func (m *CloudPcSnapshot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

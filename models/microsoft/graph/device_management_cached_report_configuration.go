@@ -183,8 +183,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementReportStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*DeviceManagementReportStatus))
         }
         return nil
     }
@@ -242,7 +241,7 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i04eb5309ae
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

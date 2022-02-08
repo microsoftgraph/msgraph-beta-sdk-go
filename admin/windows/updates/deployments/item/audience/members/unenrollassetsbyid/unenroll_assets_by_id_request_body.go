@@ -88,8 +88,7 @@ func (m *UnenrollAssetsByIdRequestBody) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            cast := val.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdateCategory)
-            m.SetUpdateCategory(&cast)
+            m.SetUpdateCategory(val.(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.UpdateCategory))
         }
         return nil
     }
@@ -113,7 +112,7 @@ func (m *UnenrollAssetsByIdRequestBody) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     if m.GetUpdateCategory() != nil {
-        cast := m.GetUpdateCategory().String()
+        cast := (*m.GetUpdateCategory()).String()
         err := writer.WriteStringValue("updateCategory", &cast)
         if err != nil {
             return err

@@ -19,21 +19,24 @@ func (i DeviceManangementIntentValueType) String() string {
     return []string{"INTEGER", "BOOLEAN", "STRING", "COMPLEX", "COLLECTION", "ABSTRACTCOMPLEX"}[i]
 }
 func ParseDeviceManangementIntentValueType(v string) (interface{}, error) {
+    result := INTEGER_DEVICEMANANGEMENTINTENTVALUETYPE
     switch strings.ToUpper(v) {
         case "INTEGER":
-            return INTEGER_DEVICEMANANGEMENTINTENTVALUETYPE, nil
+            result = INTEGER_DEVICEMANANGEMENTINTENTVALUETYPE
         case "BOOLEAN":
-            return BOOLEAN_DEVICEMANANGEMENTINTENTVALUETYPE, nil
+            result = BOOLEAN_DEVICEMANANGEMENTINTENTVALUETYPE
         case "STRING":
-            return STRING_DEVICEMANANGEMENTINTENTVALUETYPE, nil
+            result = STRING_DEVICEMANANGEMENTINTENTVALUETYPE
         case "COMPLEX":
-            return COMPLEX_DEVICEMANANGEMENTINTENTVALUETYPE, nil
+            result = COMPLEX_DEVICEMANANGEMENTINTENTVALUETYPE
         case "COLLECTION":
-            return COLLECTION_DEVICEMANANGEMENTINTENTVALUETYPE, nil
+            result = COLLECTION_DEVICEMANANGEMENTINTENTVALUETYPE
         case "ABSTRACTCOMPLEX":
-            return ABSTRACTCOMPLEX_DEVICEMANANGEMENTINTENTVALUETYPE, nil
+            result = ABSTRACTCOMPLEX_DEVICEMANANGEMENTINTENTVALUETYPE
+        default:
+            return 0, errors.New("Unknown DeviceManangementIntentValueType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManangementIntentValueType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManangementIntentValueType(values []DeviceManangementIntentValueType) []string {
     result := make([]string, len(values))

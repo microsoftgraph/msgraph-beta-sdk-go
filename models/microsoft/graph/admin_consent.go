@@ -53,8 +53,7 @@ func (m *AdminConsent) GetFieldDeserializers()(map[string]func(interface{}, i04e
             return err
         }
         if val != nil {
-            cast := val.(AdminConsentState)
-            m.SetShareAPNSData(&cast)
+            m.SetShareAPNSData(val.(*AdminConsentState))
         }
         return nil
     }
@@ -64,8 +63,7 @@ func (m *AdminConsent) GetFieldDeserializers()(map[string]func(interface{}, i04e
             return err
         }
         if val != nil {
-            cast := val.(AdminConsentState)
-            m.SetShareUserExperienceAnalyticsData(&cast)
+            m.SetShareUserExperienceAnalyticsData(val.(*AdminConsentState))
         }
         return nil
     }
@@ -77,14 +75,14 @@ func (m *AdminConsent) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *AdminConsent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetShareAPNSData() != nil {
-        cast := m.GetShareAPNSData().String()
+        cast := (*m.GetShareAPNSData()).String()
         err := writer.WriteStringValue("shareAPNSData", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetShareUserExperienceAnalyticsData() != nil {
-        cast := m.GetShareUserExperienceAnalyticsData().String()
+        cast := (*m.GetShareUserExperienceAnalyticsData()).String()
         err := writer.WriteStringValue("shareUserExperienceAnalyticsData", &cast)
         if err != nil {
             return err

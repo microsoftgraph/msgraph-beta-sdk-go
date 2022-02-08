@@ -96,8 +96,7 @@ func (m *CaseOperation) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CaseAction)
-            m.SetAction(&cast)
+            m.SetAction(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CaseAction))
         }
         return nil
     }
@@ -157,8 +156,7 @@ func (m *CaseOperation) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CaseOperationStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CaseOperationStatus))
         }
         return nil
     }
@@ -174,7 +172,7 @@ func (m *CaseOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         return err
     }
     if m.GetAction() != nil {
-        cast := m.GetAction().String()
+        cast := (*m.GetAction()).String()
         err = writer.WriteStringValue("action", &cast)
         if err != nil {
             return err
@@ -211,7 +209,7 @@ func (m *CaseOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

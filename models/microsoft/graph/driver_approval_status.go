@@ -17,17 +17,20 @@ func (i DriverApprovalStatus) String() string {
     return []string{"NEEDSREVIEW", "DECLINED", "APPROVED", "SUSPENDED"}[i]
 }
 func ParseDriverApprovalStatus(v string) (interface{}, error) {
+    result := NEEDSREVIEW_DRIVERAPPROVALSTATUS
     switch strings.ToUpper(v) {
         case "NEEDSREVIEW":
-            return NEEDSREVIEW_DRIVERAPPROVALSTATUS, nil
+            result = NEEDSREVIEW_DRIVERAPPROVALSTATUS
         case "DECLINED":
-            return DECLINED_DRIVERAPPROVALSTATUS, nil
+            result = DECLINED_DRIVERAPPROVALSTATUS
         case "APPROVED":
-            return APPROVED_DRIVERAPPROVALSTATUS, nil
+            result = APPROVED_DRIVERAPPROVALSTATUS
         case "SUSPENDED":
-            return SUSPENDED_DRIVERAPPROVALSTATUS, nil
+            result = SUSPENDED_DRIVERAPPROVALSTATUS
+        default:
+            return 0, errors.New("Unknown DriverApprovalStatus value: " + v)
     }
-    return 0, errors.New("Unknown DriverApprovalStatus value: " + v)
+    return &result, nil
 }
 func SerializeDriverApprovalStatus(values []DriverApprovalStatus) []string {
     result := make([]string, len(values))

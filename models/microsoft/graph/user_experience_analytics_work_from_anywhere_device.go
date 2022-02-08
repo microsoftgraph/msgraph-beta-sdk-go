@@ -474,8 +474,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
             return err
         }
         if val != nil {
-            cast := val.(UserExperienceAnalyticsHealthState)
-            m.SetHealthStatus(&cast)
+            m.SetHealthStatus(val.(*UserExperienceAnalyticsHealthState))
         }
         return nil
     }
@@ -675,8 +674,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
             return err
         }
         if val != nil {
-            cast := val.(OperatingSystemUpgradeEligibility)
-            m.SetUpgradeEligibility(&cast)
+            m.SetUpgradeEligibility(val.(*OperatingSystemUpgradeEligibility))
         }
         return nil
     }
@@ -778,7 +776,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) Serialize(writer i04eb53
         }
     }
     if m.GetHealthStatus() != nil {
-        cast := m.GetHealthStatus().String()
+        cast := (*m.GetHealthStatus()).String()
         err = writer.WriteStringValue("healthStatus", &cast)
         if err != nil {
             return err
@@ -899,7 +897,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) Serialize(writer i04eb53
         }
     }
     if m.GetUpgradeEligibility() != nil {
-        cast := m.GetUpgradeEligibility().String()
+        cast := (*m.GetUpgradeEligibility()).String()
         err = writer.WriteStringValue("upgradeEligibility", &cast)
         if err != nil {
             return err

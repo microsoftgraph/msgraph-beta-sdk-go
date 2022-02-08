@@ -224,8 +224,7 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceScopes)
-            m.SetDataSourceScopes(&cast)
+            m.SetDataSourceScopes(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceScopes))
         }
         return nil
     }
@@ -351,7 +350,7 @@ func (m *SourceCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetDataSourceScopes() != nil {
-        cast := m.GetDataSourceScopes().String()
+        cast := (*m.GetDataSourceScopes()).String()
         err = writer.WriteStringValue("dataSourceScopes", &cast)
         if err != nil {
             return err

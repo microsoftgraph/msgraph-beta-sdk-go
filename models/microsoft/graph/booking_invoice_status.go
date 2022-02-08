@@ -19,21 +19,24 @@ func (i BookingInvoiceStatus) String() string {
     return []string{"DRAFT", "REVIEWING", "OPEN", "CANCELED", "PAID", "CORRECTIVE"}[i]
 }
 func ParseBookingInvoiceStatus(v string) (interface{}, error) {
+    result := DRAFT_BOOKINGINVOICESTATUS
     switch strings.ToUpper(v) {
         case "DRAFT":
-            return DRAFT_BOOKINGINVOICESTATUS, nil
+            result = DRAFT_BOOKINGINVOICESTATUS
         case "REVIEWING":
-            return REVIEWING_BOOKINGINVOICESTATUS, nil
+            result = REVIEWING_BOOKINGINVOICESTATUS
         case "OPEN":
-            return OPEN_BOOKINGINVOICESTATUS, nil
+            result = OPEN_BOOKINGINVOICESTATUS
         case "CANCELED":
-            return CANCELED_BOOKINGINVOICESTATUS, nil
+            result = CANCELED_BOOKINGINVOICESTATUS
         case "PAID":
-            return PAID_BOOKINGINVOICESTATUS, nil
+            result = PAID_BOOKINGINVOICESTATUS
         case "CORRECTIVE":
-            return CORRECTIVE_BOOKINGINVOICESTATUS, nil
+            result = CORRECTIVE_BOOKINGINVOICESTATUS
+        default:
+            return 0, errors.New("Unknown BookingInvoiceStatus value: " + v)
     }
-    return 0, errors.New("Unknown BookingInvoiceStatus value: " + v)
+    return &result, nil
 }
 func SerializeBookingInvoiceStatus(values []BookingInvoiceStatus) []string {
     result := make([]string, len(values))

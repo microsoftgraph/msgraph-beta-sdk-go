@@ -17,17 +17,20 @@ func (i PrintColorConfiguration) String() string {
     return []string{"BLACKANDWHITE", "GRAYSCALE", "COLOR", "AUTO"}[i]
 }
 func ParsePrintColorConfiguration(v string) (interface{}, error) {
+    result := BLACKANDWHITE_PRINTCOLORCONFIGURATION
     switch strings.ToUpper(v) {
         case "BLACKANDWHITE":
-            return BLACKANDWHITE_PRINTCOLORCONFIGURATION, nil
+            result = BLACKANDWHITE_PRINTCOLORCONFIGURATION
         case "GRAYSCALE":
-            return GRAYSCALE_PRINTCOLORCONFIGURATION, nil
+            result = GRAYSCALE_PRINTCOLORCONFIGURATION
         case "COLOR":
-            return COLOR_PRINTCOLORCONFIGURATION, nil
+            result = COLOR_PRINTCOLORCONFIGURATION
         case "AUTO":
-            return AUTO_PRINTCOLORCONFIGURATION, nil
+            result = AUTO_PRINTCOLORCONFIGURATION
+        default:
+            return 0, errors.New("Unknown PrintColorConfiguration value: " + v)
     }
-    return 0, errors.New("Unknown PrintColorConfiguration value: " + v)
+    return &result, nil
 }
 func SerializePrintColorConfiguration(values []PrintColorConfiguration) []string {
     result := make([]string, len(values))

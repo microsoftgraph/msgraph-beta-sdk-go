@@ -124,8 +124,7 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
             return err
         }
         if val != nil {
-            cast := val.(UserAccountSecurityType)
-            m.SetAccountType(&cast)
+            m.SetAccountType(val.(*UserAccountSecurityType))
         }
         return nil
     }
@@ -193,7 +192,7 @@ func (m *LogonUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     if m.GetAccountType() != nil {
-        cast := m.GetAccountType().String()
+        cast := (*m.GetAccountType()).String()
         err := writer.WriteStringValue("accountType", &cast)
         if err != nil {
             return err

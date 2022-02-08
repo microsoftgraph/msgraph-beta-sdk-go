@@ -215,8 +215,7 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(GroupPolicyDefinitionClassType)
-            m.SetClassType(&cast)
+            m.SetClassType(val.(*GroupPolicyDefinitionClassType))
         }
         return nil
     }
@@ -316,8 +315,7 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(GroupPolicyType)
-            m.SetPolicyType(&cast)
+            m.SetPolicyType(val.(*GroupPolicyType))
         }
         return nil
     }
@@ -389,7 +387,7 @@ func (m *GroupPolicyDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetClassType() != nil {
-        cast := m.GetClassType().String()
+        cast := (*m.GetClassType()).String()
         err = writer.WriteStringValue("classType", &cast)
         if err != nil {
             return err
@@ -450,7 +448,7 @@ func (m *GroupPolicyDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetPolicyType() != nil {
-        cast := m.GetPolicyType().String()
+        cast := (*m.GetPolicyType()).String()
         err = writer.WriteStringValue("policyType", &cast)
         if err != nil {
             return err

@@ -12,6 +12,7 @@ import (
     i1262fc2601f26c6426f134578d76f0d6d82f780c631056a8228b3f0d99e6d860 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/manageddevicemobileappconfigurationstates"
     i1443aae9c03729a2846287e12ec51c60f2fcf8b160378feeeb93a607f140550a "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/cleanwindowsdevice"
     i1868d182d5fc9971d12e89f687d24afd220b971669c2a3ca28b0153484943026 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/shutdown"
+    i1a2c5f8ed2e88c9f4bbc42d1bfa4b2c5d073f119152a10b4b129dfbe7d2a285d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/getoemwarranty"
     i2b2643552578b57de1982c2b63e86ffdc342052fcd3810982705fe32f7ff4917 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/syncdevice"
     i33634be37bdeb06eea71e0090c6a79f402d72ef80000527b54246bdca02cebf1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/disable"
     i39cdf1e9f523efcaeac5364e8b420fd9fb42101199a12dd136dbd692cf97b084 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/reprovisioncloudpc"
@@ -290,6 +291,10 @@ func (m *ManagedDeviceRequestBuilder) GetFileVaultKey()(*ifc5d9d9efd260f9d829ab8
 // GetNonCompliantSettings builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.getNonCompliantSettings()
 func (m *ManagedDeviceRequestBuilder) GetNonCompliantSettings()(*i9e3c4371f99649398ab300d2008599e2276df3ba3799e553549f49a0d01216b1.GetNonCompliantSettingsRequestBuilder) {
     return i9e3c4371f99649398ab300d2008599e2276df3ba3799e553549f49a0d01216b1.NewGetNonCompliantSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetOemWarranty builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.getOemWarranty()
+func (m *ManagedDeviceRequestBuilder) GetOemWarranty()(*i1a2c5f8ed2e88c9f4bbc42d1bfa4b2c5d073f119152a10b4b129dfbe7d2a285d.GetOemWarrantyRequestBuilder) {
+    return i1a2c5f8ed2e88c9f4bbc42d1bfa4b2c5d073f119152a10b4b129dfbe7d2a285d.NewGetOemWarrantyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ManagedDeviceRequestBuilder) LocateDevice()(*ic0d3d817ae531275a13e069c0b36d3a00e8760c3936ab3ad8e37e1fe6fcc985c.LocateDeviceRequestBuilder) {
     return ic0d3d817ae531275a13e069c0b36d3a00e8760c3936ab3ad8e37e1fe6fcc985c.NewLocateDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);

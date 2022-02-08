@@ -16,15 +16,18 @@ func (i CloudPcDeviceImageStatus) String() string {
     return []string{"PENDING", "READY", "FAILED"}[i]
 }
 func ParseCloudPcDeviceImageStatus(v string) (interface{}, error) {
+    result := PENDING_CLOUDPCDEVICEIMAGESTATUS
     switch strings.ToUpper(v) {
         case "PENDING":
-            return PENDING_CLOUDPCDEVICEIMAGESTATUS, nil
+            result = PENDING_CLOUDPCDEVICEIMAGESTATUS
         case "READY":
-            return READY_CLOUDPCDEVICEIMAGESTATUS, nil
+            result = READY_CLOUDPCDEVICEIMAGESTATUS
         case "FAILED":
-            return FAILED_CLOUDPCDEVICEIMAGESTATUS, nil
+            result = FAILED_CLOUDPCDEVICEIMAGESTATUS
+        default:
+            return 0, errors.New("Unknown CloudPcDeviceImageStatus value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcDeviceImageStatus value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcDeviceImageStatus(values []CloudPcDeviceImageStatus) []string {
     result := make([]string, len(values))

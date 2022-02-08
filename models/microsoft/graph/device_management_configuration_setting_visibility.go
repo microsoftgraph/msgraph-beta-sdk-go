@@ -16,15 +16,18 @@ func (i DeviceManagementConfigurationSettingVisibility) String() string {
     return []string{"NONE", "SETTINGSCATALOG", "TEMPLATE"}[i]
 }
 func ParseDeviceManagementConfigurationSettingVisibility(v string) (interface{}, error) {
+    result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY, nil
+            result = NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
         case "SETTINGSCATALOG":
-            return SETTINGSCATALOG_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY, nil
+            result = SETTINGSCATALOG_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
         case "TEMPLATE":
-            return TEMPLATE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY, nil
+            result = TEMPLATE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
+        default:
+            return 0, errors.New("Unknown DeviceManagementConfigurationSettingVisibility value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementConfigurationSettingVisibility value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementConfigurationSettingVisibility(values []DeviceManagementConfigurationSettingVisibility) []string {
     result := make([]string, len(values))

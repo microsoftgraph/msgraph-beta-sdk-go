@@ -93,8 +93,7 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(ReplyRestriction)
-            m.SetReplyRestriction(&cast)
+            m.SetReplyRestriction(val.(*ReplyRestriction))
         }
         return nil
     }
@@ -104,8 +103,7 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(UserNewMessageRestriction)
-            m.SetUserNewMessageRestriction(&cast)
+            m.SetUserNewMessageRestriction(val.(*UserNewMessageRestriction))
         }
         return nil
     }
@@ -129,14 +127,14 @@ func (m *ChannelModerationSettings) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     if m.GetReplyRestriction() != nil {
-        cast := m.GetReplyRestriction().String()
+        cast := (*m.GetReplyRestriction()).String()
         err := writer.WriteStringValue("replyRestriction", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetUserNewMessageRestriction() != nil {
-        cast := m.GetUserNewMessageRestriction().String()
+        cast := (*m.GetUserNewMessageRestriction()).String()
         err := writer.WriteStringValue("userNewMessageRestriction", &cast)
         if err != nil {
             return err

@@ -18,19 +18,22 @@ func (i SensitivityLabelTarget) String() string {
     return []string{"EMAIL", "SITE", "UNIFIEDGROUP", "UNKNOWNFUTUREVALUE", "TEAMWORK"}[i]
 }
 func ParseSensitivityLabelTarget(v string) (interface{}, error) {
+    result := EMAIL_SENSITIVITYLABELTARGET
     switch strings.ToUpper(v) {
         case "EMAIL":
-            return EMAIL_SENSITIVITYLABELTARGET, nil
+            result = EMAIL_SENSITIVITYLABELTARGET
         case "SITE":
-            return SITE_SENSITIVITYLABELTARGET, nil
+            result = SITE_SENSITIVITYLABELTARGET
         case "UNIFIEDGROUP":
-            return UNIFIEDGROUP_SENSITIVITYLABELTARGET, nil
+            result = UNIFIEDGROUP_SENSITIVITYLABELTARGET
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SENSITIVITYLABELTARGET, nil
+            result = UNKNOWNFUTUREVALUE_SENSITIVITYLABELTARGET
         case "TEAMWORK":
-            return TEAMWORK_SENSITIVITYLABELTARGET, nil
+            result = TEAMWORK_SENSITIVITYLABELTARGET
+        default:
+            return 0, errors.New("Unknown SensitivityLabelTarget value: " + v)
     }
-    return 0, errors.New("Unknown SensitivityLabelTarget value: " + v)
+    return &result, nil
 }
 func SerializeSensitivityLabelTarget(values []SensitivityLabelTarget) []string {
     result := make([]string, len(values))

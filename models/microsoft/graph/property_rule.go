@@ -74,8 +74,7 @@ func (m *PropertyRule) GetFieldDeserializers()(map[string]func(interface{}, i04e
             return err
         }
         if val != nil {
-            cast := val.(i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.RuleOperation)
-            m.SetOperation(&cast)
+            m.SetOperation(val.(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.RuleOperation))
         }
         return nil
     }
@@ -109,8 +108,7 @@ func (m *PropertyRule) GetFieldDeserializers()(map[string]func(interface{}, i04e
             return err
         }
         if val != nil {
-            cast := val.(BinaryOperator)
-            m.SetValuesJoinedBy(&cast)
+            m.SetValuesJoinedBy(val.(*BinaryOperator))
         }
         return nil
     }
@@ -122,7 +120,7 @@ func (m *PropertyRule) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *PropertyRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetOperation() != nil {
-        cast := m.GetOperation().String()
+        cast := (*m.GetOperation()).String()
         err := writer.WriteStringValue("operation", &cast)
         if err != nil {
             return err
@@ -141,7 +139,7 @@ func (m *PropertyRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     if m.GetValuesJoinedBy() != nil {
-        cast := m.GetValuesJoinedBy().String()
+        cast := (*m.GetValuesJoinedBy()).String()
         err := writer.WriteStringValue("valuesJoinedBy", &cast)
         if err != nil {
             return err

@@ -304,8 +304,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
             return err
         }
         if val != nil {
-            cast := val.(DiskType)
-            m.SetDiskType(&cast)
+            m.SetDiskType(val.(*DiskType))
         }
         return nil
     }
@@ -335,8 +334,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetFieldDeserializers()(map[s
             return err
         }
         if val != nil {
-            cast := val.(UserExperienceAnalyticsHealthState)
-            m.SetHealthStatus(&cast)
+            m.SetHealthStatus(val.(*UserExperienceAnalyticsHealthState))
         }
         return nil
     }
@@ -480,7 +478,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) Serialize(writer i04eb5309aea
         }
     }
     if m.GetDiskType() != nil {
-        cast := m.GetDiskType().String()
+        cast := (*m.GetDiskType()).String()
         err = writer.WriteStringValue("diskType", &cast)
         if err != nil {
             return err
@@ -499,7 +497,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) Serialize(writer i04eb5309aea
         }
     }
     if m.GetHealthStatus() != nil {
-        cast := m.GetHealthStatus().String()
+        cast := (*m.GetHealthStatus()).String()
         err = writer.WriteStringValue("healthStatus", &cast)
         if err != nil {
             return err

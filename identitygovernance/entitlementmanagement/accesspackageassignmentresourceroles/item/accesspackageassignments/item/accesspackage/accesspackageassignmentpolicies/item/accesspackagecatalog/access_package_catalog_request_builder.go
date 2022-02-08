@@ -8,9 +8,11 @@ import (
     i5b1ea8f18be0114db91617313c5761d27811540c4b8ba50305503574bbaa4ec4 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackageresourcescopes"
     i6ff4014c09e32340978e05975432e90db23cc9da7f59423dd72c96e81d9a43a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackages"
     iac3d8e8548302fe50f2b7fa25157aa34ad5fd88f22dc39ba486feca88feec13b "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackageresources"
+    ic969b483bfc4bd7da5e7d91e8e28c90cecfa00c3ceffe44a74618f33d5ae41c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/accesspackageassignmentpolicies/item/accesspackagecatalog/customaccesspackageworkflowextensions"
     i440be6366a336feb707c569cece92efaea387dd1dff5c6af63ff78e96882cce7 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackages/item"
     i4ff1ffd20e991a295dc3b63530808dc8d14dcaf27b600f84946f6168bd85e166 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackageresourceroles/item"
     ib624d64a7d7d95291ee572d664b88d08d3c13ec0cc1e27987efdf14b09313fd9 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackageresourcescopes/item"
+    id68b0df3daf04b6b08e0790f53d7a03fe6bf92072b2e9cca2a31824bee01679f "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/accesspackageassignmentpolicies/item/accesspackagecatalog/customaccesspackageworkflowextensions/item"
     if3efffdebc6ab11f2123428548820ea49e540e3a7a1f15c7ed3f033e1681ad05 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item/accesspackageassignments/item/accesspackage/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackageresources/item"
 )
 
@@ -190,6 +192,20 @@ func (m *AccessPackageCatalogRequestBuilder) CreatePatchRequestInformation(optio
         }
     }
     return requestInfo, nil
+}
+func (m *AccessPackageCatalogRequestBuilder) CustomAccessPackageWorkflowExtensions()(*ic969b483bfc4bd7da5e7d91e8e28c90cecfa00c3ceffe44a74618f33d5ae41c3.CustomAccessPackageWorkflowExtensionsRequestBuilder) {
+    return ic969b483bfc4bd7da5e7d91e8e28c90cecfa00c3ceffe44a74618f33d5ae41c3.NewCustomAccessPackageWorkflowExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CustomAccessPackageWorkflowExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item.accessPackage.accessPackageAssignmentPolicies.item.accessPackageCatalog.customAccessPackageWorkflowExtensions.item collection
+func (m *AccessPackageCatalogRequestBuilder) CustomAccessPackageWorkflowExtensionsById(id string)(*id68b0df3daf04b6b08e0790f53d7a03fe6bf92072b2e9cca2a31824bee01679f.CustomAccessPackageWorkflowExtensionRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["customAccessPackageWorkflowExtension_id"] = id
+    }
+    return id68b0df3daf04b6b08e0790f53d7a03fe6bf92072b2e9cca2a31824bee01679f.NewCustomAccessPackageWorkflowExtensionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property accessPackageCatalog for identityGovernance
 func (m *AccessPackageCatalogRequestBuilder) Delete(options *AccessPackageCatalogRequestBuilderDeleteOptions)(error) {

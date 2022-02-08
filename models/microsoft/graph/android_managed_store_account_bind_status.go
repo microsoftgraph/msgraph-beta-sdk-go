@@ -17,17 +17,20 @@ func (i AndroidManagedStoreAccountBindStatus) String() string {
     return []string{"NOTBOUND", "BOUND", "BOUNDANDVALIDATED", "UNBINDING"}[i]
 }
 func ParseAndroidManagedStoreAccountBindStatus(v string) (interface{}, error) {
+    result := NOTBOUND_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
     switch strings.ToUpper(v) {
         case "NOTBOUND":
-            return NOTBOUND_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS, nil
+            result = NOTBOUND_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
         case "BOUND":
-            return BOUND_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS, nil
+            result = BOUND_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
         case "BOUNDANDVALIDATED":
-            return BOUNDANDVALIDATED_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS, nil
+            result = BOUNDANDVALIDATED_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
         case "UNBINDING":
-            return UNBINDING_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS, nil
+            result = UNBINDING_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
+        default:
+            return 0, errors.New("Unknown AndroidManagedStoreAccountBindStatus value: " + v)
     }
-    return 0, errors.New("Unknown AndroidManagedStoreAccountBindStatus value: " + v)
+    return &result, nil
 }
 func SerializeAndroidManagedStoreAccountBindStatus(values []AndroidManagedStoreAccountBindStatus) []string {
     result := make([]string, len(values))

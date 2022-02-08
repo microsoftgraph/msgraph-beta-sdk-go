@@ -20,23 +20,26 @@ func (i ProtocolType) String() string {
     return []string{"NONE", "OAUTH2", "ROPC", "WSFEDERATION", "SAML20", "DEVICECODE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseProtocolType(v string) (interface{}, error) {
+    result := NONE_PROTOCOLTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_PROTOCOLTYPE, nil
+            result = NONE_PROTOCOLTYPE
         case "OAUTH2":
-            return OAUTH2_PROTOCOLTYPE, nil
+            result = OAUTH2_PROTOCOLTYPE
         case "ROPC":
-            return ROPC_PROTOCOLTYPE, nil
+            result = ROPC_PROTOCOLTYPE
         case "WSFEDERATION":
-            return WSFEDERATION_PROTOCOLTYPE, nil
+            result = WSFEDERATION_PROTOCOLTYPE
         case "SAML20":
-            return SAML20_PROTOCOLTYPE, nil
+            result = SAML20_PROTOCOLTYPE
         case "DEVICECODE":
-            return DEVICECODE_PROTOCOLTYPE, nil
+            result = DEVICECODE_PROTOCOLTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PROTOCOLTYPE, nil
+            result = UNKNOWNFUTUREVALUE_PROTOCOLTYPE
+        default:
+            return 0, errors.New("Unknown ProtocolType value: " + v)
     }
-    return 0, errors.New("Unknown ProtocolType value: " + v)
+    return &result, nil
 }
 func SerializeProtocolType(values []ProtocolType) []string {
     result := make([]string, len(values))

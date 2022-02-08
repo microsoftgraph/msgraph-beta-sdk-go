@@ -13,27 +13,36 @@ const (
     MACOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
     WINDOWS10X_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
     WINDOWS10_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+    LINUX_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
 )
 
 func (i DeviceManagementConfigurationPlatforms) String() string {
-    return []string{"NONE", "ANDROID", "IOS", "MACOS", "WINDOWS10X", "WINDOWS10"}[i]
+    return []string{"NONE", "ANDROID", "IOS", "MACOS", "WINDOWS10X", "WINDOWS10", "LINUX", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDeviceManagementConfigurationPlatforms(v string) (interface{}, error) {
+    result := NONE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS, nil
+            result = NONE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
         case "ANDROID":
-            return ANDROID_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS, nil
+            result = ANDROID_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
         case "IOS":
-            return IOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS, nil
+            result = IOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
         case "MACOS":
-            return MACOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS, nil
+            result = MACOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
         case "WINDOWS10X":
-            return WINDOWS10X_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS, nil
+            result = WINDOWS10X_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
         case "WINDOWS10":
-            return WINDOWS10_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS, nil
+            result = WINDOWS10_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+        case "LINUX":
+            result = LINUX_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+        case "UNKNOWNFUTUREVALUE":
+            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+        default:
+            return 0, errors.New("Unknown DeviceManagementConfigurationPlatforms value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementConfigurationPlatforms value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementConfigurationPlatforms(values []DeviceManagementConfigurationPlatforms) []string {
     result := make([]string, len(values))

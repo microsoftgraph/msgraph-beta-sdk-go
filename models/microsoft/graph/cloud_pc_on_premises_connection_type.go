@@ -16,15 +16,18 @@ func (i CloudPcOnPremisesConnectionType) String() string {
     return []string{"HYBRIDAZUREADJOIN", "AZUREADJOIN", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCloudPcOnPremisesConnectionType(v string) (interface{}, error) {
+    result := HYBRIDAZUREADJOIN_CLOUDPCONPREMISESCONNECTIONTYPE
     switch strings.ToUpper(v) {
         case "HYBRIDAZUREADJOIN":
-            return HYBRIDAZUREADJOIN_CLOUDPCONPREMISESCONNECTIONTYPE, nil
+            result = HYBRIDAZUREADJOIN_CLOUDPCONPREMISESCONNECTIONTYPE
         case "AZUREADJOIN":
-            return AZUREADJOIN_CLOUDPCONPREMISESCONNECTIONTYPE, nil
+            result = AZUREADJOIN_CLOUDPCONPREMISESCONNECTIONTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CLOUDPCONPREMISESCONNECTIONTYPE, nil
+            result = UNKNOWNFUTUREVALUE_CLOUDPCONPREMISESCONNECTIONTYPE
+        default:
+            return 0, errors.New("Unknown CloudPcOnPremisesConnectionType value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcOnPremisesConnectionType value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcOnPremisesConnectionType(values []CloudPcOnPremisesConnectionType) []string {
     result := make([]string, len(values))

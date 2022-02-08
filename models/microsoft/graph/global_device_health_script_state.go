@@ -16,15 +16,18 @@ func (i GlobalDeviceHealthScriptState) String() string {
     return []string{"NOTCONFIGURED", "PENDING", "ENABLED"}[i]
 }
 func ParseGlobalDeviceHealthScriptState(v string) (interface{}, error) {
+    result := NOTCONFIGURED_GLOBALDEVICEHEALTHSCRIPTSTATE
     switch strings.ToUpper(v) {
         case "NOTCONFIGURED":
-            return NOTCONFIGURED_GLOBALDEVICEHEALTHSCRIPTSTATE, nil
+            result = NOTCONFIGURED_GLOBALDEVICEHEALTHSCRIPTSTATE
         case "PENDING":
-            return PENDING_GLOBALDEVICEHEALTHSCRIPTSTATE, nil
+            result = PENDING_GLOBALDEVICEHEALTHSCRIPTSTATE
         case "ENABLED":
-            return ENABLED_GLOBALDEVICEHEALTHSCRIPTSTATE, nil
+            result = ENABLED_GLOBALDEVICEHEALTHSCRIPTSTATE
+        default:
+            return 0, errors.New("Unknown GlobalDeviceHealthScriptState value: " + v)
     }
-    return 0, errors.New("Unknown GlobalDeviceHealthScriptState value: " + v)
+    return &result, nil
 }
 func SerializeGlobalDeviceHealthScriptState(values []GlobalDeviceHealthScriptState) []string {
     result := make([]string, len(values))

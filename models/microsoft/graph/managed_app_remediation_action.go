@@ -16,15 +16,18 @@ func (i ManagedAppRemediationAction) String() string {
     return []string{"BLOCK", "WIPE", "WARN"}[i]
 }
 func ParseManagedAppRemediationAction(v string) (interface{}, error) {
+    result := BLOCK_MANAGEDAPPREMEDIATIONACTION
     switch strings.ToUpper(v) {
         case "BLOCK":
-            return BLOCK_MANAGEDAPPREMEDIATIONACTION, nil
+            result = BLOCK_MANAGEDAPPREMEDIATIONACTION
         case "WIPE":
-            return WIPE_MANAGEDAPPREMEDIATIONACTION, nil
+            result = WIPE_MANAGEDAPPREMEDIATIONACTION
         case "WARN":
-            return WARN_MANAGEDAPPREMEDIATIONACTION, nil
+            result = WARN_MANAGEDAPPREMEDIATIONACTION
+        default:
+            return 0, errors.New("Unknown ManagedAppRemediationAction value: " + v)
     }
-    return 0, errors.New("Unknown ManagedAppRemediationAction value: " + v)
+    return &result, nil
 }
 func SerializeManagedAppRemediationAction(values []ManagedAppRemediationAction) []string {
     result := make([]string, len(values))

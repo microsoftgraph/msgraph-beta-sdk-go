@@ -3,23 +3,24 @@ package graph
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph/security"
 )
 
 // Incident 
 type Incident struct {
     Entity
     // 
-    alerts []Alert_v2;
+    alerts []Alert;
     // 
     assignedTo *string;
     // 
-    classification *AlertClassification_v2;
+    classification *i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertClassification;
     // 
-    comments []AlertComment_v2;
+    comments []AlertComment;
     // 
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
-    determination *AlertDetermination_v2;
+    determination *i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertDetermination;
     // 
     displayName *string;
     // 
@@ -29,11 +30,13 @@ type Incident struct {
     // 
     redirectIncidentId *string;
     // 
-    severity *AlertSeverity_v2;
+    severity *i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertSeverity;
     // 
-    status *IncidentStatus;
+    status *i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.IncidentStatus;
     // 
     tags []string;
+    // 
+    tenantId *string;
 }
 // NewIncident instantiates a new incident and sets the default values.
 func NewIncident()(*Incident) {
@@ -43,7 +46,7 @@ func NewIncident()(*Incident) {
     return m
 }
 // GetAlerts gets the alerts property value. 
-func (m *Incident) GetAlerts()([]Alert_v2) {
+func (m *Incident) GetAlerts()([]Alert) {
     if m == nil {
         return nil
     } else {
@@ -59,7 +62,7 @@ func (m *Incident) GetAssignedTo()(*string) {
     }
 }
 // GetClassification gets the classification property value. 
-func (m *Incident) GetClassification()(*AlertClassification_v2) {
+func (m *Incident) GetClassification()(*i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertClassification) {
     if m == nil {
         return nil
     } else {
@@ -67,7 +70,7 @@ func (m *Incident) GetClassification()(*AlertClassification_v2) {
     }
 }
 // GetComments gets the comments property value. 
-func (m *Incident) GetComments()([]AlertComment_v2) {
+func (m *Incident) GetComments()([]AlertComment) {
     if m == nil {
         return nil
     } else {
@@ -83,7 +86,7 @@ func (m *Incident) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     }
 }
 // GetDetermination gets the determination property value. 
-func (m *Incident) GetDetermination()(*AlertDetermination_v2) {
+func (m *Incident) GetDetermination()(*i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertDetermination) {
     if m == nil {
         return nil
     } else {
@@ -123,7 +126,7 @@ func (m *Incident) GetRedirectIncidentId()(*string) {
     }
 }
 // GetSeverity gets the severity property value. 
-func (m *Incident) GetSeverity()(*AlertSeverity_v2) {
+func (m *Incident) GetSeverity()(*i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertSeverity) {
     if m == nil {
         return nil
     } else {
@@ -131,7 +134,7 @@ func (m *Incident) GetSeverity()(*AlertSeverity_v2) {
     }
 }
 // GetStatus gets the status property value. 
-func (m *Incident) GetStatus()(*IncidentStatus) {
+func (m *Incident) GetStatus()(*i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.IncidentStatus) {
     if m == nil {
         return nil
     } else {
@@ -146,18 +149,26 @@ func (m *Incident) GetTags()([]string) {
         return m.tags
     }
 }
+// GetTenantId gets the tenantId property value. 
+func (m *Incident) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
+    }
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Incident) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alerts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAlert_v2() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAlert() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Alert_v2, len(val))
+            res := make([]Alert, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Alert_v2))
+                res[i] = *(v.(*Alert))
             }
             m.SetAlerts(res)
         }
@@ -174,25 +185,24 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["classification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertClassification_v2)
+        val, err := n.GetEnumValue(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ParseAlertClassification)
         if err != nil {
             return err
         }
         if val != nil {
-            cast := val.(AlertClassification_v2)
-            m.SetClassification(&cast)
+            m.SetClassification(val.(*i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertClassification))
         }
         return nil
     }
     res["comments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAlertComment_v2() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAlertComment() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AlertComment_v2, len(val))
+            res := make([]AlertComment, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AlertComment_v2))
+                res[i] = *(v.(*AlertComment))
             }
             m.SetComments(res)
         }
@@ -209,13 +219,12 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["determination"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertDetermination_v2)
+        val, err := n.GetEnumValue(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ParseAlertDetermination)
         if err != nil {
             return err
         }
         if val != nil {
-            cast := val.(AlertDetermination_v2)
-            m.SetDetermination(&cast)
+            m.SetDetermination(val.(*i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertDetermination))
         }
         return nil
     }
@@ -260,24 +269,22 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         return nil
     }
     res["severity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertSeverity_v2)
+        val, err := n.GetEnumValue(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ParseAlertSeverity)
         if err != nil {
             return err
         }
         if val != nil {
-            cast := val.(AlertSeverity_v2)
-            m.SetSeverity(&cast)
+            m.SetSeverity(val.(*i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertSeverity))
         }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetEnumValue(ParseIncidentStatus)
+        val, err := n.GetEnumValue(i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.ParseIncidentStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            cast := val.(IncidentStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.IncidentStatus))
         }
         return nil
     }
@@ -292,6 +299,16 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
                 res[i] = *(v.(*string))
             }
             m.SetTags(res)
+        }
+        return nil
+    }
+    res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantId(val)
         }
         return nil
     }
@@ -324,7 +341,7 @@ func (m *Incident) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetClassification() != nil {
-        cast := m.GetClassification().String()
+        cast := (*m.GetClassification()).String()
         err = writer.WriteStringValue("classification", &cast)
         if err != nil {
             return err
@@ -348,7 +365,7 @@ func (m *Incident) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetDetermination() != nil {
-        cast := m.GetDetermination().String()
+        cast := (*m.GetDetermination()).String()
         err = writer.WriteStringValue("determination", &cast)
         if err != nil {
             return err
@@ -379,14 +396,14 @@ func (m *Incident) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetSeverity() != nil {
-        cast := m.GetSeverity().String()
+        cast := (*m.GetSeverity()).String()
         err = writer.WriteStringValue("severity", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
@@ -398,10 +415,16 @@ func (m *Incident) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("tenantId", m.GetTenantId())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAlerts sets the alerts property value. 
-func (m *Incident) SetAlerts(value []Alert_v2)() {
+func (m *Incident) SetAlerts(value []Alert)() {
     if m != nil {
         m.alerts = value
     }
@@ -413,13 +436,13 @@ func (m *Incident) SetAssignedTo(value *string)() {
     }
 }
 // SetClassification sets the classification property value. 
-func (m *Incident) SetClassification(value *AlertClassification_v2)() {
+func (m *Incident) SetClassification(value *i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertClassification)() {
     if m != nil {
         m.classification = value
     }
 }
 // SetComments sets the comments property value. 
-func (m *Incident) SetComments(value []AlertComment_v2)() {
+func (m *Incident) SetComments(value []AlertComment)() {
     if m != nil {
         m.comments = value
     }
@@ -431,7 +454,7 @@ func (m *Incident) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // SetDetermination sets the determination property value. 
-func (m *Incident) SetDetermination(value *AlertDetermination_v2)() {
+func (m *Incident) SetDetermination(value *i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertDetermination)() {
     if m != nil {
         m.determination = value
     }
@@ -461,13 +484,13 @@ func (m *Incident) SetRedirectIncidentId(value *string)() {
     }
 }
 // SetSeverity sets the severity property value. 
-func (m *Incident) SetSeverity(value *AlertSeverity_v2)() {
+func (m *Incident) SetSeverity(value *i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.AlertSeverity)() {
     if m != nil {
         m.severity = value
     }
 }
 // SetStatus sets the status property value. 
-func (m *Incident) SetStatus(value *IncidentStatus)() {
+func (m *Incident) SetStatus(value *i2263de81f518180fb490a1c688534af1ccfbd4dae2a6d9830596b78378fe7849.IncidentStatus)() {
     if m != nil {
         m.status = value
     }
@@ -476,5 +499,11 @@ func (m *Incident) SetStatus(value *IncidentStatus)() {
 func (m *Incident) SetTags(value []string)() {
     if m != nil {
         m.tags = value
+    }
+}
+// SetTenantId sets the tenantId property value. 
+func (m *Incident) SetTenantId(value *string)() {
+    if m != nil {
+        m.tenantId = value
     }
 }

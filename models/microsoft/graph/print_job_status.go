@@ -147,8 +147,7 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(PrintJobProcessingState)
-            m.SetProcessingState(&cast)
+            m.SetProcessingState(val.(*PrintJobProcessingState))
         }
         return nil
     }
@@ -168,8 +167,7 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(PrintJobProcessingState)
-            m.SetState(&cast)
+            m.SetState(val.(*PrintJobProcessingState))
         }
         return nil
     }
@@ -205,7 +203,7 @@ func (m *PrintJobStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetProcessingState() != nil {
-        cast := m.GetProcessingState().String()
+        cast := (*m.GetProcessingState()).String()
         err := writer.WriteStringValue("processingState", &cast)
         if err != nil {
             return err
@@ -218,7 +216,7 @@ func (m *PrintJobStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err := writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

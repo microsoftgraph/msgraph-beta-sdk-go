@@ -83,8 +83,7 @@ func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(CloudPcDomainJoinType)
-            m.SetType(&cast)
+            m.SetType(val.(*CloudPcDomainJoinType))
         }
         return nil
     }
@@ -108,7 +107,7 @@ func (m *CloudPcDomainJoinConfiguration) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

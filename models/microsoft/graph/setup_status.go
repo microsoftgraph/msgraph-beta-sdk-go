@@ -21,25 +21,28 @@ func (i SetupStatus) String() string {
     return []string{"UNKNOWN", "NOTREGISTEREDYET", "REGISTEREDSETUPNOTSTARTED", "REGISTEREDSETUPINPROGRESS", "REGISTRATIONANDSETUPCOMPLETED", "REGISTRATIONFAILED", "REGISTRATIONTIMEDOUT", "DISABLED"}[i]
 }
 func ParseSetupStatus(v string) (interface{}, error) {
+    result := UNKNOWN_SETUPSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_SETUPSTATUS, nil
+            result = UNKNOWN_SETUPSTATUS
         case "NOTREGISTEREDYET":
-            return NOTREGISTEREDYET_SETUPSTATUS, nil
+            result = NOTREGISTEREDYET_SETUPSTATUS
         case "REGISTEREDSETUPNOTSTARTED":
-            return REGISTEREDSETUPNOTSTARTED_SETUPSTATUS, nil
+            result = REGISTEREDSETUPNOTSTARTED_SETUPSTATUS
         case "REGISTEREDSETUPINPROGRESS":
-            return REGISTEREDSETUPINPROGRESS_SETUPSTATUS, nil
+            result = REGISTEREDSETUPINPROGRESS_SETUPSTATUS
         case "REGISTRATIONANDSETUPCOMPLETED":
-            return REGISTRATIONANDSETUPCOMPLETED_SETUPSTATUS, nil
+            result = REGISTRATIONANDSETUPCOMPLETED_SETUPSTATUS
         case "REGISTRATIONFAILED":
-            return REGISTRATIONFAILED_SETUPSTATUS, nil
+            result = REGISTRATIONFAILED_SETUPSTATUS
         case "REGISTRATIONTIMEDOUT":
-            return REGISTRATIONTIMEDOUT_SETUPSTATUS, nil
+            result = REGISTRATIONTIMEDOUT_SETUPSTATUS
         case "DISABLED":
-            return DISABLED_SETUPSTATUS, nil
+            result = DISABLED_SETUPSTATUS
+        default:
+            return 0, errors.New("Unknown SetupStatus value: " + v)
     }
-    return 0, errors.New("Unknown SetupStatus value: " + v)
+    return &result, nil
 }
 func SerializeSetupStatus(values []SetupStatus) []string {
     result := make([]string, len(values))

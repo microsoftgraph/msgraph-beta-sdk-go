@@ -134,8 +134,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(AdvancedBitLockerState)
-            m.SetAdvancedBitLockerStates(&cast)
+            m.SetAdvancedBitLockerStates(val.(*AdvancedBitLockerState))
         }
         return nil
     }
@@ -155,8 +154,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(DeviceTypes)
-            m.SetDeviceType(&cast)
+            m.SetDeviceType(val.(*DeviceTypes))
         }
         return nil
     }
@@ -166,8 +164,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(ComplianceStatus)
-            m.SetEncryptionPolicySettingState(&cast)
+            m.SetEncryptionPolicySettingState(val.(*ComplianceStatus))
         }
         return nil
     }
@@ -177,8 +174,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(EncryptionReadinessState)
-            m.SetEncryptionReadinessState(&cast)
+            m.SetEncryptionReadinessState(val.(*EncryptionReadinessState))
         }
         return nil
     }
@@ -188,8 +184,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(EncryptionState)
-            m.SetEncryptionState(&cast)
+            m.SetEncryptionState(val.(*EncryptionState))
         }
         return nil
     }
@@ -199,8 +194,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(FileVaultState)
-            m.SetFileVaultStates(&cast)
+            m.SetFileVaultStates(val.(*FileVaultState))
         }
         return nil
     }
@@ -260,7 +254,7 @@ func (m *ManagedDeviceEncryptionState) Serialize(writer i04eb5309aeaafadd28374d7
         return err
     }
     if m.GetAdvancedBitLockerStates() != nil {
-        cast := m.GetAdvancedBitLockerStates().String()
+        cast := (*m.GetAdvancedBitLockerStates()).String()
         err = writer.WriteStringValue("advancedBitLockerStates", &cast)
         if err != nil {
             return err
@@ -273,35 +267,35 @@ func (m *ManagedDeviceEncryptionState) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     if m.GetDeviceType() != nil {
-        cast := m.GetDeviceType().String()
+        cast := (*m.GetDeviceType()).String()
         err = writer.WriteStringValue("deviceType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetEncryptionPolicySettingState() != nil {
-        cast := m.GetEncryptionPolicySettingState().String()
+        cast := (*m.GetEncryptionPolicySettingState()).String()
         err = writer.WriteStringValue("encryptionPolicySettingState", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetEncryptionReadinessState() != nil {
-        cast := m.GetEncryptionReadinessState().String()
+        cast := (*m.GetEncryptionReadinessState()).String()
         err = writer.WriteStringValue("encryptionReadinessState", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetEncryptionState() != nil {
-        cast := m.GetEncryptionState().String()
+        cast := (*m.GetEncryptionState()).String()
         err = writer.WriteStringValue("encryptionState", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetFileVaultStates() != nil {
-        cast := m.GetFileVaultStates().String()
+        cast := (*m.GetFileVaultStates()).String()
         err = writer.WriteStringValue("fileVaultStates", &cast)
         if err != nil {
             return err

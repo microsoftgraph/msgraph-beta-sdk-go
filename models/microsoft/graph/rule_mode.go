@@ -18,19 +18,22 @@ func (i RuleMode) String() string {
     return []string{"AUDIT", "AUDITANDNOTIFY", "ENFORCE", "PENDINGDELETION", "TEST"}[i]
 }
 func ParseRuleMode(v string) (interface{}, error) {
+    result := AUDIT_RULEMODE
     switch strings.ToUpper(v) {
         case "AUDIT":
-            return AUDIT_RULEMODE, nil
+            result = AUDIT_RULEMODE
         case "AUDITANDNOTIFY":
-            return AUDITANDNOTIFY_RULEMODE, nil
+            result = AUDITANDNOTIFY_RULEMODE
         case "ENFORCE":
-            return ENFORCE_RULEMODE, nil
+            result = ENFORCE_RULEMODE
         case "PENDINGDELETION":
-            return PENDINGDELETION_RULEMODE, nil
+            result = PENDINGDELETION_RULEMODE
         case "TEST":
-            return TEST_RULEMODE, nil
+            result = TEST_RULEMODE
+        default:
+            return 0, errors.New("Unknown RuleMode value: " + v)
     }
-    return 0, errors.New("Unknown RuleMode value: " + v)
+    return &result, nil
 }
 func SerializeRuleMode(values []RuleMode) []string {
     result := make([]string, len(values))

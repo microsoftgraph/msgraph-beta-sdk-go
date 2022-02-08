@@ -123,8 +123,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[s
             return err
         }
         if val != nil {
-            cast := val.(AndroidForWorkAppConfigurationSchemaItemDataType)
-            m.SetDataType(&cast)
+            m.SetDataType(val.(*AndroidForWorkAppConfigurationSchemaItemDataType))
         }
         return nil
     }
@@ -224,7 +223,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *AndroidForWorkAppConfigurationSchemaItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDataType() != nil {
-        cast := m.GetDataType().String()
+        cast := (*m.GetDataType()).String()
         err := writer.WriteStringValue("dataType", &cast)
         if err != nil {
             return err

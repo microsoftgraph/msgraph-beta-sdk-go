@@ -123,8 +123,7 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            cast := val.(ResultantAppState)
-            m.SetInstallState(&cast)
+            m.SetInstallState(val.(*ResultantAppState))
         }
         return nil
     }
@@ -134,8 +133,7 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            cast := val.(MobileAppIntent)
-            m.SetMobileAppIntent(&cast)
+            m.SetMobileAppIntent(val.(*MobileAppIntent))
         }
         return nil
     }
@@ -179,14 +177,14 @@ func (m *MobileAppIntentAndStateDetail) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     if m.GetInstallState() != nil {
-        cast := m.GetInstallState().String()
+        cast := (*m.GetInstallState()).String()
         err := writer.WriteStringValue("installState", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetMobileAppIntent() != nil {
-        cast := m.GetMobileAppIntent().String()
+        cast := (*m.GetMobileAppIntent()).String()
         err := writer.WriteStringValue("mobileAppIntent", &cast)
         if err != nil {
             return err

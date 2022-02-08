@@ -19,21 +19,24 @@ func (i WorkloadActionStatus) String() string {
     return []string{"TOADDRESS", "COMPLETED", "ERROR", "TIMEOUT", "INPROGRESS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseWorkloadActionStatus(v string) (interface{}, error) {
+    result := TOADDRESS_WORKLOADACTIONSTATUS
     switch strings.ToUpper(v) {
         case "TOADDRESS":
-            return TOADDRESS_WORKLOADACTIONSTATUS, nil
+            result = TOADDRESS_WORKLOADACTIONSTATUS
         case "COMPLETED":
-            return COMPLETED_WORKLOADACTIONSTATUS, nil
+            result = COMPLETED_WORKLOADACTIONSTATUS
         case "ERROR":
-            return ERROR_WORKLOADACTIONSTATUS, nil
+            result = ERROR_WORKLOADACTIONSTATUS
         case "TIMEOUT":
-            return TIMEOUT_WORKLOADACTIONSTATUS, nil
+            result = TIMEOUT_WORKLOADACTIONSTATUS
         case "INPROGRESS":
-            return INPROGRESS_WORKLOADACTIONSTATUS, nil
+            result = INPROGRESS_WORKLOADACTIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_WORKLOADACTIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_WORKLOADACTIONSTATUS
+        default:
+            return 0, errors.New("Unknown WorkloadActionStatus value: " + v)
     }
-    return 0, errors.New("Unknown WorkloadActionStatus value: " + v)
+    return &result, nil
 }
 func SerializeWorkloadActionStatus(values []WorkloadActionStatus) []string {
     result := make([]string, len(values))

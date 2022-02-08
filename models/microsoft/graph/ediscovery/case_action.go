@@ -21,25 +21,28 @@ func (i CaseAction) String() string {
     return []string{"CONTENTEXPORT", "APPLYTAGS", "CONVERTTOPDF", "INDEX", "ESTIMATESTATISTICS", "ADDTOREVIEWSET", "HOLDUPDATE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCaseAction(v string) (interface{}, error) {
+    result := CONTENTEXPORT_CASEACTION
     switch strings.ToUpper(v) {
         case "CONTENTEXPORT":
-            return CONTENTEXPORT_CASEACTION, nil
+            result = CONTENTEXPORT_CASEACTION
         case "APPLYTAGS":
-            return APPLYTAGS_CASEACTION, nil
+            result = APPLYTAGS_CASEACTION
         case "CONVERTTOPDF":
-            return CONVERTTOPDF_CASEACTION, nil
+            result = CONVERTTOPDF_CASEACTION
         case "INDEX":
-            return INDEX_CASEACTION, nil
+            result = INDEX_CASEACTION
         case "ESTIMATESTATISTICS":
-            return ESTIMATESTATISTICS_CASEACTION, nil
+            result = ESTIMATESTATISTICS_CASEACTION
         case "ADDTOREVIEWSET":
-            return ADDTOREVIEWSET_CASEACTION, nil
+            result = ADDTOREVIEWSET_CASEACTION
         case "HOLDUPDATE":
-            return HOLDUPDATE_CASEACTION, nil
+            result = HOLDUPDATE_CASEACTION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CASEACTION, nil
+            result = UNKNOWNFUTUREVALUE_CASEACTION
+        default:
+            return 0, errors.New("Unknown CaseAction value: " + v)
     }
-    return 0, errors.New("Unknown CaseAction value: " + v)
+    return &result, nil
 }
 func SerializeCaseAction(values []CaseAction) []string {
     result := make([]string, len(values))

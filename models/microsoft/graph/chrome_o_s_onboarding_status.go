@@ -19,21 +19,24 @@ func (i ChromeOSOnboardingStatus) String() string {
     return []string{"UNKNOWN", "INPROGRESS", "ONBOARDED", "FAILED", "OFFBOARDING", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseChromeOSOnboardingStatus(v string) (interface{}, error) {
+    result := UNKNOWN_CHROMEOSONBOARDINGSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_CHROMEOSONBOARDINGSTATUS, nil
+            result = UNKNOWN_CHROMEOSONBOARDINGSTATUS
         case "INPROGRESS":
-            return INPROGRESS_CHROMEOSONBOARDINGSTATUS, nil
+            result = INPROGRESS_CHROMEOSONBOARDINGSTATUS
         case "ONBOARDED":
-            return ONBOARDED_CHROMEOSONBOARDINGSTATUS, nil
+            result = ONBOARDED_CHROMEOSONBOARDINGSTATUS
         case "FAILED":
-            return FAILED_CHROMEOSONBOARDINGSTATUS, nil
+            result = FAILED_CHROMEOSONBOARDINGSTATUS
         case "OFFBOARDING":
-            return OFFBOARDING_CHROMEOSONBOARDINGSTATUS, nil
+            result = OFFBOARDING_CHROMEOSONBOARDINGSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CHROMEOSONBOARDINGSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_CHROMEOSONBOARDINGSTATUS
+        default:
+            return 0, errors.New("Unknown ChromeOSOnboardingStatus value: " + v)
     }
-    return 0, errors.New("Unknown ChromeOSOnboardingStatus value: " + v)
+    return &result, nil
 }
 func SerializeChromeOSOnboardingStatus(values []ChromeOSOnboardingStatus) []string {
     result := make([]string, len(values))

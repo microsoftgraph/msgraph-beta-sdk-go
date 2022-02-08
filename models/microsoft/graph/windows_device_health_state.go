@@ -19,21 +19,24 @@ func (i WindowsDeviceHealthState) String() string {
     return []string{"CLEAN", "FULLSCANPENDING", "REBOOTPENDING", "MANUALSTEPSPENDING", "OFFLINESCANPENDING", "CRITICAL"}[i]
 }
 func ParseWindowsDeviceHealthState(v string) (interface{}, error) {
+    result := CLEAN_WINDOWSDEVICEHEALTHSTATE
     switch strings.ToUpper(v) {
         case "CLEAN":
-            return CLEAN_WINDOWSDEVICEHEALTHSTATE, nil
+            result = CLEAN_WINDOWSDEVICEHEALTHSTATE
         case "FULLSCANPENDING":
-            return FULLSCANPENDING_WINDOWSDEVICEHEALTHSTATE, nil
+            result = FULLSCANPENDING_WINDOWSDEVICEHEALTHSTATE
         case "REBOOTPENDING":
-            return REBOOTPENDING_WINDOWSDEVICEHEALTHSTATE, nil
+            result = REBOOTPENDING_WINDOWSDEVICEHEALTHSTATE
         case "MANUALSTEPSPENDING":
-            return MANUALSTEPSPENDING_WINDOWSDEVICEHEALTHSTATE, nil
+            result = MANUALSTEPSPENDING_WINDOWSDEVICEHEALTHSTATE
         case "OFFLINESCANPENDING":
-            return OFFLINESCANPENDING_WINDOWSDEVICEHEALTHSTATE, nil
+            result = OFFLINESCANPENDING_WINDOWSDEVICEHEALTHSTATE
         case "CRITICAL":
-            return CRITICAL_WINDOWSDEVICEHEALTHSTATE, nil
+            result = CRITICAL_WINDOWSDEVICEHEALTHSTATE
+        default:
+            return 0, errors.New("Unknown WindowsDeviceHealthState value: " + v)
     }
-    return 0, errors.New("Unknown WindowsDeviceHealthState value: " + v)
+    return &result, nil
 }
 func SerializeWindowsDeviceHealthState(values []WindowsDeviceHealthState) []string {
     result := make([]string, len(values))

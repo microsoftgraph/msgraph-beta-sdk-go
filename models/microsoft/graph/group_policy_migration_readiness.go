@@ -18,19 +18,22 @@ func (i GroupPolicyMigrationReadiness) String() string {
     return []string{"NONE", "PARTIAL", "COMPLETE", "ERROR", "NOTAPPLICABLE"}[i]
 }
 func ParseGroupPolicyMigrationReadiness(v string) (interface{}, error) {
+    result := NONE_GROUPPOLICYMIGRATIONREADINESS
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_GROUPPOLICYMIGRATIONREADINESS, nil
+            result = NONE_GROUPPOLICYMIGRATIONREADINESS
         case "PARTIAL":
-            return PARTIAL_GROUPPOLICYMIGRATIONREADINESS, nil
+            result = PARTIAL_GROUPPOLICYMIGRATIONREADINESS
         case "COMPLETE":
-            return COMPLETE_GROUPPOLICYMIGRATIONREADINESS, nil
+            result = COMPLETE_GROUPPOLICYMIGRATIONREADINESS
         case "ERROR":
-            return ERROR_GROUPPOLICYMIGRATIONREADINESS, nil
+            result = ERROR_GROUPPOLICYMIGRATIONREADINESS
         case "NOTAPPLICABLE":
-            return NOTAPPLICABLE_GROUPPOLICYMIGRATIONREADINESS, nil
+            result = NOTAPPLICABLE_GROUPPOLICYMIGRATIONREADINESS
+        default:
+            return 0, errors.New("Unknown GroupPolicyMigrationReadiness value: " + v)
     }
-    return 0, errors.New("Unknown GroupPolicyMigrationReadiness value: " + v)
+    return &result, nil
 }
 func SerializeGroupPolicyMigrationReadiness(values []GroupPolicyMigrationReadiness) []string {
     result := make([]string, len(values))

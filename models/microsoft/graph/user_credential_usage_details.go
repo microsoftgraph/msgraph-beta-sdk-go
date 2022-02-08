@@ -95,8 +95,7 @@ func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(UsageAuthMethod)
-            m.SetAuthMethod(&cast)
+            m.SetAuthMethod(val.(*UsageAuthMethod))
         }
         return nil
     }
@@ -126,8 +125,7 @@ func (m *UserCredentialUsageDetails) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(FeatureType)
-            m.SetFeature(&cast)
+            m.SetFeature(val.(*FeatureType))
         }
         return nil
     }
@@ -173,7 +171,7 @@ func (m *UserCredentialUsageDetails) Serialize(writer i04eb5309aeaafadd28374d79c
         return err
     }
     if m.GetAuthMethod() != nil {
-        cast := m.GetAuthMethod().String()
+        cast := (*m.GetAuthMethod()).String()
         err = writer.WriteStringValue("authMethod", &cast)
         if err != nil {
             return err
@@ -192,7 +190,7 @@ func (m *UserCredentialUsageDetails) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetFeature() != nil {
-        cast := m.GetFeature().String()
+        cast := (*m.GetFeature()).String()
         err = writer.WriteStringValue("feature", &cast)
         if err != nil {
             return err

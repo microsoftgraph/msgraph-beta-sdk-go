@@ -98,8 +98,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementExchangeAccessLevel)
-            m.SetDefaultAccessLevel(&cast)
+            m.SetDefaultAccessLevel(val.(*DeviceManagementExchangeAccessLevel))
         }
         return nil
     }
@@ -156,7 +155,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i04eb5309aea
         }
     }
     if m.GetDefaultAccessLevel() != nil {
-        cast := m.GetDefaultAccessLevel().String()
+        cast := (*m.GetDefaultAccessLevel()).String()
         err = writer.WriteStringValue("defaultAccessLevel", &cast)
         if err != nil {
             return err

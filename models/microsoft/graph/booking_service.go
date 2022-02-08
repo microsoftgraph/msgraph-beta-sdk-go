@@ -258,8 +258,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(BookingPriceType)
-            m.SetDefaultPriceType(&cast)
+            m.SetDefaultPriceType(val.(*BookingPriceType))
         }
         return nil
     }
@@ -438,7 +437,7 @@ func (m *BookingService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetDefaultPriceType() != nil {
-        cast := m.GetDefaultPriceType().String()
+        cast := (*m.GetDefaultPriceType()).String()
         err = writer.WriteStringValue("defaultPriceType", &cast)
         if err != nil {
             return err

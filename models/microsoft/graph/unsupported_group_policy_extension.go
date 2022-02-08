@@ -94,8 +94,7 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(GroupPolicySettingScope)
-            m.SetSettingScope(&cast)
+            m.SetSettingScope(val.(*GroupPolicySettingScope))
         }
         return nil
     }
@@ -129,7 +128,7 @@ func (m *UnsupportedGroupPolicyExtension) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     if m.GetSettingScope() != nil {
-        cast := m.GetSettingScope().String()
+        cast := (*m.GetSettingScope()).String()
         err = writer.WriteStringValue("settingScope", &cast)
         if err != nil {
             return err

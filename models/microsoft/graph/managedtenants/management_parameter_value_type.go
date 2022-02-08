@@ -22,27 +22,30 @@ func (i ManagementParameterValueType) String() string {
     return []string{"STRING", "INTEGER", "BOOLEAN", "GUID", "STRINGCOLLECTION", "INTEGERCOLLECTION", "BOOLEANCOLLECTION", "GUIDCOLLECTION", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseManagementParameterValueType(v string) (interface{}, error) {
+    result := STRING_MANAGEMENTPARAMETERVALUETYPE
     switch strings.ToUpper(v) {
         case "STRING":
-            return STRING_MANAGEMENTPARAMETERVALUETYPE, nil
+            result = STRING_MANAGEMENTPARAMETERVALUETYPE
         case "INTEGER":
-            return INTEGER_MANAGEMENTPARAMETERVALUETYPE, nil
+            result = INTEGER_MANAGEMENTPARAMETERVALUETYPE
         case "BOOLEAN":
-            return BOOLEAN_MANAGEMENTPARAMETERVALUETYPE, nil
+            result = BOOLEAN_MANAGEMENTPARAMETERVALUETYPE
         case "GUID":
-            return GUID_MANAGEMENTPARAMETERVALUETYPE, nil
+            result = GUID_MANAGEMENTPARAMETERVALUETYPE
         case "STRINGCOLLECTION":
-            return STRINGCOLLECTION_MANAGEMENTPARAMETERVALUETYPE, nil
+            result = STRINGCOLLECTION_MANAGEMENTPARAMETERVALUETYPE
         case "INTEGERCOLLECTION":
-            return INTEGERCOLLECTION_MANAGEMENTPARAMETERVALUETYPE, nil
+            result = INTEGERCOLLECTION_MANAGEMENTPARAMETERVALUETYPE
         case "BOOLEANCOLLECTION":
-            return BOOLEANCOLLECTION_MANAGEMENTPARAMETERVALUETYPE, nil
+            result = BOOLEANCOLLECTION_MANAGEMENTPARAMETERVALUETYPE
         case "GUIDCOLLECTION":
-            return GUIDCOLLECTION_MANAGEMENTPARAMETERVALUETYPE, nil
+            result = GUIDCOLLECTION_MANAGEMENTPARAMETERVALUETYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MANAGEMENTPARAMETERVALUETYPE, nil
+            result = UNKNOWNFUTUREVALUE_MANAGEMENTPARAMETERVALUETYPE
+        default:
+            return 0, errors.New("Unknown ManagementParameterValueType value: " + v)
     }
-    return 0, errors.New("Unknown ManagementParameterValueType value: " + v)
+    return &result, nil
 }
 func SerializeManagementParameterValueType(values []ManagementParameterValueType) []string {
     result := make([]string, len(values))

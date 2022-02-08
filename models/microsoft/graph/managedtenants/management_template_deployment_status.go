@@ -23,29 +23,32 @@ func (i ManagementTemplateDeploymentStatus) String() string {
     return []string{"TOADDRESS", "COMPLETED", "ERROR", "TIMEOUT", "INPROGRESS", "PLANNED", "RESOLVEDBY3RDPARTY", "RESOLVEDTHROUGHALTERNATEMITIGATION", "RISKACCEPTED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseManagementTemplateDeploymentStatus(v string) (interface{}, error) {
+    result := TOADDRESS_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
     switch strings.ToUpper(v) {
         case "TOADDRESS":
-            return TOADDRESS_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS, nil
+            result = TOADDRESS_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
         case "COMPLETED":
-            return COMPLETED_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS, nil
+            result = COMPLETED_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
         case "ERROR":
-            return ERROR_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS, nil
+            result = ERROR_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
         case "TIMEOUT":
-            return TIMEOUT_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS, nil
+            result = TIMEOUT_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
         case "INPROGRESS":
-            return INPROGRESS_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS, nil
+            result = INPROGRESS_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
         case "PLANNED":
-            return PLANNED_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS, nil
+            result = PLANNED_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
         case "RESOLVEDBY3RDPARTY":
-            return RESOLVEDBY3RDPARTY_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS, nil
+            result = RESOLVEDBY3RDPARTY_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
         case "RESOLVEDTHROUGHALTERNATEMITIGATION":
-            return RESOLVEDTHROUGHALTERNATEMITIGATION_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS, nil
+            result = RESOLVEDTHROUGHALTERNATEMITIGATION_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
         case "RISKACCEPTED":
-            return RISKACCEPTED_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS, nil
+            result = RISKACCEPTED_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
+        default:
+            return 0, errors.New("Unknown ManagementTemplateDeploymentStatus value: " + v)
     }
-    return 0, errors.New("Unknown ManagementTemplateDeploymentStatus value: " + v)
+    return &result, nil
 }
 func SerializeManagementTemplateDeploymentStatus(values []ManagementTemplateDeploymentStatus) []string {
     result := make([]string, len(values))

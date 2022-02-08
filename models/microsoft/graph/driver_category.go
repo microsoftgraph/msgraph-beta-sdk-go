@@ -16,15 +16,18 @@ func (i DriverCategory) String() string {
     return []string{"RECOMMENDED", "PREVIOUSLYAPPROVED", "OTHER"}[i]
 }
 func ParseDriverCategory(v string) (interface{}, error) {
+    result := RECOMMENDED_DRIVERCATEGORY
     switch strings.ToUpper(v) {
         case "RECOMMENDED":
-            return RECOMMENDED_DRIVERCATEGORY, nil
+            result = RECOMMENDED_DRIVERCATEGORY
         case "PREVIOUSLYAPPROVED":
-            return PREVIOUSLYAPPROVED_DRIVERCATEGORY, nil
+            result = PREVIOUSLYAPPROVED_DRIVERCATEGORY
         case "OTHER":
-            return OTHER_DRIVERCATEGORY, nil
+            result = OTHER_DRIVERCATEGORY
+        default:
+            return 0, errors.New("Unknown DriverCategory value: " + v)
     }
-    return 0, errors.New("Unknown DriverCategory value: " + v)
+    return &result, nil
 }
 func SerializeDriverCategory(values []DriverCategory) []string {
     result := make([]string, len(values))

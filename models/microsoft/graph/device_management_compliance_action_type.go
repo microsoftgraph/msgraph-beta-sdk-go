@@ -21,25 +21,28 @@ func (i DeviceManagementComplianceActionType) String() string {
     return []string{"NOACTION", "NOTIFICATION", "BLOCK", "RETIRE", "WIPE", "REMOVERESOURCEACCESSPROFILES", "PUSHNOTIFICATION", "REMOTELOCK"}[i]
 }
 func ParseDeviceManagementComplianceActionType(v string) (interface{}, error) {
+    result := NOACTION_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE
     switch strings.ToUpper(v) {
         case "NOACTION":
-            return NOACTION_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE, nil
+            result = NOACTION_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE
         case "NOTIFICATION":
-            return NOTIFICATION_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE, nil
+            result = NOTIFICATION_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE
         case "BLOCK":
-            return BLOCK_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE, nil
+            result = BLOCK_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE
         case "RETIRE":
-            return RETIRE_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE, nil
+            result = RETIRE_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE
         case "WIPE":
-            return WIPE_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE, nil
+            result = WIPE_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE
         case "REMOVERESOURCEACCESSPROFILES":
-            return REMOVERESOURCEACCESSPROFILES_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE, nil
+            result = REMOVERESOURCEACCESSPROFILES_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE
         case "PUSHNOTIFICATION":
-            return PUSHNOTIFICATION_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE, nil
+            result = PUSHNOTIFICATION_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE
         case "REMOTELOCK":
-            return REMOTELOCK_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE, nil
+            result = REMOTELOCK_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE
+        default:
+            return 0, errors.New("Unknown DeviceManagementComplianceActionType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementComplianceActionType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementComplianceActionType(values []DeviceManagementComplianceActionType) []string {
     result := make([]string, len(values))

@@ -12,7 +12,7 @@ type Alerts_v2Response struct {
     // 
     nextLink *string;
     // 
-    value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert_v2;
+    value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert;
 }
 // NewAlerts_v2Response instantiates a new alerts_v2Response and sets the default values.
 func NewAlerts_v2Response()(*Alerts_v2Response) {
@@ -38,7 +38,7 @@ func (m *Alerts_v2Response) GetNextLink()(*string) {
     }
 }
 // GetValue gets the value property value. 
-func (m *Alerts_v2Response) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert_v2) {
+func (m *Alerts_v2Response) GetValue()([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert) {
     if m == nil {
         return nil
     } else {
@@ -59,14 +59,14 @@ func (m *Alerts_v2Response) GetFieldDeserializers()(map[string]func(interface{},
         return nil
     }
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAlert_v2() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAlert() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert_v2, len(val))
+            res := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert_v2))
+                res[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert))
             }
             m.SetValue(res)
         }
@@ -117,7 +117,7 @@ func (m *Alerts_v2Response) SetNextLink(value *string)() {
     }
 }
 // SetValue sets the value property value. 
-func (m *Alerts_v2Response) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert_v2)() {
+func (m *Alerts_v2Response) SetValue(value []i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert)() {
     if m != nil {
         m.value = value
     }

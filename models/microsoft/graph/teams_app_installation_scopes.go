@@ -17,17 +17,20 @@ func (i TeamsAppInstallationScopes) String() string {
     return []string{"TEAM", "GROUPCHAT", "PERSONAL", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamsAppInstallationScopes(v string) (interface{}, error) {
+    result := TEAM_TEAMSAPPINSTALLATIONSCOPES
     switch strings.ToUpper(v) {
         case "TEAM":
-            return TEAM_TEAMSAPPINSTALLATIONSCOPES, nil
+            result = TEAM_TEAMSAPPINSTALLATIONSCOPES
         case "GROUPCHAT":
-            return GROUPCHAT_TEAMSAPPINSTALLATIONSCOPES, nil
+            result = GROUPCHAT_TEAMSAPPINSTALLATIONSCOPES
         case "PERSONAL":
-            return PERSONAL_TEAMSAPPINSTALLATIONSCOPES, nil
+            result = PERSONAL_TEAMSAPPINSTALLATIONSCOPES
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMSAPPINSTALLATIONSCOPES, nil
+            result = UNKNOWNFUTUREVALUE_TEAMSAPPINSTALLATIONSCOPES
+        default:
+            return 0, errors.New("Unknown TeamsAppInstallationScopes value: " + v)
     }
-    return 0, errors.New("Unknown TeamsAppInstallationScopes value: " + v)
+    return &result, nil
 }
 func SerializeTeamsAppInstallationScopes(values []TeamsAppInstallationScopes) []string {
     result := make([]string, len(values))

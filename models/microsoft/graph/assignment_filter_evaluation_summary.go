@@ -144,8 +144,7 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(DevicePlatformType)
-            m.SetAssignmentFilterPlatform(&cast)
+            m.SetAssignmentFilterPlatform(val.(*DevicePlatformType))
         }
         return nil
     }
@@ -155,8 +154,7 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(DeviceAndAppManagementAssignmentFilterType)
-            m.SetAssignmentFilterType(&cast)
+            m.SetAssignmentFilterType(val.(*DeviceAndAppManagementAssignmentFilterType))
         }
         return nil
     }
@@ -190,8 +188,7 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(AssignmentFilterEvaluationResult)
-            m.SetEvaluationResult(&cast)
+            m.SetEvaluationResult(val.(*AssignmentFilterEvaluationResult))
         }
         return nil
     }
@@ -221,14 +218,14 @@ func (m *AssignmentFilterEvaluationSummary) Serialize(writer i04eb5309aeaafadd28
         }
     }
     if m.GetAssignmentFilterPlatform() != nil {
-        cast := m.GetAssignmentFilterPlatform().String()
+        cast := (*m.GetAssignmentFilterPlatform()).String()
         err := writer.WriteStringValue("assignmentFilterPlatform", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAssignmentFilterType() != nil {
-        cast := m.GetAssignmentFilterType().String()
+        cast := (*m.GetAssignmentFilterType()).String()
         err := writer.WriteStringValue("assignmentFilterType", &cast)
         if err != nil {
             return err
@@ -252,7 +249,7 @@ func (m *AssignmentFilterEvaluationSummary) Serialize(writer i04eb5309aeaafadd28
         }
     }
     if m.GetEvaluationResult() != nil {
-        cast := m.GetEvaluationResult().String()
+        cast := (*m.GetEvaluationResult()).String()
         err := writer.WriteStringValue("evaluationResult", &cast)
         if err != nil {
             return err

@@ -305,8 +305,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(WindowsAutopilotDeploymentState)
-            m.SetAccountSetupStatus(&cast)
+            m.SetAccountSetupStatus(val.(*WindowsAutopilotDeploymentState))
         }
         return nil
     }
@@ -346,8 +345,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(WindowsAutopilotDeploymentState)
-            m.SetDeploymentState(&cast)
+            m.SetDeploymentState(val.(*WindowsAutopilotDeploymentState))
         }
         return nil
     }
@@ -417,8 +415,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(WindowsAutopilotDeploymentState)
-            m.SetDeviceSetupStatus(&cast)
+            m.SetDeviceSetupStatus(val.(*WindowsAutopilotDeploymentState))
         }
         return nil
     }
@@ -448,8 +445,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(EnrollmentState)
-            m.SetEnrollmentState(&cast)
+            m.SetEnrollmentState(val.(*EnrollmentState))
         }
         return nil
     }
@@ -459,8 +455,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(WindowsAutopilotEnrollmentType)
-            m.SetEnrollmentType(&cast)
+            m.SetEnrollmentType(val.(*WindowsAutopilotEnrollmentType))
         }
         return nil
     }
@@ -586,7 +581,7 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     if m.GetAccountSetupStatus() != nil {
-        cast := m.GetAccountSetupStatus().String()
+        cast := (*m.GetAccountSetupStatus()).String()
         err = writer.WriteStringValue("accountSetupStatus", &cast)
         if err != nil {
             return err
@@ -611,7 +606,7 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     if m.GetDeploymentState() != nil {
-        cast := m.GetDeploymentState().String()
+        cast := (*m.GetDeploymentState()).String()
         err = writer.WriteStringValue("deploymentState", &cast)
         if err != nil {
             return err
@@ -654,7 +649,7 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     if m.GetDeviceSetupStatus() != nil {
-        cast := m.GetDeviceSetupStatus().String()
+        cast := (*m.GetDeviceSetupStatus()).String()
         err = writer.WriteStringValue("deviceSetupStatus", &cast)
         if err != nil {
             return err
@@ -673,14 +668,14 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     if m.GetEnrollmentState() != nil {
-        cast := m.GetEnrollmentState().String()
+        cast := (*m.GetEnrollmentState()).String()
         err = writer.WriteStringValue("enrollmentState", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetEnrollmentType() != nil {
-        cast := m.GetEnrollmentType().String()
+        cast := (*m.GetEnrollmentType()).String()
         err = writer.WriteStringValue("enrollmentType", &cast)
         if err != nil {
             return err

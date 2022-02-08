@@ -16,15 +16,18 @@ func (i EnrollmentAvailabilityOptions) String() string {
     return []string{"AVAILABLEWITHPROMPTS", "AVAILABLEWITHOUTPROMPTS", "UNAVAILABLE"}[i]
 }
 func ParseEnrollmentAvailabilityOptions(v string) (interface{}, error) {
+    result := AVAILABLEWITHPROMPTS_ENROLLMENTAVAILABILITYOPTIONS
     switch strings.ToUpper(v) {
         case "AVAILABLEWITHPROMPTS":
-            return AVAILABLEWITHPROMPTS_ENROLLMENTAVAILABILITYOPTIONS, nil
+            result = AVAILABLEWITHPROMPTS_ENROLLMENTAVAILABILITYOPTIONS
         case "AVAILABLEWITHOUTPROMPTS":
-            return AVAILABLEWITHOUTPROMPTS_ENROLLMENTAVAILABILITYOPTIONS, nil
+            result = AVAILABLEWITHOUTPROMPTS_ENROLLMENTAVAILABILITYOPTIONS
         case "UNAVAILABLE":
-            return UNAVAILABLE_ENROLLMENTAVAILABILITYOPTIONS, nil
+            result = UNAVAILABLE_ENROLLMENTAVAILABILITYOPTIONS
+        default:
+            return 0, errors.New("Unknown EnrollmentAvailabilityOptions value: " + v)
     }
-    return 0, errors.New("Unknown EnrollmentAvailabilityOptions value: " + v)
+    return &result, nil
 }
 func SerializeEnrollmentAvailabilityOptions(values []EnrollmentAvailabilityOptions) []string {
     result := make([]string, len(values))

@@ -18,19 +18,22 @@ func (i AppCredentialRestrictionType) String() string {
     return []string{"PASSWORDADDITION", "PASSWORDLIFETIME", "SYMMETRICKEYADDITION", "SYMMETRICKEYLIFETIME", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAppCredentialRestrictionType(v string) (interface{}, error) {
+    result := PASSWORDADDITION_APPCREDENTIALRESTRICTIONTYPE
     switch strings.ToUpper(v) {
         case "PASSWORDADDITION":
-            return PASSWORDADDITION_APPCREDENTIALRESTRICTIONTYPE, nil
+            result = PASSWORDADDITION_APPCREDENTIALRESTRICTIONTYPE
         case "PASSWORDLIFETIME":
-            return PASSWORDLIFETIME_APPCREDENTIALRESTRICTIONTYPE, nil
+            result = PASSWORDLIFETIME_APPCREDENTIALRESTRICTIONTYPE
         case "SYMMETRICKEYADDITION":
-            return SYMMETRICKEYADDITION_APPCREDENTIALRESTRICTIONTYPE, nil
+            result = SYMMETRICKEYADDITION_APPCREDENTIALRESTRICTIONTYPE
         case "SYMMETRICKEYLIFETIME":
-            return SYMMETRICKEYLIFETIME_APPCREDENTIALRESTRICTIONTYPE, nil
+            result = SYMMETRICKEYLIFETIME_APPCREDENTIALRESTRICTIONTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_APPCREDENTIALRESTRICTIONTYPE, nil
+            result = UNKNOWNFUTUREVALUE_APPCREDENTIALRESTRICTIONTYPE
+        default:
+            return 0, errors.New("Unknown AppCredentialRestrictionType value: " + v)
     }
-    return 0, errors.New("Unknown AppCredentialRestrictionType value: " + v)
+    return &result, nil
 }
 func SerializeAppCredentialRestrictionType(values []AppCredentialRestrictionType) []string {
     result := make([]string, len(values))

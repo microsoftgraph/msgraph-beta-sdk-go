@@ -124,8 +124,7 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
             return err
         }
         if val != nil {
-            cast := val.(AccessReviewTimeoutBehavior)
-            m.SetAccessReviewTimeoutBehavior(&cast)
+            m.SetAccessReviewTimeoutBehavior(val.(*AccessReviewTimeoutBehavior))
         }
         return nil
     }
@@ -221,7 +220,7 @@ func (m *AssignmentReviewSettings) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *AssignmentReviewSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAccessReviewTimeoutBehavior() != nil {
-        cast := m.GetAccessReviewTimeoutBehavior().String()
+        cast := (*m.GetAccessReviewTimeoutBehavior()).String()
         err := writer.WriteStringValue("accessReviewTimeoutBehavior", &cast)
         if err != nil {
             return err

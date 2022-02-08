@@ -63,8 +63,7 @@ func (m *AuthenticationRequirementPolicy) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(RequirementProvider)
-            m.SetRequirementProvider(&cast)
+            m.SetRequirementProvider(val.(*RequirementProvider))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *AuthenticationRequirementPolicy) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     if m.GetRequirementProvider() != nil {
-        cast := m.GetRequirementProvider().String()
+        cast := (*m.GetRequirementProvider()).String()
         err := writer.WriteStringValue("requirementProvider", &cast)
         if err != nil {
             return err

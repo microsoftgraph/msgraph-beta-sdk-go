@@ -16,15 +16,18 @@ func (i DeviceCustomAttributeValueType) String() string {
     return []string{"INTEGER", "STRING", "DATETIME"}[i]
 }
 func ParseDeviceCustomAttributeValueType(v string) (interface{}, error) {
+    result := INTEGER_DEVICECUSTOMATTRIBUTEVALUETYPE
     switch strings.ToUpper(v) {
         case "INTEGER":
-            return INTEGER_DEVICECUSTOMATTRIBUTEVALUETYPE, nil
+            result = INTEGER_DEVICECUSTOMATTRIBUTEVALUETYPE
         case "STRING":
-            return STRING_DEVICECUSTOMATTRIBUTEVALUETYPE, nil
+            result = STRING_DEVICECUSTOMATTRIBUTEVALUETYPE
         case "DATETIME":
-            return DATETIME_DEVICECUSTOMATTRIBUTEVALUETYPE, nil
+            result = DATETIME_DEVICECUSTOMATTRIBUTEVALUETYPE
+        default:
+            return 0, errors.New("Unknown DeviceCustomAttributeValueType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceCustomAttributeValueType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceCustomAttributeValueType(values []DeviceCustomAttributeValueType) []string {
     result := make([]string, len(values))

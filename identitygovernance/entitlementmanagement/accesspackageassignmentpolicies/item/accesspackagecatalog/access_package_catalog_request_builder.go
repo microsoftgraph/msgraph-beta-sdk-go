@@ -7,8 +7,10 @@ import (
     i06f55fe273374e566585b387b4b12f998fc67722c0f7a1e8877fe2e19bb89b6c "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackageresources"
     i3ae92221e188e95920b2189c87e93bcd22fd8e4c03af33242bc9818cb03e4f00 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackageresourceroles"
     i4d70a21744d16b081bd115e35c40dbe3ed6d700db06c86dca9837cd415d85129 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackages"
+    i9694a523137a8c17ede9f6c5f52bd0f76a9a135ba2e4abc61dc879f2be9e741b "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog/customaccesspackageworkflowextensions"
     id525b2b6a4ab48edd6551f44667557bba2b605e12f2916fac21132be4f40ff6c "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackageresourcescopes"
     i163f0eb7e485efca73e17a7e10891a141a5eb4d2e1a8d1058d86706f3104492f "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackageresources/item"
+    i50f9c89077d449dc473e089c3cb6aa5d073331a8cf140add833cf31be093a1e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog/customaccesspackageworkflowextensions/item"
     i780579cf0ea203daa57fcd099fcc2a0b1d13087054b566d179485115e501b1ac "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackageresourceroles/item"
     ia274969901c28c25f0c1091b0012bcfdcf6bf88c3f6ec7edf286e4b96dbc3f8c "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackageresourcescopes/item"
     ifddaed755ca7d8f06fc0c82ad667e3de1f1fd9ca6e7bb1e97293931cc23f3886 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item/accesspackagecatalog/accesspackages/item"
@@ -190,6 +192,20 @@ func (m *AccessPackageCatalogRequestBuilder) CreatePatchRequestInformation(optio
         }
     }
     return requestInfo, nil
+}
+func (m *AccessPackageCatalogRequestBuilder) CustomAccessPackageWorkflowExtensions()(*i9694a523137a8c17ede9f6c5f52bd0f76a9a135ba2e4abc61dc879f2be9e741b.CustomAccessPackageWorkflowExtensionsRequestBuilder) {
+    return i9694a523137a8c17ede9f6c5f52bd0f76a9a135ba2e4abc61dc879f2be9e741b.NewCustomAccessPackageWorkflowExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CustomAccessPackageWorkflowExtensionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.item.accessPackageCatalog.customAccessPackageWorkflowExtensions.item collection
+func (m *AccessPackageCatalogRequestBuilder) CustomAccessPackageWorkflowExtensionsById(id string)(*i50f9c89077d449dc473e089c3cb6aa5d073331a8cf140add833cf31be093a1e0.CustomAccessPackageWorkflowExtensionRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["customAccessPackageWorkflowExtension_id"] = id
+    }
+    return i50f9c89077d449dc473e089c3cb6aa5d073331a8cf140add833cf31be093a1e0.NewCustomAccessPackageWorkflowExtensionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property accessPackageCatalog for identityGovernance
 func (m *AccessPackageCatalogRequestBuilder) Delete(options *AccessPackageCatalogRequestBuilderDeleteOptions)(error) {

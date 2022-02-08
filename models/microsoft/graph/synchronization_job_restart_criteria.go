@@ -43,8 +43,7 @@ func (m *SynchronizationJobRestartCriteria) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(SynchronizationJobRestartScope)
-            m.SetResetScope(&cast)
+            m.SetResetScope(val.(*SynchronizationJobRestartScope))
         }
         return nil
     }
@@ -56,7 +55,7 @@ func (m *SynchronizationJobRestartCriteria) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *SynchronizationJobRestartCriteria) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetResetScope() != nil {
-        cast := m.GetResetScope().String()
+        cast := (*m.GetResetScope()).String()
         err := writer.WriteStringValue("resetScope", &cast)
         if err != nil {
             return err

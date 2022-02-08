@@ -18,19 +18,22 @@ func (i PersonAnnualEventType) String() string {
     return []string{"BIRTHDAY", "WEDDING", "WORK", "OTHER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePersonAnnualEventType(v string) (interface{}, error) {
+    result := BIRTHDAY_PERSONANNUALEVENTTYPE
     switch strings.ToUpper(v) {
         case "BIRTHDAY":
-            return BIRTHDAY_PERSONANNUALEVENTTYPE, nil
+            result = BIRTHDAY_PERSONANNUALEVENTTYPE
         case "WEDDING":
-            return WEDDING_PERSONANNUALEVENTTYPE, nil
+            result = WEDDING_PERSONANNUALEVENTTYPE
         case "WORK":
-            return WORK_PERSONANNUALEVENTTYPE, nil
+            result = WORK_PERSONANNUALEVENTTYPE
         case "OTHER":
-            return OTHER_PERSONANNUALEVENTTYPE, nil
+            result = OTHER_PERSONANNUALEVENTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PERSONANNUALEVENTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_PERSONANNUALEVENTTYPE
+        default:
+            return 0, errors.New("Unknown PersonAnnualEventType value: " + v)
     }
-    return 0, errors.New("Unknown PersonAnnualEventType value: " + v)
+    return &result, nil
 }
 func SerializePersonAnnualEventType(values []PersonAnnualEventType) []string {
     result := make([]string, len(values))

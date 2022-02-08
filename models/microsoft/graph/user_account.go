@@ -144,8 +144,7 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(AccountStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*AccountStatus))
         }
         return nil
     }
@@ -187,7 +186,7 @@ func (m *UserAccount) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err := writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

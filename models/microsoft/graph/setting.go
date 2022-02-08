@@ -124,8 +124,7 @@ func (m *Setting) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
             return err
         }
         if val != nil {
-            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType)
-            m.SetValueType(&cast)
+            m.SetValueType(val.(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementParameterValueType))
         }
         return nil
     }
@@ -161,7 +160,7 @@ func (m *Setting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     if m.GetValueType() != nil {
-        cast := m.GetValueType().String()
+        cast := (*m.GetValueType()).String()
         err := writer.WriteStringValue("valueType", &cast)
         if err != nil {
             return err

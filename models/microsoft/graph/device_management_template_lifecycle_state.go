@@ -19,21 +19,24 @@ func (i DeviceManagementTemplateLifecycleState) String() string {
     return []string{"INVALID", "DRAFT", "ACTIVE", "SUPERSEDED", "DEPRECATED", "RETIRED"}[i]
 }
 func ParseDeviceManagementTemplateLifecycleState(v string) (interface{}, error) {
+    result := INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
     switch strings.ToUpper(v) {
         case "INVALID":
-            return INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE, nil
+            result = INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
         case "DRAFT":
-            return DRAFT_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE, nil
+            result = DRAFT_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
         case "ACTIVE":
-            return ACTIVE_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE, nil
+            result = ACTIVE_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
         case "SUPERSEDED":
-            return SUPERSEDED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE, nil
+            result = SUPERSEDED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
         case "DEPRECATED":
-            return DEPRECATED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE, nil
+            result = DEPRECATED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
         case "RETIRED":
-            return RETIRED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE, nil
+            result = RETIRED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+        default:
+            return 0, errors.New("Unknown DeviceManagementTemplateLifecycleState value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementTemplateLifecycleState value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementTemplateLifecycleState(values []DeviceManagementTemplateLifecycleState) []string {
     result := make([]string, len(values))

@@ -17,17 +17,20 @@ func (i ManagedAppPhoneNumberRedirectLevel) String() string {
     return []string{"ALLAPPS", "MANAGEDAPPS", "CUSTOMAPP", "BLOCKED"}[i]
 }
 func ParseManagedAppPhoneNumberRedirectLevel(v string) (interface{}, error) {
+    result := ALLAPPS_MANAGEDAPPPHONENUMBERREDIRECTLEVEL
     switch strings.ToUpper(v) {
         case "ALLAPPS":
-            return ALLAPPS_MANAGEDAPPPHONENUMBERREDIRECTLEVEL, nil
+            result = ALLAPPS_MANAGEDAPPPHONENUMBERREDIRECTLEVEL
         case "MANAGEDAPPS":
-            return MANAGEDAPPS_MANAGEDAPPPHONENUMBERREDIRECTLEVEL, nil
+            result = MANAGEDAPPS_MANAGEDAPPPHONENUMBERREDIRECTLEVEL
         case "CUSTOMAPP":
-            return CUSTOMAPP_MANAGEDAPPPHONENUMBERREDIRECTLEVEL, nil
+            result = CUSTOMAPP_MANAGEDAPPPHONENUMBERREDIRECTLEVEL
         case "BLOCKED":
-            return BLOCKED_MANAGEDAPPPHONENUMBERREDIRECTLEVEL, nil
+            result = BLOCKED_MANAGEDAPPPHONENUMBERREDIRECTLEVEL
+        default:
+            return 0, errors.New("Unknown ManagedAppPhoneNumberRedirectLevel value: " + v)
     }
-    return 0, errors.New("Unknown ManagedAppPhoneNumberRedirectLevel value: " + v)
+    return &result, nil
 }
 func SerializeManagedAppPhoneNumberRedirectLevel(values []ManagedAppPhoneNumberRedirectLevel) []string {
     result := make([]string, len(values))

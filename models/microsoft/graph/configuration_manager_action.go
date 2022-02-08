@@ -43,8 +43,7 @@ func (m *ConfigurationManagerAction) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(ConfigurationManagerActionType)
-            m.SetAction(&cast)
+            m.SetAction(val.(*ConfigurationManagerActionType))
         }
         return nil
     }
@@ -56,7 +55,7 @@ func (m *ConfigurationManagerAction) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ConfigurationManagerAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAction() != nil {
-        cast := m.GetAction().String()
+        cast := (*m.GetAction()).String()
         err := writer.WriteStringValue("action", &cast)
         if err != nil {
             return err

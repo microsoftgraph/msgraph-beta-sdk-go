@@ -204,8 +204,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationSettingAccessTypes)
-            m.SetAccessTypes(&cast)
+            m.SetAccessTypes(val.(*DeviceManagementConfigurationSettingAccessTypes))
         }
         return nil
     }
@@ -357,8 +356,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationSettingUsage)
-            m.SetSettingUsage(&cast)
+            m.SetSettingUsage(val.(*DeviceManagementConfigurationSettingUsage))
         }
         return nil
     }
@@ -368,8 +366,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationControlType)
-            m.SetUxBehavior(&cast)
+            m.SetUxBehavior(val.(*DeviceManagementConfigurationControlType))
         }
         return nil
     }
@@ -389,8 +386,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationSettingVisibility)
-            m.SetVisibility(&cast)
+            m.SetVisibility(val.(*DeviceManagementConfigurationSettingVisibility))
         }
         return nil
     }
@@ -406,7 +402,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i04eb5
         return err
     }
     if m.GetAccessTypes() != nil {
-        cast := m.GetAccessTypes().String()
+        cast := (*m.GetAccessTypes()).String()
         err = writer.WriteStringValue("accessTypes", &cast)
         if err != nil {
             return err
@@ -496,14 +492,14 @@ func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i04eb5
         }
     }
     if m.GetSettingUsage() != nil {
-        cast := m.GetSettingUsage().String()
+        cast := (*m.GetSettingUsage()).String()
         err = writer.WriteStringValue("settingUsage", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetUxBehavior() != nil {
-        cast := m.GetUxBehavior().String()
+        cast := (*m.GetUxBehavior()).String()
         err = writer.WriteStringValue("uxBehavior", &cast)
         if err != nil {
             return err
@@ -516,7 +512,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i04eb5
         }
     }
     if m.GetVisibility() != nil {
-        cast := m.GetVisibility().String()
+        cast := (*m.GetVisibility()).String()
         err = writer.WriteStringValue("visibility", &cast)
         if err != nil {
             return err

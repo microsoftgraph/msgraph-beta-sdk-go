@@ -17,17 +17,20 @@ func (i ErrorCode) String() string {
     return []string{"NOERROR", "UNAUTHORIZED", "NOTFOUND", "DELETED"}[i]
 }
 func ParseErrorCode(v string) (interface{}, error) {
+    result := NOERROR_ERRORCODE
     switch strings.ToUpper(v) {
         case "NOERROR":
-            return NOERROR_ERRORCODE, nil
+            result = NOERROR_ERRORCODE
         case "UNAUTHORIZED":
-            return UNAUTHORIZED_ERRORCODE, nil
+            result = UNAUTHORIZED_ERRORCODE
         case "NOTFOUND":
-            return NOTFOUND_ERRORCODE, nil
+            result = NOTFOUND_ERRORCODE
         case "DELETED":
-            return DELETED_ERRORCODE, nil
+            result = DELETED_ERRORCODE
+        default:
+            return 0, errors.New("Unknown ErrorCode value: " + v)
     }
-    return 0, errors.New("Unknown ErrorCode value: " + v)
+    return &result, nil
 }
 func SerializeErrorCode(values []ErrorCode) []string {
     result := make([]string, len(values))

@@ -19,21 +19,24 @@ func (i SignInIdentifierType) String() string {
     return []string{"USERPRINCIPALNAME", "PHONENUMBER", "PROXYADDRESS", "QRCODE", "ONPREMISESUSERPRINCIPALNAME", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSignInIdentifierType(v string) (interface{}, error) {
+    result := USERPRINCIPALNAME_SIGNINIDENTIFIERTYPE
     switch strings.ToUpper(v) {
         case "USERPRINCIPALNAME":
-            return USERPRINCIPALNAME_SIGNINIDENTIFIERTYPE, nil
+            result = USERPRINCIPALNAME_SIGNINIDENTIFIERTYPE
         case "PHONENUMBER":
-            return PHONENUMBER_SIGNINIDENTIFIERTYPE, nil
+            result = PHONENUMBER_SIGNINIDENTIFIERTYPE
         case "PROXYADDRESS":
-            return PROXYADDRESS_SIGNINIDENTIFIERTYPE, nil
+            result = PROXYADDRESS_SIGNINIDENTIFIERTYPE
         case "QRCODE":
-            return QRCODE_SIGNINIDENTIFIERTYPE, nil
+            result = QRCODE_SIGNINIDENTIFIERTYPE
         case "ONPREMISESUSERPRINCIPALNAME":
-            return ONPREMISESUSERPRINCIPALNAME_SIGNINIDENTIFIERTYPE, nil
+            result = ONPREMISESUSERPRINCIPALNAME_SIGNINIDENTIFIERTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SIGNINIDENTIFIERTYPE, nil
+            result = UNKNOWNFUTUREVALUE_SIGNINIDENTIFIERTYPE
+        default:
+            return 0, errors.New("Unknown SignInIdentifierType value: " + v)
     }
-    return 0, errors.New("Unknown SignInIdentifierType value: " + v)
+    return &result, nil
 }
 func SerializeSignInIdentifierType(values []SignInIdentifierType) []string {
     result := make([]string, len(values))

@@ -63,8 +63,7 @@ func (m *MicrosoftManagedDesktop) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(MicrosoftManagedDesktopType)
-            m.SetType(&cast)
+            m.SetType(val.(*MicrosoftManagedDesktopType))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *MicrosoftManagedDesktop) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

@@ -533,8 +533,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(MicrosoftStoreForBusinessPortalSelectionOptions)
-            m.SetMicrosoftStoreForBusinessPortalSelection(&cast)
+            m.SetMicrosoftStoreForBusinessPortalSelection(val.(*MicrosoftStoreForBusinessPortalSelectionOptions))
         }
         return nil
     }
@@ -880,7 +879,7 @@ func (m *DeviceAppManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetMicrosoftStoreForBusinessPortalSelection() != nil {
-        cast := m.GetMicrosoftStoreForBusinessPortalSelection().String()
+        cast := (*m.GetMicrosoftStoreForBusinessPortalSelection()).String()
         err = writer.WriteStringValue("microsoftStoreForBusinessPortalSelection", &cast)
         if err != nil {
             return err

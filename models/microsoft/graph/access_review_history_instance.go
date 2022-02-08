@@ -155,8 +155,7 @@ func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(AccessReviewHistoryStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*AccessReviewHistoryStatus))
         }
         return nil
     }
@@ -208,7 +207,7 @@ func (m *AccessReviewHistoryInstance) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

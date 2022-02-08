@@ -370,8 +370,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i04e
             return err
         }
         if val != nil {
-            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CaseStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.CaseStatus))
         }
         return nil
     }
@@ -521,7 +520,7 @@ func (m *Case_escaped) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

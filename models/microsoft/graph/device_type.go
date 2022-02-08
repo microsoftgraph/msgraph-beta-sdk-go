@@ -40,63 +40,66 @@ func (i DeviceType) String() string {
     return []string{"DESKTOP", "WINDOWSRT", "WINMO6", "NOKIA", "WINDOWSPHONE", "MAC", "WINCE", "WINEMBEDDED", "IPHONE", "IPAD", "IPOD", "ANDROID", "ISOCCONSUMER", "UNIX", "MACMDM", "HOLOLENS", "SURFACEHUB", "ANDROIDFORWORK", "ANDROIDENTERPRISE", "WINDOWS10X", "ANDROIDNGMS", "CHROMEOS", "LINUX", "BLACKBERRY", "PALM", "UNKNOWN", "CLOUDPC"}[i]
 }
 func ParseDeviceType(v string) (interface{}, error) {
+    result := DESKTOP_DEVICETYPE
     switch strings.ToUpper(v) {
         case "DESKTOP":
-            return DESKTOP_DEVICETYPE, nil
+            result = DESKTOP_DEVICETYPE
         case "WINDOWSRT":
-            return WINDOWSRT_DEVICETYPE, nil
+            result = WINDOWSRT_DEVICETYPE
         case "WINMO6":
-            return WINMO6_DEVICETYPE, nil
+            result = WINMO6_DEVICETYPE
         case "NOKIA":
-            return NOKIA_DEVICETYPE, nil
+            result = NOKIA_DEVICETYPE
         case "WINDOWSPHONE":
-            return WINDOWSPHONE_DEVICETYPE, nil
+            result = WINDOWSPHONE_DEVICETYPE
         case "MAC":
-            return MAC_DEVICETYPE, nil
+            result = MAC_DEVICETYPE
         case "WINCE":
-            return WINCE_DEVICETYPE, nil
+            result = WINCE_DEVICETYPE
         case "WINEMBEDDED":
-            return WINEMBEDDED_DEVICETYPE, nil
+            result = WINEMBEDDED_DEVICETYPE
         case "IPHONE":
-            return IPHONE_DEVICETYPE, nil
+            result = IPHONE_DEVICETYPE
         case "IPAD":
-            return IPAD_DEVICETYPE, nil
+            result = IPAD_DEVICETYPE
         case "IPOD":
-            return IPOD_DEVICETYPE, nil
+            result = IPOD_DEVICETYPE
         case "ANDROID":
-            return ANDROID_DEVICETYPE, nil
+            result = ANDROID_DEVICETYPE
         case "ISOCCONSUMER":
-            return ISOCCONSUMER_DEVICETYPE, nil
+            result = ISOCCONSUMER_DEVICETYPE
         case "UNIX":
-            return UNIX_DEVICETYPE, nil
+            result = UNIX_DEVICETYPE
         case "MACMDM":
-            return MACMDM_DEVICETYPE, nil
+            result = MACMDM_DEVICETYPE
         case "HOLOLENS":
-            return HOLOLENS_DEVICETYPE, nil
+            result = HOLOLENS_DEVICETYPE
         case "SURFACEHUB":
-            return SURFACEHUB_DEVICETYPE, nil
+            result = SURFACEHUB_DEVICETYPE
         case "ANDROIDFORWORK":
-            return ANDROIDFORWORK_DEVICETYPE, nil
+            result = ANDROIDFORWORK_DEVICETYPE
         case "ANDROIDENTERPRISE":
-            return ANDROIDENTERPRISE_DEVICETYPE, nil
+            result = ANDROIDENTERPRISE_DEVICETYPE
         case "WINDOWS10X":
-            return WINDOWS10X_DEVICETYPE, nil
+            result = WINDOWS10X_DEVICETYPE
         case "ANDROIDNGMS":
-            return ANDROIDNGMS_DEVICETYPE, nil
+            result = ANDROIDNGMS_DEVICETYPE
         case "CHROMEOS":
-            return CHROMEOS_DEVICETYPE, nil
+            result = CHROMEOS_DEVICETYPE
         case "LINUX":
-            return LINUX_DEVICETYPE, nil
+            result = LINUX_DEVICETYPE
         case "BLACKBERRY":
-            return BLACKBERRY_DEVICETYPE, nil
+            result = BLACKBERRY_DEVICETYPE
         case "PALM":
-            return PALM_DEVICETYPE, nil
+            result = PALM_DEVICETYPE
         case "UNKNOWN":
-            return UNKNOWN_DEVICETYPE, nil
+            result = UNKNOWN_DEVICETYPE
         case "CLOUDPC":
-            return CLOUDPC_DEVICETYPE, nil
+            result = CLOUDPC_DEVICETYPE
+        default:
+            return 0, errors.New("Unknown DeviceType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceType(values []DeviceType) []string {
     result := make([]string, len(values))

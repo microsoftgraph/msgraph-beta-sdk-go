@@ -214,8 +214,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(DeviceRegistrationState)
-            m.SetClientRegistrationStatus(&cast)
+            m.SetClientRegistrationStatus(val.(*DeviceRegistrationState))
         }
         return nil
     }
@@ -235,8 +234,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(DeviceType)
-            m.SetDeviceType(&cast)
+            m.SetDeviceType(val.(*DeviceType))
         }
         return nil
     }
@@ -256,8 +254,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(ManagementAgentType)
-            m.SetManagementAgents(&cast)
+            m.SetManagementAgents(val.(*ManagementAgentType))
         }
         return nil
     }
@@ -267,8 +264,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(ManagementState)
-            m.SetManagementState(&cast)
+            m.SetManagementState(val.(*ManagementState))
         }
         return nil
     }
@@ -328,8 +324,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(OwnerType)
-            m.SetOwnerType(&cast)
+            m.SetOwnerType(val.(*OwnerType))
         }
         return nil
     }
@@ -359,8 +354,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(ComanagementEligibleType)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*ComanagementEligibleType))
         }
         return nil
     }
@@ -416,7 +410,7 @@ func (m *ComanagementEligibleDevice) Serialize(writer i04eb5309aeaafadd28374d79c
         return err
     }
     if m.GetClientRegistrationStatus() != nil {
-        cast := m.GetClientRegistrationStatus().String()
+        cast := (*m.GetClientRegistrationStatus()).String()
         err = writer.WriteStringValue("clientRegistrationStatus", &cast)
         if err != nil {
             return err
@@ -429,7 +423,7 @@ func (m *ComanagementEligibleDevice) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetDeviceType() != nil {
-        cast := m.GetDeviceType().String()
+        cast := (*m.GetDeviceType()).String()
         err = writer.WriteStringValue("deviceType", &cast)
         if err != nil {
             return err
@@ -442,14 +436,14 @@ func (m *ComanagementEligibleDevice) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetManagementAgents() != nil {
-        cast := m.GetManagementAgents().String()
+        cast := (*m.GetManagementAgents()).String()
         err = writer.WriteStringValue("managementAgents", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagementState() != nil {
-        cast := m.GetManagementState().String()
+        cast := (*m.GetManagementState()).String()
         err = writer.WriteStringValue("managementState", &cast)
         if err != nil {
             return err
@@ -486,7 +480,7 @@ func (m *ComanagementEligibleDevice) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetOwnerType() != nil {
-        cast := m.GetOwnerType().String()
+        cast := (*m.GetOwnerType()).String()
         err = writer.WriteStringValue("ownerType", &cast)
         if err != nil {
             return err
@@ -505,7 +499,7 @@ func (m *ComanagementEligibleDevice) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

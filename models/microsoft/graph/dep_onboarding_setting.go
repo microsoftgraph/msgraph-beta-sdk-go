@@ -347,8 +347,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(DepTokenType)
-            m.SetTokenType(&cast)
+            m.SetTokenType(val.(*DepTokenType))
         }
         return nil
     }
@@ -464,7 +463,7 @@ func (m *DepOnboardingSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetTokenType() != nil {
-        cast := m.GetTokenType().String()
+        cast := (*m.GetTokenType()).String()
         err = writer.WriteStringValue("tokenType", &cast)
         if err != nil {
             return err

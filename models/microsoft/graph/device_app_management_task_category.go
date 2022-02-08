@@ -15,13 +15,16 @@ func (i DeviceAppManagementTaskCategory) String() string {
     return []string{"UNKNOWN", "ADVANCEDTHREATPROTECTION"}[i]
 }
 func ParseDeviceAppManagementTaskCategory(v string) (interface{}, error) {
+    result := UNKNOWN_DEVICEAPPMANAGEMENTTASKCATEGORY
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_DEVICEAPPMANAGEMENTTASKCATEGORY, nil
+            result = UNKNOWN_DEVICEAPPMANAGEMENTTASKCATEGORY
         case "ADVANCEDTHREATPROTECTION":
-            return ADVANCEDTHREATPROTECTION_DEVICEAPPMANAGEMENTTASKCATEGORY, nil
+            result = ADVANCEDTHREATPROTECTION_DEVICEAPPMANAGEMENTTASKCATEGORY
+        default:
+            return 0, errors.New("Unknown DeviceAppManagementTaskCategory value: " + v)
     }
-    return 0, errors.New("Unknown DeviceAppManagementTaskCategory value: " + v)
+    return &result, nil
 }
 func SerializeDeviceAppManagementTaskCategory(values []DeviceAppManagementTaskCategory) []string {
     result := make([]string, len(values))

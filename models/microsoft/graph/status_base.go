@@ -43,8 +43,7 @@ func (m *StatusBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
             return err
         }
         if val != nil {
-            cast := val.(ProvisioningResult)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*ProvisioningResult))
         }
         return nil
     }
@@ -56,7 +55,7 @@ func (m *StatusBase) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *StatusBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err := writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

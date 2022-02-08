@@ -104,8 +104,7 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(inter
             return err
         }
         if val != nil {
-            cast := val.(FederatedIdpMfaBehavior)
-            m.SetFederatedIdpMfaBehavior(&cast)
+            m.SetFederatedIdpMfaBehavior(val.(*FederatedIdpMfaBehavior))
         }
         return nil
     }
@@ -135,8 +134,7 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(inter
             return err
         }
         if val != nil {
-            cast := val.(PromptLoginBehavior)
-            m.SetPromptLoginBehavior(&cast)
+            m.SetPromptLoginBehavior(val.(*PromptLoginBehavior))
         }
         return nil
     }
@@ -178,7 +176,7 @@ func (m *InternalDomainFederation) Serialize(writer i04eb5309aeaafadd28374d79c84
         }
     }
     if m.GetFederatedIdpMfaBehavior() != nil {
-        cast := m.GetFederatedIdpMfaBehavior().String()
+        cast := (*m.GetFederatedIdpMfaBehavior()).String()
         err = writer.WriteStringValue("federatedIdpMfaBehavior", &cast)
         if err != nil {
             return err
@@ -197,7 +195,7 @@ func (m *InternalDomainFederation) Serialize(writer i04eb5309aeaafadd28374d79c84
         }
     }
     if m.GetPromptLoginBehavior() != nil {
-        cast := m.GetPromptLoginBehavior().String()
+        cast := (*m.GetPromptLoginBehavior()).String()
         err = writer.WriteStringValue("promptLoginBehavior", &cast)
         if err != nil {
             return err

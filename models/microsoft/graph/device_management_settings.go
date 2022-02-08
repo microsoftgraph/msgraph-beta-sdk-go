@@ -18,6 +18,8 @@ type DeviceManagementSettings struct {
     deviceComplianceCheckinThresholdDays *int32;
     // When the device does not check in for specified number of days, the company data might be removed and the device will not be under management. Valid values 30 to 270
     deviceInactivityBeforeRetirementInDay *int32;
+    // Determines whether the autopilot diagnostic feature is enabled or not.
+    enableAutopilotDiagnostics *bool;
     // Determines whether the log collection feature should be available for use.
     enableLogCollection *bool;
     // Is feature enabled or not for enhanced jailbreak detection.
@@ -84,6 +86,14 @@ func (m *DeviceManagementSettings) GetDeviceInactivityBeforeRetirementInDay()(*i
         return m.deviceInactivityBeforeRetirementInDay
     }
 }
+// GetEnableAutopilotDiagnostics gets the enableAutopilotDiagnostics property value. Determines whether the autopilot diagnostic feature is enabled or not.
+func (m *DeviceManagementSettings) GetEnableAutopilotDiagnostics()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.enableAutopilotDiagnostics
+    }
+}
 // GetEnableLogCollection gets the enableLogCollection property value. Determines whether the log collection feature should be available for use.
 func (m *DeviceManagementSettings) GetEnableLogCollection()(*bool) {
     if m == nil {
@@ -143,8 +153,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
             return err
         }
         if val != nil {
-            cast := val.(DerivedCredentialProviderType)
-            m.SetDerivedCredentialProvider(&cast)
+            m.SetDerivedCredentialProvider(val.(*DerivedCredentialProviderType))
         }
         return nil
     }
@@ -175,6 +184,16 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         }
         if val != nil {
             m.SetDeviceInactivityBeforeRetirementInDay(val)
+        }
+        return nil
+    }
+    res["enableAutopilotDiagnostics"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableAutopilotDiagnostics(val)
         }
         return nil
     }
@@ -242,7 +261,7 @@ func (m *DeviceManagementSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
         }
     }
     if m.GetDerivedCredentialProvider() != nil {
-        cast := m.GetDerivedCredentialProvider().String()
+        cast := (*m.GetDerivedCredentialProvider()).String()
         err := writer.WriteStringValue("derivedCredentialProvider", &cast)
         if err != nil {
             return err
@@ -262,6 +281,12 @@ func (m *DeviceManagementSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     {
         err := writer.WriteInt32Value("deviceInactivityBeforeRetirementInDay", m.GetDeviceInactivityBeforeRetirementInDay())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("enableAutopilotDiagnostics", m.GetEnableAutopilotDiagnostics())
         if err != nil {
             return err
         }
@@ -338,6 +363,12 @@ func (m *DeviceManagementSettings) SetDeviceComplianceCheckinThresholdDays(value
 func (m *DeviceManagementSettings) SetDeviceInactivityBeforeRetirementInDay(value *int32)() {
     if m != nil {
         m.deviceInactivityBeforeRetirementInDay = value
+    }
+}
+// SetEnableAutopilotDiagnostics sets the enableAutopilotDiagnostics property value. Determines whether the autopilot diagnostic feature is enabled or not.
+func (m *DeviceManagementSettings) SetEnableAutopilotDiagnostics(value *bool)() {
+    if m != nil {
+        m.enableAutopilotDiagnostics = value
     }
 }
 // SetEnableLogCollection sets the enableLogCollection property value. Determines whether the log collection feature should be available for use.

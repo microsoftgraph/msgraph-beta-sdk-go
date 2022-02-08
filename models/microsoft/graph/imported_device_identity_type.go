@@ -16,15 +16,18 @@ func (i ImportedDeviceIdentityType) String() string {
     return []string{"UNKNOWN", "IMEI", "SERIALNUMBER"}[i]
 }
 func ParseImportedDeviceIdentityType(v string) (interface{}, error) {
+    result := UNKNOWN_IMPORTEDDEVICEIDENTITYTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_IMPORTEDDEVICEIDENTITYTYPE, nil
+            result = UNKNOWN_IMPORTEDDEVICEIDENTITYTYPE
         case "IMEI":
-            return IMEI_IMPORTEDDEVICEIDENTITYTYPE, nil
+            result = IMEI_IMPORTEDDEVICEIDENTITYTYPE
         case "SERIALNUMBER":
-            return SERIALNUMBER_IMPORTEDDEVICEIDENTITYTYPE, nil
+            result = SERIALNUMBER_IMPORTEDDEVICEIDENTITYTYPE
+        default:
+            return 0, errors.New("Unknown ImportedDeviceIdentityType value: " + v)
     }
-    return 0, errors.New("Unknown ImportedDeviceIdentityType value: " + v)
+    return &result, nil
 }
 func SerializeImportedDeviceIdentityType(values []ImportedDeviceIdentityType) []string {
     result := make([]string, len(values))

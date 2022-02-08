@@ -21,25 +21,28 @@ func (i TeamworkDeviceOperationType) String() string {
     return []string{"DEVICERESTART", "CONFIGUPDATE", "DEVICEDIAGNOSTICS", "SOFTWAREUPDATE", "DEVICEMANAGEMENTAGENTCONFIGUPDATE", "REMOTELOGIN", "REMOTELOGOUT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamworkDeviceOperationType(v string) (interface{}, error) {
+    result := DEVICERESTART_TEAMWORKDEVICEOPERATIONTYPE
     switch strings.ToUpper(v) {
         case "DEVICERESTART":
-            return DEVICERESTART_TEAMWORKDEVICEOPERATIONTYPE, nil
+            result = DEVICERESTART_TEAMWORKDEVICEOPERATIONTYPE
         case "CONFIGUPDATE":
-            return CONFIGUPDATE_TEAMWORKDEVICEOPERATIONTYPE, nil
+            result = CONFIGUPDATE_TEAMWORKDEVICEOPERATIONTYPE
         case "DEVICEDIAGNOSTICS":
-            return DEVICEDIAGNOSTICS_TEAMWORKDEVICEOPERATIONTYPE, nil
+            result = DEVICEDIAGNOSTICS_TEAMWORKDEVICEOPERATIONTYPE
         case "SOFTWAREUPDATE":
-            return SOFTWAREUPDATE_TEAMWORKDEVICEOPERATIONTYPE, nil
+            result = SOFTWAREUPDATE_TEAMWORKDEVICEOPERATIONTYPE
         case "DEVICEMANAGEMENTAGENTCONFIGUPDATE":
-            return DEVICEMANAGEMENTAGENTCONFIGUPDATE_TEAMWORKDEVICEOPERATIONTYPE, nil
+            result = DEVICEMANAGEMENTAGENTCONFIGUPDATE_TEAMWORKDEVICEOPERATIONTYPE
         case "REMOTELOGIN":
-            return REMOTELOGIN_TEAMWORKDEVICEOPERATIONTYPE, nil
+            result = REMOTELOGIN_TEAMWORKDEVICEOPERATIONTYPE
         case "REMOTELOGOUT":
-            return REMOTELOGOUT_TEAMWORKDEVICEOPERATIONTYPE, nil
+            result = REMOTELOGOUT_TEAMWORKDEVICEOPERATIONTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMWORKDEVICEOPERATIONTYPE, nil
+            result = UNKNOWNFUTUREVALUE_TEAMWORKDEVICEOPERATIONTYPE
+        default:
+            return 0, errors.New("Unknown TeamworkDeviceOperationType value: " + v)
     }
-    return 0, errors.New("Unknown TeamworkDeviceOperationType value: " + v)
+    return &result, nil
 }
 func SerializeTeamworkDeviceOperationType(values []TeamworkDeviceOperationType) []string {
     result := make([]string, len(values))

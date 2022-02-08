@@ -15,13 +15,16 @@ func (i DeviceManagementApplicabilityRuleType) String() string {
     return []string{"INCLUDE", "EXCLUDE"}[i]
 }
 func ParseDeviceManagementApplicabilityRuleType(v string) (interface{}, error) {
+    result := INCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE
     switch strings.ToUpper(v) {
         case "INCLUDE":
-            return INCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE, nil
+            result = INCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE
         case "EXCLUDE":
-            return EXCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE, nil
+            result = EXCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE
+        default:
+            return 0, errors.New("Unknown DeviceManagementApplicabilityRuleType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementApplicabilityRuleType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementApplicabilityRuleType(values []DeviceManagementApplicabilityRuleType) []string {
     result := make([]string, len(values))

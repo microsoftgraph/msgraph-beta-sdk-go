@@ -17,17 +17,20 @@ func (i PrintOrientation) String() string {
     return []string{"PORTRAIT", "LANDSCAPE", "REVERSELANDSCAPE", "REVERSEPORTRAIT"}[i]
 }
 func ParsePrintOrientation(v string) (interface{}, error) {
+    result := PORTRAIT_PRINTORIENTATION
     switch strings.ToUpper(v) {
         case "PORTRAIT":
-            return PORTRAIT_PRINTORIENTATION, nil
+            result = PORTRAIT_PRINTORIENTATION
         case "LANDSCAPE":
-            return LANDSCAPE_PRINTORIENTATION, nil
+            result = LANDSCAPE_PRINTORIENTATION
         case "REVERSELANDSCAPE":
-            return REVERSELANDSCAPE_PRINTORIENTATION, nil
+            result = REVERSELANDSCAPE_PRINTORIENTATION
         case "REVERSEPORTRAIT":
-            return REVERSEPORTRAIT_PRINTORIENTATION, nil
+            result = REVERSEPORTRAIT_PRINTORIENTATION
+        default:
+            return 0, errors.New("Unknown PrintOrientation value: " + v)
     }
-    return 0, errors.New("Unknown PrintOrientation value: " + v)
+    return &result, nil
 }
 func SerializePrintOrientation(values []PrintOrientation) []string {
     result := make([]string, len(values))

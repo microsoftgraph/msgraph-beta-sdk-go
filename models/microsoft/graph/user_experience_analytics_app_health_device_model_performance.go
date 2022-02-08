@@ -124,8 +124,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
             return err
         }
         if val != nil {
-            cast := val.(UserExperienceAnalyticsHealthState)
-            m.SetHealthStatus(&cast)
+            m.SetHealthStatus(val.(*UserExperienceAnalyticsHealthState))
         }
         return nil
     }
@@ -189,7 +188,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) Serialize(write
         }
     }
     if m.GetHealthStatus() != nil {
-        cast := m.GetHealthStatus().String()
+        cast := (*m.GetHealthStatus()).String()
         err = writer.WriteStringValue("healthStatus", &cast)
         if err != nil {
             return err

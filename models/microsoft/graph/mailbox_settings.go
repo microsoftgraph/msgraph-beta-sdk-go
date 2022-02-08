@@ -8,13 +8,13 @@ import (
 type MailboxSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Folder ID of an archive folder for the user. Read only.
+    // Folder ID of an archive folder for the user.
     archiveFolder *string;
     // Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
     automaticRepliesSetting *AutomaticRepliesSetting;
     // The date format for the user's mailbox.
     dateFormat *string;
-    // If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.
+    // If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
     delegateMeetingMessageDeliveryOptions *DelegateMeetingMessageDeliveryOptions;
     // The locale information for the user, including the preferred language and country/region.
     language *LocaleInfo;
@@ -44,7 +44,7 @@ func (m *MailboxSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetArchiveFolder gets the archiveFolder property value. Folder ID of an archive folder for the user. Read only.
+// GetArchiveFolder gets the archiveFolder property value. Folder ID of an archive folder for the user.
 func (m *MailboxSettings) GetArchiveFolder()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *MailboxSettings) GetDateFormat()(*string) {
         return m.dateFormat
     }
 }
-// GetDelegateMeetingMessageDeliveryOptions gets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.
+// GetDelegateMeetingMessageDeliveryOptions gets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
 func (m *MailboxSettings) GetDelegateMeetingMessageDeliveryOptions()(*DelegateMeetingMessageDeliveryOptions) {
     if m == nil {
         return nil
@@ -163,8 +163,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(DelegateMeetingMessageDeliveryOptions)
-            m.SetDelegateMeetingMessageDeliveryOptions(&cast)
+            m.SetDelegateMeetingMessageDeliveryOptions(val.(*DelegateMeetingMessageDeliveryOptions))
         }
         return nil
     }
@@ -204,8 +203,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(UserPurpose)
-            m.SetUserPurpose(&cast)
+            m.SetUserPurpose(val.(*UserPurpose))
         }
         return nil
     }
@@ -215,8 +213,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(MailboxRecipientType)
-            m.SetUserPurposeV2(&cast)
+            m.SetUserPurposeV2(val.(*MailboxRecipientType))
         }
         return nil
     }
@@ -256,7 +253,7 @@ func (m *MailboxSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetDelegateMeetingMessageDeliveryOptions() != nil {
-        cast := m.GetDelegateMeetingMessageDeliveryOptions().String()
+        cast := (*m.GetDelegateMeetingMessageDeliveryOptions()).String()
         err := writer.WriteStringValue("delegateMeetingMessageDeliveryOptions", &cast)
         if err != nil {
             return err
@@ -281,14 +278,14 @@ func (m *MailboxSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetUserPurpose() != nil {
-        cast := m.GetUserPurpose().String()
+        cast := (*m.GetUserPurpose()).String()
         err := writer.WriteStringValue("userPurpose", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetUserPurposeV2() != nil {
-        cast := m.GetUserPurposeV2().String()
+        cast := (*m.GetUserPurposeV2()).String()
         err := writer.WriteStringValue("userPurposeV2", &cast)
         if err != nil {
             return err
@@ -314,7 +311,7 @@ func (m *MailboxSettings) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetArchiveFolder sets the archiveFolder property value. Folder ID of an archive folder for the user. Read only.
+// SetArchiveFolder sets the archiveFolder property value. Folder ID of an archive folder for the user.
 func (m *MailboxSettings) SetArchiveFolder(value *string)() {
     if m != nil {
         m.archiveFolder = value
@@ -332,7 +329,7 @@ func (m *MailboxSettings) SetDateFormat(value *string)() {
         m.dateFormat = value
     }
 }
-// SetDelegateMeetingMessageDeliveryOptions sets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.
+// SetDelegateMeetingMessageDeliveryOptions sets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
 func (m *MailboxSettings) SetDelegateMeetingMessageDeliveryOptions(value *DelegateMeetingMessageDeliveryOptions)() {
     if m != nil {
         m.delegateMeetingMessageDeliveryOptions = value

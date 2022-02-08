@@ -19,21 +19,24 @@ func (i RunState) String() string {
     return []string{"UNKNOWN", "SUCCESS", "FAIL", "SCRIPTERROR", "PENDING", "NOTAPPLICABLE"}[i]
 }
 func ParseRunState(v string) (interface{}, error) {
+    result := UNKNOWN_RUNSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_RUNSTATE, nil
+            result = UNKNOWN_RUNSTATE
         case "SUCCESS":
-            return SUCCESS_RUNSTATE, nil
+            result = SUCCESS_RUNSTATE
         case "FAIL":
-            return FAIL_RUNSTATE, nil
+            result = FAIL_RUNSTATE
         case "SCRIPTERROR":
-            return SCRIPTERROR_RUNSTATE, nil
+            result = SCRIPTERROR_RUNSTATE
         case "PENDING":
-            return PENDING_RUNSTATE, nil
+            result = PENDING_RUNSTATE
         case "NOTAPPLICABLE":
-            return NOTAPPLICABLE_RUNSTATE, nil
+            result = NOTAPPLICABLE_RUNSTATE
+        default:
+            return 0, errors.New("Unknown RunState value: " + v)
     }
-    return 0, errors.New("Unknown RunState value: " + v)
+    return &result, nil
 }
 func SerializeRunState(values []RunState) []string {
     result := make([]string, len(values))

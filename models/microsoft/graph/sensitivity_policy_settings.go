@@ -64,8 +64,7 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(SensitivityLabelTarget)
-            m.SetApplicableTo(&cast)
+            m.SetApplicableTo(val.(*SensitivityLabelTarget))
         }
         return nil
     }
@@ -111,7 +110,7 @@ func (m *SensitivityPolicySettings) Serialize(writer i04eb5309aeaafadd28374d79c8
         return err
     }
     if m.GetApplicableTo() != nil {
-        cast := m.GetApplicableTo().String()
+        cast := (*m.GetApplicableTo()).String()
         err = writer.WriteStringValue("applicableTo", &cast)
         if err != nil {
             return err

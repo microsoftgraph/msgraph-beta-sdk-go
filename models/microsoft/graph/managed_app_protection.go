@@ -502,8 +502,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppDataTransferLevel)
-            m.SetAllowedInboundDataTransferSources(&cast)
+            m.SetAllowedInboundDataTransferSources(val.(*ManagedAppDataTransferLevel))
         }
         return nil
     }
@@ -523,8 +522,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppClipboardSharingLevel)
-            m.SetAllowedOutboundClipboardSharingLevel(&cast)
+            m.SetAllowedOutboundClipboardSharingLevel(val.(*ManagedAppClipboardSharingLevel))
         }
         return nil
     }
@@ -534,8 +532,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppDataTransferLevel)
-            m.SetAllowedOutboundDataTransferDestinations(&cast)
+            m.SetAllowedOutboundDataTransferDestinations(val.(*ManagedAppDataTransferLevel))
         }
         return nil
     }
@@ -545,8 +542,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppRemediationAction)
-            m.SetAppActionIfDeviceComplianceRequired(&cast)
+            m.SetAppActionIfDeviceComplianceRequired(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -556,8 +552,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppRemediationAction)
-            m.SetAppActionIfMaximumPinRetriesExceeded(&cast)
+            m.SetAppActionIfMaximumPinRetriesExceeded(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -567,8 +562,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppRemediationAction)
-            m.SetAppActionIfUnableToAuthenticateUser(&cast)
+            m.SetAppActionIfUnableToAuthenticateUser(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -618,8 +612,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppPhoneNumberRedirectLevel)
-            m.SetDialerRestrictionLevel(&cast)
+            m.SetDialerRestrictionLevel(val.(*ManagedAppPhoneNumberRedirectLevel))
         }
         return nil
     }
@@ -659,8 +652,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedBrowserType)
-            m.SetManagedBrowser(&cast)
+            m.SetManagedBrowser(val.(*ManagedBrowserType))
         }
         return nil
     }
@@ -680,8 +672,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppDeviceThreatLevel)
-            m.SetMaximumAllowedDeviceThreatLevel(&cast)
+            m.SetMaximumAllowedDeviceThreatLevel(val.(*ManagedAppDeviceThreatLevel))
         }
         return nil
     }
@@ -801,8 +792,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppRemediationAction)
-            m.SetMobileThreatDefenseRemediationAction(&cast)
+            m.SetMobileThreatDefenseRemediationAction(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -812,8 +802,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppNotificationRestriction)
-            m.SetNotificationRestriction(&cast)
+            m.SetNotificationRestriction(val.(*ManagedAppNotificationRestriction))
         }
         return nil
     }
@@ -873,8 +862,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppPinCharacterSet)
-            m.SetPinCharacterSet(&cast)
+            m.SetPinCharacterSet(val.(*ManagedAppPinCharacterSet))
         }
         return nil
     }
@@ -962,7 +950,7 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetAllowedInboundDataTransferSources() != nil {
-        cast := m.GetAllowedInboundDataTransferSources().String()
+        cast := (*m.GetAllowedInboundDataTransferSources()).String()
         err = writer.WriteStringValue("allowedInboundDataTransferSources", &cast)
         if err != nil {
             return err
@@ -975,35 +963,35 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetAllowedOutboundClipboardSharingLevel() != nil {
-        cast := m.GetAllowedOutboundClipboardSharingLevel().String()
+        cast := (*m.GetAllowedOutboundClipboardSharingLevel()).String()
         err = writer.WriteStringValue("allowedOutboundClipboardSharingLevel", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAllowedOutboundDataTransferDestinations() != nil {
-        cast := m.GetAllowedOutboundDataTransferDestinations().String()
+        cast := (*m.GetAllowedOutboundDataTransferDestinations()).String()
         err = writer.WriteStringValue("allowedOutboundDataTransferDestinations", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAppActionIfDeviceComplianceRequired() != nil {
-        cast := m.GetAppActionIfDeviceComplianceRequired().String()
+        cast := (*m.GetAppActionIfDeviceComplianceRequired()).String()
         err = writer.WriteStringValue("appActionIfDeviceComplianceRequired", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAppActionIfMaximumPinRetriesExceeded() != nil {
-        cast := m.GetAppActionIfMaximumPinRetriesExceeded().String()
+        cast := (*m.GetAppActionIfMaximumPinRetriesExceeded()).String()
         err = writer.WriteStringValue("appActionIfMaximumPinRetriesExceeded", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAppActionIfUnableToAuthenticateUser() != nil {
-        cast := m.GetAppActionIfUnableToAuthenticateUser().String()
+        cast := (*m.GetAppActionIfUnableToAuthenticateUser()).String()
         err = writer.WriteStringValue("appActionIfUnableToAuthenticateUser", &cast)
         if err != nil {
             return err
@@ -1034,7 +1022,7 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetDialerRestrictionLevel() != nil {
-        cast := m.GetDialerRestrictionLevel().String()
+        cast := (*m.GetDialerRestrictionLevel()).String()
         err = writer.WriteStringValue("dialerRestrictionLevel", &cast)
         if err != nil {
             return err
@@ -1059,7 +1047,7 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetManagedBrowser() != nil {
-        cast := m.GetManagedBrowser().String()
+        cast := (*m.GetManagedBrowser()).String()
         err = writer.WriteStringValue("managedBrowser", &cast)
         if err != nil {
             return err
@@ -1072,7 +1060,7 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetMaximumAllowedDeviceThreatLevel() != nil {
-        cast := m.GetMaximumAllowedDeviceThreatLevel().String()
+        cast := (*m.GetMaximumAllowedDeviceThreatLevel()).String()
         err = writer.WriteStringValue("maximumAllowedDeviceThreatLevel", &cast)
         if err != nil {
             return err
@@ -1145,14 +1133,14 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetMobileThreatDefenseRemediationAction() != nil {
-        cast := m.GetMobileThreatDefenseRemediationAction().String()
+        cast := (*m.GetMobileThreatDefenseRemediationAction()).String()
         err = writer.WriteStringValue("mobileThreatDefenseRemediationAction", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetNotificationRestriction() != nil {
-        cast := m.GetNotificationRestriction().String()
+        cast := (*m.GetNotificationRestriction()).String()
         err = writer.WriteStringValue("notificationRestriction", &cast)
         if err != nil {
             return err
@@ -1189,7 +1177,7 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetPinCharacterSet() != nil {
-        cast := m.GetPinCharacterSet().String()
+        cast := (*m.GetPinCharacterSet()).String()
         err = writer.WriteStringValue("pinCharacterSet", &cast)
         if err != nil {
             return err

@@ -38,59 +38,62 @@ func (i Operator) String() string {
     return []string{"NONE", "AND", "OR", "ISEQUALS", "NOTEQUALS", "GREATERTHAN", "LESSTHAN", "BETWEEN", "NOTBETWEEN", "GREATEREQUALS", "LESSEQUALS", "DAYTIMEBETWEEN", "BEGINSWITH", "NOTBEGINSWITH", "ENDSWITH", "NOTENDSWITH", "CONTAINS", "NOTCONTAINS", "ALLOF", "ONEOF", "NONEOF", "SETEQUALS", "ORDEREDSETEQUALS", "SUBSETOF", "EXCLUDESALL"}[i]
 }
 func ParseOperator(v string) (interface{}, error) {
+    result := NONE_OPERATOR
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_OPERATOR, nil
+            result = NONE_OPERATOR
         case "AND":
-            return AND_OPERATOR, nil
+            result = AND_OPERATOR
         case "OR":
-            return OR_OPERATOR, nil
+            result = OR_OPERATOR
         case "ISEQUALS":
-            return ISEQUALS_OPERATOR, nil
+            result = ISEQUALS_OPERATOR
         case "NOTEQUALS":
-            return NOTEQUALS_OPERATOR, nil
+            result = NOTEQUALS_OPERATOR
         case "GREATERTHAN":
-            return GREATERTHAN_OPERATOR, nil
+            result = GREATERTHAN_OPERATOR
         case "LESSTHAN":
-            return LESSTHAN_OPERATOR, nil
+            result = LESSTHAN_OPERATOR
         case "BETWEEN":
-            return BETWEEN_OPERATOR, nil
+            result = BETWEEN_OPERATOR
         case "NOTBETWEEN":
-            return NOTBETWEEN_OPERATOR, nil
+            result = NOTBETWEEN_OPERATOR
         case "GREATEREQUALS":
-            return GREATEREQUALS_OPERATOR, nil
+            result = GREATEREQUALS_OPERATOR
         case "LESSEQUALS":
-            return LESSEQUALS_OPERATOR, nil
+            result = LESSEQUALS_OPERATOR
         case "DAYTIMEBETWEEN":
-            return DAYTIMEBETWEEN_OPERATOR, nil
+            result = DAYTIMEBETWEEN_OPERATOR
         case "BEGINSWITH":
-            return BEGINSWITH_OPERATOR, nil
+            result = BEGINSWITH_OPERATOR
         case "NOTBEGINSWITH":
-            return NOTBEGINSWITH_OPERATOR, nil
+            result = NOTBEGINSWITH_OPERATOR
         case "ENDSWITH":
-            return ENDSWITH_OPERATOR, nil
+            result = ENDSWITH_OPERATOR
         case "NOTENDSWITH":
-            return NOTENDSWITH_OPERATOR, nil
+            result = NOTENDSWITH_OPERATOR
         case "CONTAINS":
-            return CONTAINS_OPERATOR, nil
+            result = CONTAINS_OPERATOR
         case "NOTCONTAINS":
-            return NOTCONTAINS_OPERATOR, nil
+            result = NOTCONTAINS_OPERATOR
         case "ALLOF":
-            return ALLOF_OPERATOR, nil
+            result = ALLOF_OPERATOR
         case "ONEOF":
-            return ONEOF_OPERATOR, nil
+            result = ONEOF_OPERATOR
         case "NONEOF":
-            return NONEOF_OPERATOR, nil
+            result = NONEOF_OPERATOR
         case "SETEQUALS":
-            return SETEQUALS_OPERATOR, nil
+            result = SETEQUALS_OPERATOR
         case "ORDEREDSETEQUALS":
-            return ORDEREDSETEQUALS_OPERATOR, nil
+            result = ORDEREDSETEQUALS_OPERATOR
         case "SUBSETOF":
-            return SUBSETOF_OPERATOR, nil
+            result = SUBSETOF_OPERATOR
         case "EXCLUDESALL":
-            return EXCLUDESALL_OPERATOR, nil
+            result = EXCLUDESALL_OPERATOR
+        default:
+            return 0, errors.New("Unknown Operator value: " + v)
     }
-    return 0, errors.New("Unknown Operator value: " + v)
+    return &result, nil
 }
 func SerializeOperator(values []Operator) []string {
     result := make([]string, len(values))

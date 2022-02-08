@@ -18,19 +18,22 @@ func (i IncomingTokenType) String() string {
     return []string{"NONE", "PRIMARYREFRESHTOKEN", "SAML11", "SAML20", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseIncomingTokenType(v string) (interface{}, error) {
+    result := NONE_INCOMINGTOKENTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_INCOMINGTOKENTYPE, nil
+            result = NONE_INCOMINGTOKENTYPE
         case "PRIMARYREFRESHTOKEN":
-            return PRIMARYREFRESHTOKEN_INCOMINGTOKENTYPE, nil
+            result = PRIMARYREFRESHTOKEN_INCOMINGTOKENTYPE
         case "SAML11":
-            return SAML11_INCOMINGTOKENTYPE, nil
+            result = SAML11_INCOMINGTOKENTYPE
         case "SAML20":
-            return SAML20_INCOMINGTOKENTYPE, nil
+            result = SAML20_INCOMINGTOKENTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_INCOMINGTOKENTYPE, nil
+            result = UNKNOWNFUTUREVALUE_INCOMINGTOKENTYPE
+        default:
+            return 0, errors.New("Unknown IncomingTokenType value: " + v)
     }
-    return 0, errors.New("Unknown IncomingTokenType value: " + v)
+    return &result, nil
 }
 func SerializeIncomingTokenType(values []IncomingTokenType) []string {
     result := make([]string, len(values))

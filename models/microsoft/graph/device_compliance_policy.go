@@ -26,7 +26,7 @@ type DeviceCompliancePolicy struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // List of Scope Tags for this Entity instance.
     roleScopeTagIds []string;
-    // The list of scheduled action for this rule
+    // The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
     scheduledActionsForRule []DeviceComplianceScheduledActionForRule;
     // List of DeviceComplianceUserStatus.
     userStatuses []DeviceComplianceUserStatus;
@@ -114,7 +114,7 @@ func (m *DeviceCompliancePolicy) GetRoleScopeTagIds()([]string) {
         return m.roleScopeTagIds
     }
 }
-// GetScheduledActionsForRule gets the scheduledActionsForRule property value. The list of scheduled action for this rule
+// GetScheduledActionsForRule gets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *DeviceCompliancePolicy) GetScheduledActionsForRule()([]DeviceComplianceScheduledActionForRule) {
     if m == nil {
         return nil
@@ -473,7 +473,7 @@ func (m *DeviceCompliancePolicy) SetRoleScopeTagIds(value []string)() {
         m.roleScopeTagIds = value
     }
 }
-// SetScheduledActionsForRule sets the scheduledActionsForRule property value. The list of scheduled action for this rule
+// SetScheduledActionsForRule sets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *DeviceCompliancePolicy) SetScheduledActionsForRule(value []DeviceComplianceScheduledActionForRule)() {
     if m != nil {
         m.scheduledActionsForRule = value

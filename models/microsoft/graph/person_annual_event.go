@@ -74,8 +74,7 @@ func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(PersonAnnualEventType)
-            m.SetType(&cast)
+            m.SetType(val.(*PersonAnnualEventType))
         }
         return nil
     }
@@ -103,7 +102,7 @@ func (m *PersonAnnualEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

@@ -18,19 +18,22 @@ func (i ManagedAppDeviceThreatLevel) String() string {
     return []string{"NOTCONFIGURED", "SECURED", "LOW", "MEDIUM", "HIGH"}[i]
 }
 func ParseManagedAppDeviceThreatLevel(v string) (interface{}, error) {
+    result := NOTCONFIGURED_MANAGEDAPPDEVICETHREATLEVEL
     switch strings.ToUpper(v) {
         case "NOTCONFIGURED":
-            return NOTCONFIGURED_MANAGEDAPPDEVICETHREATLEVEL, nil
+            result = NOTCONFIGURED_MANAGEDAPPDEVICETHREATLEVEL
         case "SECURED":
-            return SECURED_MANAGEDAPPDEVICETHREATLEVEL, nil
+            result = SECURED_MANAGEDAPPDEVICETHREATLEVEL
         case "LOW":
-            return LOW_MANAGEDAPPDEVICETHREATLEVEL, nil
+            result = LOW_MANAGEDAPPDEVICETHREATLEVEL
         case "MEDIUM":
-            return MEDIUM_MANAGEDAPPDEVICETHREATLEVEL, nil
+            result = MEDIUM_MANAGEDAPPDEVICETHREATLEVEL
         case "HIGH":
-            return HIGH_MANAGEDAPPDEVICETHREATLEVEL, nil
+            result = HIGH_MANAGEDAPPDEVICETHREATLEVEL
+        default:
+            return 0, errors.New("Unknown ManagedAppDeviceThreatLevel value: " + v)
     }
-    return 0, errors.New("Unknown ManagedAppDeviceThreatLevel value: " + v)
+    return &result, nil
 }
 func SerializeManagedAppDeviceThreatLevel(values []ManagedAppDeviceThreatLevel) []string {
     result := make([]string, len(values))

@@ -55,6 +55,8 @@ type DepIOSEnrollmentProfile struct {
     temporarySessionTimeoutInSeconds *int32;
     // Indicates if Weclome screen is disabled
     updateCompleteScreenDisabled *bool;
+    // Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices.
+    userlessSharedAadModeEnabled *bool;
     // Indicates timeout of temporary session
     userSessionTimeoutInSeconds *int32;
     // Indicates if the watch migration screen is disabled
@@ -263,6 +265,14 @@ func (m *DepIOSEnrollmentProfile) GetUpdateCompleteScreenDisabled()(*bool) {
         return m.updateCompleteScreenDisabled
     }
 }
+// GetUserlessSharedAadModeEnabled gets the userlessSharedAadModeEnabled property value. Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices.
+func (m *DepIOSEnrollmentProfile) GetUserlessSharedAadModeEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userlessSharedAadModeEnabled
+    }
+}
 // GetUserSessionTimeoutInSeconds gets the userSessionTimeoutInSeconds property value. Indicates timeout of temporary session
 func (m *DepIOSEnrollmentProfile) GetUserSessionTimeoutInSeconds()(*int32) {
     if m == nil {
@@ -414,8 +424,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(ITunesPairingMode)
-            m.SetITunesPairingMode(&cast)
+            m.SetITunesPairingMode(val.(*ITunesPairingMode))
         }
         return nil
     }
@@ -543,6 +552,16 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
+    res["userlessSharedAadModeEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserlessSharedAadModeEnabled(val)
+        }
+        return nil
+    }
     res["userSessionTimeoutInSeconds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -661,7 +680,7 @@ func (m *DepIOSEnrollmentProfile) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetITunesPairingMode() != nil {
-        cast := m.GetITunesPairingMode().String()
+        cast := (*m.GetITunesPairingMode()).String()
         err = writer.WriteStringValue("iTunesPairingMode", &cast)
         if err != nil {
             return err
@@ -740,6 +759,12 @@ func (m *DepIOSEnrollmentProfile) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     {
         err = writer.WriteBoolValue("updateCompleteScreenDisabled", m.GetUpdateCompleteScreenDisabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("userlessSharedAadModeEnabled", m.GetUserlessSharedAadModeEnabled())
         if err != nil {
             return err
         }
@@ -912,6 +937,12 @@ func (m *DepIOSEnrollmentProfile) SetTemporarySessionTimeoutInSeconds(value *int
 func (m *DepIOSEnrollmentProfile) SetUpdateCompleteScreenDisabled(value *bool)() {
     if m != nil {
         m.updateCompleteScreenDisabled = value
+    }
+}
+// SetUserlessSharedAadModeEnabled sets the userlessSharedAadModeEnabled property value. Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices.
+func (m *DepIOSEnrollmentProfile) SetUserlessSharedAadModeEnabled(value *bool)() {
+    if m != nil {
+        m.userlessSharedAadModeEnabled = value
     }
 }
 // SetUserSessionTimeoutInSeconds sets the userSessionTimeoutInSeconds property value. Indicates timeout of temporary session

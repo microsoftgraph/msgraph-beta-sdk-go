@@ -16,15 +16,18 @@ func (i HealthState) String() string {
     return []string{"UNKNOWN", "HEALTHY", "UNHEALTHY"}[i]
 }
 func ParseHealthState(v string) (interface{}, error) {
+    result := UNKNOWN_HEALTHSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_HEALTHSTATE, nil
+            result = UNKNOWN_HEALTHSTATE
         case "HEALTHY":
-            return HEALTHY_HEALTHSTATE, nil
+            result = HEALTHY_HEALTHSTATE
         case "UNHEALTHY":
-            return UNHEALTHY_HEALTHSTATE, nil
+            result = UNHEALTHY_HEALTHSTATE
+        default:
+            return 0, errors.New("Unknown HealthState value: " + v)
     }
-    return 0, errors.New("Unknown HealthState value: " + v)
+    return &result, nil
 }
 func SerializeHealthState(values []HealthState) []string {
     result := make([]string, len(values))

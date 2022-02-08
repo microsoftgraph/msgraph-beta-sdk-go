@@ -15,13 +15,16 @@ func (i DeviceManagementResourceAccessProfileIntent) String() string {
     return []string{"APPLY", "REMOVE"}[i]
 }
 func ParseDeviceManagementResourceAccessProfileIntent(v string) (interface{}, error) {
+    result := APPLY_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT
     switch strings.ToUpper(v) {
         case "APPLY":
-            return APPLY_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT, nil
+            result = APPLY_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT
         case "REMOVE":
-            return REMOVE_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT, nil
+            result = REMOVE_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT
+        default:
+            return 0, errors.New("Unknown DeviceManagementResourceAccessProfileIntent value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementResourceAccessProfileIntent value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementResourceAccessProfileIntent(values []DeviceManagementResourceAccessProfileIntent) []string {
     result := make([]string, len(values))

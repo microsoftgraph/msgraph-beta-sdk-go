@@ -53,8 +53,7 @@ func (m *EducationSynchronizationLicenseAssignment) GetFieldDeserializers()(map[
             return err
         }
         if val != nil {
-            cast := val.(EducationUserRole)
-            m.SetAppliesTo(&cast)
+            m.SetAppliesTo(val.(*EducationUserRole))
         }
         return nil
     }
@@ -80,7 +79,7 @@ func (m *EducationSynchronizationLicenseAssignment) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *EducationSynchronizationLicenseAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAppliesTo() != nil {
-        cast := m.GetAppliesTo().String()
+        cast := (*m.GetAppliesTo()).String()
         err := writer.WriteStringValue("appliesTo", &cast)
         if err != nil {
             return err

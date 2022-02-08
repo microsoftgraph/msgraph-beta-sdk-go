@@ -15,13 +15,16 @@ func (i AutoAdmittedUsersType) String() string {
     return []string{"EVERYONEINCOMPANY", "EVERYONE"}[i]
 }
 func ParseAutoAdmittedUsersType(v string) (interface{}, error) {
+    result := EVERYONEINCOMPANY_AUTOADMITTEDUSERSTYPE
     switch strings.ToUpper(v) {
         case "EVERYONEINCOMPANY":
-            return EVERYONEINCOMPANY_AUTOADMITTEDUSERSTYPE, nil
+            result = EVERYONEINCOMPANY_AUTOADMITTEDUSERSTYPE
         case "EVERYONE":
-            return EVERYONE_AUTOADMITTEDUSERSTYPE, nil
+            result = EVERYONE_AUTOADMITTEDUSERSTYPE
+        default:
+            return 0, errors.New("Unknown AutoAdmittedUsersType value: " + v)
     }
-    return 0, errors.New("Unknown AutoAdmittedUsersType value: " + v)
+    return &result, nil
 }
 func SerializeAutoAdmittedUsersType(values []AutoAdmittedUsersType) []string {
     result := make([]string, len(values))

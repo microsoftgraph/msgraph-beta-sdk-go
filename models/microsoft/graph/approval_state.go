@@ -18,19 +18,22 @@ func (i ApprovalState) String() string {
     return []string{"PENDING", "APPROVED", "DENIED", "ABORTED", "CANCELED"}[i]
 }
 func ParseApprovalState(v string) (interface{}, error) {
+    result := PENDING_APPROVALSTATE
     switch strings.ToUpper(v) {
         case "PENDING":
-            return PENDING_APPROVALSTATE, nil
+            result = PENDING_APPROVALSTATE
         case "APPROVED":
-            return APPROVED_APPROVALSTATE, nil
+            result = APPROVED_APPROVALSTATE
         case "DENIED":
-            return DENIED_APPROVALSTATE, nil
+            result = DENIED_APPROVALSTATE
         case "ABORTED":
-            return ABORTED_APPROVALSTATE, nil
+            result = ABORTED_APPROVALSTATE
         case "CANCELED":
-            return CANCELED_APPROVALSTATE, nil
+            result = CANCELED_APPROVALSTATE
+        default:
+            return 0, errors.New("Unknown ApprovalState value: " + v)
     }
-    return 0, errors.New("Unknown ApprovalState value: " + v)
+    return &result, nil
 }
 func SerializeApprovalState(values []ApprovalState) []string {
     result := make([]string, len(values))

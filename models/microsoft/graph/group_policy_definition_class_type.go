@@ -15,13 +15,16 @@ func (i GroupPolicyDefinitionClassType) String() string {
     return []string{"USER", "MACHINE"}[i]
 }
 func ParseGroupPolicyDefinitionClassType(v string) (interface{}, error) {
+    result := USER_GROUPPOLICYDEFINITIONCLASSTYPE
     switch strings.ToUpper(v) {
         case "USER":
-            return USER_GROUPPOLICYDEFINITIONCLASSTYPE, nil
+            result = USER_GROUPPOLICYDEFINITIONCLASSTYPE
         case "MACHINE":
-            return MACHINE_GROUPPOLICYDEFINITIONCLASSTYPE, nil
+            result = MACHINE_GROUPPOLICYDEFINITIONCLASSTYPE
+        default:
+            return 0, errors.New("Unknown GroupPolicyDefinitionClassType value: " + v)
     }
-    return 0, errors.New("Unknown GroupPolicyDefinitionClassType value: " + v)
+    return &result, nil
 }
 func SerializeGroupPolicyDefinitionClassType(values []GroupPolicyDefinitionClassType) []string {
     result := make([]string, len(values))

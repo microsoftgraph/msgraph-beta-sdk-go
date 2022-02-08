@@ -18,19 +18,22 @@ func (i SynchronizationStatusCode) String() string {
     return []string{"NOTCONFIGURED", "NOTRUN", "ACTIVE", "PAUSED", "QUARANTINE"}[i]
 }
 func ParseSynchronizationStatusCode(v string) (interface{}, error) {
+    result := NOTCONFIGURED_SYNCHRONIZATIONSTATUSCODE
     switch strings.ToUpper(v) {
         case "NOTCONFIGURED":
-            return NOTCONFIGURED_SYNCHRONIZATIONSTATUSCODE, nil
+            result = NOTCONFIGURED_SYNCHRONIZATIONSTATUSCODE
         case "NOTRUN":
-            return NOTRUN_SYNCHRONIZATIONSTATUSCODE, nil
+            result = NOTRUN_SYNCHRONIZATIONSTATUSCODE
         case "ACTIVE":
-            return ACTIVE_SYNCHRONIZATIONSTATUSCODE, nil
+            result = ACTIVE_SYNCHRONIZATIONSTATUSCODE
         case "PAUSED":
-            return PAUSED_SYNCHRONIZATIONSTATUSCODE, nil
+            result = PAUSED_SYNCHRONIZATIONSTATUSCODE
         case "QUARANTINE":
-            return QUARANTINE_SYNCHRONIZATIONSTATUSCODE, nil
+            result = QUARANTINE_SYNCHRONIZATIONSTATUSCODE
+        default:
+            return 0, errors.New("Unknown SynchronizationStatusCode value: " + v)
     }
-    return 0, errors.New("Unknown SynchronizationStatusCode value: " + v)
+    return &result, nil
 }
 func SerializeSynchronizationStatusCode(values []SynchronizationStatusCode) []string {
     result := make([]string, len(values))

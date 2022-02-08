@@ -18,19 +18,22 @@ func (i EmailType) String() string {
     return []string{"UNKNOWN", "WORK", "PERSONAL", "MAIN", "OTHER"}[i]
 }
 func ParseEmailType(v string) (interface{}, error) {
+    result := UNKNOWN_EMAILTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_EMAILTYPE, nil
+            result = UNKNOWN_EMAILTYPE
         case "WORK":
-            return WORK_EMAILTYPE, nil
+            result = WORK_EMAILTYPE
         case "PERSONAL":
-            return PERSONAL_EMAILTYPE, nil
+            result = PERSONAL_EMAILTYPE
         case "MAIN":
-            return MAIN_EMAILTYPE, nil
+            result = MAIN_EMAILTYPE
         case "OTHER":
-            return OTHER_EMAILTYPE, nil
+            result = OTHER_EMAILTYPE
+        default:
+            return 0, errors.New("Unknown EmailType value: " + v)
     }
-    return 0, errors.New("Unknown EmailType value: " + v)
+    return &result, nil
 }
 func SerializeEmailType(values []EmailType) []string {
     result := make([]string, len(values))

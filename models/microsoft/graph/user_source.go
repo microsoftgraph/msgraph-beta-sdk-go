@@ -65,8 +65,7 @@ func (m *UserSource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
             return err
         }
         if val != nil {
-            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.SourceType)
-            m.SetIncludedSources(&cast)
+            m.SetIncludedSources(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.SourceType))
         }
         return nil
     }
@@ -98,7 +97,7 @@ func (m *UserSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     if m.GetIncludedSources() != nil {
-        cast := m.GetIncludedSources().String()
+        cast := (*m.GetIncludedSources()).String()
         err = writer.WriteStringValue("includedSources", &cast)
         if err != nil {
             return err

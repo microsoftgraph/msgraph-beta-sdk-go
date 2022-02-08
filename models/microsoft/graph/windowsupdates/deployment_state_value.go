@@ -19,21 +19,24 @@ func (i DeploymentStateValue) String() string {
     return []string{"SCHEDULED", "OFFERING", "PAUSED", "FAULTED", "ARCHIVED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDeploymentStateValue(v string) (interface{}, error) {
+    result := SCHEDULED_DEPLOYMENTSTATEVALUE
     switch strings.ToUpper(v) {
         case "SCHEDULED":
-            return SCHEDULED_DEPLOYMENTSTATEVALUE, nil
+            result = SCHEDULED_DEPLOYMENTSTATEVALUE
         case "OFFERING":
-            return OFFERING_DEPLOYMENTSTATEVALUE, nil
+            result = OFFERING_DEPLOYMENTSTATEVALUE
         case "PAUSED":
-            return PAUSED_DEPLOYMENTSTATEVALUE, nil
+            result = PAUSED_DEPLOYMENTSTATEVALUE
         case "FAULTED":
-            return FAULTED_DEPLOYMENTSTATEVALUE, nil
+            result = FAULTED_DEPLOYMENTSTATEVALUE
         case "ARCHIVED":
-            return ARCHIVED_DEPLOYMENTSTATEVALUE, nil
+            result = ARCHIVED_DEPLOYMENTSTATEVALUE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DEPLOYMENTSTATEVALUE, nil
+            result = UNKNOWNFUTUREVALUE_DEPLOYMENTSTATEVALUE
+        default:
+            return 0, errors.New("Unknown DeploymentStateValue value: " + v)
     }
-    return 0, errors.New("Unknown DeploymentStateValue value: " + v)
+    return &result, nil
 }
 func SerializeDeploymentStateValue(values []DeploymentStateValue) []string {
     result := make([]string, len(values))

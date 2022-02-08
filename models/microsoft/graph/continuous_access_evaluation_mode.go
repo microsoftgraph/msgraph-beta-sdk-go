@@ -16,15 +16,18 @@ func (i ContinuousAccessEvaluationMode) String() string {
     return []string{"STRICTENFORCEMENT", "DISABLED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseContinuousAccessEvaluationMode(v string) (interface{}, error) {
+    result := STRICTENFORCEMENT_CONTINUOUSACCESSEVALUATIONMODE
     switch strings.ToUpper(v) {
         case "STRICTENFORCEMENT":
-            return STRICTENFORCEMENT_CONTINUOUSACCESSEVALUATIONMODE, nil
+            result = STRICTENFORCEMENT_CONTINUOUSACCESSEVALUATIONMODE
         case "DISABLED":
-            return DISABLED_CONTINUOUSACCESSEVALUATIONMODE, nil
+            result = DISABLED_CONTINUOUSACCESSEVALUATIONMODE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONTINUOUSACCESSEVALUATIONMODE, nil
+            result = UNKNOWNFUTUREVALUE_CONTINUOUSACCESSEVALUATIONMODE
+        default:
+            return 0, errors.New("Unknown ContinuousAccessEvaluationMode value: " + v)
     }
-    return 0, errors.New("Unknown ContinuousAccessEvaluationMode value: " + v)
+    return &result, nil
 }
 func SerializeContinuousAccessEvaluationMode(values []ContinuousAccessEvaluationMode) []string {
     result := make([]string, len(values))

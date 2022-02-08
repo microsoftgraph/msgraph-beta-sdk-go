@@ -159,8 +159,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            cast := val.(RunState)
-            m.SetDetectionState(&cast)
+            m.SetDetectionState(val.(*RunState))
         }
         return nil
     }
@@ -260,8 +259,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            cast := val.(RemediationState)
-            m.SetRemediationState(&cast)
+            m.SetRemediationState(val.(*RemediationState))
         }
         return nil
     }
@@ -283,7 +281,7 @@ func (m *DeviceHealthScriptDeviceState) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     if m.GetDetectionState() != nil {
-        cast := m.GetDetectionState().String()
+        cast := (*m.GetDetectionState()).String()
         err = writer.WriteStringValue("detectionState", &cast)
         if err != nil {
             return err
@@ -344,7 +342,7 @@ func (m *DeviceHealthScriptDeviceState) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     if m.GetRemediationState() != nil {
-        cast := m.GetRemediationState().String()
+        cast := (*m.GetRemediationState()).String()
         err = writer.WriteStringValue("remediationState", &cast)
         if err != nil {
             return err

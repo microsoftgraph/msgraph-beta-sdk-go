@@ -20,23 +20,26 @@ func (i MailboxRecipientType) String() string {
     return []string{"UNKNOWN", "USER", "LINKED", "SHARED", "ROOM", "EQUIPMENT", "OTHERS"}[i]
 }
 func ParseMailboxRecipientType(v string) (interface{}, error) {
+    result := UNKNOWN_MAILBOXRECIPIENTTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_MAILBOXRECIPIENTTYPE, nil
+            result = UNKNOWN_MAILBOXRECIPIENTTYPE
         case "USER":
-            return USER_MAILBOXRECIPIENTTYPE, nil
+            result = USER_MAILBOXRECIPIENTTYPE
         case "LINKED":
-            return LINKED_MAILBOXRECIPIENTTYPE, nil
+            result = LINKED_MAILBOXRECIPIENTTYPE
         case "SHARED":
-            return SHARED_MAILBOXRECIPIENTTYPE, nil
+            result = SHARED_MAILBOXRECIPIENTTYPE
         case "ROOM":
-            return ROOM_MAILBOXRECIPIENTTYPE, nil
+            result = ROOM_MAILBOXRECIPIENTTYPE
         case "EQUIPMENT":
-            return EQUIPMENT_MAILBOXRECIPIENTTYPE, nil
+            result = EQUIPMENT_MAILBOXRECIPIENTTYPE
         case "OTHERS":
-            return OTHERS_MAILBOXRECIPIENTTYPE, nil
+            result = OTHERS_MAILBOXRECIPIENTTYPE
+        default:
+            return 0, errors.New("Unknown MailboxRecipientType value: " + v)
     }
-    return 0, errors.New("Unknown MailboxRecipientType value: " + v)
+    return &result, nil
 }
 func SerializeMailboxRecipientType(values []MailboxRecipientType) []string {
     result := make([]string, len(values))

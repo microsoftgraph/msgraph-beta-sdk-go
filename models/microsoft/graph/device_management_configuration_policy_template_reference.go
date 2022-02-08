@@ -93,8 +93,7 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetFieldDeseriali
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationTemplateFamily)
-            m.SetTemplateFamily(&cast)
+            m.SetTemplateFamily(val.(*DeviceManagementConfigurationTemplateFamily))
         }
         return nil
     }
@@ -128,7 +127,7 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) Serialize(writer 
         }
     }
     if m.GetTemplateFamily() != nil {
-        cast := m.GetTemplateFamily().String()
+        cast := (*m.GetTemplateFamily()).String()
         err := writer.WriteStringValue("templateFamily", &cast)
         if err != nil {
             return err

@@ -74,8 +74,7 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(AnalyticsActivityType)
-            m.SetActivity(&cast)
+            m.SetActivity(val.(*AnalyticsActivityType))
         }
         return nil
     }
@@ -131,7 +130,7 @@ func (m *ActivityStatistics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         return err
     }
     if m.GetActivity() != nil {
-        cast := m.GetActivity().String()
+        cast := (*m.GetActivity()).String()
         err = writer.WriteStringValue("activity", &cast)
         if err != nil {
             return err

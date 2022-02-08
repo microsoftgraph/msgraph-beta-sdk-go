@@ -17,17 +17,20 @@ func (i PromptLoginBehavior) String() string {
     return []string{"TRANSLATETOFRESHPASSWORDAUTHENTICATION", "NATIVESUPPORT", "DISABLED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePromptLoginBehavior(v string) (interface{}, error) {
+    result := TRANSLATETOFRESHPASSWORDAUTHENTICATION_PROMPTLOGINBEHAVIOR
     switch strings.ToUpper(v) {
         case "TRANSLATETOFRESHPASSWORDAUTHENTICATION":
-            return TRANSLATETOFRESHPASSWORDAUTHENTICATION_PROMPTLOGINBEHAVIOR, nil
+            result = TRANSLATETOFRESHPASSWORDAUTHENTICATION_PROMPTLOGINBEHAVIOR
         case "NATIVESUPPORT":
-            return NATIVESUPPORT_PROMPTLOGINBEHAVIOR, nil
+            result = NATIVESUPPORT_PROMPTLOGINBEHAVIOR
         case "DISABLED":
-            return DISABLED_PROMPTLOGINBEHAVIOR, nil
+            result = DISABLED_PROMPTLOGINBEHAVIOR
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PROMPTLOGINBEHAVIOR, nil
+            result = UNKNOWNFUTUREVALUE_PROMPTLOGINBEHAVIOR
+        default:
+            return 0, errors.New("Unknown PromptLoginBehavior value: " + v)
     }
-    return 0, errors.New("Unknown PromptLoginBehavior value: " + v)
+    return &result, nil
 }
 func SerializePromptLoginBehavior(values []PromptLoginBehavior) []string {
     result := make([]string, len(values))

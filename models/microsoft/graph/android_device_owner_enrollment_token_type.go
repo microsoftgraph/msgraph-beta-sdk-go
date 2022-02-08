@@ -15,13 +15,16 @@ func (i AndroidDeviceOwnerEnrollmentTokenType) String() string {
     return []string{"DEFAULT", "CORPORATEOWNEDDEDICATEDDEVICEWITHAZUREADSHAREDMODE"}[i]
 }
 func ParseAndroidDeviceOwnerEnrollmentTokenType(v string) (interface{}, error) {
+    result := DEFAULT_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
     switch strings.ToUpper(v) {
         case "DEFAULT":
-            return DEFAULT_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE, nil
+            result = DEFAULT_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
         case "CORPORATEOWNEDDEDICATEDDEVICEWITHAZUREADSHAREDMODE":
-            return CORPORATEOWNEDDEDICATEDDEVICEWITHAZUREADSHAREDMODE_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE, nil
+            result = CORPORATEOWNEDDEDICATEDDEVICEWITHAZUREADSHAREDMODE_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
+        default:
+            return 0, errors.New("Unknown AndroidDeviceOwnerEnrollmentTokenType value: " + v)
     }
-    return 0, errors.New("Unknown AndroidDeviceOwnerEnrollmentTokenType value: " + v)
+    return &result, nil
 }
 func SerializeAndroidDeviceOwnerEnrollmentTokenType(values []AndroidDeviceOwnerEnrollmentTokenType) []string {
     result := make([]string, len(values))

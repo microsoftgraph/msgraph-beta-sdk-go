@@ -17,17 +17,20 @@ func (i AndroidForWorkBindStatus) String() string {
     return []string{"NOTBOUND", "BOUND", "BOUNDANDVALIDATED", "UNBINDING"}[i]
 }
 func ParseAndroidForWorkBindStatus(v string) (interface{}, error) {
+    result := NOTBOUND_ANDROIDFORWORKBINDSTATUS
     switch strings.ToUpper(v) {
         case "NOTBOUND":
-            return NOTBOUND_ANDROIDFORWORKBINDSTATUS, nil
+            result = NOTBOUND_ANDROIDFORWORKBINDSTATUS
         case "BOUND":
-            return BOUND_ANDROIDFORWORKBINDSTATUS, nil
+            result = BOUND_ANDROIDFORWORKBINDSTATUS
         case "BOUNDANDVALIDATED":
-            return BOUNDANDVALIDATED_ANDROIDFORWORKBINDSTATUS, nil
+            result = BOUNDANDVALIDATED_ANDROIDFORWORKBINDSTATUS
         case "UNBINDING":
-            return UNBINDING_ANDROIDFORWORKBINDSTATUS, nil
+            result = UNBINDING_ANDROIDFORWORKBINDSTATUS
+        default:
+            return 0, errors.New("Unknown AndroidForWorkBindStatus value: " + v)
     }
-    return 0, errors.New("Unknown AndroidForWorkBindStatus value: " + v)
+    return &result, nil
 }
 func SerializeAndroidForWorkBindStatus(values []AndroidForWorkBindStatus) []string {
     result := make([]string, len(values))

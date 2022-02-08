@@ -289,8 +289,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(ProvisioningAction)
-            m.SetProvisioningAction(&cast)
+            m.SetProvisioningAction(val.(*ProvisioningAction))
         }
         return nil
     }
@@ -453,7 +452,7 @@ func (m *ProvisioningObjectSummary) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     if m.GetProvisioningAction() != nil {
-        cast := m.GetProvisioningAction().String()
+        cast := (*m.GetProvisioningAction()).String()
         err = writer.WriteStringValue("provisioningAction", &cast)
         if err != nil {
             return err

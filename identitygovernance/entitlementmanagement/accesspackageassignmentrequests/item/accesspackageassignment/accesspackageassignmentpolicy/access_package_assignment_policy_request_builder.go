@@ -5,6 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i30fb73e77e906dc0eea6635da74be6076e34814d3870522c862f1ddc090e21a1 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackageassignmentpolicy/accesspackage"
+    i9d6c643a3a99cb8c8b392a5d9de3b24c66892a1018aa96a04b84ca68eb8ead32 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackageassignmentpolicy/customextensionhandlers"
     ib6104d0ef623490a75c78dd965abd453c39df11a0e0aca91e56cb236dfdb9224 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/item/accesspackageassignment/accesspackageassignmentpolicy/accesspackagecatalog"
 )
 
@@ -134,6 +135,9 @@ func (m *AccessPackageAssignmentPolicyRequestBuilder) CreatePatchRequestInformat
         }
     }
     return requestInfo, nil
+}
+func (m *AccessPackageAssignmentPolicyRequestBuilder) CustomExtensionHandlers()(*i9d6c643a3a99cb8c8b392a5d9de3b24c66892a1018aa96a04b84ca68eb8ead32.CustomExtensionHandlersRequestBuilder) {
+    return i9d6c643a3a99cb8c8b392a5d9de3b24c66892a1018aa96a04b84ca68eb8ead32.NewCustomExtensionHandlersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Delete read-only. Nullable. Supports $filter (eq) on the id property
 func (m *AccessPackageAssignmentPolicyRequestBuilder) Delete(options *AccessPackageAssignmentPolicyRequestBuilderDeleteOptions)(error) {

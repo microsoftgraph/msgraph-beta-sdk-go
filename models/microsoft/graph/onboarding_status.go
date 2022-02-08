@@ -19,21 +19,24 @@ func (i OnboardingStatus) String() string {
     return []string{"UNKNOWN", "INPROGRESS", "ONBOARDED", "FAILED", "OFFBOARDING", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseOnboardingStatus(v string) (interface{}, error) {
+    result := UNKNOWN_ONBOARDINGSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_ONBOARDINGSTATUS, nil
+            result = UNKNOWN_ONBOARDINGSTATUS
         case "INPROGRESS":
-            return INPROGRESS_ONBOARDINGSTATUS, nil
+            result = INPROGRESS_ONBOARDINGSTATUS
         case "ONBOARDED":
-            return ONBOARDED_ONBOARDINGSTATUS, nil
+            result = ONBOARDED_ONBOARDINGSTATUS
         case "FAILED":
-            return FAILED_ONBOARDINGSTATUS, nil
+            result = FAILED_ONBOARDINGSTATUS
         case "OFFBOARDING":
-            return OFFBOARDING_ONBOARDINGSTATUS, nil
+            result = OFFBOARDING_ONBOARDINGSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS
+        default:
+            return 0, errors.New("Unknown OnboardingStatus value: " + v)
     }
-    return 0, errors.New("Unknown OnboardingStatus value: " + v)
+    return &result, nil
 }
 func SerializeOnboardingStatus(values []OnboardingStatus) []string {
     result := make([]string, len(values))

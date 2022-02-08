@@ -163,8 +163,7 @@ func (m *PhysicalAddress) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(PhysicalAddressType)
-            m.SetType(&cast)
+            m.SetType(val.(*PhysicalAddressType))
         }
         return nil
     }
@@ -212,7 +211,7 @@ func (m *PhysicalAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

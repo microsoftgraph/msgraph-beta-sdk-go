@@ -30,6 +30,7 @@ import (
     i79a6973f4d40aa7a8a7dcbc19ded45b92b4972f9a2a79acd08913532444ec442 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/item/userrunstates/item/devicerunstates/item/manageddevice/revokeapplevpplicenses"
     i7b158fccf72d7011089fe0ebdde1bba6013d6389629feb801a04a2289d8311f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/item/userrunstates/item/devicerunstates/item/manageddevice/sendcustomnotificationtocompanyportal"
     i7fcf2a2dc546dd9324d7b6b2b82d8c933dbbd65c24f896f1602dcb9594f15d7d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/item/userrunstates/item/devicerunstates/item/manageddevice/windowsdefenderupdatesignatures"
+    i8ae1b530eeb7499671c1b24315e124bca0b226fb6d83659db2f0a4cd895e2db5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/item/userrunstates/item/devicerunstates/item/manageddevice/getoemwarranty"
     ia85e2afd6a2f8100fa7ba4a967610063545b9a81015f9ac320a2db7a8cfd4ca5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/item/userrunstates/item/devicerunstates/item/manageddevice/locatedevice"
     iab8439718df12560a25e2edcf55a786fead5110795dc7808a30663503f11afe2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/item/userrunstates/item/devicerunstates/item/manageddevice/triggerconfigurationmanageraction"
     iae5f043d307dcb4475baf1d4aebe21e39c5a372abfb29c50b4697c9d9848641e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceshellscripts/item/userrunstates/item/devicerunstates/item/manageddevice/recoverpasscode"
@@ -161,6 +162,10 @@ func (m *ManagedDeviceRequestBuilder) GetFileVaultKey()(*i6664e22465e1a7f842f7db
 // GetNonCompliantSettings builds and executes requests for operations under \deviceManagement\deviceShellScripts\{deviceShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getNonCompliantSettings()
 func (m *ManagedDeviceRequestBuilder) GetNonCompliantSettings()(*iea13686895285205bc0a71513b3d539595cd074a638334066aac1f89b78dac1f.GetNonCompliantSettingsRequestBuilder) {
     return iea13686895285205bc0a71513b3d539595cd074a638334066aac1f89b78dac1f.NewGetNonCompliantSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetOemWarranty builds and executes requests for operations under \deviceManagement\deviceShellScripts\{deviceShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getOemWarranty()
+func (m *ManagedDeviceRequestBuilder) GetOemWarranty()(*i8ae1b530eeb7499671c1b24315e124bca0b226fb6d83659db2f0a4cd895e2db5.GetOemWarrantyRequestBuilder) {
+    return i8ae1b530eeb7499671c1b24315e124bca0b226fb6d83659db2f0a4cd895e2db5.NewGetOemWarrantyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ManagedDeviceRequestBuilder) LocateDevice()(*ia85e2afd6a2f8100fa7ba4a967610063545b9a81015f9ac320a2db7a8cfd4ca5.LocateDeviceRequestBuilder) {
     return ia85e2afd6a2f8100fa7ba4a967610063545b9a81015f9ac320a2db7a8cfd4ca5.NewLocateDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);

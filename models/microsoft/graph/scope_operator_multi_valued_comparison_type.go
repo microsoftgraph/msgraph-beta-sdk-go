@@ -15,13 +15,16 @@ func (i ScopeOperatorMultiValuedComparisonType) String() string {
     return []string{"ALL", "ANY"}[i]
 }
 func ParseScopeOperatorMultiValuedComparisonType(v string) (interface{}, error) {
+    result := ALL_SCOPEOPERATORMULTIVALUEDCOMPARISONTYPE
     switch strings.ToUpper(v) {
         case "ALL":
-            return ALL_SCOPEOPERATORMULTIVALUEDCOMPARISONTYPE, nil
+            result = ALL_SCOPEOPERATORMULTIVALUEDCOMPARISONTYPE
         case "ANY":
-            return ANY_SCOPEOPERATORMULTIVALUEDCOMPARISONTYPE, nil
+            result = ANY_SCOPEOPERATORMULTIVALUEDCOMPARISONTYPE
+        default:
+            return 0, errors.New("Unknown ScopeOperatorMultiValuedComparisonType value: " + v)
     }
-    return 0, errors.New("Unknown ScopeOperatorMultiValuedComparisonType value: " + v)
+    return &result, nil
 }
 func SerializeScopeOperatorMultiValuedComparisonType(values []ScopeOperatorMultiValuedComparisonType) []string {
     result := make([]string, len(values))

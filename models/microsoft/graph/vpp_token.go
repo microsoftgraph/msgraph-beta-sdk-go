@@ -34,7 +34,7 @@ type VppToken struct {
     organizationName *string;
     // Role Scope Tags IDs assigned to this entity.
     roleScopeTagIds []string;
-    // Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
+    // Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
     state *VppTokenState;
     // The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.
     token *string;
@@ -154,7 +154,7 @@ func (m *VppToken) GetRoleScopeTagIds()([]string) {
         return m.roleScopeTagIds
     }
 }
-// GetState gets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
+// GetState gets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
 func (m *VppToken) GetState()(*VppTokenState) {
     if m == nil {
         return nil
@@ -285,8 +285,7 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(VppTokenSyncStatus)
-            m.SetLastSyncStatus(&cast)
+            m.SetLastSyncStatus(val.(*VppTokenSyncStatus))
         }
         return nil
     }
@@ -330,8 +329,7 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(VppTokenState)
-            m.SetState(&cast)
+            m.SetState(val.(*VppTokenState))
         }
         return nil
     }
@@ -365,8 +363,7 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(VppTokenAccountType)
-            m.SetVppTokenAccountType(&cast)
+            m.SetVppTokenAccountType(val.(*VppTokenAccountType))
         }
         return nil
     }
@@ -436,7 +433,7 @@ func (m *VppToken) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetLastSyncStatus() != nil {
-        cast := m.GetLastSyncStatus().String()
+        cast := (*m.GetLastSyncStatus()).String()
         err = writer.WriteStringValue("lastSyncStatus", &cast)
         if err != nil {
             return err
@@ -461,7 +458,7 @@ func (m *VppToken) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err
@@ -485,7 +482,7 @@ func (m *VppToken) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetVppTokenAccountType() != nil {
-        cast := m.GetVppTokenAccountType().String()
+        cast := (*m.GetVppTokenAccountType()).String()
         err = writer.WriteStringValue("vppTokenAccountType", &cast)
         if err != nil {
             return err
@@ -571,7 +568,7 @@ func (m *VppToken) SetRoleScopeTagIds(value []string)() {
         m.roleScopeTagIds = value
     }
 }
-// SetState sets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
+// SetState sets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
 func (m *VppToken) SetState(value *VppTokenState)() {
     if m != nil {
         m.state = value

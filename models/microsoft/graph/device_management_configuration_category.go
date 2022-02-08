@@ -208,8 +208,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationPlatforms)
-            m.SetPlatforms(&cast)
+            m.SetPlatforms(val.(*DeviceManagementConfigurationPlatforms))
         }
         return nil
     }
@@ -229,8 +228,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationSettingUsage)
-            m.SetSettingUsage(&cast)
+            m.SetSettingUsage(val.(*DeviceManagementConfigurationSettingUsage))
         }
         return nil
     }
@@ -240,8 +238,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationTechnologies)
-            m.SetTechnologies(&cast)
+            m.SetTechnologies(val.(*DeviceManagementConfigurationTechnologies))
         }
         return nil
     }
@@ -299,7 +296,7 @@ func (m *DeviceManagementConfigurationCategory) Serialize(writer i04eb5309aeaafa
         }
     }
     if m.GetPlatforms() != nil {
-        cast := m.GetPlatforms().String()
+        cast := (*m.GetPlatforms()).String()
         err = writer.WriteStringValue("platforms", &cast)
         if err != nil {
             return err
@@ -312,14 +309,14 @@ func (m *DeviceManagementConfigurationCategory) Serialize(writer i04eb5309aeaafa
         }
     }
     if m.GetSettingUsage() != nil {
-        cast := m.GetSettingUsage().String()
+        cast := (*m.GetSettingUsage()).String()
         err = writer.WriteStringValue("settingUsage", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetTechnologies() != nil {
-        cast := m.GetTechnologies().String()
+        cast := (*m.GetTechnologies()).String()
         err = writer.WriteStringValue("technologies", &cast)
         if err != nil {
             return err

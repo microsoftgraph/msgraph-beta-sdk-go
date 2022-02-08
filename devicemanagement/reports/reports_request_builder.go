@@ -15,9 +15,11 @@ import (
     i2a7e95d28bcab38f85f05fe3f131357d5c408f5fbd47fb213b7aac8dbd71328a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/cachedreportconfigurations"
     i2abf29284e813349f3083b2dc57f6553c2b467c8f68ad9c82e8950ce8d0afd2d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationsettingsreport"
     i2cbf3d93d72f9416ce29a9ac2774ddf6c3cceadcccbd462303a2ff5215c59622 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getpolicynoncompliancemetadata"
+    i2d1fa8bbec4edb544879f637766d18e684b3ebd9bc8ab7dc1f62547a9cc9f6a0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcompliancesettingdetailsreport"
     i3e013f91ac3d040684b27abcd0dc56839c52d2faa6d92ef0d2295a7fefa96a5b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getappstatusoverviewreport"
     i3f11f18462beffdea839437cba5610e05b58902433c635e68fdfdfb6e5f1c4b7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationpolicydevicesummaryreport"
     i45eba99273cfc2518cc265806b0cba99d31c259eee99db3fa9a93ca6fbd11d28 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcompliancepolicynoncompliancereport"
+    i460f7dd518397a3ddaedfec14fee80b46cfdb6c8bcad4e1a01d71973f2624fa1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcompliancesettingsreport"
     i4d73fdd41ba9bd99a3822503da6e6d8345d38f32a116b7860fb94fbdc8a9c79d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getactivemalwarereport"
     i5284d7a78de859429101f202a37b95a2897b7a115a509f7ea9be6db8a70482a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcertificatesreport"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
@@ -271,8 +273,14 @@ func (m *ReportsRequestBuilder) GetCompliancePolicyNonComplianceReport()(*i45eba
 func (m *ReportsRequestBuilder) GetCompliancePolicyNonComplianceSummaryReport()(*i5b82ca25c293ac194e35ceb34a2eb3523dd2a1568f2e61c9458b2d7fe4f1d970.GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) {
     return i5b82ca25c293ac194e35ceb34a2eb3523dd2a1568f2e61c9458b2d7fe4f1d970.NewGetCompliancePolicyNonComplianceSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+func (m *ReportsRequestBuilder) GetComplianceSettingDetailsReport()(*i2d1fa8bbec4edb544879f637766d18e684b3ebd9bc8ab7dc1f62547a9cc9f6a0.GetComplianceSettingDetailsReportRequestBuilder) {
+    return i2d1fa8bbec4edb544879f637766d18e684b3ebd9bc8ab7dc1f62547a9cc9f6a0.NewGetComplianceSettingDetailsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 func (m *ReportsRequestBuilder) GetComplianceSettingNonComplianceReport()(*i711aceb383b63eb4ad8db059fe173d8b78d6bb1bdcfaf386735b20a8e54c2748.GetComplianceSettingNonComplianceReportRequestBuilder) {
     return i711aceb383b63eb4ad8db059fe173d8b78d6bb1bdcfaf386735b20a8e54c2748.NewGetComplianceSettingNonComplianceReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ReportsRequestBuilder) GetComplianceSettingsReport()(*i460f7dd518397a3ddaedfec14fee80b46cfdb6c8bcad4e1a01d71973f2624fa1.GetComplianceSettingsReportRequestBuilder) {
+    return i460f7dd518397a3ddaedfec14fee80b46cfdb6c8bcad4e1a01d71973f2624fa1.NewGetComplianceSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ReportsRequestBuilder) GetConfigManagerDevicePolicyStatusReport()(*ic09bfed61d7acf9bcd44dfdcb91600937d60cff331615b3b8a208a31e277cd7d.GetConfigManagerDevicePolicyStatusReportRequestBuilder) {
     return ic09bfed61d7acf9bcd44dfdcb91600937d60cff331615b3b8a208a31e277cd7d.NewGetConfigManagerDevicePolicyStatusReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);

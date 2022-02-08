@@ -24,31 +24,34 @@ func (i TeamworkDeviceType) String() string {
     return []string{"UNKNOWN", "IPPHONE", "TEAMSROOM", "SURFACEHUB", "COLLABORATIONBAR", "TEAMSDISPLAY", "TOUCHCONSOLE", "LOWCOSTPHONE", "TEAMSPANEL", "SIP", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamworkDeviceType(v string) (interface{}, error) {
+    result := UNKNOWN_TEAMWORKDEVICETYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_TEAMWORKDEVICETYPE, nil
+            result = UNKNOWN_TEAMWORKDEVICETYPE
         case "IPPHONE":
-            return IPPHONE_TEAMWORKDEVICETYPE, nil
+            result = IPPHONE_TEAMWORKDEVICETYPE
         case "TEAMSROOM":
-            return TEAMSROOM_TEAMWORKDEVICETYPE, nil
+            result = TEAMSROOM_TEAMWORKDEVICETYPE
         case "SURFACEHUB":
-            return SURFACEHUB_TEAMWORKDEVICETYPE, nil
+            result = SURFACEHUB_TEAMWORKDEVICETYPE
         case "COLLABORATIONBAR":
-            return COLLABORATIONBAR_TEAMWORKDEVICETYPE, nil
+            result = COLLABORATIONBAR_TEAMWORKDEVICETYPE
         case "TEAMSDISPLAY":
-            return TEAMSDISPLAY_TEAMWORKDEVICETYPE, nil
+            result = TEAMSDISPLAY_TEAMWORKDEVICETYPE
         case "TOUCHCONSOLE":
-            return TOUCHCONSOLE_TEAMWORKDEVICETYPE, nil
+            result = TOUCHCONSOLE_TEAMWORKDEVICETYPE
         case "LOWCOSTPHONE":
-            return LOWCOSTPHONE_TEAMWORKDEVICETYPE, nil
+            result = LOWCOSTPHONE_TEAMWORKDEVICETYPE
         case "TEAMSPANEL":
-            return TEAMSPANEL_TEAMWORKDEVICETYPE, nil
+            result = TEAMSPANEL_TEAMWORKDEVICETYPE
         case "SIP":
-            return SIP_TEAMWORKDEVICETYPE, nil
+            result = SIP_TEAMWORKDEVICETYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMWORKDEVICETYPE, nil
+            result = UNKNOWNFUTUREVALUE_TEAMWORKDEVICETYPE
+        default:
+            return 0, errors.New("Unknown TeamworkDeviceType value: " + v)
     }
-    return 0, errors.New("Unknown TeamworkDeviceType value: " + v)
+    return &result, nil
 }
 func SerializeTeamworkDeviceType(values []TeamworkDeviceType) []string {
     result := make([]string, len(values))

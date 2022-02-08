@@ -21,25 +21,28 @@ func (i UserPurpose) String() string {
     return []string{"UNKNOWN", "USER", "LINKED", "SHARED", "ROOM", "EQUIPMENT", "OTHERS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseUserPurpose(v string) (interface{}, error) {
+    result := UNKNOWN_USERPURPOSE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_USERPURPOSE, nil
+            result = UNKNOWN_USERPURPOSE
         case "USER":
-            return USER_USERPURPOSE, nil
+            result = USER_USERPURPOSE
         case "LINKED":
-            return LINKED_USERPURPOSE, nil
+            result = LINKED_USERPURPOSE
         case "SHARED":
-            return SHARED_USERPURPOSE, nil
+            result = SHARED_USERPURPOSE
         case "ROOM":
-            return ROOM_USERPURPOSE, nil
+            result = ROOM_USERPURPOSE
         case "EQUIPMENT":
-            return EQUIPMENT_USERPURPOSE, nil
+            result = EQUIPMENT_USERPURPOSE
         case "OTHERS":
-            return OTHERS_USERPURPOSE, nil
+            result = OTHERS_USERPURPOSE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_USERPURPOSE, nil
+            result = UNKNOWNFUTUREVALUE_USERPURPOSE
+        default:
+            return 0, errors.New("Unknown UserPurpose value: " + v)
     }
-    return 0, errors.New("Unknown UserPurpose value: " + v)
+    return &result, nil
 }
 func SerializeUserPurpose(values []UserPurpose) []string {
     result := make([]string, len(values))

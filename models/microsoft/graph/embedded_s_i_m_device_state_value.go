@@ -21,25 +21,28 @@ func (i EmbeddedSIMDeviceStateValue) String() string {
     return []string{"NOTEVALUATED", "FAILED", "INSTALLING", "INSTALLED", "DELETING", "ERROR", "DELETED", "REMOVEDBYUSER"}[i]
 }
 func ParseEmbeddedSIMDeviceStateValue(v string) (interface{}, error) {
+    result := NOTEVALUATED_EMBEDDEDSIMDEVICESTATEVALUE
     switch strings.ToUpper(v) {
         case "NOTEVALUATED":
-            return NOTEVALUATED_EMBEDDEDSIMDEVICESTATEVALUE, nil
+            result = NOTEVALUATED_EMBEDDEDSIMDEVICESTATEVALUE
         case "FAILED":
-            return FAILED_EMBEDDEDSIMDEVICESTATEVALUE, nil
+            result = FAILED_EMBEDDEDSIMDEVICESTATEVALUE
         case "INSTALLING":
-            return INSTALLING_EMBEDDEDSIMDEVICESTATEVALUE, nil
+            result = INSTALLING_EMBEDDEDSIMDEVICESTATEVALUE
         case "INSTALLED":
-            return INSTALLED_EMBEDDEDSIMDEVICESTATEVALUE, nil
+            result = INSTALLED_EMBEDDEDSIMDEVICESTATEVALUE
         case "DELETING":
-            return DELETING_EMBEDDEDSIMDEVICESTATEVALUE, nil
+            result = DELETING_EMBEDDEDSIMDEVICESTATEVALUE
         case "ERROR":
-            return ERROR_EMBEDDEDSIMDEVICESTATEVALUE, nil
+            result = ERROR_EMBEDDEDSIMDEVICESTATEVALUE
         case "DELETED":
-            return DELETED_EMBEDDEDSIMDEVICESTATEVALUE, nil
+            result = DELETED_EMBEDDEDSIMDEVICESTATEVALUE
         case "REMOVEDBYUSER":
-            return REMOVEDBYUSER_EMBEDDEDSIMDEVICESTATEVALUE, nil
+            result = REMOVEDBYUSER_EMBEDDEDSIMDEVICESTATEVALUE
+        default:
+            return 0, errors.New("Unknown EmbeddedSIMDeviceStateValue value: " + v)
     }
-    return 0, errors.New("Unknown EmbeddedSIMDeviceStateValue value: " + v)
+    return &result, nil
 }
 func SerializeEmbeddedSIMDeviceStateValue(values []EmbeddedSIMDeviceStateValue) []string {
     result := make([]string, len(values))

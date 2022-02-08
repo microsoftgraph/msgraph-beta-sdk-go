@@ -16,15 +16,18 @@ func (i MonitoringAction) String() string {
     return []string{"ALERTERROR", "PAUSEDEPLOYMENT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseMonitoringAction(v string) (interface{}, error) {
+    result := ALERTERROR_MONITORINGACTION
     switch strings.ToUpper(v) {
         case "ALERTERROR":
-            return ALERTERROR_MONITORINGACTION, nil
+            result = ALERTERROR_MONITORINGACTION
         case "PAUSEDEPLOYMENT":
-            return PAUSEDEPLOYMENT_MONITORINGACTION, nil
+            result = PAUSEDEPLOYMENT_MONITORINGACTION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MONITORINGACTION, nil
+            result = UNKNOWNFUTUREVALUE_MONITORINGACTION
+        default:
+            return 0, errors.New("Unknown MonitoringAction value: " + v)
     }
-    return 0, errors.New("Unknown MonitoringAction value: " + v)
+    return &result, nil
 }
 func SerializeMonitoringAction(values []MonitoringAction) []string {
     result := make([]string, len(values))

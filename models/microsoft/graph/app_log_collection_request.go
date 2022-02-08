@@ -99,8 +99,7 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(AppLogUploadState)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*AppLogUploadState))
         }
         return nil
     }
@@ -134,7 +133,7 @@ func (m *AppLogCollectionRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

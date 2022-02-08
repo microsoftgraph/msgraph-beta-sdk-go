@@ -63,8 +63,7 @@ func (m *DeviceComplianceScriptError) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(Code)
-            m.SetCode(&cast)
+            m.SetCode(val.(*Code))
         }
         return nil
     }
@@ -74,8 +73,7 @@ func (m *DeviceComplianceScriptError) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(DeviceComplianceScriptRulesValidationError)
-            m.SetDeviceComplianceScriptRulesValidationError(&cast)
+            m.SetDeviceComplianceScriptRulesValidationError(val.(*DeviceComplianceScriptRulesValidationError))
         }
         return nil
     }
@@ -97,14 +95,14 @@ func (m *DeviceComplianceScriptError) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *DeviceComplianceScriptError) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetCode() != nil {
-        cast := m.GetCode().String()
+        cast := (*m.GetCode()).String()
         err := writer.WriteStringValue("code", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetDeviceComplianceScriptRulesValidationError() != nil {
-        cast := m.GetDeviceComplianceScriptRulesValidationError().String()
+        cast := (*m.GetDeviceComplianceScriptRulesValidationError()).String()
         err := writer.WriteStringValue("deviceComplianceScriptRulesValidationError", &cast)
         if err != nil {
             return err

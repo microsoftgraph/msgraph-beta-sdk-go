@@ -85,8 +85,7 @@ func (m *DirectoryDefinition) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(DirectoryDefinitionDiscoverabilities)
-            m.SetDiscoverabilities(&cast)
+            m.SetDiscoverabilities(val.(*DirectoryDefinitionDiscoverabilities))
         }
         return nil
     }
@@ -156,7 +155,7 @@ func (m *DirectoryDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         return err
     }
     if m.GetDiscoverabilities() != nil {
-        cast := m.GetDiscoverabilities().String()
+        cast := (*m.GetDiscoverabilities()).String()
         err = writer.WriteStringValue("discoverabilities", &cast)
         if err != nil {
             return err

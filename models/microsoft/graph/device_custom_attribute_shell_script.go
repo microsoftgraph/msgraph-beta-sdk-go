@@ -209,8 +209,7 @@ func (m *DeviceCustomAttributeShellScript) GetFieldDeserializers()(map[string]fu
             return err
         }
         if val != nil {
-            cast := val.(DeviceCustomAttributeValueType)
-            m.SetCustomAttributeType(&cast)
+            m.SetCustomAttributeType(val.(*DeviceCustomAttributeValueType))
         }
         return nil
     }
@@ -302,8 +301,7 @@ func (m *DeviceCustomAttributeShellScript) GetFieldDeserializers()(map[string]fu
             return err
         }
         if val != nil {
-            cast := val.(RunAsAccountType)
-            m.SetRunAsAccount(&cast)
+            m.SetRunAsAccount(val.(*RunAsAccountType))
         }
         return nil
     }
@@ -376,7 +374,7 @@ func (m *DeviceCustomAttributeShellScript) Serialize(writer i04eb5309aeaafadd283
         }
     }
     if m.GetCustomAttributeType() != nil {
-        cast := m.GetCustomAttributeType().String()
+        cast := (*m.GetCustomAttributeType()).String()
         err = writer.WriteStringValue("customAttributeType", &cast)
         if err != nil {
             return err
@@ -435,7 +433,7 @@ func (m *DeviceCustomAttributeShellScript) Serialize(writer i04eb5309aeaafadd283
         }
     }
     if m.GetRunAsAccount() != nil {
-        cast := m.GetRunAsAccount().String()
+        cast := (*m.GetRunAsAccount()).String()
         err = writer.WriteStringValue("runAsAccount", &cast)
         if err != nil {
             return err

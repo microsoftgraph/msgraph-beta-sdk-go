@@ -83,8 +83,7 @@ func (m *AlterationResponse) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(SearchAlterationType)
-            m.SetQueryAlterationType(&cast)
+            m.SetQueryAlterationType(val.(*SearchAlterationType))
         }
         return nil
     }
@@ -108,7 +107,7 @@ func (m *AlterationResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetQueryAlterationType() != nil {
-        cast := m.GetQueryAlterationType().String()
+        cast := (*m.GetQueryAlterationType()).String()
         err := writer.WriteStringValue("queryAlterationType", &cast)
         if err != nil {
             return err

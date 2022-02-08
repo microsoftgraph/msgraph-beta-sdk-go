@@ -19,21 +19,24 @@ func (i SignInAccessType) String() string {
     return []string{"NONE", "B2BCOLLABORATION", "B2BDIRECTCONNECT", "MICROSOFTSUPPORT", "SERVICEPROVIDER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSignInAccessType(v string) (interface{}, error) {
+    result := NONE_SIGNINACCESSTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_SIGNINACCESSTYPE, nil
+            result = NONE_SIGNINACCESSTYPE
         case "B2BCOLLABORATION":
-            return B2BCOLLABORATION_SIGNINACCESSTYPE, nil
+            result = B2BCOLLABORATION_SIGNINACCESSTYPE
         case "B2BDIRECTCONNECT":
-            return B2BDIRECTCONNECT_SIGNINACCESSTYPE, nil
+            result = B2BDIRECTCONNECT_SIGNINACCESSTYPE
         case "MICROSOFTSUPPORT":
-            return MICROSOFTSUPPORT_SIGNINACCESSTYPE, nil
+            result = MICROSOFTSUPPORT_SIGNINACCESSTYPE
         case "SERVICEPROVIDER":
-            return SERVICEPROVIDER_SIGNINACCESSTYPE, nil
+            result = SERVICEPROVIDER_SIGNINACCESSTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SIGNINACCESSTYPE, nil
+            result = UNKNOWNFUTUREVALUE_SIGNINACCESSTYPE
+        default:
+            return 0, errors.New("Unknown SignInAccessType value: " + v)
     }
-    return 0, errors.New("Unknown SignInAccessType value: " + v)
+    return &result, nil
 }
 func SerializeSignInAccessType(values []SignInAccessType) []string {
     result := make([]string, len(values))

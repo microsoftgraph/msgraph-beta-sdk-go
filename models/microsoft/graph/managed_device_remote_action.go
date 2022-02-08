@@ -29,41 +29,44 @@ func (i ManagedDeviceRemoteAction) String() string {
     return []string{"RETIRE", "DELETE", "FULLSCAN", "QUICKSCAN", "SIGNATUREUPDATE", "WIPE", "CUSTOMTEXTNOTIFICATION", "REBOOTNOW", "SETDEVICENAME", "SYNCDEVICE", "DEPROVISION", "DISABLE", "REENABLE", "MOVEDEVICETOORGANIZATIONALUNIT", "ACTIVATEDEVICEESIM", "COLLECTDIAGNOSTICS"}[i]
 }
 func ParseManagedDeviceRemoteAction(v string) (interface{}, error) {
+    result := RETIRE_MANAGEDDEVICEREMOTEACTION
     switch strings.ToUpper(v) {
         case "RETIRE":
-            return RETIRE_MANAGEDDEVICEREMOTEACTION, nil
+            result = RETIRE_MANAGEDDEVICEREMOTEACTION
         case "DELETE":
-            return DELETE_MANAGEDDEVICEREMOTEACTION, nil
+            result = DELETE_MANAGEDDEVICEREMOTEACTION
         case "FULLSCAN":
-            return FULLSCAN_MANAGEDDEVICEREMOTEACTION, nil
+            result = FULLSCAN_MANAGEDDEVICEREMOTEACTION
         case "QUICKSCAN":
-            return QUICKSCAN_MANAGEDDEVICEREMOTEACTION, nil
+            result = QUICKSCAN_MANAGEDDEVICEREMOTEACTION
         case "SIGNATUREUPDATE":
-            return SIGNATUREUPDATE_MANAGEDDEVICEREMOTEACTION, nil
+            result = SIGNATUREUPDATE_MANAGEDDEVICEREMOTEACTION
         case "WIPE":
-            return WIPE_MANAGEDDEVICEREMOTEACTION, nil
+            result = WIPE_MANAGEDDEVICEREMOTEACTION
         case "CUSTOMTEXTNOTIFICATION":
-            return CUSTOMTEXTNOTIFICATION_MANAGEDDEVICEREMOTEACTION, nil
+            result = CUSTOMTEXTNOTIFICATION_MANAGEDDEVICEREMOTEACTION
         case "REBOOTNOW":
-            return REBOOTNOW_MANAGEDDEVICEREMOTEACTION, nil
+            result = REBOOTNOW_MANAGEDDEVICEREMOTEACTION
         case "SETDEVICENAME":
-            return SETDEVICENAME_MANAGEDDEVICEREMOTEACTION, nil
+            result = SETDEVICENAME_MANAGEDDEVICEREMOTEACTION
         case "SYNCDEVICE":
-            return SYNCDEVICE_MANAGEDDEVICEREMOTEACTION, nil
+            result = SYNCDEVICE_MANAGEDDEVICEREMOTEACTION
         case "DEPROVISION":
-            return DEPROVISION_MANAGEDDEVICEREMOTEACTION, nil
+            result = DEPROVISION_MANAGEDDEVICEREMOTEACTION
         case "DISABLE":
-            return DISABLE_MANAGEDDEVICEREMOTEACTION, nil
+            result = DISABLE_MANAGEDDEVICEREMOTEACTION
         case "REENABLE":
-            return REENABLE_MANAGEDDEVICEREMOTEACTION, nil
+            result = REENABLE_MANAGEDDEVICEREMOTEACTION
         case "MOVEDEVICETOORGANIZATIONALUNIT":
-            return MOVEDEVICETOORGANIZATIONALUNIT_MANAGEDDEVICEREMOTEACTION, nil
+            result = MOVEDEVICETOORGANIZATIONALUNIT_MANAGEDDEVICEREMOTEACTION
         case "ACTIVATEDEVICEESIM":
-            return ACTIVATEDEVICEESIM_MANAGEDDEVICEREMOTEACTION, nil
+            result = ACTIVATEDEVICEESIM_MANAGEDDEVICEREMOTEACTION
         case "COLLECTDIAGNOSTICS":
-            return COLLECTDIAGNOSTICS_MANAGEDDEVICEREMOTEACTION, nil
+            result = COLLECTDIAGNOSTICS_MANAGEDDEVICEREMOTEACTION
+        default:
+            return 0, errors.New("Unknown ManagedDeviceRemoteAction value: " + v)
     }
-    return 0, errors.New("Unknown ManagedDeviceRemoteAction value: " + v)
+    return &result, nil
 }
 func SerializeManagedDeviceRemoteAction(values []ManagedDeviceRemoteAction) []string {
     result := make([]string, len(values))

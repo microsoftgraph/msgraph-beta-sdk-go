@@ -1,0 +1,185 @@
+package item
+
+import (
+    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i6569cc4c438add39750c2fc7006bc0dc5f8b76fdb8fc83861535db7be56727e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item/stages/item/decisions"
+    i8b8389b2e9644d3bc4df86f811daa472f1287eaa50c625e1e175a95dfa24b37f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item/stages/item/stop"
+    ib24dda4023173e4d186210e89b253814cbe954575a5e8ac7d28704d7148b9e24 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/pendingaccessreviewinstances/item/stages/item/decisions/item"
+)
+
+// AccessReviewStageRequestBuilder builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\{accessReviewInstance-id}\stages\{accessReviewStage-id}
+type AccessReviewStageRequestBuilder struct {
+    // Path parameters for the request
+    pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
+    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
+    urlTemplate string;
+}
+// AccessReviewStageRequestBuilderDeleteOptions options for Delete
+type AccessReviewStageRequestBuilderDeleteOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// AccessReviewStageRequestBuilderGetOptions options for Get
+type AccessReviewStageRequestBuilderGetOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Request query parameters
+    Q *AccessReviewStageRequestBuilderGetQueryParameters;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// AccessReviewStageRequestBuilderGetQueryParameters get stages from users
+type AccessReviewStageRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string;
+    // Select properties to be returned
+    Select []string;
+}
+// AccessReviewStageRequestBuilderPatchOptions options for Patch
+type AccessReviewStageRequestBuilderPatchOptions struct {
+    // 
+    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewStage;
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// NewAccessReviewStageRequestBuilderInternal instantiates a new AccessReviewStageRequestBuilder and sets the default values.
+func NewAccessReviewStageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewStageRequestBuilder) {
+    m := &AccessReviewStageRequestBuilder{
+    }
+    m.urlTemplate = "{+baseurl}/users/{user_id}/pendingAccessReviewInstances/{accessReviewInstance_id}/stages/{accessReviewStage_id}{?select,expand}";
+    urlTplParams := make(map[string]string)
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
+    }
+    m.pathParameters = pathParameters;
+    m.requestAdapter = requestAdapter;
+    return m
+}
+// NewAccessReviewStageRequestBuilder instantiates a new AccessReviewStageRequestBuilder and sets the default values.
+func NewAccessReviewStageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewStageRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewAccessReviewStageRequestBuilderInternal(urlParams, requestAdapter)
+}
+// CreateDeleteRequestInformation delete navigation property stages for users
+func (m *AccessReviewStageRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewStageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
+    }
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+// CreateGetRequestInformation get stages from users
+func (m *AccessReviewStageRequestBuilder) CreateGetRequestInformation(options *AccessReviewStageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
+    if options != nil && options.Q != nil {
+        requestInfo.AddQueryParameters(*(options.Q))
+    }
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
+    }
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+// CreatePatchRequestInformation update the navigation property stages in users
+func (m *AccessReviewStageRequestBuilder) CreatePatchRequestInformation(options *AccessReviewStageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
+    }
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+func (m *AccessReviewStageRequestBuilder) Decisions()(*i6569cc4c438add39750c2fc7006bc0dc5f8b76fdb8fc83861535db7be56727e4.DecisionsRequestBuilder) {
+    return i6569cc4c438add39750c2fc7006bc0dc5f8b76fdb8fc83861535db7be56727e4.NewDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DecisionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.pendingAccessReviewInstances.item.stages.item.decisions.item collection
+func (m *AccessReviewStageRequestBuilder) DecisionsById(id string)(*ib24dda4023173e4d186210e89b253814cbe954575a5e8ac7d28704d7148b9e24.AccessReviewInstanceDecisionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["accessReviewInstanceDecisionItem_id"] = id
+    }
+    return ib24dda4023173e4d186210e89b253814cbe954575a5e8ac7d28704d7148b9e24.NewAccessReviewInstanceDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Delete delete navigation property stages for users
+func (m *AccessReviewStageRequestBuilder) Delete(options *AccessReviewStageRequestBuilderDeleteOptions)(error) {
+    requestInfo, err := m.CreateDeleteRequestInformation(options);
+    if err != nil {
+        return err
+    }
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Get get stages from users
+func (m *AccessReviewStageRequestBuilder) Get(options *AccessReviewStageRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewStage, error) {
+    requestInfo, err := m.CreateGetRequestInformation(options);
+    if err != nil {
+        return nil, err
+    }
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessReviewStage() }, nil)
+    if err != nil {
+        return nil, err
+    }
+    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewStage), nil
+}
+// Patch update the navigation property stages in users
+func (m *AccessReviewStageRequestBuilder) Patch(options *AccessReviewStageRequestBuilderPatchOptions)(error) {
+    requestInfo, err := m.CreatePatchRequestInformation(options);
+    if err != nil {
+        return err
+    }
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+func (m *AccessReviewStageRequestBuilder) Stop()(*i8b8389b2e9644d3bc4df86f811daa472f1287eaa50c625e1e175a95dfa24b37f.StopRequestBuilder) {
+    return i8b8389b2e9644d3bc4df86f811daa472f1287eaa50c625e1e175a95dfa24b37f.NewStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}

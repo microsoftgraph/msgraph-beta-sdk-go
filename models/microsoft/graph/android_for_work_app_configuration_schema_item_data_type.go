@@ -21,25 +21,28 @@ func (i AndroidForWorkAppConfigurationSchemaItemDataType) String() string {
     return []string{"BOOL", "INTEGER", "STRING", "CHOICE", "MULTISELECT", "BUNDLE", "BUNDLEARRAY", "HIDDEN"}[i]
 }
 func ParseAndroidForWorkAppConfigurationSchemaItemDataType(v string) (interface{}, error) {
+    result := BOOL_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
     switch strings.ToUpper(v) {
         case "BOOL":
-            return BOOL_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE, nil
+            result = BOOL_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
         case "INTEGER":
-            return INTEGER_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE, nil
+            result = INTEGER_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
         case "STRING":
-            return STRING_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE, nil
+            result = STRING_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
         case "CHOICE":
-            return CHOICE_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE, nil
+            result = CHOICE_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
         case "MULTISELECT":
-            return MULTISELECT_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE, nil
+            result = MULTISELECT_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
         case "BUNDLE":
-            return BUNDLE_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE, nil
+            result = BUNDLE_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
         case "BUNDLEARRAY":
-            return BUNDLEARRAY_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE, nil
+            result = BUNDLEARRAY_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
         case "HIDDEN":
-            return HIDDEN_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE, nil
+            result = HIDDEN_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
+        default:
+            return 0, errors.New("Unknown AndroidForWorkAppConfigurationSchemaItemDataType value: " + v)
     }
-    return 0, errors.New("Unknown AndroidForWorkAppConfigurationSchemaItemDataType value: " + v)
+    return &result, nil
 }
 func SerializeAndroidForWorkAppConfigurationSchemaItemDataType(values []AndroidForWorkAppConfigurationSchemaItemDataType) []string {
     result := make([]string, len(values))

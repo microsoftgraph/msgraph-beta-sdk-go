@@ -135,8 +135,7 @@ func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(ChatMessageType)
-            m.SetMessageType(&cast)
+            m.SetMessageType(val.(*ChatMessageType))
         }
         return nil
     }
@@ -182,7 +181,7 @@ func (m *ChatMessageInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetMessageType() != nil {
-        cast := m.GetMessageType().String()
+        cast := (*m.GetMessageType()).String()
         err = writer.WriteStringValue("messageType", &cast)
         if err != nil {
             return err

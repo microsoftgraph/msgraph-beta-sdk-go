@@ -155,8 +155,7 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(DiscoverySource)
-            m.SetDiscoverySource(&cast)
+            m.SetDiscoverySource(val.(*DiscoverySource))
         }
         return nil
     }
@@ -166,8 +165,7 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(EnrollmentState)
-            m.SetEnrollmentState(&cast)
+            m.SetEnrollmentState(val.(*EnrollmentState))
         }
         return nil
     }
@@ -207,8 +205,7 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(Platform)
-            m.SetPlatform(&cast)
+            m.SetPlatform(val.(*Platform))
         }
         return nil
     }
@@ -266,14 +263,14 @@ func (m *ImportedAppleDeviceIdentity) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     if m.GetDiscoverySource() != nil {
-        cast := m.GetDiscoverySource().String()
+        cast := (*m.GetDiscoverySource()).String()
         err = writer.WriteStringValue("discoverySource", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetEnrollmentState() != nil {
-        cast := m.GetEnrollmentState().String()
+        cast := (*m.GetEnrollmentState()).String()
         err = writer.WriteStringValue("enrollmentState", &cast)
         if err != nil {
             return err
@@ -298,7 +295,7 @@ func (m *ImportedAppleDeviceIdentity) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     if m.GetPlatform() != nil {
-        cast := m.GetPlatform().String()
+        cast := (*m.GetPlatform()).String()
         err = writer.WriteStringValue("platform", &cast)
         if err != nil {
             return err

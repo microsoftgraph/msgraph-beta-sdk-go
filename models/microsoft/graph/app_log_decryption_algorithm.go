@@ -14,11 +14,14 @@ func (i AppLogDecryptionAlgorithm) String() string {
     return []string{"AES256"}[i]
 }
 func ParseAppLogDecryptionAlgorithm(v string) (interface{}, error) {
+    result := AES256_APPLOGDECRYPTIONALGORITHM
     switch strings.ToUpper(v) {
         case "AES256":
-            return AES256_APPLOGDECRYPTIONALGORITHM, nil
+            result = AES256_APPLOGDECRYPTIONALGORITHM
+        default:
+            return 0, errors.New("Unknown AppLogDecryptionAlgorithm value: " + v)
     }
-    return 0, errors.New("Unknown AppLogDecryptionAlgorithm value: " + v)
+    return &result, nil
 }
 func SerializeAppLogDecryptionAlgorithm(values []AppLogDecryptionAlgorithm) []string {
     result := make([]string, len(values))

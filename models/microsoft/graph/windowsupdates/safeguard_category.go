@@ -15,13 +15,16 @@ func (i SafeguardCategory) String() string {
     return []string{"LIKELYISSUES", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSafeguardCategory(v string) (interface{}, error) {
+    result := LIKELYISSUES_SAFEGUARDCATEGORY
     switch strings.ToUpper(v) {
         case "LIKELYISSUES":
-            return LIKELYISSUES_SAFEGUARDCATEGORY, nil
+            result = LIKELYISSUES_SAFEGUARDCATEGORY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SAFEGUARDCATEGORY, nil
+            result = UNKNOWNFUTUREVALUE_SAFEGUARDCATEGORY
+        default:
+            return 0, errors.New("Unknown SafeguardCategory value: " + v)
     }
-    return 0, errors.New("Unknown SafeguardCategory value: " + v)
+    return &result, nil
 }
 func SerializeSafeguardCategory(values []SafeguardCategory) []string {
     result := make([]string, len(values))

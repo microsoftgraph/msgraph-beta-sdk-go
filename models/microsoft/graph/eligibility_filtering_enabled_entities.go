@@ -17,17 +17,20 @@ func (i EligibilityFilteringEnabledEntities) String() string {
     return []string{"NONE", "SWAPREQUEST", "OFFERSHIFTREQUEST", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseEligibilityFilteringEnabledEntities(v string) (interface{}, error) {
+    result := NONE_ELIGIBILITYFILTERINGENABLEDENTITIES
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_ELIGIBILITYFILTERINGENABLEDENTITIES, nil
+            result = NONE_ELIGIBILITYFILTERINGENABLEDENTITIES
         case "SWAPREQUEST":
-            return SWAPREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES, nil
+            result = SWAPREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES
         case "OFFERSHIFTREQUEST":
-            return OFFERSHIFTREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES, nil
+            result = OFFERSHIFTREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ELIGIBILITYFILTERINGENABLEDENTITIES, nil
+            result = UNKNOWNFUTUREVALUE_ELIGIBILITYFILTERINGENABLEDENTITIES
+        default:
+            return 0, errors.New("Unknown EligibilityFilteringEnabledEntities value: " + v)
     }
-    return 0, errors.New("Unknown EligibilityFilteringEnabledEntities value: " + v)
+    return &result, nil
 }
 func SerializeEligibilityFilteringEnabledEntities(values []EligibilityFilteringEnabledEntities) []string {
     result := make([]string, len(values))

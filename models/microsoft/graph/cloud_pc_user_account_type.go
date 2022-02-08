@@ -16,15 +16,18 @@ func (i CloudPcUserAccountType) String() string {
     return []string{"STANDARDUSER", "ADMINISTRATOR", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCloudPcUserAccountType(v string) (interface{}, error) {
+    result := STANDARDUSER_CLOUDPCUSERACCOUNTTYPE
     switch strings.ToUpper(v) {
         case "STANDARDUSER":
-            return STANDARDUSER_CLOUDPCUSERACCOUNTTYPE, nil
+            result = STANDARDUSER_CLOUDPCUSERACCOUNTTYPE
         case "ADMINISTRATOR":
-            return ADMINISTRATOR_CLOUDPCUSERACCOUNTTYPE, nil
+            result = ADMINISTRATOR_CLOUDPCUSERACCOUNTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CLOUDPCUSERACCOUNTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_CLOUDPCUSERACCOUNTTYPE
+        default:
+            return 0, errors.New("Unknown CloudPcUserAccountType value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcUserAccountType value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcUserAccountType(values []CloudPcUserAccountType) []string {
     result := make([]string, len(values))

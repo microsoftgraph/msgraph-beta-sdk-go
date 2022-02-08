@@ -13,7 +13,7 @@ type AppConsentRequest struct {
     appId *string;
     // The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
     consentType *string;
-    // A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
+    // A list of pending scopes waiting for approval. Required.
     pendingScopes []AppConsentRequestScope;
     // A list of pending user consent requests.
     userConsentRequests []UserConsentRequest;
@@ -49,7 +49,7 @@ func (m *AppConsentRequest) GetConsentType()(*string) {
         return m.consentType
     }
 }
-// GetPendingScopes gets the pendingScopes property value. A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
+// GetPendingScopes gets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
 func (m *AppConsentRequest) GetPendingScopes()([]AppConsentRequestScope) {
     if m == nil {
         return nil
@@ -197,7 +197,7 @@ func (m *AppConsentRequest) SetConsentType(value *string)() {
         m.consentType = value
     }
 }
-// SetPendingScopes sets the pendingScopes property value. A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
+// SetPendingScopes sets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
 func (m *AppConsentRequest) SetPendingScopes(value []AppConsentRequestScope)() {
     if m != nil {
         m.pendingScopes = value

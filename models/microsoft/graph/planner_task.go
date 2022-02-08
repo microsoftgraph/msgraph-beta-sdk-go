@@ -48,7 +48,7 @@ type PlannerTask struct {
     percentComplete *int32;
     // Plan ID to which the task belongs.
     planId *string;
-    // This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+    // This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
     previewType *PlannerPreviewType;
     // Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
     priority *int32;
@@ -228,7 +228,7 @@ func (m *PlannerTask) GetPlanId()(*string) {
         return m.planId
     }
 }
-// GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+// GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
 func (m *PlannerTask) GetPreviewType()(*PlannerPreviewType) {
     if m == nil {
         return nil
@@ -485,8 +485,7 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(PlannerPreviewType)
-            m.SetPreviewType(&cast)
+            m.SetPreviewType(val.(*PlannerPreviewType))
         }
         return nil
     }
@@ -672,7 +671,7 @@ func (m *PlannerTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetPreviewType() != nil {
-        cast := m.GetPreviewType().String()
+        cast := (*m.GetPreviewType()).String()
         err = writer.WriteStringValue("previewType", &cast)
         if err != nil {
             return err
@@ -830,7 +829,7 @@ func (m *PlannerTask) SetPlanId(value *string)() {
         m.planId = value
     }
 }
-// SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+// SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
 func (m *PlannerTask) SetPreviewType(value *PlannerPreviewType)() {
     if m != nil {
         m.previewType = value

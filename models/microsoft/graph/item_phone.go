@@ -74,8 +74,7 @@ func (m *ItemPhone) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
             return err
         }
         if val != nil {
-            cast := val.(PhoneType)
-            m.SetType(&cast)
+            m.SetType(val.(*PhoneType))
         }
         return nil
     }
@@ -103,7 +102,7 @@ func (m *ItemPhone) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

@@ -21,25 +21,28 @@ func (i DeviceManagementConfigurationTechnologies) String() string {
     return []string{"NONE", "MDM", "WINDOWS10XMANAGEMENT", "CONFIGMANAGER", "MICROSOFTSENSE", "EXCHANGEONLINE", "LINUXMDM", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDeviceManagementConfigurationTechnologies(v string) (interface{}, error) {
+    result := NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES, nil
+            result = NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         case "MDM":
-            return MDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES, nil
+            result = MDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         case "WINDOWS10XMANAGEMENT":
-            return WINDOWS10XMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES, nil
+            result = WINDOWS10XMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         case "CONFIGMANAGER":
-            return CONFIGMANAGER_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES, nil
+            result = CONFIGMANAGER_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         case "MICROSOFTSENSE":
-            return MICROSOFTSENSE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES, nil
+            result = MICROSOFTSENSE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         case "EXCHANGEONLINE":
-            return EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES, nil
+            result = EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         case "LINUXMDM":
-            return LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES, nil
+            result = LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES, nil
+            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+        default:
+            return 0, errors.New("Unknown DeviceManagementConfigurationTechnologies value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementConfigurationTechnologies value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementConfigurationTechnologies(values []DeviceManagementConfigurationTechnologies) []string {
     result := make([]string, len(values))

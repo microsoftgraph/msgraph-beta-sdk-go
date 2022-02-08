@@ -233,8 +233,7 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(WindowsAutopilotDeviceType)
-            m.SetDeviceType(&cast)
+            m.SetDeviceType(val.(*WindowsAutopilotDeviceType))
         }
         return nil
     }
@@ -384,7 +383,7 @@ func (m *WindowsAutopilotDeploymentProfile) Serialize(writer i04eb5309aeaafadd28
         }
     }
     if m.GetDeviceType() != nil {
-        cast := m.GetDeviceType().String()
+        cast := (*m.GetDeviceType()).String()
         err = writer.WriteStringValue("deviceType", &cast)
         if err != nil {
             return err

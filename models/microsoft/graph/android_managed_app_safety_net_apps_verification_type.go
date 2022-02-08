@@ -15,13 +15,16 @@ func (i AndroidManagedAppSafetyNetAppsVerificationType) String() string {
     return []string{"NONE", "ENABLED"}[i]
 }
 func ParseAndroidManagedAppSafetyNetAppsVerificationType(v string) (interface{}, error) {
+    result := NONE_ANDROIDMANAGEDAPPSAFETYNETAPPSVERIFICATIONTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_ANDROIDMANAGEDAPPSAFETYNETAPPSVERIFICATIONTYPE, nil
+            result = NONE_ANDROIDMANAGEDAPPSAFETYNETAPPSVERIFICATIONTYPE
         case "ENABLED":
-            return ENABLED_ANDROIDMANAGEDAPPSAFETYNETAPPSVERIFICATIONTYPE, nil
+            result = ENABLED_ANDROIDMANAGEDAPPSAFETYNETAPPSVERIFICATIONTYPE
+        default:
+            return 0, errors.New("Unknown AndroidManagedAppSafetyNetAppsVerificationType value: " + v)
     }
-    return 0, errors.New("Unknown AndroidManagedAppSafetyNetAppsVerificationType value: " + v)
+    return &result, nil
 }
 func SerializeAndroidManagedAppSafetyNetAppsVerificationType(values []AndroidManagedAppSafetyNetAppsVerificationType) []string {
     result := make([]string, len(values))

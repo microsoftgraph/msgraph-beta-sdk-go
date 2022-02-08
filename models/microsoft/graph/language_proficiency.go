@@ -104,8 +104,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(LanguageProficiencyLevel)
-            m.SetProficiency(&cast)
+            m.SetProficiency(val.(*LanguageProficiencyLevel))
         }
         return nil
     }
@@ -115,8 +114,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(LanguageProficiencyLevel)
-            m.SetReading(&cast)
+            m.SetReading(val.(*LanguageProficiencyLevel))
         }
         return nil
     }
@@ -126,8 +124,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(LanguageProficiencyLevel)
-            m.SetSpoken(&cast)
+            m.SetSpoken(val.(*LanguageProficiencyLevel))
         }
         return nil
     }
@@ -157,8 +154,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(LanguageProficiencyLevel)
-            m.SetWritten(&cast)
+            m.SetWritten(val.(*LanguageProficiencyLevel))
         }
         return nil
     }
@@ -180,21 +176,21 @@ func (m *LanguageProficiency) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetProficiency() != nil {
-        cast := m.GetProficiency().String()
+        cast := (*m.GetProficiency()).String()
         err = writer.WriteStringValue("proficiency", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetReading() != nil {
-        cast := m.GetReading().String()
+        cast := (*m.GetReading()).String()
         err = writer.WriteStringValue("reading", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetSpoken() != nil {
-        cast := m.GetSpoken().String()
+        cast := (*m.GetSpoken()).String()
         err = writer.WriteStringValue("spoken", &cast)
         if err != nil {
             return err
@@ -213,7 +209,7 @@ func (m *LanguageProficiency) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetWritten() != nil {
-        cast := m.GetWritten().String()
+        cast := (*m.GetWritten()).String()
         err = writer.WriteStringValue("written", &cast)
         if err != nil {
             return err

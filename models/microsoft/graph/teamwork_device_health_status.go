@@ -19,21 +19,24 @@ func (i TeamworkDeviceHealthStatus) String() string {
     return []string{"UNKNOWN", "OFFLINE", "CRITICAL", "NONURGENT", "HEALTHY", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamworkDeviceHealthStatus(v string) (interface{}, error) {
+    result := UNKNOWN_TEAMWORKDEVICEHEALTHSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_TEAMWORKDEVICEHEALTHSTATUS, nil
+            result = UNKNOWN_TEAMWORKDEVICEHEALTHSTATUS
         case "OFFLINE":
-            return OFFLINE_TEAMWORKDEVICEHEALTHSTATUS, nil
+            result = OFFLINE_TEAMWORKDEVICEHEALTHSTATUS
         case "CRITICAL":
-            return CRITICAL_TEAMWORKDEVICEHEALTHSTATUS, nil
+            result = CRITICAL_TEAMWORKDEVICEHEALTHSTATUS
         case "NONURGENT":
-            return NONURGENT_TEAMWORKDEVICEHEALTHSTATUS, nil
+            result = NONURGENT_TEAMWORKDEVICEHEALTHSTATUS
         case "HEALTHY":
-            return HEALTHY_TEAMWORKDEVICEHEALTHSTATUS, nil
+            result = HEALTHY_TEAMWORKDEVICEHEALTHSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMWORKDEVICEHEALTHSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_TEAMWORKDEVICEHEALTHSTATUS
+        default:
+            return 0, errors.New("Unknown TeamworkDeviceHealthStatus value: " + v)
     }
-    return 0, errors.New("Unknown TeamworkDeviceHealthStatus value: " + v)
+    return &result, nil
 }
 func SerializeTeamworkDeviceHealthStatus(values []TeamworkDeviceHealthStatus) []string {
     result := make([]string, len(values))

@@ -44,8 +44,7 @@ func (m *DeploymentStateReason) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.DeploymentStateReasonValue)
-            m.SetValue(&cast)
+            m.SetValue(val.(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.DeploymentStateReasonValue))
         }
         return nil
     }
@@ -57,7 +56,7 @@ func (m *DeploymentStateReason) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *DeploymentStateReason) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetValue() != nil {
-        cast := m.GetValue().String()
+        cast := (*m.GetValue()).String()
         err := writer.WriteStringValue("value", &cast)
         if err != nil {
             return err

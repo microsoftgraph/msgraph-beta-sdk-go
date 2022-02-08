@@ -15,13 +15,16 @@ func (i SensitiveTypeSource) String() string {
     return []string{"OUTOFBOX", "TENANT"}[i]
 }
 func ParseSensitiveTypeSource(v string) (interface{}, error) {
+    result := OUTOFBOX_SENSITIVETYPESOURCE
     switch strings.ToUpper(v) {
         case "OUTOFBOX":
-            return OUTOFBOX_SENSITIVETYPESOURCE, nil
+            result = OUTOFBOX_SENSITIVETYPESOURCE
         case "TENANT":
-            return TENANT_SENSITIVETYPESOURCE, nil
+            result = TENANT_SENSITIVETYPESOURCE
+        default:
+            return 0, errors.New("Unknown SensitiveTypeSource value: " + v)
     }
-    return 0, errors.New("Unknown SensitiveTypeSource value: " + v)
+    return &result, nil
 }
 func SerializeSensitiveTypeSource(values []SensitiveTypeSource) []string {
     result := make([]string, len(values))

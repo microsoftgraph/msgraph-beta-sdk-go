@@ -22,27 +22,30 @@ func (i EducationSynchronizationStatus) String() string {
     return []string{"PAUSED", "INPROGRESS", "SUCCESS", "ERROR", "VALIDATIONERROR", "QUARANTINED", "UNKNOWNFUTUREVALUE", "EXTRACTING", "VALIDATING"}[i]
 }
 func ParseEducationSynchronizationStatus(v string) (interface{}, error) {
+    result := PAUSED_EDUCATIONSYNCHRONIZATIONSTATUS
     switch strings.ToUpper(v) {
         case "PAUSED":
-            return PAUSED_EDUCATIONSYNCHRONIZATIONSTATUS, nil
+            result = PAUSED_EDUCATIONSYNCHRONIZATIONSTATUS
         case "INPROGRESS":
-            return INPROGRESS_EDUCATIONSYNCHRONIZATIONSTATUS, nil
+            result = INPROGRESS_EDUCATIONSYNCHRONIZATIONSTATUS
         case "SUCCESS":
-            return SUCCESS_EDUCATIONSYNCHRONIZATIONSTATUS, nil
+            result = SUCCESS_EDUCATIONSYNCHRONIZATIONSTATUS
         case "ERROR":
-            return ERROR_EDUCATIONSYNCHRONIZATIONSTATUS, nil
+            result = ERROR_EDUCATIONSYNCHRONIZATIONSTATUS
         case "VALIDATIONERROR":
-            return VALIDATIONERROR_EDUCATIONSYNCHRONIZATIONSTATUS, nil
+            result = VALIDATIONERROR_EDUCATIONSYNCHRONIZATIONSTATUS
         case "QUARANTINED":
-            return QUARANTINED_EDUCATIONSYNCHRONIZATIONSTATUS, nil
+            result = QUARANTINED_EDUCATIONSYNCHRONIZATIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EDUCATIONSYNCHRONIZATIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_EDUCATIONSYNCHRONIZATIONSTATUS
         case "EXTRACTING":
-            return EXTRACTING_EDUCATIONSYNCHRONIZATIONSTATUS, nil
+            result = EXTRACTING_EDUCATIONSYNCHRONIZATIONSTATUS
         case "VALIDATING":
-            return VALIDATING_EDUCATIONSYNCHRONIZATIONSTATUS, nil
+            result = VALIDATING_EDUCATIONSYNCHRONIZATIONSTATUS
+        default:
+            return 0, errors.New("Unknown EducationSynchronizationStatus value: " + v)
     }
-    return 0, errors.New("Unknown EducationSynchronizationStatus value: " + v)
+    return &result, nil
 }
 func SerializeEducationSynchronizationStatus(values []EducationSynchronizationStatus) []string {
     result := make([]string, len(values))

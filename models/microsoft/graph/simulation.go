@@ -175,8 +175,7 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
             return err
         }
         if val != nil {
-            cast := val.(SimulationAttackTechnique)
-            m.SetAttackTechnique(&cast)
+            m.SetAttackTechnique(val.(*SimulationAttackTechnique))
         }
         return nil
     }
@@ -186,8 +185,7 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
             return err
         }
         if val != nil {
-            cast := val.(SimulationAttackType)
-            m.SetAttackType(&cast)
+            m.SetAttackType(val.(*SimulationAttackType))
         }
         return nil
     }
@@ -297,8 +295,7 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
             return err
         }
         if val != nil {
-            cast := val.(PayloadDeliveryPlatform)
-            m.SetPayloadDeliveryPlatform(&cast)
+            m.SetPayloadDeliveryPlatform(val.(*PayloadDeliveryPlatform))
         }
         return nil
     }
@@ -318,8 +315,7 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
             return err
         }
         if val != nil {
-            cast := val.(SimulationStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*SimulationStatus))
         }
         return nil
     }
@@ -335,14 +331,14 @@ func (m *Simulation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         return err
     }
     if m.GetAttackTechnique() != nil {
-        cast := m.GetAttackTechnique().String()
+        cast := (*m.GetAttackTechnique()).String()
         err = writer.WriteStringValue("attackTechnique", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAttackType() != nil {
-        cast := m.GetAttackType().String()
+        cast := (*m.GetAttackType()).String()
         err = writer.WriteStringValue("attackType", &cast)
         if err != nil {
             return err
@@ -409,7 +405,7 @@ func (m *Simulation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     if m.GetPayloadDeliveryPlatform() != nil {
-        cast := m.GetPayloadDeliveryPlatform().String()
+        cast := (*m.GetPayloadDeliveryPlatform()).String()
         err = writer.WriteStringValue("payloadDeliveryPlatform", &cast)
         if err != nil {
             return err
@@ -422,7 +418,7 @@ func (m *Simulation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

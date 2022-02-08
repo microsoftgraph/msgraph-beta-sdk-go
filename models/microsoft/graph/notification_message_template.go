@@ -8,7 +8,7 @@ import (
 // NotificationMessageTemplate 
 type NotificationMessageTemplate struct {
     Entity
-    // The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.
+    // The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
     brandingOptions *NotificationTemplateBrandingOptions;
     // The default locale to fallback onto when the requested locale is not available.
     defaultLocale *string;
@@ -28,7 +28,7 @@ func NewNotificationMessageTemplate()(*NotificationMessageTemplate) {
     }
     return m
 }
-// GetBrandingOptions gets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.
+// GetBrandingOptions gets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
 func (m *NotificationMessageTemplate) GetBrandingOptions()(*NotificationTemplateBrandingOptions) {
     if m == nil {
         return nil
@@ -85,8 +85,7 @@ func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(NotificationTemplateBrandingOptions)
-            m.SetBrandingOptions(&cast)
+            m.SetBrandingOptions(val.(*NotificationTemplateBrandingOptions))
         }
         return nil
     }
@@ -160,7 +159,7 @@ func (m *NotificationMessageTemplate) Serialize(writer i04eb5309aeaafadd28374d79
         return err
     }
     if m.GetBrandingOptions() != nil {
-        cast := m.GetBrandingOptions().String()
+        cast := (*m.GetBrandingOptions()).String()
         err = writer.WriteStringValue("brandingOptions", &cast)
         if err != nil {
             return err
@@ -203,7 +202,7 @@ func (m *NotificationMessageTemplate) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// SetBrandingOptions sets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.
+// SetBrandingOptions sets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
 func (m *NotificationMessageTemplate) SetBrandingOptions(value *NotificationTemplateBrandingOptions)() {
     if m != nil {
         m.brandingOptions = value

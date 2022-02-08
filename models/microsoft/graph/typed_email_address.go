@@ -54,8 +54,7 @@ func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(EmailType)
-            m.SetType(&cast)
+            m.SetType(val.(*EmailType))
         }
         return nil
     }
@@ -77,7 +76,7 @@ func (m *TypedEmailAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

@@ -37,57 +37,60 @@ func (i RemoteAction) String() string {
     return []string{"UNKNOWN", "FACTORYRESET", "REMOVECOMPANYDATA", "RESETPASSCODE", "REMOTELOCK", "ENABLELOSTMODE", "DISABLELOSTMODE", "LOCATEDEVICE", "REBOOTNOW", "RECOVERPASSCODE", "CLEANWINDOWSDEVICE", "LOGOUTSHAREDAPPLEDEVICEACTIVEUSER", "QUICKSCAN", "FULLSCAN", "WINDOWSDEFENDERUPDATESIGNATURES", "FACTORYRESETKEEPENROLLMENTDATA", "UPDATEDEVICEACCOUNT", "AUTOMATICREDEPLOYMENT", "SHUTDOWN", "ROTATEBITLOCKERKEYS", "ROTATEFILEVAULTKEY", "GETFILEVAULTKEY", "SETDEVICENAME", "ACTIVATEDEVICEESIM"}[i]
 }
 func ParseRemoteAction(v string) (interface{}, error) {
+    result := UNKNOWN_REMOTEACTION
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_REMOTEACTION, nil
+            result = UNKNOWN_REMOTEACTION
         case "FACTORYRESET":
-            return FACTORYRESET_REMOTEACTION, nil
+            result = FACTORYRESET_REMOTEACTION
         case "REMOVECOMPANYDATA":
-            return REMOVECOMPANYDATA_REMOTEACTION, nil
+            result = REMOVECOMPANYDATA_REMOTEACTION
         case "RESETPASSCODE":
-            return RESETPASSCODE_REMOTEACTION, nil
+            result = RESETPASSCODE_REMOTEACTION
         case "REMOTELOCK":
-            return REMOTELOCK_REMOTEACTION, nil
+            result = REMOTELOCK_REMOTEACTION
         case "ENABLELOSTMODE":
-            return ENABLELOSTMODE_REMOTEACTION, nil
+            result = ENABLELOSTMODE_REMOTEACTION
         case "DISABLELOSTMODE":
-            return DISABLELOSTMODE_REMOTEACTION, nil
+            result = DISABLELOSTMODE_REMOTEACTION
         case "LOCATEDEVICE":
-            return LOCATEDEVICE_REMOTEACTION, nil
+            result = LOCATEDEVICE_REMOTEACTION
         case "REBOOTNOW":
-            return REBOOTNOW_REMOTEACTION, nil
+            result = REBOOTNOW_REMOTEACTION
         case "RECOVERPASSCODE":
-            return RECOVERPASSCODE_REMOTEACTION, nil
+            result = RECOVERPASSCODE_REMOTEACTION
         case "CLEANWINDOWSDEVICE":
-            return CLEANWINDOWSDEVICE_REMOTEACTION, nil
+            result = CLEANWINDOWSDEVICE_REMOTEACTION
         case "LOGOUTSHAREDAPPLEDEVICEACTIVEUSER":
-            return LOGOUTSHAREDAPPLEDEVICEACTIVEUSER_REMOTEACTION, nil
+            result = LOGOUTSHAREDAPPLEDEVICEACTIVEUSER_REMOTEACTION
         case "QUICKSCAN":
-            return QUICKSCAN_REMOTEACTION, nil
+            result = QUICKSCAN_REMOTEACTION
         case "FULLSCAN":
-            return FULLSCAN_REMOTEACTION, nil
+            result = FULLSCAN_REMOTEACTION
         case "WINDOWSDEFENDERUPDATESIGNATURES":
-            return WINDOWSDEFENDERUPDATESIGNATURES_REMOTEACTION, nil
+            result = WINDOWSDEFENDERUPDATESIGNATURES_REMOTEACTION
         case "FACTORYRESETKEEPENROLLMENTDATA":
-            return FACTORYRESETKEEPENROLLMENTDATA_REMOTEACTION, nil
+            result = FACTORYRESETKEEPENROLLMENTDATA_REMOTEACTION
         case "UPDATEDEVICEACCOUNT":
-            return UPDATEDEVICEACCOUNT_REMOTEACTION, nil
+            result = UPDATEDEVICEACCOUNT_REMOTEACTION
         case "AUTOMATICREDEPLOYMENT":
-            return AUTOMATICREDEPLOYMENT_REMOTEACTION, nil
+            result = AUTOMATICREDEPLOYMENT_REMOTEACTION
         case "SHUTDOWN":
-            return SHUTDOWN_REMOTEACTION, nil
+            result = SHUTDOWN_REMOTEACTION
         case "ROTATEBITLOCKERKEYS":
-            return ROTATEBITLOCKERKEYS_REMOTEACTION, nil
+            result = ROTATEBITLOCKERKEYS_REMOTEACTION
         case "ROTATEFILEVAULTKEY":
-            return ROTATEFILEVAULTKEY_REMOTEACTION, nil
+            result = ROTATEFILEVAULTKEY_REMOTEACTION
         case "GETFILEVAULTKEY":
-            return GETFILEVAULTKEY_REMOTEACTION, nil
+            result = GETFILEVAULTKEY_REMOTEACTION
         case "SETDEVICENAME":
-            return SETDEVICENAME_REMOTEACTION, nil
+            result = SETDEVICENAME_REMOTEACTION
         case "ACTIVATEDEVICEESIM":
-            return ACTIVATEDEVICEESIM_REMOTEACTION, nil
+            result = ACTIVATEDEVICEESIM_REMOTEACTION
+        default:
+            return 0, errors.New("Unknown RemoteAction value: " + v)
     }
-    return 0, errors.New("Unknown RemoteAction value: " + v)
+    return &result, nil
 }
 func SerializeRemoteAction(values []RemoteAction) []string {
     result := make([]string, len(values))

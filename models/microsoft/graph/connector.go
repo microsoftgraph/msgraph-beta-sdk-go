@@ -98,8 +98,7 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
             return err
         }
         if val != nil {
-            cast := val.(ConnectorStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*ConnectorStatus))
         }
         return nil
     }
@@ -138,7 +137,7 @@ func (m *Connector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

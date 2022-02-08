@@ -55,7 +55,7 @@ type EventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// EventRequestBuilderGetQueryParameters the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// EventRequestBuilderGetQueryParameters the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string;
@@ -113,7 +113,7 @@ func NewEventRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams["request-raw-url"] = rawUrl
     return NewEventRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// CreateDeleteRequestInformation the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventRequestBuilder) CreateDeleteRequestInformation(options *EventRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,7 +130,7 @@ func (m *EventRequestBuilder) CreateDeleteRequestInformation(options *EventReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// CreateGetRequestInformation the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventRequestBuilder) CreateGetRequestInformation(options *EventRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,7 +150,7 @@ func (m *EventRequestBuilder) CreateGetRequestInformation(options *EventRequestB
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// CreatePatchRequestInformation the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventRequestBuilder) CreatePatchRequestInformation(options *EventRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -171,7 +171,7 @@ func (m *EventRequestBuilder) CreatePatchRequestInformation(options *EventReques
 func (m *EventRequestBuilder) Decline()(*if8385c0725bebab3400ac53450aa0a6fe210717d6702a895487379d999cababc.DeclineRequestBuilder) {
     return if8385c0725bebab3400ac53450aa0a6fe210717d6702a895487379d999cababc.NewDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Delete the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// Delete the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventRequestBuilder) Delete(options *EventRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -217,7 +217,7 @@ func (m *EventRequestBuilder) ExtensionsById(id string)(*i5d36ace97f3f76411ae8d4
 func (m *EventRequestBuilder) Forward()(*id1adeec63eafeac63e2a323cb6de5aad1091c62b1c34922e2bd17933aa7b90ce.ForwardRequestBuilder) {
     return id1adeec63eafeac63e2a323cb6de5aad1091c62b1c34922e2bd17933aa7b90ce.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// Get the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventRequestBuilder) Get(options *EventRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -257,7 +257,7 @@ func (m *EventRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i0b64
     }
     return i0b64b3ef52dbd3e72d88b3002e2346ed309a759fff57c4e03d03441f16395a61.NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// Patch the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventRequestBuilder) Patch(options *EventRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

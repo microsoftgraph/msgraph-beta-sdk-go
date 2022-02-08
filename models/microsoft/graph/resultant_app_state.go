@@ -20,23 +20,26 @@ func (i ResultantAppState) String() string {
     return []string{"NOTAPPLICABLE", "INSTALLED", "FAILED", "NOTINSTALLED", "UNINSTALLFAILED", "PENDINGINSTALL", "UNKNOWN"}[i]
 }
 func ParseResultantAppState(v string) (interface{}, error) {
+    result := NOTAPPLICABLE_RESULTANTAPPSTATE
     switch strings.ToUpper(v) {
         case "NOTAPPLICABLE":
-            return NOTAPPLICABLE_RESULTANTAPPSTATE, nil
+            result = NOTAPPLICABLE_RESULTANTAPPSTATE
         case "INSTALLED":
-            return INSTALLED_RESULTANTAPPSTATE, nil
+            result = INSTALLED_RESULTANTAPPSTATE
         case "FAILED":
-            return FAILED_RESULTANTAPPSTATE, nil
+            result = FAILED_RESULTANTAPPSTATE
         case "NOTINSTALLED":
-            return NOTINSTALLED_RESULTANTAPPSTATE, nil
+            result = NOTINSTALLED_RESULTANTAPPSTATE
         case "UNINSTALLFAILED":
-            return UNINSTALLFAILED_RESULTANTAPPSTATE, nil
+            result = UNINSTALLFAILED_RESULTANTAPPSTATE
         case "PENDINGINSTALL":
-            return PENDINGINSTALL_RESULTANTAPPSTATE, nil
+            result = PENDINGINSTALL_RESULTANTAPPSTATE
         case "UNKNOWN":
-            return UNKNOWN_RESULTANTAPPSTATE, nil
+            result = UNKNOWN_RESULTANTAPPSTATE
+        default:
+            return 0, errors.New("Unknown ResultantAppState value: " + v)
     }
-    return 0, errors.New("Unknown ResultantAppState value: " + v)
+    return &result, nil
 }
 func SerializeResultantAppState(values []ResultantAppState) []string {
     result := make([]string, len(values))

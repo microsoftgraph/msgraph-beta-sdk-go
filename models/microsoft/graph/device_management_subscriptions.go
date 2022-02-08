@@ -19,21 +19,24 @@ func (i DeviceManagementSubscriptions) String() string {
     return []string{"NONE", "INTUNE", "OFFICE365", "INTUNEPREMIUM", "INTUNE_EDU", "INTUNE_SMB"}[i]
 }
 func ParseDeviceManagementSubscriptions(v string) (interface{}, error) {
+    result := NONE_DEVICEMANAGEMENTSUBSCRIPTIONS
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEMANAGEMENTSUBSCRIPTIONS, nil
+            result = NONE_DEVICEMANAGEMENTSUBSCRIPTIONS
         case "INTUNE":
-            return INTUNE_DEVICEMANAGEMENTSUBSCRIPTIONS, nil
+            result = INTUNE_DEVICEMANAGEMENTSUBSCRIPTIONS
         case "OFFICE365":
-            return OFFICE365_DEVICEMANAGEMENTSUBSCRIPTIONS, nil
+            result = OFFICE365_DEVICEMANAGEMENTSUBSCRIPTIONS
         case "INTUNEPREMIUM":
-            return INTUNEPREMIUM_DEVICEMANAGEMENTSUBSCRIPTIONS, nil
+            result = INTUNEPREMIUM_DEVICEMANAGEMENTSUBSCRIPTIONS
         case "INTUNE_EDU":
-            return INTUNE_EDU_DEVICEMANAGEMENTSUBSCRIPTIONS, nil
+            result = INTUNE_EDU_DEVICEMANAGEMENTSUBSCRIPTIONS
         case "INTUNE_SMB":
-            return INTUNE_SMB_DEVICEMANAGEMENTSUBSCRIPTIONS, nil
+            result = INTUNE_SMB_DEVICEMANAGEMENTSUBSCRIPTIONS
+        default:
+            return 0, errors.New("Unknown DeviceManagementSubscriptions value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementSubscriptions value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementSubscriptions(values []DeviceManagementSubscriptions) []string {
     result := make([]string, len(values))

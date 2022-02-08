@@ -6,7 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
-// RunHuntingQueryRequestBuilder builds and executes requests for operations under \security\microsoft.graph.runHuntingQuery
+// RunHuntingQueryRequestBuilder builds and executes requests for operations under \security\microsoft.graph.security.runHuntingQuery
 type RunHuntingQueryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -106,7 +106,7 @@ func (m *RunHuntingQueryResponse) SetHuntingQueryResults(value *i535684e11b55001
 func NewRunHuntingQueryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RunHuntingQueryRequestBuilder) {
     m := &RunHuntingQueryRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security/microsoft.graph.runHuntingQuery";
+    m.urlTemplate = "{+baseurl}/security/microsoft.graph.security.runHuntingQuery";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

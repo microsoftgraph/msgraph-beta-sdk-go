@@ -64,8 +64,7 @@ func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(AnswerInputType)
-            m.SetAnswerInputType(&cast)
+            m.SetAnswerInputType(val.(*AnswerInputType))
         }
         return nil
     }
@@ -115,7 +114,7 @@ func (m *MeetingRegistrationQuestion) Serialize(writer i04eb5309aeaafadd28374d79
         return err
     }
     if m.GetAnswerInputType() != nil {
-        cast := m.GetAnswerInputType().String()
+        cast := (*m.GetAnswerInputType()).String()
         err = writer.WriteStringValue("answerInputType", &cast)
         if err != nil {
             return err

@@ -17,17 +17,20 @@ func (i AuthenticationContextDetail) String() string {
     return []string{"REQUIRED", "PREVIOUSLYSATISFIED", "NOTAPPLICABLE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAuthenticationContextDetail(v string) (interface{}, error) {
+    result := REQUIRED_AUTHENTICATIONCONTEXTDETAIL
     switch strings.ToUpper(v) {
         case "REQUIRED":
-            return REQUIRED_AUTHENTICATIONCONTEXTDETAIL, nil
+            result = REQUIRED_AUTHENTICATIONCONTEXTDETAIL
         case "PREVIOUSLYSATISFIED":
-            return PREVIOUSLYSATISFIED_AUTHENTICATIONCONTEXTDETAIL, nil
+            result = PREVIOUSLYSATISFIED_AUTHENTICATIONCONTEXTDETAIL
         case "NOTAPPLICABLE":
-            return NOTAPPLICABLE_AUTHENTICATIONCONTEXTDETAIL, nil
+            result = NOTAPPLICABLE_AUTHENTICATIONCONTEXTDETAIL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_AUTHENTICATIONCONTEXTDETAIL, nil
+            result = UNKNOWNFUTUREVALUE_AUTHENTICATIONCONTEXTDETAIL
+        default:
+            return 0, errors.New("Unknown AuthenticationContextDetail value: " + v)
     }
-    return 0, errors.New("Unknown AuthenticationContextDetail value: " + v)
+    return &result, nil
 }
 func SerializeAuthenticationContextDetail(values []AuthenticationContextDetail) []string {
     result := make([]string, len(values))

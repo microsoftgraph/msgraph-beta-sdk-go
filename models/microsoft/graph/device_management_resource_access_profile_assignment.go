@@ -54,8 +54,7 @@ func (m *DeviceManagementResourceAccessProfileAssignment) GetFieldDeserializers(
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementResourceAccessProfileIntent)
-            m.SetIntent(&cast)
+            m.SetIntent(val.(*DeviceManagementResourceAccessProfileIntent))
         }
         return nil
     }
@@ -91,7 +90,7 @@ func (m *DeviceManagementResourceAccessProfileAssignment) Serialize(writer i04eb
         return err
     }
     if m.GetIntent() != nil {
-        cast := m.GetIntent().String()
+        cast := (*m.GetIntent()).String()
         err = writer.WriteStringValue("intent", &cast)
         if err != nil {
             return err

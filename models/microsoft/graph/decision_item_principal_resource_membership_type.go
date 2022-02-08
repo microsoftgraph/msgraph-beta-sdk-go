@@ -16,15 +16,18 @@ func (i DecisionItemPrincipalResourceMembershipType) String() string {
     return []string{"DIRECT", "INDIRECT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDecisionItemPrincipalResourceMembershipType(v string) (interface{}, error) {
+    result := DIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE
     switch strings.ToUpper(v) {
         case "DIRECT":
-            return DIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE, nil
+            result = DIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE
         case "INDIRECT":
-            return INDIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE, nil
+            result = INDIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE, nil
+            result = UNKNOWNFUTUREVALUE_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE
+        default:
+            return 0, errors.New("Unknown DecisionItemPrincipalResourceMembershipType value: " + v)
     }
-    return 0, errors.New("Unknown DecisionItemPrincipalResourceMembershipType value: " + v)
+    return &result, nil
 }
 func SerializeDecisionItemPrincipalResourceMembershipType(values []DecisionItemPrincipalResourceMembershipType) []string {
     result := make([]string, len(values))

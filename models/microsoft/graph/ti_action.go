@@ -18,19 +18,22 @@ func (i TiAction) String() string {
     return []string{"UNKNOWN", "ALLOW", "BLOCK", "ALERT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTiAction(v string) (interface{}, error) {
+    result := UNKNOWN_TIACTION
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_TIACTION, nil
+            result = UNKNOWN_TIACTION
         case "ALLOW":
-            return ALLOW_TIACTION, nil
+            result = ALLOW_TIACTION
         case "BLOCK":
-            return BLOCK_TIACTION, nil
+            result = BLOCK_TIACTION
         case "ALERT":
-            return ALERT_TIACTION, nil
+            result = ALERT_TIACTION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TIACTION, nil
+            result = UNKNOWNFUTUREVALUE_TIACTION
+        default:
+            return 0, errors.New("Unknown TiAction value: " + v)
     }
-    return 0, errors.New("Unknown TiAction value: " + v)
+    return &result, nil
 }
 func SerializeTiAction(values []TiAction) []string {
     result := make([]string, len(values))

@@ -145,8 +145,7 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) GetFieldDeserializers()(map[s
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MigrationStatus)
-            m.SetMigrationStatus(&cast)
+            m.SetMigrationStatus(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MigrationStatus))
         }
         return nil
     }
@@ -266,7 +265,7 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriod) Serialize(writer i04eb5309aea
         }
     }
     if m.GetMigrationStatus() != nil {
-        cast := m.GetMigrationStatus().String()
+        cast := (*m.GetMigrationStatus()).String()
         err = writer.WriteStringValue("migrationStatus", &cast)
         if err != nil {
             return err

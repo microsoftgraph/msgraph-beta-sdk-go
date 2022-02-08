@@ -122,8 +122,7 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(SkillProficiencyLevel)
-            m.SetProficiency(&cast)
+            m.SetProficiency(val.(*SkillProficiencyLevel))
         }
         return nil
     }
@@ -177,7 +176,7 @@ func (m *SkillProficiency) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetProficiency() != nil {
-        cast := m.GetProficiency().String()
+        cast := (*m.GetProficiency()).String()
         err = writer.WriteStringValue("proficiency", &cast)
         if err != nil {
             return err

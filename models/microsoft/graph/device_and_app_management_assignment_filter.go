@@ -135,8 +135,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[str
             return err
         }
         if val != nil {
-            cast := val.(DevicePlatformType)
-            m.SetPlatform(&cast)
+            m.SetPlatform(val.(*DevicePlatformType))
         }
         return nil
     }
@@ -200,7 +199,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i04eb5309aeaaf
         }
     }
     if m.GetPlatform() != nil {
-        cast := m.GetPlatform().String()
+        cast := (*m.GetPlatform()).String()
         err = writer.WriteStringValue("platform", &cast)
         if err != nil {
             return err

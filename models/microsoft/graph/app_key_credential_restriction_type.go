@@ -15,13 +15,16 @@ func (i AppKeyCredentialRestrictionType) String() string {
     return []string{"ASYMMETRICKEYLIFETIME", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAppKeyCredentialRestrictionType(v string) (interface{}, error) {
+    result := ASYMMETRICKEYLIFETIME_APPKEYCREDENTIALRESTRICTIONTYPE
     switch strings.ToUpper(v) {
         case "ASYMMETRICKEYLIFETIME":
-            return ASYMMETRICKEYLIFETIME_APPKEYCREDENTIALRESTRICTIONTYPE, nil
+            result = ASYMMETRICKEYLIFETIME_APPKEYCREDENTIALRESTRICTIONTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_APPKEYCREDENTIALRESTRICTIONTYPE, nil
+            result = UNKNOWNFUTUREVALUE_APPKEYCREDENTIALRESTRICTIONTYPE
+        default:
+            return 0, errors.New("Unknown AppKeyCredentialRestrictionType value: " + v)
     }
-    return 0, errors.New("Unknown AppKeyCredentialRestrictionType value: " + v)
+    return &result, nil
 }
 func SerializeAppKeyCredentialRestrictionType(values []AppKeyCredentialRestrictionType) []string {
     result := make([]string, len(values))

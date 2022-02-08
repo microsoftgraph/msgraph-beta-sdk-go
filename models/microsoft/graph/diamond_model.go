@@ -19,21 +19,24 @@ func (i DiamondModel) String() string {
     return []string{"UNKNOWN", "ADVERSARY", "CAPABILITY", "INFRASTRUCTURE", "VICTIM", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDiamondModel(v string) (interface{}, error) {
+    result := UNKNOWN_DIAMONDMODEL
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_DIAMONDMODEL, nil
+            result = UNKNOWN_DIAMONDMODEL
         case "ADVERSARY":
-            return ADVERSARY_DIAMONDMODEL, nil
+            result = ADVERSARY_DIAMONDMODEL
         case "CAPABILITY":
-            return CAPABILITY_DIAMONDMODEL, nil
+            result = CAPABILITY_DIAMONDMODEL
         case "INFRASTRUCTURE":
-            return INFRASTRUCTURE_DIAMONDMODEL, nil
+            result = INFRASTRUCTURE_DIAMONDMODEL
         case "VICTIM":
-            return VICTIM_DIAMONDMODEL, nil
+            result = VICTIM_DIAMONDMODEL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DIAMONDMODEL, nil
+            result = UNKNOWNFUTUREVALUE_DIAMONDMODEL
+        default:
+            return 0, errors.New("Unknown DiamondModel value: " + v)
     }
-    return 0, errors.New("Unknown DiamondModel value: " + v)
+    return &result, nil
 }
 func SerializeDiamondModel(values []DiamondModel) []string {
     result := make([]string, len(values))

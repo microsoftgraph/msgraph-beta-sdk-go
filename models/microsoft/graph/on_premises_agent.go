@@ -108,8 +108,7 @@ func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(AgentStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*AgentStatus))
         }
         return nil
     }
@@ -162,7 +161,7 @@ func (m *OnPremisesAgent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

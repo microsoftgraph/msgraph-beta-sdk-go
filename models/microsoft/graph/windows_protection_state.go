@@ -259,8 +259,7 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(WindowsDeviceHealthState)
-            m.SetDeviceState(&cast)
+            m.SetDeviceState(val.(*WindowsDeviceHealthState))
         }
         return nil
     }
@@ -380,8 +379,7 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(WindowsDefenderProductStatus)
-            m.SetProductStatus(&cast)
+            m.SetProductStatus(val.(*WindowsDefenderProductStatus))
         }
         return nil
     }
@@ -474,7 +472,7 @@ func (m *WindowsProtectionState) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetDeviceState() != nil {
-        cast := m.GetDeviceState().String()
+        cast := (*m.GetDeviceState()).String()
         err = writer.WriteStringValue("deviceState", &cast)
         if err != nil {
             return err
@@ -547,7 +545,7 @@ func (m *WindowsProtectionState) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetProductStatus() != nil {
-        cast := m.GetProductStatus().String()
+        cast := (*m.GetProductStatus()).String()
         err = writer.WriteStringValue("productStatus", &cast)
         if err != nil {
             return err

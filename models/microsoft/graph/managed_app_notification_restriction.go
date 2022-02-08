@@ -16,15 +16,18 @@ func (i ManagedAppNotificationRestriction) String() string {
     return []string{"ALLOW", "BLOCKORGANIZATIONALDATA", "BLOCK"}[i]
 }
 func ParseManagedAppNotificationRestriction(v string) (interface{}, error) {
+    result := ALLOW_MANAGEDAPPNOTIFICATIONRESTRICTION
     switch strings.ToUpper(v) {
         case "ALLOW":
-            return ALLOW_MANAGEDAPPNOTIFICATIONRESTRICTION, nil
+            result = ALLOW_MANAGEDAPPNOTIFICATIONRESTRICTION
         case "BLOCKORGANIZATIONALDATA":
-            return BLOCKORGANIZATIONALDATA_MANAGEDAPPNOTIFICATIONRESTRICTION, nil
+            result = BLOCKORGANIZATIONALDATA_MANAGEDAPPNOTIFICATIONRESTRICTION
         case "BLOCK":
-            return BLOCK_MANAGEDAPPNOTIFICATIONRESTRICTION, nil
+            result = BLOCK_MANAGEDAPPNOTIFICATIONRESTRICTION
+        default:
+            return 0, errors.New("Unknown ManagedAppNotificationRestriction value: " + v)
     }
-    return 0, errors.New("Unknown ManagedAppNotificationRestriction value: " + v)
+    return &result, nil
 }
 func SerializeManagedAppNotificationRestriction(values []ManagedAppNotificationRestriction) []string {
     result := make([]string, len(values))

@@ -17,17 +17,20 @@ func (i OperatingSystemUpgradeEligibility) String() string {
     return []string{"UPGRADED", "UNKNOWN", "NOTCAPABLE", "CAPABLE"}[i]
 }
 func ParseOperatingSystemUpgradeEligibility(v string) (interface{}, error) {
+    result := UPGRADED_OPERATINGSYSTEMUPGRADEELIGIBILITY
     switch strings.ToUpper(v) {
         case "UPGRADED":
-            return UPGRADED_OPERATINGSYSTEMUPGRADEELIGIBILITY, nil
+            result = UPGRADED_OPERATINGSYSTEMUPGRADEELIGIBILITY
         case "UNKNOWN":
-            return UNKNOWN_OPERATINGSYSTEMUPGRADEELIGIBILITY, nil
+            result = UNKNOWN_OPERATINGSYSTEMUPGRADEELIGIBILITY
         case "NOTCAPABLE":
-            return NOTCAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY, nil
+            result = NOTCAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY
         case "CAPABLE":
-            return CAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY, nil
+            result = CAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY
+        default:
+            return 0, errors.New("Unknown OperatingSystemUpgradeEligibility value: " + v)
     }
-    return 0, errors.New("Unknown OperatingSystemUpgradeEligibility value: " + v)
+    return &result, nil
 }
 func SerializeOperatingSystemUpgradeEligibility(values []OperatingSystemUpgradeEligibility) []string {
     result := make([]string, len(values))

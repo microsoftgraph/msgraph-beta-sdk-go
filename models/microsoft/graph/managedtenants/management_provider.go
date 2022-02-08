@@ -18,19 +18,22 @@ func (i ManagementProvider) String() string {
     return []string{"MICROSOFT", "COMMUNITY", "INDIRECTPROVIDER", "SELF", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseManagementProvider(v string) (interface{}, error) {
+    result := MICROSOFT_MANAGEMENTPROVIDER
     switch strings.ToUpper(v) {
         case "MICROSOFT":
-            return MICROSOFT_MANAGEMENTPROVIDER, nil
+            result = MICROSOFT_MANAGEMENTPROVIDER
         case "COMMUNITY":
-            return COMMUNITY_MANAGEMENTPROVIDER, nil
+            result = COMMUNITY_MANAGEMENTPROVIDER
         case "INDIRECTPROVIDER":
-            return INDIRECTPROVIDER_MANAGEMENTPROVIDER, nil
+            result = INDIRECTPROVIDER_MANAGEMENTPROVIDER
         case "SELF":
-            return SELF_MANAGEMENTPROVIDER, nil
+            result = SELF_MANAGEMENTPROVIDER
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MANAGEMENTPROVIDER, nil
+            result = UNKNOWNFUTUREVALUE_MANAGEMENTPROVIDER
+        default:
+            return 0, errors.New("Unknown ManagementProvider value: " + v)
     }
-    return 0, errors.New("Unknown ManagementProvider value: " + v)
+    return &result, nil
 }
 func SerializeManagementProvider(values []ManagementProvider) []string {
     result := make([]string, len(values))

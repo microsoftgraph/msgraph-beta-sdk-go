@@ -247,8 +247,7 @@ func (m *ManagedDeviceMobileAppConfigurationSettingState) GetFieldDeserializers(
             return err
         }
         if val != nil {
-            cast := val.(ComplianceStatus)
-            m.SetState(&cast)
+            m.SetState(val.(*ComplianceStatus))
         }
         return nil
     }
@@ -353,7 +352,7 @@ func (m *ManagedDeviceMobileAppConfigurationSettingState) Serialize(writer i04eb
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err := writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

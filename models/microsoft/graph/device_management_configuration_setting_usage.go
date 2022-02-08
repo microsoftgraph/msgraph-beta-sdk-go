@@ -16,15 +16,18 @@ func (i DeviceManagementConfigurationSettingUsage) String() string {
     return []string{"NONE", "CONFIGURATION", "COMPLIANCE"}[i]
 }
 func ParseDeviceManagementConfigurationSettingUsage(v string) (interface{}, error) {
+    result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE, nil
+            result = NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
         case "CONFIGURATION":
-            return CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE, nil
+            result = CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
         case "COMPLIANCE":
-            return COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE, nil
+            result = COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+        default:
+            return 0, errors.New("Unknown DeviceManagementConfigurationSettingUsage value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementConfigurationSettingUsage value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementConfigurationSettingUsage(values []DeviceManagementConfigurationSettingUsage) []string {
     result := make([]string, len(values))

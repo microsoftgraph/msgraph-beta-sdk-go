@@ -19,21 +19,24 @@ func (i RoutingPolicy) String() string {
     return []string{"NONE", "NOMISSEDCALL", "DISABLEFORWARDINGEXCEPTPHONE", "DISABLEFORWARDING", "PREFERSKYPEFORBUSINESS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRoutingPolicy(v string) (interface{}, error) {
+    result := NONE_ROUTINGPOLICY
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_ROUTINGPOLICY, nil
+            result = NONE_ROUTINGPOLICY
         case "NOMISSEDCALL":
-            return NOMISSEDCALL_ROUTINGPOLICY, nil
+            result = NOMISSEDCALL_ROUTINGPOLICY
         case "DISABLEFORWARDINGEXCEPTPHONE":
-            return DISABLEFORWARDINGEXCEPTPHONE_ROUTINGPOLICY, nil
+            result = DISABLEFORWARDINGEXCEPTPHONE_ROUTINGPOLICY
         case "DISABLEFORWARDING":
-            return DISABLEFORWARDING_ROUTINGPOLICY, nil
+            result = DISABLEFORWARDING_ROUTINGPOLICY
         case "PREFERSKYPEFORBUSINESS":
-            return PREFERSKYPEFORBUSINESS_ROUTINGPOLICY, nil
+            result = PREFERSKYPEFORBUSINESS_ROUTINGPOLICY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ROUTINGPOLICY, nil
+            result = UNKNOWNFUTUREVALUE_ROUTINGPOLICY
+        default:
+            return 0, errors.New("Unknown RoutingPolicy value: " + v)
     }
-    return 0, errors.New("Unknown RoutingPolicy value: " + v)
+    return &result, nil
 }
 func SerializeRoutingPolicy(values []RoutingPolicy) []string {
     result := make([]string, len(values))

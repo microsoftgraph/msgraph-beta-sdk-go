@@ -185,8 +185,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(UserPfxIntendedPurpose)
-            m.SetIntendedPurpose(&cast)
+            m.SetIntendedPurpose(val.(*UserPfxIntendedPurpose))
         }
         return nil
     }
@@ -216,8 +215,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(UserPfxPaddingScheme)
-            m.SetPaddingScheme(&cast)
+            m.SetPaddingScheme(val.(*UserPfxPaddingScheme))
         }
         return nil
     }
@@ -297,7 +295,7 @@ func (m *UserPFXCertificate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetIntendedPurpose() != nil {
-        cast := m.GetIntendedPurpose().String()
+        cast := (*m.GetIntendedPurpose()).String()
         err = writer.WriteStringValue("intendedPurpose", &cast)
         if err != nil {
             return err
@@ -316,7 +314,7 @@ func (m *UserPFXCertificate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetPaddingScheme() != nil {
-        cast := m.GetPaddingScheme().String()
+        cast := (*m.GetPaddingScheme()).String()
         err = writer.WriteStringValue("paddingScheme", &cast)
         if err != nil {
             return err

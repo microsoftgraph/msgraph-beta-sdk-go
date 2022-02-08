@@ -15,13 +15,16 @@ func (i ManagedDeviceManagementFeatures) String() string {
     return []string{"NONE", "MICROSOFTMANAGEDDESKTOP"}[i]
 }
 func ParseManagedDeviceManagementFeatures(v string) (interface{}, error) {
+    result := NONE_MANAGEDDEVICEMANAGEMENTFEATURES
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_MANAGEDDEVICEMANAGEMENTFEATURES, nil
+            result = NONE_MANAGEDDEVICEMANAGEMENTFEATURES
         case "MICROSOFTMANAGEDDESKTOP":
-            return MICROSOFTMANAGEDDESKTOP_MANAGEDDEVICEMANAGEMENTFEATURES, nil
+            result = MICROSOFTMANAGEDDESKTOP_MANAGEDDEVICEMANAGEMENTFEATURES
+        default:
+            return 0, errors.New("Unknown ManagedDeviceManagementFeatures value: " + v)
     }
-    return 0, errors.New("Unknown ManagedDeviceManagementFeatures value: " + v)
+    return &result, nil
 }
 func SerializeManagedDeviceManagementFeatures(values []ManagedDeviceManagementFeatures) []string {
     result := make([]string, len(values))

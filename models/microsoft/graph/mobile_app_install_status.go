@@ -205,8 +205,7 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(ResultantAppState)
-            m.SetInstallState(&cast)
+            m.SetInstallState(val.(*ResultantAppState))
         }
         return nil
     }
@@ -216,8 +215,7 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(ResultantAppStateDetail)
-            m.SetInstallStateDetail(&cast)
+            m.SetInstallStateDetail(val.(*ResultantAppStateDetail))
         }
         return nil
     }
@@ -237,8 +235,7 @@ func (m *MobileAppInstallStatus) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(ResultantAppState)
-            m.SetMobileAppInstallStatusValue(&cast)
+            m.SetMobileAppInstallStatusValue(val.(*ResultantAppState))
         }
         return nil
     }
@@ -324,14 +321,14 @@ func (m *MobileAppInstallStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetInstallState() != nil {
-        cast := m.GetInstallState().String()
+        cast := (*m.GetInstallState()).String()
         err = writer.WriteStringValue("installState", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetInstallStateDetail() != nil {
-        cast := m.GetInstallStateDetail().String()
+        cast := (*m.GetInstallStateDetail()).String()
         err = writer.WriteStringValue("installStateDetail", &cast)
         if err != nil {
             return err
@@ -344,7 +341,7 @@ func (m *MobileAppInstallStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetMobileAppInstallStatusValue() != nil {
-        cast := m.GetMobileAppInstallStatusValue().String()
+        cast := (*m.GetMobileAppInstallStatusValue()).String()
         err = writer.WriteStringValue("mobileAppInstallStatusValue", &cast)
         if err != nil {
             return err

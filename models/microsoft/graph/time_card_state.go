@@ -17,17 +17,20 @@ func (i TimeCardState) String() string {
     return []string{"CLOCKEDIN", "ONBREAK", "CLOCKEDOUT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTimeCardState(v string) (interface{}, error) {
+    result := CLOCKEDIN_TIMECARDSTATE
     switch strings.ToUpper(v) {
         case "CLOCKEDIN":
-            return CLOCKEDIN_TIMECARDSTATE, nil
+            result = CLOCKEDIN_TIMECARDSTATE
         case "ONBREAK":
-            return ONBREAK_TIMECARDSTATE, nil
+            result = ONBREAK_TIMECARDSTATE
         case "CLOCKEDOUT":
-            return CLOCKEDOUT_TIMECARDSTATE, nil
+            result = CLOCKEDOUT_TIMECARDSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TIMECARDSTATE, nil
+            result = UNKNOWNFUTUREVALUE_TIMECARDSTATE
+        default:
+            return 0, errors.New("Unknown TimeCardState value: " + v)
     }
-    return 0, errors.New("Unknown TimeCardState value: " + v)
+    return &result, nil
 }
 func SerializeTimeCardState(values []TimeCardState) []string {
     result := make([]string, len(values))

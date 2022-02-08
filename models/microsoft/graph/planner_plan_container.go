@@ -73,8 +73,7 @@ func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(PlannerContainerType)
-            m.SetType(&cast)
+            m.SetType(val.(*PlannerContainerType))
         }
         return nil
     }
@@ -102,7 +101,7 @@ func (m *PlannerPlanContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

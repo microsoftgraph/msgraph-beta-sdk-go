@@ -219,8 +219,7 @@ func (m *SimulationAutomation) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(SimulationAutomationStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*SimulationAutomationStatus))
         }
         return nil
     }
@@ -295,7 +294,7 @@ func (m *SimulationAutomation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

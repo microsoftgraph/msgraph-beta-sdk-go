@@ -193,8 +193,7 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionStatus))
         }
         return nil
     }
@@ -248,7 +247,7 @@ func (m *WorkloadActionDeploymentStatus) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err := writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

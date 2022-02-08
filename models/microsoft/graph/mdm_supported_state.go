@@ -17,17 +17,20 @@ func (i MdmSupportedState) String() string {
     return []string{"UNKNOWN", "SUPPORTED", "UNSUPPORTED", "DEPRECATED"}[i]
 }
 func ParseMdmSupportedState(v string) (interface{}, error) {
+    result := UNKNOWN_MDMSUPPORTEDSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_MDMSUPPORTEDSTATE, nil
+            result = UNKNOWN_MDMSUPPORTEDSTATE
         case "SUPPORTED":
-            return SUPPORTED_MDMSUPPORTEDSTATE, nil
+            result = SUPPORTED_MDMSUPPORTEDSTATE
         case "UNSUPPORTED":
-            return UNSUPPORTED_MDMSUPPORTEDSTATE, nil
+            result = UNSUPPORTED_MDMSUPPORTEDSTATE
         case "DEPRECATED":
-            return DEPRECATED_MDMSUPPORTEDSTATE, nil
+            result = DEPRECATED_MDMSUPPORTEDSTATE
+        default:
+            return 0, errors.New("Unknown MdmSupportedState value: " + v)
     }
-    return 0, errors.New("Unknown MdmSupportedState value: " + v)
+    return &result, nil
 }
 func SerializeMdmSupportedState(values []MdmSupportedState) []string {
     result := make([]string, len(values))

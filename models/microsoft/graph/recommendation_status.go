@@ -19,21 +19,24 @@ func (i RecommendationStatus) String() string {
     return []string{"ACTIVE", "COMPLETEDBYSYSTEM", "COMPLETEDBYUSER", "DISMISSED", "POSTPONED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRecommendationStatus(v string) (interface{}, error) {
+    result := ACTIVE_RECOMMENDATIONSTATUS
     switch strings.ToUpper(v) {
         case "ACTIVE":
-            return ACTIVE_RECOMMENDATIONSTATUS, nil
+            result = ACTIVE_RECOMMENDATIONSTATUS
         case "COMPLETEDBYSYSTEM":
-            return COMPLETEDBYSYSTEM_RECOMMENDATIONSTATUS, nil
+            result = COMPLETEDBYSYSTEM_RECOMMENDATIONSTATUS
         case "COMPLETEDBYUSER":
-            return COMPLETEDBYUSER_RECOMMENDATIONSTATUS, nil
+            result = COMPLETEDBYUSER_RECOMMENDATIONSTATUS
         case "DISMISSED":
-            return DISMISSED_RECOMMENDATIONSTATUS, nil
+            result = DISMISSED_RECOMMENDATIONSTATUS
         case "POSTPONED":
-            return POSTPONED_RECOMMENDATIONSTATUS, nil
+            result = POSTPONED_RECOMMENDATIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_RECOMMENDATIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_RECOMMENDATIONSTATUS
+        default:
+            return 0, errors.New("Unknown RecommendationStatus value: " + v)
     }
-    return 0, errors.New("Unknown RecommendationStatus value: " + v)
+    return &result, nil
 }
 func SerializeRecommendationStatus(values []RecommendationStatus) []string {
     result := make([]string, len(values))

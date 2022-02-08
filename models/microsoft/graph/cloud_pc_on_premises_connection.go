@@ -204,8 +204,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(CloudPcOnPremisesConnectionStatus)
-            m.SetHealthCheckStatus(&cast)
+            m.SetHealthCheckStatus(val.(*CloudPcOnPremisesConnectionStatus))
         }
         return nil
     }
@@ -285,8 +284,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(CloudPcOnPremisesConnectionType)
-            m.SetType(&cast)
+            m.SetType(val.(*CloudPcOnPremisesConnectionType))
         }
         return nil
     }
@@ -336,7 +334,7 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     if m.GetHealthCheckStatus() != nil {
-        cast := m.GetHealthCheckStatus().String()
+        cast := (*m.GetHealthCheckStatus()).String()
         err = writer.WriteStringValue("healthCheckStatus", &cast)
         if err != nil {
             return err
@@ -385,7 +383,7 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

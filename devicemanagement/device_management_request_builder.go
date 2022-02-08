@@ -50,6 +50,7 @@ import (
     i4252c65331d838d3f6fc7facbc5b82bc4dd347df90714b1bfa5f3bc96ec99e19 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configmanagercollections"
     i46f6b730fa2bb030fa0b9c2d0af94ba03f8f2c25d6e086a7f55f47071f42fc09 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformancebyappversiondeviceid"
     i4deaab6d5ba50813ad2e9aa4704473d165202b18e7c38cd1fd3bb871aecc2364 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsmodelscores"
+    i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsworkfromanywheremodelperformance"
     i547e75c3751220b84b6d826399c69087ddca96b6bb141becda2daa5187b1f251 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancecategories"
     i57d8944d5d121692c68b51d3cea46fbd31ef9f0bc139c17120d42d194ee625b8 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformancebyosversion"
     i5829b09916b668f7826693dac476ee85ff6f59fd831d0581a362c02cf68ea11c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports"
@@ -72,6 +73,7 @@ import (
     i71ff36cd3fe036185279652e52cb108c1a3c3c5f76cd4cd5292950202f3a6912 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsworkfromanywheremetrics"
     i72062f459a5fffec8b646ec5ea269d8a517e5d4fa6a037393a75e9112866c452 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/exchangeonpremisespolicy"
     i73ae9a38fc9c78be1d48a5912b96fba6b7ce2fc8eff8cd048aff1526f431ee86 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/importeddeviceidentities"
+    i75eef99785e7c55af72c8cd2c9f73dbe018ac96fc1da9a07ec82c4194dcf92f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/oemwarrantyinformationonboarding"
     i76dbec3f4277cf99054b4e577f9e55b4178cdb6999a54fdbea51b39bd33ae365 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/resourceaccessprofiles"
     i779a52aae2a2de32c6d22a901113cb0229d88da876d6c4dbe0af7284691cad65 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddeviceencryptionstates"
     i786b0e3095c151f06daf164c0a83a8047e041917775b7735ef061fff3fe4474c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/cloudpcconnectivityissues"
@@ -1451,6 +1453,20 @@ func (m *DeviceManagementRequestBuilder) NotificationMessageTemplatesById(id str
     }
     return i816c10ea42c24b57eeababf5be54d8e9dccb9d2153ae348d4cfcc0648299f316.NewNotificationMessageTemplateRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+func (m *DeviceManagementRequestBuilder) OemWarrantyInformationOnboarding()(*i75eef99785e7c55af72c8cd2c9f73dbe018ac96fc1da9a07ec82c4194dcf92f5.OemWarrantyInformationOnboardingRequestBuilder) {
+    return i75eef99785e7c55af72c8cd2c9f73dbe018ac96fc1da9a07ec82c4194dcf92f5.NewOemWarrantyInformationOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OemWarrantyInformationOnboardingById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.oemWarrantyInformationOnboarding.item collection
+func (m *DeviceManagementRequestBuilder) OemWarrantyInformationOnboardingById(id string)(*i75eef99785e7c55af72c8cd2c9f73dbe018ac96fc1da9a07ec82c4194dcf92f5.OemWarrantyInformationOnboardingRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["oemWarrantyInformationOnboarding_id"] = id
+    }
+    return i75eef99785e7c55af72c8cd2c9f73dbe018ac96fc1da9a07ec82c4194dcf92f5.NewOemWarrantyInformationOnboardingRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // Patch update deviceManagement
 func (m *DeviceManagementRequestBuilder) Patch(options *DeviceManagementRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
@@ -2158,6 +2174,20 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhere
         urlTplParams["userExperienceAnalyticsWorkFromAnywhereMetric_id"] = id
     }
     return i83698992c166b55c29828f0c880624c4406162edc2b708a75dc2b64eb808d8d4.NewUserExperienceAnalyticsWorkFromAnywhereMetricRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) {
+    return i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a.NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UserExperienceAnalyticsWorkFromAnywhereModelPerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsWorkFromAnywhereModelPerformance.item collection
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhereModelPerformanceById(id string)(*i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["userExperienceAnalyticsWorkFromAnywhereModelPerformance_id"] = id
+    }
+    return i4eac80abb587e01894b8c04188dfae1dd075616fe3f70e3cc9c28ca508385e4a.NewUserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceManagementRequestBuilder) UserPfxCertificates()(*i16f8591309ff56925b8c7d68d14f1ef47ac78cbb7093a9c87ff620425ef7ac1b.UserPfxCertificatesRequestBuilder) {
     return i16f8591309ff56925b8c7d68d14f1ef47ac78cbb7093a9c87ff620425ef7ac1b.NewUserPfxCertificatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

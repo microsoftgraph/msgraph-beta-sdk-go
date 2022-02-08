@@ -43,8 +43,7 @@ func (m *DlpActionInfo) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(DlpAction)
-            m.SetAction(&cast)
+            m.SetAction(val.(*DlpAction))
         }
         return nil
     }
@@ -56,7 +55,7 @@ func (m *DlpActionInfo) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *DlpActionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAction() != nil {
-        cast := m.GetAction().String()
+        cast := (*m.GetAction()).String()
         err := writer.WriteStringValue("action", &cast)
         if err != nil {
             return err

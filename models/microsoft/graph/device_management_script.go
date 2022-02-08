@@ -301,8 +301,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(RunAsAccountType)
-            m.SetRunAsAccount(&cast)
+            m.SetRunAsAccount(val.(*RunAsAccountType))
         }
         return nil
     }
@@ -433,7 +432,7 @@ func (m *DeviceManagementScript) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetRunAsAccount() != nil {
-        cast := m.GetRunAsAccount().String()
+        cast := (*m.GetRunAsAccount()).String()
         err = writer.WriteStringValue("runAsAccount", &cast)
         if err != nil {
             return err

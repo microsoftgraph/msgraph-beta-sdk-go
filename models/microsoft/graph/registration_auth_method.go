@@ -23,29 +23,32 @@ func (i RegistrationAuthMethod) String() string {
     return []string{"EMAIL", "MOBILEPHONE", "OFFICEPHONE", "SECURITYQUESTION", "APPNOTIFICATION", "APPCODE", "ALTERNATEMOBILEPHONE", "FIDO", "APPPASSWORD", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRegistrationAuthMethod(v string) (interface{}, error) {
+    result := EMAIL_REGISTRATIONAUTHMETHOD
     switch strings.ToUpper(v) {
         case "EMAIL":
-            return EMAIL_REGISTRATIONAUTHMETHOD, nil
+            result = EMAIL_REGISTRATIONAUTHMETHOD
         case "MOBILEPHONE":
-            return MOBILEPHONE_REGISTRATIONAUTHMETHOD, nil
+            result = MOBILEPHONE_REGISTRATIONAUTHMETHOD
         case "OFFICEPHONE":
-            return OFFICEPHONE_REGISTRATIONAUTHMETHOD, nil
+            result = OFFICEPHONE_REGISTRATIONAUTHMETHOD
         case "SECURITYQUESTION":
-            return SECURITYQUESTION_REGISTRATIONAUTHMETHOD, nil
+            result = SECURITYQUESTION_REGISTRATIONAUTHMETHOD
         case "APPNOTIFICATION":
-            return APPNOTIFICATION_REGISTRATIONAUTHMETHOD, nil
+            result = APPNOTIFICATION_REGISTRATIONAUTHMETHOD
         case "APPCODE":
-            return APPCODE_REGISTRATIONAUTHMETHOD, nil
+            result = APPCODE_REGISTRATIONAUTHMETHOD
         case "ALTERNATEMOBILEPHONE":
-            return ALTERNATEMOBILEPHONE_REGISTRATIONAUTHMETHOD, nil
+            result = ALTERNATEMOBILEPHONE_REGISTRATIONAUTHMETHOD
         case "FIDO":
-            return FIDO_REGISTRATIONAUTHMETHOD, nil
+            result = FIDO_REGISTRATIONAUTHMETHOD
         case "APPPASSWORD":
-            return APPPASSWORD_REGISTRATIONAUTHMETHOD, nil
+            result = APPPASSWORD_REGISTRATIONAUTHMETHOD
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_REGISTRATIONAUTHMETHOD, nil
+            result = UNKNOWNFUTUREVALUE_REGISTRATIONAUTHMETHOD
+        default:
+            return 0, errors.New("Unknown RegistrationAuthMethod value: " + v)
     }
-    return 0, errors.New("Unknown RegistrationAuthMethod value: " + v)
+    return &result, nil
 }
 func SerializeRegistrationAuthMethod(values []RegistrationAuthMethod) []string {
     result := make([]string, len(values))

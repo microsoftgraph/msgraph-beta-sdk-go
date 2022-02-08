@@ -63,8 +63,7 @@ func (m *DeviceAndAppManagementAssignmentTarget) GetFieldDeserializers()(map[str
             return err
         }
         if val != nil {
-            cast := val.(DeviceAndAppManagementAssignmentFilterType)
-            m.SetDeviceAndAppManagementAssignmentFilterType(&cast)
+            m.SetDeviceAndAppManagementAssignmentFilterType(val.(*DeviceAndAppManagementAssignmentFilterType))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *DeviceAndAppManagementAssignmentTarget) Serialize(writer i04eb5309aeaaf
         }
     }
     if m.GetDeviceAndAppManagementAssignmentFilterType() != nil {
-        cast := m.GetDeviceAndAppManagementAssignmentFilterType().String()
+        cast := (*m.GetDeviceAndAppManagementAssignmentFilterType()).String()
         err := writer.WriteStringValue("deviceAndAppManagementAssignmentFilterType", &cast)
         if err != nil {
             return err

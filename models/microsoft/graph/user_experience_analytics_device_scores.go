@@ -134,8 +134,7 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(UserExperienceAnalyticsHealthState)
-            m.SetHealthStatus(&cast)
+            m.SetHealthStatus(val.(*UserExperienceAnalyticsHealthState))
         }
         return nil
     }
@@ -209,7 +208,7 @@ func (m *UserExperienceAnalyticsDeviceScores) Serialize(writer i04eb5309aeaafadd
         }
     }
     if m.GetHealthStatus() != nil {
-        cast := m.GetHealthStatus().String()
+        cast := (*m.GetHealthStatus()).String()
         err = writer.WriteStringValue("healthStatus", &cast)
         if err != nil {
             return err

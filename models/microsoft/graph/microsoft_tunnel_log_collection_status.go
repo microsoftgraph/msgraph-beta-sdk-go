@@ -16,15 +16,18 @@ func (i MicrosoftTunnelLogCollectionStatus) String() string {
     return []string{"PENDING", "COMPLETED", "FAILED"}[i]
 }
 func ParseMicrosoftTunnelLogCollectionStatus(v string) (interface{}, error) {
+    result := PENDING_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
     switch strings.ToUpper(v) {
         case "PENDING":
-            return PENDING_MICROSOFTTUNNELLOGCOLLECTIONSTATUS, nil
+            result = PENDING_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
         case "COMPLETED":
-            return COMPLETED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS, nil
+            result = COMPLETED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
         case "FAILED":
-            return FAILED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS, nil
+            result = FAILED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
+        default:
+            return 0, errors.New("Unknown MicrosoftTunnelLogCollectionStatus value: " + v)
     }
-    return 0, errors.New("Unknown MicrosoftTunnelLogCollectionStatus value: " + v)
+    return &result, nil
 }
 func SerializeMicrosoftTunnelLogCollectionStatus(values []MicrosoftTunnelLogCollectionStatus) []string {
     result := make([]string, len(values))

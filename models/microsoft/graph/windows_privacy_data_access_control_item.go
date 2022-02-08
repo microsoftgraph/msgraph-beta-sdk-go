@@ -64,8 +64,7 @@ func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(WindowsPrivacyDataAccessLevel)
-            m.SetAccessLevel(&cast)
+            m.SetAccessLevel(val.(*WindowsPrivacyDataAccessLevel))
         }
         return nil
     }
@@ -95,8 +94,7 @@ func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(WindowsPrivacyDataCategory)
-            m.SetDataCategory(&cast)
+            m.SetDataCategory(val.(*WindowsPrivacyDataCategory))
         }
         return nil
     }
@@ -112,7 +110,7 @@ func (m *WindowsPrivacyDataAccessControlItem) Serialize(writer i04eb5309aeaafadd
         return err
     }
     if m.GetAccessLevel() != nil {
-        cast := m.GetAccessLevel().String()
+        cast := (*m.GetAccessLevel()).String()
         err = writer.WriteStringValue("accessLevel", &cast)
         if err != nil {
             return err
@@ -131,7 +129,7 @@ func (m *WindowsPrivacyDataAccessControlItem) Serialize(writer i04eb5309aeaafadd
         }
     }
     if m.GetDataCategory() != nil {
-        cast := m.GetDataCategory().String()
+        cast := (*m.GetDataCategory()).String()
         err = writer.WriteStringValue("dataCategory", &cast)
         if err != nil {
             return err

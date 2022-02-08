@@ -142,8 +142,7 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(RoleAssignmentScopeType)
-            m.SetScopeType(&cast)
+            m.SetScopeType(val.(*RoleAssignmentScopeType))
         }
         return nil
     }
@@ -189,7 +188,7 @@ func (m *RoleAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetScopeType() != nil {
-        cast := m.GetScopeType().String()
+        cast := (*m.GetScopeType()).String()
         err = writer.WriteStringValue("scopeType", &cast)
         if err != nil {
             return err

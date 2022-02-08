@@ -10,7 +10,7 @@ type AccessReviewInstance struct {
     Entity
     // Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
     contactedReviewers []AccessReviewReviewer;
-    // Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+    // Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
     decisions []AccessReviewInstanceDecisionItem;
     // There is exactly one accessReviewScheduleDefinition associated with each instance. It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
     definition *AccessReviewScheduleDefinition;
@@ -24,6 +24,8 @@ type AccessReviewInstance struct {
     reviewers []AccessReviewReviewerScope;
     // Created based on scope and instanceEnumerationScope at the accessReviewScheduleDefinition level. Defines the scope of users reviewed in a group. Supports $select and $filter (contains only). Read-only.
     scope *AccessReviewScope;
+    // 
+    stages []AccessReviewStage;
     // DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
@@ -44,7 +46,7 @@ func (m *AccessReviewInstance) GetContactedReviewers()([]AccessReviewReviewer) {
         return m.contactedReviewers
     }
 }
-// GetDecisions gets the decisions property value. Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+// GetDecisions gets the decisions property value. Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstance) GetDecisions()([]AccessReviewInstanceDecisionItem) {
     if m == nil {
         return nil
@@ -98,6 +100,14 @@ func (m *AccessReviewInstance) GetScope()(*AccessReviewScope) {
         return nil
     } else {
         return m.scope
+    }
+}
+// GetStages gets the stages property value. 
+func (m *AccessReviewInstance) GetStages()([]AccessReviewStage) {
+    if m == nil {
+        return nil
+    } else {
+        return m.stages
     }
 }
 // GetStartDateTime gets the startDateTime property value. DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
@@ -219,6 +229,20 @@ func (m *AccessReviewInstance) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
+    res["stages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewStage() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessReviewStage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewStage))
+            }
+            m.SetStages(res)
+        }
+        return nil
+    }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -323,6 +347,17 @@ func (m *AccessReviewInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
+    if m.GetStages() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetStages()))
+        for i, v := range m.GetStages() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("stages", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
         if err != nil {
@@ -343,7 +378,7 @@ func (m *AccessReviewInstance) SetContactedReviewers(value []AccessReviewReviewe
         m.contactedReviewers = value
     }
 }
-// SetDecisions sets the decisions property value. Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+// SetDecisions sets the decisions property value. Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstance) SetDecisions(value []AccessReviewInstanceDecisionItem)() {
     if m != nil {
         m.decisions = value
@@ -383,6 +418,12 @@ func (m *AccessReviewInstance) SetReviewers(value []AccessReviewReviewerScope)()
 func (m *AccessReviewInstance) SetScope(value *AccessReviewScope)() {
     if m != nil {
         m.scope = value
+    }
+}
+// SetStages sets the stages property value. 
+func (m *AccessReviewInstance) SetStages(value []AccessReviewStage)() {
+    if m != nil {
+        m.stages = value
     }
 }
 // SetStartDateTime sets the startDateTime property value. DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.

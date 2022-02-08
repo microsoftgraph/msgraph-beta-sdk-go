@@ -133,8 +133,7 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(ApplicationMode)
-            m.SetApplicationMode(&cast)
+            m.SetApplicationMode(val.(*ApplicationMode))
         }
         return nil
     }
@@ -240,7 +239,7 @@ func (m *MatchingLabel) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *MatchingLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetApplicationMode() != nil {
-        cast := m.GetApplicationMode().String()
+        cast := (*m.GetApplicationMode()).String()
         err := writer.WriteStringValue("applicationMode", &cast)
         if err != nil {
             return err

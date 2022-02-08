@@ -95,8 +95,7 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(HealthState)
-            m.SetHealthState(&cast)
+            m.SetHealthState(val.(*HealthState))
         }
         return nil
     }
@@ -144,7 +143,7 @@ func (m *WindowsManagementAppHealthState) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     if m.GetHealthState() != nil {
-        cast := m.GetHealthState().String()
+        cast := (*m.GetHealthState()).String()
         err = writer.WriteStringValue("healthState", &cast)
         if err != nil {
             return err

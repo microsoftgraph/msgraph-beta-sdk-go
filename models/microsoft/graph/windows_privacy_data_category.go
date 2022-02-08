@@ -32,47 +32,50 @@ func (i WindowsPrivacyDataCategory) String() string {
     return []string{"NOTCONFIGURED", "ACCOUNTINFO", "APPSRUNINBACKGROUND", "CALENDAR", "CALLHISTORY", "CAMERA", "CONTACTS", "DIAGNOSTICSINFO", "EMAIL", "LOCATION", "MESSAGING", "MICROPHONE", "MOTION", "NOTIFICATIONS", "PHONE", "RADIOS", "TASKS", "SYNCWITHDEVICES", "TRUSTEDDEVICES"}[i]
 }
 func ParseWindowsPrivacyDataCategory(v string) (interface{}, error) {
+    result := NOTCONFIGURED_WINDOWSPRIVACYDATACATEGORY
     switch strings.ToUpper(v) {
         case "NOTCONFIGURED":
-            return NOTCONFIGURED_WINDOWSPRIVACYDATACATEGORY, nil
+            result = NOTCONFIGURED_WINDOWSPRIVACYDATACATEGORY
         case "ACCOUNTINFO":
-            return ACCOUNTINFO_WINDOWSPRIVACYDATACATEGORY, nil
+            result = ACCOUNTINFO_WINDOWSPRIVACYDATACATEGORY
         case "APPSRUNINBACKGROUND":
-            return APPSRUNINBACKGROUND_WINDOWSPRIVACYDATACATEGORY, nil
+            result = APPSRUNINBACKGROUND_WINDOWSPRIVACYDATACATEGORY
         case "CALENDAR":
-            return CALENDAR_WINDOWSPRIVACYDATACATEGORY, nil
+            result = CALENDAR_WINDOWSPRIVACYDATACATEGORY
         case "CALLHISTORY":
-            return CALLHISTORY_WINDOWSPRIVACYDATACATEGORY, nil
+            result = CALLHISTORY_WINDOWSPRIVACYDATACATEGORY
         case "CAMERA":
-            return CAMERA_WINDOWSPRIVACYDATACATEGORY, nil
+            result = CAMERA_WINDOWSPRIVACYDATACATEGORY
         case "CONTACTS":
-            return CONTACTS_WINDOWSPRIVACYDATACATEGORY, nil
+            result = CONTACTS_WINDOWSPRIVACYDATACATEGORY
         case "DIAGNOSTICSINFO":
-            return DIAGNOSTICSINFO_WINDOWSPRIVACYDATACATEGORY, nil
+            result = DIAGNOSTICSINFO_WINDOWSPRIVACYDATACATEGORY
         case "EMAIL":
-            return EMAIL_WINDOWSPRIVACYDATACATEGORY, nil
+            result = EMAIL_WINDOWSPRIVACYDATACATEGORY
         case "LOCATION":
-            return LOCATION_WINDOWSPRIVACYDATACATEGORY, nil
+            result = LOCATION_WINDOWSPRIVACYDATACATEGORY
         case "MESSAGING":
-            return MESSAGING_WINDOWSPRIVACYDATACATEGORY, nil
+            result = MESSAGING_WINDOWSPRIVACYDATACATEGORY
         case "MICROPHONE":
-            return MICROPHONE_WINDOWSPRIVACYDATACATEGORY, nil
+            result = MICROPHONE_WINDOWSPRIVACYDATACATEGORY
         case "MOTION":
-            return MOTION_WINDOWSPRIVACYDATACATEGORY, nil
+            result = MOTION_WINDOWSPRIVACYDATACATEGORY
         case "NOTIFICATIONS":
-            return NOTIFICATIONS_WINDOWSPRIVACYDATACATEGORY, nil
+            result = NOTIFICATIONS_WINDOWSPRIVACYDATACATEGORY
         case "PHONE":
-            return PHONE_WINDOWSPRIVACYDATACATEGORY, nil
+            result = PHONE_WINDOWSPRIVACYDATACATEGORY
         case "RADIOS":
-            return RADIOS_WINDOWSPRIVACYDATACATEGORY, nil
+            result = RADIOS_WINDOWSPRIVACYDATACATEGORY
         case "TASKS":
-            return TASKS_WINDOWSPRIVACYDATACATEGORY, nil
+            result = TASKS_WINDOWSPRIVACYDATACATEGORY
         case "SYNCWITHDEVICES":
-            return SYNCWITHDEVICES_WINDOWSPRIVACYDATACATEGORY, nil
+            result = SYNCWITHDEVICES_WINDOWSPRIVACYDATACATEGORY
         case "TRUSTEDDEVICES":
-            return TRUSTEDDEVICES_WINDOWSPRIVACYDATACATEGORY, nil
+            result = TRUSTEDDEVICES_WINDOWSPRIVACYDATACATEGORY
+        default:
+            return 0, errors.New("Unknown WindowsPrivacyDataCategory value: " + v)
     }
-    return 0, errors.New("Unknown WindowsPrivacyDataCategory value: " + v)
+    return &result, nil
 }
 func SerializeWindowsPrivacyDataCategory(values []WindowsPrivacyDataCategory) []string {
     result := make([]string, len(values))

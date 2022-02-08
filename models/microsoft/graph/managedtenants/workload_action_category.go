@@ -16,15 +16,18 @@ func (i WorkloadActionCategory) String() string {
     return []string{"AUTOMATED", "MANUAL", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseWorkloadActionCategory(v string) (interface{}, error) {
+    result := AUTOMATED_WORKLOADACTIONCATEGORY
     switch strings.ToUpper(v) {
         case "AUTOMATED":
-            return AUTOMATED_WORKLOADACTIONCATEGORY, nil
+            result = AUTOMATED_WORKLOADACTIONCATEGORY
         case "MANUAL":
-            return MANUAL_WORKLOADACTIONCATEGORY, nil
+            result = MANUAL_WORKLOADACTIONCATEGORY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_WORKLOADACTIONCATEGORY, nil
+            result = UNKNOWNFUTUREVALUE_WORKLOADACTIONCATEGORY
+        default:
+            return 0, errors.New("Unknown WorkloadActionCategory value: " + v)
     }
-    return 0, errors.New("Unknown WorkloadActionCategory value: " + v)
+    return &result, nil
 }
 func SerializeWorkloadActionCategory(values []WorkloadActionCategory) []string {
     result := make([]string, len(values))

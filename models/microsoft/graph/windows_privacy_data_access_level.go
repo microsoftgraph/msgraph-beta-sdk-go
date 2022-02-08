@@ -17,17 +17,20 @@ func (i WindowsPrivacyDataAccessLevel) String() string {
     return []string{"NOTCONFIGURED", "FORCEALLOW", "FORCEDENY", "USERINCONTROL"}[i]
 }
 func ParseWindowsPrivacyDataAccessLevel(v string) (interface{}, error) {
+    result := NOTCONFIGURED_WINDOWSPRIVACYDATAACCESSLEVEL
     switch strings.ToUpper(v) {
         case "NOTCONFIGURED":
-            return NOTCONFIGURED_WINDOWSPRIVACYDATAACCESSLEVEL, nil
+            result = NOTCONFIGURED_WINDOWSPRIVACYDATAACCESSLEVEL
         case "FORCEALLOW":
-            return FORCEALLOW_WINDOWSPRIVACYDATAACCESSLEVEL, nil
+            result = FORCEALLOW_WINDOWSPRIVACYDATAACCESSLEVEL
         case "FORCEDENY":
-            return FORCEDENY_WINDOWSPRIVACYDATAACCESSLEVEL, nil
+            result = FORCEDENY_WINDOWSPRIVACYDATAACCESSLEVEL
         case "USERINCONTROL":
-            return USERINCONTROL_WINDOWSPRIVACYDATAACCESSLEVEL, nil
+            result = USERINCONTROL_WINDOWSPRIVACYDATAACCESSLEVEL
+        default:
+            return 0, errors.New("Unknown WindowsPrivacyDataAccessLevel value: " + v)
     }
-    return 0, errors.New("Unknown WindowsPrivacyDataAccessLevel value: " + v)
+    return &result, nil
 }
 func SerializeWindowsPrivacyDataAccessLevel(values []WindowsPrivacyDataAccessLevel) []string {
     result := make([]string, len(values))

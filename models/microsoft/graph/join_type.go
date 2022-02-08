@@ -17,17 +17,20 @@ func (i JoinType) String() string {
     return []string{"UNKNOWN", "AZUREADJOINED", "AZUREADREGISTERED", "HYBRIDAZUREADJOINED"}[i]
 }
 func ParseJoinType(v string) (interface{}, error) {
+    result := UNKNOWN_JOINTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_JOINTYPE, nil
+            result = UNKNOWN_JOINTYPE
         case "AZUREADJOINED":
-            return AZUREADJOINED_JOINTYPE, nil
+            result = AZUREADJOINED_JOINTYPE
         case "AZUREADREGISTERED":
-            return AZUREADREGISTERED_JOINTYPE, nil
+            result = AZUREADREGISTERED_JOINTYPE
         case "HYBRIDAZUREADJOINED":
-            return HYBRIDAZUREADJOINED_JOINTYPE, nil
+            result = HYBRIDAZUREADJOINED_JOINTYPE
+        default:
+            return 0, errors.New("Unknown JoinType value: " + v)
     }
-    return 0, errors.New("Unknown JoinType value: " + v)
+    return &result, nil
 }
 func SerializeJoinType(values []JoinType) []string {
     result := make([]string, len(values))

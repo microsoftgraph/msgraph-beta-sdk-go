@@ -169,8 +169,7 @@ func (m *PolicySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
             return err
         }
         if val != nil {
-            cast := val.(ErrorCode)
-            m.SetErrorCode(&cast)
+            m.SetErrorCode(val.(*ErrorCode))
         }
         return nil
     }
@@ -232,8 +231,7 @@ func (m *PolicySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
             return err
         }
         if val != nil {
-            cast := val.(PolicySetStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*PolicySetStatus))
         }
         return nil
     }
@@ -278,7 +276,7 @@ func (m *PolicySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     if m.GetErrorCode() != nil {
-        cast := m.GetErrorCode().String()
+        cast := (*m.GetErrorCode()).String()
         err = writer.WriteStringValue("errorCode", &cast)
         if err != nil {
             return err
@@ -314,7 +312,7 @@ func (m *PolicySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

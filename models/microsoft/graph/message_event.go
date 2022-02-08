@@ -75,8 +75,7 @@ func (m *MessageEvent) GetFieldDeserializers()(map[string]func(interface{}, i04e
             return err
         }
         if val != nil {
-            cast := val.(MessageEventType)
-            m.SetEventType(&cast)
+            m.SetEventType(val.(*MessageEventType))
         }
         return nil
     }
@@ -104,7 +103,7 @@ func (m *MessageEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     if m.GetEventType() != nil {
-        cast := m.GetEventType().String()
+        cast := (*m.GetEventType()).String()
         err = writer.WriteStringValue("eventType", &cast)
         if err != nil {
             return err

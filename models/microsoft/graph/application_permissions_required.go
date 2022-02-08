@@ -20,23 +20,26 @@ func (i ApplicationPermissionsRequired) String() string {
     return []string{"UNKNOWN", "ANONYMOUS", "GUEST", "USER", "ADMINISTRATOR", "SYSTEM", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseApplicationPermissionsRequired(v string) (interface{}, error) {
+    result := UNKNOWN_APPLICATIONPERMISSIONSREQUIRED
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_APPLICATIONPERMISSIONSREQUIRED, nil
+            result = UNKNOWN_APPLICATIONPERMISSIONSREQUIRED
         case "ANONYMOUS":
-            return ANONYMOUS_APPLICATIONPERMISSIONSREQUIRED, nil
+            result = ANONYMOUS_APPLICATIONPERMISSIONSREQUIRED
         case "GUEST":
-            return GUEST_APPLICATIONPERMISSIONSREQUIRED, nil
+            result = GUEST_APPLICATIONPERMISSIONSREQUIRED
         case "USER":
-            return USER_APPLICATIONPERMISSIONSREQUIRED, nil
+            result = USER_APPLICATIONPERMISSIONSREQUIRED
         case "ADMINISTRATOR":
-            return ADMINISTRATOR_APPLICATIONPERMISSIONSREQUIRED, nil
+            result = ADMINISTRATOR_APPLICATIONPERMISSIONSREQUIRED
         case "SYSTEM":
-            return SYSTEM_APPLICATIONPERMISSIONSREQUIRED, nil
+            result = SYSTEM_APPLICATIONPERMISSIONSREQUIRED
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_APPLICATIONPERMISSIONSREQUIRED, nil
+            result = UNKNOWNFUTUREVALUE_APPLICATIONPERMISSIONSREQUIRED
+        default:
+            return 0, errors.New("Unknown ApplicationPermissionsRequired value: " + v)
     }
-    return 0, errors.New("Unknown ApplicationPermissionsRequired value: " + v)
+    return &result, nil
 }
 func SerializeApplicationPermissionsRequired(values []ApplicationPermissionsRequired) []string {
     result := make([]string, len(values))

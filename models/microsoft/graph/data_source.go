@@ -96,8 +96,7 @@ func (m *DataSource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
             return err
         }
         if val != nil {
-            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus)
-            m.SetHoldStatus(&cast)
+            m.SetHoldStatus(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus))
         }
         return nil
     }
@@ -131,7 +130,7 @@ func (m *DataSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     if m.GetHoldStatus() != nil {
-        cast := m.GetHoldStatus().String()
+        cast := (*m.GetHoldStatus()).String()
         err = writer.WriteStringValue("holdStatus", &cast)
         if err != nil {
             return err

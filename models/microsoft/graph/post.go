@@ -8,7 +8,7 @@ import (
 // Post 
 type Post struct {
     OutlookItem
-    // The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+    // Read-only. Nullable. Supports $expand.
     attachments []Attachment;
     // The contents of the post. This is a default property. This property can be null.
     body *ItemBody;
@@ -24,7 +24,7 @@ type Post struct {
     hasAttachments *bool;
     // The importance of a group post: low, normal, high.
     importance *Importance;
-    // The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
+    // Read-only. Supports $expand.
     inReplyTo *Post;
     // 
     mentions []Mention;
@@ -46,7 +46,7 @@ func NewPost()(*Post) {
     }
     return m
 }
-// GetAttachments gets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// GetAttachments gets the attachments property value. Read-only. Nullable. Supports $expand.
 func (m *Post) GetAttachments()([]Attachment) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *Post) GetImportance()(*Importance) {
         return m.importance
     }
 }
-// GetInReplyTo gets the inReplyTo property value. The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
+// GetInReplyTo gets the inReplyTo property value. Read-only. Supports $expand.
 func (m *Post) GetInReplyTo()(*Post) {
     if m == nil {
         return nil
@@ -253,8 +253,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
             return err
         }
         if val != nil {
-            cast := val.(Importance)
-            m.SetImportance(&cast)
+            m.SetImportance(val.(*Importance))
         }
         return nil
     }
@@ -408,7 +407,7 @@ func (m *Post) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     if m.GetImportance() != nil {
-        cast := m.GetImportance().String()
+        cast := (*m.GetImportance()).String()
         err = writer.WriteStringValue("importance", &cast)
         if err != nil {
             return err
@@ -478,7 +477,7 @@ func (m *Post) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     }
     return nil
 }
-// SetAttachments sets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// SetAttachments sets the attachments property value. Read-only. Nullable. Supports $expand.
 func (m *Post) SetAttachments(value []Attachment)() {
     if m != nil {
         m.attachments = value
@@ -526,7 +525,7 @@ func (m *Post) SetImportance(value *Importance)() {
         m.importance = value
     }
 }
-// SetInReplyTo sets the inReplyTo property value. The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
+// SetInReplyTo sets the inReplyTo property value. Read-only. Supports $expand.
 func (m *Post) SetInReplyTo(value *Post)() {
     if m != nil {
         m.inReplyTo = value

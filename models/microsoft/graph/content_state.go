@@ -16,15 +16,18 @@ func (i ContentState) String() string {
     return []string{"REST", "MOTION", "USE"}[i]
 }
 func ParseContentState(v string) (interface{}, error) {
+    result := REST_CONTENTSTATE
     switch strings.ToUpper(v) {
         case "REST":
-            return REST_CONTENTSTATE, nil
+            result = REST_CONTENTSTATE
         case "MOTION":
-            return MOTION_CONTENTSTATE, nil
+            result = MOTION_CONTENTSTATE
         case "USE":
-            return USE_CONTENTSTATE, nil
+            result = USE_CONTENTSTATE
+        default:
+            return 0, errors.New("Unknown ContentState value: " + v)
     }
-    return 0, errors.New("Unknown ContentState value: " + v)
+    return &result, nil
 }
 func SerializeContentState(values []ContentState) []string {
     result := make([]string, len(values))

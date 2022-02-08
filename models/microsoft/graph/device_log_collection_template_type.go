@@ -14,11 +14,14 @@ func (i DeviceLogCollectionTemplateType) String() string {
     return []string{"PREDEFINED"}[i]
 }
 func ParseDeviceLogCollectionTemplateType(v string) (interface{}, error) {
+    result := PREDEFINED_DEVICELOGCOLLECTIONTEMPLATETYPE
     switch strings.ToUpper(v) {
         case "PREDEFINED":
-            return PREDEFINED_DEVICELOGCOLLECTIONTEMPLATETYPE, nil
+            result = PREDEFINED_DEVICELOGCOLLECTIONTEMPLATETYPE
+        default:
+            return 0, errors.New("Unknown DeviceLogCollectionTemplateType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceLogCollectionTemplateType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceLogCollectionTemplateType(values []DeviceLogCollectionTemplateType) []string {
     result := make([]string, len(values))

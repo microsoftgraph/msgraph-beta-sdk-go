@@ -15,13 +15,16 @@ func (i DeviceManagementConfigurationDeviceMode) String() string {
     return []string{"NONE", "KIOSK"}[i]
 }
 func ParseDeviceManagementConfigurationDeviceMode(v string) (interface{}, error) {
+    result := NONE_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE, nil
+            result = NONE_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE
         case "KIOSK":
-            return KIOSK_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE, nil
+            result = KIOSK_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE
+        default:
+            return 0, errors.New("Unknown DeviceManagementConfigurationDeviceMode value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementConfigurationDeviceMode value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementConfigurationDeviceMode(values []DeviceManagementConfigurationDeviceMode) []string {
     result := make([]string, len(values))

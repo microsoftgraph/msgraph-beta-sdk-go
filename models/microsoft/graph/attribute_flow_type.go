@@ -18,19 +18,22 @@ func (i AttributeFlowType) String() string {
     return []string{"ALWAYS", "OBJECTADDONLY", "MULTIVALUEADDONLY", "VALUEADDONLY", "ATTRIBUTEADDONLY"}[i]
 }
 func ParseAttributeFlowType(v string) (interface{}, error) {
+    result := ALWAYS_ATTRIBUTEFLOWTYPE
     switch strings.ToUpper(v) {
         case "ALWAYS":
-            return ALWAYS_ATTRIBUTEFLOWTYPE, nil
+            result = ALWAYS_ATTRIBUTEFLOWTYPE
         case "OBJECTADDONLY":
-            return OBJECTADDONLY_ATTRIBUTEFLOWTYPE, nil
+            result = OBJECTADDONLY_ATTRIBUTEFLOWTYPE
         case "MULTIVALUEADDONLY":
-            return MULTIVALUEADDONLY_ATTRIBUTEFLOWTYPE, nil
+            result = MULTIVALUEADDONLY_ATTRIBUTEFLOWTYPE
         case "VALUEADDONLY":
-            return VALUEADDONLY_ATTRIBUTEFLOWTYPE, nil
+            result = VALUEADDONLY_ATTRIBUTEFLOWTYPE
         case "ATTRIBUTEADDONLY":
-            return ATTRIBUTEADDONLY_ATTRIBUTEFLOWTYPE, nil
+            result = ATTRIBUTEADDONLY_ATTRIBUTEFLOWTYPE
+        default:
+            return 0, errors.New("Unknown AttributeFlowType value: " + v)
     }
-    return 0, errors.New("Unknown AttributeFlowType value: " + v)
+    return &result, nil
 }
 func SerializeAttributeFlowType(values []AttributeFlowType) []string {
     result := make([]string, len(values))

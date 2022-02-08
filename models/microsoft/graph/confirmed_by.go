@@ -17,17 +17,20 @@ func (i ConfirmedBy) String() string {
     return []string{"NONE", "USER", "MANAGER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseConfirmedBy(v string) (interface{}, error) {
+    result := NONE_CONFIRMEDBY
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_CONFIRMEDBY, nil
+            result = NONE_CONFIRMEDBY
         case "USER":
-            return USER_CONFIRMEDBY, nil
+            result = USER_CONFIRMEDBY
         case "MANAGER":
-            return MANAGER_CONFIRMEDBY, nil
+            result = MANAGER_CONFIRMEDBY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONFIRMEDBY, nil
+            result = UNKNOWNFUTUREVALUE_CONFIRMEDBY
+        default:
+            return 0, errors.New("Unknown ConfirmedBy value: " + v)
     }
-    return 0, errors.New("Unknown ConfirmedBy value: " + v)
+    return &result, nil
 }
 func SerializeConfirmedBy(values []ConfirmedBy) []string {
     result := make([]string, len(values))

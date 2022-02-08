@@ -203,8 +203,7 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(CloudPcAuditActorType)
-            m.SetType(&cast)
+            m.SetType(val.(*CloudPcAuditActorType))
         }
         return nil
     }
@@ -300,7 +299,7 @@ func (m *CloudPcAuditActor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
