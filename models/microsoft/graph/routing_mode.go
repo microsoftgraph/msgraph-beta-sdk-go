@@ -15,13 +15,16 @@ func (i RoutingMode) String() string {
     return []string{"ONETOONE", "MULTICAST"}[i]
 }
 func ParseRoutingMode(v string) (interface{}, error) {
+    result := ONETOONE_ROUTINGMODE
     switch strings.ToUpper(v) {
         case "ONETOONE":
-            return ONETOONE_ROUTINGMODE, nil
+            result = ONETOONE_ROUTINGMODE
         case "MULTICAST":
-            return MULTICAST_ROUTINGMODE, nil
+            result = MULTICAST_ROUTINGMODE
+        default:
+            return 0, errors.New("Unknown RoutingMode value: " + v)
     }
-    return 0, errors.New("Unknown RoutingMode value: " + v)
+    return &result, nil
 }
 func SerializeRoutingMode(values []RoutingMode) []string {
     result := make([]string, len(values))

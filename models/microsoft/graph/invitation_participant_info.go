@@ -18,7 +18,7 @@ type InvitationParticipantInfo struct {
     participantId *string;
     // 
     removeFromDefaultAudioRoutingGroup *bool;
-    // Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+    // Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
     replacesCallId *string;
 }
 // NewInvitationParticipantInfo instantiates a new invitationParticipantInfo and sets the default values.
@@ -76,7 +76,7 @@ func (m *InvitationParticipantInfo) GetRemoveFromDefaultAudioRoutingGroup()(*boo
         return m.removeFromDefaultAudioRoutingGroup
     }
 }
-// GetReplacesCallId gets the replacesCallId property value. Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+// GetReplacesCallId gets the replacesCallId property value. Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
 func (m *InvitationParticipantInfo) GetReplacesCallId()(*string) {
     if m == nil {
         return nil
@@ -93,8 +93,7 @@ func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(EndpointType)
-            m.SetEndpointType(&cast)
+            m.SetEndpointType(val.(*EndpointType))
         }
         return nil
     }
@@ -156,7 +155,7 @@ func (m *InvitationParticipantInfo) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *InvitationParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetEndpointType() != nil {
-        cast := m.GetEndpointType().String()
+        cast := (*m.GetEndpointType()).String()
         err := writer.WriteStringValue("endpointType", &cast)
         if err != nil {
             return err
@@ -236,7 +235,7 @@ func (m *InvitationParticipantInfo) SetRemoveFromDefaultAudioRoutingGroup(value 
         m.removeFromDefaultAudioRoutingGroup = value
     }
 }
-// SetReplacesCallId sets the replacesCallId property value. Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+// SetReplacesCallId sets the replacesCallId property value. Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
 func (m *InvitationParticipantInfo) SetReplacesCallId(value *string)() {
     if m != nil {
         m.replacesCallId = value

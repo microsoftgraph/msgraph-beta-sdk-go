@@ -18,19 +18,22 @@ func (i AccessReviewHistoryStatus) String() string {
     return []string{"DONE", "INPROGRESS", "ERROR", "REQUESTED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAccessReviewHistoryStatus(v string) (interface{}, error) {
+    result := DONE_ACCESSREVIEWHISTORYSTATUS
     switch strings.ToUpper(v) {
         case "DONE":
-            return DONE_ACCESSREVIEWHISTORYSTATUS, nil
+            result = DONE_ACCESSREVIEWHISTORYSTATUS
         case "INPROGRESS":
-            return INPROGRESS_ACCESSREVIEWHISTORYSTATUS, nil
+            result = INPROGRESS_ACCESSREVIEWHISTORYSTATUS
         case "ERROR":
-            return ERROR_ACCESSREVIEWHISTORYSTATUS, nil
+            result = ERROR_ACCESSREVIEWHISTORYSTATUS
         case "REQUESTED":
-            return REQUESTED_ACCESSREVIEWHISTORYSTATUS, nil
+            result = REQUESTED_ACCESSREVIEWHISTORYSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACCESSREVIEWHISTORYSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_ACCESSREVIEWHISTORYSTATUS
+        default:
+            return 0, errors.New("Unknown AccessReviewHistoryStatus value: " + v)
     }
-    return 0, errors.New("Unknown AccessReviewHistoryStatus value: " + v)
+    return &result, nil
 }
 func SerializeAccessReviewHistoryStatus(values []AccessReviewHistoryStatus) []string {
     result := make([]string, len(values))

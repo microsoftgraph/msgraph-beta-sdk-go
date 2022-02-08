@@ -19,21 +19,24 @@ func (i ConfigurationManagerClientState) String() string {
     return []string{"UNKNOWN", "INSTALLED", "HEALTHY", "INSTALLFAILED", "UPDATEFAILED", "COMMUNICATIONERROR"}[i]
 }
 func ParseConfigurationManagerClientState(v string) (interface{}, error) {
+    result := UNKNOWN_CONFIGURATIONMANAGERCLIENTSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_CONFIGURATIONMANAGERCLIENTSTATE, nil
+            result = UNKNOWN_CONFIGURATIONMANAGERCLIENTSTATE
         case "INSTALLED":
-            return INSTALLED_CONFIGURATIONMANAGERCLIENTSTATE, nil
+            result = INSTALLED_CONFIGURATIONMANAGERCLIENTSTATE
         case "HEALTHY":
-            return HEALTHY_CONFIGURATIONMANAGERCLIENTSTATE, nil
+            result = HEALTHY_CONFIGURATIONMANAGERCLIENTSTATE
         case "INSTALLFAILED":
-            return INSTALLFAILED_CONFIGURATIONMANAGERCLIENTSTATE, nil
+            result = INSTALLFAILED_CONFIGURATIONMANAGERCLIENTSTATE
         case "UPDATEFAILED":
-            return UPDATEFAILED_CONFIGURATIONMANAGERCLIENTSTATE, nil
+            result = UPDATEFAILED_CONFIGURATIONMANAGERCLIENTSTATE
         case "COMMUNICATIONERROR":
-            return COMMUNICATIONERROR_CONFIGURATIONMANAGERCLIENTSTATE, nil
+            result = COMMUNICATIONERROR_CONFIGURATIONMANAGERCLIENTSTATE
+        default:
+            return 0, errors.New("Unknown ConfigurationManagerClientState value: " + v)
     }
-    return 0, errors.New("Unknown ConfigurationManagerClientState value: " + v)
+    return &result, nil
 }
 func SerializeConfigurationManagerClientState(values []ConfigurationManagerClientState) []string {
     result := make([]string, len(values))

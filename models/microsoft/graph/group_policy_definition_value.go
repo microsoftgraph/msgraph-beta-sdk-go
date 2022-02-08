@@ -85,8 +85,7 @@ func (m *GroupPolicyDefinitionValue) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(GroupPolicyConfigurationType)
-            m.SetConfigurationType(&cast)
+            m.SetConfigurationType(val.(*GroupPolicyConfigurationType))
         }
         return nil
     }
@@ -156,7 +155,7 @@ func (m *GroupPolicyDefinitionValue) Serialize(writer i04eb5309aeaafadd28374d79c
         return err
     }
     if m.GetConfigurationType() != nil {
-        cast := m.GetConfigurationType().String()
+        cast := (*m.GetConfigurationType()).String()
         err = writer.WriteStringValue("configurationType", &cast)
         if err != nil {
             return err

@@ -15,13 +15,16 @@ func (i RemoteAssistanceState) String() string {
     return []string{"DISABLED", "ENABLED"}[i]
 }
 func ParseRemoteAssistanceState(v string) (interface{}, error) {
+    result := DISABLED_REMOTEASSISTANCESTATE
     switch strings.ToUpper(v) {
         case "DISABLED":
-            return DISABLED_REMOTEASSISTANCESTATE, nil
+            result = DISABLED_REMOTEASSISTANCESTATE
         case "ENABLED":
-            return ENABLED_REMOTEASSISTANCESTATE, nil
+            result = ENABLED_REMOTEASSISTANCESTATE
+        default:
+            return 0, errors.New("Unknown RemoteAssistanceState value: " + v)
     }
-    return 0, errors.New("Unknown RemoteAssistanceState value: " + v)
+    return &result, nil
 }
 func SerializeRemoteAssistanceState(values []RemoteAssistanceState) []string {
     result := make([]string, len(values))

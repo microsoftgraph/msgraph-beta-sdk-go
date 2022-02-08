@@ -15,13 +15,16 @@ func (i AccessScope) String() string {
     return []string{"INORGANIZATION", "NOTINORGANIZATION"}[i]
 }
 func ParseAccessScope(v string) (interface{}, error) {
+    result := INORGANIZATION_ACCESSSCOPE
     switch strings.ToUpper(v) {
         case "INORGANIZATION":
-            return INORGANIZATION_ACCESSSCOPE, nil
+            result = INORGANIZATION_ACCESSSCOPE
         case "NOTINORGANIZATION":
-            return NOTINORGANIZATION_ACCESSSCOPE, nil
+            result = NOTINORGANIZATION_ACCESSSCOPE
+        default:
+            return 0, errors.New("Unknown AccessScope value: " + v)
     }
-    return 0, errors.New("Unknown AccessScope value: " + v)
+    return &result, nil
 }
 func SerializeAccessScope(values []AccessScope) []string {
     result := make([]string, len(values))

@@ -104,8 +104,7 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(inter
             return err
         }
         if val != nil {
-            cast := val.(PolicyScope)
-            m.SetAppliesTo(&cast)
+            m.SetAppliesTo(val.(*PolicyScope))
         }
         return nil
     }
@@ -195,7 +194,7 @@ func (m *MobilityManagementPolicy) Serialize(writer i04eb5309aeaafadd28374d79c84
         return err
     }
     if m.GetAppliesTo() != nil {
-        cast := m.GetAppliesTo().String()
+        cast := (*m.GetAppliesTo()).String()
         err = writer.WriteStringValue("appliesTo", &cast)
         if err != nil {
             return err

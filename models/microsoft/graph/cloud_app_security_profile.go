@@ -285,8 +285,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(ApplicationPermissionsRequired)
-            m.SetPermissionsRequired(&cast)
+            m.SetPermissionsRequired(val.(*ApplicationPermissionsRequired))
         }
         return nil
     }
@@ -430,7 +429,7 @@ func (m *CloudAppSecurityProfile) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetPermissionsRequired() != nil {
-        cast := m.GetPermissionsRequired().String()
+        cast := (*m.GetPermissionsRequired()).String()
         err = writer.WriteStringValue("permissionsRequired", &cast)
         if err != nil {
             return err

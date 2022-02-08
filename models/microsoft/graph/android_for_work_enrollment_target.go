@@ -17,17 +17,20 @@ func (i AndroidForWorkEnrollmentTarget) String() string {
     return []string{"NONE", "ALL", "TARGETED", "TARGETEDASENROLLMENTRESTRICTIONS"}[i]
 }
 func ParseAndroidForWorkEnrollmentTarget(v string) (interface{}, error) {
+    result := NONE_ANDROIDFORWORKENROLLMENTTARGET
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_ANDROIDFORWORKENROLLMENTTARGET, nil
+            result = NONE_ANDROIDFORWORKENROLLMENTTARGET
         case "ALL":
-            return ALL_ANDROIDFORWORKENROLLMENTTARGET, nil
+            result = ALL_ANDROIDFORWORKENROLLMENTTARGET
         case "TARGETED":
-            return TARGETED_ANDROIDFORWORKENROLLMENTTARGET, nil
+            result = TARGETED_ANDROIDFORWORKENROLLMENTTARGET
         case "TARGETEDASENROLLMENTRESTRICTIONS":
-            return TARGETEDASENROLLMENTRESTRICTIONS_ANDROIDFORWORKENROLLMENTTARGET, nil
+            result = TARGETEDASENROLLMENTRESTRICTIONS_ANDROIDFORWORKENROLLMENTTARGET
+        default:
+            return 0, errors.New("Unknown AndroidForWorkEnrollmentTarget value: " + v)
     }
-    return 0, errors.New("Unknown AndroidForWorkEnrollmentTarget value: " + v)
+    return &result, nil
 }
 func SerializeAndroidForWorkEnrollmentTarget(values []AndroidForWorkEnrollmentTarget) []string {
     result := make([]string, len(values))

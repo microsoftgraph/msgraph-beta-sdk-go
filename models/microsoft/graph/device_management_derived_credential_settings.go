@@ -84,8 +84,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementDerivedCredentialIssuer)
-            m.SetIssuer(&cast)
+            m.SetIssuer(val.(*DeviceManagementDerivedCredentialIssuer))
         }
         return nil
     }
@@ -95,8 +94,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementDerivedCredentialNotificationType)
-            m.SetNotificationType(&cast)
+            m.SetNotificationType(val.(*DeviceManagementDerivedCredentialNotificationType))
         }
         return nil
     }
@@ -124,14 +122,14 @@ func (m *DeviceManagementDerivedCredentialSettings) Serialize(writer i04eb5309ae
         }
     }
     if m.GetIssuer() != nil {
-        cast := m.GetIssuer().String()
+        cast := (*m.GetIssuer()).String()
         err = writer.WriteStringValue("issuer", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetNotificationType() != nil {
-        cast := m.GetNotificationType().String()
+        cast := (*m.GetNotificationType()).String()
         err = writer.WriteStringValue("notificationType", &cast)
         if err != nil {
             return err

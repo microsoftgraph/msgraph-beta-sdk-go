@@ -123,8 +123,7 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(AttributeFlowBehavior)
-            m.SetFlowBehavior(&cast)
+            m.SetFlowBehavior(val.(*AttributeFlowBehavior))
         }
         return nil
     }
@@ -134,8 +133,7 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(AttributeFlowType)
-            m.SetFlowType(&cast)
+            m.SetFlowType(val.(*AttributeFlowType))
         }
         return nil
     }
@@ -189,14 +187,14 @@ func (m *AttributeMapping) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetFlowBehavior() != nil {
-        cast := m.GetFlowBehavior().String()
+        cast := (*m.GetFlowBehavior()).String()
         err := writer.WriteStringValue("flowBehavior", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetFlowType() != nil {
-        cast := m.GetFlowType().String()
+        cast := (*m.GetFlowType()).String()
         err := writer.WriteStringValue("flowType", &cast)
         if err != nil {
             return err

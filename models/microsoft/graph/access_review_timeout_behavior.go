@@ -17,17 +17,20 @@ func (i AccessReviewTimeoutBehavior) String() string {
     return []string{"KEEPACCESS", "REMOVEACCESS", "ACCEPTACCESSRECOMMENDATION", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAccessReviewTimeoutBehavior(v string) (interface{}, error) {
+    result := KEEPACCESS_ACCESSREVIEWTIMEOUTBEHAVIOR
     switch strings.ToUpper(v) {
         case "KEEPACCESS":
-            return KEEPACCESS_ACCESSREVIEWTIMEOUTBEHAVIOR, nil
+            result = KEEPACCESS_ACCESSREVIEWTIMEOUTBEHAVIOR
         case "REMOVEACCESS":
-            return REMOVEACCESS_ACCESSREVIEWTIMEOUTBEHAVIOR, nil
+            result = REMOVEACCESS_ACCESSREVIEWTIMEOUTBEHAVIOR
         case "ACCEPTACCESSRECOMMENDATION":
-            return ACCEPTACCESSRECOMMENDATION_ACCESSREVIEWTIMEOUTBEHAVIOR, nil
+            result = ACCEPTACCESSRECOMMENDATION_ACCESSREVIEWTIMEOUTBEHAVIOR
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACCESSREVIEWTIMEOUTBEHAVIOR, nil
+            result = UNKNOWNFUTUREVALUE_ACCESSREVIEWTIMEOUTBEHAVIOR
+        default:
+            return 0, errors.New("Unknown AccessReviewTimeoutBehavior value: " + v)
     }
-    return 0, errors.New("Unknown AccessReviewTimeoutBehavior value: " + v)
+    return &result, nil
 }
 func SerializeAccessReviewTimeoutBehavior(values []AccessReviewTimeoutBehavior) []string {
     result := make([]string, len(values))

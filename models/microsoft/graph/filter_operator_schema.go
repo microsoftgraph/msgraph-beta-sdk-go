@@ -54,8 +54,7 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ScopeOperatorType)
-            m.SetArity(&cast)
+            m.SetArity(val.(*ScopeOperatorType))
         }
         return nil
     }
@@ -65,8 +64,7 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ScopeOperatorMultiValuedComparisonType)
-            m.SetMultivaluedComparisonType(&cast)
+            m.SetMultivaluedComparisonType(val.(*ScopeOperatorMultiValuedComparisonType))
         }
         return nil
     }
@@ -96,14 +94,14 @@ func (m *FilterOperatorSchema) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         return err
     }
     if m.GetArity() != nil {
-        cast := m.GetArity().String()
+        cast := (*m.GetArity()).String()
         err = writer.WriteStringValue("arity", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetMultivaluedComparisonType() != nil {
-        cast := m.GetMultivaluedComparisonType().String()
+        cast := (*m.GetMultivaluedComparisonType()).String()
         err = writer.WriteStringValue("multivaluedComparisonType", &cast)
         if err != nil {
             return err

@@ -16,15 +16,18 @@ func (i DriverApprovalAction) String() string {
     return []string{"APPROVE", "DECLINE", "SUSPEND"}[i]
 }
 func ParseDriverApprovalAction(v string) (interface{}, error) {
+    result := APPROVE_DRIVERAPPROVALACTION
     switch strings.ToUpper(v) {
         case "APPROVE":
-            return APPROVE_DRIVERAPPROVALACTION, nil
+            result = APPROVE_DRIVERAPPROVALACTION
         case "DECLINE":
-            return DECLINE_DRIVERAPPROVALACTION, nil
+            result = DECLINE_DRIVERAPPROVALACTION
         case "SUSPEND":
-            return SUSPEND_DRIVERAPPROVALACTION, nil
+            result = SUSPEND_DRIVERAPPROVALACTION
+        default:
+            return 0, errors.New("Unknown DriverApprovalAction value: " + v)
     }
-    return 0, errors.New("Unknown DriverApprovalAction value: " + v)
+    return &result, nil
 }
 func SerializeDriverApprovalAction(values []DriverApprovalAction) []string {
     result := make([]string, len(values))

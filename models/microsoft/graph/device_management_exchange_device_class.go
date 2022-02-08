@@ -63,8 +63,7 @@ func (m *DeviceManagementExchangeDeviceClass) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementExchangeAccessRuleType)
-            m.SetType(&cast)
+            m.SetType(val.(*DeviceManagementExchangeAccessRuleType))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *DeviceManagementExchangeDeviceClass) Serialize(writer i04eb5309aeaafadd
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

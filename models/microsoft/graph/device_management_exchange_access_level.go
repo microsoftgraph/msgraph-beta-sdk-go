@@ -17,17 +17,20 @@ func (i DeviceManagementExchangeAccessLevel) String() string {
     return []string{"NONE", "ALLOW", "BLOCK", "QUARANTINE"}[i]
 }
 func ParseDeviceManagementExchangeAccessLevel(v string) (interface{}, error) {
+    result := NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL, nil
+            result = NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
         case "ALLOW":
-            return ALLOW_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL, nil
+            result = ALLOW_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
         case "BLOCK":
-            return BLOCK_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL, nil
+            result = BLOCK_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
         case "QUARANTINE":
-            return QUARANTINE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL, nil
+            result = QUARANTINE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
+        default:
+            return 0, errors.New("Unknown DeviceManagementExchangeAccessLevel value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementExchangeAccessLevel value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementExchangeAccessLevel(values []DeviceManagementExchangeAccessLevel) []string {
     result := make([]string, len(values))

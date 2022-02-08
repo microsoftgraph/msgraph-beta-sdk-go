@@ -63,8 +63,7 @@ func (m *OnPremisesPublishingSingleSignOn) GetFieldDeserializers()(map[string]fu
             return err
         }
         if val != nil {
-            cast := val.(SingleSignOnMode)
-            m.SetSingleSignOnMode(&cast)
+            m.SetSingleSignOnMode(val.(*SingleSignOnMode))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *OnPremisesPublishingSingleSignOn) Serialize(writer i04eb5309aeaafadd283
         }
     }
     if m.GetSingleSignOnMode() != nil {
-        cast := m.GetSingleSignOnMode().String()
+        cast := (*m.GetSingleSignOnMode()).String()
         err := writer.WriteStringValue("singleSignOnMode", &cast)
         if err != nil {
             return err

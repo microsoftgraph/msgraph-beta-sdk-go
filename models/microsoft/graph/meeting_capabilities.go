@@ -15,13 +15,16 @@ func (i MeetingCapabilities) String() string {
     return []string{"QUESTIONANDANSWER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseMeetingCapabilities(v string) (interface{}, error) {
+    result := QUESTIONANDANSWER_MEETINGCAPABILITIES
     switch strings.ToUpper(v) {
         case "QUESTIONANDANSWER":
-            return QUESTIONANDANSWER_MEETINGCAPABILITIES, nil
+            result = QUESTIONANDANSWER_MEETINGCAPABILITIES
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MEETINGCAPABILITIES, nil
+            result = UNKNOWNFUTUREVALUE_MEETINGCAPABILITIES
+        default:
+            return 0, errors.New("Unknown MeetingCapabilities value: " + v)
     }
-    return 0, errors.New("Unknown MeetingCapabilities value: " + v)
+    return &result, nil
 }
 func SerializeMeetingCapabilities(values []MeetingCapabilities) []string {
     result := make([]string, len(values))

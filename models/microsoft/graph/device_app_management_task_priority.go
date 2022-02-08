@@ -16,15 +16,18 @@ func (i DeviceAppManagementTaskPriority) String() string {
     return []string{"NONE", "HIGH", "LOW"}[i]
 }
 func ParseDeviceAppManagementTaskPriority(v string) (interface{}, error) {
+    result := NONE_DEVICEAPPMANAGEMENTTASKPRIORITY
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEAPPMANAGEMENTTASKPRIORITY, nil
+            result = NONE_DEVICEAPPMANAGEMENTTASKPRIORITY
         case "HIGH":
-            return HIGH_DEVICEAPPMANAGEMENTTASKPRIORITY, nil
+            result = HIGH_DEVICEAPPMANAGEMENTTASKPRIORITY
         case "LOW":
-            return LOW_DEVICEAPPMANAGEMENTTASKPRIORITY, nil
+            result = LOW_DEVICEAPPMANAGEMENTTASKPRIORITY
+        default:
+            return 0, errors.New("Unknown DeviceAppManagementTaskPriority value: " + v)
     }
-    return 0, errors.New("Unknown DeviceAppManagementTaskPriority value: " + v)
+    return &result, nil
 }
 func SerializeDeviceAppManagementTaskPriority(values []DeviceAppManagementTaskPriority) []string {
     result := make([]string, len(values))

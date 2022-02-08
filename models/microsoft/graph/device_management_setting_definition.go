@@ -246,8 +246,7 @@ func (m *DeviceManagementSettingDefinition) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(DeviceManangementIntentValueType)
-            m.SetValueType(&cast)
+            m.SetValueType(val.(*DeviceManangementIntentValueType))
         }
         return nil
     }
@@ -333,7 +332,7 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i04eb5309aeaafadd28
         }
     }
     if m.GetValueType() != nil {
-        cast := m.GetValueType().String()
+        cast := (*m.GetValueType()).String()
         err = writer.WriteStringValue("valueType", &cast)
         if err != nil {
             return err

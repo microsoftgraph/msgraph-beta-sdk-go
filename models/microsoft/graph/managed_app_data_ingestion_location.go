@@ -16,15 +16,18 @@ func (i ManagedAppDataIngestionLocation) String() string {
     return []string{"ONEDRIVEFORBUSINESS", "SHAREPOINT", "CAMERA"}[i]
 }
 func ParseManagedAppDataIngestionLocation(v string) (interface{}, error) {
+    result := ONEDRIVEFORBUSINESS_MANAGEDAPPDATAINGESTIONLOCATION
     switch strings.ToUpper(v) {
         case "ONEDRIVEFORBUSINESS":
-            return ONEDRIVEFORBUSINESS_MANAGEDAPPDATAINGESTIONLOCATION, nil
+            result = ONEDRIVEFORBUSINESS_MANAGEDAPPDATAINGESTIONLOCATION
         case "SHAREPOINT":
-            return SHAREPOINT_MANAGEDAPPDATAINGESTIONLOCATION, nil
+            result = SHAREPOINT_MANAGEDAPPDATAINGESTIONLOCATION
         case "CAMERA":
-            return CAMERA_MANAGEDAPPDATAINGESTIONLOCATION, nil
+            result = CAMERA_MANAGEDAPPDATAINGESTIONLOCATION
+        default:
+            return 0, errors.New("Unknown ManagedAppDataIngestionLocation value: " + v)
     }
-    return 0, errors.New("Unknown ManagedAppDataIngestionLocation value: " + v)
+    return &result, nil
 }
 func SerializeManagedAppDataIngestionLocation(values []ManagedAppDataIngestionLocation) []string {
     result := make([]string, len(values))

@@ -19,21 +19,24 @@ func (i Platform) String() string {
     return []string{"UNKNOWN", "IOS", "ANDROID", "WINDOWS", "WINDOWSMOBILE", "MACOS"}[i]
 }
 func ParsePlatform(v string) (interface{}, error) {
+    result := UNKNOWN_PLATFORM
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_PLATFORM, nil
+            result = UNKNOWN_PLATFORM
         case "IOS":
-            return IOS_PLATFORM, nil
+            result = IOS_PLATFORM
         case "ANDROID":
-            return ANDROID_PLATFORM, nil
+            result = ANDROID_PLATFORM
         case "WINDOWS":
-            return WINDOWS_PLATFORM, nil
+            result = WINDOWS_PLATFORM
         case "WINDOWSMOBILE":
-            return WINDOWSMOBILE_PLATFORM, nil
+            result = WINDOWSMOBILE_PLATFORM
         case "MACOS":
-            return MACOS_PLATFORM, nil
+            result = MACOS_PLATFORM
+        default:
+            return 0, errors.New("Unknown Platform value: " + v)
     }
-    return 0, errors.New("Unknown Platform value: " + v)
+    return &result, nil
 }
 func SerializePlatform(values []Platform) []string {
     result := make([]string, len(values))

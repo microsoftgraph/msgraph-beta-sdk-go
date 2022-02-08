@@ -31,9 +31,9 @@ type AndroidManagedAppProtection struct {
     blockAfterCompanyPortalUpdateDeferralInDays *int32;
     // Whether the app should connect to the configured VPN on launch.
     connectToVpnOnLaunch *bool;
-    // Friendly name of the preferred custom browser to open weblink on Android.
+    // Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
     customBrowserDisplayName *string;
-    // Unique identifier of a custom browser to open weblink on Android.
+    // Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
     customBrowserPackageId *string;
     // Friendly name of a custom dialer app to click-to-open a phone number on Android.
     customDialerAppDisplayName *string;
@@ -181,7 +181,7 @@ func (m *AndroidManagedAppProtection) GetConnectToVpnOnLaunch()(*bool) {
         return m.connectToVpnOnLaunch
     }
 }
-// GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
+// GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
         return m.customBrowserDisplayName
     }
 }
-// GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
+// GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *AndroidManagedAppProtection) GetCustomBrowserPackageId()(*string) {
     if m == nil {
         return nil
@@ -398,8 +398,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppRemediationAction)
-            m.SetAppActionIfAndroidDeviceManufacturerNotAllowed(&cast)
+            m.SetAppActionIfAndroidDeviceManufacturerNotAllowed(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -409,8 +408,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppRemediationAction)
-            m.SetAppActionIfAndroidDeviceModelNotAllowed(&cast)
+            m.SetAppActionIfAndroidDeviceModelNotAllowed(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -420,8 +418,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppRemediationAction)
-            m.SetAppActionIfAndroidSafetyNetAppsVerificationFailed(&cast)
+            m.SetAppActionIfAndroidSafetyNetAppsVerificationFailed(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -431,8 +428,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppRemediationAction)
-            m.SetAppActionIfAndroidSafetyNetDeviceAttestationFailed(&cast)
+            m.SetAppActionIfAndroidSafetyNetDeviceAttestationFailed(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -442,8 +438,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppRemediationAction)
-            m.SetAppActionIfDeviceLockNotSet(&cast)
+            m.SetAppActionIfDeviceLockNotSet(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -685,8 +680,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(AndroidManagedAppSafetyNetAppsVerificationType)
-            m.SetRequiredAndroidSafetyNetAppsVerificationType(&cast)
+            m.SetRequiredAndroidSafetyNetAppsVerificationType(val.(*AndroidManagedAppSafetyNetAppsVerificationType))
         }
         return nil
     }
@@ -696,8 +690,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(AndroidManagedAppSafetyNetDeviceAttestationType)
-            m.SetRequiredAndroidSafetyNetDeviceAttestationType(&cast)
+            m.SetRequiredAndroidSafetyNetDeviceAttestationType(val.(*AndroidManagedAppSafetyNetDeviceAttestationType))
         }
         return nil
     }
@@ -707,8 +700,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(AndroidManagedAppSafetyNetEvaluationType)
-            m.SetRequiredAndroidSafetyNetEvaluationType(&cast)
+            m.SetRequiredAndroidSafetyNetEvaluationType(val.(*AndroidManagedAppSafetyNetEvaluationType))
         }
         return nil
     }
@@ -766,35 +758,35 @@ func (m *AndroidManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     if m.GetAppActionIfAndroidDeviceManufacturerNotAllowed() != nil {
-        cast := m.GetAppActionIfAndroidDeviceManufacturerNotAllowed().String()
+        cast := (*m.GetAppActionIfAndroidDeviceManufacturerNotAllowed()).String()
         err = writer.WriteStringValue("appActionIfAndroidDeviceManufacturerNotAllowed", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAppActionIfAndroidDeviceModelNotAllowed() != nil {
-        cast := m.GetAppActionIfAndroidDeviceModelNotAllowed().String()
+        cast := (*m.GetAppActionIfAndroidDeviceModelNotAllowed()).String()
         err = writer.WriteStringValue("appActionIfAndroidDeviceModelNotAllowed", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAppActionIfAndroidSafetyNetAppsVerificationFailed() != nil {
-        cast := m.GetAppActionIfAndroidSafetyNetAppsVerificationFailed().String()
+        cast := (*m.GetAppActionIfAndroidSafetyNetAppsVerificationFailed()).String()
         err = writer.WriteStringValue("appActionIfAndroidSafetyNetAppsVerificationFailed", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAppActionIfAndroidSafetyNetDeviceAttestationFailed() != nil {
-        cast := m.GetAppActionIfAndroidSafetyNetDeviceAttestationFailed().String()
+        cast := (*m.GetAppActionIfAndroidSafetyNetDeviceAttestationFailed()).String()
         err = writer.WriteStringValue("appActionIfAndroidSafetyNetDeviceAttestationFailed", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAppActionIfDeviceLockNotSet() != nil {
-        cast := m.GetAppActionIfDeviceLockNotSet().String()
+        cast := (*m.GetAppActionIfDeviceLockNotSet()).String()
         err = writer.WriteStringValue("appActionIfDeviceLockNotSet", &cast)
         if err != nil {
             return err
@@ -948,21 +940,21 @@ func (m *AndroidManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     if m.GetRequiredAndroidSafetyNetAppsVerificationType() != nil {
-        cast := m.GetRequiredAndroidSafetyNetAppsVerificationType().String()
+        cast := (*m.GetRequiredAndroidSafetyNetAppsVerificationType()).String()
         err = writer.WriteStringValue("requiredAndroidSafetyNetAppsVerificationType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetRequiredAndroidSafetyNetDeviceAttestationType() != nil {
-        cast := m.GetRequiredAndroidSafetyNetDeviceAttestationType().String()
+        cast := (*m.GetRequiredAndroidSafetyNetDeviceAttestationType()).String()
         err = writer.WriteStringValue("requiredAndroidSafetyNetDeviceAttestationType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetRequiredAndroidSafetyNetEvaluationType() != nil {
-        cast := m.GetRequiredAndroidSafetyNetEvaluationType().String()
+        cast := (*m.GetRequiredAndroidSafetyNetEvaluationType()).String()
         err = writer.WriteStringValue("requiredAndroidSafetyNetEvaluationType", &cast)
         if err != nil {
             return err
@@ -1060,13 +1052,13 @@ func (m *AndroidManagedAppProtection) SetConnectToVpnOnLaunch(value *bool)() {
         m.connectToVpnOnLaunch = value
     }
 }
-// SetCustomBrowserDisplayName sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
+// SetCustomBrowserDisplayName sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *AndroidManagedAppProtection) SetCustomBrowserDisplayName(value *string)() {
     if m != nil {
         m.customBrowserDisplayName = value
     }
 }
-// SetCustomBrowserPackageId sets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
+// SetCustomBrowserPackageId sets the customBrowserPackageId property value. Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *AndroidManagedAppProtection) SetCustomBrowserPackageId(value *string)() {
     if m != nil {
         m.customBrowserPackageId = value

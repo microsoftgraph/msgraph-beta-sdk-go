@@ -17,17 +17,20 @@ func (i RequestedDeploymentStateValue) String() string {
     return []string{"NONE", "PAUSED", "ARCHIVED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRequestedDeploymentStateValue(v string) (interface{}, error) {
+    result := NONE_REQUESTEDDEPLOYMENTSTATEVALUE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_REQUESTEDDEPLOYMENTSTATEVALUE, nil
+            result = NONE_REQUESTEDDEPLOYMENTSTATEVALUE
         case "PAUSED":
-            return PAUSED_REQUESTEDDEPLOYMENTSTATEVALUE, nil
+            result = PAUSED_REQUESTEDDEPLOYMENTSTATEVALUE
         case "ARCHIVED":
-            return ARCHIVED_REQUESTEDDEPLOYMENTSTATEVALUE, nil
+            result = ARCHIVED_REQUESTEDDEPLOYMENTSTATEVALUE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_REQUESTEDDEPLOYMENTSTATEVALUE, nil
+            result = UNKNOWNFUTUREVALUE_REQUESTEDDEPLOYMENTSTATEVALUE
+        default:
+            return 0, errors.New("Unknown RequestedDeploymentStateValue value: " + v)
     }
-    return 0, errors.New("Unknown RequestedDeploymentStateValue value: " + v)
+    return &result, nil
 }
 func SerializeRequestedDeploymentStateValue(values []RequestedDeploymentStateValue) []string {
     result := make([]string, len(values))

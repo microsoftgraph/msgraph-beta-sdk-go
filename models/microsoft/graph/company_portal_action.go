@@ -16,15 +16,18 @@ func (i CompanyPortalAction) String() string {
     return []string{"UNKNOWN", "REMOVE", "RESET"}[i]
 }
 func ParseCompanyPortalAction(v string) (interface{}, error) {
+    result := UNKNOWN_COMPANYPORTALACTION
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_COMPANYPORTALACTION, nil
+            result = UNKNOWN_COMPANYPORTALACTION
         case "REMOVE":
-            return REMOVE_COMPANYPORTALACTION, nil
+            result = REMOVE_COMPANYPORTALACTION
         case "RESET":
-            return RESET_COMPANYPORTALACTION, nil
+            result = RESET_COMPANYPORTALACTION
+        default:
+            return 0, errors.New("Unknown CompanyPortalAction value: " + v)
     }
-    return 0, errors.New("Unknown CompanyPortalAction value: " + v)
+    return &result, nil
 }
 func SerializeCompanyPortalAction(values []CompanyPortalAction) []string {
     result := make([]string, len(values))

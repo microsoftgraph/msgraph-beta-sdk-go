@@ -182,8 +182,7 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(SecurityBaselineComplianceState)
-            m.SetState(&cast)
+            m.SetState(val.(*SecurityBaselineComplianceState))
         }
         return nil
     }
@@ -251,7 +250,7 @@ func (m *SecurityBaselineSettingState) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

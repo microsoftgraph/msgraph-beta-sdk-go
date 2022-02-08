@@ -23,29 +23,32 @@ func (i DevicePlatformType) String() string {
     return []string{"ANDROID", "ANDROIDFORWORK", "IOS", "MACOS", "WINDOWSPHONE81", "WINDOWS81ANDLATER", "WINDOWS10ANDLATER", "ANDROIDWORKPROFILE", "UNKNOWN", "ANDROIDAOSP"}[i]
 }
 func ParseDevicePlatformType(v string) (interface{}, error) {
+    result := ANDROID_DEVICEPLATFORMTYPE
     switch strings.ToUpper(v) {
         case "ANDROID":
-            return ANDROID_DEVICEPLATFORMTYPE, nil
+            result = ANDROID_DEVICEPLATFORMTYPE
         case "ANDROIDFORWORK":
-            return ANDROIDFORWORK_DEVICEPLATFORMTYPE, nil
+            result = ANDROIDFORWORK_DEVICEPLATFORMTYPE
         case "IOS":
-            return IOS_DEVICEPLATFORMTYPE, nil
+            result = IOS_DEVICEPLATFORMTYPE
         case "MACOS":
-            return MACOS_DEVICEPLATFORMTYPE, nil
+            result = MACOS_DEVICEPLATFORMTYPE
         case "WINDOWSPHONE81":
-            return WINDOWSPHONE81_DEVICEPLATFORMTYPE, nil
+            result = WINDOWSPHONE81_DEVICEPLATFORMTYPE
         case "WINDOWS81ANDLATER":
-            return WINDOWS81ANDLATER_DEVICEPLATFORMTYPE, nil
+            result = WINDOWS81ANDLATER_DEVICEPLATFORMTYPE
         case "WINDOWS10ANDLATER":
-            return WINDOWS10ANDLATER_DEVICEPLATFORMTYPE, nil
+            result = WINDOWS10ANDLATER_DEVICEPLATFORMTYPE
         case "ANDROIDWORKPROFILE":
-            return ANDROIDWORKPROFILE_DEVICEPLATFORMTYPE, nil
+            result = ANDROIDWORKPROFILE_DEVICEPLATFORMTYPE
         case "UNKNOWN":
-            return UNKNOWN_DEVICEPLATFORMTYPE, nil
+            result = UNKNOWN_DEVICEPLATFORMTYPE
         case "ANDROIDAOSP":
-            return ANDROIDAOSP_DEVICEPLATFORMTYPE, nil
+            result = ANDROIDAOSP_DEVICEPLATFORMTYPE
+        default:
+            return 0, errors.New("Unknown DevicePlatformType value: " + v)
     }
-    return 0, errors.New("Unknown DevicePlatformType value: " + v)
+    return &result, nil
 }
 func SerializeDevicePlatformType(values []DevicePlatformType) []string {
     result := make([]string, len(values))

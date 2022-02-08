@@ -63,8 +63,7 @@ func (m *SessionLifetimePolicy) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(ExpirationRequirement)
-            m.SetExpirationRequirement(&cast)
+            m.SetExpirationRequirement(val.(*ExpirationRequirement))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *SessionLifetimePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetExpirationRequirement() != nil {
-        cast := m.GetExpirationRequirement().String()
+        cast := (*m.GetExpirationRequirement()).String()
         err := writer.WriteStringValue("expirationRequirement", &cast)
         if err != nil {
             return err

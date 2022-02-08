@@ -19,21 +19,24 @@ func (i CloudPcOnPremisesConnectionStatus) String() string {
     return []string{"PENDING", "RUNNING", "PASSED", "FAILED", "WARNING", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCloudPcOnPremisesConnectionStatus(v string) (interface{}, error) {
+    result := PENDING_CLOUDPCONPREMISESCONNECTIONSTATUS
     switch strings.ToUpper(v) {
         case "PENDING":
-            return PENDING_CLOUDPCONPREMISESCONNECTIONSTATUS, nil
+            result = PENDING_CLOUDPCONPREMISESCONNECTIONSTATUS
         case "RUNNING":
-            return RUNNING_CLOUDPCONPREMISESCONNECTIONSTATUS, nil
+            result = RUNNING_CLOUDPCONPREMISESCONNECTIONSTATUS
         case "PASSED":
-            return PASSED_CLOUDPCONPREMISESCONNECTIONSTATUS, nil
+            result = PASSED_CLOUDPCONPREMISESCONNECTIONSTATUS
         case "FAILED":
-            return FAILED_CLOUDPCONPREMISESCONNECTIONSTATUS, nil
+            result = FAILED_CLOUDPCONPREMISESCONNECTIONSTATUS
         case "WARNING":
-            return WARNING_CLOUDPCONPREMISESCONNECTIONSTATUS, nil
+            result = WARNING_CLOUDPCONPREMISESCONNECTIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CLOUDPCONPREMISESCONNECTIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_CLOUDPCONPREMISESCONNECTIONSTATUS
+        default:
+            return 0, errors.New("Unknown CloudPcOnPremisesConnectionStatus value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcOnPremisesConnectionStatus value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcOnPremisesConnectionStatus(values []CloudPcOnPremisesConnectionStatus) []string {
     result := make([]string, len(values))

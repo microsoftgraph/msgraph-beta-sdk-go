@@ -48,7 +48,7 @@ type Alerts_v2RequestBuilderGetQueryParameters struct {
 // Alerts_v2RequestBuilderPostOptions options for Post
 type Alerts_v2RequestBuilderPostOptions struct {
     // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert_v2;
+    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert;
     // Request headers
     H map[string]string;
     // Request options
@@ -126,14 +126,14 @@ func (m *Alerts_v2RequestBuilder) Get(options *Alerts_v2RequestBuilderGetOptions
     return res.(*Alerts_v2Response), nil
 }
 // Post create new navigation property to alerts_v2 for security
-func (m *Alerts_v2RequestBuilder) Post(options *Alerts_v2RequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert_v2, error) {
+func (m *Alerts_v2RequestBuilder) Post(options *Alerts_v2RequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAlert_v2() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAlert() }, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert_v2), nil
+    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Alert), nil
 }

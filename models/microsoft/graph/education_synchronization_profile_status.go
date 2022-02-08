@@ -105,8 +105,7 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
             return err
         }
         if val != nil {
-            cast := val.(EducationSynchronizationStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*EducationSynchronizationStatus))
         }
         return nil
     }
@@ -150,7 +149,7 @@ func (m *EducationSynchronizationProfileStatus) Serialize(writer i04eb5309aeaafa
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

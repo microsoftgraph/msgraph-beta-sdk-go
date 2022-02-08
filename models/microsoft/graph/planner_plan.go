@@ -8,7 +8,7 @@ import (
 // PlannerPlan 
 type PlannerPlan struct {
     PlannerDelta
-    // Collection of buckets in the plan. Read-only. Nullable.
+    // Read-only. Nullable. Collection of buckets in the plan.
     buckets []PlannerBucket;
     // Identifies the container of the plan. After it is set, this property can’t be updated. Required.
     container *PlannerPlanContainer;
@@ -18,11 +18,11 @@ type PlannerPlan struct {
     createdBy *IdentitySet;
     // Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Additional details about the plan. Read-only. Nullable.
+    // Read-only. Nullable. Additional details about the plan.
     details *PlannerPlanDetails;
     // ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
     owner *string;
-    // Collection of tasks in the plan. Read-only. Nullable.
+    // Read-only. Nullable. Collection of tasks in the plan.
     tasks []PlannerTask;
     // Required. Title of the plan.
     title *string;
@@ -34,7 +34,7 @@ func NewPlannerPlan()(*PlannerPlan) {
     }
     return m
 }
-// GetBuckets gets the buckets property value. Collection of buckets in the plan. Read-only. Nullable.
+// GetBuckets gets the buckets property value. Read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerPlan) GetBuckets()([]PlannerBucket) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *PlannerPlan) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.createdDateTime
     }
 }
-// GetDetails gets the details property value. Additional details about the plan. Read-only. Nullable.
+// GetDetails gets the details property value. Read-only. Nullable. Additional details about the plan.
 func (m *PlannerPlan) GetDetails()(*PlannerPlanDetails) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *PlannerPlan) GetOwner()(*string) {
         return m.owner
     }
 }
-// GetTasks gets the tasks property value. Collection of tasks in the plan. Read-only. Nullable.
+// GetTasks gets the tasks property value. Read-only. Nullable. Collection of tasks in the plan.
 func (m *PlannerPlan) GetTasks()([]PlannerTask) {
     if m == nil {
         return nil
@@ -284,7 +284,7 @@ func (m *PlannerPlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// SetBuckets sets the buckets property value. Collection of buckets in the plan. Read-only. Nullable.
+// SetBuckets sets the buckets property value. Read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerPlan) SetBuckets(value []PlannerBucket)() {
     if m != nil {
         m.buckets = value
@@ -314,7 +314,7 @@ func (m *PlannerPlan) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a
         m.createdDateTime = value
     }
 }
-// SetDetails sets the details property value. Additional details about the plan. Read-only. Nullable.
+// SetDetails sets the details property value. Read-only. Nullable. Additional details about the plan.
 func (m *PlannerPlan) SetDetails(value *PlannerPlanDetails)() {
     if m != nil {
         m.details = value
@@ -326,7 +326,7 @@ func (m *PlannerPlan) SetOwner(value *string)() {
         m.owner = value
     }
 }
-// SetTasks sets the tasks property value. Collection of tasks in the plan. Read-only. Nullable.
+// SetTasks sets the tasks property value. Read-only. Nullable. Collection of tasks in the plan.
 func (m *PlannerPlan) SetTasks(value []PlannerTask)() {
     if m != nil {
         m.tasks = value

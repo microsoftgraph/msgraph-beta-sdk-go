@@ -7,24 +7,27 @@ import (
 type DiskType int
 
 const (
-    UNKOWN_DISKTYPE DiskType = iota
-    HDD_DISKTYPE
+    HDD_DISKTYPE DiskType = iota
     SSD_DISKTYPE
+    UNKNOWN_DISKTYPE
 )
 
 func (i DiskType) String() string {
-    return []string{"UNKOWN", "HDD", "SSD"}[i]
+    return []string{"HDD", "SSD", "UNKNOWN"}[i]
 }
 func ParseDiskType(v string) (interface{}, error) {
+    result := HDD_DISKTYPE
     switch strings.ToUpper(v) {
-        case "UNKOWN":
-            return UNKOWN_DISKTYPE, nil
         case "HDD":
-            return HDD_DISKTYPE, nil
+            result = HDD_DISKTYPE
         case "SSD":
-            return SSD_DISKTYPE, nil
+            result = SSD_DISKTYPE
+        case "UNKNOWN":
+            result = UNKNOWN_DISKTYPE
+        default:
+            return 0, errors.New("Unknown DiskType value: " + v)
     }
-    return 0, errors.New("Unknown DiskType value: " + v)
+    return &result, nil
 }
 func SerializeDiskType(values []DiskType) []string {
     result := make([]string, len(values))

@@ -20,23 +20,26 @@ func (i TeamworkSoftwareType) String() string {
     return []string{"ADMINAGENT", "OPERATINGSYSTEM", "TEAMSCLIENT", "FIRMWARE", "PARTNERAGENT", "COMPANYPORTAL", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamworkSoftwareType(v string) (interface{}, error) {
+    result := ADMINAGENT_TEAMWORKSOFTWARETYPE
     switch strings.ToUpper(v) {
         case "ADMINAGENT":
-            return ADMINAGENT_TEAMWORKSOFTWARETYPE, nil
+            result = ADMINAGENT_TEAMWORKSOFTWARETYPE
         case "OPERATINGSYSTEM":
-            return OPERATINGSYSTEM_TEAMWORKSOFTWARETYPE, nil
+            result = OPERATINGSYSTEM_TEAMWORKSOFTWARETYPE
         case "TEAMSCLIENT":
-            return TEAMSCLIENT_TEAMWORKSOFTWARETYPE, nil
+            result = TEAMSCLIENT_TEAMWORKSOFTWARETYPE
         case "FIRMWARE":
-            return FIRMWARE_TEAMWORKSOFTWARETYPE, nil
+            result = FIRMWARE_TEAMWORKSOFTWARETYPE
         case "PARTNERAGENT":
-            return PARTNERAGENT_TEAMWORKSOFTWARETYPE, nil
+            result = PARTNERAGENT_TEAMWORKSOFTWARETYPE
         case "COMPANYPORTAL":
-            return COMPANYPORTAL_TEAMWORKSOFTWARETYPE, nil
+            result = COMPANYPORTAL_TEAMWORKSOFTWARETYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMWORKSOFTWARETYPE, nil
+            result = UNKNOWNFUTUREVALUE_TEAMWORKSOFTWARETYPE
+        default:
+            return 0, errors.New("Unknown TeamworkSoftwareType value: " + v)
     }
-    return 0, errors.New("Unknown TeamworkSoftwareType value: " + v)
+    return &result, nil
 }
 func SerializeTeamworkSoftwareType(values []TeamworkSoftwareType) []string {
     result := make([]string, len(values))

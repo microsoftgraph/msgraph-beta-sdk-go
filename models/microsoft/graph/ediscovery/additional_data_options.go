@@ -16,15 +16,18 @@ func (i AdditionalDataOptions) String() string {
     return []string{"ALLVERSIONS", "LINKEDFILES", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAdditionalDataOptions(v string) (interface{}, error) {
+    result := ALLVERSIONS_ADDITIONALDATAOPTIONS
     switch strings.ToUpper(v) {
         case "ALLVERSIONS":
-            return ALLVERSIONS_ADDITIONALDATAOPTIONS, nil
+            result = ALLVERSIONS_ADDITIONALDATAOPTIONS
         case "LINKEDFILES":
-            return LINKEDFILES_ADDITIONALDATAOPTIONS, nil
+            result = LINKEDFILES_ADDITIONALDATAOPTIONS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ADDITIONALDATAOPTIONS, nil
+            result = UNKNOWNFUTUREVALUE_ADDITIONALDATAOPTIONS
+        default:
+            return 0, errors.New("Unknown AdditionalDataOptions value: " + v)
     }
-    return 0, errors.New("Unknown AdditionalDataOptions value: " + v)
+    return &result, nil
 }
 func SerializeAdditionalDataOptions(values []AdditionalDataOptions) []string {
     result := make([]string, len(values))

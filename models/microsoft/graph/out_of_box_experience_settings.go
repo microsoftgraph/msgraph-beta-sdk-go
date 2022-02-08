@@ -93,8 +93,7 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(WindowsDeviceUsageType)
-            m.SetDeviceUsageType(&cast)
+            m.SetDeviceUsageType(val.(*WindowsDeviceUsageType))
         }
         return nil
     }
@@ -144,8 +143,7 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(WindowsUserType)
-            m.SetUserType(&cast)
+            m.SetUserType(val.(*WindowsUserType))
         }
         return nil
     }
@@ -157,7 +155,7 @@ func (m *OutOfBoxExperienceSettings) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *OutOfBoxExperienceSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDeviceUsageType() != nil {
-        cast := m.GetDeviceUsageType().String()
+        cast := (*m.GetDeviceUsageType()).String()
         err := writer.WriteStringValue("deviceUsageType", &cast)
         if err != nil {
             return err
@@ -188,7 +186,7 @@ func (m *OutOfBoxExperienceSettings) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetUserType() != nil {
-        cast := m.GetUserType().String()
+        cast := (*m.GetUserType()).String()
         err := writer.WriteStringValue("userType", &cast)
         if err != nil {
             return err

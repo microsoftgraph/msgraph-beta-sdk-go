@@ -16,15 +16,18 @@ func (i AuthenticationProtocol) String() string {
     return []string{"WSFED", "SAML", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAuthenticationProtocol(v string) (interface{}, error) {
+    result := WSFED_AUTHENTICATIONPROTOCOL
     switch strings.ToUpper(v) {
         case "WSFED":
-            return WSFED_AUTHENTICATIONPROTOCOL, nil
+            result = WSFED_AUTHENTICATIONPROTOCOL
         case "SAML":
-            return SAML_AUTHENTICATIONPROTOCOL, nil
+            result = SAML_AUTHENTICATIONPROTOCOL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_AUTHENTICATIONPROTOCOL, nil
+            result = UNKNOWNFUTUREVALUE_AUTHENTICATIONPROTOCOL
+        default:
+            return 0, errors.New("Unknown AuthenticationProtocol value: " + v)
     }
-    return 0, errors.New("Unknown AuthenticationProtocol value: " + v)
+    return &result, nil
 }
 func SerializeAuthenticationProtocol(values []AuthenticationProtocol) []string {
     result := make([]string, len(values))

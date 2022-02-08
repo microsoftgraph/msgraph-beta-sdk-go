@@ -26,35 +26,38 @@ func (i PrintMediaType) String() string {
     return []string{"STATIONERY", "TRANSPARENCY", "ENVELOPE", "ENVELOPEPLAIN", "CONTINUOUS", "SCREEN", "SCREENPAGED", "CONTINUOUSLONG", "CONTINUOUSSHORT", "ENVELOPEWINDOW", "MULTIPARTFORM", "MULTILAYER", "LABELS"}[i]
 }
 func ParsePrintMediaType(v string) (interface{}, error) {
+    result := STATIONERY_PRINTMEDIATYPE
     switch strings.ToUpper(v) {
         case "STATIONERY":
-            return STATIONERY_PRINTMEDIATYPE, nil
+            result = STATIONERY_PRINTMEDIATYPE
         case "TRANSPARENCY":
-            return TRANSPARENCY_PRINTMEDIATYPE, nil
+            result = TRANSPARENCY_PRINTMEDIATYPE
         case "ENVELOPE":
-            return ENVELOPE_PRINTMEDIATYPE, nil
+            result = ENVELOPE_PRINTMEDIATYPE
         case "ENVELOPEPLAIN":
-            return ENVELOPEPLAIN_PRINTMEDIATYPE, nil
+            result = ENVELOPEPLAIN_PRINTMEDIATYPE
         case "CONTINUOUS":
-            return CONTINUOUS_PRINTMEDIATYPE, nil
+            result = CONTINUOUS_PRINTMEDIATYPE
         case "SCREEN":
-            return SCREEN_PRINTMEDIATYPE, nil
+            result = SCREEN_PRINTMEDIATYPE
         case "SCREENPAGED":
-            return SCREENPAGED_PRINTMEDIATYPE, nil
+            result = SCREENPAGED_PRINTMEDIATYPE
         case "CONTINUOUSLONG":
-            return CONTINUOUSLONG_PRINTMEDIATYPE, nil
+            result = CONTINUOUSLONG_PRINTMEDIATYPE
         case "CONTINUOUSSHORT":
-            return CONTINUOUSSHORT_PRINTMEDIATYPE, nil
+            result = CONTINUOUSSHORT_PRINTMEDIATYPE
         case "ENVELOPEWINDOW":
-            return ENVELOPEWINDOW_PRINTMEDIATYPE, nil
+            result = ENVELOPEWINDOW_PRINTMEDIATYPE
         case "MULTIPARTFORM":
-            return MULTIPARTFORM_PRINTMEDIATYPE, nil
+            result = MULTIPARTFORM_PRINTMEDIATYPE
         case "MULTILAYER":
-            return MULTILAYER_PRINTMEDIATYPE, nil
+            result = MULTILAYER_PRINTMEDIATYPE
         case "LABELS":
-            return LABELS_PRINTMEDIATYPE, nil
+            result = LABELS_PRINTMEDIATYPE
+        default:
+            return 0, errors.New("Unknown PrintMediaType value: " + v)
     }
-    return 0, errors.New("Unknown PrintMediaType value: " + v)
+    return &result, nil
 }
 func SerializePrintMediaType(values []PrintMediaType) []string {
     result := make([]string, len(values))

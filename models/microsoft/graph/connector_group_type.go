@@ -14,11 +14,14 @@ func (i ConnectorGroupType) String() string {
     return []string{"APPLICATIONPROXY"}[i]
 }
 func ParseConnectorGroupType(v string) (interface{}, error) {
+    result := APPLICATIONPROXY_CONNECTORGROUPTYPE
     switch strings.ToUpper(v) {
         case "APPLICATIONPROXY":
-            return APPLICATIONPROXY_CONNECTORGROUPTYPE, nil
+            result = APPLICATIONPROXY_CONNECTORGROUPTYPE
+        default:
+            return 0, errors.New("Unknown ConnectorGroupType value: " + v)
     }
-    return 0, errors.New("Unknown ConnectorGroupType value: " + v)
+    return &result, nil
 }
 func SerializeConnectorGroupType(values []ConnectorGroupType) []string {
     result := make([]string, len(values))

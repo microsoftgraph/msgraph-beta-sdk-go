@@ -17,17 +17,20 @@ func (i DeviceManagementAutopilotPolicyType) String() string {
     return []string{"UNKNOWN", "APPLICATION", "APPMODEL", "CONFIGURATIONPOLICY"}[i]
 }
 func ParseDeviceManagementAutopilotPolicyType(v string) (interface{}, error) {
+    result := UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE, nil
+            result = UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
         case "APPLICATION":
-            return APPLICATION_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE, nil
+            result = APPLICATION_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
         case "APPMODEL":
-            return APPMODEL_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE, nil
+            result = APPMODEL_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
         case "CONFIGURATIONPOLICY":
-            return CONFIGURATIONPOLICY_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE, nil
+            result = CONFIGURATIONPOLICY_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
+        default:
+            return 0, errors.New("Unknown DeviceManagementAutopilotPolicyType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementAutopilotPolicyType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementAutopilotPolicyType(values []DeviceManagementAutopilotPolicyType) []string {
     result := make([]string, len(values))

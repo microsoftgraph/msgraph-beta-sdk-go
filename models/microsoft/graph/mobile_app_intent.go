@@ -20,23 +20,26 @@ func (i MobileAppIntent) String() string {
     return []string{"AVAILABLE", "NOTAVAILABLE", "REQUIREDINSTALL", "REQUIREDUNINSTALL", "REQUIREDANDAVAILABLEINSTALL", "AVAILABLEINSTALLWITHOUTENROLLMENT", "EXCLUDE"}[i]
 }
 func ParseMobileAppIntent(v string) (interface{}, error) {
+    result := AVAILABLE_MOBILEAPPINTENT
     switch strings.ToUpper(v) {
         case "AVAILABLE":
-            return AVAILABLE_MOBILEAPPINTENT, nil
+            result = AVAILABLE_MOBILEAPPINTENT
         case "NOTAVAILABLE":
-            return NOTAVAILABLE_MOBILEAPPINTENT, nil
+            result = NOTAVAILABLE_MOBILEAPPINTENT
         case "REQUIREDINSTALL":
-            return REQUIREDINSTALL_MOBILEAPPINTENT, nil
+            result = REQUIREDINSTALL_MOBILEAPPINTENT
         case "REQUIREDUNINSTALL":
-            return REQUIREDUNINSTALL_MOBILEAPPINTENT, nil
+            result = REQUIREDUNINSTALL_MOBILEAPPINTENT
         case "REQUIREDANDAVAILABLEINSTALL":
-            return REQUIREDANDAVAILABLEINSTALL_MOBILEAPPINTENT, nil
+            result = REQUIREDANDAVAILABLEINSTALL_MOBILEAPPINTENT
         case "AVAILABLEINSTALLWITHOUTENROLLMENT":
-            return AVAILABLEINSTALLWITHOUTENROLLMENT_MOBILEAPPINTENT, nil
+            result = AVAILABLEINSTALLWITHOUTENROLLMENT_MOBILEAPPINTENT
         case "EXCLUDE":
-            return EXCLUDE_MOBILEAPPINTENT, nil
+            result = EXCLUDE_MOBILEAPPINTENT
+        default:
+            return 0, errors.New("Unknown MobileAppIntent value: " + v)
     }
-    return 0, errors.New("Unknown MobileAppIntent value: " + v)
+    return &result, nil
 }
 func SerializeMobileAppIntent(values []MobileAppIntent) []string {
     result := make([]string, len(values))

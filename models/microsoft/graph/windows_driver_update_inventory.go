@@ -125,8 +125,7 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(DriverApprovalStatus)
-            m.SetApprovalStatus(&cast)
+            m.SetApprovalStatus(val.(*DriverApprovalStatus))
         }
         return nil
     }
@@ -136,8 +135,7 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(DriverCategory)
-            m.SetCategory(&cast)
+            m.SetCategory(val.(*DriverCategory))
         }
         return nil
     }
@@ -219,14 +217,14 @@ func (m *WindowsDriverUpdateInventory) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     if m.GetApprovalStatus() != nil {
-        cast := m.GetApprovalStatus().String()
+        cast := (*m.GetApprovalStatus()).String()
         err = writer.WriteStringValue("approvalStatus", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetCategory() != nil {
-        cast := m.GetCategory().String()
+        cast := (*m.GetCategory()).String()
         err = writer.WriteStringValue("category", &cast)
         if err != nil {
             return err

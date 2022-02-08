@@ -15,13 +15,16 @@ func (i ExternalAuthenticationType) String() string {
     return []string{"PASSTHRU", "AADPREAUTHENTICATION"}[i]
 }
 func ParseExternalAuthenticationType(v string) (interface{}, error) {
+    result := PASSTHRU_EXTERNALAUTHENTICATIONTYPE
     switch strings.ToUpper(v) {
         case "PASSTHRU":
-            return PASSTHRU_EXTERNALAUTHENTICATIONTYPE, nil
+            result = PASSTHRU_EXTERNALAUTHENTICATIONTYPE
         case "AADPREAUTHENTICATION":
-            return AADPREAUTHENTICATION_EXTERNALAUTHENTICATIONTYPE, nil
+            result = AADPREAUTHENTICATION_EXTERNALAUTHENTICATIONTYPE
+        default:
+            return 0, errors.New("Unknown ExternalAuthenticationType value: " + v)
     }
-    return 0, errors.New("Unknown ExternalAuthenticationType value: " + v)
+    return &result, nil
 }
 func SerializeExternalAuthenticationType(values []ExternalAuthenticationType) []string {
     result := make([]string, len(values))

@@ -17,17 +17,20 @@ func (i UserExperienceAnalyticsHealthState) String() string {
     return []string{"UNKNOWN", "INSUFFICIENTDATA", "NEEDSATTENTION", "MEETINGGOALS"}[i]
 }
 func ParseUserExperienceAnalyticsHealthState(v string) (interface{}, error) {
+    result := UNKNOWN_USEREXPERIENCEANALYTICSHEALTHSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_USEREXPERIENCEANALYTICSHEALTHSTATE, nil
+            result = UNKNOWN_USEREXPERIENCEANALYTICSHEALTHSTATE
         case "INSUFFICIENTDATA":
-            return INSUFFICIENTDATA_USEREXPERIENCEANALYTICSHEALTHSTATE, nil
+            result = INSUFFICIENTDATA_USEREXPERIENCEANALYTICSHEALTHSTATE
         case "NEEDSATTENTION":
-            return NEEDSATTENTION_USEREXPERIENCEANALYTICSHEALTHSTATE, nil
+            result = NEEDSATTENTION_USEREXPERIENCEANALYTICSHEALTHSTATE
         case "MEETINGGOALS":
-            return MEETINGGOALS_USEREXPERIENCEANALYTICSHEALTHSTATE, nil
+            result = MEETINGGOALS_USEREXPERIENCEANALYTICSHEALTHSTATE
+        default:
+            return 0, errors.New("Unknown UserExperienceAnalyticsHealthState value: " + v)
     }
-    return 0, errors.New("Unknown UserExperienceAnalyticsHealthState value: " + v)
+    return &result, nil
 }
 func SerializeUserExperienceAnalyticsHealthState(values []UserExperienceAnalyticsHealthState) []string {
     result := make([]string, len(values))

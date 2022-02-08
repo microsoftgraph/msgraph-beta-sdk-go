@@ -105,8 +105,7 @@ func (m *WorkloadStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadOnboardingStatus)
-            m.SetOnboardingStatus(&cast)
+            m.SetOnboardingStatus(val.(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadOnboardingStatus))
         }
         return nil
     }
@@ -136,7 +135,7 @@ func (m *WorkloadStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetOnboardingStatus() != nil {
-        cast := m.GetOnboardingStatus().String()
+        cast := (*m.GetOnboardingStatus()).String()
         err := writer.WriteStringValue("onboardingStatus", &cast)
         if err != nil {
             return err

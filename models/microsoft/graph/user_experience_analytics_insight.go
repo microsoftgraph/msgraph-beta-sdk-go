@@ -83,8 +83,7 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(UserExperienceAnalyticsInsightSeverity)
-            m.SetSeverity(&cast)
+            m.SetSeverity(val.(*UserExperienceAnalyticsInsightSeverity))
         }
         return nil
     }
@@ -126,7 +125,7 @@ func (m *UserExperienceAnalyticsInsight) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     if m.GetSeverity() != nil {
-        cast := m.GetSeverity().String()
+        cast := (*m.GetSeverity()).String()
         err := writer.WriteStringValue("severity", &cast)
         if err != nil {
             return err

@@ -213,8 +213,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
             return err
         }
         if val != nil {
-            cast := val.(PolicyPlatformType)
-            m.SetPlatformType(&cast)
+            m.SetPlatformType(val.(*PolicyPlatformType))
         }
         return nil
     }
@@ -248,8 +247,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementTemplateSubtype)
-            m.SetTemplateSubtype(&cast)
+            m.SetTemplateSubtype(val.(*DeviceManagementTemplateSubtype))
         }
         return nil
     }
@@ -259,8 +257,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(inter
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementTemplateType)
-            m.SetTemplateType(&cast)
+            m.SetTemplateType(val.(*DeviceManagementTemplateType))
         }
         return nil
     }
@@ -332,7 +329,7 @@ func (m *DeviceManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c84
         }
     }
     if m.GetPlatformType() != nil {
-        cast := m.GetPlatformType().String()
+        cast := (*m.GetPlatformType()).String()
         err = writer.WriteStringValue("platformType", &cast)
         if err != nil {
             return err
@@ -356,14 +353,14 @@ func (m *DeviceManagementTemplate) Serialize(writer i04eb5309aeaafadd28374d79c84
         }
     }
     if m.GetTemplateSubtype() != nil {
-        cast := m.GetTemplateSubtype().String()
+        cast := (*m.GetTemplateSubtype()).String()
         err = writer.WriteStringValue("templateSubtype", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetTemplateType() != nil {
-        cast := m.GetTemplateType().String()
+        cast := (*m.GetTemplateType()).String()
         err = writer.WriteStringValue("templateType", &cast)
         if err != nil {
             return err

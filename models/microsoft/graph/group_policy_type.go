@@ -15,13 +15,16 @@ func (i GroupPolicyType) String() string {
     return []string{"ADMXBACKED", "ADMXINGESTED"}[i]
 }
 func ParseGroupPolicyType(v string) (interface{}, error) {
+    result := ADMXBACKED_GROUPPOLICYTYPE
     switch strings.ToUpper(v) {
         case "ADMXBACKED":
-            return ADMXBACKED_GROUPPOLICYTYPE, nil
+            result = ADMXBACKED_GROUPPOLICYTYPE
         case "ADMXINGESTED":
-            return ADMXINGESTED_GROUPPOLICYTYPE, nil
+            result = ADMXINGESTED_GROUPPOLICYTYPE
+        default:
+            return 0, errors.New("Unknown GroupPolicyType value: " + v)
     }
-    return 0, errors.New("Unknown GroupPolicyType value: " + v)
+    return &result, nil
 }
 func SerializeGroupPolicyType(values []GroupPolicyType) []string {
     result := make([]string, len(values))

@@ -53,8 +53,7 @@ func (m *UserRegistrationFeatureCount) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(AuthenticationMethodFeature)
-            m.SetFeature(&cast)
+            m.SetFeature(val.(*AuthenticationMethodFeature))
         }
         return nil
     }
@@ -76,7 +75,7 @@ func (m *UserRegistrationFeatureCount) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *UserRegistrationFeatureCount) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetFeature() != nil {
-        cast := m.GetFeature().String()
+        cast := (*m.GetFeature()).String()
         err := writer.WriteStringValue("feature", &cast)
         if err != nil {
             return err

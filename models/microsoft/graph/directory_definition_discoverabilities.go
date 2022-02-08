@@ -19,21 +19,24 @@ func (i DirectoryDefinitionDiscoverabilities) String() string {
     return []string{"NONE", "ATTRIBUTENAMES", "ATTRIBUTEDATATYPES", "ATTRIBUTEREADONLY", "REFERENCEATTRIBUTES", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDirectoryDefinitionDiscoverabilities(v string) (interface{}, error) {
+    result := NONE_DIRECTORYDEFINITIONDISCOVERABILITIES
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DIRECTORYDEFINITIONDISCOVERABILITIES, nil
+            result = NONE_DIRECTORYDEFINITIONDISCOVERABILITIES
         case "ATTRIBUTENAMES":
-            return ATTRIBUTENAMES_DIRECTORYDEFINITIONDISCOVERABILITIES, nil
+            result = ATTRIBUTENAMES_DIRECTORYDEFINITIONDISCOVERABILITIES
         case "ATTRIBUTEDATATYPES":
-            return ATTRIBUTEDATATYPES_DIRECTORYDEFINITIONDISCOVERABILITIES, nil
+            result = ATTRIBUTEDATATYPES_DIRECTORYDEFINITIONDISCOVERABILITIES
         case "ATTRIBUTEREADONLY":
-            return ATTRIBUTEREADONLY_DIRECTORYDEFINITIONDISCOVERABILITIES, nil
+            result = ATTRIBUTEREADONLY_DIRECTORYDEFINITIONDISCOVERABILITIES
         case "REFERENCEATTRIBUTES":
-            return REFERENCEATTRIBUTES_DIRECTORYDEFINITIONDISCOVERABILITIES, nil
+            result = REFERENCEATTRIBUTES_DIRECTORYDEFINITIONDISCOVERABILITIES
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DIRECTORYDEFINITIONDISCOVERABILITIES, nil
+            result = UNKNOWNFUTUREVALUE_DIRECTORYDEFINITIONDISCOVERABILITIES
+        default:
+            return 0, errors.New("Unknown DirectoryDefinitionDiscoverabilities value: " + v)
     }
-    return 0, errors.New("Unknown DirectoryDefinitionDiscoverabilities value: " + v)
+    return &result, nil
 }
 func SerializeDirectoryDefinitionDiscoverabilities(values []DirectoryDefinitionDiscoverabilities) []string {
     result := make([]string, len(values))

@@ -143,8 +143,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetFieldDeserializers()(
             return err
         }
         if val != nil {
-            cast := val.(AndroidManagedStoreAppConfigurationSchemaItemDataType)
-            m.SetDataType(&cast)
+            m.SetDataType(val.(*AndroidManagedStoreAppConfigurationSchemaItemDataType))
         }
         return nil
     }
@@ -264,7 +263,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDataType() != nil {
-        cast := m.GetDataType().String()
+        cast := (*m.GetDataType()).String()
         err := writer.WriteStringValue("dataType", &cast)
         if err != nil {
             return err

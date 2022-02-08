@@ -15,13 +15,16 @@ func (i LostModeState) String() string {
     return []string{"DISABLED", "ENABLED"}[i]
 }
 func ParseLostModeState(v string) (interface{}, error) {
+    result := DISABLED_LOSTMODESTATE
     switch strings.ToUpper(v) {
         case "DISABLED":
-            return DISABLED_LOSTMODESTATE, nil
+            result = DISABLED_LOSTMODESTATE
         case "ENABLED":
-            return ENABLED_LOSTMODESTATE, nil
+            result = ENABLED_LOSTMODESTATE
+        default:
+            return 0, errors.New("Unknown LostModeState value: " + v)
     }
-    return 0, errors.New("Unknown LostModeState value: " + v)
+    return &result, nil
 }
 func SerializeLostModeState(values []LostModeState) []string {
     result := make([]string, len(values))

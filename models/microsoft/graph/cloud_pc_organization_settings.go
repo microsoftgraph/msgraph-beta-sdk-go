@@ -44,8 +44,7 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(CloudPcOperatingSystem)
-            m.SetOsVersion(&cast)
+            m.SetOsVersion(val.(*CloudPcOperatingSystem))
         }
         return nil
     }
@@ -55,8 +54,7 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(CloudPcUserAccountType)
-            m.SetUserAccountType(&cast)
+            m.SetUserAccountType(val.(*CloudPcUserAccountType))
         }
         return nil
     }
@@ -72,14 +70,14 @@ func (m *CloudPcOrganizationSettings) Serialize(writer i04eb5309aeaafadd28374d79
         return err
     }
     if m.GetOsVersion() != nil {
-        cast := m.GetOsVersion().String()
+        cast := (*m.GetOsVersion()).String()
         err = writer.WriteStringValue("osVersion", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetUserAccountType() != nil {
-        cast := m.GetUserAccountType().String()
+        cast := (*m.GetUserAccountType()).String()
         err = writer.WriteStringValue("userAccountType", &cast)
         if err != nil {
             return err

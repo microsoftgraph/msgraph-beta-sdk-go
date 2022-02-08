@@ -16,15 +16,18 @@ func (i AospWifiSecurityType) String() string {
     return []string{"NONE", "WPA", "WEP"}[i]
 }
 func ParseAospWifiSecurityType(v string) (interface{}, error) {
+    result := NONE_AOSPWIFISECURITYTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_AOSPWIFISECURITYTYPE, nil
+            result = NONE_AOSPWIFISECURITYTYPE
         case "WPA":
-            return WPA_AOSPWIFISECURITYTYPE, nil
+            result = WPA_AOSPWIFISECURITYTYPE
         case "WEP":
-            return WEP_AOSPWIFISECURITYTYPE, nil
+            result = WEP_AOSPWIFISECURITYTYPE
+        default:
+            return 0, errors.New("Unknown AospWifiSecurityType value: " + v)
     }
-    return 0, errors.New("Unknown AospWifiSecurityType value: " + v)
+    return &result, nil
 }
 func SerializeAospWifiSecurityType(values []AospWifiSecurityType) []string {
     result := make([]string, len(values))

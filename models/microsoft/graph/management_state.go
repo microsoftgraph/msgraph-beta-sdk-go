@@ -25,33 +25,36 @@ func (i ManagementState) String() string {
     return []string{"MANAGED", "RETIREPENDING", "RETIREFAILED", "WIPEPENDING", "WIPEFAILED", "UNHEALTHY", "DELETEPENDING", "RETIREISSUED", "WIPEISSUED", "WIPECANCELED", "RETIRECANCELED", "DISCOVERED"}[i]
 }
 func ParseManagementState(v string) (interface{}, error) {
+    result := MANAGED_MANAGEMENTSTATE
     switch strings.ToUpper(v) {
         case "MANAGED":
-            return MANAGED_MANAGEMENTSTATE, nil
+            result = MANAGED_MANAGEMENTSTATE
         case "RETIREPENDING":
-            return RETIREPENDING_MANAGEMENTSTATE, nil
+            result = RETIREPENDING_MANAGEMENTSTATE
         case "RETIREFAILED":
-            return RETIREFAILED_MANAGEMENTSTATE, nil
+            result = RETIREFAILED_MANAGEMENTSTATE
         case "WIPEPENDING":
-            return WIPEPENDING_MANAGEMENTSTATE, nil
+            result = WIPEPENDING_MANAGEMENTSTATE
         case "WIPEFAILED":
-            return WIPEFAILED_MANAGEMENTSTATE, nil
+            result = WIPEFAILED_MANAGEMENTSTATE
         case "UNHEALTHY":
-            return UNHEALTHY_MANAGEMENTSTATE, nil
+            result = UNHEALTHY_MANAGEMENTSTATE
         case "DELETEPENDING":
-            return DELETEPENDING_MANAGEMENTSTATE, nil
+            result = DELETEPENDING_MANAGEMENTSTATE
         case "RETIREISSUED":
-            return RETIREISSUED_MANAGEMENTSTATE, nil
+            result = RETIREISSUED_MANAGEMENTSTATE
         case "WIPEISSUED":
-            return WIPEISSUED_MANAGEMENTSTATE, nil
+            result = WIPEISSUED_MANAGEMENTSTATE
         case "WIPECANCELED":
-            return WIPECANCELED_MANAGEMENTSTATE, nil
+            result = WIPECANCELED_MANAGEMENTSTATE
         case "RETIRECANCELED":
-            return RETIRECANCELED_MANAGEMENTSTATE, nil
+            result = RETIRECANCELED_MANAGEMENTSTATE
         case "DISCOVERED":
-            return DISCOVERED_MANAGEMENTSTATE, nil
+            result = DISCOVERED_MANAGEMENTSTATE
+        default:
+            return 0, errors.New("Unknown ManagementState value: " + v)
     }
-    return 0, errors.New("Unknown ManagementState value: " + v)
+    return &result, nil
 }
 func SerializeManagementState(values []ManagementState) []string {
     result := make([]string, len(values))

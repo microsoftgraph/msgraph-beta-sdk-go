@@ -95,8 +95,7 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
             return err
         }
         if val != nil {
-            cast := val.(ActionState)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*ActionState))
         }
         return nil
     }
@@ -158,7 +157,7 @@ func (m *WindowsInformationProtectionWipeAction) Serialize(writer i04eb5309aeaaf
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

@@ -128,8 +128,7 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(TeamworkTagType)
-            m.SetTagType(&cast)
+            m.SetTagType(val.(*TeamworkTagType))
         }
         return nil
     }
@@ -184,7 +183,7 @@ func (m *TeamworkTag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetTagType() != nil {
-        cast := m.GetTagType().String()
+        cast := (*m.GetTagType()).String()
         err = writer.WriteStringValue("tagType", &cast)
         if err != nil {
             return err

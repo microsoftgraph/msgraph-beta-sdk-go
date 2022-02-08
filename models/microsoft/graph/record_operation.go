@@ -54,8 +54,7 @@ func (m *RecordOperation) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(RecordCompletionReason)
-            m.SetCompletionReason(&cast)
+            m.SetCompletionReason(val.(*RecordCompletionReason))
         }
         return nil
     }
@@ -91,7 +90,7 @@ func (m *RecordOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         return err
     }
     if m.GetCompletionReason() != nil {
-        cast := m.GetCompletionReason().String()
+        cast := (*m.GetCompletionReason()).String()
         err = writer.WriteStringValue("completionReason", &cast)
         if err != nil {
             return err

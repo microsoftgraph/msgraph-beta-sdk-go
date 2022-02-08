@@ -227,8 +227,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementPartnerTenantState)
-            m.SetPartnerState(&cast)
+            m.SetPartnerState(val.(*DeviceManagementPartnerTenantState))
         }
         return nil
     }
@@ -331,7 +330,7 @@ func (m *ComplianceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     if m.GetPartnerState() != nil {
-        cast := m.GetPartnerState().String()
+        cast := (*m.GetPartnerState()).String()
         err = writer.WriteStringValue("partnerState", &cast)
         if err != nil {
             return err

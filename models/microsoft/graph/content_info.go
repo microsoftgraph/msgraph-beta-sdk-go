@@ -73,8 +73,7 @@ func (m *ContentInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(ContentFormat)
-            m.SetFormat(&cast)
+            m.SetFormat(val.(*ContentFormat))
         }
         return nil
     }
@@ -108,8 +107,7 @@ func (m *ContentInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(ContentState)
-            m.SetState(&cast)
+            m.SetState(val.(*ContentState))
         }
         return nil
     }
@@ -121,7 +119,7 @@ func (m *ContentInfo) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ContentInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetFormat() != nil {
-        cast := m.GetFormat().String()
+        cast := (*m.GetFormat()).String()
         err := writer.WriteStringValue("format", &cast)
         if err != nil {
             return err
@@ -145,7 +143,7 @@ func (m *ContentInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err := writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

@@ -17,17 +17,20 @@ func (i MacOSSoftwareUpdateCategory) String() string {
     return []string{"CRITICAL", "CONFIGURATIONDATAFILE", "FIRMWARE", "OTHER"}[i]
 }
 func ParseMacOSSoftwareUpdateCategory(v string) (interface{}, error) {
+    result := CRITICAL_MACOSSOFTWAREUPDATECATEGORY
     switch strings.ToUpper(v) {
         case "CRITICAL":
-            return CRITICAL_MACOSSOFTWAREUPDATECATEGORY, nil
+            result = CRITICAL_MACOSSOFTWAREUPDATECATEGORY
         case "CONFIGURATIONDATAFILE":
-            return CONFIGURATIONDATAFILE_MACOSSOFTWAREUPDATECATEGORY, nil
+            result = CONFIGURATIONDATAFILE_MACOSSOFTWAREUPDATECATEGORY
         case "FIRMWARE":
-            return FIRMWARE_MACOSSOFTWAREUPDATECATEGORY, nil
+            result = FIRMWARE_MACOSSOFTWAREUPDATECATEGORY
         case "OTHER":
-            return OTHER_MACOSSOFTWAREUPDATECATEGORY, nil
+            result = OTHER_MACOSSOFTWAREUPDATECATEGORY
+        default:
+            return 0, errors.New("Unknown MacOSSoftwareUpdateCategory value: " + v)
     }
-    return 0, errors.New("Unknown MacOSSoftwareUpdateCategory value: " + v)
+    return &result, nil
 }
 func SerializeMacOSSoftwareUpdateCategory(values []MacOSSoftwareUpdateCategory) []string {
     result := make([]string, len(values))

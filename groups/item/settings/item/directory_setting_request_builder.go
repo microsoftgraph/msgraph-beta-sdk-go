@@ -35,7 +35,7 @@ type DirectorySettingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// DirectorySettingRequestBuilderGetQueryParameters settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// DirectorySettingRequestBuilderGetQueryParameters read-only. Nullable.
 type DirectorySettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewDirectorySettingRequestBuilder(rawUrl string, requestAdapter ida96af0f17
     urlParams["request-raw-url"] = rawUrl
     return NewDirectorySettingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// CreateDeleteRequestInformation read-only. Nullable.
 func (m *DirectorySettingRequestBuilder) CreateDeleteRequestInformation(options *DirectorySettingRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *DirectorySettingRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// CreateGetRequestInformation read-only. Nullable.
 func (m *DirectorySettingRequestBuilder) CreateGetRequestInformation(options *DirectorySettingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *DirectorySettingRequestBuilder) CreateGetRequestInformation(options *Di
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// CreatePatchRequestInformation read-only. Nullable.
 func (m *DirectorySettingRequestBuilder) CreatePatchRequestInformation(options *DirectorySettingRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *DirectorySettingRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// Delete read-only. Nullable.
 func (m *DirectorySettingRequestBuilder) Delete(options *DirectorySettingRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *DirectorySettingRequestBuilder) Delete(options *DirectorySettingRequest
     }
     return nil
 }
-// Get settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// Get read-only. Nullable.
 func (m *DirectorySettingRequestBuilder) Get(options *DirectorySettingRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectorySetting, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *DirectorySettingRequestBuilder) Get(options *DirectorySettingRequestBui
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DirectorySetting), nil
 }
-// Patch settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// Patch read-only. Nullable.
 func (m *DirectorySettingRequestBuilder) Patch(options *DirectorySettingRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

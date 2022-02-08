@@ -15,13 +15,16 @@ func (i CloudPcAuditCategory) String() string {
     return []string{"CLOUDPC", "OTHER"}[i]
 }
 func ParseCloudPcAuditCategory(v string) (interface{}, error) {
+    result := CLOUDPC_CLOUDPCAUDITCATEGORY
     switch strings.ToUpper(v) {
         case "CLOUDPC":
-            return CLOUDPC_CLOUDPCAUDITCATEGORY, nil
+            result = CLOUDPC_CLOUDPCAUDITCATEGORY
         case "OTHER":
-            return OTHER_CLOUDPCAUDITCATEGORY, nil
+            result = OTHER_CLOUDPCAUDITCATEGORY
+        default:
+            return 0, errors.New("Unknown CloudPcAuditCategory value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcAuditCategory value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcAuditCategory(values []CloudPcAuditCategory) []string {
     result := make([]string, len(values))

@@ -19,21 +19,24 @@ func (i DataSourceHoldStatus) String() string {
     return []string{"NOTAPPLIED", "APPLIED", "APPLYING", "REMOVING", "PARTIAL", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDataSourceHoldStatus(v string) (interface{}, error) {
+    result := NOTAPPLIED_DATASOURCEHOLDSTATUS
     switch strings.ToUpper(v) {
         case "NOTAPPLIED":
-            return NOTAPPLIED_DATASOURCEHOLDSTATUS, nil
+            result = NOTAPPLIED_DATASOURCEHOLDSTATUS
         case "APPLIED":
-            return APPLIED_DATASOURCEHOLDSTATUS, nil
+            result = APPLIED_DATASOURCEHOLDSTATUS
         case "APPLYING":
-            return APPLYING_DATASOURCEHOLDSTATUS, nil
+            result = APPLYING_DATASOURCEHOLDSTATUS
         case "REMOVING":
-            return REMOVING_DATASOURCEHOLDSTATUS, nil
+            result = REMOVING_DATASOURCEHOLDSTATUS
         case "PARTIAL":
-            return PARTIAL_DATASOURCEHOLDSTATUS, nil
+            result = PARTIAL_DATASOURCEHOLDSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DATASOURCEHOLDSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_DATASOURCEHOLDSTATUS
+        default:
+            return 0, errors.New("Unknown DataSourceHoldStatus value: " + v)
     }
-    return 0, errors.New("Unknown DataSourceHoldStatus value: " + v)
+    return &result, nil
 }
 func SerializeDataSourceHoldStatus(values []DataSourceHoldStatus) []string {
     result := make([]string, len(values))

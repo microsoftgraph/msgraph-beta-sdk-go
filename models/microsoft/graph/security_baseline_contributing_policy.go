@@ -83,8 +83,7 @@ func (m *SecurityBaselineContributingPolicy) GetFieldDeserializers()(map[string]
             return err
         }
         if val != nil {
-            cast := val.(SecurityBaselinePolicySourceType)
-            m.SetSourceType(&cast)
+            m.SetSourceType(val.(*SecurityBaselinePolicySourceType))
         }
         return nil
     }
@@ -108,7 +107,7 @@ func (m *SecurityBaselineContributingPolicy) Serialize(writer i04eb5309aeaafadd2
         }
     }
     if m.GetSourceType() != nil {
-        cast := m.GetSourceType().String()
+        cast := (*m.GetSourceType()).String()
         err := writer.WriteStringValue("sourceType", &cast)
         if err != nil {
             return err

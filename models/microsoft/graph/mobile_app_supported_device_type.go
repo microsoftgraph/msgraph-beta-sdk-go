@@ -83,8 +83,7 @@ func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(DeviceType)
-            m.SetType(&cast)
+            m.SetType(val.(*DeviceType))
         }
         return nil
     }
@@ -108,7 +107,7 @@ func (m *MobileAppSupportedDeviceType) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

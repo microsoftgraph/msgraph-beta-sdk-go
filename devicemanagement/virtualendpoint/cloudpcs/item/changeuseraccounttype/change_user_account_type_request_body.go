@@ -44,8 +44,7 @@ func (m *ChangeUserAccountTypeRequestBody) GetFieldDeserializers()(map[string]fu
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcUserAccountType)
-            m.SetUserAccountType(&cast)
+            m.SetUserAccountType(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcUserAccountType))
         }
         return nil
     }
@@ -57,7 +56,7 @@ func (m *ChangeUserAccountTypeRequestBody) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ChangeUserAccountTypeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetUserAccountType() != nil {
-        cast := m.GetUserAccountType().String()
+        cast := (*m.GetUserAccountType()).String()
         err := writer.WriteStringValue("userAccountType", &cast)
         if err != nil {
             return err

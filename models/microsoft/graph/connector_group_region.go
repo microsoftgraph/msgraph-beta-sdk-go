@@ -19,21 +19,24 @@ func (i ConnectorGroupRegion) String() string {
     return []string{"NAM", "EUR", "AUS", "ASIA", "IND", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseConnectorGroupRegion(v string) (interface{}, error) {
+    result := NAM_CONNECTORGROUPREGION
     switch strings.ToUpper(v) {
         case "NAM":
-            return NAM_CONNECTORGROUPREGION, nil
+            result = NAM_CONNECTORGROUPREGION
         case "EUR":
-            return EUR_CONNECTORGROUPREGION, nil
+            result = EUR_CONNECTORGROUPREGION
         case "AUS":
-            return AUS_CONNECTORGROUPREGION, nil
+            result = AUS_CONNECTORGROUPREGION
         case "ASIA":
-            return ASIA_CONNECTORGROUPREGION, nil
+            result = ASIA_CONNECTORGROUPREGION
         case "IND":
-            return IND_CONNECTORGROUPREGION, nil
+            result = IND_CONNECTORGROUPREGION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONNECTORGROUPREGION, nil
+            result = UNKNOWNFUTUREVALUE_CONNECTORGROUPREGION
+        default:
+            return 0, errors.New("Unknown ConnectorGroupRegion value: " + v)
     }
-    return 0, errors.New("Unknown ConnectorGroupRegion value: " + v)
+    return &result, nil
 }
 func SerializeConnectorGroupRegion(values []ConnectorGroupRegion) []string {
     result := make([]string, len(values))

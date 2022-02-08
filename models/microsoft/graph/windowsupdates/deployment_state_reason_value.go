@@ -19,21 +19,24 @@ func (i DeploymentStateReasonValue) String() string {
     return []string{"SCHEDULEDBYOFFERWINDOW", "OFFERINGBYREQUEST", "PAUSEDBYREQUEST", "PAUSEDBYMONITORING", "UNKNOWNFUTUREVALUE", "FAULTEDBYCONTENTOUTDATED"}[i]
 }
 func ParseDeploymentStateReasonValue(v string) (interface{}, error) {
+    result := SCHEDULEDBYOFFERWINDOW_DEPLOYMENTSTATEREASONVALUE
     switch strings.ToUpper(v) {
         case "SCHEDULEDBYOFFERWINDOW":
-            return SCHEDULEDBYOFFERWINDOW_DEPLOYMENTSTATEREASONVALUE, nil
+            result = SCHEDULEDBYOFFERWINDOW_DEPLOYMENTSTATEREASONVALUE
         case "OFFERINGBYREQUEST":
-            return OFFERINGBYREQUEST_DEPLOYMENTSTATEREASONVALUE, nil
+            result = OFFERINGBYREQUEST_DEPLOYMENTSTATEREASONVALUE
         case "PAUSEDBYREQUEST":
-            return PAUSEDBYREQUEST_DEPLOYMENTSTATEREASONVALUE, nil
+            result = PAUSEDBYREQUEST_DEPLOYMENTSTATEREASONVALUE
         case "PAUSEDBYMONITORING":
-            return PAUSEDBYMONITORING_DEPLOYMENTSTATEREASONVALUE, nil
+            result = PAUSEDBYMONITORING_DEPLOYMENTSTATEREASONVALUE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DEPLOYMENTSTATEREASONVALUE, nil
+            result = UNKNOWNFUTUREVALUE_DEPLOYMENTSTATEREASONVALUE
         case "FAULTEDBYCONTENTOUTDATED":
-            return FAULTEDBYCONTENTOUTDATED_DEPLOYMENTSTATEREASONVALUE, nil
+            result = FAULTEDBYCONTENTOUTDATED_DEPLOYMENTSTATEREASONVALUE
+        default:
+            return 0, errors.New("Unknown DeploymentStateReasonValue value: " + v)
     }
-    return 0, errors.New("Unknown DeploymentStateReasonValue value: " + v)
+    return &result, nil
 }
 func SerializeDeploymentStateReasonValue(values []DeploymentStateReasonValue) []string {
     result := make([]string, len(values))

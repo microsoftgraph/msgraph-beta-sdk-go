@@ -15,13 +15,16 @@ func (i EncryptionReadinessState) String() string {
     return []string{"NOTREADY", "READY"}[i]
 }
 func ParseEncryptionReadinessState(v string) (interface{}, error) {
+    result := NOTREADY_ENCRYPTIONREADINESSSTATE
     switch strings.ToUpper(v) {
         case "NOTREADY":
-            return NOTREADY_ENCRYPTIONREADINESSSTATE, nil
+            result = NOTREADY_ENCRYPTIONREADINESSSTATE
         case "READY":
-            return READY_ENCRYPTIONREADINESSSTATE, nil
+            result = READY_ENCRYPTIONREADINESSSTATE
+        default:
+            return 0, errors.New("Unknown EncryptionReadinessState value: " + v)
     }
-    return 0, errors.New("Unknown EncryptionReadinessState value: " + v)
+    return &result, nil
 }
 func SerializeEncryptionReadinessState(values []EncryptionReadinessState) []string {
     result := make([]string, len(values))

@@ -20,23 +20,26 @@ func (i WindowsAutopilotProfileAssignmentStatus) String() string {
     return []string{"UNKNOWN", "ASSIGNEDINSYNC", "ASSIGNEDOUTOFSYNC", "ASSIGNEDUNKOWNSYNCSTATE", "NOTASSIGNED", "PENDING", "FAILED"}[i]
 }
 func ParseWindowsAutopilotProfileAssignmentStatus(v string) (interface{}, error) {
+    result := UNKNOWN_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS, nil
+            result = UNKNOWN_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
         case "ASSIGNEDINSYNC":
-            return ASSIGNEDINSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS, nil
+            result = ASSIGNEDINSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
         case "ASSIGNEDOUTOFSYNC":
-            return ASSIGNEDOUTOFSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS, nil
+            result = ASSIGNEDOUTOFSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
         case "ASSIGNEDUNKOWNSYNCSTATE":
-            return ASSIGNEDUNKOWNSYNCSTATE_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS, nil
+            result = ASSIGNEDUNKOWNSYNCSTATE_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
         case "NOTASSIGNED":
-            return NOTASSIGNED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS, nil
+            result = NOTASSIGNED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
         case "PENDING":
-            return PENDING_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS, nil
+            result = PENDING_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
         case "FAILED":
-            return FAILED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS, nil
+            result = FAILED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+        default:
+            return 0, errors.New("Unknown WindowsAutopilotProfileAssignmentStatus value: " + v)
     }
-    return 0, errors.New("Unknown WindowsAutopilotProfileAssignmentStatus value: " + v)
+    return &result, nil
 }
 func SerializeWindowsAutopilotProfileAssignmentStatus(values []WindowsAutopilotProfileAssignmentStatus) []string {
     result := make([]string, len(values))

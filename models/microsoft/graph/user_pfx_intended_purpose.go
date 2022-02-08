@@ -18,19 +18,22 @@ func (i UserPfxIntendedPurpose) String() string {
     return []string{"UNASSIGNED", "SMIMEENCRYPTION", "SMIMESIGNING", "VPN", "WIFI"}[i]
 }
 func ParseUserPfxIntendedPurpose(v string) (interface{}, error) {
+    result := UNASSIGNED_USERPFXINTENDEDPURPOSE
     switch strings.ToUpper(v) {
         case "UNASSIGNED":
-            return UNASSIGNED_USERPFXINTENDEDPURPOSE, nil
+            result = UNASSIGNED_USERPFXINTENDEDPURPOSE
         case "SMIMEENCRYPTION":
-            return SMIMEENCRYPTION_USERPFXINTENDEDPURPOSE, nil
+            result = SMIMEENCRYPTION_USERPFXINTENDEDPURPOSE
         case "SMIMESIGNING":
-            return SMIMESIGNING_USERPFXINTENDEDPURPOSE, nil
+            result = SMIMESIGNING_USERPFXINTENDEDPURPOSE
         case "VPN":
-            return VPN_USERPFXINTENDEDPURPOSE, nil
+            result = VPN_USERPFXINTENDEDPURPOSE
         case "WIFI":
-            return WIFI_USERPFXINTENDEDPURPOSE, nil
+            result = WIFI_USERPFXINTENDEDPURPOSE
+        default:
+            return 0, errors.New("Unknown UserPfxIntendedPurpose value: " + v)
     }
-    return 0, errors.New("Unknown UserPfxIntendedPurpose value: " + v)
+    return &result, nil
 }
 func SerializeUserPfxIntendedPurpose(values []UserPfxIntendedPurpose) []string {
     result := make([]string, len(values))

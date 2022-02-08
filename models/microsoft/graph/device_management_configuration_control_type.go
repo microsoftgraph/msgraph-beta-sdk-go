@@ -20,23 +20,26 @@ func (i DeviceManagementConfigurationControlType) String() string {
     return []string{"DEFAULT", "DROPDOWN", "SMALLTEXTBOX", "LARGETEXTBOX", "TOGGLE", "MULTIHEADERGRID", "CONTEXTPANE"}[i]
 }
 func ParseDeviceManagementConfigurationControlType(v string) (interface{}, error) {
+    result := DEFAULT_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
     switch strings.ToUpper(v) {
         case "DEFAULT":
-            return DEFAULT_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE, nil
+            result = DEFAULT_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         case "DROPDOWN":
-            return DROPDOWN_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE, nil
+            result = DROPDOWN_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         case "SMALLTEXTBOX":
-            return SMALLTEXTBOX_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE, nil
+            result = SMALLTEXTBOX_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         case "LARGETEXTBOX":
-            return LARGETEXTBOX_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE, nil
+            result = LARGETEXTBOX_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         case "TOGGLE":
-            return TOGGLE_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE, nil
+            result = TOGGLE_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         case "MULTIHEADERGRID":
-            return MULTIHEADERGRID_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE, nil
+            result = MULTIHEADERGRID_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         case "CONTEXTPANE":
-            return CONTEXTPANE_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE, nil
+            result = CONTEXTPANE_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
+        default:
+            return 0, errors.New("Unknown DeviceManagementConfigurationControlType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementConfigurationControlType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementConfigurationControlType(values []DeviceManagementConfigurationControlType) []string {
     result := make([]string, len(values))

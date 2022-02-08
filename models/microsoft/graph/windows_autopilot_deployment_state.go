@@ -20,23 +20,26 @@ func (i WindowsAutopilotDeploymentState) String() string {
     return []string{"UNKNOWN", "SUCCESS", "INPROGRESS", "FAILURE", "SUCCESSWITHTIMEOUT", "NOTATTEMPTED", "DISABLED"}[i]
 }
 func ParseWindowsAutopilotDeploymentState(v string) (interface{}, error) {
+    result := UNKNOWN_WINDOWSAUTOPILOTDEPLOYMENTSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_WINDOWSAUTOPILOTDEPLOYMENTSTATE, nil
+            result = UNKNOWN_WINDOWSAUTOPILOTDEPLOYMENTSTATE
         case "SUCCESS":
-            return SUCCESS_WINDOWSAUTOPILOTDEPLOYMENTSTATE, nil
+            result = SUCCESS_WINDOWSAUTOPILOTDEPLOYMENTSTATE
         case "INPROGRESS":
-            return INPROGRESS_WINDOWSAUTOPILOTDEPLOYMENTSTATE, nil
+            result = INPROGRESS_WINDOWSAUTOPILOTDEPLOYMENTSTATE
         case "FAILURE":
-            return FAILURE_WINDOWSAUTOPILOTDEPLOYMENTSTATE, nil
+            result = FAILURE_WINDOWSAUTOPILOTDEPLOYMENTSTATE
         case "SUCCESSWITHTIMEOUT":
-            return SUCCESSWITHTIMEOUT_WINDOWSAUTOPILOTDEPLOYMENTSTATE, nil
+            result = SUCCESSWITHTIMEOUT_WINDOWSAUTOPILOTDEPLOYMENTSTATE
         case "NOTATTEMPTED":
-            return NOTATTEMPTED_WINDOWSAUTOPILOTDEPLOYMENTSTATE, nil
+            result = NOTATTEMPTED_WINDOWSAUTOPILOTDEPLOYMENTSTATE
         case "DISABLED":
-            return DISABLED_WINDOWSAUTOPILOTDEPLOYMENTSTATE, nil
+            result = DISABLED_WINDOWSAUTOPILOTDEPLOYMENTSTATE
+        default:
+            return 0, errors.New("Unknown WindowsAutopilotDeploymentState value: " + v)
     }
-    return 0, errors.New("Unknown WindowsAutopilotDeploymentState value: " + v)
+    return &result, nil
 }
 func SerializeWindowsAutopilotDeploymentState(values []WindowsAutopilotDeploymentState) []string {
     result := make([]string, len(values))

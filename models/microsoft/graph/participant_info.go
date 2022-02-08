@@ -20,7 +20,7 @@ type ParticipantInfo struct {
     participantId *string;
     // The client platform ID of the participant. Read-only.
     platformId *string;
-    // The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+    // The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
     region *string;
 }
 // NewParticipantInfo instantiates a new participantInfo and sets the default values.
@@ -86,7 +86,7 @@ func (m *ParticipantInfo) GetPlatformId()(*string) {
         return m.platformId
     }
 }
-// GetRegion gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+// GetRegion gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
 func (m *ParticipantInfo) GetRegion()(*string) {
     if m == nil {
         return nil
@@ -113,8 +113,7 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(EndpointType)
-            m.SetEndpointType(&cast)
+            m.SetEndpointType(val.(*EndpointType))
         }
         return nil
     }
@@ -182,7 +181,7 @@ func (m *ParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetEndpointType() != nil {
-        cast := m.GetEndpointType().String()
+        cast := (*m.GetEndpointType()).String()
         err := writer.WriteStringValue("endpointType", &cast)
         if err != nil {
             return err
@@ -268,7 +267,7 @@ func (m *ParticipantInfo) SetPlatformId(value *string)() {
         m.platformId = value
     }
 }
-// SetRegion sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+// SetRegion sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
 func (m *ParticipantInfo) SetRegion(value *string)() {
     if m != nil {
         m.region = value

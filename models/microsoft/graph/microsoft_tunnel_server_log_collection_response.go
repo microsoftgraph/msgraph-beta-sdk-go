@@ -155,8 +155,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
             return err
         }
         if val != nil {
-            cast := val.(MicrosoftTunnelLogCollectionStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*MicrosoftTunnelLogCollectionStatus))
         }
         return nil
     }
@@ -208,7 +207,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) Serialize(writer i04eb5309a
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

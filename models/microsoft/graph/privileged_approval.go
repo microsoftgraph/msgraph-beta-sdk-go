@@ -145,8 +145,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(ApprovalState)
-            m.SetApprovalState(&cast)
+            m.SetApprovalState(val.(*ApprovalState))
         }
         return nil
     }
@@ -258,7 +257,7 @@ func (m *PrivilegedApproval) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetApprovalState() != nil {
-        cast := m.GetApprovalState().String()
+        cast := (*m.GetApprovalState()).String()
         err = writer.WriteStringValue("approvalState", &cast)
         if err != nil {
             return err

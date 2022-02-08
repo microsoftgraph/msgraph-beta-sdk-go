@@ -15,13 +15,16 @@ func (i RunAsAccountType) String() string {
     return []string{"SYSTEM", "USER"}[i]
 }
 func ParseRunAsAccountType(v string) (interface{}, error) {
+    result := SYSTEM_RUNASACCOUNTTYPE
     switch strings.ToUpper(v) {
         case "SYSTEM":
-            return SYSTEM_RUNASACCOUNTTYPE, nil
+            result = SYSTEM_RUNASACCOUNTTYPE
         case "USER":
-            return USER_RUNASACCOUNTTYPE, nil
+            result = USER_RUNASACCOUNTTYPE
+        default:
+            return 0, errors.New("Unknown RunAsAccountType value: " + v)
     }
-    return 0, errors.New("Unknown RunAsAccountType value: " + v)
+    return &result, nil
 }
 func SerializeRunAsAccountType(values []RunAsAccountType) []string {
     result := make([]string, len(values))

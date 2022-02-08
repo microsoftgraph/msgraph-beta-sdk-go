@@ -63,8 +63,7 @@ func (m *TeamworkAccountConfiguration) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(TeamworkSupportedClient)
-            m.SetSupportedClient(&cast)
+            m.SetSupportedClient(val.(*TeamworkSupportedClient))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *TeamworkAccountConfiguration) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     if m.GetSupportedClient() != nil {
-        cast := m.GetSupportedClient().String()
+        cast := (*m.GetSupportedClient()).String()
         err := writer.WriteStringValue("supportedClient", &cast)
         if err != nil {
             return err

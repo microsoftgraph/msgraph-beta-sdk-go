@@ -24,31 +24,34 @@ func (i CloudPcStatus) String() string {
     return []string{"NOTPROVISIONED", "PROVISIONING", "PROVISIONED", "INGRACEPERIOD", "DEPROVISIONING", "FAILED", "PROVISIONEDWITHWARNINGS", "RESIZING", "RESTORING", "PENDINGPROVISION", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCloudPcStatus(v string) (interface{}, error) {
+    result := NOTPROVISIONED_CLOUDPCSTATUS
     switch strings.ToUpper(v) {
         case "NOTPROVISIONED":
-            return NOTPROVISIONED_CLOUDPCSTATUS, nil
+            result = NOTPROVISIONED_CLOUDPCSTATUS
         case "PROVISIONING":
-            return PROVISIONING_CLOUDPCSTATUS, nil
+            result = PROVISIONING_CLOUDPCSTATUS
         case "PROVISIONED":
-            return PROVISIONED_CLOUDPCSTATUS, nil
+            result = PROVISIONED_CLOUDPCSTATUS
         case "INGRACEPERIOD":
-            return INGRACEPERIOD_CLOUDPCSTATUS, nil
+            result = INGRACEPERIOD_CLOUDPCSTATUS
         case "DEPROVISIONING":
-            return DEPROVISIONING_CLOUDPCSTATUS, nil
+            result = DEPROVISIONING_CLOUDPCSTATUS
         case "FAILED":
-            return FAILED_CLOUDPCSTATUS, nil
+            result = FAILED_CLOUDPCSTATUS
         case "PROVISIONEDWITHWARNINGS":
-            return PROVISIONEDWITHWARNINGS_CLOUDPCSTATUS, nil
+            result = PROVISIONEDWITHWARNINGS_CLOUDPCSTATUS
         case "RESIZING":
-            return RESIZING_CLOUDPCSTATUS, nil
+            result = RESIZING_CLOUDPCSTATUS
         case "RESTORING":
-            return RESTORING_CLOUDPCSTATUS, nil
+            result = RESTORING_CLOUDPCSTATUS
         case "PENDINGPROVISION":
-            return PENDINGPROVISION_CLOUDPCSTATUS, nil
+            result = PENDINGPROVISION_CLOUDPCSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CLOUDPCSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_CLOUDPCSTATUS
+        default:
+            return 0, errors.New("Unknown CloudPcStatus value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcStatus value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcStatus(values []CloudPcStatus) []string {
     result := make([]string, len(values))

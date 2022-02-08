@@ -16,15 +16,18 @@ func (i AppleUserInitiatedEnrollmentType) String() string {
     return []string{"UNKNOWN", "DEVICE", "USER"}[i]
 }
 func ParseAppleUserInitiatedEnrollmentType(v string) (interface{}, error) {
+    result := UNKNOWN_APPLEUSERINITIATEDENROLLMENTTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_APPLEUSERINITIATEDENROLLMENTTYPE, nil
+            result = UNKNOWN_APPLEUSERINITIATEDENROLLMENTTYPE
         case "DEVICE":
-            return DEVICE_APPLEUSERINITIATEDENROLLMENTTYPE, nil
+            result = DEVICE_APPLEUSERINITIATEDENROLLMENTTYPE
         case "USER":
-            return USER_APPLEUSERINITIATEDENROLLMENTTYPE, nil
+            result = USER_APPLEUSERINITIATEDENROLLMENTTYPE
+        default:
+            return 0, errors.New("Unknown AppleUserInitiatedEnrollmentType value: " + v)
     }
-    return 0, errors.New("Unknown AppleUserInitiatedEnrollmentType value: " + v)
+    return &result, nil
 }
 func SerializeAppleUserInitiatedEnrollmentType(values []AppleUserInitiatedEnrollmentType) []string {
     result := make([]string, len(values))

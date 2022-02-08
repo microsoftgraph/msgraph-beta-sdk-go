@@ -16,15 +16,18 @@ func (i DlpAction) String() string {
     return []string{"NOTIFYUSER", "BLOCKACCESS", "DEVICERESTRICTION"}[i]
 }
 func ParseDlpAction(v string) (interface{}, error) {
+    result := NOTIFYUSER_DLPACTION
     switch strings.ToUpper(v) {
         case "NOTIFYUSER":
-            return NOTIFYUSER_DLPACTION, nil
+            result = NOTIFYUSER_DLPACTION
         case "BLOCKACCESS":
-            return BLOCKACCESS_DLPACTION, nil
+            result = BLOCKACCESS_DLPACTION
         case "DEVICERESTRICTION":
-            return DEVICERESTRICTION_DLPACTION, nil
+            result = DEVICERESTRICTION_DLPACTION
+        default:
+            return 0, errors.New("Unknown DlpAction value: " + v)
     }
-    return 0, errors.New("Unknown DlpAction value: " + v)
+    return &result, nil
 }
 func SerializeDlpAction(values []DlpAction) []string {
     result := make([]string, len(values))

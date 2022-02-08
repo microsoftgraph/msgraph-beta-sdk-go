@@ -75,8 +75,7 @@ func (m *NdesConnector) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(NdesConnectorState)
-            m.SetState(&cast)
+            m.SetState(val.(*NdesConnectorState))
         }
         return nil
     }
@@ -104,7 +103,7 @@ func (m *NdesConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

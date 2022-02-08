@@ -74,8 +74,7 @@ func (m *UsageRight) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
             return err
         }
         if val != nil {
-            cast := val.(UsageRightState)
-            m.SetState(&cast)
+            m.SetState(val.(*UsageRightState))
         }
         return nil
     }
@@ -103,7 +102,7 @@ func (m *UsageRight) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

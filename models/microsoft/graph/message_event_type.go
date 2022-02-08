@@ -35,53 +35,56 @@ func (i MessageEventType) String() string {
     return []string{"RECEIVED", "SENT", "DELIVERED", "FAILED", "PROCESSINGFAILED", "DISTRIBUTIONGROUPEXPANDED", "SUBMITTED", "DELAYED", "REDIRECTED", "RESOLVED", "DROPPED", "RECIPIENTSADDED", "MALWAREDETECTED", "MALWAREDETECTEDINMESSAGE", "MALWAREDETECTEDINATTACHMENT", "TTZAPPED", "TTDELIVERED", "SPAMDETECTED", "TRANSPORTRULETRIGGERED", "DLPRULETRIGGERED", "JOURNALED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseMessageEventType(v string) (interface{}, error) {
+    result := RECEIVED_MESSAGEEVENTTYPE
     switch strings.ToUpper(v) {
         case "RECEIVED":
-            return RECEIVED_MESSAGEEVENTTYPE, nil
+            result = RECEIVED_MESSAGEEVENTTYPE
         case "SENT":
-            return SENT_MESSAGEEVENTTYPE, nil
+            result = SENT_MESSAGEEVENTTYPE
         case "DELIVERED":
-            return DELIVERED_MESSAGEEVENTTYPE, nil
+            result = DELIVERED_MESSAGEEVENTTYPE
         case "FAILED":
-            return FAILED_MESSAGEEVENTTYPE, nil
+            result = FAILED_MESSAGEEVENTTYPE
         case "PROCESSINGFAILED":
-            return PROCESSINGFAILED_MESSAGEEVENTTYPE, nil
+            result = PROCESSINGFAILED_MESSAGEEVENTTYPE
         case "DISTRIBUTIONGROUPEXPANDED":
-            return DISTRIBUTIONGROUPEXPANDED_MESSAGEEVENTTYPE, nil
+            result = DISTRIBUTIONGROUPEXPANDED_MESSAGEEVENTTYPE
         case "SUBMITTED":
-            return SUBMITTED_MESSAGEEVENTTYPE, nil
+            result = SUBMITTED_MESSAGEEVENTTYPE
         case "DELAYED":
-            return DELAYED_MESSAGEEVENTTYPE, nil
+            result = DELAYED_MESSAGEEVENTTYPE
         case "REDIRECTED":
-            return REDIRECTED_MESSAGEEVENTTYPE, nil
+            result = REDIRECTED_MESSAGEEVENTTYPE
         case "RESOLVED":
-            return RESOLVED_MESSAGEEVENTTYPE, nil
+            result = RESOLVED_MESSAGEEVENTTYPE
         case "DROPPED":
-            return DROPPED_MESSAGEEVENTTYPE, nil
+            result = DROPPED_MESSAGEEVENTTYPE
         case "RECIPIENTSADDED":
-            return RECIPIENTSADDED_MESSAGEEVENTTYPE, nil
+            result = RECIPIENTSADDED_MESSAGEEVENTTYPE
         case "MALWAREDETECTED":
-            return MALWAREDETECTED_MESSAGEEVENTTYPE, nil
+            result = MALWAREDETECTED_MESSAGEEVENTTYPE
         case "MALWAREDETECTEDINMESSAGE":
-            return MALWAREDETECTEDINMESSAGE_MESSAGEEVENTTYPE, nil
+            result = MALWAREDETECTEDINMESSAGE_MESSAGEEVENTTYPE
         case "MALWAREDETECTEDINATTACHMENT":
-            return MALWAREDETECTEDINATTACHMENT_MESSAGEEVENTTYPE, nil
+            result = MALWAREDETECTEDINATTACHMENT_MESSAGEEVENTTYPE
         case "TTZAPPED":
-            return TTZAPPED_MESSAGEEVENTTYPE, nil
+            result = TTZAPPED_MESSAGEEVENTTYPE
         case "TTDELIVERED":
-            return TTDELIVERED_MESSAGEEVENTTYPE, nil
+            result = TTDELIVERED_MESSAGEEVENTTYPE
         case "SPAMDETECTED":
-            return SPAMDETECTED_MESSAGEEVENTTYPE, nil
+            result = SPAMDETECTED_MESSAGEEVENTTYPE
         case "TRANSPORTRULETRIGGERED":
-            return TRANSPORTRULETRIGGERED_MESSAGEEVENTTYPE, nil
+            result = TRANSPORTRULETRIGGERED_MESSAGEEVENTTYPE
         case "DLPRULETRIGGERED":
-            return DLPRULETRIGGERED_MESSAGEEVENTTYPE, nil
+            result = DLPRULETRIGGERED_MESSAGEEVENTTYPE
         case "JOURNALED":
-            return JOURNALED_MESSAGEEVENTTYPE, nil
+            result = JOURNALED_MESSAGEEVENTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MESSAGEEVENTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_MESSAGEEVENTTYPE
+        default:
+            return 0, errors.New("Unknown MessageEventType value: " + v)
     }
-    return 0, errors.New("Unknown MessageEventType value: " + v)
+    return &result, nil
 }
 func SerializeMessageEventType(values []MessageEventType) []string {
     result := make([]string, len(values))

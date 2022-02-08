@@ -105,8 +105,7 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(LongRunningOperationStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*LongRunningOperationStatus))
         }
         return nil
     }
@@ -150,7 +149,7 @@ func (m *LongRunningOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

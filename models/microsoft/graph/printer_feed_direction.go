@@ -15,13 +15,16 @@ func (i PrinterFeedDirection) String() string {
     return []string{"LONGEDGEFIRST", "SHORTEDGEFIRST"}[i]
 }
 func ParsePrinterFeedDirection(v string) (interface{}, error) {
+    result := LONGEDGEFIRST_PRINTERFEEDDIRECTION
     switch strings.ToUpper(v) {
         case "LONGEDGEFIRST":
-            return LONGEDGEFIRST_PRINTERFEEDDIRECTION, nil
+            result = LONGEDGEFIRST_PRINTERFEEDDIRECTION
         case "SHORTEDGEFIRST":
-            return SHORTEDGEFIRST_PRINTERFEEDDIRECTION, nil
+            result = SHORTEDGEFIRST_PRINTERFEEDDIRECTION
+        default:
+            return 0, errors.New("Unknown PrinterFeedDirection value: " + v)
     }
-    return 0, errors.New("Unknown PrinterFeedDirection value: " + v)
+    return &result, nil
 }
 func SerializePrinterFeedDirection(values []PrinterFeedDirection) []string {
     result := make([]string, len(values))

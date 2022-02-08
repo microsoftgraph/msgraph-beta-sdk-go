@@ -17,17 +17,20 @@ func (i AuthenticationPhoneType) String() string {
     return []string{"MOBILE", "ALTERNATEMOBILE", "OFFICE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAuthenticationPhoneType(v string) (interface{}, error) {
+    result := MOBILE_AUTHENTICATIONPHONETYPE
     switch strings.ToUpper(v) {
         case "MOBILE":
-            return MOBILE_AUTHENTICATIONPHONETYPE, nil
+            result = MOBILE_AUTHENTICATIONPHONETYPE
         case "ALTERNATEMOBILE":
-            return ALTERNATEMOBILE_AUTHENTICATIONPHONETYPE, nil
+            result = ALTERNATEMOBILE_AUTHENTICATIONPHONETYPE
         case "OFFICE":
-            return OFFICE_AUTHENTICATIONPHONETYPE, nil
+            result = OFFICE_AUTHENTICATIONPHONETYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_AUTHENTICATIONPHONETYPE, nil
+            result = UNKNOWNFUTUREVALUE_AUTHENTICATIONPHONETYPE
+        default:
+            return 0, errors.New("Unknown AuthenticationPhoneType value: " + v)
     }
-    return 0, errors.New("Unknown AuthenticationPhoneType value: " + v)
+    return &result, nil
 }
 func SerializeAuthenticationPhoneType(values []AuthenticationPhoneType) []string {
     result := make([]string, len(values))

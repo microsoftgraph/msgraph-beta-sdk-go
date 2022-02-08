@@ -17,17 +17,20 @@ func (i PolicyScope) String() string {
     return []string{"NONE", "ALL", "SELECTED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePolicyScope(v string) (interface{}, error) {
+    result := NONE_POLICYSCOPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_POLICYSCOPE, nil
+            result = NONE_POLICYSCOPE
         case "ALL":
-            return ALL_POLICYSCOPE, nil
+            result = ALL_POLICYSCOPE
         case "SELECTED":
-            return SELECTED_POLICYSCOPE, nil
+            result = SELECTED_POLICYSCOPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_POLICYSCOPE, nil
+            result = UNKNOWNFUTUREVALUE_POLICYSCOPE
+        default:
+            return 0, errors.New("Unknown PolicyScope value: " + v)
     }
-    return 0, errors.New("Unknown PolicyScope value: " + v)
+    return &result, nil
 }
 func SerializePolicyScope(values []PolicyScope) []string {
     result := make([]string, len(values))

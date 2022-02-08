@@ -20,23 +20,26 @@ func (i AuthenticationMethodSignInState) String() string {
     return []string{"NOTSUPPORTED", "NOTALLOWEDBYPOLICY", "NOTENABLED", "PHONENUMBERNOTUNIQUE", "READY", "NOTCONFIGURED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAuthenticationMethodSignInState(v string) (interface{}, error) {
+    result := NOTSUPPORTED_AUTHENTICATIONMETHODSIGNINSTATE
     switch strings.ToUpper(v) {
         case "NOTSUPPORTED":
-            return NOTSUPPORTED_AUTHENTICATIONMETHODSIGNINSTATE, nil
+            result = NOTSUPPORTED_AUTHENTICATIONMETHODSIGNINSTATE
         case "NOTALLOWEDBYPOLICY":
-            return NOTALLOWEDBYPOLICY_AUTHENTICATIONMETHODSIGNINSTATE, nil
+            result = NOTALLOWEDBYPOLICY_AUTHENTICATIONMETHODSIGNINSTATE
         case "NOTENABLED":
-            return NOTENABLED_AUTHENTICATIONMETHODSIGNINSTATE, nil
+            result = NOTENABLED_AUTHENTICATIONMETHODSIGNINSTATE
         case "PHONENUMBERNOTUNIQUE":
-            return PHONENUMBERNOTUNIQUE_AUTHENTICATIONMETHODSIGNINSTATE, nil
+            result = PHONENUMBERNOTUNIQUE_AUTHENTICATIONMETHODSIGNINSTATE
         case "READY":
-            return READY_AUTHENTICATIONMETHODSIGNINSTATE, nil
+            result = READY_AUTHENTICATIONMETHODSIGNINSTATE
         case "NOTCONFIGURED":
-            return NOTCONFIGURED_AUTHENTICATIONMETHODSIGNINSTATE, nil
+            result = NOTCONFIGURED_AUTHENTICATIONMETHODSIGNINSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODSIGNINSTATE, nil
+            result = UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODSIGNINSTATE
+        default:
+            return 0, errors.New("Unknown AuthenticationMethodSignInState value: " + v)
     }
-    return 0, errors.New("Unknown AuthenticationMethodSignInState value: " + v)
+    return &result, nil
 }
 func SerializeAuthenticationMethodSignInState(values []AuthenticationMethodSignInState) []string {
     result := make([]string, len(values))

@@ -16,15 +16,18 @@ func (i DeviceManagementDomainJoinConnectorState) String() string {
     return []string{"ACTIVE", "ERROR", "INACTIVE"}[i]
 }
 func ParseDeviceManagementDomainJoinConnectorState(v string) (interface{}, error) {
+    result := ACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
     switch strings.ToUpper(v) {
         case "ACTIVE":
-            return ACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE, nil
+            result = ACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
         case "ERROR":
-            return ERROR_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE, nil
+            result = ERROR_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
         case "INACTIVE":
-            return INACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE, nil
+            result = INACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
+        default:
+            return 0, errors.New("Unknown DeviceManagementDomainJoinConnectorState value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementDomainJoinConnectorState value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementDomainJoinConnectorState(values []DeviceManagementDomainJoinConnectorState) []string {
     result := make([]string, len(values))

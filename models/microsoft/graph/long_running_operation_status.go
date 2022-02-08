@@ -18,19 +18,22 @@ func (i LongRunningOperationStatus) String() string {
     return []string{"NOTSTARTED", "RUNNING", "SUCCEEDED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseLongRunningOperationStatus(v string) (interface{}, error) {
+    result := NOTSTARTED_LONGRUNNINGOPERATIONSTATUS
     switch strings.ToUpper(v) {
         case "NOTSTARTED":
-            return NOTSTARTED_LONGRUNNINGOPERATIONSTATUS, nil
+            result = NOTSTARTED_LONGRUNNINGOPERATIONSTATUS
         case "RUNNING":
-            return RUNNING_LONGRUNNINGOPERATIONSTATUS, nil
+            result = RUNNING_LONGRUNNINGOPERATIONSTATUS
         case "SUCCEEDED":
-            return SUCCEEDED_LONGRUNNINGOPERATIONSTATUS, nil
+            result = SUCCEEDED_LONGRUNNINGOPERATIONSTATUS
         case "FAILED":
-            return FAILED_LONGRUNNINGOPERATIONSTATUS, nil
+            result = FAILED_LONGRUNNINGOPERATIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_LONGRUNNINGOPERATIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_LONGRUNNINGOPERATIONSTATUS
+        default:
+            return 0, errors.New("Unknown LongRunningOperationStatus value: " + v)
     }
-    return 0, errors.New("Unknown LongRunningOperationStatus value: " + v)
+    return &result, nil
 }
 func SerializeLongRunningOperationStatus(values []LongRunningOperationStatus) []string {
     result := make([]string, len(values))

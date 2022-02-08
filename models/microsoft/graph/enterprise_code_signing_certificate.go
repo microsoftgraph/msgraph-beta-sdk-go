@@ -145,8 +145,7 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
             return err
         }
         if val != nil {
-            cast := val.(CertificateStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*CertificateStatus))
         }
         return nil
     }
@@ -216,7 +215,7 @@ func (m *EnterpriseCodeSigningCertificate) Serialize(writer i04eb5309aeaafadd283
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

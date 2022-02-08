@@ -19,21 +19,24 @@ func (i AndroidForWorkSyncStatus) String() string {
     return []string{"SUCCESS", "CREDENTIALSNOTVALID", "ANDROIDFORWORKAPIERROR", "MANAGEMENTSERVICEERROR", "UNKNOWNERROR", "NONE"}[i]
 }
 func ParseAndroidForWorkSyncStatus(v string) (interface{}, error) {
+    result := SUCCESS_ANDROIDFORWORKSYNCSTATUS
     switch strings.ToUpper(v) {
         case "SUCCESS":
-            return SUCCESS_ANDROIDFORWORKSYNCSTATUS, nil
+            result = SUCCESS_ANDROIDFORWORKSYNCSTATUS
         case "CREDENTIALSNOTVALID":
-            return CREDENTIALSNOTVALID_ANDROIDFORWORKSYNCSTATUS, nil
+            result = CREDENTIALSNOTVALID_ANDROIDFORWORKSYNCSTATUS
         case "ANDROIDFORWORKAPIERROR":
-            return ANDROIDFORWORKAPIERROR_ANDROIDFORWORKSYNCSTATUS, nil
+            result = ANDROIDFORWORKAPIERROR_ANDROIDFORWORKSYNCSTATUS
         case "MANAGEMENTSERVICEERROR":
-            return MANAGEMENTSERVICEERROR_ANDROIDFORWORKSYNCSTATUS, nil
+            result = MANAGEMENTSERVICEERROR_ANDROIDFORWORKSYNCSTATUS
         case "UNKNOWNERROR":
-            return UNKNOWNERROR_ANDROIDFORWORKSYNCSTATUS, nil
+            result = UNKNOWNERROR_ANDROIDFORWORKSYNCSTATUS
         case "NONE":
-            return NONE_ANDROIDFORWORKSYNCSTATUS, nil
+            result = NONE_ANDROIDFORWORKSYNCSTATUS
+        default:
+            return 0, errors.New("Unknown AndroidForWorkSyncStatus value: " + v)
     }
-    return 0, errors.New("Unknown AndroidForWorkSyncStatus value: " + v)
+    return &result, nil
 }
 func SerializeAndroidForWorkSyncStatus(values []AndroidForWorkSyncStatus) []string {
     result := make([]string, len(values))

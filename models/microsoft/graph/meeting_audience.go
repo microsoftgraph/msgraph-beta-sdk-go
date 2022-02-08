@@ -16,15 +16,18 @@ func (i MeetingAudience) String() string {
     return []string{"EVERYONE", "ORGANIZATION", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseMeetingAudience(v string) (interface{}, error) {
+    result := EVERYONE_MEETINGAUDIENCE
     switch strings.ToUpper(v) {
         case "EVERYONE":
-            return EVERYONE_MEETINGAUDIENCE, nil
+            result = EVERYONE_MEETINGAUDIENCE
         case "ORGANIZATION":
-            return ORGANIZATION_MEETINGAUDIENCE, nil
+            result = ORGANIZATION_MEETINGAUDIENCE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MEETINGAUDIENCE, nil
+            result = UNKNOWNFUTUREVALUE_MEETINGAUDIENCE
+        default:
+            return 0, errors.New("Unknown MeetingAudience value: " + v)
     }
-    return 0, errors.New("Unknown MeetingAudience value: " + v)
+    return &result, nil
 }
 func SerializeMeetingAudience(values []MeetingAudience) []string {
     result := make([]string, len(values))

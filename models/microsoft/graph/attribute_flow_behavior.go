@@ -15,13 +15,16 @@ func (i AttributeFlowBehavior) String() string {
     return []string{"FLOWWHENCHANGED", "FLOWALWAYS"}[i]
 }
 func ParseAttributeFlowBehavior(v string) (interface{}, error) {
+    result := FLOWWHENCHANGED_ATTRIBUTEFLOWBEHAVIOR
     switch strings.ToUpper(v) {
         case "FLOWWHENCHANGED":
-            return FLOWWHENCHANGED_ATTRIBUTEFLOWBEHAVIOR, nil
+            result = FLOWWHENCHANGED_ATTRIBUTEFLOWBEHAVIOR
         case "FLOWALWAYS":
-            return FLOWALWAYS_ATTRIBUTEFLOWBEHAVIOR, nil
+            result = FLOWALWAYS_ATTRIBUTEFLOWBEHAVIOR
+        default:
+            return 0, errors.New("Unknown AttributeFlowBehavior value: " + v)
     }
-    return 0, errors.New("Unknown AttributeFlowBehavior value: " + v)
+    return &result, nil
 }
 func SerializeAttributeFlowBehavior(values []AttributeFlowBehavior) []string {
     result := make([]string, len(values))

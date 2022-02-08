@@ -17,17 +17,20 @@ func (i PhysicalAddressType) String() string {
     return []string{"UNKNOWN", "HOME", "BUSINESS", "OTHER"}[i]
 }
 func ParsePhysicalAddressType(v string) (interface{}, error) {
+    result := UNKNOWN_PHYSICALADDRESSTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_PHYSICALADDRESSTYPE, nil
+            result = UNKNOWN_PHYSICALADDRESSTYPE
         case "HOME":
-            return HOME_PHYSICALADDRESSTYPE, nil
+            result = HOME_PHYSICALADDRESSTYPE
         case "BUSINESS":
-            return BUSINESS_PHYSICALADDRESSTYPE, nil
+            result = BUSINESS_PHYSICALADDRESSTYPE
         case "OTHER":
-            return OTHER_PHYSICALADDRESSTYPE, nil
+            result = OTHER_PHYSICALADDRESSTYPE
+        default:
+            return 0, errors.New("Unknown PhysicalAddressType value: " + v)
     }
-    return 0, errors.New("Unknown PhysicalAddressType value: " + v)
+    return &result, nil
 }
 func SerializePhysicalAddressType(values []PhysicalAddressType) []string {
     result := make([]string, len(values))

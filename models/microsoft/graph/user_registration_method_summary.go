@@ -97,8 +97,7 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            cast := val.(IncludedUserRoles)
-            m.SetUserRoles(&cast)
+            m.SetUserRoles(val.(*IncludedUserRoles))
         }
         return nil
     }
@@ -108,8 +107,7 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            cast := val.(IncludedUserTypes)
-            m.SetUserTypes(&cast)
+            m.SetUserTypes(val.(*IncludedUserTypes))
         }
         return nil
     }
@@ -138,14 +136,14 @@ func (m *UserRegistrationMethodSummary) Serialize(writer i04eb5309aeaafadd28374d
         }
     }
     if m.GetUserRoles() != nil {
-        cast := m.GetUserRoles().String()
+        cast := (*m.GetUserRoles()).String()
         err := writer.WriteStringValue("userRoles", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetUserTypes() != nil {
-        cast := m.GetUserTypes().String()
+        cast := (*m.GetUserTypes()).String()
         err := writer.WriteStringValue("userTypes", &cast)
         if err != nil {
             return err

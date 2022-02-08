@@ -53,8 +53,7 @@ func (m *ConditionalAccessRuleSatisfied) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(ConditionalAccessConditions)
-            m.SetConditionalAccessCondition(&cast)
+            m.SetConditionalAccessCondition(val.(*ConditionalAccessConditions))
         }
         return nil
     }
@@ -64,8 +63,7 @@ func (m *ConditionalAccessRuleSatisfied) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(ConditionalAccessRule)
-            m.SetRuleSatisfied(&cast)
+            m.SetRuleSatisfied(val.(*ConditionalAccessRule))
         }
         return nil
     }
@@ -77,14 +75,14 @@ func (m *ConditionalAccessRuleSatisfied) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ConditionalAccessRuleSatisfied) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetConditionalAccessCondition() != nil {
-        cast := m.GetConditionalAccessCondition().String()
+        cast := (*m.GetConditionalAccessCondition()).String()
         err := writer.WriteStringValue("conditionalAccessCondition", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetRuleSatisfied() != nil {
-        cast := m.GetRuleSatisfied().String()
+        cast := (*m.GetRuleSatisfied()).String()
         err := writer.WriteStringValue("ruleSatisfied", &cast)
         if err != nil {
             return err

@@ -185,8 +185,7 @@ func (m *TeamworkDevice) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(TeamworkDeviceActivityState)
-            m.SetActivityState(&cast)
+            m.SetActivityState(val.(*TeamworkDeviceActivityState))
         }
         return nil
     }
@@ -246,8 +245,7 @@ func (m *TeamworkDevice) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(TeamworkDeviceType)
-            m.SetDeviceType(&cast)
+            m.SetDeviceType(val.(*TeamworkDeviceType))
         }
         return nil
     }
@@ -277,8 +275,7 @@ func (m *TeamworkDevice) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(TeamworkDeviceHealthStatus)
-            m.SetHealthStatus(&cast)
+            m.SetHealthStatus(val.(*TeamworkDeviceHealthStatus))
         }
         return nil
     }
@@ -344,7 +341,7 @@ func (m *TeamworkDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetActivityState() != nil {
-        cast := m.GetActivityState().String()
+        cast := (*m.GetActivityState()).String()
         err = writer.WriteStringValue("activityState", &cast)
         if err != nil {
             return err
@@ -381,7 +378,7 @@ func (m *TeamworkDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetDeviceType() != nil {
-        cast := m.GetDeviceType().String()
+        cast := (*m.GetDeviceType()).String()
         err = writer.WriteStringValue("deviceType", &cast)
         if err != nil {
             return err
@@ -400,7 +397,7 @@ func (m *TeamworkDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetHealthStatus() != nil {
-        cast := m.GetHealthStatus().String()
+        cast := (*m.GetHealthStatus()).String()
         err = writer.WriteStringValue("healthStatus", &cast)
         if err != nil {
             return err

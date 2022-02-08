@@ -265,8 +265,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(AndroidDeviceOwnerEnrollmentMode)
-            m.SetEnrollmentMode(&cast)
+            m.SetEnrollmentMode(val.(*AndroidDeviceOwnerEnrollmentMode))
         }
         return nil
     }
@@ -276,8 +275,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(AndroidDeviceOwnerEnrollmentTokenType)
-            m.SetEnrollmentTokenType(&cast)
+            m.SetEnrollmentTokenType(val.(*AndroidDeviceOwnerEnrollmentTokenType))
         }
         return nil
     }
@@ -391,8 +389,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(AospWifiSecurityType)
-            m.SetWifiSecurityType(&cast)
+            m.SetWifiSecurityType(val.(*AospWifiSecurityType))
         }
         return nil
     }
@@ -448,14 +445,14 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) Serialize(writer i04eb5309aeaafadd
         }
     }
     if m.GetEnrollmentMode() != nil {
-        cast := m.GetEnrollmentMode().String()
+        cast := (*m.GetEnrollmentMode()).String()
         err = writer.WriteStringValue("enrollmentMode", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetEnrollmentTokenType() != nil {
-        cast := m.GetEnrollmentTokenType().String()
+        cast := (*m.GetEnrollmentTokenType()).String()
         err = writer.WriteStringValue("enrollmentTokenType", &cast)
         if err != nil {
             return err
@@ -522,7 +519,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) Serialize(writer i04eb5309aeaafadd
         }
     }
     if m.GetWifiSecurityType() != nil {
-        cast := m.GetWifiSecurityType().String()
+        cast := (*m.GetWifiSecurityType()).String()
         err = writer.WriteStringValue("wifiSecurityType", &cast)
         if err != nil {
             return err

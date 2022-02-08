@@ -16,15 +16,18 @@ func (i DeviceAndAppManagementAssignmentFilterType) String() string {
     return []string{"NONE", "INCLUDE", "EXCLUDE"}[i]
 }
 func ParseDeviceAndAppManagementAssignmentFilterType(v string) (interface{}, error) {
+    result := NONE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE, nil
+            result = NONE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
         case "INCLUDE":
-            return INCLUDE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE, nil
+            result = INCLUDE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
         case "EXCLUDE":
-            return EXCLUDE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE, nil
+            result = EXCLUDE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
+        default:
+            return 0, errors.New("Unknown DeviceAndAppManagementAssignmentFilterType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceAndAppManagementAssignmentFilterType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceAndAppManagementAssignmentFilterType(values []DeviceAndAppManagementAssignmentFilterType) []string {
     result := make([]string, len(values))

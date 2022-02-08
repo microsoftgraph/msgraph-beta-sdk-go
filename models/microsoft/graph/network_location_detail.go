@@ -67,8 +67,7 @@ func (m *NetworkLocationDetail) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(NetworkType)
-            m.SetNetworkType(&cast)
+            m.SetNetworkType(val.(*NetworkType))
         }
         return nil
     }
@@ -86,7 +85,7 @@ func (m *NetworkLocationDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetNetworkType() != nil {
-        cast := m.GetNetworkType().String()
+        cast := (*m.GetNetworkType()).String()
         err := writer.WriteStringValue("networkType", &cast)
         if err != nil {
             return err

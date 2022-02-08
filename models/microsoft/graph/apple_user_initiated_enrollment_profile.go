@@ -153,8 +153,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(AppleUserInitiatedEnrollmentType)
-            m.SetDefaultEnrollmentType(&cast)
+            m.SetDefaultEnrollmentType(val.(*AppleUserInitiatedEnrollmentType))
         }
         return nil
     }
@@ -194,8 +193,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(DevicePlatformType)
-            m.SetPlatform(&cast)
+            m.SetPlatform(val.(*DevicePlatformType))
         }
         return nil
     }
@@ -249,7 +247,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) Serialize(writer i04eb5309aeaafadd
         }
     }
     if m.GetDefaultEnrollmentType() != nil {
-        cast := m.GetDefaultEnrollmentType().String()
+        cast := (*m.GetDefaultEnrollmentType()).String()
         err = writer.WriteStringValue("defaultEnrollmentType", &cast)
         if err != nil {
             return err
@@ -274,7 +272,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) Serialize(writer i04eb5309aeaafadd
         }
     }
     if m.GetPlatform() != nil {
-        cast := m.GetPlatform().String()
+        cast := (*m.GetPlatform()).String()
         err = writer.WriteStringValue("platform", &cast)
         if err != nil {
             return err

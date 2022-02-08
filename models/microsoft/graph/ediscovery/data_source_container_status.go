@@ -16,15 +16,18 @@ func (i DataSourceContainerStatus) String() string {
     return []string{"ACTIVE", "RELEASED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDataSourceContainerStatus(v string) (interface{}, error) {
+    result := ACTIVE_DATASOURCECONTAINERSTATUS
     switch strings.ToUpper(v) {
         case "ACTIVE":
-            return ACTIVE_DATASOURCECONTAINERSTATUS, nil
+            result = ACTIVE_DATASOURCECONTAINERSTATUS
         case "RELEASED":
-            return RELEASED_DATASOURCECONTAINERSTATUS, nil
+            result = RELEASED_DATASOURCECONTAINERSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DATASOURCECONTAINERSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_DATASOURCECONTAINERSTATUS
+        default:
+            return 0, errors.New("Unknown DataSourceContainerStatus value: " + v)
     }
-    return 0, errors.New("Unknown DataSourceContainerStatus value: " + v)
+    return &result, nil
 }
 func SerializeDataSourceContainerStatus(values []DataSourceContainerStatus) []string {
     result := make([]string, len(values))

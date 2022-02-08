@@ -21,25 +21,28 @@ func (i MessageStatus) String() string {
     return []string{"GETTINGSTATUS", "PENDING", "FAILED", "DELIVERED", "EXPANDED", "QUARANTINED", "FILTEREDASSPAM", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseMessageStatus(v string) (interface{}, error) {
+    result := GETTINGSTATUS_MESSAGESTATUS
     switch strings.ToUpper(v) {
         case "GETTINGSTATUS":
-            return GETTINGSTATUS_MESSAGESTATUS, nil
+            result = GETTINGSTATUS_MESSAGESTATUS
         case "PENDING":
-            return PENDING_MESSAGESTATUS, nil
+            result = PENDING_MESSAGESTATUS
         case "FAILED":
-            return FAILED_MESSAGESTATUS, nil
+            result = FAILED_MESSAGESTATUS
         case "DELIVERED":
-            return DELIVERED_MESSAGESTATUS, nil
+            result = DELIVERED_MESSAGESTATUS
         case "EXPANDED":
-            return EXPANDED_MESSAGESTATUS, nil
+            result = EXPANDED_MESSAGESTATUS
         case "QUARANTINED":
-            return QUARANTINED_MESSAGESTATUS, nil
+            result = QUARANTINED_MESSAGESTATUS
         case "FILTEREDASSPAM":
-            return FILTEREDASSPAM_MESSAGESTATUS, nil
+            result = FILTEREDASSPAM_MESSAGESTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MESSAGESTATUS, nil
+            result = UNKNOWNFUTUREVALUE_MESSAGESTATUS
+        default:
+            return 0, errors.New("Unknown MessageStatus value: " + v)
     }
-    return 0, errors.New("Unknown MessageStatus value: " + v)
+    return &result, nil
 }
 func SerializeMessageStatus(values []MessageStatus) []string {
     result := make([]string, len(values))

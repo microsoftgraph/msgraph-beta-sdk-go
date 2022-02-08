@@ -16,15 +16,18 @@ func (i SynchronizationTaskExecutionResult) String() string {
     return []string{"SUCCEEDED", "FAILED", "ENTRYLEVELERRORS"}[i]
 }
 func ParseSynchronizationTaskExecutionResult(v string) (interface{}, error) {
+    result := SUCCEEDED_SYNCHRONIZATIONTASKEXECUTIONRESULT
     switch strings.ToUpper(v) {
         case "SUCCEEDED":
-            return SUCCEEDED_SYNCHRONIZATIONTASKEXECUTIONRESULT, nil
+            result = SUCCEEDED_SYNCHRONIZATIONTASKEXECUTIONRESULT
         case "FAILED":
-            return FAILED_SYNCHRONIZATIONTASKEXECUTIONRESULT, nil
+            result = FAILED_SYNCHRONIZATIONTASKEXECUTIONRESULT
         case "ENTRYLEVELERRORS":
-            return ENTRYLEVELERRORS_SYNCHRONIZATIONTASKEXECUTIONRESULT, nil
+            result = ENTRYLEVELERRORS_SYNCHRONIZATIONTASKEXECUTIONRESULT
+        default:
+            return 0, errors.New("Unknown SynchronizationTaskExecutionResult value: " + v)
     }
-    return 0, errors.New("Unknown SynchronizationTaskExecutionResult value: " + v)
+    return &result, nil
 }
 func SerializeSynchronizationTaskExecutionResult(values []SynchronizationTaskExecutionResult) []string {
     result := make([]string, len(values))

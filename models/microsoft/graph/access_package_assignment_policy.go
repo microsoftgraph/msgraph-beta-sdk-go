@@ -22,6 +22,8 @@ type AccessPackageAssignmentPolicy struct {
     createdBy *string;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
+    customExtensionHandlers []CustomExtensionHandler;
     // The description of the policy.
     description *string;
     // The display name of the policy. Supports $filter (eq).
@@ -102,6 +104,14 @@ func (m *AccessPackageAssignmentPolicy) GetCreatedDateTime()(*i336074805fc853987
         return nil
     } else {
         return m.createdDateTime
+    }
+}
+// GetCustomExtensionHandlers gets the customExtensionHandlers property value. 
+func (m *AccessPackageAssignmentPolicy) GetCustomExtensionHandlers()([]CustomExtensionHandler) {
+    if m == nil {
+        return nil
+    } else {
+        return m.customExtensionHandlers
     }
 }
 // GetDescription gets the description property value. The description of the policy.
@@ -246,6 +256,20 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["customExtensionHandlers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomExtensionHandler() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomExtensionHandler, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CustomExtensionHandler))
+            }
+            m.SetCustomExtensionHandlers(res)
         }
         return nil
     }
@@ -396,6 +420,17 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i04eb5309aeaafadd28374d
             return err
         }
     }
+    if m.GetCustomExtensionHandlers() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomExtensionHandlers()))
+        for i, v := range m.GetCustomExtensionHandlers() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("customExtensionHandlers", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -497,6 +532,12 @@ func (m *AccessPackageAssignmentPolicy) SetCreatedBy(value *string)() {
 func (m *AccessPackageAssignmentPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
+    }
+}
+// SetCustomExtensionHandlers sets the customExtensionHandlers property value. 
+func (m *AccessPackageAssignmentPolicy) SetCustomExtensionHandlers(value []CustomExtensionHandler)() {
+    if m != nil {
+        m.customExtensionHandlers = value
     }
 }
 // SetDescription sets the description property value. The description of the policy.

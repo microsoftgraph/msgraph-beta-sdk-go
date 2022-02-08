@@ -15,11 +15,11 @@ type Calendar struct {
     calendarPermissions []CalendarPermission;
     // The calendar view for the calendar. Navigation property. Read-only.
     calendarView []Event;
-    // true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.
+    // true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
     canEdit *bool;
-    // true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.
+    // true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
     canShare *bool;
-    // true if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.
+    // true if the user can read calendar items that have been marked private, false otherwise.
     canViewPrivateItems *bool;
     // Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     changeKey *string;
@@ -29,7 +29,7 @@ type Calendar struct {
     defaultOnlineMeetingProvider *OnlineMeetingProviderType;
     // The events in the calendar. Navigation property. Read-only.
     events []Event;
-    // The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
+    // The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.
     hexColor *string;
     // true if this is the default calendar where new events are created by default, false otherwise.
     isDefaultCalendar *bool;
@@ -45,7 +45,7 @@ type Calendar struct {
     multiValueExtendedProperties []MultiValueLegacyExtendedProperty;
     // The calendar name.
     name *string;
-    // If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user. Read-only.
+    // If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
     owner *EmailAddress;
     // The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
     singleValueExtendedProperties []SingleValueLegacyExtendedProperty;
@@ -89,7 +89,7 @@ func (m *Calendar) GetCalendarView()([]Event) {
         return m.calendarView
     }
 }
-// GetCanEdit gets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.
+// GetCanEdit gets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
 func (m *Calendar) GetCanEdit()(*bool) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *Calendar) GetCanEdit()(*bool) {
         return m.canEdit
     }
 }
-// GetCanShare gets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.
+// GetCanShare gets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
 func (m *Calendar) GetCanShare()(*bool) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *Calendar) GetCanShare()(*bool) {
         return m.canShare
     }
 }
-// GetCanViewPrivateItems gets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.
+// GetCanViewPrivateItems gets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise.
 func (m *Calendar) GetCanViewPrivateItems()(*bool) {
     if m == nil {
         return nil
@@ -145,7 +145,7 @@ func (m *Calendar) GetEvents()([]Event) {
         return m.events
     }
 }
-// GetHexColor gets the hexColor property value. The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
+// GetHexColor gets the hexColor property value. The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.
 func (m *Calendar) GetHexColor()(*string) {
     if m == nil {
         return nil
@@ -209,7 +209,7 @@ func (m *Calendar) GetName()(*string) {
         return m.name
     }
 }
-// GetOwner gets the owner property value. If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user. Read-only.
+// GetOwner gets the owner property value. If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
 func (m *Calendar) GetOwner()(*EmailAddress) {
     if m == nil {
         return nil
@@ -326,8 +326,7 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(CalendarColor)
-            m.SetColor(&cast)
+            m.SetColor(val.(*CalendarColor))
         }
         return nil
     }
@@ -337,8 +336,7 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(OnlineMeetingProviderType)
-            m.SetDefaultOnlineMeetingProvider(&cast)
+            m.SetDefaultOnlineMeetingProvider(val.(*OnlineMeetingProviderType))
         }
         return nil
     }
@@ -534,14 +532,14 @@ func (m *Calendar) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetColor() != nil {
-        cast := m.GetColor().String()
+        cast := (*m.GetColor()).String()
         err = writer.WriteStringValue("color", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetDefaultOnlineMeetingProvider() != nil {
-        cast := m.GetDefaultOnlineMeetingProvider().String()
+        cast := (*m.GetDefaultOnlineMeetingProvider()).String()
         err = writer.WriteStringValue("defaultOnlineMeetingProvider", &cast)
         if err != nil {
             return err
@@ -654,19 +652,19 @@ func (m *Calendar) SetCalendarView(value []Event)() {
         m.calendarView = value
     }
 }
-// SetCanEdit sets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.
+// SetCanEdit sets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
 func (m *Calendar) SetCanEdit(value *bool)() {
     if m != nil {
         m.canEdit = value
     }
 }
-// SetCanShare sets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.
+// SetCanShare sets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
 func (m *Calendar) SetCanShare(value *bool)() {
     if m != nil {
         m.canShare = value
     }
 }
-// SetCanViewPrivateItems sets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.
+// SetCanViewPrivateItems sets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise.
 func (m *Calendar) SetCanViewPrivateItems(value *bool)() {
     if m != nil {
         m.canViewPrivateItems = value
@@ -696,7 +694,7 @@ func (m *Calendar) SetEvents(value []Event)() {
         m.events = value
     }
 }
-// SetHexColor sets the hexColor property value. The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.
+// SetHexColor sets the hexColor property value. The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.
 func (m *Calendar) SetHexColor(value *string)() {
     if m != nil {
         m.hexColor = value
@@ -744,7 +742,7 @@ func (m *Calendar) SetName(value *string)() {
         m.name = value
     }
 }
-// SetOwner sets the owner property value. If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user. Read-only.
+// SetOwner sets the owner property value. If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
 func (m *Calendar) SetOwner(value *EmailAddress)() {
     if m != nil {
         m.owner = value

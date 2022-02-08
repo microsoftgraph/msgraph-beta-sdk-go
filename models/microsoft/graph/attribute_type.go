@@ -19,21 +19,24 @@ func (i AttributeType) String() string {
     return []string{"STRING", "INTEGER", "REFERENCE", "BINARY", "BOOLEAN", "DATETIME"}[i]
 }
 func ParseAttributeType(v string) (interface{}, error) {
+    result := STRING_ATTRIBUTETYPE
     switch strings.ToUpper(v) {
         case "STRING":
-            return STRING_ATTRIBUTETYPE, nil
+            result = STRING_ATTRIBUTETYPE
         case "INTEGER":
-            return INTEGER_ATTRIBUTETYPE, nil
+            result = INTEGER_ATTRIBUTETYPE
         case "REFERENCE":
-            return REFERENCE_ATTRIBUTETYPE, nil
+            result = REFERENCE_ATTRIBUTETYPE
         case "BINARY":
-            return BINARY_ATTRIBUTETYPE, nil
+            result = BINARY_ATTRIBUTETYPE
         case "BOOLEAN":
-            return BOOLEAN_ATTRIBUTETYPE, nil
+            result = BOOLEAN_ATTRIBUTETYPE
         case "DATETIME":
-            return DATETIME_ATTRIBUTETYPE, nil
+            result = DATETIME_ATTRIBUTETYPE
+        default:
+            return 0, errors.New("Unknown AttributeType value: " + v)
     }
-    return 0, errors.New("Unknown AttributeType value: " + v)
+    return &result, nil
 }
 func SerializeAttributeType(values []AttributeType) []string {
     result := make([]string, len(values))

@@ -63,8 +63,7 @@ func (m *AppLogCollectionDownloadDetails) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(AppLogDecryptionAlgorithm)
-            m.SetAppLogDecryptionAlgorithm(&cast)
+            m.SetAppLogDecryptionAlgorithm(val.(*AppLogDecryptionAlgorithm))
         }
         return nil
     }
@@ -96,7 +95,7 @@ func (m *AppLogCollectionDownloadDetails) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *AppLogCollectionDownloadDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAppLogDecryptionAlgorithm() != nil {
-        cast := m.GetAppLogDecryptionAlgorithm().String()
+        cast := (*m.GetAppLogDecryptionAlgorithm()).String()
         err := writer.WriteStringValue("appLogDecryptionAlgorithm", &cast)
         if err != nil {
             return err

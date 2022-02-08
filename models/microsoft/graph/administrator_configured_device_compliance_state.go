@@ -15,13 +15,16 @@ func (i AdministratorConfiguredDeviceComplianceState) String() string {
     return []string{"BASEDONDEVICECOMPLIANCEPOLICY", "NONCOMPLIANT"}[i]
 }
 func ParseAdministratorConfiguredDeviceComplianceState(v string) (interface{}, error) {
+    result := BASEDONDEVICECOMPLIANCEPOLICY_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE
     switch strings.ToUpper(v) {
         case "BASEDONDEVICECOMPLIANCEPOLICY":
-            return BASEDONDEVICECOMPLIANCEPOLICY_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE, nil
+            result = BASEDONDEVICECOMPLIANCEPOLICY_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE
         case "NONCOMPLIANT":
-            return NONCOMPLIANT_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE, nil
+            result = NONCOMPLIANT_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE
+        default:
+            return 0, errors.New("Unknown AdministratorConfiguredDeviceComplianceState value: " + v)
     }
-    return 0, errors.New("Unknown AdministratorConfiguredDeviceComplianceState value: " + v)
+    return &result, nil
 }
 func SerializeAdministratorConfiguredDeviceComplianceState(values []AdministratorConfiguredDeviceComplianceState) []string {
     result := make([]string, len(values))

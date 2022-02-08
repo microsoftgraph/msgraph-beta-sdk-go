@@ -17,17 +17,20 @@ func (i ObjectFlowTypes) String() string {
     return []string{"NONE", "ADD", "UPDATE", "DELETE"}[i]
 }
 func ParseObjectFlowTypes(v string) (interface{}, error) {
+    result := NONE_OBJECTFLOWTYPES
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_OBJECTFLOWTYPES, nil
+            result = NONE_OBJECTFLOWTYPES
         case "ADD":
-            return ADD_OBJECTFLOWTYPES, nil
+            result = ADD_OBJECTFLOWTYPES
         case "UPDATE":
-            return UPDATE_OBJECTFLOWTYPES, nil
+            result = UPDATE_OBJECTFLOWTYPES
         case "DELETE":
-            return DELETE_OBJECTFLOWTYPES, nil
+            result = DELETE_OBJECTFLOWTYPES
+        default:
+            return 0, errors.New("Unknown ObjectFlowTypes value: " + v)
     }
-    return 0, errors.New("Unknown ObjectFlowTypes value: " + v)
+    return &result, nil
 }
 func SerializeObjectFlowTypes(values []ObjectFlowTypes) []string {
     result := make([]string, len(values))

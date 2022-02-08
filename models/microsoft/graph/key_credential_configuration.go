@@ -84,8 +84,7 @@ func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(AppKeyCredentialRestrictionType)
-            m.SetRestrictionType(&cast)
+            m.SetRestrictionType(val.(*AppKeyCredentialRestrictionType))
         }
         return nil
     }
@@ -109,7 +108,7 @@ func (m *KeyCredentialConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetRestrictionType() != nil {
-        cast := m.GetRestrictionType().String()
+        cast := (*m.GetRestrictionType()).String()
         err := writer.WriteStringValue("restrictionType", &cast)
         if err != nil {
             return err

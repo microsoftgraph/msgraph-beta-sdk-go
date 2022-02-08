@@ -16,15 +16,18 @@ func (i MicrosoftStoreForBusinessPortalSelectionOptions) String() string {
     return []string{"NONE", "COMPANYPORTAL", "PRIVATESTORE"}[i]
 }
 func ParseMicrosoftStoreForBusinessPortalSelectionOptions(v string) (interface{}, error) {
+    result := NONE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS, nil
+            result = NONE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
         case "COMPANYPORTAL":
-            return COMPANYPORTAL_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS, nil
+            result = COMPANYPORTAL_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
         case "PRIVATESTORE":
-            return PRIVATESTORE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS, nil
+            result = PRIVATESTORE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
+        default:
+            return 0, errors.New("Unknown MicrosoftStoreForBusinessPortalSelectionOptions value: " + v)
     }
-    return 0, errors.New("Unknown MicrosoftStoreForBusinessPortalSelectionOptions value: " + v)
+    return &result, nil
 }
 func SerializeMicrosoftStoreForBusinessPortalSelectionOptions(values []MicrosoftStoreForBusinessPortalSelectionOptions) []string {
     result := make([]string, len(values))

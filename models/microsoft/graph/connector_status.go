@@ -15,13 +15,16 @@ func (i ConnectorStatus) String() string {
     return []string{"ACTIVE", "INACTIVE"}[i]
 }
 func ParseConnectorStatus(v string) (interface{}, error) {
+    result := ACTIVE_CONNECTORSTATUS
     switch strings.ToUpper(v) {
         case "ACTIVE":
-            return ACTIVE_CONNECTORSTATUS, nil
+            result = ACTIVE_CONNECTORSTATUS
         case "INACTIVE":
-            return INACTIVE_CONNECTORSTATUS, nil
+            result = INACTIVE_CONNECTORSTATUS
+        default:
+            return 0, errors.New("Unknown ConnectorStatus value: " + v)
     }
-    return 0, errors.New("Unknown ConnectorStatus value: " + v)
+    return &result, nil
 }
 func SerializeConnectorStatus(values []ConnectorStatus) []string {
     result := make([]string, len(values))

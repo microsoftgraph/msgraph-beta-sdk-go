@@ -285,8 +285,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetFieldDeserializers()(ma
             return err
         }
         if val != nil {
-            cast := val.(UserExperienceAnalyticsOperatingSystemRestartCategory)
-            m.SetRestartCategory(&cast)
+            m.SetRestartCategory(val.(*UserExperienceAnalyticsOperatingSystemRestartCategory))
         }
         return nil
     }
@@ -412,7 +411,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) Serialize(writer i04eb5309
         }
     }
     if m.GetRestartCategory() != nil {
-        cast := m.GetRestartCategory().String()
+        cast := (*m.GetRestartCategory()).String()
         err = writer.WriteStringValue("restartCategory", &cast)
         if err != nil {
             return err

@@ -18,19 +18,22 @@ func (i CertificateRevocationStatus) String() string {
     return []string{"NONE", "PENDING", "ISSUED", "FAILED", "REVOKED"}[i]
 }
 func ParseCertificateRevocationStatus(v string) (interface{}, error) {
+    result := NONE_CERTIFICATEREVOCATIONSTATUS
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_CERTIFICATEREVOCATIONSTATUS, nil
+            result = NONE_CERTIFICATEREVOCATIONSTATUS
         case "PENDING":
-            return PENDING_CERTIFICATEREVOCATIONSTATUS, nil
+            result = PENDING_CERTIFICATEREVOCATIONSTATUS
         case "ISSUED":
-            return ISSUED_CERTIFICATEREVOCATIONSTATUS, nil
+            result = ISSUED_CERTIFICATEREVOCATIONSTATUS
         case "FAILED":
-            return FAILED_CERTIFICATEREVOCATIONSTATUS, nil
+            result = FAILED_CERTIFICATEREVOCATIONSTATUS
         case "REVOKED":
-            return REVOKED_CERTIFICATEREVOCATIONSTATUS, nil
+            result = REVOKED_CERTIFICATEREVOCATIONSTATUS
+        default:
+            return 0, errors.New("Unknown CertificateRevocationStatus value: " + v)
     }
-    return 0, errors.New("Unknown CertificateRevocationStatus value: " + v)
+    return &result, nil
 }
 func SerializeCertificateRevocationStatus(values []CertificateRevocationStatus) []string {
     result := make([]string, len(values))

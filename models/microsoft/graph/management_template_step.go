@@ -115,8 +115,7 @@ func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory)
-            m.SetCategory(&cast)
+            m.SetCategory(val.(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementCategory))
         }
         return nil
     }
@@ -186,8 +185,7 @@ func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementProvider)
-            m.SetProvider(&cast)
+            m.SetProvider(val.(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.ManagementProvider))
         }
         return nil
     }
@@ -217,7 +215,7 @@ func (m *ManagementTemplateStep) Serialize(writer i04eb5309aeaafadd28374d79c8471
         return err
     }
     if m.GetCategory() != nil {
-        cast := m.GetCategory().String()
+        cast := (*m.GetCategory()).String()
         err = writer.WriteStringValue("category", &cast)
         if err != nil {
             return err
@@ -260,7 +258,7 @@ func (m *ManagementTemplateStep) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetProvider() != nil {
-        cast := m.GetProvider().String()
+        cast := (*m.GetProvider()).String()
         err = writer.WriteStringValue("provider", &cast)
         if err != nil {
             return err

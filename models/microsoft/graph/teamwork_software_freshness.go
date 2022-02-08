@@ -17,17 +17,20 @@ func (i TeamworkSoftwareFreshness) String() string {
     return []string{"UNKNOWN", "LATEST", "UPDATEAVAILABLE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamworkSoftwareFreshness(v string) (interface{}, error) {
+    result := UNKNOWN_TEAMWORKSOFTWAREFRESHNESS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_TEAMWORKSOFTWAREFRESHNESS, nil
+            result = UNKNOWN_TEAMWORKSOFTWAREFRESHNESS
         case "LATEST":
-            return LATEST_TEAMWORKSOFTWAREFRESHNESS, nil
+            result = LATEST_TEAMWORKSOFTWAREFRESHNESS
         case "UPDATEAVAILABLE":
-            return UPDATEAVAILABLE_TEAMWORKSOFTWAREFRESHNESS, nil
+            result = UPDATEAVAILABLE_TEAMWORKSOFTWAREFRESHNESS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMWORKSOFTWAREFRESHNESS, nil
+            result = UNKNOWNFUTUREVALUE_TEAMWORKSOFTWAREFRESHNESS
+        default:
+            return 0, errors.New("Unknown TeamworkSoftwareFreshness value: " + v)
     }
-    return 0, errors.New("Unknown TeamworkSoftwareFreshness value: " + v)
+    return &result, nil
 }
 func SerializeTeamworkSoftwareFreshness(values []TeamworkSoftwareFreshness) []string {
     result := make([]string, len(values))

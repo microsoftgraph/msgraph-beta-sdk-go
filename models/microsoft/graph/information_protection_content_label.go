@@ -64,8 +64,7 @@ func (m *InformationProtectionContentLabel) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(AssignmentMethod)
-            m.SetAssignmentMethod(&cast)
+            m.SetAssignmentMethod(val.(*AssignmentMethod))
         }
         return nil
     }
@@ -97,7 +96,7 @@ func (m *InformationProtectionContentLabel) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *InformationProtectionContentLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAssignmentMethod() != nil {
-        cast := m.GetAssignmentMethod().String()
+        cast := (*m.GetAssignmentMethod()).String()
         err := writer.WriteStringValue("assignmentMethod", &cast)
         if err != nil {
             return err

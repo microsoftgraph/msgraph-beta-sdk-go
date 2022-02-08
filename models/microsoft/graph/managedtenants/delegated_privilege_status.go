@@ -16,15 +16,18 @@ func (i DelegatedPrivilegeStatus) String() string {
     return []string{"NONE", "DELEGATEDADMINPRIVILEGES", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDelegatedPrivilegeStatus(v string) (interface{}, error) {
+    result := NONE_DELEGATEDPRIVILEGESTATUS
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DELEGATEDPRIVILEGESTATUS, nil
+            result = NONE_DELEGATEDPRIVILEGESTATUS
         case "DELEGATEDADMINPRIVILEGES":
-            return DELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS, nil
+            result = DELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DELEGATEDPRIVILEGESTATUS, nil
+            result = UNKNOWNFUTUREVALUE_DELEGATEDPRIVILEGESTATUS
+        default:
+            return 0, errors.New("Unknown DelegatedPrivilegeStatus value: " + v)
     }
-    return 0, errors.New("Unknown DelegatedPrivilegeStatus value: " + v)
+    return &result, nil
 }
 func SerializeDelegatedPrivilegeStatus(values []DelegatedPrivilegeStatus) []string {
     result := make([]string, len(values))

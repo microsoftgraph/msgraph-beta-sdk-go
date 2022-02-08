@@ -19,21 +19,24 @@ func (i CaseStatus) String() string {
     return []string{"UNKNOWN", "ACTIVE", "PENDINGDELETE", "CLOSING", "CLOSED", "CLOSEDWITHERROR"}[i]
 }
 func ParseCaseStatus(v string) (interface{}, error) {
+    result := UNKNOWN_CASESTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_CASESTATUS, nil
+            result = UNKNOWN_CASESTATUS
         case "ACTIVE":
-            return ACTIVE_CASESTATUS, nil
+            result = ACTIVE_CASESTATUS
         case "PENDINGDELETE":
-            return PENDINGDELETE_CASESTATUS, nil
+            result = PENDINGDELETE_CASESTATUS
         case "CLOSING":
-            return CLOSING_CASESTATUS, nil
+            result = CLOSING_CASESTATUS
         case "CLOSED":
-            return CLOSED_CASESTATUS, nil
+            result = CLOSED_CASESTATUS
         case "CLOSEDWITHERROR":
-            return CLOSEDWITHERROR_CASESTATUS, nil
+            result = CLOSEDWITHERROR_CASESTATUS
+        default:
+            return 0, errors.New("Unknown CaseStatus value: " + v)
     }
-    return 0, errors.New("Unknown CaseStatus value: " + v)
+    return &result, nil
 }
 func SerializeCaseStatus(values []CaseStatus) []string {
     result := make([]string, len(values))

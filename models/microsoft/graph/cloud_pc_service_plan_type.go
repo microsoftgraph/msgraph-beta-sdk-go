@@ -16,15 +16,18 @@ func (i CloudPcServicePlanType) String() string {
     return []string{"ENTERPRISE", "BUSINESS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCloudPcServicePlanType(v string) (interface{}, error) {
+    result := ENTERPRISE_CLOUDPCSERVICEPLANTYPE
     switch strings.ToUpper(v) {
         case "ENTERPRISE":
-            return ENTERPRISE_CLOUDPCSERVICEPLANTYPE, nil
+            result = ENTERPRISE_CLOUDPCSERVICEPLANTYPE
         case "BUSINESS":
-            return BUSINESS_CLOUDPCSERVICEPLANTYPE, nil
+            result = BUSINESS_CLOUDPCSERVICEPLANTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CLOUDPCSERVICEPLANTYPE, nil
+            result = UNKNOWNFUTUREVALUE_CLOUDPCSERVICEPLANTYPE
+        default:
+            return 0, errors.New("Unknown CloudPcServicePlanType value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcServicePlanType value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcServicePlanType(values []CloudPcServicePlanType) []string {
     result := make([]string, len(values))

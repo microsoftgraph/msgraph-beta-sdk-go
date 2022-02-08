@@ -114,8 +114,7 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(MobileAppRelationshipType)
-            m.SetTargetType(&cast)
+            m.SetTargetType(val.(*MobileAppRelationshipType))
         }
         return nil
     }
@@ -155,7 +154,7 @@ func (m *MobileAppRelationship) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetTargetType() != nil {
-        cast := m.GetTargetType().String()
+        cast := (*m.GetTargetType()).String()
         err = writer.WriteStringValue("targetType", &cast)
         if err != nil {
             return err

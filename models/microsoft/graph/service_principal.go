@@ -24,9 +24,9 @@ type ServicePrincipal struct {
     applicationTemplateId *string;
     // The appManagementPolicy applied to this service principal.
     appManagementPolicies []AppManagementPolicy;
-    // Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+    // Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
     appOwnerOrganizationId *string;
-    // App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+    // App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
     appRoleAssignedTo []AppRoleAssignment;
     // Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
     appRoleAssignmentRequired *bool;
@@ -80,7 +80,7 @@ type ServicePrincipal struct {
     ownedObjects []DirectoryObject;
     // Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
     owners []DirectoryObject;
-    // The collection of password credentials associated with the service principal. Not nullable.
+    // The collection of password credentials associated with the application. Not nullable.
     passwordCredentials []PasswordCredential;
     // The collection for settings related to password single sign-on. Use $select=passwordSingleSignOnSettings to read the property. Read-only for applicationTemplates except for custom applicationTemplates.
     passwordSingleSignOnSettings *PasswordSingleSignOnSettings;
@@ -102,7 +102,7 @@ type ServicePrincipal struct {
     samlSingleSignOnSettings *SamlSingleSignOnSettings;
     // Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
     servicePrincipalNames []string;
-    // Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+    // Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
     servicePrincipalType *string;
     // Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
     signInAudience *string;
@@ -112,9 +112,9 @@ type ServicePrincipal struct {
     tags []string;
     // Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
     tokenEncryptionKeyId *string;
-    // The tokenIssuancePolicies assigned to this service principal. Supports $expand.
+    // The tokenIssuancePolicies assigned to this service principal.
     tokenIssuancePolicies []TokenIssuancePolicy;
-    // The tokenLifetimePolicies assigned to this service principal. Supports $expand.
+    // The tokenLifetimePolicies assigned to this service principal.
     tokenLifetimePolicies []TokenLifetimePolicy;
     // 
     transitiveMemberOf []DirectoryObject;
@@ -190,7 +190,7 @@ func (m *ServicePrincipal) GetAppManagementPolicies()([]AppManagementPolicy) {
         return m.appManagementPolicies
     }
 }
-// GetAppOwnerOrganizationId gets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+// GetAppOwnerOrganizationId gets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
 func (m *ServicePrincipal) GetAppOwnerOrganizationId()(*string) {
     if m == nil {
         return nil
@@ -198,7 +198,7 @@ func (m *ServicePrincipal) GetAppOwnerOrganizationId()(*string) {
         return m.appOwnerOrganizationId
     }
 }
-// GetAppRoleAssignedTo gets the appRoleAssignedTo property value. App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+// GetAppRoleAssignedTo gets the appRoleAssignedTo property value. App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
 func (m *ServicePrincipal) GetAppRoleAssignedTo()([]AppRoleAssignment) {
     if m == nil {
         return nil
@@ -414,7 +414,7 @@ func (m *ServicePrincipal) GetOwners()([]DirectoryObject) {
         return m.owners
     }
 }
-// GetPasswordCredentials gets the passwordCredentials property value. The collection of password credentials associated with the service principal. Not nullable.
+// GetPasswordCredentials gets the passwordCredentials property value. The collection of password credentials associated with the application. Not nullable.
 func (m *ServicePrincipal) GetPasswordCredentials()([]PasswordCredential) {
     if m == nil {
         return nil
@@ -502,7 +502,7 @@ func (m *ServicePrincipal) GetServicePrincipalNames()([]string) {
         return m.servicePrincipalNames
     }
 }
-// GetServicePrincipalType gets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+// GetServicePrincipalType gets the servicePrincipalType property value. Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
 func (m *ServicePrincipal) GetServicePrincipalType()(*string) {
     if m == nil {
         return nil
@@ -542,7 +542,7 @@ func (m *ServicePrincipal) GetTokenEncryptionKeyId()(*string) {
         return m.tokenEncryptionKeyId
     }
 }
-// GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. The tokenIssuancePolicies assigned to this service principal. Supports $expand.
+// GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. The tokenIssuancePolicies assigned to this service principal.
 func (m *ServicePrincipal) GetTokenIssuancePolicies()([]TokenIssuancePolicy) {
     if m == nil {
         return nil
@@ -550,7 +550,7 @@ func (m *ServicePrincipal) GetTokenIssuancePolicies()([]TokenIssuancePolicy) {
         return m.tokenIssuancePolicies
     }
 }
-// GetTokenLifetimePolicies gets the tokenLifetimePolicies property value. The tokenLifetimePolicies assigned to this service principal. Supports $expand.
+// GetTokenLifetimePolicies gets the tokenLifetimePolicies property value. The tokenLifetimePolicies assigned to this service principal.
 func (m *ServicePrincipal) GetTokenLifetimePolicies()([]TokenLifetimePolicy) {
     if m == nil {
         return nil
@@ -1728,13 +1728,13 @@ func (m *ServicePrincipal) SetAppManagementPolicies(value []AppManagementPolicy)
         m.appManagementPolicies = value
     }
 }
-// SetAppOwnerOrganizationId sets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+// SetAppOwnerOrganizationId sets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
 func (m *ServicePrincipal) SetAppOwnerOrganizationId(value *string)() {
     if m != nil {
         m.appOwnerOrganizationId = value
     }
 }
-// SetAppRoleAssignedTo sets the appRoleAssignedTo property value. App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+// SetAppRoleAssignedTo sets the appRoleAssignedTo property value. App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
 func (m *ServicePrincipal) SetAppRoleAssignedTo(value []AppRoleAssignment)() {
     if m != nil {
         m.appRoleAssignedTo = value
@@ -1896,7 +1896,7 @@ func (m *ServicePrincipal) SetOwners(value []DirectoryObject)() {
         m.owners = value
     }
 }
-// SetPasswordCredentials sets the passwordCredentials property value. The collection of password credentials associated with the service principal. Not nullable.
+// SetPasswordCredentials sets the passwordCredentials property value. The collection of password credentials associated with the application. Not nullable.
 func (m *ServicePrincipal) SetPasswordCredentials(value []PasswordCredential)() {
     if m != nil {
         m.passwordCredentials = value
@@ -1962,7 +1962,7 @@ func (m *ServicePrincipal) SetServicePrincipalNames(value []string)() {
         m.servicePrincipalNames = value
     }
 }
-// SetServicePrincipalType sets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+// SetServicePrincipalType sets the servicePrincipalType property value. Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
 func (m *ServicePrincipal) SetServicePrincipalType(value *string)() {
     if m != nil {
         m.servicePrincipalType = value
@@ -1992,13 +1992,13 @@ func (m *ServicePrincipal) SetTokenEncryptionKeyId(value *string)() {
         m.tokenEncryptionKeyId = value
     }
 }
-// SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The tokenIssuancePolicies assigned to this service principal. Supports $expand.
+// SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The tokenIssuancePolicies assigned to this service principal.
 func (m *ServicePrincipal) SetTokenIssuancePolicies(value []TokenIssuancePolicy)() {
     if m != nil {
         m.tokenIssuancePolicies = value
     }
 }
-// SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. The tokenLifetimePolicies assigned to this service principal. Supports $expand.
+// SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. The tokenLifetimePolicies assigned to this service principal.
 func (m *ServicePrincipal) SetTokenLifetimePolicies(value []TokenLifetimePolicy)() {
     if m != nil {
         m.tokenLifetimePolicies = value

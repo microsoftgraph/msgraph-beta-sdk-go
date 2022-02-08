@@ -85,8 +85,7 @@ func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(OnboardingStatus)
-            m.SetOnboardingStatus(&cast)
+            m.SetOnboardingStatus(val.(*OnboardingStatus))
         }
         return nil
     }
@@ -124,7 +123,7 @@ func (m *ChromeOSOnboardingSettings) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetOnboardingStatus() != nil {
-        cast := m.GetOnboardingStatus().String()
+        cast := (*m.GetOnboardingStatus()).String()
         err = writer.WriteStringValue("onboardingStatus", &cast)
         if err != nil {
             return err

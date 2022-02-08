@@ -15,13 +15,16 @@ func (i SourceType) String() string {
     return []string{"MAILBOX", "SITE"}[i]
 }
 func ParseSourceType(v string) (interface{}, error) {
+    result := MAILBOX_SOURCETYPE
     switch strings.ToUpper(v) {
         case "MAILBOX":
-            return MAILBOX_SOURCETYPE, nil
+            result = MAILBOX_SOURCETYPE
         case "SITE":
-            return SITE_SOURCETYPE, nil
+            result = SITE_SOURCETYPE
+        default:
+            return 0, errors.New("Unknown SourceType value: " + v)
     }
-    return 0, errors.New("Unknown SourceType value: " + v)
+    return &result, nil
 }
 func SerializeSourceType(values []SourceType) []string {
     result := make([]string, len(values))

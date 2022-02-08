@@ -104,8 +104,7 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(BookingStaffRole)
-            m.SetRole(&cast)
+            m.SetRole(val.(*BookingStaffRole))
         }
         return nil
     }
@@ -167,7 +166,7 @@ func (m *BookingStaffMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetRole() != nil {
-        cast := m.GetRole().String()
+        cast := (*m.GetRole()).String()
         err = writer.WriteStringValue("role", &cast)
         if err != nil {
             return err

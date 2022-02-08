@@ -19,21 +19,24 @@ func (i DataSourceScopes) String() string {
     return []string{"NONE", "ALLTENANTMAILBOXES", "ALLTENANTSITES", "ALLCASECUSTODIANS", "ALLCASENONCUSTODIALDATASOURCES", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDataSourceScopes(v string) (interface{}, error) {
+    result := NONE_DATASOURCESCOPES
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DATASOURCESCOPES, nil
+            result = NONE_DATASOURCESCOPES
         case "ALLTENANTMAILBOXES":
-            return ALLTENANTMAILBOXES_DATASOURCESCOPES, nil
+            result = ALLTENANTMAILBOXES_DATASOURCESCOPES
         case "ALLTENANTSITES":
-            return ALLTENANTSITES_DATASOURCESCOPES, nil
+            result = ALLTENANTSITES_DATASOURCESCOPES
         case "ALLCASECUSTODIANS":
-            return ALLCASECUSTODIANS_DATASOURCESCOPES, nil
+            result = ALLCASECUSTODIANS_DATASOURCESCOPES
         case "ALLCASENONCUSTODIALDATASOURCES":
-            return ALLCASENONCUSTODIALDATASOURCES_DATASOURCESCOPES, nil
+            result = ALLCASENONCUSTODIALDATASOURCES_DATASOURCESCOPES
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DATASOURCESCOPES, nil
+            result = UNKNOWNFUTUREVALUE_DATASOURCESCOPES
+        default:
+            return 0, errors.New("Unknown DataSourceScopes value: " + v)
     }
-    return 0, errors.New("Unknown DataSourceScopes value: " + v)
+    return &result, nil
 }
 func SerializeDataSourceScopes(values []DataSourceScopes) []string {
     result := make([]string, len(values))

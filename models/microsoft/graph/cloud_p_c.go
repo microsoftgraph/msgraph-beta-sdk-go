@@ -325,8 +325,7 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
             return err
         }
         if val != nil {
-            cast := val.(CloudPcOperatingSystem)
-            m.SetOsVersion(&cast)
+            m.SetOsVersion(val.(*CloudPcOperatingSystem))
         }
         return nil
     }
@@ -376,8 +375,7 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
             return err
         }
         if val != nil {
-            cast := val.(CloudPcServicePlanType)
-            m.SetServicePlanType(&cast)
+            m.SetServicePlanType(val.(*CloudPcServicePlanType))
         }
         return nil
     }
@@ -387,8 +385,7 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
             return err
         }
         if val != nil {
-            cast := val.(CloudPcStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*CloudPcStatus))
         }
         return nil
     }
@@ -408,8 +405,7 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
             return err
         }
         if val != nil {
-            cast := val.(CloudPcUserAccountType)
-            m.SetUserAccountType(&cast)
+            m.SetUserAccountType(val.(*CloudPcUserAccountType))
         }
         return nil
     }
@@ -495,7 +491,7 @@ func (m *CloudPC) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     if m.GetOsVersion() != nil {
-        cast := m.GetOsVersion().String()
+        cast := (*m.GetOsVersion()).String()
         err = writer.WriteStringValue("osVersion", &cast)
         if err != nil {
             return err
@@ -526,14 +522,14 @@ func (m *CloudPC) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     if m.GetServicePlanType() != nil {
-        cast := m.GetServicePlanType().String()
+        cast := (*m.GetServicePlanType()).String()
         err = writer.WriteStringValue("servicePlanType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
@@ -546,7 +542,7 @@ func (m *CloudPC) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     if m.GetUserAccountType() != nil {
-        cast := m.GetUserAccountType().String()
+        cast := (*m.GetUserAccountType()).String()
         err = writer.WriteStringValue("userAccountType", &cast)
         if err != nil {
             return err

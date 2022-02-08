@@ -114,8 +114,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(ClassificationMethod)
-            m.SetClassificationMethod(&cast)
+            m.SetClassificationMethod(val.(*ClassificationMethod))
         }
         return nil
     }
@@ -175,8 +174,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(SensitiveTypeScope)
-            m.SetScope(&cast)
+            m.SetScope(val.(*SensitiveTypeScope))
         }
         return nil
     }
@@ -186,8 +184,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(SensitiveTypeSource)
-            m.SetSensitiveTypeSource(&cast)
+            m.SetSensitiveTypeSource(val.(*SensitiveTypeSource))
         }
         return nil
     }
@@ -213,7 +210,7 @@ func (m *SensitiveType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         return err
     }
     if m.GetClassificationMethod() != nil {
-        cast := m.GetClassificationMethod().String()
+        cast := (*m.GetClassificationMethod()).String()
         err = writer.WriteStringValue("classificationMethod", &cast)
         if err != nil {
             return err
@@ -250,14 +247,14 @@ func (m *SensitiveType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetScope() != nil {
-        cast := m.GetScope().String()
+        cast := (*m.GetScope()).String()
         err = writer.WriteStringValue("scope", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetSensitiveTypeSource() != nil {
-        cast := m.GetSensitiveTypeSource().String()
+        cast := (*m.GetSensitiveTypeSource()).String()
         err = writer.WriteStringValue("sensitiveTypeSource", &cast)
         if err != nil {
             return err

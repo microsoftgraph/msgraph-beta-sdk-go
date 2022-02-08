@@ -16,15 +16,18 @@ func (i SignInUserType) String() string {
     return []string{"MEMBER", "GUEST", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSignInUserType(v string) (interface{}, error) {
+    result := MEMBER_SIGNINUSERTYPE
     switch strings.ToUpper(v) {
         case "MEMBER":
-            return MEMBER_SIGNINUSERTYPE, nil
+            result = MEMBER_SIGNINUSERTYPE
         case "GUEST":
-            return GUEST_SIGNINUSERTYPE, nil
+            result = GUEST_SIGNINUSERTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SIGNINUSERTYPE, nil
+            result = UNKNOWNFUTUREVALUE_SIGNINUSERTYPE
+        default:
+            return 0, errors.New("Unknown SignInUserType value: " + v)
     }
-    return 0, errors.New("Unknown SignInUserType value: " + v)
+    return &result, nil
 }
 func SerializeSignInUserType(values []SignInUserType) []string {
     result := make([]string, len(values))

@@ -116,8 +116,7 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus)
-            m.SetHoldStatus(&cast)
+            m.SetHoldStatus(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceHoldStatus))
         }
         return nil
     }
@@ -157,8 +156,7 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceContainerStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.DataSourceContainerStatus))
         }
         return nil
     }
@@ -186,7 +184,7 @@ func (m *DataSourceContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetHoldStatus() != nil {
-        cast := m.GetHoldStatus().String()
+        cast := (*m.GetHoldStatus()).String()
         err = writer.WriteStringValue("holdStatus", &cast)
         if err != nil {
             return err
@@ -211,7 +209,7 @@ func (m *DataSourceContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

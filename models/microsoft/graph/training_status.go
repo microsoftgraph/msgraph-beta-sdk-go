@@ -19,21 +19,24 @@ func (i TrainingStatus) String() string {
     return []string{"UNKNOWN", "ASSIGNED", "INPROGRESS", "COMPLETED", "OVERDUE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTrainingStatus(v string) (interface{}, error) {
+    result := UNKNOWN_TRAININGSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_TRAININGSTATUS, nil
+            result = UNKNOWN_TRAININGSTATUS
         case "ASSIGNED":
-            return ASSIGNED_TRAININGSTATUS, nil
+            result = ASSIGNED_TRAININGSTATUS
         case "INPROGRESS":
-            return INPROGRESS_TRAININGSTATUS, nil
+            result = INPROGRESS_TRAININGSTATUS
         case "COMPLETED":
-            return COMPLETED_TRAININGSTATUS, nil
+            result = COMPLETED_TRAININGSTATUS
         case "OVERDUE":
-            return OVERDUE_TRAININGSTATUS, nil
+            result = OVERDUE_TRAININGSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TRAININGSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_TRAININGSTATUS
+        default:
+            return 0, errors.New("Unknown TrainingStatus value: " + v)
     }
-    return 0, errors.New("Unknown TrainingStatus value: " + v)
+    return &result, nil
 }
 func SerializeTrainingStatus(values []TrainingStatus) []string {
     result := make([]string, len(values))

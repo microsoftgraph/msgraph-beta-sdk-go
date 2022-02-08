@@ -16,15 +16,18 @@ func (i RecommendationPriority) String() string {
     return []string{"LOW", "MEDIUM", "HIGH"}[i]
 }
 func ParseRecommendationPriority(v string) (interface{}, error) {
+    result := LOW_RECOMMENDATIONPRIORITY
     switch strings.ToUpper(v) {
         case "LOW":
-            return LOW_RECOMMENDATIONPRIORITY, nil
+            result = LOW_RECOMMENDATIONPRIORITY
         case "MEDIUM":
-            return MEDIUM_RECOMMENDATIONPRIORITY, nil
+            result = MEDIUM_RECOMMENDATIONPRIORITY
         case "HIGH":
-            return HIGH_RECOMMENDATIONPRIORITY, nil
+            result = HIGH_RECOMMENDATIONPRIORITY
+        default:
+            return 0, errors.New("Unknown RecommendationPriority value: " + v)
     }
-    return 0, errors.New("Unknown RecommendationPriority value: " + v)
+    return &result, nil
 }
 func SerializeRecommendationPriority(values []RecommendationPriority) []string {
     result := make([]string, len(values))

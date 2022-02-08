@@ -53,8 +53,7 @@ func (m *DriveItemSource) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(DriveItemSourceApplication)
-            m.SetApplication(&cast)
+            m.SetApplication(val.(*DriveItemSourceApplication))
         }
         return nil
     }
@@ -76,7 +75,7 @@ func (m *DriveItemSource) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *DriveItemSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetApplication() != nil {
-        cast := m.GetApplication().String()
+        cast := (*m.GetApplication()).String()
         err := writer.WriteStringValue("application", &cast)
         if err != nil {
             return err

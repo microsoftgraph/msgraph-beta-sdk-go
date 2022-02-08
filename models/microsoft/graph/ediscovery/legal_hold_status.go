@@ -17,17 +17,20 @@ func (i LegalHoldStatus) String() string {
     return []string{"PENDING", "ERROR", "SUCCESS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseLegalHoldStatus(v string) (interface{}, error) {
+    result := PENDING_LEGALHOLDSTATUS
     switch strings.ToUpper(v) {
         case "PENDING":
-            return PENDING_LEGALHOLDSTATUS, nil
+            result = PENDING_LEGALHOLDSTATUS
         case "ERROR":
-            return ERROR_LEGALHOLDSTATUS, nil
+            result = ERROR_LEGALHOLDSTATUS
         case "SUCCESS":
-            return SUCCESS_LEGALHOLDSTATUS, nil
+            result = SUCCESS_LEGALHOLDSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_LEGALHOLDSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_LEGALHOLDSTATUS
+        default:
+            return 0, errors.New("Unknown LegalHoldStatus value: " + v)
     }
-    return 0, errors.New("Unknown LegalHoldStatus value: " + v)
+    return &result, nil
 }
 func SerializeLegalHoldStatus(values []LegalHoldStatus) []string {
     result := make([]string, len(values))

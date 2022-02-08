@@ -17,17 +17,20 @@ func (i TeamworkConnectionStatus) String() string {
     return []string{"UNKNOWN", "CONNECTED", "DISCONNECTED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamworkConnectionStatus(v string) (interface{}, error) {
+    result := UNKNOWN_TEAMWORKCONNECTIONSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_TEAMWORKCONNECTIONSTATUS, nil
+            result = UNKNOWN_TEAMWORKCONNECTIONSTATUS
         case "CONNECTED":
-            return CONNECTED_TEAMWORKCONNECTIONSTATUS, nil
+            result = CONNECTED_TEAMWORKCONNECTIONSTATUS
         case "DISCONNECTED":
-            return DISCONNECTED_TEAMWORKCONNECTIONSTATUS, nil
+            result = DISCONNECTED_TEAMWORKCONNECTIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMWORKCONNECTIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_TEAMWORKCONNECTIONSTATUS
+        default:
+            return 0, errors.New("Unknown TeamworkConnectionStatus value: " + v)
     }
-    return 0, errors.New("Unknown TeamworkConnectionStatus value: " + v)
+    return &result, nil
 }
 func SerializeTeamworkConnectionStatus(values []TeamworkConnectionStatus) []string {
     result := make([]string, len(values))

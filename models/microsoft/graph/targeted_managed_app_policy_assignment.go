@@ -54,8 +54,7 @@ func (m *TargetedManagedAppPolicyAssignment) GetFieldDeserializers()(map[string]
             return err
         }
         if val != nil {
-            cast := val.(DeviceAndAppManagementAssignmentSource)
-            m.SetSource(&cast)
+            m.SetSource(val.(*DeviceAndAppManagementAssignmentSource))
         }
         return nil
     }
@@ -91,7 +90,7 @@ func (m *TargetedManagedAppPolicyAssignment) Serialize(writer i04eb5309aeaafadd2
         return err
     }
     if m.GetSource() != nil {
-        cast := m.GetSource().String()
+        cast := (*m.GetSource()).String()
         err = writer.WriteStringValue("source", &cast)
         if err != nil {
             return err

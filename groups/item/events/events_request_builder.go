@@ -27,7 +27,7 @@ type EventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// EventsRequestBuilderGetQueryParameters the group's events.
+// EventsRequestBuilderGetQueryParameters the group's calendar events.
 type EventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -72,7 +72,7 @@ func NewEventsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams["request-raw-url"] = rawUrl
     return NewEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the group's events.
+// CreateGetRequestInformation the group's calendar events.
 func (m *EventsRequestBuilder) CreateGetRequestInformation(options *EventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,7 +92,7 @@ func (m *EventsRequestBuilder) CreateGetRequestInformation(options *EventsReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the group's events.
+// CreatePostRequestInformation the group's calendar events.
 func (m *EventsRequestBuilder) CreatePostRequestInformation(options *EventsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *EventsRequestBuilder) CreatePostRequestInformation(options *EventsReque
 func (m *EventsRequestBuilder) Delta()(*i266e1c1f7949bccc719dc90e1714839a9d1885f2192a21e66040e2928498c484.DeltaRequestBuilder) {
     return i266e1c1f7949bccc719dc90e1714839a9d1885f2192a21e66040e2928498c484.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the group's events.
+// Get the group's calendar events.
 func (m *EventsRequestBuilder) Get(options *EventsRequestBuilderGetOptions)(*EventsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -126,7 +126,7 @@ func (m *EventsRequestBuilder) Get(options *EventsRequestBuilderGetOptions)(*Eve
     }
     return res.(*EventsResponse), nil
 }
-// Post the group's events.
+// Post the group's calendar events.
 func (m *EventsRequestBuilder) Post(options *EventsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Event, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

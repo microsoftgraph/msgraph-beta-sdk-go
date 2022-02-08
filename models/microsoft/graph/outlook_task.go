@@ -268,8 +268,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(Importance)
-            m.SetImportance(&cast)
+            m.SetImportance(val.(*Importance))
         }
         return nil
     }
@@ -343,8 +342,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(Sensitivity)
-            m.SetSensitivity(&cast)
+            m.SetSensitivity(val.(*Sensitivity))
         }
         return nil
     }
@@ -378,8 +376,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(TaskStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*TaskStatus))
         }
         return nil
     }
@@ -446,7 +443,7 @@ func (m *OutlookTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetImportance() != nil {
-        cast := m.GetImportance().String()
+        cast := (*m.GetImportance()).String()
         err = writer.WriteStringValue("importance", &cast)
         if err != nil {
             return err
@@ -494,7 +491,7 @@ func (m *OutlookTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetSensitivity() != nil {
-        cast := m.GetSensitivity().String()
+        cast := (*m.GetSensitivity()).String()
         err = writer.WriteStringValue("sensitivity", &cast)
         if err != nil {
             return err
@@ -518,7 +515,7 @@ func (m *OutlookTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

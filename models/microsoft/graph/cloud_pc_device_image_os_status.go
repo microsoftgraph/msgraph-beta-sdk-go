@@ -16,15 +16,18 @@ func (i CloudPcDeviceImageOsStatus) String() string {
     return []string{"SUPPORTED", "SUPPORTEDWITHWARNING", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCloudPcDeviceImageOsStatus(v string) (interface{}, error) {
+    result := SUPPORTED_CLOUDPCDEVICEIMAGEOSSTATUS
     switch strings.ToUpper(v) {
         case "SUPPORTED":
-            return SUPPORTED_CLOUDPCDEVICEIMAGEOSSTATUS, nil
+            result = SUPPORTED_CLOUDPCDEVICEIMAGEOSSTATUS
         case "SUPPORTEDWITHWARNING":
-            return SUPPORTEDWITHWARNING_CLOUDPCDEVICEIMAGEOSSTATUS, nil
+            result = SUPPORTEDWITHWARNING_CLOUDPCDEVICEIMAGEOSSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGEOSSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGEOSSTATUS
+        default:
+            return 0, errors.New("Unknown CloudPcDeviceImageOsStatus value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcDeviceImageOsStatus value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcDeviceImageOsStatus(values []CloudPcDeviceImageOsStatus) []string {
     result := make([]string, len(values))

@@ -15,13 +15,16 @@ func (i ManagedInstallerStatus) String() string {
     return []string{"DISABLED", "ENABLED"}[i]
 }
 func ParseManagedInstallerStatus(v string) (interface{}, error) {
+    result := DISABLED_MANAGEDINSTALLERSTATUS
     switch strings.ToUpper(v) {
         case "DISABLED":
-            return DISABLED_MANAGEDINSTALLERSTATUS, nil
+            result = DISABLED_MANAGEDINSTALLERSTATUS
         case "ENABLED":
-            return ENABLED_MANAGEDINSTALLERSTATUS, nil
+            result = ENABLED_MANAGEDINSTALLERSTATUS
+        default:
+            return 0, errors.New("Unknown ManagedInstallerStatus value: " + v)
     }
-    return 0, errors.New("Unknown ManagedInstallerStatus value: " + v)
+    return &result, nil
 }
 func SerializeManagedInstallerStatus(values []ManagedInstallerStatus) []string {
     result := make([]string, len(values))

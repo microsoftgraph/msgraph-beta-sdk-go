@@ -81,15 +81,15 @@ func (m *SecurityRequestBuilder) Alerts_v2()(*ic9ba9daf256a77044250cba0d8c29ae1a
     return ic9ba9daf256a77044250cba0d8c29ae1ae3e69cd91e81b4a7aba1988ececf405.NewAlerts_v2RequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Alerts_v2ById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.alerts_v2.item collection
-func (m *SecurityRequestBuilder) Alerts_v2ById(id string)(*i18f494f2b6028fa48209e2ed1901867809ed07f584269e2fa79310996bdc0c55.Alert_v2RequestBuilder) {
+func (m *SecurityRequestBuilder) Alerts_v2ById(id string)(*i18f494f2b6028fa48209e2ed1901867809ed07f584269e2fa79310996bdc0c55.AlertRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["alert_v2_id"] = id
+        urlTplParams["alert_id"] = id
     }
-    return i18f494f2b6028fa48209e2ed1901867809ed07f584269e2fa79310996bdc0c55.NewAlert_v2RequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i18f494f2b6028fa48209e2ed1901867809ed07f584269e2fa79310996bdc0c55.NewAlertRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AlertsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.alerts.item collection
 func (m *SecurityRequestBuilder) AlertsById(id string)(*icf7abdec996315842957a23a296d4a13dfa457345ce67dfb1fcf777acecb7ef7.AlertRequestBuilder) {

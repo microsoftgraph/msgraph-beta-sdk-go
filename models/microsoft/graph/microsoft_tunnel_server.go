@@ -115,8 +115,7 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(MicrosoftTunnelServerHealthStatus)
-            m.SetTunnelServerHealthStatus(&cast)
+            m.SetTunnelServerHealthStatus(val.(*MicrosoftTunnelServerHealthStatus))
         }
         return nil
     }
@@ -156,7 +155,7 @@ func (m *MicrosoftTunnelServer) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetTunnelServerHealthStatus() != nil {
-        cast := m.GetTunnelServerHealthStatus().String()
+        cast := (*m.GetTunnelServerHealthStatus()).String()
         err = writer.WriteStringValue("tunnelServerHealthStatus", &cast)
         if err != nil {
             return err

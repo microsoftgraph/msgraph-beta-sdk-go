@@ -103,8 +103,7 @@ func (m *AttributeMappingParameterSchema) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(AttributeType)
-            m.SetType(&cast)
+            m.SetType(val.(*AttributeType))
         }
         return nil
     }
@@ -134,7 +133,7 @@ func (m *AttributeMappingParameterSchema) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

@@ -18,19 +18,22 @@ func (i IncludedUserRoles) String() string {
     return []string{"ALL", "PRIVILEGEDADMIN", "ADMIN", "USER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseIncludedUserRoles(v string) (interface{}, error) {
+    result := ALL_INCLUDEDUSERROLES
     switch strings.ToUpper(v) {
         case "ALL":
-            return ALL_INCLUDEDUSERROLES, nil
+            result = ALL_INCLUDEDUSERROLES
         case "PRIVILEGEDADMIN":
-            return PRIVILEGEDADMIN_INCLUDEDUSERROLES, nil
+            result = PRIVILEGEDADMIN_INCLUDEDUSERROLES
         case "ADMIN":
-            return ADMIN_INCLUDEDUSERROLES, nil
+            result = ADMIN_INCLUDEDUSERROLES
         case "USER":
-            return USER_INCLUDEDUSERROLES, nil
+            result = USER_INCLUDEDUSERROLES
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_INCLUDEDUSERROLES, nil
+            result = UNKNOWNFUTUREVALUE_INCLUDEDUSERROLES
+        default:
+            return 0, errors.New("Unknown IncludedUserRoles value: " + v)
     }
-    return 0, errors.New("Unknown IncludedUserRoles value: " + v)
+    return &result, nil
 }
 func SerializeIncludedUserRoles(values []IncludedUserRoles) []string {
     result := make([]string, len(values))

@@ -64,8 +64,7 @@ func (m *UpdateStatusRequestBody) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagementTaskStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagementTaskStatus))
         }
         return nil
     }
@@ -83,7 +82,7 @@ func (m *UpdateStatusRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err := writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

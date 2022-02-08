@@ -16,15 +16,18 @@ func (i AndroidManagedAppSafetyNetDeviceAttestationType) String() string {
     return []string{"NONE", "BASICINTEGRITY", "BASICINTEGRITYANDDEVICECERTIFICATION"}[i]
 }
 func ParseAndroidManagedAppSafetyNetDeviceAttestationType(v string) (interface{}, error) {
+    result := NONE_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE, nil
+            result = NONE_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
         case "BASICINTEGRITY":
-            return BASICINTEGRITY_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE, nil
+            result = BASICINTEGRITY_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
         case "BASICINTEGRITYANDDEVICECERTIFICATION":
-            return BASICINTEGRITYANDDEVICECERTIFICATION_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE, nil
+            result = BASICINTEGRITYANDDEVICECERTIFICATION_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
+        default:
+            return 0, errors.New("Unknown AndroidManagedAppSafetyNetDeviceAttestationType value: " + v)
     }
-    return 0, errors.New("Unknown AndroidManagedAppSafetyNetDeviceAttestationType value: " + v)
+    return &result, nil
 }
 func SerializeAndroidManagedAppSafetyNetDeviceAttestationType(values []AndroidManagedAppSafetyNetDeviceAttestationType) []string {
     result := make([]string, len(values))

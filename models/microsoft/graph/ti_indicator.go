@@ -605,8 +605,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(TiAction)
-            m.SetAction(&cast)
+            m.SetAction(val.(*TiAction))
         }
         return nil
     }
@@ -670,8 +669,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(DiamondModel)
-            m.SetDiamondModel(&cast)
+            m.SetDiamondModel(val.(*DiamondModel))
         }
         return nil
     }
@@ -821,8 +819,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(FileHashType)
-            m.SetFileHashType(&cast)
+            m.SetFileHashType(val.(*FileHashType))
         }
         return nil
     }
@@ -1174,8 +1171,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(TlpLevel)
-            m.SetTlpLevel(&cast)
+            m.SetTlpLevel(val.(*TlpLevel))
         }
         return nil
     }
@@ -1211,7 +1207,7 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         return err
     }
     if m.GetAction() != nil {
-        cast := m.GetAction().String()
+        cast := (*m.GetAction()).String()
         err = writer.WriteStringValue("action", &cast)
         if err != nil {
             return err
@@ -1248,7 +1244,7 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetDiamondModel() != nil {
-        cast := m.GetDiamondModel().String()
+        cast := (*m.GetDiamondModel()).String()
         err = writer.WriteStringValue("diamondModel", &cast)
         if err != nil {
             return err
@@ -1339,7 +1335,7 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetFileHashType() != nil {
-        cast := m.GetFileHashType().String()
+        cast := (*m.GetFileHashType()).String()
         err = writer.WriteStringValue("fileHashType", &cast)
         if err != nil {
             return err
@@ -1544,7 +1540,7 @@ func (m *TiIndicator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetTlpLevel() != nil {
-        cast := m.GetTlpLevel().String()
+        cast := (*m.GetTlpLevel()).String()
         err = writer.WriteStringValue("tlpLevel", &cast)
         if err != nil {
             return err

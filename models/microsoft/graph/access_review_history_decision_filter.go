@@ -19,21 +19,24 @@ func (i AccessReviewHistoryDecisionFilter) String() string {
     return []string{"APPROVE", "DENY", "NOTREVIEWED", "DONTKNOW", "NOTNOTIFIED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAccessReviewHistoryDecisionFilter(v string) (interface{}, error) {
+    result := APPROVE_ACCESSREVIEWHISTORYDECISIONFILTER
     switch strings.ToUpper(v) {
         case "APPROVE":
-            return APPROVE_ACCESSREVIEWHISTORYDECISIONFILTER, nil
+            result = APPROVE_ACCESSREVIEWHISTORYDECISIONFILTER
         case "DENY":
-            return DENY_ACCESSREVIEWHISTORYDECISIONFILTER, nil
+            result = DENY_ACCESSREVIEWHISTORYDECISIONFILTER
         case "NOTREVIEWED":
-            return NOTREVIEWED_ACCESSREVIEWHISTORYDECISIONFILTER, nil
+            result = NOTREVIEWED_ACCESSREVIEWHISTORYDECISIONFILTER
         case "DONTKNOW":
-            return DONTKNOW_ACCESSREVIEWHISTORYDECISIONFILTER, nil
+            result = DONTKNOW_ACCESSREVIEWHISTORYDECISIONFILTER
         case "NOTNOTIFIED":
-            return NOTNOTIFIED_ACCESSREVIEWHISTORYDECISIONFILTER, nil
+            result = NOTNOTIFIED_ACCESSREVIEWHISTORYDECISIONFILTER
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACCESSREVIEWHISTORYDECISIONFILTER, nil
+            result = UNKNOWNFUTUREVALUE_ACCESSREVIEWHISTORYDECISIONFILTER
+        default:
+            return 0, errors.New("Unknown AccessReviewHistoryDecisionFilter value: " + v)
     }
-    return 0, errors.New("Unknown AccessReviewHistoryDecisionFilter value: " + v)
+    return &result, nil
 }
 func SerializeAccessReviewHistoryDecisionFilter(values []AccessReviewHistoryDecisionFilter) []string {
     result := make([]string, len(values))

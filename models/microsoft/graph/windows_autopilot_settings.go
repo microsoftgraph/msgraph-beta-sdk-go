@@ -75,8 +75,7 @@ func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(inter
             return err
         }
         if val != nil {
-            cast := val.(WindowsAutopilotSyncStatus)
-            m.SetSyncStatus(&cast)
+            m.SetSyncStatus(val.(*WindowsAutopilotSyncStatus))
         }
         return nil
     }
@@ -104,7 +103,7 @@ func (m *WindowsAutopilotSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
         }
     }
     if m.GetSyncStatus() != nil {
-        cast := m.GetSyncStatus().String()
+        cast := (*m.GetSyncStatus()).String()
         err = writer.WriteStringValue("syncStatus", &cast)
         if err != nil {
             return err

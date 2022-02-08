@@ -18,19 +18,22 @@ func (i TenantOnboardingStatus) String() string {
     return []string{"INELIGIBLE", "INPROCESS", "ACTIVE", "INACTIVE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTenantOnboardingStatus(v string) (interface{}, error) {
+    result := INELIGIBLE_TENANTONBOARDINGSTATUS
     switch strings.ToUpper(v) {
         case "INELIGIBLE":
-            return INELIGIBLE_TENANTONBOARDINGSTATUS, nil
+            result = INELIGIBLE_TENANTONBOARDINGSTATUS
         case "INPROCESS":
-            return INPROCESS_TENANTONBOARDINGSTATUS, nil
+            result = INPROCESS_TENANTONBOARDINGSTATUS
         case "ACTIVE":
-            return ACTIVE_TENANTONBOARDINGSTATUS, nil
+            result = ACTIVE_TENANTONBOARDINGSTATUS
         case "INACTIVE":
-            return INACTIVE_TENANTONBOARDINGSTATUS, nil
+            result = INACTIVE_TENANTONBOARDINGSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TENANTONBOARDINGSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_TENANTONBOARDINGSTATUS
+        default:
+            return 0, errors.New("Unknown TenantOnboardingStatus value: " + v)
     }
-    return 0, errors.New("Unknown TenantOnboardingStatus value: " + v)
+    return &result, nil
 }
 func SerializeTenantOnboardingStatus(values []TenantOnboardingStatus) []string {
     result := make([]string, len(values))

@@ -18,19 +18,22 @@ func (i KerberosSignOnMappingAttributeType) String() string {
     return []string{"USERPRINCIPALNAME", "ONPREMISESUSERPRINCIPALNAME", "USERPRINCIPALUSERNAME", "ONPREMISESUSERPRINCIPALUSERNAME", "ONPREMISESSAMACCOUNTNAME"}[i]
 }
 func ParseKerberosSignOnMappingAttributeType(v string) (interface{}, error) {
+    result := USERPRINCIPALNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
     switch strings.ToUpper(v) {
         case "USERPRINCIPALNAME":
-            return USERPRINCIPALNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE, nil
+            result = USERPRINCIPALNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
         case "ONPREMISESUSERPRINCIPALNAME":
-            return ONPREMISESUSERPRINCIPALNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE, nil
+            result = ONPREMISESUSERPRINCIPALNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
         case "USERPRINCIPALUSERNAME":
-            return USERPRINCIPALUSERNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE, nil
+            result = USERPRINCIPALUSERNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
         case "ONPREMISESUSERPRINCIPALUSERNAME":
-            return ONPREMISESUSERPRINCIPALUSERNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE, nil
+            result = ONPREMISESUSERPRINCIPALUSERNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
         case "ONPREMISESSAMACCOUNTNAME":
-            return ONPREMISESSAMACCOUNTNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE, nil
+            result = ONPREMISESSAMACCOUNTNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
+        default:
+            return 0, errors.New("Unknown KerberosSignOnMappingAttributeType value: " + v)
     }
-    return 0, errors.New("Unknown KerberosSignOnMappingAttributeType value: " + v)
+    return &result, nil
 }
 func SerializeKerberosSignOnMappingAttributeType(values []KerberosSignOnMappingAttributeType) []string {
     result := make([]string, len(values))

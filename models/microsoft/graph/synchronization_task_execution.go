@@ -284,8 +284,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(SynchronizationTaskExecutionResult)
-            m.SetState(&cast)
+            m.SetState(val.(*SynchronizationTaskExecutionResult))
         }
         return nil
     }
@@ -383,7 +382,7 @@ func (m *SynchronizationTaskExecution) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err := writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

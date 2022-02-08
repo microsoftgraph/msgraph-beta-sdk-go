@@ -17,17 +17,20 @@ func (i CloudPcGalleryImageStatus) String() string {
     return []string{"SUPPORTED", "SUPPORTEDWITHWARNING", "NOTSUPPORTED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCloudPcGalleryImageStatus(v string) (interface{}, error) {
+    result := SUPPORTED_CLOUDPCGALLERYIMAGESTATUS
     switch strings.ToUpper(v) {
         case "SUPPORTED":
-            return SUPPORTED_CLOUDPCGALLERYIMAGESTATUS, nil
+            result = SUPPORTED_CLOUDPCGALLERYIMAGESTATUS
         case "SUPPORTEDWITHWARNING":
-            return SUPPORTEDWITHWARNING_CLOUDPCGALLERYIMAGESTATUS, nil
+            result = SUPPORTEDWITHWARNING_CLOUDPCGALLERYIMAGESTATUS
         case "NOTSUPPORTED":
-            return NOTSUPPORTED_CLOUDPCGALLERYIMAGESTATUS, nil
+            result = NOTSUPPORTED_CLOUDPCGALLERYIMAGESTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CLOUDPCGALLERYIMAGESTATUS, nil
+            result = UNKNOWNFUTUREVALUE_CLOUDPCGALLERYIMAGESTATUS
+        default:
+            return 0, errors.New("Unknown CloudPcGalleryImageStatus value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcGalleryImageStatus value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcGalleryImageStatus(values []CloudPcGalleryImageStatus) []string {
     result := make([]string, len(values))

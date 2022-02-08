@@ -17,17 +17,20 @@ func (i FederatedIdpMfaBehavior) String() string {
     return []string{"ACCEPTIFMFADONEBYFEDERATEDIDP", "ENFORCEMFABYFEDERATEDIDP", "REJECTMFABYFEDERATEDIDP", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseFederatedIdpMfaBehavior(v string) (interface{}, error) {
+    result := ACCEPTIFMFADONEBYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR
     switch strings.ToUpper(v) {
         case "ACCEPTIFMFADONEBYFEDERATEDIDP":
-            return ACCEPTIFMFADONEBYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR, nil
+            result = ACCEPTIFMFADONEBYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR
         case "ENFORCEMFABYFEDERATEDIDP":
-            return ENFORCEMFABYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR, nil
+            result = ENFORCEMFABYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR
         case "REJECTMFABYFEDERATEDIDP":
-            return REJECTMFABYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR, nil
+            result = REJECTMFABYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_FEDERATEDIDPMFABEHAVIOR, nil
+            result = UNKNOWNFUTUREVALUE_FEDERATEDIDPMFABEHAVIOR
+        default:
+            return 0, errors.New("Unknown FederatedIdpMfaBehavior value: " + v)
     }
-    return 0, errors.New("Unknown FederatedIdpMfaBehavior value: " + v)
+    return &result, nil
 }
 func SerializeFederatedIdpMfaBehavior(values []FederatedIdpMfaBehavior) []string {
     result := make([]string, len(values))

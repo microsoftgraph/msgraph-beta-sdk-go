@@ -30,7 +30,7 @@ type ExternalConnection struct {
     schema *Schema;
     // The settings configuring the search experience for content in this connection, such as the display templates for search results.
     searchSettings *SearchSettings;
-    // Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
+    // Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
     state *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionState;
 }
 // NewExternalConnection instantiates a new externalConnection and sets the default values.
@@ -128,7 +128,7 @@ func (m *ExternalConnection) GetSearchSettings()(*SearchSettings) {
         return m.searchSettings
     }
 }
-// GetState gets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
+// GetState gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 func (m *ExternalConnection) GetState()(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionState) {
     if m == nil {
         return nil
@@ -267,8 +267,7 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionState)
-            m.SetState(&cast)
+            m.SetState(val.(*i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionState))
         }
         return nil
     }
@@ -365,7 +364,7 @@ func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err
@@ -439,7 +438,7 @@ func (m *ExternalConnection) SetSearchSettings(value *SearchSettings)() {
         m.searchSettings = value
     }
 }
-// SetState sets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
+// SetState sets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 func (m *ExternalConnection) SetState(value *i3af76fce9a0d8c03f22ff90ccd64c93d01bbef0102a1c4e80376e26d2e22a367.ConnectionState)() {
     if m != nil {
         m.state = value

@@ -93,8 +93,7 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(DataType)
-            m.SetDataType(&cast)
+            m.SetDataType(val.(*DataType))
         }
         return nil
     }
@@ -104,8 +103,7 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(DeviceComplianceScriptRuleDataType)
-            m.SetDeviceComplianceScriptRuleDataType(&cast)
+            m.SetDeviceComplianceScriptRuleDataType(val.(*DeviceComplianceScriptRuleDataType))
         }
         return nil
     }
@@ -115,8 +113,7 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(DeviceComplianceScriptRulOperator)
-            m.SetDeviceComplianceScriptRulOperator(&cast)
+            m.SetDeviceComplianceScriptRulOperator(val.(*DeviceComplianceScriptRulOperator))
         }
         return nil
     }
@@ -136,8 +133,7 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(Operator)
-            m.SetOperator(&cast)
+            m.SetOperator(val.(*Operator))
         }
         return nil
     }
@@ -159,21 +155,21 @@ func (m *DeviceComplianceScriptRule) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *DeviceComplianceScriptRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDataType() != nil {
-        cast := m.GetDataType().String()
+        cast := (*m.GetDataType()).String()
         err := writer.WriteStringValue("dataType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetDeviceComplianceScriptRuleDataType() != nil {
-        cast := m.GetDeviceComplianceScriptRuleDataType().String()
+        cast := (*m.GetDeviceComplianceScriptRuleDataType()).String()
         err := writer.WriteStringValue("deviceComplianceScriptRuleDataType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetDeviceComplianceScriptRulOperator() != nil {
-        cast := m.GetDeviceComplianceScriptRulOperator().String()
+        cast := (*m.GetDeviceComplianceScriptRulOperator()).String()
         err := writer.WriteStringValue("deviceComplianceScriptRulOperator", &cast)
         if err != nil {
             return err
@@ -186,7 +182,7 @@ func (m *DeviceComplianceScriptRule) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetOperator() != nil {
-        cast := m.GetOperator().String()
+        cast := (*m.GetOperator()).String()
         err := writer.WriteStringValue("operator", &cast)
         if err != nil {
             return err

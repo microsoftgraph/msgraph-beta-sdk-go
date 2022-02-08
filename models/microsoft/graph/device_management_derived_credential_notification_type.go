@@ -16,15 +16,18 @@ func (i DeviceManagementDerivedCredentialNotificationType) String() string {
     return []string{"NONE", "COMPANYPORTAL", "EMAIL"}[i]
 }
 func ParseDeviceManagementDerivedCredentialNotificationType(v string) (interface{}, error) {
+    result := NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE, nil
+            result = NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
         case "COMPANYPORTAL":
-            return COMPANYPORTAL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE, nil
+            result = COMPANYPORTAL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
         case "EMAIL":
-            return EMAIL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE, nil
+            result = EMAIL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
+        default:
+            return 0, errors.New("Unknown DeviceManagementDerivedCredentialNotificationType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementDerivedCredentialNotificationType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementDerivedCredentialNotificationType(values []DeviceManagementDerivedCredentialNotificationType) []string {
     result := make([]string, len(values))

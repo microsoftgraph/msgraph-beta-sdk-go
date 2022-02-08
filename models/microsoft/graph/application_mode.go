@@ -16,15 +16,18 @@ func (i ApplicationMode) String() string {
     return []string{"MANUAL", "AUTOMATIC", "RECOMMENDED"}[i]
 }
 func ParseApplicationMode(v string) (interface{}, error) {
+    result := MANUAL_APPLICATIONMODE
     switch strings.ToUpper(v) {
         case "MANUAL":
-            return MANUAL_APPLICATIONMODE, nil
+            result = MANUAL_APPLICATIONMODE
         case "AUTOMATIC":
-            return AUTOMATIC_APPLICATIONMODE, nil
+            result = AUTOMATIC_APPLICATIONMODE
         case "RECOMMENDED":
-            return RECOMMENDED_APPLICATIONMODE, nil
+            result = RECOMMENDED_APPLICATIONMODE
+        default:
+            return 0, errors.New("Unknown ApplicationMode value: " + v)
     }
-    return 0, errors.New("Unknown ApplicationMode value: " + v)
+    return &result, nil
 }
 func SerializeApplicationMode(values []ApplicationMode) []string {
     result := make([]string, len(values))

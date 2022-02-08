@@ -28,39 +28,42 @@ func (i DeviceComplianceScriptRuleDataType) String() string {
     return []string{"NONE", "BOOLEAN", "INT64", "DOUBLE", "STRING", "DATETIME", "VERSION", "BASE64", "XML", "BOOLEANARRAY", "INT64ARRAY", "DOUBLEARRAY", "STRINGARRAY", "DATETIMEARRAY", "VERSIONARRAY"}[i]
 }
 func ParseDeviceComplianceScriptRuleDataType(v string) (interface{}, error) {
+    result := NONE_DEVICECOMPLIANCESCRIPTRULEDATATYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = NONE_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "BOOLEAN":
-            return BOOLEAN_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = BOOLEAN_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "INT64":
-            return INT64_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = INT64_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "DOUBLE":
-            return DOUBLE_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = DOUBLE_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "STRING":
-            return STRING_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = STRING_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "DATETIME":
-            return DATETIME_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = DATETIME_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "VERSION":
-            return VERSION_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = VERSION_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "BASE64":
-            return BASE64_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = BASE64_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "XML":
-            return XML_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = XML_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "BOOLEANARRAY":
-            return BOOLEANARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = BOOLEANARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "INT64ARRAY":
-            return INT64ARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = INT64ARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "DOUBLEARRAY":
-            return DOUBLEARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = DOUBLEARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "STRINGARRAY":
-            return STRINGARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = STRINGARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "DATETIMEARRAY":
-            return DATETIMEARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = DATETIMEARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         case "VERSIONARRAY":
-            return VERSIONARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE, nil
+            result = VERSIONARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE
+        default:
+            return 0, errors.New("Unknown DeviceComplianceScriptRuleDataType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceComplianceScriptRuleDataType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceComplianceScriptRuleDataType(values []DeviceComplianceScriptRuleDataType) []string {
     result := make([]string, len(values))

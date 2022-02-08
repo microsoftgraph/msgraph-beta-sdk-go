@@ -20,23 +20,26 @@ func (i OnPremisesPublishingType) String() string {
     return []string{"APPLICATIONPROXY", "EXCHANGEONLINE", "AUTHENTICATION", "PROVISIONING", "INTUNEPFX", "OFLINEDOMAINJOIN", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseOnPremisesPublishingType(v string) (interface{}, error) {
+    result := APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE
     switch strings.ToUpper(v) {
         case "APPLICATIONPROXY":
-            return APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE, nil
+            result = APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE
         case "EXCHANGEONLINE":
-            return EXCHANGEONLINE_ONPREMISESPUBLISHINGTYPE, nil
+            result = EXCHANGEONLINE_ONPREMISESPUBLISHINGTYPE
         case "AUTHENTICATION":
-            return AUTHENTICATION_ONPREMISESPUBLISHINGTYPE, nil
+            result = AUTHENTICATION_ONPREMISESPUBLISHINGTYPE
         case "PROVISIONING":
-            return PROVISIONING_ONPREMISESPUBLISHINGTYPE, nil
+            result = PROVISIONING_ONPREMISESPUBLISHINGTYPE
         case "INTUNEPFX":
-            return INTUNEPFX_ONPREMISESPUBLISHINGTYPE, nil
+            result = INTUNEPFX_ONPREMISESPUBLISHINGTYPE
         case "OFLINEDOMAINJOIN":
-            return OFLINEDOMAINJOIN_ONPREMISESPUBLISHINGTYPE, nil
+            result = OFLINEDOMAINJOIN_ONPREMISESPUBLISHINGTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ONPREMISESPUBLISHINGTYPE, nil
+            result = UNKNOWNFUTUREVALUE_ONPREMISESPUBLISHINGTYPE
+        default:
+            return 0, errors.New("Unknown OnPremisesPublishingType value: " + v)
     }
-    return 0, errors.New("Unknown OnPremisesPublishingType value: " + v)
+    return &result, nil
 }
 func SerializeOnPremisesPublishingType(values []OnPremisesPublishingType) []string {
     result := make([]string, len(values))

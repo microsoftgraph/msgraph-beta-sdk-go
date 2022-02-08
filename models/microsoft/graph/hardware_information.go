@@ -413,8 +413,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(DeviceGuardLocalSystemAuthorityCredentialGuardState)
-            m.SetDeviceGuardLocalSystemAuthorityCredentialGuardState(&cast)
+            m.SetDeviceGuardLocalSystemAuthorityCredentialGuardState(val.(*DeviceGuardLocalSystemAuthorityCredentialGuardState))
         }
         return nil
     }
@@ -424,8 +423,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(DeviceGuardVirtualizationBasedSecurityHardwareRequirementState)
-            m.SetDeviceGuardVirtualizationBasedSecurityHardwareRequirementState(&cast)
+            m.SetDeviceGuardVirtualizationBasedSecurityHardwareRequirementState(val.(*DeviceGuardVirtualizationBasedSecurityHardwareRequirementState))
         }
         return nil
     }
@@ -435,8 +433,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(DeviceGuardVirtualizationBasedSecurityState)
-            m.SetDeviceGuardVirtualizationBasedSecurityState(&cast)
+            m.SetDeviceGuardVirtualizationBasedSecurityState(val.(*DeviceGuardVirtualizationBasedSecurityState))
         }
         return nil
     }
@@ -732,21 +729,21 @@ func (m *HardwareInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetDeviceGuardLocalSystemAuthorityCredentialGuardState() != nil {
-        cast := m.GetDeviceGuardLocalSystemAuthorityCredentialGuardState().String()
+        cast := (*m.GetDeviceGuardLocalSystemAuthorityCredentialGuardState()).String()
         err := writer.WriteStringValue("deviceGuardLocalSystemAuthorityCredentialGuardState", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetDeviceGuardVirtualizationBasedSecurityHardwareRequirementState() != nil {
-        cast := m.GetDeviceGuardVirtualizationBasedSecurityHardwareRequirementState().String()
+        cast := (*m.GetDeviceGuardVirtualizationBasedSecurityHardwareRequirementState()).String()
         err := writer.WriteStringValue("deviceGuardVirtualizationBasedSecurityHardwareRequirementState", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetDeviceGuardVirtualizationBasedSecurityState() != nil {
-        cast := m.GetDeviceGuardVirtualizationBasedSecurityState().String()
+        cast := (*m.GetDeviceGuardVirtualizationBasedSecurityState()).String()
         err := writer.WriteStringValue("deviceGuardVirtualizationBasedSecurityState", &cast)
         if err != nil {
             return err

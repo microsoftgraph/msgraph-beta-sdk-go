@@ -64,8 +64,7 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            cast := val.(DeviceConfigAssignmentIntent)
-            m.SetIntent(&cast)
+            m.SetIntent(val.(*DeviceConfigAssignmentIntent))
         }
         return nil
     }
@@ -75,8 +74,7 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            cast := val.(DeviceAndAppManagementAssignmentSource)
-            m.SetSource(&cast)
+            m.SetSource(val.(*DeviceAndAppManagementAssignmentSource))
         }
         return nil
     }
@@ -112,14 +110,14 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28374d
         return err
     }
     if m.GetIntent() != nil {
-        cast := m.GetIntent().String()
+        cast := (*m.GetIntent()).String()
         err = writer.WriteStringValue("intent", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetSource() != nil {
-        cast := m.GetSource().String()
+        cast := (*m.GetSource()).String()
         err = writer.WriteStringValue("source", &cast)
         if err != nil {
             return err

@@ -17,17 +17,20 @@ func (i AndroidManagedStoreAccountEnrollmentTarget) String() string {
     return []string{"NONE", "ALL", "TARGETED", "TARGETEDASENROLLMENTRESTRICTIONS"}[i]
 }
 func ParseAndroidManagedStoreAccountEnrollmentTarget(v string) (interface{}, error) {
+    result := NONE_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET, nil
+            result = NONE_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
         case "ALL":
-            return ALL_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET, nil
+            result = ALL_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
         case "TARGETED":
-            return TARGETED_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET, nil
+            result = TARGETED_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
         case "TARGETEDASENROLLMENTRESTRICTIONS":
-            return TARGETEDASENROLLMENTRESTRICTIONS_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET, nil
+            result = TARGETEDASENROLLMENTRESTRICTIONS_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
+        default:
+            return 0, errors.New("Unknown AndroidManagedStoreAccountEnrollmentTarget value: " + v)
     }
-    return 0, errors.New("Unknown AndroidManagedStoreAccountEnrollmentTarget value: " + v)
+    return &result, nil
 }
 func SerializeAndroidManagedStoreAccountEnrollmentTarget(values []AndroidManagedStoreAccountEnrollmentTarget) []string {
     result := make([]string, len(values))

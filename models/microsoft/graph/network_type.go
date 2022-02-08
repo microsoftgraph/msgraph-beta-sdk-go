@@ -19,21 +19,24 @@ func (i NetworkType) String() string {
     return []string{"INTRANET", "EXTRANET", "NAMEDNETWORK", "TRUSTED", "TRUSTEDNAMEDLOCATION", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseNetworkType(v string) (interface{}, error) {
+    result := INTRANET_NETWORKTYPE
     switch strings.ToUpper(v) {
         case "INTRANET":
-            return INTRANET_NETWORKTYPE, nil
+            result = INTRANET_NETWORKTYPE
         case "EXTRANET":
-            return EXTRANET_NETWORKTYPE, nil
+            result = EXTRANET_NETWORKTYPE
         case "NAMEDNETWORK":
-            return NAMEDNETWORK_NETWORKTYPE, nil
+            result = NAMEDNETWORK_NETWORKTYPE
         case "TRUSTED":
-            return TRUSTED_NETWORKTYPE, nil
+            result = TRUSTED_NETWORKTYPE
         case "TRUSTEDNAMEDLOCATION":
-            return TRUSTEDNAMEDLOCATION_NETWORKTYPE, nil
+            result = TRUSTEDNAMEDLOCATION_NETWORKTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_NETWORKTYPE, nil
+            result = UNKNOWNFUTUREVALUE_NETWORKTYPE
+        default:
+            return 0, errors.New("Unknown NetworkType value: " + v)
     }
-    return 0, errors.New("Unknown NetworkType value: " + v)
+    return &result, nil
 }
 func SerializeNetworkType(values []NetworkType) []string {
     result := make([]string, len(values))

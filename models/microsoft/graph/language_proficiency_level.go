@@ -20,23 +20,26 @@ func (i LanguageProficiencyLevel) String() string {
     return []string{"ELEMENTARY", "CONVERSATIONAL", "LIMITEDWORKING", "PROFESSIONALWORKING", "FULLPROFESSIONAL", "NATIVEORBILINGUAL", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseLanguageProficiencyLevel(v string) (interface{}, error) {
+    result := ELEMENTARY_LANGUAGEPROFICIENCYLEVEL
     switch strings.ToUpper(v) {
         case "ELEMENTARY":
-            return ELEMENTARY_LANGUAGEPROFICIENCYLEVEL, nil
+            result = ELEMENTARY_LANGUAGEPROFICIENCYLEVEL
         case "CONVERSATIONAL":
-            return CONVERSATIONAL_LANGUAGEPROFICIENCYLEVEL, nil
+            result = CONVERSATIONAL_LANGUAGEPROFICIENCYLEVEL
         case "LIMITEDWORKING":
-            return LIMITEDWORKING_LANGUAGEPROFICIENCYLEVEL, nil
+            result = LIMITEDWORKING_LANGUAGEPROFICIENCYLEVEL
         case "PROFESSIONALWORKING":
-            return PROFESSIONALWORKING_LANGUAGEPROFICIENCYLEVEL, nil
+            result = PROFESSIONALWORKING_LANGUAGEPROFICIENCYLEVEL
         case "FULLPROFESSIONAL":
-            return FULLPROFESSIONAL_LANGUAGEPROFICIENCYLEVEL, nil
+            result = FULLPROFESSIONAL_LANGUAGEPROFICIENCYLEVEL
         case "NATIVEORBILINGUAL":
-            return NATIVEORBILINGUAL_LANGUAGEPROFICIENCYLEVEL, nil
+            result = NATIVEORBILINGUAL_LANGUAGEPROFICIENCYLEVEL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_LANGUAGEPROFICIENCYLEVEL, nil
+            result = UNKNOWNFUTUREVALUE_LANGUAGEPROFICIENCYLEVEL
+        default:
+            return 0, errors.New("Unknown LanguageProficiencyLevel value: " + v)
     }
-    return 0, errors.New("Unknown LanguageProficiencyLevel value: " + v)
+    return &result, nil
 }
 func SerializeLanguageProficiencyLevel(values []LanguageProficiencyLevel) []string {
     result := make([]string, len(values))

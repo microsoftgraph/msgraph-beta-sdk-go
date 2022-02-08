@@ -15,13 +15,16 @@ func (i DeviceAndAppManagementAssignmentSource) String() string {
     return []string{"DIRECT", "POLICYSETS"}[i]
 }
 func ParseDeviceAndAppManagementAssignmentSource(v string) (interface{}, error) {
+    result := DIRECT_DEVICEANDAPPMANAGEMENTASSIGNMENTSOURCE
     switch strings.ToUpper(v) {
         case "DIRECT":
-            return DIRECT_DEVICEANDAPPMANAGEMENTASSIGNMENTSOURCE, nil
+            result = DIRECT_DEVICEANDAPPMANAGEMENTASSIGNMENTSOURCE
         case "POLICYSETS":
-            return POLICYSETS_DEVICEANDAPPMANAGEMENTASSIGNMENTSOURCE, nil
+            result = POLICYSETS_DEVICEANDAPPMANAGEMENTASSIGNMENTSOURCE
+        default:
+            return 0, errors.New("Unknown DeviceAndAppManagementAssignmentSource value: " + v)
     }
-    return 0, errors.New("Unknown DeviceAndAppManagementAssignmentSource value: " + v)
+    return &result, nil
 }
 func SerializeDeviceAndAppManagementAssignmentSource(values []DeviceAndAppManagementAssignmentSource) []string {
     result := make([]string, len(values))

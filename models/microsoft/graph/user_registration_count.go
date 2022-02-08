@@ -63,8 +63,7 @@ func (m *UserRegistrationCount) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(RegistrationStatusType)
-            m.SetRegistrationStatus(&cast)
+            m.SetRegistrationStatus(val.(*RegistrationStatusType))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *UserRegistrationCount) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetRegistrationStatus() != nil {
-        cast := m.GetRegistrationStatus().String()
+        cast := (*m.GetRegistrationStatus()).String()
         err := writer.WriteStringValue("registrationStatus", &cast)
         if err != nil {
             return err

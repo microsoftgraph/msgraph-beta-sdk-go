@@ -417,8 +417,7 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(EnrollmentAvailabilityOptions)
-            m.SetEnrollmentAvailability(&cast)
+            m.SetEnrollmentAvailability(val.(*EnrollmentAvailabilityOptions))
         }
         return nil
     }
@@ -655,7 +654,7 @@ func (m *IntuneBrand) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetEnrollmentAvailability() != nil {
-        cast := m.GetEnrollmentAvailability().String()
+        cast := (*m.GetEnrollmentAvailability()).String()
         err := writer.WriteStringValue("enrollmentAvailability", &cast)
         if err != nil {
             return err

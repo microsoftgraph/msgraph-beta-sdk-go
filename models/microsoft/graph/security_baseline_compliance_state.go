@@ -19,21 +19,24 @@ func (i SecurityBaselineComplianceState) String() string {
     return []string{"UNKNOWN", "SECURE", "NOTAPPLICABLE", "NOTSECURE", "ERROR", "CONFLICT"}[i]
 }
 func ParseSecurityBaselineComplianceState(v string) (interface{}, error) {
+    result := UNKNOWN_SECURITYBASELINECOMPLIANCESTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_SECURITYBASELINECOMPLIANCESTATE, nil
+            result = UNKNOWN_SECURITYBASELINECOMPLIANCESTATE
         case "SECURE":
-            return SECURE_SECURITYBASELINECOMPLIANCESTATE, nil
+            result = SECURE_SECURITYBASELINECOMPLIANCESTATE
         case "NOTAPPLICABLE":
-            return NOTAPPLICABLE_SECURITYBASELINECOMPLIANCESTATE, nil
+            result = NOTAPPLICABLE_SECURITYBASELINECOMPLIANCESTATE
         case "NOTSECURE":
-            return NOTSECURE_SECURITYBASELINECOMPLIANCESTATE, nil
+            result = NOTSECURE_SECURITYBASELINECOMPLIANCESTATE
         case "ERROR":
-            return ERROR_SECURITYBASELINECOMPLIANCESTATE, nil
+            result = ERROR_SECURITYBASELINECOMPLIANCESTATE
         case "CONFLICT":
-            return CONFLICT_SECURITYBASELINECOMPLIANCESTATE, nil
+            result = CONFLICT_SECURITYBASELINECOMPLIANCESTATE
+        default:
+            return 0, errors.New("Unknown SecurityBaselineComplianceState value: " + v)
     }
-    return 0, errors.New("Unknown SecurityBaselineComplianceState value: " + v)
+    return &result, nil
 }
 func SerializeSecurityBaselineComplianceState(values []SecurityBaselineComplianceState) []string {
     result := make([]string, len(values))

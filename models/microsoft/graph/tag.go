@@ -96,8 +96,7 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
             return err
         }
         if val != nil {
-            cast := val.(i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ChildSelectability)
-            m.SetChildSelectability(&cast)
+            m.SetChildSelectability(val.(*i2756dc8c91c60abdde0aa43bf23ca1c0a6ac9b630146e89b7184e174a72c2de3.ChildSelectability))
         }
         return nil
     }
@@ -177,7 +176,7 @@ func (m *Tag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
         return err
     }
     if m.GetChildSelectability() != nil {
-        cast := m.GetChildSelectability().String()
+        cast := (*m.GetChildSelectability()).String()
         err = writer.WriteStringValue("childSelectability", &cast)
         if err != nil {
             return err

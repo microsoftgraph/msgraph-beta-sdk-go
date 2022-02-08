@@ -17,17 +17,20 @@ func (i IncludedUserTypes) String() string {
     return []string{"ALL", "MEMBER", "GUEST", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseIncludedUserTypes(v string) (interface{}, error) {
+    result := ALL_INCLUDEDUSERTYPES
     switch strings.ToUpper(v) {
         case "ALL":
-            return ALL_INCLUDEDUSERTYPES, nil
+            result = ALL_INCLUDEDUSERTYPES
         case "MEMBER":
-            return MEMBER_INCLUDEDUSERTYPES, nil
+            result = MEMBER_INCLUDEDUSERTYPES
         case "GUEST":
-            return GUEST_INCLUDEDUSERTYPES, nil
+            result = GUEST_INCLUDEDUSERTYPES
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_INCLUDEDUSERTYPES, nil
+            result = UNKNOWNFUTUREVALUE_INCLUDEDUSERTYPES
+        default:
+            return 0, errors.New("Unknown IncludedUserTypes value: " + v)
     }
-    return 0, errors.New("Unknown IncludedUserTypes value: " + v)
+    return &result, nil
 }
 func SerializeIncludedUserTypes(values []IncludedUserTypes) []string {
     result := make([]string, len(values))

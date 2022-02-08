@@ -15,13 +15,16 @@ func (i CertificateStatus) String() string {
     return []string{"NOTPROVISIONED", "PROVISIONED"}[i]
 }
 func ParseCertificateStatus(v string) (interface{}, error) {
+    result := NOTPROVISIONED_CERTIFICATESTATUS
     switch strings.ToUpper(v) {
         case "NOTPROVISIONED":
-            return NOTPROVISIONED_CERTIFICATESTATUS, nil
+            result = NOTPROVISIONED_CERTIFICATESTATUS
         case "PROVISIONED":
-            return PROVISIONED_CERTIFICATESTATUS, nil
+            result = PROVISIONED_CERTIFICATESTATUS
+        default:
+            return 0, errors.New("Unknown CertificateStatus value: " + v)
     }
-    return 0, errors.New("Unknown CertificateStatus value: " + v)
+    return &result, nil
 }
 func SerializeCertificateStatus(values []CertificateStatus) []string {
     result := make([]string, len(values))

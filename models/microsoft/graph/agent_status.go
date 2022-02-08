@@ -15,13 +15,16 @@ func (i AgentStatus) String() string {
     return []string{"ACTIVE", "INACTIVE"}[i]
 }
 func ParseAgentStatus(v string) (interface{}, error) {
+    result := ACTIVE_AGENTSTATUS
     switch strings.ToUpper(v) {
         case "ACTIVE":
-            return ACTIVE_AGENTSTATUS, nil
+            result = ACTIVE_AGENTSTATUS
         case "INACTIVE":
-            return INACTIVE_AGENTSTATUS, nil
+            result = INACTIVE_AGENTSTATUS
+        default:
+            return 0, errors.New("Unknown AgentStatus value: " + v)
     }
-    return 0, errors.New("Unknown AgentStatus value: " + v)
+    return &result, nil
 }
 func SerializeAgentStatus(values []AgentStatus) []string {
     result := make([]string, len(values))

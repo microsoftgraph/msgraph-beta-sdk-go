@@ -8,7 +8,7 @@ import (
 // AccessPackageAssignmentRequest 
 type AccessPackageAssignmentRequest struct {
     Entity
-    // The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
+    // The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
     accessPackage *AccessPackage;
     // For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
     accessPackageAssignment *AccessPackageAssignment;
@@ -18,6 +18,8 @@ type AccessPackageAssignmentRequest struct {
     completedDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
+    customExtensionHandlerInstances []CustomExtensionHandlerInstance;
     // 
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // True if the request is not to be processed for assignment.
@@ -30,9 +32,9 @@ type AccessPackageAssignmentRequest struct {
     requestState *string;
     // More information on the request processing status. Read-only.
     requestStatus *string;
-    // One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+    // The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
     requestType *string;
-    // The range of dates that access is to be assigned to the requestor. Read-only.
+    // The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
     schedule *RequestSchedule;
 }
 // NewAccessPackageAssignmentRequest instantiates a new accessPackageAssignmentRequest and sets the default values.
@@ -42,7 +44,7 @@ func NewAccessPackageAssignmentRequest()(*AccessPackageAssignmentRequest) {
     }
     return m
 }
-// GetAccessPackage gets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
+// GetAccessPackage gets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
 func (m *AccessPackageAssignmentRequest) GetAccessPackage()(*AccessPackage) {
     if m == nil {
         return nil
@@ -80,6 +82,14 @@ func (m *AccessPackageAssignmentRequest) GetCreatedDateTime()(*i336074805fc85398
         return nil
     } else {
         return m.createdDateTime
+    }
+}
+// GetCustomExtensionHandlerInstances gets the customExtensionHandlerInstances property value. 
+func (m *AccessPackageAssignmentRequest) GetCustomExtensionHandlerInstances()([]CustomExtensionHandlerInstance) {
+    if m == nil {
+        return nil
+    } else {
+        return m.customExtensionHandlerInstances
     }
 }
 // GetExpirationDateTime gets the expirationDateTime property value. 
@@ -130,7 +140,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestStatus()(*string) {
         return m.requestStatus
     }
 }
-// GetRequestType gets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+// GetRequestType gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
 func (m *AccessPackageAssignmentRequest) GetRequestType()(*string) {
     if m == nil {
         return nil
@@ -138,7 +148,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestType()(*string) {
         return m.requestType
     }
 }
-// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. Read-only.
+// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
 func (m *AccessPackageAssignmentRequest) GetSchedule()(*RequestSchedule) {
     if m == nil {
         return nil
@@ -200,6 +210,20 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["customExtensionHandlerInstances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomExtensionHandlerInstance() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomExtensionHandlerInstance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CustomExtensionHandlerInstance))
+            }
+            m.SetCustomExtensionHandlerInstances(res)
         }
         return nil
     }
@@ -329,6 +353,17 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i04eb5309aeaafadd28374
             return err
         }
     }
+    if m.GetCustomExtensionHandlerInstances() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomExtensionHandlerInstances()))
+        for i, v := range m.GetCustomExtensionHandlerInstances() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("customExtensionHandlerInstances", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("expirationDateTime", m.GetExpirationDateTime())
         if err != nil {
@@ -379,7 +414,7 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// SetAccessPackage sets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
+// SetAccessPackage sets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetAccessPackage(value *AccessPackage)() {
     if m != nil {
         m.accessPackage = value
@@ -407,6 +442,12 @@ func (m *AccessPackageAssignmentRequest) SetCompletedDate(value *i336074805fc853
 func (m *AccessPackageAssignmentRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
+    }
+}
+// SetCustomExtensionHandlerInstances sets the customExtensionHandlerInstances property value. 
+func (m *AccessPackageAssignmentRequest) SetCustomExtensionHandlerInstances(value []CustomExtensionHandlerInstance)() {
+    if m != nil {
+        m.customExtensionHandlerInstances = value
     }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. 
@@ -445,13 +486,13 @@ func (m *AccessPackageAssignmentRequest) SetRequestStatus(value *string)() {
         m.requestStatus = value
     }
 }
-// SetRequestType sets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+// SetRequestType sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
 func (m *AccessPackageAssignmentRequest) SetRequestType(value *string)() {
     if m != nil {
         m.requestType = value
     }
 }
-// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. Read-only.
+// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
 func (m *AccessPackageAssignmentRequest) SetSchedule(value *RequestSchedule)() {
     if m != nil {
         m.schedule = value

@@ -20,23 +20,26 @@ func (i GroupPolicyUploadedDefinitionFileStatus) String() string {
     return []string{"NONE", "UPLOADINPROGRESS", "AVAILABLE", "ASSIGNED", "REMOVALINPROGRESS", "UPLOADFAILED", "REMOVALFAILED"}[i]
 }
 func ParseGroupPolicyUploadedDefinitionFileStatus(v string) (interface{}, error) {
+    result := NONE_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS, nil
+            result = NONE_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
         case "UPLOADINPROGRESS":
-            return UPLOADINPROGRESS_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS, nil
+            result = UPLOADINPROGRESS_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
         case "AVAILABLE":
-            return AVAILABLE_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS, nil
+            result = AVAILABLE_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
         case "ASSIGNED":
-            return ASSIGNED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS, nil
+            result = ASSIGNED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
         case "REMOVALINPROGRESS":
-            return REMOVALINPROGRESS_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS, nil
+            result = REMOVALINPROGRESS_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
         case "UPLOADFAILED":
-            return UPLOADFAILED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS, nil
+            result = UPLOADFAILED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
         case "REMOVALFAILED":
-            return REMOVALFAILED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS, nil
+            result = REMOVALFAILED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
+        default:
+            return 0, errors.New("Unknown GroupPolicyUploadedDefinitionFileStatus value: " + v)
     }
-    return 0, errors.New("Unknown GroupPolicyUploadedDefinitionFileStatus value: " + v)
+    return &result, nil
 }
 func SerializeGroupPolicyUploadedDefinitionFileStatus(values []GroupPolicyUploadedDefinitionFileStatus) []string {
     result := make([]string, len(values))

@@ -125,8 +125,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
             return err
         }
         if val != nil {
-            cast := val.(WindowsDefenderApplicationControlSupplementalPolicyStatuses)
-            m.SetDeploymentStatus(&cast)
+            m.SetDeploymentStatus(val.(*WindowsDefenderApplicationControlSupplementalPolicyStatuses))
         }
         return nil
     }
@@ -232,7 +231,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Se
         return err
     }
     if m.GetDeploymentStatus() != nil {
-        cast := m.GetDeploymentStatus().String()
+        cast := (*m.GetDeploymentStatus()).String()
         err = writer.WriteStringValue("deploymentStatus", &cast)
         if err != nil {
             return err

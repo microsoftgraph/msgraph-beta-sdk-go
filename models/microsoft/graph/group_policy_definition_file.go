@@ -14,6 +14,8 @@ type GroupPolicyDefinitionFile struct {
     description *string;
     // The localized friendly name of the ADMX file.
     displayName *string;
+    // The file name of the ADMX file without the path. For example: edge.admx
+    fileName *string;
     // The supported language codes for the ADMX file.
     languageCodes []string;
     // The date and time the entity was last modified.
@@ -56,6 +58,14 @@ func (m *GroupPolicyDefinitionFile) GetDisplayName()(*string) {
         return nil
     } else {
         return m.displayName
+    }
+}
+// GetFileName gets the fileName property value. The file name of the ADMX file without the path. For example: edge.admx
+func (m *GroupPolicyDefinitionFile) GetFileName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fileName
     }
 }
 // GetLanguageCodes gets the languageCodes property value. The supported language codes for the ADMX file.
@@ -143,6 +153,16 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
+    res["fileName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFileName(val)
+        }
+        return nil
+    }
     res["languageCodes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -173,8 +193,7 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(GroupPolicyType)
-            m.SetPolicyType(&cast)
+            m.SetPolicyType(val.(*GroupPolicyType))
         }
         return nil
     }
@@ -242,6 +261,12 @@ func (m *GroupPolicyDefinitionFile) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("fileName", m.GetFileName())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetLanguageCodes() != nil {
         err = writer.WriteCollectionOfStringValues("languageCodes", m.GetLanguageCodes())
         if err != nil {
@@ -255,7 +280,7 @@ func (m *GroupPolicyDefinitionFile) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     if m.GetPolicyType() != nil {
-        cast := m.GetPolicyType().String()
+        cast := (*m.GetPolicyType()).String()
         err = writer.WriteStringValue("policyType", &cast)
         if err != nil {
             return err
@@ -297,6 +322,12 @@ func (m *GroupPolicyDefinitionFile) SetDescription(value *string)() {
 func (m *GroupPolicyDefinitionFile) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetFileName sets the fileName property value. The file name of the ADMX file without the path. For example: edge.admx
+func (m *GroupPolicyDefinitionFile) SetFileName(value *string)() {
+    if m != nil {
+        m.fileName = value
     }
 }
 // SetLanguageCodes sets the languageCodes property value. The supported language codes for the ADMX file.

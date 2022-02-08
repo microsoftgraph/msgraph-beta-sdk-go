@@ -16,15 +16,18 @@ func (i AppLogUploadState) String() string {
     return []string{"PENDING", "COMPLETED", "FAILED"}[i]
 }
 func ParseAppLogUploadState(v string) (interface{}, error) {
+    result := PENDING_APPLOGUPLOADSTATE
     switch strings.ToUpper(v) {
         case "PENDING":
-            return PENDING_APPLOGUPLOADSTATE, nil
+            result = PENDING_APPLOGUPLOADSTATE
         case "COMPLETED":
-            return COMPLETED_APPLOGUPLOADSTATE, nil
+            result = COMPLETED_APPLOGUPLOADSTATE
         case "FAILED":
-            return FAILED_APPLOGUPLOADSTATE, nil
+            result = FAILED_APPLOGUPLOADSTATE
+        default:
+            return 0, errors.New("Unknown AppLogUploadState value: " + v)
     }
-    return 0, errors.New("Unknown AppLogUploadState value: " + v)
+    return &result, nil
 }
 func SerializeAppLogUploadState(values []AppLogUploadState) []string {
     result := make([]string, len(values))

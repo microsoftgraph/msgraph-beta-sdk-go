@@ -19,21 +19,24 @@ func (i SimulationAutomationStatus) String() string {
     return []string{"UNKNOWN", "DRAFT", "NOTRUNNING", "RUNNING", "COMPLETED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSimulationAutomationStatus(v string) (interface{}, error) {
+    result := UNKNOWN_SIMULATIONAUTOMATIONSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_SIMULATIONAUTOMATIONSTATUS, nil
+            result = UNKNOWN_SIMULATIONAUTOMATIONSTATUS
         case "DRAFT":
-            return DRAFT_SIMULATIONAUTOMATIONSTATUS, nil
+            result = DRAFT_SIMULATIONAUTOMATIONSTATUS
         case "NOTRUNNING":
-            return NOTRUNNING_SIMULATIONAUTOMATIONSTATUS, nil
+            result = NOTRUNNING_SIMULATIONAUTOMATIONSTATUS
         case "RUNNING":
-            return RUNNING_SIMULATIONAUTOMATIONSTATUS, nil
+            result = RUNNING_SIMULATIONAUTOMATIONSTATUS
         case "COMPLETED":
-            return COMPLETED_SIMULATIONAUTOMATIONSTATUS, nil
+            result = COMPLETED_SIMULATIONAUTOMATIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SIMULATIONAUTOMATIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_SIMULATIONAUTOMATIONSTATUS
+        default:
+            return 0, errors.New("Unknown SimulationAutomationStatus value: " + v)
     }
-    return 0, errors.New("Unknown SimulationAutomationStatus value: " + v)
+    return &result, nil
 }
 func SerializeSimulationAutomationStatus(values []SimulationAutomationStatus) []string {
     result := make([]string, len(values))

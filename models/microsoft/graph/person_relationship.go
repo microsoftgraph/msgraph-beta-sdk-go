@@ -29,41 +29,44 @@ func (i PersonRelationship) String() string {
     return []string{"MANAGER", "COLLEAGUE", "DIRECTREPORT", "DOTLINEREPORT", "ASSISTANT", "DOTLINEMANAGER", "ALTERNATECONTACT", "FRIEND", "SPOUSE", "SIBLING", "CHILD", "PARENT", "SPONSOR", "EMERGENCYCONTACT", "OTHER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePersonRelationship(v string) (interface{}, error) {
+    result := MANAGER_PERSONRELATIONSHIP
     switch strings.ToUpper(v) {
         case "MANAGER":
-            return MANAGER_PERSONRELATIONSHIP, nil
+            result = MANAGER_PERSONRELATIONSHIP
         case "COLLEAGUE":
-            return COLLEAGUE_PERSONRELATIONSHIP, nil
+            result = COLLEAGUE_PERSONRELATIONSHIP
         case "DIRECTREPORT":
-            return DIRECTREPORT_PERSONRELATIONSHIP, nil
+            result = DIRECTREPORT_PERSONRELATIONSHIP
         case "DOTLINEREPORT":
-            return DOTLINEREPORT_PERSONRELATIONSHIP, nil
+            result = DOTLINEREPORT_PERSONRELATIONSHIP
         case "ASSISTANT":
-            return ASSISTANT_PERSONRELATIONSHIP, nil
+            result = ASSISTANT_PERSONRELATIONSHIP
         case "DOTLINEMANAGER":
-            return DOTLINEMANAGER_PERSONRELATIONSHIP, nil
+            result = DOTLINEMANAGER_PERSONRELATIONSHIP
         case "ALTERNATECONTACT":
-            return ALTERNATECONTACT_PERSONRELATIONSHIP, nil
+            result = ALTERNATECONTACT_PERSONRELATIONSHIP
         case "FRIEND":
-            return FRIEND_PERSONRELATIONSHIP, nil
+            result = FRIEND_PERSONRELATIONSHIP
         case "SPOUSE":
-            return SPOUSE_PERSONRELATIONSHIP, nil
+            result = SPOUSE_PERSONRELATIONSHIP
         case "SIBLING":
-            return SIBLING_PERSONRELATIONSHIP, nil
+            result = SIBLING_PERSONRELATIONSHIP
         case "CHILD":
-            return CHILD_PERSONRELATIONSHIP, nil
+            result = CHILD_PERSONRELATIONSHIP
         case "PARENT":
-            return PARENT_PERSONRELATIONSHIP, nil
+            result = PARENT_PERSONRELATIONSHIP
         case "SPONSOR":
-            return SPONSOR_PERSONRELATIONSHIP, nil
+            result = SPONSOR_PERSONRELATIONSHIP
         case "EMERGENCYCONTACT":
-            return EMERGENCYCONTACT_PERSONRELATIONSHIP, nil
+            result = EMERGENCYCONTACT_PERSONRELATIONSHIP
         case "OTHER":
-            return OTHER_PERSONRELATIONSHIP, nil
+            result = OTHER_PERSONRELATIONSHIP
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PERSONRELATIONSHIP, nil
+            result = UNKNOWNFUTUREVALUE_PERSONRELATIONSHIP
+        default:
+            return 0, errors.New("Unknown PersonRelationship value: " + v)
     }
-    return 0, errors.New("Unknown PersonRelationship value: " + v)
+    return &result, nil
 }
 func SerializePersonRelationship(values []PersonRelationship) []string {
     result := make([]string, len(values))

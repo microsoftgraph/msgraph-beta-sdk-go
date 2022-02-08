@@ -175,8 +175,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(CloudPcDeviceImageOsStatus)
-            m.SetOsStatus(&cast)
+            m.SetOsStatus(val.(*CloudPcDeviceImageOsStatus))
         }
         return nil
     }
@@ -196,8 +195,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(CloudPcDeviceImageStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*CloudPcDeviceImageStatus))
         }
         return nil
     }
@@ -207,8 +205,7 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(CloudPcDeviceImageStatusDetails)
-            m.SetStatusDetails(&cast)
+            m.SetStatusDetails(val.(*CloudPcDeviceImageStatusDetails))
         }
         return nil
     }
@@ -264,7 +261,7 @@ func (m *CloudPcDeviceImage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetOsStatus() != nil {
-        cast := m.GetOsStatus().String()
+        cast := (*m.GetOsStatus()).String()
         err = writer.WriteStringValue("osStatus", &cast)
         if err != nil {
             return err
@@ -277,14 +274,14 @@ func (m *CloudPcDeviceImage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetStatusDetails() != nil {
-        cast := m.GetStatusDetails().String()
+        cast := (*m.GetStatusDetails()).String()
         err = writer.WriteStringValue("statusDetails", &cast)
         if err != nil {
             return err

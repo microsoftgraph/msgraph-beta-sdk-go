@@ -43,8 +43,7 @@ func (m *DecisionItemPrincipalResourceMembership) GetFieldDeserializers()(map[st
             return err
         }
         if val != nil {
-            cast := val.(DecisionItemPrincipalResourceMembershipType)
-            m.SetMembershipType(&cast)
+            m.SetMembershipType(val.(*DecisionItemPrincipalResourceMembershipType))
         }
         return nil
     }
@@ -56,7 +55,7 @@ func (m *DecisionItemPrincipalResourceMembership) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *DecisionItemPrincipalResourceMembership) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetMembershipType() != nil {
-        cast := m.GetMembershipType().String()
+        cast := (*m.GetMembershipType()).String()
         err := writer.WriteStringValue("membershipType", &cast)
         if err != nil {
             return err

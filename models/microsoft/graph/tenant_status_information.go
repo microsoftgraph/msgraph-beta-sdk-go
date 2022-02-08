@@ -125,8 +125,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.DelegatedPrivilegeStatus)
-            m.SetDelegatedPrivilegeStatus(&cast)
+            m.SetDelegatedPrivilegeStatus(val.(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.DelegatedPrivilegeStatus))
         }
         return nil
     }
@@ -186,8 +185,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingStatus)
-            m.SetOnboardingStatus(&cast)
+            m.SetOnboardingStatus(val.(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingStatus))
         }
         return nil
     }
@@ -197,8 +195,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason)
-            m.SetTenantOnboardingEligibilityReason(&cast)
+            m.SetTenantOnboardingEligibilityReason(val.(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.TenantOnboardingEligibilityReason))
         }
         return nil
     }
@@ -224,7 +221,7 @@ func (m *TenantStatusInformation) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *TenantStatusInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDelegatedPrivilegeStatus() != nil {
-        cast := m.GetDelegatedPrivilegeStatus().String()
+        cast := (*m.GetDelegatedPrivilegeStatus()).String()
         err := writer.WriteStringValue("delegatedPrivilegeStatus", &cast)
         if err != nil {
             return err
@@ -261,14 +258,14 @@ func (m *TenantStatusInformation) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetOnboardingStatus() != nil {
-        cast := m.GetOnboardingStatus().String()
+        cast := (*m.GetOnboardingStatus()).String()
         err := writer.WriteStringValue("onboardingStatus", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetTenantOnboardingEligibilityReason() != nil {
-        cast := m.GetTenantOnboardingEligibilityReason().String()
+        cast := (*m.GetTenantOnboardingEligibilityReason()).String()
         err := writer.WriteStringValue("tenantOnboardingEligibilityReason", &cast)
         if err != nil {
             return err

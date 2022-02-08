@@ -175,8 +175,7 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(TeamworkDeviceOperationType)
-            m.SetOperationType(&cast)
+            m.SetOperationType(val.(*TeamworkDeviceOperationType))
         }
         return nil
     }
@@ -248,7 +247,7 @@ func (m *TeamworkDeviceOperation) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetOperationType() != nil {
-        cast := m.GetOperationType().String()
+        cast := (*m.GetOperationType()).String()
         err = writer.WriteStringValue("operationType", &cast)
         if err != nil {
             return err

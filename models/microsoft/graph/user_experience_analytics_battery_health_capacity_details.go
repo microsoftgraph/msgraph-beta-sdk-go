@@ -1,6 +1,7 @@
 package graph
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
@@ -15,6 +16,8 @@ type UserExperienceAnalyticsBatteryHealthCapacityDetails struct {
     batteryCapacityGood *int32;
     // Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
     batteryCapacityPoor *int32;
+    // Recorded date time of this capacity details instance.
+    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
 // NewUserExperienceAnalyticsBatteryHealthCapacityDetails instantiates a new userExperienceAnalyticsBatteryHealthCapacityDetails and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthCapacityDetails()(*UserExperienceAnalyticsBatteryHealthCapacityDetails) {
@@ -53,6 +56,14 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetBatteryCapacity
         return nil
     } else {
         return m.batteryCapacityPoor
+    }
+}
+// GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Recorded date time of this capacity details instance.
+func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastRefreshedDateTime
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -98,6 +109,16 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializ
         }
         return nil
     }
+    res["lastRefreshedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastRefreshedDateTime(val)
+        }
+        return nil
+    }
     return res
 }
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) IsNil()(bool) {
@@ -133,6 +154,12 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) Serialize(writer i
             return err
         }
     }
+    {
+        err = writer.WriteTimeValue("lastRefreshedDateTime", m.GetLastRefreshedDateTime())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
@@ -157,5 +184,11 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetBatteryCapacity
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetBatteryCapacityPoor(value *int32)() {
     if m != nil {
         m.batteryCapacityPoor = value
+    }
+}
+// SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Recorded date time of this capacity details instance.
+func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    if m != nil {
+        m.lastRefreshedDateTime = value
     }
 }

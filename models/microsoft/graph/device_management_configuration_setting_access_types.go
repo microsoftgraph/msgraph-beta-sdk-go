@@ -20,23 +20,26 @@ func (i DeviceManagementConfigurationSettingAccessTypes) String() string {
     return []string{"NONE", "ADD", "COPY", "DELETE", "GET", "REPLACE", "EXECUTE"}[i]
 }
 func ParseDeviceManagementConfigurationSettingAccessTypes(v string) (interface{}, error) {
+    result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES, nil
+            result = NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
         case "ADD":
-            return ADD_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES, nil
+            result = ADD_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
         case "COPY":
-            return COPY_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES, nil
+            result = COPY_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
         case "DELETE":
-            return DELETE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES, nil
+            result = DELETE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
         case "GET":
-            return GET_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES, nil
+            result = GET_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
         case "REPLACE":
-            return REPLACE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES, nil
+            result = REPLACE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
         case "EXECUTE":
-            return EXECUTE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES, nil
+            result = EXECUTE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
+        default:
+            return 0, errors.New("Unknown DeviceManagementConfigurationSettingAccessTypes value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementConfigurationSettingAccessTypes value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementConfigurationSettingAccessTypes(values []DeviceManagementConfigurationSettingAccessTypes) []string {
     result := make([]string, len(values))

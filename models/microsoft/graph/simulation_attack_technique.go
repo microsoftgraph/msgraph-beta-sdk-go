@@ -20,23 +20,26 @@ func (i SimulationAttackTechnique) String() string {
     return []string{"UNKNOWN", "CREDENTIALHARVESTING", "ATTACHMENTMALWARE", "DRIVEBYURL", "LINKINATTACHMENT", "LINKTOMALWAREFILE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSimulationAttackTechnique(v string) (interface{}, error) {
+    result := UNKNOWN_SIMULATIONATTACKTECHNIQUE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_SIMULATIONATTACKTECHNIQUE, nil
+            result = UNKNOWN_SIMULATIONATTACKTECHNIQUE
         case "CREDENTIALHARVESTING":
-            return CREDENTIALHARVESTING_SIMULATIONATTACKTECHNIQUE, nil
+            result = CREDENTIALHARVESTING_SIMULATIONATTACKTECHNIQUE
         case "ATTACHMENTMALWARE":
-            return ATTACHMENTMALWARE_SIMULATIONATTACKTECHNIQUE, nil
+            result = ATTACHMENTMALWARE_SIMULATIONATTACKTECHNIQUE
         case "DRIVEBYURL":
-            return DRIVEBYURL_SIMULATIONATTACKTECHNIQUE, nil
+            result = DRIVEBYURL_SIMULATIONATTACKTECHNIQUE
         case "LINKINATTACHMENT":
-            return LINKINATTACHMENT_SIMULATIONATTACKTECHNIQUE, nil
+            result = LINKINATTACHMENT_SIMULATIONATTACKTECHNIQUE
         case "LINKTOMALWAREFILE":
-            return LINKTOMALWAREFILE_SIMULATIONATTACKTECHNIQUE, nil
+            result = LINKTOMALWAREFILE_SIMULATIONATTACKTECHNIQUE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SIMULATIONATTACKTECHNIQUE, nil
+            result = UNKNOWNFUTUREVALUE_SIMULATIONATTACKTECHNIQUE
+        default:
+            return 0, errors.New("Unknown SimulationAttackTechnique value: " + v)
     }
-    return 0, errors.New("Unknown SimulationAttackTechnique value: " + v)
+    return &result, nil
 }
 func SerializeSimulationAttackTechnique(values []SimulationAttackTechnique) []string {
     result := make([]string, len(values))

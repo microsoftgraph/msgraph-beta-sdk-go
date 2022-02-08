@@ -45,73 +45,76 @@ func (i Code) String() string {
     return []string{"NONE", "JSONFILEINVALID", "JSONFILEMISSING", "JSONFILETOOLARGE", "RULESMISSING", "DUPLICATERULES", "TOOMANYRULESSPECIFIED", "OPERATORMISSING", "OPERATORNOTSUPPORTED", "DATATYPEMISSING", "DATATYPENOTSUPPORTED", "OPERATORDATATYPECOMBINATIONNOTSUPPORTED", "MOREINFOURIMISSING", "MOREINFOURIINVALID", "MOREINFOURITOOLARGE", "DESCRIPTIONMISSING", "DESCRIPTIONINVALID", "DESCRIPTIONTOOLARGE", "TITLEMISSING", "TITLEINVALID", "TITLETOOLARGE", "OPERANDMISSING", "OPERANDINVALID", "OPERANDTOOLARGE", "SETTINGNAMEMISSING", "SETTINGNAMEINVALID", "SETTINGNAMETOOLARGE", "ENGLISHLOCALEMISSING", "DUPLICATELOCALES", "UNRECOGNIZEDLOCALE", "UNKNOWN", "REMEDIATIONSTRINGSMISSING"}[i]
 }
 func ParseCode(v string) (interface{}, error) {
+    result := NONE_CODE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_CODE, nil
+            result = NONE_CODE
         case "JSONFILEINVALID":
-            return JSONFILEINVALID_CODE, nil
+            result = JSONFILEINVALID_CODE
         case "JSONFILEMISSING":
-            return JSONFILEMISSING_CODE, nil
+            result = JSONFILEMISSING_CODE
         case "JSONFILETOOLARGE":
-            return JSONFILETOOLARGE_CODE, nil
+            result = JSONFILETOOLARGE_CODE
         case "RULESMISSING":
-            return RULESMISSING_CODE, nil
+            result = RULESMISSING_CODE
         case "DUPLICATERULES":
-            return DUPLICATERULES_CODE, nil
+            result = DUPLICATERULES_CODE
         case "TOOMANYRULESSPECIFIED":
-            return TOOMANYRULESSPECIFIED_CODE, nil
+            result = TOOMANYRULESSPECIFIED_CODE
         case "OPERATORMISSING":
-            return OPERATORMISSING_CODE, nil
+            result = OPERATORMISSING_CODE
         case "OPERATORNOTSUPPORTED":
-            return OPERATORNOTSUPPORTED_CODE, nil
+            result = OPERATORNOTSUPPORTED_CODE
         case "DATATYPEMISSING":
-            return DATATYPEMISSING_CODE, nil
+            result = DATATYPEMISSING_CODE
         case "DATATYPENOTSUPPORTED":
-            return DATATYPENOTSUPPORTED_CODE, nil
+            result = DATATYPENOTSUPPORTED_CODE
         case "OPERATORDATATYPECOMBINATIONNOTSUPPORTED":
-            return OPERATORDATATYPECOMBINATIONNOTSUPPORTED_CODE, nil
+            result = OPERATORDATATYPECOMBINATIONNOTSUPPORTED_CODE
         case "MOREINFOURIMISSING":
-            return MOREINFOURIMISSING_CODE, nil
+            result = MOREINFOURIMISSING_CODE
         case "MOREINFOURIINVALID":
-            return MOREINFOURIINVALID_CODE, nil
+            result = MOREINFOURIINVALID_CODE
         case "MOREINFOURITOOLARGE":
-            return MOREINFOURITOOLARGE_CODE, nil
+            result = MOREINFOURITOOLARGE_CODE
         case "DESCRIPTIONMISSING":
-            return DESCRIPTIONMISSING_CODE, nil
+            result = DESCRIPTIONMISSING_CODE
         case "DESCRIPTIONINVALID":
-            return DESCRIPTIONINVALID_CODE, nil
+            result = DESCRIPTIONINVALID_CODE
         case "DESCRIPTIONTOOLARGE":
-            return DESCRIPTIONTOOLARGE_CODE, nil
+            result = DESCRIPTIONTOOLARGE_CODE
         case "TITLEMISSING":
-            return TITLEMISSING_CODE, nil
+            result = TITLEMISSING_CODE
         case "TITLEINVALID":
-            return TITLEINVALID_CODE, nil
+            result = TITLEINVALID_CODE
         case "TITLETOOLARGE":
-            return TITLETOOLARGE_CODE, nil
+            result = TITLETOOLARGE_CODE
         case "OPERANDMISSING":
-            return OPERANDMISSING_CODE, nil
+            result = OPERANDMISSING_CODE
         case "OPERANDINVALID":
-            return OPERANDINVALID_CODE, nil
+            result = OPERANDINVALID_CODE
         case "OPERANDTOOLARGE":
-            return OPERANDTOOLARGE_CODE, nil
+            result = OPERANDTOOLARGE_CODE
         case "SETTINGNAMEMISSING":
-            return SETTINGNAMEMISSING_CODE, nil
+            result = SETTINGNAMEMISSING_CODE
         case "SETTINGNAMEINVALID":
-            return SETTINGNAMEINVALID_CODE, nil
+            result = SETTINGNAMEINVALID_CODE
         case "SETTINGNAMETOOLARGE":
-            return SETTINGNAMETOOLARGE_CODE, nil
+            result = SETTINGNAMETOOLARGE_CODE
         case "ENGLISHLOCALEMISSING":
-            return ENGLISHLOCALEMISSING_CODE, nil
+            result = ENGLISHLOCALEMISSING_CODE
         case "DUPLICATELOCALES":
-            return DUPLICATELOCALES_CODE, nil
+            result = DUPLICATELOCALES_CODE
         case "UNRECOGNIZEDLOCALE":
-            return UNRECOGNIZEDLOCALE_CODE, nil
+            result = UNRECOGNIZEDLOCALE_CODE
         case "UNKNOWN":
-            return UNKNOWN_CODE, nil
+            result = UNKNOWN_CODE
         case "REMEDIATIONSTRINGSMISSING":
-            return REMEDIATIONSTRINGSMISSING_CODE, nil
+            result = REMEDIATIONSTRINGSMISSING_CODE
+        default:
+            return 0, errors.New("Unknown Code value: " + v)
     }
-    return 0, errors.New("Unknown Code value: " + v)
+    return &result, nil
 }
 func SerializeCode(values []Code) []string {
     result := make([]string, len(values))

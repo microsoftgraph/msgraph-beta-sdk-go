@@ -229,8 +229,7 @@ func (m *DeviceManagementCompliancePolicy) GetFieldDeserializers()(map[string]fu
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationPlatforms)
-            m.SetPlatforms(&cast)
+            m.SetPlatforms(val.(*DeviceManagementConfigurationPlatforms))
         }
         return nil
     }
@@ -292,8 +291,7 @@ func (m *DeviceManagementCompliancePolicy) GetFieldDeserializers()(map[string]fu
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationTechnologies)
-            m.SetTechnologies(&cast)
+            m.SetTechnologies(val.(*DeviceManagementConfigurationTechnologies))
         }
         return nil
     }
@@ -356,7 +354,7 @@ func (m *DeviceManagementCompliancePolicy) Serialize(writer i04eb5309aeaafadd283
         }
     }
     if m.GetPlatforms() != nil {
-        cast := m.GetPlatforms().String()
+        cast := (*m.GetPlatforms()).String()
         err = writer.WriteStringValue("platforms", &cast)
         if err != nil {
             return err
@@ -397,7 +395,7 @@ func (m *DeviceManagementCompliancePolicy) Serialize(writer i04eb5309aeaafadd283
         }
     }
     if m.GetTechnologies() != nil {
-        cast := m.GetTechnologies().String()
+        cast := (*m.GetTechnologies()).String()
         err = writer.WriteStringValue("technologies", &cast)
         if err != nil {
             return err

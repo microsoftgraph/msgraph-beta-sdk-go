@@ -17,17 +17,20 @@ func (i UserNewMessageRestriction) String() string {
     return []string{"EVERYONE", "EVERYONEEXCEPTGUESTS", "MODERATORS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseUserNewMessageRestriction(v string) (interface{}, error) {
+    result := EVERYONE_USERNEWMESSAGERESTRICTION
     switch strings.ToUpper(v) {
         case "EVERYONE":
-            return EVERYONE_USERNEWMESSAGERESTRICTION, nil
+            result = EVERYONE_USERNEWMESSAGERESTRICTION
         case "EVERYONEEXCEPTGUESTS":
-            return EVERYONEEXCEPTGUESTS_USERNEWMESSAGERESTRICTION, nil
+            result = EVERYONEEXCEPTGUESTS_USERNEWMESSAGERESTRICTION
         case "MODERATORS":
-            return MODERATORS_USERNEWMESSAGERESTRICTION, nil
+            result = MODERATORS_USERNEWMESSAGERESTRICTION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_USERNEWMESSAGERESTRICTION, nil
+            result = UNKNOWNFUTUREVALUE_USERNEWMESSAGERESTRICTION
+        default:
+            return 0, errors.New("Unknown UserNewMessageRestriction value: " + v)
     }
-    return 0, errors.New("Unknown UserNewMessageRestriction value: " + v)
+    return &result, nil
 }
 func SerializeUserNewMessageRestriction(values []UserNewMessageRestriction) []string {
     result := make([]string, len(values))

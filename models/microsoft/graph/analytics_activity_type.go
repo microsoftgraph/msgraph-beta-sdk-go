@@ -18,19 +18,22 @@ func (i AnalyticsActivityType) String() string {
     return []string{"EMAIL", "MEETING", "FOCUS", "CHAT", "CALL"}[i]
 }
 func ParseAnalyticsActivityType(v string) (interface{}, error) {
+    result := EMAIL_ANALYTICSACTIVITYTYPE
     switch strings.ToUpper(v) {
         case "EMAIL":
-            return EMAIL_ANALYTICSACTIVITYTYPE, nil
+            result = EMAIL_ANALYTICSACTIVITYTYPE
         case "MEETING":
-            return MEETING_ANALYTICSACTIVITYTYPE, nil
+            result = MEETING_ANALYTICSACTIVITYTYPE
         case "FOCUS":
-            return FOCUS_ANALYTICSACTIVITYTYPE, nil
+            result = FOCUS_ANALYTICSACTIVITYTYPE
         case "CHAT":
-            return CHAT_ANALYTICSACTIVITYTYPE, nil
+            result = CHAT_ANALYTICSACTIVITYTYPE
         case "CALL":
-            return CALL_ANALYTICSACTIVITYTYPE, nil
+            result = CALL_ANALYTICSACTIVITYTYPE
+        default:
+            return 0, errors.New("Unknown AnalyticsActivityType value: " + v)
     }
-    return 0, errors.New("Unknown AnalyticsActivityType value: " + v)
+    return &result, nil
 }
 func SerializeAnalyticsActivityType(values []AnalyticsActivityType) []string {
     result := make([]string, len(values))

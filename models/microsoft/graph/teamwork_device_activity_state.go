@@ -18,19 +18,22 @@ func (i TeamworkDeviceActivityState) String() string {
     return []string{"UNKNOWN", "BUSY", "IDLE", "UNAVAILABLE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamworkDeviceActivityState(v string) (interface{}, error) {
+    result := UNKNOWN_TEAMWORKDEVICEACTIVITYSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_TEAMWORKDEVICEACTIVITYSTATE, nil
+            result = UNKNOWN_TEAMWORKDEVICEACTIVITYSTATE
         case "BUSY":
-            return BUSY_TEAMWORKDEVICEACTIVITYSTATE, nil
+            result = BUSY_TEAMWORKDEVICEACTIVITYSTATE
         case "IDLE":
-            return IDLE_TEAMWORKDEVICEACTIVITYSTATE, nil
+            result = IDLE_TEAMWORKDEVICEACTIVITYSTATE
         case "UNAVAILABLE":
-            return UNAVAILABLE_TEAMWORKDEVICEACTIVITYSTATE, nil
+            result = UNAVAILABLE_TEAMWORKDEVICEACTIVITYSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMWORKDEVICEACTIVITYSTATE, nil
+            result = UNKNOWNFUTUREVALUE_TEAMWORKDEVICEACTIVITYSTATE
+        default:
+            return 0, errors.New("Unknown TeamworkDeviceActivityState value: " + v)
     }
-    return 0, errors.New("Unknown TeamworkDeviceActivityState value: " + v)
+    return &result, nil
 }
 func SerializeTeamworkDeviceActivityState(values []TeamworkDeviceActivityState) []string {
     result := make([]string, len(values))

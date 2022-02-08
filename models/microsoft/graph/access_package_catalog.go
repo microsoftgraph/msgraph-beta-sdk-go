@@ -14,19 +14,21 @@ type AccessPackageCatalog struct {
     accessPackageResources []AccessPackageResource;
     // 
     accessPackageResourceScopes []AccessPackageResourceScope;
-    // The access packages in this catalog. Read-only. Nullable. Supports $expand.
+    // The access packages in this catalog. Read-only. Nullable.
     accessPackages []AccessPackage;
     // Has the value Published if the access packages are available for management.
     catalogStatus *string;
-    // One of UserManaged or ServiceDefault.
+    // Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
     catalogType *string;
     // UPN of the user who created this resource. Read-only.
     createdBy *string;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
+    customAccessPackageWorkflowExtensions []CustomAccessPackageWorkflowExtension;
     // The description of the access package catalog.
     description *string;
-    // The display name of the access package catalog. Supports $filter (eq, contains).
+    // The display name of the access package catalog.
     displayName *string;
     // Whether the access packages in this catalog can be requested by users outside of the tenant.
     isExternallyVisible *bool;
@@ -66,7 +68,7 @@ func (m *AccessPackageCatalog) GetAccessPackageResourceScopes()([]AccessPackageR
         return m.accessPackageResourceScopes
     }
 }
-// GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable. Supports $expand.
+// GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackage) {
     if m == nil {
         return nil
@@ -82,7 +84,7 @@ func (m *AccessPackageCatalog) GetCatalogStatus()(*string) {
         return m.catalogStatus
     }
 }
-// GetCatalogType gets the catalogType property value. One of UserManaged or ServiceDefault.
+// GetCatalogType gets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
 func (m *AccessPackageCatalog) GetCatalogType()(*string) {
     if m == nil {
         return nil
@@ -106,6 +108,14 @@ func (m *AccessPackageCatalog) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
         return m.createdDateTime
     }
 }
+// GetCustomAccessPackageWorkflowExtensions gets the customAccessPackageWorkflowExtensions property value. 
+func (m *AccessPackageCatalog) GetCustomAccessPackageWorkflowExtensions()([]CustomAccessPackageWorkflowExtension) {
+    if m == nil {
+        return nil
+    } else {
+        return m.customAccessPackageWorkflowExtensions
+    }
+}
 // GetDescription gets the description property value. The description of the access package catalog.
 func (m *AccessPackageCatalog) GetDescription()(*string) {
     if m == nil {
@@ -114,7 +124,7 @@ func (m *AccessPackageCatalog) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name of the access package catalog. Supports $filter (eq, contains).
+// GetDisplayName gets the displayName property value. The display name of the access package catalog.
 func (m *AccessPackageCatalog) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -242,6 +252,20 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(interface
         }
         if val != nil {
             m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["customAccessPackageWorkflowExtensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCustomAccessPackageWorkflowExtension() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomAccessPackageWorkflowExtension, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CustomAccessPackageWorkflowExtension))
+            }
+            m.SetCustomAccessPackageWorkflowExtensions(res)
         }
         return nil
     }
@@ -374,6 +398,17 @@ func (m *AccessPackageCatalog) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
+    if m.GetCustomAccessPackageWorkflowExtensions() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomAccessPackageWorkflowExtensions()))
+        for i, v := range m.GetCustomAccessPackageWorkflowExtensions() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("customAccessPackageWorkflowExtensions", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -424,7 +459,7 @@ func (m *AccessPackageCatalog) SetAccessPackageResourceScopes(value []AccessPack
         m.accessPackageResourceScopes = value
     }
 }
-// SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable. Supports $expand.
+// SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackage)() {
     if m != nil {
         m.accessPackages = value
@@ -436,7 +471,7 @@ func (m *AccessPackageCatalog) SetCatalogStatus(value *string)() {
         m.catalogStatus = value
     }
 }
-// SetCatalogType sets the catalogType property value. One of UserManaged or ServiceDefault.
+// SetCatalogType sets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
 func (m *AccessPackageCatalog) SetCatalogType(value *string)() {
     if m != nil {
         m.catalogType = value
@@ -454,13 +489,19 @@ func (m *AccessPackageCatalog) SetCreatedDateTime(value *i336074805fc853987abe6f
         m.createdDateTime = value
     }
 }
+// SetCustomAccessPackageWorkflowExtensions sets the customAccessPackageWorkflowExtensions property value. 
+func (m *AccessPackageCatalog) SetCustomAccessPackageWorkflowExtensions(value []CustomAccessPackageWorkflowExtension)() {
+    if m != nil {
+        m.customAccessPackageWorkflowExtensions = value
+    }
+}
 // SetDescription sets the description property value. The description of the access package catalog.
 func (m *AccessPackageCatalog) SetDescription(value *string)() {
     if m != nil {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the access package catalog. Supports $filter (eq, contains).
+// SetDisplayName sets the displayName property value. The display name of the access package catalog.
 func (m *AccessPackageCatalog) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value

@@ -22,27 +22,30 @@ func (i RecordCompletionReason) String() string {
     return []string{"OPERATIONCANCELED", "STOPTONEDETECTED", "MAXRECORDDURATIONREACHED", "INITIALSILENCETIMEOUT", "MAXSILENCETIMEOUT", "PLAYPROMPTFAILED", "PLAYBEEPFAILED", "MEDIARECEIVETIMEOUT", "UNSPECIFIEDERROR"}[i]
 }
 func ParseRecordCompletionReason(v string) (interface{}, error) {
+    result := OPERATIONCANCELED_RECORDCOMPLETIONREASON
     switch strings.ToUpper(v) {
         case "OPERATIONCANCELED":
-            return OPERATIONCANCELED_RECORDCOMPLETIONREASON, nil
+            result = OPERATIONCANCELED_RECORDCOMPLETIONREASON
         case "STOPTONEDETECTED":
-            return STOPTONEDETECTED_RECORDCOMPLETIONREASON, nil
+            result = STOPTONEDETECTED_RECORDCOMPLETIONREASON
         case "MAXRECORDDURATIONREACHED":
-            return MAXRECORDDURATIONREACHED_RECORDCOMPLETIONREASON, nil
+            result = MAXRECORDDURATIONREACHED_RECORDCOMPLETIONREASON
         case "INITIALSILENCETIMEOUT":
-            return INITIALSILENCETIMEOUT_RECORDCOMPLETIONREASON, nil
+            result = INITIALSILENCETIMEOUT_RECORDCOMPLETIONREASON
         case "MAXSILENCETIMEOUT":
-            return MAXSILENCETIMEOUT_RECORDCOMPLETIONREASON, nil
+            result = MAXSILENCETIMEOUT_RECORDCOMPLETIONREASON
         case "PLAYPROMPTFAILED":
-            return PLAYPROMPTFAILED_RECORDCOMPLETIONREASON, nil
+            result = PLAYPROMPTFAILED_RECORDCOMPLETIONREASON
         case "PLAYBEEPFAILED":
-            return PLAYBEEPFAILED_RECORDCOMPLETIONREASON, nil
+            result = PLAYBEEPFAILED_RECORDCOMPLETIONREASON
         case "MEDIARECEIVETIMEOUT":
-            return MEDIARECEIVETIMEOUT_RECORDCOMPLETIONREASON, nil
+            result = MEDIARECEIVETIMEOUT_RECORDCOMPLETIONREASON
         case "UNSPECIFIEDERROR":
-            return UNSPECIFIEDERROR_RECORDCOMPLETIONREASON, nil
+            result = UNSPECIFIEDERROR_RECORDCOMPLETIONREASON
+        default:
+            return 0, errors.New("Unknown RecordCompletionReason value: " + v)
     }
-    return 0, errors.New("Unknown RecordCompletionReason value: " + v)
+    return &result, nil
 }
 func SerializeRecordCompletionReason(values []RecordCompletionReason) []string {
     result := make([]string, len(values))

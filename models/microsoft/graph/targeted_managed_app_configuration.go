@@ -84,8 +84,7 @@ func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(TargetedManagedAppGroupType)
-            m.SetAppGroupType(&cast)
+            m.SetAppGroupType(val.(*TargetedManagedAppGroupType))
         }
         return nil
     }
@@ -159,7 +158,7 @@ func (m *TargetedManagedAppConfiguration) Serialize(writer i04eb5309aeaafadd2837
         return err
     }
     if m.GetAppGroupType() != nil {
-        cast := m.GetAppGroupType().String()
+        cast := (*m.GetAppGroupType()).String()
         err = writer.WriteStringValue("appGroupType", &cast)
         if err != nil {
             return err

@@ -18,7 +18,9 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     // The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
     estimatedRuntimeInMinutes *int32;
     // The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-    healthStatus *string;
+    healthStatus *UserExperienceAnalyticsHealthState;
+    // The manufacturer name of the device.
+    manufacturer *string;
     // Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
     maxCapacityPercentage *int32;
     // The model name of the device.
@@ -72,11 +74,19 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetEstimatedRunt
     }
 }
 // GetHealthStatus gets the healthStatus property value. The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetHealthStatus()(*string) {
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     if m == nil {
         return nil
     } else {
         return m.healthStatus
+    }
+}
+// GetManufacturer gets the manufacturer property value. The manufacturer name of the device.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetManufacturer()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.manufacturer
     }
 }
 // GetMaxCapacityPercentage gets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
@@ -149,12 +159,22 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         return nil
     }
     res["healthStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserExperienceAnalyticsHealthState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHealthStatus(val.(*UserExperienceAnalyticsHealthState))
+        }
+        return nil
+    }
+    res["manufacturer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetHealthStatus(val)
+            m.SetManufacturer(val)
         }
         return nil
     }
@@ -219,8 +239,15 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) Serialize(writer
             return err
         }
     }
+    if m.GetHealthStatus() != nil {
+        cast := (*m.GetHealthStatus()).String()
+        err = writer.WriteStringValue("healthStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
-        err = writer.WriteStringValue("healthStatus", m.GetHealthStatus())
+        err = writer.WriteStringValue("manufacturer", m.GetManufacturer())
         if err != nil {
             return err
         }
@@ -270,9 +297,15 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetEstimatedRunt
     }
 }
 // SetHealthStatus sets the healthStatus property value. The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetHealthStatus(value *string)() {
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
     if m != nil {
         m.healthStatus = value
+    }
+}
+// SetManufacturer sets the manufacturer property value. The manufacturer name of the device.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetManufacturer(value *string)() {
+    if m != nil {
+        m.manufacturer = value
     }
 }
 // SetMaxCapacityPercentage sets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647

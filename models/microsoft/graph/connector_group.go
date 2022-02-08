@@ -98,8 +98,7 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(ConnectorGroupType)
-            m.SetConnectorGroupType(&cast)
+            m.SetConnectorGroupType(val.(*ConnectorGroupType))
         }
         return nil
     }
@@ -143,8 +142,7 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(ConnectorGroupRegion)
-            m.SetRegion(&cast)
+            m.SetRegion(val.(*ConnectorGroupRegion))
         }
         return nil
     }
@@ -171,7 +169,7 @@ func (m *ConnectorGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetConnectorGroupType() != nil {
-        cast := m.GetConnectorGroupType().String()
+        cast := (*m.GetConnectorGroupType()).String()
         err = writer.WriteStringValue("connectorGroupType", &cast)
         if err != nil {
             return err
@@ -201,7 +199,7 @@ func (m *ConnectorGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetRegion() != nil {
-        cast := m.GetRegion().String()
+        cast := (*m.GetRegion()).String()
         err = writer.WriteStringValue("region", &cast)
         if err != nil {
             return err

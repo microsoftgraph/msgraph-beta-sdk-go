@@ -18,19 +18,22 @@ func (i RemediationState) String() string {
     return []string{"UNKNOWN", "SKIPPED", "SUCCESS", "REMEDIATIONFAILED", "SCRIPTERROR"}[i]
 }
 func ParseRemediationState(v string) (interface{}, error) {
+    result := UNKNOWN_REMEDIATIONSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_REMEDIATIONSTATE, nil
+            result = UNKNOWN_REMEDIATIONSTATE
         case "SKIPPED":
-            return SKIPPED_REMEDIATIONSTATE, nil
+            result = SKIPPED_REMEDIATIONSTATE
         case "SUCCESS":
-            return SUCCESS_REMEDIATIONSTATE, nil
+            result = SUCCESS_REMEDIATIONSTATE
         case "REMEDIATIONFAILED":
-            return REMEDIATIONFAILED_REMEDIATIONSTATE, nil
+            result = REMEDIATIONFAILED_REMEDIATIONSTATE
         case "SCRIPTERROR":
-            return SCRIPTERROR_REMEDIATIONSTATE, nil
+            result = SCRIPTERROR_REMEDIATIONSTATE
+        default:
+            return 0, errors.New("Unknown RemediationState value: " + v)
     }
-    return 0, errors.New("Unknown RemediationState value: " + v)
+    return &result, nil
 }
 func SerializeRemediationState(values []RemediationState) []string {
     result := make([]string, len(values))

@@ -20,23 +20,26 @@ func (i SynchronizationJobRestartScope) String() string {
     return []string{"NONE", "CONNECTORDATASTORE", "ESCROWS", "WATERMARK", "QUARANTINESTATE", "FULL", "FORCEDELETES"}[i]
 }
 func ParseSynchronizationJobRestartScope(v string) (interface{}, error) {
+    result := NONE_SYNCHRONIZATIONJOBRESTARTSCOPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_SYNCHRONIZATIONJOBRESTARTSCOPE, nil
+            result = NONE_SYNCHRONIZATIONJOBRESTARTSCOPE
         case "CONNECTORDATASTORE":
-            return CONNECTORDATASTORE_SYNCHRONIZATIONJOBRESTARTSCOPE, nil
+            result = CONNECTORDATASTORE_SYNCHRONIZATIONJOBRESTARTSCOPE
         case "ESCROWS":
-            return ESCROWS_SYNCHRONIZATIONJOBRESTARTSCOPE, nil
+            result = ESCROWS_SYNCHRONIZATIONJOBRESTARTSCOPE
         case "WATERMARK":
-            return WATERMARK_SYNCHRONIZATIONJOBRESTARTSCOPE, nil
+            result = WATERMARK_SYNCHRONIZATIONJOBRESTARTSCOPE
         case "QUARANTINESTATE":
-            return QUARANTINESTATE_SYNCHRONIZATIONJOBRESTARTSCOPE, nil
+            result = QUARANTINESTATE_SYNCHRONIZATIONJOBRESTARTSCOPE
         case "FULL":
-            return FULL_SYNCHRONIZATIONJOBRESTARTSCOPE, nil
+            result = FULL_SYNCHRONIZATIONJOBRESTARTSCOPE
         case "FORCEDELETES":
-            return FORCEDELETES_SYNCHRONIZATIONJOBRESTARTSCOPE, nil
+            result = FORCEDELETES_SYNCHRONIZATIONJOBRESTARTSCOPE
+        default:
+            return 0, errors.New("Unknown SynchronizationJobRestartScope value: " + v)
     }
-    return 0, errors.New("Unknown SynchronizationJobRestartScope value: " + v)
+    return &result, nil
 }
 func SerializeSynchronizationJobRestartScope(values []SynchronizationJobRestartScope) []string {
     result := make([]string, len(values))

@@ -16,15 +16,18 @@ func (i CallDisposition) String() string {
     return []string{"DEFAULT", "SIMULTANEOUSRING", "FORWARD"}[i]
 }
 func ParseCallDisposition(v string) (interface{}, error) {
+    result := DEFAULT_CALLDISPOSITION
     switch strings.ToUpper(v) {
         case "DEFAULT":
-            return DEFAULT_CALLDISPOSITION, nil
+            result = DEFAULT_CALLDISPOSITION
         case "SIMULTANEOUSRING":
-            return SIMULTANEOUSRING_CALLDISPOSITION, nil
+            result = SIMULTANEOUSRING_CALLDISPOSITION
         case "FORWARD":
-            return FORWARD_CALLDISPOSITION, nil
+            result = FORWARD_CALLDISPOSITION
+        default:
+            return 0, errors.New("Unknown CallDisposition value: " + v)
     }
-    return 0, errors.New("Unknown CallDisposition value: " + v)
+    return &result, nil
 }
 func SerializeCallDisposition(values []CallDisposition) []string {
     result := make([]string, len(values))

@@ -34,8 +34,7 @@ func (m *PlayPromptOperation) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(PlayPromptCompletionReason)
-            m.SetCompletionReason(&cast)
+            m.SetCompletionReason(val.(*PlayPromptCompletionReason))
         }
         return nil
     }
@@ -51,7 +50,7 @@ func (m *PlayPromptOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         return err
     }
     if m.GetCompletionReason() != nil {
-        cast := m.GetCompletionReason().String()
+        cast := (*m.GetCompletionReason()).String()
         err = writer.WriteStringValue("completionReason", &cast)
         if err != nil {
             return err

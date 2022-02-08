@@ -88,8 +88,7 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedInstallerStatus)
-            m.SetManagedInstaller(&cast)
+            m.SetManagedInstaller(val.(*ManagedInstallerStatus))
         }
         return nil
     }
@@ -132,7 +131,7 @@ func (m *WindowsManagementApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetManagedInstaller() != nil {
-        cast := m.GetManagedInstaller().String()
+        cast := (*m.GetManagedInstaller()).String()
         err = writer.WriteStringValue("managedInstaller", &cast)
         if err != nil {
             return err

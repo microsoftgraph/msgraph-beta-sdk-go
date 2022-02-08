@@ -16,15 +16,18 @@ func (i AttributeMappingSourceType) String() string {
     return []string{"ATTRIBUTE", "CONSTANT", "FUNCTION"}[i]
 }
 func ParseAttributeMappingSourceType(v string) (interface{}, error) {
+    result := ATTRIBUTE_ATTRIBUTEMAPPINGSOURCETYPE
     switch strings.ToUpper(v) {
         case "ATTRIBUTE":
-            return ATTRIBUTE_ATTRIBUTEMAPPINGSOURCETYPE, nil
+            result = ATTRIBUTE_ATTRIBUTEMAPPINGSOURCETYPE
         case "CONSTANT":
-            return CONSTANT_ATTRIBUTEMAPPINGSOURCETYPE, nil
+            result = CONSTANT_ATTRIBUTEMAPPINGSOURCETYPE
         case "FUNCTION":
-            return FUNCTION_ATTRIBUTEMAPPINGSOURCETYPE, nil
+            result = FUNCTION_ATTRIBUTEMAPPINGSOURCETYPE
+        default:
+            return 0, errors.New("Unknown AttributeMappingSourceType value: " + v)
     }
-    return 0, errors.New("Unknown AttributeMappingSourceType value: " + v)
+    return &result, nil
 }
 func SerializeAttributeMappingSourceType(values []AttributeMappingSourceType) []string {
     result := make([]string, len(values))

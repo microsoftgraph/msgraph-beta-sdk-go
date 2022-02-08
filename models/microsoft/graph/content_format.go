@@ -15,13 +15,16 @@ func (i ContentFormat) String() string {
     return []string{"DEFAULT", "EMAIL"}[i]
 }
 func ParseContentFormat(v string) (interface{}, error) {
+    result := DEFAULT_CONTENTFORMAT
     switch strings.ToUpper(v) {
         case "DEFAULT":
-            return DEFAULT_CONTENTFORMAT, nil
+            result = DEFAULT_CONTENTFORMAT
         case "EMAIL":
-            return EMAIL_CONTENTFORMAT, nil
+            result = EMAIL_CONTENTFORMAT
+        default:
+            return 0, errors.New("Unknown ContentFormat value: " + v)
     }
-    return 0, errors.New("Unknown ContentFormat value: " + v)
+    return &result, nil
 }
 func SerializeContentFormat(values []ContentFormat) []string {
     result := make([]string, len(values))

@@ -21,25 +21,28 @@ func (i AllowedAudiences) String() string {
     return []string{"ME", "FAMILY", "CONTACTS", "GROUPMEMBERS", "ORGANIZATION", "FEDERATEDORGANIZATIONS", "EVERYONE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAllowedAudiences(v string) (interface{}, error) {
+    result := ME_ALLOWEDAUDIENCES
     switch strings.ToUpper(v) {
         case "ME":
-            return ME_ALLOWEDAUDIENCES, nil
+            result = ME_ALLOWEDAUDIENCES
         case "FAMILY":
-            return FAMILY_ALLOWEDAUDIENCES, nil
+            result = FAMILY_ALLOWEDAUDIENCES
         case "CONTACTS":
-            return CONTACTS_ALLOWEDAUDIENCES, nil
+            result = CONTACTS_ALLOWEDAUDIENCES
         case "GROUPMEMBERS":
-            return GROUPMEMBERS_ALLOWEDAUDIENCES, nil
+            result = GROUPMEMBERS_ALLOWEDAUDIENCES
         case "ORGANIZATION":
-            return ORGANIZATION_ALLOWEDAUDIENCES, nil
+            result = ORGANIZATION_ALLOWEDAUDIENCES
         case "FEDERATEDORGANIZATIONS":
-            return FEDERATEDORGANIZATIONS_ALLOWEDAUDIENCES, nil
+            result = FEDERATEDORGANIZATIONS_ALLOWEDAUDIENCES
         case "EVERYONE":
-            return EVERYONE_ALLOWEDAUDIENCES, nil
+            result = EVERYONE_ALLOWEDAUDIENCES
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ALLOWEDAUDIENCES, nil
+            result = UNKNOWNFUTUREVALUE_ALLOWEDAUDIENCES
+        default:
+            return 0, errors.New("Unknown AllowedAudiences value: " + v)
     }
-    return 0, errors.New("Unknown AllowedAudiences value: " + v)
+    return &result, nil
 }
 func SerializeAllowedAudiences(values []AllowedAudiences) []string {
     result := make([]string, len(values))

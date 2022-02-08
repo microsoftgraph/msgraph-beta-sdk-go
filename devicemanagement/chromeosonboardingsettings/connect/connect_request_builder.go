@@ -65,8 +65,7 @@ func (m *ConnectResponse) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChromeOSOnboardingStatus)
-            m.SetChromeOSOnboardingStatus(&cast)
+            m.SetChromeOSOnboardingStatus(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ChromeOSOnboardingStatus))
         }
         return nil
     }
@@ -78,7 +77,7 @@ func (m *ConnectResponse) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ConnectResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetChromeOSOnboardingStatus() != nil {
-        cast := m.GetChromeOSOnboardingStatus().String()
+        cast := (*m.GetChromeOSOnboardingStatus()).String()
         err := writer.WriteStringValue("chromeOSOnboardingStatus", &cast)
         if err != nil {
             return err

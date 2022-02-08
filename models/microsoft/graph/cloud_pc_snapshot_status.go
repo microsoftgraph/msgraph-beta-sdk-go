@@ -15,13 +15,16 @@ func (i CloudPcSnapshotStatus) String() string {
     return []string{"READY", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCloudPcSnapshotStatus(v string) (interface{}, error) {
+    result := READY_CLOUDPCSNAPSHOTSTATUS
     switch strings.ToUpper(v) {
         case "READY":
-            return READY_CLOUDPCSNAPSHOTSTATUS, nil
+            result = READY_CLOUDPCSNAPSHOTSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTSTATUS
+        default:
+            return 0, errors.New("Unknown CloudPcSnapshotStatus value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcSnapshotStatus value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcSnapshotStatus(values []CloudPcSnapshotStatus) []string {
     result := make([]string, len(values))

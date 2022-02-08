@@ -16,15 +16,18 @@ func (i DiscoverySource) String() string {
     return []string{"UNKNOWN", "ADMINIMPORT", "DEVICEENROLLMENTPROGRAM"}[i]
 }
 func ParseDiscoverySource(v string) (interface{}, error) {
+    result := UNKNOWN_DISCOVERYSOURCE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_DISCOVERYSOURCE, nil
+            result = UNKNOWN_DISCOVERYSOURCE
         case "ADMINIMPORT":
-            return ADMINIMPORT_DISCOVERYSOURCE, nil
+            result = ADMINIMPORT_DISCOVERYSOURCE
         case "DEVICEENROLLMENTPROGRAM":
-            return DEVICEENROLLMENTPROGRAM_DISCOVERYSOURCE, nil
+            result = DEVICEENROLLMENTPROGRAM_DISCOVERYSOURCE
+        default:
+            return 0, errors.New("Unknown DiscoverySource value: " + v)
     }
-    return 0, errors.New("Unknown DiscoverySource value: " + v)
+    return &result, nil
 }
 func SerializeDiscoverySource(values []DiscoverySource) []string {
     result := make([]string, len(values))

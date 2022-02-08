@@ -78,8 +78,7 @@ func (m *DeploymentState) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.RequestedDeploymentStateValue)
-            m.SetRequestedValue(&cast)
+            m.SetRequestedValue(val.(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.RequestedDeploymentStateValue))
         }
         return nil
     }
@@ -89,8 +88,7 @@ func (m *DeploymentState) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.DeploymentStateValue)
-            m.SetValue(&cast)
+            m.SetValue(val.(*ifded49a845bbaa9057da6e2cf565863ac34eb797e99b129c3e0659166af6b7e2.DeploymentStateValue))
         }
         return nil
     }
@@ -113,14 +111,14 @@ func (m *DeploymentState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetRequestedValue() != nil {
-        cast := m.GetRequestedValue().String()
+        cast := (*m.GetRequestedValue()).String()
         err := writer.WriteStringValue("requestedValue", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetValue() != nil {
-        cast := m.GetValue().String()
+        cast := (*m.GetValue()).String()
         err := writer.WriteStringValue("value", &cast)
         if err != nil {
             return err

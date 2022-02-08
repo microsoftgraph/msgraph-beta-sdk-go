@@ -19,21 +19,24 @@ func (i CaseOperationStatus) String() string {
     return []string{"NOTSTARTED", "SUBMISSIONFAILED", "RUNNING", "SUCCEEDED", "PARTIALLYSUCCEEDED", "FAILED"}[i]
 }
 func ParseCaseOperationStatus(v string) (interface{}, error) {
+    result := NOTSTARTED_CASEOPERATIONSTATUS
     switch strings.ToUpper(v) {
         case "NOTSTARTED":
-            return NOTSTARTED_CASEOPERATIONSTATUS, nil
+            result = NOTSTARTED_CASEOPERATIONSTATUS
         case "SUBMISSIONFAILED":
-            return SUBMISSIONFAILED_CASEOPERATIONSTATUS, nil
+            result = SUBMISSIONFAILED_CASEOPERATIONSTATUS
         case "RUNNING":
-            return RUNNING_CASEOPERATIONSTATUS, nil
+            result = RUNNING_CASEOPERATIONSTATUS
         case "SUCCEEDED":
-            return SUCCEEDED_CASEOPERATIONSTATUS, nil
+            result = SUCCEEDED_CASEOPERATIONSTATUS
         case "PARTIALLYSUCCEEDED":
-            return PARTIALLYSUCCEEDED_CASEOPERATIONSTATUS, nil
+            result = PARTIALLYSUCCEEDED_CASEOPERATIONSTATUS
         case "FAILED":
-            return FAILED_CASEOPERATIONSTATUS, nil
+            result = FAILED_CASEOPERATIONSTATUS
+        default:
+            return 0, errors.New("Unknown CaseOperationStatus value: " + v)
     }
-    return 0, errors.New("Unknown CaseOperationStatus value: " + v)
+    return &result, nil
 }
 func SerializeCaseOperationStatus(values []CaseOperationStatus) []string {
     result := make([]string, len(values))

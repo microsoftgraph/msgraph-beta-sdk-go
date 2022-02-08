@@ -247,8 +247,7 @@ func (m *DeviceConfigurationSettingState) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(ComplianceStatus)
-            m.SetState(&cast)
+            m.SetState(val.(*ComplianceStatus))
         }
         return nil
     }
@@ -353,7 +352,7 @@ func (m *DeviceConfigurationSettingState) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err := writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

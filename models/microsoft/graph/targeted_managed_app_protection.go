@@ -64,8 +64,7 @@ func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(TargetedManagedAppGroupType)
-            m.SetAppGroupType(&cast)
+            m.SetAppGroupType(val.(*TargetedManagedAppGroupType))
         }
         return nil
     }
@@ -99,8 +98,7 @@ func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(AppManagementLevel)
-            m.SetTargetedAppManagementLevels(&cast)
+            m.SetTargetedAppManagementLevels(val.(*AppManagementLevel))
         }
         return nil
     }
@@ -116,7 +114,7 @@ func (m *TargetedManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d7
         return err
     }
     if m.GetAppGroupType() != nil {
-        cast := m.GetAppGroupType().String()
+        cast := (*m.GetAppGroupType()).String()
         err = writer.WriteStringValue("appGroupType", &cast)
         if err != nil {
             return err
@@ -140,7 +138,7 @@ func (m *TargetedManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     if m.GetTargetedAppManagementLevels() != nil {
-        cast := m.GetTargetedAppManagementLevels().String()
+        cast := (*m.GetTargetedAppManagementLevels()).String()
         err = writer.WriteStringValue("targetedAppManagementLevels", &cast)
         if err != nil {
             return err

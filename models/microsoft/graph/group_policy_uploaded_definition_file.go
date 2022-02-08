@@ -12,8 +12,6 @@ type GroupPolicyUploadedDefinitionFile struct {
     content []byte;
     // The default language of the uploaded ADMX file.
     defaultLanguageCode *string;
-    // The file name of the ADMX file without the path. For example: edge.admx Inherited from groupPolicyDefinitionFile
-    fileName *string;
     // The list of operations on the uploaded ADMX file.
     groupPolicyOperations []GroupPolicyOperation;
     // The list of ADML files associated with the uploaded ADMX file.
@@ -44,14 +42,6 @@ func (m *GroupPolicyUploadedDefinitionFile) GetDefaultLanguageCode()(*string) {
         return nil
     } else {
         return m.defaultLanguageCode
-    }
-}
-// GetFileName gets the fileName property value. The file name of the ADMX file without the path. For example: edge.admx Inherited from groupPolicyDefinitionFile
-func (m *GroupPolicyUploadedDefinitionFile) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
     }
 }
 // GetGroupPolicyOperations gets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
@@ -109,16 +99,6 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["fileName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFileName(val)
-        }
-        return nil
-    }
     res["groupPolicyOperations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGroupPolicyOperation() })
         if err != nil {
@@ -153,8 +133,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(GroupPolicyUploadedDefinitionFileStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*GroupPolicyUploadedDefinitionFileStatus))
         }
         return nil
     }
@@ -191,12 +170,6 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i04eb5309aeaafadd28
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("fileName", m.GetFileName())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetGroupPolicyOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroupPolicyOperations()))
         for i, v := range m.GetGroupPolicyOperations() {
@@ -220,7 +193,7 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i04eb5309aeaafadd28
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
@@ -244,12 +217,6 @@ func (m *GroupPolicyUploadedDefinitionFile) SetContent(value []byte)() {
 func (m *GroupPolicyUploadedDefinitionFile) SetDefaultLanguageCode(value *string)() {
     if m != nil {
         m.defaultLanguageCode = value
-    }
-}
-// SetFileName sets the fileName property value. The file name of the ADMX file without the path. For example: edge.admx Inherited from groupPolicyDefinitionFile
-func (m *GroupPolicyUploadedDefinitionFile) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
     }
 }
 // SetGroupPolicyOperations sets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.

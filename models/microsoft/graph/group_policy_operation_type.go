@@ -20,23 +20,26 @@ func (i GroupPolicyOperationType) String() string {
     return []string{"NONE", "UPLOAD", "UPLOADNEWVERSION", "ADDLANGUAGEFILES", "REMOVELANGUAGEFILES", "UPDATELANGUAGEFILES", "REMOVE"}[i]
 }
 func ParseGroupPolicyOperationType(v string) (interface{}, error) {
+    result := NONE_GROUPPOLICYOPERATIONTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_GROUPPOLICYOPERATIONTYPE, nil
+            result = NONE_GROUPPOLICYOPERATIONTYPE
         case "UPLOAD":
-            return UPLOAD_GROUPPOLICYOPERATIONTYPE, nil
+            result = UPLOAD_GROUPPOLICYOPERATIONTYPE
         case "UPLOADNEWVERSION":
-            return UPLOADNEWVERSION_GROUPPOLICYOPERATIONTYPE, nil
+            result = UPLOADNEWVERSION_GROUPPOLICYOPERATIONTYPE
         case "ADDLANGUAGEFILES":
-            return ADDLANGUAGEFILES_GROUPPOLICYOPERATIONTYPE, nil
+            result = ADDLANGUAGEFILES_GROUPPOLICYOPERATIONTYPE
         case "REMOVELANGUAGEFILES":
-            return REMOVELANGUAGEFILES_GROUPPOLICYOPERATIONTYPE, nil
+            result = REMOVELANGUAGEFILES_GROUPPOLICYOPERATIONTYPE
         case "UPDATELANGUAGEFILES":
-            return UPDATELANGUAGEFILES_GROUPPOLICYOPERATIONTYPE, nil
+            result = UPDATELANGUAGEFILES_GROUPPOLICYOPERATIONTYPE
         case "REMOVE":
-            return REMOVE_GROUPPOLICYOPERATIONTYPE, nil
+            result = REMOVE_GROUPPOLICYOPERATIONTYPE
+        default:
+            return 0, errors.New("Unknown GroupPolicyOperationType value: " + v)
     }
-    return 0, errors.New("Unknown GroupPolicyOperationType value: " + v)
+    return &result, nil
 }
 func SerializeGroupPolicyOperationType(values []GroupPolicyOperationType) []string {
     result := make([]string, len(values))

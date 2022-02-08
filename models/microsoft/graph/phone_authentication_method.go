@@ -64,8 +64,7 @@ func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(AuthenticationPhoneType)
-            m.SetPhoneType(&cast)
+            m.SetPhoneType(val.(*AuthenticationPhoneType))
         }
         return nil
     }
@@ -75,8 +74,7 @@ func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(AuthenticationMethodSignInState)
-            m.SetSmsSignInState(&cast)
+            m.SetSmsSignInState(val.(*AuthenticationMethodSignInState))
         }
         return nil
     }
@@ -98,14 +96,14 @@ func (m *PhoneAuthenticationMethod) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     if m.GetPhoneType() != nil {
-        cast := m.GetPhoneType().String()
+        cast := (*m.GetPhoneType()).String()
         err = writer.WriteStringValue("phoneType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetSmsSignInState() != nil {
-        cast := m.GetSmsSignInState().String()
+        cast := (*m.GetSmsSignInState()).String()
         err = writer.WriteStringValue("smsSignInState", &cast)
         if err != nil {
             return err

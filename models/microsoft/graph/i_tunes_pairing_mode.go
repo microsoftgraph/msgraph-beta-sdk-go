@@ -16,15 +16,18 @@ func (i ITunesPairingMode) String() string {
     return []string{"DISALLOW", "ALLOW", "REQUIRESCERTIFICATE"}[i]
 }
 func ParseITunesPairingMode(v string) (interface{}, error) {
+    result := DISALLOW_ITUNESPAIRINGMODE
     switch strings.ToUpper(v) {
         case "DISALLOW":
-            return DISALLOW_ITUNESPAIRINGMODE, nil
+            result = DISALLOW_ITUNESPAIRINGMODE
         case "ALLOW":
-            return ALLOW_ITUNESPAIRINGMODE, nil
+            result = ALLOW_ITUNESPAIRINGMODE
         case "REQUIRESCERTIFICATE":
-            return REQUIRESCERTIFICATE_ITUNESPAIRINGMODE, nil
+            result = REQUIRESCERTIFICATE_ITUNESPAIRINGMODE
+        default:
+            return 0, errors.New("Unknown ITunesPairingMode value: " + v)
     }
-    return 0, errors.New("Unknown ITunesPairingMode value: " + v)
+    return &result, nil
 }
 func SerializeITunesPairingMode(values []ITunesPairingMode) []string {
     result := make([]string, len(values))

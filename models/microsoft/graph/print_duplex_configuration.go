@@ -16,15 +16,18 @@ func (i PrintDuplexConfiguration) String() string {
     return []string{"TWOSIDEDLONGEDGE", "TWOSIDEDSHORTEDGE", "ONESIDED"}[i]
 }
 func ParsePrintDuplexConfiguration(v string) (interface{}, error) {
+    result := TWOSIDEDLONGEDGE_PRINTDUPLEXCONFIGURATION
     switch strings.ToUpper(v) {
         case "TWOSIDEDLONGEDGE":
-            return TWOSIDEDLONGEDGE_PRINTDUPLEXCONFIGURATION, nil
+            result = TWOSIDEDLONGEDGE_PRINTDUPLEXCONFIGURATION
         case "TWOSIDEDSHORTEDGE":
-            return TWOSIDEDSHORTEDGE_PRINTDUPLEXCONFIGURATION, nil
+            result = TWOSIDEDSHORTEDGE_PRINTDUPLEXCONFIGURATION
         case "ONESIDED":
-            return ONESIDED_PRINTDUPLEXCONFIGURATION, nil
+            result = ONESIDED_PRINTDUPLEXCONFIGURATION
+        default:
+            return 0, errors.New("Unknown PrintDuplexConfiguration value: " + v)
     }
-    return 0, errors.New("Unknown PrintDuplexConfiguration value: " + v)
+    return &result, nil
 }
 func SerializePrintDuplexConfiguration(values []PrintDuplexConfiguration) []string {
     result := make([]string, len(values))

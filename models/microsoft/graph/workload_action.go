@@ -114,8 +114,7 @@ func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionCategory)
-            m.SetCategory(&cast)
+            m.SetCategory(val.(*i5c2592132064055aae424492b066923068e6d9a29d4565707b3591c21983fe01.WorkloadActionCategory))
         }
         return nil
     }
@@ -191,7 +190,7 @@ func (m *WorkloadAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetCategory() != nil {
-        cast := m.GetCategory().String()
+        cast := (*m.GetCategory()).String()
         err := writer.WriteStringValue("category", &cast)
         if err != nil {
             return err

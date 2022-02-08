@@ -65,8 +65,7 @@ func (m *GetCredentialUsageSummaryWithPeriod) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UsageAuthMethod)
-            m.SetAuthMethod(&cast)
+            m.SetAuthMethod(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UsageAuthMethod))
         }
         return nil
     }
@@ -86,8 +85,7 @@ func (m *GetCredentialUsageSummaryWithPeriod) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FeatureType)
-            m.SetFeature(&cast)
+            m.SetFeature(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.FeatureType))
         }
         return nil
     }
@@ -113,7 +111,7 @@ func (m *GetCredentialUsageSummaryWithPeriod) Serialize(writer i04eb5309aeaafadd
         return err
     }
     if m.GetAuthMethod() != nil {
-        cast := m.GetAuthMethod().String()
+        cast := (*m.GetAuthMethod()).String()
         err = writer.WriteStringValue("authMethod", &cast)
         if err != nil {
             return err
@@ -126,7 +124,7 @@ func (m *GetCredentialUsageSummaryWithPeriod) Serialize(writer i04eb5309aeaafadd
         }
     }
     if m.GetFeature() != nil {
-        cast := m.GetFeature().String()
+        cast := (*m.GetFeature()).String()
         err = writer.WriteStringValue("feature", &cast)
         if err != nil {
             return err

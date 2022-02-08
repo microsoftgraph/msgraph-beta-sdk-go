@@ -467,8 +467,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
             return err
         }
         if val != nil {
-            cast := val.(MobileAppPublishingState)
-            m.SetPublishingState(&cast)
+            m.SetPublishingState(val.(*MobileAppPublishingState))
         }
         return nil
     }
@@ -679,7 +678,7 @@ func (m *MobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     if m.GetPublishingState() != nil {
-        cast := m.GetPublishingState().String()
+        cast := (*m.GetPublishingState()).String()
         err = writer.WriteStringValue("publishingState", &cast)
         if err != nil {
             return err

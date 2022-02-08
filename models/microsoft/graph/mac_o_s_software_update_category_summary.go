@@ -175,8 +175,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
             return err
         }
         if val != nil {
-            cast := val.(MacOSSoftwareUpdateCategory)
-            m.SetUpdateCategory(&cast)
+            m.SetUpdateCategory(val.(*MacOSSoftwareUpdateCategory))
         }
         return nil
     }
@@ -252,7 +251,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) Serialize(writer i04eb5309aeaafadd2
         }
     }
     if m.GetUpdateCategory() != nil {
-        cast := m.GetUpdateCategory().String()
+        cast := (*m.GetUpdateCategory()).String()
         err = writer.WriteStringValue("updateCategory", &cast)
         if err != nil {
             return err

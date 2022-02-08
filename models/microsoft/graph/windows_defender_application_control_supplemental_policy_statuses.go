@@ -18,19 +18,22 @@ func (i WindowsDefenderApplicationControlSupplementalPolicyStatuses) String() st
     return []string{"UNKNOWN", "SUCCESS", "TOKENERROR", "NOTAUTHORIZEDBYTOKEN", "POLICYNOTFOUND"}[i]
 }
 func ParseWindowsDefenderApplicationControlSupplementalPolicyStatuses(v string) (interface{}, error) {
+    result := UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES, nil
+            result = UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
         case "SUCCESS":
-            return SUCCESS_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES, nil
+            result = SUCCESS_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
         case "TOKENERROR":
-            return TOKENERROR_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES, nil
+            result = TOKENERROR_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
         case "NOTAUTHORIZEDBYTOKEN":
-            return NOTAUTHORIZEDBYTOKEN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES, nil
+            result = NOTAUTHORIZEDBYTOKEN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
         case "POLICYNOTFOUND":
-            return POLICYNOTFOUND_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES, nil
+            result = POLICYNOTFOUND_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+        default:
+            return 0, errors.New("Unknown WindowsDefenderApplicationControlSupplementalPolicyStatuses value: " + v)
     }
-    return 0, errors.New("Unknown WindowsDefenderApplicationControlSupplementalPolicyStatuses value: " + v)
+    return &result, nil
 }
 func SerializeWindowsDefenderApplicationControlSupplementalPolicyStatuses(values []WindowsDefenderApplicationControlSupplementalPolicyStatuses) []string {
     result := make([]string, len(values))

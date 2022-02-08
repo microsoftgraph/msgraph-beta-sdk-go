@@ -43,8 +43,7 @@ func (m *ContinuousAccessEvaluationSessionControl) GetFieldDeserializers()(map[s
             return err
         }
         if val != nil {
-            cast := val.(ContinuousAccessEvaluationMode)
-            m.SetMode(&cast)
+            m.SetMode(val.(*ContinuousAccessEvaluationMode))
         }
         return nil
     }
@@ -56,7 +55,7 @@ func (m *ContinuousAccessEvaluationSessionControl) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ContinuousAccessEvaluationSessionControl) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetMode() != nil {
-        cast := m.GetMode().String()
+        cast := (*m.GetMode()).String()
         err := writer.WriteStringValue("mode", &cast)
         if err != nil {
             return err

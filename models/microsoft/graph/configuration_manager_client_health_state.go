@@ -84,8 +84,7 @@ func (m *ConfigurationManagerClientHealthState) GetFieldDeserializers()(map[stri
             return err
         }
         if val != nil {
-            cast := val.(ConfigurationManagerClientState)
-            m.SetState(&cast)
+            m.SetState(val.(*ConfigurationManagerClientState))
         }
         return nil
     }
@@ -109,7 +108,7 @@ func (m *ConfigurationManagerClientHealthState) Serialize(writer i04eb5309aeaafa
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err := writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

@@ -18,19 +18,22 @@ func (i ManagedDeviceArchitecture) String() string {
     return []string{"UNKNOWN", "X86", "X64", "ARM", "ARM64"}[i]
 }
 func ParseManagedDeviceArchitecture(v string) (interface{}, error) {
+    result := UNKNOWN_MANAGEDDEVICEARCHITECTURE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_MANAGEDDEVICEARCHITECTURE, nil
+            result = UNKNOWN_MANAGEDDEVICEARCHITECTURE
         case "X86":
-            return X86_MANAGEDDEVICEARCHITECTURE, nil
+            result = X86_MANAGEDDEVICEARCHITECTURE
         case "X64":
-            return X64_MANAGEDDEVICEARCHITECTURE, nil
+            result = X64_MANAGEDDEVICEARCHITECTURE
         case "ARM":
-            return ARM_MANAGEDDEVICEARCHITECTURE, nil
+            result = ARM_MANAGEDDEVICEARCHITECTURE
         case "ARM64":
-            return ARM64_MANAGEDDEVICEARCHITECTURE, nil
+            result = ARM64_MANAGEDDEVICEARCHITECTURE
+        default:
+            return 0, errors.New("Unknown ManagedDeviceArchitecture value: " + v)
     }
-    return 0, errors.New("Unknown ManagedDeviceArchitecture value: " + v)
+    return &result, nil
 }
 func SerializeManagedDeviceArchitecture(values []ManagedDeviceArchitecture) []string {
     result := make([]string, len(values))

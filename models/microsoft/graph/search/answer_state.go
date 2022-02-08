@@ -17,17 +17,20 @@ func (i AnswerState) String() string {
     return []string{"PUBLISHED", "DRAFT", "EXCLUDED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAnswerState(v string) (interface{}, error) {
+    result := PUBLISHED_ANSWERSTATE
     switch strings.ToUpper(v) {
         case "PUBLISHED":
-            return PUBLISHED_ANSWERSTATE, nil
+            result = PUBLISHED_ANSWERSTATE
         case "DRAFT":
-            return DRAFT_ANSWERSTATE, nil
+            result = DRAFT_ANSWERSTATE
         case "EXCLUDED":
-            return EXCLUDED_ANSWERSTATE, nil
+            result = EXCLUDED_ANSWERSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ANSWERSTATE, nil
+            result = UNKNOWNFUTUREVALUE_ANSWERSTATE
+        default:
+            return 0, errors.New("Unknown AnswerState value: " + v)
     }
-    return 0, errors.New("Unknown AnswerState value: " + v)
+    return &result, nil
 }
 func SerializeAnswerState(values []AnswerState) []string {
     result := make([]string, len(values))

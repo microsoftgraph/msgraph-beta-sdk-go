@@ -20,23 +20,26 @@ func (i MicrosoftTunnelServerHealthStatus) String() string {
     return []string{"UNKNOWN", "HEALTHY", "UNHEALTHY", "WARNING", "OFFLINE", "UPGRADEINPROGRESS", "UPGRADEFAILED"}[i]
 }
 func ParseMicrosoftTunnelServerHealthStatus(v string) (interface{}, error) {
+    result := UNKNOWN_MICROSOFTTUNNELSERVERHEALTHSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_MICROSOFTTUNNELSERVERHEALTHSTATUS, nil
+            result = UNKNOWN_MICROSOFTTUNNELSERVERHEALTHSTATUS
         case "HEALTHY":
-            return HEALTHY_MICROSOFTTUNNELSERVERHEALTHSTATUS, nil
+            result = HEALTHY_MICROSOFTTUNNELSERVERHEALTHSTATUS
         case "UNHEALTHY":
-            return UNHEALTHY_MICROSOFTTUNNELSERVERHEALTHSTATUS, nil
+            result = UNHEALTHY_MICROSOFTTUNNELSERVERHEALTHSTATUS
         case "WARNING":
-            return WARNING_MICROSOFTTUNNELSERVERHEALTHSTATUS, nil
+            result = WARNING_MICROSOFTTUNNELSERVERHEALTHSTATUS
         case "OFFLINE":
-            return OFFLINE_MICROSOFTTUNNELSERVERHEALTHSTATUS, nil
+            result = OFFLINE_MICROSOFTTUNNELSERVERHEALTHSTATUS
         case "UPGRADEINPROGRESS":
-            return UPGRADEINPROGRESS_MICROSOFTTUNNELSERVERHEALTHSTATUS, nil
+            result = UPGRADEINPROGRESS_MICROSOFTTUNNELSERVERHEALTHSTATUS
         case "UPGRADEFAILED":
-            return UPGRADEFAILED_MICROSOFTTUNNELSERVERHEALTHSTATUS, nil
+            result = UPGRADEFAILED_MICROSOFTTUNNELSERVERHEALTHSTATUS
+        default:
+            return 0, errors.New("Unknown MicrosoftTunnelServerHealthStatus value: " + v)
     }
-    return 0, errors.New("Unknown MicrosoftTunnelServerHealthStatus value: " + v)
+    return &result, nil
 }
 func SerializeMicrosoftTunnelServerHealthStatus(values []MicrosoftTunnelServerHealthStatus) []string {
     result := make([]string, len(values))

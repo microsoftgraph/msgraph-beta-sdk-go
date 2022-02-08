@@ -54,8 +54,7 @@ func (m *PrivilegedSignupStatus) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(SetupStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*SetupStatus))
         }
         return nil
     }
@@ -77,7 +76,7 @@ func (m *PrivilegedSignupStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

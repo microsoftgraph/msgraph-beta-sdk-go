@@ -104,8 +104,7 @@ func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(AuthenticationProtocol)
-            m.SetPreferredAuthenticationProtocol(&cast)
+            m.SetPreferredAuthenticationProtocol(val.(*AuthenticationProtocol))
         }
         return nil
     }
@@ -149,7 +148,7 @@ func (m *SamlOrWsFedProvider) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetPreferredAuthenticationProtocol() != nil {
-        cast := m.GetPreferredAuthenticationProtocol().String()
+        cast := (*m.GetPreferredAuthenticationProtocol()).String()
         err = writer.WriteStringValue("preferredAuthenticationProtocol", &cast)
         if err != nil {
             return err

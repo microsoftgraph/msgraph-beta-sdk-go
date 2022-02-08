@@ -155,8 +155,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(CloudPcAuditActivityOperationType)
-            m.SetActivityOperationType(&cast)
+            m.SetActivityOperationType(val.(*CloudPcAuditActivityOperationType))
         }
         return nil
     }
@@ -166,8 +165,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(CloudPcAuditActivityResult)
-            m.SetActivityResult(&cast)
+            m.SetActivityResult(val.(*CloudPcAuditActivityResult))
         }
         return nil
     }
@@ -197,8 +195,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(CloudPcAuditCategory)
-            m.SetCategory(&cast)
+            m.SetCategory(val.(*CloudPcAuditCategory))
         }
         return nil
     }
@@ -270,14 +267,14 @@ func (m *CloudPcAuditEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetActivityOperationType() != nil {
-        cast := m.GetActivityOperationType().String()
+        cast := (*m.GetActivityOperationType()).String()
         err = writer.WriteStringValue("activityOperationType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetActivityResult() != nil {
-        cast := m.GetActivityResult().String()
+        cast := (*m.GetActivityResult()).String()
         err = writer.WriteStringValue("activityResult", &cast)
         if err != nil {
             return err
@@ -296,7 +293,7 @@ func (m *CloudPcAuditEvent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetCategory() != nil {
-        cast := m.GetCategory().String()
+        cast := (*m.GetCategory()).String()
         err = writer.WriteStringValue("category", &cast)
         if err != nil {
             return err

@@ -53,8 +53,7 @@ func (m *AuthenticationContext) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(AuthenticationContextDetail)
-            m.SetDetail(&cast)
+            m.SetDetail(val.(*AuthenticationContextDetail))
         }
         return nil
     }
@@ -76,7 +75,7 @@ func (m *AuthenticationContext) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *AuthenticationContext) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDetail() != nil {
-        cast := m.GetDetail().String()
+        cast := (*m.GetDetail()).String()
         err := writer.WriteStringValue("detail", &cast)
         if err != nil {
             return err

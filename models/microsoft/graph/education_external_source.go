@@ -17,17 +17,20 @@ func (i EducationExternalSource) String() string {
     return []string{"SIS", "MANUAL", "UNKNOWNFUTUREVALUE", "LMS"}[i]
 }
 func ParseEducationExternalSource(v string) (interface{}, error) {
+    result := SIS_EDUCATIONEXTERNALSOURCE
     switch strings.ToUpper(v) {
         case "SIS":
-            return SIS_EDUCATIONEXTERNALSOURCE, nil
+            result = SIS_EDUCATIONEXTERNALSOURCE
         case "MANUAL":
-            return MANUAL_EDUCATIONEXTERNALSOURCE, nil
+            result = MANUAL_EDUCATIONEXTERNALSOURCE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EDUCATIONEXTERNALSOURCE, nil
+            result = UNKNOWNFUTUREVALUE_EDUCATIONEXTERNALSOURCE
         case "LMS":
-            return LMS_EDUCATIONEXTERNALSOURCE, nil
+            result = LMS_EDUCATIONEXTERNALSOURCE
+        default:
+            return 0, errors.New("Unknown EducationExternalSource value: " + v)
     }
-    return 0, errors.New("Unknown EducationExternalSource value: " + v)
+    return &result, nil
 }
 func SerializeEducationExternalSource(values []EducationExternalSource) []string {
     result := make([]string, len(values))

@@ -18,19 +18,22 @@ func (i CloudPcAuditActivityResult) String() string {
     return []string{"SUCCESS", "CLIENTERROR", "FAILURE", "TIMEOUT", "OTHER"}[i]
 }
 func ParseCloudPcAuditActivityResult(v string) (interface{}, error) {
+    result := SUCCESS_CLOUDPCAUDITACTIVITYRESULT
     switch strings.ToUpper(v) {
         case "SUCCESS":
-            return SUCCESS_CLOUDPCAUDITACTIVITYRESULT, nil
+            result = SUCCESS_CLOUDPCAUDITACTIVITYRESULT
         case "CLIENTERROR":
-            return CLIENTERROR_CLOUDPCAUDITACTIVITYRESULT, nil
+            result = CLIENTERROR_CLOUDPCAUDITACTIVITYRESULT
         case "FAILURE":
-            return FAILURE_CLOUDPCAUDITACTIVITYRESULT, nil
+            result = FAILURE_CLOUDPCAUDITACTIVITYRESULT
         case "TIMEOUT":
-            return TIMEOUT_CLOUDPCAUDITACTIVITYRESULT, nil
+            result = TIMEOUT_CLOUDPCAUDITACTIVITYRESULT
         case "OTHER":
-            return OTHER_CLOUDPCAUDITACTIVITYRESULT, nil
+            result = OTHER_CLOUDPCAUDITACTIVITYRESULT
+        default:
+            return 0, errors.New("Unknown CloudPcAuditActivityResult value: " + v)
     }
-    return 0, errors.New("Unknown CloudPcAuditActivityResult value: " + v)
+    return &result, nil
 }
 func SerializeCloudPcAuditActivityResult(values []CloudPcAuditActivityResult) []string {
     result := make([]string, len(values))

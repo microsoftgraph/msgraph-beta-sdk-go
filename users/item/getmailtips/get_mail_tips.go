@@ -244,8 +244,7 @@ func (m *GetMailTips) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RecipientScopeType)
-            m.SetRecipientScope(&cast)
+            m.SetRecipientScope(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.RecipientScopeType))
         }
         return nil
     }
@@ -335,7 +334,7 @@ func (m *GetMailTips) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetRecipientScope() != nil {
-        cast := m.GetRecipientScope().String()
+        cast := (*m.GetRecipientScope()).String()
         err := writer.WriteStringValue("recipientScope", &cast)
         if err != nil {
             return err

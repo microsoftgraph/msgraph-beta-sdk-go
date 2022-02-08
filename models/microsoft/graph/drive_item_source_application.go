@@ -21,25 +21,28 @@ func (i DriveItemSourceApplication) String() string {
     return []string{"TEAMS", "YAMMER", "SHAREPOINT", "ONEDRIVE", "STREAM", "POWERPOINT", "OFFICE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDriveItemSourceApplication(v string) (interface{}, error) {
+    result := TEAMS_DRIVEITEMSOURCEAPPLICATION
     switch strings.ToUpper(v) {
         case "TEAMS":
-            return TEAMS_DRIVEITEMSOURCEAPPLICATION, nil
+            result = TEAMS_DRIVEITEMSOURCEAPPLICATION
         case "YAMMER":
-            return YAMMER_DRIVEITEMSOURCEAPPLICATION, nil
+            result = YAMMER_DRIVEITEMSOURCEAPPLICATION
         case "SHAREPOINT":
-            return SHAREPOINT_DRIVEITEMSOURCEAPPLICATION, nil
+            result = SHAREPOINT_DRIVEITEMSOURCEAPPLICATION
         case "ONEDRIVE":
-            return ONEDRIVE_DRIVEITEMSOURCEAPPLICATION, nil
+            result = ONEDRIVE_DRIVEITEMSOURCEAPPLICATION
         case "STREAM":
-            return STREAM_DRIVEITEMSOURCEAPPLICATION, nil
+            result = STREAM_DRIVEITEMSOURCEAPPLICATION
         case "POWERPOINT":
-            return POWERPOINT_DRIVEITEMSOURCEAPPLICATION, nil
+            result = POWERPOINT_DRIVEITEMSOURCEAPPLICATION
         case "OFFICE":
-            return OFFICE_DRIVEITEMSOURCEAPPLICATION, nil
+            result = OFFICE_DRIVEITEMSOURCEAPPLICATION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DRIVEITEMSOURCEAPPLICATION, nil
+            result = UNKNOWNFUTUREVALUE_DRIVEITEMSOURCEAPPLICATION
+        default:
+            return 0, errors.New("Unknown DriveItemSourceApplication value: " + v)
     }
-    return 0, errors.New("Unknown DriveItemSourceApplication value: " + v)
+    return &result, nil
 }
 func SerializeDriveItemSourceApplication(values []DriveItemSourceApplication) []string {
     result := make([]string, len(values))

@@ -18,19 +18,22 @@ func (i MicrosoftManagedDesktopType) String() string {
     return []string{"NOTMANAGED", "PREMIUMMANAGED", "STANDARDMANAGED", "STARTERMANAGED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseMicrosoftManagedDesktopType(v string) (interface{}, error) {
+    result := NOTMANAGED_MICROSOFTMANAGEDDESKTOPTYPE
     switch strings.ToUpper(v) {
         case "NOTMANAGED":
-            return NOTMANAGED_MICROSOFTMANAGEDDESKTOPTYPE, nil
+            result = NOTMANAGED_MICROSOFTMANAGEDDESKTOPTYPE
         case "PREMIUMMANAGED":
-            return PREMIUMMANAGED_MICROSOFTMANAGEDDESKTOPTYPE, nil
+            result = PREMIUMMANAGED_MICROSOFTMANAGEDDESKTOPTYPE
         case "STANDARDMANAGED":
-            return STANDARDMANAGED_MICROSOFTMANAGEDDESKTOPTYPE, nil
+            result = STANDARDMANAGED_MICROSOFTMANAGEDDESKTOPTYPE
         case "STARTERMANAGED":
-            return STARTERMANAGED_MICROSOFTMANAGEDDESKTOPTYPE, nil
+            result = STARTERMANAGED_MICROSOFTMANAGEDDESKTOPTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MICROSOFTMANAGEDDESKTOPTYPE, nil
+            result = UNKNOWNFUTUREVALUE_MICROSOFTMANAGEDDESKTOPTYPE
+        default:
+            return 0, errors.New("Unknown MicrosoftManagedDesktopType value: " + v)
     }
-    return 0, errors.New("Unknown MicrosoftManagedDesktopType value: " + v)
+    return &result, nil
 }
 func SerializeMicrosoftManagedDesktopType(values []MicrosoftManagedDesktopType) []string {
     result := make([]string, len(values))

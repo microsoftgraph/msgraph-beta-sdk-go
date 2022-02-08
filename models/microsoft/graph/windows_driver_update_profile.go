@@ -135,8 +135,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(DriverUpdateProfileApprovalType)
-            m.SetApprovalType(&cast)
+            m.SetApprovalType(val.(*DriverUpdateProfileApprovalType))
         }
         return nil
     }
@@ -264,7 +263,7 @@ func (m *WindowsDriverUpdateProfile) Serialize(writer i04eb5309aeaafadd28374d79c
         return err
     }
     if m.GetApprovalType() != nil {
-        cast := m.GetApprovalType().String()
+        cast := (*m.GetApprovalType()).String()
         err = writer.WriteStringValue("approvalType", &cast)
         if err != nil {
             return err

@@ -54,8 +54,7 @@ func (m *TeamworkConnection) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(TeamworkConnectionStatus)
-            m.SetConnectionStatus(&cast)
+            m.SetConnectionStatus(val.(*TeamworkConnectionStatus))
         }
         return nil
     }
@@ -77,7 +76,7 @@ func (m *TeamworkConnection) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *TeamworkConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetConnectionStatus() != nil {
-        cast := m.GetConnectionStatus().String()
+        cast := (*m.GetConnectionStatus()).String()
         err := writer.WriteStringValue("connectionStatus", &cast)
         if err != nil {
             return err

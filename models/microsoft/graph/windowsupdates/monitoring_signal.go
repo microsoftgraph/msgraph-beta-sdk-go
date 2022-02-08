@@ -15,13 +15,16 @@ func (i MonitoringSignal) String() string {
     return []string{"ROLLBACK", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseMonitoringSignal(v string) (interface{}, error) {
+    result := ROLLBACK_MONITORINGSIGNAL
     switch strings.ToUpper(v) {
         case "ROLLBACK":
-            return ROLLBACK_MONITORINGSIGNAL, nil
+            result = ROLLBACK_MONITORINGSIGNAL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MONITORINGSIGNAL, nil
+            result = UNKNOWNFUTUREVALUE_MONITORINGSIGNAL
+        default:
+            return 0, errors.New("Unknown MonitoringSignal value: " + v)
     }
-    return 0, errors.New("Unknown MonitoringSignal value: " + v)
+    return &result, nil
 }
 func SerializeMonitoringSignal(values []MonitoringSignal) []string {
     result := make([]string, len(values))

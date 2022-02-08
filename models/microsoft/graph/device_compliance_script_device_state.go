@@ -95,8 +95,7 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(RunState)
-            m.SetDetectionState(&cast)
+            m.SetDetectionState(val.(*RunState))
         }
         return nil
     }
@@ -172,7 +171,7 @@ func (m *DeviceComplianceScriptDeviceState) Serialize(writer i04eb5309aeaafadd28
         return err
     }
     if m.GetDetectionState() != nil {
-        cast := m.GetDetectionState().String()
+        cast := (*m.GetDetectionState()).String()
         err = writer.WriteStringValue("detectionState", &cast)
         if err != nil {
             return err

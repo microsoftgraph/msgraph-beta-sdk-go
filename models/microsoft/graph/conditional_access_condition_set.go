@@ -22,11 +22,13 @@ type ConditionalAccessConditionSet struct {
     locations *ConditionalAccessLocations;
     // Platforms included in and excluded from the policy.
     platforms *ConditionalAccessPlatforms;
+    // 
+    servicePrincipalRiskLevels []RiskLevel;
     // Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     signInRiskLevels []RiskLevel;
     // User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     userRiskLevels []RiskLevel;
-    // Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
+    // Users, groups, and roles included in and excluded from the policy. Required.
     users *ConditionalAccessUsers;
 }
 // NewConditionalAccessConditionSet instantiates a new conditionalAccessConditionSet and sets the default values.
@@ -100,6 +102,14 @@ func (m *ConditionalAccessConditionSet) GetPlatforms()(*ConditionalAccessPlatfor
         return m.platforms
     }
 }
+// GetServicePrincipalRiskLevels gets the servicePrincipalRiskLevels property value. 
+func (m *ConditionalAccessConditionSet) GetServicePrincipalRiskLevels()([]RiskLevel) {
+    if m == nil {
+        return nil
+    } else {
+        return m.servicePrincipalRiskLevels
+    }
+}
 // GetSignInRiskLevels gets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 func (m *ConditionalAccessConditionSet) GetSignInRiskLevels()([]RiskLevel) {
     if m == nil {
@@ -116,7 +126,7 @@ func (m *ConditionalAccessConditionSet) GetUserRiskLevels()([]RiskLevel) {
         return m.userRiskLevels
     }
 }
-// GetUsers gets the users property value. Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
+// GetUsers gets the users property value. Users, groups, and roles included in and excluded from the policy. Required.
 func (m *ConditionalAccessConditionSet) GetUsers()(*ConditionalAccessUsers) {
     if m == nil {
         return nil
@@ -198,6 +208,20 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetPlatforms(val.(*ConditionalAccessPlatforms))
+        }
+        return nil
+    }
+    res["servicePrincipalRiskLevels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfEnumValues(ParseRiskLevel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RiskLevel, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RiskLevel))
+            }
+            m.SetServicePrincipalRiskLevels(res)
         }
         return nil
     }
@@ -288,6 +312,12 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i04eb5309aeaafadd28374d
             return err
         }
     }
+    if m.GetServicePrincipalRiskLevels() != nil {
+        err := writer.WriteCollectionOfStringValues("servicePrincipalRiskLevels", SerializeRiskLevel(m.GetServicePrincipalRiskLevels()))
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSignInRiskLevels() != nil {
         err := writer.WriteCollectionOfStringValues("signInRiskLevels", SerializeRiskLevel(m.GetSignInRiskLevels()))
         if err != nil {
@@ -362,6 +392,12 @@ func (m *ConditionalAccessConditionSet) SetPlatforms(value *ConditionalAccessPla
         m.platforms = value
     }
 }
+// SetServicePrincipalRiskLevels sets the servicePrincipalRiskLevels property value. 
+func (m *ConditionalAccessConditionSet) SetServicePrincipalRiskLevels(value []RiskLevel)() {
+    if m != nil {
+        m.servicePrincipalRiskLevels = value
+    }
+}
 // SetSignInRiskLevels sets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 func (m *ConditionalAccessConditionSet) SetSignInRiskLevels(value []RiskLevel)() {
     if m != nil {
@@ -374,7 +410,7 @@ func (m *ConditionalAccessConditionSet) SetUserRiskLevels(value []RiskLevel)() {
         m.userRiskLevels = value
     }
 }
-// SetUsers sets the users property value. Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
+// SetUsers sets the users property value. Users, groups, and roles included in and excluded from the policy. Required.
 func (m *ConditionalAccessConditionSet) SetUsers(value *ConditionalAccessUsers)() {
     if m != nil {
         m.users = value

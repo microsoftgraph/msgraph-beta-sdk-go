@@ -19,21 +19,24 @@ func (i TenantOnboardingEligibilityReason) String() string {
     return []string{"NONE", "CONTRACTTYPE", "DELEGATEDADMINPRIVILEGES", "USERSCOUNT", "LICENSE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTenantOnboardingEligibilityReason(v string) (interface{}, error) {
+    result := NONE_TENANTONBOARDINGELIGIBILITYREASON
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_TENANTONBOARDINGELIGIBILITYREASON, nil
+            result = NONE_TENANTONBOARDINGELIGIBILITYREASON
         case "CONTRACTTYPE":
-            return CONTRACTTYPE_TENANTONBOARDINGELIGIBILITYREASON, nil
+            result = CONTRACTTYPE_TENANTONBOARDINGELIGIBILITYREASON
         case "DELEGATEDADMINPRIVILEGES":
-            return DELEGATEDADMINPRIVILEGES_TENANTONBOARDINGELIGIBILITYREASON, nil
+            result = DELEGATEDADMINPRIVILEGES_TENANTONBOARDINGELIGIBILITYREASON
         case "USERSCOUNT":
-            return USERSCOUNT_TENANTONBOARDINGELIGIBILITYREASON, nil
+            result = USERSCOUNT_TENANTONBOARDINGELIGIBILITYREASON
         case "LICENSE":
-            return LICENSE_TENANTONBOARDINGELIGIBILITYREASON, nil
+            result = LICENSE_TENANTONBOARDINGELIGIBILITYREASON
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TENANTONBOARDINGELIGIBILITYREASON, nil
+            result = UNKNOWNFUTUREVALUE_TENANTONBOARDINGELIGIBILITYREASON
+        default:
+            return 0, errors.New("Unknown TenantOnboardingEligibilityReason value: " + v)
     }
-    return 0, errors.New("Unknown TenantOnboardingEligibilityReason value: " + v)
+    return &result, nil
 }
 func SerializeTenantOnboardingEligibilityReason(values []TenantOnboardingEligibilityReason) []string {
     result := make([]string, len(values))

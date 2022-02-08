@@ -135,8 +135,7 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(interface{}, i04e
             return err
         }
         if val != nil {
-            cast := val.(Priority)
-            m.SetPriority(&cast)
+            m.SetPriority(val.(*Priority))
         }
         return nil
     }
@@ -196,7 +195,7 @@ func (m *Notification) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     if m.GetPriority() != nil {
-        cast := m.GetPriority().String()
+        cast := (*m.GetPriority()).String()
         err = writer.WriteStringValue("priority", &cast)
         if err != nil {
             return err

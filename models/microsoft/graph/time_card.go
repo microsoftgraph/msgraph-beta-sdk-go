@@ -138,8 +138,7 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(ConfirmedBy)
-            m.SetConfirmedBy(&cast)
+            m.SetConfirmedBy(val.(*ConfirmedBy))
         }
         return nil
     }
@@ -169,8 +168,7 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(TimeCardState)
-            m.SetState(&cast)
+            m.SetState(val.(*TimeCardState))
         }
         return nil
     }
@@ -219,7 +217,7 @@ func (m *TimeCard) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetConfirmedBy() != nil {
-        cast := m.GetConfirmedBy().String()
+        cast := (*m.GetConfirmedBy()).String()
         err = writer.WriteStringValue("confirmedBy", &cast)
         if err != nil {
             return err
@@ -238,7 +236,7 @@ func (m *TimeCard) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

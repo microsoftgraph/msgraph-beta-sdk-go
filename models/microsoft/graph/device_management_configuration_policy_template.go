@@ -194,8 +194,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementTemplateLifecycleState)
-            m.SetLifecycleState(&cast)
+            m.SetLifecycleState(val.(*DeviceManagementTemplateLifecycleState))
         }
         return nil
     }
@@ -205,8 +204,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationPlatforms)
-            m.SetPlatforms(&cast)
+            m.SetPlatforms(val.(*DeviceManagementConfigurationPlatforms))
         }
         return nil
     }
@@ -240,8 +238,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationTechnologies)
-            m.SetTechnologies(&cast)
+            m.SetTechnologies(val.(*DeviceManagementConfigurationTechnologies))
         }
         return nil
     }
@@ -251,8 +248,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementConfigurationTemplateFamily)
-            m.SetTemplateFamily(&cast)
+            m.SetTemplateFamily(val.(*DeviceManagementConfigurationTemplateFamily))
         }
         return nil
     }
@@ -308,14 +304,14 @@ func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i04eb5309
         }
     }
     if m.GetLifecycleState() != nil {
-        cast := m.GetLifecycleState().String()
+        cast := (*m.GetLifecycleState()).String()
         err = writer.WriteStringValue("lifecycleState", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetPlatforms() != nil {
-        cast := m.GetPlatforms().String()
+        cast := (*m.GetPlatforms()).String()
         err = writer.WriteStringValue("platforms", &cast)
         if err != nil {
             return err
@@ -339,14 +335,14 @@ func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i04eb5309
         }
     }
     if m.GetTechnologies() != nil {
-        cast := m.GetTechnologies().String()
+        cast := (*m.GetTechnologies()).String()
         err = writer.WriteStringValue("technologies", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetTemplateFamily() != nil {
-        cast := m.GetTemplateFamily().String()
+        cast := (*m.GetTemplateFamily()).String()
         err = writer.WriteStringValue("templateFamily", &cast)
         if err != nil {
             return err

@@ -16,15 +16,18 @@ func (i DepTokenType) String() string {
     return []string{"NONE", "DEP", "APPLESCHOOLMANAGER"}[i]
 }
 func ParseDepTokenType(v string) (interface{}, error) {
+    result := NONE_DEPTOKENTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEPTOKENTYPE, nil
+            result = NONE_DEPTOKENTYPE
         case "DEP":
-            return DEP_DEPTOKENTYPE, nil
+            result = DEP_DEPTOKENTYPE
         case "APPLESCHOOLMANAGER":
-            return APPLESCHOOLMANAGER_DEPTOKENTYPE, nil
+            result = APPLESCHOOLMANAGER_DEPTOKENTYPE
+        default:
+            return 0, errors.New("Unknown DepTokenType value: " + v)
     }
-    return 0, errors.New("Unknown DepTokenType value: " + v)
+    return &result, nil
 }
 func SerializeDepTokenType(values []DepTokenType) []string {
     result := make([]string, len(values))

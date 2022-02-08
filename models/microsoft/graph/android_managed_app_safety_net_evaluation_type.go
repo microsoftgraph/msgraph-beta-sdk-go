@@ -15,13 +15,16 @@ func (i AndroidManagedAppSafetyNetEvaluationType) String() string {
     return []string{"BASIC", "HARDWAREBACKED"}[i]
 }
 func ParseAndroidManagedAppSafetyNetEvaluationType(v string) (interface{}, error) {
+    result := BASIC_ANDROIDMANAGEDAPPSAFETYNETEVALUATIONTYPE
     switch strings.ToUpper(v) {
         case "BASIC":
-            return BASIC_ANDROIDMANAGEDAPPSAFETYNETEVALUATIONTYPE, nil
+            result = BASIC_ANDROIDMANAGEDAPPSAFETYNETEVALUATIONTYPE
         case "HARDWAREBACKED":
-            return HARDWAREBACKED_ANDROIDMANAGEDAPPSAFETYNETEVALUATIONTYPE, nil
+            result = HARDWAREBACKED_ANDROIDMANAGEDAPPSAFETYNETEVALUATIONTYPE
+        default:
+            return 0, errors.New("Unknown AndroidManagedAppSafetyNetEvaluationType value: " + v)
     }
-    return 0, errors.New("Unknown AndroidManagedAppSafetyNetEvaluationType value: " + v)
+    return &result, nil
 }
 func SerializeAndroidManagedAppSafetyNetEvaluationType(values []AndroidManagedAppSafetyNetEvaluationType) []string {
     result := make([]string, len(values))

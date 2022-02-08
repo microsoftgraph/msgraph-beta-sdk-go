@@ -18,19 +18,22 @@ func (i DeviceGuardLocalSystemAuthorityCredentialGuardState) String() string {
     return []string{"RUNNING", "REBOOTREQUIRED", "NOTLICENSED", "NOTCONFIGURED", "VIRTUALIZATIONBASEDSECURITYNOTRUNNING"}[i]
 }
 func ParseDeviceGuardLocalSystemAuthorityCredentialGuardState(v string) (interface{}, error) {
+    result := RUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
     switch strings.ToUpper(v) {
         case "RUNNING":
-            return RUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE, nil
+            result = RUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
         case "REBOOTREQUIRED":
-            return REBOOTREQUIRED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE, nil
+            result = REBOOTREQUIRED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
         case "NOTLICENSED":
-            return NOTLICENSED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE, nil
+            result = NOTLICENSED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
         case "NOTCONFIGURED":
-            return NOTCONFIGURED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE, nil
+            result = NOTCONFIGURED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
         case "VIRTUALIZATIONBASEDSECURITYNOTRUNNING":
-            return VIRTUALIZATIONBASEDSECURITYNOTRUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE, nil
+            result = VIRTUALIZATIONBASEDSECURITYNOTRUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
+        default:
+            return 0, errors.New("Unknown DeviceGuardLocalSystemAuthorityCredentialGuardState value: " + v)
     }
-    return 0, errors.New("Unknown DeviceGuardLocalSystemAuthorityCredentialGuardState value: " + v)
+    return &result, nil
 }
 func SerializeDeviceGuardLocalSystemAuthorityCredentialGuardState(values []DeviceGuardLocalSystemAuthorityCredentialGuardState) []string {
     result := make([]string, len(values))

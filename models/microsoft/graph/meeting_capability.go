@@ -83,8 +83,7 @@ func (m *MeetingCapability) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(AutoAdmittedUsersType)
-            m.SetAutoAdmittedUsers(&cast)
+            m.SetAutoAdmittedUsers(val.(*AutoAdmittedUsersType))
         }
         return nil
     }
@@ -108,7 +107,7 @@ func (m *MeetingCapability) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetAutoAdmittedUsers() != nil {
-        cast := m.GetAutoAdmittedUsers().String()
+        cast := (*m.GetAutoAdmittedUsers()).String()
         err := writer.WriteStringValue("autoAdmittedUsers", &cast)
         if err != nil {
             return err

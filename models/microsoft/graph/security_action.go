@@ -283,8 +283,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(OperationStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*OperationStatus))
         }
         return nil
     }
@@ -396,7 +395,7 @@ func (m *SecurityAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

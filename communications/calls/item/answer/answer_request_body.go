@@ -14,6 +14,8 @@ type AnswerRequestBody struct {
     // 
     callbackUri *string;
     // 
+    callOptions *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptions;
+    // 
     mediaConfig *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MediaConfig;
     // 
     participantCapacity *int32;
@@ -47,6 +49,14 @@ func (m *AnswerRequestBody) GetCallbackUri()(*string) {
         return nil
     } else {
         return m.callbackUri
+    }
+}
+// GetCallOptions gets the callOptions property value. 
+func (m *AnswerRequestBody) GetCallOptions()(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptions) {
+    if m == nil {
+        return nil
+    } else {
+        return m.callOptions
     }
 }
 // GetMediaConfig gets the mediaConfig property value. 
@@ -92,6 +102,16 @@ func (m *AnswerRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
+    res["callOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewIncomingCallOptions() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCallOptions(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptions))
+        }
+        return nil
+    }
     res["mediaConfig"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMediaConfig() })
         if err != nil {
@@ -132,6 +152,12 @@ func (m *AnswerRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     {
+        err := writer.WriteObjectValue("callOptions", m.GetCallOptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("mediaConfig", m.GetMediaConfig())
         if err != nil {
             return err
@@ -167,6 +193,12 @@ func (m *AnswerRequestBody) SetAdditionalData(value map[string]interface{})() {
 func (m *AnswerRequestBody) SetCallbackUri(value *string)() {
     if m != nil {
         m.callbackUri = value
+    }
+}
+// SetCallOptions sets the callOptions property value. 
+func (m *AnswerRequestBody) SetCallOptions(value *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.IncomingCallOptions)() {
+    if m != nil {
+        m.callOptions = value
     }
 }
 // SetMediaConfig sets the mediaConfig property value. 

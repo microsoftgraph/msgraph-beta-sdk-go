@@ -155,8 +155,7 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(TeamsAppInstallationScopes)
-            m.SetAllowedInstallationScopes(&cast)
+            m.SetAllowedInstallationScopes(val.(*TeamsAppInstallationScopes))
         }
         return nil
     }
@@ -246,8 +245,7 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(TeamsAppPublishingState)
-            m.SetPublishingState(&cast)
+            m.SetPublishingState(val.(*TeamsAppPublishingState))
         }
         return nil
     }
@@ -293,7 +291,7 @@ func (m *TeamsAppDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         return err
     }
     if m.GetAllowedInstallationScopes() != nil {
-        cast := m.GetAllowedInstallationScopes().String()
+        cast := (*m.GetAllowedInstallationScopes()).String()
         err = writer.WriteStringValue("allowedInstallationScopes", &cast)
         if err != nil {
             return err
@@ -348,7 +346,7 @@ func (m *TeamsAppDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetPublishingState() != nil {
-        cast := m.GetPublishingState().String()
+        cast := (*m.GetPublishingState()).String()
         err = writer.WriteStringValue("publishingState", &cast)
         if err != nil {
             return err

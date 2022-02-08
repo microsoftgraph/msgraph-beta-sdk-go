@@ -64,8 +64,7 @@ func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[strin
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementComplianceActionType)
-            m.SetActionType(&cast)
+            m.SetActionType(val.(*DeviceManagementComplianceActionType))
         }
         return nil
     }
@@ -115,7 +114,7 @@ func (m *DeviceManagementComplianceActionItem) Serialize(writer i04eb5309aeaafad
         return err
     }
     if m.GetActionType() != nil {
-        cast := m.GetActionType().String()
+        cast := (*m.GetActionType()).String()
         err = writer.WriteStringValue("actionType", &cast)
         if err != nil {
             return err

@@ -154,8 +154,7 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(PolicyPlatformType)
-            m.SetPlatformType(&cast)
+            m.SetPlatformType(val.(*PolicyPlatformType))
         }
         return nil
     }
@@ -179,8 +178,7 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(RestrictedAppsState)
-            m.SetRestrictedAppsState(&cast)
+            m.SetRestrictedAppsState(val.(*RestrictedAppsState))
         }
         return nil
     }
@@ -240,7 +238,7 @@ func (m *RestrictedAppsViolation) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetPlatformType() != nil {
-        cast := m.GetPlatformType().String()
+        cast := (*m.GetPlatformType()).String()
         err = writer.WriteStringValue("platformType", &cast)
         if err != nil {
             return err
@@ -258,7 +256,7 @@ func (m *RestrictedAppsViolation) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetRestrictedAppsState() != nil {
-        cast := m.GetRestrictedAppsState().String()
+        cast := (*m.GetRestrictedAppsState()).String()
         err = writer.WriteStringValue("restrictedAppsState", &cast)
         if err != nil {
             return err

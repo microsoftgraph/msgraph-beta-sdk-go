@@ -104,8 +104,7 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(RoleSummaryStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*RoleSummaryStatus))
         }
         return nil
     }
@@ -149,7 +148,7 @@ func (m *PrivilegedRoleSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

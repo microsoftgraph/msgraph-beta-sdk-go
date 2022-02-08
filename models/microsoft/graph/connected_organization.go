@@ -26,7 +26,7 @@ type ConnectedOrganization struct {
     modifiedBy *string;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
+    // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
     state *ConnectedOrganizationState;
 }
 // NewConnectedOrganization instantiates a new connectedOrganization and sets the default values.
@@ -108,7 +108,7 @@ func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7f
         return m.modifiedDateTime
     }
 }
-// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
+// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
 func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
     if m == nil {
         return nil
@@ -227,8 +227,7 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(ConnectedOrganizationState)
-            m.SetState(&cast)
+            m.SetState(val.(*ConnectedOrganizationState))
         }
         return nil
     }
@@ -313,7 +312,7 @@ func (m *ConnectedOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err
@@ -375,7 +374,7 @@ func (m *ConnectedOrganization) SetModifiedDateTime(value *i336074805fc853987abe
         m.modifiedDateTime = value
     }
 }
-// SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
+// SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
 func (m *ConnectedOrganization) SetState(value *ConnectedOrganizationState)() {
     if m != nil {
         m.state = value

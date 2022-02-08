@@ -63,8 +63,7 @@ func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(AccessScope)
-            m.SetAccessScope(&cast)
+            m.SetAccessScope(val.(*AccessScope))
         }
         return nil
     }
@@ -100,7 +99,7 @@ func (m *DlpEvaluationInput) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *DlpEvaluationInput) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAccessScope() != nil {
-        cast := m.GetAccessScope().String()
+        cast := (*m.GetAccessScope()).String()
         err := writer.WriteStringValue("accessScope", &cast)
         if err != nil {
             return err

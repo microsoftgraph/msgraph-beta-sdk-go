@@ -53,8 +53,7 @@ func (m *AssignmentFilterTypeAndEvaluationResult) GetFieldDeserializers()(map[st
             return err
         }
         if val != nil {
-            cast := val.(DeviceAndAppManagementAssignmentFilterType)
-            m.SetAssignmentFilterType(&cast)
+            m.SetAssignmentFilterType(val.(*DeviceAndAppManagementAssignmentFilterType))
         }
         return nil
     }
@@ -64,8 +63,7 @@ func (m *AssignmentFilterTypeAndEvaluationResult) GetFieldDeserializers()(map[st
             return err
         }
         if val != nil {
-            cast := val.(AssignmentFilterEvaluationResult)
-            m.SetEvaluationResult(&cast)
+            m.SetEvaluationResult(val.(*AssignmentFilterEvaluationResult))
         }
         return nil
     }
@@ -77,14 +75,14 @@ func (m *AssignmentFilterTypeAndEvaluationResult) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *AssignmentFilterTypeAndEvaluationResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAssignmentFilterType() != nil {
-        cast := m.GetAssignmentFilterType().String()
+        cast := (*m.GetAssignmentFilterType()).String()
         err := writer.WriteStringValue("assignmentFilterType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetEvaluationResult() != nil {
-        cast := m.GetEvaluationResult().String()
+        cast := (*m.GetEvaluationResult()).String()
         err := writer.WriteStringValue("evaluationResult", &cast)
         if err != nil {
             return err

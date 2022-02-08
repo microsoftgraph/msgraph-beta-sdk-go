@@ -7,6 +7,7 @@ import (
     i226aac2d9e753eec2396e7a04e06f10afaa0784792e00d5fe99fea4069422656 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/batchrecorddecisions"
     i28cbfe53788555c1e8fb2bcbb1f7b5ee3a25273656373f13f5ff7b954d036e04 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/contactedreviewers"
     i5a33caa17867d8a52a52d95e786e9714ce0e9a6b07f5e9aa14f00f581f95c45f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/stop"
+    i6be43a98526e3cd95557ccc422ad7cdaa8c43585327deaffa99f4367f522a108 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/stages"
     i78cfe79793d77a5fede4967db4de1713d8be67261324f74669c2af685e4134f8 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/applydecisions"
     i857369f7b2494f5fc984108c41f95436f6b0349231c74000340f9f1547e30300 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/decisions"
     i978a7302921342acb736ff821abff5eb57189f5f20e0b9d44a2800bd91c9bc2e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/resetdecisions"
@@ -15,6 +16,7 @@ import (
     icbbe17c4811e8e4855cc7841cf8914b2f2a20b1d41e16779ac8b42dd4ad533a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/sendreminder"
     i92a83f24221d12aedaef668e1fbb993200a107c50dd873c65f56c93ab8abaa7e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/decisions/item"
     ia273f0c967440d14bb94006b177f70e6b83152c6fcad8ccbf86dc8739482bc95 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/contactedreviewers/item"
+    ie9afc88f4d0ebd933223975c8172435f458acf5c8c922ff0f1d55f973e0ed66f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/pendingaccessreviewinstances/item/stages/item"
 )
 
 // AccessReviewInstanceRequestBuilder builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}
@@ -219,6 +221,20 @@ func (m *AccessReviewInstanceRequestBuilder) ResetDecisions()(*i978a7302921342ac
 }
 func (m *AccessReviewInstanceRequestBuilder) SendReminder()(*icbbe17c4811e8e4855cc7841cf8914b2f2a20b1d41e16779ac8b42dd4ad533a6.SendReminderRequestBuilder) {
     return icbbe17c4811e8e4855cc7841cf8914b2f2a20b1d41e16779ac8b42dd4ad533a6.NewSendReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *AccessReviewInstanceRequestBuilder) Stages()(*i6be43a98526e3cd95557ccc422ad7cdaa8c43585327deaffa99f4367f522a108.StagesRequestBuilder) {
+    return i6be43a98526e3cd95557ccc422ad7cdaa8c43585327deaffa99f4367f522a108.NewStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// StagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.pendingAccessReviewInstances.item.stages.item collection
+func (m *AccessReviewInstanceRequestBuilder) StagesById(id string)(*ie9afc88f4d0ebd933223975c8172435f458acf5c8c922ff0f1d55f973e0ed66f.AccessReviewStageRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["accessReviewStage_id"] = id
+    }
+    return ie9afc88f4d0ebd933223975c8172435f458acf5c8c922ff0f1d55f973e0ed66f.NewAccessReviewStageRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *AccessReviewInstanceRequestBuilder) Stop()(*i5a33caa17867d8a52a52d95e786e9714ce0e9a6b07f5e9aa14f00f581f95c45f.StopRequestBuilder) {
     return i5a33caa17867d8a52a52d95e786e9714ce0e9a6b07f5e9aa14f00f581f95c45f.NewStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);

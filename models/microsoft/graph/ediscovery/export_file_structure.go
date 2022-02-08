@@ -17,17 +17,20 @@ func (i ExportFileStructure) String() string {
     return []string{"NONE", "DIRECTORY", "PST", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseExportFileStructure(v string) (interface{}, error) {
+    result := NONE_EXPORTFILESTRUCTURE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_EXPORTFILESTRUCTURE, nil
+            result = NONE_EXPORTFILESTRUCTURE
         case "DIRECTORY":
-            return DIRECTORY_EXPORTFILESTRUCTURE, nil
+            result = DIRECTORY_EXPORTFILESTRUCTURE
         case "PST":
-            return PST_EXPORTFILESTRUCTURE, nil
+            result = PST_EXPORTFILESTRUCTURE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EXPORTFILESTRUCTURE, nil
+            result = UNKNOWNFUTUREVALUE_EXPORTFILESTRUCTURE
+        default:
+            return 0, errors.New("Unknown ExportFileStructure value: " + v)
     }
-    return 0, errors.New("Unknown ExportFileStructure value: " + v)
+    return &result, nil
 }
 func SerializeExportFileStructure(values []ExportFileStructure) []string {
     result := make([]string, len(values))

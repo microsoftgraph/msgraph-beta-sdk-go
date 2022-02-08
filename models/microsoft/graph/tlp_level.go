@@ -19,21 +19,24 @@ func (i TlpLevel) String() string {
     return []string{"UNKNOWN", "WHITE", "GREEN", "AMBER", "RED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTlpLevel(v string) (interface{}, error) {
+    result := UNKNOWN_TLPLEVEL
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_TLPLEVEL, nil
+            result = UNKNOWN_TLPLEVEL
         case "WHITE":
-            return WHITE_TLPLEVEL, nil
+            result = WHITE_TLPLEVEL
         case "GREEN":
-            return GREEN_TLPLEVEL, nil
+            result = GREEN_TLPLEVEL
         case "AMBER":
-            return AMBER_TLPLEVEL, nil
+            result = AMBER_TLPLEVEL
         case "RED":
-            return RED_TLPLEVEL, nil
+            result = RED_TLPLEVEL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TLPLEVEL, nil
+            result = UNKNOWNFUTUREVALUE_TLPLEVEL
+        default:
+            return 0, errors.New("Unknown TlpLevel value: " + v)
     }
-    return 0, errors.New("Unknown TlpLevel value: " + v)
+    return &result, nil
 }
 func SerializeTlpLevel(values []TlpLevel) []string {
     result := make([]string, len(values))

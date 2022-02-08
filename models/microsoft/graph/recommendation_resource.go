@@ -219,8 +219,7 @@ func (m *RecommendationResource) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(RecommendationStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*RecommendationStatus))
         }
         return nil
     }
@@ -295,7 +294,7 @@ func (m *RecommendationResource) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

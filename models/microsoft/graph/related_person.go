@@ -73,8 +73,7 @@ func (m *RelatedPerson) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(PersonRelationship)
-            m.SetRelationship(&cast)
+            m.SetRelationship(val.(*PersonRelationship))
         }
         return nil
     }
@@ -102,7 +101,7 @@ func (m *RelatedPerson) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetRelationship() != nil {
-        cast := m.GetRelationship().String()
+        cast := (*m.GetRelationship()).String()
         err := writer.WriteStringValue("relationship", &cast)
         if err != nil {
             return err

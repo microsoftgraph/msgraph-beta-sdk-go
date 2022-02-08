@@ -21,7 +21,7 @@ type PlannerUser struct {
     recentPlans []PlannerPlan;
     // Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
     rosterPlans []PlannerPlan;
-    // Read-only. Nullable. Returns the plannerTasks assigned to the user.
+    // Read-only. Nullable. Returns the plannerPlans shared with the user.
     tasks []PlannerTask;
 }
 // NewPlannerUser instantiates a new plannerUser and sets the default values.
@@ -87,7 +87,7 @@ func (m *PlannerUser) GetRosterPlans()([]PlannerPlan) {
         return m.rosterPlans
     }
 }
-// GetTasks gets the tasks property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
+// GetTasks gets the tasks property value. Read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerUser) GetTasks()([]PlannerTask) {
     if m == nil {
         return nil
@@ -335,7 +335,7 @@ func (m *PlannerUser) SetRosterPlans(value []PlannerPlan)() {
         m.rosterPlans = value
     }
 }
-// SetTasks sets the tasks property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
+// SetTasks sets the tasks property value. Read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerUser) SetTasks(value []PlannerTask)() {
     if m != nil {
         m.tasks = value

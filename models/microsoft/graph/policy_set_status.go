@@ -19,21 +19,24 @@ func (i PolicySetStatus) String() string {
     return []string{"UNKNOWN", "VALIDATING", "PARTIALSUCCESS", "SUCCESS", "ERROR", "NOTASSIGNED"}[i]
 }
 func ParsePolicySetStatus(v string) (interface{}, error) {
+    result := UNKNOWN_POLICYSETSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_POLICYSETSTATUS, nil
+            result = UNKNOWN_POLICYSETSTATUS
         case "VALIDATING":
-            return VALIDATING_POLICYSETSTATUS, nil
+            result = VALIDATING_POLICYSETSTATUS
         case "PARTIALSUCCESS":
-            return PARTIALSUCCESS_POLICYSETSTATUS, nil
+            result = PARTIALSUCCESS_POLICYSETSTATUS
         case "SUCCESS":
-            return SUCCESS_POLICYSETSTATUS, nil
+            result = SUCCESS_POLICYSETSTATUS
         case "ERROR":
-            return ERROR_POLICYSETSTATUS, nil
+            result = ERROR_POLICYSETSTATUS
         case "NOTASSIGNED":
-            return NOTASSIGNED_POLICYSETSTATUS, nil
+            result = NOTASSIGNED_POLICYSETSTATUS
+        default:
+            return 0, errors.New("Unknown PolicySetStatus value: " + v)
     }
-    return 0, errors.New("Unknown PolicySetStatus value: " + v)
+    return &result, nil
 }
 func SerializePolicySetStatus(values []PolicySetStatus) []string {
     result := make([]string, len(values))

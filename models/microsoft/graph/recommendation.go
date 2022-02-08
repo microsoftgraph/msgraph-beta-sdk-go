@@ -199,8 +199,7 @@ func (m *Recommendation) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(RecommendationCategory)
-            m.SetCategory(&cast)
+            m.SetCategory(val.(*RecommendationCategory))
         }
         return nil
     }
@@ -314,8 +313,7 @@ func (m *Recommendation) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(RecommendationPriority)
-            m.SetPriority(&cast)
+            m.SetPriority(val.(*RecommendationPriority))
         }
         return nil
     }
@@ -325,8 +323,7 @@ func (m *Recommendation) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(RecommendationStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*RecommendationStatus))
         }
         return nil
     }
@@ -359,7 +356,7 @@ func (m *Recommendation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetCategory() != nil {
-        cast := m.GetCategory().String()
+        cast := (*m.GetCategory()).String()
         err = writer.WriteStringValue("category", &cast)
         if err != nil {
             return err
@@ -431,14 +428,14 @@ func (m *Recommendation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetPriority() != nil {
-        cast := m.GetPriority().String()
+        cast := (*m.GetPriority()).String()
         err = writer.WriteStringValue("priority", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

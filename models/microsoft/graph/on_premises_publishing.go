@@ -243,8 +243,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ExternalAuthenticationType)
-            m.SetExternalAuthenticationType(&cast)
+            m.SetExternalAuthenticationType(val.(*ExternalAuthenticationType))
         }
         return nil
     }
@@ -414,7 +413,7 @@ func (m *OnPremisesPublishing) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetExternalAuthenticationType() != nil {
-        cast := m.GetExternalAuthenticationType().String()
+        cast := (*m.GetExternalAuthenticationType()).String()
         err := writer.WriteStringValue("externalAuthenticationType", &cast)
         if err != nil {
             return err

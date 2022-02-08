@@ -18,19 +18,22 @@ func (i ManagementCategory) String() string {
     return []string{"CUSTOM", "DEVICES", "IDENTITY", "DATA", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseManagementCategory(v string) (interface{}, error) {
+    result := CUSTOM_MANAGEMENTCATEGORY
     switch strings.ToUpper(v) {
         case "CUSTOM":
-            return CUSTOM_MANAGEMENTCATEGORY, nil
+            result = CUSTOM_MANAGEMENTCATEGORY
         case "DEVICES":
-            return DEVICES_MANAGEMENTCATEGORY, nil
+            result = DEVICES_MANAGEMENTCATEGORY
         case "IDENTITY":
-            return IDENTITY_MANAGEMENTCATEGORY, nil
+            result = IDENTITY_MANAGEMENTCATEGORY
         case "DATA":
-            return DATA_MANAGEMENTCATEGORY, nil
+            result = DATA_MANAGEMENTCATEGORY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MANAGEMENTCATEGORY, nil
+            result = UNKNOWNFUTUREVALUE_MANAGEMENTCATEGORY
+        default:
+            return 0, errors.New("Unknown ManagementCategory value: " + v)
     }
-    return 0, errors.New("Unknown ManagementCategory value: " + v)
+    return &result, nil
 }
 func SerializeManagementCategory(values []ManagementCategory) []string {
     result := make([]string, len(values))

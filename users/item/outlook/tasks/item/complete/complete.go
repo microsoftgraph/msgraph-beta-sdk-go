@@ -269,8 +269,7 @@ func (m *Complete) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Importance)
-            m.SetImportance(&cast)
+            m.SetImportance(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Importance))
         }
         return nil
     }
@@ -344,8 +343,7 @@ func (m *Complete) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Sensitivity)
-            m.SetSensitivity(&cast)
+            m.SetSensitivity(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Sensitivity))
         }
         return nil
     }
@@ -379,8 +377,7 @@ func (m *Complete) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TaskStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.TaskStatus))
         }
         return nil
     }
@@ -447,7 +444,7 @@ func (m *Complete) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetImportance() != nil {
-        cast := m.GetImportance().String()
+        cast := (*m.GetImportance()).String()
         err = writer.WriteStringValue("importance", &cast)
         if err != nil {
             return err
@@ -495,7 +492,7 @@ func (m *Complete) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetSensitivity() != nil {
-        cast := m.GetSensitivity().String()
+        cast := (*m.GetSensitivity()).String()
         err = writer.WriteStringValue("sensitivity", &cast)
         if err != nil {
             return err
@@ -519,7 +516,7 @@ func (m *Complete) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

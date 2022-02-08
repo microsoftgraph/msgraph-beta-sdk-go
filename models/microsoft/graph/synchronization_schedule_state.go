@@ -16,15 +16,18 @@ func (i SynchronizationScheduleState) String() string {
     return []string{"ACTIVE", "DISABLED", "PAUSED"}[i]
 }
 func ParseSynchronizationScheduleState(v string) (interface{}, error) {
+    result := ACTIVE_SYNCHRONIZATIONSCHEDULESTATE
     switch strings.ToUpper(v) {
         case "ACTIVE":
-            return ACTIVE_SYNCHRONIZATIONSCHEDULESTATE, nil
+            result = ACTIVE_SYNCHRONIZATIONSCHEDULESTATE
         case "DISABLED":
-            return DISABLED_SYNCHRONIZATIONSCHEDULESTATE, nil
+            result = DISABLED_SYNCHRONIZATIONSCHEDULESTATE
         case "PAUSED":
-            return PAUSED_SYNCHRONIZATIONSCHEDULESTATE, nil
+            result = PAUSED_SYNCHRONIZATIONSCHEDULESTATE
+        default:
+            return 0, errors.New("Unknown SynchronizationScheduleState value: " + v)
     }
-    return 0, errors.New("Unknown SynchronizationScheduleState value: " + v)
+    return &result, nil
 }
 func SerializeSynchronizationScheduleState(values []SynchronizationScheduleState) []string {
     result := make([]string, len(values))

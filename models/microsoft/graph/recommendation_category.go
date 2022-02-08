@@ -19,21 +19,24 @@ func (i RecommendationCategory) String() string {
     return []string{"USAGEANDCOMPLIANCE", "SECURITY", "PRODUCTIVITY", "HEALTH", "CONFIGURATION", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRecommendationCategory(v string) (interface{}, error) {
+    result := USAGEANDCOMPLIANCE_RECOMMENDATIONCATEGORY
     switch strings.ToUpper(v) {
         case "USAGEANDCOMPLIANCE":
-            return USAGEANDCOMPLIANCE_RECOMMENDATIONCATEGORY, nil
+            result = USAGEANDCOMPLIANCE_RECOMMENDATIONCATEGORY
         case "SECURITY":
-            return SECURITY_RECOMMENDATIONCATEGORY, nil
+            result = SECURITY_RECOMMENDATIONCATEGORY
         case "PRODUCTIVITY":
-            return PRODUCTIVITY_RECOMMENDATIONCATEGORY, nil
+            result = PRODUCTIVITY_RECOMMENDATIONCATEGORY
         case "HEALTH":
-            return HEALTH_RECOMMENDATIONCATEGORY, nil
+            result = HEALTH_RECOMMENDATIONCATEGORY
         case "CONFIGURATION":
-            return CONFIGURATION_RECOMMENDATIONCATEGORY, nil
+            result = CONFIGURATION_RECOMMENDATIONCATEGORY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_RECOMMENDATIONCATEGORY, nil
+            result = UNKNOWNFUTUREVALUE_RECOMMENDATIONCATEGORY
+        default:
+            return 0, errors.New("Unknown RecommendationCategory value: " + v)
     }
-    return 0, errors.New("Unknown RecommendationCategory value: " + v)
+    return &result, nil
 }
 func SerializeRecommendationCategory(values []RecommendationCategory) []string {
     result := make([]string, len(values))
