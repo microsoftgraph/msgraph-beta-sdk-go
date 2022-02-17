@@ -3,6 +3,7 @@ package getoffice365activeuserdetailwithperiod
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
 // GetOffice365ActiveUserDetailWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActiveUserDetail(period='{period}')
@@ -63,18 +64,18 @@ func (m *GetOffice365ActiveUserDetailWithPeriodRequestBuilder) CreateGetRequestI
     return requestInfo, nil
 }
 // Get invoke function getOffice365ActiveUserDetail
-func (m *GetOffice365ActiveUserDetailWithPeriodRequestBuilder) Get(options *GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetOptions)([]GetOffice365ActiveUserDetailWithPeriod, error) {
+func (m *GetOffice365ActiveUserDetailWithPeriodRequestBuilder) Get(options *GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetOptions)([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365ActiveUserDetail, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetOffice365ActiveUserDetailWithPeriod() }, nil)
+    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOffice365ActiveUserDetail() }, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetOffice365ActiveUserDetailWithPeriod, len(res))
+    val := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365ActiveUserDetail, len(res))
     for i, v := range res {
-        val[i] = *(v.(*GetOffice365ActiveUserDetailWithPeriod))
+        val[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365ActiveUserDetail))
     }
     return val, nil
 }

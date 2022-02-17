@@ -90,7 +90,7 @@ type ServicePrincipal struct {
     preferredTokenSigningKeyEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
     preferredTokenSigningKeyThumbprint *string;
-    // The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
+    // The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
     publishedPermissionScopes []PermissionScope;
     // 
     publisherName *string;
@@ -454,7 +454,7 @@ func (m *ServicePrincipal) GetPreferredTokenSigningKeyThumbprint()(*string) {
         return m.preferredTokenSigningKeyThumbprint
     }
 }
-// GetPublishedPermissionScopes gets the publishedPermissionScopes property value. The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
+// GetPublishedPermissionScopes gets the publishedPermissionScopes property value. The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
 func (m *ServicePrincipal) GetPublishedPermissionScopes()([]PermissionScope) {
     if m == nil {
         return nil
@@ -1926,7 +1926,7 @@ func (m *ServicePrincipal) SetPreferredTokenSigningKeyThumbprint(value *string)(
         m.preferredTokenSigningKeyThumbprint = value
     }
 }
-// SetPublishedPermissionScopes sets the publishedPermissionScopes property value. The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
+// SetPublishedPermissionScopes sets the publishedPermissionScopes property value. The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
 func (m *ServicePrincipal) SetPublishedPermissionScopes(value []PermissionScope)() {
     if m != nil {
         m.publishedPermissionScopes = value

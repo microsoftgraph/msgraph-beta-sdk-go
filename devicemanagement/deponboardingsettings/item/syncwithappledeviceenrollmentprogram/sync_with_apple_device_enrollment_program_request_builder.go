@@ -64,7 +64,7 @@ func (m *SyncWithAppleDeviceEnrollmentProgramRequestBuilder) Post(options *SyncW
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

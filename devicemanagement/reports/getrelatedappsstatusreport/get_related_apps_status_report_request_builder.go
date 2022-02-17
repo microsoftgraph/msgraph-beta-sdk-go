@@ -67,7 +67,7 @@ func (m *GetRelatedAppsStatusReportRequestBuilder) Post(options *GetRelatedAppsS
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
     if err != nil {
         return nil, err
     }

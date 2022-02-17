@@ -67,7 +67,7 @@ func (m *UpdateGlobalScriptRequestBuilder) Post(options *UpdateGlobalScriptReque
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
     if err != nil {
         return nil, err
     }

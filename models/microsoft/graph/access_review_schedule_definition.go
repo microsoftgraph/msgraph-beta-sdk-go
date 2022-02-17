@@ -36,7 +36,7 @@ type AccessReviewScheduleDefinition struct {
     scope *AccessReviewScope;
     // The settings for an access review series, see type definition below. Supports $select. Required on create.
     settings *AccessReviewScheduleSettings;
-    // 
+    // Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.
     stageSettings []AccessReviewStageSettings;
     // This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
     status *string;
@@ -160,7 +160,7 @@ func (m *AccessReviewScheduleDefinition) GetSettings()(*AccessReviewScheduleSett
         return m.settings
     }
 }
-// GetStageSettings gets the stageSettings property value. 
+// GetStageSettings gets the stageSettings property value. Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.
 func (m *AccessReviewScheduleDefinition) GetStageSettings()([]AccessReviewStageSettings) {
     if m == nil {
         return nil
@@ -586,7 +586,7 @@ func (m *AccessReviewScheduleDefinition) SetSettings(value *AccessReviewSchedule
         m.settings = value
     }
 }
-// SetStageSettings sets the stageSettings property value. 
+// SetStageSettings sets the stageSettings property value. Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.
 func (m *AccessReviewScheduleDefinition) SetStageSettings(value []AccessReviewStageSettings)() {
     if m != nil {
         m.stageSettings = value

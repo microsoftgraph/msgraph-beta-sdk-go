@@ -55,6 +55,8 @@ type OnlineMeeting struct {
     // The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
     joinInformation *ItemBody;
     // 
+    joinMeetingIdSettings *JoinMeetingIdSettings;
+    // 
     joinUrl *string;
     // Specifies which participants can bypass the meeting   lobby.
     lobbyBypassSettings *LobbyBypassSettings;
@@ -264,6 +266,14 @@ func (m *OnlineMeeting) GetJoinInformation()(*ItemBody) {
         return nil
     } else {
         return m.joinInformation
+    }
+}
+// GetJoinMeetingIdSettings gets the joinMeetingIdSettings property value. 
+func (m *OnlineMeeting) GetJoinMeetingIdSettings()(*JoinMeetingIdSettings) {
+    if m == nil {
+        return nil
+    } else {
+        return m.joinMeetingIdSettings
     }
 }
 // GetJoinUrl gets the joinUrl property value. 
@@ -587,6 +597,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         return nil
     }
+    res["joinMeetingIdSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewJoinMeetingIdSettings() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetJoinMeetingIdSettings(val.(*JoinMeetingIdSettings))
+        }
+        return nil
+    }
     res["joinUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -845,6 +865,12 @@ func (m *OnlineMeeting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
+        err = writer.WriteObjectValue("joinMeetingIdSettings", m.GetJoinMeetingIdSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("joinUrl", m.GetJoinUrl())
         if err != nil {
             return err
@@ -1042,6 +1068,12 @@ func (m *OnlineMeeting) SetIsEntryExitAnnounced(value *bool)() {
 func (m *OnlineMeeting) SetJoinInformation(value *ItemBody)() {
     if m != nil {
         m.joinInformation = value
+    }
+}
+// SetJoinMeetingIdSettings sets the joinMeetingIdSettings property value. 
+func (m *OnlineMeeting) SetJoinMeetingIdSettings(value *JoinMeetingIdSettings)() {
+    if m != nil {
+        m.joinMeetingIdSettings = value
     }
 }
 // SetJoinUrl sets the joinUrl property value. 

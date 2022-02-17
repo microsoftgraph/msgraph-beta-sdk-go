@@ -67,7 +67,7 @@ func (m *GetMobileAppCountWithStatusRequestBuilder) Get(options *GetMobileAppCou
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "int64", nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "int64", nil, nil)
     if err != nil {
         return nil, err
     }

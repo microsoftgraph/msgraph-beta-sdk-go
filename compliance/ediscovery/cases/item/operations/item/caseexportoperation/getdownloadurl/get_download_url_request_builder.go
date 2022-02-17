@@ -64,7 +64,7 @@ func (m *GetDownloadUrlRequestBuilder) Get(options *GetDownloadUrlRequestBuilder
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
     if err != nil {
         return nil, err
     }

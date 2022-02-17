@@ -14,11 +14,11 @@ type AccessPackageResource struct {
     accessPackageResourceRoles []AccessPackageResourceRole;
     // Read-only. Nullable. Supports $expand.
     accessPackageResourceScopes []AccessPackageResourceScope;
-    // Read-only.
+    // The name of the user or application that first added this resource. Read-only.
     addedBy *string;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     addedOn *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Contains attribute information for the resource.
+    // Contains information about the attributes to be collected from the requestor and sent to the resource application.
     attributes []AccessPackageResourceAttribute;
     // A description for the resource.
     description *string;
@@ -66,7 +66,7 @@ func (m *AccessPackageResource) GetAccessPackageResourceScopes()([]AccessPackage
         return m.accessPackageResourceScopes
     }
 }
-// GetAddedBy gets the addedBy property value. Read-only.
+// GetAddedBy gets the addedBy property value. The name of the user or application that first added this resource. Read-only.
 func (m *AccessPackageResource) GetAddedBy()(*string) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *AccessPackageResource) GetAddedOn()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.addedOn
     }
 }
-// GetAttributes gets the attributes property value. Contains attribute information for the resource.
+// GetAttributes gets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.
 func (m *AccessPackageResource) GetAttributes()([]AccessPackageResourceAttribute) {
     if m == nil {
         return nil
@@ -415,7 +415,7 @@ func (m *AccessPackageResource) SetAccessPackageResourceScopes(value []AccessPac
         m.accessPackageResourceScopes = value
     }
 }
-// SetAddedBy sets the addedBy property value. Read-only.
+// SetAddedBy sets the addedBy property value. The name of the user or application that first added this resource. Read-only.
 func (m *AccessPackageResource) SetAddedBy(value *string)() {
     if m != nil {
         m.addedBy = value
@@ -427,7 +427,7 @@ func (m *AccessPackageResource) SetAddedOn(value *i336074805fc853987abe6f7fe3ad9
         m.addedOn = value
     }
 }
-// SetAttributes sets the attributes property value. Contains attribute information for the resource.
+// SetAttributes sets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.
 func (m *AccessPackageResource) SetAttributes(value []AccessPackageResourceAttribute)() {
     if m != nil {
         m.attributes = value

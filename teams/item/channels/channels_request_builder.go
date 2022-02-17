@@ -28,7 +28,7 @@ type ChannelsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ChannelsRequestBuilderGetQueryParameters the collection of channels & messages associated with the team.
+// ChannelsRequestBuilderGetQueryParameters the collection of channels and messages associated with the team.
 type ChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -81,7 +81,7 @@ func NewChannelsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewChannelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the collection of channels & messages associated with the team.
+// CreateGetRequestInformation the collection of channels and messages associated with the team.
 func (m *ChannelsRequestBuilder) CreateGetRequestInformation(options *ChannelsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,7 +101,7 @@ func (m *ChannelsRequestBuilder) CreateGetRequestInformation(options *ChannelsRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of channels & messages associated with the team.
+// CreatePostRequestInformation the collection of channels and messages associated with the team.
 func (m *ChannelsRequestBuilder) CreatePostRequestInformation(options *ChannelsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,13 +119,13 @@ func (m *ChannelsRequestBuilder) CreatePostRequestInformation(options *ChannelsR
     }
     return requestInfo, nil
 }
-// Get the collection of channels & messages associated with the team.
+// Get the collection of channels and messages associated with the team.
 func (m *ChannelsRequestBuilder) Get(options *ChannelsRequestBuilderGetOptions)(*ChannelsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChannelsResponse() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewChannelsResponse() }, nil, nil)
     if err != nil {
         return nil, err
     }
@@ -135,13 +135,13 @@ func (m *ChannelsRequestBuilder) Get(options *ChannelsRequestBuilderGetOptions)(
 func (m *ChannelsRequestBuilder) GetAllMessages()(*i347d175e169084f11b452d87049eb355c7eb602ed2eb270e0611b9f242af9991.GetAllMessagesRequestBuilder) {
     return i347d175e169084f11b452d87049eb355c7eb602ed2eb270e0611b9f242af9991.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post the collection of channels & messages associated with the team.
+// Post the collection of channels and messages associated with the team.
 func (m *ChannelsRequestBuilder) Post(options *ChannelsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Channel, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewChannel() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewChannel() }, nil, nil)
     if err != nil {
         return nil, err
     }

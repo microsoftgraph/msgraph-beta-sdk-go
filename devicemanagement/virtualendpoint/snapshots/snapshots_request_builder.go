@@ -26,7 +26,7 @@ type SnapshotsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// SnapshotsRequestBuilderGetQueryParameters get snapshots from deviceManagement
+// SnapshotsRequestBuilderGetQueryParameters cloud PC snapshots.
 type SnapshotsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewSnapshotsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewSnapshotsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get snapshots from deviceManagement
+// CreateGetRequestInformation cloud PC snapshots.
 func (m *SnapshotsRequestBuilder) CreateGetRequestInformation(options *SnapshotsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *SnapshotsRequestBuilder) CreateGetRequestInformation(options *Snapshots
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to snapshots for deviceManagement
+// CreatePostRequestInformation cloud PC snapshots.
 func (m *SnapshotsRequestBuilder) CreatePostRequestInformation(options *SnapshotsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,25 +113,25 @@ func (m *SnapshotsRequestBuilder) CreatePostRequestInformation(options *Snapshot
     }
     return requestInfo, nil
 }
-// Get get snapshots from deviceManagement
+// Get cloud PC snapshots.
 func (m *SnapshotsRequestBuilder) Get(options *SnapshotsRequestBuilderGetOptions)(*SnapshotsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSnapshotsResponse() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSnapshotsResponse() }, nil, nil)
     if err != nil {
         return nil, err
     }
     return res.(*SnapshotsResponse), nil
 }
-// Post create new navigation property to snapshots for deviceManagement
+// Post cloud PC snapshots.
 func (m *SnapshotsRequestBuilder) Post(options *SnapshotsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcSnapshot, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCloudPcSnapshot() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCloudPcSnapshot() }, nil, nil)
     if err != nil {
         return nil, err
     }

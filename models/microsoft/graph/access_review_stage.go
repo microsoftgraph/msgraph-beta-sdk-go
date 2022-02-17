@@ -8,17 +8,17 @@ import (
 // AccessReviewStage 
 type AccessReviewStage struct {
     Entity
-    // 
+    // Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
     decisions []AccessReviewInstanceDecisionItem;
-    // 
+    // DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
     fallbackReviewers []AccessReviewReviewerScope;
-    // 
+    // This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
     reviewers []AccessReviewReviewerScope;
-    // 
+    // DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.
     status *string;
 }
 // NewAccessReviewStage instantiates a new accessReviewStage and sets the default values.
@@ -28,7 +28,7 @@ func NewAccessReviewStage()(*AccessReviewStage) {
     }
     return m
 }
-// GetDecisions gets the decisions property value. 
+// GetDecisions gets the decisions property value. Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewStage) GetDecisions()([]AccessReviewInstanceDecisionItem) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *AccessReviewStage) GetDecisions()([]AccessReviewInstanceDecisionItem) {
         return m.decisions
     }
 }
-// GetEndDateTime gets the endDateTime property value. 
+// GetEndDateTime gets the endDateTime property value. DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
 func (m *AccessReviewStage) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *AccessReviewStage) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.endDateTime
     }
 }
-// GetFallbackReviewers gets the fallbackReviewers property value. 
+// GetFallbackReviewers gets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
 func (m *AccessReviewStage) GetFallbackReviewers()([]AccessReviewReviewerScope) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *AccessReviewStage) GetFallbackReviewers()([]AccessReviewReviewerScope) 
         return m.fallbackReviewers
     }
 }
-// GetReviewers gets the reviewers property value. 
+// GetReviewers gets the reviewers property value. This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
 func (m *AccessReviewStage) GetReviewers()([]AccessReviewReviewerScope) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *AccessReviewStage) GetReviewers()([]AccessReviewReviewerScope) {
         return m.reviewers
     }
 }
-// GetStartDateTime gets the startDateTime property value. 
+// GetStartDateTime gets the startDateTime property value. DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessReviewStage) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *AccessReviewStage) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.startDateTime
     }
 }
-// GetStatus gets the status property value. 
+// GetStatus gets the status property value. Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.
 func (m *AccessReviewStage) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -215,37 +215,37 @@ func (m *AccessReviewStage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// SetDecisions sets the decisions property value. 
+// SetDecisions sets the decisions property value. Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewStage) SetDecisions(value []AccessReviewInstanceDecisionItem)() {
     if m != nil {
         m.decisions = value
     }
 }
-// SetEndDateTime sets the endDateTime property value. 
+// SetEndDateTime sets the endDateTime property value. DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
 func (m *AccessReviewStage) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.endDateTime = value
     }
 }
-// SetFallbackReviewers sets the fallbackReviewers property value. 
+// SetFallbackReviewers sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
 func (m *AccessReviewStage) SetFallbackReviewers(value []AccessReviewReviewerScope)() {
     if m != nil {
         m.fallbackReviewers = value
     }
 }
-// SetReviewers sets the reviewers property value. 
+// SetReviewers sets the reviewers property value. This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
 func (m *AccessReviewStage) SetReviewers(value []AccessReviewReviewerScope)() {
     if m != nil {
         m.reviewers = value
     }
 }
-// SetStartDateTime sets the startDateTime property value. 
+// SetStartDateTime sets the startDateTime property value. DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessReviewStage) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.startDateTime = value
     }
 }
-// SetStatus sets the status property value. 
+// SetStatus sets the status property value. Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.
 func (m *AccessReviewStage) SetStatus(value *string)() {
     if m != nil {
         m.status = value

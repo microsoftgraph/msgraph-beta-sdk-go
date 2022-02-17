@@ -8,7 +8,6 @@ import (
     i84de904bb05d23fc4ff8a1ee5fc476086d921dc37d79e9e94ff777bece0b6c81 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onenote/notebooks/item/sectiongroups/item/sections"
     id53f30906ec6f73ca1357392427f1ae940199113362d3b7366616db5753a71ef "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onenote/notebooks/item/sectiongroups/item/parentnotebook"
     iea6d27c54cea0d8a4786722261b40349b0ade057a7e84cd3741d4766208f9bb9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onenote/notebooks/item/sectiongroups/item/sectiongroups"
-    i25ca3158dcb79c5c329618972f6a88bdaddadcb153b5c7e7d9b72a3c04402ea2 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onenote/notebooks/item/sectiongroups/item/sectiongroups/item"
     i8f8b2da649f109b9263c40c093f36b98ed8281dc94749253cb4b9203bdc3b9f9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onenote/notebooks/item/sectiongroups/item/sections/item"
 )
 
@@ -139,7 +138,7 @@ func (m *SectionGroupRequestBuilder) Delete(options *SectionGroupRequestBuilderD
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
@@ -151,7 +150,7 @@ func (m *SectionGroupRequestBuilder) Get(options *SectionGroupRequestBuilderGetO
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSectionGroup() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewSectionGroup() }, nil, nil)
     if err != nil {
         return nil, err
     }
@@ -169,7 +168,7 @@ func (m *SectionGroupRequestBuilder) Patch(options *SectionGroupRequestBuilderPa
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
@@ -177,17 +176,6 @@ func (m *SectionGroupRequestBuilder) Patch(options *SectionGroupRequestBuilderPa
 }
 func (m *SectionGroupRequestBuilder) SectionGroups()(*iea6d27c54cea0d8a4786722261b40349b0ade057a7e84cd3741d4766208f9bb9.SectionGroupsRequestBuilder) {
     return iea6d27c54cea0d8a4786722261b40349b0ade057a7e84cd3741d4766208f9bb9.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SectionGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.onenote.notebooks.item.sectionGroups.item.sectionGroups.item collection
-func (m *SectionGroupRequestBuilder) SectionGroupsById(id string)(*i25ca3158dcb79c5c329618972f6a88bdaddadcb153b5c7e7d9b72a3c04402ea2.SectionGroupRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["sectionGroup_id1"] = id
-    }
-    return i25ca3158dcb79c5c329618972f6a88bdaddadcb153b5c7e7d9b72a3c04402ea2.NewSectionGroupRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *SectionGroupRequestBuilder) Sections()(*i84de904bb05d23fc4ff8a1ee5fc476086d921dc37d79e9e94ff777bece0b6c81.SectionsRequestBuilder) {
     return i84de904bb05d23fc4ff8a1ee5fc476086d921dc37d79e9e94ff777bece0b6c81.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
