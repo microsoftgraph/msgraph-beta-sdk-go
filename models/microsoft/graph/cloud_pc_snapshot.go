@@ -8,13 +8,13 @@ import (
 // CloudPcSnapshot 
 type CloudPcSnapshot struct {
     Entity
-    // 
+    // The unique identifier for the Cloud PC.
     cloudPcId *string;
-    // 
+    // The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     lastRestoredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // The status of the Cloud PC snapshot. The possible values are: ready, unknownFutureValue.
     status *CloudPcSnapshotStatus;
 }
 // NewCloudPcSnapshot instantiates a new cloudPcSnapshot and sets the default values.
@@ -24,7 +24,7 @@ func NewCloudPcSnapshot()(*CloudPcSnapshot) {
     }
     return m
 }
-// GetCloudPcId gets the cloudPcId property value. 
+// GetCloudPcId gets the cloudPcId property value. The unique identifier for the Cloud PC.
 func (m *CloudPcSnapshot) GetCloudPcId()(*string) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *CloudPcSnapshot) GetCloudPcId()(*string) {
         return m.cloudPcId
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. 
+// GetCreatedDateTime gets the createdDateTime property value. The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcSnapshot) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *CloudPcSnapshot) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.createdDateTime
     }
 }
-// GetLastRestoredDateTime gets the lastRestoredDateTime property value. 
+// GetLastRestoredDateTime gets the lastRestoredDateTime property value. The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcSnapshot) GetLastRestoredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *CloudPcSnapshot) GetLastRestoredDateTime()(*i336074805fc853987abe6f7fe3
         return m.lastRestoredDateTime
     }
 }
-// GetStatus gets the status property value. 
+// GetStatus gets the status property value. The status of the Cloud PC snapshot. The possible values are: ready, unknownFutureValue.
 func (m *CloudPcSnapshot) GetStatus()(*CloudPcSnapshotStatus) {
     if m == nil {
         return nil
@@ -137,25 +137,25 @@ func (m *CloudPcSnapshot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// SetCloudPcId sets the cloudPcId property value. 
+// SetCloudPcId sets the cloudPcId property value. The unique identifier for the Cloud PC.
 func (m *CloudPcSnapshot) SetCloudPcId(value *string)() {
     if m != nil {
         m.cloudPcId = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. 
+// SetCreatedDateTime sets the createdDateTime property value. The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcSnapshot) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
     }
 }
-// SetLastRestoredDateTime sets the lastRestoredDateTime property value. 
+// SetLastRestoredDateTime sets the lastRestoredDateTime property value. The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcSnapshot) SetLastRestoredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastRestoredDateTime = value
     }
 }
-// SetStatus sets the status property value. 
+// SetStatus sets the status property value. The status of the Cloud PC snapshot. The possible values are: ready, unknownFutureValue.
 func (m *CloudPcSnapshot) SetStatus(value *CloudPcSnapshotStatus)() {
     if m != nil {
         m.status = value

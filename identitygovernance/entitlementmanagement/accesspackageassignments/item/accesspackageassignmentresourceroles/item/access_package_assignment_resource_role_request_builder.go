@@ -8,7 +8,6 @@ import (
     i2c32e45c5d65e51fced4cf39c1c3f67f8d4ed0608aab6b75b7d642a007b2f9e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/accesspackageassignmentresourceroles/item/accesspackageresourcescope"
     i6eca23cd75a999dbb5c8e9d0117641b4ff3cecb3979b3e547793fe238df221c4 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/accesspackageassignmentresourceroles/item/accesspackagesubject"
     if1b7f7cae92d17e491826c7eb7dbfe64885f5e3a436dcba3a8a3e613f5121882 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/accesspackageassignmentresourceroles/item/accesspackageresourcerole"
-    ia37a638d7f3d60c9112b0aec719d0a99d0cd2cd187495734627185fc987e9d75 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/item/accesspackageassignmentresourceroles/item/accesspackageassignments/item"
 )
 
 // AccessPackageAssignmentResourceRoleRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackageAssignmentResourceRoles\{accessPackageAssignmentResourceRole-id}
@@ -60,17 +59,6 @@ type AccessPackageAssignmentResourceRoleRequestBuilderPatchOptions struct {
 }
 func (m *AccessPackageAssignmentResourceRoleRequestBuilder) AccessPackageAssignments()(*i0cabe3741c90882c02a7845c85fc54aabd27cb743b143945d2182594f0d1e0bc.AccessPackageAssignmentsRequestBuilder) {
     return i0cabe3741c90882c02a7845c85fc54aabd27cb743b143945d2182594f0d1e0bc.NewAccessPackageAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AccessPackageAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignments.item.accessPackageAssignmentResourceRoles.item.accessPackageAssignments.item collection
-func (m *AccessPackageAssignmentResourceRoleRequestBuilder) AccessPackageAssignmentsById(id string)(*ia37a638d7f3d60c9112b0aec719d0a99d0cd2cd187495734627185fc987e9d75.AccessPackageAssignmentRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["accessPackageAssignment_id1"] = id
-    }
-    return ia37a638d7f3d60c9112b0aec719d0a99d0cd2cd187495734627185fc987e9d75.NewAccessPackageAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *AccessPackageAssignmentResourceRoleRequestBuilder) AccessPackageResourceRole()(*if1b7f7cae92d17e491826c7eb7dbfe64885f5e3a436dcba3a8a3e613f5121882.AccessPackageResourceRoleRequestBuilder) {
     return if1b7f7cae92d17e491826c7eb7dbfe64885f5e3a436dcba3a8a3e613f5121882.NewAccessPackageResourceRoleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -161,7 +149,7 @@ func (m *AccessPackageAssignmentResourceRoleRequestBuilder) Delete(options *Acce
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
@@ -173,7 +161,7 @@ func (m *AccessPackageAssignmentResourceRoleRequestBuilder) Get(options *AccessP
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessPackageAssignmentResourceRole() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessPackageAssignmentResourceRole() }, nil, nil)
     if err != nil {
         return nil, err
     }
@@ -185,7 +173,7 @@ func (m *AccessPackageAssignmentResourceRoleRequestBuilder) Patch(options *Acces
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

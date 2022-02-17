@@ -12,7 +12,7 @@ type AccessReviewScheduleSettings struct {
     applyActions []AccessReviewApplyAction;
     // Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
     autoApplyDecisionsEnabled *bool;
-    // 
+    // Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
     decisionHistoriesForReviewersEnabled *bool;
     // Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
     defaultDecision *string;
@@ -24,9 +24,9 @@ type AccessReviewScheduleSettings struct {
     justificationRequiredOnApproval *bool;
     // Indicates whether emails are enabled or disabled. Default value is false.
     mailNotificationsEnabled *bool;
-    // Optional. Describes the types of insights that aid reviewers to make access review decisions.
+    // Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
     recommendationInsightSettings []AccessReviewRecommendationInsightSetting;
-    // Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
+    // Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
     recommendationLookBackDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Indicates whether decision recommendations are enabled or disabled.
     recommendationsEnabled *bool;
@@ -66,7 +66,7 @@ func (m *AccessReviewScheduleSettings) GetAutoApplyDecisionsEnabled()(*bool) {
         return m.autoApplyDecisionsEnabled
     }
 }
-// GetDecisionHistoriesForReviewersEnabled gets the decisionHistoriesForReviewersEnabled property value. 
+// GetDecisionHistoriesForReviewersEnabled gets the decisionHistoriesForReviewersEnabled property value. Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
 func (m *AccessReviewScheduleSettings) GetDecisionHistoriesForReviewersEnabled()(*bool) {
     if m == nil {
         return nil
@@ -114,7 +114,7 @@ func (m *AccessReviewScheduleSettings) GetMailNotificationsEnabled()(*bool) {
         return m.mailNotificationsEnabled
     }
 }
-// GetRecommendationInsightSettings gets the recommendationInsightSettings property value. Optional. Describes the types of insights that aid reviewers to make access review decisions.
+// GetRecommendationInsightSettings gets the recommendationInsightSettings property value. Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
 func (m *AccessReviewScheduleSettings) GetRecommendationInsightSettings()([]AccessReviewRecommendationInsightSetting) {
     if m == nil {
         return nil
@@ -122,7 +122,7 @@ func (m *AccessReviewScheduleSettings) GetRecommendationInsightSettings()([]Acce
         return m.recommendationInsightSettings
     }
 }
-// GetRecommendationLookBackDuration gets the recommendationLookBackDuration property value. Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
+// GetRecommendationLookBackDuration gets the recommendationLookBackDuration property value. Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
 func (m *AccessReviewScheduleSettings) GetRecommendationLookBackDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
@@ -416,7 +416,7 @@ func (m *AccessReviewScheduleSettings) SetAutoApplyDecisionsEnabled(value *bool)
         m.autoApplyDecisionsEnabled = value
     }
 }
-// SetDecisionHistoriesForReviewersEnabled sets the decisionHistoriesForReviewersEnabled property value. 
+// SetDecisionHistoriesForReviewersEnabled sets the decisionHistoriesForReviewersEnabled property value. Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
 func (m *AccessReviewScheduleSettings) SetDecisionHistoriesForReviewersEnabled(value *bool)() {
     if m != nil {
         m.decisionHistoriesForReviewersEnabled = value
@@ -452,13 +452,13 @@ func (m *AccessReviewScheduleSettings) SetMailNotificationsEnabled(value *bool)(
         m.mailNotificationsEnabled = value
     }
 }
-// SetRecommendationInsightSettings sets the recommendationInsightSettings property value. Optional. Describes the types of insights that aid reviewers to make access review decisions.
+// SetRecommendationInsightSettings sets the recommendationInsightSettings property value. Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
 func (m *AccessReviewScheduleSettings) SetRecommendationInsightSettings(value []AccessReviewRecommendationInsightSetting)() {
     if m != nil {
         m.recommendationInsightSettings = value
     }
 }
-// SetRecommendationLookBackDuration sets the recommendationLookBackDuration property value. Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
+// SetRecommendationLookBackDuration sets the recommendationLookBackDuration property value. Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
 func (m *AccessReviewScheduleSettings) SetRecommendationLookBackDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.recommendationLookBackDuration = value

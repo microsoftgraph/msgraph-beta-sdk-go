@@ -8,15 +8,15 @@ import (
 type LoginPageTextVisibilitySettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.
     hideCannotAccessYourAccount *bool;
-    // 
+    // Option to hide the self-service password reset (SSPR) 'Forgot my password' hyperlink on the sign-in form.
     hideForgotMyPassword *bool;
-    // 
+    // Option to hide the 'Privacy & Cookies' hyperlink in the footer.
     hidePrivacyAndCookies *bool;
-    // 
+    // Option to hide the self-service password reset (SSPR) 'reset it now' hyperlink on the sign-in form.
     hideResetItNow *bool;
-    // 
+    // Option to hide the 'Terms of Use' hyperlink in the footer.
     hideTermsOfUse *bool;
 }
 // NewLoginPageTextVisibilitySettings instantiates a new loginPageTextVisibilitySettings and sets the default values.
@@ -34,7 +34,7 @@ func (m *LoginPageTextVisibilitySettings) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// GetHideCannotAccessYourAccount gets the hideCannotAccessYourAccount property value. 
+// GetHideCannotAccessYourAccount gets the hideCannotAccessYourAccount property value. Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) GetHideCannotAccessYourAccount()(*bool) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *LoginPageTextVisibilitySettings) GetHideCannotAccessYourAccount()(*bool
         return m.hideCannotAccessYourAccount
     }
 }
-// GetHideForgotMyPassword gets the hideForgotMyPassword property value. 
+// GetHideForgotMyPassword gets the hideForgotMyPassword property value. Option to hide the self-service password reset (SSPR) 'Forgot my password' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) GetHideForgotMyPassword()(*bool) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *LoginPageTextVisibilitySettings) GetHideForgotMyPassword()(*bool) {
         return m.hideForgotMyPassword
     }
 }
-// GetHidePrivacyAndCookies gets the hidePrivacyAndCookies property value. 
+// GetHidePrivacyAndCookies gets the hidePrivacyAndCookies property value. Option to hide the 'Privacy & Cookies' hyperlink in the footer.
 func (m *LoginPageTextVisibilitySettings) GetHidePrivacyAndCookies()(*bool) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *LoginPageTextVisibilitySettings) GetHidePrivacyAndCookies()(*bool) {
         return m.hidePrivacyAndCookies
     }
 }
-// GetHideResetItNow gets the hideResetItNow property value. 
+// GetHideResetItNow gets the hideResetItNow property value. Option to hide the self-service password reset (SSPR) 'reset it now' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) GetHideResetItNow()(*bool) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *LoginPageTextVisibilitySettings) GetHideResetItNow()(*bool) {
         return m.hideResetItNow
     }
 }
-// GetHideTermsOfUse gets the hideTermsOfUse property value. 
+// GetHideTermsOfUse gets the hideTermsOfUse property value. Option to hide the 'Terms of Use' hyperlink in the footer.
 func (m *LoginPageTextVisibilitySettings) GetHideTermsOfUse()(*bool) {
     if m == nil {
         return nil
@@ -178,31 +178,31 @@ func (m *LoginPageTextVisibilitySettings) SetAdditionalData(value map[string]int
         m.additionalData = value
     }
 }
-// SetHideCannotAccessYourAccount sets the hideCannotAccessYourAccount property value. 
+// SetHideCannotAccessYourAccount sets the hideCannotAccessYourAccount property value. Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) SetHideCannotAccessYourAccount(value *bool)() {
     if m != nil {
         m.hideCannotAccessYourAccount = value
     }
 }
-// SetHideForgotMyPassword sets the hideForgotMyPassword property value. 
+// SetHideForgotMyPassword sets the hideForgotMyPassword property value. Option to hide the self-service password reset (SSPR) 'Forgot my password' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) SetHideForgotMyPassword(value *bool)() {
     if m != nil {
         m.hideForgotMyPassword = value
     }
 }
-// SetHidePrivacyAndCookies sets the hidePrivacyAndCookies property value. 
+// SetHidePrivacyAndCookies sets the hidePrivacyAndCookies property value. Option to hide the 'Privacy & Cookies' hyperlink in the footer.
 func (m *LoginPageTextVisibilitySettings) SetHidePrivacyAndCookies(value *bool)() {
     if m != nil {
         m.hidePrivacyAndCookies = value
     }
 }
-// SetHideResetItNow sets the hideResetItNow property value. 
+// SetHideResetItNow sets the hideResetItNow property value. Option to hide the self-service password reset (SSPR) 'reset it now' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) SetHideResetItNow(value *bool)() {
     if m != nil {
         m.hideResetItNow = value
     }
 }
-// SetHideTermsOfUse sets the hideTermsOfUse property value. 
+// SetHideTermsOfUse sets the hideTermsOfUse property value. Option to hide the 'Terms of Use' hyperlink in the footer.
 func (m *LoginPageTextVisibilitySettings) SetHideTermsOfUse(value *bool)() {
     if m != nil {
         m.hideTermsOfUse = value

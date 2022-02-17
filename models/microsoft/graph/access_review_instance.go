@@ -24,7 +24,7 @@ type AccessReviewInstance struct {
     reviewers []AccessReviewReviewerScope;
     // Created based on scope and instanceEnumerationScope at the accessReviewScheduleDefinition level. Defines the scope of users reviewed in a group. Supports $select and $filter (contains only). Read-only.
     scope *AccessReviewScope;
-    // 
+    // If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
     stages []AccessReviewStage;
     // DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -102,7 +102,7 @@ func (m *AccessReviewInstance) GetScope()(*AccessReviewScope) {
         return m.scope
     }
 }
-// GetStages gets the stages property value. 
+// GetStages gets the stages property value. If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
 func (m *AccessReviewInstance) GetStages()([]AccessReviewStage) {
     if m == nil {
         return nil
@@ -420,7 +420,7 @@ func (m *AccessReviewInstance) SetScope(value *AccessReviewScope)() {
         m.scope = value
     }
 }
-// SetStages sets the stages property value. 
+// SetStages sets the stages property value. If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
 func (m *AccessReviewInstance) SetStages(value []AccessReviewStage)() {
     if m != nil {
         m.stages = value

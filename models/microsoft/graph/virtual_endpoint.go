@@ -23,7 +23,7 @@ type VirtualEndpoint struct {
     provisioningPolicies []CloudPcProvisioningPolicy;
     // Cloud PC service plans.
     servicePlans []CloudPcServicePlan;
-    // 
+    // Cloud PC snapshots.
     snapshots []CloudPcSnapshot;
     // Cloud PC supported regions.
     supportedRegions []CloudPcSupportedRegion;
@@ -101,7 +101,7 @@ func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlan) {
         return m.servicePlans
     }
 }
-// GetSnapshots gets the snapshots property value. 
+// GetSnapshots gets the snapshots property value. Cloud PC snapshots.
 func (m *VirtualEndpoint) GetSnapshots()([]CloudPcSnapshot) {
     if m == nil {
         return nil
@@ -455,7 +455,7 @@ func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlan)() {
         m.servicePlans = value
     }
 }
-// SetSnapshots sets the snapshots property value. 
+// SetSnapshots sets the snapshots property value. Cloud PC snapshots.
 func (m *VirtualEndpoint) SetSnapshots(value []CloudPcSnapshot)() {
     if m != nil {
         m.snapshots = value

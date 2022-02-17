@@ -22,7 +22,7 @@ type ConditionalAccessConditionSet struct {
     locations *ConditionalAccessLocations;
     // Platforms included in and excluded from the policy.
     platforms *ConditionalAccessPlatforms;
-    // 
+    // Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
     servicePrincipalRiskLevels []RiskLevel;
     // Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     signInRiskLevels []RiskLevel;
@@ -102,7 +102,7 @@ func (m *ConditionalAccessConditionSet) GetPlatforms()(*ConditionalAccessPlatfor
         return m.platforms
     }
 }
-// GetServicePrincipalRiskLevels gets the servicePrincipalRiskLevels property value. 
+// GetServicePrincipalRiskLevels gets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
 func (m *ConditionalAccessConditionSet) GetServicePrincipalRiskLevels()([]RiskLevel) {
     if m == nil {
         return nil
@@ -392,7 +392,7 @@ func (m *ConditionalAccessConditionSet) SetPlatforms(value *ConditionalAccessPla
         m.platforms = value
     }
 }
-// SetServicePrincipalRiskLevels sets the servicePrincipalRiskLevels property value. 
+// SetServicePrincipalRiskLevels sets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
 func (m *ConditionalAccessConditionSet) SetServicePrincipalRiskLevels(value []RiskLevel)() {
     if m != nil {
         m.servicePrincipalRiskLevels = value

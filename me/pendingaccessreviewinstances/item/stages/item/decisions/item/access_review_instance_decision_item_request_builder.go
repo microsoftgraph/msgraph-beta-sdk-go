@@ -38,7 +38,7 @@ type AccessReviewInstanceDecisionItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessReviewInstanceDecisionItemRequestBuilderGetQueryParameters get decisions from me
+// AccessReviewInstanceDecisionItemRequestBuilderGetQueryParameters each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 type AccessReviewInstanceDecisionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -75,7 +75,7 @@ func NewAccessReviewInstanceDecisionItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewInstanceDecisionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property decisions for me
+// CreateDeleteRequestInformation each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewInstanceDecisionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,7 +92,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get decisions from me
+// CreateGetRequestInformation each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateGetRequestInformation(options *AccessReviewInstanceDecisionItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,7 +112,7 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property decisions in me
+// CreatePatchRequestInformation each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreatePatchRequestInformation(options *AccessReviewInstanceDecisionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,25 +130,25 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// Delete delete navigation property decisions for me
+// Delete each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Delete(options *AccessReviewInstanceDecisionItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
     return nil
 }
-// Get get decisions from me
+// Get each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Get(options *AccessReviewInstanceDecisionItemRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessReviewInstanceDecisionItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessReviewInstanceDecisionItem() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewAccessReviewInstanceDecisionItem() }, nil, nil)
     if err != nil {
         return nil, err
     }
@@ -171,13 +171,13 @@ func (m *AccessReviewInstanceDecisionItemRequestBuilder) InsightsById(id string)
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Instance()(*i343e1bd4aa6917629271bed7a21a7c877f4e7e45eb6dd61b16f3197b16e2dc07.InstanceRequestBuilder) {
     return i343e1bd4aa6917629271bed7a21a7c877f4e7e45eb6dd61b16f3197b16e2dc07.NewInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch update the navigation property decisions in me
+// Patch each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstanceDecisionItemRequestBuilder) Patch(options *AccessReviewInstanceDecisionItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

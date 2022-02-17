@@ -3,7 +3,7 @@ package items
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
+    i112cabe39d5c861ce98dbb81dde868c7670f33463ac070bc5e8ff43a60ec5cc9 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares/item/items/ref"
 )
 
 // ItemsRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\items
@@ -45,17 +45,6 @@ type ItemsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// ItemsRequestBuilderPostOptions options for Post
-type ItemsRequestBuilderPostOptions struct {
-    // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem;
-    // Request headers
-    H map[string]string;
-    // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
-}
 // NewItemsRequestBuilderInternal instantiates a new ItemsRequestBuilder and sets the default values.
 func NewItemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemsRequestBuilder) {
     m := &ItemsRequestBuilder{
@@ -95,45 +84,18 @@ func (m *ItemsRequestBuilder) CreateGetRequestInformation(options *ItemsRequestB
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation all driveItems contained in the sharing root. This collection cannot be enumerated.
-func (m *ItemsRequestBuilder) CreatePostRequestInformation(options *ItemsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
-    }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
-        if err != nil {
-            return nil, err
-        }
-    }
-    return requestInfo, nil
-}
 // Get all driveItems contained in the sharing root. This collection cannot be enumerated.
 func (m *ItemsRequestBuilder) Get(options *ItemsRequestBuilderGetOptions)(*ItemsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemsResponse() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemsResponse() }, nil, nil)
     if err != nil {
         return nil, err
     }
     return res.(*ItemsResponse), nil
 }
-// Post all driveItems contained in the sharing root. This collection cannot be enumerated.
-func (m *ItemsRequestBuilder) Post(options *ItemsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewDriveItem() }, nil)
-    if err != nil {
-        return nil, err
-    }
-    return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DriveItem), nil
+func (m *ItemsRequestBuilder) Ref()(*i112cabe39d5c861ce98dbb81dde868c7670f33463ac070bc5e8ff43a60ec5cc9.RefRequestBuilder) {
+    return i112cabe39d5c861ce98dbb81dde868c7670f33463ac070bc5e8ff43a60ec5cc9.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

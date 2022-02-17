@@ -64,7 +64,7 @@ func (m *SetDefaultProfileRequestBuilder) Post(options *SetDefaultProfileRequest
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

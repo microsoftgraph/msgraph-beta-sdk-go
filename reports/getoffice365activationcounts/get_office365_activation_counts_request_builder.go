@@ -64,7 +64,7 @@ func (m *GetOffice365ActivationCountsRequestBuilder) Get(options *GetOffice365Ac
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
     if err != nil {
         return nil, err
     }

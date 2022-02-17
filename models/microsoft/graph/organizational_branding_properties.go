@@ -19,31 +19,31 @@ type OrganizationalBrandingProperties struct {
     bannerLogoRelativeUrl *string;
     // A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
     cdnList []string;
-    // 
+    // A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
     customAccountResetCredentialsUrl *string;
-    // 
+    // A string to replace the default 'Can't access your account?' self-service password reset (SSPR) hyperlink text on the sign-in page. This text must be in Unicode format and not exceed 256 characters.
     customCannotAccessYourAccountText *string;
-    // 
+    // A custom URL to replace the default URL of the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. DO NOT USE. Use customAccountResetCredentialsUrl instead.
     customCannotAccessYourAccountUrl *string;
-    // 
+    // A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
     customForgotMyPasswordText *string;
-    // 
+    // A string to replace the default 'Privacy and Cookies' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
     customPrivacyAndCookiesText *string;
-    // 
+    // A custom URL to replace the default URL of the 'Privacy and Cookies' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
     customPrivacyAndCookiesUrl *string;
-    // 
+    // A string to replace the default 'reset it now' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. DO NOT USE: Customization of the 'reset it now' hyperlink text is currently not supported.
     customResetItNowText *string;
-    // 
+    // A string to replace the the default 'Terms of Use' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
     customTermsOfUseText *string;
-    // 
+    // A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
     customTermsOfUseUrl *string;
-    // 
+    // A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
     favicon []byte;
-    // 
+    // A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
     faviconRelativeUrl *string;
-    // 
+    // The RGB color to apply to customize the color of the header.
     headerBackgroundColor *string;
-    // 
+    // Represents the various texts that can be hidden on the login page for a tenant.
     loginPageTextVisibilitySettings *LoginPageTextVisibilitySettings;
     // Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
     signInPageText *string;
@@ -109,7 +109,7 @@ func (m *OrganizationalBrandingProperties) GetCdnList()([]string) {
         return m.cdnList
     }
 }
-// GetCustomAccountResetCredentialsUrl gets the customAccountResetCredentialsUrl property value. 
+// GetCustomAccountResetCredentialsUrl gets the customAccountResetCredentialsUrl property value. A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
 func (m *OrganizationalBrandingProperties) GetCustomAccountResetCredentialsUrl()(*string) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *OrganizationalBrandingProperties) GetCustomAccountResetCredentialsUrl()
         return m.customAccountResetCredentialsUrl
     }
 }
-// GetCustomCannotAccessYourAccountText gets the customCannotAccessYourAccountText property value. 
+// GetCustomCannotAccessYourAccountText gets the customCannotAccessYourAccountText property value. A string to replace the default 'Can't access your account?' self-service password reset (SSPR) hyperlink text on the sign-in page. This text must be in Unicode format and not exceed 256 characters.
 func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountText()(*string) {
     if m == nil {
         return nil
@@ -125,7 +125,7 @@ func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountText(
         return m.customCannotAccessYourAccountText
     }
 }
-// GetCustomCannotAccessYourAccountUrl gets the customCannotAccessYourAccountUrl property value. 
+// GetCustomCannotAccessYourAccountUrl gets the customCannotAccessYourAccountUrl property value. A custom URL to replace the default URL of the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. DO NOT USE. Use customAccountResetCredentialsUrl instead.
 func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountUrl()(*string) {
     if m == nil {
         return nil
@@ -133,7 +133,7 @@ func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountUrl()
         return m.customCannotAccessYourAccountUrl
     }
 }
-// GetCustomForgotMyPasswordText gets the customForgotMyPasswordText property value. 
+// GetCustomForgotMyPasswordText gets the customForgotMyPasswordText property value. A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
 func (m *OrganizationalBrandingProperties) GetCustomForgotMyPasswordText()(*string) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *OrganizationalBrandingProperties) GetCustomForgotMyPasswordText()(*stri
         return m.customForgotMyPasswordText
     }
 }
-// GetCustomPrivacyAndCookiesText gets the customPrivacyAndCookiesText property value. 
+// GetCustomPrivacyAndCookiesText gets the customPrivacyAndCookiesText property value. A string to replace the default 'Privacy and Cookies' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
 func (m *OrganizationalBrandingProperties) GetCustomPrivacyAndCookiesText()(*string) {
     if m == nil {
         return nil
@@ -149,7 +149,7 @@ func (m *OrganizationalBrandingProperties) GetCustomPrivacyAndCookiesText()(*str
         return m.customPrivacyAndCookiesText
     }
 }
-// GetCustomPrivacyAndCookiesUrl gets the customPrivacyAndCookiesUrl property value. 
+// GetCustomPrivacyAndCookiesUrl gets the customPrivacyAndCookiesUrl property value. A custom URL to replace the default URL of the 'Privacy and Cookies' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
 func (m *OrganizationalBrandingProperties) GetCustomPrivacyAndCookiesUrl()(*string) {
     if m == nil {
         return nil
@@ -157,7 +157,7 @@ func (m *OrganizationalBrandingProperties) GetCustomPrivacyAndCookiesUrl()(*stri
         return m.customPrivacyAndCookiesUrl
     }
 }
-// GetCustomResetItNowText gets the customResetItNowText property value. 
+// GetCustomResetItNowText gets the customResetItNowText property value. A string to replace the default 'reset it now' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. DO NOT USE: Customization of the 'reset it now' hyperlink text is currently not supported.
 func (m *OrganizationalBrandingProperties) GetCustomResetItNowText()(*string) {
     if m == nil {
         return nil
@@ -165,7 +165,7 @@ func (m *OrganizationalBrandingProperties) GetCustomResetItNowText()(*string) {
         return m.customResetItNowText
     }
 }
-// GetCustomTermsOfUseText gets the customTermsOfUseText property value. 
+// GetCustomTermsOfUseText gets the customTermsOfUseText property value. A string to replace the the default 'Terms of Use' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
 func (m *OrganizationalBrandingProperties) GetCustomTermsOfUseText()(*string) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *OrganizationalBrandingProperties) GetCustomTermsOfUseText()(*string) {
         return m.customTermsOfUseText
     }
 }
-// GetCustomTermsOfUseUrl gets the customTermsOfUseUrl property value. 
+// GetCustomTermsOfUseUrl gets the customTermsOfUseUrl property value. A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
 func (m *OrganizationalBrandingProperties) GetCustomTermsOfUseUrl()(*string) {
     if m == nil {
         return nil
@@ -181,7 +181,7 @@ func (m *OrganizationalBrandingProperties) GetCustomTermsOfUseUrl()(*string) {
         return m.customTermsOfUseUrl
     }
 }
-// GetFavicon gets the favicon property value. 
+// GetFavicon gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 func (m *OrganizationalBrandingProperties) GetFavicon()([]byte) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *OrganizationalBrandingProperties) GetFavicon()([]byte) {
         return m.favicon
     }
 }
-// GetFaviconRelativeUrl gets the faviconRelativeUrl property value. 
+// GetFaviconRelativeUrl gets the faviconRelativeUrl property value. A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) GetFaviconRelativeUrl()(*string) {
     if m == nil {
         return nil
@@ -197,7 +197,7 @@ func (m *OrganizationalBrandingProperties) GetFaviconRelativeUrl()(*string) {
         return m.faviconRelativeUrl
     }
 }
-// GetHeaderBackgroundColor gets the headerBackgroundColor property value. 
+// GetHeaderBackgroundColor gets the headerBackgroundColor property value. The RGB color to apply to customize the color of the header.
 func (m *OrganizationalBrandingProperties) GetHeaderBackgroundColor()(*string) {
     if m == nil {
         return nil
@@ -205,7 +205,7 @@ func (m *OrganizationalBrandingProperties) GetHeaderBackgroundColor()(*string) {
         return m.headerBackgroundColor
     }
 }
-// GetLoginPageTextVisibilitySettings gets the loginPageTextVisibilitySettings property value. 
+// GetLoginPageTextVisibilitySettings gets the loginPageTextVisibilitySettings property value. Represents the various texts that can be hidden on the login page for a tenant.
 func (m *OrganizationalBrandingProperties) GetLoginPageTextVisibilitySettings()(*LoginPageTextVisibilitySettings) {
     if m == nil {
         return nil
@@ -669,79 +669,79 @@ func (m *OrganizationalBrandingProperties) SetCdnList(value []string)() {
         m.cdnList = value
     }
 }
-// SetCustomAccountResetCredentialsUrl sets the customAccountResetCredentialsUrl property value. 
+// SetCustomAccountResetCredentialsUrl sets the customAccountResetCredentialsUrl property value. A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
 func (m *OrganizationalBrandingProperties) SetCustomAccountResetCredentialsUrl(value *string)() {
     if m != nil {
         m.customAccountResetCredentialsUrl = value
     }
 }
-// SetCustomCannotAccessYourAccountText sets the customCannotAccessYourAccountText property value. 
+// SetCustomCannotAccessYourAccountText sets the customCannotAccessYourAccountText property value. A string to replace the default 'Can't access your account?' self-service password reset (SSPR) hyperlink text on the sign-in page. This text must be in Unicode format and not exceed 256 characters.
 func (m *OrganizationalBrandingProperties) SetCustomCannotAccessYourAccountText(value *string)() {
     if m != nil {
         m.customCannotAccessYourAccountText = value
     }
 }
-// SetCustomCannotAccessYourAccountUrl sets the customCannotAccessYourAccountUrl property value. 
+// SetCustomCannotAccessYourAccountUrl sets the customCannotAccessYourAccountUrl property value. A custom URL to replace the default URL of the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. DO NOT USE. Use customAccountResetCredentialsUrl instead.
 func (m *OrganizationalBrandingProperties) SetCustomCannotAccessYourAccountUrl(value *string)() {
     if m != nil {
         m.customCannotAccessYourAccountUrl = value
     }
 }
-// SetCustomForgotMyPasswordText sets the customForgotMyPasswordText property value. 
+// SetCustomForgotMyPasswordText sets the customForgotMyPasswordText property value. A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
 func (m *OrganizationalBrandingProperties) SetCustomForgotMyPasswordText(value *string)() {
     if m != nil {
         m.customForgotMyPasswordText = value
     }
 }
-// SetCustomPrivacyAndCookiesText sets the customPrivacyAndCookiesText property value. 
+// SetCustomPrivacyAndCookiesText sets the customPrivacyAndCookiesText property value. A string to replace the default 'Privacy and Cookies' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
 func (m *OrganizationalBrandingProperties) SetCustomPrivacyAndCookiesText(value *string)() {
     if m != nil {
         m.customPrivacyAndCookiesText = value
     }
 }
-// SetCustomPrivacyAndCookiesUrl sets the customPrivacyAndCookiesUrl property value. 
+// SetCustomPrivacyAndCookiesUrl sets the customPrivacyAndCookiesUrl property value. A custom URL to replace the default URL of the 'Privacy and Cookies' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
 func (m *OrganizationalBrandingProperties) SetCustomPrivacyAndCookiesUrl(value *string)() {
     if m != nil {
         m.customPrivacyAndCookiesUrl = value
     }
 }
-// SetCustomResetItNowText sets the customResetItNowText property value. 
+// SetCustomResetItNowText sets the customResetItNowText property value. A string to replace the default 'reset it now' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. DO NOT USE: Customization of the 'reset it now' hyperlink text is currently not supported.
 func (m *OrganizationalBrandingProperties) SetCustomResetItNowText(value *string)() {
     if m != nil {
         m.customResetItNowText = value
     }
 }
-// SetCustomTermsOfUseText sets the customTermsOfUseText property value. 
+// SetCustomTermsOfUseText sets the customTermsOfUseText property value. A string to replace the the default 'Terms of Use' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
 func (m *OrganizationalBrandingProperties) SetCustomTermsOfUseText(value *string)() {
     if m != nil {
         m.customTermsOfUseText = value
     }
 }
-// SetCustomTermsOfUseUrl sets the customTermsOfUseUrl property value. 
+// SetCustomTermsOfUseUrl sets the customTermsOfUseUrl property value. A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
 func (m *OrganizationalBrandingProperties) SetCustomTermsOfUseUrl(value *string)() {
     if m != nil {
         m.customTermsOfUseUrl = value
     }
 }
-// SetFavicon sets the favicon property value. 
+// SetFavicon sets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 func (m *OrganizationalBrandingProperties) SetFavicon(value []byte)() {
     if m != nil {
         m.favicon = value
     }
 }
-// SetFaviconRelativeUrl sets the faviconRelativeUrl property value. 
+// SetFaviconRelativeUrl sets the faviconRelativeUrl property value. A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
 func (m *OrganizationalBrandingProperties) SetFaviconRelativeUrl(value *string)() {
     if m != nil {
         m.faviconRelativeUrl = value
     }
 }
-// SetHeaderBackgroundColor sets the headerBackgroundColor property value. 
+// SetHeaderBackgroundColor sets the headerBackgroundColor property value. The RGB color to apply to customize the color of the header.
 func (m *OrganizationalBrandingProperties) SetHeaderBackgroundColor(value *string)() {
     if m != nil {
         m.headerBackgroundColor = value
     }
 }
-// SetLoginPageTextVisibilitySettings sets the loginPageTextVisibilitySettings property value. 
+// SetLoginPageTextVisibilitySettings sets the loginPageTextVisibilitySettings property value. Represents the various texts that can be hidden on the login page for a tenant.
 func (m *OrganizationalBrandingProperties) SetLoginPageTextVisibilitySettings(value *LoginPageTextVisibilitySettings)() {
     if m != nil {
         m.loginPageTextVisibilitySettings = value

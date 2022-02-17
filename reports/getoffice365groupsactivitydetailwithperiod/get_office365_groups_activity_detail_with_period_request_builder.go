@@ -3,6 +3,7 @@ package getoffice365groupsactivitydetailwithperiod
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
 // GetOffice365GroupsActivityDetailWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365GroupsActivityDetail(period='{period}')
@@ -63,18 +64,18 @@ func (m *GetOffice365GroupsActivityDetailWithPeriodRequestBuilder) CreateGetRequ
     return requestInfo, nil
 }
 // Get invoke function getOffice365GroupsActivityDetail
-func (m *GetOffice365GroupsActivityDetailWithPeriodRequestBuilder) Get(options *GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetOptions)([]GetOffice365GroupsActivityDetailWithPeriod, error) {
+func (m *GetOffice365GroupsActivityDetailWithPeriodRequestBuilder) Get(options *GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetOptions)([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365GroupsActivityDetail, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetOffice365GroupsActivityDetailWithPeriod() }, nil)
+    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewOffice365GroupsActivityDetail() }, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetOffice365GroupsActivityDetailWithPeriod, len(res))
+    val := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365GroupsActivityDetail, len(res))
     for i, v := range res {
-        val[i] = *(v.(*GetOffice365GroupsActivityDetailWithPeriod))
+        val[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Office365GroupsActivityDetail))
     }
     return val, nil
 }

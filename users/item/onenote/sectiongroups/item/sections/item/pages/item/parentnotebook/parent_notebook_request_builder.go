@@ -5,10 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i0c7cdad38e9fac16d11fcc01f3f37d2188fb0f4ed82b006259241411d71d7720 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onenote/sectiongroups/item/sections/item/pages/item/parentnotebook/copynotebook"
-    i54bac68a52dad3f25430f1a8af37ced1cfff7fe59d1534417a1b28a876f8c1d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onenote/sectiongroups/item/sections/item/pages/item/parentnotebook/sectiongroups"
-    ia7c2d355d43dbb74851d7c90a1274c93d7e51dea8d69ba6d0048914d48bda3e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onenote/sectiongroups/item/sections/item/pages/item/parentnotebook/sections"
-    i30ba7b291bd7357d5cedc15d45b20381f086e6469b8b5b0a206d8501cca167eb "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onenote/sectiongroups/item/sections/item/pages/item/parentnotebook/sectiongroups/item"
-    i950d1157aee11508646f1ec75cf21f97f05b16a35d6aa8be2d18bec63a07ff90 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onenote/sectiongroups/item/sections/item/pages/item/parentnotebook/sections/item"
+    id5a318e713d876ec98fa63b5f95ff2d3ffa6de95b1419787a307d9428e642610 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/onenote/sectiongroups/item/sections/item/pages/item/parentnotebook/ref"
 )
 
 // ParentNotebookRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}\pages\{onenotePage-id}\parentNotebook
@@ -19,15 +16,6 @@ type ParentNotebookRequestBuilder struct {
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
-}
-// ParentNotebookRequestBuilderDeleteOptions options for Delete
-type ParentNotebookRequestBuilderDeleteOptions struct {
-    // Request headers
-    H map[string]string;
-    // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // ParentNotebookRequestBuilderGetOptions options for Get
 type ParentNotebookRequestBuilderGetOptions struct {
@@ -46,17 +34,6 @@ type ParentNotebookRequestBuilderGetQueryParameters struct {
     Expand []string;
     // Select properties to be returned
     Select []string;
-}
-// ParentNotebookRequestBuilderPatchOptions options for Patch
-type ParentNotebookRequestBuilderPatchOptions struct {
-    // 
-    Body *i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Notebook;
-    // Request headers
-    H map[string]string;
-    // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewParentNotebookRequestBuilderInternal instantiates a new ParentNotebookRequestBuilder and sets the default values.
 func NewParentNotebookRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentNotebookRequestBuilder) {
@@ -80,23 +57,6 @@ func NewParentNotebookRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
 func (m *ParentNotebookRequestBuilder) CopyNotebook()(*i0c7cdad38e9fac16d11fcc01f3f37d2188fb0f4ed82b006259241411d71d7720.CopyNotebookRequestBuilder) {
     return i0c7cdad38e9fac16d11fcc01f3f37d2188fb0f4ed82b006259241411d71d7720.NewCopyNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation the notebook that contains the page.  Read-only.
-func (m *ParentNotebookRequestBuilder) CreateDeleteRequestInformation(options *ParentNotebookRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
-    }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
-        if err != nil {
-            return nil, err
-        }
-    }
-    return requestInfo, nil
-}
 // CreateGetRequestInformation the notebook that contains the page.  Read-only.
 func (m *ParentNotebookRequestBuilder) CreateGetRequestInformation(options *ParentNotebookRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
@@ -117,85 +77,18 @@ func (m *ParentNotebookRequestBuilder) CreateGetRequestInformation(options *Pare
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the notebook that contains the page.  Read-only.
-func (m *ParentNotebookRequestBuilder) CreatePatchRequestInformation(options *ParentNotebookRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
-    }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
-        if err != nil {
-            return nil, err
-        }
-    }
-    return requestInfo, nil
-}
-// Delete the notebook that contains the page.  Read-only.
-func (m *ParentNotebookRequestBuilder) Delete(options *ParentNotebookRequestBuilderDeleteOptions)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformation(options);
-    if err != nil {
-        return err
-    }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
-    if err != nil {
-        return err
-    }
-    return nil
-}
 // Get the notebook that contains the page.  Read-only.
 func (m *ParentNotebookRequestBuilder) Get(options *ParentNotebookRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Notebook, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewNotebook() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewNotebook() }, nil, nil)
     if err != nil {
         return nil, err
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Notebook), nil
 }
-// Patch the notebook that contains the page.  Read-only.
-func (m *ParentNotebookRequestBuilder) Patch(options *ParentNotebookRequestBuilderPatchOptions)(error) {
-    requestInfo, err := m.CreatePatchRequestInformation(options);
-    if err != nil {
-        return err
-    }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
-    if err != nil {
-        return err
-    }
-    return nil
-}
-func (m *ParentNotebookRequestBuilder) SectionGroups()(*i54bac68a52dad3f25430f1a8af37ced1cfff7fe59d1534417a1b28a876f8c1d7.SectionGroupsRequestBuilder) {
-    return i54bac68a52dad3f25430f1a8af37ced1cfff7fe59d1534417a1b28a876f8c1d7.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SectionGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.onenote.sectionGroups.item.sections.item.pages.item.parentNotebook.sectionGroups.item collection
-func (m *ParentNotebookRequestBuilder) SectionGroupsById(id string)(*i30ba7b291bd7357d5cedc15d45b20381f086e6469b8b5b0a206d8501cca167eb.SectionGroupRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["sectionGroup_id1"] = id
-    }
-    return i30ba7b291bd7357d5cedc15d45b20381f086e6469b8b5b0a206d8501cca167eb.NewSectionGroupRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-func (m *ParentNotebookRequestBuilder) Sections()(*ia7c2d355d43dbb74851d7c90a1274c93d7e51dea8d69ba6d0048914d48bda3e9.SectionsRequestBuilder) {
-    return ia7c2d355d43dbb74851d7c90a1274c93d7e51dea8d69ba6d0048914d48bda3e9.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// SectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.onenote.sectionGroups.item.sections.item.pages.item.parentNotebook.sections.item collection
-func (m *ParentNotebookRequestBuilder) SectionsById(id string)(*i950d1157aee11508646f1ec75cf21f97f05b16a35d6aa8be2d18bec63a07ff90.OnenoteSectionRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenoteSection_id1"] = id
-    }
-    return i950d1157aee11508646f1ec75cf21f97f05b16a35d6aa8be2d18bec63a07ff90.NewOnenoteSectionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+func (m *ParentNotebookRequestBuilder) Ref()(*id5a318e713d876ec98fa63b5f95ff2d3ffa6de95b1419787a307d9428e642610.RefRequestBuilder) {
+    return id5a318e713d876ec98fa63b5f95ff2d3ffa6de95b1419787a307d9428e642610.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

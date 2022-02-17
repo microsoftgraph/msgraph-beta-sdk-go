@@ -35,7 +35,7 @@ type CloudPcSnapshotRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// CloudPcSnapshotRequestBuilderGetQueryParameters get snapshots from deviceManagement
+// CloudPcSnapshotRequestBuilderGetQueryParameters cloud PC snapshots.
 type CloudPcSnapshotRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewCloudPcSnapshotRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcSnapshotRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property snapshots for deviceManagement
+// CreateDeleteRequestInformation cloud PC snapshots.
 func (m *CloudPcSnapshotRequestBuilder) CreateDeleteRequestInformation(options *CloudPcSnapshotRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *CloudPcSnapshotRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get snapshots from deviceManagement
+// CreateGetRequestInformation cloud PC snapshots.
 func (m *CloudPcSnapshotRequestBuilder) CreateGetRequestInformation(options *CloudPcSnapshotRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *CloudPcSnapshotRequestBuilder) CreateGetRequestInformation(options *Clo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property snapshots in deviceManagement
+// CreatePatchRequestInformation cloud PC snapshots.
 func (m *CloudPcSnapshotRequestBuilder) CreatePatchRequestInformation(options *CloudPcSnapshotRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,37 +127,37 @@ func (m *CloudPcSnapshotRequestBuilder) CreatePatchRequestInformation(options *C
     }
     return requestInfo, nil
 }
-// Delete delete navigation property snapshots for deviceManagement
+// Delete cloud PC snapshots.
 func (m *CloudPcSnapshotRequestBuilder) Delete(options *CloudPcSnapshotRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
     return nil
 }
-// Get get snapshots from deviceManagement
+// Get cloud PC snapshots.
 func (m *CloudPcSnapshotRequestBuilder) Get(options *CloudPcSnapshotRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcSnapshot, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCloudPcSnapshot() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewCloudPcSnapshot() }, nil, nil)
     if err != nil {
         return nil, err
     }
     return res.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.CloudPcSnapshot), nil
 }
-// Patch update the navigation property snapshots in deviceManagement
+// Patch cloud PC snapshots.
 func (m *CloudPcSnapshotRequestBuilder) Patch(options *CloudPcSnapshotRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

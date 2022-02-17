@@ -3,6 +3,7 @@ package getmailtips
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
 )
 
 // GetMailTipsRequestBuilder builds and executes requests for operations under \me\microsoft.graph.getMailTips
@@ -63,18 +64,18 @@ func (m *GetMailTipsRequestBuilder) CreatePostRequestInformation(options *GetMai
     return requestInfo, nil
 }
 // Post invoke action getMailTips
-func (m *GetMailTipsRequestBuilder) Post(options *GetMailTipsRequestBuilderPostOptions)([]GetMailTips, error) {
+func (m *GetMailTipsRequestBuilder) Post(options *GetMailTipsRequestBuilderPostOptions)([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MailTips, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewGetMailTips() }, nil)
+    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.NewMailTips() }, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]GetMailTips, len(res))
+    val := make([]i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MailTips, len(res))
     for i, v := range res {
-        val[i] = *(v.(*GetMailTips))
+        val[i] = *(v.(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.MailTips))
     }
     return val, nil
 }

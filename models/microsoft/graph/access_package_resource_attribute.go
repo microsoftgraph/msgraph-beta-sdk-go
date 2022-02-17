@@ -8,13 +8,13 @@ import (
 type AccessPackageResourceAttribute struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Information about how to set the attribute.
+    // Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.
     attributeDestination *AccessPackageResourceAttributeDestination;
-    // The name of the attribute in the end system.
+    // The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
     attributeName *string;
-    // Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled.
+    // Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.
     attributeSource *AccessPackageResourceAttributeSource;
-    // Unique identifier for the attribute.
+    // Unique identifier for the attribute on the access package resource. Read-only.
     id *string;
     // Specifies whether or not an existing attribute value can be edited by the requester.
     isEditable *bool;
@@ -36,7 +36,7 @@ func (m *AccessPackageResourceAttribute) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetAttributeDestination gets the attributeDestination property value. Information about how to set the attribute.
+// GetAttributeDestination gets the attributeDestination property value. Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.
 func (m *AccessPackageResourceAttribute) GetAttributeDestination()(*AccessPackageResourceAttributeDestination) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *AccessPackageResourceAttribute) GetAttributeDestination()(*AccessPackag
         return m.attributeDestination
     }
 }
-// GetAttributeName gets the attributeName property value. The name of the attribute in the end system.
+// GetAttributeName gets the attributeName property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
 func (m *AccessPackageResourceAttribute) GetAttributeName()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *AccessPackageResourceAttribute) GetAttributeName()(*string) {
         return m.attributeName
     }
 }
-// GetAttributeSource gets the attributeSource property value. Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled.
+// GetAttributeSource gets the attributeSource property value. Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.
 func (m *AccessPackageResourceAttribute) GetAttributeSource()(*AccessPackageResourceAttributeSource) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *AccessPackageResourceAttribute) GetAttributeSource()(*AccessPackageReso
         return m.attributeSource
     }
 }
-// GetId gets the id property value. Unique identifier for the attribute.
+// GetId gets the id property value. Unique identifier for the attribute on the access package resource. Read-only.
 func (m *AccessPackageResourceAttribute) GetId()(*string) {
     if m == nil {
         return nil
@@ -204,25 +204,25 @@ func (m *AccessPackageResourceAttribute) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetAttributeDestination sets the attributeDestination property value. Information about how to set the attribute.
+// SetAttributeDestination sets the attributeDestination property value. Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.
 func (m *AccessPackageResourceAttribute) SetAttributeDestination(value *AccessPackageResourceAttributeDestination)() {
     if m != nil {
         m.attributeDestination = value
     }
 }
-// SetAttributeName sets the attributeName property value. The name of the attribute in the end system.
+// SetAttributeName sets the attributeName property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
 func (m *AccessPackageResourceAttribute) SetAttributeName(value *string)() {
     if m != nil {
         m.attributeName = value
     }
 }
-// SetAttributeSource sets the attributeSource property value. Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled.
+// SetAttributeSource sets the attributeSource property value. Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.
 func (m *AccessPackageResourceAttribute) SetAttributeSource(value *AccessPackageResourceAttributeSource)() {
     if m != nil {
         m.attributeSource = value
     }
 }
-// SetId sets the id property value. Unique identifier for the attribute.
+// SetId sets the id property value. Unique identifier for the attribute on the access package resource. Read-only.
 func (m *AccessPackageResourceAttribute) SetId(value *string)() {
     if m != nil {
         m.id = value
