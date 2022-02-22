@@ -10,10 +10,11 @@ const (
     SIGNIN_ACTIVITYTYPE ActivityType = iota
     USER_ACTIVITYTYPE
     UNKNOWNFUTUREVALUE_ACTIVITYTYPE
+    SERVICEPRINCIPAL_ACTIVITYTYPE
 )
 
 func (i ActivityType) String() string {
-    return []string{"SIGNIN", "USER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"SIGNIN", "USER", "UNKNOWNFUTUREVALUE", "SERVICEPRINCIPAL"}[i]
 }
 func ParseActivityType(v string) (interface{}, error) {
     result := SIGNIN_ACTIVITYTYPE
@@ -24,6 +25,8 @@ func ParseActivityType(v string) (interface{}, error) {
             result = USER_ACTIVITYTYPE
         case "UNKNOWNFUTUREVALUE":
             result = UNKNOWNFUTUREVALUE_ACTIVITYTYPE
+        case "SERVICEPRINCIPAL":
+            result = SERVICEPRINCIPAL_ACTIVITYTYPE
         default:
             return 0, errors.New("Unknown ActivityType value: " + v)
     }

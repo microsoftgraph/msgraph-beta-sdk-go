@@ -28,6 +28,8 @@ type PolicyRoot struct {
     claimsMappingPolicies []ClaimsMappingPolicy;
     // The custom rules that define an access scenario.
     conditionalAccessPolicies []ConditionalAccessPolicy;
+    // The custom rules that define an access scenario when interacting with external Azure AD tenants.
+    crossTenantAccessPolicy *CrossTenantAccessPolicy;
     // The tenant-wide policy that enforces app management restrictions for all applications and service principals.
     defaultAppManagementPolicy *TenantAppManagementPolicy;
     // 
@@ -150,6 +152,14 @@ func (m *PolicyRoot) GetConditionalAccessPolicies()([]ConditionalAccessPolicy) {
         return nil
     } else {
         return m.conditionalAccessPolicies
+    }
+}
+// GetCrossTenantAccessPolicy gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
+func (m *PolicyRoot) GetCrossTenantAccessPolicy()(*CrossTenantAccessPolicy) {
+    if m == nil {
+        return nil
+    } else {
+        return m.crossTenantAccessPolicy
     }
 }
 // GetDefaultAppManagementPolicy gets the defaultAppManagementPolicy property value. The tenant-wide policy that enforces app management restrictions for all applications and service principals.
@@ -384,6 +394,16 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
                 res[i] = *(v.(*ConditionalAccessPolicy))
             }
             m.SetConditionalAccessPolicies(res)
+        }
+        return nil
+    }
+    res["crossTenantAccessPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewCrossTenantAccessPolicy() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCrossTenantAccessPolicy(val.(*CrossTenantAccessPolicy))
         }
         return nil
     }
@@ -660,6 +680,12 @@ func (m *PolicyRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
+        err := writer.WriteObjectValue("crossTenantAccessPolicy", m.GetCrossTenantAccessPolicy())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("defaultAppManagementPolicy", m.GetDefaultAppManagementPolicy())
         if err != nil {
             return err
@@ -865,6 +891,12 @@ func (m *PolicyRoot) SetClaimsMappingPolicies(value []ClaimsMappingPolicy)() {
 func (m *PolicyRoot) SetConditionalAccessPolicies(value []ConditionalAccessPolicy)() {
     if m != nil {
         m.conditionalAccessPolicies = value
+    }
+}
+// SetCrossTenantAccessPolicy sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
+func (m *PolicyRoot) SetCrossTenantAccessPolicy(value *CrossTenantAccessPolicy)() {
+    if m != nil {
+        m.crossTenantAccessPolicy = value
     }
 }
 // SetDefaultAppManagementPolicy sets the defaultAppManagementPolicy property value. The tenant-wide policy that enforces app management restrictions for all applications and service principals.

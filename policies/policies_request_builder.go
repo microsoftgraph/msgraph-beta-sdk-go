@@ -25,6 +25,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     idf9e8b9f9da041893e6b6cb24dd45425a8696e3da093aef925b748ba4b81e936 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/authorizationpolicy"
     iea55f9833b3f70a27d04fdb2fbb1fdc5b35798960f8ea227ae35055ce1b36486 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/homerealmdiscoverypolicies"
+    if3614f47055e200240fcbfc6301166529ebd3a0ae749e2a305e4126a286e6c20 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/crosstenantaccesspolicy"
     ife15f5c3e6b78fb8bf35531d4fa132e7caa227e970656877474d6ac270ea6da2 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/mobileappmanagementpolicies"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i1e97552013b3bffa16b2d23c422d3b88e120ef118f30ef817760eb98fdf1c32e "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/tokenlifetimepolicies/item"
@@ -223,6 +224,9 @@ func (m *PoliciesRequestBuilder) CreatePatchRequestInformation(options *Policies
         }
     }
     return requestInfo, nil
+}
+func (m *PoliciesRequestBuilder) CrossTenantAccessPolicy()(*if3614f47055e200240fcbfc6301166529ebd3a0ae749e2a305e4126a286e6c20.CrossTenantAccessPolicyRequestBuilder) {
+    return if3614f47055e200240fcbfc6301166529ebd3a0ae749e2a305e4126a286e6c20.NewCrossTenantAccessPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *PoliciesRequestBuilder) DefaultAppManagementPolicy()(*ia66b26489abda0f16a4552e41f842faa0920a32a210488eb7684d2c0a3ac678e.DefaultAppManagementPolicyRequestBuilder) {
     return ia66b26489abda0f16a4552e41f842faa0920a32a210488eb7684d2c0a3ac678e.NewDefaultAppManagementPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
