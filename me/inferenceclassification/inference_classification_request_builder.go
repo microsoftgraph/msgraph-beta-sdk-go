@@ -155,7 +155,7 @@ func (m *InferenceClassificationRequestBuilder) Overrides()(*i2c60e27ae546ae226d
     return i2c60e27ae546ae226d294ac99befec64a9875faa55c5c7570a2c93e23d490e8e.NewOverridesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OverridesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.inferenceClassification.overrides.item collection
-func (m *InferenceClassificationRequestBuilder) OverridesById(id string)(*ibbe1ae72551dc1926f500a6e9c2d3585e5af3ad526f4193e15968f7cf4c8a7d6.InferenceClassificationOverrideRequestBuilder) {
+func (m *InferenceClassificationRequestBuilder) OverridesById(id string)(*ibbe1ae72551dc1926f500a6e9c2d3585e5af3ad526f4193e15968f7cf4c8a7d6.InferenceClassificationOverrideItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -163,7 +163,7 @@ func (m *InferenceClassificationRequestBuilder) OverridesById(id string)(*ibbe1a
     if id != "" {
         urlTplParams["inferenceClassificationOverride_id"] = id
     }
-    return ibbe1ae72551dc1926f500a6e9c2d3585e5af3ad526f4193e15968f7cf4c8a7d6.NewInferenceClassificationOverrideRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ibbe1ae72551dc1926f500a6e9c2d3585e5af3ad526f4193e15968f7cf4c8a7d6.NewInferenceClassificationOverrideItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 func (m *InferenceClassificationRequestBuilder) Patch(options *InferenceClassificationRequestBuilderPatchOptions)(error) {

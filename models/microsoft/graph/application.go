@@ -90,6 +90,8 @@ type Application struct {
     verifiedPublisher *VerifiedPublisher;
     // Specifies settings for a web application.
     web *WebApplication;
+    // Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
+    windows *WindowsApplication;
 }
 // NewApplication instantiates a new application and sets the default values.
 func NewApplication()(*Application) {
@@ -424,6 +426,14 @@ func (m *Application) GetWeb()(*WebApplication) {
         return nil
     } else {
         return m.web
+    }
+}
+// GetWindows gets the windows property value. Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
+func (m *Application) GetWindows()(*WindowsApplication) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windows
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -891,6 +901,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         }
         return nil
     }
+    res["windows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWindowsApplication() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindows(val.(*WindowsApplication))
+        }
+        return nil
+    }
     return res
 }
 func (m *Application) IsNil()(bool) {
@@ -1203,6 +1223,12 @@ func (m *Application) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("windows", m.GetWindows())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetApi sets the api property value. Specifies settings for an application that implements a web API.
@@ -1449,5 +1475,11 @@ func (m *Application) SetVerifiedPublisher(value *VerifiedPublisher)() {
 func (m *Application) SetWeb(value *WebApplication)() {
     if m != nil {
         m.web = value
+    }
+}
+// SetWindows sets the windows property value. Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
+func (m *Application) SetWindows(value *WindowsApplication)() {
+    if m != nil {
+        m.windows = value
     }
 }

@@ -61,7 +61,7 @@ func NewRefRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a401
     urlParams["request-raw-url"] = rawUrl
     return NewRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// CreateDeleteRequestInformation contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *RefRequestBuilder) CreateDeleteRequestInformation(options *RefRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -78,7 +78,7 @@ func (m *RefRequestBuilder) CreateDeleteRequestInformation(options *RefRequestBu
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// CreateGetRequestInformation contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *RefRequestBuilder) CreateGetRequestInformation(options *RefRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *RefRequestBuilder) CreateGetRequestInformation(options *RefRequestBuild
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformation contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// CreatePutRequestInformation contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *RefRequestBuilder) CreatePutRequestInformation(options *RefRequestBuilderPutOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *RefRequestBuilder) CreatePutRequestInformation(options *RefRequestBuild
     }
     return requestInfo, nil
 }
-// Delete contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// Delete contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *RefRequestBuilder) Delete(options *RefRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *RefRequestBuilder) Delete(options *RefRequestBuilderDeleteOptions)(erro
     }
     return nil
 }
-// Get contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// Get contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *RefRequestBuilder) Get(options *RefRequestBuilderGetOptions)(*string, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,7 +137,7 @@ func (m *RefRequestBuilder) Get(options *RefRequestBuilderGetOptions)(*string, e
     }
     return res.(*string), nil
 }
-// Put contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// Put contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *RefRequestBuilder) Put(options *RefRequestBuilderPutOptions)(error) {
     requestInfo, err := m.CreatePutRequestInformation(options);
     if err != nil {

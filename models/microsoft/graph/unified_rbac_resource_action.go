@@ -7,15 +7,15 @@ import (
 // UnifiedRbacResourceAction 
 type UnifiedRbacResourceAction struct {
     Entity
-    // 
+    // HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
     actionVerb *string;
-    // 
+    // Description for the action. Supports $filter (eq).
     description *string;
-    // 
+    // Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
     name *string;
     // 
     resourceScope *UnifiedRbacResourceScope;
-    // 
+    // Not implemented.
     resourceScopeId *string;
 }
 // NewUnifiedRbacResourceAction instantiates a new unifiedRbacResourceAction and sets the default values.
@@ -25,7 +25,7 @@ func NewUnifiedRbacResourceAction()(*UnifiedRbacResourceAction) {
     }
     return m
 }
-// GetActionVerb gets the actionVerb property value. 
+// GetActionVerb gets the actionVerb property value. HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
 func (m *UnifiedRbacResourceAction) GetActionVerb()(*string) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *UnifiedRbacResourceAction) GetActionVerb()(*string) {
         return m.actionVerb
     }
 }
-// GetDescription gets the description property value. 
+// GetDescription gets the description property value. Description for the action. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *UnifiedRbacResourceAction) GetDescription()(*string) {
         return m.description
     }
 }
-// GetName gets the name property value. 
+// GetName gets the name property value. Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) GetName()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *UnifiedRbacResourceAction) GetResourceScope()(*UnifiedRbacResourceScope
         return m.resourceScope
     }
 }
-// GetResourceScopeId gets the resourceScopeId property value. 
+// GetResourceScopeId gets the resourceScopeId property value. Not implemented.
 func (m *UnifiedRbacResourceAction) GetResourceScopeId()(*string) {
     if m == nil {
         return nil
@@ -161,19 +161,19 @@ func (m *UnifiedRbacResourceAction) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// SetActionVerb sets the actionVerb property value. 
+// SetActionVerb sets the actionVerb property value. HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
 func (m *UnifiedRbacResourceAction) SetActionVerb(value *string)() {
     if m != nil {
         m.actionVerb = value
     }
 }
-// SetDescription sets the description property value. 
+// SetDescription sets the description property value. Description for the action. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) SetDescription(value *string)() {
     if m != nil {
         m.description = value
     }
 }
-// SetName sets the name property value. 
+// SetName sets the name property value. Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
 func (m *UnifiedRbacResourceAction) SetName(value *string)() {
     if m != nil {
         m.name = value
@@ -185,7 +185,7 @@ func (m *UnifiedRbacResourceAction) SetResourceScope(value *UnifiedRbacResourceS
         m.resourceScope = value
     }
 }
-// SetResourceScopeId sets the resourceScopeId property value. 
+// SetResourceScopeId sets the resourceScopeId property value. Not implemented.
 func (m *UnifiedRbacResourceAction) SetResourceScopeId(value *string)() {
     if m != nil {
         m.resourceScopeId = value

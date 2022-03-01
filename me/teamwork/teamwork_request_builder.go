@@ -158,7 +158,7 @@ func (m *TeamworkRequestBuilder) InstalledApps()(*i5352384a816a8116471b29a72d69f
     return i5352384a816a8116471b29a72d69ff38c387d8edbbac8d15cc0e43ef5d88cb0e.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // InstalledAppsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.teamwork.installedApps.item collection
-func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*i2f8fc19d0ffa378974d134d26c9bd4ed6b3083770f50add7d052132db4ad8e8b.UserScopeTeamsAppInstallationRequestBuilder) {
+func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*i2f8fc19d0ffa378974d134d26c9bd4ed6b3083770f50add7d052132db4ad8e8b.UserScopeTeamsAppInstallationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -166,7 +166,7 @@ func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*i2f8fc19d0ffa3789
     if id != "" {
         urlTplParams["userScopeTeamsAppInstallation_id"] = id
     }
-    return i2f8fc19d0ffa378974d134d26c9bd4ed6b3083770f50add7d052132db4ad8e8b.NewUserScopeTeamsAppInstallationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i2f8fc19d0ffa378974d134d26c9bd4ed6b3083770f50add7d052132db4ad8e8b.NewUserScopeTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch a container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *TeamworkRequestBuilder) Patch(options *TeamworkRequestBuilderPatchOptions)(error) {

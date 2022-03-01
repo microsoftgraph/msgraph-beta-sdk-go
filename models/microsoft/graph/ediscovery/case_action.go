@@ -15,10 +15,11 @@ const (
     ADDTOREVIEWSET_CASEACTION
     HOLDUPDATE_CASEACTION
     UNKNOWNFUTUREVALUE_CASEACTION
+    PURGEDATA_CASEACTION
 )
 
 func (i CaseAction) String() string {
-    return []string{"CONTENTEXPORT", "APPLYTAGS", "CONVERTTOPDF", "INDEX", "ESTIMATESTATISTICS", "ADDTOREVIEWSET", "HOLDUPDATE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"CONTENTEXPORT", "APPLYTAGS", "CONVERTTOPDF", "INDEX", "ESTIMATESTATISTICS", "ADDTOREVIEWSET", "HOLDUPDATE", "UNKNOWNFUTUREVALUE", "PURGEDATA"}[i]
 }
 func ParseCaseAction(v string) (interface{}, error) {
     result := CONTENTEXPORT_CASEACTION
@@ -39,6 +40,8 @@ func ParseCaseAction(v string) (interface{}, error) {
             result = HOLDUPDATE_CASEACTION
         case "UNKNOWNFUTUREVALUE":
             result = UNKNOWNFUTUREVALUE_CASEACTION
+        case "PURGEDATA":
+            result = PURGEDATA_CASEACTION
         default:
             return 0, errors.New("Unknown CaseAction value: " + v)
     }

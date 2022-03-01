@@ -55,7 +55,7 @@ func (m *SearchRequestBuilder) Acronyms()(*ib721af151194f36463bd473df1277a526735
     return ib721af151194f36463bd473df1277a52673500924a4562283e137a3f7ed94072.NewAcronymsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AcronymsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.acronyms.item collection
-func (m *SearchRequestBuilder) AcronymsById(id string)(*i74358e4db7f904e8f49fdcb30f91642f6639093ec5390b7ca96d2a396083031d.AcronymRequestBuilder) {
+func (m *SearchRequestBuilder) AcronymsById(id string)(*i74358e4db7f904e8f49fdcb30f91642f6639093ec5390b7ca96d2a396083031d.AcronymItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,13 +63,13 @@ func (m *SearchRequestBuilder) AcronymsById(id string)(*i74358e4db7f904e8f49fdcb
     if id != "" {
         urlTplParams["acronym_id"] = id
     }
-    return i74358e4db7f904e8f49fdcb30f91642f6639093ec5390b7ca96d2a396083031d.NewAcronymRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i74358e4db7f904e8f49fdcb30f91642f6639093ec5390b7ca96d2a396083031d.NewAcronymItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *SearchRequestBuilder) Bookmarks()(*i98acee39b1010d46fe63cc02c3afafb76788d106b29f8cbe8718dc6507b1faa8.BookmarksRequestBuilder) {
     return i98acee39b1010d46fe63cc02c3afafb76788d106b29f8cbe8718dc6507b1faa8.NewBookmarksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BookmarksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.bookmarks.item collection
-func (m *SearchRequestBuilder) BookmarksById(id string)(*i8b7285689d9aced3e20dd7af58f5c67035f37b8fe34ead1766f01cc855dbb192.BookmarkRequestBuilder) {
+func (m *SearchRequestBuilder) BookmarksById(id string)(*i8b7285689d9aced3e20dd7af58f5c67035f37b8fe34ead1766f01cc855dbb192.BookmarkItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -77,7 +77,7 @@ func (m *SearchRequestBuilder) BookmarksById(id string)(*i8b7285689d9aced3e20dd7
     if id != "" {
         urlTplParams["bookmark_id"] = id
     }
-    return i8b7285689d9aced3e20dd7af58f5c67035f37b8fe34ead1766f01cc855dbb192.NewBookmarkRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i8b7285689d9aced3e20dd7af58f5c67035f37b8fe34ead1766f01cc855dbb192.NewBookmarkItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewSearchRequestBuilderInternal instantiates a new SearchRequestBuilder and sets the default values.
 func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SearchRequestBuilder) {
@@ -164,7 +164,7 @@ func (m *SearchRequestBuilder) Qnas()(*ia2bf4f3fe5831ab1e67fee5e544f828bb45264fc
     return ia2bf4f3fe5831ab1e67fee5e544f828bb45264fc9a4823e780f848a593eed31e.NewQnasRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // QnasById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.search.qnas.item collection
-func (m *SearchRequestBuilder) QnasById(id string)(*i5a7b1d161e5927fae4776d21687bd98261ca983357fb199581c959d3642cfc0c.QnaRequestBuilder) {
+func (m *SearchRequestBuilder) QnasById(id string)(*i5a7b1d161e5927fae4776d21687bd98261ca983357fb199581c959d3642cfc0c.QnaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -172,7 +172,7 @@ func (m *SearchRequestBuilder) QnasById(id string)(*i5a7b1d161e5927fae4776d21687
     if id != "" {
         urlTplParams["qna_id"] = id
     }
-    return i5a7b1d161e5927fae4776d21687bd98261ca983357fb199581c959d3642cfc0c.NewQnaRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i5a7b1d161e5927fae4776d21687bd98261ca983357fb199581c959d3642cfc0c.NewQnaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *SearchRequestBuilder) Query()(*i8bbfec18807af5d9aab08ad55e8f88a28fc74be92766b92e28c073d7011b7a09.QueryRequestBuilder) {
     return i8bbfec18807af5d9aab08ad55e8f88a28fc74be92766b92e28c073d7011b7a09.NewQueryRequestBuilderInternal(m.pathParameters, m.requestAdapter);

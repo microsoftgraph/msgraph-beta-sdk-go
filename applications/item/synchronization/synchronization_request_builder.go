@@ -164,7 +164,7 @@ func (m *SynchronizationRequestBuilder) Jobs()(*i24aca1a09e1a9371d3ed55ec89c2a9a
     return i24aca1a09e1a9371d3ed55ec89c2a9aa93cd22ef9b2809e21ef705ec431f9373.NewJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // JobsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.applications.item.synchronization.jobs.item collection
-func (m *SynchronizationRequestBuilder) JobsById(id string)(*ie696cb911da1ddd94a64281ef404310fd8f0821d842d07dc9443fb4922f0fed2.SynchronizationJobRequestBuilder) {
+func (m *SynchronizationRequestBuilder) JobsById(id string)(*ie696cb911da1ddd94a64281ef404310fd8f0821d842d07dc9443fb4922f0fed2.SynchronizationJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -172,7 +172,7 @@ func (m *SynchronizationRequestBuilder) JobsById(id string)(*ie696cb911da1ddd94a
     if id != "" {
         urlTplParams["synchronizationJob_id"] = id
     }
-    return ie696cb911da1ddd94a64281ef404310fd8f0821d842d07dc9443fb4922f0fed2.NewSynchronizationJobRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ie696cb911da1ddd94a64281ef404310fd8f0821d842d07dc9443fb4922f0fed2.NewSynchronizationJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property synchronization in applications
 func (m *SynchronizationRequestBuilder) Patch(options *SynchronizationRequestBuilderPatchOptions)(error) {
@@ -194,7 +194,7 @@ func (m *SynchronizationRequestBuilder) Templates()(*i11872257330c9dfde50ea9af96
     return i11872257330c9dfde50ea9af96d17c64c29f6df124435f8ebc6077cdc9a623f1.NewTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.applications.item.synchronization.templates.item collection
-func (m *SynchronizationRequestBuilder) TemplatesById(id string)(*i81be635c95f0b471e65265af6e757fe50614612e56f6d562a96c5a5bb6d49b5a.SynchronizationTemplateRequestBuilder) {
+func (m *SynchronizationRequestBuilder) TemplatesById(id string)(*i81be635c95f0b471e65265af6e757fe50614612e56f6d562a96c5a5bb6d49b5a.SynchronizationTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -202,5 +202,5 @@ func (m *SynchronizationRequestBuilder) TemplatesById(id string)(*i81be635c95f0b
     if id != "" {
         urlTplParams["synchronizationTemplate_id"] = id
     }
-    return i81be635c95f0b471e65265af6e757fe50614612e56f6d562a96c5a5bb6d49b5a.NewSynchronizationTemplateRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i81be635c95f0b471e65265af6e757fe50614612e56f6d562a96c5a5bb6d49b5a.NewSynchronizationTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

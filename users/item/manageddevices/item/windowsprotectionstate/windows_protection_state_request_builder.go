@@ -145,7 +145,7 @@ func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareState()(*i7d799ec9
     return i7d799ec9df3d5c404eec113574d92a36c40d1176d5ba37bb9bbf6115c32cfd4a.NewDetectedMalwareStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DetectedMalwareStateById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.managedDevices.item.windowsProtectionState.detectedMalwareState.item collection
-func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareStateById(id string)(*i7c28f247d1352ac8e9e8461bd9fb2ffbf0472cfcabfbfd3171c743b4b6ce4e64.WindowsDeviceMalwareStateRequestBuilder) {
+func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareStateById(id string)(*i7c28f247d1352ac8e9e8461bd9fb2ffbf0472cfcabfbfd3171c743b4b6ce4e64.WindowsDeviceMalwareStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -153,7 +153,7 @@ func (m *WindowsProtectionStateRequestBuilder) DetectedMalwareStateById(id strin
     if id != "" {
         urlTplParams["windowsDeviceMalwareState_id"] = id
     }
-    return i7c28f247d1352ac8e9e8461bd9fb2ffbf0472cfcabfbfd3171c743b4b6ce4e64.NewWindowsDeviceMalwareStateRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i7c28f247d1352ac8e9e8461bd9fb2ffbf0472cfcabfbfd3171c743b4b6ce4e64.NewWindowsDeviceMalwareStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the device protection status. This property is read-only.
 func (m *WindowsProtectionStateRequestBuilder) Get(options *WindowsProtectionStateRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.WindowsProtectionState, error) {

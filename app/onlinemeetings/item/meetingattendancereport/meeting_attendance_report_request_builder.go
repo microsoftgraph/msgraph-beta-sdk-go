@@ -59,7 +59,7 @@ func (m *MeetingAttendanceReportRequestBuilder) AttendanceRecords()(*i7fa4a4339d
     return i7fa4a4339dd2609f6a68917a4bcdf4b4020561fc670de0bd54fb6ca39b175e7d.NewAttendanceRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AttendanceRecordsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.onlineMeetings.item.meetingAttendanceReport.attendanceRecords.item collection
-func (m *MeetingAttendanceReportRequestBuilder) AttendanceRecordsById(id string)(*i005edab8317f285ab5777ccd7ce349dc43d63dcb6cfd9e559e846b13b89a46f8.AttendanceRecordRequestBuilder) {
+func (m *MeetingAttendanceReportRequestBuilder) AttendanceRecordsById(id string)(*i005edab8317f285ab5777ccd7ce349dc43d63dcb6cfd9e559e846b13b89a46f8.AttendanceRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func (m *MeetingAttendanceReportRequestBuilder) AttendanceRecordsById(id string)
     if id != "" {
         urlTplParams["attendanceRecord_id"] = id
     }
-    return i005edab8317f285ab5777ccd7ce349dc43d63dcb6cfd9e559e846b13b89a46f8.NewAttendanceRecordRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i005edab8317f285ab5777ccd7ce349dc43d63dcb6cfd9e559e846b13b89a46f8.NewAttendanceRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewMeetingAttendanceReportRequestBuilderInternal instantiates a new MeetingAttendanceReportRequestBuilder and sets the default values.
 func NewMeetingAttendanceReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MeetingAttendanceReportRequestBuilder) {

@@ -119,7 +119,7 @@ func (m *BrandingRequestBuilder) Localizations()(*icb26067e77492c83cb4e87ec1e3f5
     return icb26067e77492c83cb4e87ec1e3f5164c5a2b6eccb9e23f4a03609a175e65c87.NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LocalizationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.branding.localizations.item collection
-func (m *BrandingRequestBuilder) LocalizationsById(id string)(*i71fbeabc44f0c477a20e1c3a1515ecf3df8929b67e5f5aeb33b83cf6335140ad.OrganizationalBrandingLocalizationRequestBuilder) {
+func (m *BrandingRequestBuilder) LocalizationsById(id string)(*i71fbeabc44f0c477a20e1c3a1515ecf3df8929b67e5f5aeb33b83cf6335140ad.OrganizationalBrandingLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -127,7 +127,7 @@ func (m *BrandingRequestBuilder) LocalizationsById(id string)(*i71fbeabc44f0c477
     if id != "" {
         urlTplParams["organizationalBrandingLocalization_id"] = id
     }
-    return i71fbeabc44f0c477a20e1c3a1515ecf3df8929b67e5f5aeb33b83cf6335140ad.NewOrganizationalBrandingLocalizationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i71fbeabc44f0c477a20e1c3a1515ecf3df8929b67e5f5aeb33b83cf6335140ad.NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update branding
 func (m *BrandingRequestBuilder) Patch(options *BrandingRequestBuilderPatchOptions)(error) {

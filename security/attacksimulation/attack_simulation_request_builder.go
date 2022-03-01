@@ -171,7 +171,7 @@ func (m *AttackSimulationRequestBuilder) SimulationAutomations()(*ie8a063a943fef
     return ie8a063a943fef4e082163058dd2e72338195ff1de79a742eb6b73521689f5884.NewSimulationAutomationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SimulationAutomationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.attackSimulation.simulationAutomations.item collection
-func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*ieb8d3f2d145f8b20bedef89bf1b341cbd6abe71dc63c7e852454de2baf05bb5a.SimulationAutomationRequestBuilder) {
+func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*ieb8d3f2d145f8b20bedef89bf1b341cbd6abe71dc63c7e852454de2baf05bb5a.SimulationAutomationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -179,13 +179,13 @@ func (m *AttackSimulationRequestBuilder) SimulationAutomationsById(id string)(*i
     if id != "" {
         urlTplParams["simulationAutomation_id"] = id
     }
-    return ieb8d3f2d145f8b20bedef89bf1b341cbd6abe71dc63c7e852454de2baf05bb5a.NewSimulationAutomationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ieb8d3f2d145f8b20bedef89bf1b341cbd6abe71dc63c7e852454de2baf05bb5a.NewSimulationAutomationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *AttackSimulationRequestBuilder) Simulations()(*i91ea136d6db7c9ecbe5c19aaf6f9924fa0ccbcf63930c3fadff4429c1bbff683.SimulationsRequestBuilder) {
     return i91ea136d6db7c9ecbe5c19aaf6f9924fa0ccbcf63930c3fadff4429c1bbff683.NewSimulationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SimulationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.attackSimulation.simulations.item collection
-func (m *AttackSimulationRequestBuilder) SimulationsById(id string)(*i50ec8564a3573ab218480a77da34dfd3ec06dcd6cc87f5f81ab4cc9acfcfd9d2.SimulationRequestBuilder) {
+func (m *AttackSimulationRequestBuilder) SimulationsById(id string)(*i50ec8564a3573ab218480a77da34dfd3ec06dcd6cc87f5f81ab4cc9acfcfd9d2.SimulationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,5 +193,5 @@ func (m *AttackSimulationRequestBuilder) SimulationsById(id string)(*i50ec8564a3
     if id != "" {
         urlTplParams["simulation_id"] = id
     }
-    return i50ec8564a3573ab218480a77da34dfd3ec06dcd6cc87f5f81ab4cc9acfcfd9d2.NewSimulationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i50ec8564a3573ab218480a77da34dfd3ec06dcd6cc87f5f81ab4cc9acfcfd9d2.NewSimulationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

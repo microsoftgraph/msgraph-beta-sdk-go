@@ -65,7 +65,7 @@ func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRoles()(*ib07
     return ib07995ec0b11e53178623c1812668e6fc839910262c25864d8dcf75042177c24.NewAccessPackageResourceRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AccessPackageResourceRolesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageCatalogs.item.accessPackages.item.accessPackageResourceRoleScopes.item.accessPackageResourceScope.accessPackageResource.accessPackageResourceRoles.item collection
-func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRolesById(id string)(*ie96ec33663d960eb53aeac79e821c6063da06d72faeca062bbe9e07e335a72be.AccessPackageResourceRoleRequestBuilder) {
+func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRolesById(id string)(*ie96ec33663d960eb53aeac79e821c6063da06d72faeca062bbe9e07e335a72be.AccessPackageResourceRoleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -73,13 +73,13 @@ func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceRolesById(id 
     if id != "" {
         urlTplParams["accessPackageResourceRole_id"] = id
     }
-    return ie96ec33663d960eb53aeac79e821c6063da06d72faeca062bbe9e07e335a72be.NewAccessPackageResourceRoleRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ie96ec33663d960eb53aeac79e821c6063da06d72faeca062bbe9e07e335a72be.NewAccessPackageResourceRoleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceScopes()(*i7e8b759a9d42819bcbf2ff1dc0ae8522e7c955c737a8ea788b0f9073a2ca042d.AccessPackageResourceScopesRequestBuilder) {
     return i7e8b759a9d42819bcbf2ff1dc0ae8522e7c955c737a8ea788b0f9073a2ca042d.NewAccessPackageResourceScopesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AccessPackageResourceScopesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.accessPackageCatalogs.item.accessPackages.item.accessPackageResourceRoleScopes.item.accessPackageResourceScope.accessPackageResource.accessPackageResourceScopes.item collection
-func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceScopesById(id string)(*i303f6dd296d7f37a0806817eae25d6d3406d15dcef9c4f7504a4e126fcd922d5.AccessPackageResourceScopeRequestBuilder) {
+func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceScopesById(id string)(*i303f6dd296d7f37a0806817eae25d6d3406d15dcef9c4f7504a4e126fcd922d5.AccessPackageResourceScopeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -87,7 +87,7 @@ func (m *AccessPackageResourceRequestBuilder) AccessPackageResourceScopesById(id
     if id != "" {
         urlTplParams["accessPackageResourceScope_id"] = id
     }
-    return i303f6dd296d7f37a0806817eae25d6d3406d15dcef9c4f7504a4e126fcd922d5.NewAccessPackageResourceScopeRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i303f6dd296d7f37a0806817eae25d6d3406d15dcef9c4f7504a4e126fcd922d5.NewAccessPackageResourceScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewAccessPackageResourceRequestBuilderInternal instantiates a new AccessPackageResourceRequestBuilder and sets the default values.
 func NewAccessPackageResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageResourceRequestBuilder) {

@@ -57,7 +57,7 @@ func (m *CommunicationsRequestBuilder) CallRecords()(*i965da9a625d444ee0641f25e2
     return i965da9a625d444ee0641f25e2137e02bba50edc4392b22f2fa73778ab7bced1e.NewCallRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CallRecordsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.callRecords.item collection
-func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*i91e038aa5292a643921ca895687d88f65d881c089abb4e73353e157fb12a2573.CallRecordRequestBuilder) {
+func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*i91e038aa5292a643921ca895687d88f65d881c089abb4e73353e157fb12a2573.CallRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -65,13 +65,13 @@ func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*i91e038aa5292
     if id != "" {
         urlTplParams["callRecord_id"] = id
     }
-    return i91e038aa5292a643921ca895687d88f65d881c089abb4e73353e157fb12a2573.NewCallRecordRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i91e038aa5292a643921ca895687d88f65d881c089abb4e73353e157fb12a2573.NewCallRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *CommunicationsRequestBuilder) Calls()(*i891c794d72e389d3ebce030767a797114949bd32e4681583cd25a769eeb2801e.CallsRequestBuilder) {
     return i891c794d72e389d3ebce030767a797114949bd32e4681583cd25a769eeb2801e.NewCallsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CallsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.calls.item collection
-func (m *CommunicationsRequestBuilder) CallsById(id string)(*i7dc1bec6d83d544190845d06820f8de2905f8b24b69eeb9dfe9bfa4b6a37d5ac.CallRequestBuilder) {
+func (m *CommunicationsRequestBuilder) CallsById(id string)(*i7dc1bec6d83d544190845d06820f8de2905f8b24b69eeb9dfe9bfa4b6a37d5ac.CallItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -79,7 +79,7 @@ func (m *CommunicationsRequestBuilder) CallsById(id string)(*i7dc1bec6d83d544190
     if id != "" {
         urlTplParams["call_id"] = id
     }
-    return i7dc1bec6d83d544190845d06820f8de2905f8b24b69eeb9dfe9bfa4b6a37d5ac.NewCallRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i7dc1bec6d83d544190845d06820f8de2905f8b24b69eeb9dfe9bfa4b6a37d5ac.NewCallItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewCommunicationsRequestBuilderInternal instantiates a new CommunicationsRequestBuilder and sets the default values.
 func NewCommunicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CommunicationsRequestBuilder) {
@@ -157,7 +157,7 @@ func (m *CommunicationsRequestBuilder) OnlineMeetings()(*id205c187fcafdd41d1efec
     return id205c187fcafdd41d1efec3c117b76a126ea7da2330f7428fefe2024eb61a3f9.NewOnlineMeetingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OnlineMeetingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.onlineMeetings.item collection
-func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*id8025802a736e38f202cdaf17f10fd49a39fe90b7555838603d54aab8444b40b.OnlineMeetingRequestBuilder) {
+func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*id8025802a736e38f202cdaf17f10fd49a39fe90b7555838603d54aab8444b40b.OnlineMeetingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -165,7 +165,7 @@ func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*id8025802a
     if id != "" {
         urlTplParams["onlineMeeting_id"] = id
     }
-    return id8025802a736e38f202cdaf17f10fd49a39fe90b7555838603d54aab8444b40b.NewOnlineMeetingRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return id8025802a736e38f202cdaf17f10fd49a39fe90b7555838603d54aab8444b40b.NewOnlineMeetingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update communications
 func (m *CommunicationsRequestBuilder) Patch(options *CommunicationsRequestBuilderPatchOptions)(error) {
@@ -183,7 +183,7 @@ func (m *CommunicationsRequestBuilder) Presences()(*iff0649defbec7d66cfef68be552
     return iff0649defbec7d66cfef68be55245c7871b1497994380576ead94617d6cc94ae.NewPresencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PresencesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.communications.presences.item collection
-func (m *CommunicationsRequestBuilder) PresencesById(id string)(*i6746c6cf2c43c81a05117e20eb3e5320224f79f1b890ece0fe2fdfa63ae8b1a0.PresenceRequestBuilder) {
+func (m *CommunicationsRequestBuilder) PresencesById(id string)(*i6746c6cf2c43c81a05117e20eb3e5320224f79f1b890ece0fe2fdfa63ae8b1a0.PresenceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -191,5 +191,5 @@ func (m *CommunicationsRequestBuilder) PresencesById(id string)(*i6746c6cf2c43c8
     if id != "" {
         urlTplParams["presence_id"] = id
     }
-    return i6746c6cf2c43c81a05117e20eb3e5320224f79f1b890ece0fe2fdfa63ae8b1a0.NewPresenceRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i6746c6cf2c43c81a05117e20eb3e5320224f79f1b890ece0fe2fdfa63ae8b1a0.NewPresenceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

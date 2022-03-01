@@ -26,7 +26,7 @@ type ResourceActionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ResourceActionsRequestBuilderGetQueryParameters get resourceActions from roleManagement
+// ResourceActionsRequestBuilderGetQueryParameters operations that an authorized principal are allowed to perform.
 type ResourceActionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewResourceActionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171
     urlParams["request-raw-url"] = rawUrl
     return NewResourceActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get resourceActions from roleManagement
+// CreateGetRequestInformation operations that an authorized principal are allowed to perform.
 func (m *ResourceActionsRequestBuilder) CreateGetRequestInformation(options *ResourceActionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *ResourceActionsRequestBuilder) CreateGetRequestInformation(options *Res
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to resourceActions for roleManagement
+// CreatePostRequestInformation operations that an authorized principal are allowed to perform.
 func (m *ResourceActionsRequestBuilder) CreatePostRequestInformation(options *ResourceActionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ResourceActionsRequestBuilder) CreatePostRequestInformation(options *Re
     }
     return requestInfo, nil
 }
-// Get get resourceActions from roleManagement
+// Get operations that an authorized principal are allowed to perform.
 func (m *ResourceActionsRequestBuilder) Get(options *ResourceActionsRequestBuilderGetOptions)(*ResourceActionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *ResourceActionsRequestBuilder) Get(options *ResourceActionsRequestBuild
     }
     return res.(*ResourceActionsResponse), nil
 }
-// Post create new navigation property to resourceActions for roleManagement
+// Post operations that an authorized principal are allowed to perform.
 func (m *ResourceActionsRequestBuilder) Post(options *ResourceActionsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.UnifiedRbacResourceAction, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

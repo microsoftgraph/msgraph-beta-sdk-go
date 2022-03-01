@@ -148,7 +148,7 @@ func (m *SchemaRequestBuilder) Directories()(*i6ee51d7b052a2996a1de210399bcba9e5
     return i6ee51d7b052a2996a1de210399bcba9e55077a4899e05774012e607edda2f344.NewDirectoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DirectoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.applications.item.synchronization.jobs.item.schema.directories.item collection
-func (m *SchemaRequestBuilder) DirectoriesById(id string)(*ief99c576a2437c90f6668478d921f23511414ad3967ae9fa00350a32c4507ad7.DirectoryDefinitionRequestBuilder) {
+func (m *SchemaRequestBuilder) DirectoriesById(id string)(*ief99c576a2437c90f6668478d921f23511414ad3967ae9fa00350a32c4507ad7.DirectoryDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -156,7 +156,7 @@ func (m *SchemaRequestBuilder) DirectoriesById(id string)(*ief99c576a2437c90f666
     if id != "" {
         urlTplParams["directoryDefinition_id"] = id
     }
-    return ief99c576a2437c90f6668478d921f23511414ad3967ae9fa00350a32c4507ad7.NewDirectoryDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ief99c576a2437c90f6668478d921f23511414ad3967ae9fa00350a32c4507ad7.NewDirectoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // FilterOperators builds and executes requests for operations under \applications\{application-id}\synchronization\jobs\{synchronizationJob-id}\schema\microsoft.graph.filterOperators()
 func (m *SchemaRequestBuilder) FilterOperators()(*ie8a5b62460f2e0d2fc1993c479c5f46c740b621ae82fc5bb156a396c876b7a3c.FilterOperatorsRequestBuilder) {

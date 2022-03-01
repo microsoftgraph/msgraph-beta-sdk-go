@@ -59,7 +59,7 @@ func (m *EdiscoveryRequestBuilder) Cases()(*i11d895b13fb719aa1efc1375b26199040ec
     return i11d895b13fb719aa1efc1375b26199040ecaddfd8d2c7a3988be9eb44cb349f9.NewCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CasesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.compliance.ediscovery.cases.item collection
-func (m *EdiscoveryRequestBuilder) CasesById(id string)(*i64fd5515da31cb83f4be500694b8177bd68e5ad393279ae6213b89bea5bfdbe1.CaseRequestBuilder) {
+func (m *EdiscoveryRequestBuilder) CasesById(id string)(*i64fd5515da31cb83f4be500694b8177bd68e5ad393279ae6213b89bea5bfdbe1.CaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func (m *EdiscoveryRequestBuilder) CasesById(id string)(*i64fd5515da31cb83f4be50
     if id != "" {
         urlTplParams["case_id"] = id
     }
-    return i64fd5515da31cb83f4be500694b8177bd68e5ad393279ae6213b89bea5bfdbe1.NewCaseRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i64fd5515da31cb83f4be500694b8177bd68e5ad393279ae6213b89bea5bfdbe1.NewCaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewEdiscoveryRequestBuilderInternal instantiates a new EdiscoveryRequestBuilder and sets the default values.
 func NewEdiscoveryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EdiscoveryRequestBuilder) {

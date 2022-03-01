@@ -8,15 +8,15 @@ import (
 // SearchAnswer 
 type SearchAnswer struct {
     Entity
-    // 
+    // Search answer description shown on search results page.
     description *string;
-    // 
+    // Search answer name displayed in search results.
     displayName *string;
-    // 
+    // Details of the user that created or last modified the search answer. Read-only.
     lastModifiedBy *IdentitySet;
-    // 
+    // Timestamp of when the search answer is created or edited. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // Search answer URL link. When users click this search answer in search results, they will go to this URL.
     webUrl *string;
 }
 // NewSearchAnswer instantiates a new searchAnswer and sets the default values.
@@ -26,7 +26,7 @@ func NewSearchAnswer()(*SearchAnswer) {
     }
     return m
 }
-// GetDescription gets the description property value. 
+// GetDescription gets the description property value. Search answer description shown on search results page.
 func (m *SearchAnswer) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *SearchAnswer) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. 
+// GetDisplayName gets the displayName property value. Search answer name displayed in search results.
 func (m *SearchAnswer) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *SearchAnswer) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. 
+// GetLastModifiedBy gets the lastModifiedBy property value. Details of the user that created or last modified the search answer. Read-only.
 func (m *SearchAnswer) GetLastModifiedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *SearchAnswer) GetLastModifiedBy()(*IdentitySet) {
         return m.lastModifiedBy
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp of when the search answer is created or edited. Read-only.
 func (m *SearchAnswer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *SearchAnswer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.lastModifiedDateTime
     }
 }
-// GetWebUrl gets the webUrl property value. 
+// GetWebUrl gets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
 func (m *SearchAnswer) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -162,31 +162,31 @@ func (m *SearchAnswer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// SetDescription sets the description property value. 
+// SetDescription sets the description property value. Search answer description shown on search results page.
 func (m *SearchAnswer) SetDescription(value *string)() {
     if m != nil {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. 
+// SetDisplayName sets the displayName property value. Search answer name displayed in search results.
 func (m *SearchAnswer) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. 
+// SetLastModifiedBy sets the lastModifiedBy property value. Details of the user that created or last modified the search answer. Read-only.
 func (m *SearchAnswer) SetLastModifiedBy(value *IdentitySet)() {
     if m != nil {
         m.lastModifiedBy = value
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Timestamp of when the search answer is created or edited. Read-only.
 func (m *SearchAnswer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
     }
 }
-// SetWebUrl sets the webUrl property value. 
+// SetWebUrl sets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
 func (m *SearchAnswer) SetWebUrl(value *string)() {
     if m != nil {
         m.webUrl = value

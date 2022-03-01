@@ -8,13 +8,13 @@ import (
 type CustomExtensionHandlerInstance struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Identifier of the customAccessPackageWorkflowExtension triggered at this instance.
     customExtensionId *string;
-    // 
+    // The unique run ID for the logic app.
     externalCorrelationId *string;
-    // 
+    // Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
     stage *AccessPackageCustomExtensionStage;
-    // 
+    // Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
     status *AccessPackageCustomExtensionHandlerStatus;
 }
 // NewCustomExtensionHandlerInstance instantiates a new customExtensionHandlerInstance and sets the default values.
@@ -32,7 +32,7 @@ func (m *CustomExtensionHandlerInstance) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetCustomExtensionId gets the customExtensionId property value. 
+// GetCustomExtensionId gets the customExtensionId property value. Identifier of the customAccessPackageWorkflowExtension triggered at this instance.
 func (m *CustomExtensionHandlerInstance) GetCustomExtensionId()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *CustomExtensionHandlerInstance) GetCustomExtensionId()(*string) {
         return m.customExtensionId
     }
 }
-// GetExternalCorrelationId gets the externalCorrelationId property value. 
+// GetExternalCorrelationId gets the externalCorrelationId property value. The unique run ID for the logic app.
 func (m *CustomExtensionHandlerInstance) GetExternalCorrelationId()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *CustomExtensionHandlerInstance) GetExternalCorrelationId()(*string) {
         return m.externalCorrelationId
     }
 }
-// GetStage gets the stage property value. 
+// GetStage gets the stage property value. Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *CustomExtensionHandlerInstance) GetStage()(*AccessPackageCustomExtensionStage) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *CustomExtensionHandlerInstance) GetStage()(*AccessPackageCustomExtensio
         return m.stage
     }
 }
-// GetStatus gets the status property value. 
+// GetStatus gets the status property value. Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
 func (m *CustomExtensionHandlerInstance) GetStatus()(*AccessPackageCustomExtensionHandlerStatus) {
     if m == nil {
         return nil
@@ -154,25 +154,25 @@ func (m *CustomExtensionHandlerInstance) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetCustomExtensionId sets the customExtensionId property value. 
+// SetCustomExtensionId sets the customExtensionId property value. Identifier of the customAccessPackageWorkflowExtension triggered at this instance.
 func (m *CustomExtensionHandlerInstance) SetCustomExtensionId(value *string)() {
     if m != nil {
         m.customExtensionId = value
     }
 }
-// SetExternalCorrelationId sets the externalCorrelationId property value. 
+// SetExternalCorrelationId sets the externalCorrelationId property value. The unique run ID for the logic app.
 func (m *CustomExtensionHandlerInstance) SetExternalCorrelationId(value *string)() {
     if m != nil {
         m.externalCorrelationId = value
     }
 }
-// SetStage sets the stage property value. 
+// SetStage sets the stage property value. Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *CustomExtensionHandlerInstance) SetStage(value *AccessPackageCustomExtensionStage)() {
     if m != nil {
         m.stage = value
     }
 }
-// SetStatus sets the status property value. 
+// SetStatus sets the status property value. Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
 func (m *CustomExtensionHandlerInstance) SetStatus(value *AccessPackageCustomExtensionHandlerStatus)() {
     if m != nil {
         m.status = value

@@ -26,7 +26,7 @@ type QnasRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// QnasRequestBuilderGetQueryParameters get qnas from search
+// QnasRequestBuilderGetQueryParameters administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 type QnasRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewQnasRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
     urlParams["request-raw-url"] = rawUrl
     return NewQnasRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get qnas from search
+// CreateGetRequestInformation administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 func (m *QnasRequestBuilder) CreateGetRequestInformation(options *QnasRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *QnasRequestBuilder) CreateGetRequestInformation(options *QnasRequestBui
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to qnas for search
+// CreatePostRequestInformation administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 func (m *QnasRequestBuilder) CreatePostRequestInformation(options *QnasRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *QnasRequestBuilder) CreatePostRequestInformation(options *QnasRequestBu
     }
     return requestInfo, nil
 }
-// Get get qnas from search
+// Get administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 func (m *QnasRequestBuilder) Get(options *QnasRequestBuilderGetOptions)(*QnasResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *QnasRequestBuilder) Get(options *QnasRequestBuilderGetOptions)(*QnasRes
     }
     return res.(*QnasResponse), nil
 }
-// Post create new navigation property to qnas for search
+// Post administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 func (m *QnasRequestBuilder) Post(options *QnasRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Qna, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

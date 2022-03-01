@@ -133,7 +133,7 @@ func (m *RegistrationRequestBuilder) CustomQuestions()(*i30653050b595cb21b15f68a
     return i30653050b595cb21b15f68a043c33a39a8a59b4e9b628f2f8ce1367de0c76f29.NewCustomQuestionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CustomQuestionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.onlineMeetings.item.registration.customQuestions.item collection
-func (m *RegistrationRequestBuilder) CustomQuestionsById(id string)(*i022718a803bf01f48de9971caabac22fb9388c922fc5c47de1d0a1f764c5eb23.MeetingRegistrationQuestionRequestBuilder) {
+func (m *RegistrationRequestBuilder) CustomQuestionsById(id string)(*i022718a803bf01f48de9971caabac22fb9388c922fc5c47de1d0a1f764c5eb23.MeetingRegistrationQuestionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -141,7 +141,7 @@ func (m *RegistrationRequestBuilder) CustomQuestionsById(id string)(*i022718a803
     if id != "" {
         urlTplParams["meetingRegistrationQuestion_id"] = id
     }
-    return i022718a803bf01f48de9971caabac22fb9388c922fc5c47de1d0a1f764c5eb23.NewMeetingRegistrationQuestionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i022718a803bf01f48de9971caabac22fb9388c922fc5c47de1d0a1f764c5eb23.NewMeetingRegistrationQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete the registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
 func (m *RegistrationRequestBuilder) Delete(options *RegistrationRequestBuilderDeleteOptions)(error) {

@@ -65,7 +65,7 @@ func (m *MeRequestBuilder) Assignments()(*i066e6c0b7a628617371533e62ce3ebdd3bb41
     return i066e6c0b7a628617371533e62ce3ebdd3bb41009a8fbfe0051aebeee5a091763.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.assignments.item collection
-func (m *MeRequestBuilder) AssignmentsById(id string)(*ieba30bd3da2220b37fa7fcf6200b1473597f54cc0733c3310394e58e26492403.EducationAssignmentRequestBuilder) {
+func (m *MeRequestBuilder) AssignmentsById(id string)(*ieba30bd3da2220b37fa7fcf6200b1473597f54cc0733c3310394e58e26492403.EducationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -73,7 +73,7 @@ func (m *MeRequestBuilder) AssignmentsById(id string)(*ieba30bd3da2220b37fa7fcf6
     if id != "" {
         urlTplParams["educationAssignment_id"] = id
     }
-    return ieba30bd3da2220b37fa7fcf6200b1473597f54cc0733c3310394e58e26492403.NewEducationAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ieba30bd3da2220b37fa7fcf6200b1473597f54cc0733c3310394e58e26492403.NewEducationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *MeRequestBuilder) Classes()(*ia9901f126435d74fc86b3bf99ec52d925f16943c99de2d04f1f3f010f4c84fbc.ClassesRequestBuilder) {
     return ia9901f126435d74fc86b3bf99ec52d925f16943c99de2d04f1f3f010f4c84fbc.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -192,7 +192,7 @@ func (m *MeRequestBuilder) Rubrics()(*i1b5284c067c2acfcb9ec377599aa90647d0e8c253
     return i1b5284c067c2acfcb9ec377599aa90647d0e8c253bdeac21d56033eae704633e.NewRubricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RubricsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.me.rubrics.item collection
-func (m *MeRequestBuilder) RubricsById(id string)(*i719722077dd2c46836e8fc87facd02a34341429e3162704b105c41c28deda2b9.EducationRubricRequestBuilder) {
+func (m *MeRequestBuilder) RubricsById(id string)(*i719722077dd2c46836e8fc87facd02a34341429e3162704b105c41c28deda2b9.EducationRubricItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -200,7 +200,7 @@ func (m *MeRequestBuilder) RubricsById(id string)(*i719722077dd2c46836e8fc87facd
     if id != "" {
         urlTplParams["educationRubric_id"] = id
     }
-    return i719722077dd2c46836e8fc87facd02a34341429e3162704b105c41c28deda2b9.NewEducationRubricRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i719722077dd2c46836e8fc87facd02a34341429e3162704b105c41c28deda2b9.NewEducationRubricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *MeRequestBuilder) Schools()(*i1197007b396c8142142d808832d472fa4a0ca1796dcda8056a9c759ced2a4005.SchoolsRequestBuilder) {
     return i1197007b396c8142142d808832d472fa4a0ca1796dcda8056a9c759ced2a4005.NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);

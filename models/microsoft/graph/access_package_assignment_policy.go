@@ -22,7 +22,7 @@ type AccessPackageAssignmentPolicy struct {
     createdBy *string;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
     customExtensionHandlers []CustomExtensionHandler;
     // The description of the policy.
     description *string;
@@ -106,7 +106,7 @@ func (m *AccessPackageAssignmentPolicy) GetCreatedDateTime()(*i336074805fc853987
         return m.createdDateTime
     }
 }
-// GetCustomExtensionHandlers gets the customExtensionHandlers property value. 
+// GetCustomExtensionHandlers gets the customExtensionHandlers property value. The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) GetCustomExtensionHandlers()([]CustomExtensionHandler) {
     if m == nil {
         return nil
@@ -534,7 +534,7 @@ func (m *AccessPackageAssignmentPolicy) SetCreatedDateTime(value *i336074805fc85
         m.createdDateTime = value
     }
 }
-// SetCustomExtensionHandlers sets the customExtensionHandlers property value. 
+// SetCustomExtensionHandlers sets the customExtensionHandlers property value. The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) SetCustomExtensionHandlers(value []CustomExtensionHandler)() {
     if m != nil {
         m.customExtensionHandlers = value

@@ -121,7 +121,7 @@ func (m *TrustFrameworkRequestBuilder) KeySets()(*i7b667425d5ba5070b20ca9a446c10
     return i7b667425d5ba5070b20ca9a446c105ed8c4749fa25d168849c6e0258ab640270.NewKeySetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // KeySetsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.trustFramework.keySets.item collection
-func (m *TrustFrameworkRequestBuilder) KeySetsById(id string)(*i130f0626fe3c071232b6f7dc633093963e558c51511332c8d4c462636204a280.TrustFrameworkKeySetRequestBuilder) {
+func (m *TrustFrameworkRequestBuilder) KeySetsById(id string)(*i130f0626fe3c071232b6f7dc633093963e558c51511332c8d4c462636204a280.TrustFrameworkKeySetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -129,7 +129,7 @@ func (m *TrustFrameworkRequestBuilder) KeySetsById(id string)(*i130f0626fe3c0712
     if id != "" {
         urlTplParams["trustFrameworkKeySet_id"] = id
     }
-    return i130f0626fe3c071232b6f7dc633093963e558c51511332c8d4c462636204a280.NewTrustFrameworkKeySetRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i130f0626fe3c071232b6f7dc633093963e558c51511332c8d4c462636204a280.NewTrustFrameworkKeySetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update trustFramework
 func (m *TrustFrameworkRequestBuilder) Patch(options *TrustFrameworkRequestBuilderPatchOptions)(error) {
@@ -147,7 +147,7 @@ func (m *TrustFrameworkRequestBuilder) Policies()(*i45ac5b9b0bfa1cab1bbb052f4f9c
     return i45ac5b9b0bfa1cab1bbb052f4f9c7d4e05cfb96edb3cb1d48ad9d002664d39d9.NewPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.trustFramework.policies.item collection
-func (m *TrustFrameworkRequestBuilder) PoliciesById(id string)(*i76c4dfef5c53e4b89a114a49ab372d39e04290df03064db59620347dee08cbcd.TrustFrameworkPolicyRequestBuilder) {
+func (m *TrustFrameworkRequestBuilder) PoliciesById(id string)(*i76c4dfef5c53e4b89a114a49ab372d39e04290df03064db59620347dee08cbcd.TrustFrameworkPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,5 +155,5 @@ func (m *TrustFrameworkRequestBuilder) PoliciesById(id string)(*i76c4dfef5c53e4b
     if id != "" {
         urlTplParams["trustFrameworkPolicy_id"] = id
     }
-    return i76c4dfef5c53e4b89a114a49ab372d39e04290df03064db59620347dee08cbcd.NewTrustFrameworkPolicyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i76c4dfef5c53e4b89a114a49ab372d39e04290df03064db59620347dee08cbcd.NewTrustFrameworkPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -27,7 +27,7 @@ type AccessPackageResourceEnvironmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageResourceEnvironmentRequestBuilderGetQueryParameters contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// AccessPackageResourceEnvironmentRequestBuilderGetQueryParameters contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 type AccessPackageResourceEnvironmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -53,7 +53,7 @@ func NewAccessPackageResourceEnvironmentRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceEnvironmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// CreateGetRequestInformation contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *AccessPackageResourceEnvironmentRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourceEnvironmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -73,7 +73,7 @@ func (m *AccessPackageResourceEnvironmentRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Get contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// Get contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *AccessPackageResourceEnvironmentRequestBuilder) Get(options *AccessPackageResourceEnvironmentRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceEnvironment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

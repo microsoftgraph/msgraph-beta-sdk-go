@@ -98,7 +98,7 @@ func (m *InstanceRequestBuilder) ContactedReviewers()(*i3a336a3f181639d0b400b4f9
     return i3a336a3f181639d0b400b4f90499430d40c47aec7a3f3f5b8992a6d831caaba2.NewContactedReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ContactedReviewersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.decisions.item.instance.contactedReviewers.item collection
-func (m *InstanceRequestBuilder) ContactedReviewersById(id string)(*i2cf7965e5bcacbaf398832a7f2f84cae59e8d9123c23a4d7df880c767c813358.AccessReviewReviewerRequestBuilder) {
+func (m *InstanceRequestBuilder) ContactedReviewersById(id string)(*i2cf7965e5bcacbaf398832a7f2f84cae59e8d9123c23a4d7df880c767c813358.AccessReviewReviewerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -106,7 +106,7 @@ func (m *InstanceRequestBuilder) ContactedReviewersById(id string)(*i2cf7965e5bc
     if id != "" {
         urlTplParams["accessReviewReviewer_id"] = id
     }
-    return i2cf7965e5bcacbaf398832a7f2f84cae59e8d9123c23a4d7df880c767c813358.NewAccessReviewReviewerRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i2cf7965e5bcacbaf398832a7f2f84cae59e8d9123c23a4d7df880c767c813358.NewAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CreateDeleteRequestInformation there is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
 func (m *InstanceRequestBuilder) CreateDeleteRequestInformation(options *InstanceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -167,7 +167,7 @@ func (m *InstanceRequestBuilder) Decisions()(*ibf4f3d33172cc835cda4e47809b585e37
     return ibf4f3d33172cc835cda4e47809b585e37190bab1e76e467b086a125d159a0ce3.NewDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DecisionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.decisions.item.instance.decisions.item collection
-func (m *InstanceRequestBuilder) DecisionsById(id string)(*i8f76eb834e079485d9bfcc198960c387e47a032c16f3c5e1a1d9779d19557d0e.AccessReviewInstanceDecisionItemRequestBuilder) {
+func (m *InstanceRequestBuilder) DecisionsById(id string)(*i8f76eb834e079485d9bfcc198960c387e47a032c16f3c5e1a1d9779d19557d0e.AccessReviewInstanceDecisionItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -175,7 +175,7 @@ func (m *InstanceRequestBuilder) DecisionsById(id string)(*i8f76eb834e079485d9bf
     if id != "" {
         urlTplParams["accessReviewInstanceDecisionItem_id1"] = id
     }
-    return i8f76eb834e079485d9bfcc198960c387e47a032c16f3c5e1a1d9779d19557d0e.NewAccessReviewInstanceDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i8f76eb834e079485d9bfcc198960c387e47a032c16f3c5e1a1d9779d19557d0e.NewAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *InstanceRequestBuilder) Definition()(*i112309bcdf0c75639081cbf60ec6f9c39955c11f95422199c3e1aa9fd9b60ec4.DefinitionRequestBuilder) {
     return i112309bcdf0c75639081cbf60ec6f9c39955c11f95422199c3e1aa9fd9b60ec4.NewDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -226,7 +226,7 @@ func (m *InstanceRequestBuilder) Stages()(*i634ca318551c7e45221adbee2751c7e66b92
     return i634ca318551c7e45221adbee2751c7e66b920ae332f90c95ef4ac4389fa7d373.NewStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // StagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.accessReviews.decisions.item.instance.stages.item collection
-func (m *InstanceRequestBuilder) StagesById(id string)(*ie737e21101e5c8fcb439d2621c3dbdcc10511191b0a9e20174987172b109dc3c.AccessReviewStageRequestBuilder) {
+func (m *InstanceRequestBuilder) StagesById(id string)(*ie737e21101e5c8fcb439d2621c3dbdcc10511191b0a9e20174987172b109dc3c.AccessReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -234,7 +234,7 @@ func (m *InstanceRequestBuilder) StagesById(id string)(*ie737e21101e5c8fcb439d26
     if id != "" {
         urlTplParams["accessReviewStage_id"] = id
     }
-    return ie737e21101e5c8fcb439d2621c3dbdcc10511191b0a9e20174987172b109dc3c.NewAccessReviewStageRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ie737e21101e5c8fcb439d2621c3dbdcc10511191b0a9e20174987172b109dc3c.NewAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *InstanceRequestBuilder) Stop()(*i5cd91d67258652f5b2854613fdc8776da7412faf0be7b08d61715e958f802163.StopRequestBuilder) {
     return i5cd91d67258652f5b2854613fdc8776da7412faf0be7b08d61715e958f802163.NewStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);

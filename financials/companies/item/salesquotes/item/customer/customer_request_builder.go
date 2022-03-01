@@ -9,6 +9,7 @@ import (
     ib58754f5f881c18c2ca269060f3c317c3e83390e76c1e4954a4189eafd5a1b00 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesquotes/item/customer/currency"
     iebaeaed891e22099adf873e93af393ea2aba7272bbd1ac49f83516156aa12d5f "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesquotes/item/customer/picture"
     iffdec760f3c54ce22b9dc5d12ed1b2e7732775989305f129ef3195fdce81c9b1 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesquotes/item/customer/paymentterm"
+    i8c51fa21e9b36e89ccacc38a9d1a3e0afa5a8da00d040cf69890bb1f7021acd0 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesquotes/item/customer/picture/item"
 )
 
 // CustomerRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesQuotes\{salesQuote-id}\customer
@@ -181,7 +182,7 @@ func (m *CustomerRequestBuilder) Picture()(*iebaeaed891e22099adf873e93af393ea2ab
     return iebaeaed891e22099adf873e93af393ea2aba7272bbd1ac49f83516156aa12d5f.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PictureById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesQuotes.item.customer.picture.item collection
-func (m *CustomerRequestBuilder) PictureById(id string)(*iebaeaed891e22099adf873e93af393ea2aba7272bbd1ac49f83516156aa12d5f.PictureRequestBuilder) {
+func (m *CustomerRequestBuilder) PictureById(id string)(*i8c51fa21e9b36e89ccacc38a9d1a3e0afa5a8da00d040cf69890bb1f7021acd0.PictureItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,7 +190,7 @@ func (m *CustomerRequestBuilder) PictureById(id string)(*iebaeaed891e22099adf873
     if id != "" {
         urlTplParams["picture_id"] = id
     }
-    return iebaeaed891e22099adf873e93af393ea2aba7272bbd1ac49f83516156aa12d5f.NewPictureRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i8c51fa21e9b36e89ccacc38a9d1a3e0afa5a8da00d040cf69890bb1f7021acd0.NewPictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *CustomerRequestBuilder) ShipmentMethod()(*i2ebe271486d7f7838cffeceeac4ee6021f58fd55eedf712c59486a0e92d13c99.ShipmentMethodRequestBuilder) {
     return i2ebe271486d7f7838cffeceeac4ee6021f58fd55eedf712c59486a0e92d13c99.NewShipmentMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);

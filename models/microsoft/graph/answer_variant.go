@@ -8,15 +8,15 @@ import (
 type AnswerVariant struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Answer variation description shown on search results page.
     description *string;
-    // 
+    // Answer variation name displayed in search results.
     displayName *string;
     // 
     languageTag *string;
     // 
     platform *DevicePlatformType;
-    // 
+    // Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
     webUrl *string;
 }
 // NewAnswerVariant instantiates a new answerVariant and sets the default values.
@@ -34,7 +34,7 @@ func (m *AnswerVariant) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDescription gets the description property value. 
+// GetDescription gets the description property value. Answer variation description shown on search results page.
 func (m *AnswerVariant) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *AnswerVariant) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. 
+// GetDisplayName gets the displayName property value. Answer variation name displayed in search results.
 func (m *AnswerVariant) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *AnswerVariant) GetPlatform()(*DevicePlatformType) {
         return m.platform
     }
 }
-// GetWebUrl gets the webUrl property value. 
+// GetWebUrl gets the webUrl property value. Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
 func (m *AnswerVariant) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -179,13 +179,13 @@ func (m *AnswerVariant) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetDescription sets the description property value. 
+// SetDescription sets the description property value. Answer variation description shown on search results page.
 func (m *AnswerVariant) SetDescription(value *string)() {
     if m != nil {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. 
+// SetDisplayName sets the displayName property value. Answer variation name displayed in search results.
 func (m *AnswerVariant) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
@@ -203,7 +203,7 @@ func (m *AnswerVariant) SetPlatform(value *DevicePlatformType)() {
         m.platform = value
     }
 }
-// SetWebUrl sets the webUrl property value. 
+// SetWebUrl sets the webUrl property value. Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
 func (m *AnswerVariant) SetWebUrl(value *string)() {
     if m != nil {
         m.webUrl = value

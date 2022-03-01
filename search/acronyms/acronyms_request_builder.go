@@ -26,7 +26,7 @@ type AcronymsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AcronymsRequestBuilderGetQueryParameters get acronyms from search
+// AcronymsRequestBuilderGetQueryParameters administrative answer in Microsoft Search results to define common acronyms in a organization.
 type AcronymsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAcronymsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewAcronymsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get acronyms from search
+// CreateGetRequestInformation administrative answer in Microsoft Search results to define common acronyms in a organization.
 func (m *AcronymsRequestBuilder) CreateGetRequestInformation(options *AcronymsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AcronymsRequestBuilder) CreateGetRequestInformation(options *AcronymsRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to acronyms for search
+// CreatePostRequestInformation administrative answer in Microsoft Search results to define common acronyms in a organization.
 func (m *AcronymsRequestBuilder) CreatePostRequestInformation(options *AcronymsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AcronymsRequestBuilder) CreatePostRequestInformation(options *AcronymsR
     }
     return requestInfo, nil
 }
-// Get get acronyms from search
+// Get administrative answer in Microsoft Search results to define common acronyms in a organization.
 func (m *AcronymsRequestBuilder) Get(options *AcronymsRequestBuilderGetOptions)(*AcronymsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AcronymsRequestBuilder) Get(options *AcronymsRequestBuilderGetOptions)(
     }
     return res.(*AcronymsResponse), nil
 }
-// Post create new navigation property to acronyms for search
+// Post administrative answer in Microsoft Search results to define common acronyms in a organization.
 func (m *AcronymsRequestBuilder) Post(options *AcronymsRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Acronym, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

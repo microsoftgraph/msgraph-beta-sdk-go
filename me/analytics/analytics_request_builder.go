@@ -5,6 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i736a478ce48d7aea8edf746ddda719717300253628d7c53d36199e9d39134cd0 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/analytics/activitystatistics"
+    i182b4ecb8d613ea8dd26aa9928ee29bb68a4790814fef91c2ef3d711ca71c1c7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/analytics/activitystatistics/item"
 )
 
 // AnalyticsRequestBuilder builds and executes requests for operations under \me\analytics
@@ -58,7 +59,7 @@ func (m *AnalyticsRequestBuilder) ActivityStatistics()(*i736a478ce48d7aea8edf746
     return i736a478ce48d7aea8edf746ddda719717300253628d7c53d36199e9d39134cd0.NewActivityStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ActivityStatisticsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.analytics.activityStatistics.item collection
-func (m *AnalyticsRequestBuilder) ActivityStatisticsById(id string)(*i736a478ce48d7aea8edf746ddda719717300253628d7c53d36199e9d39134cd0.ActivityStatisticsRequestBuilder) {
+func (m *AnalyticsRequestBuilder) ActivityStatisticsById(id string)(*i182b4ecb8d613ea8dd26aa9928ee29bb68a4790814fef91c2ef3d711ca71c1c7.ActivityStatisticsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -66,7 +67,7 @@ func (m *AnalyticsRequestBuilder) ActivityStatisticsById(id string)(*i736a478ce4
     if id != "" {
         urlTplParams["activityStatistics_id"] = id
     }
-    return i736a478ce48d7aea8edf746ddda719717300253628d7c53d36199e9d39134cd0.NewActivityStatisticsRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i182b4ecb8d613ea8dd26aa9928ee29bb68a4790814fef91c2ef3d711ca71c1c7.NewActivityStatisticsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewAnalyticsRequestBuilderInternal instantiates a new AnalyticsRequestBuilder and sets the default values.
 func NewAnalyticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AnalyticsRequestBuilder) {

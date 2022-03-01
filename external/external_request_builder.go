@@ -50,7 +50,7 @@ func (m *ExternalRequestBuilder) Connections()(*i58d99e39282ae5d31df48fa8b20c3f8
     return i58d99e39282ae5d31df48fa8b20c3f8f72e2dcdf580a4fd8b923a52cd4bc6141.NewConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ConnectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.external.connections.item collection
-func (m *ExternalRequestBuilder) ConnectionsById(id string)(*i533bedf163cb33517e42f00c7da4a9ea77d46e9fdcb601a0e3cfddc125d6b9a6.ExternalConnectionRequestBuilder) {
+func (m *ExternalRequestBuilder) ConnectionsById(id string)(*i533bedf163cb33517e42f00c7da4a9ea77d46e9fdcb601a0e3cfddc125d6b9a6.ExternalConnectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -58,7 +58,7 @@ func (m *ExternalRequestBuilder) ConnectionsById(id string)(*i533bedf163cb33517e
     if id != "" {
         urlTplParams["externalConnection_id"] = id
     }
-    return i533bedf163cb33517e42f00c7da4a9ea77d46e9fdcb601a0e3cfddc125d6b9a6.NewExternalConnectionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i533bedf163cb33517e42f00c7da4a9ea77d46e9fdcb601a0e3cfddc125d6b9a6.NewExternalConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewExternalRequestBuilderInternal instantiates a new ExternalRequestBuilder and sets the default values.
 func NewExternalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExternalRequestBuilder) {

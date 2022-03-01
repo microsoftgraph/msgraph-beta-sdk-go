@@ -61,7 +61,7 @@ func (m *TasksRequestBuilder) Alltasks()(*i90b34d9fac7c1c269432ffb8ef49e89191ca6
     return i90b34d9fac7c1c269432ffb8ef49e89191ca62c8e46ec6738b64eb66e07584df.NewAlltasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AlltasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.tasks.alltasks.item collection
-func (m *TasksRequestBuilder) AlltasksById(id string)(*iac44614d1920235d24f5bb6840cdb65b41011ba10b25af8066e07d5a04b5756b.BaseTaskRequestBuilder) {
+func (m *TasksRequestBuilder) AlltasksById(id string)(*iac44614d1920235d24f5bb6840cdb65b41011ba10b25af8066e07d5a04b5756b.BaseTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -69,7 +69,7 @@ func (m *TasksRequestBuilder) AlltasksById(id string)(*iac44614d1920235d24f5bb68
     if id != "" {
         urlTplParams["baseTask_id"] = id
     }
-    return iac44614d1920235d24f5bb6840cdb65b41011ba10b25af8066e07d5a04b5756b.NewBaseTaskRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return iac44614d1920235d24f5bb6840cdb65b41011ba10b25af8066e07d5a04b5756b.NewBaseTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewTasksRequestBuilderInternal instantiates a new TasksRequestBuilder and sets the default values.
 func NewTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TasksRequestBuilder) {
@@ -173,7 +173,7 @@ func (m *TasksRequestBuilder) Lists()(*i95ae0ceaeb0c878ce1514849b2fe0d97cd984e3f
     return i95ae0ceaeb0c878ce1514849b2fe0d97cd984e3f93e03aeda598206ffd005d14.NewListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ListsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.tasks.lists.item collection
-func (m *TasksRequestBuilder) ListsById(id string)(*i4893ddb283cf449295fe09b6fa55cc1a8378c1147be1d846f6bdcb3f69d51c00.BaseTaskListRequestBuilder) {
+func (m *TasksRequestBuilder) ListsById(id string)(*i4893ddb283cf449295fe09b6fa55cc1a8378c1147be1d846f6bdcb3f69d51c00.BaseTaskListItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -181,7 +181,7 @@ func (m *TasksRequestBuilder) ListsById(id string)(*i4893ddb283cf449295fe09b6fa5
     if id != "" {
         urlTplParams["baseTaskList_id"] = id
     }
-    return i4893ddb283cf449295fe09b6fa55cc1a8378c1147be1d846f6bdcb3f69d51c00.NewBaseTaskListRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i4893ddb283cf449295fe09b6fa55cc1a8378c1147be1d846f6bdcb3f69d51c00.NewBaseTaskListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property tasks in users
 func (m *TasksRequestBuilder) Patch(options *TasksRequestBuilderPatchOptions)(error) {

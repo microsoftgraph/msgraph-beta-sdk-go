@@ -157,7 +157,7 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValues()(
     return i76d76df01534fbe41283b7237bc4b6635f2316d4abaf6113e056758ee16ef5cc.NewMetricValuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MetricValuesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthOverview.metricValues.item collection
-func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValuesById(id string)(*i52615d5294b7c09cc7abf48113e76d304d971ab6e369a32e6e648d565d5d7767.UserExperienceAnalyticsMetricRequestBuilder) {
+func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValuesById(id string)(*i52615d5294b7c09cc7abf48113e76d304d971ab6e369a32e6e648d565d5d7767.UserExperienceAnalyticsMetricItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -165,7 +165,7 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValuesByI
     if id != "" {
         urlTplParams["userExperienceAnalyticsMetric_id"] = id
     }
-    return i52615d5294b7c09cc7abf48113e76d304d971ab6e369a32e6e648d565d5d7767.NewUserExperienceAnalyticsMetricRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i52615d5294b7c09cc7abf48113e76d304d971ab6e369a32e6e648d565d5d7767.NewUserExperienceAnalyticsMetricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch user experience analytics appHealth overview
 func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Patch(options *UserExperienceAnalyticsAppHealthOverviewRequestBuilderPatchOptions)(error) {

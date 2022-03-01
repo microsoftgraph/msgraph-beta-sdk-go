@@ -18,7 +18,7 @@ type AccessPackageAssignmentRequest struct {
     completedDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // A collection of custom workflow extension instances being run on an assignment request. Read-only.
     customExtensionHandlerInstances []CustomExtensionHandlerInstance;
     // 
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -84,7 +84,7 @@ func (m *AccessPackageAssignmentRequest) GetCreatedDateTime()(*i336074805fc85398
         return m.createdDateTime
     }
 }
-// GetCustomExtensionHandlerInstances gets the customExtensionHandlerInstances property value. 
+// GetCustomExtensionHandlerInstances gets the customExtensionHandlerInstances property value. A collection of custom workflow extension instances being run on an assignment request. Read-only.
 func (m *AccessPackageAssignmentRequest) GetCustomExtensionHandlerInstances()([]CustomExtensionHandlerInstance) {
     if m == nil {
         return nil
@@ -444,7 +444,7 @@ func (m *AccessPackageAssignmentRequest) SetCreatedDateTime(value *i336074805fc8
         m.createdDateTime = value
     }
 }
-// SetCustomExtensionHandlerInstances sets the customExtensionHandlerInstances property value. 
+// SetCustomExtensionHandlerInstances sets the customExtensionHandlerInstances property value. A collection of custom workflow extension instances being run on an assignment request. Read-only.
 func (m *AccessPackageAssignmentRequest) SetCustomExtensionHandlerInstances(value []CustomExtensionHandlerInstance)() {
     if m != nil {
         m.customExtensionHandlerInstances = value

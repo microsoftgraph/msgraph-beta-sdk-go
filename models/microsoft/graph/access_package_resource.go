@@ -8,7 +8,7 @@ import (
 // AccessPackageResource 
 type AccessPackageResource struct {
     Entity
-    // Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+    // Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
     accessPackageResourceEnvironment *AccessPackageResourceEnvironment;
     // Read-only. Nullable. Supports $expand.
     accessPackageResourceRoles []AccessPackageResourceRole;
@@ -42,7 +42,7 @@ func NewAccessPackageResource()(*AccessPackageResource) {
     }
     return m
 }
-// GetAccessPackageResourceEnvironment gets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// GetAccessPackageResourceEnvironment gets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *AccessPackageResource) GetAccessPackageResourceEnvironment()(*AccessPackageResourceEnvironment) {
     if m == nil {
         return nil
@@ -397,7 +397,7 @@ func (m *AccessPackageResource) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// SetAccessPackageResourceEnvironment sets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+// SetAccessPackageResourceEnvironment sets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 func (m *AccessPackageResource) SetAccessPackageResourceEnvironment(value *AccessPackageResourceEnvironment)() {
     if m != nil {
         m.accessPackageResourceEnvironment = value
