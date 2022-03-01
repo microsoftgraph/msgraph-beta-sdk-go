@@ -57,7 +57,7 @@ func (m *EducationRequestBuilder) Classes()(*ib66e30f6b3aeaf350ed09763c0deac43e2
     return ib66e30f6b3aeaf350ed09763c0deac43e2a8c5ebd97258eecafd38240fa58d1b.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ClassesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.classes.item collection
-func (m *EducationRequestBuilder) ClassesById(id string)(*ic55376c4e180e6c30db51b0da6b21653e2bd1c223954aa398f7f85ee7f1ab1fd.EducationClassRequestBuilder) {
+func (m *EducationRequestBuilder) ClassesById(id string)(*ic55376c4e180e6c30db51b0da6b21653e2bd1c223954aa398f7f85ee7f1ab1fd.EducationClassItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -65,7 +65,7 @@ func (m *EducationRequestBuilder) ClassesById(id string)(*ic55376c4e180e6c30db51
     if id != "" {
         urlTplParams["educationClass_id"] = id
     }
-    return ic55376c4e180e6c30db51b0da6b21653e2bd1c223954aa398f7f85ee7f1ab1fd.NewEducationClassRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ic55376c4e180e6c30db51b0da6b21653e2bd1c223954aa398f7f85ee7f1ab1fd.NewEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewEducationRequestBuilderInternal instantiates a new EducationRequestBuilder and sets the default values.
 func NewEducationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationRequestBuilder) {
@@ -155,7 +155,7 @@ func (m *EducationRequestBuilder) Schools()(*i53e096f34b515b4400cb74425f756b37c5
     return i53e096f34b515b4400cb74425f756b37c554f0dd01122ccbdc851e302a54df1c.NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SchoolsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.schools.item collection
-func (m *EducationRequestBuilder) SchoolsById(id string)(*i55d158864f05addf1ddf88c8f6aff3854a29b88e36bc404eb7167a1c13495a9a.EducationSchoolRequestBuilder) {
+func (m *EducationRequestBuilder) SchoolsById(id string)(*i55d158864f05addf1ddf88c8f6aff3854a29b88e36bc404eb7167a1c13495a9a.EducationSchoolItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -163,13 +163,13 @@ func (m *EducationRequestBuilder) SchoolsById(id string)(*i55d158864f05addf1ddf8
     if id != "" {
         urlTplParams["educationSchool_id"] = id
     }
-    return i55d158864f05addf1ddf88c8f6aff3854a29b88e36bc404eb7167a1c13495a9a.NewEducationSchoolRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i55d158864f05addf1ddf88c8f6aff3854a29b88e36bc404eb7167a1c13495a9a.NewEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *EducationRequestBuilder) SynchronizationProfiles()(*i58108e2d82e0462b534008f2f016e3d633c124bc780e0445f5b9d139fd18cf22.SynchronizationProfilesRequestBuilder) {
     return i58108e2d82e0462b534008f2f016e3d633c124bc780e0445f5b9d139fd18cf22.NewSynchronizationProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SynchronizationProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.synchronizationProfiles.item collection
-func (m *EducationRequestBuilder) SynchronizationProfilesById(id string)(*ia9a70568b8d421a38915cdf33eea35c2df3432111abdad0bb7d5169fb8c9e26b.EducationSynchronizationProfileRequestBuilder) {
+func (m *EducationRequestBuilder) SynchronizationProfilesById(id string)(*ia9a70568b8d421a38915cdf33eea35c2df3432111abdad0bb7d5169fb8c9e26b.EducationSynchronizationProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -177,13 +177,13 @@ func (m *EducationRequestBuilder) SynchronizationProfilesById(id string)(*ia9a70
     if id != "" {
         urlTplParams["educationSynchronizationProfile_id"] = id
     }
-    return ia9a70568b8d421a38915cdf33eea35c2df3432111abdad0bb7d5169fb8c9e26b.NewEducationSynchronizationProfileRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ia9a70568b8d421a38915cdf33eea35c2df3432111abdad0bb7d5169fb8c9e26b.NewEducationSynchronizationProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *EducationRequestBuilder) Users()(*i8c83ac2fb480533d8c9e30080c936573aac55d73adc5a8f1617aed89f50165d0.UsersRequestBuilder) {
     return i8c83ac2fb480533d8c9e30080c936573aac55d73adc5a8f1617aed89f50165d0.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UsersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.users.item collection
-func (m *EducationRequestBuilder) UsersById(id string)(*i7bc4bfb8dac45e0b487266018aebf5c4f0660e8547d69a5d9bccd64de3f76c6e.EducationUserRequestBuilder) {
+func (m *EducationRequestBuilder) UsersById(id string)(*i7bc4bfb8dac45e0b487266018aebf5c4f0660e8547d69a5d9bccd64de3f76c6e.EducationUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -191,5 +191,5 @@ func (m *EducationRequestBuilder) UsersById(id string)(*i7bc4bfb8dac45e0b4872660
     if id != "" {
         urlTplParams["educationUser_id"] = id
     }
-    return i7bc4bfb8dac45e0b487266018aebf5c4f0660e8547d69a5d9bccd64de3f76c6e.NewEducationUserRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i7bc4bfb8dac45e0b487266018aebf5c4f0660e8547d69a5d9bccd64de3f76c6e.NewEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

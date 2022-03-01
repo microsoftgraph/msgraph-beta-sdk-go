@@ -8,13 +8,13 @@ import (
 type CloudPcBulkRemoteActionResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // A list of all the Intune managed device IDs that completed the bulk action with a failure.
     failedDeviceIds []string;
-    // 
+    // A list of all the Intune managed device IDs that were not found when the bulk action was attempted.
     notFoundDeviceIds []string;
-    // 
+    // A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.
     notSupportedDeviceIds []string;
-    // 
+    // A list of all the Intune managed device IDs that completed the bulk action successfully.
     successfulDeviceIds []string;
 }
 // NewCloudPcBulkRemoteActionResult instantiates a new cloudPcBulkRemoteActionResult and sets the default values.
@@ -32,7 +32,7 @@ func (m *CloudPcBulkRemoteActionResult) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// GetFailedDeviceIds gets the failedDeviceIds property value. 
+// GetFailedDeviceIds gets the failedDeviceIds property value. A list of all the Intune managed device IDs that completed the bulk action with a failure.
 func (m *CloudPcBulkRemoteActionResult) GetFailedDeviceIds()([]string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *CloudPcBulkRemoteActionResult) GetFailedDeviceIds()([]string) {
         return m.failedDeviceIds
     }
 }
-// GetNotFoundDeviceIds gets the notFoundDeviceIds property value. 
+// GetNotFoundDeviceIds gets the notFoundDeviceIds property value. A list of all the Intune managed device IDs that were not found when the bulk action was attempted.
 func (m *CloudPcBulkRemoteActionResult) GetNotFoundDeviceIds()([]string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *CloudPcBulkRemoteActionResult) GetNotFoundDeviceIds()([]string) {
         return m.notFoundDeviceIds
     }
 }
-// GetNotSupportedDeviceIds gets the notSupportedDeviceIds property value. 
+// GetNotSupportedDeviceIds gets the notSupportedDeviceIds property value. A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.
 func (m *CloudPcBulkRemoteActionResult) GetNotSupportedDeviceIds()([]string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *CloudPcBulkRemoteActionResult) GetNotSupportedDeviceIds()([]string) {
         return m.notSupportedDeviceIds
     }
 }
-// GetSuccessfulDeviceIds gets the successfulDeviceIds property value. 
+// GetSuccessfulDeviceIds gets the successfulDeviceIds property value. A list of all the Intune managed device IDs that completed the bulk action successfully.
 func (m *CloudPcBulkRemoteActionResult) GetSuccessfulDeviceIds()([]string) {
     if m == nil {
         return nil
@@ -168,25 +168,25 @@ func (m *CloudPcBulkRemoteActionResult) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetFailedDeviceIds sets the failedDeviceIds property value. 
+// SetFailedDeviceIds sets the failedDeviceIds property value. A list of all the Intune managed device IDs that completed the bulk action with a failure.
 func (m *CloudPcBulkRemoteActionResult) SetFailedDeviceIds(value []string)() {
     if m != nil {
         m.failedDeviceIds = value
     }
 }
-// SetNotFoundDeviceIds sets the notFoundDeviceIds property value. 
+// SetNotFoundDeviceIds sets the notFoundDeviceIds property value. A list of all the Intune managed device IDs that were not found when the bulk action was attempted.
 func (m *CloudPcBulkRemoteActionResult) SetNotFoundDeviceIds(value []string)() {
     if m != nil {
         m.notFoundDeviceIds = value
     }
 }
-// SetNotSupportedDeviceIds sets the notSupportedDeviceIds property value. 
+// SetNotSupportedDeviceIds sets the notSupportedDeviceIds property value. A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.
 func (m *CloudPcBulkRemoteActionResult) SetNotSupportedDeviceIds(value []string)() {
     if m != nil {
         m.notSupportedDeviceIds = value
     }
 }
-// SetSuccessfulDeviceIds sets the successfulDeviceIds property value. 
+// SetSuccessfulDeviceIds sets the successfulDeviceIds property value. A list of all the Intune managed device IDs that completed the bulk action successfully.
 func (m *CloudPcBulkRemoteActionResult) SetSuccessfulDeviceIds(value []string)() {
     if m != nil {
         m.successfulDeviceIds = value

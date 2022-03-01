@@ -26,7 +26,7 @@ type CustomExtensionHandlersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// CustomExtensionHandlersRequestBuilderGetQueryParameters get customExtensionHandlers from identityGovernance
+// CustomExtensionHandlersRequestBuilderGetQueryParameters the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
 type CustomExtensionHandlersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -64,7 +64,7 @@ func NewCustomExtensionHandlersRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams["request-raw-url"] = rawUrl
     return NewCustomExtensionHandlersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get customExtensionHandlers from identityGovernance
+// CreateGetRequestInformation the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
 func (m *CustomExtensionHandlersRequestBuilder) CreateGetRequestInformation(options *CustomExtensionHandlersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -84,7 +84,7 @@ func (m *CustomExtensionHandlersRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get get customExtensionHandlers from identityGovernance
+// Get the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
 func (m *CustomExtensionHandlersRequestBuilder) Get(options *CustomExtensionHandlersRequestBuilderGetOptions)(*CustomExtensionHandlersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

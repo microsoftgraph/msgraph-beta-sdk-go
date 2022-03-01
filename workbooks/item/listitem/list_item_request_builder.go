@@ -66,7 +66,7 @@ func (m *ListItemRequestBuilder) Activities()(*iaebdcfc54ab2edc6fe5105d1afafedf2
     return iaebdcfc54ab2edc6fe5105d1afafedf26835f7f668ac4b066860aa351101b1ad.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ActivitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.listItem.activities.item collection
-func (m *ListItemRequestBuilder) ActivitiesById(id string)(*ibe08c884ca571ea57b684ee03e3420c41ac87ffe76b7f866dfac0c1419574108.ItemActivityOLDRequestBuilder) {
+func (m *ListItemRequestBuilder) ActivitiesById(id string)(*ibe08c884ca571ea57b684ee03e3420c41ac87ffe76b7f866dfac0c1419574108.ItemActivityOLDItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func (m *ListItemRequestBuilder) ActivitiesById(id string)(*ibe08c884ca571ea57b6
     if id != "" {
         urlTplParams["itemActivityOLD_id"] = id
     }
-    return ibe08c884ca571ea57b684ee03e3420c41ac87ffe76b7f866dfac0c1419574108.NewItemActivityOLDRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ibe08c884ca571ea57b684ee03e3420c41ac87ffe76b7f866dfac0c1419574108.NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *ListItemRequestBuilder) Analytics()(*i8c553aa1c8c4c2b81c0062f66e2868ab7452581bcd6757919ee9bb5a787db993.AnalyticsRequestBuilder) {
     return i8c553aa1c8c4c2b81c0062f66e2868ab7452581bcd6757919ee9bb5a787db993.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -206,7 +206,7 @@ func (m *ListItemRequestBuilder) Versions()(*i529eecf9a39472817b91cb99c0f2664c2f
     return i529eecf9a39472817b91cb99c0f2664c2fe83a61324142474841226d8cab6226.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // VersionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.listItem.versions.item collection
-func (m *ListItemRequestBuilder) VersionsById(id string)(*i4eec53871899220cfb963e8222bb0e0d672fb91c668739a3b13cc94d4a9b14b2.ListItemVersionRequestBuilder) {
+func (m *ListItemRequestBuilder) VersionsById(id string)(*i4eec53871899220cfb963e8222bb0e0d672fb91c668739a3b13cc94d4a9b14b2.ListItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -214,5 +214,5 @@ func (m *ListItemRequestBuilder) VersionsById(id string)(*i4eec53871899220cfb963
     if id != "" {
         urlTplParams["listItemVersion_id"] = id
     }
-    return i4eec53871899220cfb963e8222bb0e0d672fb91c668739a3b13cc94d4a9b14b2.NewListItemVersionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i4eec53871899220cfb963e8222bb0e0d672fb91c668739a3b13cc94d4a9b14b2.NewListItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

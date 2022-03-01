@@ -161,7 +161,7 @@ func (m *CrossTenantAccessPolicyRequestBuilder) Partners()(*i12ec00c0cda085cf3d1
     return i12ec00c0cda085cf3d19e747ae27322079cbb18e5b556d17b1a8a5d083c42b4f.NewPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PartnersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.crossTenantAccessPolicy.partners.item collection
-func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*i671445f12e1144f0707e713947da70fbe18307579db947c865515610f6068a76.CrossTenantAccessPolicyConfigurationPartnerRequestBuilder) {
+func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*i671445f12e1144f0707e713947da70fbe18307579db947c865515610f6068a76.CrossTenantAccessPolicyConfigurationPartnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -169,7 +169,7 @@ func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*i671445
     if id != "" {
         urlTplParams["crossTenantAccessPolicyConfigurationPartner_tenantId"] = id
     }
-    return i671445f12e1144f0707e713947da70fbe18307579db947c865515610f6068a76.NewCrossTenantAccessPolicyConfigurationPartnerRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i671445f12e1144f0707e713947da70fbe18307579db947c865515610f6068a76.NewCrossTenantAccessPolicyConfigurationPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch the custom rules that define an access scenario when interacting with external Azure AD tenants.
 func (m *CrossTenantAccessPolicyRequestBuilder) Patch(options *CrossTenantAccessPolicyRequestBuilderPatchOptions)(error) {

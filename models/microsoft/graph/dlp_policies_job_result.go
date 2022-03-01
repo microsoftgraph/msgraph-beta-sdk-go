@@ -1,6 +1,7 @@
 package graph
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
@@ -8,6 +9,10 @@ import (
 type DlpPoliciesJobResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
+    auditCorrelationId *string;
+    // 
+    evaluationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
     matchingRules []MatchingDlpRule;
 }
@@ -26,6 +31,22 @@ func (m *DlpPoliciesJobResult) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// GetAuditCorrelationId gets the auditCorrelationId property value. 
+func (m *DlpPoliciesJobResult) GetAuditCorrelationId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.auditCorrelationId
+    }
+}
+// GetEvaluationDateTime gets the evaluationDateTime property value. 
+func (m *DlpPoliciesJobResult) GetEvaluationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.evaluationDateTime
+    }
+}
 // GetMatchingRules gets the matchingRules property value. 
 func (m *DlpPoliciesJobResult) GetMatchingRules()([]MatchingDlpRule) {
     if m == nil {
@@ -37,6 +58,26 @@ func (m *DlpPoliciesJobResult) GetMatchingRules()([]MatchingDlpRule) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DlpPoliciesJobResult) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
+    res["auditCorrelationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuditCorrelationId(val)
+        }
+        return nil
+    }
+    res["evaluationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEvaluationDateTime(val)
+        }
+        return nil
+    }
     res["matchingRules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMatchingDlpRule() })
         if err != nil {
@@ -58,6 +99,18 @@ func (m *DlpPoliciesJobResult) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *DlpPoliciesJobResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("auditCorrelationId", m.GetAuditCorrelationId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteTimeValue("evaluationDateTime", m.GetEvaluationDateTime())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMatchingRules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMatchingRules()))
         for i, v := range m.GetMatchingRules() {
@@ -81,6 +134,18 @@ func (m *DlpPoliciesJobResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 func (m *DlpPoliciesJobResult) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetAuditCorrelationId sets the auditCorrelationId property value. 
+func (m *DlpPoliciesJobResult) SetAuditCorrelationId(value *string)() {
+    if m != nil {
+        m.auditCorrelationId = value
+    }
+}
+// SetEvaluationDateTime sets the evaluationDateTime property value. 
+func (m *DlpPoliciesJobResult) SetEvaluationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    if m != nil {
+        m.evaluationDateTime = value
     }
 }
 // SetMatchingRules sets the matchingRules property value. 

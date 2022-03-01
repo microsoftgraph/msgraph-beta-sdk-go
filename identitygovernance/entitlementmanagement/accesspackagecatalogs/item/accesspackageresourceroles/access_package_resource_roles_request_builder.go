@@ -26,7 +26,7 @@ type AccessPackageResourceRolesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageResourceRolesRequestBuilderGetQueryParameters get accessPackageResourceRoles from identityGovernance
+// AccessPackageResourceRolesRequestBuilderGetQueryParameters the roles in each resource in a catalog. Read-only.
 type AccessPackageResourceRolesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAccessPackageResourceRolesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceRolesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get accessPackageResourceRoles from identityGovernance
+// CreateGetRequestInformation the roles in each resource in a catalog. Read-only.
 func (m *AccessPackageResourceRolesRequestBuilder) CreateGetRequestInformation(options *AccessPackageResourceRolesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AccessPackageResourceRolesRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to accessPackageResourceRoles for identityGovernance
+// CreatePostRequestInformation the roles in each resource in a catalog. Read-only.
 func (m *AccessPackageResourceRolesRequestBuilder) CreatePostRequestInformation(options *AccessPackageResourceRolesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AccessPackageResourceRolesRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Get get accessPackageResourceRoles from identityGovernance
+// Get the roles in each resource in a catalog. Read-only.
 func (m *AccessPackageResourceRolesRequestBuilder) Get(options *AccessPackageResourceRolesRequestBuilderGetOptions)(*AccessPackageResourceRolesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AccessPackageResourceRolesRequestBuilder) Get(options *AccessPackageRes
     }
     return res.(*AccessPackageResourceRolesResponse), nil
 }
-// Post create new navigation property to accessPackageResourceRoles for identityGovernance
+// Post the roles in each resource in a catalog. Read-only.
 func (m *AccessPackageResourceRolesRequestBuilder) Post(options *AccessPackageResourceRolesRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AccessPackageResourceRole, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -169,7 +169,7 @@ func (m *ApprovalRequestBuilder) Steps()(*i38886a9f30b28aa80cf280cbfb097da3558ca
     return i38886a9f30b28aa80cf280cbfb097da3558cace7540a0aaf5df3ffda6ec3670d.NewStepsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // StepsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.appConsentRequestsForApproval.item.userConsentRequests.item.approval.steps.item collection
-func (m *ApprovalRequestBuilder) StepsById(id string)(*if4f6bba92f381d4ed873f0efde58af978a482860b93707c94d38c06f3c8f7cd8.ApprovalStepRequestBuilder) {
+func (m *ApprovalRequestBuilder) StepsById(id string)(*if4f6bba92f381d4ed873f0efde58af978a482860b93707c94d38c06f3c8f7cd8.ApprovalStepItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -177,5 +177,5 @@ func (m *ApprovalRequestBuilder) StepsById(id string)(*if4f6bba92f381d4ed873f0ef
     if id != "" {
         urlTplParams["approvalStep_id"] = id
     }
-    return if4f6bba92f381d4ed873f0efde58af978a482860b93707c94d38c06f3c8f7cd8.NewApprovalStepRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return if4f6bba92f381d4ed873f0efde58af978a482860b93707c94d38c06f3c8f7cd8.NewApprovalStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

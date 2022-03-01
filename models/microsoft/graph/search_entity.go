@@ -7,11 +7,11 @@ import (
 // SearchEntity 
 type SearchEntity struct {
     Entity
-    // 
+    // Administrative answer in Microsoft Search results to define common acronyms in a organization.
     acronyms []Acronym;
-    // 
+    // Administrative answer in Microsoft Search results for common search queries in an organization.
     bookmarks []Bookmark;
-    // 
+    // Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
     qnas []Qna;
 }
 // NewSearchEntity instantiates a new searchEntity and sets the default values.
@@ -21,7 +21,7 @@ func NewSearchEntity()(*SearchEntity) {
     }
     return m
 }
-// GetAcronyms gets the acronyms property value. 
+// GetAcronyms gets the acronyms property value. Administrative answer in Microsoft Search results to define common acronyms in a organization.
 func (m *SearchEntity) GetAcronyms()([]Acronym) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *SearchEntity) GetAcronyms()([]Acronym) {
         return m.acronyms
     }
 }
-// GetBookmarks gets the bookmarks property value. 
+// GetBookmarks gets the bookmarks property value. Administrative answer in Microsoft Search results for common search queries in an organization.
 func (m *SearchEntity) GetBookmarks()([]Bookmark) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *SearchEntity) GetBookmarks()([]Bookmark) {
         return m.bookmarks
     }
 }
-// GetQnas gets the qnas property value. 
+// GetQnas gets the qnas property value. Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 func (m *SearchEntity) GetQnas()([]Qna) {
     if m == nil {
         return nil
@@ -136,19 +136,19 @@ func (m *SearchEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// SetAcronyms sets the acronyms property value. 
+// SetAcronyms sets the acronyms property value. Administrative answer in Microsoft Search results to define common acronyms in a organization.
 func (m *SearchEntity) SetAcronyms(value []Acronym)() {
     if m != nil {
         m.acronyms = value
     }
 }
-// SetBookmarks sets the bookmarks property value. 
+// SetBookmarks sets the bookmarks property value. Administrative answer in Microsoft Search results for common search queries in an organization.
 func (m *SearchEntity) SetBookmarks(value []Bookmark)() {
     if m != nil {
         m.bookmarks = value
     }
 }
-// SetQnas sets the qnas property value. 
+// SetQnas sets the qnas property value. Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 func (m *SearchEntity) SetQnas(value []Qna)() {
     if m != nil {
         m.qnas = value

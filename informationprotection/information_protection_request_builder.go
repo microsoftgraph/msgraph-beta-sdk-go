@@ -121,7 +121,7 @@ func (m *InformationProtectionRequestBuilder) DataLossPreventionPolicies()(*i1a9
     return i1a95523e1b7c794d87cb658c728777e101fb0ee597c029847e1a346429f38524.NewDataLossPreventionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DataLossPreventionPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.informationProtection.dataLossPreventionPolicies.item collection
-func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id string)(*i81855f40af60427eaa02288c5b3a8c7910b71b92f7590558464a7545621900e0.DataLossPreventionPolicyRequestBuilder) {
+func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id string)(*i81855f40af60427eaa02288c5b3a8c7910b71b92f7590558464a7545621900e0.DataLossPreventionPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -129,7 +129,7 @@ func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id 
     if id != "" {
         urlTplParams["dataLossPreventionPolicy_id"] = id
     }
-    return i81855f40af60427eaa02288c5b3a8c7910b71b92f7590558464a7545621900e0.NewDataLossPreventionPolicyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i81855f40af60427eaa02288c5b3a8c7910b71b92f7590558464a7545621900e0.NewDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *InformationProtectionRequestBuilder) DecryptBuffer()(*if1d4de22a4e73e8600fbc436c47981b98858d08128f85fdfca3d0206acce2e0e.DecryptBufferRequestBuilder) {
     return if1d4de22a4e73e8600fbc436c47981b98858d08128f85fdfca3d0206acce2e0e.NewDecryptBufferRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -168,7 +168,7 @@ func (m *InformationProtectionRequestBuilder) SensitivityLabels()(*i4a2863a2873d
     return i4a2863a2873ddcee341eca5db8b2392a687082091015ea021687fd47d5cc62b1.NewSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SensitivityLabelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.informationProtection.sensitivityLabels.item collection
-func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*ia08232ff2c92a1e8e8fe0d1ca164e23faf909caa06499c80937301423e6eeecd.SensitivityLabelRequestBuilder) {
+func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*ia08232ff2c92a1e8e8fe0d1ca164e23faf909caa06499c80937301423e6eeecd.SensitivityLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -176,7 +176,7 @@ func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*
     if id != "" {
         urlTplParams["sensitivityLabel_id"] = id
     }
-    return ia08232ff2c92a1e8e8fe0d1ca164e23faf909caa06499c80937301423e6eeecd.NewSensitivityLabelRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ia08232ff2c92a1e8e8fe0d1ca164e23faf909caa06499c80937301423e6eeecd.NewSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *InformationProtectionRequestBuilder) SensitivityPolicySettings()(*i1f1fc4efa4f7beefe6f28e0e47da69e7db2e007893565f6a9709f0136e0664b4.SensitivityPolicySettingsRequestBuilder) {
     return i1f1fc4efa4f7beefe6f28e0e47da69e7db2e007893565f6a9709f0136e0664b4.NewSensitivityPolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -188,7 +188,7 @@ func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*i01a4d
     return i01a4da13cab38ce326543975818120437c502ed331f722fb657d431f4668f147.NewThreatAssessmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ThreatAssessmentRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.informationProtection.threatAssessmentRequests.item collection
-func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*i327f9371a6a981bfca40891bd4712a18ae93dba5046bc3d5eb9091886aa46aa3.ThreatAssessmentRequestRequestBuilder) {
+func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*i327f9371a6a981bfca40891bd4712a18ae93dba5046bc3d5eb9091886aa46aa3.ThreatAssessmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -196,7 +196,7 @@ func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id st
     if id != "" {
         urlTplParams["threatAssessmentRequest_id"] = id
     }
-    return i327f9371a6a981bfca40891bd4712a18ae93dba5046bc3d5eb9091886aa46aa3.NewThreatAssessmentRequestRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i327f9371a6a981bfca40891bd4712a18ae93dba5046bc3d5eb9091886aa46aa3.NewThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *InformationProtectionRequestBuilder) VerifySignature()(*ib1e5ef178341a9997924bbcf59d55402eb0c8d72a3fe1ae61ffc28668ff4e286.VerifySignatureRequestBuilder) {
     return ib1e5ef178341a9997924bbcf59d55402eb0c8d72a3fe1ae61ffc28668ff4e286.NewVerifySignatureRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -97,7 +97,7 @@ func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtections()(*i102
     return i102dee350049990db6017a7e5aaec602f046d2eab032b9cfe8fdd20bb889fe71.NewAndroidManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AndroidManagedAppProtectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.androidManagedAppProtections.item collection
-func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtectionsById(id string)(*i3b0fefd7a08f40697f53b6e4e31c5e2c9753528a64f9b232b76ca8f31a4e944e.AndroidManagedAppProtectionRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtectionsById(id string)(*i3b0fefd7a08f40697f53b6e4e31c5e2c9753528a64f9b232b76ca8f31a4e944e.AndroidManagedAppProtectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -105,7 +105,7 @@ func (m *DeviceAppManagementRequestBuilder) AndroidManagedAppProtectionsById(id 
     if id != "" {
         urlTplParams["androidManagedAppProtection_id"] = id
     }
-    return i3b0fefd7a08f40697f53b6e4e31c5e2c9753528a64f9b232b76ca8f31a4e944e.NewAndroidManagedAppProtectionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i3b0fefd7a08f40697f53b6e4e31c5e2c9753528a64f9b232b76ca8f31a4e944e.NewAndroidManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDeviceAppManagementRequestBuilderInternal instantiates a new DeviceAppManagementRequestBuilder and sets the default values.
 func NewDeviceAppManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceAppManagementRequestBuilder) {
@@ -168,7 +168,7 @@ func (m *DeviceAppManagementRequestBuilder) DefaultManagedAppProtections()(*i249
     return i24941860ea69ec24f14182d511152b68a5da0429ab75a0d6a1e6ccecfd1a155c.NewDefaultManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DefaultManagedAppProtectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.defaultManagedAppProtections.item collection
-func (m *DeviceAppManagementRequestBuilder) DefaultManagedAppProtectionsById(id string)(*i587ff2c64043a8d6a7ba7b62c47e4c87fddaaad70ec6796eb827a7be948a9033.DefaultManagedAppProtectionRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) DefaultManagedAppProtectionsById(id string)(*i587ff2c64043a8d6a7ba7b62c47e4c87fddaaad70ec6796eb827a7be948a9033.DefaultManagedAppProtectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -176,13 +176,13 @@ func (m *DeviceAppManagementRequestBuilder) DefaultManagedAppProtectionsById(id 
     if id != "" {
         urlTplParams["defaultManagedAppProtection_id"] = id
     }
-    return i587ff2c64043a8d6a7ba7b62c47e4c87fddaaad70ec6796eb827a7be948a9033.NewDefaultManagedAppProtectionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i587ff2c64043a8d6a7ba7b62c47e4c87fddaaad70ec6796eb827a7be948a9033.NewDefaultManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) DeviceAppManagementTasks()(*i2c0e155b4c97677199c972087f9bc6d38e155b8f14c9d3cfa0eb0c056759608c.DeviceAppManagementTasksRequestBuilder) {
     return i2c0e155b4c97677199c972087f9bc6d38e155b8f14c9d3cfa0eb0c056759608c.NewDeviceAppManagementTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DeviceAppManagementTasksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.deviceAppManagementTasks.item collection
-func (m *DeviceAppManagementRequestBuilder) DeviceAppManagementTasksById(id string)(*i111d2625f1ad2501f178f2146156ce46548595d9f1f6169f1d43762d4d373d9d.DeviceAppManagementTaskRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) DeviceAppManagementTasksById(id string)(*i111d2625f1ad2501f178f2146156ce46548595d9f1f6169f1d43762d4d373d9d.DeviceAppManagementTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -190,13 +190,13 @@ func (m *DeviceAppManagementRequestBuilder) DeviceAppManagementTasksById(id stri
     if id != "" {
         urlTplParams["deviceAppManagementTask_id"] = id
     }
-    return i111d2625f1ad2501f178f2146156ce46548595d9f1f6169f1d43762d4d373d9d.NewDeviceAppManagementTaskRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i111d2625f1ad2501f178f2146156ce46548595d9f1f6169f1d43762d4d373d9d.NewDeviceAppManagementTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) EnterpriseCodeSigningCertificates()(*i47f8613c686153638e221e0ff110d8a5a6e072e9cf93b668c444d83a782cf6fe.EnterpriseCodeSigningCertificatesRequestBuilder) {
     return i47f8613c686153638e221e0ff110d8a5a6e072e9cf93b668c444d83a782cf6fe.NewEnterpriseCodeSigningCertificatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // EnterpriseCodeSigningCertificatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.enterpriseCodeSigningCertificates.item collection
-func (m *DeviceAppManagementRequestBuilder) EnterpriseCodeSigningCertificatesById(id string)(*ic25fb9fffd8c02c79bfc42b3e12ad25f3fbaf117526021e4526f4cd527116b00.EnterpriseCodeSigningCertificateRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) EnterpriseCodeSigningCertificatesById(id string)(*ic25fb9fffd8c02c79bfc42b3e12ad25f3fbaf117526021e4526f4cd527116b00.EnterpriseCodeSigningCertificateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -204,7 +204,7 @@ func (m *DeviceAppManagementRequestBuilder) EnterpriseCodeSigningCertificatesByI
     if id != "" {
         urlTplParams["enterpriseCodeSigningCertificate_id"] = id
     }
-    return ic25fb9fffd8c02c79bfc42b3e12ad25f3fbaf117526021e4526f4cd527116b00.NewEnterpriseCodeSigningCertificateRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ic25fb9fffd8c02c79bfc42b3e12ad25f3fbaf117526021e4526f4cd527116b00.NewEnterpriseCodeSigningCertificateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get deviceAppManagement
 func (m *DeviceAppManagementRequestBuilder) Get(options *DeviceAppManagementRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.DeviceAppManagement, error) {
@@ -222,7 +222,7 @@ func (m *DeviceAppManagementRequestBuilder) IosLobAppProvisioningConfigurations(
     return i4ae1191713b2bcf5293d5d9a7f57d7875e1fb8395d4f1ac48c09144198cf2584.NewIosLobAppProvisioningConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IosLobAppProvisioningConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.iosLobAppProvisioningConfigurations.item collection
-func (m *DeviceAppManagementRequestBuilder) IosLobAppProvisioningConfigurationsById(id string)(*i6ed3d58de1a55f05afd474b93dfc98801a4e594f2d674957216b11e72cef3f3b.IosLobAppProvisioningConfigurationRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) IosLobAppProvisioningConfigurationsById(id string)(*i6ed3d58de1a55f05afd474b93dfc98801a4e594f2d674957216b11e72cef3f3b.IosLobAppProvisioningConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -230,13 +230,13 @@ func (m *DeviceAppManagementRequestBuilder) IosLobAppProvisioningConfigurationsB
     if id != "" {
         urlTplParams["iosLobAppProvisioningConfiguration_id"] = id
     }
-    return i6ed3d58de1a55f05afd474b93dfc98801a4e594f2d674957216b11e72cef3f3b.NewIosLobAppProvisioningConfigurationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i6ed3d58de1a55f05afd474b93dfc98801a4e594f2d674957216b11e72cef3f3b.NewIosLobAppProvisioningConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) IosManagedAppProtections()(*i2dad5aeb46d764dd36e179abb8522de62e89f2a53fdcd4b051505fecc5c0f7bc.IosManagedAppProtectionsRequestBuilder) {
     return i2dad5aeb46d764dd36e179abb8522de62e89f2a53fdcd4b051505fecc5c0f7bc.NewIosManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // IosManagedAppProtectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.iosManagedAppProtections.item collection
-func (m *DeviceAppManagementRequestBuilder) IosManagedAppProtectionsById(id string)(*i1fa4345424f4e8032c54aadba42924b3c9de89ca46689dc3b1b829ffe729b8f6.IosManagedAppProtectionRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) IosManagedAppProtectionsById(id string)(*i1fa4345424f4e8032c54aadba42924b3c9de89ca46689dc3b1b829ffe729b8f6.IosManagedAppProtectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -244,13 +244,13 @@ func (m *DeviceAppManagementRequestBuilder) IosManagedAppProtectionsById(id stri
     if id != "" {
         urlTplParams["iosManagedAppProtection_id"] = id
     }
-    return i1fa4345424f4e8032c54aadba42924b3c9de89ca46689dc3b1b829ffe729b8f6.NewIosManagedAppProtectionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i1fa4345424f4e8032c54aadba42924b3c9de89ca46689dc3b1b829ffe729b8f6.NewIosManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) ManagedAppPolicies()(*ib1493941e0d94862b2a07650ec9a7a40216e313891ffb7e2b502884c5d0796df.ManagedAppPoliciesRequestBuilder) {
     return ib1493941e0d94862b2a07650ec9a7a40216e313891ffb7e2b502884c5d0796df.NewManagedAppPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedAppPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedAppPolicies.item collection
-func (m *DeviceAppManagementRequestBuilder) ManagedAppPoliciesById(id string)(*i31dc45267ed832743f873d9cbf6d2e8ce83262adc3ce83b4698d646470d1061d.ManagedAppPolicyRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) ManagedAppPoliciesById(id string)(*i31dc45267ed832743f873d9cbf6d2e8ce83262adc3ce83b4698d646470d1061d.ManagedAppPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -258,13 +258,13 @@ func (m *DeviceAppManagementRequestBuilder) ManagedAppPoliciesById(id string)(*i
     if id != "" {
         urlTplParams["managedAppPolicy_id"] = id
     }
-    return i31dc45267ed832743f873d9cbf6d2e8ce83262adc3ce83b4698d646470d1061d.NewManagedAppPolicyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i31dc45267ed832743f873d9cbf6d2e8ce83262adc3ce83b4698d646470d1061d.NewManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) ManagedAppRegistrations()(*i3e0f6a6236335b92506dbec1a57163f0d6904827a60904e0159bf0e01304e5c1.ManagedAppRegistrationsRequestBuilder) {
     return i3e0f6a6236335b92506dbec1a57163f0d6904827a60904e0159bf0e01304e5c1.NewManagedAppRegistrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedAppRegistrationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedAppRegistrations.item collection
-func (m *DeviceAppManagementRequestBuilder) ManagedAppRegistrationsById(id string)(*i77e081996fdbcfeb6b1bd69d57141d661fd7bda147a8b41a9cfbbeecda840090.ManagedAppRegistrationRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) ManagedAppRegistrationsById(id string)(*i77e081996fdbcfeb6b1bd69d57141d661fd7bda147a8b41a9cfbbeecda840090.ManagedAppRegistrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -272,13 +272,13 @@ func (m *DeviceAppManagementRequestBuilder) ManagedAppRegistrationsById(id strin
     if id != "" {
         urlTplParams["managedAppRegistration_id"] = id
     }
-    return i77e081996fdbcfeb6b1bd69d57141d661fd7bda147a8b41a9cfbbeecda840090.NewManagedAppRegistrationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i77e081996fdbcfeb6b1bd69d57141d661fd7bda147a8b41a9cfbbeecda840090.NewManagedAppRegistrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) ManagedAppStatuses()(*i2409240b9ff00edd267b9ce9480582a136074b1a1ef0f1a320e40469879b5b4a.ManagedAppStatusesRequestBuilder) {
     return i2409240b9ff00edd267b9ce9480582a136074b1a1ef0f1a320e40469879b5b4a.NewManagedAppStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedAppStatusesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedAppStatuses.item collection
-func (m *DeviceAppManagementRequestBuilder) ManagedAppStatusesById(id string)(*i15b8057a97c25aa14e9a4d6fc9def02dce42569f753f7a62f61b392239a5d612.ManagedAppStatusRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) ManagedAppStatusesById(id string)(*i15b8057a97c25aa14e9a4d6fc9def02dce42569f753f7a62f61b392239a5d612.ManagedAppStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -286,13 +286,13 @@ func (m *DeviceAppManagementRequestBuilder) ManagedAppStatusesById(id string)(*i
     if id != "" {
         urlTplParams["managedAppStatus_id"] = id
     }
-    return i15b8057a97c25aa14e9a4d6fc9def02dce42569f753f7a62f61b392239a5d612.NewManagedAppStatusRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i15b8057a97c25aa14e9a4d6fc9def02dce42569f753f7a62f61b392239a5d612.NewManagedAppStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) ManagedEBookCategories()(*i506595e5c982d9cbef552a980467df6c4caffc29ce38c31544b7a4a9e91b4ef9.ManagedEBookCategoriesRequestBuilder) {
     return i506595e5c982d9cbef552a980467df6c4caffc29ce38c31544b7a4a9e91b4ef9.NewManagedEBookCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedEBookCategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedEBookCategories.item collection
-func (m *DeviceAppManagementRequestBuilder) ManagedEBookCategoriesById(id string)(*i6d212574cda4bdc3baad6eb00d5c9eaf6d61f31d25ad4cdc63ed678de8d2f959.ManagedEBookCategoryRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) ManagedEBookCategoriesById(id string)(*i6d212574cda4bdc3baad6eb00d5c9eaf6d61f31d25ad4cdc63ed678de8d2f959.ManagedEBookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -300,13 +300,13 @@ func (m *DeviceAppManagementRequestBuilder) ManagedEBookCategoriesById(id string
     if id != "" {
         urlTplParams["managedEBookCategory_id"] = id
     }
-    return i6d212574cda4bdc3baad6eb00d5c9eaf6d61f31d25ad4cdc63ed678de8d2f959.NewManagedEBookCategoryRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i6d212574cda4bdc3baad6eb00d5c9eaf6d61f31d25ad4cdc63ed678de8d2f959.NewManagedEBookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) ManagedEBooks()(*i20583d0a177898187a71dda1d89153f4ea0e3952fb9f921dbe151384949dfd62.ManagedEBooksRequestBuilder) {
     return i20583d0a177898187a71dda1d89153f4ea0e3952fb9f921dbe151384949dfd62.NewManagedEBooksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ManagedEBooksById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.managedEBooks.item collection
-func (m *DeviceAppManagementRequestBuilder) ManagedEBooksById(id string)(*i926032b256e689b9a8930cece406118a2156139b79c1b064550fc7bba6a804b8.ManagedEBookRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) ManagedEBooksById(id string)(*i926032b256e689b9a8930cece406118a2156139b79c1b064550fc7bba6a804b8.ManagedEBookItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -314,13 +314,13 @@ func (m *DeviceAppManagementRequestBuilder) ManagedEBooksById(id string)(*i92603
     if id != "" {
         urlTplParams["managedEBook_id"] = id
     }
-    return i926032b256e689b9a8930cece406118a2156139b79c1b064550fc7bba6a804b8.NewManagedEBookRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i926032b256e689b9a8930cece406118a2156139b79c1b064550fc7bba6a804b8.NewManagedEBookItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPolicies()(*i76773835ad298178375c61fd2bb3db2a00f6d1b79d366e5235fc02cd5a71d5ef.MdmWindowsInformationProtectionPoliciesRequestBuilder) {
     return i76773835ad298178375c61fd2bb3db2a00f6d1b79d366e5235fc02cd5a71d5ef.NewMdmWindowsInformationProtectionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MdmWindowsInformationProtectionPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.mdmWindowsInformationProtectionPolicies.item collection
-func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPoliciesById(id string)(*i40679b07c9d7f966f341b0ef7533a4761cd0fc2dd66e199f9bb9bef68c64cdeb.MdmWindowsInformationProtectionPolicyRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPoliciesById(id string)(*i40679b07c9d7f966f341b0ef7533a4761cd0fc2dd66e199f9bb9bef68c64cdeb.MdmWindowsInformationProtectionPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -328,13 +328,13 @@ func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPolic
     if id != "" {
         urlTplParams["mdmWindowsInformationProtectionPolicy_id"] = id
     }
-    return i40679b07c9d7f966f341b0ef7533a4761cd0fc2dd66e199f9bb9bef68c64cdeb.NewMdmWindowsInformationProtectionPolicyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i40679b07c9d7f966f341b0ef7533a4761cd0fc2dd66e199f9bb9bef68c64cdeb.NewMdmWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) MobileAppCategories()(*i1d8bd406d3b1507c2172d70e5990518e80c89c738e5da31e1c4a628d3bff7d8f.MobileAppCategoriesRequestBuilder) {
     return i1d8bd406d3b1507c2172d70e5990518e80c89c738e5da31e1c4a628d3bff7d8f.NewMobileAppCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MobileAppCategoriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.mobileAppCategories.item collection
-func (m *DeviceAppManagementRequestBuilder) MobileAppCategoriesById(id string)(*iebd0ee945a2658314caea3437be3d7434b12969418fd5a37ff33dec3769a17de.MobileAppCategoryRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) MobileAppCategoriesById(id string)(*iebd0ee945a2658314caea3437be3d7434b12969418fd5a37ff33dec3769a17de.MobileAppCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -342,13 +342,13 @@ func (m *DeviceAppManagementRequestBuilder) MobileAppCategoriesById(id string)(*
     if id != "" {
         urlTplParams["mobileAppCategory_id"] = id
     }
-    return iebd0ee945a2658314caea3437be3d7434b12969418fd5a37ff33dec3769a17de.NewMobileAppCategoryRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return iebd0ee945a2658314caea3437be3d7434b12969418fd5a37ff33dec3769a17de.NewMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurations()(*i55b67fda8074ac8f07c7e2339a212683a0fb8f21e6b18b534d0e1c1d0d87cf54.MobileAppConfigurationsRequestBuilder) {
     return i55b67fda8074ac8f07c7e2339a212683a0fb8f21e6b18b534d0e1c1d0d87cf54.NewMobileAppConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MobileAppConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.mobileAppConfigurations.item collection
-func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurationsById(id string)(*if980bb6134295700a6ecd4621e106b4faf366915f3f6b4a9decbfa4a90b923df.ManagedDeviceMobileAppConfigurationRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurationsById(id string)(*if980bb6134295700a6ecd4621e106b4faf366915f3f6b4a9decbfa4a90b923df.ManagedDeviceMobileAppConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -356,13 +356,13 @@ func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurationsById(id strin
     if id != "" {
         urlTplParams["managedDeviceMobileAppConfiguration_id"] = id
     }
-    return if980bb6134295700a6ecd4621e106b4faf366915f3f6b4a9decbfa4a90b923df.NewManagedDeviceMobileAppConfigurationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return if980bb6134295700a6ecd4621e106b4faf366915f3f6b4a9decbfa4a90b923df.NewManagedDeviceMobileAppConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) MobileApps()(*i002d4b08a58acc3cf19dcedd322215597fc792aab29c13c978987157740bb4c9.MobileAppsRequestBuilder) {
     return i002d4b08a58acc3cf19dcedd322215597fc792aab29c13c978987157740bb4c9.NewMobileAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MobileAppsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.mobileApps.item collection
-func (m *DeviceAppManagementRequestBuilder) MobileAppsById(id string)(*i29437e4fbb36224c3fa3e19cdd35ffd707faff0d9b46f5b91bb301fa83c2fc02.MobileAppRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) MobileAppsById(id string)(*i29437e4fbb36224c3fa3e19cdd35ffd707faff0d9b46f5b91bb301fa83c2fc02.MobileAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -370,7 +370,7 @@ func (m *DeviceAppManagementRequestBuilder) MobileAppsById(id string)(*i29437e4f
     if id != "" {
         urlTplParams["mobileApp_id"] = id
     }
-    return i29437e4fbb36224c3fa3e19cdd35ffd707faff0d9b46f5b91bb301fa83c2fc02.NewMobileAppRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i29437e4fbb36224c3fa3e19cdd35ffd707faff0d9b46f5b91bb301fa83c2fc02.NewMobileAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update deviceAppManagement
 func (m *DeviceAppManagementRequestBuilder) Patch(options *DeviceAppManagementRequestBuilderPatchOptions)(error) {
@@ -388,7 +388,7 @@ func (m *DeviceAppManagementRequestBuilder) PolicySets()(*icabc5c2bd51f5daedc915
     return icabc5c2bd51f5daedc915efd55ca836aaaa2a4f1e8745b5ea4f3e393db1797f1.NewPolicySetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PolicySetsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.policySets.item collection
-func (m *DeviceAppManagementRequestBuilder) PolicySetsById(id string)(*i492539e1cc50966c62570b7b76059bb701558d85482e3ca95c396dc36c10607a.PolicySetRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) PolicySetsById(id string)(*i492539e1cc50966c62570b7b76059bb701558d85482e3ca95c396dc36c10607a.PolicySetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -396,13 +396,13 @@ func (m *DeviceAppManagementRequestBuilder) PolicySetsById(id string)(*i492539e1
     if id != "" {
         urlTplParams["policySet_id"] = id
     }
-    return i492539e1cc50966c62570b7b76059bb701558d85482e3ca95c396dc36c10607a.NewPolicySetRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i492539e1cc50966c62570b7b76059bb701558d85482e3ca95c396dc36c10607a.NewPolicySetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) SideLoadingKeys()(*i56f77a9c5e1a7ca279d87b52f582d52adbbc4de96f0fcef383fa9ded66e0a4c1.SideLoadingKeysRequestBuilder) {
     return i56f77a9c5e1a7ca279d87b52f582d52adbbc4de96f0fcef383fa9ded66e0a4c1.NewSideLoadingKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SideLoadingKeysById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.sideLoadingKeys.item collection
-func (m *DeviceAppManagementRequestBuilder) SideLoadingKeysById(id string)(*i6b77a717f9ad30ec5ef2cbce04e89b2244f69b8e725f39fb3990beeed77e175d.SideLoadingKeyRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) SideLoadingKeysById(id string)(*i6b77a717f9ad30ec5ef2cbce04e89b2244f69b8e725f39fb3990beeed77e175d.SideLoadingKeyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -410,7 +410,7 @@ func (m *DeviceAppManagementRequestBuilder) SideLoadingKeysById(id string)(*i6b7
     if id != "" {
         urlTplParams["sideLoadingKey_id"] = id
     }
-    return i6b77a717f9ad30ec5ef2cbce04e89b2244f69b8e725f39fb3990beeed77e175d.NewSideLoadingKeyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i6b77a717f9ad30ec5ef2cbce04e89b2244f69b8e725f39fb3990beeed77e175d.NewSideLoadingKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) SymantecCodeSigningCertificate()(*i55154c3923d16b5ed36ced8585e111c41354882664d34667a6e3b97700313735.SymantecCodeSigningCertificateRequestBuilder) {
     return i55154c3923d16b5ed36ced8585e111c41354882664d34667a6e3b97700313735.NewSymantecCodeSigningCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -422,7 +422,7 @@ func (m *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurations()(*
     return i39a576817b6f726c83eda563ed7f79852514888b74a8942a87e4fb08eb489a74.NewTargetedManagedAppConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TargetedManagedAppConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.targetedManagedAppConfigurations.item collection
-func (m *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurationsById(id string)(*iceecf955eeeaa6e59a7ff5c62bcd7ca93ca56e0d58f15cbe8d764abcf525d4fc.TargetedManagedAppConfigurationRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurationsById(id string)(*iceecf955eeeaa6e59a7ff5c62bcd7ca93ca56e0d58f15cbe8d764abcf525d4fc.TargetedManagedAppConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -430,13 +430,13 @@ func (m *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurationsById
     if id != "" {
         urlTplParams["targetedManagedAppConfiguration_id"] = id
     }
-    return iceecf955eeeaa6e59a7ff5c62bcd7ca93ca56e0d58f15cbe8d764abcf525d4fc.NewTargetedManagedAppConfigurationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return iceecf955eeeaa6e59a7ff5c62bcd7ca93ca56e0d58f15cbe8d764abcf525d4fc.NewTargetedManagedAppConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) VppTokens()(*iee0ff8dcd5df6303aaa9e4b0eb5d5437722e178fc10f16c2284bd8702f364eaa.VppTokensRequestBuilder) {
     return iee0ff8dcd5df6303aaa9e4b0eb5d5437722e178fc10f16c2284bd8702f364eaa.NewVppTokensRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // VppTokensById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.vppTokens.item collection
-func (m *DeviceAppManagementRequestBuilder) VppTokensById(id string)(*i3b995f6d41023e3b43346c95c0f59fe84cb19f9a05efc8999cbbd88c8e143b9c.VppTokenRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) VppTokensById(id string)(*i3b995f6d41023e3b43346c95c0f59fe84cb19f9a05efc8999cbbd88c8e143b9c.VppTokenItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -444,13 +444,13 @@ func (m *DeviceAppManagementRequestBuilder) VppTokensById(id string)(*i3b995f6d4
     if id != "" {
         urlTplParams["vppToken_id"] = id
     }
-    return i3b995f6d41023e3b43346c95c0f59fe84cb19f9a05efc8999cbbd88c8e143b9c.NewVppTokenRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i3b995f6d41023e3b43346c95c0f59fe84cb19f9a05efc8999cbbd88c8e143b9c.NewVppTokenItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) WdacSupplementalPolicies()(*i8b9340bb6f8a5fae484feebe60a0c77ea793398c1470ee9294c37011a384a585.WdacSupplementalPoliciesRequestBuilder) {
     return i8b9340bb6f8a5fae484feebe60a0c77ea793398c1470ee9294c37011a384a585.NewWdacSupplementalPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WdacSupplementalPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.wdacSupplementalPolicies.item collection
-func (m *DeviceAppManagementRequestBuilder) WdacSupplementalPoliciesById(id string)(*i37f5ce10204a635850269ccbe65874caffc5e6d79af25b669118274ddd1b167e.WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) WdacSupplementalPoliciesById(id string)(*i37f5ce10204a635850269ccbe65874caffc5e6d79af25b669118274ddd1b167e.WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -458,13 +458,13 @@ func (m *DeviceAppManagementRequestBuilder) WdacSupplementalPoliciesById(id stri
     if id != "" {
         urlTplParams["windowsDefenderApplicationControlSupplementalPolicy_id"] = id
     }
-    return i37f5ce10204a635850269ccbe65874caffc5e6d79af25b669118274ddd1b167e.NewWindowsDefenderApplicationControlSupplementalPolicyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i37f5ce10204a635850269ccbe65874caffc5e6d79af25b669118274ddd1b167e.NewWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionDeviceRegistrations()(*i63940f883f70d79c9f036190af3786b785aa38e88077dee0da7d8bdd443ffb95.WindowsInformationProtectionDeviceRegistrationsRequestBuilder) {
     return i63940f883f70d79c9f036190af3786b785aa38e88077dee0da7d8bdd443ffb95.NewWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WindowsInformationProtectionDeviceRegistrationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.windowsInformationProtectionDeviceRegistrations.item collection
-func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionDeviceRegistrationsById(id string)(*i9c05ace01a97f06826939943c032786e845da3515dd142da04b21d1ed556d243.WindowsInformationProtectionDeviceRegistrationRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionDeviceRegistrationsById(id string)(*i9c05ace01a97f06826939943c032786e845da3515dd142da04b21d1ed556d243.WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -472,13 +472,13 @@ func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionDeviceRe
     if id != "" {
         urlTplParams["windowsInformationProtectionDeviceRegistration_id"] = id
     }
-    return i9c05ace01a97f06826939943c032786e845da3515dd142da04b21d1ed556d243.NewWindowsInformationProtectionDeviceRegistrationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i9c05ace01a97f06826939943c032786e845da3515dd142da04b21d1ed556d243.NewWindowsInformationProtectionDeviceRegistrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPolicies()(*ie802a5a736b1aceb4dbbe40ec170346b4ae36c2165343b37c69767334cdf1f05.WindowsInformationProtectionPoliciesRequestBuilder) {
     return ie802a5a736b1aceb4dbbe40ec170346b4ae36c2165343b37c69767334cdf1f05.NewWindowsInformationProtectionPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WindowsInformationProtectionPoliciesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.windowsInformationProtectionPolicies.item collection
-func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPoliciesById(id string)(*ib84c840989f9ab439ec3ef07f903c5bac878d6066f60bc53dac1f18abcc7ad13.WindowsInformationProtectionPolicyRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPoliciesById(id string)(*ib84c840989f9ab439ec3ef07f903c5bac878d6066f60bc53dac1f18abcc7ad13.WindowsInformationProtectionPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -486,13 +486,13 @@ func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPolicies
     if id != "" {
         urlTplParams["windowsInformationProtectionPolicy_id"] = id
     }
-    return ib84c840989f9ab439ec3ef07f903c5bac878d6066f60bc53dac1f18abcc7ad13.NewWindowsInformationProtectionPolicyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ib84c840989f9ab439ec3ef07f903c5bac878d6066f60bc53dac1f18abcc7ad13.NewWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionWipeActions()(*i869aad9b4b95674254fbc32234cd41bc975fb5a270d41358d0b38c0a515d0e76.WindowsInformationProtectionWipeActionsRequestBuilder) {
     return i869aad9b4b95674254fbc32234cd41bc975fb5a270d41358d0b38c0a515d0e76.NewWindowsInformationProtectionWipeActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WindowsInformationProtectionWipeActionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.windowsInformationProtectionWipeActions.item collection
-func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionWipeActionsById(id string)(*ib4dcb1c692a4cab02e05d87e0707aa4831b962f34cad5157cb939f82a9345efb.WindowsInformationProtectionWipeActionRequestBuilder) {
+func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionWipeActionsById(id string)(*ib4dcb1c692a4cab02e05d87e0707aa4831b962f34cad5157cb939f82a9345efb.WindowsInformationProtectionWipeActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -500,7 +500,7 @@ func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionWipeActi
     if id != "" {
         urlTplParams["windowsInformationProtectionWipeAction_id"] = id
     }
-    return ib4dcb1c692a4cab02e05d87e0707aa4831b962f34cad5157cb939f82a9345efb.NewWindowsInformationProtectionWipeActionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ib4dcb1c692a4cab02e05d87e0707aa4831b962f34cad5157cb939f82a9345efb.NewWindowsInformationProtectionWipeActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DeviceAppManagementRequestBuilder) WindowsManagementApp()(*i9b677b07864604eb0a1dc7960a42ddf4914647e3fa83a6d2cfea3e12250a4704.WindowsManagementAppRequestBuilder) {
     return i9b677b07864604eb0a1dc7960a42ddf4914647e3fa83a6d2cfea3e12250a4704.NewWindowsManagementAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);

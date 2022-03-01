@@ -26,7 +26,7 @@ type BookmarksRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// BookmarksRequestBuilderGetQueryParameters get bookmarks from search
+// BookmarksRequestBuilderGetQueryParameters administrative answer in Microsoft Search results for common search queries in an organization.
 type BookmarksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewBookmarksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewBookmarksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get bookmarks from search
+// CreateGetRequestInformation administrative answer in Microsoft Search results for common search queries in an organization.
 func (m *BookmarksRequestBuilder) CreateGetRequestInformation(options *BookmarksRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *BookmarksRequestBuilder) CreateGetRequestInformation(options *Bookmarks
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to bookmarks for search
+// CreatePostRequestInformation administrative answer in Microsoft Search results for common search queries in an organization.
 func (m *BookmarksRequestBuilder) CreatePostRequestInformation(options *BookmarksRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *BookmarksRequestBuilder) CreatePostRequestInformation(options *Bookmark
     }
     return requestInfo, nil
 }
-// Get get bookmarks from search
+// Get administrative answer in Microsoft Search results for common search queries in an organization.
 func (m *BookmarksRequestBuilder) Get(options *BookmarksRequestBuilderGetOptions)(*BookmarksResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *BookmarksRequestBuilder) Get(options *BookmarksRequestBuilderGetOptions
     }
     return res.(*BookmarksResponse), nil
 }
-// Post create new navigation property to bookmarks for search
+// Post administrative answer in Microsoft Search results for common search queries in an organization.
 func (m *BookmarksRequestBuilder) Post(options *BookmarksRequestBuilderPostOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Bookmark, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

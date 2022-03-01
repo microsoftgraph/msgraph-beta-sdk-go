@@ -157,7 +157,7 @@ func (m *PolicyRequestBuilder) Labels()(*i1900faee127036955bb1240ae0350b96972d27
     return i1900faee127036955bb1240ae0350b96972d27bcc96727ffbe45aff2a8b4338d.NewLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LabelsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.informationProtection.policy.labels.item collection
-func (m *PolicyRequestBuilder) LabelsById(id string)(*ie085268c4afc45c8557c32136e2f1d802878f154575855708ba0169a6e547fde.InformationProtectionLabelRequestBuilder) {
+func (m *PolicyRequestBuilder) LabelsById(id string)(*ie085268c4afc45c8557c32136e2f1d802878f154575855708ba0169a6e547fde.InformationProtectionLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -165,7 +165,7 @@ func (m *PolicyRequestBuilder) LabelsById(id string)(*ie085268c4afc45c8557c32136
     if id != "" {
         urlTplParams["informationProtectionLabel_id"] = id
     }
-    return ie085268c4afc45c8557c32136e2f1d802878f154575855708ba0169a6e547fde.NewInformationProtectionLabelRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ie085268c4afc45c8557c32136e2f1d802878f154575855708ba0169a6e547fde.NewInformationProtectionLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property policy in informationProtection
 func (m *PolicyRequestBuilder) Patch(options *PolicyRequestBuilderPatchOptions)(error) {

@@ -8,11 +8,11 @@ import (
 type AnswerKeyword struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // A collection of keywords used to trigger the search answer.
     keywords []string;
-    // 
+    // If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
     matchSimilarKeywords *bool;
-    // 
+    // Unique keywords that will guarantee the search answer is triggered.
     reservedKeywords []string;
 }
 // NewAnswerKeyword instantiates a new answerKeyword and sets the default values.
@@ -30,7 +30,7 @@ func (m *AnswerKeyword) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetKeywords gets the keywords property value. 
+// GetKeywords gets the keywords property value. A collection of keywords used to trigger the search answer.
 func (m *AnswerKeyword) GetKeywords()([]string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *AnswerKeyword) GetKeywords()([]string) {
         return m.keywords
     }
 }
-// GetMatchSimilarKeywords gets the matchSimilarKeywords property value. 
+// GetMatchSimilarKeywords gets the matchSimilarKeywords property value. If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
 func (m *AnswerKeyword) GetMatchSimilarKeywords()(*bool) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *AnswerKeyword) GetMatchSimilarKeywords()(*bool) {
         return m.matchSimilarKeywords
     }
 }
-// GetReservedKeywords gets the reservedKeywords property value. 
+// GetReservedKeywords gets the reservedKeywords property value. Unique keywords that will guarantee the search answer is triggered.
 func (m *AnswerKeyword) GetReservedKeywords()([]string) {
     if m == nil {
         return nil
@@ -134,19 +134,19 @@ func (m *AnswerKeyword) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetKeywords sets the keywords property value. 
+// SetKeywords sets the keywords property value. A collection of keywords used to trigger the search answer.
 func (m *AnswerKeyword) SetKeywords(value []string)() {
     if m != nil {
         m.keywords = value
     }
 }
-// SetMatchSimilarKeywords sets the matchSimilarKeywords property value. 
+// SetMatchSimilarKeywords sets the matchSimilarKeywords property value. If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
 func (m *AnswerKeyword) SetMatchSimilarKeywords(value *bool)() {
     if m != nil {
         m.matchSimilarKeywords = value
     }
 }
-// SetReservedKeywords sets the reservedKeywords property value. 
+// SetReservedKeywords sets the reservedKeywords property value. Unique keywords that will guarantee the search answer is triggered.
 func (m *AnswerKeyword) SetReservedKeywords(value []string)() {
     if m != nil {
         m.reservedKeywords = value

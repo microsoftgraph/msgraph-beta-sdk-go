@@ -7,9 +7,9 @@ import (
 // UnifiedRbacResourceNamespace 
 type UnifiedRbacResourceNamespace struct {
     Entity
-    // 
+    // Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
     name *string;
-    // 
+    // Operations that an authorized principal are allowed to perform.
     resourceActions []UnifiedRbacResourceAction;
 }
 // NewUnifiedRbacResourceNamespace instantiates a new unifiedRbacResourceNamespace and sets the default values.
@@ -19,7 +19,7 @@ func NewUnifiedRbacResourceNamespace()(*UnifiedRbacResourceNamespace) {
     }
     return m
 }
-// GetName gets the name property value. 
+// GetName gets the name property value. Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
 func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
         return m.name
     }
 }
-// GetResourceActions gets the resourceActions property value. 
+// GetResourceActions gets the resourceActions property value. Operations that an authorized principal are allowed to perform.
 func (m *UnifiedRbacResourceNamespace) GetResourceActions()([]UnifiedRbacResourceAction) {
     if m == nil {
         return nil
@@ -92,13 +92,13 @@ func (m *UnifiedRbacResourceNamespace) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// SetName sets the name property value. 
+// SetName sets the name property value. Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
 func (m *UnifiedRbacResourceNamespace) SetName(value *string)() {
     if m != nil {
         m.name = value
     }
 }
-// SetResourceActions sets the resourceActions property value. 
+// SetResourceActions sets the resourceActions property value. Operations that an authorized principal are allowed to perform.
 func (m *UnifiedRbacResourceNamespace) SetResourceActions(value []UnifiedRbacResourceAction)() {
     if m != nil {
         m.resourceActions = value

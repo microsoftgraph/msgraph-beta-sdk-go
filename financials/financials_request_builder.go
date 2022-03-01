@@ -50,7 +50,7 @@ func (m *FinancialsRequestBuilder) Companies()(*id29d15365ad5523627e5b623b48c894
     return id29d15365ad5523627e5b623b48c89472d30a8eef04acc7d94150f71c04ba174.NewCompaniesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CompaniesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item collection
-func (m *FinancialsRequestBuilder) CompaniesById(id string)(*ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759.CompanyRequestBuilder) {
+func (m *FinancialsRequestBuilder) CompaniesById(id string)(*ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759.CompanyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -58,7 +58,7 @@ func (m *FinancialsRequestBuilder) CompaniesById(id string)(*ib1913e881039747711
     if id != "" {
         urlTplParams["company_id"] = id
     }
-    return ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759.NewCompanyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ib1913e88103974771158f72c0c9908ae5dba09d660c34f1cb7c8bb669d201759.NewCompanyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewFinancialsRequestBuilderInternal instantiates a new FinancialsRequestBuilder and sets the default values.
 func NewFinancialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FinancialsRequestBuilder) {

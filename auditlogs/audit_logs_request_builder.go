@@ -115,7 +115,7 @@ func (m *AuditLogsRequestBuilder) DirectoryAudits()(*iddb9d350ed2f2204a816a8b2c9
     return iddb9d350ed2f2204a816a8b2c9737202cbbb609b2b77635734c77c461c7b11b3.NewDirectoryAuditsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DirectoryAuditsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.auditLogs.directoryAudits.item collection
-func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*iecdf88a9efb8a7e905d5b4313dc1bc508fc1f53e48ec460b752ecce4944a19d3.DirectoryAuditRequestBuilder) {
+func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*iecdf88a9efb8a7e905d5b4313dc1bc508fc1f53e48ec460b752ecce4944a19d3.DirectoryAuditItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -123,13 +123,13 @@ func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*iecdf88a9efb8a
     if id != "" {
         urlTplParams["directoryAudit_id"] = id
     }
-    return iecdf88a9efb8a7e905d5b4313dc1bc508fc1f53e48ec460b752ecce4944a19d3.NewDirectoryAuditRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return iecdf88a9efb8a7e905d5b4313dc1bc508fc1f53e48ec460b752ecce4944a19d3.NewDirectoryAuditItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *AuditLogsRequestBuilder) DirectoryProvisioning()(*i897c3994bb157d73a049b5f8e090a75f6296cc505d281e096f9c2f5015269d48.DirectoryProvisioningRequestBuilder) {
     return i897c3994bb157d73a049b5f8e090a75f6296cc505d281e096f9c2f5015269d48.NewDirectoryProvisioningRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DirectoryProvisioningById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.auditLogs.directoryProvisioning.item collection
-func (m *AuditLogsRequestBuilder) DirectoryProvisioningById(id string)(*i43b93442c076ce1053480c2aaba8f405e6875171980c0abd4c67e9a1a25b53e5.ProvisioningObjectSummaryRequestBuilder) {
+func (m *AuditLogsRequestBuilder) DirectoryProvisioningById(id string)(*i43b93442c076ce1053480c2aaba8f405e6875171980c0abd4c67e9a1a25b53e5.ProvisioningObjectSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -137,7 +137,7 @@ func (m *AuditLogsRequestBuilder) DirectoryProvisioningById(id string)(*i43b9344
     if id != "" {
         urlTplParams["provisioningObjectSummary_id"] = id
     }
-    return i43b93442c076ce1053480c2aaba8f405e6875171980c0abd4c67e9a1a25b53e5.NewProvisioningObjectSummaryRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i43b93442c076ce1053480c2aaba8f405e6875171980c0abd4c67e9a1a25b53e5.NewProvisioningObjectSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get auditLogs
 func (m *AuditLogsRequestBuilder) Get(options *AuditLogsRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.AuditLogRoot, error) {
@@ -167,7 +167,7 @@ func (m *AuditLogsRequestBuilder) Provisioning()(*ie7cd14714146bead7b23538aa08e8
     return ie7cd14714146bead7b23538aa08e8ec73dbbd6fdac83c25da131496b868f0852.NewProvisioningRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ProvisioningById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.auditLogs.provisioning.item collection
-func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*ida9b6a06c8d64bad7537948374efa593835455cc0fac39900b364fe69288a5b5.ProvisioningObjectSummaryRequestBuilder) {
+func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*ida9b6a06c8d64bad7537948374efa593835455cc0fac39900b364fe69288a5b5.ProvisioningObjectSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -175,13 +175,13 @@ func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*ida9b6a06c8d64bad
     if id != "" {
         urlTplParams["provisioningObjectSummary_id"] = id
     }
-    return ida9b6a06c8d64bad7537948374efa593835455cc0fac39900b364fe69288a5b5.NewProvisioningObjectSummaryRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ida9b6a06c8d64bad7537948374efa593835455cc0fac39900b364fe69288a5b5.NewProvisioningObjectSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *AuditLogsRequestBuilder) RestrictedSignIns()(*i61884affea02999b55c34273d0b26c7d1ae48580ccad62b3a4ecefd4ecca9be5.RestrictedSignInsRequestBuilder) {
     return i61884affea02999b55c34273d0b26c7d1ae48580ccad62b3a4ecefd4ecca9be5.NewRestrictedSignInsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RestrictedSignInsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.auditLogs.restrictedSignIns.item collection
-func (m *AuditLogsRequestBuilder) RestrictedSignInsById(id string)(*i6cc8224410e5f63fa35653adcdb9e8272fa04027bd7951a66a001c4821dbc387.RestrictedSignInRequestBuilder) {
+func (m *AuditLogsRequestBuilder) RestrictedSignInsById(id string)(*i6cc8224410e5f63fa35653adcdb9e8272fa04027bd7951a66a001c4821dbc387.RestrictedSignInItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -189,13 +189,13 @@ func (m *AuditLogsRequestBuilder) RestrictedSignInsById(id string)(*i6cc8224410e
     if id != "" {
         urlTplParams["restrictedSignIn_id"] = id
     }
-    return i6cc8224410e5f63fa35653adcdb9e8272fa04027bd7951a66a001c4821dbc387.NewRestrictedSignInRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i6cc8224410e5f63fa35653adcdb9e8272fa04027bd7951a66a001c4821dbc387.NewRestrictedSignInItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *AuditLogsRequestBuilder) SignIns()(*ie1f17e2e55a9a96b4c8eaf8d9efd0982978d50135d920222ccacbe442d0074b7.SignInsRequestBuilder) {
     return ie1f17e2e55a9a96b4c8eaf8d9efd0982978d50135d920222ccacbe442d0074b7.NewSignInsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SignInsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.auditLogs.signIns.item collection
-func (m *AuditLogsRequestBuilder) SignInsById(id string)(*i18c1f0dab1391e55e1b65be523640813575f4930aeeb8f410364c82046e73187.SignInRequestBuilder) {
+func (m *AuditLogsRequestBuilder) SignInsById(id string)(*i18c1f0dab1391e55e1b65be523640813575f4930aeeb8f410364c82046e73187.SignInItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -203,5 +203,5 @@ func (m *AuditLogsRequestBuilder) SignInsById(id string)(*i18c1f0dab1391e55e1b65
     if id != "" {
         urlTplParams["signIn_id"] = id
     }
-    return i18c1f0dab1391e55e1b65be523640813575f4930aeeb8f410364c82046e73187.NewSignInRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i18c1f0dab1391e55e1b65be523640813575f4930aeeb8f410364c82046e73187.NewSignInItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

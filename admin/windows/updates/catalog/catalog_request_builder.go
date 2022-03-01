@@ -145,7 +145,7 @@ func (m *CatalogRequestBuilder) Entries()(*i4968f4ec9198198a442624bbae5280f764e6
     return i4968f4ec9198198a442624bbae5280f764e604de782d3e8b5b23463d851d1581.NewEntriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // EntriesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.catalog.entries.item collection
-func (m *CatalogRequestBuilder) EntriesById(id string)(*id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91.CatalogEntryRequestBuilder) {
+func (m *CatalogRequestBuilder) EntriesById(id string)(*id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91.CatalogEntryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -153,7 +153,7 @@ func (m *CatalogRequestBuilder) EntriesById(id string)(*id50e9b79234f49f74c6a4b5
     if id != "" {
         urlTplParams["catalogEntry_id"] = id
     }
-    return id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91.NewCatalogEntryRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91.NewCatalogEntryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *CatalogRequestBuilder) Get(options *CatalogRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.Catalog, error) {

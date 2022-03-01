@@ -20,7 +20,7 @@ type CloudPC struct {
     lastLoginResult *CloudPcLoginResult;
     // The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Rename, Reboot, Reprovision, and Troubleshoot.
+    // The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, and Troubleshoot.
     lastRemoteActionResult *CloudPcRemoteActionResult;
     // The Intune device ID of the Cloud PC.
     managedDeviceId *string;
@@ -40,7 +40,7 @@ type CloudPC struct {
     servicePlanName *string;
     // The service plan type of the Cloud PC.
     servicePlanType *CloudPcServicePlanType;
-    // The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
+    // The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed, restoring.
     status *CloudPcStatus;
     // The details of the Cloud PC status.
     statusDetails *CloudPcStatusDetails;
@@ -104,7 +104,7 @@ func (m *CloudPC) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return m.lastModifiedDateTime
     }
 }
-// GetLastRemoteActionResult gets the lastRemoteActionResult property value. The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Rename, Reboot, Reprovision, and Troubleshoot.
+// GetLastRemoteActionResult gets the lastRemoteActionResult property value. The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, and Troubleshoot.
 func (m *CloudPC) GetLastRemoteActionResult()(*CloudPcRemoteActionResult) {
     if m == nil {
         return nil
@@ -184,7 +184,7 @@ func (m *CloudPC) GetServicePlanType()(*CloudPcServicePlanType) {
         return m.servicePlanType
     }
 }
-// GetStatus gets the status property value. The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
+// GetStatus gets the status property value. The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed, restoring.
 func (m *CloudPC) GetStatus()(*CloudPcStatus) {
     if m == nil {
         return nil
@@ -592,7 +592,7 @@ func (m *CloudPC) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97
         m.lastModifiedDateTime = value
     }
 }
-// SetLastRemoteActionResult sets the lastRemoteActionResult property value. The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Rename, Reboot, Reprovision, and Troubleshoot.
+// SetLastRemoteActionResult sets the lastRemoteActionResult property value. The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, and Troubleshoot.
 func (m *CloudPC) SetLastRemoteActionResult(value *CloudPcRemoteActionResult)() {
     if m != nil {
         m.lastRemoteActionResult = value
@@ -652,7 +652,7 @@ func (m *CloudPC) SetServicePlanType(value *CloudPcServicePlanType)() {
         m.servicePlanType = value
     }
 }
-// SetStatus sets the status property value. The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
+// SetStatus sets the status property value. The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed, restoring.
 func (m *CloudPC) SetStatus(value *CloudPcStatus)() {
     if m != nil {
         m.status = value

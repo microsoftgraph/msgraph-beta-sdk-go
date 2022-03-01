@@ -7,7 +7,7 @@ import (
 
 // CloudPcRemoteActionResult 
 type CloudPcRemoteActionResult struct {
-    // The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize. Supported values in enterprise Cloud PC devices are: Rename, Reboot, Reprovision, Troubleshoot.
+    // The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
     actionName *string;
     // State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
     actionState *ActionState;
@@ -31,7 +31,7 @@ func NewCloudPcRemoteActionResult()(*CloudPcRemoteActionResult) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetActionName gets the actionName property value. The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize. Supported values in enterprise Cloud PC devices are: Rename, Reboot, Reprovision, Troubleshoot.
+// GetActionName gets the actionName property value. The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
 func (m *CloudPcRemoteActionResult) GetActionName()(*string) {
     if m == nil {
         return nil
@@ -226,7 +226,7 @@ func (m *CloudPcRemoteActionResult) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// SetActionName sets the actionName property value. The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize. Supported values in enterprise Cloud PC devices are: Rename, Reboot, Reprovision, Troubleshoot.
+// SetActionName sets the actionName property value. The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
 func (m *CloudPcRemoteActionResult) SetActionName(value *string)() {
     if m != nil {
         m.actionName = value

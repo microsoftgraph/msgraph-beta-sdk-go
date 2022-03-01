@@ -157,7 +157,7 @@ func (m *TodoRequestBuilder) Lists()(*icea965fb6dc5282efc02707daa27370489b21ebab
     return icea965fb6dc5282efc02707daa27370489b21ebab602d4276d9a11470c1396d9.NewListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ListsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item collection
-func (m *TodoRequestBuilder) ListsById(id string)(*i8507b6fa54bb3b204e7b86bada677645be39bdcd4ca9fab5590bb4c3a51d57c6.TodoTaskListRequestBuilder) {
+func (m *TodoRequestBuilder) ListsById(id string)(*i8507b6fa54bb3b204e7b86bada677645be39bdcd4ca9fab5590bb4c3a51d57c6.TodoTaskListItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -165,7 +165,7 @@ func (m *TodoRequestBuilder) ListsById(id string)(*i8507b6fa54bb3b204e7b86bada67
     if id != "" {
         urlTplParams["todoTaskList_id"] = id
     }
-    return i8507b6fa54bb3b204e7b86bada677645be39bdcd4ca9fab5590bb4c3a51d57c6.NewTodoTaskListRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i8507b6fa54bb3b204e7b86bada677645be39bdcd4ca9fab5590bb4c3a51d57c6.NewTodoTaskListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch represents the To Do services available to a user.
 func (m *TodoRequestBuilder) Patch(options *TodoRequestBuilderPatchOptions)(error) {

@@ -15,6 +15,8 @@ type ServicePrincipalCreationConditionSet struct {
     applicationsFromVerifiedPublisherOnly *bool;
     // 
     applicationTenantIds []string;
+    // 
+    certifiedApplicationsOnly *bool;
 }
 // NewServicePrincipalCreationConditionSet instantiates a new servicePrincipalCreationConditionSet and sets the default values.
 func NewServicePrincipalCreationConditionSet()(*ServicePrincipalCreationConditionSet) {
@@ -53,6 +55,14 @@ func (m *ServicePrincipalCreationConditionSet) GetApplicationTenantIds()([]strin
         return nil
     } else {
         return m.applicationTenantIds
+    }
+}
+// GetCertifiedApplicationsOnly gets the certifiedApplicationsOnly property value. 
+func (m *ServicePrincipalCreationConditionSet) GetCertifiedApplicationsOnly()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.certifiedApplicationsOnly
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -110,6 +120,16 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["certifiedApplicationsOnly"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCertifiedApplicationsOnly(val)
+        }
+        return nil
+    }
     return res
 }
 func (m *ServicePrincipalCreationConditionSet) IsNil()(bool) {
@@ -145,6 +165,12 @@ func (m *ServicePrincipalCreationConditionSet) Serialize(writer i04eb5309aeaafad
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("certifiedApplicationsOnly", m.GetCertifiedApplicationsOnly())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetApplicationIds sets the applicationIds property value. 
@@ -169,5 +195,11 @@ func (m *ServicePrincipalCreationConditionSet) SetApplicationsFromVerifiedPublis
 func (m *ServicePrincipalCreationConditionSet) SetApplicationTenantIds(value []string)() {
     if m != nil {
         m.applicationTenantIds = value
+    }
+}
+// SetCertifiedApplicationsOnly sets the certifiedApplicationsOnly property value. 
+func (m *ServicePrincipalCreationConditionSet) SetCertifiedApplicationsOnly(value *bool)() {
+    if m != nil {
+        m.certifiedApplicationsOnly = value
     }
 }

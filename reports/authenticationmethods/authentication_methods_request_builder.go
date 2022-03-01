@@ -9,6 +9,7 @@ import (
     ib7f16628d84c0be87b68eb41df4b24ca4202644b1a9a828575242e338acc8524 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/authenticationmethods/usersregisteredbymethodwithincludedusertypeswithincludeduserroles"
     iea66ad25029df78159398965a02cd69d8925573317b76bc5330047b2d9b0baf0 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/authenticationmethods/usersregisteredbyfeaturewithincludedusertypeswithincludeduserroles"
     ieba9935f611e8dffd6c4a595723c566237eca57407b2ce3912312f1d48019de6 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/authenticationmethods/usersregisteredbyfeature"
+    id56845adf52c64521fdbf34ae5eab50d9239bb78eb71c9f92a44c87dc1d83dbc "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/authenticationmethods/userregistrationdetails/item"
 )
 
 // AuthenticationMethodsRequestBuilder builds and executes requests for operations under \reports\authenticationMethods
@@ -172,7 +173,7 @@ func (m *AuthenticationMethodsRequestBuilder) UserRegistrationDetails()(*i7b9ae5
     return i7b9ae5210f90db0ebad31fc1b0bef221ff1eaa0cbeb3edb35517a6383d681410.NewUserRegistrationDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserRegistrationDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.reports.authenticationMethods.userRegistrationDetails.item collection
-func (m *AuthenticationMethodsRequestBuilder) UserRegistrationDetailsById(id string)(*i7b9ae5210f90db0ebad31fc1b0bef221ff1eaa0cbeb3edb35517a6383d681410.UserRegistrationDetailsRequestBuilder) {
+func (m *AuthenticationMethodsRequestBuilder) UserRegistrationDetailsById(id string)(*id56845adf52c64521fdbf34ae5eab50d9239bb78eb71c9f92a44c87dc1d83dbc.UserRegistrationDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -180,7 +181,7 @@ func (m *AuthenticationMethodsRequestBuilder) UserRegistrationDetailsById(id str
     if id != "" {
         urlTplParams["userRegistrationDetails_id"] = id
     }
-    return i7b9ae5210f90db0ebad31fc1b0bef221ff1eaa0cbeb3edb35517a6383d681410.NewUserRegistrationDetailsRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return id56845adf52c64521fdbf34ae5eab50d9239bb78eb71c9f92a44c87dc1d83dbc.NewUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UsersRegisteredByFeature builds and executes requests for operations under \reports\authenticationMethods\microsoft.graph.usersRegisteredByFeature()
 func (m *AuthenticationMethodsRequestBuilder) UsersRegisteredByFeature()(*ieba9935f611e8dffd6c4a595723c566237eca57407b2ce3912312f1d48019de6.UsersRegisteredByFeatureRequestBuilder) {

@@ -157,7 +157,7 @@ func (m *FileRequestBuilder) Localizations()(*i2358a7b294dbfc5af99c78f6f0b89ef66
     return i2358a7b294dbfc5af99c78f6f0b89ef669d5ed55f5c176e931b1de31f3be7a3f.NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // LocalizationsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.agreements.item.file.localizations.item collection
-func (m *FileRequestBuilder) LocalizationsById(id string)(*i56d60d06da3a58c57524bb6ec4cf3035a69ad1a68d0bf2782a6baa9716c68dc3.AgreementFileLocalizationRequestBuilder) {
+func (m *FileRequestBuilder) LocalizationsById(id string)(*i56d60d06da3a58c57524bb6ec4cf3035a69ad1a68d0bf2782a6baa9716c68dc3.AgreementFileLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -165,7 +165,7 @@ func (m *FileRequestBuilder) LocalizationsById(id string)(*i56d60d06da3a58c57524
     if id != "" {
         urlTplParams["agreementFileLocalization_id"] = id
     }
-    return i56d60d06da3a58c57524bb6ec4cf3035a69ad1a68d0bf2782a6baa9716c68dc3.NewAgreementFileLocalizationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i56d60d06da3a58c57524bb6ec4cf3035a69ad1a68d0bf2782a6baa9716c68dc3.NewAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch default PDF linked to this agreement.
 func (m *FileRequestBuilder) Patch(options *FileRequestBuilderPatchOptions)(error) {

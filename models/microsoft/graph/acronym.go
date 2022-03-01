@@ -8,9 +8,9 @@ import (
 // Acronym 
 type Acronym struct {
     SearchAnswer
-    // 
+    // What the acronym stands for.
     standsFor *string;
-    // 
+    // State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.
     state *id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState;
 }
 // NewAcronym instantiates a new acronym and sets the default values.
@@ -20,7 +20,7 @@ func NewAcronym()(*Acronym) {
     }
     return m
 }
-// GetStandsFor gets the standsFor property value. 
+// GetStandsFor gets the standsFor property value. What the acronym stands for.
 func (m *Acronym) GetStandsFor()(*string) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *Acronym) GetStandsFor()(*string) {
         return m.standsFor
     }
 }
-// GetState gets the state property value. 
+// GetState gets the state property value. State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.
 func (m *Acronym) GetState()(*id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState) {
     if m == nil {
         return nil
@@ -85,13 +85,13 @@ func (m *Acronym) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     }
     return nil
 }
-// SetStandsFor sets the standsFor property value. 
+// SetStandsFor sets the standsFor property value. What the acronym stands for.
 func (m *Acronym) SetStandsFor(value *string)() {
     if m != nil {
         m.standsFor = value
     }
 }
-// SetState sets the state property value. 
+// SetState sets the state property value. State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.
 func (m *Acronym) SetState(value *id2242e0abfe0270d8d02377d5aa406c0b4e2307a32628cf8b4c8c6d7176530e8.AnswerState)() {
     if m != nil {
         m.state = value

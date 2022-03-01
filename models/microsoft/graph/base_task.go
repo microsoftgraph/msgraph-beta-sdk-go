@@ -8,8 +8,6 @@ import (
 // BaseTask 
 type BaseTask struct {
     Entity
-    // The task body that typically contains information about the task.
-    body *ItemBody;
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     bodyLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // A collection of checklistItems linked to a task.
@@ -32,14 +30,16 @@ type BaseTask struct {
     linkedResources []LinkedResource_v2;
     // The list which contains the task.
     parentList *BaseTaskList;
-    // 
-    personalProperties *PersonalTaskProperties;
     // The recurrence pattern for the task.
     recurrence *PatternedRecurrence;
     // The date in the specified time zone when the task is to begin.
     startDateTime *DateTimeTimeZone;
     // Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed,unknownFutureValue.
     status *TaskStatus_v2;
+    // 
+    textBody *string;
+    // 
+    viewpoint *TaskViewpoint;
 }
 // NewBaseTask instantiates a new baseTask and sets the default values.
 func NewBaseTask()(*BaseTask) {
@@ -47,14 +47,6 @@ func NewBaseTask()(*BaseTask) {
         Entity: *NewEntity(),
     }
     return m
-}
-// GetBody gets the body property value. The task body that typically contains information about the task.
-func (m *BaseTask) GetBody()(*ItemBody) {
-    if m == nil {
-        return nil
-    } else {
-        return m.body
-    }
 }
 // GetBodyLastModifiedDateTime gets the bodyLastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *BaseTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -144,14 +136,6 @@ func (m *BaseTask) GetParentList()(*BaseTaskList) {
         return m.parentList
     }
 }
-// GetPersonalProperties gets the personalProperties property value. 
-func (m *BaseTask) GetPersonalProperties()(*PersonalTaskProperties) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personalProperties
-    }
-}
 // GetRecurrence gets the recurrence property value. The recurrence pattern for the task.
 func (m *BaseTask) GetRecurrence()(*PatternedRecurrence) {
     if m == nil {
@@ -176,19 +160,25 @@ func (m *BaseTask) GetStatus()(*TaskStatus_v2) {
         return m.status
     }
 }
+// GetTextBody gets the textBody property value. 
+func (m *BaseTask) GetTextBody()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.textBody
+    }
+}
+// GetViewpoint gets the viewpoint property value. 
+func (m *BaseTask) GetViewpoint()(*TaskViewpoint) {
+    if m == nil {
+        return nil
+    } else {
+        return m.viewpoint
+    }
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BaseTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBody(val.(*ItemBody))
-        }
-        return nil
-    }
     res["bodyLastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -311,16 +301,6 @@ func (m *BaseTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         }
         return nil
     }
-    res["personalProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPersonalTaskProperties() })
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPersonalProperties(val.(*PersonalTaskProperties))
-        }
-        return nil
-    }
     res["recurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPatternedRecurrence() })
         if err != nil {
@@ -351,6 +331,26 @@ func (m *BaseTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         }
         return nil
     }
+    res["textBody"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTextBody(val)
+        }
+        return nil
+    }
+    res["viewpoint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTaskViewpoint() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetViewpoint(val.(*TaskViewpoint))
+        }
+        return nil
+    }
     return res
 }
 func (m *BaseTask) IsNil()(bool) {
@@ -361,12 +361,6 @@ func (m *BaseTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
-    }
-    {
-        err = writer.WriteObjectValue("body", m.GetBody())
-        if err != nil {
-            return err
-        }
     }
     {
         err = writer.WriteTimeValue("bodyLastModifiedDateTime", m.GetBodyLastModifiedDateTime())
@@ -451,12 +445,6 @@ func (m *BaseTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     {
-        err = writer.WriteObjectValue("personalProperties", m.GetPersonalProperties())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("recurrence", m.GetRecurrence())
         if err != nil {
             return err
@@ -475,13 +463,19 @@ func (m *BaseTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    return nil
-}
-// SetBody sets the body property value. The task body that typically contains information about the task.
-func (m *BaseTask) SetBody(value *ItemBody)() {
-    if m != nil {
-        m.body = value
+    {
+        err = writer.WriteStringValue("textBody", m.GetTextBody())
+        if err != nil {
+            return err
+        }
     }
+    {
+        err = writer.WriteObjectValue("viewpoint", m.GetViewpoint())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
 }
 // SetBodyLastModifiedDateTime sets the bodyLastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *BaseTask) SetBodyLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
@@ -549,12 +543,6 @@ func (m *BaseTask) SetParentList(value *BaseTaskList)() {
         m.parentList = value
     }
 }
-// SetPersonalProperties sets the personalProperties property value. 
-func (m *BaseTask) SetPersonalProperties(value *PersonalTaskProperties)() {
-    if m != nil {
-        m.personalProperties = value
-    }
-}
 // SetRecurrence sets the recurrence property value. The recurrence pattern for the task.
 func (m *BaseTask) SetRecurrence(value *PatternedRecurrence)() {
     if m != nil {
@@ -571,5 +559,17 @@ func (m *BaseTask) SetStartDateTime(value *DateTimeTimeZone)() {
 func (m *BaseTask) SetStatus(value *TaskStatus_v2)() {
     if m != nil {
         m.status = value
+    }
+}
+// SetTextBody sets the textBody property value. 
+func (m *BaseTask) SetTextBody(value *string)() {
+    if m != nil {
+        m.textBody = value
+    }
+}
+// SetViewpoint sets the viewpoint property value. 
+func (m *BaseTask) SetViewpoint(value *TaskViewpoint)() {
+    if m != nil {
+        m.viewpoint = value
     }
 }

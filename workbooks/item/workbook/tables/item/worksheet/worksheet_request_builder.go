@@ -75,7 +75,7 @@ func (m *WorksheetRequestBuilder) Charts()(*ide4ba23235f326614c8805813356139727b
     return ide4ba23235f326614c8805813356139727b8263a14f3a4d923bb40121a7ba365.NewChartsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ChartsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.worksheet.charts.item collection
-func (m *WorksheetRequestBuilder) ChartsById(id string)(*ia1cc623eddd9df9f17c0b9701a2a3539b2f5442517a879409721736eb8a27048.WorkbookChartRequestBuilder) {
+func (m *WorksheetRequestBuilder) ChartsById(id string)(*ia1cc623eddd9df9f17c0b9701a2a3539b2f5442517a879409721736eb8a27048.WorkbookChartItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -83,7 +83,7 @@ func (m *WorksheetRequestBuilder) ChartsById(id string)(*ia1cc623eddd9df9f17c0b9
     if id != "" {
         urlTplParams["workbookChart_id"] = id
     }
-    return ia1cc623eddd9df9f17c0b9701a2a3539b2f5442517a879409721736eb8a27048.NewWorkbookChartRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ia1cc623eddd9df9f17c0b9701a2a3539b2f5442517a879409721736eb8a27048.NewWorkbookChartItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewWorksheetRequestBuilderInternal instantiates a new WorksheetRequestBuilder and sets the default values.
 func NewWorksheetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorksheetRequestBuilder) {
@@ -187,7 +187,7 @@ func (m *WorksheetRequestBuilder) Names()(*iee6c370a85cb6bb0fefbc8dc3939ea618f9c
     return iee6c370a85cb6bb0fefbc8dc3939ea618f9c1c5957db5c49369a7a35b0d095a7.NewNamesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NamesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.worksheet.names.item collection
-func (m *WorksheetRequestBuilder) NamesById(id string)(*i53303b45d7d648df95cc91c6507cc59b5af02e940b75e6a563d137849b1f393d.WorkbookNamedItemRequestBuilder) {
+func (m *WorksheetRequestBuilder) NamesById(id string)(*i53303b45d7d648df95cc91c6507cc59b5af02e940b75e6a563d137849b1f393d.WorkbookNamedItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -195,7 +195,7 @@ func (m *WorksheetRequestBuilder) NamesById(id string)(*i53303b45d7d648df95cc91c
     if id != "" {
         urlTplParams["workbookNamedItem_id"] = id
     }
-    return i53303b45d7d648df95cc91c6507cc59b5af02e940b75e6a563d137849b1f393d.NewWorkbookNamedItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i53303b45d7d648df95cc91c6507cc59b5af02e940b75e6a563d137849b1f393d.NewWorkbookNamedItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch the worksheet containing the current table. Read-only.
 func (m *WorksheetRequestBuilder) Patch(options *WorksheetRequestBuilderPatchOptions)(error) {
@@ -213,7 +213,7 @@ func (m *WorksheetRequestBuilder) PivotTables()(*i3ddcdce4491c9d04c88133619f912a
     return i3ddcdce4491c9d04c88133619f912a234e6c29f49882574f3899a635b9c598c2.NewPivotTablesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PivotTablesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.worksheet.pivotTables.item collection
-func (m *WorksheetRequestBuilder) PivotTablesById(id string)(*if823d55338eadd2201e55a09008562794fbe17cc448d5a324b81519ccff4008a.WorkbookPivotTableRequestBuilder) {
+func (m *WorksheetRequestBuilder) PivotTablesById(id string)(*if823d55338eadd2201e55a09008562794fbe17cc448d5a324b81519ccff4008a.WorkbookPivotTableItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -221,7 +221,7 @@ func (m *WorksheetRequestBuilder) PivotTablesById(id string)(*if823d55338eadd220
     if id != "" {
         urlTplParams["workbookPivotTable_id"] = id
     }
-    return if823d55338eadd2201e55a09008562794fbe17cc448d5a324b81519ccff4008a.NewWorkbookPivotTableRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return if823d55338eadd2201e55a09008562794fbe17cc448d5a324b81519ccff4008a.NewWorkbookPivotTableItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *WorksheetRequestBuilder) Protection()(*i986fff784f42ffbf5b0746413f92c6f4ccf48b191a61b742e953699e8d3413f0.ProtectionRequestBuilder) {
     return i986fff784f42ffbf5b0746413f92c6f4ccf48b191a61b742e953699e8d3413f0.NewProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -238,7 +238,7 @@ func (m *WorksheetRequestBuilder) Tables()(*ia276ceb85fd09a2117364dbbb767b09b3c5
     return ia276ceb85fd09a2117364dbbb767b09b3c5479169f5e4f85a8f8f9bab3a80f6b.NewTablesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TablesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.workbooks.item.workbook.tables.item.worksheet.tables.item collection
-func (m *WorksheetRequestBuilder) TablesById(id string)(*iec90b216a18e128f226f8a1291a9f75dd1d3bed00c0efd71469331f485a8cb0a.WorkbookTableRequestBuilder) {
+func (m *WorksheetRequestBuilder) TablesById(id string)(*iec90b216a18e128f226f8a1291a9f75dd1d3bed00c0efd71469331f485a8cb0a.WorkbookTableItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -246,7 +246,7 @@ func (m *WorksheetRequestBuilder) TablesById(id string)(*iec90b216a18e128f226f8a
     if id != "" {
         urlTplParams["workbookTable_id1"] = id
     }
-    return iec90b216a18e128f226f8a1291a9f75dd1d3bed00c0efd71469331f485a8cb0a.NewWorkbookTableRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return iec90b216a18e128f226f8a1291a9f75dd1d3bed00c0efd71469331f485a8cb0a.NewWorkbookTableItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UsedRange builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\microsoft.graph.usedRange()
 func (m *WorksheetRequestBuilder) UsedRange()(*i0a95af900300faaed3357b3f622cbbf00989f037fa708defe188d9a16fc51418.UsedRangeRequestBuilder) {

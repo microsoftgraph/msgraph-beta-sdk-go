@@ -28,7 +28,7 @@ type Chat struct {
     operations []TeamsAsyncOperation;
     // A collection of permissions granted to apps for the chat.
     permissionGrants []ResourceSpecificPermissionGrant;
-    // 
+    // A collection of all the tabs in the chat. Nullable.
     tabs []TeamsTab;
     // The identifier of the tenant in which the chat was created. Read-only.
     tenantId *string;
@@ -126,7 +126,7 @@ func (m *Chat) GetPermissionGrants()([]ResourceSpecificPermissionGrant) {
         return m.permissionGrants
     }
 }
-// GetTabs gets the tabs property value. 
+// GetTabs gets the tabs property value. A collection of all the tabs in the chat. Nullable.
 func (m *Chat) GetTabs()([]TeamsTab) {
     if m == nil {
         return nil
@@ -537,7 +537,7 @@ func (m *Chat) SetPermissionGrants(value []ResourceSpecificPermissionGrant)() {
         m.permissionGrants = value
     }
 }
-// SetTabs sets the tabs property value. 
+// SetTabs sets the tabs property value. A collection of all the tabs in the chat. Nullable.
 func (m *Chat) SetTabs(value []TeamsTab)() {
     if m != nil {
         m.tabs = value

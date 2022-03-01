@@ -7,15 +7,15 @@ import (
 // CustomCalloutExtension 
 type CustomCalloutExtension struct {
     Entity
-    // 
+    // Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
     authenticationConfiguration *CustomExtensionAuthenticationConfiguration;
-    // 
+    // HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
     clientConfiguration *CustomExtensionClientConfiguration;
-    // 
+    // Description for the customCalloutExtension object.
     description *string;
-    // 
+    // Display name for the customCalloutExtension object.
     displayName *string;
-    // 
+    // The type and details for configuring the endpoint to call the logic app's workflow.
     endpointConfiguration *CustomExtensionEndpointConfiguration;
 }
 // NewCustomCalloutExtension instantiates a new customCalloutExtension and sets the default values.
@@ -25,7 +25,7 @@ func NewCustomCalloutExtension()(*CustomCalloutExtension) {
     }
     return m
 }
-// GetAuthenticationConfiguration gets the authenticationConfiguration property value. 
+// GetAuthenticationConfiguration gets the authenticationConfiguration property value. Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
 func (m *CustomCalloutExtension) GetAuthenticationConfiguration()(*CustomExtensionAuthenticationConfiguration) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *CustomCalloutExtension) GetAuthenticationConfiguration()(*CustomExtensi
         return m.authenticationConfiguration
     }
 }
-// GetClientConfiguration gets the clientConfiguration property value. 
+// GetClientConfiguration gets the clientConfiguration property value. HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
 func (m *CustomCalloutExtension) GetClientConfiguration()(*CustomExtensionClientConfiguration) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *CustomCalloutExtension) GetClientConfiguration()(*CustomExtensionClient
         return m.clientConfiguration
     }
 }
-// GetDescription gets the description property value. 
+// GetDescription gets the description property value. Description for the customCalloutExtension object.
 func (m *CustomCalloutExtension) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *CustomCalloutExtension) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. 
+// GetDisplayName gets the displayName property value. Display name for the customCalloutExtension object.
 func (m *CustomCalloutExtension) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *CustomCalloutExtension) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEndpointConfiguration gets the endpointConfiguration property value. 
+// GetEndpointConfiguration gets the endpointConfiguration property value. The type and details for configuring the endpoint to call the logic app's workflow.
 func (m *CustomCalloutExtension) GetEndpointConfiguration()(*CustomExtensionEndpointConfiguration) {
     if m == nil {
         return nil
@@ -161,31 +161,31 @@ func (m *CustomCalloutExtension) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// SetAuthenticationConfiguration sets the authenticationConfiguration property value. 
+// SetAuthenticationConfiguration sets the authenticationConfiguration property value. Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
 func (m *CustomCalloutExtension) SetAuthenticationConfiguration(value *CustomExtensionAuthenticationConfiguration)() {
     if m != nil {
         m.authenticationConfiguration = value
     }
 }
-// SetClientConfiguration sets the clientConfiguration property value. 
+// SetClientConfiguration sets the clientConfiguration property value. HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
 func (m *CustomCalloutExtension) SetClientConfiguration(value *CustomExtensionClientConfiguration)() {
     if m != nil {
         m.clientConfiguration = value
     }
 }
-// SetDescription sets the description property value. 
+// SetDescription sets the description property value. Description for the customCalloutExtension object.
 func (m *CustomCalloutExtension) SetDescription(value *string)() {
     if m != nil {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. 
+// SetDisplayName sets the displayName property value. Display name for the customCalloutExtension object.
 func (m *CustomCalloutExtension) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetEndpointConfiguration sets the endpointConfiguration property value. 
+// SetEndpointConfiguration sets the endpointConfiguration property value. The type and details for configuring the endpoint to call the logic app's workflow.
 func (m *CustomCalloutExtension) SetEndpointConfiguration(value *CustomExtensionEndpointConfiguration)() {
     if m != nil {
         m.endpointConfiguration = value

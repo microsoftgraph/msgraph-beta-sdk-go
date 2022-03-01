@@ -27,6 +27,8 @@ type RbacApplication struct {
     roleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequest;
     // 
     roleEligibilitySchedules []UnifiedRoleEligibilitySchedule;
+    // 
+    transitiveRoleAssignments []UnifiedRoleAssignment;
 }
 // NewRbacApplication instantiates a new rbacApplication and sets the default values.
 func NewRbacApplication()(*RbacApplication) {
@@ -113,6 +115,14 @@ func (m *RbacApplication) GetRoleEligibilitySchedules()([]UnifiedRoleEligibility
         return nil
     } else {
         return m.roleEligibilitySchedules
+    }
+}
+// GetTransitiveRoleAssignments gets the transitiveRoleAssignments property value. 
+func (m *RbacApplication) GetTransitiveRoleAssignments()([]UnifiedRoleAssignment) {
+    if m == nil {
+        return nil
+    } else {
+        return m.transitiveRoleAssignments
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -258,6 +268,20 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
+    res["transitiveRoleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUnifiedRoleAssignment() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UnifiedRoleAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleAssignment))
+            }
+            m.SetTransitiveRoleAssignments(res)
+        }
+        return nil
+    }
     return res
 }
 func (m *RbacApplication) IsNil()(bool) {
@@ -379,6 +403,17 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
+    if m.GetTransitiveRoleAssignments() != nil {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTransitiveRoleAssignments()))
+        for i, v := range m.GetTransitiveRoleAssignments() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("transitiveRoleAssignments", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetResourceNamespaces sets the resourceNamespaces property value. 
@@ -439,5 +474,11 @@ func (m *RbacApplication) SetRoleEligibilityScheduleRequests(value []UnifiedRole
 func (m *RbacApplication) SetRoleEligibilitySchedules(value []UnifiedRoleEligibilitySchedule)() {
     if m != nil {
         m.roleEligibilitySchedules = value
+    }
+}
+// SetTransitiveRoleAssignments sets the transitiveRoleAssignments property value. 
+func (m *RbacApplication) SetTransitiveRoleAssignments(value []UnifiedRoleAssignment)() {
+    if m != nil {
+        m.transitiveRoleAssignments = value
     }
 }

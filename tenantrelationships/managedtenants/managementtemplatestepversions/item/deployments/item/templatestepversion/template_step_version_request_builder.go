@@ -5,7 +5,6 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i4261fb17e0c76843a152f58b34dc951cd1cd3b513cd9ff4370402cbe2d7ccd76 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatestepversions/item/deployments/item/templatestepversion/ref"
-    ic3ac3b84723781bdf65b34095cd8952b449b29f28b5193fc410efb700a4d0b4c "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatestepversions/item/deployments/item/templatestepversion/deploy"
 )
 
 // TemplateStepVersionRequestBuilder builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateStepVersions\{managementTemplateStepVersion-id}\deployments\{managementTemplateStepDeployment-id}\templateStepVersion
@@ -73,9 +72,6 @@ func (m *TemplateStepVersionRequestBuilder) CreateGetRequestInformation(options 
         }
     }
     return requestInfo, nil
-}
-func (m *TemplateStepVersionRequestBuilder) Deploy()(*ic3ac3b84723781bdf65b34095cd8952b449b29f28b5193fc410efb700a4d0b4c.DeployRequestBuilder) {
-    return ic3ac3b84723781bdf65b34095cd8952b449b29f28b5193fc410efb700a4d0b4c.NewDeployRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get templateStepVersion from tenantRelationships
 func (m *TemplateStepVersionRequestBuilder) Get(options *TemplateStepVersionRequestBuilderGetOptions)(*i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc.ManagementTemplateStepVersion, error) {

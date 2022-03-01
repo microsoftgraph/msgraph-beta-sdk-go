@@ -6,6 +6,7 @@ import (
     i535684e11b5500196ecb4b5c6634e0651fe2c2f78b6cd0fbe097d3c9029ae7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/models/microsoft/graph"
     i7b01373d7b81ad5a71a47b8799708380df9518e5d0da2982c333b9cd02201d62 "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesinvoices/item/salesinvoicelines/item/item/picture"
     id51184b10cefc64a5eea40d66ce323e5bea851615cfbade940a42c5d261fa1dc "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesinvoices/item/salesinvoicelines/item/item/itemcategory"
+    i5413efcf9b244fb34cf27bab7536191b841cd9ebd431c9495dbf18762969dfbb "github.com/microsoftgraph/msgraph-beta-sdk-go/financials/companies/item/salesinvoices/item/salesinvoicelines/item/item/picture/item"
 )
 
 // ItemRequestBuilder builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}\salesInvoiceLines\{salesInvoiceLine-id}\item
@@ -172,7 +173,7 @@ func (m *ItemRequestBuilder) Picture()(*i7b01373d7b81ad5a71a47b8799708380df9518e
     return i7b01373d7b81ad5a71a47b8799708380df9518e5d0da2982c333b9cd02201d62.NewPictureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PictureById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.financials.companies.item.salesInvoices.item.salesInvoiceLines.item.item.picture.item collection
-func (m *ItemRequestBuilder) PictureById(id string)(*i7b01373d7b81ad5a71a47b8799708380df9518e5d0da2982c333b9cd02201d62.PictureRequestBuilder) {
+func (m *ItemRequestBuilder) PictureById(id string)(*i5413efcf9b244fb34cf27bab7536191b841cd9ebd431c9495dbf18762969dfbb.PictureItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -180,5 +181,5 @@ func (m *ItemRequestBuilder) PictureById(id string)(*i7b01373d7b81ad5a71a47b8799
     if id != "" {
         urlTplParams["picture_id"] = id
     }
-    return i7b01373d7b81ad5a71a47b8799708380df9518e5d0da2982c333b9cd02201d62.NewPictureRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i5413efcf9b244fb34cf27bab7536191b841cd9ebd431c9495dbf18762969dfbb.NewPictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

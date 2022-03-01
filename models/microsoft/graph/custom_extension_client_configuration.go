@@ -8,7 +8,7 @@ import (
 type CustomExtensionClientConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
     timeoutInMilliseconds *int32;
 }
 // NewCustomExtensionClientConfiguration instantiates a new customExtensionClientConfiguration and sets the default values.
@@ -26,7 +26,7 @@ func (m *CustomExtensionClientConfiguration) GetAdditionalData()(map[string]inte
         return m.additionalData
     }
 }
-// GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. 
+// GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
 func (m *CustomExtensionClientConfiguration) GetTimeoutInMilliseconds()(*int32) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *CustomExtensionClientConfiguration) SetAdditionalData(value map[string]
         m.additionalData = value
     }
 }
-// SetTimeoutInMilliseconds sets the timeoutInMilliseconds property value. 
+// SetTimeoutInMilliseconds sets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
 func (m *CustomExtensionClientConfiguration) SetTimeoutInMilliseconds(value *int32)() {
     if m != nil {
         m.timeoutInMilliseconds = value
